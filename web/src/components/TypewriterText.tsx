@@ -9,11 +9,30 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-const SPEEDS = {
-  slow: 50,    // 50ms per character
-  normal: 20,  // 20ms per character
-  fast: 5,     // 5ms per character
+// Base delay por carácter (ms)
+const BASE_SPEEDS: Record<NonNullable<TypewriterTextProps['speed']>, number> = {
+  slow: 55,    // ~18 chars/s
+  normal: 32,  // ~31 chars/s
+  fast: 16,    // ~62 chars/s
 };
+
+// Pausas extra (ms) según signo
+const PUNCTUATION_PAUSE: Array<{ re: RegExp; extra: number }> = [
+  { re: /[\.\!\?]$/, extra: 260 },    // fin de frase
+  { re: /[:,;]$/, extra: 120 },       // pausa corta
+  { re: /\n$/, extra: 220 },          // salto de línea
+  { re: /\s$/, extra: 0 },            // espacio
+];
+
+function getDelay(char: string, base: number) {
+  // Un pelín de variación para que no sea “robot”
+  const jitter = Math.floor(Math.random() * 12); // 0-11ms
+
+  for (const rule of PUNCTUATION_PAUSE) {
+    if (rule.re.test(char)) return base + rule.extra + jitter;
+  }
+  return base + jitter;
+}
 
 export default function TypewriterText({
   text,
@@ -22,36 +41,51 @@ export default function TypewriterText({
   className = '',
 }: TypewriterTextProps) {
   const [displayedText, setDisplayedText] = useState('');
-  const [isComplete, setIsComplete] = useState(false);
   const indexRef = useRef(0);
+  const timeoutRef = useRef<number | null>(null);
+  const completedRef = useRef(false);
 
   useEffect(() => {
-    // Reset when text changes
+    // Reset al cambiar texto
     setDisplayedText('');
-    setIsComplete(false);
     indexRef.current = 0;
+    completedRef.current = false;
 
     if (!text) {
-      setIsComplete(true);
       onComplete?.();
       return;
     }
 
-    const interval = setInterval(() => {
-      if (indexRef.current < text.length) {
-        setDisplayedText(text.slice(0, indexRef.current + 1));
-        indexRef.current += 1;
-      } else {
-        clearInterval(interval);
-        setIsComplete(true);
-        onComplete?.();
-      }
-    }, SPEEDS[speed]);
+    const base = BASE_SPEEDS[speed];
 
-    return () => clearInterval(interval);
+    const tick = () => {
+      if (indexRef.current >= text.length) {
+        if (!completedRef.current) {
+          completedRef.current = true;
+          onComplete?.();
+        }
+        return;
+      }
+
+      indexRef.current += 1;
+      const nextText = text.slice(0, indexRef.current);
+      setDisplayedText(nextText);
+
+      const lastChar = nextText[nextText.length - 1] ?? '';
+      const delay = getDelay(lastChar, base);
+
+      timeoutRef.current = window.setTimeout(tick, delay);
+    };
+
+    timeoutRef.current = window.setTimeout(tick, base);
+
+    return () => {
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    };
   }, [text, speed, onComplete]);
 
-  // Show cursor while typing
+  const isComplete = displayedText.length >= text.length;
+
   return (
     <span className={className}>
       {displayedText}

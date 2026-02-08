@@ -56,6 +56,40 @@ Ejemplo:
 curl http://localhost:8000/api/personas/dra_vega
 ```
 
+### Books (F9.1)
+
+```
+GET /api/books             # Listar libros disponibles
+GET /api/books/{id}        # Obtener detalles de un libro
+```
+
+Listar libros:
+```bash
+curl http://localhost:8000/api/books
+```
+
+Respuesta:
+```json
+{
+  "books": [
+    {
+      "id": "llm-intro",
+      "title": "Introduction to LLMs",
+      "authors": ["AI Research Team"],
+      "total_chapters": 5,
+      "has_outline": true,
+      "has_units": true
+    }
+  ],
+  "count": 1
+}
+```
+
+Obtener detalle con capítulos:
+```bash
+curl http://localhost:8000/api/books/llm-intro
+```
+
 ### Sessions
 
 ```
@@ -133,6 +167,64 @@ Event types:
 
 ## Desarrollo
 
+### dev.sh - Script de desarrollo unificado
+
+El proyecto incluye un script `dev.sh` para manejar backend y frontend:
+
+```bash
+# Arrancar todo
+./dev.sh start
+
+# Parar todo
+./dev.sh stop
+
+# Reiniciar
+./dev.sh restart
+
+# Ver estado
+./dev.sh status
+
+# Ver logs (tail -f)
+./dev.sh logs
+```
+
+**Notas:**
+- PIDs en `.pids/backend.pid` y `.pids/frontend.pid`
+- Logs en `.logs/backend.log` y `.logs/frontend.log`
+- Detecta conflictos de puertos y procesos duplicados
+
+### Sesiones efímeras
+
+Las sesiones se almacenan **en memoria** y se pierden al reiniciar el servidor.
+La respuesta de sesión incluye `"ephemeral": true` para indicar esto.
+
+Si un usuario recarga una página de sesión tras reiniciar el servidor:
+- El frontend detecta el 404
+- Muestra un mensaje explicativo
+- Redirige automáticamente al lobby
+
+### Debug de libros
+
+Para diagnosticar problemas con la lista de libros:
+
+```bash
+curl http://localhost:8000/api/books/debug
+```
+
+Respuesta:
+```json
+{
+  "source": "data/books/ directory scan",
+  "data_dir": "/path/to/data",
+  "data_dir_exists": true,
+  "books_dir_exists": true,
+  "book_dirs_found": 6,
+  "books_with_metadata": 6,
+  "book_ids": ["book1", "book2", ...],
+  "cwd": "/path/to/project"
+}
+```
+
 ### Tests
 
 ```bash
@@ -147,14 +239,33 @@ uv run pytest -q
 
 ```
 src/teaching/web/
-├── __init__.py      # Exports create_app
-├── api.py           # FastAPI app factory
-├── schemas.py       # Pydantic models
-├── sessions.py      # SessionManager
+├── __init__.py       # Exports create_app
+├── api.py            # FastAPI app factory
+├── schemas.py        # Pydantic models
+├── sessions.py       # SessionManager
+├── tutor_engine.py   # TutorEngine (F9.1) - orquesta lógica de enseñanza
 └── routes/
     ├── __init__.py
-    ├── health.py    # GET /health
-    ├── students.py  # /api/students
-    ├── personas.py  # /api/personas
-    └── sessions.py  # /api/sessions
+    ├── health.py     # GET /health
+    ├── students.py   # /api/students
+    ├── personas.py   # /api/personas
+    ├── sessions.py   # /api/sessions
+    └── books.py      # /api/books (F9.1)
 ```
+
+## TutorEngine (F9.1)
+
+El TutorEngine es el componente que orquesta la lógica de enseñanza para sesiones web.
+Reutiliza las funciones del core (`explain_point`, `check_comprehension`, etc.) y mantiene
+el estado de cada sesión.
+
+Estados de enseñanza (WebTeachingState):
+- `UNIT_OPENING`: Apertura de unidad
+- `WAIT_UNIT_START`: Esperando que el estudiante inicie
+- `EXPLAINING`: Explicando un punto
+- `WAITING_INPUT`: Esperando respuesta del estudiante
+- `CHECKING`: Verificando comprensión
+- `AWAITING_RETRY`: Esperando reintento tras respuesta incorrecta
+- `REMEDIATION`: Re-explicando con analogía
+- `CONFIRM_ADVANCE`: Confirmando avance al siguiente punto
+- `UNIT_COMPLETE`: Unidad completada

@@ -7,16 +7,10 @@ import {
   createStudent,
   deleteStudent,
   listPersonas,
+  listBooks,
   startSession,
 } from '@/lib/api';
-import type { Student, Persona } from '@/lib/types';
-
-// Mock book list (no endpoint available in MVP)
-const MOCK_BOOKS = [
-  { id: 'llm-intro', name: 'Introduccion a LLMs' },
-  { id: 'transformers', name: 'Transformers Deep Dive' },
-  { id: 'prompt-eng', name: 'Prompt Engineering' },
-];
+import type { Student, Persona, Book } from '@/lib/types';
 
 export default function LobbyPage() {
   const router = useRouter();
@@ -24,9 +18,10 @@ export default function LobbyPage() {
   // State
   const [students, setStudents] = useState<Student[]>([]);
   const [personas, setPersonas] = useState<Persona[]>([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [selectedStudent, setSelectedStudent] = useState<string>('');
   const [selectedPersona, setSelectedPersona] = useState<string>('');
-  const [selectedBook, setSelectedBook] = useState<string>(MOCK_BOOKS[0].id);
+  const [selectedBook, setSelectedBook] = useState<string>('');
 
   // Form state
   const [newName, setNewName] = useState('');
@@ -44,12 +39,14 @@ export default function LobbyPage() {
     async function loadData() {
       try {
         setLoading(true);
-        const [studentsData, personasData] = await Promise.all([
+        const [studentsData, personasData, booksData] = await Promise.all([
           listStudents(),
           listPersonas(),
+          listBooks(),
         ]);
         setStudents(studentsData.students);
         setPersonas(personasData.personas);
+        setBooks(booksData.books);
 
         // Auto-select default persona
         const defaultPersona = personasData.personas.find((p) => p.default);
@@ -60,6 +57,11 @@ export default function LobbyPage() {
         // Auto-select first student if exists
         if (studentsData.students.length > 0) {
           setSelectedStudent(studentsData.students[0].student_id);
+        }
+
+        // Auto-select first book if exists
+        if (booksData.books.length > 0) {
+          setSelectedBook(booksData.books[0].id);
         }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error loading data');
@@ -289,19 +291,23 @@ export default function LobbyPage() {
           {/* Book selector */}
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Libro
+              Libro ({books.length} disponibles)
             </label>
-            <select
-              value={selectedBook}
-              onChange={(e) => setSelectedBook(e.target.value)}
-              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              {MOCK_BOOKS.map((book) => (
-                <option key={book.id} value={book.id}>
-                  {book.name}
-                </option>
-              ))}
-            </select>
+            {books.length === 0 ? (
+              <p className="text-gray-500 text-sm">No hay libros disponibles</p>
+            ) : (
+              <select
+                value={selectedBook}
+                onChange={(e) => setSelectedBook(e.target.value)}
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {books.map((book) => (
+                  <option key={book.id} value={book.id}>
+                    {book.title}
+                  </option>
+                ))}
+              </select>
+            )}
             <p className="mt-1 text-xs text-gray-400">
               Tambien puedes escribir un ID de libro personalizado
             </p>

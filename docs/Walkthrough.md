@@ -543,11 +543,33 @@ Abre http://localhost:3000
 | DELETE | `/api/students/{id}` | Eliminar estudiante |
 | GET | `/api/personas` | Listar tutores |
 | GET | `/api/personas/{id}` | Detalle de tutor |
+| GET | `/api/books` | Listar libros disponibles (F9.1) |
+| GET | `/api/books/{id}` | Detalle de libro con capítulos (F9.1) |
 | POST | `/api/sessions` | Iniciar sesión |
 | GET | `/api/sessions/{id}` | Estado de sesión |
 | DELETE | `/api/sessions/{id}` | Terminar sesión |
 | POST | `/api/sessions/{id}/input` | Enviar respuesta |
 | GET | `/api/sessions/{id}/events` | Stream SSE |
+
+### TutorEngine (F9.1)
+
+El TutorEngine orquesta la lógica de enseñanza real:
+
+- Genera plan de enseñanza a partir de los apuntes
+- Explica puntos usando las funciones del core
+- Verifica comprensión del estudiante
+- Ofrece remediación con analogías si es necesario
+- Emite TutorEvents reales (no placeholders)
+
+Los eventos SSE ahora contienen respuestas reales del tutor:
+```json
+{
+  "event_type": "POINT_EXPLANATION",
+  "markdown": "La tokenización consiste en dividir el texto en unidades llamadas tokens...",
+  "turn_id": 2,
+  "seq": 1
+}
+```
 
 ### Documentación Interactiva
 

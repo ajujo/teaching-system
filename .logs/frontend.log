@@ -1,0 +1,18 @@
+
+> teaching-web@0.1.0 dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1152ms
+ ○ Compiling /session/[sessionId] ...
+ ✓ Compiled /session/[sessionId] in 821ms (1000 modules)
+ ✓ Compiled in 53ms (505 modules)
+ GET /session/5c817b6b 200 in 1109ms
+ ✓ Compiled / in 158ms (992 modules)
+ ✓ Compiled in 151ms (507 modules)
+ ✓ Compiled in 65ms (507 modules)
+ ✓ Compiled in 291ms (1006 modules)

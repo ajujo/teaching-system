@@ -36,6 +36,16 @@ class TestStartSession:
         assert data["book_id"] == "test-book"
         assert data["status"] == "active"
 
+    def test_start_session_includes_ephemeral_flag(self, client):
+        """Session response includes ephemeral flag."""
+        response = client.post(
+            "/api/sessions",
+            json={"student_id": "stu01", "book_id": "test-book"},
+        )
+        data = response.json()
+        assert "ephemeral" in data
+        assert data["ephemeral"] is True  # Sessions are in-memory
+
     def test_start_session_generates_unique_ids(self, client):
         """Each session gets unique ID."""
         resp1 = client.post(

@@ -61,6 +61,21 @@ export interface TutorEvent {
   data: Record<string, unknown>;
 }
 
+// Book types
+export interface Book {
+  id: string;
+  title: string;
+  authors: string[];
+  total_chapters: number;
+  has_outline: boolean;
+  has_units: boolean;
+}
+
+export interface BookListResponse {
+  books: Book[];
+  count: number;
+}
+
 // Event types for styling
 export const EVENT_TYPES = {
   UNIT_OPENING: 'UNIT_OPENING',

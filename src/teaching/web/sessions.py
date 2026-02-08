@@ -1,6 +1,6 @@
-"""Session management for Web API (F9).
+"""Session management for Web API (F9.1).
 
-Manages active teaching sessions with event queues.
+Manages active teaching sessions with event queues and real tutor integration.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from teaching.core.tutor import (
     TutorTurnContext,
     generate_event_id,
 )
+from teaching.web.tutor_engine import get_tutor_engine, TutorEngine
 
 logger = structlog.get_logger(__name__)
 
@@ -32,6 +33,7 @@ class Session:
     book_id: str
     chapter_number: int
     unit_number: int
+    persona_id: str = "dra_vega"
     created_at: str = ""
     status: str = "active"  # active | paused | completed
     # Event queue for SSE
@@ -40,9 +42,6 @@ class Session:
     )
     # Turn context for event tracking
     turn_context: TutorTurnContext = field(default_factory=TutorTurnContext)
-    # Teaching state (simplified for MVP)
-    current_point_index: int = 0
-    last_prompt_kind: str = ""
 
     def __post_init__(self):
         if not self.created_at:
@@ -65,11 +64,16 @@ class SessionManager:
     """Manages active teaching sessions.
 
     Thread-safe session management with event queues for SSE.
+    Integrates with TutorEngine for real teaching logic.
     """
 
     def __init__(self):
         self._sessions: dict[str, Session] = {}
         self._lock = asyncio.Lock()
+
+    def _get_tutor_engine(self) -> TutorEngine:
+        """Get the tutor engine instance."""
+        return get_tutor_engine()
 
     async def create_session(
         self,
@@ -77,6 +81,7 @@ class SessionManager:
         book_id: str,
         chapter_number: int = 1,
         unit_number: int = 1,
+        persona_id: str = "dra_vega",
     ) -> Session:
         """Create a new teaching session.
 
@@ -85,6 +90,7 @@ class SessionManager:
             book_id: ID of the book to teach
             chapter_number: Starting chapter (default 1)
             unit_number: Starting unit (default 1)
+            persona_id: ID of the tutor persona
 
         Returns:
             The created Session object
@@ -97,16 +103,33 @@ class SessionManager:
             book_id=book_id,
             chapter_number=chapter_number,
             unit_number=unit_number,
+            persona_id=persona_id,
         )
 
         async with self._lock:
             self._sessions[session_id] = session
+
+        # Start the tutor session and get initial events
+        engine = self._get_tutor_engine()
+        initial_events = engine.start_session(
+            session_id=session_id,
+            student_id=student_id,
+            book_id=book_id,
+            chapter_number=chapter_number,
+            unit_number=unit_number,
+            persona_id=persona_id,
+        )
+
+        # Enqueue initial events
+        for event in initial_events:
+            await session.event_queue.put(event)
 
         logger.info(
             "session_created",
             session_id=session_id,
             student_id=student_id,
             book_id=book_id,
+            initial_events=len(initial_events),
         )
 
         return session
@@ -130,6 +153,10 @@ class SessionManager:
 
         if session is None:
             return False
+
+        # Clean up tutor engine session
+        engine = self._get_tutor_engine()
+        engine.end_session(session_id)
 
         # Signal end of event stream
         session.status = "completed"
@@ -163,11 +190,36 @@ class SessionManager:
         )
         return True
 
+    async def emit_events(self, session_id: str, events: list[TutorEvent]) -> bool:
+        """Emit multiple events to a session's queue.
+
+        Args:
+            session_id: ID of the session
+            events: List of TutorEvents to emit
+
+        Returns:
+            True if events were emitted, False if session not found
+        """
+        async with self._lock:
+            session = self._sessions.get(session_id)
+
+        if session is None:
+            return False
+
+        for event in events:
+            await session.event_queue.put(event)
+            logger.debug(
+                "event_emitted",
+                session_id=session_id,
+                event_type=event.event_type.name,
+                event_id=event.event_id,
+            )
+        return True
+
     async def process_input(self, session_id: str, text: str) -> list[TutorEvent]:
         """Process user input and generate response events.
 
-        This is a simplified MVP implementation. The full implementation
-        would integrate with the CLI teaching loop.
+        Uses the TutorEngine for real teaching logic.
 
         Args:
             session_id: ID of the session
@@ -182,20 +234,20 @@ class SessionManager:
         if session is None:
             return []
 
-        # Advance turn context
-        session.turn_context.advance_turn()
+        # Use tutor engine to handle input
+        engine = self._get_tutor_engine()
+        events = engine.handle_input(session_id, text)
 
-        # MVP: Simple echo response + placeholder
-        # In full implementation, this would call the teaching logic
-        events = []
+        # Enqueue events for SSE
+        for event in events:
+            await session.event_queue.put(event)
 
-        # Create a feedback event
-        feedback_event = session.turn_context.next_event(
-            TutorEventType.FEEDBACK,
-            markdown=f"Recibido: '{text}'\n\n_[MVP placeholder - integrar con tutor logic]_",
+        logger.info(
+            "input_processed",
+            session_id=session_id,
+            text_length=len(text),
+            events_generated=len(events),
         )
-        events.append(feedback_event)
-        await session.event_queue.put(feedback_event)
 
         return events
 

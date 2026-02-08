@@ -81,6 +81,49 @@ class PersonaListResponse(BaseModel):
 
 
 # =============================================================================
+# BOOK SCHEMAS (F9.1)
+# =============================================================================
+
+
+class ChapterSummary(BaseModel):
+    """Summary of a chapter."""
+
+    number: int
+    title: str
+    unit_count: int = 0
+
+
+class BookSummary(BaseModel):
+    """Summary of a book for listing."""
+
+    id: str
+    title: str
+    authors: list[str] = Field(default_factory=list)
+    total_chapters: int = 0
+    has_outline: bool = False
+    has_units: bool = False
+
+
+class BookDetail(BaseModel):
+    """Detailed book information."""
+
+    id: str
+    title: str
+    authors: list[str] = Field(default_factory=list)
+    total_chapters: int = 0
+    has_outline: bool = False
+    has_units: bool = False
+    chapters: list[ChapterSummary] = Field(default_factory=list)
+
+
+class BookListResponse(BaseModel):
+    """Response for list of books."""
+
+    books: list[BookSummary]
+    count: int
+
+
+# =============================================================================
 # SESSION SCHEMAS
 # =============================================================================
 
@@ -104,6 +147,7 @@ class SessionResponse(BaseModel):
     unit_number: int
     created_at: str
     status: str = "active"  # active | paused | completed
+    ephemeral: bool = True  # Sessions are in-memory, lost on server restart
 
 
 class TutorInputRequest(BaseModel):

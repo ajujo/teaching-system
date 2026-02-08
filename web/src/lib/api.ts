@@ -7,9 +7,30 @@ import type {
   Session,
   SessionStart,
   TutorEvent,
+  Book,
+  BookListResponse,
 } from './types';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+
+// Custom error for 404 responses
+export class NotFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'NotFoundError';
+  }
+}
+
+// Custom error for API errors
+export class ApiError extends Error {
+  status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
 
 // Generic fetcher with error handling
 async function fetcher<T>(
@@ -28,7 +49,13 @@ async function fetcher<T>(
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `HTTP ${response.status}`);
+    const message = error.detail || `HTTP ${response.status}`;
+
+    if (response.status === 404) {
+      throw new NotFoundError(message);
+    }
+
+    throw new ApiError(message, response.status);
   }
 
   // Handle 204 No Content
@@ -74,6 +101,14 @@ export async function listPersonas(): Promise<{ personas: Persona[]; count: numb
 
 export async function getPersona(personaId: string): Promise<Persona> {
   return fetcher(`/api/personas/${personaId}`);
+}
+
+// ============================================================================
+// Books API
+// ============================================================================
+
+export async function listBooks(): Promise<BookListResponse> {
+  return fetcher('/api/books');
 }
 
 // ============================================================================

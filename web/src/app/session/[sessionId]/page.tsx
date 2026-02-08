@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import {
   getSession,
@@ -8,9 +8,14 @@ import {
   sendInput,
   createEventSource,
   parseEventData,
+  NotFoundError,
 } from '@/lib/api';
 import type { Session, TutorEvent } from '@/lib/types';
 import ChatMessage from '@/components/ChatMessage';
+
+// Message shown when session is not found (404)
+const SESSION_NOT_FOUND_MESSAGE =
+  'La sesión ha expirado o el servidor fue reiniciado. Las sesiones se almacenan en memoria y se pierden al reiniciar el servidor.';
 
 // Quick action buttons
 const QUICK_ACTIONS = [
@@ -39,97 +44,112 @@ export default function SessionPage() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const hasInitialized = useRef(false);
 
   // Scroll to bottom when new events arrive
-  const scrollToBottom = useCallback(() => {
+  const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
+  };
 
-  // Add event to list, sorted by (turn_id, seq)
-  const addEvent = useCallback((event: TutorEvent) => {
-    setEvents((prev) => {
-      // Check for duplicates
-      if (prev.some((e) => e.event_id === event.event_id)) {
-        return prev;
-      }
-      // Add and sort
-      const updated = [...prev, event];
-      updated.sort((a, b) => {
-        if (a.turn_id !== b.turn_id) return a.turn_id - b.turn_id;
-        return a.seq - b.seq;
-      });
-      return updated;
-    });
-    // Set animating for new event
-    setAnimatingEventId(event.event_id);
-    setTimeout(scrollToBottom, 100);
-  }, [scrollToBottom]);
-
-  // Connect SSE
-  const connectSSE = useCallback(() => {
-    if (eventSourceRef.current) {
-      eventSourceRef.current.close();
-    }
-
-    const es = createEventSource(sessionId);
-    eventSourceRef.current = es;
-
-    es.addEventListener('tutor_event', (e) => {
-      const event = parseEventData(e.data);
-      if (event) {
-        addEvent(event);
-        setReconnecting(false);
-      }
-    });
-
-    es.addEventListener('keepalive', () => {
-      setReconnecting(false);
-    });
-
-    es.addEventListener('close', () => {
-      console.log('Session closed by server');
-      es.close();
-    });
-
-    es.addEventListener('error', () => {
-      console.log('Session error');
-      setReconnecting(false);
-    });
-
-    es.onerror = () => {
-      setReconnecting(true);
-    };
-
-    es.onopen = () => {
-      setReconnecting(false);
-    };
-
-    return es;
-  }, [sessionId, addEvent]);
-
-  // Load session and connect SSE on mount
+  // Load session and connect SSE on mount - RUN ONLY ONCE
   useEffect(() => {
+    // Prevent double initialization (React StrictMode)
+    if (hasInitialized.current) return;
+    hasInitialized.current = true;
+
     async function init() {
       try {
         setLoading(true);
+
+        // First verify session exists
         const sessionData = await getSession(sessionId);
         setSession(sessionData);
-        connectSSE();
+
+        // Then connect SSE - only once
+        const es = createEventSource(sessionId);
+        eventSourceRef.current = es;
+
+        es.addEventListener('tutor_event', (e) => {
+          const event = parseEventData(e.data);
+          if (event) {
+            setEvents((prev) => {
+              // Check for duplicates
+              if (prev.some((ev) => ev.event_id === event.event_id)) {
+                return prev;
+              }
+              // Add and sort by (turn_id, seq)
+              const updated = [...prev, event];
+              updated.sort((a, b) => {
+                if (a.turn_id !== b.turn_id) return a.turn_id - b.turn_id;
+                return a.seq - b.seq;
+              });
+              return updated;
+            });
+            setAnimatingEventId(event.event_id);
+            setTimeout(scrollToBottom, 100);
+            setReconnecting(false);
+          }
+        });
+
+        es.addEventListener('keepalive', () => {
+          setReconnecting(false);
+        });
+
+        es.addEventListener('close', () => {
+          console.log('Session closed by server');
+          es.close();
+        });
+
+        es.addEventListener('error', () => {
+          console.log('Session SSE error');
+        });
+
+        es.onerror = () => {
+          setReconnecting(true);
+        };
+
+        es.onopen = () => {
+          setReconnecting(false);
+        };
+
       } catch (err) {
+        // Handle 404 specifically - redirect to lobby with message
+        if (err instanceof NotFoundError) {
+          alert(SESSION_NOT_FOUND_MESSAGE);
+          router.push('/');
+          return;
+        }
         setError(err instanceof Error ? err.message : 'Error loading session');
       } finally {
         setLoading(false);
       }
     }
+
     init();
 
     // Cleanup on unmount
     return () => {
       if (eventSourceRef.current) {
         eventSourceRef.current.close();
+        eventSourceRef.current = null;
       }
     };
-  }, [sessionId, connectSSE]);
+  }, [sessionId, router]);
+
+  // Add event helper for user messages
+  const addUserEvent = (text: string) => {
+    const userEvent: TutorEvent = {
+      event_id: `user-${Date.now()}`,
+      event_type: 'USER_INPUT',
+      turn_id: events.length > 0 ? events[events.length - 1].turn_id + 1 : 1,
+      seq: 0,
+      title: '',
+      markdown: text,
+      data: { isUser: true },
+    };
+    setEvents((prev) => [...prev, userEvent]);
+    setTimeout(scrollToBottom, 100);
+  };
 
   // Send input handler
   const handleSendInput = async (text: string) => {
@@ -141,25 +161,11 @@ export default function SessionPage() {
       setInputText('');
 
       // Add user message as pseudo-event for display
-      const userEvent: TutorEvent = {
-        event_id: `user-${Date.now()}`,
-        event_type: 'USER_INPUT',
-        turn_id: events.length > 0 ? events[events.length - 1].turn_id + 1 : 1,
-        seq: 0,
-        title: '',
-        markdown: text,
-        data: { isUser: true },
-      };
-      addEvent(userEvent);
+      addUserEvent(text);
 
-      // Send to backend
-      const responseEvents = await sendInput(sessionId, text);
+      // Send to backend - events come through SSE
+      await sendInput(sessionId, text);
 
-      // Response events come through SSE, but also returned here
-      // SSE should handle them, but add any missing ones
-      for (const event of responseEvents) {
-        addEvent(event);
-      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error sending input');
     } finally {
@@ -188,9 +194,7 @@ export default function SessionPage() {
 
   // Animation complete handler
   const handleAnimationComplete = (eventId: string) => {
-    if (animatingEventId === eventId) {
-      setAnimatingEventId(null);
-    }
+    setAnimatingEventId((current) => (current === eventId ? null : current));
   };
 
   if (loading) {
