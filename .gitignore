@@ -1,75 +1,11 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
+dist/
+build/
 .venv/
 venv/
-ENV/
-env/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# Environment variables
 .env
-.env.local
-
-# Database
-db/*.db
-db/*.sqlite
-db/*.sqlite3
-
-# Logs
-logs/*.log
-logs/*.log.*
-
-# Data (imported books - may contain copyrighted material)
-data/books/*/
-
-# macOS
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Linux
-*~
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-.nox/
-
-# mypy
-.mypy_cache/
-
-# ruff
-.ruff_cache/
+data/state/
+data/config/*secrets*
