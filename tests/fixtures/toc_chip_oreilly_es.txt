@@ -1,0 +1,60 @@
+# O'Reilly Spanish format (no traditional TOC, chapters detected from headings)
+# Format: "capítulo N. Título" at start of chapter (preceded by empty line)
+# Example: AI Engineering (Chip Huyen, Spanish edition)
+
+Contenido anterior del prefacio...
+
+capítulo 1. Introducción a la creación de
+aplicaciones de IA con modelos
+fundacionales
+Si solo pudiera utilizar una palabra para describir la IA después de 2020,
+sería escala. Los modelos de IA que hay detrás de aplicaciones como
+ChatGPT, Gemini de Google y Midjourney...
+
+Mucho contenido del capítulo 1 aquí...
+
+capítulo 2. Comprender los modelos
+fundacionales
+Para crear aplicaciones con modelos fundacionales, primero se necesitan
+modelos fundacionales. Este capítulo explora...
+
+Mucho contenido del capítulo 2 aquí...
+
+capítulo 3. Metodología de evaluación
+Cuanto más se utiliza la IA, más oportunidades hay de que se produzcan
+fallos catastróficos. Ya hemos visto muchos fracasos...
+
+capítulo 4. Evaluar los sistemas de IA
+La evaluación de los sistemas de IA es un proceso complejo que requiere
+múltiples enfoques y métricas...
+
+capítulo 5. Ingeniería de prompts
+La ingeniería de prompts es el arte y la ciencia de diseñar instrucciones
+efectivas para modelos de lenguaje...
+
+capítulo 6. RAG y agentes
+Este capítulo explora dos patrones fundamentales para construir
+aplicaciones de IA avanzadas...
+
+capítulo 7. Afinado
+El afinado permite adaptar un modelo preentrenado a tareas específicas
+mediante entrenamiento adicional...
+
+capítulo 8. Ingeniería de conjuntos de
+datos
+La calidad de los datos es fundamental para el éxito de cualquier
+proyecto de machine learning...
+
+capítulo 9. Optimización de la inferencia
+Una vez que tenemos un modelo funcionando, el siguiente paso es
+optimizarlo para producción...
+
+capítulo 10. Arquitectura de ingeniería de
+IA
+Este capítulo final reúne todos los conceptos anteriores para construir
+sistemas de IA completos y robustos...
+
+índice
+A
+aceleradores, Utilización, MFU y MBU
+- capacidad de cálculo, ¿Qué es un acelerador?

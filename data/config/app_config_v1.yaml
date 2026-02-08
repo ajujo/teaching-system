@@ -1,0 +1,30 @@
+$schema: app_config_v1
+
+# LLM Provider defaults
+providers:
+  lmstudio:
+    base_url: "http://localhost:1234/v1"
+    default_model: "llama-3.2-3b-instruct"
+    api_key_env: null  # No API key needed
+
+  openai:
+    base_url: null  # Use default
+    default_model: "gpt-4o-mini"
+    api_key_env: "OPENAI_API_KEY"
+
+  anthropic:
+    base_url: null
+    default_model: "claude-sonnet-4-20250514"
+    api_key_env: "ANTHROPIC_API_KEY"
+
+# Tutor defaults
+tutor:
+  default_provider: "lmstudio"
+  default_persona: "dra_vega"
+  max_retries: 3
+
+# Paths (relative to project root)
+paths:
+  state_dir: "data/state"
+  config_dir: "data/config"
+  prompts_dir: "prompts"

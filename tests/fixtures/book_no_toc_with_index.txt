@@ -1,0 +1,99 @@
+# Book without TOC but with alphabetical index at end
+# Simulates books like Chip's AI Engineering (Spanish)
+# Expected behavior: method=toc fails, auto uses headings, index_only=true
+
+Prefacio
+Este libro explora los fundamentos de la ingeniería de IA.
+
+capítulo 1. Introducción
+Este capítulo presenta los conceptos básicos.
+Contenido extenso del capítulo 1...
+
+capítulo 2. Modelos Fundacionales
+Exploramos los modelos de lenguaje grandes.
+Contenido extenso del capítulo 2...
+
+capítulo 3. Evaluación
+Métodos para evaluar sistemas de IA.
+Contenido extenso del capítulo 3...
+
+capítulo 4. Prompts
+Diseño de instrucciones efectivas.
+Contenido extenso del capítulo 4...
+
+capítulo 5. Agentes
+Construcción de sistemas autónomos.
+Contenido extenso del capítulo 5...
+
+índice
+A
+aceleradores, 45
+agentes, 123
+algoritmos, 78
+API, 56
+arquitectura, 189
+B
+batch processing, 67
+benchmarks, 89
+C
+cache, 112
+cadenas de prompts, 134
+configuración, 156
+D
+datos, 178
+debugging, 201
+deployment, 223
+E
+embeddings, 245
+entrenamiento, 267
+evaluación, 289
+F
+fine-tuning, 311
+funciones, 333
+G
+GPU, 355
+generación, 377
+H
+hiperparámetros, 399
+I
+inferencia, 421
+integración, 443
+J
+JSON, 465
+K
+knowledge, 487
+L
+latencia, 509
+LLM, 531
+M
+memoria, 553
+modelos, 575
+N
+normalización, 597
+O
+optimización, 619
+P
+pipelines, 641
+prompts, 663
+Q
+quantization, 685
+R
+RAG, 707
+S
+seguridad, 729
+T
+tokens, 751
+training, 773
+U
+utilización, 795
+V
+validación, 817
+vectores, 839
+W
+weights, 861
+X
+XML, 883
+Y
+YAML, 905
+Z
+zero-shot, 927

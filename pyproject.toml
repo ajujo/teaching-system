@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teaching-system"
+version = "0.1.0"
+description = "Personal LLM-powered teaching system for book-based learning"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Teaching System Team"}
+]
+keywords = ["llm", "teaching", "learning", "pdf", "epub"]
+
+dependencies = [
+    # PDF/EPUB extraction
+    "pymupdf>=1.23.0",
+    "ebooklib>=0.18",
+    "beautifulsoup4>=4.12",
+    "lxml>=4.9",
+    "langdetect>=1.0.9",
+
+    # CLI
+    "typer>=0.9.0",
+    "rich>=13.0",
+
+    # Data validation & serialization
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+
+    # LLM client (LM Studio compatible)
+    "openai>=1.0",
+
+    # Logging
+    "structlog>=23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+teach = "teaching.cli.commands:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
