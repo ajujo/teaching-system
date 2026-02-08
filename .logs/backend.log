@@ -1,142 +1,98 @@
 INFO:     Will watch for changes in these directories: ['/Users/ajujo/Lab/Proyectos/Teaching System']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [70757] using StatReload
-INFO:     Started server process [70763]
+INFO:     Started reloader process [72081] using StatReload
+INFO:     Started server process [72087]
 INFO:     Waiting for application startup.
-2026-02-08 20:57:20 [info     ] api_startup                    book_ids=['paul-llm-engineer-s-handbook', 'michael-building-applications-with-ai-agents', 'test-programming-guide', 'ben-generative-ai-with-langchain', 'soledad-python-feature-engineering-cookbok', 'chip-ai-engineering'] books_dir='/Users/ajujo/Lab/Proyectos/Teaching System/data/books' books_found=6
+2026-02-08 21:19:39 [info     ] api_startup                    book_ids=['paul-llm-engineer-s-handbook', 'michael-building-applications-with-ai-agents', 'test-programming-guide', 'ben-generative-ai-with-langchain', 'soledad-python-feature-engineering-cookbok', 'chip-ai-engineering'] books_dir='/Users/ajujo/Lab/Proyectos/Teaching System/data/books' books_found=6
 INFO:     Application startup complete.
-INFO:     127.0.0.1:62997 - "GET /api/sessions/5c817b6b HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:63003 - "GET /api/students HTTP/1.1" 200 OK
-2026-02-08 20:57:32 [debug    ] loaded_personas                count=4
-INFO:     127.0.0.1:63004 - "GET /api/personas HTTP/1.1" 200 OK
-2026-02-08 20:57:32 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63005 - "GET /api/books HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63003 - "GET /api/students HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63004 - "GET /api/personas HTTP/1.1" 200 OK
-2026-02-08 20:57:32 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63004 - "GET /api/books HTTP/1.1" 200 OK
-2026-02-08 20:57:41 [info     ] session_started                book_id=chip-ai-engineering num_points=5 session_id=7550fb50 student_id=stu01
-2026-02-08 20:57:41 [info     ] session_created                book_id=chip-ai-engineering initial_events=1 session_id=7550fb50 student_id=stu01
-INFO:     127.0.0.1:63006 - "POST /api/sessions HTTP/1.1" 201 Created
-INFO:     127.0.0.1:63006 - "GET /api/sessions/7550fb50 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63006 - "GET /api/sessions/7550fb50/events HTTP/1.1" 200 OK
-2026-02-08 20:57:48 [info     ] llm_client_initialized         base_url=http://localhost:1234/v1 model=default provider=lmstudio
-2026-02-08 20:58:11 [debug    ] llm_response                   latency_ms=23581 model=qwen3-32b provider=lmstudio tokens=841
-2026-02-08 20:58:11 [info     ] input_processed                events_generated=2 session_id=7550fb50 text_length=2
-INFO:     127.0.0.1:63008 - "POST /api/sessions/7550fb50/input HTTP/1.1" 200 OK
-2026-02-08 20:59:22 [debug    ] llm_response                   latency_ms=15015 model=qwen3-32b provider=lmstudio tokens=852
-2026-02-08 20:59:22 [info     ] input_processed                events_generated=2 session_id=7550fb50 text_length=1
-INFO:     127.0.0.1:63023 - "POST /api/sessions/7550fb50/input HTTP/1.1" 200 OK
-2026-02-08 21:01:38 [debug    ] llm_response                   latency_ms=29374 model=qwen3-32b provider=lmstudio tokens=978
-2026-02-08 21:01:38 [info     ] input_processed                events_generated=2 session_id=7550fb50 text_length=155
-INFO:     127.0.0.1:63063 - "POST /api/sessions/7550fb50/input HTTP/1.1" 200 OK
-2026-02-08 21:03:48 [debug    ] llm_response                   latency_ms=33332 model=qwen3-32b provider=lmstudio tokens=1188
-2026-02-08 21:03:48 [info     ] input_processed                events_generated=2 session_id=7550fb50 text_length=20
-INFO:     127.0.0.1:63087 - "POST /api/sessions/7550fb50/input HTTP/1.1" 200 OK
-2026-02-08 21:14:03 [debug    ] llm_response                   latency_ms=14610 model=qwen3-32b provider=lmstudio tokens=810
-2026-02-08 21:14:03 [info     ] input_processed                events_generated=2 session_id=7550fb50 text_length=4
-INFO:     127.0.0.1:63259 - "POST /api/sessions/7550fb50/input HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63262 - "POST /api/sessions/7550fb50/input HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1138, in __call__
-    await super().__call__(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
-    raise exc
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 95, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 153, in simple_response
-    await self.app(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 121, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 107, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 426, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 314, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/src/teaching/web/routes/sessions.py", line 94, in send_input
-    events = await manager.process_input(session_id, request.text)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/src/teaching/web/sessions.py", line 239, in process_input
-    events = engine.handle_input(session_id, text)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/src/teaching/web/tutor_engine.py", line 266, in handle_input
-    events = self._handle_post_failure_choice(session, text)
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/src/teaching/web/tutor_engine.py", line 361, in _handle_post_failure_choice
-    return self._do_remediation(session)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/ajujo/Lab/Proyectos/Teaching System/src/teaching/web/tutor_engine.py", line 507, in _do_remediation
-    remediation = reexplain_with_analogy(
-        point=point,
-    ...<2 lines>...
-        client=client,
-    )
-TypeError: reexplain_with_analogy() got an unexpected keyword argument 'original_explanation'
-2026-02-08 21:14:22 [info     ] session_ended                  session_id=7550fb50
-INFO:     127.0.0.1:63271 - "DELETE /api/sessions/7550fb50 HTTP/1.1" 204 No Content
-INFO:     127.0.0.1:63271 - "GET /api/students HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63273 - "GET /api/personas HTTP/1.1" 200 OK
-2026-02-08 21:14:22 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63274 - "GET /api/books HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63273 - "GET /api/students HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63271 - "GET /api/personas HTTP/1.1" 200 OK
-2026-02-08 21:14:22 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63274 - "GET /api/books HTTP/1.1" 200 OK
-2026-02-08 21:14:25 [info     ] session_started                book_id=chip-ai-engineering num_points=5 session_id=ebb01250 student_id=stu01
-2026-02-08 21:14:25 [info     ] session_created                book_id=chip-ai-engineering initial_events=1 session_id=ebb01250 student_id=stu01
-INFO:     127.0.0.1:63273 - "POST /api/sessions HTTP/1.1" 201 Created
-INFO:     127.0.0.1:63271 - "GET /api/sessions/ebb01250 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63273 - "GET /api/sessions/ebb01250/events HTTP/1.1" 200 OK
-2026-02-08 21:14:34 [info     ] session_ended                  session_id=ebb01250
-INFO:     127.0.0.1:63275 - "DELETE /api/sessions/ebb01250 HTTP/1.1" 204 No Content
-INFO:     127.0.0.1:63273 - "GET /api/students HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63275 - "GET /api/personas HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63273 - "GET /api/students HTTP/1.1" 200 OK
-2026-02-08 21:14:34 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63276 - "GET /api/books HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63275 - "GET /api/personas HTTP/1.1" 200 OK
-2026-02-08 21:14:34 [info     ] books_list                     count=6
-INFO:     127.0.0.1:63273 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63404 - "GET /api/students HTTP/1.1" 200 OK
+2026-02-08 21:19:47 [debug    ] loaded_personas                count=4
+INFO:     127.0.0.1:63405 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:19:47 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63406 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63404 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63405 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:19:47 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63406 - "GET /api/books HTTP/1.1" 200 OK
+2026-02-08 21:19:49 [info     ] students_state_saved           path=data/state/students_v1.json
+2026-02-08 21:19:49 [warning  ] failed_to_save_session_start   error="_make_filtering_bound_logger.<locals>.make_method.<locals>.meth() got multiple values for argument 'event'"
+2026-02-08 21:19:49 [info     ] session_started                book_id=chip-ai-engineering num_points=5 session_id=386a3509 student_id=stu01
+2026-02-08 21:19:49 [info     ] session_created                book_id=chip-ai-engineering initial_events=1 session_id=386a3509 student_id=stu01
+INFO:     127.0.0.1:63405 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63405 - "GET /api/sessions/386a3509 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63405 - "GET /api/sessions/386a3509/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63448 - "GET /api/students HTTP/1.1" 200 OK
+2026-02-08 21:22:40 [info     ] llm_client_initialized         base_url=http://localhost:1234/v1 model=default provider=lmstudio
+2026-02-08 21:23:08 [debug    ] llm_response                   latency_ms=27530 model=qwen3-32b provider=lmstudio tokens=917
+2026-02-08 21:23:08 [info     ] input_processed                events_generated=2 session_id=386a3509 text_length=2
+INFO:     127.0.0.1:63461 - "POST /api/sessions/386a3509/input HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63478 - "GET /api/students HTTP/1.1" 200 OK
+2026-02-08 21:24:48 [debug    ] llm_response                   latency_ms=20061 model=qwen3-32b provider=lmstudio tokens=968
+2026-02-08 21:24:48 [info     ] input_processed                events_generated=2 session_id=386a3509 text_length=1
+INFO:     127.0.0.1:63489 - "POST /api/sessions/386a3509/input HTTP/1.1" 200 OK
+2026-02-08 21:25:47 [debug    ] llm_response                   latency_ms=20708 model=qwen3-32b provider=lmstudio tokens=983
+2026-02-08 21:25:47 [info     ] input_processed                events_generated=2 session_id=386a3509 text_length=1
+INFO:     127.0.0.1:63518 - "POST /api/sessions/386a3509/input HTTP/1.1" 200 OK
+2026-02-08 21:26:02 [info     ] input_processed                events_generated=1 session_id=386a3509 text_length=7
+INFO:     127.0.0.1:63520 - "POST /api/sessions/386a3509/input HTTP/1.1" 200 OK
+2026-02-08 21:26:35 [debug    ] llm_response                   latency_ms=25876 model=qwen3-32b provider=lmstudio tokens=1100
+2026-02-08 21:26:35 [info     ] input_processed                events_generated=1 session_id=386a3509 text_length=1
+INFO:     127.0.0.1:63521 - "POST /api/sessions/386a3509/input HTTP/1.1" 200 OK
+2026-02-08 21:27:15 [info     ] students_state_saved           path=data/state/students_v1.json
+2026-02-08 21:27:15 [warning  ] failed_to_save_session_progress error="_make_filtering_bound_logger.<locals>.make_method.<locals>.meth() got multiple values for argument 'event'"
+2026-02-08 21:27:15 [info     ] session_ended                  session_id=386a3509
+INFO:     127.0.0.1:63534 - "DELETE /api/sessions/386a3509 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:63534 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:27:15 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63537 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "GET /api/personas HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63537 - "GET /api/students HTTP/1.1" 200 OK
+2026-02-08 21:27:15 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63536 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63537 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:27:17 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63534 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63537 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:27:17 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63536 - "GET /api/books HTTP/1.1" 200 OK
+2026-02-08 21:27:20 [info     ] students_state_saved           path=data/state/students_v1.json
+2026-02-08 21:27:20 [warning  ] failed_to_save_session_start   error="_make_filtering_bound_logger.<locals>.make_method.<locals>.meth() got multiple values for argument 'event'"
+2026-02-08 21:27:20 [info     ] session_started                book_id=chip-ai-engineering num_points=5 session_id=46689cb3 student_id=stu01
+2026-02-08 21:27:20 [info     ] session_created                book_id=chip-ai-engineering initial_events=1 session_id=46689cb3 student_id=stu01
+INFO:     127.0.0.1:63537 - "POST /api/sessions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63536 - "GET /api/sessions/46689cb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63537 - "GET /api/sessions/46689cb3/events HTTP/1.1" 200 OK
+2026-02-08 21:28:10 [info     ] input_processed                events_generated=1 session_id=46689cb3 text_length=4
+INFO:     127.0.0.1:63555 - "POST /api/sessions/46689cb3/input HTTP/1.1" 200 OK
+2026-02-08 21:28:40 [debug    ] llm_response                   latency_ms=22992 model=qwen3-32b provider=lmstudio tokens=832
+2026-02-08 21:28:40 [info     ] input_processed                events_generated=2 session_id=46689cb3 text_length=9
+INFO:     127.0.0.1:63556 - "POST /api/sessions/46689cb3/input HTTP/1.1" 200 OK
+2026-02-08 21:30:21 [debug    ] llm_response                   latency_ms=19076 model=qwen3-32b provider=lmstudio tokens=930
+2026-02-08 21:30:21 [info     ] input_processed                events_generated=1 session_id=46689cb3 text_length=1
+INFO:     127.0.0.1:63592 - "POST /api/sessions/46689cb3/input HTTP/1.1" 200 OK
+2026-02-08 21:31:31 [debug    ] llm_response                   latency_ms=26199 model=qwen3-32b provider=lmstudio tokens=1047
+2026-02-08 21:31:31 [info     ] input_processed                events_generated=2 session_id=46689cb3 text_length=88
+INFO:     127.0.0.1:63618 - "POST /api/sessions/46689cb3/input HTTP/1.1" 200 OK
+2026-02-08 21:32:02 [debug    ] llm_response                   latency_ms=27038 model=qwen3-32b provider=lmstudio tokens=927
+2026-02-08 21:32:02 [info     ] input_processed                events_generated=2 session_id=46689cb3 text_length=2
+INFO:     127.0.0.1:63618 - "POST /api/sessions/46689cb3/input HTTP/1.1" 200 OK
+2026-02-08 21:33:42 [info     ] students_state_saved           path=data/state/students_v1.json
+2026-02-08 21:33:42 [warning  ] failed_to_save_session_progress error="_make_filtering_bound_logger.<locals>.make_method.<locals>.meth() got multiple values for argument 'event'"
+2026-02-08 21:33:42 [info     ] session_ended                  session_id=46689cb3
+INFO:     127.0.0.1:63659 - "DELETE /api/sessions/46689cb3 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:63659 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63661 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:33:42 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63662 - "GET /api/books HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63659 - "GET /api/students HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63661 - "GET /api/personas HTTP/1.1" 200 OK
+2026-02-08 21:33:42 [info     ] books_list                     count=6
+INFO:     127.0.0.1:63662 - "GET /api/books HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [70763]
-INFO:     Stopping reloader process [70757]
+INFO:     Finished server process [72087]
+INFO:     Stopping reloader process [72081]

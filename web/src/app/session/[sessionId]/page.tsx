@@ -197,6 +197,15 @@ export default function SessionPage() {
     setAnimatingEventId((current) => (current === eventId ? null : current));
   };
 
+  // Quick action handler - Stop terminates session, others send as input
+  const handleQuickAction = async (value: string) => {
+    if (value === 'stop') {
+      await handleEndSession();
+    } else {
+      handleSendInput(value);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -304,7 +313,7 @@ export default function SessionPage() {
             {QUICK_ACTIONS.map((action) => (
               <button
                 key={action.value}
-                onClick={() => handleSendInput(action.value)}
+                onClick={() => handleQuickAction(action.value)}
                 disabled={sending}
                 className="quick-btn border-gray-300 hover:border-gray-400"
               >

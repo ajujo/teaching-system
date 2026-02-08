@@ -162,7 +162,22 @@ class TutorEngine:
 
         # Generate teaching plan
         unit_id = self._get_unit_id(book_id, chapter_number, unit_number)
-        unit_title = f"Capítulo {chapter_number}, Unidad {unit_number}"
+
+        # Get real chapter/section titles from outline
+        chapter_info = get_chapter_info(book_id, chapter_number, self.data_dir)
+        if chapter_info:
+            chapter_title = chapter_info.get("title", f"Capítulo {chapter_number}")
+            # Find section title for this unit
+            sections = chapter_info.get("sections", [])
+            section_title = f"Unidad {unit_number}"
+            for sec in sections:
+                sec_num = sec.get("number", "")
+                if sec_num == f"{chapter_number}.{unit_number}":
+                    section_title = sec.get("title", section_title)
+                    break
+            unit_title = f"{chapter_title} - {section_title}"
+        else:
+            unit_title = f"Capítulo {chapter_number}, Unidad {unit_number}"
 
         try:
             plan = generate_teaching_plan(notes_text, unit_id, unit_title)

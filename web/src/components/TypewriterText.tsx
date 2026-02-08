@@ -9,18 +9,18 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-// Base delay por carácter (ms)
+// Base delay por carácter (ms) - velocidad 2x
 const BASE_SPEEDS: Record<NonNullable<TypewriterTextProps['speed']>, number> = {
-  slow: 55,    // ~18 chars/s
-  normal: 32,  // ~31 chars/s
-  fast: 16,    // ~62 chars/s
+  slow: 28,    // ~36 chars/s
+  normal: 16,  // ~62 chars/s
+  fast: 8,     // ~125 chars/s
 };
 
-// Pausas extra (ms) según signo
+// Pausas extra (ms) según signo - reducidas a la mitad
 const PUNCTUATION_PAUSE: Array<{ re: RegExp; extra: number }> = [
-  { re: /[\.\!\?]$/, extra: 260 },    // fin de frase
-  { re: /[:,;]$/, extra: 120 },       // pausa corta
-  { re: /\n$/, extra: 220 },          // salto de línea
+  { re: /[\.\!\?]$/, extra: 130 },    // fin de frase
+  { re: /[:,;]$/, extra: 60 },        // pausa corta
+  { re: /\n$/, extra: 110 },          // salto de línea
   { re: /\s$/, extra: 0 },            // espacio
 ];
 
