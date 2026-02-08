@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -5,7 +6,19 @@ dist/
 build/
 .venv/
 venv/
+
+# Env / OS
 .env
 .DS_Store
+
+# Teaching-system local state & secrets
 data/state/
 data/config/*secrets*
+
+# Claude / local tooling
+.claude/
+.Rapp.history
+
+# Don't version PDFs/books
+Library/
+*.pdf
