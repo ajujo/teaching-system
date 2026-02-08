@@ -1,0 +1,9 @@
+figura 6-12. Un agente ReAct en acción. Imagen del documento ReAct (Yao et al.,
+2022). La imagen está bajo licencia CC BY 4.0.
+Este es el enfoque que adoptó Reflexion (Shinn et al., 2023). En este marco,
+la reflexión se separa en dos módulos: un evaluador que valora el resultado
+y un módulo de autorreflexión que analiza lo que ha salido mal. La
+Figura 6-13 muestra ejemplos de agentes Reflexion en acción. Los autores
+utilizaron el término "trayectoria" para referirse a un plan. En cada paso,
+tras la evaluación y la autorreflexión, el agente propone una nueva
+trayectoria.

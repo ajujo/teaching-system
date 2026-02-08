@@ -1,0 +1,33 @@
+Table of Contents
+xiv
+Offline evaluation ........................................................................................................... 336
+Evaluating RAG systems • 336
+Evaluating a benchmark in LangSmith • 339
+Evaluating a benchmark with HF datasets and Evaluate • 343
+Evaluating email extraction • 344
+Summary ........................................................................................................................ 347
+Questions ........................................................................................................................ 348
+Chapter 9: Production-Ready LLM Deployment and Observability 
+ 349
+Security considerations for LLM applications ................................................................. 350
+Deploying LLM apps ....................................................................................................... 353
+Web framework deployment with FastAPI • 354
+Scalable deployment with Ray Serve • 358
+Building the index • 359
+Serving the index • 365
+Running the application • 367
+Deployment considerations for LangChain applications • 369
+LangGraph platform • 374
+Local development with the LangGraph CLI • 375
+Serverless deployment options • 378
+UI frameworks • 379
+Model Context Protocol • 379
+Infrastructure considerations • 381
+How to choose your deployment model • 382
+Model serving infrastructure • 384
+How to observe LLM apps ............................................................................................... 386
+Operational metrics for LLM applications • 387
+Tracking responses • 388
+Hallucination detection • 390
+Bias detection and monitoring • 391
+LangSmith • 391

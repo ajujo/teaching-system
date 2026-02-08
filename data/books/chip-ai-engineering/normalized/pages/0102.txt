@@ -1,0 +1,15 @@
+estos dominios en sus datos de entrenamiento. La Figura 2-3 muestra la
+distribución de dominios presentes en Common Crawl según el análisis de
+2023 del Washington Post.3
+figura 2-3. Distribución de dominios en el conjunto de datos C4. Reproducido a partir
+de las estadísticas del Washington Post. Una aclaración que hay que hacer de este
+análisis es que solo muestra las categorías incluidas, no las que faltan.
+Hasta la fecha, no se han realizado muchos análisis de la distribución de
+dominios en los datos de visión. Esto puede deberse a que las imágenes son
+más difíciles de clasificar que los textos. 4 Sin embargo, se pueden deducir
+los dominios de un modelo a partir de su rendimiento en los puntos de
+referencia. La Tabla 2-3 muestra el rendimiento de dos modelos, CLIP y
+Open CLIP, en diferentes puntos de referencia. Estos puntos de referencia
+muestran lo bien que funcionan estos dos modelos con pájaros, flores,
+coches y algunas categorías más, pero el mundo es mucho más grande y
+complejo que estas pocas categorías.

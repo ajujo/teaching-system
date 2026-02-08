@@ -1,0 +1,43 @@
+This accessibility lowers barriers for organizations and developers who may not have
+the budget or infrastructure to support large-scale models. Small models allow these
+teams to experiment, innovate, and deploy ML solutions without incurring signifi‐
+cant operational costs. This democratization of ML technology enables more organi‐
+zations to harness the benefits of AI, contributing to a more inclusive development
+ecosystem.
+In terms of performance, fine-tuned small models can achieve results comparable to
+those of larger models on specific, narrowly defined tasks. For example, a small
+model fine-tuned for sentiment analysis within a particular domain, such as financial
+reports, can achieve high accuracy because it specializes in recognizing patterns spe‐
+cific to that context. When applied to well-defined tasks with clear data boundaries,
+small models can match, or even surpass, the performance of larger models by focus‐
+ing all of their capacity on the relevant aspects of the task. This efficiency is particu‐
+larly valuable in applications with high accuracy demands but limited data, where
+small models can be customized to perform effectively without overfitting.
+In addition to their efficiency, small models support a sustainable approach to AI
+development. Training and deploying large models consume significant energy and
+computational resources, which contribute to environmental impacts. Small models,
+however, require substantially less energy for training and inference, making them a
+more sustainable choice for applications where resource consumption is a concern.
+Organizations prioritizing environmental sustainability can integrate small models as
+part of their green AI strategies, contributing to reduced carbon footprints without
+compromising on innovation.
+The promise of small models extends to settings where frequent updates or retraining
+are needed. In scenarios where the data landscape changes rapidly—such as social
+media sentiment analysis, real-time fraud detection, or personalized recommenda‐
+tions—small models can be quickly retrained or fine-tuned with new data, adapting
+rapidly to changing patterns. This ability to frequently update without high retraining
+costs makes small models ideal for applications where adaptability is crucial. Addi‐
+tionally, small models can be deployed in federated learning environments, where
+data privacy concerns require models to be trained across decentralized data sources.
+In these settings, small models can be efficiently fine-tuned on edge devices, enabling
+privacy-preserving AI solutions.
+Fine-tuning smaller models represents a rapidly evolving landscape—a kaleidoscope
+of architectures, sizes, and capabilities that can deliver near-state-of-the-art perfor‐
+mance at a fraction of the compute and cost. In early 2025, benchmarks like Stan‐
+ford’s HELM (Holistic Evaluation of Language Models) showcased open weight
+models such as DeepSeek-v3 and Llama 3.1 Instruct Turbo (70B) achieving mean
+scores above 66% on MMLU, and even 8B-parameter variants like Gemini 2.0 Flash-
+Lite began to crack the 64% threshold. In addition, Baytech Consulting reported that
+152 
+| 
+Chapter 7: Learning in Agentic Systems

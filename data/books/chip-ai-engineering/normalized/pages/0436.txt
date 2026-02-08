@@ -1,0 +1,30 @@
+Generación de planes
+La forma más sencilla de convertir un modelo en un generador de planes es
+con ingeniería de prompts. Imagine que desea crear un agente que ayude a
+los clientes a informarse sobre los productos de Kitty Vogue. A este agente
+le da acceso a tres herramientas externas: recuperar productos por precio,
+recuperar productos principales y recuperar información sobre productos.
+Este es un ejemplo de prompt de generación de planes. Este prompt es
+meramente ilustrativo. Los prompts de producción son probablemente más
+complejos:
+PROMPT DEL SISTEMA
+Propón un plan para resolver la tarea. Tienes acceso a 5 acciones:
+get_today_date()
+fetch_top_products(start_date, end_date, num_products)
+fetch_product_info(product_name)
+generate_query(task_history, tool_output)
+generate_response(query)
+El plan debe ser una secuencia de acciones válidas.
+Ejemplos
+Tarea: "Háblame de Fruity Fedora"
+Plan: [fetch_product_info, generate_query, generate_response]
+Tarea: "¿Cuál fue el producto más vendido la semana pasada?"
+Plan: [fetch_top_products, generate_query, generate_response]
+Tarea: {USER INPUT}
+Plan:
+Hay dos cosas que destacar de este ejemplo:
+El formato de plan utilizado aquí (una lista de funciones cuyos
+parámetros son inferidos por el agente) es solo una de las muchas
+formas de estructurar el flujo de control del agente.
+La función generate_query toma el historial actual de la tarea y
+los outputs más recientes de la herramienta para generar una

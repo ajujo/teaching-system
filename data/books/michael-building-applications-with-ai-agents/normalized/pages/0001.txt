@@ -1,0 +1,6 @@
+Building
+Applications
+with AI Agents
+Designing and Implementing
+Multiagent Systems
+Michael Albada

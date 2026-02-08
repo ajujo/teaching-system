@@ -1,0 +1,32 @@
+se le puede llamar base de datos vectorial. Muchas bases de datos
+tradicionales se han ampliado o se ampliarán para admitir el
+almacenamiento vectorial y la búsqueda vectorial.
+Comparación de algoritmos de recuperación
+Debido a la larga historia de la recuperación, sus numerosas soluciones
+maduras hacen que tanto la recuperación basada en términos como la
+basada en incrustaciones sean relativamente fáciles de iniciar. Cada enfoque
+tiene sus pros y sus contras.
+La recuperación basada en términos suele ser mucho más rápida que la
+basada en incrustaciones, tanto durante la indexación como durante la
+consulta. La extracción de términos es más rápida que la generación de
+incrustaciones, y la asignación de un término a los documentos que lo
+contienen puede ser menos costosa computacionalmente que una búsqueda
+por el vecino más próximo.
+La recuperación basada en términos también funciona bien como solución
+genérica. Soluciones como Elasticsearch y BM25 han impulsado con éxito
+muchas aplicaciones de búsqueda y recuperación. Sin embargo, su
+simplicidad también significa que tiene menos componentes que se puedan
+ajustar para mejorar su rendimiento.
+Por otra parte, la recuperación basada en incrustaciones puede mejorarse
+significativamente con el tiempo hasta superar a la recuperación basada en
+términos. Puede afinar el modelo de incrustación y el recuperador por
+separado, a la vez, o junto con el modelo generativo. Sin embargo, convertir
+los datos en incrustaciones puede ocultar palabras clave, como códigos de
+error específicos, por ejemplo, EADDRNOTAVAIL (99), o nombres de
+productos, lo que dificulta su búsqueda posterior. Esta limitación puede
+solventarse combinando la recuperación basada en incrustaciones con la
+recuperación basada en términos, como se explica más adelante en este
+capítulo.
+La calidad de un recuperador puede evaluarse en función de la calidad de
+los datos que recupera. Dos métricas utilizadas a menudo por los marcos de
+evaluación RAG son la precisión del contexto y el recuerdo del contexto, o

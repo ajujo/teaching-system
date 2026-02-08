@@ -1,0 +1,30 @@
+Evaluating LLMs
+268
+Likewise, classification tasks also benefit from it and use the following classic metrics, among
+others:
+•
+Accuracy: Accuracy refers to the proportion of correctly predicted instances compared
+to the total instances. It's particularly useful for tasks with categorical outputs or where
+there is a clear distinction between right and wrong answers, such as named entity recognition (NER).
+•
+Precision: The ratio of true positive predictions to the total positive predictions made
+by the model.
+•
+Recall: The ratio of true positive predictions to the total actual positive instances.
+•
+F1 Score: The harmonic mean of precision and recall, used to balance both metrics. These
+are particularly useful in tasks such as classification or entity extraction.
+When the task cannot be directly mapped to a traditional ML task, it is possible to create a custom
+benchmark. This benchmark can be inspired by general-purpose and domain-specific evaluation
+datasets. A common and successful pattern is the use of multiple-choice question answering. In
+this framework, the instruction consists of a question with several options. See the following
+example with a question from the MMLU dataset (abstract algebra):
+Instruction
+Find the degree for the given field extension Q(sqrt(2), sqrt(3)) over Q.
+A. 0
+B. 4
+C. 2
+D. 6
+Output
+B
+Table 7.1: Example from the MMLU dataset

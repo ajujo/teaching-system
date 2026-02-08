@@ -1,0 +1,29 @@
+Imputing Missing Data
+34
+Note
+Change the degree of the polynomial used in the interpolation to see how the replacement
+values vary.
+We've now obtained complete datasets that we can use for analysis and modeling.
+How it works...
+pandas interpolate() fills missing values in a range by using an interpolation method. When
+we set the method to linear, interpolate() treats all data points as equidistant and fits a line
+between the last and next valid points in an interval with missing data.
+Note
+If you want to perform linear interpolation, but your data points are not equally distanced, set
+method to time.
+We then performed spline interpolation with a second-degree polynomial by setting method to
+spline and order to 2.
+pandas interpolate() uses scipy.interpolate.interp1d and scipy.interpolate.
+UnivariateSpline under the hood, and can therefore implement other interpolation methods.
+Check out pandas documentation for more details at https://pandas.pydata.org/pandasdocs/stable/reference/api/pandas.DataFrame.interpolate.html.
+See also
+While interpolation aims to get better estimates of the missing data compared to forward and backward
+fill, these estimates may still not be accurate if the times series show strong trend and seasonality.
+To obtain better estimates of the missing data in these types of time series, check out time series
+decomposition followed by interpolation in the Feature Engineering for Time Series Course at https://
+www.trainindata.com/p/feature-engineering-for-forecasting.
+Performing multivariate imputation by chained equations
+Multivariate imputation methods, as opposed to univariate imputation, use multiple variables to
+estimate the missing values. Multivariate Imputation by Chained Equations (MICE) models each
+variable with missing values as a function of the remaining variables in the dataset. The output of that
+function is used to replace missing data.

@@ -1,0 +1,29 @@
+CUANTIZACIÓN VS. PRECISIÓN REDUCIDA
+Estrictamente hablando, es cuantización solo si el formato de destino es
+entero. Sin embargo, en la práctica, la cuantización se utiliza para
+referirse a todas las técnicas que convierten valores a un formato de
+menor precisión. En este libro, utilizo cuantización para referirme a la
+reducción de precisión, para mantener la consistencia con la
+bibliografía.
+Para cuantizar, hay que decidir qué cuantizar y cuándo:
+Qué cuantizar
+Lo ideal es cuantizar lo que consuma más memoria, pero
+también depende de lo que se pueda cuantizar sin afectar
+demasiado al rendimiento. Como se aborda en el
+"Matemática de la memoria", los principales contribuyentes
+a la huella de memoria de un modelo durante la inferencia
+son las ponderaciones y las activaciones del modelo. 17 La
+cuantización de ponderaciones es más común que la
+cuantización de activaciones, ya que la activación de
+ponderaciones tiende a tener un impacto más estable en el
+rendimiento con una menor pérdida de precisión.
+Cuándo cuantizar
+La cuantización puede darse durante el entrenamiento o
+después de él. La cuantización post-entrenamiento (PTQ)
+consiste en cuantizar un modelo después de que haya sido
+completamente entrenado. La PTQ es, con diferencia, la más
+común. También es más relevante para los desarrolladores
+de aplicaciones de IA que no suelen entrenar modelos.
+Cuantización de inferencia
+En los primeros días del deep learning, era estándar entrenar y servir
+modelos usando 32 bits con FP32. Desde finales de la década de 2010, cada

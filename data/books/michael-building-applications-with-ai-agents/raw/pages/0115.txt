@@ -1,0 +1,60 @@
+Weaknesses
+High cost
+Extensive foundation model use and multiple API calls inflate compute and
+token expenses.
+Latency
+Each layer of planning, decomposition, and reflection adds delay.
+Fragility
+It is reliant on quality and availability of external data sources and needs careful
+error handling and fallback strategies.
+The best use cases are long-form, expert-level tasks—academic literature surveys,
+technical due diligence, competitive intelligence—where depth and rigor trump
+speed.
+Table 5-1 offers a snapshot of today’s most common agent archetypes—each with its
+own trade-offs in speed, flexibility, and complexity. However, this landscape is evolv‐
+ing at breakneck speed. New hybrid patterns, metareasoning frameworks, and plan‐
+ning strategies are emerging all the time, and the classification of agent types will only
+grow more nuanced. Consider this list a starting point rather than a definitive taxon‐
+omy: as the field advances, you’ll see fresh approaches built on these foundations, so
+stay curious, experiment often, and be ready to adapt your orchestration strategies as
+the research and tooling continue to mature.
+Table 5-1. Common agent archetypes
+Agent type
+Strength
+Weakness
+Best use case
+Reflex
+Millisecond responses
+No multistep reasoning
+Keyword routing, simple lookups
+ReAct
+Flexible, on-the-fly adaptation
+Higher latency and cost
+Exploratory workflows,
+troubleshooting
+Plan-execute
+Clear task breakdown
+Planning overhead
+Complex, multistep processes
+Query-
+decomposition
+Grounded retrieval accuracy
+Multiple tool calls
+Research, fact-based Q&A
+Reflection
+Early error detection
+Added compute and latency
+High-stakes, safety-critical tasks
+Deep research
+Management of multistage,
+adaptive investigations
+High compute costs and very
+high latency
+Long-form literature reviews
+Tool Selection
+Before we get to orchestration, we will start with tool selection, because it is the foun‐
+dation for more advanced planning. Different approaches to tool selection offer
+unique advantages and considerations, meeting different requirements and
+Tool Selection 
+| 
+93

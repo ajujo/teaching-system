@@ -1,0 +1,23 @@
+Inference Optimization
+290
+By the end of this chapter, you will understand the core challenges in LLM inference and be fa-
+miliar with state-of-the-art optimization techniques, including model parallelism and weight 
+quantization.
+Model optimization strategies
+Most of the LLMs used nowadays, like GPT or Llama, are powered by a decoder-only Transformer 
+architecture. The decoder-only architecture is designed for text-generation tasks. It predicts the 
+next word in a sequence based on preceding words, making it effective for generating contextually 
+appropriate text continuations.
+In contrast, an encoder-only architecture, like BERT, focuses on understanding and representing 
+the input text with detailed embeddings. It excels in tasks that require comprehensive context 
+understanding, such as text classification and named entity recognition. Finally, the encoder-de-
+coder architecture, like T5, combines both functionalities. The encoder processes the input text 
+to generate a context-rich representation, which the decoder then uses to produce the output 
+text. This dual structure is particularly powerful for sequence-to-sequence tasks like translation 
+and summarization, where understanding the input context and generating a relevant output 
+are equally important.
+In this book, we only focus on the decoder-only architecture, which dominates the LLM field.
+Figure 8.1 – Inference process with decoder-only models. We provide “I have a dream” as 
+input and obtain “of” as output.
+All the code examples from this chapter can be found on GitHub at https://github.
+com/PacktPublishing/LLM-Engineering.

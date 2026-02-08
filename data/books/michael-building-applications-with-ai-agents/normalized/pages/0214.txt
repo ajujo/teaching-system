@@ -1,0 +1,46 @@
+            temperature=0.7
+        )
+        summary = llm_response.choices[0].message.content.strip()
+    except Exception as e:
+        summary = f"Error in summarization: {str(e)}"  # Fallback for errors
+
+    response = {
+        "jsonrpc": "2.0",
+        "result": {"summary": summary},
+        "id": rpc_request['id']
+    }
+    # Send response
+    self.send_response(200)
+    self.send_header('Content-type', 'application/json')
+    self.end_headers()
+    self.wfile.write(json.dumps(response).encode())
+else:
+    # Error response
+    error_response = {
+        "jsonrpc": "2.0",
+        "error": {"code": -32601, "message": "Method not found"},
+        "id": rpc_request.get('id')
+    }
+    self.send_response(400)
+    self.send_header('Content-type', 'application/json')
+    self.end_headers()
+    self.wfile.write(json.dumps(error_response).encode())
+While A2A presents an exciting direction for multiagent systems-offering a modu‐
+lar, runtime-agnostic approach to delegation and coordination-it is still in its
+infancy. Significant open questions remain, particularly around security. Authentica‐
+tion is currently supported via pluggable mechanisms, but robust authorization, ratelimiting, trust establishment, and abuse resistance are far from solved. As with any
+early protocol, it should be approached with both enthusiasm and caution. Early
+adopters should expect vulnerabilities, implementation gaps, and evolving
+specifications.
+Still, A2A points to a future where agents don't operate in isolation but as part of
+dynamic, loosely coupled ecosystems capable of tackling broader and more sophisti‐
+cated problems. Much like HTTP enabled the composability of the web, A2A aspires
+to do the same for AI agents. It's too early to say whether it will become the
+standard-but it's a promising beginning in the quest to make agent cooperation
+seamless, scalable, and secure.
+Message Brokers and Event Buses
+As agent-based systems scale, point-to-point communication becomes brittle and
+inflexible. A common alternative is to adopt message brokers or event buses, which
+192
+|
+Chapter 8: From One Agent to Many

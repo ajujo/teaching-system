@@ -1,0 +1,20 @@
+En comparación con la generación de planes, la reflexión es relativamente
+fácil de aplicar y puede mejorar sorprendentemente el rendimiento. El
+inconveniente de este enfoque es la latencia y el costo. La generación de
+pensamientos, observaciones y, a veces, acciones puede requerir muchos
+tokens, lo que aumenta el costo y la latencia percibida por el usuario,
+especialmente en el caso de tareas con muchos pasos intermedios. Para
+animar a sus agentes a seguir el formato, tanto los autores de ReAct como
+los de Reflexion utilizaron abundantes ejemplos en sus prompts. Esto
+aumenta el costo de computación de los tokens de input y reduce el espacio
+de contexto disponible para otra información.
+figura 6-13. Ejemplos del funcionamiento de los agentes Reflexion. Imágenes del
+repositorio Git-Hub de Reflexion.
+Selección de herramientas
+Ya que las herramientas suelen desempeñar un papel crucial en el éxito de
+una tarea, la selección de las mismas requiere una cuidadosa consideración.
+Las herramientas que puede dar a su agente dependen del entorno y de la
+tarea, pero también dependen del modelo de IA que impulsa al agente.
+No existe una guía infalible para seleccionar el mejor conjunto de
+herramientas. La bibliografía sobre agentes contiene una amplia gama de
+inventarios de herramientas. Por ejemplo, Toolformer (Schick et al., 2023)

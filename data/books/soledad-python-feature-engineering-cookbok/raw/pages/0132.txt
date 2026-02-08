@@ -1,0 +1,41 @@
+Performing Yeo-Johnson transformations
+109
+There’s more…
+We can apply the Box-Cox transformation with the SciPy library. For a code implementation, visit 
+this book’s GitHub repository: https://github.com/PacktPublishing/Python-
+Feature-Engineering-Cookbook-Third-Edition/blob/main/ch03-variable-
+transformation/Recipe-5-Box-Cox-transformation.ipynb
+Performing Yeo-Johnson transformations
+The Yeo-Johnson transformation is an extension of the Box-Cox transformation that is no longer 
+constrained to positive values. In other words, the Yeo-Johnson transformation can be used on variables 
+with zero and negative values, as well as positive values. These transformations are defined as follows:
+•	 ​​(​X + 1​)​ λ​ − 1 
+_ 
+λ 
+​; if λ ≠ 0 and X >= 0
+•	 ln(X + 1 ); if λ = 0 and X >= 0
+•	 ​− ​​(​ − X + 1​)​ 2−λ​ − 1 
+_ 
+2 − λ 
+​; if λ ≠ 2 and X < 0
+•	 -ln(-X + 1); if λ = 2 and X < 0
+When the variable has only positive values, then the Yeo-Johnson transformation is like the Box-Cox 
+transformation of the variable plus one. If the variable has only negative values, then the Yeo-Johnson 
+transformation is like the Box-Cox transformation of the negative of the variable plus one, at the 
+power of 2- λ. If the variable has a mix of positive and negative values, the Yeo-Johnson transformation 
+applies different powers to the positive and negative values.
+In this recipe, we will perform the Yeo-Johnson transformation using scikit-learn and Feature-engine.
+How to do it...
+Let’s begin by importing the necessary libraries and getting the dataset ready:
+1.	
+Import the required Python libraries and classes:
+import numpy as np import pandas as pd
+import scipy.stats as stats
+from sklearn.datasets import fetch_california_housing
+from sklearn.preprocessing import PowerTransformer
+from feature_engine.transformation import YeoJohnsonTransformer
+2.	
+Let’s load the California housing dataset into a pandas DataFrame and then drop the Latitude 
+and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)

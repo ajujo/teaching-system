@@ -1,0 +1,30 @@
+Dividir tareas complejas en subtareas más sencillas
+Para tareas complejas que requieran varios pasos, divídalas en subtareas. En
+lugar de tener un prompt gigante para toda la tarea, cada subtarea tiene su
+propio prompt. A continuación, estas subtareas se encadenan. Piense en un
+chatbot de atención al cliente. El proceso de respuesta a una solicitud de un
+cliente puede descomponerse en dos etapas:
+1. Clasificación de la intención: identificar la intención de la
+solicitud.
+2. Generar respuesta: a partir de esta intención, dele instrucciones al
+modelo sobre cómo responder. Si hay diez intenciones posibles,
+necesitará diez prompts diferentes.
+El siguiente ejemplo de la guía de ingeniería de prompts de OpenAI
+muestra el prompt de clasificación de intenciones y el prompt para una
+intención (resolución de problemas). Los prompts se han modificado
+ligeramente para abreviar:
+Prompt 1 (clasificación de intenciones)
+SISTEMA
+Se te darán consultas de atención al cliente. Clasifica cada 
+consulta en 
+una categoría principal y otra secundaria. Proporciona el output en 
+formato 
+json con las claves: primaria y secundaria.
+Categorías principales: Facturación, Soporte técnico, Gestión de 
+cuentas o
+Consulta general.
+Categorías secundarias de Facturación:
+-   Darse de baja o subir de plan
+-   …
+Categorías secundarias de Soporte técnico:
+-   Resolución de problemas

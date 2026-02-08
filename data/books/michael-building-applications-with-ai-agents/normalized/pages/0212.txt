@@ -1,0 +1,44 @@
+that communication can be established securely and programmatically. Optional
+metadata like versioning and media support further enrich agent discovery and com‐
+patibility. To illustrate, here's a simple Python dictionary representing an Agent Card
+for a summarization agent:
+agent_card = {
+    "identity": "SummarizerAgent",
+    "capabilities": ["summarizeText"],
+    "schemas": {
+        "summarizeText": {
+            "input": {"text": "string"},
+            "output": {"summary": "string"}
+        }
+    },
+    "endpoint": "http://localhost:8000/api",
+    "auth_methods": ["none"],  # In production: OAuth2, API keys, etc.
+    "version": "1.0"
+}
+This JSON can be served at a well-known endpoint like /.well-known/agent.json for
+discovery. A2A uses JSON-RPC 2.0 over HTTPS as its reference implementation, but
+the protocol is designed to be transport-agnostic. This opens the door to integration
+over gRPC, WebSocket, or other streaming and multiplexed protocols as infrastruc‐
+ture demands evolve. JSON-RPC ensures consistent handling of requests, responses,
+and errors, creating a shared semantic model even across agents built in different lan‐
+guages or frameworks.
+In practical use, agents locate one another via a registry-centralized or distributedthat stores Agent Cards. Once a peer is identified, an initiating agent performs a
+handshake, exchanging Agent Cards and negotiating session parameters like protocol
+version, timeout expectations, or payload limits. For example, a client agent might
+discover and negotiate compatibility like this (using Python's requests library):
+import requests
+import json
+# Discover Agent Card (mocked as direct access; in production, query a registry)
+card_url = 'http://localhost:8000/.well-known/agent.json'
+response = requests.get(card_url)
+if response.status_code != 200:
+    raise ValueError("Failed to retrieve Agent Card")
+agent_card = response.json()
+print("Discovered Agent Card:", json.dumps(agent_card, indent=2))
+# Handshake: Check compatibility
+if agent_card['version'] != '1.0':
+    raise ValueError("Incompatible protocol version")
+if "summarizeText" not in agent_card['capabilities']:
+190
+|
+Chapter 8: From One Agent to Many

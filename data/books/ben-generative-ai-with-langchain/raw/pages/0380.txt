@@ -1,0 +1,35 @@
+Chapter 9
+353
+Deploying LLM apps
+Given the increasing use of LLMs in various sectors, it’s imperative to understand how to effec­
+tively deploy LangChain and LangGraph applications into production. Deployment services and 
+frameworks can help to scale the technical hurdles, with multiple approaches depending on your 
+specific requirements.
+Deploying generative AI applications to production is about making sure everything runs smoothly, 
+scales well, and stays easy to manage. To do that, you’ll need to think across three key areas, each 
+with its own challenges.
+•	
+First is application deployment and APIs. This is where you set up API endpoints for your 
+LangChain applications, making sure they can communicate efficiently with other sys­
+tems. You’ll also want to use containerization and orchestration to keep things consistent 
+and manageable as your app grows. And, of course, you can’t forget about scaling and 
+load balancing—these are what keep your application responsive when demand spikes.
+•	
+Next is observability and monitoring, which is keeping an eye on how your application is 
+performing once it’s live. This means tracking key metrics, watching costs so they don’t 
+spiral out of control, and having solid debugging and tracing tools in place. Good ob­
+servability helps you catch issues early and ensures your system keeps running smoothly 
+without surprises.
+•	
+The third area is model infrastructure, which might not be needed in every case. You’ll 
+need to choose the right serving frameworks, like vLLM or TensorRT-LLM, fine-tune 
+your hardware setup, and use techniques like quantization to make sure your models run 
+efficiently without wasting resources.
+Before proceeding with deployment specifics, it’s worth clarifying that MLOps refers 
+to a set of practices and tools designed to streamline and automate the develop­
+ment, deployment, and maintenance of ML systems. These practices provide the 
+operational framework for LLM applications. While specialized terms like LLMOps, 
+LMOps, and Foundational Model Orchestration (FOMO) exist for language model 
+operations, we’ll use the more established term MLOps throughout this chapter to 
+refer to the practices of deploying, monitoring, and maintaining LLM applications 
+in production.

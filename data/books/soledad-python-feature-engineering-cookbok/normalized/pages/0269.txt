@@ -1,0 +1,39 @@
+Creating New Features
+246
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+2.
+Then, load the data and separate it into train and test sets:
+data = load_breast_cancer()
+df = pd.DataFrame(data.data,
+    columns=data.feature_names)
+X_train, X_test, y_train, y_test = train_test_split(
+    df, data.target, test_size=0.3, random_state=0
+)
+3.
+Make a list with the features to combine:
+features = [
+    "mean smoothness",
+    "mean compactness",
+    "mean concavity"]
+4.
+Set up PolynomialFeatures() to create all possible combinations up to the third degree:
+poly = PolynomialFeatures(
+    degree=3,
+    interaction_only=False,
+    include_bias=False)
+5.
+Set up the column transformer to create features only from those specified in step 3:
+ct = ColumnTransformer([("poly", poly, features)])
+6.
+Create the polynomial features:
+train_t = ct.fit_transform(X_train)
+test_t = ct.transform(X_test)
+And that's it. By executing ct.get_feature_names_out(), we obtain the names of the
+new features.
+Note
+ColumnTransformer() will append the word poly to the resulting variables, which is
+the name we gave to the step within ColumnTransformer() in step 5. I am not a huge
+fan of this behavior because it makes data analysis harder, as you need to keep track of the
+variable name changes. To avoid variable name changes, you can use feature-engine's
+SklearnTransformerWrapper() instead.

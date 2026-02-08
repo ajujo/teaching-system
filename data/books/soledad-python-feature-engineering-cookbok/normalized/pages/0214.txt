@@ -1,0 +1,27 @@
+Capturing the elapsed time between datetime variables
+191
+We can find the new variable in the final column of the DataFrame in the following output:
+Figure 6.17 - A DataFrame with the new variable containing the difference
+between date1 and the day this code was executed
+Note
+The to_today variable on your computer will be different from the one in this book, due to
+the difference between the current date (at the time of writing) and when you execute the code.
+That's it! We've now enriched our dataset with new features that were created by comparing two
+datetime variables.
+How it works...
+In this recipe, we captured different representations of the time between two datetime variables.
+To proceed with this recipe, we created a sample DataFrame with two variables, each with 20 dates
+starting at an arbitrary date. The first variable increased in intervals of 1 hour, while the second variable
+increased in intervals of 1 month. We created the variables with pandas' date_range(), which
+we discussed in the previous two recipes in this chapter.
+To determine the difference between the variables - that is, to determine the time between them - we
+directly subtracted one datetime variable from the other - that is, one pandas Series from the
+other. The difference between the two pandas Series returned a new pandas Series. To capture
+the difference in days, we used pandas' dt, followed by days. To convert the time difference into
+months, we used timedelta() from NumPy, indicating that we wanted the difference in weeks by
+passing W in the second argument of the method. To capture the difference in seconds and minutes,
+we passed the s and m strings to timedelta(), respectively.
+Note
+The arguments for NumPy's timedelta are a number, - 1, in our example, to represent
+the number of units, and a datetime unit, such as day (D), week (W), hours (h), minutes
+(m), or seconds (s).

@@ -1,0 +1,26 @@
+metodología de evaluación, Metodología de evaluación
+- clasificación de modelos con evaluación comparativa, ¿Qué modelos
+pueden actuar como jueces?
+- evaluación de sistemas de IA (ver evaluación de sistemas)
+- evaluación exacta, Interpretación y casos prácticos de la perplejidad
+- futuro, Del rendimiento comparativo al rendimiento absoluto
+- la IA como juez, Introducción a la incrustación
+- métricas de modelado lingüístico, Comprender las métricas de
+modelado lingüístico
+- modelo lingüístico para calcular la perplejidad de un texto,
+Interpretación y casos prácticos de la perplejidad
+- retos, Retos de la evaluación comparativa
+- retos de la evaluación de modelos fundacionales, Metodología de
+evaluación
+- cuellos de botella en la escalabilidad, Retos de la evaluación
+comparativa
+- del rendimiento comparativo al rendimiento absoluto, Del
+rendimiento comparativo al rendimiento absoluto
+- falta de normalización y control de calidad, Cuellos de botella en
+la escalabilidad
+métodos basados en adaptadores, Afinado eficiente en parámetros
+métodos PEFT basados en prompts suaves, Afinado eficiente en parámetros
+métricas, Monitoreo y observabilidad
+- basado en referencias frente a sin referencias, Medidas de similitud
+con los datos de referencia
+- correlaciones entre, Evalúe su proceso de evaluación

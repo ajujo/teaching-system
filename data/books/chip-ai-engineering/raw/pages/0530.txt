@@ -1,0 +1,27 @@
+Interpolación lineal esférica (SLERP)
+Otro método habitual de suma de modelos es SLERP, que se basa en el
+operador matemático del mismo nombre, Spherical LinEar inteRPolation.
+NOTA
+Interpolar significa estimar valores desconocidos a partir de valores
+conocidos. En el caso de la fusión de modelos, el valor desconocido es el
+modelo fusionado y los valores conocidos son los modelos constituyentes.
+La combinación lineal es una técnica de interpolación. SLERP es otra.
+Como la fórmula del SLERP es pesada matemáticamente y las herramientas
+de fusión de modelos suelen aplicarla por usted, no entraré aquí en detalles.
+Intuitivamente, se puede pensar en cada componente (vector) que se va a
+fusionar como en un punto de una esfera. Para fusionar dos vectores,
+primero se traza el camino más corto entre estos dos puntos a lo largo de la
+superficie de la esfera. Esto es similar a trazar el camino más corto entre
+dos ciudades a lo largo de la superficie terrestre. El vector fusionado de
+estos dos vectores es un punto a lo largo de su camino más corto. La
+posición exacta del punto en la trayectoria depende del factor de
+interpolación, que puede fijarse entre 0 y 1. Los valores del factor inferiores
+a 0.5 acercan el vector fusionado al primer vector, lo que significa que el
+vector de la primera tarea contribuirá más al resultado. Un factor de 0.5
+significa un punto exactamente a la mitad. Este punto medio es el punto
+azul de la Figura 7-16.
+SLERP, como operación matemática, se define con solo dos vectores, lo
+que significa que solo se pueden fusionar dos vectores a la vez. Si desea
+fusionar más de dos vectores, puede realizar el SLERP de forma secuencial,
+es decir, fusionando A con B y, a continuación, fusionando ese resultado
+con C.

@@ -1,0 +1,19 @@
+figura 9-5. La utilización del ancho de banda para Llama 2-70B en FP16 a través de
+tres chips diferentes muestra una disminución de la MBU a medida que aumenta el
+número de usuarios concurrentes. Imagen de "LLM Training and Inference with Intel
+Gaudi 2 AI Accelerators" (Databricks, 2024).
+Las métricas de utilización son útiles para realizar un seguimiento de la
+eficiencia de su sistema. Una mayor tasa de utilización de cargas de trabajo
+similares en el mismo hardware suele significar que sus servicios son cada
+vez más eficientes. Sin embargo, el objetivo no es conseguir los chips con
+mayor utilización. Lo que realmente le importa es cómo hacer su trabajo
+más rápido y más barato. Una mayor tasa de utilización no significa nada si
+aumentan tanto el costo como la latencia.
+Aceleradores de IA
+Que un software funcione de forma rápida y económica depende del
+hardware en el que se ejecute. Aunque existen técnicas de optimización que
+funcionan con todo el hardware, entender el hardware permite una
+optimización más profunda. Esta sección analiza el hardware desde el punto
+de vista de la inferencia, pero también puede aplicarse al entrenamiento.
+El desarrollo de modelos de IA y del hardware siempre ha estado
+entrelazado. La falta de computadoras suficientemente potentes fue uno de

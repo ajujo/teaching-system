@@ -1,0 +1,31 @@
+Fine-Tuning with Preference Alignment
+244
+            preference_triples.extend(future.result())
+    instructions, generated_answers, extracted_answers = 
+zip(*preference_triples)
+    return Dataset.from_dict(
+        {
+            "prompt": list(instructions),
+            "rejected": list(generated_answers),
+            "chosen": list(extracted_answers)
+        }
+    )
+10.	 The main function is updated to include the new filtering steps and to use the preference 
+dataset creation function:
+def main(dataset_id: str) -> Dataset:
+    client = OpenAI()
+    # 1. Load the raw data
+    raw_dataset = load_articles_from_json("cleaned_documents.json")
+    print("Raw dataset:")
+    print(raw_dataset.to_pandas())
+    # 2. Create preference dataset
+    dataset = create_preference_dataset(raw_dataset, client)
+    print("Preference dataset:")
+    print(dataset.to_pandas())
+    # 3. Filter out samples with short answers
+    dataset = filter_short_answers(dataset)
+    # 4. Filter answers based on format
+    dataset = filter_answer_format(dataset)
+    # 5. Export
+    dataset.push_to_hub(dataset_id)
+    return dataset

@@ -1,0 +1,29 @@
+CHAPTER 12
+Protecting Agentic Systems
+The adoption of AI agents introduces unique security challenges distinct from tradi‐
+tional software. Agentic systems—characterized by their autonomy, advanced reason‐
+ing capabilities, dynamic interactions, and complex workflows—significantly expand
+the threat landscape. Effectively securing these systems requires addressing not only
+traditional security concerns but also unique vulnerabilities inherent to agent
+autonomy, probabilistic decision making, and extensive reliance on foundational AI
+models and data.
+Generative AI has introduced a formidable and expanding threat vector in the cyber‐
+security landscape. These technologies amplify risks through sophisticated attacks
+like deepfakes for fraud, prompt injections to hijack systems, and memory poisoning
+in multiagent workflows, where tainted data can cascade into systemic failures or
+unauthorized actions. For instance, in early 2025, a Maine municipality fell victim to
+an AI-powered phishing scam that exploited generative voice cloning to steal
+between $10,000 and $100,000, while the Chevrolet dealership’s chatbot was manipu‐
+lated via prompt injection to offer a $76,000 vehicle for just $1, highlighting how
+easily safeguards can be bypassed. Similarly, agentic systems have exposed new vul‐
+nerabilities, as seen in Google’s Big Sleep agent uncovering a zero-day flaw in SQLite
+(CVE-2025-6965), but also raising concerns over autonomous agents potentially
+escalating privileges or drifting from objectives in enterprise. With Gartner predicting
+that over 40% of AI-related data breaches by 2027 will stem from cross-border gener‐
+ative AI misuse, and 73% of enterprises already reporting AI security incidents aver‐
+aging $4.8 million each, addressing these threats is imperative through robust
+governance, real-time monitoring, and layered defenses to harness AI’s potential
+without compromising security.
+This chapter serves as a comprehensive guide for understanding and mitigating the
+risks associated with agentic systems. It begins by exploring the unique security
+271

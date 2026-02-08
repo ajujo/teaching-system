@@ -1,0 +1,108 @@
+Table of Contents
+x
+Using the median absolute 
+deviation to find outliers
+162
+How to do it...
+163
+How it works…
+165
+Removing outliers
+166
+How to do it...
+166
+How it works...
+170
+See also
+170
+Bringing outliers back within 
+acceptable limits
+170
+How to do it...
+171
+How it works...
+173
+See also
+174
+Applying winsorization
+174
+How to do it...
+174
+How it works...
+176
+See also
+176
+6
+Extracting Features from Date and Time Variables
+177
+Technical requirements
+177
+Extracting features from dates 
+with pandas
+178
+Getting ready
+178
+How to do it...
+179
+How it works...
+183
+There’s more…
+184
+See also
+184
+Extracting features from time 
+with pandas
+184
+Getting ready
+185
+How to do it...
+185
+How it works...
+187
+There’s more…
+188
+Capturing the elapsed time 
+between datetime variables
+188
+How to do it...
+188
+How it works...
+191
+There's more...
+192
+See also
+193
+Working with time in different 
+time zones
+193
+How to do it...
+193
+How it works...
+196
+See also
+197
+Automating the datetime feature 
+extraction with Feature-engine
+197
+How to do it...
+198
+How it works...
+201
+7
+Performing Feature Scaling
+203
+Technical requirements
+204
+Standardizing the features
+204
+Getting ready
+204
+How to do it...
+206
+How it works...
+208
+Scaling to the maximum and 
+minimum values
+209
+Getting ready
+209

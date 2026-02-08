@@ -1,0 +1,24 @@
+Inference Optimization
+308
+Discarding these outliers is not feasible, as it would degrade a model’s performance. You can see 
+an example of outliers in Figure 8.11:
+Figure 8.11 – Example of outliers in a weight matrix
+To address the outlier problem, more advanced quantization techniques have been proposed. 
+One notable example is LLM.int8(), introduced by Dettmers et al. (2022). LLM.int8() employs a 
+mixed-precision quantization scheme, where outlier features are processed using FP16, while the 
+remaining values are quantized to INT8. This approach effectively reduces the memory footprint 
+of LLMs by nearly 2x while minimizing performance degradation.
+LLM.int8() works by performing matrix multiplication in three steps. First, it extracts columns 
+containing outlier features from the input hidden states using a custom threshold. Second, it 
+performs separate matrix multiplications for the outliers (in FP16) and non-outliers (in INT8) 
+using vector-wise quantization. Finally, it dequantizes the non-outlier results and combines 
+them with the outlier results to obtain the final output in FP16.
+The effectiveness of LLM.int8() has been demonstrated empirically, showing negligible perfor-
+mance degradation (<1%) compared to the original FP32 models. However, it does introduce an 
+additional computational overhead, resulting in around 20% slower inference for large models. 
+Models can be directly loaded in 8-bit precision with the transformer library, using LLM.int8(), 
+as follows:
+from transformers import AutoModelForCausalLM
+model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
+model = AutoModelForCausalLM.from_pretrained(model_name, device_
+map="auto", load_in_8bit=True)

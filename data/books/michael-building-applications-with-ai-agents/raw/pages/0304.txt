@@ -1,0 +1,48 @@
+Figure 12-2. MAESTRO layered reference architecture for agentic systems.
+Real-world incidents underscore its necessity. For instance, the 2024 Hong Kong
+deepfake heist, where generative AI was used to impersonate executives and siphon
+$25 million, illustrates how unmodeled threats in data operations and agent frame‐
+works can lead to catastrophic financial losses. Similarly, enterprise deployments of
+agentic AI, like those in supply chain management, have exposed risks of “memory
+poisoning,” where tainted data persists across agents, as seen in simulated attacks dur‐
+ing 2025 CSA wargames. Table 12-3 summarizes the key threats, recommended miti‐
+gations, and real-world or illustrative examples for each of MAESTRO’s seven layers.
+Table 12-3. MAESTRO Agentic AI Threat Modeling Framework
+Layer
+Key threats
+Recommended mitigations
+Real-world example
+1. Foundation models
+Adversarial examples, model
+stealing, backdoors
+Adversarial robustness
+training, API query limits
+Open source foundation model
+theft via black box queries in 2024
+research exploits
+2. Data operations
+Data poisoning, exfiltration,
+tampering
+Hashing (e.g., SHA-256),
+encryption, RAG safeguards
+2025 RAG pipeline injections
+leading to enterprise data leaks
+3. Agent frameworks
+Supply chain attacks, input
+validation failures
+Software composition analysis
+tools, secure dependencies
+SolarWinds-style compromises
+adapted to AI libraries
+4. Deployment and
+infrastructure
+Container hijacking, denial of
+service (DoS), lateral
+movement
+Container scanning, mutual
+TLS, resource quotas
+Kubernetes exploits in 2025 cloud
+AI deployments
+282 
+| 
+Chapter 12: Protecting Agentic Systems

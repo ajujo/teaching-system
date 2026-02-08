@@ -1,0 +1,26 @@
+una base de código), este documento largo se puede almacenar en caché
+para reutilizarlo en las distintas consultas. También es útil en
+conversaciones largas, cuando el procesamiento de mensajes anteriores
+puede almacenarse en caché y reutilizarse al predecir mensajes futuros.
+En la Figura 9-17 se visualiza una caché de prompts. También se denomina
+caché de contexto o caché de prefijos.
+figura 9-17. Con una caché de prompts, los segmentos que se traslapan en diferentes
+prompts pueden almacenarse en caché y reutilizarse.
+En el caso de las aplicaciones con prompts de sistema largos, el
+almacenamiento en caché de los prompts puede reducir significativamente
+tanto la latencia como el costo. Si la consulta de su sistema es de 1000
+tokens y su aplicación genera un millón de llamadas a la API del modelo,
+¡una caché de prompts le ahorrará el procesamiento de aproximadamente
+mil millones de tokens de input repetitivos al día! Sin embargo, esto no es
+totalmente gratis. Al igual que la caché KV, el tamaño de la caché de
+prompts puede ser bastante grande y ocupar espacio de memoria. A menos
+que utilice una API de modelo con esta funcionalidad, la implementación de
+un almacenamiento en caché de los prompts puede requerir un esfuerzo de
+ingeniería significativo.
+Desde su introducción en noviembre de 2023 por Gim et al., la caché de
+prompts se ha incorporado rápidamente a las API de los modelos. En el
+momento de escribir esto, Google Gemini ofrece esta funcionalidad, con
+tokens de input en caché con un descuento del 75 % en comparación con
+los tokens de input normales, pero tendrá que pagar más por el
+almacenamiento en caché (en el momento de escribir esto, $1.00 /millón de
+tokens por hora). Anthropic ofrece una caché de prompts que promete hasta

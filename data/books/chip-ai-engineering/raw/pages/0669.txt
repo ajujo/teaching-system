@@ -1,0 +1,32 @@
+En el paralelismo de secuencia, los operadores necesarios para todo el input
+se reparten entre las máquinas. Por ejemplo, si el input requiere el cómputo
+tanto de atención como de prealimentación, la atención podría procesarse en
+la máquina 1 mientras la prealimentación se procesa en la máquina 2.
+Resumen
+La usabilidad de un modelo depende en gran medida de su costo de
+inferencia y de su latencia. Una inferencia más barata hace que las
+decisiones basadas en IA sean más asequibles, mientras que una inferencia
+más rápida permite integrar la IA en más aplicaciones. Dado el enorme
+impacto potencial de la optimización de la inferencia, ha atraído a muchas
+personas con talento, que aportan continuamente enfoques innovadores.
+Antes de empezar a hacer las cosas más eficientes, tenemos que entender
+cómo se mide la eficiencia. Este capítulo comenzó con las métricas
+comunes de eficiencia para latencia, throughput y utilización. Para la
+inferencia basada en modelos lingüísticos, la latencia puede dividirse en
+tiempo hasta el primer token (TTFT), en el que influye la fase de llenado
+previo, y tiempo por token de output (TPOT), en el que influye la fase de
+decodificación. Las métricas de throughput están directamente relacionadas
+con el costo. Hay concesiones que hacer entre latencia y throughput. Puede
+reducir el costo potencial si acepta el aumento de la latencia, y reducir la
+latencia a menudo implica aumentar el costo.
+La eficacia de un modelo depende del hardware en el que se ejecute. Por
+este motivo, este capítulo también ofrece una rápida visión general del
+hardware de IA y de lo que se necesita para optimizar modelos en diferentes
+aceleradores.
+El capítulo continuó con diferentes técnicas de optimización de la
+inferencia. Dada la disponibilidad de API de modelos, la mayoría de los
+desarrolladores de aplicaciones utilizarán estas API con su optimización
+incorporada en lugar de implementar estas técnicas por sí mismos.
+Aunque puede que estas técnicas no sean relevantes para todos los
+desarrolladores de aplicaciones, creo que entender qué técnicas son posibles
+puede ser útil para evaluar la eficiencia de las API de modelos.

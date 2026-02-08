@@ -1,0 +1,30 @@
+Performing mean or median imputation
+9
+7.
+Let's set up the imputer to replace missing data with the median:
+imputer = SimpleImputer(strategy="median")
+Note
+To perform mean imputation, set SimpleImputer() as follows: imputer =
+SimpleImputer(strategy = "mean").
+8.
+We restrict the imputation to the numerical variables by using ColumnTransformer():
+ct = ColumnTransformer(
+    [("imputer", imputer, numeric_vars)],
+    remainder="passthrough",
+    force_int_remainder_cols=False,
+).set_output(transform="pandas")
+Note
+Scikit-learn can return numpy arrays, pandas DataFrames, or polar frames, depending on
+how we set out the transform output. By default, it returns numpy arrays.
+9.
+Let's fit the imputer to the train set so that it learns the median values:
+ct.fit(X_train)
+10.	 Let's check out the learned median values:
+ct.named_transformers_.imputer.statistics_
+The previous command returns the median values per variable:
+array([ 28.835,   2.75,   1.,   0., 160.,   6.])
+11.	 Let's replace missing values with the median:
+X_train_t = ct.transform(X_train)
+X_test_t = ct.transform(X_test)
+12.	 Let's display the resulting training set:
+print(X_train_t.head())

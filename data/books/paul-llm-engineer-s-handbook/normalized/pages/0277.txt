@@ -1,0 +1,36 @@
+Fine-Tuning with Preference Alignment
+246
+Reinforcement Learning from Human Feedback
+Reinforcement Learning from Human Feedback (RLHF) combines reinforcement learning
+(RL) with human input to align models with human preferences and values. RLHF emerged as a
+response to challenges in traditional RL methods, particularly the difficulty of specifying reward
+functions for complex tasks and the potential for misalignment between engineered rewards
+and intended objectives.
+The origins of RLHF can be traced back to the field of preference-based reinforcement learning
+(PbRL), which was independently introduced by Akrour et al. and Cheng et al. in 2011. PbRL aimed
+to infer objectives from qualitative feedback, such as pairwise preferences between behaviors,
+rather than relying on quantitative reward signals. This approach addressed some of the limitations of conventional RL, where defining appropriate reward functions can be challenging and
+prone to reward hacking or unintended behaviors.
+The term RLHF was coined later, around 2021-2022, as the approach gained prominence in the
+context of training LLMs. However, the core ideas had been developing for years prior. A seminal
+paper by Christiano et al. in 2017 demonstrated the effectiveness of learning reward models from
+human preferences and using them to train RL agents. This work showed that RLHF could match
+or exceed the performance of agents trained on hand-engineered rewards, but with significantly
+less human effort.
+At its core, RLHF works by iteratively improving both a reward model and a policy:
+•
+Reward model learning: Instead of using a pre-defined reward function, RLHF learns a
+reward model from human feedback. This is typically done by presenting humans with
+different answers and asking them to indicate which one they prefer. These preferences
+are used to train a reward model, often using a Bradley-Terry model or similar approaches
+that map preferences to underlying utility functions.
+•
+Policy optimization: With the learned reward model, standard RL algorithms can be
+used to optimize a policy. This policy generates new behaviors that aim to maximize the
+predicted rewards from the learned model.
+•
+Iterative improvement: As the policy improves, it generates new behaviors that can be
+evaluated by humans, leading to refinements in the reward model. This cycle continues,
+ideally resulting in a policy that aligns well with human preferences.
+A key innovation in RLHF is its approach to handling the high cost of human feedback. Rather
+than requiring constant human oversight, RLHF allows for asynchronous and sparse feedback.

@@ -1,0 +1,32 @@
+Counting characters, words, and vocabulary
+341
+Before jumping into the recipe, let’s discuss the features that we are going to derive from these text 
+pieces. We mentioned that longer descriptions, more words in the article, a greater variety of unique 
+words, and longer words tend to correlate with the amount of information that the article provides. 
+Hence, we can capture text complexity by extracting the following information about the text:
+•	 The total number of characters
+•	 The total number of words
+•	 The total number of unique words
+•	 Lexical diversity (total number of words divided by number of unique words)
+•	 Word average length (number of characters divided by number of words)
+In this recipe, we will extract these numerical features using pandas, which has extensive string 
+processing functionalities that can be accessed via the str vectorized string functions for series.
+How to do it...
+Let’s begin by loading pandas and getting the dataset ready:
+1.	
+Load pandas and the dataset from scikit-learn:
+import pandas as pd
+from sklearn.datasets import fetch_20newsgroups
+2.	
+Let’s load the train set part of the 20 Newsgroup dataset into a pandas DataFrame:
+data = fetch_20newsgroups(subset='train')
+df = pd.DataFrame(data.data, columns=['text'])
+Tip
+You can print an example of a text from the DataFrame by executing print(df['text']
+[1]). Change the number between [ and ] to display different texts. Note how every text 
+description is a single string composed of letters, numbers, punctuation, and spaces. You can 
+check the datatype by executing type(df["text"][1]).
+Now that we have the text variable in a pandas DataFrame, we are ready to extract the features.
+3.	
+Let’s capture the number of characters in each text piece in a new column:
+df['num_char'] = df['text'].str.len()

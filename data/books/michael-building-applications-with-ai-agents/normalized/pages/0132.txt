@@ -1,0 +1,48 @@
+        f"Write a concise customer reply based on: {details}"
+    }]).generations[0][0].text.strip()
+    return {**state, "response": summary}
+This next section wires up the logical flow in each node into an actual execution
+graph. By creating a new StateGraph, we establish the starting point with START →
+categorize_issue, which ensures every request first passes through the classification
+step. Then, using add_conditional_edges, you encode the core business rules: after
+categorization, only billing issues route into the invoice/refund handlers, and only
+technical issues route into the login/performance handlers. Each router function
+inspects the evolving state and returns the name of the next node, and the mapping
+ensures that only valid successors are enabled at runtime. This approach keeps the
+decision logic explicit, enforces the correct sequence of tool invocations, and prevents
+invalid transitions-all before we ever execute a single tool call:
+# 2. Build the graph
+graph = StateGraph()
+# Start → categorize_issue
+graph.add_edge(START, categorize_issue)
+# categorize_issue → billing or technical
+def top_router(state):
+    return "billing" if state["issue_type"] == "billing" else "technical"
+graph.add_conditional_edges(
+    categorize_issue,
+    top_router,
+    mapping={"billing": handle_invoice, "technical": handle_login}
+)
+# Billing sub-branches: invoice vs. refund
+def billing_router(state):
+    msg = state["user_message"].lower()
+    return "invoice" if "invoice" in msg else "refund"
+graph.add_conditional_edges(
+    handle_invoice,
+    billing_router,
+    mapping={"invoice": handle_invoice, "refund": handle_refund}
+)
+# Technical sub-branches: login vs. performance
+def tech_router(state):
+    msg = state["user_message"].lower()
+    return "login" if "login" in msg else "performance"
+graph.add_conditional_edges(
+    handle_login,
+    tech_router,
+    mapping={"login": handle_login, "performance": handle_performance}
+)
+This final wiring adds consolidation edges so that, no matter which subpath was
+taken-whether the user needed an invoice lookup, a refund, login troubleshooting,
+110
+|
+Chapter 5: Orchestration

@@ -1,0 +1,33 @@
+Goldman Sachs Research estimó que la inversión en IA
+podría acercarse a los 100 000 millones de dólares en EE. UU.
+y a los 200 000 millones en todo el mundo para 2025.9 La IA
+se menciona a menudo como una ventaja competitiva.
+FactSet descubrió que una de cada tres empresas del S&P
+500 mencionó la IA en sus informes de utilidades del
+segundo trimestre de 2023, tres veces más de lo que lo
+hicieron el año anterior. La Figura 1-5 muestra el número de
+empresas del S&P 500 que mencionaron la IA en sus
+informes de resultados de 2018 a 2023.
+Según WallStreetZen, las empresas que mencionaron la IA
+en sus informe de resultados experimentaron una mayor
+subida de sus acciones que las que no lo hicieron: una media
+del 4.6 % frente al 2.4 %. No está claro si se trata de
+causalidad (la IA hace que estas empresas tengan más éxito)
+o de correlación (las empresas tienen éxito porque se
+adaptan rápidamente a las nuevas tecnologías).
+Factor 3: Baja barrera de entrada para crear aplicaciones de IA
+El enfoque del modelo como servicio popularizado por
+OpenAI y otros proveedores de modelos facilita el
+aprovechamiento de la IA para crear aplicaciones. En este
+enfoque, los modelos se exponen a través de API que reciben
+las consultas de los usuarios y devuelven los outputs del
+modelo. Sin estas API, usar un modelo de IA requeriría
+contar con la infraestructura necesaria para alojar y servir
+este modelo. Estas API le dan acceso a potentes modelos
+mediante llamadas únicas a la API.
+Y no solo eso, la IA también permite crear aplicaciones con
+una codificación mínima. En primer lugar, la IA puede
+escribir código por usted, lo que permite a personas sin
+formación en ingeniería de software convertir rápidamente
+sus ideas en código y ponerlas a disposición de sus usuarios.
+En segundo lugar, usted puede trabajar con estos modelos

@@ -1,0 +1,39 @@
+Chapter 9
+359
+Building the index
+First, let’s set up our imports:
+import ray
+import numpy as np
+import pickle
+import os
+from typing import List, Optional
+from langchain_community.document_loaders import RecursiveUrlLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents
+import DocumentMore actions
+from utils import clean_html_content
+# Initialize Ray
+ray.init(include_dashboard=True, dashboard_host="0.0.0.0")
+Ray is initialized to enable distributed processing, and we’re using the all-mpnet-base-v2 model 
+from Hugging Face to generate embeddings. Next, we’ll implement our document processing 
+functions:
+@ray.remote
+def preprocess_documents(docs: List[Document], chunk_size: int = 500, 
+chunk_overlap: int = 50) -> List[Document]:More actions
+    """Preprocess documents by splitting them into smaller chunks.
+    
+    Args:
+        docs: List of documents to process.
+        chunk_size: Maximum size of each chunk in characters.
+        chunk_overlap: Number of overlapping characters between chunks.
+        
+    Returns:
+        List of document chunks.
+    """
+    print(f"Preprocessing batch of {len(docs)} documents")
+text_splitter = RecursiveCharacterTextSplitter(More actions
+        chunk_size=chunk_size, 
+        chunk_overlap=chunk_overlap
+    )

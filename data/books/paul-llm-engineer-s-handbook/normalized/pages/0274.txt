@@ -1,0 +1,35 @@
+Chapter 6
+243
+8.	 Two new filtering functions are introduced for the preference data pipeline: filter_short_
+answers and filter_answer_format. These functions filter out short answers and ensure
+that answers start with an uppercase letter and end with proper punctuation. We use
+them as heuristics to filter out samples with poor quality.
+def filter_short_answers(dataset: Dataset, min_length: int = 100) ->
+Dataset:
+    def is_long_enough(example):
+        return len(example['chosen']) >= min_length
+    return dataset.filter(is_long_enough)
+def filter_answer_format(dataset: Dataset) -> Dataset:
+    def is_valid_format(example):
+        chosen = example['chosen']
+        return (len(chosen) > 0 and
+                chosen[0].isupper() and
+                chosen[-1] in ('.', '!', '?'))
+    return dataset.filter(is_valid_format)
+9.
+The create_preference_dataset function replaces the original create_instruction_
+dataset function. This function now works with triples instead of pairs and uses different
+column names in the resulting dataset.
+def create_preference_dataset(dataset: Dataset, client: OpenAI, num_
+workers: int = 4) -> Dataset:
+    extracts = extract_substrings(dataset)
+    preference_triples = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_
+workers) as executor:
+        futures = [
+            executor.submit(generate_preference_triples, extract,
+client)
+            for extract in extracts
+        ]
+        for future in tqdm(concurrent.futures.as_completed(futures),
+total=len(futures)):

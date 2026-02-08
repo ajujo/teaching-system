@@ -1,0 +1,30 @@
+omitidas y variables no inicializadas.
+2. Utilizar pruebas unitarias para detectar errores de ejecución.
+Curiosamente, utilizaron IA para generar estas pruebas unitarias.
+3. Cuando una solución falle en cualquier paso, realizar un prompt al
+modelo para que revise el código. El prompt incluía la descripción
+original del problema, la solución defectuosa y los comentarios del
+analizador sintáctico, el linter y las pruebas unitarias. Solo los
+ejemplos que superan todas las comprobaciones se incluyen en el
+conjunto de datos final de afinado supervisado. 12
+Combinando los tres métodos (traducción de código, retrotraducción de
+código y generación de código), el flujo de trabajo de síntesis de datos de
+Llama 3 es impresionante. Para resumir, así es como estos tres métodos
+funcionan juntos:
+1. Utilizar la IA para generar descripciones de problemas.
+2. Utilizar la IA para generar soluciones para cada problema en
+distintos lenguajes de programación.
+3. Utilizar la AI para generar pruebas unitarias para probar el código
+generado.
+4. Presentar un prompt a la IA para que corrija los errores del código
+sintetizado.
+5. Utilizar la IA para traducir el código generado a distintos lenguajes
+de programación. Filtrar y desechar el código traducido que no
+supere las pruebas.
+6. Utilizar la IA para generar conversaciones sobre el código,
+incluyendo la explicación del código y la adición de
+documentación. Filtrar las explicaciones generadas y la
+documentación que no supere la verificación de retrotraducción.
+Utilizando este proceso, Dubey et al. fueron capaces de generar más de 2.7
+millones de ejemplos sintéticos relacionados con la codificación para el
+afinado supervisado de Llama 3.1.

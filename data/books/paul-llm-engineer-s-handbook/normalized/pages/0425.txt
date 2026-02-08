@@ -1,0 +1,33 @@
+Inference Pipeline Deployment
+394
+Without going into the little details of cloud networking, when working with multi-replica systems,
+between the client and the replicas sits an Application Load Balancer (ALB) or another type of
+load balancer. All the requests first go to the ALB, which knows to route them to a replica. The
+ALB can adopt various routing strategies, where the simplest one is called round robin, which
+sequentially sends a request to each replica. For example, the first request is routed to replica one,
+the second to replica two, and so on. Taking this approach, regardless of how many replicas you
+have online, the endpoint that the client calls is always represented by the load balancer that
+acts as an entry point into your cluster. Thus, adding or removing new replicas doesn't affect the
+server and client communication protocol.
+Let's quickly learn how to implement an autoscaling strategy for our AWS SageMaker Inference
+endpoint. SageMaker provides a feature called Application Auto Scaling that allows you to scale
+resources dynamically based on pre-defined policies. Two foundational steps are involved in effectively leveraging this functionality: registering a scalable target and creating a scalable policy.
+Registering a scalable target
+The first step in enabling autoscaling for your resources is to register a scalable target with the
+Application Auto Scaling feature AWS provides. Think of this as informing AWS about the specific
+resource you intend to scale, as well as setting the boundaries within which the scaling should
+occur. However, this step does not dictate how or when the scaling should happen.
+For instance, when working with SageMaker Inference components, you'll define the following:
+•
+Resource ID: This serves as a unique identifier for the resource you want to scale, typically
+including the name of the SageMaker Inference component.
+•
+Service namespace: This identifies the AWS service the resource belongs to, which, in
+this case, is SageMaker.
+•
+Scalable dimension: This specifies the resources to be scaled, such as the desired number
+of copies.
+•
+MinCapacity and MaxCapacity: These parameters define the boundaries of the autoscaling strategies, such as minimum and maximum limits of the number of replicas.
+By registering a scalable target, you prepare your SageMaker Inference component for future
+scaling actions without determining when or how these actions should occur.

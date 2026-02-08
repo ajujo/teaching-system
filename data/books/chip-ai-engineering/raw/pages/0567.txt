@@ -1,0 +1,32 @@
+SUGERENCIA
+Es posible reducir la cantidad de datos de alta calidad necesarios afinando
+primero el modelo con datos de menor calidad o menos relevantes. Estos
+son tres ejemplos de este enfoque:
+Autosupervisado → supervisado
+Quiere afinar un modelo para responder a preguntas
+jurídicas. Su conjunto de duplas (pregunta, respuesta) es
+pequeño, pero tiene muchos documentos legales. En primer
+lugar, puede afinar su modelo con documentos jurídicos de
+forma autosupervisada y, a continuación, afinarlo todavía
+más con duplas (pregunta, respuesta).
+Datos menos relevantes → datos relevantes
+Quiere afinar un modelo para clasificar los sentimientos de
+las reseñas de productos, pero tiene pocos datos de
+sentimientos de productos y muchos más datos de
+sentimientos de tweets. En primer lugar, puede afinar su
+modelo para clasificar los sentimientos de los tweets y, a
+continuación, afinarlo para clasificar los sentimientos de los
+productos.
+Datos sintéticos → datos reales
+Quiere afinar un modelo para predecir afecciones médicas a
+partir de informes médicos. Debido al carácter sensible de
+esta tarea, sus datos son limitados. Puede utilizar modelos
+de IA para sintetizar una gran cantidad de datos con el fin
+de afinar primero su modelo y, a continuación, seguir
+afinándolo con sus datos reales. Este enfoque es más difícil
+de aplicar correctamente, ya que hay que hacer dos
+afinaciones distintas y coordinar la transición entre ellas. Si
+no se sabe lo que se está haciendo, se pueden acabar
+utilizando más cálculos para producir un modelo peor que
+el que se habría obtenido afinando con datos de alta calidad.
+6

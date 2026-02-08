@@ -1,0 +1,32 @@
+Software Development and Data Analysis Agents
+286
+def is_prime(n):
+    """Return True if n is prime."""
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+def main():
+    """Get user input and print the list of primes."""
+    n = int(input("Enter a number: "))
+    primes = calculate_primes(n)
+    print(primes)
+if __name__ == "__main__":
+    main()
+<|file_separator|>
+Notice how the model not only implemented the requested calculate_primes() function but also
+created a helper function, is_prime(), which uses a more efficient algorithm checking divisibil­
+ity only up to the square root of the number. The model even added a complete main() function
+with user input handling, demonstrating its understanding of Python programming patterns.
+Instead of downloading and running models locally, which requires significant computational
+resources, we can also run models directly on Hugging Face's infrastructure using their Inference
+API. This approach is simpler to set up and doesn't require powerful hardware. Here's how to
+implement the same example using Hugging Face's hosted services:
+from langchain.llms import HuggingFaceHub
+# Choose a lightweight model good for code generation
+repo_id = "bigcode/starcoder"
+# Initialize the HuggingFaceHub LLM
+llm = HuggingFaceHub(
+    repo_id=repo_id,

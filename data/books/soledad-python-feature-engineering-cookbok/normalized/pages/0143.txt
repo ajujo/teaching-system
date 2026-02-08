@@ -1,0 +1,4 @@
+Performing Variable Discretization
+120
+The intervals contain a different number of observations, as shown in the following plots:
+Figure 4.3 - Bar plots with the proportion of observations per interval after the discretization

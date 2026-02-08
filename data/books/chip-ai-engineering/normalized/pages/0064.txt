@@ -1,0 +1,31 @@
+Involucrar a los humanos en los procesos de toma de decisiones de la IA se
+denomina "humano en el bucle" (HITL).
+Microsoft (2023) propuso un marco para aumentar gradualmente la
+automatización de la IA en los productos que denomina "Crawl-Walk-Run"
+(Gatear-Caminar-Correr):
+1. Gatear significa que la participación humana es obligatoria.
+2. Caminar significa que la IA puede interactuar directamente con los
+empleados internos.
+3. Correr significa aumentar la automatización, incluyendo
+potencialmente interacciones directas de la IA con usuarios
+externos.
+Es posible que el papel de los humanos cambie con el tiempo a medida que
+mejore la calidad del sistema de IA. Por ejemplo, al principio, cuando aún
+están evaluando las capacidades de la IA, podrían utilizarla para generar
+sugerencias para los agentes humanos. Si la tasa de aceptación por parte de
+los agentes humanos es alta, por ejemplo, si el 95 % de las respuestas
+sugeridas por la IA a solicitudes sencillas son utilizadas por los agentes
+humanos al pie de la letra, pueden dejar que los clientes interactúen
+directamente con la IA para esas solicitudes sencillas.
+Defensibilidad de los productos de IA
+Si vende aplicaciones de IA como productos independientes, es importante
+tener en cuenta su capacidad para defenderlos. La baja barrera de entrada es
+a la vez una bendición y una maldición. Si algo es fácil de construir para
+usted, también lo será para sus competidores. ¿De qué barreras dispone para
+defender su producto?
+En cierto modo, construir aplicaciones sobre modelos fundacionales
+significa aplicar una capa sobre estos modelos. 20 Esto también significa
+que si los modelos subyacentes amplían sus capacidades, la capa que
+ustedes aplican podría ser asimilada por los modelos, haciendo que su
+aplicación se quede obsoleta. Imagine crear una aplicación de análisis de
+PDF sobre ChatGPT partiendo de la base de que ChatGPT no puede

@@ -1,0 +1,30 @@
+pocos puntos porcentuales de outputs inválidos del modelo pueden ser
+inaceptables para muchas aplicaciones.
+Para aumentar el porcentaje de outputs válidos, algunas personas utilizan la
+IA para validar o corregir el output del prompt original. Este es un ejemplo
+del enfoque de la IA como juez analizado en el Capítulo 3. Esto significa
+que, para cada output, habrá al menos dos consultas al modelo: una para
+generar el output y otra para validarlo. Aunque la capa de validación
+añadida puede mejorar significativamente la validez de los outputs, el costo
+adicional y la latencia en que incurren las consultas de validación
+adicionales pueden hacer que este enfoque resulte demasiado caro para
+algunos.
+Post-procesamiento
+El post-procesamiento es sencillo y barato, pero puede funcionar
+sorprendentemente bien. Durante mi época de profesora, me di cuenta de
+que los alumnos solían cometer errores muy parecidos. Cuando empecé a
+trabajar con modelos fundacionales, me di cuenta de lo mismo. Un modelo
+tiende a repetir errores similares en todos los prompts. Esto significa que si
+encuentra los errores más comunes que comete un modelo, puede escribir
+un guión para corregirlos. Por ejemplo, si al objeto JSON generado le falta
+un corchete de cierre, añádanlo manualmente. El analizador sintáctico
+defensivo YAML de LinkedIn aumentó el porcentaje de outputs YAML
+correctos del 90 % al 99.99 % (Bottaro y Ramgopal, 2020).
+SUGERENCIA
+JSON y YAML son formatos de texto habituales. LinkedIn descubrió que
+su modelo subyacente, GPT-4, funcionaba con ambos, pero eligieron
+YAML como formato de output porque es menos verborreico y, por tanto,
+requiere menos tokens de output que JSON (Bottaro y Ramgopal, 2020).
+El post-procesamiento solo funciona si los errores son fáciles de corregir.
+Esto suele ocurrir si los outputs de un modelo ya están formateados
+correctamente en su mayoría, con pequeños errores ocasionales.

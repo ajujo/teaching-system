@@ -1,0 +1,31 @@
+Como los usuarios no piden funciones proactivas, pueden
+considerarlas intrusivas o molestas si la calidad es baja. Por
+lo tanto, las predicciones y generaciones proactivas suelen
+tener un listón de calidad más alto.
+Dinámica o estática
+Las funciones dinámicas se actualizan continuamente con
+los comentarios de los usuarios, mientras que las estáticas se
+actualizan periódicamente. Por ejemplo, Face ID necesita
+actualizarse a medida que las caras de las personas cambian
+con el tiempo. Sin embargo, es probable que la detección de
+objetos en Google Photos solo se actualice al actualizarse
+Google Photos.
+En el caso de la IA, las funciones dinámicas pueden
+significar que cada usuario tenga su propio modelo,
+continuamente ajustado en función de sus datos, u otros
+mecanismos de personalización como la función de
+memoria de ChatGPT, que le permite recordar las
+preferencias de cada usuario. Sin embargo, las
+características estáticas pueden tener un modelo para un
+grupo de usuarios. En ese caso, estas características solo se
+actualizan cuando se actualiza el modelo compartido.
+También es importante aclarar el papel de los humanos en la aplicación.
+¿Será la IA un apoyo para los humanos, tomará decisiones directamente, o
+ambas cosas? Por ejemplo, para un chatbot de atención al cliente, las
+respuestas de la IA pueden utilizarse de diferentes maneras:
+La IA muestra varias respuestas que los agentes humanos pueden
+consultar para redactar respuestas más rápidas.
+La IA solo responde a peticiones sencillas y remite las más
+complejas a los humanos.
+La IA responde a todas las solicitudes directamente, sin
+intervención humana.

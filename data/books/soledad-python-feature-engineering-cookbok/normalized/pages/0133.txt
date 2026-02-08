@@ -1,0 +1,32 @@
+Transforming Numerical Variables
+110
+X.drop(labels=[«Latitude», «Longitude»], axis=1,
+    inplace=True)
+Note
+We can evaluate the variable distribution with histograms and Q-Q plots, as we did in steps 4
+to 7 of the Performing Box-Cox transformations recipe.
+Now, let's apply the Yeo-Johnson transformation with scikit-learn.
+3.
+Let's set up PowerTransformer() with the yeo-johnson transformation:
+transformer = PowerTransformer(
+    method="yeo-johnson", standardize=False,
+).set_output(transform="pandas")
+4.
+Let's fit the transformer to the data:
+transformer.fit(X)
+Note
+The λ parameter should be learned from the train set and then used to transform the
+train and test sets. Thus, remember to separate your data into train and test sets before
+fitting PowerTransformer().
+5.
+Now, let's transform the dataset:
+X_tf = transformer.transform(X)
+Note
+PowerTransformer() stores the learned parameters in its lambda_ attribute, which you
+can return by executing transformer.lambdas_.
+6.
+Let's inspect the distributions of the transformed data with histograms:
+X_tf.hist(bins=30, figsize=(12, 12), layout=(3, 3))
+plt.show()
+In the following output, we can see that the variables' values are more evenly spread across
+their ranges:

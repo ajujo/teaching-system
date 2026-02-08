@@ -1,0 +1,22 @@
+Other Books You May Enjoy
+477
+Building LLM Powered Applications
+Valentina Alto
+ISBN: 9781835462317
+•
+Explore the core components of LLM architecture, including encoder-decoder blocks
+and embeddings
+•
+Understand the unique features of LLMs like GPT-3.5/4, Llama 2, and Falcon LLM
+•
+Use AI orchestrators like LangChain, with Streamlit for the frontend
+•
+Get familiar with LLM components such as memory, prompts, and tools
+•
+Learn how to use non-parametric knowledge and vector databases
+•
+Understand the implications of LFMs for AI research and industry applications
+•
+Customize your LLMs with fine tuning
+•
+Learn about the ethical implications of LLM-powered applications

@@ -1,0 +1,39 @@
+Chapter 4
+135
+2.	
+Cleaning: The data from the data warehouse is standardized and partially clean, but we 
+have to ensure that the text contains only useful information, is not duplicated, and can 
+be interpreted by the embedding model. For example, we must clean and normalize all 
+non-ASCII characters before passing the text to the embedding model. Also, to keep the 
+information semantically dense, we decided to replace all the URLs with placeholders 
+and remove all emojis. The cleaning step is more art than science. Hence, after you have 
+the first iteration with an evaluation mechanism in place, you will probably reiterate and 
+improve it.
+3.	
+Chunking: You must adopt various chunking strategies based on each data category 
+and embedding model. For example, when working with code repositories, you want 
+the chunks broader, whereas when working with articles, you want them narrower or 
+scoped at the paragraph level. Depending on your data, you must decide if you split your 
+document based on the chapter, section, paragraph, sentence, or just a fixed window size. 
+Also, you have to ensure that the chunk size doesn’t exceed the maximum input size of 
+the embedding model. That is why you usually chunk a document based on your data 
+structure and the maximum input size of the model.
+4.	
+Embedding: You pass each chunk individually to an embedding model of your choice. 
+Implementation-wise, this step is usually the simplest, as tools such as SentenceTrans-
+former and Hugging Face provide high-level interfaces for most embedding models. As 
+explained in the What are embeddings? section of this chapter, at this step, the most critical 
+decisions are to decide what model to use and whether to fine-tune it or not. For example, 
+we used an "all-mpnet-base-v2" embedding model from SentenceTransformer, which 
+is relatively tiny and runs on most machines. However, we provide a configuration file 
+where you can quickly configure the embedding model with something more powerful 
+based on the state of the art when reading this book. You can quickly find other options 
+on the MTEB on Hugging Face (https://huggingface.co/spaces/mteb/leaderboard).
+5.	
+Data loading: The final step combines the embedding of a chunked document and its 
+metadata, such as the author and the document ID, content, URL, platform, and creation 
+date. Ultimately, we wrap the vector and the metadata into a structure compatible with 
+Qdrant and push it to the vector DB. As we want to use Qdrant as the single source of truth 
+for the features, we also push the cleaned documents (before chunking) to Qdrant. We can 
+push data without vectors, as the metadata index of Qdrant behaves like a NoSQL DB. Thus, 
+pushing metadata without a vector attached to it is like using a standard NoSQL engine.

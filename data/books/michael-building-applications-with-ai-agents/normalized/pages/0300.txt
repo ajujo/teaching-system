@@ -1,0 +1,41 @@
+To evaluate the efficacy of these defenses, prompt injection test benchmarks, such as
+the Lakera PINT Benchmark, can be employed. This open source tool uses a diverse
+dataset of 4,314 inputs-including multilingual prompt injections, jailbreaks, and
+hard negatives-to compute a PINT Score measuring detection accuracy, with results
+showing varying performance across systems like Lakera Guard (92.5%) and Llama
+Prompt Guard (61.4%). As the field is still in its early days, it's challenging to deter‐
+mine how well-guarded a system truly is, emphasizing the need for ongoing testing
+and updates. Similarly, BIPIA (Benchmark for Indirect Prompt Injection Attacks)
+from Microsoft is one of the most referenced, focusing specifically on evaluating
+foundation model robustness against indirect injections with a dataset of attacks and
+defenses.
+Output filtering and validation are equally essential. Even with careful input controls,
+models may still generate harmful or unintended outputs. Output filtering tech‐
+niques, including automated keyword scanning, toxicity detection models, and rulebased filters, can help catch problematic content before it reaches the end user.
+Additionally, implementing postprocessing pipelines ensures outputs are validated
+against business rules and safety constraints.
+Access control and rate limiting are also important operational defenses. By tightly
+regulating access to foundation model endpoints-through authentication mecha‐
+nisms, role-based permissions, and API rate limits-systems can reduce the risk of
+abuse and prevent brute-force attacks. Logging and auditing every interaction with
+the model further enables security teams to detect suspicious patterns and respond
+proactively.
+Sandboxing foundation model operations isolates agent activities in controlled envi‐
+ronments, preventing unintended actions from spilling into broader systems. This is
+particularly useful when agents interact with external plug-ins or APIs, ensuring that
+a misbehaving agent cannot cause cascading failures across dependent services.
+In practice, effective defensive strategies are rarely static-they require continuous
+iteration and adaptation. As threat actors evolve their tactics, defensive systems must
+remain agile, incorporating insights from real-world adversarial testing, security
+audits, and emerging best practices. By adopting a layered defense strategy that inte‐
+grates technical, operational, and human-centric safeguards, organizations can signif‐
+icantly reduce the risks associated with deploying foundation models in agent
+systems.
+Red Teaming
+Red teaming is a proactive security practice where experts simulate adversarial
+attacks to identify vulnerabilities, weaknesses, and failure modes in agent systems and
+their underlying foundation models. Unlike traditional software testing, which focu‐
+ses on functional correctness, red teaming focuses on probing the system's robustness
+278
+|
+Chapter 12: Protecting Agentic Systems

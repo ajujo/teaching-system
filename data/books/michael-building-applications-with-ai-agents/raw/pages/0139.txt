@@ -1,0 +1,42 @@
+foundation model when the model is called. In the simplest approach, the context
+window contains the current question and all previous interactions in the current ses‐
+sion. When that window fills up, only the most recent interactions are included. In
+some circumstances, we will have more information to provide than we can fit into
+the context window. When this happens, we need to be careful with how we allocate
+our limited budget of tokens.
+For simple use cases, you can use a rolling context window. In this case, as the inter‐
+action with the foundation model progresses, the full interaction is passed into the
+context window. At a certain point, the context window fills up, and the oldest parts
+of the context are ejected and replaced with the most recent context, in a first-in,
+first-out fashion. This is easy to implement, low in complexity, and will work for
+many use cases. The primary drawback to this approach is information will be lost,
+regardless of how relevant or important it is, as soon as enough interaction has occur‐
+red to eject it from the current context. With large prompts or verbose foundation
+model responses, this can happen quickly. Foundation models can also miss impor‐
+tant information in large prompts, so highlighting the most relevant context and
+placing it close to the end of the prompt can increase the likelihood that it will be
+used. This standard approach to memory can be incorporated into our LangGraph
+agent as follows:
+from typing import Annotated
+from typing_extensions import TypedDict
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph, MessagesState, START
+llm = ChatOpenAI(model="gpt-5")
+def call_model(state: MessagesState):
+   response = llm.invoke(state["messages"])
+   return {"messages": response}
+# Fails to maintain state across the conversation
+input_message = {"type": "user", "content": "hi! I'm bob"}
+for chunk in graph.stream({"messages": [input_message]}, stream_mode="values"):
+   chunk["messages"][-1].pretty_print()
+input_message = {"type": "user", "content": "what's my name?"}
+for chunk in graph.stream({"messages": [input_message]}, stream_mode="values"):
+   chunk["messages"][-1].pretty_print()
+Traditional Full-Text Search
+Traditional full-text search forms the backbone of many large-scale retrieval systems
+and offers a robust, mature approach to injecting precise historical context into
+agents enabled with foundation models. At its heart lies an inverted index, which pre‐
+processes all text via tokenization, normalization (lowercasing, stemming), and
+Foundational Approaches to Memory 
+| 
+117

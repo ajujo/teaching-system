@@ -1,0 +1,11 @@
+Carrying out interpolation
+33
+Figure 1.8 - Time series data where missing values were replaced by linear
+interpolation between the last and next valid data points (dotted line)
+5.
+Alternatively, we can impute missing data by doing spline interpolation. We'll use a polynomial
+of the second degree:
+df_imputed = df.interpolate(method="spline", order=2)
+If we plot the imputed dataset and overlay the imputation values as we did in step 4, we'll see
+the following plot:
+Figure 1.9 - Time series data where missing values were replaced by fitting a seconddegree polynomial between the last and next valid data points (dotted line)

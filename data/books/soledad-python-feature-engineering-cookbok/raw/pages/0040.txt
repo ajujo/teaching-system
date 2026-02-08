@@ -1,0 +1,39 @@
+Replacing missing values with an arbitrary number
+17
+Note
+We’d use arbitrary number imputation when data is not missing at random, use non-linear 
+models, or when the percentage of missing data is high. This imputation technique distorts 
+the original variable distribution.
+In this recipe, we will impute missing data with arbitrary numbers using pandas, scikit-learn, 
+and feature-engine.
+How to do it...
+Let’s begin by importing the necessary tools and loading the data:
+1.	
+Import pandas and the required functions and classes:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from feature_engine.imputation import ArbitraryNumberImputer
+2.	
+Let’s load the dataset described in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")
+3.	
+Let’s separate the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+We will select arbitrary values greater than the maximum value of the distribution.
+4.	
+Let’s find the maximum value of four numerical variables:
+X_train[['A2','A3', 'A8', 'A11']].max()
+The previous command returns the following output:
+A2     76.750
+A3     26.335
+A8     28.500
+A11    67.000
+dtype: float64
+We’ll use 99 for the imputation because it is bigger than the maximum values of the numerical 
+variables in step 4.

@@ -1,0 +1,34 @@
+Building Workflows with LangGraph
+74
+With the first option, a node should return a list as a value for the key actions. We provide short 
+code samples just for illustration purposes, but you can find full ones on Github. If such a value 
+already exists in the state, it will be replaced with the new one:
+class JobApplicationState(TypedDict):
+   ...
+   actions: list[str]
+Another option is to use the default add method with the Annotated type hint. By using this type 
+hint, we tell the LangGraph compiler that the type of our variable in the state is a list of strings, 
+and it should use the add method to concatenate two lists (if the value already exists in the state 
+and a node produces a new one):
+from typing import Annotated, Optional
+from operator import add
+class JobApplicationState(TypedDict):
+   ...
+   actions: Annotated[list[str], add]
+The last option is to write your own custom reducer. In this example, we write a custom reducer 
+that accepts not only a list from the node (as a new value) but also a single string that would be 
+converted to a list:
+from typing import Annotated, Optional, Union
+def my_reducer(left: list[str], right: Optional[Union[str, list[str]]]) -> 
+list[str]:
+ if right:
+   return left + [right] if isinstance(right, str) else left + right
+ return left
+class JobApplicationState(TypedDict):
+   ...
+   actions: Annotated[list[str], my_reducer]
+LangGraph has a few built-in reducers, and we’ll also demonstrate how you can implement your 
+own. One of the important ones is add_messages, which allows us to merge messages. Many of 
+your nodes would be LLM agents, and LLMs typically work with messages. Therefore, according 
+to the conversational programming paradigm we’ll talk about in more detail in Chapters 5 and 6, 
+you typically need to keep track of these messages:

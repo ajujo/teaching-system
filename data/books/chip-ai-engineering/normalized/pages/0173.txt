@@ -1,0 +1,7 @@
+figura 2-24. Un ejemplo de autoengaño por parte de LLaVA-v1.5-7B.
+Zhang et al. (2023) llaman a este fenómeno bola de nieve de alucinaciones.
+Tras hacer una suposición incorrecta, un modelo puede seguir alucinando
+para justificar la suposición errónea inicial. Curiosamente, los autores
+muestran que unas suposiciones iniciales erróneas pueden hacer que el
+modelo cometa errores en preguntas que, de otro modo, podría responder
+correctamente, como se muestra en la Figura 2-25.

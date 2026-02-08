@@ -1,0 +1,33 @@
+Chapter 10
+355
+Low-latency systems require optimized and often more costly infrastructure, such as faster processors, lower network latency, and possibly edge computing to reduce the distance data needs
+to travel.
+A lower latency translates to higher throughput when the service processes multiple queries in
+parallel successfully. For example, if the service takes 100 ms to process requests, this translates to
+a throughput of 10 requests per second. If the latency reaches 10 ms per request, the throughput
+rises to 100 requests per second.
+However, to complicate things, most ML applications adopt a batching strategy to simultaneously
+pass multiple data samples to the model. In this case, a lower latency can translate into lower
+throughput; in other words, a higher latency maps to a higher throughput. For example, if you
+process 20 batched requests in 100 ms, the latency is 100 ms, while the throughput is 200 requests
+per second. If you process 60 requests in 200 ms, the latency is 200 ms, while the throughput
+rises to 300 requests per second. Thus, even when batching requests at serving time, it's essential
+to consider the minimum latency accepted for a good user experience.
+Data
+As we know, data is everywhere in an ML system. But when talking about model serving, we
+mostly care about the model's input and output. This includes the format, volume, and complexity
+of the processed data. Data is the foundation of the inference process. The characteristics of the
+data, such as its size and type, determine how the system needs to be configured and optimized
+for efficient processing.
+The type and size of the data directly impact latency and throughput, as more complex or extensive data can take longer to process. For example, designing a model that takes input structured
+data and outputs a probability differs entirely from an LLM that takes input text (or even images)
+and outputs an array of characters.
+Infrastructure
+Infrastructure refers to the underlying hardware, software, networking, and system architecture
+that supports the deployment and operation of the ML models. The infrastructure provides the
+necessary resources for deploying, scaling, and maintaining ML models. It includes computing
+resources, memory, storage, networking components, and the software stack:
+•
+For high throughput, the systems require scalable infrastructure to manage large data
+volumes and high request rates, possibly through parallel processing, distributed systems,
+and high-end GPUs.

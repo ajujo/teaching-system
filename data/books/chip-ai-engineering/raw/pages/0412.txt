@@ -1,0 +1,31 @@
+Reranking
+Los rankings iniciales de documentos generados por el recuperador pueden
+volver a ordenarse para ser más precisos. El reranking es especialmente útil
+cuando se necesita reducir el número de documentos recuperados, ya sea
+para ajustarlos al contexto del modelo o para reducir el número de tokens de
+input.
+En el “Combinar los algoritmos de recuperación”, se describe un patrón
+común para el reranking. Un recuperador barato pero menos preciso busca
+candidatos, y luego un mecanismo más preciso pero más caro vuelve a
+ordenarlos.
+Los documentos también pueden rerankearse en función del tiempo, dando
+más peso a los datos más recientes. Esto es útil para aplicaciones sensibles
+al tiempo, como la agregación de noticias, chatear con sus correos
+electrónicos (por ejemplo, un chatbot que pueda responder a preguntas
+sobre sus correos electrónicos) o el análisis bursátil.
+El reranking contextual difiere del reranking de búsqueda tradicional en que
+la posición exacta de los elementos es menos crítica. En la búsqueda, el
+puesto (por ejemplo, primero o quinto) es crucial. En el reranking
+contextual, el orden de los documentos sigue siendo importante porque
+afecta a la capacidad del modelo para procesarlos. Los modelos podrían
+comprender mejor los documentos al principio y al final del contexto, como
+se explica en el “Longitud y eficacia del contexto”. Sin embargo, siempre
+que se incluya un documento, el impacto de su orden es menos significativo
+en comparación de en el ranking de búsqueda.
+Reescritura de consultas
+La reescritura de consultas también se conoce como reformulación de
+consultas, normalización de consultas y, en ocasiones, expansión de
+consultas. Considere la siguiente conversación:
+Usuario: ¿Cuándo fue la última vez que John Doe nos compró algo?
+IA: La última vez que John nos compró un sombrero Fruity Fedora fue 
+hace dos 

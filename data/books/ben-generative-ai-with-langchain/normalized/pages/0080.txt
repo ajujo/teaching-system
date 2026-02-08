@@ -1,0 +1,20 @@
+Chapter 2
+53
+from langchain_core.runnables import RunnableLambda
+prompt = PromptTemplate.from_template("Explain {concept} in simple terms")
+safe_llm = RunnableLambda(lambda x: safe_model_call(llm, x))
+safe_chain = prompt | safe_llm
+response = safe_chain.invoke({"concept": "quantum computing"})
+Common local model errors you might run into are as follows:
+•
+Out of memory: Occurs when the model requires more VRAM than available
+•
+Model loading failure: When model files are corrupt or incompatible
+•
+Timeout issues: When inference takes too long on resource-constrained systems
+•
+Context length errors: When input exceeds the model's maximum token limit
+By implementing these optimizations and error-handling strategies, you can create robust LangC­
+hain applications that leverage local models effectively while maintaining a good user experience
+even when issues arise.
+Figure 2.1: Decision chart for choosing between local and cloud-based models

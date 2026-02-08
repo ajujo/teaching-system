@@ -1,0 +1,33 @@
+próximo capítulo se explicará cómo optimizar la inferencia en función de la
+latencia y el costo.
+1  La creciente importancia de los datos se refleja en la forma en que el esfuerzo
+en este campo cambió de GPT-3 a GPT-4. En la lista de contribuidores de GPT-3
+(OpenAI, 2020), solo se le da el crédito a dos personas de encargarse de
+recopilar, filtrar y deduplicar los datos, así como de realizar el análisis de
+traslape de los datos de entrenamiento. Esto cambió radicalmente tres años
+después. Para GPT-4 (OpenAI, 2023), se acreditó la participación de ochenta
+personas en diferentes procesos de datos. Y esta lista no incluye a los anotadores
+de datos que OpenAI contrató a través de proveedores de datos. Para algo que
+parece tan sencillo como un formato ChatML participaron once personas,
+muchas de ellas investigadores de alto nivel. En su hilo AMA (pregúntame lo
+que quieras) de 2016, Wojciech Zaremba, uno de los cofundadores de OpenAI,
+dijo que pretendían llevar a cabo la mayor parte de su investigación utilizando
+conjuntos de datos disponibles públicamente.
+2  Si utiliza muchos datos, el simple hecho de garantizar el cumplimiento de datos
+puede ser un trabajo a tiempo completo.
+3  Aunque me encanta escribir, una de las cosas que no disfruto en absoluto es
+intentar condensar las opiniones de todo el mundo en una sola definición. IBM
+definió la calidad de los datos a partir de siete dimensiones: integridad, unicidad,
+validez, puntualidad, exactitud, coherencia y adecuación al propósito. Wikipedia
+añadió accesibilidad, comparabilidad, credibilidad, flexibilidad y verosimilitud.
+Muchas de estas definiciones se centran en la calidad de los datos en una amplia
+gama de casos de uso. Aquí quiero centrarme en la calidad de los datos para el
+afinado.
+4  Un error doloroso que aún recuerdo es cuando una columna de números
+flotantes en mis datos se almacenaba erróneamente como enteros, lo que
+redondeaba estos valores, causando comportamientos desconcertantes.
+5  Aunque esto no se refiere a la exclusividad de sus datos, tener datos que nadie
+más tiene puede ser extremadamente valioso.
+6  En Designing Machine Learning Systems, también traté otras técnicas para
+reducir la demanda de datos anotados, como la supervisión débil, la
+semisupervisión y el aprendizaje activo.

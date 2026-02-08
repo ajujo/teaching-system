@@ -1,0 +1,33 @@
+que había pasado por alto. Luke y Han fueron los primeros en revisar mis
+borradores antes de enviarlos a la siguiente ronda de revisores técnicos, y
+siempre estaré en deuda con ellos por tolerar mis locuras y errores.
+Vittorio Cretella y Andrei Lopatenko, que han liderado la innovación en IA
+en empresas de la lista Fortune 500, aportaron valiosos comentarios que
+combinaban profundos conocimientos técnicos con perspectivas ejecutivas.
+Vicki Reyzelman me ayudó a fundamentar mi contenido y a mantenerlo
+relevante para los lectores con formación en ingeniería de software.
+Eugene Yan, un querido amigo y asombroso científico aplicado, me
+proporcionó apoyo técnico y emocional. Shawn Wang (swyx) fue esencial
+con sus opiniones para sentirme más segura sobre el libro. Sanyam Bhutani,
+uno de los mejores estudiantes y de las almas más humildes que conozco,
+no solo aportó comentarios por escrito, sino que también grabó vídeos para
+explicar sus comentarios.
+Kyle Kranen es un líder estrella del deep learning que entrevistó a sus
+colegas y compartió conmigo un increíble escrito sobre su proceso de
+afinado, que guió el capítulo sobre el afinado. Mark Saroufim, una mente
+inquisitiva que siempre está al tanto de los problemas más interesantes, me
+mostró grandes recursos sobre eficiencia. Tanto los comentarios de Kyle
+como los de Mark fueron fundamentales para escribir los capítulos
+Capítulo 7 y Capítulo 9.
+Kittipat "Bot" Kampa, además de responder a mis numerosas preguntas,
+compartió conmigo una detallada visualización de cómo concibe las
+plataformas de IA. Aprecio el enfoque sistemático de Denys Linkov para la
+evaluación y el desarrollo de plataformas. Chetan Tekur ofreció grandes
+ejemplos que me ayudaron a estructurar los patrones de aplicación de la IA.
+También me gustaría dar las gracias a Shengzhi (Alex) Li y Hien Luu por
+sus atentos comentarios a mi borrador sobre arquitectura de IA.
+Aileen Bui es un tesoro que compartió comentarios y ejemplos únicos desde
+la perspectiva de un director de producto. Gracias a Todor Markov por los
+consejos prácticos sobre el capítulo de RAG y agentes. Gracias a Tal
+Kachman por intervenir en el último momento para llevar a buen puerto el
+capítulo sobre afinado.

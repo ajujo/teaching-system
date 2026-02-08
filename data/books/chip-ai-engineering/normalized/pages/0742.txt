@@ -1,0 +1,25 @@
+- entrenamiento en escala inversa y alineación, Tamaño del modelo
+- RAG y, RAG
+- recuperación contextual, Reescritura de consultas
+API de inferencia, Cuellos de botella de cómputo
+API de inferencia en línea, Cuellos de botella de cómputo
+API de inferencia por lotes, Cuellos de botella de cómputo
+API de modelos, modelos de código abierto frente a (ver modelos de código
+abierto, API de modelos frente a)
+apilamiento de capas, Poda de parámetros redundantes específicos de la
+tarea
+application building
+- rise of AI engineering, El auge de la ingeniería de IA
+aprendizaje de cero disparos, Introducción al prompting
+aprendizaje de pocos disparos, Introducción al prompting
+aprendizaje en contexto, Introducción al prompting
+aprendizaje en contexto: cero disparos y pocos disparos, Introducción al
+prompting
+- buenas prácticas, Longitud y eficacia del contexto
+- aportar un contexto suficiente, Especifique el formato de output
+- dar tiempo al modelo para pensar, Dividir tareas complejas en
+subtareas más sencillas
+- dividir tareas complejas en subtareas más sencillas, Aportar
+suficiente contexto
+- escribir instrucciones claras y explícitas, Longitud y eficacia del
+contexto

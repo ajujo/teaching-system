@@ -1,0 +1,49 @@
+tabla 7-3. Convertir valores FP32 a formatos de menor precisión. Las
+inexactitudes resultantes figuran en cursiva.
+FP32
+FP16
+BF16
+TF32
+0.0123456789
+0.0123443603515625
+0.0123291
+0.01234436035
+0.123456789
+0.12347412109375
+0.123535
+0.12341308593
+1.23456789
+1.234375
+1.23438
+1.234375
+12.3456789
+12.34375
+12.375
+12.34375
+123.456789
+123.4375
+123.5
+123.4375
+1234.56789
+1235.0
+1232.0
+1234.0
+12345.6789
+12344.0
+12352.0
+12344.0
+123456.789
+INFa
+123392.0
+123456.0
+1234567.89
+INF
+1236990.0
+1233920.0
+a Los valores fuera de límite en FP16 se redondean a infinito.
+Observe en la Tabla 7-3 que, aunque BF16 y FP16 tienen el mismo número
+de bits, BF16 tiene más bits para el rango y menos bits para la precisión.
+Esto permite a BF16 representar valores grandes que están fuera de los
+límites de FP16. Sin embargo, esto también hace que BF16 sea menos
+preciso que FP16. Por ejemplo, 1234.56789 es 1235.0 en FP16 (0.035 % de
+cambio de valor) pero es 1232.0 en BF16 (0.208% de cambio de valor).

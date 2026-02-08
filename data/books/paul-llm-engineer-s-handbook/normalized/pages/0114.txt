@@ -1,0 +1,28 @@
+Chapter 3
+83
+The NoSQLBaseDocument class is then declared as an abstract base class inheriting from Pydantic's BaseModel, Python's Generic (which provides the functionality described earlier), and ABC
+(making the class abstract) classes. This class serves as the foundational ODM class:
+T = TypeVar("T", bound="NoSQLBaseDocument")
+class NoSQLBaseDocument(BaseModel, Generic[T], ABC):
+Within the NoSQLBaseDocument class, an id field is defined as a UUID4, with a default factory
+generating a unique UUID. The class also implements the __eq__ and __hash__ methods to allow
+instances to be compared and used in hashed collections like sets or as dictionary keys based on
+their unique id attribute:
+id: UUID4 = Field(default_factory=uuid.uuid4)
+def __eq__(self, value: object) -> bool:
+    if not isinstance(value, self.__class__):
+        return False
+    return self.id == value.id
+def __hash__(self) -> int:
+    return hash(self.id)
+The class provides methods for converting between MongoDB documents and class instances. The
+from_mongo() class method transforms a dictionary retrieved from MongoDB into an instance of
+the class. The to_mongo() instance method converts the model instance into a dictionary suitable
+for MongoDB insertion:
+@classmethod
+def from_mongo(cls: Type[T], data: dict) -> T:
+    if not data:
+        raise ValueError("Data is empty.")
+    id = data.pop("_id")
+    return cls(**dict(data, id=id))
+def to_mongo(self: T, **kwargs) -> dict:

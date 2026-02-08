@@ -1,0 +1,19 @@
+equilibrando diferentes objetivos como la calidad del modelo, la
+latencia y el costo.
+3. Realizar experimentos con su propia línea de evaluación para
+encontrar el mejor modelo, de nuevo, equilibrando todos sus
+objetivos.
+4. Supervisar continuamente su modelo en producción para detectar
+fallos y recopilar información para mejorar su aplicación.
+figura 4-5. Una visión general del flujo de trabajo de evaluación de modelos para su
+aplicación.
+Estos cuatro pasos son iterativos: quizá desee cambiar la decisión de un
+paso anterior con información más reciente del paso actual. Por ejemplo,
+quizá inicialmente desee alojar modelos de código abierto. Sin embargo,
+tras una evaluación pública y privada, quizá se dé cuenta de que los
+modelos de código abierto no puede alcanzar el nivel de rendimiento que
+desea y tenga que cambiar a las API comerciales.
+En el Capítulo 10 se aborda el monitoreo y la recolección de opiniones de
+los usuarios. El resto de este capítulo tratará sobre los tres primeros pasos.
+En primer lugar, vamos a tratar una cuestión que la mayoría de los equipos
+se plantearán más de una vez: utilizar API de modelos o alojar ellos mismos

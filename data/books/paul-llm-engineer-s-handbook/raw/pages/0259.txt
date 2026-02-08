@@ -1,0 +1,15 @@
+Supervised Fine-Tuning
+228
+•	
+Edward J. Hu et al.. “LoRA: Low-Rank Adaptation of Large Language Models.” arXiv preprint 
+arXiv:2106.09685, June 2021.
+•	
+Tim Dettmers et al.. “QLoRA: Efficient Finetuning of Quantized LLMs.” arXiv preprint arX-
+iv:2305.14314, May 2023.
+Unlock this book’s exclusive 
+benefits now
+This book comes with additional ben-
+efits designed to elevate your learning 
+experience. 
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

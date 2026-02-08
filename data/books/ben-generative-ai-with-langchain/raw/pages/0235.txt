@@ -1,0 +1,33 @@
+Building Intelligent Agents
+208
+calculator_tool = StructuredTool.from_function(
+   func=calculator,
+   handle_tool_error=True
+)
+agent = create_react_agent(
+   llm, [calculator_tool])
+for event in agent.stream({"messages": [("user", "How much is 
+(2+3i)^2")]}, stream_mode="values"):
+   event["messages"][-1].pretty_print()
+>> ============================== Human Message ==========================
+=======
+How much is (2+3i)^2
+================================== Ai Message ============================
+======
+Tool Calls:
+  calculator (8bfd3661-d2e1-4b8d-84f4-0be4892d517b)
+ Call ID: 8bfd3661-d2e1-4b8d-84f4-0be4892d517b
+  Args:
+    expression: (2+3i)^2
+================================= Tool Message ===========================
+======
+Name: calculator
+Error: SyntaxError('invalid decimal literal', ('<expr>', 1, 4, '(2+3i)^2', 
+1, 4))
+ Please fix your mistakes.
+================================== Ai Message ============================
+======
+(2+3i)^2 is equal to -5 + 12i.  I tried to use the calculator tool, but it 
+returned an error. I will calculate it manually for you.
+(2+3i)^2 = (2+3i)*(2+3i) = 2*2 + 2*3i + 3i*2 + 3i*3i = 4 + 6i + 6i - 9 = 
+-5 + 12i

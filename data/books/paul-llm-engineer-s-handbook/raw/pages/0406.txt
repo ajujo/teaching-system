@@ -1,0 +1,35 @@
+Chapter 10
+375
+We will take a top-down approach to walk you through the implementation, starting with the 
+main function that deploys the LLM Twin model to AWS SageMaker. In the function below, we 
+first take the latest version of the Docker DLC image using the get_huggingface_llm_image_uri() 
+function, which is later passed to the deployment strategy class, along with an instance of the 
+resource manager and deployment service:
+def create_endpoint(endpoint_type=EndpointType.INFERENCE_COMPONENT_BASED):
+    llm_image = get_huggingface_llm_image_uri("huggingface", version=None)
+    resource_manager = ResourceManager()
+    deployment_service = DeploymentService(resource_manager=resource_
+manager)
+    SagemakerHuggingfaceStrategy(deployment_service).deploy(
+        role_arn=settings.ARN_ROLE,
+        llm_image=llm_image,
+        config=hugging_face_deploy_config,
+        endpoint_name=settings.SAGEMAKER_ENDPOINT_INFERENCE,
+        endpoint_config_name=settings.SAGEMAKER_ENDPOINT_CONFIG_INFERENCE,
+        gpu_instance_type=settings.GPU_INSTANCE_TYPE,
+        resources=model_resource_config,
+        endpoint_type=endpoint_type,
+    )
+We must review the three classes used in the create_endpoint() function to fully understand 
+the deployment process. Let’s start with the ResourceManager class. The class begins with the 
+initialization method, establishing the connection to AWS SageMaker using boto3, the AWS 
+SDK for Python, which provides the necessary functions to interact with various AWS services, 
+including SageMaker.
+class ResourceManager:
+    def __init__(self) -> None:
+        self.sagemaker_client = boto3.client(
+            "sagemaker",
+            region_name=settings.AWS_REGION,
+            aws_access_key_id=settings.AWS_ACCESS_KEY,
+            aws_secret_access_key=settings.AWS_SECRET_KEY,
+        )

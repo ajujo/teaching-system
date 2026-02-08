@@ -1,0 +1,20 @@
+figura 10-6. Una puerta de enlace de modelos proporciona una interfaz unificada para
+trabajar con distintos modelos.
+En su forma más simple, una puerta de enlace de modelos es una envoltura
+unificada. El siguiente ejemplo de código le da una idea de cómo podría
+implementarse una puerta de enlace de modelos. No pretende ser funcional,
+ya que no contiene ninguna comprobación de errores ni optimización:
+import google.generativeai as genai
+import openai
+def openai_model(input_data, model_name, max_tokens):
+    openai.api_key = os.environ["OPENAI_API_KEY"]
+    response = openai.Completion.create(
+        engine=model_name,
+        prompt=input_data,
+        max_tokens=max_tokens
+    )
+    return {"response": response.choices[0].text.strip()}
+def gemini_model(input_data, model_name, max_tokens):
+    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+    model = genai.GenerativeModel(model_name=model_name)
+    response = model.generate_content(input_data,

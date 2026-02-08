@@ -1,0 +1,28 @@
+Chapter 4
+157
+            )
+            cls.create_collection()
+            try:
+                cls._bulk_insert(documents)
+            except exceptions.UnexpectedResponse:
+                logger.error(f"Failed to insert documents in '{cls.get_
+collection_name()}'.")
+                return False
+        return True
+    @classmethod
+    def _bulk_insert(cls: Type[T], documents: list["VectorBaseDocument"])
+-> None:
+        points = [doc.to_point() for doc in documents]
+        connection.upsert(collection_name=cls.get_collection_name(),
+points=points)
+The collection name is inferred from the Config class defined in the subclasses inheriting the OVM:
+class VectorBaseDocument(BaseModel, Generic[T], ABC):
+    ... # Rest of the class
+    @classmethod
+    def get_collection_name(cls: Type[T]) -> str:
+        if not hasattr(cls, "Config") or not hasattr(cls.Config, "name"):
+            raise ImproperlyConfigured(
+                "The class should define a Config class with" "the 'name'
+property that reflects the collection's name."
+            )
+        return cls.Config.name

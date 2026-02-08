@@ -1,0 +1,30 @@
+Chapter 6
+249
+LangGraph has a special interrupt function to implement HIL-type interactions. You should 
+include this function in the node, and by the first execution, it would throw a GraphInterrupt 
+exception (the value of which would be presented to the user). To resume the execution of the 
+graph, a client should use the Command class, which we discussed earlier in this chapter. LangGraph 
+would start from the same node, re-execute it, and return corresponding values as a result of the 
+node invoking the interrupt function (if there are multiple interrupts in your node, LangGraph 
+would keep an ordering). You can also use Command to route to different nodes based on the user’s 
+input. Of course, you can use interrupt only when a checkpointer is provided to the graph since 
+its state should be persisted.
+Let’s construct a very simple graph with only the node that asks a user for their home address:
+from langgraph.types import interrupt, Command
+class State(MessagesState):
+   home_address: Optional[str]
+def _human_input(state: State):
+   address = interrupt("What is your address?")
+   return {"home_address": address}
+builder = StateGraph(State)
+builder.add_node("human_input", _human_input)
+builder.add_edge(START, "human_input")
+checkpointer = MemorySaver()
+graph = builder.compile(checkpointer=checkpointer)
+config = {"configurable": {"thread_id": "1"}}
+for chunk in graph.stream({"messages": [("human", "What is weather 
+today?")]}, config):
+   print(chunk)
+>> {'__interrupt__': (Interrupt(value='What is your address?', 
+resumable=True, ns=['human_input:b7e8a744-b404-0a60-7967-ddb8d30b11e3'], 
+when='during'),)}

@@ -1,0 +1,20 @@
+figura 7-12. Mantener los adaptadores LoRA separados permite reutilizar la misma
+matriz W de rango completo durante el multiservicio LoRA.
+Para el multiservicio LoRA, aunque la opción 2 añade sobrecarga de
+latencia, reduce significativamente el almacenamiento necesario. Considere
+el escenario en el que hacen un afinado de un modelo para cada uno de sus
+clientes utilizando LoRA. Con 100 clientes, acaba teniendo 100 modelos
+afinados que comparten el mismo modelo base. Con la opción 1, tiene que
+almacenar 100 matrices de rango completo W′. Con la opción 2, solo tiene
+que almacenar una matriz de rango completo W, y 100 conjuntos de
+matrices más pequeñas (A, B).
+Para poner esto en perspectiva, digamos que la matriz original W es de
+dimensión 4096 × 4096 (16.8 M de parámetros). Si el rango del LoRA es
+8, el número de parámetros en A y B es 4096 × 8 × 2 = 65 536:
+En la opción 1, 100 matrices de rango completo W′ contienen en
+total 16.8M × 100 = 1.68 MM parámetros.
+En la opción 2, una matriz de rango completo W y 100 conjuntos
+de matrices pequeñas (A,B) suman:
+16.8 M + 65.536 × 100 = 23.3 M de parámetros.
+La opción 2 también agiliza el cambio entre tareas. Digamos que
+actualmente está atendiendo al cliente X utilizando el modelo de este

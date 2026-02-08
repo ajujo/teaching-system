@@ -1,0 +1,30 @@
+centradas en datos son DataPerf (MLCom‐ mons, 2023) y dcbench
+(Eyuboglu and Karlaš, 2022).
+La división entre centrado en modelos y centrado en datos ayuda a
+orientar la investigación. En realidad, sin embargo, a menudo un
+progreso tecnológico significativo requiere invertir en la mejora tanto
+de los modelos como de los datos.
+Curación de datos
+Aunque no todos los problemas de los modelos de IA pueden resolverse con
+datos, éstos suelen ser una parte fundamental de la solución. Los datos
+adecuados pueden hacer que el modelo sea más capaz, seguro y que pueda
+manejar contextos más largos. A la inversa, unos datos deficientes pueden
+hacer que el modelo aumente los sesgos y las alucinaciones. Los errores en
+los datos pueden perjudicar al modelo y malgastar recursos.
+La curación de datos es una ciencia que requiere comprender cómo aprende
+el modelo y de qué recursos dispone para ayudarle a aprender. Los
+creadores de conjuntos de datos deben colaborar estrechamente con los
+desarrolladores de aplicaciones y modelos. En un equipo pequeño, pueden
+ser la misma persona: la persona responsable de entrenar un modelo
+también será responsable de adquirir los datos para el mismo. Sin embargo,
+las organizaciones con grandes demandas de datos suelen emplear roles
+especializados. 2
+Qué datos necesite depende de la tarea y de lo que se quiera enseñar al
+modelo. Para el afinado autosupervisado, se necesitan secuencias de datos.
+Para el afinado de instrucciones, se necesitan datos en el formato
+(instrucción, respuesta). Para el afinado de preferencias, se necesitan datos
+en el formato (instrucción, respuesta ganadora, respuesta perdedora). Para
+entrenar un modelo de recompensa, pueden utilizar el mismo formato de
+datos que para el afinado de preferencias o utilizar datos con puntuaciones
+anotadas para cada uno de sus ejemplos en el formato ((instrucción,
+respuesta), puntuación).

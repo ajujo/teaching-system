@@ -1,0 +1,33 @@
+Chapter 6
+235
+For instance, when generating summaries, one might request variations such as concise sum-
+maries, detailed summaries, and summaries focusing on key points. This approach not only 
+produces a diverse dataset but also helps in understanding how different styles and approaches 
+align with human preferences.
+Introducing variability in the outputs is another crucial aspect of generating synthetic preference 
+datasets. This can be achieved by manipulating the temperature settings or employing other 
+sampling methods in the LLM. Higher temperature settings tend to produce more creative and 
+diverse responses, while lower settings result in more focused and deterministic outputs. This 
+creates a trade-off between diversity and coherence, which depends on the kind of data we want 
+to generate. For example, generating code requires low creativity, thus low temperature, while 
+writing articles can be high temperature.
+Using multiple LLMs to generate samples can be better than using just one model. Some LLMs are 
+better at specific tasks, and this approach also adds more variety. This approach is used by popular 
+open-source datasets like argilla/Capybara-Preferences, combining GPT-4 with open-weight 
+models. The evaluation process then selects the chosen and the rejected answers.
+Evaluating preferences
+Data evaluation can be performed by human raters or automated with LLMs. LLM evaluation 
+involves developing detailed criteria, creating a prompt that clearly communicates these guide-
+lines to the LLM, and using the model to select preferred and rejected responses. While more 
+scalable than human rating and allowing the consistent application of criteria, this quality of 
+LLM evaluation depends directly on the model’s performance and the provided guidelines. It 
+may miss subtle human preferences or cultural nuances. However, as LLMs continue to improve, 
+their ability to make nuanced judgments improves as well, potentially leading to higher-quality 
+datasets over time.
+Implementing LLM evaluation for preference datasets can be done through absolute scoring or 
+pairwise ranking. In absolute scoring, the LLM assigns a numerical score or categorical rating to 
+each response based on predefined criteria. This method is straightforward but may suffer from 
+inconsistency across different prompts or evaluation sessions. Pairwise ranking, on the other 
+hand, involves presenting the LLM with two responses and asking it to choose the better one or 
+rank them. This approach more closely mimics the format of human evaluation and can lead to 
+more consistent results.

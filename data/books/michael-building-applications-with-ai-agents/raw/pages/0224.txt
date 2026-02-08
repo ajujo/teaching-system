@@ -1,0 +1,61 @@
+Table 8-1. Durable storage option overview
+Approach
+Pros
+Cons
+Best for
+Relational databases (e.g.,
+PostgreSQL/Redis)
+Flexible, queryable, cost-
+effective
+Manual management,
+potential inconsistency
+Custom, high-query
+systems
+Vector stores (e.g., Pinecone)
+Semantic search, scalable
+embeddings
+Higher cost, specialized setup
+Knowledge-intensive
+agents
+Object storage (e.g., S3)
+Cheap, durable for large data
+Slow access, no native
+indexing
+Archival outputs
+Stateful orchestration
+frameworks
+Automated recovery, low
+boilerplate
+Framework lock-in
+Resilient, long-running
+workflows
+Frameworks like Temporal and Orleans offer a different approach: they abstract away
+much of the complexity of persistence by tightly integrating state management into
+the agent or workflow lifecycle. Temporal automatically checkpoints workflow pro‐
+gress, supports deterministic replay, and handles failures transparently. Orleans ena‐
+bles each actor (agent) to maintain a durable, event-driven state with minimal
+boilerplate. These abstractions reduce development effort and improve resilience, but
+they also impose framework-specific constraints—such as serialization formats, exe‐
+cution models, or language bindings—that may not suit every architecture.
+The right choice depends on the nature of the memory and coordination required:
+• Episodic memory (short-lived, task-specific state) may only need in-memory or
+transient storage with minimal durability.
+• Semantic memory (long-term knowledge across interactions) typically requires
+durable storage with search or vector indexing capabilities.
+• Workflow durability (resilience to mid-process failure) benefits most from inte‐
+grated engines like Temporal or Orleans that automatically checkpoint progress
+and state.
+Ultimately, persistence decisions reflect trade-offs between developer effort, perfor‐
+mance, durability, and flexibility. Systems with tight service-level agreements, cross-
+agent dependencies, or real-time coordination requirements will often benefit from
+workflow-native persistence layers, while more modular or research-oriented systems
+may prefer explicit, database-driven state management that offers more control and
+visibility.
+Conclusion
+The transition from single-agent to multiagent systems offers significant advantages
+in addressing complex tasks, enhancing adaptability, and increasing efficiency. Yet, as
+we’ve explored in this chapter, the scalability that comes with adding more agents
+brings challenges that demand careful planning. Deciding on the optimal number of
+202 
+| 
+Chapter 8: From One Agent to Many

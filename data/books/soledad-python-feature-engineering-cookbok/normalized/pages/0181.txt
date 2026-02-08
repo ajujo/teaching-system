@@ -1,0 +1,23 @@
+Working with Outliers
+158
+Figure 5.3 - Boxplot and histogram of the HouseAge variable
+10.	 Let's find the variable's limits according to the IQR proximity rule:
+lower_limit, upper_limit = find_limits(
+    X, "HouseAge", 1.5)
+If we execute lower_limit and upper_limit, we will see the values -10.5 and 65.5, which
+are beyond the edges of the plots, and hence we don't see any outliers.
+How it works...
+In this recipe, we used the boxplot method from Seaborn to create the boxplots and then we calculated
+the limits beyond which a value could be considered an outlier based on the IQR proximity rule.
+In Figure 5.2, we saw that the box in the boxplot for MedInc extended from approximately 2 to 5,
+corresponding to the first and third quantiles (you can determine these values precisely by executing
+X["MedInc"].quantile(0.25) and X["MedInc"].quantile(0.75)). We also saw that
+the whiskers start at MedInc's minimum on the left and extend up to 8.013 on the right (we know
+this value exactly because we calculated it in step 8). MedInc showed values greater than 8.013,
+which were displayed in the boxplot as dots. Those are the values that could be considered outliers.
+In Figure 5.3, we displayed the boxplot for the HouseAge variable. The box included values ranging
+from approximately 18 to 35 (you can determine the precise values by executing X["HouseAge"].
+quantile(0.25) and X["HouseAge"].quantile(0.75)). The whiskers extended to the
+minimum and maximum values of the distribution. The limits of the whiskers in the plot did not
+coincide with those based on the IQR proximity rule (which we calculated in step 10) because these
+limits were far beyond the value range observed for this variable.

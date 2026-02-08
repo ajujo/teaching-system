@@ -1,0 +1,32 @@
+Desde este punto de vista, la ingeniería de prompts consiste en encontrar el
+prompt adecuado que pueda activar el programa deseado.
+Prompt de sistema y prompt de usuario
+Muchas API de modelos le dan la opción de dividir un prompt en un prompt
+del sistema y un prompt de usuario. Se puede pensar en el prompt del
+sistema como la descripción de la tarea y en el prompt de usuario como la
+tarea. Veámoslo con un ejemplo.
+Imagine que quiere crear un chatbot que ayude a los compradores a
+entender la información de una propiedad. Un usuario puede subir un
+informe y hacer preguntas como "¿Qué edad tiene el tejado?" o "¿Qué tiene
+de inusual esta propiedad?". Usted quiere que este chatbot actúe como un
+agente inmobiliario. Puede poner esta instrucción de juego de rol en el
+prompt del sistema, mientras que la pregunta del usuario y el informe
+cargado pueden estar en el prompt de usuario.
+Prompt del sistema: Eres un agente inmobiliario con experiencia. Tu 
+trabajo 
+consiste en leer detenidamente cada informe, evaluar con 
+imparcialidad el 
+estado de la propiedad basándote en ella y ayudar a tu comprador a 
+comprender 
+los riesgos y oportunidades de cada propiedad. Responde a cada 
+pregunta de forma 
+concisa y profesional.
+Prompt de usuario:
+Contexto: [informe.pdf]
+Pregunta: Resume las quejas por ruido, si las hay, sobre esta 
+propiedad.
+Respuesta:
+Casi todas las aplicaciones de IA generativa, incluida ChatGPT, tienen
+prompts de sistema. Normalmente, las instrucciones proporcionadas por los
+desarrolladores de aplicaciones se colocan en el prompt del sistema,
+mientras que las instrucciones dadas por los usuarios se colocan en el

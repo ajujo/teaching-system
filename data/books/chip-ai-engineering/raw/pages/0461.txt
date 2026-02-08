@@ -1,0 +1,32 @@
+Un sistema de memoria para modelos de IA suele constar de dos funciones:
+Gestión de memoria: manejar la información que debe almacenarse
+en la memoria a corto y largo plazo.
+Recuperación de la memoria: recuperar la información relevante
+para la tarea a partir de la memoria a largo plazo.
+La recuperación de la memoria es similar a la recuperación RAG, ya que la
+memoria a largo plazo es una fuente de datos externa. En esta sección me
+centraré en la gestión de memoria. La gestión de memoria suele consistir en
+dos operaciones: añadir y eliminar memoria. Si la memoria es limitada,
+puede que no sea necesario borrarla. Esto podría funcionar para la memoria
+a largo plazo, porque el almacenamiento en memoria externa es
+relativamente barato y fácilmente ampliable. Sin embargo, la memoria a
+corto plazo está limitada por la longitud máxima del contexto del modelo y,
+por tanto, requiere una estrategia para saber qué añadir y qué eliminar.
+La memoria a largo plazo puede utilizarse para almacenar el
+desbordamiento de la memoria a corto plazo. Esta operación depende del
+espacio que quiera destinar a la memoria a corto plazo. Para una consulta
+determinada, el contexto introducido en el modelo se compone tanto de su
+memoria a corto plazo como de la información recuperada de su memoria a
+largo plazo. Por tanto, la capacidad a corto plazo de un modelo viene
+determinada por qué tanto contexto debe asignarse a la información
+recuperada de la memoria a largo plazo. Por ejemplo, si el 30 % del
+contexto está reservado, el modelo puede utilizar como máximo el 70 % del
+límite de contexto para la memoria a corto plazo. Cuando se alcanza este
+umbral, el desbordamiento puede trasladarse a la memoria a largo plazo.
+Al igual que muchos componentes tratados anteriormente en este capítulo,
+la gestión de memoria no es exclusiva de las aplicaciones de IA. La gestión
+de memoria ha sido la piedra angular de todos los sistemas de datos, y se
+han desarrollado muchas estrategias para utilizar la memoria de forma
+eficiente.
+La estrategia más sencilla es FIFO: primero en entrar, primero en salir. Lo
+primero que se añada a la memoria a corto plazo será lo que primero se

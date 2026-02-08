@@ -1,0 +1,16 @@
+2. Coincidencia exacta: si la respuesta generada coincide exactamente
+con una de las respuestas de referencia.
+3. Similitud léxica: qué tan similar la respuesta generada se ve con las
+respuestas de referencia.
+4. Similitud semántica: que tan similar es la respuesta generada a las
+respuestas de referencia en cuanto a significado (semántica).
+Dos respuestas pueden ser comparadas por evaluadores humanos o
+evaluadores de IA. Estos son cada vez más comunes y serán el tema central
+de la siguiente sección.
+Esta sección se centra en las métricas diseñadas a mano: coincidencia
+exacta, similitud léxica y similitud semántica. Las puntuaciones por
+coincidencia exacta son binarias (coincide o no), mientras que las otras dos
+puntuaciones se sitúan en una escala móvil (por ejemplo, entre 0 y 1 o entre
+-1 y 1). A pesar de la facilidad de uso y la flexibilidad del enfoque de la IA
+como juez, las mediciones de similitud diseñadas a mano siguen siendo
+muy utilizadas en la industria por su naturaleza exacta.

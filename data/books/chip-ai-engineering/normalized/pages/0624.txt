@@ -1,0 +1,16 @@
+Imagine que su aplicación tiene los siguientes objetivos: TTFT de 200 ms
+como máximo y TPOT de 100 ms como máximo. Supongamos que su
+servicio de inferencia puede completar 100 solicitudes por minuto. Sin
+embargo, de estas 100 solicitudes, solo 30 satisfacen la SLO. Entonces, el
+goodput de este servicio es de 30 solicitudes por minuto. En la Figura 9-4 se
+puede visualizar esto.
+figura 9-4. Si un servicio de inferencia puede completar 10 RPS pero solo 3 satisfacen
+el SLO, su goodput es de 3 RPS.
+Utilización, MFU y MBU
+Las métricas de utilización miden la eficiencia con la que se utiliza un
+recurso. Suelen cuantificar la proporción del recurso que se utiliza
+activamente en comparación con su capacidad total disponible.
+La utilización de la GPU es una métrica común pero a menudo
+malinterpretada, y parte de la culpa de este malentendido la tiene NVIDIA.
+La herramienta oficial de NVIDIA para monitorear el uso de la GPU es
+nvidia-smi-SMI significa Interfaz de Gestión del Sistema. Una de las

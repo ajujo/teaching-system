@@ -1,0 +1,23 @@
+jueces basados en referencias, ¿Qué modelos pueden actuar como jueces?
+juegos de rol, Criterios de seguimiento de instrucciones
+juez de IA, Introducción a la incrustación
+– (ver también la IA como juez)
+K
+kernels, Rediseñar el mecanismo de atención, Kernels y compiladores
+L
+la IA como juez, Introducción a la incrustación
+– basado en referencias, ¿Qué modelos pueden actuar como jueces?
+– limitaciones, Cómo utilizar la IA como juez
+– ambigüedad de los criterios, Incoherencia
+– incoherencia, Incoherencia
+– mayores costes y latencia, Ambigüedad de los criterios
+– sesgos, Ambigüedad de los criterios
+– modelos, Sesgos de la IA como juez
+– razones, La IA como juez
+– usos, Cómo utilizar la IA como juez
+LangChain, Evaluar las herramientas de ingeniería de prompts, Defensa a
+nivel de prompt, Memoria
+language models, Modelos lingüísticos
+latencia
+– fiabilidad frente a, Implementación de barreras de seguridad
+– jueces de IA y, Ambigüedad de los criterios

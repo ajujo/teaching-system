@@ -1,0 +1,36 @@
+Implementing equal-frequency discretization
+123
+Note
+EqualWidthDiscretiser() extends the values of the first and last interval to minus and 
+plus infinity by default to automatically accommodate smaller and greater values than those 
+seen in the training set.
+We followed the discretization with bar plots to display the fraction of observations per interval for 
+each of the transformed variables. We could see that if the original variable was skewed, the bar plot 
+was also skewed. Note how some of the intervals of the MedInc and AveRooms variables, which 
+had skewed distributions, contained very few observations. In particular, even though we wanted to 
+create eight bins for AveRooms, there were only enough values to create five, and most values of the 
+variables were allocated to the first interval.
+Finally, we discretized three continuous variables into equal-width bins with KBinsDiscretizer() 
+from scikit-learn. To create equal-width bins, we set the strategy argument to uniform. With 
+fit(), the transformer learned the limits of the intervals, and with transform(), it sorted the 
+values into each interval.
+We used the ColumnTransformer() to restrict the discretization to the selected variables, setting the 
+transform output to pandas to obtain a DataFrame after the transformation. KBinsDiscretizer() 
+can return the intervals as ordinal numbers, as we had it do in the recipe, or as one-hot-encoded 
+variables. The behavior can be modified through the encode parameter.
+See also
+For a comparison of equal-width discretization with more sophisticated methods, see Dougherty J, 
+Kohavi R, Sahami M. Supervised and unsupervised discretization of continuous features. In: Proceedings 
+of the 12th international conference on machine learning. San Francisco: Morgan Kaufmann; 1995. 
+p. 194–202.
+Implementing equal-frequency discretization
+Equal-width discretization is intuitive and easy to compute. However, if the variables are skewed, then 
+there will be many empty bins or bins with only a few values, while most observations will be allocated 
+to a few intervals. This could result in a loss of information. This problem can be solved by adaptively 
+finding the interval cut-points so that each interval contains a similar fraction of observations.
+Equal-frequency discretization divides the values of the variable into intervals that carry the same 
+proportion of observations. The interval width is determined by quantiles. Quantiles are values that 
+divide data into equal portions. For example, the median is a quantile that divides the data into two 
+halves. Quartiles divide the data into four equal portions, and percentiles divide the data into 100 
+equal-sized portions. As a result, the intervals will most likely have different widths, but a similar 
+number of observations. The number of intervals is defined by the user.

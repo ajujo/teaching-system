@@ -1,0 +1,32 @@
+RAG Feature Pipeline
+158
+Now, we must define a method that lets us read all the records from the vector DB (without using 
+vector similarity search logic). The bulk_find() method enables us to scroll (or list) all the records 
+from a collection. The function below scrolls the Qdrant vector DB, which returns a list of data 
+points, which are ultimately mapped to our internal structure using the from_record() method.
+The limit parameters control how many items we return at once, and the offset signals the ID of 
+the point from which Qdrant starts returning records.
+class VectorBaseDocument(BaseModel, Generic[T], ABC):
+    … # Rest of the class
+    @classmethod
+    def bulk_find(cls: Type[T], limit: int = 10, **kwargs) -> 
+tuple[list[T], UUID | None]:
+        try:
+            documents, next_offset = cls._bulk_find(limit=limit, **kwargs)
+        except exceptions.UnexpectedResponse:
+            logger.error(f"Failed to search documents in '{cls.get_
+collection_name()}'.")
+            documents, next_offset = [], None
+        return documents, next_offset
+    @classmethod
+    def _bulk_find(cls: Type[T], limit: int = 10, **kwargs) -> 
+tuple[list[T], UUID | None]:
+        collection_name = cls.get_collection_name()
+        offset = kwargs.pop("offset", None)
+        offset = str(offset) if offset else None
+        records, next_offset = connection.scroll(
+            collection_name=collection_name,
+            limit=limit,
+            with_payload=kwargs.pop("with_payload", True),
+            with_vectors=kwargs.pop("with_vectors", False),
+            offset=offset,

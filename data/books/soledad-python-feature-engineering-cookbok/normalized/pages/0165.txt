@@ -1,0 +1,14 @@
+Performing Variable Discretization
+142
+In the following histograms, we can see that the different words appear zero times in
+most documents:
+Figure 4.10 - Histograms representing the number of times each word appears in a document
+4.
+Let's set up binarizer to clip all values greater than 1 to 1 and return DataFrames as a result:
+binarizer = Binarizer(threshold = 0) .set_
+output(transform="pandas")
+5.
+Let's binarize the variables:
+data_t = binarizer.fit_transform(data)
+Now we can explore the distribution of the binarized variables by displaying the histograms as
+in step 3, or better, by creating bar plots.

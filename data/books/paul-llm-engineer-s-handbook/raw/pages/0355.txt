@@ -1,0 +1,32 @@
+RAG Inference Pipeline
+324
+    embedding: list[float]
+    class Config:
+        category = DataCategory.QUERIES
+The EmbeddedQuery class extends Query by adding the embedding field. The EmbeddedQuery entity 
+encapsulates all the data and metadata necessary to perform vector search operations on top of 
+Qdrant (or another vector DB).
+Now that we understand all the interfaces and new domain entities used within the RAG inference 
+pipeline, let’s move on to our advanced RAG pre-retrieval optimization techniques.
+Advanced RAG pre-retrieval optimizations: query expansion 
+and self-querying
+We implemented two methods to optimize the pre-retrieval optimization step: query expansion 
+and self-querying. The two methods work closely with the filtered vector search step, which we 
+will touch on in the next section. For now, however, we will start with understanding the code 
+for query expansion and move to implementing self-querying.
+Within these two methods, we will leverage OpenAI’s API to generate variations of the original 
+query within the query expansion step and to extract the necessary metadata within the self-que-
+rying algorithm. When we wrote this book, we used GPT-4o-mini in all our examples, but as 
+OpenAI’s models quickly evolve, the model might get deprecated. But that’s not an issue, as you 
+can quickly change it in your .env file by configuring the OPENAI_MODEL_ID environment variable.
+Query expansion
+The problem in a typical retrieval step is that you query your vector DB using a single vector rep-
+resentation of your original question. This approach covers only a small area of the embedding 
+space, which can be limiting. If the embedding doesn’t contain all the required information or 
+nuances of your query, the retrieved context may not be relevant. This means essential documents 
+that are semantically related but not near the query vector might be overlooked.
+The solution is based on query expansion, which offers a way to overcome this limitation. Using an 
+LLM to generate multiple queries based on your initial question, you create various perspectives 
+that capture different facets of your query. These expanded queries, when embedded, target other 
+areas of the embedding space that are still relevant to your original question. This increases the 
+likelihood of retrieving more relevant documents from the vector DB. 

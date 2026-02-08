@@ -1,0 +1,30 @@
+Setting up an entity set and creating features automatically
+277
+Note
+The command from step 12 triggered the creation of 114 features with different aggregations of
+data at the customer level. The feature_matrix variable is a DataFrame with the feature
+values, and feature_defs is a list with the names of the new features. Go ahead and execute
+feature_defs or visit our accompanying GitHub repository (https://github.com/
+PacktPublishing/Python-Feature-Engineering-Cookbook-Third-Edition/
+blob/main/ch09-featuretools/Recipe1-Setting-up-an-entitity-set.
+ipynb) to check the names of the created features. You will find more details about these
+features in the How it works... section.
+13.	 For reasons of space, we can't print out all the features in the book, so instead, let's display the
+names of five of the created features:
+feature_defs[5:10]
+In the following output, we see 5 of the 114 features created by featuretools:
+[<Feature: MIN(data.price)>,
+<Feature: MIN(data.quantity)>,
+<Feature: MODE(data.description)>,
+<Feature: MODE(data.stock_code)>,
+<Feature: NUM_UNIQUE(data.description)>]
+Note
+The featuretools library names the new features with the function used to create them,
+followed by the DataFrame that was used to perform the aggregation, followed by the aggregated
+variable name. Thus, MIN(data.quantity) is equivalent to df.groupby(["customer_
+id"])["quantity"].min(), if you are familiar with pandas. We will give more details
+in the How it works... section.
+14.	 Let's display the first five rows of the DataFrame containing five of the created features:
+feature_matrix[feature_matrix.columns[5:10]].head()
+In the following output, we can see the first five rows containing the values of the five new features:
+Figure 9.6 - DataFrame with five features created by aggregating the data at the customer level

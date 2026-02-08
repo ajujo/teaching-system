@@ -1,0 +1,20 @@
+respuestas de su modelo carecen de los detalles que busca el usuario.
+También pueden indicar una desconfianza general en su modelo.
+Algunas aplicaciones permiten a los usuarios editar directamente las
+respuestas del modelo. Por ejemplo, si un usuario pide al modelo que
+genere código y el usuario corrige el código generado, es una señal muy
+clara de que el código que se ha editado no era del todo correcto.
+Las ediciones de los usuarios también son una valiosa fuente de datos sobre
+preferencias. Recordemos que los datos de preferencias, normalmente en el
+formato de (consulta, respuesta ganadora, respuesta perdedora), pueden
+utilizarse para alinear un modelo con las preferencias humanas. Cada
+edición del usuario constituye un ejemplo de preferencia, siendo la
+respuesta generada originalmente la respuesta perdedora, y la respuesta
+editada la respuesta ganadora.
+Quejas
+A menudo, los usuarios se limitan a quejarse de los outputs de su aplicación
+sin intentar corregirlos. Por ejemplo, pueden quejarse de que una respuesta
+es incorrecta, irrelevante, tóxica, larga, falta de detalles o simplemente
+mala. La Tabla 10-1 muestra ocho grupos de retroalimentación de lenguaje
+natural resultantes del clustering automático del conjunto de datos FITS
+(Feedback for Interactive Talk & Search) (Xu et al., 2022).

@@ -1,0 +1,73 @@
+cuya disponibilidad como datos de entrenamiento es limitada (que suelen
+ser los excluidos de esta lista) se consideran bajos en recursos.
+tabla 2-1. Los idiomas más comunes en Common Crawl, un popular conjunt
+para el entrenamiento de LLMs. Fuente: Lai et al. (2023).
+Idioma
+Código
+Pob.
+Tamaño CC
+(M)
+(%)
+Cat.
+Inglés
+en
+1452
+45.8786
+H
+Ruso
+ru
+258
+5.9692
+H
+Alemán
+de
+134
+5.8811
+H
+Chino
+zh
+1118
+4.8747
+H
+Japonés
+jp
+125
+4.7884
+H
+Francés
+fr
+274
+4.7254
+H
+Español
+es
+548
+4.4690
+H
+Italiano
+it
+68
+2.5712
+H
+Neerlandés
+nl
+30
+2.0585
+H
+Polaco
+pl
+45
+1.6636
+H
+Portugués
+pt
+257
+1.1505
+H
+Vietnamita
+vi
+85
+1.0299
+H
+Muchos otros idiomas, a pesar de tener muchos hablantes hoy en día, están
+muy poco representados en Common Crawl. La Tabla 2-2 muestra algunos

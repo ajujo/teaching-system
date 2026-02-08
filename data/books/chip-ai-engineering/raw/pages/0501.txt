@@ -1,0 +1,57 @@
+tabla 7-4. Rendimiento de BitNet b1.58 comparado con el de Llama 2 16 bits
+parámetros. Resultados de Ma et al. (2024).
+Modelo
+Tamaño
+ARCe
+ARCc
+HS
+Llama LLM
+700M
+54.7
+23.0
+37.0
+BitNet b1.58
+700M
+51.8
+21.4
+35.1
+Llama LLM
+1.3 MM
+56.9
+23.5
+38.5
+BitNet b1.58
+1.3 MM
+54.9
+24.2
+37.7
+Llama LLM
+3 MM
+62.1
+25.6
+43.3
+BitNet b1.58
+3 MM
+61.4
+28.3
+42.9
+BitNet b1.58
+3.9B
+64.2
+28.7
+44.2
+La precisión reducida no solo reduce la huella de memoria, sino que
+también suele mejorar la velocidad de cómputo. En primer lugar, permite un
+mayor tamaño de lote, lo que permite al modelo procesar más inputs en
+paralelo. En segundo lugar, la precisión reducida acelera el cómputo, lo que
+reduce aún más la latencia de la inferencia y el tiempo de entrenamiento.
+Para ilustrarlo, consideremos la suma de dos números. Si realizamos la
+suma bit a bit, y cada uno tarda t nanosegundos, tardará 32t nanosegundos
+para 32 bits pero solo 16t nanosegundos para 16 bits. Sin embargo, reducir
+la precisión no siempre reduce la latencia debido al cómputo adicional
+necesario para la conversión de formatos.
+Reducir la precisión tiene sus inconvenientes. Cada conversión suele
+provocar un pequeño cambio de valor, y muchos cambios pequeños pueden
+causar un gran cambio en el rendimiento. Si un valor está fuera del rango
+que puede representar el formato de precisión reducida, podría convertirse
+en infinito o en un valor arbitrario, lo que degradaría aún más la calidad del

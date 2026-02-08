@@ -1,0 +1,17 @@
+condensado su experiencia para los nuevos ingenieros de IA que se inician
+en este campo.
+—swyx, Curador, AI.Engineer
+Ingeniería de IA es una guía práctica que ofrece la información más
+actualizada sobre el desarrollo de la IA, haciéndola accesible tanto a los
+líderes noveles como a los expertos. Este libro es un recurso esencial para
+cualquiera que desee crear sistemas de IA sólidos y escalables.
+—Vicki Reyzelman, Arquitecta Jefe de Soluciones de IA, Mave Sparks
+Ingeniería de IA es una guía completa que sirve de referencia esencial tanto
+para comprender como para implementar sistemas de IA en la práctica.
+—Han Lee, Director de Ciencia de Datos, Moody's
+Ingeniería de IA es una guía esencial para cualquier persona que desarrolle
+software con IA generativa. Desmitifica la tecnología, destaca la
+importancia de la evaluación y comparte lo que debe hacerse para lograr
+calidad antes de empezar con un costoso afinado.
+—Rafal Kawala, Director Senior de Ingeniería de IA, 16 años de
+experiencia en una empresa de Fortune 500.

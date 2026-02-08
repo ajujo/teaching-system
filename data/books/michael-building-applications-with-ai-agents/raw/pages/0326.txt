@@ -1,0 +1,42 @@
+scopes without clear policy. Designing memory systems that respect these privacy
+boundaries—and make them auditable and enforceable—is key to ethical scalability.
+Personal agents often store simple, user-specific context: preferences, past queries, in-
+progress tasks. But a team or departmental agent may need access to shared goals,
+conversations, or documents, and an org-level agent might build long-term memory
+of patterns across the business.
+These broader memories are powerful—but also more sensitive. If a team agent
+recalls something shared in a private one-to-one chat, or a department agent surfaces
+confidential data across business units, the result could be a serious breach of trust or
+compliance.
+To avoid this, memory must be scoped appropriately. Personal agents should default
+to isolated memory, only sharing data when explicitly allowed. Team and department
+agents should operate within shared but access-controlled memory spaces. Org-wide
+agents should work within policy-governed systems that enforce retention rules, log‐
+ging, and auditability. In all cases, agents should be able to explain what they remem‐
+ber and why—and users should be able to inspect or delete that memory when
+needed.
+Designers must also consider context flow. Should memory move upward (e.g., from
+a personal agent to a project agent)? Can agents query one another for context, or
+must they stay siloed? Clear boundaries are essential to prevent unintentional leaks or
+scope creep.
+Just as important is making memory behavior transparent. Users should know what
+their agent remembers and be able to control it. That means surfacing memory visi‐
+bly in the interface, giving people the ability to turn it off, and ensuring agents never
+make hidden assumptions based on stale or private data.
+Ultimately, memory isn’t just a technical feature—it’s a source of power, trust, and
+risk. As agents operate at broader levels, we must treat memory as an asset that
+requires explicit governance, not an afterthought bolted onto stateful systems. Sys‐
+tems that manage memory well will feel coherent, helpful, and respectful. Systems
+that don’t will feel invasive, opaque, and unsafe.
+As you’ve seen, designing agents for scopes from personal assistants to enterprise-
+wide orchestrators requires tailoring autonomy, access controls, and interface pat‐
+terns at each level. But remember: this is not a one-and-done exercise. Effective
+collaboration at scale is part of the same evolving journey we introduced at the start
+of this chapter—where human roles shift, trust deepens, and governance adapts
+alongside capability. Every new scope you unlock—from a project bot to a division-
+level adviser—is another step along that arc of progressive delegation. With these pat‐
+terns in hand, we’re ready to address the critical foundations of trust, governance, and
+compliance that underpin safe, ethical collaboration at every level.
+304 
+| 
+Chapter 13: Human-Agent Collaboration

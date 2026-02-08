@@ -1,0 +1,34 @@
+En segundo lugar, el afinado requiere saber cómo entrenar los modelos. Hay
+que evaluar los modelos base para elegir uno que afinar. Dependiendo de
+sus necesidades y recursos, las opciones pueden ser limitadas. Aunque las
+API y los marcos de afinado pueden automatizar muchos pasos del proceso
+de afinado, aún es necesario comprender las diferentes "palancas" de
+entrenamiento que se pueden ajustar, supervisar el proceso de aprendizaje y
+depurar cuando algo va mal. Por ejemplo, hay que entender cómo funciona
+un optimizador, qué ritmo de aprendizaje utilizar, cuántos datos de
+entrenamiento se necesitan, cómo abordar el sobreafinado/infraafinado y
+cómo evaluar los modelos a lo largo del proceso.
+En tercer lugar, una vez que tenga un modelo afinado, tendrá que averiguar
+cómo hacerlo funcionar. ¿Lo alojará usted mismo o utilizará un servicio
+API? Como se trató en el Capítulo 9, la optimización de la inferencia para
+modelos grandes, especialmente LLMs, no es nada trivial. El afinado
+requiere menos esfuerzo técnico si ya aloja sus modelos internamente y está
+familiarizado con su funcionamiento.
+Y lo que es más importante, debe establecer una política y un presupuesto
+para monitorear, mantener y actualizar su modelo. A medida que itera sobre
+su modelo afinado, se desarrollan nuevos modelos base a gran velocidad.
+Estos modelos base pueden mejorar más rápido de lo que usted puede
+mejorar su modelo afinado. Si un nuevo modelo base supera a su modelo
+afinado en su tarea específica, ¿qué tan significativa tiene que ser la mejora
+de rendimiento antes de que cambie al nuevo modelo base? ¿Y si un nuevo
+modelo base no supera inmediatamente al actual, pero tiene potencial para
+hacerlo tras un afinado? ¿Experimentaría con él?
+En muchos casos, el cambio a un modelo mejor solo proporcionaría una
+pequeña mejora incremental, y su tarea podría recibir una prioridad inferior
+a la de proyectos con mayores beneficios, como la habilitación de nuevos
+casos de uso. 2
+Los experimentos de ingeniería de IA deben comenzar con el prompting,
+siguiendo las buenas prácticas comentadas en el Capítulo 6. Explore
+soluciones más avanzadas solo si el prompting por sí solo resulta
+inadecuado. Asegúrese de haber probado a fondo varios prompts, ya que el
+rendimiento de un modelo puede variar mucho con distintos prompts.

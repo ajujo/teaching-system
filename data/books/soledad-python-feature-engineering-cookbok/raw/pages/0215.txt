@@ -1,0 +1,36 @@
+Extracting Features from Date and Time Variables
+192
+Finally, we captured the difference from one datetime variable to today’s date. We obtained the 
+date and time of today (at the time of writing) by using today() from the built-in datetime 
+Python library.
+There's more...
+We can automate the creation of features that capture the time between variables by using the 
+feature-engine‘s transformer DatetimeSubstraction().
+1.	
+Let’s import pandas and feature-engine’s transformer:
+import pandas as pd
+from feature_engine.datetime import (
+    DatetimeSubtraction
+)
+2.	
+Let’s re-create the sample dataset that we described in Step 2 of the How to do it… section:
+date = "2024-05-17"
+rng_hr = pd.date_range(date, periods=20, freq="h")
+rng_month = pd.date_range(date, periods=20, freq="ME")
+df = pd.DataFrame(
+    {"date1": rng_hr, "date2": rng_month})
+3.	
+Let’s set up DatetimeSubstraction()to return the time difference between the second 
+date and the first date expressed in days:
+ds = DatetimeSubtraction(
+    variables="date2",
+    reference="date1",
+    output_unit="D",
+)
+Note
+We can obtain the difference between more than two variables by passing variable lists in the 
+variables and reference parameters.
+4.	
+Let’s create and then display the new feature:
+dft = ds.fit_transform(df)
+dft.head()

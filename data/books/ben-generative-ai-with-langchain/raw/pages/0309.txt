@@ -1,0 +1,37 @@
+Software Development and Data Analysis Agents
+282
+•	
+User input and visualization: Google Trends and PowerBI Toolkit highlight the ecosys­
+tem’s focus on bringing in external data (such as market trends) and then visualizing 
+it effectively. The “human as a tool” integration is a reminder that, sometimes, human 
+judgment remains indispensable, especially in ambiguous scenarios.
+Having explored the theoretical framework and potential benefits of LLM-assisted software 
+development, let’s now turn to practical implementation. In the following section, we’ll demon­
+strate how to generate functional software code with LLMs and execute it directly from within 
+the LangChain framework. This hands-on approach will illustrate the concepts we’ve discussed 
+and provide you with actionable examples you can adapt to your own projects.
+Writing code with LLMs 
+In this section, we demonstrate code generation using various models integrated with LangChain. 
+We’ve selected different models to showcase: 
+•	
+LangChain’s diverse integrations with AI tools 
+•	
+Models with different licensing and availability 
+•	
+Options for local deployment, including smaller models 
+These examples illustrate LangChain’s flexibility in working with various code generation models, 
+from cloud-based services to open-source alternatives. This approach allows you to understand 
+the range of options available and choose the most suitable solution for your specific needs and 
+constraints. 
+Google generative AI
+The Google generative AI platform offers a range of models designed for instruction following, 
+conversion, and code generation/assistance. These models also have different input/output limits 
+and training data and are often updated. Let’s see if the Gemini Pro model can solve FizzBuzz, a 
+common interview question for entry-level software developer positions. 
+Please make sure you have installed all the dependencies needed for this book, as 
+explained in Chapter 2. Otherwise, you might run into issues. 
+Given the pace of the field and the development of the LangChain library, we are 
+making an effort to keep the GitHub repository up to date. Please see https://
+github.com/benman1/generative_ai_with_langchain.
+For any questions or if you have any trouble running the code, please create an issue 
+on GitHub or join the discussion on Discord: https://packt.link/lang.

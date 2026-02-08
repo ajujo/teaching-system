@@ -1,0 +1,18 @@
+Inference Optimization
+316
+•	
+T. Dettmers, M. Lewis, Y. Belkada, L. Zettlemoyer, LLM.int8(): 8-bit Matrix Multiplication for 
+Transformers at Scale, 2022.
+•	
+G. Gerganov, llama.cpp, https://github.com/ggerganov/llama.cpp, 2023.
+•	
+E. Frantar, S. Ashkboos, T. Hoefler, D. Alistarh, GPTQ: Accurate Post-Training Quantization for 
+Generative Pre-trained Transformers, 2023.
+•	
+Tuboderp, exllamav2, https://github.com/turboderp/exllamav2, 2023.
+•	
+J. Lin, J. Tang, H. Tang, S. Yang, W.-M. Chen, W.-C. Wang, G. Xiao, X. Dang, C. Gan, S. Han, 
+AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration, 2024.
+Join our book’s Discord space
+Join our community’s Discord space for discussions with the authors and other readers:
+https://packt.link/llmeng

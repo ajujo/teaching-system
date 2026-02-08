@@ -1,0 +1,38 @@
+Chapter 6
+261
+We limited the number of candidates, but we can potentially increase it and add additional pruning
+logic (which will prune the leaves that are not promising). We can use the same LLM-as-a-judge
+approach, or use some other heuristic for pruning. We can also explore more advanced pruning
+strategies; we'll talk about one of them in the next section.
+Trimming ToT with MCTS
+Some of you might remember AlphaGo - the first computer program that defeated humans in a
+game of Go. Google DeepMind developed it back in 2015, and it used Monte Carlo Tree Search
+(MCTS) as the core decision-making algorithm. Here's a simple idea of how it works. Before
+taking the next move in a game, the algorithm builds a decision tree with potential future moves,
+with nodes representing your moves and your opponent's potential responses (this tree expands
+quickly, as you can imagine). To keep the tree from expanding too fast, they used MCTS to search
+only through the most promising paths that lead to a better state in the game.
+Now, coming back to the ToT pattern we learned about in the previous chapter. Think about
+the fact that the dimensionality of the ToT we've been building in the previous section might
+grow really fast. If, on every step, we're generating 3 candidates and there are only 5 steps in the
+workflow, we'll end up with 3
+5=243 steps to evaluate. That incurs a lot of cost and time. We can
+trim the dimensionality in different ways, for example, by using MCTS. It includes selection and
+simulation components:
+•
+Selection helps you pick the next node when analyzing the tree. You do that by balanc­
+ing exploration and exploitation (you estimate the most promising node but add some
+randomness to this process).
+•
+After you expand the tree by adding a new child to it, if it's not a terminal node, you
+need to simulate the consequences of it. This might be done just by randomly playing all
+the next moves until the end, or using more sophisticated simulation approaches. After
+evaluating the child, you backpropagate the results to all the parent nodes by adjusting
+their probability scores for the next round of selection.
+We're not aiming to go into the details and teach you MCTS. We only want to demonstrate how you
+apply already-existing algorithms to agentic workflows to increase their performance. One such
+example is a LATS approach suggested by Andy Zhou and colleagues in June 2024 in their paper
+Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models. Without
+going into too much detail (you're welcome to look at the original paper or the corresponding
+tutorials), the authors added MCTS on top of ToT, and they demonstrated an increased perfor­
+mance on complex tasks by getting number 1 on the HumanEval benchmark.

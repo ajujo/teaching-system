@@ -1,0 +1,30 @@
+Data Engineering
+86
+        if instance:
+            return cls.from_mongo(instance)
+        return None
+    except errors.OperationFailure:
+        logger.error("Failed to retrieve document.")
+        return None
+Similarly, the bulk_find() class method retrieves multiple documents matching the filter options.
+It converts each retrieved MongoDB document into a model instance, collecting them into a list:
+@classmethod
+def bulk_find(cls: Type[T], **filter_options) -> list[T]:
+    collection = _database[cls.get_collection_name()]
+    try:
+        instances = collection.find(filter_options)
+        return [document for instance in instances if (document := cls.
+from_mongo(instance)) is not None]
+    except errors.OperationFailure:
+        logger.error("Failed to retrieve document.")
+        return []
+Finally, the get_collection_name() class method determines the name of the MongoDB collection associated with the class. It expects the class to have a nested Settings class with a name attribute specifying the collection name. If this configuration is missing, an ImproperlyConfigured
+exception will be raised specifying that the subclass should define a nested Settings class:
+@classmethod
+def get_collection_name(cls: Type[T]) -> str:
+    if not hasattr(cls, "Settings") or not hasattr(cls.Settings, "name"):
+        raise ImproperlyConfigured(
+            "Document should define an Settings configuration class with
+the name of the collection."
+        )
+    return cls.Settings.name

@@ -1,0 +1,32 @@
+Imputing categorical variables
+15
+Note
+With the variables parameter set to None, CategoricalImputer() will automatically
+impute all categorical variables found in the train set. Use this parameter to restrict the imputation
+to a subset of categorical variables, as shown in step 13.
+14.	 Fit the imputer to the train set so that it learns the most frequent categories:
+imputer.fit(X_train)
+Note
+To impute categorical variables with a specific string, set imputation_method to missing
+and fill_value to the desired string.
+15.	 Let's check out the learned categories:
+imputer.imputer_dict_
+We can see the dictionary with the most frequent values in the following output:
+{'A1': 'b',
+ 'A4': 'u',
+ 'A5': 'g',
+ 'A6': 'c',
+ 'A7': 'v',
+ 'A9': 't',
+ 'A10': 'f',
+ 'A12': 'f',
+ 'A13': 'g'}
+16.	 Finally, let's replace the missing values with frequent categories:
+X_train_t = imputer.transform(X_train)
+X_test_t = imputer.transform(X_test)
+If you want to impute numerical variables with a string or the most frequent value using
+CategoricalImputer(), set the ignore_format parameter to True.
+CategoricalImputer() returns a pandas DataFrame as a result.
+How it works...
+In this recipe, we replaced missing values in categorical variables with the most frequent categories
+or an arbitrary string. We used pandas, scikit-learn, and feature-engine.

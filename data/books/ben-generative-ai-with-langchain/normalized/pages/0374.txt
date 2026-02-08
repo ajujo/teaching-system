@@ -1,0 +1,30 @@
+Chapter 8
+347
+    "Claim ID INS78910, Policy Number POL12345, and the damage is
+estimated at $3500. "
+    "Please process my claim."
+)
+result = extraction_chain.invoke({"input": sample_claim_text})
+print("Extraction Result:")
+print(result)
+This showed how to evaluate structured information extraction from insurance claims text, using
+a Pydantic schema to standardize extraction and LangSmith to assess performance.
+Summary
+In this chapter, we outlined critical strategies for evaluating LLM applications, ensuring robust
+performance before production deployment. We provided an overview of the importance of
+evaluation, architectural challenges, evaluation strategies, and types of evaluation. We then
+demonstrated practical evaluation techniques through code examples, including correctness
+evaluation using exact matches and LLM-as-a-judge approaches. For instance, we showed how
+to implement the ExactMatchStringEvaluator for comparing answers about Federal Reserve
+interest rates, and how to use ScoreStringEvalChain for more nuanced evaluations. The exam­
+ples also covered JSON format validation using JsonValidityEvaluator and assessment of agent
+trajectories in healthcare scenarios.
+Tools like LangChain provide predefined evaluators for criteria such as conciseness and relevance,
+while platforms like LangSmith enable comprehensive testing and monitoring. The chapter pre­
+sented code examples using LangSmith to create and evaluate datasets, demonstrating how to
+assess model performance across multiple criteria. The implementation of pass@k metrics using
+Hugging Face's Evaluate library was shown for assessing code generation capabilities. We also
+walked through an example of evaluating insurance claim text extraction using structured sche­
+mas and LangChain's evaluation capabilities.
+Now that we've evaluated our AI workflows, in the next chapter we'll look at how we can deploy
+and monitor them. Let's discuss deployment and observability!

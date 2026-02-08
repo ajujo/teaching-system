@@ -1,0 +1,41 @@
+Chapter 4
+127
+•
+Non-Metric Space Library (nmslib) supports various indexing algorithms like HNSW,
+SW-graph, and SPTAG.
+•
+SPTAG by Microsoft implements a distributed ANN. It comes with a k-d tree and relative
+neighborhood graph (SPTAG-KDT), and a balanced k-means tree and relative neighbor­
+hood graph (SPTAG-BKT).
+When implementing vector storage solutions, consider:
+•
+The tradeoff between exact and approximate search
+•
+Memory constraints and scaling requirements
+•
+The need for hybrid search capabilities combining vector and traditional search
+•
+Multi-modal data support requirements
+•
+Integration costs and maintenance complexity
+For many applications, a hybrid approach combining vector search with traditional database
+capabilities provides the most flexible solution.
+Breaking down the RAG pipeline
+Think of the RAG pipeline as an assembly line in a library, where raw materials (documents) get
+transformed into a searchable knowledge base that can answer questions. Let us walk through
+how each component plays its part.
+1.
+Document processing - the foundation
+Document processing is like preparing books for a library. When documents first enter
+the system, they need to be:
+•
+Loaded using document loaders appropriate for their format (PDF, HTML, text,
+etc.)
+•
+Transformed into a standard format that the system can work with
+•
+Split into smaller, meaningful chunks that are easier to process and retrieve
+For example, when processing a textbook, we might break it into chapter-sized or para­
+graph-sized chunks while preserving important context in metadata.
+There are a lot more vector search libraries you can choose from. You can get a com­
+plete overview at https://github.com/erikbern/ann-benchmarks.

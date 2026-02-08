@@ -1,0 +1,31 @@
+Transforming Numerical Variables
+94
+10.	 Now, let's make a copy of the original dataset and transform the variable:
+X_tf = X.copy()
+X_tf["AveOccup"] = transformer.transform(
+    X["AveOccup"])
+You can check the effect of the transformation using the function from step 3.
+Note
+The inverse transformation of the reciprocal function is also the reciprocal function. Hence,
+if you re-apply transform() to the transformed data, you will revert it to its original
+representation. A better practice would be to set the inverse_transform parameter of
+the FunctionTransformer() to np.reciprocal as well.
+Now, let's apply the reciprocal transformation with feature-engine.
+11.	 Let's import the ReciprocalTransformer():
+from feature_engine.transformation import ReciprocalTransformer
+12.	 Let's set up the transformer to modify the AveOccup variable and then fit it to the dataset:
+rt = ReciprocalTransformer(variables=»AveOccup»)
+rt.fit(X)
+Note
+If the variables argument is set to None, the transformer applies the reciprocal function
+to all the numerical variables in the dataset. If some of the variables contain a 0 value, the
+transformer will raise an error.
+13.	 Let's transform the selected variable in our dataset:
+X_tf = rt.transform(X)
+ReciprocalTransformer() will return a new pandas DataFrame containing the original
+variables, where the variable indicated in step 12 is transformed with the reciprocal function.
+How it works...
+In this recipe, we applied the reciprocal transformation using NumPy, scikit-learn, and Feature-engine.
+To evaluate the variable distribution, we used the function to plot a histogram next to a Q-Q plot that
+we described in the How it works... section of the Transforming variables with the logarithm function
+recipe earlier in this chapter.

@@ -1,0 +1,18 @@
+Aunque el afinado parcial puede reducir la huella de memoria, es
+ineficiente desde el punto de vista de los parámetros. El afinado parcial
+requiere muchos parámetros entrenables para lograr un rendimiento cercano
+al del afinado completo. Un estudio de Houlsby et al. (2019) muestra que
+con BERT grande (Devlin et al., 2018), necesitaría actualizar
+aproximadamente el 25 % de los parámetros para lograr un rendimiento
+comparable al del afinado completo en la prueba comparativa GLUE (Wang
+et al., 2018). La Figura 7-7 muestra la curva de rendimiento del afinado
+parcial con diferentes cantidades de parámetros entrenables.
+figura 7-7. La línea azul muestra que el afinado parcial requiere muchos parámetros
+entrenables para lograr un rendimiento comparable al del afinado completo. Imagen
+de Houlsby et al. (2019).
+Esto plantea una pregunta: ¿Cómo conseguir un rendimiento similar al del
+afinado completo utilizando muchos menos parámetros entrenables? Las
+técnicas de afinado resultantes de esta búsqueda son eficientes en
+parámetros. No existe un umbral claro que deba superar un método de
+ajuste para que se considere eficiente en parámetros. Sin embargo, en
+general, se considera que una técnica es eficiente en parámetros si puede

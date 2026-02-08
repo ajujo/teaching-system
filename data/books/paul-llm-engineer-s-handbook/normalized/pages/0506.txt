@@ -1,0 +1,10 @@
+Other Books
+You May Enjoy
+If you enjoyed this book, you may be interested in these other books by Packt:
+RAG-Driven Generative AI
+Denis Rothman
+ISBN: 9781836200918
+•
+Scale RAG pipelines to handle large datasets efficiently
+•
+Employ techniques that minimize hallucinations and ensure accurate responses

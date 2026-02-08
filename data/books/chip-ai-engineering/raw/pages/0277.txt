@@ -1,0 +1,66 @@
+tabla 4-3. Ejemplo de criterios de selección de modelos para una aplicación
+Criterios
+Métrica
+Prueba
+comparativa
+Requisito
+estricto
+Idea
+Costo
+Costo por
+token de
+output
+X
+< $30.00 /
+1 millón de
+tokens
+< $15
+1 mil
+token
+Escala
+TPM (tokens
+por minuto)
+X
+> 1 millón de
+TPM
+> 1 m
+TPM
+Latencia
+Tiempo hasta
+el primer
+token (P90)
+Conjunto de
+datos de
+prompts de
+usuario
+interno
+< 200 ms
+< 100
+Latencia
+Tiempo por
+consulta total
+(P90)
+Conjunto de
+datos de
+prompts de
+usuario
+interno
+< 1 m
+< 30 
+Calidad
+general del
+modelo
+Puntuación
+Elo
+Clasificación
+de Chatbot
+Arena
+> 1200
+> 125
+Capacidad de
+generación de
+código
+pass@1
+HumanEval
+> 90 %
+> 95 

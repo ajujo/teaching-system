@@ -1,0 +1,17 @@
+Tooling and Installation
+44
+    - https://mlabonne.github.io/blog/posts/2024-07-29_Finetune_Llama31.
+html
+    - https://mlabonne.github.io/blog/posts/2024-07-15_The_Rise_of_
+Agentic_Data_Generation.html
+    # Substack
+    - https://maximelabonne.substack.com/p/uncensor-any-llm-with-
+abliteration-d30148b7d43e
+    … # More links
+Where the digital_data_etl function signature looks like this:
+@pipeline
+def digital_data_etl(user_full_name: str, links: list[str]) -> str:
+This approach allows us to configure each pipeline at runtime without modifying the code. We 
+can also clearly track the inputs for all our pipelines, ensuring reproducibility. As seen in Figure 
+2.10, we have one or more configs for each pipeline.
+Figure 2.10: ZenML pipeline configs

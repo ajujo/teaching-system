@@ -1,0 +1,40 @@
+Chapter 11
+411
+•	
+Output guardrails: At the output of an LLM response, you want to catch failed outputs 
+that don’t respect your application’s standards. This can vary from one application to 
+another, but some examples are empty responses (these responses don’t follow your 
+expected format, such as JSON or YAML), toxic responses, hallucinations, and, in general, 
+wrong responses. Also, you have to check for sensitive information that can leak from the 
+internal knowledge of the LLM or your RAG system.
+Popular guardrail tools are Galileo Protect, which detects prompt injections, toxic language, data 
+privacy protection leaks, and hallucinations. Also, you can use OpenAI’s Moderation API to detect 
+harmful inputs or outputs and take action on them.
+The downside of adding input and output guardrails is the extra latency added to your system, 
+which might interfere with your application’s user experience. Thus, there is a trade-off between 
+the safety of your input/output and latency. Regarding invalid outputs, as LLMs are non-deter-
+ministic, you can implement a retry mechanism to generate another potential candidate. However, 
+as stated above, running the retry sequentially will double the response time. Thus, a common 
+strategy is to run multiple generations in parallel and pick the best one. This will increase redun-
+dancy but help keep the latency in check.
+Prompt monitoring
+Monitoring is not new to LLMOps, but in the LLM world, we have a new entity to manage: the 
+prompt. Thus, we have to find specific ways to log and analyze them.
+Most ML platforms, such as Opik (from Comet ML) and W&B, or other specialized tools like Lang-
+fuse, have implemented logging tools to debug and monitor prompts. While in production, using 
+these tools, you usually want to track the user input, the prompt templates, the input variables, 
+the generated response, the number of tokens, and the latency.
+When generating an answer with an LLM, we don’t wait for the whole answer to be generated; we 
+stream the output token by token. This makes the entire process snappier and more responsive. 
+Thus, when it comes to tracking the latency of generating an answer, the final user experience 
+must look at this from multiple perspectives, such as:
+•	
+Time to First Token (TTFT): The time it takes for the first token to be generated
+•	
+Time between Tokens (TBT): The interval between each token generation
+•	
+Tokens per Second (TPS): The rate at which tokens are generated
+•	
+Time per Output Token (TPOT): The time it takes to generate each output token
+•	
+Total Latency: The total time required to complete a response

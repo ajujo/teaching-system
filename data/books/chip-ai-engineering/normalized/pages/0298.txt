@@ -1,0 +1,32 @@
+Tableros de clasificación públicos
+Muchos tableros de clasificación públicos ordenan los modelos en función
+de su rendimiento agregado en un subconjunto de pruebas comparativas.
+Estos tableros de clasificación son muy útiles, pero distan mucho de ser
+exhaustivos. En primer lugar, debido a las restricciones de cálculo (evaluar
+un modelo en una prueba comparativa requiere cálculo), la mayoría de los
+tableros de clasificación solo pueden incorporar un pequeño número de
+pruebas comparativas. Algunos tableros de clasificación pueden excluir una
+prueba comparativa importante pero cara. Por ejemplo, HELM (Holistic
+Evaluation of Language Models) Lite dejó fuera una prueba comparativa de
+recuperación de información (MS MARCO, Microsoft Machine Reading
+Comprehension) porque es cara de ejecutar. Hugging Face optó por no
+utilizar HumanEval debido a sus elevados requisitos de cómputo, ya que
+necesita generar muchas terminaciones.
+Cuando Hugging Face lanzó por primera vez el tablero de clasificación de
+Open LLM en 2023, constaba de cuatro pruebas comparativas. A finales de
+ese año, lo ampliaron a seis. Un pequeño conjunto de pruebas comparativas
+no es suficiente para representar las enormes capacidades y los diferentes
+modos de fallo de los modelos fundacionales.
+Además, aunque los desarrolladores de tableros de clasificación suelen ser
+muy cuidadosos sobre cómo seleccionan las pruebas comparativas, su
+proceso de toma de decisiones no siempre está claro para los usuarios. Los
+tableros de clasificación suelen tener pruebas comparativas diferentes, lo
+que dificulta compararlos e interpretar sus clasificaciones. Por ejemplo, a
+finales de 2023, Hugging Face actualizó su tablero de clasificación de Open
+LLM para utilizar el promedio de seis pruebas comparativas diferentes para
+ordenar los modelos:
+1. ARC-C (Clark et al., 2018): Midiendo la capacidad para resolver
+preguntas complejas sobre ciencias de nivel escolar.
+2. MMLU (Hendrycks et al., 2020): Midiendo los conocimientos y la
+capacidad de razonamiento en 57 materias, entre ellas matemáticas
+elementales, historia de Estados Unidos, informática y derecho.

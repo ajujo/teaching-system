@@ -1,0 +1,39 @@
+Extracting Features from Relational Data with Featuretools
+278
+15.	 Similarly, we can create features automatically by aggregating information at the invoice level:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»invoices»,
+    ignore_columns = {«data»: [«customer_id»]},
+    max_depth = 1,
+)
+16.	 The previous step returns 24 features - let's display their names:
+feature_defs
+We can see the names of the features in the following output:
+[<Feature: customer_id>,
+<Feature: COUNT(data)>,
+<Feature: MAX(data.price)>,
+<Feature: MAX(data.quantity)>,
+<Feature: MEAN(data.price)>,
+<Feature: MEAN(data.quantity)>,
+<Feature: MIN(data.price)>,
+<Feature: MIN(data.quantity)>,
+<Feature: MODE(data.description)>,
+<Feature: MODE(data.stock_code)>,
+<Feature: NUM_UNIQUE(data.description)>,
+<Feature: NUM_UNIQUE(data.stock_code)>,
+<Feature: SKEW(data.price)>,
+<Feature: SKEW(data.quantity)>,
+<Feature: STD(data.price)>,
+<Feature: STD(data.quantity)>,
+<Feature: SUM(data.price)>,
+<Feature: SUM(data.quantity)>,
+<Feature: DAY(first_data_time)>,
+<Feature: MONTH(first_data_time)>,
+<Feature: WEEKDAY(first_data_time)>,
+<Feature: YEAR(first_data_time)>]
+Note
+Go ahead and display the DataFrame containing the new features by executing feature_
+matrix.head() or check our accompanying GitHub repository for the result.
+To wrap up, by using the code from step 16 and changing the target DataFrame name from invoices
+to items, go ahead and create features automatically at the product level.

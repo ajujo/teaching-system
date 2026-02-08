@@ -1,0 +1,29 @@
+MLOps and LLMOps
+456
+Implementing the notification functions is straightforward. As seen in the code snippets below,
+you have to get the alerter instance from your current stack, build the message as you see fit,
+and send it to your notification channel of choice:
+from zenml.client import Client
+alerter = Client().active_stack.alerter
+def notify_on_failure() -> None:
+        alerter.post(message=build_message(status="failed"))
+@step(enable_cache=False)
+def notify_on_success() -> None:
+        alerter.post(message=build_message(status="succeeded"))
+ZenML and most orchestrators simplify implementing an alerter, as it's a critical component
+in your MLOps/LLMOps infrastructure.
+Summary
+In this chapter, we laid down the foundations with a theoretical section on DevOps. Then, we
+moved on to MLOps and its core components and principles. Finally, we presented how LLMOps
+differs from MLOps by introducing strategies such as prompt monitoring, guardrails, and human-in-the-loop feedback. Also, we briefly discussed why most companies would avoid training
+LLMs from scratch but choose to optimize them for their use case through prompt engineering
+or fine-tuning. At the end of the theoretical portion of the chapter, we learned what a CI/CD/CT
+pipeline is, the three core dimensions of an ML application (code, data, model), and that, after
+deployment, it is more critical than ever to implement a monitoring and alerting layer due to
+model degradation.
+Next, we learned how to deploy the LLM Twin's pipeline to the cloud. We understood the infrastructure and went step by step through deploying MongoDB, Qdrant, the ZenML cloud, and all
+the necessary AWS resources to sustain the application. Finally, we learned how to Dockerize our
+application and push our Docker image to AWS ECR, which will be used to execute the application
+on top of AWS SageMaker.
+The final step was to add LLMOps to our LLM Twin project. We began by implementing a CI/CD
+pipeline with GitHub Actions. Then, we looked at our CT strategy by leveraging ZenML.

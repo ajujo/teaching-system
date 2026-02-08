@@ -1,0 +1,19 @@
+7
+Performing Feature Scaling
+Many machine learning algorithms are sensitive to the variable scale. For example, the coefficients of
+linear models depend on the scale of the feature - that is, changing the feature scale will change the
+coefficient's value. In linear models, as well as in algorithms that depend on distance calculations such
+as clustering and principal component analysis, features with larger value ranges tend to dominate over
+features with smaller ranges. Therefore, having features on a similar scale allows us to compare feature
+importance and may help algorithms converge faster, improving performance and training times.
+Scaling techniques, in general, divide the variables by some constant; therefore, it is important to
+highlight that the shape of the variable distribution does not change when we rescale the variables. If
+you want to change the distribution shape, check out Chapter 3, Transforming Numerical Variables.
+In this chapter, we will describe different methods to set features on a similar scale.
+This chapter will cover the following recipes:
+•	 Standardizing the features
+•	 Scaling to the maximum and minimum values
+•	 Scaling with the median and quantiles
+•	 Performing mean normalization
+•	 Implementing maximum absolute scaling
+•	 Scaling to vector unit length

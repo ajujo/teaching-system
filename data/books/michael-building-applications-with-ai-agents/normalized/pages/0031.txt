@@ -1,0 +1,44 @@
+full‐blown autonomous agent can be the difference between an elegant solution and
+an overengineered, hard‐to‐maintain mess. To make this choice clearer, consider four
+key factors: the variability of your inputs, the complexity of the reasoning required,
+any performance or compliance constraints, and the ongoing maintenance burden.
+First, when might you choose not to use a foundation model-or any ML component
+at all? If your inputs are fully predictable and every possible output can be described
+in advance, a handful of lines of procedural code are often faster, cheaper, and far eas‐
+ier to test than an ML-based pipeline. For example, parsing a log file that always fol‐
+lows the format "YYYY‐MM‐DD HH:MM:SS-message" can be handled reliably
+with a small regular‐expression‐based parser in Python or Go. Likewise, if your appli‐
+cation demands millisecond‐level latency-such as an embedded system that must
+react to sensor data in real time-there simply isn't time for a language model API
+call. In such cases, traditional code is the right choice. Finally, regulated domains
+(medical devices, aeronautics, certain financial systems) often require fully determin‐
+istic, auditable decision logic-black‐box neural models won't satisfy certification
+requirements. If any of these conditions hold-deterministic inputs, strict perfor‐
+mance or explainability needs, or a static problem domain-plain code is almost
+always preferable to a foundation model.
+Next, consider deterministic or semiautomated workflows. Here, the logic can be
+expressed as a finite set of steps or branches, and you know ahead of time where you
+might need human intervention or extra error handling. Suppose you ingest invoices
+from a small set of vendors and each invoice arrives in one of three known formats:
+CSV, JSON, or PDF. You can build a workflow that routes each format to its corre‐
+sponding parser, checks for mismatches, and halts for a human review if any fields
+fail a simple reconciliation-no deep semantic understanding is required. Likewise, if
+your system must retry failed steps with exponential backoff or pause for a manager's
+approval, a workflow engine (such as Airflow, AWS Step Functions, or a well‐
+structured set of scripts) offers clearer control over error paths than an LLM could.
+Deterministic workflows make sense whenever you can enumerate all decision
+branches in advance and you need tight, auditable control over each branch. In such
+scenarios, workflows scale more naturally than large, ad hoc scripts but still avoid the
+complexity and cost of running an agentic pipeline.
+Traditional chatbots or RAG systems occupy the next tier of complexity: they add
+natural language understanding and document retrieval but stop short of autono‐
+mous, multistep planning. If your primary need is to let users ask questions about a
+knowledge base-say, searching a product manual, a legal archive, or corporate wikis
+-a RAG system can embed documents into a vector store, retrieve relevant passages
+in response to a query, and generate coherent, context‐aware answers. For instance,
+an internal IT help desk might use RAG to answer "How do I reset my VPN creden‐
+tials?" by fetching the latest troubleshooting guide and summarizing the relevant
+steps. Unlike autonomous agents, RAG systems do not independently decide on
+Workflows and Agents
+|
+9

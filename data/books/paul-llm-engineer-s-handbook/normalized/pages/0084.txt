@@ -1,0 +1,39 @@
+Chapter 2
+53
+References
+•
+Acsany, P. (2024, February 19). Dependency Management With Python Poetry. https://
+realpython.com/dependency-management-python-poetry/
+•
+Comet.ml. (n.d.). comet-ml/opik: Open-source end-to-end LLM Development Platform. GitHub.
+https://github.com/comet-ml/opik
+•
+Czakon, J. (2024, September 25). ML Experiment Tracking: What It Is, Why It Matters, and
+How to Implement It. neptune.ai. https://neptune.ai/blog/ml-experiment-tracking
+•
+Hopsworks. (n.d.). ML Artifacts (ML Assets)? Hopsworks. https://www.hopsworks.ai/
+dictionary/ml-artifacts
+•
+Introduction | Documentation | Poetry - Python dependency management and packaging made
+easy. (n.d.). https://python-poetry.org/docs
+•
+Jones, L. (2024, March 21). Managing Multiple Python Versions With pyenv. https://
+realpython.com/intro-to-pyenv/
+•
+Kaewsanmua, K. (2024, January 3). Best Machine Learning Workflow and Pipeline Orchestration Tools. neptune.ai. https://neptune.ai/blog/best-workflow-and-pipelineorchestration-tools
+•
+MongoDB. (n.d.). What is NoSQL? NoSQL databases explained. https://www.mongodb.
+com/resources/basics/databases/nosql-explained
+•
+Nat-N. (n.d.). nat-n/poethepoet: A task runner that works well with poetry. GitHub. https://
+github.com/nat-n/poethepoet
+•
+Oladele, S. (2024, August 29). ML Model Registry: The Ultimate Guide. neptune.ai. https://
+neptune.ai/blog/ml-model-registry
+•
+Schwaber-Cohen, R. (n.d.). What is a Vector Database & How Does it Work? Use Cases + Examples. Pinecone. https://www.pinecone.io/learn/vector-database/
+•
+Starter guide | ZenML Documentation. (n.d.). https://docs.zenml.io/user-guide/
+starter-guide
+•
+Vector DB Comparison. (n.d.). https://superlinked.com/vector-db-comparison

@@ -1,0 +1,38 @@
+Creating a subset of features identified through feature selection
+329
+To create different features for different time series, we can use the kind_to_fc_parameters
+parameter of tsfresh's extract_features function. This parameter takes a dictionary of
+dictionaries, specifying the methods to apply to each time series.
+In step 8, we created a dictionary to specify the creation of specific features from the light time
+series. Note that the "sum_values" and "mean" methods take None as values, but the quantile
+method needs additional parameters corresponding to the quantiles that should be returned from
+the time series. In step 9, we created a dictionary to specify the creation of features from the co2
+time series. In step 10, we combined both dictionaries into one that takes the name of the time series
+as the key and the feature creation dictionaries as values. Then, we passed this dictionary to the
+kind_to_fc_parameters parameter of tsfresh's extract_features function. This
+way of specifying features is suitable if we use domain knowledge to create the features, or if we only
+create a small number of features.
+Do we need to type each method by hand into a dictionary if we want to create multiple features for
+various time series? Not really. In the following recipe, we will learn how to specify which features to
+create based on features selected by Lasso.
+Creating a subset of features identified through feature
+selection
+In the Automatically creating and selecting predictive features from time-series data recipe, we learned
+how to select relevant features using tsfresh. We also discussed the limitations of tsfresh's
+selection procedures and suggested following up with alternative feature selection methods to identify
+predictive features while avoiding redundancy.
+In this recipe, we will create and select features using tsfresh. Following that, we will reduce the
+feature space further by utilizing Lasso regularization. Then, we will learn how to create a dictionary
+from the selected feature names to trigger the creation of those features only from future time series.
+How to do it...
+Let's begin by importing the necessary libraries and getting the dataset ready:
+1.
+Let's import the required libraries and functions:
+import pandas as pd
+from sklearn.feature_selection import SelectFromModel
+from sklearn.linear_model import LogisticRegression
+from tsfresh import (
+    extract_features,
+    extract_relevant_features,
+)
+from tsfresh.feature_extraction import settings

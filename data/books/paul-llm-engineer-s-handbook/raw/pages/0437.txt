@@ -1,0 +1,41 @@
+MLOps and LLMOps
+406
+They are:
+•	
+Automation or operationalization: Automation in MLOps involves transitioning from 
+manual processes to automated pipelines through CT and CI/CD. This enables the efficient 
+retraining and deployment of ML models in response to triggers such as new data, per-
+formance drops, or unhandled edge cases. Moving from manual experimentation to full 
+automation ensures that our ML systems are robust, scalable, and adaptable to changing 
+requirements without errors or delays.
+•	
+Versioning: In MLOps, it is crucial to track changes in code, models, and data individually, 
+ensuring consistency and reproducibility. Code is tracked using tools like Git, models are 
+versioned through model registries, and data versioning can be managed using solutions 
+like DVC or artifact management systems.
+•	
+Experiment tracking: As training ML models is an iterative and experimental process 
+that involves comparing multiple experiments based on predefined metrics, using an 
+experiment tracker to help us pick the best model is important. Tools like Comet ML, W&B, 
+MLflow, and Neptune allow us to log all necessary information to compare experiments 
+easily and select the best model for production.
+•	
+Testing: MLOps suggests that along with testing your code, you should also test your 
+data and models through unit, integration, acceptance, regression, and stress tests. This 
+ensures that each component functions correctly and integrates well, focusing on inputs, 
+outputs, and handling edge cases.
+•	
+Monitoring: This stage is vital for detecting performance degradation in served ML models 
+due to changes in production data, allowing timely intervention such as retraining, further 
+prompt or feature engineering, or data validation. By tracking logs, system metrics, and 
+model metrics and detecting drifts, we can maintain the health of ML systems in produc-
+tion, detect issues as fast as possible, and ensure they continue to deliver accurate results.
+•	
+Reproducibility: This ensures that every process (such as training or feature engineering) 
+within your ML systems produces identical results when given the same input by tracking 
+all the moving variables, such as code versions, data versions, hyperparameters, or any 
+other type of configurations. Due to the non-deterministic nature of ML training and 
+inference, setting well-known seeds when generating pseudo-random numbers is essen-
+tial to achieving consistent outcomes and making processes as deterministic as possible.
+If you want to learn more, we’ve offered an in-depth exploration of these principles in the Ap-
+pendix at the end of this book.

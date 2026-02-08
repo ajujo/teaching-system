@@ -1,0 +1,26 @@
+un cuello de botella para su funcionamiento. 8 Un modelo de 70 MM
+parámetros con 2 bytes por parámetro requerirá la friolera de 140 GB de
+memoria solo para sus ponderaciones. 9
+Memoria necesaria para el entrenamiento
+Para entrenar un modelo, se necesita memoria para las ponderaciones y las
+activaciones del modelo, de lo que ya se ha hablado. Además, se necesita
+memoria para los gradientes y los estados del optimizador, que aumenta con
+el número de parámetros entrenables.
+En total, la memoria necesaria para el entrenamiento se calcula como:
+Memoria de entrenamiento = ponderaciones del modelo +
+activaciones + gradientes + estados del optimizador
+SUGERENCIA
+Durante la pasada hacia atrás, cada parámetro entrenable requiere un valor
+para el gradiente, más de cero a dos valores para los estados del
+optimizador, dependiendo del optimizador:
+Un optimizador SGD estándar no tiene estado.
+Un optimizador de momento almacena un valor por parámetro
+entrenable.
+Un optimizador Adam almacena dos valores por parámetro
+entrenable.
+Imagine que está actualizando todos los parámetros de un modelo de 13
+MM de parámetros utilizando el optimizador Adam. Como cada parámetro
+entrenable tiene tres valores para su gradiente y estados del optimizador, si
+se necesitan 2 bytes para almacenar cada valor, la memoria necesaria para
+los gradientes y los estados del optimizador será:
+13 000 millones × 3 × 2 bytes = 78 GB

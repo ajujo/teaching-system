@@ -1,0 +1,14 @@
+RAG Inference Pipeline
+348
+Therefore, another way to add the chat history to your prompt is to keep a summary of the conver-
+sation along with the latest K replies. There are multiple ways to compute this summary, which 
+might defeat the purpose of this book if we get into them all, but the simplest way is to always 
+update the summary on every user prompt and generate an answer.
+Figure 9.4: Routing and memory examples
+As for each search, we send three queries to the vector DB, one for each data category. Thus, the 
+second improvement is to add a router between the query and the search. The router will be a 
+multi-category classifier that predicts the data categories we must retrieve for that specific query. 
+Hence, instead of making three requests for every search, we can often reduce it to one or two. For 
+example, if the user wants to write a theoretical paragraph about RAG for an article, then most 
+probably, it’s valuable to query only the article’s collection. In this case, the router will predict 
+the article class, which we can use to decide what collection we must query. 

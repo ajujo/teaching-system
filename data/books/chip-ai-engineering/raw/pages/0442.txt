@@ -1,0 +1,32 @@
+herramienta cambie, tendrá que actualizar su prompt y todos sus ejemplos.
+Utilizar los nombres exactos de las funciones también dificulta la
+reutilización de un planificador en diferentes casos de uso con diferentes
+API de herramientas.
+Si previamente han afinado un modelo para generar planes basados en el
+antiguo inventario de herramientas, tendrán que volver a afinarlo sobre el
+nuevo.
+Para evitar este problema, los planes también pueden generarse utilizando
+un lenguaje más natural, que es de mayor nivel que los nombres de función
+específicos del dominio. Por ejemplo, dada la consulta "¿Cuál es el precio
+del producto más vendido la semana pasada?", se puede ordenar a un agente
+que genere un plan similar al siguiente:
+1. obtener la fecha actual
+2. recuperar el producto más vendido la semana pasada
+3. recuperar información sobre el producto
+4. generar consulta
+5. generar respuesta
+Usar un lenguaje más natural ayuda a su generador de planes a soportar
+mejor los cambios en las API de las herramientas. Si su modelo se ha
+entrenado principalmente con lenguaje natural, es probable que comprenda
+y genere mejor los planes en lenguaje natural y que tenga menos
+probabilidades de alucinar.
+El inconveniente de este enfoque es que se necesita un traductor para
+traducir cada acción del lenguaje natural a comandos ejecutables. 13 Sin
+embargo, traducir es una tarea mucho más sencilla que planificar y puede
+ser realizada por modelos más débiles con un menor riesgo de alucinación.
+Planes complejos
+Los ejemplos de planes hasta ahora han sido secuenciales: la siguiente
+acción del plan se ejecuta siempre después de haber terminado la acción
+anterior. El orden en que pueden ejecutarse las acciones se denomina
+control de flujo. La forma secuencial es solo un tipo de control de flujo.
+Otros tipos de controles de flujo son el paralelo, la sentencia "if" y el bucle

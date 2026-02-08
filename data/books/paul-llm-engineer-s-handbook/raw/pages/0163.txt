@@ -1,0 +1,29 @@
+RAG Feature Pipeline
+132
+For example, streaming pipelines are extremely powerful in social media recommender systems 
+like TikTok. When using social media, user behavior changes frequently. A typical scenario is 
+that you want to relax at a certain point in time and mostly look at videos of puppies. Still, after 
+15 minutes, you get bored and want something more serious, such as educative content or news. 
+This means the recommender system has to capture these behavior changes without delay to keep 
+you engaged. As the transition between interests is cyclical and not predictable, you can’t use a 
+batch pipeline that runs every 30 minutes or every hour to generate more content. You can run 
+it every minute to create new content, but, at the same time, it will result in unnecessary costs, 
+as most predictions will not be consumed. By implementing a streaming pipeline, you update 
+the features of specific users in real time, which are then passed to a chain of models that predict 
+the new recommendations.
+Streaming architectures are also the backbone of real-time fraud detection algorithms, such as 
+those used at Stripe or PayPal. In this context, it’s critical to identify potentially fraudulent trans-
+actions as they occur, not after a few minutes or hours as a batch pipeline would process them. 
+The same urgency applies to high-frequency trading platforms that make stock predictions based 
+on the constant influx of market data, enabling traders to make decisions within milliseconds.
+On the other hand, you can use a batch architecture for an offline recommender system. For ex-
+ample, when implementing one for an e-commerce or streaming platform, you don’t need the 
+system to be so reactive, as the user’s behavior rarely changes. Thus, updating the recommen-
+dations periodically, such as every night, based on historical user behavior data using a batch 
+pipeline is easier to implement and cheaper.
+Another popular example of batch pipelines is the ETL design used to extract, transform, and load 
+data for different use cases. The ETL design is widespread in data pipelines used to move data 
+from one DB to another. Some practical use cases include aggregating data for analytics, where 
+you have to extract data from multiple sources, aggregate it, and load it to a data warehouse 
+connected to a dashboard. The analytics domains can be widespread, from e-commerce and 
+marketing to finance and research.

@@ -1,0 +1,32 @@
+Evaluation and Testing
+342
+            },
+            "evaluator_type": "criteria"
+        }
+    ]
+)
+This shows how to configure multi-dimensional evaluation for RAG systems, assessing factual 
+accuracy, groundedness, and retrieval quality using LLM-based judges. The criteria are defined 
+by a dictionary that includes a criterion as a key and a question to check for as the value.
+We’ll now pass a dataset together with the evaluation configuration with evaluators to run_on_
+dataset() to generate metrics and feedback:
+from langchain.smith import run_on_dataset
+results = run_on_dataset(
+    client=client,
+    dataset_name=dataset_name,
+    dataset=dataset,
+    llm_or_chain_factory=construct_chain,
+    evaluation=evaluation_config
+)
+In the same way, we could pass a dataset and evaluators to run_on_dataset() to generate metrics 
+and feedback asynchronously.
+This practical implementation provides a framework you can adapt for your specific domain. By 
+creating a comprehensive evaluation dataset and assessing your RAG system across multiple 
+dimensions (correctness, groundedness, and retrieval quality), you can identify specific areas for 
+improvement and track progress as you refine your system.
+When implementing this approach, consider incorporating real user queries from your application 
+logs (appropriately anonymized) to ensure your evaluation dataset reflects actual usage patterns. 
+Additionally, periodically refreshing your dataset with new queries and updated information 
+helps prevent overfitting and ensures your evaluation remains relevant as user needs evolve.
+Let’s use the datasets and evaluate libraries by HuggingFace to check a coding LLM approach to 
+solving programming problems.

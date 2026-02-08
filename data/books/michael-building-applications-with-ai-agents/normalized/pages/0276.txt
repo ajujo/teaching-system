@@ -1,0 +1,36 @@
+development, and system documentation, reducing the recurrence of similar failures
+in the future.
+By balancing automation with human oversight, HITL review ensures that multiagent
+systems remain both scalable and trustworthy. It transforms feedback pipelines from
+mere error correction mechanisms into engines of insight, resilience, and continuous
+improvement.
+Prompt and Tool Refinement
+Once feedback pipelines and HITL reviews have surfaced actionable insights, the next
+step is to implement targeted improvements. In agentic systems, the most direct and
+impactful levers for system refinement are the design of prompts (the instructions
+and context provided to language models) and the construction and invocation of
+external tools (functions, APIs, and actions the agent can use), so refining the prompt
+can be a very efficient way to improve the overall performance.
+Prompt refinement
+Prompts are the bridge between user intent and agent action. Subtle changes in
+prompt wording, structure, or context can dramatically affect an agent's interpreta‐
+tion, reasoning, and outputs. Feedback loops commonly reveal issues such as:
+• Ambiguous instructions leading to inconsistent or irrelevant responses
+• Overly broad prompts causing hallucination or off-task outputs
+• Rigid, narrow prompts failing to generalize to real-world variability
+• Lack of clarity around task boundaries, escalation, or error handling
+Refinement begins with analysis: reviewing misfires, tracing agent reasoning, and iso‐
+lating which part of the prompt contributed to undesired outcomes. Improvements
+might include:
+Rewriting for clarity
+Making instructions more explicit, reducing ambiguity, and specifying expected
+response formats
+Adding exemplars
+Providing positive and negative examples in the prompt to anchor agent
+reasoning
+Decomposing tasks
+Splitting complex multistep instructions into smaller, sequential prompts or
+intermediate reasoning stages
+254
+|
+Chapter 11: Improvement Loops

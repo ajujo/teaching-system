@@ -1,0 +1,24 @@
+Performing Box-Cox transformations
+105
+    for i in range(6):
+        # location in figure
+        ax = plt.subplot(2, 3, i + 1)
+        # variable to plot
+        var = variables[i]
+        # q-q plot
+        stats.probplot((df[var]), dist="norm",
+            plot=plt)
+        # add variable name as title
+        ax.set_title(var)
+    plt.show()
+7.
+Now, let's display the Q-Q plots using the preceding function:
+make_qqplot(X)
+By looking at the following plots, we can corroborate that the variables are not normally distributed:
+Figure 3.11 - Q-Q plots of the numerical variables
+Next, let's carry out the Box-Cox transformation using scikit-learn.
+8.
+Let's set up PowerTransformer() to apply the Box-Cox transformation and fit it to the
+data so that it finds the optimal λ parameter:
+transformer = PowerTransformer(
+    method="box-cox", standardize=False,

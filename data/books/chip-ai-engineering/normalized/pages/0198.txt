@@ -1,0 +1,40 @@
+perplejidad de un modelo en los datos de un punto de referencia es baja, es
+probable que este punto de referencia se haya incluido en los datos de
+entrenamiento del modelo, lo que hace que el rendimiento del modelo en
+este parámetro sea menos fiable. Esto también puede utilizarse para
+deduplicar los datos de entrenamiento: por ejemplo, añadir nuevos datos al
+conjunto de datos de entrenamiento existente solo si la perplejidad de los
+nuevos datos es alta.
+La perplejidad es máxima para los textos imprevisibles, como los que
+expresan ideas inusuales (como "mi perro enseña física cuántica en su
+tiempo libre") o incomprensibles (como "gato casero ir ojo"). Por lo tanto,
+la perplejidad puede utilizarse para detectar textos anómalos.
+La perplejidad y sus métricas relacionadas nos ayudan a comprender el
+rendimiento del modelo lingüístico subyacente, que es una aproximación
+para comprender el rendimiento del modelo en tareas derivadas. El resto del
+capítulo trata sobre cómo medir directamente el rendimiento de un modelo
+en las tareas derivadas.
+CÓMO UTILIZAR UN MODELO LINGÜÍSTICO PARA
+CALCULAR LA PERPLEJIDAD DE UN TEXTO
+La perplejidad de un modelo con respecto a un texto mide lo difícil que
+es para el modelo predecir ese texto. Dado un modelo de lenguaje X, y
+una secuencia de tokens [x1, x2, ..., xn], la perplejidad de X para esta
+secuencia es:
+P(x1, x2, . . . , xn)−1
+n = (
+1
+P(x1,x2,...,xn) )
+1
+n = (∏n
+i=1
+1
+P(xi|x1,...,xi−1) )
+1
+n
+donde P(xi|x1, . . . , xi−1) denota la probabilidad que X asigna al token
+xi dados los tokens previos x1,..., xi-1.
+Para computar la perplejidad, necesitan tener acceso a las
+probabilidades (o logprobs) que el modelo lingüístico asigna a cada uno
+de los token siguientes. Desgraciadamente, no todos los modelos
+comerciales hacen públicos los logprobs de sus modelos, como se
+discute en el Capítulo 2.

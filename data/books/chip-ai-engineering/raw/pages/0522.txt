@@ -1,0 +1,43 @@
+ponderaciones del modelo. Reducir el número de parámetros LoRA solo
+disminuye la huella de memoria total en un pequeño porcentaje.
+tabla 7-6. Memoria que necesitan las ponderaciones LoRA comparada con
+la que necesitan las ponderaciones del modelo.
+Memoria de
+ponderaciones
+del modelo (16
+bits)
+Parámetros
+entrenables
+LoRA (r=2,
+matrices de
+consultas y
+de claves)
+Memoria del
+adaptador
+LoRA (16
+bits)
+Llama 2 (13B)
+26 GB
+3.28M
+6.55 MB
+GPT-3 (175B)
+350 GB
+18.87M
+37.7 MB
+En lugar de intentar reducir el número de parámetros de LoRA, pueden
+reducir el uso de memoria de forma más eficaz cuantizando las
+ponderaciones, activaciones y/o gradientes del modelo durante el afinado.
+Una primera y prometedora versión cuantizada de LoRA es QLoRA
+(Dettmers et al., 2023). 27 En el documento original de LoRA, durante el
+afinado, las ponderaciones del modelo se almacenan utilizando 16 bits.
+QLoRA almacena las ponderaciones del modelo en 4 bits, pero los
+descuantiza (convierte) de nuevo en BF16 al calcular la pasada hacia
+delante y hacia atrás.
+El formato de 4 bits que utiliza QLoRA es NF4 (NormalFloat-4), que
+cuantiza los valores basándose en la idea de que las ponderaciones pre-
+entrenadas suelen seguir una distribución normal con una mediana de cero.
+Además de la cuantización de 4 bits, QLoRA también utiliza optimizadores
+de paginación para transferir datos automáticamente entre la CPU y la GPU
+cuando ésta se queda sin memoria, especialmente con secuencias de gran
+longitud. Estas técnicas permiten ajustar un modelo de 65 MM de
+parámetros en una sola GPU de 48 GB.

@@ -1,0 +1,113 @@
+Table 1-1. HELM Core Scenario leaderboard (August 2025). Comparative benchmark
+performance of the top 10 models across reasoning and evaluation tasks: MMLU-Pro,
+GPQA, IFEval, WildBench, and Omni-MATH.
+Model
+Mean
+score
+MMLU-Pro
+-COT
+correct
+GPQA-
+COT correct
+IFEval-
+IFEval
+Strict Acc
+WildBench-
+WB Score
+Omni-
+MATH-
+Acc
+GPT-5 mini (2025-08-07)
+0.819
+0.835
+0.756
+0.927
+0.855
+0.722
+o4-mini (2025-04-16)
+0.812
+0.82
+0.735
+0.929
+0.854
+0.72
+o3 (2025-04-16)
+0.811
+0.859
+0.753
+0.869
+0.861
+0.714
+GPT-5 (2025-08-07)
+0.807
+0.863
+0.791
+0.875
+0.857
+0.647
+Qwen3 235B A22B Instruct 2507
+FP8
+0.798
+0.844
+0.726
+0.835
+0.866
+0.718
+Grok 4 (0709)
+0.785
+0.851
+0.726
+0.949
+0.797
+0.603
+Claude 4 Opus (20250514,
+extended thinking)
+0.78
+0.875
+0.709
+0.849
+0.852
+0.616
+gpt-oss-120b
+0.77
+0.795
+0.684
+0.836
+0.845
+0.688
+Kimi K2 Instruct
+0.768
+0.819
+0.652
+0.85
+0.862
+0.654
+Claude 4 Sonnet (20250514,
+extended thinking)
+0.766
+0.843
+0.706
+0.84
+0.838
+0.602
+That said, they aren't always the most efficient choice. For many tasks-especially
+those that are well-defined, low-latency, or cost-sensitive-much smaller models can
+provide near-equivalent performance at a fraction of the cost. This has led to a grow‐
+ing trend: automated model selection. Some platforms now route simpler queries to
+fast, inexpensive small models, reserving the large, expensive models for more com‐
+plex reasoning. This dynamic test-time optimization is proving effective, and it hints
+at a future where multimodel systems become the norm.
+The key takeaway is that you can spend enormous effort optimizing model selection
+for marginal gains-but unless your scale or constraints demand it, starting simple is
+fine. Over time, it's often worth experimenting with smaller models, fine-tuning, or
+adding retrieval to improve performance and reduce costs. Just remember: the future
+is almost certainly multimodel, and designing for flexibility now will pay off later.
+From Synchronous to Asynchronous Operations
+Traditional software systems typically execute tasks synchronously, moving step-bystep and waiting for each action to finish before starting the next. While this
+approach is straightforward, it can lead to significant inefficiencies-especially when
+waiting on external inputs or processing large volumes of data.
+In contrast, autonomous agents are designed for asynchronous operation. They can
+manage multiple tasks in parallel, swiftly adapt to new information, and prioritize
+6
+|
+Chapter 1: Introduction to Agents

@@ -1,0 +1,47 @@
+Encoding Categorical Variables
+70
+Here, the numerator is the sum of the target across observations in category i and n i is the total number
+of observations in category i.
+These formulas provide a good approximation of the target estimate if there is a sufficiently large
+number of observations with each category value - in other words, if n i is large. However, in many
+datasets, there will be categories present in a few observations. In these cases, target estimates derived
+from the precedent formulas can be unreliable.
+To mitigate poor estimates returned for rare categories, the target estimates can be determined as a
+mixture of two probabilities: those returned by the preceding formulas and the prior probability of
+the target based on the entire training. The two probabilities are blended using a weighting factor,
+which is a function of the category group size:
+S i = λ
+n i(Y=1)
+_
+n i   + (1 − λ i)
+n λ
+_
+N
+In this formula, n λ is the total number of cases where the target takes a value of 1, N is the size of the
+train set, and 𝜆 is the weighting factor.
+When the category group is large, 𝜆 tends to 1, so more weight is given to the first term of the equation.
+When the category group size is small, then 𝜆 tends to 0, so the estimate is mostly driven by the second
+term of the equation - that is, the target's prior probability. In other words, if the group size is small,
+knowing the value of the category does not tell us anything about the value of the target.
+The weighting factor, 𝜆, is determined differently in different open-source implementations. In Category
+Encoders, 𝜆 is a function of the group size, k, and a smoothing parameter, f, which controls the rate
+of transition between the first and second term of the preceding equation:
+λ =
+1
+_
+1+ e −(n−k)/f
+Here, k is half of the minimal size for which we fully trust the first term of the equation. The f parameter
+is selected by the user either arbitrarily or with optimization.
+In scikit-learn and feature-engine, 𝜆 is a function of the target variance for the entire
+dataset and within the category, and is determined as follows:
+λ =   ni × t
+_
+s + ni × t
+Here, t is the target variance in the entire dataset and s is the target variance within the category. Both
+implementations are equivalent, but it is important to know the equations because they will help you
+set up the parameters in the transformers.
+Note
+Mean encoding was designed to encode highly cardinal categorical variables without expanding
+the feature space. For more details, check out the following article: Micci-Barreca D. A.,
+Preprocessing Scheme for High-Cardinality Categorical Attributes in Classification and Prediction
+Problems. ACM SIGKDD Explorations Newsletter, 2001.

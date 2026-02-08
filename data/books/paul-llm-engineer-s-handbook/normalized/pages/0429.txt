@@ -1,0 +1,34 @@
+Inference Pipeline Deployment
+398
+References
+•
+AWS Developers. (2023, September 22). Machine Learning in 15: Amazon SageMaker
+High-Performance Inference at Low Cost [Video]. YouTube. https://www.youtube.com/
+watch?v=FRbcb7CtIOw
+•
+bitsandbytes-foundation. (n.d.). GitHub-bitsandbytes-foundation/bitsandbytes: Accessible large language models via k-bit quantization for PyTorch. GitHub. https://github.
+com/bitsandbytes-foundation/bitsandbytes
+•
+Difference between IAM role and IAM user in AWS. (n.d.). Stack Overflow. https://
+stackoverflow.com/questions/46199680/difference-between-iam-role-and-iamuser-in-aws
+•
+Huggingface. (n.d.-a). GitHub-huggingface/safetensors: Simple, safe way to store and
+distribute tensors. GitHub. https://github.com/huggingface/safetensors
+•
+Huggingface. (n.d.-b). GitHub-huggingface/text-generation-inference: Large Language
+Model Text Generation Inference. GitHub. https://github.com/huggingface/textgeneration-inference
+•
+Huyen, C. (n.d.). Designing machine learning systems. O'Reilly Online Learning. https://
+www.oreilly.com/library/view/designing-machine-learning/9781098107956/
+•
+Iusztin, P. (2024, August 20). Architect LLM & RAG inference pipelines | Decoding ML.
+Medium. https://medium.com/decodingml/architect-scalable-and-cost-effectivellm-rag-inference-pipelines-73b94ef82a99
+•
+Lakshmanan, V., Robinson, S., and Munn, M. (n.d.). Machine Learning design patterns.
+O'Reilly Online Learning. https://www.oreilly.com/library/view/machine-learningdesign/9781098115777/
+•
+Mendoza, A. (2024, August 21). Best tools for ML model Serving. neptune.ai. https://
+neptune.ai/blog/ml-model-serving-best-tools
+Join our book's Discord space
+Join our community's Discord space for discussions with the authors and other readers:
+https://packt.link/llmeng

@@ -1,0 +1,38 @@
+Supervised Fine-Tuning
+222
+5.	
+Now that the model is loaded, we can define our LoRA configuration. Here, we use a rank 
+of 32 that is large enough to imitate the writing style and copy the knowledge from our in-
+struction samples. You can increase this value to 64 or 128 if your results are underwhelm-
+ing. We also set an alpha of 32, without dropout and without bias, to speed up training. 
+Finally, we target every linear layer to maximize the quality of the fine-tuning process.
+model = FastLanguageModel.get_peft_model(
+    model,
+    r=32,
+    lora_alpha=32,
+    lora_dropout=0,
+    target_modules=["q_proj", "k_proj", "v_proj", "up_proj", "down_
+proj", "o_proj", "gate_proj"],
+)
+6.	
+Next, we need to prepare the data in the right format for fine-tuning. In this example, 
+we don’t have a lot of samples in the llmtwin dataset (3,000 samples). This is an issue 
+because the model might not correctly learn the chat template. To address this, we will 
+upsample it with a high-quality general-purpose dataset called FineTome. This is a filtered 
+version of arcee-ai/The-Tome using the fineweb-edu-classifier. Instead of using 
+the 100,000 samples of this dataset, we will specify we only want 10,000 in the train split. 
+We concatenate these two datasets to create our final set.
+dataset1 = load_dataset("mlabonne/llmtwin")
+dataset2 = load_dataset("mlabonne/FineTome-Alpaca-100k", 
+split="train[:10000]")
+dataset = concatenate_datasets([dataset1, dataset2])
+7.	
+Now, we need to format this data using a chat template. Let’s use the Alpaca template 
+for convenience. This template doesn’t require additional tokens, which makes it less 
+error-prone (but can slightly impact performance compared to ChatML). Here, we map 
+all the instructions and answers to the Alpaca template. We manually add the end of sen-
+tence (EOS) token at the end of each message to ensure that the model learns to output 
+it. Without it, it will keep generating answers without ever stopping.
+alpaca_template = """Below is an instruction that describes a task. 
+Write a response that appropriately completes the request.
+### Instruction:

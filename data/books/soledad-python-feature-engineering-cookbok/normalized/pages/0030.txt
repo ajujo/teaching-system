@@ -1,0 +1,32 @@
+Performing mean or median imputation
+7
+See also
+If you want to use DropMissingData() within a pipeline together with other Feature-engine or
+scikit-learn transformers, check out Feature-engine's Pipeline: https://Feature-engine.
+trainindata.com/en/latest/user_guide/pipeline/Pipeline.html. This pipeline
+can align the target with the training and test sets after removing rows.
+Performing mean or median imputation
+Mean or median imputation consists of replacing missing data with the variable's mean or median
+value. To avoid data leakage, we determine the mean or median using the train set, and then use these
+values to impute the train and test sets, and all future data.
+Scikit-learn and Feature-engine learn the mean or median from the train set and store these parameters
+for future use out of the box.
+In this recipe, we will perform mean and median imputation using pandas, scikit-learn,
+and feature-engine.
+Note
+Use mean imputation if variables are normally distributed and median imputation otherwise.
+Mean and median imputation may distort the variable distribution if there is a high percentage
+of missing data.
+How to do it...
+Let's begin this recipe:
+1.
+First, we'll import pandas and the required functions and classes from scikit-learn
+and feature-engine:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from feature_engine.imputation import MeanMedianImputer
+2.
+Let's load the dataset that we prepared in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")

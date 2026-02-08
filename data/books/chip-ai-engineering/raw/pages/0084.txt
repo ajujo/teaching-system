@@ -1,0 +1,29 @@
+La capa de desarrollo de la aplicación consta de estas responsabilidades:
+evaluación, ingeniería de prompts e interfaz de la IA.
+Evaluación
+La evaluación consiste en mitigar riesgos y descubrir oportunidades. La
+evaluación es necesaria a lo largo de todo el proceso de adaptación del
+modelo. La evaluación es necesaria para seleccionar modelos, comparar
+progresos, determinar si una aplicación está lista para su implementación y
+detectar problemas y oportunidades de mejora en la producción.
+Aunque la evaluación siempre ha sido importante en la ingeniería de ML, lo
+es aún más con los modelos fundacionales, y por muchas razones. Los retos
+que plantea la evaluación de los modelos fundacionales se analizan en el
+Capítulo 3. En resumen, estos retos surgen principalmente de la naturaleza
+abierta y las capacidades ampliadas de los modelos fundacionales. Por
+ejemplo, en tareas de ML cerradas, como la detección de fraudes, suele
+haber verdades básicas esperadas con las que comparar los outputs del
+modelo. Si el output de un modelo difiere del esperado, se sabe que el
+modelo es erróneo. Sin embargo, para una tarea como los chatbots, hay
+tantas respuestas posibles a cada prompt que es imposible elaborar una lista
+exhaustiva de verdades básicas con las que comparar la respuesta de un
+modelo.
+La existencia de tantas técnicas de adaptación también dificulta la
+evaluación. Un sistema que funciona mal con una técnica puede funcionar
+mucho mejor con otra. Cuando Google lanzó Gemini en diciembre de 2023,
+afirmaron que Gemini es mejor que ChatGPT en la prueba comparativa
+MMLU (Hendrycks et al., 2020). Google había evaluado Gemini utilizando
+una técnica de ingeniería de prompts denominada CoT@32. En esta técnica,
+se le mostraron 32 ejemplos a Gemini, y solo 5 a ChatGPT . Cuando a
+ambos se les mostraron cinco ejemplos, ChatGPT obtuvo mejores
+resultados, como se muestra en la Tabla 1-5.

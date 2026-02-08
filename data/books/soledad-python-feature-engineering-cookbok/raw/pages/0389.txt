@@ -1,0 +1,67 @@
+Index
+366
+N
+natural language processing (NLP)  270, 339
+Natural Language Toolkit (NLTK)  339
+nearest neighbors
+used, for estimating missing data  39-41
+n-grams
+used, for creating features  349-352
+nlp_primitives library
+reference link  296
+nominal categorical variables  43
+numerical features
+combining  288-291
+O
+observations
+removing, with missing data  3-6
+Occupancy Detection dataset  308
+one-hot encoding  44
+binary variables, creating with  44-52
+of frequent categories, implementing  52-56
+ordinal categorical variables  43
+ordinal encoding
+performing  61-64
+performing, based on target value  64-69
+outliers  153
+bringing back, within acceptable 
+limits  170-173
+finding, with mean and standard 
+deviation  159-162
+finding, with Median Absolute 
+Deviation (MAD)  162-165
+removing  166-170
+visualizing, with boxplots and the 
+inter-quartile proximity rule  154-158
+P
+pandas
+dt module  184
+features, extracting from dates 
+and time  178-187
+pandas.DataFrame.interpolate
+reference link  34
+pandas unique() function  272
+periodic features
+creating, from cyclical variables  253-258
+Pipeline
+reference link  7
+polynomial expansion
+performing  239-246
+population density  91
+power transformations  99
+using  99-102
+predictive features
+creating and selecting, automatically 
+from time-series data  319-323
+Q
+Quantile-Quantile (Q-Q) plot  84
+quantiles  123
+scaling with  213, 214
+R
+rare or infrequent categories  77
+grouping  77-79
+reciprocal function
+used, for transforming variables  91-95
+reference variables
+features, comparing  234-238
+robust scaling  213

@@ -1,0 +1,32 @@
+Chapter 11
+437
+The first job, named QA, is responsible for quality assurance tasks like code checks and formatting verification. Within the qa job, the first step is to check out the repository's code using the
+actions/checkout@v3 action. This step is necessary to ensure that the job has access to the code
+that needs to be analyzed.
+jobs:
+  qa:
+    name: QA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+The next step is to set up the Python environment. This is done using the actions/setup-python@
+v3 action, with the Python version specified as "3.11". This step ensures that the subsequent
+steps in the job will run in the correct Python environment.
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+The workflow then installs Poetry using the abatilo/actions-poetry@v2 action, specifying the
+version of Poetry as 1.8.3:
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.8.3
+Once Poetry is set up, the workflow installs the project's development dependencies using the
+poetry install --only dev command. Additionally, the workflow adds the poethepoet plugin
+for Poetry, which will be used to run predefined tasks more conveniently within the project.
+      - name: Install packages
+        run: |
+          poetry install --only dev
+          poetry self add 'poethepoet[poetry_plugin]'

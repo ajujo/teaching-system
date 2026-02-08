@@ -1,0 +1,5 @@
+Performing Variable Discretization
+128
+In the following figure, we can see that the intervals have a similar fraction of observations:
+Figure 4.5 - The proportion of observations per interval after
+equal-frequency discretization of three variables.

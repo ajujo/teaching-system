@@ -1,0 +1,31 @@
+||A|| = √0.112 + 0.022 + 0.542
+Las métricas de similitud semántica textual incluyen BERTScore (las
+incrustaciones son generadas por BERT) y MoverScore (las incrustaciones
+son generadas por una mezcla de algoritmos).
+La similitud textual semántica no requiere un conjunto de respuestas de
+referencia tan amplio como el de la similitud léxica. Sin embargo, la
+fiabilidad de la similitud semántica depende de la calidad del algoritmo de
+incrustación subyacente. Dos textos con el mismo significado pueden tener
+una puntuación de similitud semántica baja si sus incrustaciones son malas.
+Otro inconveniente de esta medida es que el algoritmo de incrustación
+subyacente puede requerir un tiempo y un cómputo no triviales.
+Antes de pasar a hablar de la IA como juez, repasemos una rápida
+introducción a la incrustación. El concepto de incrustación se encuentra en
+el corazón de la similitud semántica, y es la columna vertebral de muchos
+temas que exploramos a lo largo del libro, incluyendo la búsqueda vectorial
+en el Capítulo 6 y la deduplicación de datos en el Capítulo 8.
+Introducción a la incrustación
+Dado que las computadoras trabajan con números, un modelo necesita
+convertir su input en representaciones numéricas que estas puedan procesar.
+Una incrustación es una representación numérica que pretende captar el
+significado de los datos originales.
+Una incrustación es un vector. Por ejemplo, la frase "the cat sits on a mat"
+podría representarse utilizando un vector de incrustación así: [0.11,
+0.02, 0.54]. Este vector de ejemplo es pequeño. En realidad, el tamaño
+de un vector de incrustación (el número de elementos del vector de
+incrustación) suele oscilar entre 100 y 10 000. 13
+Los modelos entrenados especialmente para producir incrustaciones
+incluyen los modelos de código abierto BERT, CLIP (pre-entrenamiento
+contrastivo lenguaje-imagen) y Transformadores de oraciones. 14 La
+Tabla 3-2 muestra los tamaños de incrustación de algunos modelos
+populares.

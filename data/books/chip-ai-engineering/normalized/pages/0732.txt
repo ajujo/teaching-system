@@ -1,0 +1,30 @@
+muestran dos respuestas largas una al lado de la otra para
+una evaluación comparativa, es posible que los usuarios no
+quieran leer las dos y se limiten a hacer clic en una al azar.
+En el caso de Midjourney, los usuarios también pueden
+elegir una imagen al azar para generar variaciones.
+Sesgo de posición
+La posición en la que se presenta una opción a los usuarios
+influye en cómo se percibe esta opción. Por lo general, es
+más probable que los usuarios hagan clic en la primera
+sugerencia que en la segunda. Si un usuario hace clic en la
+primera sugerencia, esto no significa necesariamente que
+sea una buena sugerencia.
+A la hora de diseñar su sistema de retroalimentación, este
+sesgo puede mitigarse variando aleatoriamente las
+posiciones de sus sugerencias o construyendo un modelo
+que calcule el verdadero porcentaje de éxito de una
+sugerencia en función de su posición.
+Sesgo de preferencia
+Hay muchos otros sesgos que pueden afectar a la opinión de
+una persona, algunos de los cuales se han tratado en este
+libro. Por ejemplo, la gente puede preferir la respuesta más
+larga en una comparación por pares, aunque la respuesta
+más larga sea menos precisa: es más fácil ver la longitud que
+las imprecisiones. Otro sesgo es el de recencia, por el que las
+personas tienden a favorecer la respuesta que ven en último
+lugar al comparar dos respuestas.
+Es importante examinar la retroalimentación de los usuarios para descubrir
+sus sesgos. Comprender estos sesgos les ayudará a interpretar
+correctamente la retroalimentación, evitando decisiones erróneas sobre el
+producto.

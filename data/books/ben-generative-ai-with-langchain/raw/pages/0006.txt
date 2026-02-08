@@ -1,0 +1,24 @@
+About the reviewers
+Max Tschochohei advises enterprise customers on how to realize their AI and ML ambitions 
+on Google Cloud. As an engineering manager in Google Cloud Consulting, he leads teams of AI 
+engineers on mission-critical customer projects. While his work spans the full range of AI prod­
+ucts and solutions in the Google Cloud portfolio, he is particularly interested in agentic systems, 
+machine learning operations, and healthcare applications of AI. Before joining Google in Munich, 
+Max spent several years as a consultant, first with KPMG and later with the Boston Consulting 
+Group. He also led the digital transformation of NTUC Enterprise, a Singapore government or­
+ganization. Max holds a PhD in Economics from Coventry University.
+Rany ElHousieny is an AI Solutions Architect and AI Engineering Manager with over two 
+decades of experience in AI, NLP, and ML. Throughout his career, he has focused on the develop­
+ment and deployment of AI models, authoring multiple articles on AI systems architecture and 
+ethical AI deployment. He has led groundbreaking projects at companies like Microsoft, where he 
+spearheaded advancements in NLP and the Language Understanding Intelligent Service (LUIS). 
+Currently, he plays a pivotal role at Clearwater Analytics, driving innovation in generative AI and 
+AI-driven financial and investment management solutions.
+Nicolas Bievre is a Machine Learning Engineer at Meta with extensive experience in AI, recom­
+mender systems, LLMs, and generative AI, applied to advertising and healthcare. He has held key 
+AI leadership roles at Meta and PayPal, designing and implementing large-scale recommender 
+systems used to personalize content for hundreds of millions of users. He graduated from Stanford 
+University, where he published peer-reviewed research in leading AI and bioinformatics journals. 
+Internationally recognized for his contributions, Nicolas has received awards such as the “Core 
+Ads Growth Privacy” Award and the “Outre-Mer Outstanding Talent” Award. He also serves as 
+an AI consultant to the French government and as a reviewer for top AI organizations.

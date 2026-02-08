@@ -1,0 +1,24 @@
+Creating New Features
+256
+5.
+Now, make a scatter plot between the hour and its cosine transformation:
+plt.scatter(df["hour"], df["hour_cos"])
+plt.ylabel("Cosine of hour")
+plt.xlabel("Hour")
+plt.title("Cosine transformation")
+In the following plot, we can see how the values of the hour circle between -1 and 1, just like
+the cosine function after the transformation:
+Figure 8.14 - A scatter plot of the hour versus its cosine-transformed values
+Finally, we can reconstitute the cyclical nature of the hour, which is now captured by the two
+new features.
+6.
+Plot the values of the sine versus the cosine of the hour, and overlay the original values of the
+hour using a color map:
+fig, ax = plt.subplots(figsize=(7, 5))
+sp = ax.scatter(
+    df["hour_sin"], df["hour_cos"], c=df["hour"])
+ax.set(
+    xlabel="sin(hour)",
+    ylabel="cos(hour)",
+)
+_ = fig.colorbar(sp)

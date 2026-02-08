@@ -1,0 +1,35 @@
+Chapter 2
+59
+You can send multimodal input by value or by reference. To send it by value, you should encode 
+bytes as a string and construct an image_url variable formatted as in the example below using 
+the image we generated using Stable Diffusion:
+import base64
+from langchain_google_genai.chat_models import ChatGoogleGenerativeAI
+from langchain_core.messages.human import HumanMessage
+with open("stable-diffusion.png", 'rb') as image_file:
+    image_bytes = image_file.read()
+    base64_bytes = base64.b64encode(image_bytes).decode("utf-8")
+prompt = [
+   {"type": "text", "text": "Describe the image: "},
+   {"type": "image_url", "image_url": {"url": f"data:image/
+jpeg;base64,{base64_bytes}"}},
+]
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0,
+)
+response = llm.invoke([HumanMessage(content=prompt)])
+print(response.content)
+The image presents a futuristic, stylized depiction of a humanoid robot's 
+upper body against a backdrop of glowing blue digital displays. The robot's 
+head is rounded and predominantly white, with sections of dark, possibly 
+metallic, material around the face and ears.  The face itself features 
+glowing orange eyes and a smooth, minimalist design, lacking a nose or 
+mouth in the traditional human sense.  Small, bright dots, possibly LEDs 
+or sensors, are scattered across the head and body, suggesting advanced 
+technology and intricate construction.
+The robot's neck and shoulders are visible, revealing a complex internal 
+structure of dark, interconnected parts, possibly wires or cables, which 
+contrast with the white exterior. The shoulders and upper chest are also 
+white, with similar glowing dots and hints of the internal mechanisms showing 
+through. The overall impression is of a sleek, sophisticated machine.

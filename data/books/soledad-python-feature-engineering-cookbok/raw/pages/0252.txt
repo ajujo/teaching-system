@@ -1,0 +1,27 @@
+8
+Creating New Features
+Adding new features to a dataset can help machine learning models learn patterns and important 
+details in the data. For example, in finance, the disposable income, which is the total income minus 
+the acquired debt for any one month, might be more relevant for credit risk than just the income or 
+the acquired debt. Similarly, the total acquired debt of a person across financial products, such as a 
+car loan, a mortgage, and credit cards, might be more important to estimate the credit risk than any 
+debt considered individually. In these examples, we use domain knowledge to craft new variables, 
+and these variables are created by adding or subtracting existing features.
+In some cases, a variable may not have a linear or monotonic relationship with the target, but a 
+polynomial combination might. For example, if our variable has a quadratic relationship with the target, ​
+y = ​x​ 2​, we can convert that into a linear relationship by squaring the original variable. We can also 
+help linear models better understand the relationships between variables and targets by transforming 
+the predictors through splines, or by using decision trees.
+The advantage of crafting additional features to train simpler models, such as linear or logistic regression, 
+is that both the features and the models remain interpretable. We can explain the reasons driving a model’s 
+output to management, clients, and regulators, adding a layer of transparency to our machine learning 
+pipelines. In addition, simpler models tend to be faster to train and easier to deploy and maintain.
+In this chapter, we will create new features by transforming or combining variables with mathematical 
+functions, splines, and decision trees.
+This chapter will cover the following recipes:
+•	 Combining features with mathematical functions
+•	 Comparing features to reference variables
+•	 Performing polynomial expansion
+•	 Combining features with decision trees
+•	 Creating periodic features from cyclical variables
+•	 Creating spline features

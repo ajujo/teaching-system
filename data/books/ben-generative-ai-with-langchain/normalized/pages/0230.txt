@@ -1,0 +1,36 @@
+Chapter 5
+203
+   description=(
+       "Calculates a single mathematical expression, incl. complex
+numbers."
+       "'\nAlways add * to operations, examples:\n73i -> 73*i\n"
+       "7pi**2 -> 7*pi**2"
+   ),
+   arg_types={"expression": "str"},
+)
+Observe that we defined our function as a simple Python function that takes a single input pa­
+rameter. Unlike LangGraph nodes, this function doesn't need state or config parameters. It's just
+a straightforward callable that we can wrap with retry logic. Then, we wrapped this function as
+RunnableLambda and added retries. It might be useful if we want to keep our Python function as
+a function without wrapping it with a decorator, or if we want to wrap an external API (hence,
+description and arguments schema can't be auto-inherited from the docstrings). We can use any
+Runnable (for example, a chain or a graph) to create a tool, and that allows us to build multi-agent
+systems since now one LLM-based workflow can invoke another LLM-based one. Let's convert
+our Runnable to a tool:
+calculator_tool = convert_runnable_to_tool(
+   calculator_with_retry,
+   name="calculator",
+   description=(
+       "Calculates a single mathematical expression, incl. complex
+numbers."
+       "'\nAlways add * to operations, examples:\n73i -> 73*i\n"
+       "7pi**2 -> 7*pi**2"
+   ),
+   arg_types={"expression": "str"},
+)
+Let's test our new calculator function with the LLM:
+llm.invoke("How much is (2+3i)**2", tools=[calculator_tool]).tool_calls[0]
+>> {'name': 'calculator',
+ 'args': {'__arg1': '(2+3*i)**2'},
+ 'id': '46c7e71c-4092-4299-8749-1b24a010d6d6',
+ 'type': 'tool_call'}

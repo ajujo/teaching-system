@@ -1,0 +1,37 @@
+Setup and integration
+Use OTel collectors to send agent traces/logs to Elasticsearch (via Logstash for
+ingestion). Kibana provides the UI for querying and dashboards. For LangGraph,
+instrument nodes to log structured events (e.g., JSON with tool params), leverag‐
+ing Elasticsearch’s ML jobs for anomaly detection on agent outputs. Example:
+query “hallucination events where confidence < 0.7” across sessions, correlating
+with user feedback.
+Key features
+Key features include advanced full-text and vector search for LLM outputs (e.g.,
+embedding-based drift detection); built-in ML for predictive alerts (e.g., forecast‐
+ing tool failure rates); and scalability for massive log volumes with clustering.
+Trade-offs
+The pros are superior search and analytics (e.g., fuzzy matching on prompts, bet‐
+ter for long-tail failures) and enterprise-grade scalability. The cons are higher
+resource demands (Elasticsearch is memory-intensive) and a more complex
+deployment (multiple services). It is best for teams with existing ELK invest‐
+ments, extending it for agent-specific semantic logging without starting from
+scratch.
+Arize Phoenix
+Phoenix focuses on LLM tracing and evaluation, providing a debug-oriented exten‐
+sion for agent monitoring in existing environments:
+Setup and integration
+Use Phoenix’s Python SDK to instrument LangGraph (e.g., trace LLM calls with
+evals). It supports OTel export for hybrid use. Example: visualize agent traces
+with auto-scorers for accuracy, exporting to notebooks for analysis.
+Key features
+Key features include structured tracing with evals (e.g., RAG quality, hallucina‐
+tion detection); Jupyter integration for ML workflows; and 2025 enhancements
+for multiagent coordination metrics.
+Trade-offs
+The pros are it is specialized for evals/debugging (faster insights on agent quality)
+and lightweight for prototyping. The con is that it is limited to traces/evals (sup‐
+plement for full logs/metrics) and more dev-oriented than ops. It is great for
+research/ML teams adding agent insights to managed enterprise stacks.
+228 
+| 
+Chapter 10: Monitoring in Production

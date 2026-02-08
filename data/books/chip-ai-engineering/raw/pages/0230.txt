@@ -1,0 +1,17 @@
+Un modelo de preferencias toma (prompt, respuesta 1,
+respuesta 2) como input y muestra cuál de las dos respuestas
+es mejor (la preferida por los usuarios) para el prompt en
+cuestión. Esta es quizás una de las direcciones más
+apasionantes para los jueces especializados. Ser capaz de
+predecir las preferencias humanas abre muchas
+posibilidades. Como se explica en el Capítulo 2, los datos
+sobre preferencias son esenciales para alinear los modelos
+de IA con las preferencias humanas, y su obtención es difícil
+y costosa. Disponer de un buen predictor de preferencias
+humanas suele facilitar la evaluación y hacer más seguro el
+uso de los modelos. Ha habido muchas iniciativas en la
+construcción de modelos de preferencia, incluyendo
+PandaLM (Wang et al., 2023) y JudgeLM (Zhu et al., 2023). La
+Figura 3-9 muestra un ejemplo del funcionamiento de
+PandaLM. No solo indica qué respuesta es mejor, sino que
+también explica su justificación.

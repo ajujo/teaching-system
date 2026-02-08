@@ -1,0 +1,8 @@
+figura 2-6. Visualización de la composición de ponderaciones de un modelo de
+transformador.
+Mayores valores de dimensión dan lugar a modelos de mayor tamaño. La
+Tabla 2-4 muestra estos valores de dimensión para diferentes modelos
+Llama 2 (Touvron et al., 2023) y Llama 3 (Dubey et al., 2024). Tenga en
+cuenta que, aunque el aumento de la longitud del contexto afecte a la huella
+de memoria del modelo, no afecta al número total de parámetros del
+modelo.

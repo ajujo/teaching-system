@@ -1,0 +1,22 @@
+- disperso frente a denso, Algoritmos de recuperación
+- evaluación de la calidad, Comparación de algoritmos de recuperación
+- funciones principales, RAG
+- RAG multimodal y, RAG más allá de los textos
+recuperadores densos, Algoritmos de recuperación
+recuperadores dispersos, Algoritmos de recuperación
+redes neuronales recurrentes (RNN), Modelado
+reducción de la dimensionalidad, Deduplicar datos
+reescritura de consultas, Arquitectura de transformador, Reranking
+reflexión, Planes complejos
+regeneración, Sentimiento, Sentimiento
+registros, Métricas
+regurgitación de derechos de autor, Extracción de información
+relevancia, Capacidad de generación
+reordenamiento, Estrategia de fragmentación
+respuestas canónicas, Medidas de similitud con los datos de referencia
+retropropagación, Cuellos de botella en la memoria
+RLHF (aprendizaje por refuerzo a partir de la retroalimentación humana),
+Afinado supervisado
+RNN (redes neuronales recurrentes), Modelado
+RoleLLM, Juego de rol
+rúbricas de puntuación, Paso 2. Crear una directriz de evaluación

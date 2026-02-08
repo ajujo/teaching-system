@@ -1,0 +1,34 @@
+Chapter 6
+241
+We have omitted the full output here (you're welcome to take the code from our GitHub repository
+and experiment with it yourself), but the first answer was wrong:
+Based on the DuckDuckGo search results, none of the provided statements
+are entirely true. The searches reveal that while there has been
+significant progress in women's labor force participation globally, it
+hasn't reached a point where most women work in agriculture, nor has there
+been a worldwide decline in participation. Furthermore, the information
+about working hours suggests that it's not universally true that women
+work longer hours than men in most regions. Therefore, there is no correct
+answer among the options provided.
+After five iterations, the weaker LLM was able to figure out the correct answer (keep in mind
+that the "professor" only evaluated the reasoning itself and it didn't use external tools or its own
+knowledge). Note that, technically speaking, we implemented cross-reflection and not self-re­
+flection (since we've used a different LLM for reflection than the one we used for the reasoning).
+Here's an example of the feedback provided during the first round:
+The student's reasoning relies on outside search results which are not
+provided, making it difficult to assess the accuracy of their claims. The
+student states that none of the answers are entirely true, but multiplechoice questions often have one best answer even if it requires nuance. To
+properly evaluate the answer, the search results need to be provided, and
+each option should be evaluated against those results to identify the most
+accurate choice, rather than dismissing them all. It is possible one of
+the options is more correct than the others, even if not perfectly true.
+Without the search results, it's impossible to determine if the student's
+conclusion that no answer is correct is valid. Additionally, the student
+should explicitly state what the search results were.
+Next, let's discuss an alternative communication style for a multi-agent setup, via a shared list of
+messages. But before that, we should discuss the LangGraph handoff mechanism and dive into
+some details of streaming with LangGraph.
+LangGraph streaming
+LangGraph streaming might sometimes be a source of confusion. Each graph has not only a
+stream and a corresponding asynchronous astream method, but also an astream_events. Let's
+dive into the difference.

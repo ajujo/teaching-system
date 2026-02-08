@@ -1,0 +1,19 @@
+Chapter 4
+109
+Why embeddings are so powerful
+Firstly, ML models work only with numerical values. This is not a problem when working with 
+tabular data, as the data is often in numerical form or can easily be processed into numbers. 
+Embeddings come in handy when we want to feed words, images, or audio data into models.
+For instance, when working with transformer models, you tokenize all your text input, where 
+each token has an embedding associated with it. The beauty of this process lies in its simplicity; 
+the input to the transformer is a sequence of embeddings, which can be easily and confidently 
+interpreted by the dense layers of the neural network.
+Based on this example, you can use embeddings to encode any categorical variable and feed it to 
+an ML model. But why not use other simple methods, such as one-hot encoding? When working 
+with categorical variables with high cardinality, such as language vocabularies, you will suffer 
+from the curse of dimensionality when using other classical methods. For example, if your vocab-
+ulary has 10,000 tokens, then only one token will have a length of 10,000 after applying one-hot 
+encoding. If the input sequence has N tokens, that will become N * 10,000 input parameters. If 
+N >= 100, often, when inputting text, the input is too large to be usable. Another issue with other 
+classical methods that don’t suffer from the curse of dimensionality, such as hashing, is that you 
+lose the semantic relationships between the vectors.

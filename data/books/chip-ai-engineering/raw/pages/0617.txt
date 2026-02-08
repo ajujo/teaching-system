@@ -1,0 +1,31 @@
+En el momento de escribir estas líneas, debido a la prevalencia de la
+arquitectura de transformadores y a las limitaciones de las tecnologías de
+aceleración existentes, muchas cargas de trabajo de IA y datos están
+limitadas por el ancho de banda de la memoria. Sin embargo, los futuros
+avances en software y hardware podrán hacer que la IA y las cargas de
+trabajo de datos sean limitadas por el cálculo.
+API de inferencia en línea y por lotes
+Muchos proveedores ofrecen dos tipos de API de inferencia: en línea y por
+lotes:
+Las API en línea optimizan la latencia. Las solicitudes se procesan
+en cuanto llegan.
+Las API por lotes optimizan los costos. Si su aplicación no tiene
+requisitos estrictos de latencia, pueden enviarlos a las API por lotes
+para un procesamiento más eficiente. Una mayor latencia permite
+una gama más amplia de técnicas de optimización, como la
+agrupación de solicitudes y el uso de hardware más barato. Por
+ejemplo, en el momento de escribir estas líneas, tanto Google
+Gemini como OpenAI ofrecen API por lotes con una reducción de
+costos del 50 % y un tiempo de respuesta significativamente
+mayor, es decir, del orden de horas en lugar de segundos o
+minutos. 6
+Las API en línea pueden agrupar las solicitudes siempre que no afecte
+significativamente a la latencia, tal y como se explica en “Agrupación por
+lotes”. La única diferencia real es que una API en línea se centra en una
+menor latencia, mientras que una API por lotes se centra en un mayor
+throughput (productividad).
+Los casos de uso orientados al cliente, como los chatbots o la generación de
+código, suelen requerir una latencia más baja y, por lo tanto, tienden a
+utilizar API en línea. Los casos de uso con requisitos de latencia menos
+estrictos, que son ideales para las API por lotes, incluyen los siguientes:
+Generación de datos sintéticos

@@ -1,0 +1,32 @@
+Table of Contents
+xvii
+Exploring the LLM Twin’s inference pipeline deployment strategy ................................ 366
+The training versus the inference pipeline • 369
+Deploying the LLM Twin service .................................................................................... 370
+Implementing the LLM microservice using AWS SageMaker • 371
+What are Hugging Face’s DLCs? • 371
+Configuring SageMaker roles • 372
+Deploying the LLM Twin model to AWS SageMaker • 373
+Calling the AWS SageMaker Inference endpoint • 384
+Building the business microservice using FastAPI • 389
+Autoscaling capabilities to handle spikes in usage .......................................................... 392
+Registering a scalable target • 394
+Creating a scalable policy • 395
+Minimum and maximum scaling limits • 396
+Cooldown period • 396
+Summary ........................................................................................................................  397
+References ....................................................................................................................... 398
+Chapter 11: MLOps and LLMOps 
+ 399
+The path to LLMOps: Understanding its roots in DevOps and MLOps ...........................  400
+DevOps • 401
+The DevOps lifecycle • 401
+The core DevOps concepts • 402
+MLOps • 403
+MLOps core components • 405
+MLOps principles • 405
+ML vs. MLOps engineering • 407
+LLMOps • 408
+Human feedback • 409
+Guardrails • 409
+Prompt monitoring • 411

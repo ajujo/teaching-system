@@ -1,0 +1,41 @@
+Sudden drops in accuracy (e.g., > 5–10% over a rolling 24-hour window), increases in
+task abandonment (> 15%), or surges in retries (> 20% session rate) are all potential
+indicators of input or concept drift. Embedding-based techniques, such as computing
+cosine similarity between current and historical query vectors, can also be used to
+compare new inputs against baselines (e.g., mean similarity < 0.8 triggers review),
+often implemented via libraries like Evidently AI for automated alerting in Grafana.
+Responding to these shifts is part of building resilient systems. Transient changes may
+be addressed by tuning thresholds or updating parsing logic, while persistent shifts
+might require retraining workflows or adapting to new APIs. Feedback loops, such as
+logging and exporting degraded traces for analysis, help teams determine whether
+issues are temporary or systemic. As always, response strategies benefit from the real-
+time visibility provided by a strong observability stack—enabling teams to act before
+drift becomes failure. Responding to these shifts is part of building resilient systems.
+Transient changes may be addressed by tuning thresholds or updating parsing logic,
+while persistent shifts might require retraining workflows or adapting to new APIs—
+guided by drift severity from the statistical measures (e.g., prioritize retraining if PSI
+> 0.25 persists over 48 hours). Feedback loops, such as logging and exporting degra‐
+ded traces for analysis, help teams determine whether issues are temporary or sys‐
+temic—perhaps via A/B testing post-detection to validate fixes. As always, response
+strategies benefit from the real-time visibility provided by a strong observability
+stack—enabling teams to act before drift becomes failure.
+Metric Ownership and Cross-Functional Governance
+As teams deploy agent-based systems, a subtle but serious organizational challenge
+emerges: who owns which metrics? In traditional software stacks, there’s a clear split:
+infrastructure teams own latency and uptime, product teams own conversion or user
+success, and ML teams (if present) build models, and manage the health and perfor‐
+mance of them, with responsibility for both the engineering and product implica‐
+tions. But agents powered by foundation models don’t respect these boundaries—and
+neither should your monitoring strategy.
+A foundation model response isn’t just a model artifact—it’s the product. A long
+chain of tool calls, retries, fallbacks, and generation steps isn’t a backend quirk—it’s
+the user experience. And a five-second plan generation delay isn’t a model
+limitation—it’s often a prompt or workflow design decision that someone made on
+the product team.
+That’s why logs, traces, and evaluation signals from agents belong in the core observa‐
+bility platform, alongside service health and system metrics. If product dashboards
+and model notebooks are the only place that agent metrics show up, you’re missing
+the full picture—and likely masking systemic issues.
+Metric Ownership and Cross-Functional Governance 
+| 
+239

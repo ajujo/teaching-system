@@ -1,0 +1,23 @@
+Performing polynomial expansion
+243
+If, instead of returning a DataFrame, PolynomialFeatures() returns a NumPy array
+and you want to obtain the names of the features in the array, you can do so by executing
+poly.get_feature_names_out(), which returns array(['var', 'var^2',
+'var^3'], dtype=object).
+6.
+Now, let's plot the new feature values against the original variable:
+dft = pd.DataFrame(
+    dft, columns=poly.get_feature_names_out())
+plt.plot(df["var"], dft)
+plt.legend(dft.columns)
+plt.xlabel("original variable")
+plt.ylabel("new variables")
+plt.show()
+In the following diagram, we can see the relationship between the polynomial features and
+the original variable:
+Figure 8.7 - The relationship between the features resulting from
+polynomial expansion and the original variable
+7.
+Let's add two additional variables to our toy dataset, with values from 1 to 10:
+df["col"] = np.linspace(0, 5, 11)
+df["feat"] = np.linspace(0, 5, 11)

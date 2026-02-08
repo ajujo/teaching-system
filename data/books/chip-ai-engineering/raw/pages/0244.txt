@@ -1,0 +1,35 @@
+4  Cuando GPT-o1 de OpenAI salió al mercado en septiembre de 2024, Terrence
+Tao, ganador de la medalla Fields, comparó la experiencia de trabajar con este
+modelo a trabajar con "un estudiante de posgrado mediocre, pero no
+completamente incompetente". Especuló que tal vez solo hagan falta una o dos
+iteraciones más hasta que la IA alcance el nivel de un "estudiante de posgrado
+competente". En respuesta, muchas personas bromearon diciendo que si ya
+estamos en el punto en que necesitamos las mentes humanas más brillantes para
+evaluar los modelos de IA, no tendremos a nadie cualificado para evaluar los
+modelos futuros.
+5  Busqué todos los repositorios con al menos 500 estrellas utilizando las palabras
+clave "LLM", "GPT", "generative" y "transformer". También he realizado un
+crowdsourcing para encontrar los repositorios que faltaban a través de mi sitio
+web https://huyenchip.com.
+6  Aunque existe una fuerte correlación, el rendimiento del modelado lingüístico
+no explica totalmente el rendimiento derivado. Se trata de un campo de
+investigación activo.
+7  Como se explica en el Capítulo 1, un token puede ser un carácter, una palabra o
+parte de una palabra. Cuando Claude Shannon introdujo la entropía en 1951, los
+tokens con los que trabajaba eran caracteres. Esto decía sobre la entropía en sus
+propias palabras: "La entropía es un parámetro estadístico que mide, en cierto
+sentido, cuánta información se produce en promedio por cada letra de un texto
+en el lenguaje. Si el idioma se traduce a dígitos binarios (0 o 1) de la forma más
+eficiente, la entropía es el número promedio de dígitos binarios necesarios por
+letra del idioma original".
+8  Una de las razones por las que mucha gente prefiere el logaritmo natural al
+logaritmo de base 2 es porque el logaritmo natural tiene ciertas propiedades que
+facilitan su cálculo. Por ejemplo, la derivada del logaritmo natural ln(x) es 1/x.
+9  Si no está seguros de lo que significan SFT (afinado supervisado) y RLHF
+(aprendizaje por refuerzo a partir de la retroalimentación humana), vuelva a
+consultar el Capítulo 2.
+10  La cuantización se aborda en el Capítulo 7.
+11  El reto es que, aunque muchas tareas complejas tienen objetivos cuantificables,
+la IA no es lo bastante buena para realizar tareas complejas de principio a fin,
+por lo que podría utilizarse para realizar parte de la solución. A veces, evaluar
+una parte de una solución es más difícil que evaluar el output final. Imagine que

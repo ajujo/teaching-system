@@ -1,0 +1,35 @@
+Chapter 9
+381
+from langchain_openai import ChatOpenAI
+model = ChatOpenAI(model="gpt-4o")
+server_params = StdioServerParameters(
+    command="python",
+    # Update with the full absolute path to math_server.py
+    args=["/path/to/math_server.py"],
+)
+async def run_agent():
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            tools = await load_mcp_tools(session)
+            agent = create_react_agent(model, tools)
+            response = await agent.ainvoke({"messages": "what's (3 + 5) x 
+12?"})
+            print(response)
+This code loads MCP tools into a LangChain-compatible format, creates an AI agent using Lang­
+Graph, and executes mathematical queries dynamically. You can run the client script to interact 
+with the server.
+Deploying LLM applications in production environments requires careful infrastructure planning 
+to ensure performance, reliability, and cost-effectiveness. This section provides some information 
+regarding production-grade infrastructure for LLM applications.
+Infrastructure considerations
+Production LLM applications need scalable computing resources to handle inference workloads 
+and traffic spikes. They require low-latency architectures for responsive user experiences and per­
+sistent storage solutions for managing conversation history and application state. Well-designed 
+APIs enable integration with client applications, while comprehensive monitoring systems track 
+performance metrics and model behavior.
+Production LLM applications require careful consideration of deployment architecture to en­
+sure performance, reliability, security, and cost-effectiveness. Organizations face a fundamental 
+strategic decision: leverage cloud API services, self-host on-premises, implement a cloud-based 
+self-hosted solution, or adopt a hybrid approach. This decision carries significant implications 
+for cost structures, operational control, data privacy, and technical requirements.

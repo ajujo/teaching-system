@@ -1,0 +1,33 @@
+Imputing Missing Data
+28
+How to do it...
+Let's begin by importing the required libraries and time series dataset:
+1.
+Let's import pandas and matplotlib:
+import matplotlib.pyplot as plt
+import pandas as pd
+2.
+Let's load the air passengers dataset that we described in the Technical requirements section
+and display the first five rows of the time series:
+df = pd.read_csv(
+    "air_passengers.csv",
+    parse_dates=["ds"],
+    index_col=["ds"],
+)
+print(df.head())
+We see the time series in the following output:
+                y
+ds
+1949-01-01  112.0
+1949-02-01  118.0
+1949-03-01  132.0
+1949-04-01  129.0
+1949-05-01  121.0
+Note
+You can determine the percentage of missing data by executing df.isnull().mean().
+3.
+Let's plot the time series to spot any obvious data gaps:
+ax = df.plot(marker=".", figsize=[10, 5], legend=None)
+ax.set_title("Air passengers")
+ax.set_ylabel("Number of passengers")
+ax.set_xlabel("Time")

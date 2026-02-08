@@ -1,0 +1,12 @@
+Para un mismo modelo, las distintas fases de entrenamiento pretenden
+enseñar al modelo distintas capacidades y, por tanto, requieren conjuntos de
+datos con atributos diferentes. Por ejemplo, la cantidad de datos para el preentrenamiento suele medirse en número de tokens, mientras que la cantidad
+de datos para el afinado supervisado suele medirse en número de ejemplos.
+No obstante, a un alto nivel, sus procesos de curación siguen el mismo
+principio. Este capítulo se centra en los datos de post-entrenamiento porque
+son más relevantes para los desarrolladores de aplicaciones. Sin embargo,
+también incluiré lecciones de los datos de pre-entrenamiento cuando estas
+lecciones sirvan para el post-entrenamiento.
+Hay mejores prácticas que puede seguir y herramientas que puede utilizar
+para automatizar partes del proceso. Sin embargo, con la mayoría de los
+datos será cuestión de trabajo, sudor y lágrimas.

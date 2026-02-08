@@ -1,0 +1,18 @@
+Chapter 11
+439
+          poetry install --without aws
+          poetry self add 'poethepoet[poetry_plugin]'
+Finally, the test job runs the project's tests using the poetry poe test command. This step
+ensures that all tests are executed and provides feedback on whether the current code changes
+break any functionality.
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          poetry poe test
+If any of the steps from the QA or test jobs fail, the GitHub Actions workflow will fail, resulting
+in the PR not being able to be merged until the issue is fixed. By taking this approach, we ensure
+that all the new features added to the main branches respect the standard of the project and that
+it doesn't break existing functionality through automated tests.
+Figure 11.15 shows the CI pipeline in the Actions tab of the GitHub repository. It was run after a
+commit with the message feat: Add Docker image and CD pipeline and ran the two jobs described above, QA and Test.
+Figure 11.15: GitHub Actions CI pipeline run example

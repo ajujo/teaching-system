@@ -1,0 +1,34 @@
+Building Workflows with LangGraph
+92
+ | llm
+ | StrOutputParser()
+)
+print(final_chain.invoke({"question": "Solve equation 2*x+5=15"}))
+>> 5
+Although a CoT prompt seems to be relatively simple, it's extremely powerful since, as we've
+mentioned, it has been demonstrated multiple times that it significantly increases performance
+in many cases. We will see its evolution and expansion when we discuss agents in Chapters 5 and 6.
+These days, we can observe how the CoT pattern gets more and more application with so-called
+reasoning models such as o3-mini or gemini-flash-thinking. To a certain extent, these models
+do exactly the same (but often in a more advanced manner) - they think before they answer, and
+this is achieved not only by changing the prompt but also by preparing training data (sometimes
+synthetic) that follows a CoT format.
+Please note that alternatively to using reasoning models, we can use CoT modification with ad­
+ditional instructions by asking an LLM to first generate output tokens that represent a reasoning
+process:
+template = ChatPromptTemplate.from_messages([
+    ("system", """You are a problem-solving assistant that shows its
+reasoning process. First, walk through your thought process step by step,
+labeling this section as 'THINKING:'. After completing your analysis,
+provide your final answer labeled as 'ANSWER:'."""),
+    ("user", "{problem}")
+])
+Self-consistency
+The idea behind self-consistency is simple: let's increase an LLM's temperature, sample the an­
+swer multiple times, and then take the most frequent answer from the distribution. This has
+been demonstrated to improve the performance of LLM-based workflows on certain tasks, and
+it works especially well on tasks such as classification or entity extraction, where the output's
+dimensionality is low.
+Let's use a chain from a previous example and try a quadratic equation. Even with CoT prompting,
+the first attempt might give us a wrong answer, but if we sample from a distribution, we will be
+more likely to get the right one:

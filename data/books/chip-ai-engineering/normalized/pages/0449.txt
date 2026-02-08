@@ -1,0 +1,27 @@
+afinó a GPT-J para que aprendiera cinco herramientas. Chameleon (Lu et
+al., 2023) utiliza 13 herramientas. Por otro lado, Gorilla (Patil et al., 2023)
+intentaba influenciar a los agentes para que seleccionaran la llamada a la
+API correcta entre 1645 API.
+Más herramientas dan al agente más capacidades. Sin embargo, cuantas más
+herramientas haya, más difícil es utilizarlas eficazmente. Es parecido a lo
+que les cuesta a los humanos dominar un gran conjunto de herramientas.
+Añadir herramientas también implica aumentar las descripciones de las
+mismas, que podrían no encajar en el contexto de un modelo.
+Como muchas otras decisiones a la hora de crear aplicaciones de IA, la
+selección de herramientas requiere experimentación y análisis. Estas son
+algunas cosas que pueden ayudarle a decidir:
+Compare el rendimiento de un agente con distintos conjuntos de
+herramientas.
+Haga un estudio de ablación para ver cuánto baja el rendimiento
+del agente si se elimina una herramienta de su inventario. Si una
+herramienta puede retirarse sin que disminuya el rendimiento,
+retírela.
+Esté atento a herramientas en las que el agente cometa errores con
+frecuencia. Si una herramienta resulta demasiado difícil de utilizar
+para el agente (por ejemplo, si no se consigue que el modelo
+aprenda a utilizarla mediante una amplia serie de prompts e incluso
+afinándolo), es preciso cambiarla.
+Grafique la distribución de las llamadas a las herramientas para ver
+qué herramientas se utilizan más y cuáles menos. La Figura 6-14
+muestra las diferencias en los patrones de uso de herramientas de
+GPT-4 y ChatGPT en Chameleon (Lu et al., 2023).

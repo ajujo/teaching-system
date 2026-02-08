@@ -1,0 +1,29 @@
+de la inteligencia artificial como "el estudio y diseño de agentes
+racionales".
+Las capacidades sin precedentes de los modelos fundacionales han abierto
+la puerta a aplicaciones agénticas antes inimaginables. Estas nuevas
+capacidades hacen por fin posible el desarrollo de agentes autónomos e
+inteligentes que actúen como nuestros asistentes, compañeros de trabajo y
+entrenadores. Pueden ayudarnos a crear una página web, recopilar datos,
+planificar un viaje, hacer un estudio de mercado, gestionar una cuenta de
+cliente, automatizar la introducción de datos, prepararnos para entrevistas,
+entrevistar a nuestros candidatos, negociar un acuerdo, etc. Las
+posibilidades parecen infinitas y el valor económico potencial de estos
+agentes es enorme.
+AVISO
+Los agentes impulsados por IA son un campo emergente, sin marcos
+teóricos establecidos para definirlos, desarrollarlos y evaluarlos. Esta
+sección es mi mejor intento de construir un marco a partir de la bibliografía
+existente, pero evolucionará a medida que lo haga el campo. En
+comparación con el resto del libro, esta sección es más experimental.
+Esta sección comenzará con una visión general de los agentes, para
+continuar con dos aspectos que determinan las capacidades de un agente:
+las herramientas y la planificación. Los agentes, con sus nuevos modos de
+operación, tienen nuevos modos de fallos. Esta sección terminará con un
+debate sobre cómo evaluar a los agentes para detectar estos fallos.
+Aunque los agentes son novedosos, se basan en conceptos que ya han
+aparecido en este libro, como la autocrítica, la cadena de pensamiento y los
+outputs estructurados.
+Visión general de los agentes
+El término agente se ha utilizado en muchos contextos de ingeniería
+diferentes, incluyendo, entre otros, agente de software, agente inteligente,

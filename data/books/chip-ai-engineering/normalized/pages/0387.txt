@@ -1,0 +1,27 @@
+capítulo 6. RAG y agentes
+Para resolver una tarea, un modelo necesita tanto las instrucciones para
+hacerlo como la información necesaria. Al igual que un ser humano es más
+propenso a dar una respuesta errónea cuando le falta información, los
+modelos de IA son más propensos a cometer errores y alucinar cuando les
+falta contexto. Para una aplicación determinada, las instrucciones del
+modelo son comunes a todas las consultas, mientras que el contexto es
+específico de cada consulta. En el capítulo anterior se explicó cómo escribir
+buenas instrucciones para el modelo. Este capítulo se centra en cómo
+construir el contexto pertinente para cada consulta.
+Dos patrones dominantes para la construcción de contextos son la
+generación aumentada por recuperación (RAG) y los agentes. El patrón de
+RAG permite al modelo recuperar información relevante de fuentes de
+datos externas. El patrón agéntico permite al modelo utilizar herramientas
+como las API de búsqueda web y noticias para recopilar información.
+Si bien el patrón de RAG se utiliza principalmente para construir el
+contexto, el patrón agéntico puede hacer mucho más. Las herramientas
+externas pueden ayudar a los modelos a subsanar sus deficiencias y ampliar
+sus capacidades. Y lo que es más importante, dan a los modelos la
+capacidad de interactuar directamente con el mundo, lo que les permite
+automatizar muchos aspectos de nuestras vidas.
+Tanto los modelos RAG como los agénticos son apasionantes por las
+capacidades que aportan a modelos ya de por sí potentes. En poco tiempo,
+han conseguido capturar la imaginación colectiva, dando lugar a increíbles
+demostraciones y productos que convencen a mucha gente de que son el
+futuro. Este capítulo tratará en detalle cada uno de estos patrones, cómo
+funcionan y qué los hace tan prometedores.

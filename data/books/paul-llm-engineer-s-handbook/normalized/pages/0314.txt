@@ -1,0 +1,31 @@
+Chapter 7
+283
+]
+for model_id in model_ids:
+    evaluate_answers(model_id)
+By saving intermediate results, our evaluation framework becomes more robust to failures. It is
+also easily extendable to other models, datasets, and criteria.
+Analyzing results
+There are three elements we can review at the end of this evaluation process: model answers,
+explanations from evaluations, and scores.
+While reviewing answers is not scalable, it is a crucial step that can help to identify a lot of common mistakes, such as a wrong chat template or incorrect model. Here, we will focus on a single
+instruction and read the answers provided by our two models and Llama-3.1-8B-Instruct.
+Instruction
+Discuss the concept of algorithm bias and its implications.
+TwinLlama-3.1-8B
+Algorithm bias refers to the tendency of algorithms to produce outcomes that are skewed
+or unfair due to underlying assumptions or programming biases. This can have significant
+implications, particularly in fields like machine learning and AI, where algorithms are relied
+upon to make critical decisions. If an algorithm is not properly vetted for bias, it may lead
+to discriminatory outcomes, such as lending practices that disproportionately affect certain
+demographic groups or recruitment processes that unfairly favor certain candidates. It is
+essential to ensure that algorithms are designed and implemented with fairness and accuracy
+in mind to mitigate these risks.
+TwinLlama-3.1-8B-DPO
+Algorithm bias refers to the tendency of algorithms to produce outcomes that are skewed
+or unfair due to underlying assumptions or programming biases. This can have significant
+implications, particularly in fields like machine learning and AI, where algorithms are relied
+upon to make critical decisions. If an algorithm is not properly vetted for bias, it could
+lead to discriminatory outcomes, such as denying loans to certain demographic groups or
+perpetuating stereotypes. Therefore, it is essential to address algorithmic bias proactively to
+ensure that the technology we develop is equitable and just.

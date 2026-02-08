@@ -1,0 +1,30 @@
+Extracting Features from Date and Time Variables
+178
+Extracting features from dates with pandas
+The values of datetime variables can be dates, time, or both. We’ll begin by focusing on those 
+variables that contain dates. We rarely use raw dates with machine learning algorithms. Instead, we 
+extract simpler features, such as the year, month, or day of the week, that allow us to capture insights 
+such as seasonality, periodicity, and trends.
+The pandas Python library is great for working with date and time. Utilizing the pandas dt module, 
+we can access the datetime properties of a pandas Series to extract many features. However, to 
+leverage this functionality, the variables need to be cast into a data type that supports these operations, 
+such as datetime or timedelta.
+Note
+The datetime variables can be cast as objects, particularly when we load the data from a 
+CSV file. To extract the date and time features that we will discuss throughout this chapter, it 
+is necessary to recast the variables as datetime.
+In this recipe, we will learn how to extract features from dates by utilizing pandas.
+Getting ready
+The following are some of the features that we can extract from the date part of the datetime 
+variable off the shelf using pandas:
+•	 pandas.Series.dt.year
+•	 pandas.Series.dt.quarter
+•	 pandas.Series.dt.month
+•	 pandas.Series.dt.isocalendar().week
+•	 pandas.Series.dt.day
+•	 pandas.Series.dt.day_of_week
+•	 pandas.Series.dt.weekday
+•	 pandas.Series.dt.dayofyear
+•	 pandas.Series.dt.day_of_year
+We can use the features we’ve obtained with pandas to create even more features, such as the semester 
+or whether it is a weekend. We will learn how to do this in the next section.

@@ -1,0 +1,36 @@
+Chapter 4
+163
+This module is responsible for loading documents in various formats. It defines:
+•
+Custom Loader classes: The EpubReader class inherits from UnstructuredEPubLoader
+and configures it to work in "fast" mode using element extraction, optimizing it for EPUB
+document processing.
+•
+DocumentLoader class: A central class that manages document loading across different
+file formats by maintaining a mapping between file extensions and their appropriate
+loader classes.
+•
+load_document function: A utility function that accepts a file path, determines its ex­
+tension, instantiates the appropriate loader class from the DocumentLoader's mapping,
+and returns the loaded content as a list of Document objects.
+Let's get the imports out of the way:
+import logging
+import os
+import pathlib
+import tempfile
+from typing import Any
+from langchain_community.document_loaders.epub import
+UnstructuredEPubLoader
+from langchain_community.document_loaders.pdf import PyPDFLoader
+from langchain_community.document_loaders.text import TextLoader
+from langchain_community.document_loaders.word_document import (
+    UnstructuredWordDocumentLoader
+)
+from langchain_core.documents import Document
+from streamlit.logger import get_logger
+logging.basicConfig(encoding="utf-8", level=logging.INFO)
+LOGGER = get_logger(__name__)
+This module first defines a custom class, EpubReader, that inherits from UnstructuredEPubLoader.
+This class is responsible for loading documents with supported extensions. The supported_
+extentions dictionary maps file extensions to their corresponding document loader classes.
+This gives us interfaces to read PDF, text, EPUB, and Word documents with different extensions.

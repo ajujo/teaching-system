@@ -1,0 +1,33 @@
+Dejar fijos los ajustes de generación de outputs es una buena práctica, pero
+no inspira confianza en el sistema. Imagine a un profesor que le da
+puntuaciones coherentes solo si se sienta en un aula concreta. Si ese
+profesor se sienta en un aula diferente, las puntuaciones que les dé serán
+desconcertantes.
+El segundo escenario (inputs ligeramente diferentes, outputs drásticamente
+diferentes) es más difícil. Dejar fijas las variables de generación de outputs
+del modelo sigue siendo una buena práctica, pero no obligará al modelo a
+generar los mismos outputs para inputs diferentes. Sin embargo, es posible
+conseguir que los modelos generen respuestas más parecidas a las deseadas
+con prompts cuidadosamente elaborados (lo que se aborda en el Capítulo 5)
+y un sistema de memoria (que se aborda en el Capítulo 6).
+Alucinación
+Las alucinaciones son fatales para las tareas que dependen de la factualidad.
+Si le pide a la IA que le ayude a explicar los pros y los contras de una
+vacuna, no quiere que la IA sea pseudocientífica. En junio de 2023, un
+bufete de abogados fue multado por presentar ante los tribunales
+investigaciones jurídicas ficticias. Habían utilizado ChatGPT para preparar
+su caso, sin ser conscientes de la tendencia de ChatGPT a alucinar.
+Aunque la alucinación se convirtió en un problema prominente con el auge
+de los LLMs, ya era un fenómeno común para los modelos generativos
+incluso antes de que se introdujera el término "modelo fundacional" y la
+arquitectura transformadora. Las alucinaciones en el contexto de la
+generación de textos se mencionaron ya en 2016 (Goyal et al., 2016).
+Detectar y medir las alucinaciones ha sido un elemento básico en la
+generación de lenguaje natural (NLG) desde entonces (véase Lee et al.,
+2018; Nie et al., 2019; y Zhou et al., 2020). Esta sección se centra en
+explicar por qué se producen las alucinaciones. En el Capítulo 4 se explica
+cómo detectar y medir las alucinaciones.
+Si la incoherencia se debe al azar en el proceso de muestreo, la causa de la
+alucinación es más matizada. El proceso de muestreo por sí solo no lo
+explica suficientemente. Un modelo muestrea los outputs de todas las
+opciones probables. Pero, ¿cómo se convierte algo nunca visto en una

@@ -1,0 +1,32 @@
+esas consultas. Servicios como Google Photos ya utilizan la IA para mostrar
+imágenes que coinciden con las consultas de búsqueda. 17 Google Image
+Search va un paso más allá: si no existe ninguna imagen que se ajuste a las
+necesidades de los usuarios, puede generar algunas.
+La IA es muy buena con el análisis de datos. Puede escribir programas para
+generar visualización de datos, identificar valores atípicos y hacer
+predicciones como previsiones de ingresos. 18
+Las empresas pueden utilizar la IA para extraer información estructurada de
+datos no estructurados, que puede utilizarse para organizar datos y ayudar a
+buscarlos. Algunos casos de uso sencillos son la extracción automática de
+información de tarjetas de crédito, licencias de conducir, recibos, boletos,
+información de contacto de pies de página de correos electrónicos, etc. Los
+casos de uso más complejos incluyen la extracción de datos de contratos,
+informes, gráficos, etc. Se calcula que el sector del procesamiento
+inteligente de datos (PID) alcanzará los 12 810 millones de dólares en 2030,
+con un crecimiento anual del 32.9 %.
+Automatización del flujo de trabajo
+En última instancia, la IA debería automatizar todo lo posible. Para los
+usuarios finales, la automatización puede ayudar en tareas cotidianas
+aburridas como reservar restaurantes, solicitar reembolsos, planificar viajes
+y rellenar formularios.
+Para las empresas, la IA puede automatizar tareas repetitivas como la
+gestión de clientes potenciales, la facturación, los reembolsos, la gestión de
+solicitudes de clientes, la introducción de datos, etc. Un caso especialmente
+interesante es el uso de modelos de IA para sintetizar datos, que luego
+pueden utilizarse para mejorar los propios modelos. Puede utilizar la IA
+para crear etiquetas para sus datos, con la participación de seres humanos
+para mejorar las etiquetas. En el Capítulo 8 se analiza la síntesis de los
+datos.
+Para realizar muchas tareas es necesario acceder a herramientas externas.
+Para reservar en un restaurante, una aplicación puede necesitar permiso para
+abrir un buscador para buscar el número del restaurante, utilizar su teléfono

@@ -1,0 +1,33 @@
+aplicación. El capítulo Capítulo 5 trata de la ingeniería de prompts,
+empezando por lo que es un prompt, por qué funciona la ingeniería de
+prompts y las mejores prácticas de la ingeniería de prompts. A continuación,
+se analiza cómo los malos actores pueden explotar su aplicación con
+ataques de prompts y cómo defender su aplicación contra ellos.
+El capítulo Capítulo 6 explora por qué el contexto es importante para que
+un modelo genere respuestas precisas. Se centra en dos grandes patrones de
+aplicación para la construcción de contextos: RAG y agéntico. El patrón
+RAG se entiende mejor y ha demostrado funcionar bien en la producción.
+Por su parte, aunque el patrón agéntico promete ser mucho más potente,
+también es más complejo y aún se está explorando.
+El Capítulo 7 explica cómo adaptar un modelo a una aplicación cambiando
+el propio modelo afinándolo. Debido a la escala de los modelos
+fundacionales, el afinado de los modelos nativos requiere mucha memoria,
+por lo que se han desarrollado muchas técnicas para mejorar los modelos
+mediante el afinado con menos memoria. El capítulo aborda diferentes
+enfoques de afinado, complementados por un enfoque más experimental: la
+fusión de modelos. Este capítulo contiene una sección más técnica que
+muestra cómo calcular la huella de memoria de un modelo.
+Ya que muchos marcos de afinado están disponibles, el propio proceso de
+afinado suele ser sencillo. Sin embargo, obtener datos para el afinado es
+difícil. El siguiente capítulo trata sobre los datos: su adquisición, anotación,
+síntesis y procesamiento. Muchos de los temas tratados en el Capítulo 8 son
+relevantes más allá del afinado, incluyendo la cuestión de qué significa
+calidad de datos y cómo evaluar la calidad de sus datos.
+Si del Capítulo 5 al Capítulo 8 se explora cómo mejorar la calidad de un
+modelo, el Capítulo 9 trata sobre cómo abaratar y acelerar su inferencia.
+Analiza la optimización tanto a nivel del modelo como del servicio de
+inferencia. Si utiliza una API de modelos (es decir, si alguien aloja su
+modelo por usted), es probable que esta API se encargue de optimizar la
+inferencia por usted. Sin embargo, si aloja el modelo usted mismo, ya sea
+un modelo de código abierto o un modelo desarrollado internamente, tendrá
+que aplicar muchas de las técnicas que se tratan en este capítulo.

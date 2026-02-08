@@ -1,0 +1,31 @@
+Infracción de los derechos de autor
+Si el modelo se entrena con datos protegidos por derechos
+de autor, los atacantes podrían hacer que el modelo
+regurgitara información protegida por derechos de autor.
+El sondeo factual es un área de investigación especializada que se centra en
+averiguar lo que sabe un modelo. Presentado por el laboratorio de IA de
+Meta en 2019, la prueba comparativa LAMA (Language Model Analysis)
+(Petroni et al., 2019) sondea el conocimiento relacional presente en los
+datos de entrenamiento. El conocimiento relacional sigue el formato "X
+[relación] Y", como "X nació en Y" o "X es un Y". Se puede extraer
+utilizando frases con espacios en blanco para ser llenados, como "Winston
+Churchill es un ciudadano _". Ante este prompt, un modelo que disponga de
+estos conocimientos debería ser capaz de emitir el output "británico".
+Las mismas técnicas utilizadas para sondear un modelo en busca de sus
+conocimientos pueden emplearse también para extraer información
+confidencial de los datos de entrenamiento. Se parte de la base de que el
+modelo memoriza sus datos de entrenamiento, y los prompts adecuados
+pueden hacer que el modelo emita lo memorizado. Por ejemplo, para
+extraer la dirección de correo electrónico de alguien, un atacante podría
+darle a un modelo el prompt "La dirección de correo electrónico de X es _".
+Carlini et al. (2020) y Huang et al. (2022) demostraron métodos para
+extraer datos de entrenamiento memorizados de GPT-2 y GPT-3. Ambos
+trabajos concluyen que, aunque dicha extracción es técnicamente posible, el
+riesgo es bajo porque los atacantes necesitan conocer el contexto específico
+en el que aparecen los datos que se quieren extraer. Por ejemplo, si una
+dirección de correo electrónico aparece en los datos de entrenamiento
+dentro del contexto "X cambia con frecuencia su dirección de correo
+electrónico, y la última es [DIRECCIóN DE CORREO ELECTRóNICO]",
+es más probable que el contexto exacto "X cambia con frecuencia su
+dirección de correo electrónico..." arroje el correo electrónico de X que un
+contexto más general como "El correo electrónico de X es...".

@@ -1,0 +1,108 @@
+{
+  "$schema": "exam_grade_report_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam01-a01",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "graded_at": "2026-02-05T21:08:39.673482+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "mixed",
+  "strict": true,
+  "grading_time_ms": 58108,
+  "results": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La arquitectura FTI permite modularizar los sistemas LLM en etapas reutilizables (feature, training e inference), optimizando recursos y facilitando la escalabilidad. Esto se menciona explícitamente en las páginas 8-15 del capítulo.",
+      "expected_answer": "1: Facilita la reutilización de componentes entre etapas del pipeline",
+      "given_answer": "1: Facilita la reutilización de componentes entre etapas del pipeline",
+      "correct_option_text": "Facilita la reutilización de componentes entre etapas del pipeline",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "La respuesta del estudiante es precisa y aborda correctamente los conceptos clave de un MVP en el contexto de LLM Twins: versión mínima funcional, validación de supuestos críticos (utilidad, calidad, seguridad, coste/latencia) y entrega de valor real sin construir todo el sistema. Aunque no menciona explícitamente \"mínima inversión\" como en la respuesta esperada, su definición es coherente con los principios de MVP. Podría mejorar incluyendo esta referencia para mayor alineación con la fuente original.",
+      "expected_answer": "Un MVP en este contexto es la versión más simple pero funcional del producto LLM que permite validar conceptos clave con mínima inversión, como se describe en las páginas 6-7.",
+      "given_answer": "Un MVP (Minimum Viable Product), en el contexto de desarrollar LLM Twins, es la primera versión mínima que funciona del “twin” (gemelo), con las capacidades esenciales para entregar valor real a usuarios (o al caso de uso) y validar rápidamente supuestos clave (utilidad, calidad de respuestas, seguridad, coste/latencia), sin construir todavía todo el sistema completo.",
+      "grading_path": "llm",
+      "confidence": 0.98,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q03",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! En la página 5 del capítulo, se explica que aunque ChatGPT puede parecer una alternativa, presenta limitaciones específicas que motivan el desarrollo de soluciones personalizadas como los LLM Twins.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q04",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El sistema de pago por uso no se menciona como componente arquitectónico básico. Los pipelines FTI y bases de datos vectoriales sí son componentes esenciales según páginas 16-22.",
+      "expected_answer": "2: Sistema de pago por uso basado en tokens",
+      "given_answer": "2: Sistema de pago por uso basado en tokens",
+      "correct_option_text": "Sistema de pago por uso basado en tokens",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "La respuesta es precisa y completa en el propósito del Feature Pipeline, incluyendo ejemplos relevantes como embeddings y señales de contexto. Sin embargo, no se mencionó la referencia a las páginas 19-20 del material de estudio, lo cual era parte de la respuesta esperada. Asegúrate de incluir siempre los elementos contextuales específicos cuando sean solicitados.",
+      "expected_answer": "El pipeline de características se encarga de transformar y preparar los datos brutos para su uso posterior en entrenamiento e inferencia, como se describe en las páginas 19-20.",
+      "given_answer": "El propósito principal del Feature Pipeline en un sistema LLM Twin es transformar datos brutos en “características” útiles y consistentes (por ejemplo, texto limpio, metadatos, embeddings, señales de contexto) que luego alimentan tanto el entrenamiento como la inferencia del twin.",
+      "grading_path": "llm",
+      "confidence": 0.98,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q06",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (1): Poetry. En la página 27 del capítulo posterior, se explica que Poetry es la herramienta recomendada para gestión de dependencias y entornos virtuales en proyectos LLM.",
+      "expected_answer": "1: Poetry",
+      "given_answer": "2: Conda",
+      "correct_option_text": "Poetry",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    }
+  ],
+  "summary": {
+    "total_questions": 6,
+    "correct_count": 5,
+    "total_score": 5.0,
+    "max_score": 6,
+    "percentage": 0.8333333333333334,
+    "passed": true,
+    "by_unit": {
+      "paul-llm-engineer-s-handbook-ch01-u01": {
+        "score": 5.0,
+        "max": 6.0
+      }
+    },
+    "by_type": {
+      "multiple_choice": {
+        "correct": 2,
+        "total": 3
+      },
+      "true_false": {
+        "correct": 1,
+        "total": 1
+      },
+      "short_answer": {
+        "correct": 2,
+        "total": 2
+      }
+    }
+  }
+}

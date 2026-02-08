@@ -1,0 +1,5 @@
+About the reviewer
+Hector Patiño Rivera has been involved with machine learning for geosciences since 2015, especially
+for subjects related to satellite imagery. He has a strong knowledge of Python and SQL and is a proficient
+developer of PostgresQLS, ArcGIS, QGIS, and more GIS-related software. He is an experienced Django
+developer. When Hector is not programming, he loves playing tennis and hanging out with his friends.

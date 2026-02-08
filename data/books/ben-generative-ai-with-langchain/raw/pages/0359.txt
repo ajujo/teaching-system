@@ -1,0 +1,36 @@
+Evaluation and Testing
+332
+client.create_example(
+    inputs={
+        "question": "What is the recommended dosage of ibuprofen for an 
+adult?"
+    },
+    outputs={
+        "trajectory": [
+            "intent_classifier",
+            "healthcare_agent",
+            "MedicalDatabaseSearch",
+            "format_response"
+        ],
+        "response": "Typically, 200-400mg every 4-6 hours, not exceeding 
+3200mg per day."
+    },
+    dataset_id=trajectory_dataset.id
+)
+To evaluate the agent’s trajectory, we need to capture the actual sequence of steps taken. With 
+LangGraph, we can use streaming capabilities to record every node and tool invocation:
+# Function to run graph with trajectory tracking (example implementation)
+async def run_graph_with_trajectory(inputs: dict) -> dict:
+    """Run graph and track the trajectory it takes along with the final 
+response."""
+    trajectory = []
+    final_response = ""
+   
+    # Here you would implement your actual graph execution
+    # For the example, we'll just return a sample result
+    trajectory = ["intent_classifier", "healthcare_agent", 
+"MedicalDatabaseSearch", "format_response"]
+Please remember to set your LANGSMITH_API_KEY environment variable! If you get 
+a Using legacy API key error, you might need to generate a new API key from 
+the LangSmith dashboard: https://smith.langchain.com/settings. You always 
+want to use the latest version of the LangSmith package.

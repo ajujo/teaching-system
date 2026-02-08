@@ -1,0 +1,21 @@
+MLOps Principles
+468
+Data drift
+Data drift, also called feature drift or covariate shift, occurs when the distribution of the produc-
+tion data deviates from that of the training data, as shown in Figure A.3. This difference means the 
+model cannot handle the changes in feature space, leading to potentially unreliable predictions. 
+Drift can result from natural real-life changes or systemic problems like missing data, pipeline 
+errors, and schema modifications.
+Figure A.3: Data drift examples
+When data begins to drift, the degradation in our model’s performance might not be immediately 
+noticeable, particularly if the model interpolates effectively. Nevertheless, this presents an ideal 
+chance to consider retraining before the drift affects the model’s performance.
+Target drift
+In addition to changes in input data (data drift), we might also encounter shifts in output dis-
+tribution. The shift could involve changes in the shape of the distribution or the addition and 
+removal of classes in categorical tasks. While retraining the model can help reduce performance 
+degradation due to target drift, you can often prevent it by adapting the head processing steps 
+and model head to support the new schema of the output class.
+For example, if you have a classifier that predicts if an image contains animals or people, and you 
+get a picture with buildings, you can either adapt your model to support an unknown class or 
+adjust the head of the model to add the new class for future predictions.

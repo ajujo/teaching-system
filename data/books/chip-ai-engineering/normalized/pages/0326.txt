@@ -1,0 +1,26 @@
+22 Es a la vez genial e intimidante ver que, en solo un par de años, los pruebas
+comparativas han tenido que cambiar de preguntas de nivel escolar a preguntas
+de nivel de posgrado.
+23 En los videojuegos existe el concepto de juego interminable, en el que se
+pueden generar nuevos niveles de forma procedimental a medida que los
+jugadores dominan todos los niveles existentes. Sería genial diseñar una prueba
+comparativa interminable en el que se generasen problemas más difíciles
+procedimentalmente a medida que los modelos suban de nivel.
+24 Leer sobre la experiencia de otras personas es educativo, pero depende de
+nosotros discernir una anécdota de la verdad universal. La misma actualización
+del modelo puede hacer que algunas aplicaciones se degraden y otras mejoren.
+Por ejemplo, la migración de GPT-3.5-turbo-0301 a GPT-3.5-turbo-1106 supuso
+un descenso del 10 % en la tarea de clasificación de intenciones de Voiceflow,
+pero una mejora en el chatbot de atención al cliente de GoDaddy.
+25 Si existe una puntuación disponible públicamente, compruebe hasta qué punto
+es fiable.
+26 Según el artículo de HELM, el costo total es de 38 000 dólares para las API
+comerciales y de 19 500 horas GPU para los modelos abiertos. Si una hora de
+GPU cuesta entre 2.15 y 3.18 dólares, el costo total asciende a entre 80 000 y
+100 000 dólares.
+27 Un amigo bromeó: "Una prueba comparativa deja de ser útil en cuanto se hace
+pública".
+28 Esto se debe a que la raíz cuadrada de 10 es aproximadamente 3.3.
+29 Por ejemplo, si no hay una correlación entre una prueba comparativa de
+traducción y otra de matemáticas, se podría deducir que mejorar la capacidad de
+traducción de un modelo no influye en su capacidad matemática.

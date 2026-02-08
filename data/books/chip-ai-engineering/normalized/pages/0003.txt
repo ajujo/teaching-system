@@ -1,0 +1,27 @@
+Ingeniería de IA
+por Chip Huyen
+Copyright © 2026 Developer Experience Advisory LLC. Todos los
+derechos reservados.
+Publicado por O'Reilly Media, Inc., 141 Stony Circle, Suite 195, Santa
+Rosa, CA 95401, USA.
+Los libros de O'Reilly pueden adquirirse para uso educativo, comercial o
+promocional. También hay disponibles ediciones en línea de la mayoría de
+los títulos (http://oreilly.com). Para más información, contacte con nuestro
+departamento de ventas para empresas e instituciones: 800-998-9938 o
+corporate@oreilly.com.
+Editora de Adquisiciones: Nicole Butterfield
+Editora de Desarrollo: Melissa Potter
+Editora de Producción: Beth Kelly
+Diseño de interiores: David Futato
+Diseño de portada: Karen Montgomery
+Ilustradora: Kate Dullea
+Machine Translation Post-Editing: Cypher Translation Services
+Diciembre de 2024: Primera English edición
+Noviembre de 2025: Primera edición española
+Historial de revisiones de la primera edición
+Noviembre de 2025: Primera edición española (Ebook)
+Consulte http://oreilly.com/catalog/errata.csp?isbn=9781098166304 para
+más información sobre la publicación.
+El logotipo de O'Reilly es una marca registrada de O'Reilly Media, Inc.
+Ingeniería de IA, la imagen de portada y la imagen comercial relacionada
+son marcas comerciales de O'Reilly Media, Inc.

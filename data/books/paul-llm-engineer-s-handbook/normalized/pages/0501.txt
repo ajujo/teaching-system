@@ -1,0 +1,32 @@
+MLOps Principles
+470
+How to detect and measure drifts
+Now that we've recognized the various types of drift, it's crucial to understand how to detect and
+measure it. To do so, you need two types of windows:
+•
+A reference window: This is the collection of data points used as a baseline to compare
+against the production data distributions for drift identification. It is usually gathered
+from the training dataset.
+•
+A test window: This collects data points gathered while the ML system is in production.
+It is compared with the reference window to ascertain if drift has occurred.
+To measure the drifts, you leverage hypothesis tests that verify the change in distribution between
+the two windows. For example, you can use the Kolmogorov-Smirnov (KS) test to monitor a
+single continuous feature. This is known as a univariate (1D) test. Thus, you must run it for every
+feature you want to monitor. You can leverage a chi-squared univariate test to monitor categorical
+variables and determine if the frequency of events in production is consistent with the reference
+window distribution.
+from alibi_detect.cd import KSDrift
+cd = KSDrift(X_ref, p_val=.05, preprocess_fn=preprocess_fn, input_
+shape=(max_len,))
+When working with text data in an embedding representation, we have to model a multivariate
+distribution, which is how LLMs work with text. A popular approach is to take the embeddings of
+the test and reference windows, apply a dimensionality reduction algorithm, and apply an algorithm such as maximum mean discrepancy (MMD). This algorithm is a kernel-based approach
+that measures the distance between two distributions by computing the distance between the
+mean of the embeddings of the two windows.
+from alibi_detect.cd import MMDDrift
+cd = MMDDrift(x_ref, backend='pytorch', p_val=.05)
+preds = cd.predict(x)
+Monitoring vs. observability
+Monitoring involves the collection and visualization of data, whereas observability provides insights into system health by examining its inputs and outputs. For instance, monitoring allows
+us to track a specific metric to detect potential issues.

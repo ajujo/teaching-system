@@ -1,0 +1,31 @@
+matriz de ponderaciones que se utiliza para las
+transformaciones lineales, mientras que una función de
+activación permite a las capas lineales aprender patrones no
+lineales. Una capa lineal también se denomina capa de
+prealimentación.
+Las funciones no lineales más comunes son ReLU, Rectified
+Linear Unit (Agarap, 2018), y GELU (Hendrycks y Gimpel,
+2016), que fueron utilizadas por GPT-2 y GPT-3,
+respectivamente. Las funciones de acción son muy sencillas.
+9 Por ejemplo, todo lo que hace ReLU es convertir valores
+negativos a 0. Matemáticamente, se escribe así:
+ReLU(x) = max(0, x)
+El número de bloques de un modelo de transformador suele denominarse
+número de capas del modelo. Un modelo lingüístico basado en
+transformadores también está equipado con un módulo antes y después de
+todos los bloques transformadores:
+Un módulo de incrustación antes de los bloques transformadores
+Este módulo consta de la matriz de incrustación y la matriz
+de incrustación posicional, que convierten los tokens y sus
+posiciones en vectores de incrustación, respectivamente.
+Ingenuamente, el número de índices de posición determina
+la longitud máxima del contexto del modelo. Por ejemplo, si
+un modelo registra 2048 posiciones, su longitud máxima de
+contexto será de 2048. Sin embargo, existen técnicas que
+permiten aumentar la longitud del contexto de un modelo
+sin aumentar el número de índices de posición.
+Una capa de output después de los bloques transformadores
+Este módulo mapea los vectores de output del modelo en
+probabilidades de token utilizadas para muestrear los
+outputs del modelo (se aborda en el "Muestreo"). Este
+módulo suele constar de una matriz, que también se

@@ -1,0 +1,31 @@
+Carrying out interpolation
+31
+Note
+The heights of the values used in the imputation are different in Figures 1.6 and 1.7. In Figure 1.6, 
+we carry the last value forward, hence the height is lower. In Figure 1.7, we carry the next value 
+backward, hence the height is higher.
+We’ve now obtained complete datasets that we can use for time series analysis and modeling.
+How it works...
+pandas ffill() takes the last seen value in any temporal gap in a time series and propagates it 
+forward to the next observed value. Hence, in Figure 1.6 we see the dotted overlay corresponding to 
+the imputation values at the height of the last seen observation.
+pandas bfill() takes the next valid value in any temporal gap in a time series and propagates it 
+backward to the previously observed value. Hence, in Figure 1.7 we see the dotted overlay corresponding 
+to the imputation values at the height of the next observation in the gap.
+By default, ffill() and bfill() will impute all values between valid observations. We can 
+restrict the imputation to a maximum number of data points in any interval by setting a limit, using 
+the limit parameter in both methods. For example, ffill(limit=10) will only replace the 
+first 10 data points in any gap.
+Carrying out interpolation
+We can impute missing data in time series by using interpolation between two non-missing data 
+points. Interpolation is the estimation of one or more values in a range by means of a function. In 
+linear interpolation, we fit a linear function between the last observed value and the next valid point. 
+In spline interpolation, we fit a low-degree polynomial between the last and next observed values. 
+The idea of using interpolation is to obtain better estimates of the missing data.
+In this recipe, we’ll carry out linear and spline interpolation in a time series.
+How to do it...
+Let’s begin by importing the required libraries and time series dataset.
+1.	
+Let’s import pandas and matplotlib:
+import matplotlib.pyplot as plt
+import pandas as pd

@@ -1,0 +1,30 @@
+result = graph.invoke({"order": example_order, "messages": convo})
+assert any("cancel_order" in str(m.content) for m in result["messages"],
+    "Cancel order tool not called")
+assert any("cancelled" in m.content.lower() for m in result["messages"],
+    "Confirmation message missing")
+print("✅ Agent passed minimal evaluation.")
+This snippet ensures that the tool was called and the confirmation was sent. Of
+course, real evaluation goes deeper: you can measure tool precision, parameter accu‐
+racy, and overall task success rates across hundreds of examples to catch edge cases
+before deploying. We'll dive into evaluation strategies and frameworks in depth in
+Chapter 9, but for now, remember: an untested agent is an untrusted agent.
+Because both steps are automated using @tool decorators, writing tests against real
+tickets becomes trivial-and you instantly gain measurable metrics like tool recall,
+parameter accuracy, and confirmation quality. Now that we've built and evaluated a
+minimal agent, let's explore the core design decisions that will shape its capabilities
+and impact.
+Core Components of Agent Systems
+Designing an effective agent-based system requires a deep understanding of the core
+components that enable agents to perform their tasks successfully. Each component
+plays a critical role in shaping the agent's capabilities, efficiency, and adaptability.
+From selecting the right models to equipping the agent with tools, memory, and plan‐
+ning capabilities, these elements must work together to ensure that the agent can
+operate in dynamic and complex environments. This section delves into the key com‐
+ponents-the foundation model, tools, and memory-and explores how they interact
+to form a cohesive agent system. Figure 2-1 shows the core components of an agent
+system.
+Figure 2-1. Core components of an agent system.
+20
+|
+Chapter 2: Designing Agent Systems

@@ -1,0 +1,28 @@
+Extracting features from text
+295
+In the following output, we see the DataFrame with the new features:
+Figure 9.10 – DataFrame with some of the features derived from datetime
+Note that some of the created features are numeric, such as HOUR or DAY, some are Booleans, such 
+as IS_FEDERAL_HOLIDAY, and some are categorical, such as PART_OF_DAY. To take a look at 
+the values of PART_OF_DAY, execute feature_matrix["PART_OF_DAY(first_data_
+time)"].unique().
+How it works...
+To create features from datetime variables, we used datetime transform primitives from featuretools 
+(https://featuretools.alteryx.com/en/stable/api_reference.html#datetime-
+transform-primitives). These primitives can be accessed from dfs using the strings and 
+functions we specified in steps 6 to 9 through the trans_primitive parameter. Note that in 
+addition, we passed an empty list to the agg_primitives parameter not to return the default 
+aggregation primitives that would have been otherwise applied to our datetime features. We also 
+ignored the features coming from the invoices DataFrame.
+Note
+We set agg_primitives to an empty list and ignored the invoices DataFrame to keep 
+the outputs simple and be able to focus on datetime features. However, note that the real power 
+of featuretools consists in creating primitives from datetime and then aggregating 
+them further at different entity levels.
+Extracting features from text
+In Chapter 11, Extracting Features from Text Variables, we will discuss various features that we can 
+extract from text pieces utilizing pandas and scikit-learn. We can also extract multiple features 
+from text automatically by utilizing featuretools.
+The featuretools library supports the creation of several basic features from text as part of its 
+default functionality, such as the number of characters, the number of words, the mean character 
+count per word, and the median word length in a piece of text, among others.

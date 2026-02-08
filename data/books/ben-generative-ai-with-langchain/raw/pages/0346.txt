@@ -1,0 +1,31 @@
+Chapter 8
+319
+Plan feasibility gauges whether every action in a proposed plan respects the domain’s precondi­
+tions and constraints. Using the PlanBench suite, Valmeekam and colleagues in their 2023 paper 
+PlanBench: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning 
+about Change showed that GPT-4 correctly generates fully executable plans in only about 34% 
+of classical IPC-style domains under zero-shot conditions—far below reliable thresholds and 
+underscoring persistent failures to account for environment dynamics and logical preconditions.
+Plan optimality extends evaluation beyond basic feasibility to consider efficiency. This dimen­
+sion assesses whether agents can identify not just any working solution but the most efficient 
+approach to accomplishing their goals. The Recipe2Plan benchmark specifically evaluates this 
+by testing whether agents can effectively multitask under time constraints, mirroring real-world 
+efficiency requirements. Current state-of-the-art models show significant room for improvement, 
+with published research indicating optimal planning rates between 45% and 55% for even the 
+most capable systems.
+Reasoning coherence evaluates the logical structure of the agent’s problem-solving approach—
+whether individual reasoning steps connect logically, whether conclusions follow from premises, 
+and whether the agent maintains consistency throughout complex analyses. Unlike traditional 
+software testing where only the final output matters, agent evaluation increasingly examines 
+intermediate reasoning steps to identify failures in logical progression that might be masked by 
+a correct final answer. Multiple academic studies have demonstrated the importance of this ap­
+proach, with several research groups developing standardized methods for reasoning trace analysis.
+Recent studies (CoLadder: Supporting Programmers with Hierarchical Code Generation in Multi-Level 
+Abstraction, 2023, and Generating a Low-code Complete Workflow via Task Decomposition and RAG, 
+2024) show that decomposing code-generation tasks into smaller, well-defined subtasks—often 
+using hierarchical or as-needed planning—leads to substantial gains in code quality, developer 
+productivity, and system reliability across both benchmarks and live engineering settings.
+Building on the foundational principles of LLM agent evaluation and the importance of establish­
+ing robust governance, we now turn to the practical realities of assessment. Developing reliable 
+agents requires a clear understanding of what aspects of their behavior need to be measured and 
+how to apply effective techniques to quantify their performance.

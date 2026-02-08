@@ -1,0 +1,23 @@
+3
+Data Engineering
+This chapter will begin exploring the LLM Twin project in more depth. We will learn how to 
+design and implement the data collection pipeline to gather the raw data we will use in all our 
+LLM use cases, such as fine-tuning or inference. As this is not a book on data engineering, we 
+will keep this chapter short and focus only on what is strictly necessary to collect the required 
+raw data. Starting with Chapter 4, we will concentrate on LLMs and GenAI, exploring its theory 
+and concrete implementation details.
+When working on toy projects or doing research, you usually have a static dataset with which 
+you work. But in our LLM Twin use case, we want to mimic a real-world scenario where we must 
+gather and curate the data ourselves. Thus, implementing our data pipeline will connect the dots 
+regarding how an end-to-end ML project works. This chapter will explore how to design and 
+implement an Extract, Transform, Load (ETL) pipeline that crawls multiple social platforms, 
+such as Medium, Substack, or GitHub, and aggregates the gathered data into a MongoDB data 
+warehouse. We will show you how to implement various crawling methods, standardize the data, 
+and load it into a data warehouse.
+We will begin by designing the LLM Twin’s data collection pipeline and explaining the architecture 
+of the ETL pipeline. Afterward, we will move directly to implementing the pipeline, starting with 
+ZenML, which will orchestrate the entire process. We will investigate the crawler implementation 
+and understand how to implement a dispatcher layer that instantiates the right crawler class 
+based on the domain of the provided link while following software best practices. Next, we will 
+learn how to implement each crawler individually. Also, we will show you how to implement 
+a data layer on top of MongoDB to structure all our documents and interact with the database.

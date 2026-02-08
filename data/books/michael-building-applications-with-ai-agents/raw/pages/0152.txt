@@ -1,0 +1,31 @@
+Figure 6-4. Answering questions with knowledge graphs. The user’s question is routed
+through a controller that queries the knowledge graph for relevant structured informa‐
+tion, combines it with the language model’s reasoning capabilities, and returns a contex‐
+tually rich, multihop informed answer.
+This provides an efficient way to retrieve relevant context for addressing a task. As AI
+technology progresses, the methodologies for building, integrating, and maintaining
+knowledge graphs will continue to evolve, further enhancing their utility in various 
+domains.
+Promise and Peril of Dynamic Knowledge Graphs
+Dynamic knowledge graphs are a significant step forward in managing and utilizing
+knowledge in real-time applications. These graphs are continuously updated with
+new information, adapting to changes in knowledge and context, which can signifi‐
+cantly enhance GraphRAG systems. However, the dynamic nature of these graphs
+also introduces specific challenges that need careful consideration. This section
+explores the potential benefits and risks associated with dynamic knowledge graphs.
+As the developer, it is important to apply careful consideration to choose the most
+appropriate design to retrieve the appropriate context for handling incoming tasks
+efficiently. A knowledge graph is reasonably easy to prototype, but getting one ready
+for production is a significant undertaking.
+Recent advances in model architectures are pushing context windows to unpreceden‐
+ted lengths, allowing LLMs to “remember” and process entire documents in a single
+pass. For example, Google’s Gemini 2.5 and OpenAI’s GPT-4.1 now support up to one
+million tokens—roughly 750,000 words or over 2,500 pages—enabling retrieval-free
+generation of very large contexts. Similarly, index-free RAG systems embed their own
+retrieval logic into long-context models such as GPT-4.1, effectively performing
+chunking and relevance scoring internally without external vector stores or inverted
+indices. Embedding knowledge directly into these extended contexts can simplify
+pipelines: rather than orchestrating separate retrieval and ranking nodes, an agent
+130 
+| 
+Chapter 6: Knowledge and Memory

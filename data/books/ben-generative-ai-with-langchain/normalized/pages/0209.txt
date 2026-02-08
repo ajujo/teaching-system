@@ -1,0 +1,38 @@
+Building Intelligent Agents
+182
+•
+Advanced tool-calling capabilities
+•
+Incorporating tools into workflows
+•
+What are agents?
+Let's begin with tools. Rather than diving straight into defining what an agent is, it's more helpful
+to first explore how enhancing LLMs with tools actually works in practice. By walking through
+this step by step, you'll see how these integrations unlock new capabilities. So, what exactly are
+tools, and how do they extend what LLMs can do?
+What is a tool?
+LLMs are trained on vast general corpus data (like web data and books), which gives them broad
+knowledge but limits their effectiveness in tasks that require domain-specific or up-to-date knowl­
+edge. However, because LLMs are good at reasoning, they can interact with the external environ­
+ment through tools-APIs or interfaces that allow the model to interact with the external world.
+These tools enable LLMs to perform specific tasks and receive feedback from the external world.
+When using tools, LLMs perform three specific generation tasks:
+1.
+Choose a tool to use by generating special tokens and the name of the tool.
+2.
+Generate a payload to be sent to the tool.
+3.
+Generate a response to a user based on the initial question and a history of interactions
+with tools (for this specific run).
+Now it's time to figure out how LLMs invoke tools and how we can make LLMs tool-aware. Con­
+sider a somewhat artificial but illustrative question: What is the square root of the current US pres­
+ident's age multiplied by 132? This question presents two specific challenges:
+•
+It references current information (as of March 2025) that likely falls outside the model's
+training data.
+You can find the code for this chapter in the chapter5/ directory of the book's GitHub
+repository. Please visit https://github.com/benman1/generative_ai_with_
+langchain/tree/second_edition for the latest updates.
+See Chapter 2 for setup instructions. If you have any questions or encounter issues
+while running the code, please create an issue on GitHub or join the discussion on
+Discord at https://packt.link/lang.

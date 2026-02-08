@@ -1,0 +1,26 @@
+en una amplia variedad de campos". 20 El sitio web de HELM explicaba
+que su lista de pruebas comparativas se "inspiró en la simplicidad" del
+tablero de clasificación de Hugging Face, pero con un grupo más amplio de
+escenarios.
+Los tableros de clasificación públicos, en general, intentan equilibrar la
+cobertura y el número de pruebas comparativas. Intentan elegir un pequeño
+grupo de pruebas comparativas que cubran una amplia gama de
+capacidades, entre las que se suelen incluir el razonamiento, la coherencia
+factual y capacidades específicas de un dominio, como las matemáticas y
+las ciencias.
+A grandes rasgos, esto tiene sentido. Sin embargo, no está claro qué
+significa "cobertura" ni por qué solo seis o diez pruebas comparativas. Por
+ejemplo, ¿por qué HELM Lite incluye tareas médicas y jurídicas pero no
+ciencias generales? ¿Por qué HELM Lite tiene dos pruebas de matemáticas
+pero ninguna de codificación? ¿Por qué ninguna tiene pruebas de resumen,
+uso de herramientas, detección de toxicidad, búsqueda de imágenes, etc.?
+Estas preguntas no pretenden criticar estos tableros de clasificación
+públicos, sino poner de relieve el reto que supone seleccionar pruebas
+comparativas para clasificar los modelos. Si los desarrolladores de tableros
+de clasificación no pueden explicar sus procesos para elegir pruebas
+comparativas, quizá sea porque es realmente difícil hacerlo.
+Un aspecto importante de la selección de la pruebas comparativas que a
+menudo se pasa por alto es la correlación entre pruebas. Es importante
+porque no es deseable tener dos pruebas comparativas que estén
+perfectamente correlacionadas. Las pruebas comparativas muy
+correlacionadas pueden exagerar los sesgos. 21

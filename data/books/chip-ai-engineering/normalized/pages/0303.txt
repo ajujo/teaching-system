@@ -1,0 +1,22 @@
+Aunque los tableros de clasificación públicos son útiles para hacerse una
+idea del rendimiento general de los modelos, es importante comprender qué
+capacidades intenta captar cada uno de los tableros. Si un modelo ocupa un
+lugar destacado en un tablero de clasificación público, es probable, pero no
+seguro, que funcione bien para su aplicación. Si usted quiere un modelo
+para generar código, un tablero de clasificación público que no incluya
+pruebas comparativas de generación de código podría no serle de mucha
+ayuda.
+Tableros de clasificación personalizadas con pruebas comparativas
+públicas
+Cuando se evalúan modelos para una aplicación específica, básicamente se
+está creando un tablero de clasificación privado que ordena los modelos
+según los criterios de evaluación. El primer paso es reunir una lista de
+pruebas comparativas que evalúen las capacidades importantes para su
+aplicación. Si quiere crear un agente de codificación, fíjese en las pruebas
+comparativas relacionadas con el código. Si construye un asistente de
+escritura, busque pruebas comparativas sobre escritura creativa. Como
+constantemente aparecen nuevas pruebas comparativas y las antiguos se
+saturan, debe buscar los más recientes. Asegúrese de evaluar la fiabilidad de
+una prueba comparativa. Como cualquiera puede crear y publicar una
+prueba comparativa, es posible que muchas de ellas no midan lo que
+ustedes esperan.

@@ -1,0 +1,35 @@
+Chapter 2
+33
+Instead of being another ML platform, ZenML introduced the concept of a stack, which allows
+you to run ZenML on multiple infrastructure options. A stack will enable you to connect ZenML
+to different cloud services, such as:
+•
+An orchestrator and compute engine (for example, AWS SageMaker or Vertex AI)
+•
+Remote storage (for instance, AWS S3 or Google Cloud Storage buckets)
+•
+A container registry (for example, Docker Registry or AWS ECR)
+Thus, ZenML acts as a glue that brings all your infrastructure and tools together in one place
+through its stack feature, allowing you to quickly iterate through your development processes and
+easily monitor your entire ML system. The beauty of this is that ZenML doesn't vendor-lock you
+into any cloud platform. It completely abstracts away the implementation of your Python code
+from the infrastructure it runs on. For example, in our LLM Twin use case, we used the AWS stack:
+•
+SageMaker as our orchestrator and compute
+•
+S3 as our remote storage used to store and track artifacts
+•
+ECR as our container registry
+However, the Python code contains no S3 or ECR particularities, as ZenML takes care of them.
+Thus, we can easily switch to other providers, such as Google Cloud Storage or Azure. For more
+details on ZenML stacks, you can start here: https://docs.zenml.io/user-guide/productionguide/understand-stacks.
+The local version of the ZenML server comes installed as a Python package. Thus, when running
+poetry install, it installs a ZenML debugging server that you can use locally. In Chapter 11, we
+will show you how to use their cloud serverless option to deploy the ML pipelines to AWS.
+Orchestrator
+An orchestrator is a system that automates, schedules, and coordinates all your ML pipelines. It
+ensures that each pipeline-such as data ingestion, preprocessing, model training, and deployment-executes in the correct order and handles dependencies efficiently. By managing these
+processes, an orchestrator optimizes resource utilization, handles failures gracefully, and enhances
+scalability, making complex ML pipelines more reliable and easier to manage.
+We will focus only on the ZenML features used throughout the book, such as orchestrating, artifacts, and metadata. For more details on ZenML, check out their starter
+guide: https://docs.zenml.io/user-guide/starter-guide.

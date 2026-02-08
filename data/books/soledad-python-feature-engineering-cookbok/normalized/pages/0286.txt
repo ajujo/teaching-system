@@ -1,0 +1,26 @@
+Creating spline features
+263
+7.
+Obtain the spline features and convert the NumPy array into a pandas DataFrame, adding
+the names of the spline basis functions:
+X_t = spl.fit_transform(X.reshape(-1, 1))
+X_df = pd.DataFrame(
+    X_t,
+    columns=spl.get_feature_names_out(["var"])
+)
+By executing X_df.head(), we can see the spline features:
+Figure 8.22 - A DataFrame with the splines
+Note
+SplineTransformer() returns a feature matrix consisting of n_splines = n_knots
++ degree - 1.
+8.
+Now, plot the splines against the values of X:
+plt.plot(X, X_t)
+plt.legend(
+    spl.get_feature_names_out(["var"]),
+    bbox_to_anchor=(1, 1),
+    loc="upper left")
+plt.xlabel("X")
+plt.ylabel("Splines values")
+plt.title("Splines")
+plt.show()

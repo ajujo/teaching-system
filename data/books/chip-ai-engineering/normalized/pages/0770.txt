@@ -1,0 +1,25 @@
+- métricas de observabilidad, Monitoreo y observabilidad
+- métricas de rendimiento de inferencia, API de inferencia en línea y por
+lotes
+- modelado del lenguaje (ver métricas del modelado del lenguaje)
+- para la capacidad de generación, Capacidades específicas de dominio
+- para la IA como juez, Incoherencia
+- para medir las alucinaciones, Coherencia factual
+- umbrales de utilidad, Establecimiento de expectativas
+- vincular las métricas de evaluación a las métricas de negocio, Crear
+rúbricas de puntuación con ejemplos
+métricas basadas en referencias, Medidas de similitud con los datos de
+referencia
+métricas de modelado lingüístico, Comprender las métricas de modelado
+lingüístico
+- bits por byte, Entropía cruzada
+- bits por carácter, Entropía cruzada
+- entropía, Comprender las métricas de modelado lingüístico
+- entropía cruzada, Entropía
+- interpretación de la perplejidad y casos de uso, Perplejidad
+- perplejidad, Entropía cruzada
+métricas de rendimiento de inferencia, API de inferencia en línea y por lotes
+- latencia, TTFT y TPOT, API de inferencia en línea y por lotes
+- throughput/goodput, Latencia, TTFT y TPOT
+- utilización, MFU y MBU, Utilización, MFU y MBU
+métricas sin referencias, Medidas de similitud con los datos de referencia

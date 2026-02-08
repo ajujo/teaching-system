@@ -1,0 +1,30 @@
+RAG Inference Pipeline
+338
+The __call__ method allows us to pass in a list of text pairs (each consisting of the query and 
+a document chunk) and receive their relevance scores. The method uses the model’s predict() 
+function to call the model and compute the scores.
+The CrossEncoderModelSingleton class is a wrapper over the CrossEncoder class, which we wrote 
+for two purposes. The first one is for the singleton pattern, which allows us to easily access the 
+same instance of the cross-encoder model from anywhere within the application without loading 
+the model in memory every time we need it. The second reason is that by writing our wrapper, 
+we defined our interface for a cross-encoder model (or any other model used for reranking). 
+This makes the code future-proof as in case we need a different implementation or strategy for 
+reranking, for example, using an API, we only have to write a different wrapper that follows the 
+same interface and swap the old class with the new one. Thus, we can introduce new reranking 
+methods without touching the rest of the code.
+We now understand all the advanced RAG techniques used within our architecture. In the next 
+section, we will examine the ContextRetriever class that connects all these methods and explain 
+how to use the retrieval module with an LLM for an end-to-end RAG inference pipeline.
+Implementing the LLM Twin’s RAG inference pipeline
+As explained at the beginning of this chapter, the RAG inference pipeline can mainly be divided 
+into three parts: the retrieval module, the prompt creation, and the answer generation, which 
+boils down to calling an LLM with the augmented prompt. In this section, our primary focus will 
+be implementing the retrieval module, where most of the code and logic go. Afterward, we will 
+look at how to build the final prompt using the retrieved context and user query.
+Ultimately, we will examine how to combine the retrieval module, prompt creation logic, and 
+the LLM to capture an end-to-end RAG workflow. Unfortunately, we won’t be able to test out 
+the LLM until we finish Chapter 10, as we haven’t deployed our fine-tuned LLM Twin module to 
+AWS SageMaker.
+Thus, by the end of this section, you will learn how to implement the RAG inference pipeline, 
+which you can test out end to end only after finishing Chapter 10. Now, let’s start by looking at 
+the implementation of the retrieval module.

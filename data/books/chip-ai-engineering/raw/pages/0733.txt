@@ -1,0 +1,33 @@
+Bucle de retroalimentación degenerado
+Tenga en cuenta que las opiniones de los usuarios son incompletas. Usted
+solo recibe retroalimentación sobre lo que se muestra a los usuarios.
+En un sistema en el que se utiliza la retroalimentación de los usuarios para
+modificar el comportamiento de un modelo, pueden surgir bucles de
+retroalimentación degenerados. Puede producirse un bucle de
+retroalimentación degenerado cuando las propias predicciones influyen en
+la retroalimentación, que, a su vez, influye en la siguiente iteración del
+modelo, amplificando los sesgos iniciales.
+Imagine que está creando un sistema para recomendar vídeos. Los vídeos
+mejor clasificados aparecen primero, por lo que reciben más clics,
+reforzando la creencia del sistema de que son los mejores. Inicialmente, la
+diferencia entre los dos vídeos A y B podría haber sido menor, pero como A
+estaba ligeramente mejor clasificado, obtuvo más clics y el sistema siguió
+promocionándolo. Con el tiempo, la clasificación de A se disparó, dejando
+atrás a B. Este bucle de retroalimentación es la razón por la que los vídeos
+populares siguen siéndolo, dificultando que los nuevos se abran paso.
+Esta cuestión se conoce como "sesgo de exposición", "sesgo de
+popularidad" o "burbujas de filtro", y es un problema bien estudiado.
+Un bucle de retroalimentación degenerado puede alterar el enfoque y la
+base de uso de su producto. Imaginemos que, al principio, un pequeño
+número de usuarios comenta que les gustan las fotos de gatos. El sistema lo
+capta y empieza a generar más fotos con gatos. Esto atrae a los amantes de
+los gatos, que dan más opiniones de que las fotos de gatos son buenas, lo
+que anima al sistema a generar más gatos todavía. En poco tiempo, su
+aplicación se convierte en un refugio para gatos. Aquí utilizo fotos de gatos
+como ejemplo, pero el mismo mecanismo puede amplificar otros sesgos,
+como el racismo, el sexismo o la preferencia por contenidos explícitos.
+Actuar en función de la retroalimentación de los usuarios también puede
+convertir a un agente conversacional en, a falta de una palabra mejor, un
+mentiroso. Múltiples estudios han demostrado que entrenar a un modelo a
+partir de retroalimentación de los usuarios puede enseñarle a darles lo que
+cree que quieren, aunque no sea lo más preciso o beneficioso (Stray, 2023).

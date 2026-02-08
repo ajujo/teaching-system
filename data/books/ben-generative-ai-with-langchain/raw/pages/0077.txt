@@ -1,0 +1,34 @@
+First Steps with LangChain
+50
+Please note that since you are running a local model, you don’t need to set up any keys. The answer 
+is very long – although quite reasonable. You can run this yourself and see what answers you get.
+Now that we’ve seen basic text generation, let’s look at another integration. Hugging Face offers 
+an approachable way to run models locally, with access to a vast ecosystem of pre-trained models.
+Working with Hugging Face models locally
+With Hugging Face, you can either run a model locally (HuggingFacePipeline) or on the Hug­
+ging Face Hub (HuggingFaceEndpoint). Here, we are talking about local runs, so we’ll focus on 
+HuggingFacePipeline. Here we go:
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
+# Create a pipeline with a small model:
+llm = HuggingFacePipeline.from_model_id(
+    model_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    task="text-generation",
+    pipeline_kwargs=dict(
+        max_new_tokens=512,
+        do_sample=False,
+        repetition_penalty=1.03,
+    ),
+)
+chat_model = ChatHuggingFace(llm=llm)
+# Use it like any other LangChain LLM
+messages = [
+    SystemMessage(content="You're a helpful assistant"),
+    HumanMessage(
+        content="Explain the concept of machine learning in simple terms"
+    ),
+]
+ai_msg = chat_model.invoke(messages)
+print(ai_msg.content)
+This can take quite a while, especially the first time, since the model has to be downloaded first. 
+We’ve omitted the model response for the sake of brevity.

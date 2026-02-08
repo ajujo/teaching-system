@@ -1,0 +1,33 @@
+Redacción
+La IA se utiliza desde hace tiempo para ayudar a escribir. Si usan un
+smartphone, probablemente estén familiarizados con la autocorrección y el
+autocompletado, ambos impulsados por la IA. Escribir es una aplicación
+ideal para la IA porque lo hacemos mucho, puede ser bastante tedioso y
+tenemos una alta tolerancia para los errores. Si un modelo le sugiere algo
+que no le gusta, puede ignorarlo.
+No es de extrañar que a los LLMs se les dé bien escribir, dado que están
+entrenados para completar textos. Para estudiar el impacto de ChatGPT en
+la escritura, un estudio del MIT (Noy y Zhang, 2023) asignó tareas de
+escritura específicas de la ocupación a 453 profesionales con estudios
+universitarios y expuso aleatoriamente a la mitad de ellos a ChatGPT. Sus
+resultados muestran que, entre los expuestos a ChatGPT, el tiempo medio
+empleado disminuyó un 40 % y la calidad de los outputs aumentó un 18 %.
+ChatGPT ayuda a salvar la brecha en la calidad de la producción entre los
+trabajadores, lo que significa que es más útil para aquellos con menos
+inclinación por la escritura. Los trabajadores expuestos a ChatGPT durante
+el experimento tuvieron 2 veces más probabilidades de decir que lo
+utilizaban en su trabajo real dos semanas después del experimento y 1.6
+veces más probabilidades dos meses después.
+Para los consumidores, los casos de uso son obvios. Muchos utilizan la
+inteligencia artificial para comunicarse mejor. Puede escribir enfadado un
+correo electrónico y pedirle a la IA que lo vuelva agradable. Puede darle
+puntos de una lista y recibir de vuelta párrafos completos. Varias personas
+afirmaron que ya no envían un correo electrónico importante sin pedir antes
+a la IA que lo mejore.
+Los estudiantes utilizan la IA para escribir ensayos. Los escritores utilizan
+la IA para escribir libros. 13 Muchas startups ya utilizan la IA para generar
+libros infantiles, de fan fiction, románticos y de fantasía. A diferencia de los
+libros tradicionales, los generados por IA pueden ser interactivos, ya que la
+trama de un libro puede cambiar en función de las preferencias del lector.
+Esto significa que los lectores pueden participar activamente en la creación
+de la historia que están leyendo. Una aplicación de lectura infantil identifica

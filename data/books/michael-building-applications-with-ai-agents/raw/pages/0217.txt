@@ -1,0 +1,43 @@
+We then set up similar consumer loops to run for transportation and supplier special‐
+ists. To wait for a response:
+import time
+def wait_for_response(task_id, timeout=60):
+    r = redis.Redis(host='localhost', port=6379)
+    last_id = '0'
+    start = time.time()
+    while time.time() - start < timeout:
+        msgs = r.xread({'supply-chain-responses': last_id}, count=1, block=5000)
+        if msgs:
+            stream, entries = msgs[0]
+            for entry_id, entry_data in entries:
+                resp = json.loads(entry_data[b'data'])
+                if resp['task_id'] == task_id:
+                    return resp
+                last_id = entry_id
+    raise TimeoutError("No response")
+In general, it’s wise to run specialists in separate processes (e.g., via multiprocessing).
+This enables fast async coordination—e.g., the supplier agent can process compliance
+tasks without blocking others—while keeping setup simple for lower-scale systems.
+Message buses support loose coupling between agents, allowing for flexible scaling,
+observability via logging pipelines, and replay of failed or missed messages. However,
+they also introduce challenges around eventual consistency and the need for more
+complex error handling.
+Actor Frameworks: Ray, Orleans, and Akka
+While message buses primarily decouple communication by routing events asynchro‐
+nously between components—focusing on data flow without dictating execution—
+actor frameworks integrate both messaging and computation into a unified model.
+Here, actors (representing agents) not only exchange messages but also encapsulate
+their own state and behavior, ensuring sequential processing to eliminate race condi‐
+tions and shared-state bugs common in traditional threaded systems. This contrasts
+sharply with the standard monolithic approach many developers initially take:
+deploying a single-container agent service that handles all logic centrally, often rely‐
+ing on synchronous foundation model calls and in-memory orchestration. While
+simple for prototypes, such setups become bottlenecks at scale—prone to single
+points of failure, inefficient resource use during idle periods, and challenges in paral‐
+lelizing diverse agent roles without custom concurrency hacks.
+Actor frameworks shine in scenarios requiring fine-grained distribution, resilience,
+and dynamic scaling, such as multiagent simulations with persistent per-agent mem‐
+ory (e.g., tracking conversation history or learned behaviors), high-concurrency
+Actor Frameworks: Ray, Orleans, and Akka 
+| 
+195

@@ -1,0 +1,15 @@
+Performing Feature Scaling
+210
+Figure 7.4 - Distribution of a normal and skewed variable before and
+after scaling to the minimum and maximum value
+This scaling method standardizes the maximum value of the variables to a unit size. Scaling to the
+minimum and maximum value tends to be the preferred alternative to standardization, and it is
+suitable for variables with very small standard deviations and when we want to preserve zero entries
+in sparse data, such as in one-hot encoded variables, or variables derived from counts, such as bag
+of words. However, this procedure does not center the variables at zero, so if the algorithm has that
+requirement, this method might not be the best choice.
+Note
+Scaling to the minimum and maximum values is sensitive to outliers. If outliers are present in
+the training set, the scaling will squeeze the values toward one of the tails. If, on the contrary,
+outliers are in the test set, the variable will show values greater than 1 or smaller than 0 after
+scaling, depending on whether the outlier is on the left or right tail.

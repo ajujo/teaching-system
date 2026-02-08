@@ -1,0 +1,42 @@
+Transformer
+A deep learning architecture that uses
+self-attention
+to
+process
+sequences
+efficiently.
+Unsupervised learning
+A type of machine learning where the
+model learns patterns without labeled
+data.
+User intent
+The goal behind a user's query or request.
+Variational autoencoder (VAE)
+A neural network used for generative
+modeling.
+Vector database
+A specialized database optimized for stor‐
+ing
+and
+retrieving
+high-dimensional
+embeddings.
+Weight sharing
+A technique where the same model
+parameters are used across different parts
+of a network.
+Word embedding
+A method of representing words as dense
+vectors.
+XGBoost
+A gradient boosting algorithm commonly
+used for structured data.
+YAML (Yet Another Markup Language)
+A human-readable data format often used
+for configuration files.
+Zero-shot learning
+The ability of a model to perform tasks
+without explicit training examples.
+318
+|
+Glossary

@@ -1,0 +1,28 @@
+que sean los desarrolladores de herramientas, pueden cometer errores, como
+todo el mundo.
+Organizar y versionar prompts
+Es una buena práctica separar los prompts del código, enseguida verá por
+qué. Por ejemplo, puede poner sus prompts en un archivo prompts.py y
+hacer referencia a estos prompts cuando cree una consulta de modelo. Este
+es un ejemplo:
+file: prompts.py
+GPT4o_ENTITY_EXTRACTION_PROMPT = [YOUR PROMPT]
+file: application.py
+from prompts import GPT4o_ENTITY_EXTRACTION_PROMPT
+def query_openai(model_name, user_prompt):
+    completion = client.chat.completions.create(
+    model=model_name,
+    messages=[
+        {"role": "system", "content": 
+GPT4o_ENTITY_EXTRACTION_PROMPT},
+        {"role": "user", "content": user_prompt}
+    ]
+)
+Este planteamiento tiene varias ventajas:
+Reutilización
+Varias aplicaciones pueden reutilizar el mismo prompt.
+Realización de pruebas
+El código y los prompts pueden probarse por separado. Por
+ejemplo, se puede probar el código con diferentes prompts.
+Legibilidad
+Separar los prompts del código facilita la lectura de ambos.

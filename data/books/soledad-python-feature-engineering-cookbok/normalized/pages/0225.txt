@@ -1,0 +1,6 @@
+Extracting Features from Date and Time Variables
+202
+With fit(), DatetimeFeatures() does not learn any parameters; instead, it checks that the
+variables entered by the user are, or can be, parsed into a datetime format. If the user does not
+indicate variable names, DatetimeFeatures() finds the datetime variables automatically.
+With transform(), the transformer adds the date and time-derived variables to the DataFrame.

@@ -1,0 +1,19 @@
+La HBM proporciona un ancho de banda significativamente
+mayor, con velocidades de transferencia de datos que suelen
+oscilar entre 256 GB/s y más de 1.5 TB/s. Esta velocidad es
+esencial para gestionar con eficacia grandes transferencias
+de datos y tareas de alto throughput. Una GPU de consumo
+tiene entre 24 y 80 GB de HBM.
+SRAM integrado en el chip de GPU
+Integrada directamente en el chip, esta memoria se utiliza
+para almacenar datos e instrucciones a los que se accede con
+frecuencia para un acceso casi instantáneo. Incluye cachés
+L1 y L2 hechas de SRAM y, en algunas arquitecturas,
+también cachés L3. Estas cachés forman parte de la memoria
+integrada en el chip, que también incluye otros
+componentes, como los archivos de registro o la memoria
+compartida.
+La RAM tiene velocidades de transferencia de datos
+extremadamente altas, que a menudo superan los 10 TB/s. El
+tamaño de la SRAM de la GPU es pequeño, normalmente de
+40 MB o menos.

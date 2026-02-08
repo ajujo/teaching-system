@@ -1,0 +1,16 @@
+Chapter 9
+357
+The WebSocket connection we just implemented enables token-by-token streaming of Claude's
+responses to the client. The code leverages LangChain's AsyncIteratorCallbackHandler to
+capture tokens as they're generated and immediately forwards each one to the connected client
+through WebSocket. This approach significantly improves the perceived responsiveness of your
+application, as users can begin reading responses while the model continues generating the rest
+of the response.
+You can find the complete implementation in the book's companion repository at https://github.
+com/benman1/generative_ai_with_langchain/ under the chapter9 directory.
+You can run the web server from the terminal like this:
+python main.py
+This command starts a web server, which you can view in your browser at http://127.0.0.1:8000.
+Here's a snapshot of the chatbot application we've just deployed, which looks quite nice for what
+little work we've put in:
+Figure 9.1: Chatbot in FastAPI

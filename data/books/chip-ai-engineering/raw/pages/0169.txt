@@ -1,0 +1,28 @@
+que los presidentes de EE. UU. sean extraterrestres, el modelo se lo está
+inventando.
+Los modelos fundacionales suelen entrenarse con una gran cantidad de
+datos. Son agregaciones de las opiniones de las masas, que contienen en su
+interior, literalmente, un mundo de posibilidades. Cualquier cosa con una
+probabilidad distinta de cero, por inverosímil o errónea que sea, puede ser
+generada por la IA. 36
+Esta característica hace que la creación de aplicaciones de IA sea a la vez
+apasionante y desafiante. Muchos de los esfuerzos de ingeniería de IA,
+como veremos en este libro, pretenden aprovechar y mitigar esta naturaleza
+probabilística.
+Esta naturaleza probabilística hace que la IA sea ideal para tareas creativas.
+¿Qué es la creatividad sino la capacidad de explorar más allá de los caminos
+comunes, de pensar con originalidad? La IA es un gran aliado para los
+profesionales creativos. Puede proponer ideas ilimitadas y generar diseños
+nunca vistos. Sin embargo, esta misma naturaleza probabilística puede ser
+una molestia para todo lo demás. 37
+Incoherencia
+La incoherencia del modelo se manifiesta en dos escenarios:
+1. Mismo input, diferentes outputs: Ofrecer dos veces al modelo el
+mismo prompt produce dos respuestas muy diferentes.
+2. inputs ligeramente diferentes, outputs drásticamente diferentes: Si
+se le da al modelo un prompt ligeramente distinto, como escribir
+accidentalmente una letra en mayúscula, el output puede ser muy
+diferente.
+La Figura 2-23 muestra un ejemplo de mi intento de utilizar ChatGPT para
+puntuar ensayos. El mismo prompt me dio dos outputs diferentes cuando lo
+ejecuté dos veces: 3/5 y 5/5.

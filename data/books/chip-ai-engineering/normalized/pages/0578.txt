@@ -1,0 +1,31 @@
+herramientas fundamentalmente diferentes. Otro ejemplo es
+la generación de problemas matemáticos complejos: una IA
+pueden generar preguntas mucho más complejas de lo que
+un experto humano promedio podría concebir. 9
+Algunos equipos también prefieren utilizar la IA para
+generar datos sobre preferencias. Aunque cada ser humano
+pueden ser algo constante en sus preferencias, el
+rendimiento entre distintas personas tiende a variar
+significativamente, influido no solo por las preferencias de
+cada uno, sino también por el estado de ánimo y las
+motivaciones. En cambio, las valoraciones de preferencias
+generadas por IA pueden ser mucho más consistentes y
+fiables.
+Para mitigar los problemas de privacidad
+Los datos sintéticos son a menudo la única opción para casos
+de uso en los que no se pueden utilizar datos generados por
+humanos por motivos de privacidad. Por ejemplo, en la
+salud, donde la legislación hace difícil o imposible el uso de
+historiales reales de pacientes para entrenar un modelo, se
+pueden generar historiales sintéticos de pacientes que no
+contengan ninguna información confidencial. Para las
+aseguradoras se pueden utilizar siniestros sintéticos en lugar
+de siniestros reales que incluyan información personal y
+financiera sensible.
+Para destilar modelos
+A veces es posible que desee entrenar un modelo para imitar
+el comportamiento de otro modelo. El objetivo suele ser
+crear un modelo más barato y/o rápido (el modelo destilado)
+con un rendimiento comparable al del modelo original. Para
+ello, se entrena al modelo destilado con los datos generados
+por el modelo original.

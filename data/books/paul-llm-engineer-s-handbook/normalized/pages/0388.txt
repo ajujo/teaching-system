@@ -1,0 +1,28 @@
+Chapter 10
+357
+Deeply thinking about these questions directly impacts the user experience of your application,
+which ultimately makes the difference between a successful product and not. Even if you ship a
+mind-blowing model, if the user needs to wait too long for a response or it often crashes, the user
+will switch your production to something less accurate that works reliably. For example, Google
+found in a 2016 study that 53% of visits are abandoned if a mobile site takes longer than three
+seconds to load: https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/
+mobile-site-load-time-statistics/.
+Let's move on to the three deployment architectures we can leverage to serve our models.
+Understanding inference deployment types
+As illustrated in Figure 10.1, you can choose from three fundamental deployment types when
+serving models:
+•
+Online real-time inference
+•
+Asynchronous inference
+•
+Offline batch transform
+When selecting one design over the other, there is a trade-off between latency, throughput, and
+costs. You must consider how the data is accessed and the infrastructure you are working with.
+Another criterion you have to consider is how the user will interact with the model. For example,
+will the user use it directly, like a chatbot, or will it be hidden within your system, like a classifier
+that checks if an input (or output) is safe?
+You have to consider the freshness of the predictions as well. For example, serving your model in
+offline batch mode might be easier to implement if, in your use case, it is OK to consume delayed
+predictions. Otherwise, you have to serve your model in real-time, which is more infrastructure-demanding. Also, you have to consider your application's traffic. Ask yourself questions such
+as, "Will the application be constantly used, or will there be spikes in traffic and then flatten out?"

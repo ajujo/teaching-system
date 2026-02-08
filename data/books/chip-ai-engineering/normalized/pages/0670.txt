@@ -1,0 +1,34 @@
+Este capítulo también se centró en la optimización a nivel de modelo y a
+nivel de servicio de inferencia. La optimización a nivel de modelo a
+menudo requiere cambiar el propio modelo, lo que puede provocar cambios
+en los comportamientos del modelo. En cambio, la optimización a nivel de
+servicio de inferencia suele mantener intacto el modelo y solo cambia la
+forma de servirlo.
+Las técnicas a nivel de modelo incluyen técnicas independientes del
+modelo, como la cuantización y la destilación. Las distintas arquitecturas de
+los modelos requieren su propia optimización. Por ejemplo, dado que un
+cuello de botella clave de los modelos de transformadores está en el
+mecanismo de atención, muchas técnicas de optimización implican hacer
+más eficiente la atención, incluyendo la gestión de la caché KV y la
+escritura de kernels de atención. Un gran cuello de botella para un modelo
+lingüístico autorregresivo está en su proceso de decodificación
+autorregresiva y, en consecuencia, también se han desarrollado muchas
+técnicas para abordarlo.
+Las técnicas de inferencia a nivel de servicio incluyen diversas estrategias
+de agrupación por lotes y paralelismo. También existen técnicas
+desarrolladas especialmente para los modelos lingüísticos autorregresivos,
+como el desacoplamiento de llenado previo/decodificación o el
+almacenamiento en caché de los prompts.
+La elección de las técnicas de optimización depende de sus cargas de
+trabajo. Por ejemplo, la caché KV es significativamente más importante
+para las cargas de trabajo con contextos largos que para las que tienen
+contextos cortos. Por otro lado, el almacenamiento en caché de los prompts
+es crucial para las cargas de trabajo que implican segmentos de prompts
+largos y traslapados o conversaciones de multiturno. La elección también
+depende de sus requisitos de rendimiento. Por ejemplo, si la baja latencia es
+más prioritaria que el costo, es posible que deseen aumentar el paralelismo
+de réplicas. Aunque un mayor número de réplicas requiere más máquinas,
+cada una de ellas gestiona menos solicitudes, lo que le permite asignar más
+recursos por solicitud y, por tanto, mejorar el tiempo de respuesta.
+Sin embargo, en varios casos de uso, las técnicas más impactantes suelen
+ser la cuantización (que generalmente funciona bien en todos los modelos),

@@ -1,0 +1,32 @@
+integrating with anomaly detection to flag unusual inter-subnet communications.
+This architecture not only enforces perimeter security but also enables granular con‐
+trols like ACLs on routers and mTLS for inter-component communication, reducing
+the risk of lateral movement by attackers who breach the outer layers.
+Figure 12-3. Simplified DMZ configuration with internal router.
+At the forefront of external threat protection is network security. Agents must operate
+within protected network boundaries, using technologies such as firewalls and intru‐
+sion detection and prevention systems (IDPS) to filter malicious traffic and block
+unauthorized access attempts. Endpoints where agents interact with external APIs or
+services must enforce mTLS authentication to ensure both sides of the connection are
+verified. Additionally, rate limiting and throttling controls should be implemented on
+public-facing interfaces to prevent resource exhaustion caused by excessive API
+requests or malicious traffic surges.
+Authentication and authorization mechanisms are also critical safeguards against
+external threats. Agents must enforce strict identity verification protocols, such as
+OAuth 2.0 or API keys, to ensure only authorized users and services can interact with
+them. RBAC should extend to external systems, limiting what each external entity can
+access and how they can interact with the agent.
+A particularly insidious external threat comes from supply chain attacks, where mali‐
+cious code or vulnerabilities are introduced through third-party libraries, plug-ins, or
+dependencies. To mitigate this risk, agent systems should adopt software composition
+analysis (SCA) tools that continuously scan dependencies for known vulnerabilities
+and enforce signature verification for third-party integrations. Additionally, organiza‐
+tions should maintain a software bill of materials (SBOM) to track all third-party
+components and their security statuses.
+Adversarial attacks—including prompt injection, data poisoning, and manipulation
+through ambiguous inputs—require specialized defenses. Input validation pipelines
+should sanitize all incoming data to prevent malicious prompts from reaching the
+agent’s reasoning layer. For example, adversarial inputs designed to trick the agent
+Securing Agents 
+| 
+291

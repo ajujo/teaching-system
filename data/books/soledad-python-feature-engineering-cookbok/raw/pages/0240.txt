@@ -1,0 +1,35 @@
+Performing mean normalization
+217
+How it works…
+To implement mean normalization, we captured the mean values of the numerical variables in the 
+train set using mean() from pandas. Next, we determined the difference between the maximum 
+and minimum values of the numerical variables in the train set by utilizing max() and min() 
+from pandas. Finally, we used the pandas series returned by these functions containing the mean 
+values and the value ranges to normalize the train and test sets. We subtracted the mean from each 
+observation in our train and test sets and divided the result by the value ranges. This returned the 
+normalized variables in a pandas DataFrame.
+There’s more...
+There is no dedicated scikit-learn transformer to implement mean normalization, but we can combine 
+the use of two transformers to do so.
+To do this, we need to import pandas and load the data, just like we did in Steps 1 to 3 in the How 
+to do it... section of this recipe. Then, follow these steps:
+1.	
+Import the scikit-learn transformers:
+from sklearn.preprocessing import (
+    StandardScaler, RobustScaler
+)
+2.	
+Let’s set up StandardScaler() to learn and subtract the mean without dividing the result 
+by the standard deviation:
+scaler_mean = StandardScaler(
+    with_mean=True, with_std=False,
+).set_output(transform="pandas")
+3.	
+Now, let’s set up RobustScaler() so that it does not remove the median from the values 
+but divides them by the value range – that is, the difference between the maximum and 
+minimum values:
+scaler_minmax = RobustScaler(
+    with_centering=False,
+    with_scaling=True,
+    quantile_range=(0, 100)
+).set_output(transform="pandas")

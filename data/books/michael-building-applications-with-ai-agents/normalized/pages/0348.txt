@@ -1,0 +1,101 @@
+ADAS design, 185-188
+masked language models, 317
+mathematical operations, local tools, 73
+MCP (Model Context Protocol)
+advantages, 84
+example implementation, 82-84
+overview, 81-82
+security issues, 82
+tools, 25
+measurement
+agentic system capabilities, 205-206
+evaluation mechanisms, integrating into
+development, 206-207
+evaluation sets, creating, 207-209
+memory
+agents, 115
+context engineering, 115
+persistence, 61
+semantic, 119
+implementing with vector stores,
+119-120
+semantic experience, 122
+testing, 212-213
+memory management
+agent scope considerations, 303-304
+agentic systems, 26
+memory-augmented AI, 317
+message brokers, 192-195
+message types, LangChain, 72
+Meta Agent Search (MAS) (see MAS (Meta
+Agent Search))
+meta-prompting, 317
+metadata, local tools, 73
+metric overfitting, 215
+metrics
+agent evaluation, 208
+monitoring, 225-226
+team ownership considerations, 239-241
+planning modules, evaluating, 210
+selecting, 206
+model cards, 311
+Model Context Protocol (MCP) (see MCP
+(Model Context Protocol))
+models
+agentic systems, selecting, 21-24
+chat, 72
+foundation models
+capabilities, 2-3
+fine-tuning workflow, 147
+HELM Core Scenario leaderboard, 6
+language, fine-tuning methods, 148
+local tools, binding, 74-75
+modality, 21
+performance measurement, 22-24
+pretraining, 148
+selecting, hybrid strategy, 22
+selection considerations, 5-6
+suitability
+open-ended environments, 21
+repetitive tasks, 21
+tool descriptions, 94
+training, 2
+modularity, design principle, 11
+monitoring
+agentic systems, 30
+distribution shifts, 237-239
+ELK stack, 227
+failures, identifying, 224
+high composability stack, 227
+internal failures, 293
+issues to track, 225
+Langfuse stack, 229
+metrics, 225-226
+metrics ownership considerations, 239-241
+OTel instrumentation, 230-232
+Phoenix stack, 228
+production changes, 235
+canary deployment, 235
+shadow mode development, 235
+regression trace collection, shadow mode
+development, 236
+self-healing agents, 236
+sensitive content, 225
+SigNoz stack, 229
+tools, 226-227
+open source, 223
+usefulness of, 224
+user feedback, 236
+monitoring stacks, 227-229
+selecting, 230-230
+multiagent architecture
+advantages, 32-33
+challenges, 33-34
+multiagent systems, 177
+(see also swarm systems)
+challenges, 177
+coordination, 180
+actor-critic pattern, 182-184
+326
+|
+Index

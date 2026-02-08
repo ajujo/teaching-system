@@ -1,0 +1,27 @@
+Scaling to vector unit length
+227
+As expected, the norm of each observation varies:
+array([ 255.3,  889.1, 1421.7, ...,  744.6, 1099.5,
+           1048.9])
+7.
+Let's now calculate the norm after the scaling:
+np.round(np.linalg.norm(
+    X_train_scaled, ord=1, axis=1), 1)
+Note
+You need to set ord=1 for the Manhattan distance and ord=2 for the Euclidean distance as
+arguments of NumPy's linalg()function, depending on whether you scaled the features
+to the l1 or l2 norm.
+We see that the Manhattan distance of each feature vector is 1 after scaling:
+array([1., 1., 1., ..., 1., 1., 1.])
+Based on the scikit-learn library's documentation, this scaling method can be useful when using a
+quadratic form such as the dot-product or any other kernel to quantify the similarity of a pair of samples.
+How it works...
+In this recipe, we scaled the observations from the California housing dataset to their feature vector
+unit norm by utilizing the Manhattan or Euclidean distance. To scale the feature vectors, we created
+an instance of Normalizer() from scikit-learn and set the norm to l1 for the Manhattan distance.
+For the Euclidean distance, we set the norm to l2. Then, we applied the fit() method, although
+there were no parameters to be learned, as this normalization procedure depends exclusively on
+the values of the features for each observation. Finally, with the transform() method, the scaler
+divided each observation's feature vector by its norm. This returned a NumPy array with the scaled
+dataset. After the scaling, we used NumPy's linalg.norm function to calculate the norm (l1 and
+l2) of each vector to confirm that after the transformation, it was 1.

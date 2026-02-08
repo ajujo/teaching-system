@@ -1,0 +1,43 @@
+values indicating greater drift—e.g., a threshold > 0.5 might flag concept changes in
+embeddings. In this code, we normalize frequency vectors to probabilities, add a
+small epsilon to avoid log(0) errors, and compute the sum of P * log(P/Q); the exam‐
+ple assumes simplified token count arrays for historical and current data:
+import numpy as np
+def kl_divergence(p, q, epsilon=1e-10):
+    p = p + epsilon
+    q = q + epsilon
+    p = p / np.sum(p)
+    q = q / np.sum(q)
+    return np.sum(p * np.log(p / q))
+# Token frequency vectors (e.g., [word1, word2, ...] counts)
+historical_tokens = np.array([0.4, 0.3, 0.3])
+current_tokens = np.array([0.2, 0.5, 0.3])
+kl = kl_divergence(historical_tokens, current_tokens)
+if kl > 0.5:
+    print(f"Concept drift detected: KL = {kl}")
+The population stability index (PSI) is a metric for detecting shifts in categorical or
+binned continuous variables (e.g., tool usage categories like “refund,” “cancel,” “mod‐
+ify”) by comparing percentage distributions between historical and current datasets,
+often divided into buckets for granular analysis. It sums natural_loga‐
+rithm(actual_percent / expected_percent) across categories, where low PSI (< 0.1)
+means stability, 0.1–0.25 indicates minor drift (monitor), and > 0.25 signals major
+drift (intervene—e.g., retrain). This helps flag changes in patterns without assuming
+normality, making it suitable for agent metrics like invocation frequencies:
+import numpy as np
+def psi(expected, actual):
+    expected_percents = expected / np.sum(expected)
+    actual_percents = actual / np.sum(actual)
+    psi_values = ((actual_percents - expected_percents) * 
+        np.log(actual_percents / expected_percents))
+    return np.sum(psi_values)
+# Tool usage counts (e.g., ['refund', 'cancel', 'modify'])
+historical = np.array([50, 30, 20])
+current = np.array([20, 50, 30])
+psi_value = psi(historical, current)
+if psi_value > 0.25:
+    print(f"Major drift: PSI = {psi_value}")
+elif psi_value > 0.1:
+    print(f"Minor drift: PSI = {psi_value}")
+238 
+| 
+Chapter 10: Monitoring in Production

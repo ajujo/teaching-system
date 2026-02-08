@@ -1,0 +1,42 @@
+Model Selection
+At the heart of every agent-based system lies the model that drives the agent’s
+decision-making, interaction, and learning capabilities. Selecting the right model is
+foundational: it determines how the agent interprets inputs, generates outputs, and
+adapts to its environment. This decision influences the system’s performance, scala‐
+bility, latency, and cost. Choosing an appropriate model depends on the complexity of
+the agent’s tasks, the nature of the input data, infrastructure constraints, and the
+trade-offs between generality, speed, and precision.
+Broadly speaking, model selection starts with assessing task complexity. Large foun‐
+dation models—such as GPT-5 or Claude Opus 4.1—are well suited for agents oper‐
+ating in open-ended environments, where nuanced understanding, flexible reasoning,
+and creative generation are essential. These models offer impressive generalization
+and excel at tasks involving ambiguity, contextual nuance, or multiple steps. However,
+their strengths come at a cost: they require significant computational resources, often
+demand cloud infrastructure, and introduce higher latency. They are best reserved for
+applications like personal assistants, research agents, or enterprise systems that must
+handle a wide range of unpredictable queries.
+In contrast, smaller models—such as distilled ModernBERT variants or Phi-4—are
+often more appropriate for agents performing well-defined, repetitive tasks. These
+models run efficiently on local hardware, respond quickly, and are less expensive to
+deploy and maintain. They work well in structured settings like customer support,
+information retrieval, or data labeling, where precision is needed but creativity and
+flexibility are less important. When real-time responsiveness or resource constraints
+are critical, smaller models may outperform their larger counterparts simply by being
+more practical.
+An increasingly important dimension in model selection is modality. Agents today
+often need to process not just text, but also images, audio, or structured data. Multi‐
+modal models, such as GPT-5 and Claude 4.1, enable agents to interpret and combine
+diverse data types—text, visuals, speech, and more. This expands the agent’s utility in
+domains like healthcare, robotics, and customer support, where decisions rely on
+integrating multiple forms of input. In contrast, text-only models remain ideal for
+purely language-driven use cases, offering lower complexity and faster inference in
+scenarios where additional modalities provide little added value.
+Another key consideration is openness and customizability. Open source models,
+such as Llama and DeepSeek, provide developers with full transparency and the abil‐
+ity to fine-tune or modify the model as needed. This flexibility is particularly impor‐
+tant for privacy-sensitive, regulated, or domain-specific applications. Open source
+models can be hosted on private infrastructure, tailored to unique use cases, and
+deployed without licensing costs—though they do require more engineering
+Model Selection 
+| 
+21

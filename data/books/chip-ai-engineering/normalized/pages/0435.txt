@@ -1,0 +1,31 @@
+necesario conocer el estado del resultado para determinar si hay que realizar
+una acción.
+Esto significa que no basta con dar un prompt a un modelo para que genere
+solo una secuencia de acciones, como hace la popular técnica de prompts de
+cadena de pensamiento. El artículo "Reasoning with Language Model is
+Planning with World Model" (Hao et al., 2023) sostiene que un LLM, al
+contener tanta información sobre el mundo, es capaz de predecir el
+resultado de cada acción. Este LLM puede incorporar esta predicción de
+resultados para generar planes coherentes.
+Aunque la IA no pueda planificar, puede formar parte de un planificador.
+Podría ser posible aumentar un LLM con una herramienta de búsqueda y un
+sistema de seguimiento del estado para ayudarle a planificar.
+PLANIFICADORES DE MODELOS FUNDACIONALES
+(FM) VS PLANIFICADORES DE APRENDIZAJE POR
+REFUERZO (RL)
+El agente es un concepto central en el RL, que se define en Wikipedia
+como un campo "que se ocupa de cómo debe un agente inteligente
+realizar acciones en un entorno dinámico para maximizar la recompensa
+acumulada".
+Los agentes de RL y los agentes de FM son similares en muchos
+aspectos. Ambos se caracterizan por sus entornos y sus posibles
+acciones. La principal diferencia radica en cómo funcionan sus
+planificadores. En un agente de RL, el planificador se entrena mediante
+un algoritmo RL. Entrenar a este planificador de RL puede requerir
+mucho tiempo y recursos. En un agente de FM, el modelo es el
+planificador. Se pueden ofrecer prompts o realizar un afinado a este
+modelo para mejorar su capacidad de planificación lo que, por lo
+general, requiere menos tiempo y menos recursos.
+Sin embargo, nada impide que un agente de FM incorpore algoritmos
+de RL para mejorar su rendimiento. Sospecho que, a largo plazo, los
+agentes de FM y RL se fusionarán.

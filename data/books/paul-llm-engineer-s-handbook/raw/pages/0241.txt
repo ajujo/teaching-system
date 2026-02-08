@@ -1,0 +1,39 @@
+Supervised Fine-Tuning
+210
+Because the model has been fine-tuned with this template, it understands that the next tokens 
+should be an answer relevant to the user instruction and guided by the system prompt. This is 
+how fine-tuned models acquire instruction-following capabilities.
+A common issue with chat templates is that every single whitespace and line break is extremely 
+important. Adding or removing any character would result in a wrong tokenization, which neg-
+atively impacts the performance of the model. For this reason, it is recommended to use reliable 
+templates like Jinja, as implemented in the Transformers library. Table 5.7 shows a few examples 
+of such templates, including Alpaca, which is both the name of an instruction dataset format 
+and a chat template.
+Name
+Jinja template
+Alpaca
+### Instruction: What is the capital of France?
+### Response: The capital of France is Paris.<EOS>
+ChatML
+<|im_start|>user
+What is the capital of France?<|im_end|>
+<|im_start|>assistant
+The capital of France is Paris.<|im_end|>
+Llama 3
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+What is the capital of France?<|eot_id|><|start_header_
+id|>assistant<|end_header_id|>
+The capital of France is Paris.<|eot_id|>
+Phi-3
+<|user|>
+What is the capital of France?<|end|>
+<|assistant|>
+The capital of France is Paris.<|end|>
+Gemma
+<bos><start_of_turn>user
+What is the capital of France?<end_of_turn>
+<start_of_turn>model
+The capital of France is Paris.<end_of_turn>
+Table 5.7 – Example of common chat templates
+Jinja implements loops and conditions, which allow the same template to be used for training 
+and inference (add_generation_prompt).

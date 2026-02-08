@@ -1,0 +1,37 @@
+Appendix
+461
+To conclude, CT automates the FTI pipelines, while CI/CD builds, tests, and pushes new versions 
+of the FTI pipeline code to production.
+2. Versioning
+By now, we understand that the whole ML system changes if the code, model, or data changes. 
+Thus, it is critical to track and version these three elements individually. But what strategies can 
+we adopt to track the code, model, and data separately?
+•	
+The code is tracked by Git, which helps us create a new commit (a snapshot of the code) 
+on every change added to the codebase. Also, Git-based tools usually allow us to make 
+releases, which typically pack multiple features and bug fixes. While the commits contain 
+unique identifiers that are not human-interpretable, a release follows more common con-
+ventions based on their major, minor, and patch versions. For example, in a release with 
+version “v1.2.3,” 1 is the major version, 2 is the minor version, and 3 is the patch version. 
+Popular tools are GitHub and GitLab.
+•	
+To version the model, you leverage the model registry to store, share, and version all the 
+models used within your system. It usually follows the same versioning conventions used 
+in code releases, defined as Semantic Versioning, which, along with the major, minor, 
+and patch versions, also supports alpha and beta releases that signal applications. At this 
+point, you can also leverage the ML metadata store to attach information to the stored 
+model, such as what data it was trained on, its architecture, performance, latency, and 
+whatever else makes sense to your specific use case. Doing so creates a clear catalog of 
+models that can easily be navigated across your team and company.
+•	
+Versioning the data isn’t as straightforward as versioning the code and model because it 
+depends on the type of data you have (structured or unstructured) and the scale of data you 
+have (big or small). For example, for structured data, you can leverage a SQL database with 
+a version column that helps you track the changes in the dataset. However, other popular 
+solutions are based on Git-like systems, such as Data Version Control (DVC), that track 
+every change made to the dataset. Other trendy solutions are based on artifacts similar 
+to a model registry that allows you to add a virtual layer to your dataset, tracking and 
+creating a new version for every change made to your data. Comet.ml, W&B (Weights & 
+Biases), and ZenML offer powerful artifact features. For all solutions, you must store the 
+data on-premises or use cloud object storage solutions such as AWS S3. These tools provide 
+features that allow you to structure your datasets and versions, track, and access them.

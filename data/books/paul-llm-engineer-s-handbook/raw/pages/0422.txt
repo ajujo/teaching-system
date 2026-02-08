@@ -1,0 +1,29 @@
+Chapter 10
+391
+This FastAPI application demonstrates how to effectively integrate an LLM hosted on AWS Sage-
+Maker into a web service, utilizing RAG to enhance the relevance of the model’s responses. The 
+code’s modular design, leveraging custom classes like ContextRetriever, InferenceExecutor, 
+and LLMInferenceSagemakerEndpoint, allows for easy customization and scalability, making it 
+a powerful tool for deploying ML models in production environments.
+We will leverage the uvicorn web server, the go-to method for FastAPI applications, to start the 
+server. To do so, you have to run the following:
+uvicorn tools.ml_service:app --host 0.0.0.0 --port 8000 --reload
+Also, you can run the following poe command to achieve the same:
+poetry poe run-inference-ml-service
+To call the /rag endpoint, we can leverage the curl CLI command to make a POST HTTP request 
+to our FastAPI server, as follows:
+curl -X POST 'http://127.0.0.1:8000/rag' -H 'Content-Type: application/
+json' -d '{\"query\": \"your_query \"}'
+As usual, we provided an example using a poe command that contains an actual user query:
+poetry poe call-inference-ml-service
+This FastAPI server runs only locally. The next step would be to deploy it to AWS Elastic Ku-
+bernetes Service (EKS), a self-hosted version of Kubernetes by AWS. Another option would be 
+to deploy it to AWS Elastic Container Service (ECS), which is similar to AWS EKS but doesn’t 
+use Kubernetes under the hood but AWS’s implementation. Unfortunately, this is not specific 
+to LLMs or LLMOps. Hence, we won’t go through these steps in this book. But to get an idea of 
+what you must do, you must create an AWS EKS/ECS cluster from the dashboard or leverage an 
+infrastructure-as-code (IaC) tool such as Terraform. After that, you will have to Dockerize the 
+FastAPI code presented above. Ultimately, you would have to push the Docker image to AWS ECR 
+and create an ECS/EKR deployment using the Docker image hosted on ECR. If this sounds like 
+a lot, the good news is that we will walk you through a similar example in Chapter 11, where we 
+will deploy the ZenML pipelines to AWS.

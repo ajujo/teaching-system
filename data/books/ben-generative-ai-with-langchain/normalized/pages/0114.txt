@@ -1,0 +1,31 @@
+Chapter 3
+87
+Another important concept is a placeholder. This substitutes a variable with a list of messages
+provided in real time. You can add a placeholder to your prompt by using a placeholder hint, or
+adding a MessagesPlaceholder:
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+chat_prompt_template = ChatPromptTemplate.from_messages(
+   [("system", "You are a helpful assistant."),
+    ("placeholder", "{history}"),
+    # same as MessagesPlaceholder("history"),
+    ("human", prompt_template)])
+len(chat_prompt_template.invoke({"job_description": "fake", "history":
+[("human", "hi!"), ("ai", "hi!")]}).messages)
+>> 4
+Now our input consists of four messages - a system message, two history messages that we pro­
+vided, and one human message from a templated prompt. The best example of using a placeholder
+is to input a history of a chat, but we'll see more advanced ones later in this book when we'll talk
+about how an LLM interacts with an external world or how different LLMs coordinate together
+in a multi-agent setup.
+Zero-shot vs. few-shot prompting
+As we have discussed, the first thing that we want to experiment with is improving the task de­
+scription itself. A description of a task without examples of solutions is called zero-shot prompting,
+and there are multiple tricks that you can try.
+What typically works well is assigning the LLM a certain role (for example, "You are a useful enter­
+prise assistant working for XXX Fortune-500 company") and giving some additional instruction (for
+example, whether the LLM should be creative, concise, or factual). Remember that LLMs have seen
+various data and they can do different tasks, from writing a fantasy book to answering complex
+reasoning questions. But your goal is to instruct them, and if you want them to stick to the facts,
+you'd better give very specific instructions as part of their role profile. For chat models, such role
+setting typically happens through a system message (but remember that, even for a chat model,
+everything is combined to a single input prompt formatted on the server side).

@@ -1,0 +1,24 @@
+– cuantización del entrenamiento, Cuantización de inferencia
+– limitado por el ancho de banda, Visión general de la inferencia
+– matemáticas de la memoria, Retropropagación y parámetros
+entrenables
+– memoria necesaria para el entrenamiento, Memoria necesaria
+para la inferencia
+– memoria necesaria para la inferencia, Memoria necesaria para la
+inferencia
+– tamaño y ancho de banda, ¿Qué es un acelerador?
+curación de datos, Ingeniería de conjuntos de datos
+D
+datos comparativos, Modelo de recompensa
+datos de demostración, Afinado supervisado
+datos de entrenamiento, Comprender los modelos fundacionales
+– modelos específicos de dominio, Modelos específicos de dominio
+– modelos multilingües, Datos de entrenamiento
+datos estructurados, Interpretación y casos prácticos de la perplejidad,
+Memoria
+datos no estructurados, Agregación de información, Memoria
+DDR SDRAM (memoria dinámica síncrona de acceso aleatorio con doble
+tasa de datos), Tamaño y ancho de banda de la memoria
+decodificación
+– cuello de botella de la decodificación autorregresiva, Superar el cuello
+de botella de la decodificación autorregresiva

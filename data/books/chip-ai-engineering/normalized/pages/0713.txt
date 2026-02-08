@@ -1,0 +1,19 @@
+figura 10-12. Dado que el usuario termina la generación antes de tiempo y reformula
+la pregunta, puede deducirse que el modelo no entendió la intención de la solicitud
+original.
+Los usuarios también pueden señalar cosas concretas que el modelo debería
+haber hecho de otra manera. Por ejemplo, si un usuario pide al modelo que
+le resuma una historia y el modelo confunde a un personaje, este usuario
+pueden darle una respuesta del tipo: "Bill es el sospechoso, no la víctima".
+El modelo debe ser capaz de tomar este comentario y revisar el resumen.
+Este tipo de retroalimentación correctora de la acción es especialmente
+común en los casos de uso de agentes, en los que los usuarios pueden guiar
+al agente hacia otras acciones opcionales. Por ejemplo, si un usuario asigna
+al agente la tarea de realizar un análisis de mercado sobre la empresa XYZ,
+este usuario podría darle retroalimentación como "También deberías
+consultar la página de GitHub de XYZ" o "Consulta el perfil de X del
+director general".
+A veces, los usuarios pueden querer que el modelo se corrija a sí mismo
+pidiendo una confirmación explícita, como "¿Estás seguro?", "Compruébalo
+de nuevo" o "Muéstrame las fuentes". Esto no significa necesariamente que
+el modelo dé respuestas erróneas. Sin embargo, podría significar que las

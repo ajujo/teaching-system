@@ -1,0 +1,49 @@
+# 4⃣ Trainer
+train_args = TrainingArguments(
+    output_dir      = OUTPUT_DIR,
+    per_device_train_batch_size = 4,
+    gradient_accumulation_steps = 4,
+    learning_rate   = 5e-6,
+    num_train_epochs= 3,
+    logging_steps   = 10,
+    save_strategy   = "epoch",
+    bf16            = True,
+    report_to       = None,
+)
+dpo_args = DPOConfig(
+    output_dir              = "phi3-mini-helpdesk-dpo",
+    per_device_train_batch_size  = 4,
+    gradient_accumulation_steps  = 4,
+    learning_rate           = 5e-6,
+    num_train_epochs        = 3.0,
+    bf16                    = True,
+    logging_steps           = 10,
+    save_strategy           = "epoch",
+    report_to               = None,
+    beta                    = 0.1,
+    loss_type               = "sigmoid",
+    label_smoothing         = 0.0,
+    max_prompt_length       = 4096,
+    max_completion_length   = 4096,
+    max_length              = 8192,
+    padding_value           = tok.pad_token_id,
+    label_pad_token_id      = tok.pad_token_id,
+    truncation_mode         = "keep_end",
+    generate_during_eval    = False,
+    disable_dropout         = False,
+    reference_free          = True,
+    model_init_kwargs       = None,
+    ref_model_init_kwargs   = None,
+)
+trainer = DPOTrainer(
+    model,
+    ref_model=None,
+    args=dpo_args,
+    train_dataset=ds,
+)
+trainer.train()
+trainer.save_model()
+tok.save_pretrained(OUTPUT_DIR)
+160 
+| 
+Chapter 7: Learning in Agentic Systems

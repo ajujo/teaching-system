@@ -1,0 +1,40 @@
+Building Intelligent RAG Systems
+160
+For technical or specialized domains with complex terminology, hybrid retrieval provides a strong
+foundation by capturing both semantic relationships and exact terminology. When dealing with
+lengthy documents where only portions are relevant, add contextual compression to extract the
+most pertinent sections.
+For applications where accuracy and transparency are critical, implement source attribution
+and self-consistency checking to ensure that generated responses are faithful to the retrieved
+information. If users frequently submit ambiguous or poorly formulated queries, query transfor­
+mation techniques can help bridge the gap between user language and document terminology.
+So when should you choose each approach?
+•
+Start with naive RAG for quick prototyping and simple question-answering
+•
+Add hybrid retrieval when facing vocabulary mismatch issues or mixed content types
+•
+Implement re-ranking when the initial retrieval quality needs refinement
+•
+Use query transformation for complex queries or when users struggle to articulate in­
+formation needs
+•
+Apply context processing when dealing with limited context windows or redundant in­
+formation
+•
+Add response enhancement for applications requiring high trustworthiness and attri­
+bution
+•
+Consider CRAG when reliability and factual accuracy are mission-critical
+In practice, production RAG systems often combine multiple approaches. For example, a robust
+enterprise system might use hybrid retrieval with query transformation, apply context processing
+to optimize the retrieved information, enhance responses with source attribution, and implement
+CRAG's evaluation layer for critical applications.
+Start with implementing one or two key techniques that address your most pressing challenges,
+then measure their impact on performance metrics like relevance, accuracy, and user satisfaction.
+Add additional techniques incrementally as needed, always considering the tradeoff between
+improved results and increased computational costs.
+To demonstrate a RAG system in practice, in the next section, we'll walk through the implemen­
+tation of a chatbot that retrieves and integrates external knowledge into responses.
+Explore agentic RAG (covered more in Chapter 5) for complex, multi-step information
+tasks requiring reasoning

@@ -1,0 +1,33 @@
+Chapter 5
+201
+def extract_substrings(dataset: Dataset, min_length: int = 1000, 
+max_length: int = 2000) -> List[str]:
+    extracts = []
+    sentence_pattern = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)
+(?<=\.|\?|\!)\s"
+    for article in dataset["content"]:
+        cleaned_article = clean_text(article)
+        sentences = re.split(sentence_pattern, cleaned_article)
+        current_chunk = ""
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if not sentence:
+                continue
+            if len(current_chunk) + len(sentence) <= max_length:
+                current_chunk += sentence + " "
+            else:
+                if len(current_chunk) >= min_length:
+                    extracts.append(current_chunk.strip())
+                current_chunk = sentence + " "
+        if len(current_chunk) >= min_length:
+            extracts.append(current_chunk.strip())
+    return extracts
+6.	
+Next, we want to create instruction-answer pairs from the extracted chunks of text. To 
+manage these pairs effectively, we introduce the InstructionAnswerSet class. This class 
+allows us to create instances directly from JSON strings, which is useful when parsing the 
+output from the OpenAI API.
+class InstructionAnswerSet:
+    def __init__(self, pairs: List[Tuple[str, str]]):
+        self.pairs = pairs
+    @classmethod

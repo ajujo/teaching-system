@@ -1,0 +1,32 @@
+Chapter 3
+79
+            platform="medium",
+            content=data,
+            link=link,
+            author_id=user.id,
+            author_full_name=user.full_name,
+        )
+        instance.save()
+        logger.info(f"Successfully scraped and saved article: {link}")
+With that, we conclude the MediumCrawler implementation. The LinkedIn crawler follows a
+similar pattern to the Medium one, where it uses Selenium to log in and access the feed of a
+user's latest posts. Then, it extracts the posts and scrolls through the feed to load the next page
+until a limit is hit. You can check the full implementation in our repository at https://github.
+com/PacktPublishing/LLM-Engineers-Handbook/blob/main/llm_engineering/application/
+crawlers/linkedin.py.
+With the rise of LLMs, collecting data from the internet has become a critical step in many real-world AI applications. Hence, more high-level tools have appeared in the Python ecosystem,
+such as Scrapy (https://github.com/scrapy/scrapy), which crawls websites and extracts structured data from their pages, and Crawl4AI (https://github.com/unclecode/crawl4ai), which
+is highly specialized in crawling data for LLMs and AI applications.
+In this section, we've looked at implementing three types of crawlers: one that leverages the
+git executable in a subprocess to clone GitHub repositories, one that uses LangChain utilities
+to extract the HTML of a single web page, and one that leverages Selenium for more complex
+scenarios where we have to navigate through the login page, scroll the article to load the entire
+HTML, and extract it into text format. The last step is understanding how the document classes
+we've used across the chapter, such as the ArticleDocument, work.
+The NoSQL data warehouse documents
+We had to implement three document classes to structure our data categories. These classes
+define the specific attributes we require for a document, such as the content, author, and source
+link. It is best practice to structure your data in classes instead of dictionaries, as the attributes we
+expect for each item are more verbose, reducing run errors. For example, when accessing a value
+from a Python dictionary, we can never be sure it is present or its type is current. By wrapping
+our data items with classes, we can ensure each attribute is as expected.

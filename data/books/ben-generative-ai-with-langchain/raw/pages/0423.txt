@@ -1,0 +1,33 @@
+Production-Ready LLM Deployment and Observability
+396
+from langchain_core.prompts import ChatPromptTemplate
+# Define models with different capabilities and costs
+affordable_model = ChatOpenAI(model="gpt-3.5-turbo")  # ~10× cheaper than 
+gpt-4o
+powerful_model = ChatOpenAI(model="gpt-4o")           # More capable but 
+more expensive
+# Create classifier prompt
+classifier_prompt = ChatPromptTemplate.from_template("""
+Determine if the following query is simple or complex based on these 
+criteria:
+- Simple: factual questions, straightforward tasks, general knowledge
+- Complex: multi-step reasoning, nuanced analysis, specialized expertise
+Query: {query}
+Respond with only one word: "simple" or "complex"
+""")
+# Create the classifier chain
+classifier = classifier_prompt | affordable_model | StrOutputParser()
+def route_query(query):
+    """Route the query to the appropriate model based on complexity."""
+    complexity = classifier.invoke({"query": query})
+  
+    if "simple" in complexity.lower():
+        print(f"Using affordable model for: {query}")
+        return affordable_model
+    else:
+        print(f"Using powerful model for: {query}")
+        return powerful_model
+# Example usage
+def process_query(query):
+    model = route_query(query)
+    return model.invoke(query)

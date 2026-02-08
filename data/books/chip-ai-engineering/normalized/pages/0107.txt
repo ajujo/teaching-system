@@ -1,0 +1,28 @@
+sopesar la importancia de los distintos tokens de input a la hora de generar
+cada token de output. Es como generar respuestas consultando cualquier
+página del libro. En la mitad inferior de la Figura 2-4 se muestra una
+visualización simplificada de la arquitectura de transformador.
+NOTA
+Aunque el mecanismo de atención se asocia a menudo con el modelo del
+transformador, se introdujo tres años antes de que se publicara el estudio
+sobre el mismo. El mecanismo de atención también puede utilizarse con
+otras arquitecturas. Google utilizó el mecanismo de atención con su
+arquitectura seq2seq en 2016 para su modelo GNMT (Google Neural
+Machine Translation). Sin embargo, no despegó hasta que el estudio sobre
+el transformador demostró que el mecanismo de atención podía utilizarse
+sin RNNs.7
+La arquitectura de transformadores prescinde por completo de las RNNs.
+Con los transformadores, los tokens de input pueden procesarse en paralelo,
+lo que acelera considerablemente el procesamiento de los inputs. Aunque el
+transformador elimina el cuello de botella secuencial de inputs, los modelos
+lingüísticos autorregresivos basados en transformadores siguen teniendo el
+cuello de botella secuencial de outputs.
+Por lo tanto, la inferencia de los modelos lingüísticos basados en
+transformadores consta de dos pasos:
+Llenado previo
+El modelo procesa los tokens de input en paralelo. Este paso
+crea el estado intermedio necesario para generar el primer
+token de output. Este estado intermedio incluye los vectores
+de claves y valores de todos los tokens de input.
+Decodificación
+El modelo genera un token de output cada vez.

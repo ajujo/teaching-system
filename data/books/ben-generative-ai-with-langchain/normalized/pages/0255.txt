@@ -1,0 +1,25 @@
+Advanced Applications and Multi-Agent Systems
+228
+We will look into a few core agentic architectures in the remainder of this chapter, and intro­
+duce some important LangGraph interfaces (such as streaming details and handoffs) that are
+useful to develop agents. If you're interested, you can find more examples and tutorials on the
+LangChain documentation page at https://langchain-ai.github.io/langgraph/concepts/
+agentic_concepts/. We'll begin with discussing the importance of specialization in multi-agentic
+systems, including what the consensus mechanism is and the different consensus mechanisms.
+Agent roles and specialization
+When working on a complex task, we as humans know that usually, it's beneficial to have a team
+with diverse skills and backgrounds. There is much evidence from research and experiments that
+suggests this is also true for generative AI agents. In fact, developing specialized agents offers
+several advantages for complex AI systems.
+First, specialization improves performance on specific tasks. This allows you to:
+•
+Select the optimal set of tools for each task type.
+•
+Craft tailored prompts and workflows.
+•
+Fine-tune hyperparameters such as temperature for specific contexts.
+Second, specialized agents help manage complexity. Current LLMs struggle when handling too
+many tools at once. As a best practice, limit each agent to 5-15 different tools, rather than overload­
+ing a single agent with all available tools. How to group tools is still an open question; typically,
+grouping them into toolkits to create coherent specialized agents helps.
+Figure 6.2: A supervisor pattern

@@ -1,0 +1,34 @@
+Building Intelligent RAG Systems
+148
+include a citation using [1], [2], etc. that refers to the source. Include
+a numbered reference list at the end.
+Question: {question}
+Sources:
+{sources}
+Your answer:
+""")
+Next, we'll need helper functions to format the sources with citation numbers and generate
+attributed responses:
+# Create a source-formatted string from documents
+def format_sources_with_citations(docs):
+    formatted_sources = []
+    for i, doc in enumerate(docs, 1):
+        source_info = f"[{i}] {doc.metadata.get('source', 'Unknown
+source')}"
+        if doc.metadata.get('page'):
+            source_info += f", page {doc.metadata['page']}"
+        formatted_sources.append(f"{source_info}\n{doc.page_content}")
+    return "\n\n".join(formatted_sources)
+# Build the RAG chain with source attribution
+def generate_attributed_response(question):
+    # Retrieve relevant documents
+    retrieved_docs = retriever.invoke(question)
+
+    # Format sources with citation numbers
+    sources_formatted = format_sources_with_citations(retrieved_docs)
+
+    # Create the attribution chain using LCEL
+    attribution_chain = (
+        attribution_prompt
+        | ChatOpenAI(temperature=0)
+        | StrOutputParser()

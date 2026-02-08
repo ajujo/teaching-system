@@ -1,0 +1,35 @@
+Advanced Applications and Multi-Agent Systems
+258
+async def _get_final_response(state: PlanState) -> PlanState:
+ node = state["current_node"]
+ final_response = await responder.ainvoke({"task": state["task"], "plan":
+node.get_full_plan()})
+ node.final_response = final_response
+ return {"paths_explored": 1, "candidates": [final_response]}
+def _should_create_final_response(state: PlanState) -> Literal["run",
+"generate_response"]:
+ return "generate_response" if state["is_current_node_final"] else "run"
+def _should_continue(state: PlanState, config: RunnableConfig) ->
+Literal["run", "vote"]:
+ max_paths = config["configurable"].get("max_paths", 30)
+ if state.get("paths_explored", 1) > max_paths:
+   return "vote"
+ if state["queue"] or state.get("next_node"):
+   return "run"
+ return "vote"
+These functions round out our implementation by defining the initial plan creation, final response
+generation, and flow control logic. The _should_create_final_response and _should_continue
+functions determine when to generate a final response and when to continue exploration. With
+all the components in place, we construct the final state graph:
+builder = StateGraph(PlanState)
+builder.add_node("initial_plan", _build_initial_plan)
+builder.add_node("run", _run_node)
+builder.add_node("plan_next", _plan_next)
+builder.add_node("generate_response", _get_final_response)
+builder.add_node("vote", _vote_for_the_best_option)
+builder.add_edge(START, "initial_plan")
+builder.add_edge("initial_plan", "run")
+builder.add_edge("run", "plan_next")
+builder.add_conditional_edges("plan_next", _should_create_final_response)
+builder.add_conditional_edges("generate_response", _should_continue)
+builder.add_edge("vote", END)

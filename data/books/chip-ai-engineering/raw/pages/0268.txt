@@ -1,0 +1,24 @@
+AVISO
+El rendimiento de un modelo depende de la calidad de sus instrucciones, lo
+que dificulta la evaluación de los modelos de IA. Cuando un modelo
+funciona mal, puede deberse a que el modelo sea malo o a que la
+instrucción sea mala.
+Criterios de seguimiento de instrucciones
+Las distintas pruebas comparativas tienen nociones diferentes de lo que
+engloba la capacidad de seguir instrucciones. Las dos pruebas comparativas
+que se analizan aquí, IFEval e INFOBench, miden la capacidad de los
+modelos para seguir una amplia gama de instrucciones, para darle ideas
+sobre cómo evaluar la capacidad de un modelo que siga sus instrucciones:
+qué criterios utilizar, qué instrucciones incluir en el conjunto de evaluación
+y qué métodos de evaluación son apropiados.
+La prueba comparativa IFEval de Google (Evaluación de Seguimiento de
+Instrucciones) se centra en si el modelo puede producir outputs siguiendo
+un formato esperado. Zhou et al. (2023) identificaron 25 tipos de
+instrucciones que pueden verificarse automáticamente, como la inclusión de
+palabras clave, las restricciones de longitud, el número de viñetas y el
+formato JSON. Si se pide a un modelo que escriba una frase con la palabra
+"efímero", se puede escribir un programa que compruebe si el output
+contiene esta palabra; por lo tanto, esta instrucción es verificable
+automáticamente. La puntuación es la fracción de las instrucciones que se
+siguen correctamente de entre todas las instrucciones. En la Tabla 4-2 se
+muestran las explicaciones de estos tipos de instrucciones.

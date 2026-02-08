@@ -1,0 +1,38 @@
+Preface
+xx
+Chapter 10, The Future of LLM Applications, looks ahead to emerging trends, evolving architectures,
+and ethical considerations in generative AI. The chapter explores new technologies, market de­
+velopments, potential societal impacts, and guidelines for responsible development. You'll gain
+insight into how the field is likely to evolve and how to position your skills and applications for
+future advancements, completing your journey from basic LLM understanding to building and
+deploying production-ready, future-proof AI systems.
+To get the most out of this book
+Before diving in, it's helpful to ensure you have a few things in place to make the most of your
+learning experience. This book is designed to be hands-on and practical, so having the right en­
+vironment, tools, and mindset will help you follow along smoothly and get the full value from
+each chapter. Here's what we recommend:
+•
+Environment requirements: Set up a development environment with Python 3.10+ on any
+major operating system (Windows, macOS, or Linux). All code examples are cross-plat­
+form compatible and thoroughly tested.
+•
+API access (optional but recommended): While we demonstrate using open-source
+models that can run locally, having access to commercial API providers like OpenAI, An­
+thropic, or other LLM providers will allow you to work with more powerful models. Many
+examples include both local and API-based approaches, so you can choose based on your
+budget and performance needs.
+•
+Learning approach: We recommend typing the code yourself rather than copying and
+pasting. This hands-on practice reinforces learning and encourages experimentation. Each
+chapter builds on concepts introduced earlier, so working through them sequentially will
+give you the strongest foundation.
+•
+Background knowledge: Basic Python proficiency is required, but no prior experience
+with machine learning or LLMs is necessary. We explain key concepts as they arise. If
+you're already familiar with LLMs, you can focus on the implementation patterns and
+production-readiness aspects that distinguish this book.
+Software/Hardware covered in the book
+Python 3.10+
+LangChain 0.3.1+
+LangGraph 0.2.10+
+Various LLM providers (Anthropic, Google, OpenAI, local models)

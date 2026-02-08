@@ -1,0 +1,40 @@
+First Steps with LangChain
+42
+LangChain Expression Language (LCEL)
+LCEL represents a significant evolution in how we build LLM-powered applications with Lang­
+Chain. Introduced in August 2023, LCEL is a declarative approach to constructing complex LLM 
+workflows. Rather than focusing on how to execute each step, LCEL lets you define what you want 
+to accomplish, allowing LangChain to handle the execution details behind the scenes.
+At its core, LCEL serves as a minimalist code layer that makes it remarkably easy to connect dif­
+ferent LangChain components. If you’re familiar with Unix pipes or data processing libraries like 
+pandas, you’ll recognize the intuitive syntax: components are connected using the pipe operator 
+(|) to create processing pipelines.
+As we briefly introduced in Chapter 1, LangChain has always used the concept of a “chain” as its 
+fundamental pattern for connecting components. Chains represent sequences of operations that 
+transform inputs into outputs.
+Originally, LangChain implemented this pattern through specific Chain classes like LLMChain 
+and ConversationChain. While these legacy classes still exist, they’ve been deprecated in favor 
+of the more flexible and powerful LCEL approach, which is built upon the Runnable interface.
+The Runnable interface is the cornerstone of modern LangChain. A Runnable is any component 
+that can process inputs and produce outputs in a standardized way. Every component built with 
+LCEL adheres to this interface, which provides consistent methods including:
+•	
+invoke(): Processes a single input synchronously and returns an output
+•	
+stream(): Streams output as it’s being generated
+•	
+batch(): Efficiently processes multiple inputs in parallel
+•	
+ainvoke(), abatch(), astream(): Asynchronous versions of the above methods
+This standardization means any Runnable component—whether it’s an LLM, a prompt template, 
+a document retriever, or a custom function—can be connected to any other Runnable, creating 
+a powerful composability system.
+Every Runnable implements a consistent set of methods including:
+•	
+invoke(): Processes a single input synchronously and returns an output
+•	
+stream(): Streams output as it’s being generated
+This standardization is powerful because it means any Runnable component—whether it’s an 
+LLM, a prompt template, a document retriever, or a custom function—can be connected to any 
+other Runnable. The consistency of this interface enables complex applications to be built from 
+simpler building blocks.

@@ -1,0 +1,22 @@
+índice
+A
+aceleradores, Utilización, MFU y MBU
+- capacidad de cálculo, ¿Qué es un acelerador?
+- consumo de energía, Tamaño y ancho de banda de la memoria
+- definido, ¿Qué es un acelerador?
+- tamaño y ancho de banda de la memoria, ¿Qué es un acelerador?
+aceleradores de IA (ver aceleradores)
+adaptadores
+- ajuste fino, Modelos base
+- fusión con concatenación, Concatenación
+- LoRA, Técnicas PEFT
+- técnicas PEFT, Afinado eficiente en parámetros
+agentes, RAG con datos tabulares
+- agentes planificadores, Acciones de escritura
+- generación de planes, Modelos fundacionales como
+planificadores
+- modelos fundacionales como planificadores, Visión general de la
+planificación
+- reflexión y corrección de errores, Planes complejos
+- selección de herramientas, Selección de herramientas
+- visión general, Planificación

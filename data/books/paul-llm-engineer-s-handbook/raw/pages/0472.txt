@@ -1,0 +1,36 @@
+Chapter 11
+441
+The next step involves configuring the AWS credentials. This step is crucial for interacting with 
+AWS services, such as Amazon Elastic Container Registry (ECR), where the Docker images will 
+be pushed. The AWS access key, secret access key, and region are securely retrieved from the 
+repository’s secrets to authenticate the workflow with AWS. This ensures the workflow has the 
+necessary permissions to push Docker images to the ECR repository. We will show you how to 
+configure these secrets after wrapping up with the YAML file:
+- name: Configure AWS credentials
+  uses: aws-actions/configure-aws-credentials@v1
+  with:
+    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    aws-region: ${{ secrets.AWS_REGION }}
+Once the AWS credentials are configured, the workflow logs in to Amazon ECR. This step is es-
+sential for authenticating the Docker CLI with the ECR registry, allowing subsequent steps to 
+push images to the registry:
+- name: Login to Amazon ECR
+  id: login-ecr
+  uses: aws-actions/amazon-ecr-login@v1
+The final step in the workflow involves building the Docker image and pushing it to the Ama-
+zon ECR repository. This is accomplished using the docker/build-push-action@v6 action. The 
+context specifies the build context, which is typically the repository’s root directory. The file 
+option points to the Dockerfile, which defines how the image should be built. The tags section 
+assigns tags to the image, including the specific commit SHA and the latest tag, which is a com-
+mon practice for identifying the most recent version of the image. The push option is set to true, 
+meaning the image will be uploaded to ECR after it is built:
+- name: Build images & push to ECR
+  id: build-image
+  uses: docker/build-push-action@v6
+  with:
+    context: .
+    file: ./Dockerfile
+    tags: |
+      ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_NAME 
+}}:${{ github.sha }}

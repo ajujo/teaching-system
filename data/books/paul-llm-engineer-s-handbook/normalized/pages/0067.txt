@@ -1,0 +1,8 @@
+Tooling and Installation
+36
+This structure is often called a directed acyclic graph (DAG). More on DAGs in Chapter 11.
+Figure 2.4: ZenML digital_data_etl pipeline run dashboard (example of a specific pipeline run)
+By clicking on a specific step, you can get more insights into its code and configuration. It even
+aggregates the logs output by that specific step to avoid switching between tools, as shown in
+Figure 2.5.
+Figure 2.5: Example of insights from a specific step of the digital_data_etl pipeline run

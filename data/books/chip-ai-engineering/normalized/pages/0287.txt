@@ -1,0 +1,33 @@
+Además, las leyes de propiedad intelectual en torno a la IA están
+evolucionando activamente. Aunque la Oficina de Patentes y Marcas de
+EE. UU. (USPTO) dejó claro en 2024 que "las invenciones asistidas por IA
+no son categóricamente no patentables", la patentabilidad de una aplicación
+de IA depende de "si la contribución humana a una innovación es lo
+suficientemente significativa como para calificar a una patente". Tampoco
+está claro si usted puede defender la propiedad intelectual de su producto, si
+su modelo fue entrenado con datos protegidos por derechos de autor, y
+usted utiliza este modelo para crear su producto. Muchas empresas cuya
+existencia depende de su PI, como los estudios de videojuegos y cine,
+dudan en utilizar la IA para ayudar en la creación de sus productos, al
+menos hasta que se aclaren las leyes de PI en torno a la IA (James Vincent,
+The Verge, 15 de noviembre de 2022).
+La preocupación por el linaje de los datos ha llevado a algunas empresas a
+adoptar modelos totalmente abiertos, cuyos datos de entrenamiento se han
+puesto a disposición del público. El argumento es que esto permite a la
+comunidad inspeccionar los datos y asegurarse de que su uso es seguro.
+Aunque en teoría suena muy bien, en la práctica es todo un reto para
+cualquier empresa inspeccionar a fondo un conjunto de datos del tamaño
+que se suele utilizar para entrenar modelos fundacionales.
+Ante la misma preocupación, muchas empresas optan por modelos
+comerciales. Los modelos de código abierto suelen tener recursos jurídicos
+limitados en comparación con los modelos comerciales. Si utiliza un
+modelo de código abierto que infringe los derechos de autor, es poco
+probable que el dueño de dichos derechos demande a los desarrolladores del
+modelo, y más probable que lo demande a usted. Sin embargo, si utiliza un
+modelo comercial, los contratos que firme con los proveedores del modelo
+puede protegerle potencialmente de los riesgos del linaje de datos. 16
+Rendimiento
+Diversas pruebas comparativas han demostrado que se está cerrando la
+brecha entre los modelos de código abierto y los modelos propietarios. La
+Figura 4-7 muestra la disminución de esta diferencia en la prueba
+comparativa MMLU a lo largo del tiempo. Esta tendencia ha hecho creer a

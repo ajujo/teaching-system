@@ -1,0 +1,29 @@
+memorandos, contratos y notas de reuniones de una empresa. Un
+documento puede tener 10 tokens o 1 millón de tokens. Recuperar
+ingenuamente documentos enteros puede hacer que su contexto sea
+arbitrariamente largo. Para evitarlo, pueden fragmentar cada documento en
+partes más manejables. Las estrategias de fragmentación se tratarán más
+adelante en este capítulo. Por ahora, vamos a suponer que todos los
+documentos se han dividido en fragmentos manejables. Para cada consulta,
+nuestro objetivo es recuperar los fragmentos de datos más relevantes para
+ella. A menudo es necesario un postprocesamiento menor para unir los
+fragmentos de datos recuperados con el prompt del usuario y generar el
+prompt final. Este prompt final se introduce en el modelo generativo.
+NOTA
+En este capítulo, utilizo el término "documento" para referirme tanto a
+"documento" como a "fragmento", porque técnicamente, un fragmento de
+un documento también es un documento. Lo hago para que la terminología
+de este libro sea coherente con la terminología clásica de la NLP y la
+recuperación de información (IR).
+Algoritmos de recuperación
+La recuperación no es exclusiva de la RAG. La recuperación de
+información es una idea centenaria. 5 Es la columna vertebral de los
+motores de búsqueda, los sistemas de recomendación, los análisis de
+registros, etc. Muchos algoritmos de recuperación desarrollados para los
+sistemas de recuperación tradicionales también pueden utilizarse para la
+RAG. Por ejemplo, la recuperación de información es un área de
+investigación fértil con una gran industria de apoyo que difícilmente puede
+cubrirse suficientemente en unas pocas páginas. Por consiguiente, esta
+sección solo la tratará en líneas generales. Consulte el repositorio GitHub
+de este libro para obtener más recursos detallados sobre la recuperación de
+información.

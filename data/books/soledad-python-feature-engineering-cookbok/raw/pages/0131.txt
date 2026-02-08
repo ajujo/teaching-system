@@ -1,0 +1,36 @@
+Transforming Numerical Variables
+108
+Note
+PowerTransformer() from scikit-learn will transform the entire dataset. On the other 
+hand, BoxCoxTransformer() from Feature-engine can modify a subset of the variables, 
+if we pass their names in a list to the variables parameter when setting up the transformer. 
+If the variables parameter is set to None, the transformer will transform all numerical 
+variables seen during fit().
+14.	 The optimal lambdas for the Box-Cox transformation are stored in the lambda_dict_ 
+attribute. Let’s inspect them:
+bct.lambda_dict_
+The output of the previous command is the following:
+{'MedInc': 0.09085449361507383,
+'HouseAge': 0.8093980940712507,
+'AveRooms': -0.2980048976549959,
+'AveBedrms': -1.6290002625859639,
+'Population': 0.23576757812051324,
+'AveOccup': -0.4763032278973292}
+Now you know how to implement the Box-Cox transformation with two different Python libraries.
+How it works...
+scikit-learn’s PowerTransformer() can apply both Box-Cox and Yeo-Johnson transformations, 
+so we specified the transformation when setting up the transformer by passing the box-cox string. 
+Next, we fit the transformer to the data so that the transformer learned the optimal lambdas for 
+each variable. The learned lambdas were stored in the lambdas_ attribute. Finally, we used the 
+transform() method to transform the variables.
+Note
+Remember that to return DataFrames instead of arrays, you need to specify the transform 
+output through the set_output() method. You can apply the transformation to a subset 
+of values by using the ColumnTransformer().
+Finally, we applied the Box-Cox transformation using Feature-engine. We initialized 
+BoxCoxTransformer(), leaving the parameter variables set the None. Due to this, the 
+transformer automatically found the numerical variables in the data during fit(). We fit the 
+transformer to the data so that it learned the optimal lambdas per variable, which were stored in 
+lambda_dict_, and transformed the variables using the transform() method. Feature-
+engine’s BoxCoxTransformer() can take the entire DataFrame as input and it yet modify only 
+the selected variables.

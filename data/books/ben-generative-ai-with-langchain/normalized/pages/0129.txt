@@ -1,0 +1,33 @@
+Building Workflows with LangGraph
+102
+def test_node(state):
+   # ignore the last message since it's an input one
+   print(f"History length = {len(state[:-1])}")
+   return [AIMessage(content="Hello!")]
+builder = MessageGraph()
+builder.add_node("test_node", test_node)
+builder.add_edge(START, "test_node")
+builder.add_edge("test_node", END)
+memory = MemorySaver()
+graph = builder.compile(checkpointer=memory)
+Now, each time we invoke the graph, we should provide either a specific checkpoint or a threadid (a unique identifier of each run). We invoke our graph two times with different thread-id
+values, make sure they each start with an empty history, and then check that the first thread has
+a history when we invoke it for the second time:
+_ = graph.invoke([HumanMessage(content="test")],
+  config={"configurable": {"thread_id": "thread-a"}})
+_ = graph.invoke([HumanMessage(content="test")]
+  config={"configurable": {"thread_id": "thread-b"}})
+_ = graph.invoke([HumanMessage(content="test")]
+  config={"configurable": {"thread_id": "thread-a"}})
+>> History length = 0
+History length = 0
+History length = 2
+We can inspect checkpoints for a given thread:
+checkpoints = list(memory.list(config={"configurable": {"thread_id":
+"thread-a"}}))
+for check_point in checkpoints:
+ print(check_point.config["configurable"]["checkpoint_id"])
+Let's also restore from the initial checkpoint for thread-a. We'll see that we start with an empty
+history:
+checkpoint_id = checkpoints[-1].config["configurable"]["checkpoint_id"]
+_ = graph.invoke(

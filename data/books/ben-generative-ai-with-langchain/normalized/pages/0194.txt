@@ -1,0 +1,36 @@
+Chapter 4
+167
+def split_documents(docs: List[Document]) -> list[Document]:
+    """Split each document."""
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1500, chunk_overlap=200
+    )
+    return text_splitter.split_documents(docs)
+This custom retriever inherits from a base retriever and manages an internal list of documents:
+class DocumentRetriever(BaseRetriever):
+    """A retriever that contains the top k documents that contain the user
+query."""
+    documents: List[Document] = []
+    k: int = 5
+    def model_post_init(self, ctx: Any) -> None:
+        self.store_documents(self.documents)
+    @staticmethod
+    def store_documents(docs: List[Document]) -> None:
+        """Add documents to the vector store."""
+        splits = split_documents(docs)
+        VECTOR_STORE.add_documents(splits)
+    def add_uploaded_docs(self, uploaded_files):
+        """Add uploaded documents."""
+        docs = []
+    with tempfile.TemporaryDirectory() as temp_dir:
+        for file in uploaded_files:
+            temp_filepath = os.path.join(temp_dir, file.name)
+            # Write file content first
+            with open(temp_filepath, "wb") as f:
+                f.write(file.getvalue())
+            # Load document AFTER file is closed
+            try:
+                docs.extend(load_document(temp_filepath))
+            except Exception as e:
+                print(f"Failed to load {file.name}: {e}")
+                continue

@@ -1,0 +1,25 @@
+Chapter 4
+133
+The data collection pipeline used in the LLM Twin use case is another example of an ETL pipeline
+that extracts data from the internet, structures it, and loads it into a data warehouse for future
+processing.
+Along with prediction or feature freshness, another disadvantage of batch pipelines over streaming
+ones is that you usually make redundant predictions. Let's take the example of a recommender
+system for a streaming platform like Netflix. Every night, you make the predictions for all users.
+There is a significant chance that a large chunk of users won't log in that day. Also, users usually
+don't browse all the recommendations but stick to the first ones. Thus, only a portion of predictions are used, wasting computing power on all the others.
+That's why a popular strategy is to start with a batch architecture, as it's faster and easier to implement. After the product is in place, you gradually move to a streaming design to reduce costs
+and improve the user experience.
+To conclude, we have used a batch architecture (and not a streaming one) to implement the LLM
+Twin's feature pipeline for the following reasons:
+•
+Does not require immediate data processing: Even if syncing the data warehouse and
+feature store is critical for an accurate RAG system, a delay of a few minutes is acceptable.
+Thus, we can schedule the batch pipeline to run every minute, constantly syncing the two
+data storages. This technique works because the data volume is small. The whole data
+warehouse will have only thousands of records, not millions or billions. Hence, we can
+quickly iterate through them and sync the two DBs.
+•
+Simplicity: As stated earlier, implementing a streaming pipeline is two times more complex. In the real world, you want to keep your system as simple as possible, making it
+easier to understand, debug, and maintain. Also, simplicity usually translates to lower
+infrastructure and development costs.

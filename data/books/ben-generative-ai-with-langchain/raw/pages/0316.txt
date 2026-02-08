@@ -1,0 +1,33 @@
+Chapter 7
+289
+We repeat steps 4 and 5 until the `numbers` list becomes empty. This en­
+sures that we have considered all the numbers up to N and identified the 
+prime numbers among them.
+Finally, we return the `primes` list, which contains all the prime numbers 
+up to N.
+Let’s test the function with the given example:
+```python
+print(calculate_primes(20))
+```
+Output:
+```
+[2, 3, 5, 7, 11, 13, 17, 19]
+```
+The function correctly returns the list of prime numbers up to 20. This implementation follows 
+the Sieve of Eratosthenes algorithm again.
+Agentic approach
+We can also create an LLM agent that can execute Python code to solve problems:
+from langchain_openai import ChatOpenAI
+from langchain.agents import load_tools, initialize_agent, AgentType
+from langchain_experimental.tools import PythonREPLTool
+tools = [PythonREPLTool()]   # Gives agent ability to run Python code
+llm = ChatOpenAI()
+# Set up the agent with necessary tools and model
+agent = initialize_agent(
+    tools, 
+    llm,  # Language model to power the agent
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, 
+    verbose=True  # Shows agent's thinking process
+)  # Agent makes decisions without examples
+result = agent("What are the prime numbers until 20?")
+print(result)

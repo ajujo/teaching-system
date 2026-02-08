@@ -1,0 +1,30 @@
+visto a gente utilizar el término afinar cuando lo que hacen es
+ingeniería de prompts.
+Ingeniería de conjuntos de datos
+La ingeniería de conjuntos de datos se refiere a la conservación, generación
+y anotación de los datos necesarios para entrenar y adaptar los modelos de
+IA.
+En la ingeniería tradicional de ML, la mayoría de los casos de uso tienen un
+final cerrado: el output del modelo solo puede estar entre valores
+predefinidos. Por ejemplo, la clasificación del spam con solo dos outputs
+posibles, "spam" y "no spam", es cerrada. Los modelos fundacionales, sin
+embargo, son abiertos. Anotar consultas abiertas es mucho más difícil que
+anotar consultas cerradas: es más fácil determinar si un correo electrónico
+es spam que escribir un ensayo. Por ello, la anotación de datos es un reto
+mucho mayor para la ingeniería de IA.
+Otra diferencia es que la ingeniería de ML tradicional trabaja más con datos
+tabulares, mientras que los modelos fundacionales trabajan con datos no
+estructurados. En la ingeniería de IA, la manipulación de datos tiene que
+ver más con la deduplicación, la tokenización, la recuperación del contexto
+y el control de calidad, incluyendo la eliminación de información sensible y
+datos tóxicos. El Capítulo 8 se centra en la ingeniería de conjuntos de datos.
+Muchos afirman que, dado que los modelos son ya productos básicos, los
+datos serán el principal factor diferenciador, lo que hace que la ingeniería de
+conjuntos de datos sea más importante que nunca. La cantidad de datos
+necesarios depende de la técnica de adaptación que se utilice. Entrenar un
+modelo desde cero suele requerir más datos que ajustarlo, lo que, a su vez,
+requiere más datos que una ingeniería de prompts.
+Independientemente de la cantidad de datos necesarios, ser un experto en
+datos es útil a la hora de examinar un modelo, ya que loss datos de
+entrenamiento dan pistas importantes sobre los puntos fuertes y débiles de
+dicho modelo.

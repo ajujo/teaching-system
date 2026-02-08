@@ -1,0 +1,25 @@
+Sin embargo, trabajos posteriores de Nasr et al. (2023) demostraron una
+estrategia de prompt que hace que el modelo divulgue información
+confidencial sin tener que conocer el contexto exacto. Por ejemplo, cuando
+pidieron a ChatGPT (GPT-turbo-3.5) que repitiera la palabra "poema" para
+siempre, el modelo repitió inicialmente la palabra "poema" varios cientos
+de veces y luego divergió. 19 Una vez que el modelo diverge, lo que genera
+suele carecer de sentido, pero una pequeña fracción se copia directamente
+de los datos de entrenamiento, como se muestra en la Figura 5-13. Esto
+sugiere que existen estrategias de prompts que permiten extraer datos de
+entrenamiento sin saber nada de estos.
+figura 5-13. Demostración del ataque de divergencia, en el que un prompt
+aparentemente inocuo puede hacer que el modelo diverja y divulgue datos de
+entrenamiento.
+Nasr et al. (2023) también estimaron que los índices de memorización de
+algunos modelos, basados en el corpus de prueba del artículo, se acercaban
+al 1 %. 20 Tenga en cuenta que la tasa de memorización será mayor para los
+modelos cuya distribución de datos de entrenamiento se aproxime más a la
+distribución del corpus de prueba. Para todas las familias de modelos del
+estudio, la tendencia clara es que el modelo más grande memoriza más, lo
+que hace que los modelos más grandes sean más vulnerables a los ataques
+de extracción de datos. 21
+También se puede extraer datos de entrenamiento con modelos de otras
+modalidades. "Extracting Training Data from Diffusion Models" (Carlini et
+al., 2023) demostró cómo extraer más de mil imágenes que eran casi
+duplicadas de las imágenes existentes del modelo de código abierto Stable

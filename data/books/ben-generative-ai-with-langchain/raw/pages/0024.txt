@@ -1,0 +1,14 @@
+Preface
+xxiii
+Share your thoughts
+Once you’ve read Generative AI with LangChain, Second Edition, we’d love to hear your thoughts! 
+Please click here to go straight to the Amazon review page for this book and share your 
+feedback.
+Your review is important to us and the tech community and will help us make sure we’re deliv­
+ering excellent quality content.
+Piracy: If you come across any illegal copies of our works in any form on the internet, we would 
+be grateful if you would provide us with the location address or website name. Please contact us 
+at copyright@packtpub.com with a link to the material.
+If you are interested in becoming an author: If there is a topic that you have expertise in and you 
+are interested in either writing or contributing to a book, please visit http://authors.packtpub.
+com/.

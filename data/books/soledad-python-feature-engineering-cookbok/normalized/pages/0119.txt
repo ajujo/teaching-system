@@ -1,0 +1,38 @@
+Transforming Numerical Variables
+96
+The Poisson distribution is a probability distribution that indicates the number of times an event is
+likely to occur. In other words, it is a count distribution. It is right-skewed and its variance equals its
+mean. Examples of variables that could follow a Poisson distribution are the number of financial items
+of a customer, such as the number of current accounts or credit cards, the number of passengers in a
+vehicle, and the number of occupants in a household.
+In this recipe, we will implement square root transformations using NumPy, scikit-learn,
+and Feature-engine.
+How to do it...
+We'll start by creating a dataset with two variables whose values are drawn from a Poisson distribution:
+1.
+Let's begin by importing the necessary libraries:
+import numpy as np import pandas as pd
+import scipy.stats as stats
+2.
+Let's create a DataFrame with two variables drawn from a Poisson distribution with mean
+values of 2 and 3, respectively, and 10000 observations:
+df = pd.DataFrame()
+df["counts1"] = stats.poisson.rvs(mu=3, size=10000)
+df["counts2"] = stats.poisson.rvs(mu=2, size=10000)
+3.
+Let's create a function that takes a DataFrame and a variable name as inputs and plots a bar
+graph with the number of observations per value next to a Q-Q plot:
+def diagnostic_plots(df, variable):
+    plt.figure(figsize=(15,6))
+    plt.subplot(1, 2, 1)
+    df[variable].value_counts().sort_index(). plot.bar()
+    plt.title(f"Histogram of {variable}")
+    plt.subplot(1, 2, 2)
+    stats.probplot(df[variable], dist="norm",
+        plot=plt)
+    plt.title(f"Q-Q plot of {variable}")
+    plt.show()
+4.
+Let's create a bar plot and a Q-Q plot for one of the variables in the data using the function
+from step 3:
+diagnostic_plots(df, "counts1")

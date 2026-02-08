@@ -1,0 +1,28 @@
+Chapter 3
+77
+        instance = self.model(
+            content=content,
+            link=link,
+            platform=platform,
+            author_id=user.id,
+            author_full_name=user.full_name,
+        )
+        instance.save()
+        logger.info(f"Finished scrapping custom article: {link}")
+So far, we have seen how to crawl GitHub repositories and random sites using LangChain utility
+functions. Lastly, we must explore a crawler using Selenium to manipulate the browser programmatically. Thus, we will continue with the MediumCrawler implementation.
+MediumCrawler class
+The code begins by importing essential libraries and defining the MediumCrawler class, which
+inherits from BaseSeleniumCrawler:
+from bs4 import BeautifulSoup
+from loguru import logger
+from llm_engineering.domain.documents import ArticleDocument
+from .base import BaseSeleniumCrawler
+class MediumCrawler(BaseSeleniumCrawler):
+    model = ArticleDocument
+Within the MediumCrawler class, we leverage the set_extra_driver_options() method to extend
+the default driver options used by Selenium:
+    def set_extra_driver_options(self, options) -> None:
+        options.add_argument(r"--profile-directory=Profile 2")
+The extract() method implements the core functionality, first checking whether the article
+exists in the database to prevent duplicate entries.

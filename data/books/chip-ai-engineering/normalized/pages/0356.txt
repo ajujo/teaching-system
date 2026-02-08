@@ -1,0 +1,14 @@
+generen ejemplos en contexto. La Figura 5-7 muestra un prompt escrito por
+Claude 3.5 Soneto (Anthropic, 2024).
+Promptbreeder de DeepMind (Fernando et al., 2023) y TextGrad de
+Stanford (Yuksekgonul et al., 2024) son dos ejemplos de herramientas de
+optimización de prompts basadas en IA. Promptbreeder aprovecha la
+estrategia evolutiva para "criar" prompts de forma selectiva. Empieza con
+un prompt inicial y utiliza un modelo de IA para generar mutaciones de este
+prompt. El proceso de mutación de prompts es guiado por un conjunto de
+prompts mutadores. A continuación, genera mutaciones de la mutación más
+prometedora, y así sucesivamente, hasta que encuentra un prompt que
+satisface sus criterios. La Figura 5-8 muestra cómo funciona Promptbreeder
+a grandes rasgos.
+figura 5-7. Los modelos de IA pueden escribir prompts por usted, como muestra este
+prompt generado por Claude 3.5 Sonnet.

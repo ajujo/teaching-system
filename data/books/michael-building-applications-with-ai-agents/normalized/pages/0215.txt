@@ -1,0 +1,40 @@
+decouple senders from receivers and enable agents to interact asynchronously
+through a shared communication fabric. This pattern establishes scalable, faulttolerant, and observable workflows, especially in loosely coupled multiagent
+architectures.
+To see the utility of this approach, consider integrating a message broker into a supply
+chain multiagent system from earlier in this chapter. In the original synchronous
+setup, the supervisor directly routes to a specialist via graph edges, creating tight cou‐
+pling. By using a broker, the supervisor can publish tasks to a shared topic (e.g.,
+"supply-chain-tasks"), and specialists subscribe asynchronously-processing only rel‐
+evant messages. This decouples agents, enabling independent scaling (e.g., replaying
+inventory instances), fault tolerance (e.g., replay missed messages), and easier addi‐
+tion of new agents without rewriting the graph. Key options include:
+Apache Kafka
+This is a high-throughput, distributed event streaming platform ideal for agent
+systems where agents need to publish and consume structured events. Kafka sup‐
+ports strong durability, topic partitioning for parallelism, and consumer groups
+for coordination. It is especially effective for building log-based communication
+architectures where every interaction is preserved and replayable.
+Redis Stream and RabbitMQ
+These are lightweight alternatives for lower-throughput or simpler use cases, with
+tighter latency and easier deployment. Redis Stream in particular offers fast,
+memory-based communication, though durability is more limited.
+Neural Autonomic Transport System (NATS)
+A lightweight, cloud-native messaging system designed for low-latency, highthroughput communication. NATS is ideal for real-time agent coordination in
+microservice or edge environments. It supports publish/subscribe, request/reply,
+and-with JetStream-durable message streams and replay. NATS emphasizes
+simplicity, speed, and scalability, making it well suited for distributed agentic sys‐
+tems that require fast, resilient communication with minimal overhead.
+For the supply chain agent system, Redis Stream provides quick, low-latency decou‐
+pling ideal for prototyping. The supervisor adds tasks to a stream, and specialists
+read/consume them in separate processes. Assume Redis is running (e.g., via Docker:
+docker run -p 6379:6379 redis) and use redis-py (pip install redis). The
+supervisor determines the specialist and publishes the task:
+import redis
+import json
+import uuid
+# Helper to serialize messages
+def serialize_messages(messages):
+Message Brokers and Event Buses
+|
+193

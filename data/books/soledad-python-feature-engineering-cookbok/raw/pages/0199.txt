@@ -1,0 +1,16 @@
+Working with Outliers
+176
+It’s worth noting that despite employing percentiles, the procedure didn’t precisely replace the 
+same number of observations on both sides of the distribution. If you intend to winsorize your 
+variables, compare the outcomes of your analyses before and after winsorization.
+How it works...
+We used pandas’ quantiles() to obtain the 5th and 95th percentiles of all the variables in the 
+dataset, and combined it with to_dict() to retain those percentiles in dictionaries, where the 
+keys were the variables and the values were the percentiles. We then passed these dictionaries to 
+pandas’ clip() to replace values smaller or larger than those percentiles by the percentiles. By using 
+dictionaries, we capped multiple variables at once.
+See also
+For more details about how winsorization affects the mean and standard deviation in symmetric and 
+asymmetric replacements, check out the original article:
+Dixon W. Simplified Estimation from Censored Normal Samples. The Annals of Mathematical Statistics, 
+1960. http://www.jstor.org/stable/2237953

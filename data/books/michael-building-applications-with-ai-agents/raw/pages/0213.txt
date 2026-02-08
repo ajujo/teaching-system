@@ -1,0 +1,48 @@
+    raise ValueError("Required capability not supported")
+print("Handshake successful: Agent is compatible.")
+Once validated, the agents can begin coordinating work: Agent A may issue a
+request Summarize call to Agent B, who then processes the request and returns a
+structured response or an error, as needed. Continuing the example, here’s how the
+client issues a JSON-RPC request:
+# Issue JSON-RPC request
+rpc_url = agent_card['endpoint']
+rpc_request = {
+    "jsonrpc": "2.0",
+    "method": "summarizeText",
+    "params": {"text": '''This is a long example text that needs summarization. 
+        It discusses multiagent systems and communication protocols.'''},
+    "id": 123  # Unique request ID
+}
+response = requests.post(rpc_url, json=rpc_request)
+if response.status_code == 200:
+    rpc_response = response.json()
+    print("RPC Response:", json.dumps(rpc_response, indent=2))
+else:
+    print("Error:", response.status_code, response.text)
+On the server side, handling this request might look like this (using Python’s
+http.server for simplicity):
+# Excerpt from server handler (in do_POST method)
+import os 
+from openai import OpenAI  
+content_length = int(self.headers['Content-Length'])
+post_data = self.rfile.read(content_length)
+rpc_request = json.loads(post_data)
+# Handle JSON-RPC request (core of A2A)
+if rpc_request.get('jsonrpc') == '2.0' 
+    and rpc_request['method'] == 'summarizeText':
+    text = rpc_request['params']['text']
+    # Real LLM summarization using OpenAI API 
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    try:
+        llm_response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": '''You are a helpful assistant that 
+                    provides concise summaries.'''},
+                {"role": "user", "content": f"""Summarize the following text:
+                {text}"""}
+            ],
+            max_tokens=150,
+Communication Techniques 
+| 
+191

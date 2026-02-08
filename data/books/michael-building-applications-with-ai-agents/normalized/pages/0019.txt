@@ -1,0 +1,35 @@
+• Chapter 11 explores improvement loops, with feedback pipelines (issue detec‐
+tion, human review, refinement, prioritization), experimentation (shadow
+deployments, A/B testing, adaptive, gating), and continuous learning (in-context,
+offline retraining, online reinforcement).
+• Chapter 12 addresses protecting agent systems, covering unique risks, securing
+LLMs (model selection, defenses, red teaming, fine-tuning), data protection (pri‐
+vacy, provenance), securing agents (safeguards, external/internal protections),
+and governance/compliance.
+• Chapter 13 discusses humans and agents, with ethical principles (oversight,
+transparency, fairness, explainability, privacy), building trust/oversight, address‐
+ing bias, and accountability/regulatory considerations.
+Feel free to skip sections you're familiar with-the book is modular by design.
+Note: I often use "we" to refer to you (the reader) and me, fostering a collaborative
+learning vibe.
+Conventions Used in This Book
+The following typographical conventions are used in this book:
+Italic
+Indicates new terms, URLs, email addresses, filenames, and file extensions.
+Constant width
+Used for program listings, as well as within paragraphs to refer to program ele‐
+ments such as variable or function names, databases, data types, environment
+variables, statements, and keywords.
+Constant width bold
+Shows commands or other text that should be typed literally by the user.
+Constant width italic
+Shows text that should be replaced with user-supplied values or by values deter‐
+mined by context.
+Using Code Examples
+Supplemental material (code examples, exercises, etc.) is available for download at
+https://oreil.ly/building-applications-with-ai-agents-supp.
+If you have a technical question or a problem using the code examples, please email
+support@oreilly.com.
+Preface
+|
+xvii

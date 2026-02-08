@@ -1,0 +1,22 @@
+Performing polynomial expansion
+239
+Note
+ReferenceFeatures() can also add, multiply, get the modulo, or get the power of a 
+group of variables relating to a second group of reference variables. You can find out more in 
+its documentation: https://feature-engine.readthedocs.io/en/latest/
+api_doc/creation/RelativeFeatures.html.
+See also
+To learn more about the binary operations supported by pandas, visit https://pandas.pydata.
+org/pandas-docs/stable/reference/frame.html#binary-operator-functions.
+Performing polynomial expansion
+Simple models, such as linear and logistic regression, can capture complex patterns if we feed them 
+the right features. Sometimes, we can create powerful features by combining the variables in our 
+datasets with themselves or with other variables. For example, in the following figure, we can see that 
+the target, y, has a quadratic relation with the variable, x, and as shown in the left panel, a linear model 
+is not able to capture that relationship accurately:
+Figure 8.4 – A linear model fit to predict a target, y, from a feature, x, which has a quadratic relationship to 
+the target, before and after squaring x. In the left panel: the model offers a poor fit by using the original 
+variable; in the right panel, the model offers a better fit, based on the square of the original variable
+This linear model has a quadratic relationship to the target, before and after squaring x. However, if we 
+square x, or, in other words, if we create a second-degree polynomial of the feature, the linear model 
+can accurately predict the target, y, from the square of x, as we see in the right panel.

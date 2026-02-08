@@ -1,0 +1,34 @@
+Chapter 4
+159
+            **kwargs,
+        )
+        documents = [cls.from_record(record) for record in records]
+        if next_offset is not None:
+            next_offset = UUID(next_offset, version=4)
+        return documents, next_offset
+The last piece of the puzzle is to define a method that performs a vector similarity search on a 
+provided query embedding. Like before, we defined a public search() and private _search() 
+method. The search is performed by Qdrant when calling the connection.search() function.
+class VectorBaseDocument(BaseModel, Generic[T], ABC):
+    … # Rest of the class
+    @classmethod
+    def search(cls: Type[T], query_vector: list, limit: int = 10, 
+**kwargs) -> list[T]:
+        try:
+            documents = cls._search(query_vector=query_vector, 
+limit=limit, **kwargs)
+        except exceptions.UnexpectedResponse:
+            logger.error(f"Failed to search documents in '{cls.get_
+collection_name()}'.")
+            documents = []
+        return documents
+    @classmethod
+    def _search(cls: Type[T], query_vector: list, limit: int = 10, 
+**kwargs) -> list[T]:
+        collection_name = cls.get_collection_name()
+        records = connection.search(
+            collection_name=collection_name,
+            query_vector=query_vector,
+            limit=limit,
+            with_payload=kwargs.pop("with_payload", True),
+            with_vectors=kwargs.pop("with_vectors", False),

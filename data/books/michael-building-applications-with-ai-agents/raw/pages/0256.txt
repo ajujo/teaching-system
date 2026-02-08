@@ -1,0 +1,38 @@
+Each of these panels not only helps visualize system performance but also guides
+ongoing development. If a particular tool starts failing more often, or if token usage
+increases unexpectedly, these signals help prioritize debugging and optimization.
+Grafana also supports custom alerts. You can define thresholds on any metric and
+trigger alerts via Slack, email, PagerDuty, or any other integration. For example, you
+might trigger alerts in the following circumstances:
+• Hallucination rates exceed 5% in the last 30 minutes
+• Retry loops occur more than three times in a single session
+• Average response time for a critical tool increases by more than 50%
+Alerts ensure your team is aware of regressions and anomalies in real time, even if no
+one is actively watching the dashboard. Combined with Loki logs and Tempo traces,
+these alerts help close the feedback loop rapidly.
+Grafana’s alerting system is highly extensible, integrating seamlessly with popular
+incident management tools like PagerDuty for escalating notifications to on-call
+teams—ensuring that high-severity issues, such as sudden spikes in hallucination
+rates or task failures, trigger structured response workflows with automated paging
+and acknowledgment. For more specialized error monitoring, Sentry can be layered
+in to capture and analyze exceptions within agent code, providing stack traces, bread‐
+crumbs, and release health metrics that complement Grafana’s dashboards; this is
+particularly useful for debugging probabilistic bugs in foundation model calls or tool
+invocations, with Sentry’s SDK easily instrumented alongside OTel.
+For teams seeking an all-in-one solution tailored to agentic systems, platforms like 
+AgentOps.ai offer a streamlined alternative, combining tracing, metrics, evaluations,
+and alerting in a single package optimized for foundation models and agents. Agen‐
+tOps.ai handles semantic monitoring (e.g., auto-scoring outputs for quality) and inte‐
+grates with existing stacks, reducing setup overhead compared with composing
+Grafana components—though it may introduce vendor dependency. These options
+create flexibility: extend Grafana with PagerDuty/Sentry for robust alerting, or adopt
+AgentOps.ai for faster agent-specific insights, depending on your operational matur‐
+ity and focus.
+By integrating Grafana deeply into your agent development lifecycle, you create a liv‐
+ing interface to your deployed systems. It becomes the shared canvas where product
+teams, engineers, and reliability staff can observe, debug, iterate, and improve. In the
+world of agent-based systems—where bugs are probabilistic and failure modes are
+emergent—this kind of unified visibility isn’t just nice to have. It’s essential.
+234 
+| 
+Chapter 10: Monitoring in Production

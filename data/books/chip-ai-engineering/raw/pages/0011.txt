@@ -1,0 +1,31 @@
+Soy partidaria de empezar por lo sencillo, así que para muchos problemas
+empiezo por la solución más sencilla y luego avanzo con soluciones más
+complejas para abordar retos cada vez mayores.
+En segundo lugar, he consultado a una amplia red de investigadores e
+ingenieros, más inteligentes que yo, sobre cuáles son, en su opinión, los
+problemas y las soluciones más importantes.
+En ocasiones, también me basé en la Ley de Lindy, que infiere que la
+esperanza de vida futura de una tecnología es proporcional a su edad actual.
+Así que si algo existe desde hace tiempo, asumo que continuará existiendo
+durante un tiempo más.
+En este libro, sin embargo, he incluido ocasionalmente un concepto que
+considero temporal porque es de utilidad inmediata para algunos
+desarrolladores de aplicaciones o porque ilustra un enfoque interesante para
+la resolución de problemas.
+Lo que no es este libro
+Este libro no es un tutorial. Aunque menciona herramientas específicas e
+incluye fragmentos de pseudocódigo para ilustrar ciertos conceptos, no
+enseña a utilizar una herramienta. En cambio, ofrece un marco para
+seleccionar las herramientas. Incluye muchos debates sobre las ventajas y
+desventajas de las distintas soluciones, y sobre las preguntas que deberían
+hacerse al evaluar una solución. Si queremos utilizar una herramienta, suele
+ser fácil encontrar tutoriales sobre ella en Internet. Los chatbots de IA
+también son muy útiles para ayudarle a empezar a utilizar herramientas
+populares.
+Este libro no es un libro de teoría de ML. No explica qué es una red
+neuronal ni cómo construir y entrenar un modelo desde cero. Aunque
+explica muchos conceptos teóricos inmediatamente relevantes para el
+debate, se trata de un libro práctico que se centra en ayudarle a crear
+aplicaciones de IA para resolver exitosamente problemas del mundo real.
+Aunque es posible crear aplicaciones basadas en modelos fundacionales sin
+ser experto en ML, unos conocimientos básicos de ML y estadística pueden

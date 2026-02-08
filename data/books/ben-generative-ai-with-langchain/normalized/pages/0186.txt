@@ -1,0 +1,171 @@
+Chapter 4
+159
+Context
+Process­
+ing
+Advanced
+RAG
+techniques
+- context
+processing
+Optimizes
+retrieved
+documents
+before
+sending
+to the
+generator
+(compres­
+sion, MMR)
+•	 Maximizes con­
+text window
+utilization
+•	 Reduces
+redundancy
+Focuses on
+most relevant
+information
+•	 Risk of remov­
+ing important
+context
+•	 Processing adds
+latency
+•	 May lose docu­
+ment coherence
+•	 Large docu­
+ments
+•	 When context
+window is
+limited
+•	 Redundant
+information
+sources
+Medium
+Response
+Enhance­
+ment
+Advanced
+RAG
+techniques
+- response
+enhance­
+ment
+Improves
+generated
+output
+with source
+attribu­
+tion and
+consistency
+checking
+•	 Increases out­
+put trustwor­
+thiness
+•	 Provides
+verification
+mechanisms
+•	 Enhances user
+confidence
+•	 May reduce flu­
+ency or concise­
+ness
+•	 Additional
+post-processing
+overhead
+•	 Complex imple­
+mentation logic
+•	 Educational
+or research
+content
+•	 Legal or med­
+ical informa­
+tion
+•	 When attribu­
+tion is required
+Medi­
+um-High
+Correc­
+tive RAG
+(CRAG)
+Advanced
+RAG
+techniques
+- corrective
+RAG
+Evaluates
+retrieved
+documents
+and takes
+corrective
+actions (fil­
+tering, web
+search)
+•	 Explicitly
+handles poor
+retrieval results
+•	 Improves
+robustness
+•	 Can dynamical­
+ly supplement
+knowledge
+•	 Increased latency
+from evaluation
+•	 Depends on eval­
+uator accuracy
+•	 More complex
+conditional logic
+•	 High-reliabil­
+ity require­
+ments
+•	 Systems need­
+ing factual
+accuracy
+•	 Applications
+with potential
+knowledge
+gaps
+High
+Agentic
+RAG
+Advanced
+RAG
+techniques -
+agentic RAG
+Uses auton­
+omous AI
+agents to
+orchestrate
+informa­
+tion gath­
+ering and
+synthesis
+•	 Highly adapt­
+able to complex
+tasks
+•	 Can use diverse
+tools beyond
+retrieval
+•	 Multi-step
+reasoning capa­
+bilities
+•	 Significant
+implementation
+complexity
+•	 Higher cost and
+latency
+•	 Challenging
+to debug and
+control
+•	 Complex
+multi-step
+information
+tasks
+•	 Research
+applications
+•	 Systems
+integrating
+multiple data
+sources
+Very
+High
+Table 4.5: Comparing RAG techniques

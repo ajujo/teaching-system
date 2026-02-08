@@ -1,0 +1,32 @@
+UNA IA CENTRADA EN DATOS
+La creciente atención prestada a los datos durante el desarrollo de la IA
+ha dado lugar a la IA centrada en datos, por contraposición con la IA
+centrada en modelo:
+La IA centrada en modelos trata de mejorar el rendimiento de
+la IA mejorando los modelos en sí mismos. Esto implica
+diseñar nuevas arquitecturas, aumentar el tamaño de los
+modelos o desarrollar nuevas técnicas de entrenamiento.
+La IA centrada en datos trata de mejorar el rendimiento de la
+IA mejorando los datos. Esto implica desarrollar nuevas
+técnicas de manejo de datos y crear conjuntos de datos de alta
+calidad que permitan entrenar mejores modelos con menos
+recursos.
+En los inicios del deep learning, muchas pruebas comparativas para IA
+eran modelo céntricas. Dado un conjunto de datos como ImageNet, la
+gente intenta entrenar al mejor modelo posible utilizando el mismo
+conjunto de datos. En los últimos años, más pruebas comparativas se
+han centrado en los datos. Dado un mismo modelo, se intenta
+desarrollar un conjunto de datos que dé a este modelo el mejor
+rendimiento.
+En 2021, Andrew Ng lanzó una competición de IA centrada en datos en
+la que los participantes debían mejorar el mismo conjunto de datos base
+aplicando técnicas como corregir etiquetas incorrectas, añadir ejemplos
+de casos perimetrales, aumentar los datos, etc.
+En 2023, DataComp (Gadre et al., 2023) organizó un concurso cuyo
+objetivo era crear el mejor conjunto de datos para entrenar un modelo
+CLIP (Radford et al., 2021). Un script estandarizado entrena un modelo
+CLIP en cada conjunto de datos enviado. La calidad de un conjunto de
+datos se evalúa en función del rendimiento del modelo resultante en 38
+tareas derivadas. En 2024, organizaron un concurso similar para evaluar
+conjuntos de datos para modelos con escalas de 412 M a 7 MM de
+parámetros (Li et al., 2024). Otras pruebas comparativas similares

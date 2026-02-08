@@ -1,0 +1,33 @@
+Chapter 8
+315
+For organizational decision-makers, evaluations should include cost-benefit analyses, especially
+important at the deployment stage. In healthcare, comparing the costs and benefits of AI inter­
+ventions versus traditional methods ensures economic viability. Similarly, evaluating the financial
+sustainability of LLM agent deployments involves analyzing operational costs against achieved
+efficiencies, ensuring scalability without sacrificing effectiveness.
+Building consensus for LLM evaluation
+Evaluating LLM agents presents a significant challenge due to their open-ended nature and the
+subjective, context-dependent definition of good performance. Unlike traditional software with
+clear-cut metrics, LLMs can be convincingly wrong, and human judgment on their quality varies.
+This necessitates an evaluation strategy centered on building organizational consensus.
+The foundation of effective evaluation lies in prioritizing user outcomes. Instead of starting with
+technical metrics, developers should identify what constitutes success from the user's perspective,
+understanding the value the agent should deliver and the potential risks. This outcomes-based
+approach ensures evaluation priorities align with real-world impact.
+Addressing the subjective nature of LLM evaluation requires establishing robust evaluation gov­
+ernance. This involves creating cross-functional working groups comprising technical experts,
+domain specialists, and user representatives to define and document formalized evaluation cri­
+teria. Clear ownership of different evaluation dimensions and decision-making frameworks for
+resolving disagreements is crucial. Maintaining version control for evaluation standards ensures
+transparency as understanding evolves.
+In organizational contexts, balancing diverse stakeholder perspectives is key. Evaluation frame­
+works must accommodate technical performance metrics, domain-specific accuracy, and user-cen­
+tric helpfulness. Effective governance facilitates this balance through mechanisms like weighted
+scoring systems and regular cross-functional reviews, ensuring all viewpoints are considered.
+Ultimately, evaluation governance serves as a mechanism for organizational learning. Well-struc­
+tured frameworks help identify specific failure modes, provide actionable insights for development,
+enable quantitative comparisons between system versions, and support continuous improve­
+ment through integrated feedback loops. Establishing a "model governance committee" with
+representatives from all stakeholder groups can help review results, resolve disputes, and guide
+deployment decisions. Documenting not just results but the discussions around them captures
+valuable insights into user needs and system limitations.

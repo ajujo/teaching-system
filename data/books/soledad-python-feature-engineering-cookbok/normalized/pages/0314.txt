@@ -1,0 +1,33 @@
+Extracting features from date and time
+291
+documentation. You can always double-check which functions are supported by inspecting the source
+code: https://github.com/alteryx/featuretools/tree/main/featuretools/
+primitives/standard/transform/binary. You can also check out which operations you
+can perform on your data by running the following command after you set up the entity set and its
+relationships: ft.get_valid_primitives(es, target_dataframe_name="data",
+max_depth=2). Here, es is the entity set resulting from step 5.
+Extracting features from date and time
+In Chapter 6, Extracting Features from Date and Time Variables, we discussed how we can enrich our
+datasets by extracting features from the date and time parts of datetime variables, such as the year, the
+month, the day of the week, the hour, and much more. We can extract those features automatically
+utilizing featuretools.
+The featuretools library supports the creation of various features from datetime variables using
+its datetime transform primitives. These primitives include common variables such as year, month,
+and day, and other features such as is it lunch time or is it weekday. In addition, we can extract features
+indicating if the date was a federal or bank holiday (as they call it in the UK) or features that determine
+the distance in time to a certain date. For a retail company, the proximity to dates such as Boxing Day,
+Black Fridays, or Christmas normally signals an increase in sales, and if they are forecasting demand,
+these will make useful variables.
+Note
+For more details on the features that can be created from datetime variables, visit https://
+featuretools.alteryx.com/en/stable/api_reference.html#datetimetransform-primitives.
+In this recipe, we will automatically create multiple features from a datetime variable with featuretools.
+How to do it...
+Let's begin by importing the libraries and getting the dataset ready:
+1.
+First, we'll import pandas, featuretools, and some special datetime primitives:
+import pandas as pd
+import featuretools as ft
+from featuretools.primitives import (
+    IsFederalHoliday, DistanceToHoliday)
+from woodwork.logical_types import Categorical

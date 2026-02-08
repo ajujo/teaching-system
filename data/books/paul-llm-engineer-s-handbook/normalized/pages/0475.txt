@@ -1,0 +1,16 @@
+MLOps and LLMOps
+444
+After the CD GitHub Actions are complete, check the ECR repository to see whether the Docker
+image was pushed successfully.
+Figure 11.18: GitHub Actions secrets
+If you need more details on how to set up GitHub Actions secrets, we recommend checking out
+their official documentation: https://docs.github.com/en/actions/security-for-githubactions/security-guides/using-secrets-in-github-actions
+The CT pipeline
+To implement the CT pipeline, we will leverage ZenML. Once ZenML (or other orchestrators
+such as Metaflow, Dagster, or Airflow) orchestrates all your pipelines and your infrastructure is
+deployed, you are very close to reaching CT.
+Remember the core difference between the CI/CD and CT pipelines. The CI/CD pipeline takes care
+of testing, building, and deploying your code-a dimension that any software program has. The
+CT pipeline leverages the code managed by the CI/CD pipeline to automate your data, training,
+and model-serving process, where the data and model dimensions are present only in the AI world.
+Before diving into the implementation, we want to highlight two design choices that made reaching CT simple:

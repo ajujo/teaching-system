@@ -1,0 +1,15 @@
+Chapter 3
+97
+•
+Ramos, L. P. (2023, August 4). Python and MongoDB: Connecting to NoSQL Databases.
+https://realpython.com/introduction-to-mongodb-and-python/
+•
+Refactoring.Guru. (2024, January 1). Builder. https://refactoring.guru/designpatterns/builder
+•
+What is ETL? A complete guide. (n.d.). Qlik. https://www.qlik.com/us/etl
+Unlock this book's exclusive
+benefits now
+This book comes with additional benefits designed to elevate your learning
+experience.
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

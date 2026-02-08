@@ -1,0 +1,27 @@
+Evaluating LLMs
+270
+In order to easily parse answers, one can specify a structure in the instruction or use some kind
+of structured generation (like Outlines or OpenAI's JSON mode). Here is an example of an instruction with a structure:
+You are an evaluator who assesses the quality of an answer to an
+instruction.
+Your goal is to provide a score that represents how well the answer
+addresses the instruction.
+You will use a scale of 1 to 4, where each number represents the following:
+1. The answer is not relevant to the instruction.
+2. The answer is relevant but not helpful.
+3. The answer is relevant and helpful but could be more detailed.
+4. The answer is relevant, helpful, and detailed.
+Please provide your evaluation as follows:
+##Evaluation##
+Explanation: (analyze the relevant, helpfulness, and complexity of the
+answer)
+Total rating: (final score as a number between 1 and 4)
+Instruction:
+{instruction}
+Answer:
+{answer}
+##Evaluation##
+Explanation:
+Table 7.2: Example of general-purpose LLM-as-a-judge prompt for answer evaluation
+Naturally, you can tweak the scale, add a ground-truth answer to this prompt, and customize it
+for your own use cases.

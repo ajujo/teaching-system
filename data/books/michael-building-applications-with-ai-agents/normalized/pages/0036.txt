@@ -1,0 +1,32 @@
+AutoGen
+Strengths
+Powerful multiagent orchestration; dynamic role assignment; flexible messagingbased interaction between agents
+Trade-offs
+Can be heavyweight or complex for simple use cases; more opinionated around
+agent interaction patterns
+Best for
+Research and production systems involving dialogue between multiple agents
+(e.g., manager-worker, self-reflection loops)
+CrewAI
+Strengths
+Easy to learn and use; quick setup for prototyping; useful abstractions like "crew"
+and "tasks"
+Trade-offs
+Limited customization and control over orchestration internals; less mature than
+LangGraph or AutoGen for complex workflows
+Best for
+Developers who want to get started quickly on practical, human-centric agents
+like assistants or support agents
+OpenAI Agents Software Development Kit (SDK)
+Strengths
+Deep integration with OpenAI's tool ecosystem; secure and easy-to-use function
+calling, memory primitives, and tool routing
+Trade-offs
+Tightly coupled to OpenAI's infrastructure; may be less flexible or portable for
+custom agent stacks or open source toolchains
+Best for
+Teams already using the OpenAI API and looking for a fast way to build secure,
+tool-using agents with minimal scaffolding
+14
+|
+Chapter 1: Introduction to Agents

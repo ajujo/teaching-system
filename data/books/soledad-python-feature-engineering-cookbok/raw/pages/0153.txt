@@ -1,0 +1,34 @@
+Performing Variable Discretization
+130
+Note
+With equal-frequency discretization, many occurrences of values within a small continuous 
+range could cause observations with very similar values, resulting in different intervals. The 
+problem with this is that it can introduce artificial distinctions between data points that are 
+actually quite similar in nature, biasing models or subsequent data analysis.
+With Feature-engine’s EqualFrequencyDiscretiser(), we discretized three variables into eight 
+bins. With fit(), the discretizer learned the interval limits and stored them in the binner_dict_ 
+attribute. With transform(), the observations were allocated to the bins.
+Note
+EqualFrequencyDiscretiser() returns an integer indicating whether the value was 
+sorted into the first, second, or eighth bin by default. That is the equivalent of ordinal encoding, 
+which we described in the Replacing categories with ordinal numbers recipe in Chapter 2, 
+Encoding Categorical Variables.
+To follow up the discretization with a different type of encoding, we can return the variables 
+cast as objects by setting return_object to True and then use any of the feature-
+engine or category encoders  transformers . Alternatively, we can return the interval 
+limits, as we did in this recipe.
+Finally, we discretized variables into eight equal-frequency bins using scikit-learn’s 
+KBinsDiscretizer(). With fit(), the transformer learned the cut points and stored them in 
+its bin_edges_ attribute. With transform(), it sorted the values into each interval. Note that, 
+differently from EqualFrequencyDiscretiser(), KBinsDiscretizer() will transform 
+all of the variables in the dataset. To avoid this, we only applied the discretizer on a slice of the data 
+with the variables to modify.
+Note
+scikit-learn’s KbinsDiscretizer has the option to return the intervals as ordinal numbers 
+or one-hot encoded. The behavior can be modified through the encode parameter.
+Discretizing the variable into arbitrary intervals
+In various industries, it is common to group variable values into segments that make sense for the 
+business. For example, we might want to group the variable age in intervals representing children, 
+young adults, middle-aged people, and retirees. Alternatively, we might group ratings into bad, good, 
+and excellent. On occasion, if we know that the variable is in a certain scale (for example, logarithmic), 
+we might want to define the interval cut points within that scale.

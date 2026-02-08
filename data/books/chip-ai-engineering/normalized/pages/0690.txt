@@ -1,0 +1,17 @@
+Dado que las solicitudes y respuestas ya fluyen a través de la puerta de
+enlace, es un buen lugar para implementar otras funcionalidades, como el
+balance de carga, el registro o el análisis. Algunas puertas de enlace incluso
+proporcionan caché y barreras de seguridad.
+Como las puertas de enlace son relativamente sencillas de implementar,
+existen muchas genéricas en el mercado. Algunos ejemplos son Portkey's
+AI Gateway, MLflow AI Gateway, Wealthsimple's LLM Gateway,
+TrueFoundry, Kong y Cloudflare.
+En nuestra arquitectura, la puerta de enlace sustituye ahora a la casilla de
+API del modelo, como se muestra en la Figura 10-7.
+figura 10-7. La arquitectura con los módulos de enrutamiento y puerta de enlace
+añadidos.
+NOTA
+Una capa de abstracción similar, como una puerta de enlace de
+herramientas, también puede ser útil para acceder a una amplia gama de
+herramientas. No se aborda en este libro, ya que, hasta la fecha en que se
+escribe este libro, no es un patrón común.

@@ -1,0 +1,49 @@
+Context expansion
+Incorporating additional context, constraints, or relevant background to guide
+the agent more effectively
+DSPy excels at automating prompt refinement by compiling optimized prompts from
+a set of examples. For the SOC agent, we can use DSPy to refine the internal prompts
+of a ReAct module, improving how the agent handles alerts by better aligning reason‐
+ing and tool calls with expected responses. This is particularly useful for addressing
+issues like suboptimal tool selection or inconsistent outputs identified in feedback.
+Here’s an example DSPy code snippet that optimizes a ReAct module for SOC inci‐
+dent handling using a small set of synthetic test cases (expand to 100+ annotated
+examples in practice for better results):
+import dspy
+dspy.configure(lm=dspy.OpenAI(model="gpt-4o-mini"))
+def lookup_threat_intel(indicator: str) -> str:
+    """Mock: Look up threat intelligence for an indicator."""
+    return f"Mock intel for {indicator}: potentially malicious"
+def query_logs(query: str) -> str:
+    """Mock: Search and analyze security logs."""
+    return f"Mock logs for '{query}': suspicious activity detected"
+# Handful of synthetic test cases (alert -> expected response)
+# In practice, derive from real logs or annotate failures; 
+# aim for 100+ for better optimization
+trainset = [
+    dspy.Example(alert='''Suspicious login attempt from IP 203.0.113.45 to 
+                 admin account.''',
+                 response='''Lookup threat intel for IP, query logs for activity, 
+                     triage as true positive, isolate host if malicious.''')
+                     .with_inputs('alert'),
+    dspy.Example(alert="Unusual file download from URL example.com/malware.exe.",
+                 response='''Lookup threat intel for URL and hash, query logs 
+                     for endpoint activity, triage as true positive, isolate 
+                     host.''').with_inputs('alert'),
+    dspy.Example(alert="High network traffic to domain suspicious-site.net.",
+                 response='''Lookup threat intel for domain, query logs for 
+                     network and firewall, triage as false positive if 
+                     benign.''').with_inputs('alert'),
+    dspy.Example(alert='''Alert: Potential phishing email with attachment 
+                 hash abc123.''',
+                 response='''Lookup threat intel for hash, query logs for email 
+                     and endpoint, triage as true positive, send analyst 
+                     response.''').with_inputs('alert'),
+    dspy.Example(alert='''Anomaly in user behavior: multiple failed logins from 
+                 new device.''',
+                 response='''Query logs for authentication, lookup threat intel 
+                     for device IP, triage as true positive if pattern matches 
+                     attack.''').with_inputs('alert'),
+Feedback Pipelines 
+| 
+255

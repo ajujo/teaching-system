@@ -1,0 +1,31 @@
+También pueden utilizar un sistema de puntos cuando haya varias opciones
+correctas. Un modelo obtiene un punto por cada opción que acierte.
+La clasificación es un caso especial de elección múltiple en el que las
+opciones son las mismas para todas las preguntas. Por ejemplo, para una
+tarea de clasificación del sentimiento de un tweet, cada pregunta tiene las
+mismas tres opciones: NEGATIVO, POSITIVO y NEUTRO. Las métricas
+para tareas de clasificación, además de la exactitud, incluyen las
+puntuaciones F1, la precisión y la recuperación.
+Los MCQ son populares porque son fáciles de crear, verificar y evaluar con
+respecto a la línea de base aleatoria. Si cada pregunta tiene cuatro opciones
+y solo una opción correcta, la precisión de referencia aleatoria sería del
+25 %. Las puntuaciones superiores al 25 % suelen significar, aunque no
+siempre, que el modelo obtiene mejores outputs que el azar.
+Uno de los inconvenientes de los MCQ es que el rendimiento de un modelo
+puede variar con pequeños cambios en la presentación de las preguntas y
+las opciones. Alzahrani et al. (2024) descubrieron que incluir un espacio
+extra entre la pregunta y la respuesta o añadir una frase adicional de
+instrucciones, como "Opciones:" puede hacer que el modelo cambie sus
+respuestas. La sensibilidad de los modelos a los prompts y las mejores
+prácticas de ingeniería de prompts se analizan en el Capítulo 5.
+A pesar de la prevalencia de las pruebas comparativas cerradas, no está
+claro si son una buena forma de evaluar los modelos fundacionales. Los
+MCQ ponen a prueba la capacidad de diferenciar las buenas respuestas de
+las malas (clasificación), que es diferente de la capacidad de generar buenas
+respuestas. Los MCQ son los más adecuados para evaluar los
+conocimientos ("¿sabe el modelo que París es la capital de Francia?") y el
+razonamiento ("¿puede el modelo deducir de una tabla de gastos
+empresariales cuál es el departamento que más gasta?"). No son ideales
+para evaluar capacidades de generación como la síntesis, la traducción y la
+redacción de ensayos. Analicemos cómo se pueden evaluar las capacidades
+de generación en la siguiente sección.

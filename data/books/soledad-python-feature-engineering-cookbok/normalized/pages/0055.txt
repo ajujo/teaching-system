@@ -1,0 +1,30 @@
+Imputing Missing Data
+32
+2.
+Let's load the time series data described in the Technical requirements section:
+df = pd.read_csv(
+    "air_passengers.csv",
+    parse_dates=["ds"],
+    index_col=["ds"],
+)
+Note
+You can plot the time series to find data gaps as we did in step 3 of the Implementing forward
+and backward fill recipe.
+3.
+Let's impute the missing data by linear interpolation:
+df_imputed = df.interpolate(method="linear")
+Note
+If the time intervals between rows are not uniform then the method should be set to time
+to achieve a linear fit.
+You can verify the absence of missing data by executing df_imputed.isnull().sum().
+4.
+Let's now plot the complete dataset and overlay as a dotted line the values used for the imputation:
+ax = df_imputed.plot(
+    linestyle="-", marker=".", figsize=[10, 5])
+df_imputed[df.isnull()].plot(
+    ax=ax, legend=None, marker=".", color="r")
+ax.set_title("Air passengers")
+ax.set_ylabel("Number of passengers")
+ax.set_xlabel("Time")
+The previous code returns the following plot, where we see the values used to replace nan as
+dotted lines in between the continuous line of the time series:

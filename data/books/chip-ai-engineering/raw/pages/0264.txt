@@ -1,0 +1,16 @@
+figura 4-2. El rendimiento de los distintos modelos en TruthfulQA, como se muestra en
+el informe técnico de GPT-4.
+Seguridad
+Aparte de la coherencia factual, hay muchas formas de que los outputs de
+un modelo sean perjudiciales. Las distintas soluciones de seguridad tienen
+diferentes formas de categorizar los daños; véase la taxonomía definida en
+el punto final de moderación de contenidos de OpenAI y el documento
+Llama Guard de Meta (Inan et al., 2023) En el Capítulo 5 también se
+analizan más formas en las que los modelos de IA pueden ser inseguros y
+cómo hacer que sus sistemas sean más robustos. En general, los contenidos
+inseguros pueden pertenecer a una de las siguientes categorías:
+1. Lenguaje inapropiado, incluyendo blasfemias y contenido
+explícito.
+2. Recomendaciones y tutoriales nocivos, como "guía paso a paso
+para robar un banco" o animar a los usuarios a adoptar conductas
+autodestructivas.

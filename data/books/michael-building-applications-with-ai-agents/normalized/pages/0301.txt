@@ -1,0 +1,36 @@
+against intentional misuse, adversarial manipulation, and edge-case scenarios. This
+approach is especially critical for foundation models, given their probabilistic nature
+and susceptibility to subtle prompt manipulations.
+At its core, red teaming involves designing and executing adversarial scenarios that
+mimic real-world attack strategies. These scenarios can include techniques such as
+prompt injection, where attackers craft deceptive inputs to manipulate model behav‐
+ior, or jailbreaking, where attempts are made to bypass the model's safety filters and
+elicit restricted outputs. Red team exercises also assess the model's behavior under
+stress conditions, such as ambiguous instructions, contradictory prompts, highstakes decision-making context, or proclivity to leak sensitive data or violate opera‐
+tional constraints.
+Figure 12-1 illustrates the iterative lifecycle of red teaming for agent systems, outlin‐
+ing the key stages from initial agent implementation through attack execution, evalu‐
+ation, and mitigation, with a feedback loop emphasizing continuous refinement.
+Figure 12-1. Iterative red teaming lifecycle, depicting the cyclical process from agent
+implementation through attack execution, evaluation, and mitigation for enhanced sys‐
+tem robustness.
+This cyclical process ensures vulnerabilities are systematically addressed, adapting to
+evolving threats in foundation models and agent behaviors. Red teaming frequently
+incorporates the use of language models to create synthetic datasets that intentionally
+do not conform to what developers expect to encounter. These datasets-designed to
+include anomalous patterns, noisy inputs, biased distributions, or out-of-domain
+examples-serve as a powerful stress test for the system's robustness across a wide
+range of scenarios. For instance, a foundation model could generate malformed quer‐
+ies mimicking real-world user errors particular to your use case or adversarial manip‐
+ulations, revealing how the agent handles inputs that deviate from training
+assumptions. This approach ensures comprehensive coverage of edge cases, going
+beyond individual prompts to simulate broader data environments, and can be auto‐
+mated for scalability in ongoing evaluations.
+To ensure comprehensive coverage, automated red teaming tools are increasingly
+used alongside human testers. These tools can systematically generate adversarial
+prompts, test thousands of input variations, and evaluate the model's responses at
+scale. However, human creativity remains irreplaceable in identifying nuanced vul‐
+nerabilities that automated tools might overlook. Several specialized frameworks
+Securing Foundation Models
+|
+279

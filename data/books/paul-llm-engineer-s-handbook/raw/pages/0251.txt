@@ -1,0 +1,41 @@
+Supervised Fine-Tuning
+220
+•	
+License: Some model licenses only allow non-commercial work, which is a problem if 
+we want to fine-tune for a company. Custom licenses are common in this field, and can 
+target companies with a certain number of users, for example.
+•	
+Budget: Models with smaller parameter sizes (<10 B) are a lot cheaper to fine-tune and 
+deploy for inference than larger models. This is due to the fact that they can be run on 
+cheaper GPUs and process more tokens per second.
+•	
+Performance: Evaluating the base model on general-purpose benchmarks or, even better, 
+domain- or task-specific benchmarks relevant to the final use case, is crucial. This helps 
+ensure that the model has the necessary capabilities to perform well on the intended 
+tasks after fine-tuning.
+In this chapter, we will choose Llama 3.1 8B, an open-weight model released by Meta. It has a 
+permissive custom license (“Llama 3.1 Community License Agreement”) that allows commercial 
+use. With 8B parameters, it is small enough to fit on most GPUs while reaching a high level of 
+performance compared to its competitors. We can verify this using the Open LLM Leaderboard, 
+as well as other benchmarks detailed in the model card.
+There are specialized tools and libraries to fine-tune models. In particular, we recommend the 
+following:
+•	
+TRL: This is a library created and maintained by Hugging Face to train LLMs using SFT 
+and preference alignment. It is a popular and reliable library that tends to be the most 
+up-to-date in terms of algorithms. It works in single and multi-GPU settings with FSDP 
+and DeepSpeed.
+•	
+Axolotl: Created by Wing Lian, this tool streamlines the fine-tuning of LLMs with reusable 
+YAML configuration files. It is based on TRL but includes many additional features, such as 
+automatically combining datasets stored in various formats. It also supports single- and 
+multi-GPU settings with FSDP and DeepSpeed.
+•	
+Unsloth: Created by Daniel and Michael Han, Unsloth uses custom kernels to speed up 
+training (2-5x) and reduce memory use (up to 80% less memory). It is based on TRL and 
+provides many utilities, such as automatically converting models into the GGUF quanti-
+zation format. At the time of writing, it is only available for single-GPU settings.
+To maximize efficiency, we will perform fine-tuning using the Unsloth library. The following 
+code is designed as part of our LLMOps pipeline, but can also be used as a stand-alone script. It 
+can also be executed in different environments, like SageMaker, cloud GPUs (like Lambda Labs or 
+RunPod), Google Colab, and many others. We tested it on different GPUs, like A40, A100, and L4.

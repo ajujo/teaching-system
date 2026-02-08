@@ -1,0 +1,32 @@
+The Future of Generative Models: Beyond Scaling
+422
+In creative industries, we're seeing progress in specific domains. Software development tools like
+GitHub Copilot are changing how developers work, though specific percentages of task automa­
+tion remain difficult to quantify precisely. Similarly, data analysis tools are increasingly handling
+routine tasks across finance and marketing, though the exact extent varies widely by implementa­
+tion. According to McKinsey Global Institute's 2017 research, only about 5% of occupations could
+be fully automated by demonstrated technologies, while many more have significant portions
+of automatable activities (approximately 30% of activities automatable in 60% of occupations).
+This suggests that most successful implementations are augmenting rather than completely
+replacing human capabilities.
+Job evolution and skills implications
+As automation adoption progresses across industries, the impact on jobs will vary significantly
+by sector and timeline. Based on current adoption rates and projections, we can anticipate how
+specific roles will evolve.
+Near-term impacts (2025-2035)
+As automation adoption progresses across industries, the impact on jobs will vary significantly
+by sector and timeline. While precise automation percentages are difficult to predict, we can
+identify clear patterns in how specific roles are likely to evolve.
+According to McKinsey Global Institute research, only about 5% of occupations could be fully au­
+tomated with current technologies, though about 60% of occupations have at least 30% of their
+constituent activities that could be automated. This suggests that job transformation-rather
+than wholesale replacement-will be the predominant pattern as AI capabilities advance. The
+most successful implementations to date have augmented human capabilities rather than fully
+replacing workers.
+The automation potential varies substantially across sectors. Manufacturing and logistics, with
+their structured environments and repetitive tasks, show higher potential for automation than
+sectors requiring complex human interaction like healthcare and education. This differential
+creates an uneven timeline for transformation across the economy.
+Medium-term impacts (2035-2045)
+As service sectors reach 40-60% automation levels over the next decade, we can expect significant
+transformations in traditional professional roles:

@@ -1,0 +1,25 @@
+– selección de métodos de evaluación, Seleccionar métodos de
+evaluación
+– vincular las métricas de evaluación a las métricas de negocio,
+Crear rúbricas de puntuación con ejemplos
+distancia de edición, Coincidencia exacta
+DPO (optimización de preferencias directas), Afinado de preferencias
+DRAM (memoria de la CPU), Tamaño y ancho de banda de la memoria
+E
+eficacia del contexto, Longitud y eficacia del contexto
+Elo, Ranking de modelos con evaluación comparativa, Retos de la
+evaluación comparativa, LoRA cuantizado
+encadenamiento, Orquestación de procesos de IA
+enrutador de modelos, Paso 3. Añadir enrutador de modelos y puerta de
+enlace
+enrutadores, Paso 3. Añadir enrutador de modelos y puerta de enlace
+– síntesis de datos basada en reglas, Técnicas tradicionales de síntesis de
+datos
+entrenamiento, Modelado y entrenamiento
+entrenamiento consciente de la cuantización (QAT), Cuantización de
+inferencia
+entrenamiento de computación optimizada, Ley de escalado: Construir
+modelos de computación optimizada
+entropía, Comprender las métricas de modelado lingüístico
+entropía cruzada, Entropía
+épocas, Tasa de aprendizaje

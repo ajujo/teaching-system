@@ -1,0 +1,30 @@
+Removing observations with missing data
+3
+Removing observations with missing data
+Complete Case Analysis (CCA), also called list-wise deletion of cases, consists of discarding observations 
+with missing data. CCA can be applied to both categorical and numerical variables. With CCA, we 
+preserve the distribution of the variables after the imputation, provided the data is missing at random 
+and only in a small proportion of observations. However, if data is missing across many variables, 
+CCA may lead to the removal of a large portion of the dataset.
+Note
+Use CCA only when a small number of observations are missing and you have good reasons 
+to believe that they are not important to your model.
+How to do it...
+Let’s begin by making some imports and loading the dataset:
+1.	
+Let’s import pandas, matplotlib, and the train/test split function from scikit-learn:
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load and display the dataset described in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")
+data.head()
+In the following image, we see the first 5 rows of data:
+Figure 1.1 – First 5 rows of the dataset
+3.	
+Let’s proceed as we normally would if we were preparing the data to train machine learning 
+models; by splitting the data into a training and a test set:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],

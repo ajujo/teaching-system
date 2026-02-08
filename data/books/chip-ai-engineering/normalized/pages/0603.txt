@@ -1,0 +1,30 @@
+Reducción de la dimensionalidad
+Utilice una técnica de reducción dimensional para reducir
+primero las dimensiones de los datos y, a continuación,
+realicen una comparación por parejas. Para ello, se pueden
+utilizar muchas de las técnicas empleadas en la búsqueda
+vectorial, como se explica en el Capítulo 6.
+Una búsqueda rápida producirá muchas bibliotecas para ayudar con la
+deduplicación. Algunas de ellas son dupeGuru, Dedupe, datasketch,
+TextDistance, TheFuzz y deduplicate-text-datasets. 16
+Limpiar y filtrar datos
+Es necesario limpiar los datos para que el modelo sea eficaz y seguro.
+En primer lugar, es posible que desee eliminar los tokens de formato
+superfluos. Dado que muchos conjuntos de datos públicos se extraen de
+Internet, las etiquetas HTML extrañas son bastante comunes. A menos que
+quiera entrenar su modelo con etiquetas HMTL, elimínelas. Databricks
+descubrió que la eliminación de tokens de marcado y HTML superfluos
+mejoraba la precisión de su modelo en un 20 % y reducía la longitud de los
+tokens de input en un 60 %.
+Tiene que limpiar sus datos de todo lo que no cumpla sus políticas, como
+datos de identificación personal, datos sensibles, datos protegidos por
+derechos de autor o datos considerados tóxicos. Las técnicas analizadas en
+el Capítulo 4 pueden ser de ayuda. Elimine todos los campos que no pueda
+utilizar, como el código postal, el nombre y el sexo.
+También es posible que desee eliminar los datos de baja calidad, utilizando
+las técnicas comentadas en "Verificación de datos" para detectar los datos
+de baja calidad.
+La inspección manual de los datos es especialmente importante en este
+paso. Examinar los datos puede ayudarle a detectar patrones que puede
+utilizar como heurística para detectar datos de baja calidad. Las heurísticas
+para detectar datos de baja calidad pueden no ser obvias. Por ejemplo, Kern

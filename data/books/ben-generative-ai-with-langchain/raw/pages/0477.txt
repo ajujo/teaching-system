@@ -1,0 +1,68 @@
+Index
+450
+Hierarchical Navigable Small World 
+(HNSW)  121
+hnswlib  126
+Hugging Face  50, 284-287, 433
+HuggingFace Inference Endpoints  31
+human cognition
+versus generative AI models  407, 408
+Human-in-the-Loop (HIL)  232
+evaluation  321
+hybrid retrieval
+dense retrieval method  140
+sparse retrieval method  140
+Hypothetical Document Embeddings 
+(HyDE)  144, 145
+I
+image understanding  58
+Gemini 1.5 Pro, using  58-60
+GPT-4 Vision, using  61-63
+indexes
+migrating, to retrieval systems  108, 109
+Inflection Pi  30
+Infrastructure as Code (IaC)  382
+infrastructure considerations, 
+LLMapps  381, 382
+deployment model, selecting  382, 383
+model serving infrastructure  384-386
+J
+job evolution and skills implications
+long-term shifts (2045 and beyond)  423
+medium-term impacts (2035-2045)  422
+near-term impacts (2025-2035)  422
+K
+Kaggle Notebooks  26
+KM scaling law  5
+L
+LangChain  14
+agent development  16
+building blocks  32
+integrations  281
+implementations, capabilities  274
+third-party applications  22, 23
+visual tools  22, 23
+LangChain agents, with datasets
+pandas DataFrame agent, creating  301-303
+Q&A  303-306
+langchain-anthropic  20
+LangChain applications
+cost management  395
+model selection strategies  395
+monitoring and cost analysis  399
+other strategies  398
+output token optimization  398
+LangChain architecture
+advantages  19
+core structure  20
+ecosystem  18
+exploring  17
+library organization  20
+modular design and dependency 
+management  19
+langchain-core  20
+langchain-experimental  20
+LangChain Expression Language 
+(LCEL)  16, 42-44
+complex chain example  45-47
+workflows  44, 45

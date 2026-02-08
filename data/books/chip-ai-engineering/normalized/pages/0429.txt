@@ -1,0 +1,31 @@
+Cuando hablo de agentes autónomos de IA a un grupo de personas, a
+menudo hay alguien que saca a colación los coches sin conductor. "¿Y si
+alguien hackea el coche para secuestrarme?" Mientras que el ejemplo del
+coche sin conductor causa pánico por su carácter físico, un sistema de IA
+puede causar daños sin estar presente en el mundo físico. Puede manipular
+el mercado de valores, robar derechos de autor, violar la privacidad,
+reforzar prejuicios, difundir desinformación y propaganda, y mucho más,
+como se explica en el "Ingeniería de prompts defensiva".
+Todas estas son preocupaciones válidas, y cualquier organización que
+quiera aprovechar la IA debe tomarse en serio la seguridad. Sin embargo,
+esto no significa que los sistemas de IA nunca deban tener la capacidad para
+actuar en el mundo real. Si conseguimos que la gente confíe en una
+máquina para llevarnos al espacio, espero que algún día las medidas de
+seguridad sean suficientes para que confiemos en los sistemas autónomos
+de IA. Además, los humanos también pueden fallar. Personalmente,
+confiaría más en un coche sin conductor que en un desconocido para que
+me llevara de un lado a otro.
+Del mismo modo que las herramientas adecuadas pueden ayudar a las
+personas a ser mucho más productivas (¿se imagina hacer negocios sin
+Excel o construir un rascacielos sin grúas), las herramientas permiten a los
+modelos completar muchas más tareas. Muchos proveedores de modelos ya
+admiten el uso de herramientas con sus modelos, una característica que
+suele denominarse llamada a funciones. En el futuro, espero que la llamada
+a funciones con un amplio conjunto de herramientas sea habitual en la
+mayoría de los modelos.
+Planificación
+En el corazón de un agente de modelo fundacional se encuentra el modelo
+responsable de resolver una tarea. Una tarea se define por su objetivo y sus
+limitaciones. Por ejemplo, una tarea consiste en programar un viaje de dos
+semanas de San Francisco a la India con un presupuesto de 5000 dólares. El
+objetivo es el viaje de dos semanas. La limitación es el presupuesto.

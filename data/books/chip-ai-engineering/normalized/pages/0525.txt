@@ -1,0 +1,32 @@
+Un importante caso de uso de la fusión de modelos es el afinado multitarea.
+Sin la fusión de modelos, si desea afinar un modelo para varias tareas, por
+lo general tendrán que seguir uno de estos enfoques:
+Afinado simultáneo
+Se crea un conjunto de datos con ejemplos para todas las
+tareas y se afina el modelo con este conjunto de datos para
+que el modelo aprenda todas las tareas simultáneamente.
+Sin embargo, como suele ser más difícil aprender varias
+habilidades al mismo tiempo, este enfoque suele requerir
+más datos y más entrenamiento.
+Afinado secuencial
+Puede afinar el modelo en cada tarea por separado, pero de
+forma secuencial. Después de entrenar a un modelo en la
+tarea A, entrénenlo en la tarea B, y así sucesivamente. Se
+supone que es más fácil para los modelos aprender una
+tarea cada vez. Por desgracia, las redes neuronales son
+propensas al olvido catastrófico (Kirkpatrick et al., 2016). Un
+modelo puede olvidar cómo hacer una tarea anterior
+cuando se entrena en una tarea nueva, lo que provoca una
+caída significativa del rendimiento en tareas anteriores.
+La fusión de modelos ofrece otro método de afinado multitarea. Puede
+afinar el modelo en diferentes tareas por separado, pero en paralelo. Una
+vez hecho esto, estos diferentes modelos se fusionan. El afinado de cada
+tarea por separado permite al modelo aprender mejor esa tarea. Al no haber
+aprendizaje secuencial, hay menos riesgo de olvido catastrófico.
+La fusión de modelos también resulta atractiva cuando hay que
+implementar modelos en dispositivos como teléfonos, computadoras
+portátiles, coches, smartwatchs y robots de almacén. La implementación en
+dispositivo suele ser difícil debido a sulimitada capacidad de memoria. En
+lugar de comprimir varios modelos para diferentes tareas en un dispositivo,
+puede fusionar estos modelos en uno solo que pueda realizar múltiples
+tareas y, al mismo tiempo, requiera mucha menos memoria.

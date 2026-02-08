@@ -1,0 +1,32 @@
+de FLOP/s. La relación entre los FLOP/s reales y los FLOP/s teóricos es
+una métrica de utilización.
+El número de operaciones que un chip puede realizar en un segundo
+depende de la precisión numérica: a mayor precisión, menos operaciones
+pueden ejecutar. Piense que la suma de dos números de 32 bits suele
+requerir el doble de cálculos que la suma de dos números de 16 bits. Debido
+a la optimización de los distintos chips, el número de operaciones de 32 bits
+que un chip puede realizar en un tiempo determinado no es exactamente la
+mitad que el de 16 bits. Para obtener una visión general de la precisión
+numérica, vuelva a consultar "Representaciones numéricas".
+La Tabla 9-2 muestra las especificaciones de FLOP/s para diferentes
+formatos de precisión de los chips NVIDIA H100 SXM.
+tabla 9-2. Especificaciones de FLOP/s para los chips NVIDIA H100 SXM.
+Precisión
+numérica
+teraFLOP/s (billones de FLOP/s) con
+dispersión
+TF32 Tensor Corea
+989
+BFLOAT16 Tensor
+Core
+1979
+FP16 Tensor Core
+1979
+FP8 Tensor Core
+3958
+a Recordemos del Capítulo 7 que el TF32 es un formato de 19 bits, no de
+32.
+Tamaño y ancho de banda de la memoria
+Como una GPU tiene muchos núcleos trabajando en paralelo, a menudo es
+necesario mover los datos de la memoria a estos núcleos y, por tanto, la
+velocidad de transferencia de datos es importante. La transferencia de datos

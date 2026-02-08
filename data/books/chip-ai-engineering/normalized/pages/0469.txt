@@ -1,0 +1,25 @@
+inglés-español para traducir directamente del portugués al español, a pesar
+de que no había ejemplos portugués-español en los datos de entrenamiento.
+Desde los inicios del deep learning, el aprendizaje por transferencia ha
+ofrecido una solución para tareas con datos de entrenamiento limitados o
+caros. Al entrenar un modelo base para tareas con abundantes datos, se
+puede transferir ese conocimiento a una tarea objetivo.
+En el caso de los LLMs, los conocimientos adquiridos al pre-entrenarse
+para completar textos (una tarea con abundantes datos) se transfieren a
+tareas más especializadas, como la respuesta a preguntas jurídicas o la
+conversión de texto a SQL, que suelen tener menos datos disponibles. Esta
+capacidad de aprendizaje por transferencia hace que los modelos
+fundacionales resulten especialmente valiosos.
+El aprendizaje por transferencia mejora la eficiencia de muestras,
+permitiendo que un modelo aprenda el mismo comportamiento con menos
+ejemplos. Un modelo eficiente en muestras aprende eficazmente a partir de
+menos muestras. Por ejemplo, mientras que el entrenamiento de un modelo
+desde cero para responder a preguntas jurídicas puede necesitar millones de
+ejemplos, el afinado de un buen modelo base puede requerir solo unos
+cientos.
+En el mejor de los casos, gran parte de lo que el modelo necesita aprender
+ya está presente en el modelo base, y el afinado se limita a refinar el
+comportamiento del modelo. El documento InstructGPT (2022) de OpenAI
+sugería considerar el afinado como el desbloqueo de las capacidades que un
+modelo ya posee pero a las que los usuarios les cuesta acceder únicamente a
+través de prompts.

@@ -1,0 +1,13 @@
+En vista del predominio del inglés en los datos de Internet, no es de extrañar
+que los modelos de propósito general funcionen mucho mejor para el inglés
+que para otros idiomas, según múltiples estudios. Por ejemplo, en la prueba
+comparativa MMLU, un conjunto de 14 000 problemas de elección múltiple
+que abarcan 57 temas, GPT-4 obtuvo resultados mucho mejores en inglés
+que en idiomas poco representados como el télugu, como se muestra en la
+Figura 2-1 (OpenAI, 2023).
+figura 2-1. En la prueba comparativa MMLU, GPT-4 obtiene mejores resultados en
+inglés que en cualquier otro idioma. Para obtener MMLU en otros idiomas, OpenAI
+tradujo las preguntas utilizando Azure AI Translator.
+Del mismo modo, cuando se le sometió a seis problemas matemáticos en el
+Proyecto Euler, Yennie Jun descubrió que el GPT-4 era capaz de resolver
+problemas en inglés más del triple de veces que en armenio o farsi. 1 GPT-4

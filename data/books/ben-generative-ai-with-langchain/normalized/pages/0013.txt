@@ -1,0 +1,33 @@
+Table of Contents
+xii
+Building adaptive systems .............................................................................................. 248
+Dynamic behavior adjustment • 248
+Human-in-the-loop • 248
+Exploring reasoning paths .............................................................................................. 250
+Tree of Thoughts • 250
+Trimming ToT with MCTS • 261
+Agent memory ................................................................................................................ 262
+Cache • 263
+Store • 264
+Summary ........................................................................................................................ 265
+Questions ........................................................................................................................ 266
+Chapter 7: Software Development and Data Analysis Agents 
+ 267
+LLMs in software development ....................................................................................... 268
+The future of development • 269
+Implementation considerations • 269
+Evolution of code LLMs • 271
+Benchmarks for code LLMs • 273
+LLM-based software engineering approaches • 274
+Security and risk mitigation • 277
+Validation framework for LLM-generated code • 279
+LangChain integrations • 281
+Writing code with LLMs ................................................................................................. 282
+Google generative AI • 282
+Hugging Face • 284
+Anthropic • 287
+Agentic approach • 289
+Documentation RAG • 290
+Repository RAG • 293
+Applying LLM agents for data science ............................................................................. 295
+Training an ML model • 297

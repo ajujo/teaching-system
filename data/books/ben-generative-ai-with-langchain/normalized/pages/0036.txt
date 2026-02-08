@@ -1,0 +1,40 @@
+Chapter 1
+9
+To unlock the next phase of AI capabilities, we need to move beyond passive text generation and
+toward agentic AI-systems that can plan, reason, and take action to accomplish tasks with
+minimal human intervention. Before exploring the potential of agentic AI, it's important to first
+understand the core limitations of LLMs that necessitate this evolution.
+Limitations of traditional LLMs
+Despite their advanced language capabilities, LLMs have inherent constraints that limit their
+effectiveness in real-world applications:
+1.
+Lack of true understanding: LLMs generate human-like text by predicting the next most
+likely word based on statistical patterns in training data. However, they do not understand
+meaning in the way humans do. This leads to hallucinations-confidently stating false
+information as fact-and generating plausible but incorrect, misleading, or nonsensical
+outputs. As Bender et al. (2021) describe, LLMs function as "stochastic parrots"-repeating
+patterns without genuine comprehension.
+2.
+Struggles with complex reasoning and problem-solving: While LLMs excel at retrieving
+and reformatting knowledge, they struggle with multi-step reasoning, logical puzzles, and
+mathematical problem-solving. They often fail to break down problems into sub-tasks or
+synthesize information across different contexts. Without explicit prompting techniques
+like chain-of-thought reasoning, their ability to deduce or infer remains unreliable.
+3.
+Outdated knowledge and limited external access: LLMs are trained on static datasets
+and do not have real-time access to current events, dynamic databases, or live information
+sources. This makes them unsuitable for tasks requiring up-to-date knowledge, such as
+financial analysis, breaking news summaries, or scientific research requiring the latest
+findings.
+4.
+No native tool use or action-taking abilities: LLMs operate in isolation-they cannot
+interact with APIs, retrieve live data, execute code, or modify external systems. This lack
+of tool integration makes them less effective in scenarios that require real-world actions,
+such as conducting web searches, automating workflows, or controlling software systems.
+5.
+Bias, ethical concerns, and reliability issues: Because LLMs learn from large datasets
+that may contain biases, they can unintentionally reinforce ideological, social, or cultural
+biases. Importantly, even with open-source models, accessing and auditing the complete
+training data to identify and mitigate these biases remains challenging for most prac­
+titioners. Additionally, they can generate misleading or harmful information without
+understanding the ethical implications of their outputs.

@@ -1,0 +1,44 @@
+        agent.promote_insight(insight)
+    else:
+        agent.demote_insight(insight)
+# 2) Refine one of the promoted insights with human-in-the-loop editing
+if agent.promoted_insights:
+    original = agent.promoted_insights[0]
+        agent.edit_insight(original, f'''Refined: {original} Investigate
+        landing-page UX changes to reduce bounce.''')
+# 3) Display the agent's final insights state
+agent.show_insights()
+# 4) Reflect on the top insights to plan improvements
+reflection_prompt = (
+    "Based on our promoted insights, suggest one high-impact experiment we can
+    run next quarter:"
+    f"\n{agent.promoted_insights}"
+)
+agent.reflect(reflection_prompt)
+As you can see, even a small number of lines of code can enable an agent to continu‐
+ally learn from experience to improve performance on a specific task. These
+approaches are very practical, affordable, easy to implement, and enable continual
+adaptation from experience. In some cases, though, and especially when we have a
+large number of samples to learn from, it can make sense to consider fine-tuning.
+Parametric Learning: Fine-Tuning
+Parametric learning involves adjusting the parameters of a predefined model to
+improve its performance on specific tasks. When we have evaluation data, we can use
+it to improve the performance of our system. It often makes sense to start with non‐
+parametric approaches, because they are simpler and faster to implement. Adding
+examples and insights into the prompt takes time and computational resources,
+though. When we have a sufficient number of examples, it might be worth consider‐
+ing fine-tuning your models as well to improve your agentic performance on your
+tasks. Fine-tuning is a common approach where a pretrained model is adapted to new
+tasks or datasets by making small adjustments to its parameters.
+Fine-Tuning Large Foundation Models
+Most developers begin building agentic systems with generic large foundation models
+such as GPT-5, Claude Opus, Gemini, and other similar classes of models because
+these offer an exceptional level of performance across a variety of tasks. These models
+are pretrained on extensive, general-purpose datasets, which equip them with a vast
+amount of linguistic and conceptual knowledge. These companies invest a great deal
+of effort in their own post-training processes. Fine-tuning these models involves
+making targeted adjustments to their parameters, tailoring them to specific tasks or
+domains. This process allows developers to adapt the model's extensive knowledge to
+146
+|
+Chapter 7: Learning in Agentic Systems

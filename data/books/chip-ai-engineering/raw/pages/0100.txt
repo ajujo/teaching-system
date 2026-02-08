@@ -1,0 +1,22 @@
+falló en las seis preguntas para birmano y amárico, como se muestra en la
+Figura 2-2.
+figura 2-2. GPT-4 es mucho mejor en matemáticas en inglés que en otros idiomas.
+Uno de los motivos principales de este bajo rendimiento es la
+infrarrepresentación. Los tres idiomas con peor rendimiento en las pruebas
+comparativas MMLU de GPT-4 (télugu, maratí y punjabi) también están
+entre los más infrarrepresentados en Common Crawl. Sin embargo, la
+infrarrepresentación no es la única razón. También la estructura de un
+idioma y la cultura que encarna pueden hacer difícil su aprendizaje para un
+modelo.
+Dado que los LLMs suelen ser buenos traductores, ¿podemos limitarnos a
+traducir todas las consultas de otros idiomas al inglés, obtener las respuestas
+y volver a traducirlas al idioma original? Mucha gente sigue este
+planteamiento, pero no es lo ideal. En primer lugar, esto requiere un modelo
+capaz de comprender lo suficiente los idiomas infrarrepresentados como
+para traducirlos. En segundo lugar, la traducción puede provocar pérdidas
+de información. Por ejemplo, algunos idiomas, como el vietnamita, tienen
+pronombres para denotar la relación entre los dos hablantes. Al traducir al
+inglés, todos estos pronombres se traducen por "I" y "you", con lo que se
+pierde la información sobre la relación.
+Los modelos también pueden tener problemas inesperados de rendimiento
+en idiomas distintos del inglés. Por ejemplo, NewsGuard descubrió que

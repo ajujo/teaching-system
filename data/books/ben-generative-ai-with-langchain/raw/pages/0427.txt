@@ -1,0 +1,38 @@
+Production-Ready LLM Deployment and Observability
+400
+This allows us to monitor costs in real time and identify queries or patterns that contribute dis­
+proportionately to our expenses. In addition to what we’ve seen, LangSmith provides detailed 
+analytics on token usage, costs, and performance, helping you identify opportunities for opti­
+mization. Please see the LangSmith section in this chapter for more details. By combining model 
+selection, context optimization, caching, and output length control, we can create a comprehensive 
+cost management strategy for LangChain applications.
+Summary
+Taking an LLM application from development into real-world production involves navigating 
+many complex challenges around aspects such as scalability, monitoring, and ensuring consis­
+tent performance. The deployment phase requires careful consideration of both general web 
+application best practices and LLM-specific requirements. If we want to see benefits from our 
+LLM application, we have to make sure it’s robust and secure, it scales, we can control costs, and 
+we can quickly detect any problems through monitoring.
+In this chapter, we dived into deployment and the tools used for deployment. In particular, we 
+deployed applications with FastAPI and Ray, while in earlier chapters, we used Streamlit. We’ve 
+also given detailed examples for deployment with Kubernetes. We discussed security consider­
+ations for LLM applications, highlighting key vulnerabilities like prompt injection and how to 
+defend against them. To monitor LLMs, we highlighted key metrics to track for a comprehensive 
+monitoring strategy, and gave examples of how to track metrics in practice. Finally, we looked at 
+different tools for observability, more specifically LangSmith. We also showed different patterns 
+for cost management.
+In the next and final chapter, let’s discuss what the future of generative AI will look like.
+Questions
+1.	
+What are the key components of a pre-deployment checklist for LLM agents and why are 
+they important?
+2.	 What are the main security risks for LLM applications and how can they be mitigated?
+3.	
+How can prompt injection attacks compromise LLM applications, and what strategies 
+can be implemented to mitigate this risk?
+4.	
+In your opinion, what is the best term for describing the operationalization of language 
+models, LLM apps, or apps that rely on generative models in general?
+5.	
+What are the main requirements for running LLM applications in production and what 
+trade-offs must be considered?

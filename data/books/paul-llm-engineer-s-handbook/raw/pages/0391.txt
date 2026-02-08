@@ -1,0 +1,34 @@
+Inference Pipeline Deployment
+360
+The client can either adopt a polling mechanism that checks on a schedule if there are new re-
+sults or adopt a push strategy and implement a notification system to inform the client when 
+the results are ready.
+Asynchronous inference uses resources more efficiently. It doesn’t have to process all the requests 
+simultaneously but can define a maximum number of machines that run in parallel to process 
+the messages. This is possible because the requests are stored in the queue until a machine can 
+process them. Another huge benefit is that it can handle spikes in requests without any timeouts. 
+For example, let’s assume that on an e-shop site, we usually have 10 requests per second handled 
+by two machines. Because of a promotion, many people started to visit the site, and the number 
+of requests spiked to 100 requests per second. Instead of scaling the number of virtual machines 
+(VMs) by 10, which can add drastic costs, the requests are queued, and the same two VMs can 
+process them in their rhythm without any failures.
+Another popular advantage for asynchronous architectures is when the requested job takes sig-
+nificant time to complete. For example, if the job takes over five minutes, you don’t want to block 
+the client waiting for a response.
+While asynchronous inference offers significant benefits, it does come with trade-offs. It intro-
+duces higher latency, making it less suitable for time-sensitive applications. Additionally, it adds 
+complexity to the implementation and infrastructure. Depending on your design choices, this 
+architecture type falls somewhere between online and offline, offering a balance of benefits and 
+trade-offs.
+For example, this is a robust design where you don’t care too much about the latency of the infer-
+ence but want to optimize costs heavily. Thus, it is a popular choice for problems such as extracting 
+keywords from documents, summarizing them using LLMs, or running deep-fake models on top 
+of videos. But suppose you carefully design the autoscaling system to process the requests from 
+the queue at decent speeds. In that case, you can leverage this design for other use cases, such as 
+online recommendations for e-commerce. In the end, it sums up how much computing power 
+you are willing to pay to meet the expectations of your application.
+Offline batch transform
+Batch transform is about processing large volumes of data simultaneously, either on a schedule 
+or triggered manually. In a batch transform architecture, the ML service pulls data from a storage 
+system, processes it in a single operation, and then stores the results in storage. The storage sys-
+tem can be implemented as an object storage like AWS S3 or a data warehouse like GCP BigQuery. 

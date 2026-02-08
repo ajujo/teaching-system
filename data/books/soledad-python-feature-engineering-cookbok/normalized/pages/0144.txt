@@ -1,0 +1,32 @@
+Performing equal-width discretization
+121
+Now, let's implement equal-width discretization with scikit-learn.
+17.	 Let's import the classes from scikit-learn:
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import kBinsDiscretizer
+18.	 Let's set up an equal-width discretizer by setting its strategy to uniform:
+disc = KBinsDiscretizer(
+    n_bins=8, encode='ordinal', strategy='uniform')
+Note
+KBinsDiscretiser() can return the bins as integers by setting encoding to 'ordinal'
+or one-hot encoded by setting encoding to 'onehot-dense'.
+19.	 Let's use ColumnTransformer() to restrict the discretization to the selected variables
+from step 13:
+ct = ColumnTransformer(
+    [("discretizer", disc, variables)],
+    remainder="passthrough",
+).set_output(transform="pandas")
+Note
+With remainder set to passthrough, ColumnTransformer() returns all the variables
+in the input DataFrame after the transformation. To return only the transformed variables, set
+remainder to drop.
+20.	 Let's fit the discretizer to the train set so that it learns the interval limits:
+ct.fit(X_train)
+21.	 Finally, let's discretize the selected variables in the train and test sets:
+train_t = ct.transform(X_train)
+test_t = ct.transform(X_test)
+We can inspect the cut points learned by the transformer by executing ct.named_
+transformers_["discretizer"].bin_edges_.
+Note
+ColumnTransformer() will append discretize to the variables that were discretized
+and remainder to those that were not modified.

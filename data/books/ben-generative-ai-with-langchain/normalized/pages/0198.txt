@@ -1,0 +1,39 @@
+Chapter 4
+171
+    messages = prompt.invoke(
+        {"question": state["messages"][-1].content, "context": docs_
+content}
+    )
+    response = chat_model.invoke(messages)
+    print(response.content)
+    return {"answer": response.content}
+We'll also implement a content validation check as a critical quality assurance step in our RAG
+pipeline. Please note that this is the simplest implementation possible. In a production environ­
+ment, we could have implemented a human-in-the-loop review process or more sophisticated
+guardrails. Here, we're using an LLM to analyze the generated content for any issues:
+def double_check(state: State):
+    result = chat_model.invoke([{
+        "role": "user",
+        "content": (
+            f"Review the following project documentation for compliance
+with our corporate standards. "
+            f"Return 'ISSUES FOUND' followed by any issues detected or 'NO
+ISSUES': {state['answer']}"
+        )
+    }])
+
+    # Extract actual response (after thinking block)
+    content = result.content
+    if "</think>" in content:
+        actual_response = content.split("</think>", 1)[1].strip()
+    else:
+        actual_response = content.strip()
+
+    if "ISSUES FOUND" in actual_response:
+        print("issues detected")
+        return {
+            "issues_report": actual_response.split("ISSUES FOUND", 1)[1].
+strip(),
+            "issues_detected": True
+        }
+    print("no issues detected")

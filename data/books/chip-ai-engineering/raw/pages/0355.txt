@@ -1,0 +1,31 @@
+pruebas del modelo si hay alguna disponible. Utilice el mismo prompt con
+diferentes modelos para ver cómo difieren sus respuestas, lo que puede
+ayudarle a comprender mejor su modelo.
+A medida que experimente con diferentes prompts, asegúrese de probar los
+cambios sistemáticamente. Versione sus prompts. Utilice una herramienta
+de seguimiento de experimentos. Estandarice las métricas y los datos de
+evaluación para poder comparar el rendimiento de los distintos prompts.
+Evalúe cada prompt en el contexto de todo el sistema. Un prompt puede
+mejorar el rendimiento del modelo en una subtarea pero empeorar el
+rendimiento de todo el sistema.
+Evaluar las herramientas de ingeniería de prompts
+Para cada tarea, el número de prompts posibles es infinito. La ingeniería de
+prompts manual requiere mucho tiempo. Es difícil encontrar el prompt
+óptimo. Se han desarrollado muchas herramientas de asistencia y
+automatización de la ingeniería de prompts.
+Entre las herramientas que pretenden automatizar todo el flujo de trabajo de
+la ingeniería de prompts se encuentran Open-Prompt (Ding et al., 2021) y
+DSPy (Khattab et al., 2023). De manera general, uno especifica los
+formatos de input y output, las métricas de evaluación y los datos de
+evaluación para su tarea. Estas herramientas de optimización de prompts
+encuentran automáticamente un prompt o una cadena de prompts que
+maximiza las métricas respecto de los datos de evaluación. Funcionalmente,
+estas herramientas son similares a las herramientas de autoML (ML
+automatizado) que encuentran automáticamente los hiperparámetros
+óptimos para los modelos clásicos de ML.
+Un enfoque habitual para automatizar la generación de prompts es utilizar
+modelos de IA. Los propios modelos de IA pueden escribir prompts. 10 En
+su forma más simple, puede pedirle a un modelo que genere una sugerencia
+para su prompt, como "Ayúdame a escribir un prompt conciso para una
+aplicación que califique trabajos universitarios de 1 a 5". También puede
+pedir a los modelos de IA que critiquen y mejoren sus prompts, o que

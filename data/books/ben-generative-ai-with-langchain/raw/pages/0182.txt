@@ -1,0 +1,28 @@
+Chapter 4
+155
+Corrective RAG
+The techniques we’ve explored so far mostly assume that our retrieval mechanism returns rel­
+evant, accurate documents. But what happens when it doesn’t? In real-world applications, re­
+trieval systems often return irrelevant, insufficient, or even misleading content. This “garbage 
+in, garbage out” problem represents a critical vulnerability in standard RAG systems. Corrective 
+Retrieval-Augmented Generation (CRAG) directly addresses this challenge by introducing ex­
+plicit evaluation and correction mechanisms into the RAG pipeline.
+CRAG extends the standard RAG pipeline with evaluation and conditional branching:
+1.	
+Initial retrieval: Standard document retrieval from the vector store based on the query.
+2.	
+Retrieval evaluation: A retrieval evaluator component assesses each document’s rele­
+vance and quality.
+3.	
+Conditional correction:
+a.	
+Relevant documents: Pass high-quality documents directly to the generator.
+b.	 Irrelevant documents: Filter out low-quality documents to prevent noise.
+c.	
+Insufficient/Ambiguous results: Trigger alternative information-seeking strat­
+egies (like web search) when internal knowledge is inadequate.
+4.	
+Generation: Produce the final response using the filtered or augmented context.
+This workflow transforms RAG from a static pipeline into a more dynamic, self-correcting system 
+capable of seeking additional information when needed.
+Figure 4.4: Corrective RAG workflow showing evaluation and conditional branching

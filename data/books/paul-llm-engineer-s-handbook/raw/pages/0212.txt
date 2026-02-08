@@ -1,0 +1,35 @@
+Chapter 5
+181
+Calculating an ideal number of samples is a difficult task, as both the quality of the data and the 
+size of the model can have a dramatic impact. For large models (around 70 billion parameters, 
+for example), this number can be as low as 1,000 high-quality samples (see the LIMA paper in 
+the References section). This is not true for smaller models (around seven billion parameters, for 
+instance), as they need more samples to simply learn the correct chat template. In any case, the 
+quality of the data is a crucial factor, and a high number of samples is always desirable.
+To provide additional numbers, we can look at the fine-tuned models developed by companies 
+and the open-source community. We can distinguish two types of finetunes: general-purpose, 
+aimed to reproduce the capabilities of models like GPT, and task- or domain-specific models, 
+designed to optimize their performance for a particular application.
+General-purpose models cover more topics, which requires additional samples. Among com-
+panies, we observe a wide range of values. For instance, Yi models from 01-ai rely on less than 
+10,000 samples. At the opposite range of the spectrum, Meta reported using 10 million samples 
+for Llama 3 through the entire fine-tuning process (including preference alignment). In the open-
+source community, models like OpenHermes and Dolphin use around one million samples. Based 
+on the quality of these finetunes, we recommend an instruction dataset of at least one million 
+samples to create a good general-purpose instruct model. On the other hand, models fine-tuned 
+for a specific purpose require fewer samples. Here, we differentiate task-specific models from 
+domain-specific ones.
+Task-specific and domain-specific models represent two distinct approaches to fine-tuning LLMs. 
+Task-specific models are designed to excel at a particular function, such as translation, summari-
+zation, or sentiment analysis. These models benefit from a focused training approach on a single 
+task, allowing for efficient performance even with smaller model sizes (typically less than 8 bil-
+lion parameters). The data required for task-specific fine-tuning is generally more manageable, 
+ranging from 100 to 100,000 samples. This makes task-specific fine-tuning an attractive option 
+for many applications where resources may be limited.
+Domain-specific models, on the other hand, aim to tweak the LLM with specialized knowledge 
+and familiarity with the vocabulary and linguistic patterns of a particular field. These models 
+are valuable in areas such as medicine, law, finance, e-commerce, engineering, and hospitality. 
+The data requirements for domain-specific fine-tuning can vary widely depending on the com-
+plexity and breadth of the domain. Some fields, like medicine or law, may require as much data 
+as general-purpose fine-tuning due to their vast technical corpora. Others, such as e-commerce 
+or hospitality, might need fewer samples, more in line with task-specific fine-tuning.

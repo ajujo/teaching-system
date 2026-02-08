@@ -1,0 +1,33 @@
+Adquisición y anotación de datos
+El objetivo de la adquisición de datos es producir un conjunto de datos
+suficientemente amplio con la calidad y diversidad que usted necesita,
+garantizando al mismo tiempo que sus prácticas de datos respetan la
+privacidad de los usuarios y cumplen la normativa. La adquisición de datos
+implica recopilar datos mediante métodos como la obtención de datos
+públicos, la compra de datos patentados, la anotación de datos y la síntesis
+de datos. La estrategia de adquisición de datos es un campo de
+investigación muy especializado, pero cada vez más amplio: cómo adquirir
+un conjunto de datos que cumpla unos requisitos específicos con un
+presupuesto determinado.
+Sin embargo, la fuente de datos más importante suelen ser los datos de su
+propia aplicación. Si encuentra la manera de crear un círculo virtuoso de
+datos que aproveche los datos generados por sus usuarios para mejorar
+continuamente su producto, obtendrán una ventaja significativa. 7 Los datos
+de las aplicaciones son ideales, porque son perfectamente pertinentes y
+están alineados con su tarea. En otras palabras, se ajusta a la distribución de
+los datos que le interesa, algo increíblemente difícil de conseguir con otras
+fuentes de datos. Los datos generados por el usuario pueden ser contenidos
+del usuario, datos generados por el sistema a partir del uso del usuario o
+comentarios del usuario. En el Capítulo 10 se explica cómo diseñar el
+sistema de comentarios de los usuarios.
+Antes de invertir en la creación de sus propios datos, compruebe primero
+los conjuntos de datos disponibles. Los mercados de datos son inmensos y
+ofrecen tanto datos de código abierto como privados. Si tiene suerte,
+algunos de ellos pueden ser exactamente lo que necesitan. Sin embargo, a
+menudo se trata de un enfoque de escoger las partes que necesite. Un
+conjunto de datos puede desarrollarse a partir de múltiples fuentes de datos
+a través de múltiples canales de adquisición. Por ejemplo, el proceso de
+creación de un conjunto de datos (instrucción, respuesta) podría ser el
+siguiente:
+1. Encuentre conjuntos de datos disponibles con las características
+deseables. Puede que encuentre un conjunto de datos prometedor

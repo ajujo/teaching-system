@@ -1,0 +1,42 @@
+These interfaces can range from video avatars that simulate face-to-face conversations
+to agents embedded in real-time video collaboration tools. As video becomes more
+pervasive in our digital lives-through platforms like Zoom, Microsoft Teams, and
+virtual event spaces-agents are finding new ways to integrate into these environ‐
+ments. While many of these experiences are still in the uncanny valley, the rapid pace
+of improvement suggests that this technology is getting closer to prime time, and
+more teams will begin building experiences around it.
+One of the core strengths of video interfaces is their ability to combine multiple sen‐
+sory channels-visual cues, speech, text overlays, and animations-into a richer,
+more expressive interaction. Video agents can mimic humanlike expressions and ges‐
+tures, adding emotional nuance to their communication. For example, an AI-
+powered customer service avatar might use facial expressions and hand gestures to
+reassure a frustrated customer, complementing its spoken responses with visual
+empathy.
+However, video interfaces come with technical and design challenges. High-quality
+video interactions require significant processing power and bandwidth, which can
+introduce lag or pixelation, undermining the user experience. The uncanny valley
+remains a risk-if an agent's facial expressions, gestures, or lip-syncing feel slightly
+off, it can create discomfort rather than engagement. Additionally, privacy concerns
+are amplified with video agents, as users may feel uneasy about sharing visual data
+with AI systems.
+Looking ahead, video interfaces are poised for significant growth, especially as
+improvements in rendering, real-time animation, and bandwidth optimization
+address current limitations. In the near future, expect to see agents embedded seam‐
+lessly into virtual meetings, augmented reality (AR) overlays, and digital customer
+service avatars.
+When thoughtfully executed, video interfaces offer an engaging, humanlike dimen‐
+sion to agent interactions, enhancing clarity, emotional connection, and overall effec‐
+tiveness. As technology advances, video-based agents are set to play a larger role in
+industries such as telehealth, education, remote collaboration, and interactive enter‐
+tainment, reshaping how humans and agents communicate in immersive digital
+spaces.
+Combining Modalities for Seamless Experiences
+While each interaction modality-text, graphical interfaces, voice, and video-has its
+own strengths and limitations, the most compelling agentic experiences often com‐
+bine multiple modalities into a single, cohesive user journey. Users don't think in
+terms of modality boundaries; they simply want to achieve their goals as effortlessly
+and naturally as possible. The ability to move seamlessly across modalities-main‐
+taining state and context throughout-is a hallmark of great agent system design.
+54
+|
+Chapter 3: User Experience Design for Agentic Systems

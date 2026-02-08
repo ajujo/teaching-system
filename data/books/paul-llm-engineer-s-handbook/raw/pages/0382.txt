@@ -1,0 +1,38 @@
+Chapter 9
+351
+Superlinked is a powerful Python tool for any use case that includes vector computing, such as RAG, 
+recommender systems, and semantic search. It offers an ecosystem where you can quickly ingest 
+data into a vector DB, write complex queries on top of it, and deploy the service as a RESTful API.
+The world of LLMs and RAG is experimental, similar to any other AI domain. Thus, when build-
+ing real-world products, it’s important to quickly build an end-to-end solution that works but is 
+not necessarily the best. Then, you can reiterate with various experiments until you completely 
+optimize it for your use case. This is standard practice in the industry and lets you iterate fast 
+while providing value to the business and gathering user feedback as quickly as possible in the 
+product’s lifecycle.
+Summary
+This chapter taught us how to build an advanced RAG inference pipeline. We started by looking 
+into the software architecture of the RAG system. Then, we zoomed in on the advanced RAG meth-
+ods we used within the retrieval module, such as query expansion, self-querying, filtered vector 
+search, and reranking. Afterward, we saw how to write a modular ContextRetriever class that 
+glues all the advanced RAG components under a single interface, making searching for relevant 
+documents a breeze. Ultimately, we looked into how to connect all the missing dots, such as the 
+retrieval, the prompt augmentation, and the LLM call, under a single RAG function that will serve 
+as our RAG inference pipeline.
+As highlighted a few times in this chapter, we couldn’t test our fine-tuned LLM because we haven’t 
+deployed it yet to AWS SageMaker as an inference endpoint. Thus, in the next chapter, we will 
+learn how to deploy the LLM to AWS SageMaker, write an inference interface to call the endpoint, 
+and implement a FastAPI web server to serve as our business layer.
+References
+•	
+A real-time retrieval system for social media data | VectorHub by SuperLinked. (n.d.). https://
+superlinked.com/vectorhub/articles/real-time-retrieval-system-social-media-
+data
+•	
+Building a Router from Scratch - LlamaIndex. (n.d.). https://docs.llamaindex.ai/en/
+stable/examples/low_level/router/
+•	
+How to add memory to chatbots | LangChain. (n.d.). https://python.langchain.com/docs/
+how_to/chatbots_memory/#summary-memory
+•	
+How to do “self-querying” retrieval | LangChain. (n.d.). https://python.langchain.com/
+docs/how_to/self_query/

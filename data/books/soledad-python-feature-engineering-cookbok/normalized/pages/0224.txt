@@ -1,0 +1,27 @@
+Automating the datetime feature extraction with Feature-engine
+201
+    drop_original=False,
+    utc=True,
+)
+8.
+Let's create the new features:
+dft = dfts.fit_transform(df)
+DatetimeFeatures() will set all variables into UTC before deriving the features. With
+dft.head(), we can see the resulting DataFrame:
+Figure 6.23 - A DataFrame with the original and new variables
+With that, we've created multiple date and time-related features in a few lines of code. featureengine offers a great alternative to manually creating features per feature with pandas. In addition,
+DatetimeFeatures() can be integrated into scikit-learn's Pipeline and GridSearchCV,
+among other classes.
+How it works...
+DatetimeFeatures() extracts several date and time features from datetime variables
+automatically by utilizing pandas' dt under the hood. It works with variables whose original data
+types are datetime, as well as with object-like and categorical variables, provided that they can be
+parsed into a datetime format.
+DatetimeFeatures() extracts the following features by default: month, year, day_of_week,
+day_of_month, hour, minute and second. We can make the transformer return all the features
+it supports by setting the parameter features_to_extract to all. In addition, we can extract
+a specific subset of features by passing the feature names in a list, as we did in Step 7.
+DatetimeFeatures() automatically finds datetime variables or variables that can be parsed
+as datetime in the DataFrame passed to the fit() method. To extract features from a selected
+variable or group of variables, we can pass their name in a list to the variables parameter when
+we set up the transformer.

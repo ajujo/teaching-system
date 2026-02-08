@@ -1,0 +1,14 @@
+figura 10-3. Un ejemplo de enmascaramiento y desenmascaramiento de información
+PII utilizando un mapa PII inverso para evitar enviarla a API externas.
+Barreras de seguridad de output
+Un modelo puede fallar de muchas maneras diferentes. Las barreras de
+seguridad de output tienen dos funciones principales:
+Detectar fallos de output
+Especificar la política para gestionar diferentes modos de fallo
+Para detectar los outputs que no cumplen las normas, hay que saber cómo
+son los fallos. El fallo más fácil de detectar es cuando un modelo devuelve
+una respuesta vacía cuando no debería. 2 Los fallos son diferentes según la
+aplicación. Estos son algunos fallos comunes en las dos categorías
+principales: calidad y seguridad. Los fallos de calidad se analizan en el
+Capítulo 4, y los de seguridad, en el Capítulo 5. Mencionaré rápidamente
+algunos de estos fallos a modo de recapitulación:

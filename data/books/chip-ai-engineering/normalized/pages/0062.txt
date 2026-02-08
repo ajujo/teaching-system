@@ -1,0 +1,31 @@
+Sin embargo, si está utilizando la IA para aumentar los beneficios y la
+productividad, es posible que tenga muchas opciones de compra que puede
+ahorrarle tiempo y dinero a la vez que le ofrece un mejor rendimiento.
+El papel de la IA y los humanos en la aplicación
+El papel que desempeña la IA en el producto influye en el desarrollo de la
+aplicación y en sus requisitos. Apple tiene un documento estupendo en el
+que explica las distintas formas en que se puede utilizar la IA en un
+producto. Estos son tres puntos clave relevantes para el debate actual:
+Crítica o complementaria
+Si una aplicación puede seguir funcionando sin IA, la IA es
+complementaria a la aplicación. Por ejemplo, Face ID no
+funcionaría sin el reconocimiento facial potenciado por IA,
+mientras que Gmail seguiría funcionando sin Smart
+Compose.
+Cuanto más importante es la IA para la aplicación, más
+precisa y fiable debe ser la parte de IA. La gente acepta
+mejor los errores cuando la IA no es esencial para la
+aplicación.
+Reactiva o proactiva
+Una función reactiva muestra sus contestaciones en
+respuesta a las peticiones o acciones específicas de los
+usuarios, mientras que una función proactiva muestra sus
+respuestas cuando se presenta la oportunidad de hacerlo.
+Por ejemplo, un chatbot es reactivo, mientras que las alertas
+de tráfico de Google Maps son proactivas.
+Dado que las funciones reactivas se generan en respuesta a
+eventos, normalmente, aunque no siempre, tienen que
+producirse con rapidez. Por otro lado, las características
+proactivas pueden calcularse previamente y mostrarse de
+modo oportunista, por lo que la latencia es menos
+importante.

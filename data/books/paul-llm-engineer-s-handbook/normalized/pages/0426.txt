@@ -1,0 +1,33 @@
+Chapter 10
+395
+Creating a scalable policy
+Once your scalable target is registered, the next step is defining how the scaling should occur.
+This is where creating a scaling policy comes in. A scaling policy defines specific rules that trigger
+scaling events. When creating policies, you have to define metrics to know what to monitor and
+thresholds to know when to emit scaling events.
+In the context of our SageMaker Inference component, the scalable policy might include the
+following elements:
+•
+Policy type: For instance, you might select TargetTrackingScaling, a policy that adjusts
+the resource's capacity to maintain a specific target value for a chosen metric.
+•
+Target tracking configuration: This involves selecting the metric to monitor (such as
+SageMakerInferenceComponentInvocationsPerCopy), setting the desired target value, and
+specifying cooldown periods that control how quickly scaling actions can occur after
+previous ones.
+The scaling policy defines the rules for your scaling-in and scaling-out strategy. It constantly
+monitors the specified metric, and depending on whether the metric exceeds or falls below the
+target value, it triggers actions to scale the number of inference component copies up or down,
+always within the limits defined by the registered scalable target.
+Let's explain in more depth how the TargetTrackingScaling policy works. Imagine you have
+a metric that represents the ideal average utilization or throughput level for your application.
+With target tracking, you select this metric and set a target value that reflects the optimal state
+for your application. Once defined, Application Auto Scaling creates and manages the necessary
+CloudWatch alarms to monitor this metric. When deviations occur, scaling actions are triggered,
+similar to how a thermostat adjusts to maintain a consistent room temperature.
+For instance, consider an application running on SageMaker. Let's assume we set a target of
+keeping GPU utilization around 70 percent. This target allows you to maintain enough headroom
+to manage sudden traffic spikes while preventing the unnecessary cost of idle resources. When
+GPU usage exceeds the target, the system scales out, adding resources to manage the increased
+load. Conversely, when GPU usage drops below the target, the system scales in, reducing capacity
+to minimize costs during quieter periods.

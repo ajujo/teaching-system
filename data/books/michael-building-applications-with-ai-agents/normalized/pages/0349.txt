@@ -1,0 +1,98 @@
+democratic, 180-181
+hierarchical, 182
+manager, 181
+parallel processing, 173-177
+state management, 201-202
+tools, grouping into specialized agents,
+170-173
+multimodal models, task suitability, 21
+N
+named entity recognition (NER), 317
+NATS (Neural Autonomic Transport System),
+193
+natural language processing (NLP), 317
+Neo4j, knowledge graph construction, 127-129
+neo4j‑graphrag‑python package, 123
+NER (named entity recognition), 317
+network security, 291
+Neural Autonomic Transport System (NATS),
+193
+neural networks, 317
+NIST AI Risk Management Framework (AI
+RMF), 307
+NLP (natural language processing), 317
+nonparametric learning, 135
+exemplar learning, 135-137
+experiential, 141
+Reflexion, 137-146
+nonparametric statistical tests, 237
+note-taking, 133
+O
+observability
+dashboards, 233
+Grafana, 232-234
+user feedback, 236
+offline retraining, agent improvement, 267-268
+ontology design, building knowledge graphs,
+125
+open source monitoring tools, 223
+open weight models, 23
+open-source models
+plug-in availability, 80
+task suitability, 21
+open-source tooling options, knowledge graph
+construction, 126-127
+OpenAI, plug-in tools, 78
+OpenTelemetry (see OTel)
+operational costs, agentic systems, 31
+optimization, 317
+orchestration, 89
+agent workflows, 47-48
+agentic systems, 27
+context engineering, 112-113
+Orleans, 196
+OTel, 223
+instrumentation, monitoring loops, 230-232
+overfitting, 317
+oversight, accountability, 309
+P
+parallel processing, multiagent architectures,
+173-177
+parameter-efficient fine-tuning (PEFT), 317
+parameters, tools, 105-105
+parametric learning, 135, 146
+direct preference optimization, 158-161
+large foundation models, 146-153
+reinforcement learning with verifiable
+rewards, 161-162
+small foundation models, 151
+supervised fine-tuning, 153-157
+parsimony, agent-based design principle, 179
+patient intake agent, 8
+PCI DSS (Payment Card Industry Data Security
+Standard), 311
+PEFT (parameter-efficient fine-tuning), 317
+performance
+agentic systems, design considerations, 27
+optimization, continuous learning, 265
+small foundation models, 152
+perplexity, 317
+persistence, multiagent systems, 201-202
+personal assistant agents, model suitability, 21
+personalization, agents, 62
+Phi (Microsoft), 79
+Phoenix monitoring stack, 228
+planner-executor agents, 91
+planning modules, evaluation, 210-212
+plug-in tools
+advantages and limitations, 79
+future outlook, 80
+growth of offerings, 79
+uses, 80
+policy‑as‑code libraries, 311
+population stability index (PSI), 238
+postmortem analysis workflows, internal failure
+protection, 295
+Index
+|
+327

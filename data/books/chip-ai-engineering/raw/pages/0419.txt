@@ -1,0 +1,20 @@
+Para generar una respuesta a la pregunta "¿Cuántas unidades de Fruity
+Fedora se vendieron en los últimos 7 días?", su sistema necesita consultar
+esta tabla en busca de todos los pedidos que incluyan Fruity Fedora y sumar
+el número de unidades de todos los pedidos. Supongamos que esta tabla se
+puede consultar mediante SQL. La consulta SQL podría tener el siguiente
+aspecto:
+SELECT SUM(units) AS total_units_sold
+FROM Sales
+WHERE product_name = 'Fruity Fedora'
+AND timestamp >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);
+El flujo de trabajo es el siguiente, visualizado en la Figura 6-7. Para ejecutar
+este flujo de trabajo, su sistema debe poder generar y ejecutar la consulta
+SQL:
+1. Texto a SQL: en función de la consulta del usuario y de los
+esquemas de tabla proporcionados, determina qué consulta SQL es
+necesaria. La conversión de texto a SQL es un ejemplo de análisis
+semántico, como se explica en el Capítulo 2.
+2. Ejecución SQL: ejecutar la consulta SQL.
+3. Generación: generar una respuesta basada en el resultado SQL y la
+consulta original del usuario.

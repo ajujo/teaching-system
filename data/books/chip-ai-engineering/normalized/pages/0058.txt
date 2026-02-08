@@ -1,0 +1,32 @@
+Para los consumidores, muchas aplicaciones pueden procesar sus
+documentos (contratos, declaraciones, papeles) y permitirles recuperar
+información de forma conversacional. Este caso de uso también se
+denomina "hablar con los documentos". La IA puede ayudarle a resumir
+páginas web, investigar y crear informes sobre los temas que elija. Durante
+el proceso de redacción de este libro, la IA me resultó útil para resumir y
+comparar documentos.
+La agregación y la destilación de información son esenciales para las
+operaciones empresariales. Una agregación y una disimilación más eficaces
+de la información pueden ayudar a una organización a ser más ágil, ya que
+reducen la carga de los mandos intermedios. Cuando Instacart lanzó un
+mercado interno de prompts, descubrió que una de las plantillas de prompts
+más populares es "Fast Breakdown" (Análisis rápido). Esta plantilla pide a
+la IA que resuma notas de reuniones, correos electrónicos y conversaciones
+de Slack con hechos, preguntas abiertas y elementos de acción. Estas
+acciones pueden insertarse automáticamente en una herramienta de
+seguimiento de proyectos y asignarse a los responsables adecuados.
+La IA puede ayudarle a sacar a la superficie la información crítica sobre sus
+clientes potenciales y a realizar análisis sobre sus competidores.
+Cuanta más información se reúne, más importante es organizarla. La
+agregación de información va de la mano de la organización de datos.
+Organización de datos
+Una cosa segura sobre el futuro es que seguiremos produciendo más y más
+datos. Los usuarios de smartphone seguirán haciendo fotos y vídeos. Las
+empresas seguirán registrando todo lo relacionado con sus productos,
+empleados y clientes. Cada año se crean miles de millones de contratos. Las
+fotos, los vídeos, los registros y los PDF son datos no estructurados o
+semiestructurados. Es esencial organizar todos estos datos de manera que
+puedan buscarse posteriormente.
+La IA puede ayudar precisamente en eso. La IA puede generar
+automáticamente descripciones de texto sobre imágenes y vídeos, o ayudar
+a emparejar consultas de texto con elementos visuales que coincidan con

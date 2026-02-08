@@ -1,0 +1,21 @@
+Supervised Fine-Tuning
+206
+Due to the small size of the dataset, there is no need for comprehensive exploration and topic
+clustering.
+Figure 5.7 - The mlabonne/llmtwin instruction dataset on the Hugging Face Hub
+As seen in the previous section, we could refine this instruction dataset by increasing the diversity and complexity of our samples. More advanced prompt engineering could also increase the
+quality of the generated data by providing examples of the expected results, for instance. Finally,
+quality evaluation could help filter out low-quality samples by reviewing them individually. For
+conciseness and simplicity, we will keep a straightforward approach for this instruction dataset
+and explore more advanced methods in Chapter 6 when we create a preference dataset.
+In the next section, we will introduce SFT techniques, as well as related concepts.
+Exploring SFT and its techniques
+SFT consists of re-training pre-trained models on a smaller dataset composed of pairs of instructions and answers. The goal of SFT is to turn a base model, which can only perform next-token
+prediction, into a useful assistant, capable of answering questions and following instructions.
+SFT can also be used to improve the general performance of the base model (general-purpose
+SFT), instill new knowledge (e.g., new languages, domains, etc.), focus on specific tasks, adopt
+a particular voice, and so on.
+In this section, we will discuss when to use fine-tuning and explore related concepts with storage
+formats and chat templates. Finally, we will introduce three popular ways of implementing SFT:
+full-finetuning, Low-Rank Adaptation (LoRA) and Quantization-aware Low-Rank Adaptation
+(QLoRA).

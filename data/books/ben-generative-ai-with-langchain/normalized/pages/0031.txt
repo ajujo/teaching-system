@@ -1,0 +1,47 @@
+The Rise of Generative AI: From Language Models to Agents
+4
+2019
+GPT-2
+Large-scale text generation, public awareness
+increases
+2020
+GPT-3
+API-based access, state-of-the-art performance
+2022
+ChatGPT
+Mainstream adoption of LLMs
+2023
+Large Multimodal Models
+(LMMs)
+AI models process text, images, and audio
+2024
+OpenAI o1
+Stronger reasoning capabilities
+2025
+DeepSeek R1
+Open-weight, large-scale AI model
+Table 1.1: A timeline of major developments in language models
+The field of LLMs is rapidly evolving, with multiple models competing in terms of performance,
+capabilities, and accessibility. Each provider brings distinct advantages, from OpenAI's advanced
+general-purpose AI to Mistral's open-weight, high-efficiency models. Understanding the dif­
+ferences between these models helps practitioners make informed decisions when integrating
+LLMs into their applications.
+Model comparison
+The following points outline key factors to consider when comparing different LLMs, focusing
+on their accessibility, size, capabilities, and specialization:
+•
+Open-source vs. closed-source models: Open-source models like Mistral and LLaMA pro­
+vide transparency and the ability to run locally, while closed-source models like GPT-4 and
+Claude are accessible through APIs. Open-source LLMs can be downloaded and modified,
+enabling developers and researchers to investigate and build upon their architectures,
+though specific usage terms may apply.
+•
+Size and capabilities: Larger models generally offer better performance but require more
+computational resources. This makes smaller models great for use on devices with limited
+computing power or memory, and can be significantly cheaper to use. Small language
+models (SLMs) have a relatively small number of parameters, typically using millions
+to a few billion parameters, as opposed to LLMs, which can have hundreds of billions or
+even trillions of parameters.
+•
+Specialized models: Some LLMs are optimized for specific tasks, such as code generation
+(for example, Codex) or mathematical reasoning (e.g., Minerva).

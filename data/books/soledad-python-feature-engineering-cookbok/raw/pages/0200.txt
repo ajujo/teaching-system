@@ -1,0 +1,22 @@
+6
+Extracting Features 
+from Date and Time Variables
+Date and time variables contain information about dates, times, or both, and in programming, we 
+refer to them collectively as datetime features. Date of birth, the time of an event, and the date and 
+time of the last payment are examples of datetime variables.
+Because of their nature, datetime features typically exhibit high cardinality. This means that they 
+contain a huge number of unique values, each corresponding to a specific date and/or time combination. 
+We don’t normally use datetime variables for machine learning models in their raw format. Instead, 
+we enrich the dataset by extracting multiple features from these variables. These new features will 
+typically have reduced cardinality, and allow us to capture meaningful information, such as trends, 
+seasonality, and important events and tendencies.
+In this chapter, we will explore how to extract features from dates and time by utilizing the pandas 
+dt module, and then automate this procedure with feature-engine.
+This chapter will cover the following recipes:
+•	 Extracting features from dates with pandas
+•	 Extracting features from time with pandas
+•	 Capturing elapsed time between datetime variables
+•	 Working with time in different time zones
+•	 Automating datetime feature extraction with feature-engine
+Technical requirements
+In this chapter, we will use the pandas, numpy, and feature-engine Python libraries.

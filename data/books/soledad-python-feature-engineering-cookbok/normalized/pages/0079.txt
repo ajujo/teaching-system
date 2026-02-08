@@ -1,0 +1,34 @@
+Encoding Categorical Variables
+56
+How it works...
+In the first part of this recipe, we worked with the A6 categorical variable. We inspected its unique
+categories with pandas' unique(). Next, we counted the number of observations per category
+using pandas' value_counts(), which returned a pandas series with the categories as the
+index and the number of observations as values. Next, we sorted the categories from the one with the
+most to the one with the least observations using pandas' sort_values(). We then reduced
+the series to the five most popular categories by using pandas' head(). We used this series in a
+list comprehension to capture the names of the most frequent categories. After that, we looped over
+each category, and with NumPy's where(), we created binary variables by placing a value of 1 if the
+observation showed the category, or 0 otherwise.
+We discussed how to use OneHotEncoder() from scikit-learn and feature-engine in
+the Creating binary variables through one-hot encoding recipe. Here, I will only highlight the parameters
+needed to encode the most frequent categories.
+To encode frequent categories with scikit-learn, we set the min_frequency parameter to
+39. Hence, categories shown in less than 39 observations were grouped into an additional binary
+variable called infrequent_sklearn.
+To encode frequent categories with feature-engine, we set the top_categories parameter
+to 5. Hence, the transformer created binary variables for the 5 most frequent categories only. Less
+frequent categories will show a 0 in all the binary variables.
+There's more...
+This recipe is based on the winning solution of the Knowledge Discovery and Data (KDD) 2009 mining
+cup, Winning the KDD Cup Orange Challenge with Ensemble Selection (http://proceedings.
+mlr.press/v7/niculescu09/niculescu09.pdf), where the author's limited one-hot
+encoding to the 10 most frequent categories of each variable.
+Replacing categories with counts or the frequency of
+observations
+In count with counts or frequency of observations" or frequency encoding, we replace the categories with
+the count or the fraction of observations showing that category. That is, if 10 out of 100 observations
+show the blue category for the Color variable, we would replace blue with 10 when doing
+count encoding, or with 0.1 if performing frequency encoding. These encoding methods are useful
+when there is a relationship between the category frequency and the target. For example, in sales, the
+frequency of a product may indicate its popularity.

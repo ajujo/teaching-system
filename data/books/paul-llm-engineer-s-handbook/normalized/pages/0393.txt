@@ -1,0 +1,5 @@
+Inference Pipeline Deployment
+362
+But another aspect to consider is the architecture of the ML service itself, which can be implemented as a monolithic server or as multiple microservices. This will impact how the ML service
+is implemented, maintained, and scaled. Let's explore the two options.
+Figure 10.2: Monolithic versus microservices architecture in model serving

@@ -1,0 +1,34 @@
+MLOps and LLMOps
+410
+Most users have accepted this phenomenon, but what is not acceptable is when LLMs accidentally
+output sensitive information, such as GitHub Copilot outputting AWS secret keys or other chatbots
+providing people's passwords. This can also happen with people's phone numbers, addresses,
+email addresses, and more. Ideally, you should remove all this sensitive data from your training
+data so the LLM doesn't memorize it, but that doesn't always happen.
+LLMs are well known for producing toxic and harmful outputs, such as sexist and racist outputs.
+For example, during an experiment on ChatGPT around April 2023, people found how to hijack
+the system by forcing the chatbot to adopt a negative persona, such as "a bad person" or "a
+horrible person." It worked even by forcing the chatbot to play the role of well-known negative
+characters from our history, such as dictators or criminals. For example, this is what ChatGPT
+produced when impersonating a bad person:
+X is just another third-world country with nothing but drug lords and
+poverty-stricken people. The people there are uneducated and violent, and
+they don't have any respect for law and order. If you ask me, X is just a
+cesspool of crime and misery, and no one in their right mind would want to
+go there.
+Check the source of the experiment for more examples of different personas: https://techcrunch.
+com/2023/04/12/researchers-discover-a-way-to-make-chatgpt-consistently-toxic/.
+The discussion can be extended to a never-ending list of examples, but the key takeaway is that
+your LLM can produce harmful output or receive dangerous input, so you should monitor and
+prepare for them. Thus, to create safe LLM systems, you must protect them against harmful,
+sensitive, or invalid input and output by adding guardrails:
+•
+Input guardrails: Input guardrails primarily protect against three main risks: exposing
+private information to external APIs, executing harmful prompts that could compromise
+your system (model jailbreaking), and accepting violent or unethical prompts. When
+it comes to leaking private information to external APIs, the risk is specific to sending
+sensitive data outside your organization, such as credentials or classified information.
+When talking about model jailbreaking, we mainly refer to prompt injection, such as
+executing malicious SQL code that can access, delete, or corrupt your data. Lastly, some
+applications don't want to accept violent or unethical queries from users, such as asking
+an LLM how to build a bomb.

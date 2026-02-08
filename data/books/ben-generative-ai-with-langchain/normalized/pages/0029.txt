@@ -1,0 +1,33 @@
+The Rise of Generative AI: From Language Models to Agents
+2
+In a nutshell, the following topics will be covered in this book:
+•
+The modern LLM landscape
+•
+From models to agentic applications
+•
+Introducing LangChain
+The modern LLM landscape
+Artificial intelligence (AI) has long been a subject of fascination and research, but recent advance­
+ments in generative AI have propelled it into mainstream adoption. Unlike traditional AI systems
+that classify data or make predictions, generative AI can create new content-text, images, code,
+and more-by leveraging vast amounts of training data.
+The generative AI revolution was catalyzed by the 2017 introduction of the transformer architec­
+ture, which enabled models to process text with unprecedented understanding of context and
+relationships. As researchers scaled these models from millions to billions of parameters, they
+discovered something remarkable: larger models didn't just perform incrementally better-they
+exhibited entirely new emergent capabilities like few-shot learning, complex reasoning, and
+creative generation that weren't explicitly programmed. Eventually, the release of ChatGPT in
+2022 marked a turning point, demonstrating these capabilities to the public and sparking wide­
+spread adoption.
+The landscape shifted again with the open-source revolution led by models like Llama and Mistral,
+democratizing access to powerful AI beyond the major tech companies. However, these advanced
+capabilities came with significant limitations-models couldn't reliably use tools, reason through
+complex problems, or maintain context across interactions. This gap between raw model power
+and practical utility created the need for specialized frameworks like LangChain that transform
+these models from impressive text generators into functional, production-ready agents capable
+of solving real-world problems.
+Free Benefits with Your Book
+Your purchase includes a free PDF copy of this book along with other exclusive benefits. Check
+the Free Benefits with Your Book section in the Preface to unlock them instantly and maximize
+your learning experience.

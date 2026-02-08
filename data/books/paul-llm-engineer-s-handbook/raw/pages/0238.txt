@@ -1,0 +1,25 @@
+Chapter 5
+207
+When to fine-tune
+In most scenarios, it is recommended to start with prompt engineering instead of directly fine-tun-
+ing models. Prompt engineering can be used with either open-weight or closed-source models. By 
+using techniques like few-shot prompting or retrieval augmented generation (RAG), numerous 
+problems can efficiently be tackled without SFT. Prompt engineering also allows us to build a 
+robust evaluation pipeline, which measures metrics like accuracy, but also cost and latency. If 
+these results do not match the requirements, we can explore the possibility of creating an in-
+struction dataset, as illustrated in the previous section. If enough data is available, fine-tuning 
+becomes an option.
+Figure 5.8 – Basic flowchart to determine when fine-tuning is an option on a technical level
+Beyond these technical considerations, SFT answers common needs in terms of control (“know 
+your data”) and customizability (the fine-tuned model is unique). Instead of building applications 
+around a chatbot, fine-tuning allows developers to create more diverse interactions with LLMs, 
+like tool analytics, moderation, and additional context. Note that if we focus on open-weight 
+models in this book, several LLM providers offer automated fine-tuning services. While they don’t 
+offer the same level of control and customizability as managing your own fine-tuning pipeline, it 
+can be an interesting trade-off in specific scenarios (e.g., limited resources in terms of machine 
+learning engineering).
+Despite these advantages, fine-tuning also has limitations. It is generally understood that SFT 
+leverages pre-existing knowledge in the base model’s weights and refocuses the parameters for 
+a specific purpose. This has several implications. First of all, knowledge that is too distant from 
+what has been learned in the pre-training set (such as an unknown or rare language) can be 
+difficult to learn effectively. 

@@ -1,0 +1,33 @@
+Performing Feature Scaling
+216
+By executing print(mean), we display the mean values per variable:
+MedInc           3.866667
+HouseAge        28.618702
+AveRooms         5.423404
+AveBedrms        1.094775
+Population    1425.157323
+AveOccup         3.040518
+dtype: float64
+5.	
+Now, let’s determine the difference between the maximum and minimum values per variable:
+ranges = X_train.max(axis=0)-X_train.min(axis=0)
+By executing print(ranges), we display the value ranges per variable:
+MedInc           14.500200
+HouseAge         51.000000
+AveRooms        131.687179
+AveBedrms        33.733333
+Population    35679.000000
+AveOccup        598.964286
+dtype: float64
+Note
+The pandas mean(), max(), and min() methods return a pandas series.
+6.	
+Now, we’ll apply mean normalization to the train and test sets by utilizing the learned parameters:
+X_train_scaled = (X_train - means) / ranges
+X_test_scaled = (X_test - means) / ranges
+Note
+In order to transform future data, you will need to store these parameters, for example, in a 
+.txt or .csv file.
+Step 6 returns pandas DataFrames with the transformed train and test sets. Go ahead and 
+compare the variables before and after the transformations. You’ll see that the distributions did 
+not change, but the variables are centered at 0, and their values lie between -1 and 1.

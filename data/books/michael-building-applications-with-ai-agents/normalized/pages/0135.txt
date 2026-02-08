@@ -1,0 +1,37 @@
+Context engineering sits at the intersection of memory, knowledge, and orchestra‐
+tion. While orchestration decides what steps to take in a workflow, context engineer‐
+ing ensures that each step has the right information to execute effectively. As
+foundation models continue to improve, the frontier of agentic system design is shift‐
+ing from model architecture to the quality of context we provide. In essence, a wellengineered context unlocks the full potential of even modest models, while poor
+context can undermine the performance of the most advanced systems.
+By mastering context engineering, developers can create agents that are not only
+technically powerful but also reliable, grounded, and responsive to the needs of their
+users and environments. In the coming years, as memory systems, retrieval architec‐
+tures, and orchestration frameworks evolve, context engineering will remain the glue
+that binds these components into seamless, effective experiences.
+Conclusion
+The success of agents relies heavily on the approach to orchestration, making it
+important for organizations interested in building agentic systems to invest time and
+energy into designing the appropriate planning strategy for the use case. Here are
+some best practices for designing a planning system:
+• Carefully consider the requirements for latency and accuracy for your system, as
+there is a clear trade-off between these two factors.
+• Determine the typical number of actions required for your scenario's use case.
+The greater this number, the more complex an approach to planning you are
+likely to need.
+• Assess how much the plan needs to change based on the results from prior
+actions. If significant adaptation is necessary, consider a technique that allows for
+incremental plan adjustments.
+• Design a representative set of test cases to evaluate different planning approaches
+and identify the best fit for your use case.
+• Choose the simplest planning approach that will meet your use case
+requirements.
+With an orchestration approach that will work well for your scenario, we'll now move
+on to the next part of the workflow: memory. It is worth starting small with welldesigned scenarios and simpler approaches to orchestration, and to then gradually
+move up the scale of complexity as necessary based on the use case. In the next chap‐
+ter, we will explore how memory can further enhance your agents' capabilities-ena‐
+bling them to recall knowledge, maintain context across interactions, and perform
+tasks with greater intelligence and personalization.
+Conclusion
+|
+113

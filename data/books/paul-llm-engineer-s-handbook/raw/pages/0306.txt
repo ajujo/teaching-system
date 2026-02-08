@@ -1,0 +1,32 @@
+Chapter 7
+275
+The classifier training stage involves creating high-precision classifiers to determine the relevance 
+and faithfulness of RAG outputs. Users can specify the classification dataset (typically generated 
+from the previous stage), test set for evaluation, label columns, and model choice. ARES uses mi-
+crosoft/deberta-v3-large as the default model but supports other Hugging Face models. Training 
+parameters such as the number of epochs, patience value for early stopping, and learning rate 
+can be fine-tuned to optimize classifier performance.
+The final stage, RAG evaluation, leverages the trained classifiers and synthetic data to assess the 
+RAG model’s performance. Users provide evaluation datasets, few-shot examples for guiding the 
+evaluation, classifier checkpoints, and gold label paths. ARES supports various evaluation metrics 
+and can generate confidence intervals for its assessments.
+ARES offers flexible model execution options, supporting both cloud-based and local runs through 
+vLLM integration. The framework also supports various artifact types (code snippets, documents, 
+HTML, images, and so on), enabling comprehensive evaluation across different RAG system 
+outputs.
+In summary, Ragas and ARES complement each other through their distinct approaches to eval-
+uation and dataset generation. Ragas’s strength in production monitoring and LLM-assisted 
+metrics can be combined with ARES’s highly configurable evaluation process and classifier-based 
+assessments. While Ragas may offer more nuanced evaluations based on LLM capabilities, ARES 
+provides consistent and potentially faster evaluations once its classifiers are trained. Combining 
+them offers a comprehensive evaluation framework, benefiting from quick iterations with Ragas 
+and in-depth, customized evaluations with ARES at key stages.
+In the next section, we will create our own evaluation framework to evaluate our task-specific 
+TwinLlama-3.1-8B model.
+Evaluating TwinLlama-3.1-8B
+In the previous chapters, we created two models fine-tuned to generate high-quality posts and 
+articles: TwinLlama-3.1-8B and TwinLlama-3.1-8B-DPO. Based on this summary, we want to 
+assess their abilities to write text that is both accurate and well-written. In comparison, gener-
+al-purpose fine-tuned models are accurate thanks to their extensive knowledge but often use 
+overly formal and verbose language. With this fine-tuning, we want to adopt a more natural 
+writing style, based on the original articles from the training set.

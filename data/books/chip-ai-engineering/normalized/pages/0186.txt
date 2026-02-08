@@ -1,0 +1,24 @@
+capacidades de los modelos. A medida que avanza la IA, estas deben
+evolucionar para ponerse al día. Una prueba comparativa se satura para un
+modelo una vez que este alcanza la puntuación perfecta. Con los modelos
+fundacionales, las pruebas comparativas se saturan rápidamente. La prueba
+comparativa GLUE (evaluación de la comprensión general del lenguaje)
+salió en 2018 y se saturó en apenas un año, lo que obligó a introducir
+SuperGLUE en 2019. Del mismo modo, NaturalInstructions (2021) fue
+sustituido por Super-NaturalInstructions (2022). MMLU (2020), una prueba
+comparativa en la que se basaron muchos de los primeros modelos
+fundacionales, fue sustituida en gran medida por MMLU-Pro (2024).
+Por último, pero no por ello menos importante, se ha ampliado el ámbito de
+evaluación de los modelos de uso general. Con los modelos de tareas
+específicas, la evaluación consiste en medir el rendimiento de un modelo en
+su tarea entrenada. Sin embargo, en el caso de los modelos de propósito
+general, la evaluación no solo consiste en valorar el rendimiento de un
+modelo en tareas conocidas, sino también en descubrir nuevas tareas que el
+modelo pueda realizar, y estas podrían incluir tareas que van más allá de las
+capacidades humanas. La evaluación asume la responsabilidad añadida de
+explorar el potencial y las limitaciones de la IA.
+La buena noticia es que los nuevos retos de la evaluación han impulsado
+muchos métodos y pruebas comparativas nuevas. La Figura 3-1 muestra
+que el número de artículos publicados sobre la evaluación de LLM creció
+exponencialmente cada mes en el primer semestre de 2023, pasando de 2
+artículos al mes a casi 35 artículos al mes.

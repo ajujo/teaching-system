@@ -1,0 +1,15 @@
+lograr un rendimiento cercano al del afinado completo utilizando varios
+órdenes de magnitud menos de parámetros entrenables.
+La idea de PEFT (parameter-efficient finetuning) fue introducida por
+Houlsby et al. (2019). Los autores demostraron que insertando parámetros
+adicionales en el modelo en los lugares adecuados, se puede conseguir un
+gran rendimiento de afinado con un número reducido de parámetros
+entrenables. Insertaron dos módulos adaptadores en cada bloque de
+transformadores de un modelo BERT, como se muestra en la Figura 7-8.
+figura 7-8. Al insertar dos módulos adaptadores en cada capa de transformadores de
+un modelo BERT y actualizar solo los adaptadores, Houlsby et al. (2019) fueron
+capaces de lograr un alto rendimiento de afinado utilizando un pequeño número de
+parámetros entrenables.
+Durante el afinado, mantuvieron sin cambios los parámetros originales del
+modelo y solo actualizaron los adaptadores. El número de parámetros
+entrenables es el número de parámetros de los adaptadores. En la prueba

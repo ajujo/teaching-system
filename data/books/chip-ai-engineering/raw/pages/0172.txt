@@ -1,0 +1,28 @@
+opción probable? Un modelo puede dar como output algo que se cree que
+nunca se ha visto antes en los datos de entrenamiento. No podemos
+asegurarlo porque es imposible revisar uno a uno los datos de
+entrenamiento para verificar si contienen una idea. Nuestra capacidad para
+construir algo tan complejo que ya no podemos entenderlo es a la vez una
+bendición y una maldición.
+Es difícil idear una forma de eliminar las alucinaciones sin entender por qué
+se producen en primer lugar. Actualmente existen dos hipótesis sobre por
+qué los modelos lingüísticos alucinan.
+La primera hipótesis, expresada originalmente por Ortega et al. en
+DeepMind en 2021, es que un modelo lingüístico alucina porque no puede
+diferenciar entre los datos que se le dan y los que genera. Veamos un
+ejemplo para ilustrarlo.
+Imagine que le da al modelo el prompt: "¿Quién es Chip Huyen?" y la
+primera frase que genera el modelo es: "Chip Huyen es arquitecta". El
+siguiente token que genere el modelo estará condicionado por la secuencia:
+"¿Quién es Chip Huyen? Chip Huyen es arquitecta". El modelo trata "Chip
+Huyen es arquitecta", algo que ha producido, del mismo modo que trata un
+hecho establecido. Partiendo de una secuencia generada ligeramente fuera
+de lo normal, el modelo puede ampliarla y generar hechos
+escandalosamente erróneos. Ortega y los demás autores calificaron las
+alucinaciones como una forma de autoengaño.
+La Figura 2-24 muestra un ejemplo de autoengaño del modelo LLaVA-
+v1.5-7B. Le pedí al modelo que identificara los ingredientes que aparecen
+en la etiqueta del producto de la imagen, que es un bote de champú. En su
+respuesta, el modelo se convence a sí mismo de que el producto de la
+imagen es una botella de leche, y luego sigue incluyendo la leche en la lista
+de ingredientes extraída de la etiqueta del producto.

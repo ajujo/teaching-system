@@ -1,0 +1,32 @@
+La implementación en dispositivo es necesaria para casos de uso en los que
+los datos no pueden salir del dispositivo (a menudo por motivos de
+privacidad), o cuando el acceso a Internet sea limitado o poco fiable. La
+implementación en dispositivo también puede reducir significativamente los
+costos de inferencia. Cuanto más computo pueda delegar en los dispositivos
+de los usuarios, menos tendrán que pagar a los centros de datos. 28
+La fusión de modelos es una forma de hacer aprendizaje federado
+(McMahan et al., 2016), en el que varios dispositivos entrenan el mismo
+modelo utilizando datos separados. Por ejemplo, si implementa el modelo X
+en varios dispositivos, cada copia de X puede seguir aprendiendo por
+separado de los datos del dispositivo. Después de un tiempo, tendrá
+múltiples copias de X, todas entrenadas con datos diferentes. Puede
+fusionar estas copias en un nuevo modelo base que contenga el aprendizaje
+de todos los modelos constituyentes.
+La idea de combinar modelos para obtener mejores resultados surgió con
+los métodos de ensamble de modelos. Según Wikipedia, el ensamble
+combina "múltiples algoritmos de aprendizaje para obtener un rendimiento
+predictivo mejor que el que podría obtenerse con cualquiera de los
+algoritmos de aprendizaje constituyentes por sí solos". Mientras que la
+fusión de modelos suele consistir en mezclar los parámetros de los modelos
+constituyentes, el ensamble suele combinar únicamente los outputs de los
+modelos, manteniendo intactos los modelos constituyentes.
+Por ejemplo, en el ensamble, dada una consulta, puede utilizar tres modelos
+para generar tres respuestas diferentes. A continuación, se genera una
+respuesta final basada en estas tres respuestas, utilizando un simple voto
+mayoritario u otro módulo ML entrenable. 29 Aunque el ensamble puede
+mejorar el rendimiento en general, tiene un mayor costo de inferencia, ya
+que requiere múltiples llamadas de inferencia por solicitud.
+La Figura 7-13 compara el ensamble y la fusión de modelos. Al igual que
+los ensambles de modelos solían dominar los tableros de clasificación,
+muchos de los modelos que ocupan los primeros puestos de la Hugging
+Face's Open LLM Leaderboard son modelos fusionados.

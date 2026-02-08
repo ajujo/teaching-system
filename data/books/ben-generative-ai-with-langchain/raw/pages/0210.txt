@@ -1,0 +1,34 @@
+Chapter 5
+183
+•	
+It requires a precise mathematical calculation that LLMs might not be able to answer 
+correctly just by autoregressive token generation. 
+Rather than forcing an LLM to generate an answer solely based on its internal knowledge, we’ll 
+give an LLM access to two tools: a search engine and a calculator. We expect the model to deter­
+mine which tools it needs (if any) and how to use them. 
+For clarity, let’s start with a simpler question and mock our tools by creating dummy functions 
+that always give the same response. Later in this chapter, we’ll implement fully functional tools 
+and invoke them:
+question = "how old is the US president?"
+raw_prompt_template = (
+  "You have access to search engine that provides you an "
+  "information about fresh events and news given the query. "
+  "Given the question, decide whether you need an additional "
+  "information from the search engine (reply with 'SEARCH: "
+   "<generated query>' or you know enough to answer the user "
+   "then reply with 'RESPONSE <final response>').\n"
+   "Now, act to answer a user question:\n{QUESTION}"
+)
+prompt_template = PromptTemplate.from_template(raw_prompt_template)
+result = (prompt_template | llm).invoke(question)
+print(result,response)
+>> SEARCH: current age of US president
+Let’s make sure that when the LLM has enough internal knowledge, it replies directly to the user:
+question1 = "What is the capital of Germany?"
+result = (prompt_template | llm).invoke(question1)
+print(result,response)
+>> RESPONSE: Berlin
+Finally, let’s give the model output of a tool by incorporating it into a prompt:
+query = "age of current US president"
+search_result = (
+   "Donald Trump ' Age 78 years June 14, 1946\n"

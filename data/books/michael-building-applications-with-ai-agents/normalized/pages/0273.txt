@@ -1,0 +1,39 @@
+Impact assessment
+Evaluate the frequency and severity of the issue to prioritize response.
+Critically, RCA in agentic systems often reveals that failures are not purely
+technical-they may stem from ambiguous task definitions, gaps in training data, or
+evolving user expectations that the system was not designed to handle. In some cases,
+RCA uncovers organizational blind spots, such as success metrics that incentivize the
+wrong behaviors or workflows that no longer match user needs.
+Actionable RCA does more than assign blame; it surfaces opportunities for meaning‐
+ful system improvement-whether through prompt or tool refinement, skill orches‐
+tration changes, or even rethinking the way user needs are represented and
+communicated.
+A robust feedback pipeline, anchored by automated issue detection and RCA, shifts
+teams from endless triage to a disciplined, insight-driven process where every failure
+is mined for learning. It is the first step in turning telemetry into transformationlaying the groundwork for all subsequent cycles of experimentation and continuous
+learning in agentic systems.
+Human-in-the-Loop Review
+While automated systems excel at flagging anomalies and surfacing recurring pat‐
+terns in multiagent workflows, there remain many situations where automated analy‐
+sis alone is insufficient. Some issues-particularly those involving ambiguous user
+intent, ethical nuances, conflicting goals, or novel edge cases-require human intu‐
+ition, domain expertise, and contextual judgment. Human-in-the-loop (HITL) review
+serves as a critical complement to automated detection and RCA, ensuring that feed‐
+back pipelines remain effective, comprehensive, and aligned with broader organiza‐
+tional goals.
+For the SOC agent, HITL might escalate cases where automated RCA flags ambigu‐
+ous triages (e.g., a "suspicious login" that could be a false positive from a virtual pri‐
+vate network or a real breach). A security engineer reviews the trace, validates the
+prompt's interpretation, and decides on fixes like adding ethical guidelines to the
+prompt (e.g., "Avoid isolating hosts without confirming impact on critical
+operations").
+Figure 11-3 depicts an HITL review workflow, where input data is processed by an
+agent to produce generated output candidates. These candidates undergo review by a
+human evaluator, who provides manual feedback to refine or approve them, resulting
+in human-approved outputs delivered to end users. System feedback from the review
+process loops back to enhance the agent's performance, ensuring alignment with
+complex requirements that automation alone cannot handle. This structure
+Feedback Pipelines
+|
+251

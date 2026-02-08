@@ -1,0 +1,25 @@
+Preface
+xxv
+When we wish to draw your attention to a particular part of a code block, the relevant lines or
+items are set in bold:
+def format_samples(example):
+    example["prompt"] = alpaca_template.format(example["prompt"])
+    example["chosen"] = example['chosen'] + EOS_TOKEN
+    example["rejected"] = example['rejected'] + EOS_TOKEN
+    return {"prompt": example["prompt"], "chosen": example["chosen"],
+"rejected": example["rejected"]}
+Any command-line input or output is written as follows:
+poetry install --without aws
+Bold: Indicates a new term, an important word, or words that you see on the screen. For instance,
+words in menus or dialog boxes appear in the text like this. For example: "To do so, go to the Settings tab at the top of the forked repository in GitHub. In the left panel, in the Security section,
+click on the Secrets and Variables toggle and, finally, click on Actions."
+Get in touch
+Feedback from our readers is always welcome.
+General feedback: Email feedback@packtpub.com and mention the book's title in the subject of
+your message. If you have questions about any aspect of this book, please email us at questions@
+packtpub.com.
+Errata: Although we have taken every care to ensure the accuracy of our content, mistakes do
+happen. If you have found a mistake in this book, we would be grateful if you reported this to us.
+Please visit http://www.packtpub.com/submit-errata, click Submit Errata, and fill in the form.
+Warnings or important notes appear like this.
+Tips and tricks appear like this.

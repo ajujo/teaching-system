@@ -1,0 +1,40 @@
+systems-dynamically balancing exploration (trying new ideas) with exploitation
+(sticking to what works) to accelerate improvements in unpredictable environments.
+Picture a casino slot machine with multiple "arms" (levers), each offering unknown
+odds of payout. In Bayesian Bandits, each arm represents a system variant-like alter‐
+native prompts for an agent's query handling or different orchestration strategies in a
+multiagent swarm. As interactions unfold, the algorithm observes rewards (e.g., suc‐
+cessful task resolutions, lower latency, or higher user ratings) and uses Bayesian
+updates to refine its beliefs about each arm's performance. Over time, it funnels more
+traffic to promising arms while sparingly testing others, ensuring you don't miss hid‐
+den gems.
+For a concrete agentic example, suppose you're optimizing an SOC (Security Opera‐
+tions Center) multiagent system, testing three reasoning chains for resolving ambigu‐
+ous threat queries. The bandit starts evenly, but as data rolls in, say, one chain
+improves threat classification accuracy by 15%. It reallocates 70% of queries there,
+still probing the others for shifts in user behavior. This is especially potent in multi‐
+agent setups, where interactions can be computationally expensive or reveal emergent
+behaviors only under load. In fact, frameworks like Knowledge-Aware Bayesian Ban‐
+dits (KABB) extend this to coordinate expert agents dynamically, using semantic
+insights to select subsets for tasks like knowledge-intensive queries. Some of the key
+advantages of Bayesian Bandits include:
+Responsiveness
+The system learns and shifts traffic allocations in near real time, reducing oppor‐
+tunity costs and accelerating improvements.
+Efficiency
+Rather than "wasting" equal traffic on suboptimal variants, the majority of users
+experience the best-performing configuration as soon as it is identified.
+Scalability
+Well-designed Bayesian Bandit systems can scale to very large numbers of
+parameters, enabling a much more rapid exploration of the action space than
+configurating and reviewing a series of fixed experiments.
+However, adaptive experimentation also requires:
+Metric mastery
+Rewards must reflect true system goals (e.g., user satisfaction, task success) to
+avoid optimizing for misleading proxies.
+Thoughtful initialization
+Neutral priors and regularization help avoid biasing the system prematurely
+toward any variant.
+264
+|
+Chapter 11: Improvement Loops

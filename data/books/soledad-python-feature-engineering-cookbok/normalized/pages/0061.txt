@@ -1,0 +1,9 @@
+Imputing Missing Data
+38
+Figure 1.10 - Histogram of variable A3 after mice imputation (top) or mean imputation
+(bottom), showing the distortion in the variable distribution caused by the latter
+How it works...
+In this recipe, we performed multivariate imputation using IterativeImputer() from scikitlearn. When we fit the model, IterativeImputer() carried out the steps that we described in the
+introduction of the recipe. That is, it imputed all variables with the mean. Then it selected one variable
+and set its missing values back to missing. And finally, it fitted a Bayes regressor to estimate that variable
+based on the others. It repeated this procedure for each variable. That was one cycle of imputation.

@@ -1,0 +1,32 @@
+Extracting Features from Relational Data with Featuretools
+270
+In this chapter, we will cover the following recipes:
+•	 Setting up an entity set and creating features automatically
+•	 Creating features with general and cumulative operations
+•	 Combining numerical features
+•	 Extracting features from date and time
+•	 Extracting features from text
+•	 Creating features with aggregation primitives
+Technical requirements
+In this chapter, we will use pandas, matplotlib, and featuretools open source Python
+libraries. You can install featuretools with pip:
+pip install featuretools
+Additionally, you can do so with conda:
+conda install -c conda-forge featuretools
+These commands install the basic featuretools functionality, but we can install add-ons for
+creating features with natural language processing (NLP) or for using dask as the backend instead of
+pandas. For more information on how to install featuretools add-ons, including graphviz,
+check out their documentation here: https://docs.featuretools.com/en/v0.16.0/
+getting_started/install.html.
+We will work with the Online Retail II dataset from the UCI Machine Learning Repository, which
+is available at https://archive.ics.uci.edu/ml/datasets/Online+Retail+II
+and licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license:
+https://creativecommons.org/licenses/by/4.0/legalcode. The corresponding
+citation for this data is provided here: Chen, Daqing (2019). Online Retail II. UCI Machine Learning
+Repository (https://doi.org/10.24432/C5CG6D).
+I downloaded and modified the data as shown in this notebook: https://github.com/
+PacktPublishing/Python-Feature-engineering-Cookbook-Third-Edition/
+blob/main/ch09-featuretools/prepare-retail-dataset.ipynb
+You'll find a copy of the modified dataset in the accompanying GitHub repository: https://
+github.com/PacktPublishing/Python-Feature-engineering-Cookbook-
+Third-Edition/blob/main/ch09-featuretools/retail.csv

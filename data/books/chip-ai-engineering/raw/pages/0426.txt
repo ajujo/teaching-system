@@ -1,0 +1,33 @@
+inventario que devuelva el estado de los distintos productos, la recuperación
+desde Slack, un lector de correo electrónico, etc.
+Muchas de estas herramientas aumentan un modelo con los procesos e
+información privados de su organización. Sin embargo, las herramientas
+también pueden dar a los modelos acceso a información pública,
+especialmente de Internet.
+La navegación web fue una de las primeras y más esperadas capacidades
+incorporadas a chatbots como ChatGPT. La navegación web evita que un
+modelo se vuelva obsoleto. Un modelo se vuelve obsoleto cuando los datos
+con los que se ha entrenado quedan anticuados. Si los datos de
+entrenamiento del modelo fueron truncados hasta la semana pasada, no
+podrá responder a preguntas que requieran información de esta semana, a
+menos que esta información se proporcione en el contexto. Sin navegación
+web, un modelo no podrá informarle del tiempo, las noticias, los próximos
+eventos, las cotizaciones bursátiles, el estado de los vuelos, etc.
+Utilizo el término navegación web como término general para abarcar todas
+las herramientas que acceden a Internet, incluyendo los navegadores web y
+API específicas como las API de búsqueda, de noticias, de GitHub o de
+redes sociales como las de X, LinkedIn y Reddit.
+Aunque la navegación web permite a su agente consultar información
+actualizada para generar mejores respuestas y reducir las alucinaciones,
+también puede exponer a su agente a lo peor de internet. Seleccione sus API
+de Internet con cuidado.
+Extensión de capacidades
+La segunda categoría de herramientas a considerar son las que lidian con las
+limitaciones inherentes a los modelos de IA. Son formas sencillas de
+incrementar el rendimiento de su modelo. Por ejemplo, los modelos de IA
+tienen fama de ser malos en matemáticas. Si le pregunta a un modelo
+cuánto es 199 999 dividido entre 292, lo más probable es que se equivoque.
+Sin embargo, este cálculo es trivial si el modelo tiene acceso a una
+calculadora. En lugar de intentar entrenar al modelo para que sea bueno en
+aritmética, es mucho más eficiente desde el punto de vista de recursos darle
+acceso a una herramienta.

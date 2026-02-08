@@ -1,0 +1,38 @@
+Grouping rare or infrequent categories
+79
+We can see that the infrequent labels have now been re-grouped into the Rare category:
+v       0.573499
+h       0.209110
+ff      0.084886
+bb      0.080745
+Rare    0.051760
+Name: A7, dtype: float64
+Now, let’s group rare labels using feature-engine.
+7.	
+Let’s create a rare label encoder that groups categories present in less than 5% of the observations, 
+provided that the categorical variable has more than four distinct values:
+rare_encoder = RareLabelEncoder(tol=0.05,
+    n_categories=4)
+8.	
+Let’s fit the encoder so that it finds the categorical variables and then learns their most 
+frequent categories:
+rare_encoder.fit(X_train)
+Note
+Upon fitting, the transformer will raise warnings, indicating that many categorical variables 
+have less than four categories, thus their values will not be grouped. The transformer just lets 
+you know that this is happening.
+We can display the frequent categories per variable by executing rare_encoder.encoder_
+dict_, as well as the variables that will be encoded by executing rare_encoder.variables_.
+9.	
+Finally, let’s group rare labels in the train and test sets:
+X_train_enc = rare_encoder.transform(X_train)
+X_test_enc = rare_encoder.transform(X_test)
+Now that we have grouped rare labels, we are ready to encode the categorical variables, as we’ve done 
+in the previous recipes in this chapter.
+How it works...
+In this recipe, we grouped infrequent categories using pandas and feature-engine.
+We determined the fraction of observations per category of the A7 variable using pandas’ value_
+counts() by setting the normalize parameter to True. Using list comprehension, we captured the 
+names of the variables present in more than 5% of the observations. Finally, using NumPy’s where(), 
+we searched each row of A7, and if the observation was one of the frequent categories in the list, 
+which we checked using pandas’ isin(), its value was kept; otherwise, it was replaced with Rare.

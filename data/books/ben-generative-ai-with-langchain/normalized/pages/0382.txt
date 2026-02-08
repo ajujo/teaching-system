@@ -1,0 +1,35 @@
+Chapter 9
+355
+We'll implement our web server using RESTful principles to handle interactions with the LLM
+chain. Let's set up a web server using FastAPI. In this application:
+1.
+A FastAPI backend serves the HTML/JS frontend and manages communication with the
+Claude API.
+2.	 WebSocket provides a persistent, bidirectional connection for real-time streaming re­
+sponses (you can find out more about WebSocket here: https://developer.mozilla.
+org/en-US/docs/Web/API/WebSockets_API).
+3.
+The frontend displays messages and handles the UI.
+4.
+Claude provides AI chat capabilities with streaming responses.
+Below is a basic implementation using FastAPI and LangChain's Anthropic integration:
+from fastapi import FastAPI, Request
+from langchain_anthropic import ChatAnthropic
+from langchain_core.messages import HumanMessage
+import uvicorn
+# Initialize FastAPI app
+app = FastAPI()
+# Initialize the LLM
+llm = ChatAnthropic(model=" claude-3-7-sonnet-latest")
+@app.post("/chat")
+async def chat(request: Request):
+    data = await request.json()
+    user_message = data.get("message", "")
+    if not user_message:
+        return {"response": "No message provided"}
+    # Create a human message and get response from LLM
+    messages = [HumanMessage(content=user_message)]
+    response = llm.invoke(messages)
+    return {"response": response.content}
+This creates a simple endpoint at /chat that accepts JSON with a message field and returns the
+LLM's response.

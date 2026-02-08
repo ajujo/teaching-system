@@ -1,0 +1,11 @@
+figura 5-11. PAIR utiliza una IA atacante para generar prompts para eludir las
+restricciones de la IA objetivo. Imagen de Chao et al. (2023). Esta imagen está bajo
+licencia CC BY 4.0.
+En su experimento, PAIR a menudo requiere menos de veinte consultas
+para producir un jailbreak
+Inyección indirecta de prompts
+La inyección indirecta de prompts es una forma nueva y mucho más potente
+de realizar ataques. En vez de colocar instrucciones maliciosas en el prompt
+directamente, los atacantes colocan estas instrucciones en las herramientas
+con las que se integra el modelo. La Figura 5-12 muestra el aspecto de este
+ataque.

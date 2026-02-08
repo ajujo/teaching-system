@@ -1,0 +1,31 @@
+Chapter 4
+165
+    logging.info(docs)
+    return docs
+The load_document function defined above takes a file path, determines its extension, selects the
+appropriate loader from the supported_extensions dictionary, and returns a list of Document
+objects. If the file extension isn't supported, it raises a DocumentLoaderException to alert the
+user that the file type cannot be processed.
+Language model setup
+The llms.py module sets up the LLM and embeddings for the application. First, the imports and
+loading the API keys as environment variables - please see Chapter 2 for details if you skipped
+that part.
+from langchain.embeddings import CacheBackedEmbeddings
+from langchain.storage import LocalFileStore
+from langchain_groq import ChatGroq
+from langchain_openai import OpenAIEmbeddings
+from config import set_environment
+set_environment()
+Let's initialize the LangChain ChatGroq interface using the API key from environment variables:
+chat_model = ChatGroq(
+    model="deepseek-r1-distill-llama-70b",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+)
+This uses ChatGroq (configured with a specific model, temperature, and retries) for generating
+documentation drafts and revisions. The configured model is the DeepSeek 70B R1 model.
+We'll then use OpenAIEmbeddings to convert text into vector representations:
+store = LocalFileStore("./cache/")
+underlying_embeddings = OpenAIEmbeddings(

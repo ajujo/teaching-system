@@ -1,0 +1,34 @@
+Chapter 7
+303
+Query-specific preprocessing adapts your approach based on the nature of the question. Statis­
+tical queries can often be pre-aggregated before sending to the agent. For correlation questions, 
+calculating and providing the correlation matrix upfront helps the LLM focus on interpretation 
+rather than computation. For exploratory questions, providing dataset metadata and samples may 
+be sufficient. This targeted preprocessing makes efficient use of context windows by including 
+only relevant information for each specific query type.
+Asking questions about the dataset
+Now that we’ve set up our data analysis agent, let’s explore its capabilities by asking progressively 
+complex questions about our dataset. A well-designed agent should be able to handle different 
+types of analytical tasks, from basic exploration to statistical analysis and visualization. The 
+following examples demonstrate how our agent can work with the classic Iris dataset, which 
+contains measurements of flower characteristics.
+We’ll test our agent with three types of queries that represent common data analysis workflows: 
+understanding the data structure, performing statistical calculations, and creating visualizations. 
+These examples showcase the agent’s ability to reason through problems, execute appropriate 
+code, and provide useful answers.
+First, let’s ask a fundamental exploratory question to understand what data we’re working with:
+agent.run(prompt.format(query="What's this dataset about?"))
+The agent executes this request by examining the dataset structure:
+Output:
+> Entering new AgentExecutor chain...
+Thought: I need to understand the structure and contents of the dataset.
+Action: python_repl_ast
+Action Input: print(df.head())
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width 
+(cm)
+0                5.1               3.5                1.4               
+0.2
+1                4.9               3.0                1.4               
+0.2
+2                4.7               3.2                1.3               
+0.2

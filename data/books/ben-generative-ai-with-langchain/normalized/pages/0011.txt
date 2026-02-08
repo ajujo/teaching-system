@@ -1,0 +1,34 @@
+Table of Contents
+x
+Vector stores comparison • 117
+Hardware considerations for vector stores • 119
+Vector store interface in LangChain • 119
+Vector indexing strategies • 121
+Breaking down the RAG pipeline ..................................................................................... 127
+Document processing • 130
+Chunking strategies • 132
+Retrieval • 137
+Advanced RAG techniques • 140
+Hybrid retrieval: Combining semantic and keyword search • 140
+Re-ranking • 141
+Query transformation: Improving retrieval through better queries • 143
+Context processing: maximizing retrieved information value • 145
+Response enhancement: Improving generator output • 146
+Corrective RAG • 155
+Agentic RAG • 157
+Choosing the right techniques • 158
+Developing a corporate documentation chatbot .............................................................. 161
+Document loading • 162
+Language model setup • 165
+Document retrieval • 166
+Designing the state graph • 168
+Integrating with Streamlit for a user interface • 174
+Evaluation and performance considerations • 177
+Troubleshooting RAG systems ........................................................................................ 178
+Summary ......................................................................................................................... 179
+Questions ........................................................................................................................ 180
+Chapter 5: Building Intelligent Agents 
+ 181
+What is a tool? ................................................................................................................. 182
+Tools in LangChain • 185
+ReACT • 188

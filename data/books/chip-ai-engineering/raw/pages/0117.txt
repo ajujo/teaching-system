@@ -1,0 +1,3 @@
+figura 2-7. Visualización de las capas de transformador, Mamba y Jamba. Imagen
+adaptada de "Jamba: A Hybrid Transformer–Mamba Language Model" (Lieber et al.,
+2024).

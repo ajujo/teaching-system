@@ -1,0 +1,31 @@
+Creating binary variables through one-hot encoding
+47
+Here, we can see the output of Step 5, where each label is now a binary variable:
+      Missing        l        u        y
+596     False  False   True  False
+303     False  False   True  False
+204     False  False  False   True
+351     False  False  False   True
+118     False  False   True  False
+6.	
+Now, let’s encode all the categorical variables into k-1 binaries:
+X_train_enc = pd.get_dummies(X_train, drop_first=True)
+X_test_enc = pd.get_dummies(X_test, drop_first=True)
+Note
+pandas’ get_dummies()will encode all variables of the object, string, or category 
+type by default. To encode a subset of the variables, pass the variable names in a list to the 
+columns parameter.
+7.	
+Let’s inspect the first five rows of the resulting DataFrame:
+X_train_enc.head()
+Note
+When encoding more than one variable, get_dummies() captures the variable name – say, A1 
+– and places an underscore followed by the category name to identify the resulting binary variables.
+We can see the binary variables in the following output:
+Figure 2.2 – A transformed DataFrame showing the numerical variables followed 
+by the one-hot encoded representation of the categorical variables
+Note
+pandas’ get_dummies()will create one binary variable per category seen in a DataFrame. 
+Hence, if there are more categories in the train set than in the test set, get_dummies() will return 
+more columns in the transformed train set than in the transformed test set, and vice versa. To avoid 
+this, it is better to carry out one-hot encoding with scikit-learn or feature-engine.

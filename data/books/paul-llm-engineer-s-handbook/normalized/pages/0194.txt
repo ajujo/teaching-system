@@ -1,0 +1,14 @@
+Chapter 4
+163
+Figure 4.17: Handler class hierarchy and their interaction
+Let's examine each handler family and see how it is implemented.
+The cleaning handlers
+The CleaningDataHandler() strategy interface looks as follows:
+... # Other imports.
+from typing import Generic, TypeVar
+DocumentT = TypeVar("DocumentT", bound=Document)
+CleanedDocumentT = TypeVar("CleanedDocumentT", bound=CleanedDocument)
+class CleaningDataHandler(ABC, Generic[DocumentT, CleanedDocumentT]):
+The code for all the handlers is available on GitHub at https://github.com/
+PacktPublishing/LLM-Engineering/tree/main/llm_engineering/
+application/preprocessing.

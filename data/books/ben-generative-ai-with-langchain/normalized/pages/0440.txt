@@ -1,0 +1,35 @@
+Chapter 10
+413
+Emerging alternatives to pure scaling
+As the limitations of scaling become more apparent, several alternative approaches are gaining
+traction. Many of these perspectives on moving beyond pure scaling draw inspiration from Leopold
+Aschenbrenner's influential June 2024 paper Situational Awareness: The Decade Ahead (https://
+situational-awareness.ai/), which provided a comprehensive analysis of AI scaling trends and
+their limitations while exploring alternative paradigms for advancement. These approaches can
+be organized into three main paradigms. Let's look at each of them.
+Scaling up (traditional approach)
+The traditional approach to AI advancement has centered on scaling up-pursuing greater capa­
+bilities through larger models, more compute, and bigger datasets. This paradigm can be broken
+down into several key components:
+•
+Increasing model size and complexity: The predominant approach since 2017 has been
+to create increasingly large neural networks with more parameters. GPT-3 expanded to 175
+billion parameters, while more recent models like GPT-4 and Gemini Ultra are estimated
+to have several trillion effective parameters. Each increase in size has generally yielded
+improvements in capabilities across a broad range of tasks.
+•
+Expanding computational resources: Training these massive models requires enormous
+computational infrastructure. The largest AI training runs now consume resources com­
+parable to small data centers, with electricity usage, cooling requirements, and specialized
+hardware needs that put them beyond the reach of all but the largest organizations. A
+single training run for a frontier model can cost upwards of $100 million.
+•
+Gathering vast datasets: As models grow, so too does their hunger for training data.
+Leading models are trained on trillions of tokens, essentially consuming much of the
+high-quality text available on the internet, books, and specialized datasets. This approach
+requires sophisticated data processing pipelines and significant storage infrastructure.
+•
+Limitations becoming apparent: While this approach has dominated AI development
+to date and produced remarkable results, it faces increasing challenges in terms of di­
+minishing returns on investment, economic sustainability, and technical barriers that
+scaling alone cannot overcome.

@@ -1,0 +1,33 @@
+Capítulo 4. En general, los jueces de IA son mucho más baratos que los
+evaluadores humanos.
+La implementación de jueces de IA en su proceso de producción puede
+añadir latencia. Si evalúa las respuestas antes de devolverlas a los usuarios,
+se enfrenta a una disyuntiva: menor riesgo pero mayor latencia. La latencia
+añadida puede hacer que esta opción no sea recomendable para aplicaciones
+con requisitos de latencia estrictos.
+Sesgos de la IA como juez
+Los evaluadores humanos tienen sesgos, y también los jueces de IA. Cada
+juez de IA diferente tienen diferentes sesgos. En esta sección se analizarán
+algunos de los más comunes. Ser consciente de los sesgos de sus jueces de
+IA le ayuda a interpretar correctamente sus puntuaciones e incluso a mitigar
+estos sesgos.
+Los jueces de IA tienden a tener un sesgo propio, en el que un modelo
+favorece sus propias respuestas frente a las respuestas generadas por otros
+modelos. El mismo mecanismo que ayuda a un modelo a calcular la
+respuesta más probable que generar también dará a esta respuesta una
+puntuación alta. En el experimento de 2023 de Zheng et al., GPT-4 se
+favorece a sí mismo con una tasa de victorias un 10 % mayor, mientras que
+Claude-v1 se favorece a sí mismo con una tasa de victorias un 25 % mayor.
+Muchos modelos de IA tienen un sesgo de primera posición. Un juez de IA
+puede favorecer la primera respuesta en una comparación por duplas o la
+primera en una lista de opciones. Esto se puede mitigar repitiendo la misma
+prueba varias veces con distintos ordenamientos o con prompts
+cuidadosamente elaboradas. El sesgo de posición de la IA es el opuesto al
+de los humanos. Los seres humanos tienden a favorecer la última respuesta
+que ven, lo que se denomina sesgo de recencia.
+Algunos jueces de IA tienen un sesgo de verbosidad, favoreciendo las
+respuestas más largas, independientemente de su calidad. Wu y Aji (2023)
+descubrieron que tanto GPT-4 como Claude-1 prefieren respuestas más
+largas (~100 palabras) con errores factuales sobre respuestas correctas más
+cortas (~50 palabras). Saito et al. estudiaron este sesgo para tareas creativas
+y descubrieron que cuando la diferencia de longitud es lo suficientemente

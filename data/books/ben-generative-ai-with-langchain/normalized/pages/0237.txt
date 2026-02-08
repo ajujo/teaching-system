@@ -1,0 +1,33 @@
+Building Intelligent Agents
+210
+Another important thing to keep in mind is that schemas might become pretty complex-i.e., they
+might have nullable fields or nested fields, include enums, or reference other schemas. Depend­
+ing on the model's provider, some definitions might not be supported (and you will see warning
+or compiling errors). Although LangChain aims to make switching across vendors seamless, for
+some complex workflows, this might not be the case, so pay attention to warnings in the error
+logs. Sometimes, compilations of a provided schema to a schema supported by the model's pro­
+vider are done on the best effort basis-for example, a field with a type of Union[str, int] is
+compiled to a str type if an underlying LLM doesn't support Union types with tool calling. You'll
+get a warning, but ignoring such a warning during a migration might change the behavior of your
+application unpredictably.
+As a final note, it is worth mentioning that some providers (for example, OpenAI or Google) offer
+custom tools, such as a code interpreter or Google search, that can be invoked by the model itself,
+and the model will use the tool's output to prepare a final generation. You can think of this as a
+ReACT agent on the provider's side, where the model receives an enhanced response based on
+a tool it calls. This approach reduces latency and costs. In these cases, you typically supply the
+LangChain wrapper with a custom tool created using the provider's SDK rather than one built
+with LangChain (i.e., a tool that doesn't inherit from the BaseTool class), which means your code
+won't be transferable across models.
+Incorporating tools into workflows
+Now that we know how to create and use tools, let's discuss how we can incorporate the tool-call­
+ing paradigm deeper into the workflows we're developing.
+Controlled generation
+In Chapter 3, we started to discuss a controlled generation, when you want an LLM to follow a
+specific schema. We can improve our parsing workflows not only by creating more sophisticated
+and reliable parsers but also by being more strict in forcing an LLM to adhere to a certain schema.
+Calling a tool requires controlled generation since the generated payload should follow a specific
+schema, but we can take a step back and substitute our expected schema with a forced tool calling
+that follows the expected schema. LangChain has a built-in mechanism to help with that-an
+LLM has the with_structured_output method that takes a schema as a Pydantic model, converts
+it to a tool, invokes the LLM with a given prompt by forcing it to call this tool, and parses the
+output by compiling to a corresponding Pydantic model instance.

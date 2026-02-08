@@ -1,0 +1,32 @@
+muchos algoritmos y bibliotecas para ella. Algunas bibliotecas populares de
+búsqueda vectorial son FAISS (Facebook AI Similarity Search) (Johnson et
+al., 2017), ScaNN de Google (Scalable Nearest Neighbors) (Sun et al.,
+2020), Annoy de Spotify (Bernhardsson, 2013) y Hnswlib (Hierarchical
+Navigable Small World) (Malkov and Yashunin, 2016).
+La mayoría de los desarrolladores de aplicaciones no implementarán la
+búsqueda vectorial por sí mismos, por lo que solo daré una rápida visión
+general de los diferentes enfoques. Este resumen puede serles útil a la hora
+de evaluar soluciones.
+En general, las bases de datos vectoriales organizan los vectores en cubos,
+árboles o grafos. Los algoritmos de búsqueda vectorial difieren en función
+de la heurística que utilizan para aumentar la probabilidad de que vectores
+similares estén próximos entre sí. Los vectores también pueden ser
+cuantizados (precisión reducida) o hacerse dispersos. La idea es que los
+vectores cuantizados y dispersos son menos intensivos desde el punto de
+vista computacional. Si desea aprender más sobre la búsqueda vectorial,
+Zilliz tiene una serie excelente sobre este tema. Estos son algunos
+algoritmos de búsqueda vectorial significativos:
+LSH (locality-sensitive hashing) (Indyk and Motwani, 1999)
+Se trata de un algoritmo potente y versátil que no solo
+funciona con vectores. Agrupa vectores similares en los
+mismos cubos para acelerar la búsqueda de similitudes,
+sacrificando algo de precisión a cambio de eficacia. Está
+implementado en FAISS y Annoy.
+HNSW (Hierarchical Navigable Small World) (Malkov y Yashunin, 2016)
+El HNSW construye un grafo multicapa en el que los nodos
+representan vectores y los perímetros conectan vectores
+similares, lo que permite realizar búsquedas pde vecino más
+cercano recorriendo los perímetros del grafo. Su
+implementación por los autores es de código abierto, y
+también está implementada en FAISS y Milvus.
+Cuantización de productos (Jégou et al., 2011)

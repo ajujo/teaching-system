@@ -1,0 +1,33 @@
+Extracting Features from Date and Time Variables
+184
+greater than 4, which corresponds to Saturday and Sunday, the function returned True and otherwise 
+False. Finally, we cast this Boolean vector as an integer to have a binary variable with 1s and 0s. With 
+that, we created multiple features from dates that we can use for data analysis and predictive modelling.
+There’s more…
+Using pandas’ dt module, we can extract many more features from dates out of the box. For example, 
+we can extract the beginning and end of a month, quarter, or year, whether it is a leap year, and the 
+number of days in a month. These are the functions that allow you to do so:
+•	 pandas.Series.dt.is_month_start
+•	 pandas.Series.dt.is_month_end
+•	 pandas.Series.dt.is_quarter_start
+•	 pandas.Series.dt.is_quarter_end
+•	 pandas.Series.dt.is_year_start
+•	 pandas.Series.dt.is_year_end
+•	 pandas.Series.dt.is_leap_year
+•	 pandas.Series.dt.days_in_month
+We can also return the number of days in a specific month with pd.dt.days_in_month and the 
+day in a year (from 1 to 365) with pd.dt.dayofyear.
+For more details, visit the pandas’ datetime documentation: https://pandas.pydata.org/
+pandas-docs/stable/user_guide/timeseries.html#time-date-components.
+See also
+To learn how to create different datetime ranges with pandas’ date_ranges(), visit https://
+pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#off­
+set-aliases.
+To learn more about pandas’ dt, visit https://pandas.pydata.org/pandas-docs/
+stable/reference/series.html#datetime-properties.
+Extracting features from time with pandas
+Some events occur more often at certain times of the day – for example, fraudulent activity is more 
+likely to occur during the night or early morning. Air pollutant concentration also changes with the 
+time of the day, with peaks at rush hour when there are more vehicles on the streets. Therefore, deriving 
+time features is extremely useful for data analysis and predictive modelling. In this recipe, we will 
+extract different time parts of a datetime variable by utilizing pandas and NumPy.

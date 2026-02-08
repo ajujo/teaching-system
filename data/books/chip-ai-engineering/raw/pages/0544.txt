@@ -1,0 +1,33 @@
+1  Algunos llaman a este fenómeno impuesto de alineación (Bai et al., 2020), pero
+este término puede confundirse con las penalizaciones contra la alineación de
+preferencias humanas.
+2  Muchas empresas se resisten a cambiar tecnologías que consideran
+"suficientemente buenas". Si todas las empresas se apresuraran a adoptar
+soluciones más óptimas, los faxes ya habrían quedado obsoletos.
+3  También he observado algunos casos en los que los ingenieros saben que el
+afinado no es estrictamente necesario, pero insisten en ello porque quieren
+aprender a hacerlo. Como ingeniera a la que le gusta aprender nuevas
+habilidades, aprecio esta mentalidad. Sin embargo, si ocupa un cargo directivo,
+puede ser difícil diferenciar si el afinado es necesario o solo un deseo.
+4  0314 indica la fecha de salida de esta versión GPT-4, el 14 de marzo de 2024.
+La fecha concreta es importante porque el rendimiento de las distintas versiones
+varía significativamente.
+5  Algunas personas, como los autores del documento de Llama 3.1 (Dubey et al.,
+2024), se adhieren al "principio de que el post-entrenamiento debe alinear el
+modelo para 'saber lo que sabe' en lugar de añadir conocimiento".
+6  Además de la retropropagación, la estrategia evolutiva es un enfoque
+prometedor para entrenar redes neuronales. Un ejemplo, descrito por
+Maheswaranathan et al., combina la búsqueda aleatoria con gradientes
+sustitutos, en lugar de utilizar gradientes reales, para actualizar las
+ponderaciones del modelo. Otro enfoque interesante es la alineación por
+retroalimentación directa (Arild Nøkland, 2016).
+7  Si un parámetro no es entrenable, no necesita actualizarse y, por tanto, no es
+necesario calcular su gradiente.
+8  Algunos dirán que no está trabajanto realmente con IA hasta que no vea un
+error "RuntimeError: CUDA out of memory".
+9  Para obtener más información sobre el cálculo de la memoria de inferencia,
+consulte "Transformer Inference Arithmetic" de Carol Chen, el blog de kipply
+(marzo de 2022).
+10  Para obtener más información sobre el cálculo de la memoria de entrenamiento,
+consulten "Transformer Math 101" de EleutherAI (Anthony et al., abril de
+2023).

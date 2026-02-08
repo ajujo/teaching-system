@@ -1,0 +1,202 @@
+{
+  "$schema": "units_v1",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "created_at": "2026-01-30T06:32:46.056822+00:00",
+  "units": [
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+      "chapter_number": 1,
+      "title": "Ch1 — Understanding the LLM Twin Concept and Architecture",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:1:sec:1",
+        "paul-llm-engineer-s-handbook:ch:1:sec:2",
+        "paul-llm-engineer-s-handbook:ch:1:sec:3",
+        "paul-llm-engineer-s-handbook:ch:1:sec:4",
+        "paul-llm-engineer-s-handbook:ch:1:sec:5",
+        "paul-llm-engineer-s-handbook:ch:1:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch02-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:2",
+      "chapter_number": 2,
+      "title": "Ch2 — Tooling and Installation",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:2:sec:1",
+        "paul-llm-engineer-s-handbook:ch:2:sec:2",
+        "paul-llm-engineer-s-handbook:ch:2:sec:3",
+        "paul-llm-engineer-s-handbook:ch:2:sec:4",
+        "paul-llm-engineer-s-handbook:ch:2:sec:5",
+        "paul-llm-engineer-s-handbook:ch:2:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch03-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:3",
+      "chapter_number": 3,
+      "title": "Ch3 — Data Engineering",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:3:sec:1",
+        "paul-llm-engineer-s-handbook:ch:3:sec:2",
+        "paul-llm-engineer-s-handbook:ch:3:sec:3",
+        "paul-llm-engineer-s-handbook:ch:3:sec:4"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch04-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:4",
+      "chapter_number": 4,
+      "title": "Ch4 — RAG Feature Pipeline",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:4:sec:1",
+        "paul-llm-engineer-s-handbook:ch:4:sec:2",
+        "paul-llm-engineer-s-handbook:ch:4:sec:3",
+        "paul-llm-engineer-s-handbook:ch:4:sec:4",
+        "paul-llm-engineer-s-handbook:ch:4:sec:5",
+        "paul-llm-engineer-s-handbook:ch:4:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch05-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:5",
+      "chapter_number": 5,
+      "title": "Ch5 — Supervised Fine-Tuning",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:5:sec:1",
+        "paul-llm-engineer-s-handbook:ch:5:sec:2",
+        "paul-llm-engineer-s-handbook:ch:5:sec:3",
+        "paul-llm-engineer-s-handbook:ch:5:sec:4",
+        "paul-llm-engineer-s-handbook:ch:5:sec:5",
+        "paul-llm-engineer-s-handbook:ch:5:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch06-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:6",
+      "chapter_number": 6,
+      "title": "Ch6 — Fine-Tuning with Preference Alignment",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:6:sec:1",
+        "paul-llm-engineer-s-handbook:ch:6:sec:2",
+        "paul-llm-engineer-s-handbook:ch:6:sec:3",
+        "paul-llm-engineer-s-handbook:ch:6:sec:4",
+        "paul-llm-engineer-s-handbook:ch:6:sec:5",
+        "paul-llm-engineer-s-handbook:ch:6:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch07-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:7",
+      "chapter_number": 7,
+      "title": "Ch7 — Evaluating LLMs",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:7:sec:1",
+        "paul-llm-engineer-s-handbook:ch:7:sec:2",
+        "paul-llm-engineer-s-handbook:ch:7:sec:3",
+        "paul-llm-engineer-s-handbook:ch:7:sec:4",
+        "paul-llm-engineer-s-handbook:ch:7:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch08-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:8",
+      "chapter_number": 8,
+      "title": "Ch8 — Inference Optimization",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:8:sec:1",
+        "paul-llm-engineer-s-handbook:ch:8:sec:2",
+        "paul-llm-engineer-s-handbook:ch:8:sec:3",
+        "paul-llm-engineer-s-handbook:ch:8:sec:4",
+        "paul-llm-engineer-s-handbook:ch:8:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch09-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:9",
+      "chapter_number": 9,
+      "title": "Ch9 — RAG Inference Pipeline",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:9:sec:1",
+        "paul-llm-engineer-s-handbook:ch:9:sec:2",
+        "paul-llm-engineer-s-handbook:ch:9:sec:3",
+        "paul-llm-engineer-s-handbook:ch:9:sec:4",
+        "paul-llm-engineer-s-handbook:ch:9:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch10-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:10",
+      "chapter_number": 10,
+      "title": "Ch10 — Inference Pipeline Deployment (Parte 1/2)",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:10:sec:1",
+        "paul-llm-engineer-s-handbook:ch:10:sec:2",
+        "paul-llm-engineer-s-handbook:ch:10:sec:3",
+        "paul-llm-engineer-s-handbook:ch:10:sec:4"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch10-u02",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:10",
+      "chapter_number": 10,
+      "title": "Ch10 — Inference Pipeline Deployment (Parte 2/2)",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:10:sec:5",
+        "paul-llm-engineer-s-handbook:ch:10:sec:6",
+        "paul-llm-engineer-s-handbook:ch:10:sec:7",
+        "paul-llm-engineer-s-handbook:ch:10:sec:8"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "paul-llm-engineer-s-handbook-ch11-u01",
+      "chapter_id": "paul-llm-engineer-s-handbook:ch:11",
+      "chapter_number": 11,
+      "title": "Ch11 — MLOps and LLMOps",
+      "section_ids": [
+        "paul-llm-engineer-s-handbook:ch:11:sec:1",
+        "paul-llm-engineer-s-handbook:ch:11:sec:2",
+        "paul-llm-engineer-s-handbook:ch:11:sec:3",
+        "paul-llm-engineer-s-handbook:ch:11:sec:4",
+        "paul-llm-engineer-s-handbook:ch:11:sec:5",
+        "paul-llm-engineer-s-handbook:ch:11:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    }
+  ]
+}

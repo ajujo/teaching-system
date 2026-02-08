@@ -1,0 +1,9 @@
+Counting characters, words, and vocabulary
+345
+Figure 11.2 - Histograms showing the distribution of the number of
+words per text, segregated by topic discussed in each text
+The number of words shows a different distribution across the different news topics. Therefore, this
+feature is likely useful in a classification algorithm to predict the topic of the text.
+See also
+To learn more about pandas' built-in string processing functionality visit https://pandas.
+pydata.org/pandas-docs/stable/user_guide/text.html#method-summary.

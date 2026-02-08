@@ -1,0 +1,18 @@
+figura 1-13. Algunas empresas tienen descripciones de trabajo separadas para la
+ingeniería de IA, como se muestra en los titulares de trabajo en LinkedIn del 17 de
+diciembre de 2023.
+Las tres capas de la pila de IA
+Cualquier pila de aplicaciones de IA consta de tres capas: desarrollo de
+aplicaciones, desarrollo de modelos e infraestructura. Al desarrollar una
+aplicación de IA, es probable que empiece por la capa superior y vaya
+descendiendo según sea necesario:
+Desarrollo de aplicaciones
+Con modelos fácilmente disponibles, cualquiera puede
+utilizarlos para desarrollar aplicaciones. Esta es la capa que
+ha visto más acción en los últimos dos años, y sigue
+evolucionando rápidamente. El desarrollo de aplicaciones
+implica proporcionar a un modelo buenos prompts y el
+contexto necesario. Esta capa requiere una evaluación
+rigurosa. Las buenas aplicaciones también exigen buenas
+interfaces.
+Desarrollo de modelos

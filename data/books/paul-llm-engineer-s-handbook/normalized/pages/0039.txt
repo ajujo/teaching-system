@@ -1,0 +1,37 @@
+Understanding the LLM Twin Concept and Architecture
+8
+Until now, we have examined the LLM Twin from the users' and businesses' perspectives. The last
+step is to examine it from an engineering perspective and define a development plan to understand how to solve it technically. From now on, the book's focus will be on the implementation
+of the LLM Twin.
+Building ML systems with feature/training/inference
+pipelines
+Before diving into the specifics of the LLM Twin architecture, we must understand an ML system
+pattern at the core of the architecture, known as the feature/training/inference (FTI) architecture.
+This section will present a general overview of the FTI pipeline design and how it can structure
+an ML application.
+Let's see how we can apply the FTI pipelines to the LLM Twin architecture.
+The problem with building ML systems
+Building production-ready ML systems is much more than just training a model. From an engineering point of view, training the model is the most straightforward step in most use cases.
+However, training a model becomes complex when deciding on the correct architecture and
+hyperparameters. That's not an engineering problem but a research problem.
+At this point, we want to focus on how to design a production-ready architecture. Training a
+model with high accuracy is extremely valuable, but just by training it on a static dataset, you
+are far from deploying it robustly. We have to consider how to do the following:
+•
+Ingest, clean, and validate fresh data
+•
+Training versus inference setups
+•
+Compute and serve features in the right environment
+•
+Serve the model in a cost-effective way
+•
+Version, track, and share the datasets and models
+•
+Monitor your infrastructure and models
+•
+Deploy the model on a scalable infrastructure
+•
+Automate the deployments and training
+These are the types of problems an ML or MLOps engineer must consider, while the research or
+data science team is often responsible for training the model.

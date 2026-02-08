@@ -1,0 +1,37 @@
+Creating features with aggregation primitives
+305
+To create features with featuretools automatically, we first need to enter the data into an entity 
+set and establish the relationships between the data. We discussed how to set up an entity set in the 
+Setting up an entity set and creating features automatically recipe.
+To aggregate existing features, we used the dfs class. We created a list with a string corresponding to 
+the aggregation primitives and passed it to the agg_primitives parameter from dfs. To aggregate 
+existing variables without creating new features, we passed an empty list to the trans_primitives 
+parameter of dfs.
+The customers DataFrame is the child of the invoice DataFrame, which is, in turn, the child 
+of the original data. Thus, dfs created aggregations from the original data and the pre-aggregated 
+data for each invoice. Thus, the MEAN(data.price) feature consists of the mean price for an item 
+bought by a customer calculated from the entire data, whereas MEAN(invoices.MEAN(data.
+price)) calculates the mean price per invoice first and then takes the mean of those values for a 
+customer. Thus, if a customer has five invoices, featuretools first calculates the mean price paid 
+for each of those invoices and then takes the mean of those values. As such, MEAN(data.price) 
+and MEAN(invoices.MEAN(data.price)) are not the same feature.
+Note
+An aggregate primitive aggregates information for a unique identifier. Aggregate primitives 
+use mathematical operations such as the mean, standard deviation, maximum and minimum 
+values, the sum, and the skew coefficient for numerical variables. For categorical variables, 
+aggregate primitives use the mode and the count of unique items. For unique identifiers, 
+aggregate primitives count the number of occurrences.
+Next, we combined the creation of new features from date and text variables with aggregation. 
+To do this, we passed a list of strings corresponding to the transform primitives to the trans_
+primitives parameter, and another list of strings corresponding to the aggregation primitives to 
+the agg_primitives parameter of dfs.
+One of the outputs of step 13 is a list of the new features. From these, we can identify features created 
+from the first invoice date for each customer, such as MONTH(first_invoices_time) and 
+WEEKDAY(first_invoices_time). We can also see features that were aggregated from features 
+created from text, such as MEAN(data.NUM_WORDS(description)) and MEAN(invoices.
+MEAN(data.NUM_WORDS(description))). Finally, we can see the aggregations of existing 
+numerical variables, such as MEAN(data.price) and MEAN(invoices.MEAN(data.price)).
+Note
+If you want to apply transform and aggregation primitives to specific variables, you can do so 
+by specifying the primitive options as discussed here: https://docs.featuretools.
+com/en/stable/guides/specifying_primitive_options.html.

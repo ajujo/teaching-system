@@ -1,0 +1,18 @@
+Data Engineering
+62
+Figure 3.3 shows a run of the digital_data_etl pipeline on the ZenML dashboard. The next 
+phase is to explore the get_or_create_user and crawl_links ZenML steps individually. The 
+step implementation is available in our repository at steps/etl.
+Figure 3.3: Example of a digital_data_etl pipeline run from ZenML’s dashboard
+We will start with the get_or_create_user ZenML step. We begin by importing the necessary 
+modules and functions used throughout the script.
+from loguru import logger
+from typing_extensions import Annotated
+from zenml import get_step_context, step
+from llm_engineering.application import utils
+from llm_engineering.domain.documents import UserDocument
+Next, we define the function’s signature, which takes a user’s full name as input and retrieves an 
+existing user or creates a new one in the MongoDB database if it doesn’t exist:
+@step
+def get_or_create_user(user_full_name: str) -> Annotated[UserDocument, 
+"user"]:

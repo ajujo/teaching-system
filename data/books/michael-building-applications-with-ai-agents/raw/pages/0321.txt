@@ -1,0 +1,41 @@
+clause extracted by the system. As COiN’s clause-extraction accuracy surpassed enter‐
+prise thresholds, experienced lawyers transitioned into reviewer roles, focusing only
+on nonstandard or edge-case documents. Senior counsels now serve as governors,
+defining extraction policies, auditing system behavior, and steering COiN’s expansion
+into new contract types. This structured delegation—from manual execution to pol‐
+icy governance—offers a clear example of how human roles evolve alongside
+autonomy.
+Similarly, GitLab’s Security Bot began life in a classic executor mode—scanning
+merge requests with static analysis tools like static application security testing (SAST)
+and dynamic application security testing (DAST) and flagging potential vulnerabili‐
+ties for engineers to manually address. Cases exceeding risk thresholds automatically
+escalate to designated security champions, who review and triage the bot’s findings.
+Their feedback is used to refine rules and lower false positives, gradually shifting the
+bot toward higher autonomy while maintaining human-in-the-loop oversight. Senior
+security leaders periodically audit both rules and escalation logs, performing the gov‐
+ernor role to ensure escalation thresholds align with risk policy and compliance
+needs. This system illustrates how executor → reviewer → governor roles can coexist
+and flex as trust matures.
+Each of these stages calls for different interface patterns and decision-making tools.
+Executors need clear instructions and tight feedback loops; reviewers require dash‐
+boards for exception management and audit visibility. Collaborators need interfaces
+for joint task planning and contextual annotation. Governors, by contrast, need
+system-wide observability, policy configuration, escalation logs, and tooling to vali‐
+date alignment with compliance frameworks and human values.
+Designing for human-agent collaboration means planning not only for the interac‐
+tions of today, but also for the roles users—and their organizations—will grow into
+tomorrow.
+Aligning Stakeholders and Driving Adoption
+Even the most capable agentic systems can fail if they are not embraced by the people
+and teams they are designed to support. Too often, agents are introduced as technical
+upgrades but perceived as novelties or distractions—leading to poor adoption, pas‐
+sive resistance, or active workarounds. To avoid this, implementation must be as
+much a human change management effort as it is a software deployment.
+Successful adoption begins with clear stakeholder alignment. Different teams may
+have very different expectations: engineers may focus on efficiency, legal teams on
+compliance, and end users on ease of use. If these expectations are not surfaced and
+harmonized early, agents risk being built for an imaginary “average” user who doesn’t
+exist. Misalignment breeds disillusionment.
+Roles and Autonomy 
+| 
+299

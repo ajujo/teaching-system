@@ -1,0 +1,18 @@
+MLOps Principles
+460
+•	
+CI/CD: In the final stage, you implement your CI/CD pipelines to enable fast and reliable 
+deployment of your ML code into production. The key advancement at this stage is the 
+automatic building, testing, and deployment of data, ML models, and training pipeline 
+components. CI/CD is used to quickly push new code into various environments, such as 
+staging or production, ensuring efficient and reliable deployment.
+As we build our LLM system using the FTI (feature, training, inference) architecture, we can 
+quickly move from a manual process to CI/CD/CT. In Figure A.1, we can observe that the CT process 
+can be triggered by various events, such as a drop in performance detected by the monitoring 
+pipeline or a batch of fresh data arriving. Also, Figure A.1 is split into two main sections; the first 
+one highlights the automated processes, while at the bottom, we can observe the manual pro-
+cesses performed by the data science team while experimenting with various data processing 
+methods and models. Once they improve the model by tinkering with how the data is processed 
+or the model architecture, they push the code to the code repository, which triggers the CI/CD 
+pipeline to build, test, package, and deploy the new changes to the FTI pipelines.
+Figure A.1: CI/CD/CT on top of the FTI architecture

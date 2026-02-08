@@ -1,0 +1,13 @@
+2. Se comprueba la coherencia y consistencia de estos K tokens con el
+contexto.
+3. Si uno o más tokens no aprueban la verificación, en lugar de
+agregar todos los K tokens futuros, el modelo regenera o ajusta
+solo estos tokens fallidos.
+El modelo va refinando los tokens generados hasta que todos pasan la
+verificación y se integran en el resultado final. Esta familia de algoritmos de
+decodificación paralela también se denomina decodificación de Jacobi.
+Por otro lado, Medusa utiliza un mecanismo de atención basado en árboles
+para verificar e integrar los tokens. Cada cabezal de Medusa produce varias
+opciones para cada posición. A continuación, estas opciones se organizan en
+una estructura de árbol para seleccionar la combinación más prometedora.
+El proceso se visualiza en la Figura 9-11.

@@ -1,0 +1,24 @@
+– calidad de los datos, Calidad de datos
+– cantidad de datos, Cantidad de datos
+– cobertura de datos, Cobertura de datos
+– tratamiento de datos, Destilación de modelos
+– deduplicación de datos, Inspeccionar los datos
+– formato de los datos, Limpiar y filtrar datos
+– inspección de datos, Procesamiento de datos
+– limpieza y filtrado de datos, Limpiar y filtrar datos
+– visión de la IA centrada en los datos, Ingeniería de conjuntos de datos
+ingeniería de IA (AIE)
+– auge de la ingeniería de IA, Introducción a la creación de aplicaciones
+de IA con modelos fundacionales
+– definida, De los grandes modelos lingüísticos a los modelos
+fundacionales
+– ingeniería de ML frente a, Las tres capas de la pila de IA
+ingeniería de IA frente a ingeniería de ML, Las tres capas de la pila de IA
+– pila de ingeniería
+– desarrollo de aplicaciones, Optimización de la inferencia
+– ingeniería de pila completa frente a, Interfaz de la IA
+– las tres capas de la pila de IA, Las tres capas de la pila de IA
+ingeniería de ML, ingeniería de IA frente a, Las tres capas de la pila de IA
+ingeniería de prompts, Ingeniería de prompts
+– básicos, Ingeniería de prompts
+ingeniería de prompts defensiva

@@ -1,0 +1,25 @@
+– desacoplamiento del llenado previo, Desacoplamiento del llenado
+previo y la decodificación
+– en arquitectura de transformadores, Modelado
+decodificación especulativa, Superar el cuello de botella de la
+decodificación autorregresiva
+decodificación paralela, Decodificación paralela
+deduplicación de datos, Medidas de similitud con los datos de referencia,
+Inspeccionar los datos
+defensa a nivel de modelo, Defensas contra los ataques de prompts
+defensa a nivel de prompt, Defensa a nivel de prompt
+defensa a nivel de sistema, Defensa a nivel de prompt
+definición de componentes, Detección de deriva
+definición probabilística, La naturaleza probabilística de la IA
+definido, Adquisición y anotación de datos
+depuración, Dividir tareas complejas en subtareas más sencillas
+derechos de autor, formación de modelos y, Privacidad de datos
+desarrollo basado en la evaluación, Criterios de evaluación
+desarrollo de aplicaciones, Las tres capas de la pila de IA, Optimización de
+la inferencia
+– evaluación, Optimización de la inferencia
+– ingeniería de prompts y construcción de contextos, Ingeniería de
+prompts y construcción de contextos
+– interfaz de la AI, Ingeniería de prompts y construcción de contextos
+desarrollo de modelos, Las tres capas de la pila de IA, Ingeniería de IA Vs.
+ingeniería de ML

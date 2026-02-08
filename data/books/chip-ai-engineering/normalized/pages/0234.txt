@@ -1,0 +1,39 @@
+suele funcionar en aplicaciones en las que la IA actúa como pasante o
+asistente, ayudando a los usuarios a agilizar tareas que saben hacer, y no
+cuando los usuarios piden a la IA que realice tareas que ellos mismos no
+saben hacer.
+La evaluación comparativa no debe confundirse con las pruebas A/B. En las
+pruebas A/B, el usuario ve los outputs de un modelo candidato cada vez. En
+la evaluación comparativa, el usuario ve los outputs de varios modelos al
+mismo tiempo.
+Cada comparación se denomina un encuentro. Este proceso da lugar a una
+serie de comparaciones, como se muestra en la Tabla 3-5.
+tabla 3-5. Ejemplos de un historial de comparaciones de modelos por
+duplas.
+Encuentros #
+Modelo A
+Modelo B
+Ganador
+1
+Modelo 1
+Modelo 2
+Modelo 1
+2
+Modelo 3
+Modelo 10
+Modelo 10
+3
+Modelo 7
+Modelo 4
+Modelo 4
+...
+La probabilidad de que se prefiera el modelo A al modelo B es la tasa de
+victorias de A sobre B. Podemos calcular esta tasa de victorias mirando
+todos los encuentros entre A y B y calculando el porcentaje en el que gana
+A.
+Si solo hay dos modelos, ordenarlos es sencillo. El modelo que gane más
+veces se clasificará mejor. Cuantos más modelos haya, más difícil será
+ordenar el ranking. Supongamos que tenemos cinco modelos con las tasas
+empíricas de victorias entre parejas de modelos, como se muestra en la
+Tabla 3-6. A la vista de los datos, no es evidente cómo deben ordenarse
+estos cinco modelos.

@@ -1,0 +1,25 @@
+- evaluación de herramientas de ingeniería de prompts, Hacer
+iteraciones de prompts
+- hacer iteraciones de prompts, Dar tiempo al modelo para pensar
+- organizar y versionar prompts, Evaluar las herramientas de
+ingeniería de prompts
+- ingeniería defensiva, Organizar y versionar prompts
+aprendizaje federado, Fusión de modelos y afinado multitarea
+- cómo recabar comentarios, Cuando el modelo tiene poca confianza
+- cuándo recabar comentarios
+- al principio, Cuándo recabar retroalimentación
+- cuando el modelo tiene poca confianza, Cuando el modelo tiene
+poca confianza
+- cuando pasa algo malo, Cuándo recabar retroalimentación
+aprendizaje por refuerzo a partir de la retroalimentación humana (RLHF),
+Afinado supervisado
+aprendizaje por transferencia, Afinado
+ARC-C, Selección e integración de pruebas comparativas
+arneses de evaluación, Implementación en el dispositivo
+arquitectura de ingeniería, Arquitectura de ingeniería de IA y
+retroalimentación de los usuarios
+- monitoreo frente a observabilidad, Monitoreo y observabilidad
+- monitoreo y observabilidad, Monitoreo y observabilidad
+- detección de deriva, Detección de deriva
+- métricas, Monitoreo y observabilidad
+- registros y rastros, Métricas

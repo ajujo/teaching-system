@@ -1,0 +1,41 @@
+Creating Features from a Time Series with tsfresh
+330
+2.
+Load the Occupancy Detection dataset described in the Technical requirements section:
+X = pd.read_csv("occupancy.csv", parse_dates=["date"])
+y = pd.read_csv(
+    "occupancy_target.csv",
+    index_col="id")["occupancy"]
+3.
+Create and select features from our five time series and then display the shape of the
+resulting DataFrame:
+features = extract_relevant_features(
+    X,
+    y,
+    column_id="id",
+    column_sort="date",
+)
+features.shape
+The output of step 3 is (135, 968), indicating that 968 features were returned from the five
+original time series, for each hour of records.
+Note
+We discussed the function from step 3 in the Automatically creating and selecting predictive
+features from time-series data recipe.
+Let's reduce the feature space further by selecting features with Lasso regularization.
+4.
+Set up logistic regression with Lasso regularization, which is the "l1" penalty. I also set some
+additional parameters arbitrarily:
+cls = LogisticRegression(
+    penalty="l1",
+    solver=»liblinear",
+    random_state=10,
+    C=0.05,
+    max_iter=1000,
+)
+5.
+Let's set up a transformer to retain those features whose logistic regression coefficients are
+different from 0:
+selector = SelectFromModel(cls)
+6.
+Train the logistic regression model and select the features:
+selector.fit(features, y)

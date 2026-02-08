@@ -1,0 +1,32 @@
+Chapter 4
+129
+A basic RAG implementation looks like this:
+# For query transformation
+from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
+# For basic RAG implementation
+from langchain_community.document_loaders import JSONLoader
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+# 1. Load documents
+loader = JSONLoader(
+    file_path="knowledge_base.json",
+    jq_schema=".[].content",  # This extracts the content field from each
+array item
+    text_content=True
+)
+documents = loader.load()
+# 2. Convert to vectors
+embedder = OpenAIEmbeddings()
+embeddings = embedder.embed_documents([doc.page_content for doc in
+documents])
+# 3. Store in vector database
+vector_db = FAISS.from_documents(documents, embedder)
+# 4. Retrieve similar docs
+query = "What are the effects of climate change?"
+results = vector_db.similarity_search(query)This implementation covers the core RAG
+workflow: document loading, embedding, storage, and retrieval.
+Building a RAG system with LangChain requires understanding two fundamental building blocks,
+which we should discuss a bit more in detail: document loaders and retrievers. Let's explore how
+these components work together to create effective retrieval systems.

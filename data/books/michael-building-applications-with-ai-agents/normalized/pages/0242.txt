@@ -1,0 +1,40 @@
+for a delivered order), requiring the agent to clarify or escalate rather than proceeding
+with erroneous tool calls like issue_refund. Systematic testing with adversarial varia‐
+tions from our evaluation sets, such as injecting slang or partial failures in photo
+uploads, ensures graceful handling without leaking sensitive order information.
+Effective integration testing covers not only random "fuzzing" of inputs but also sys‐
+tematic exploration of edge cases informed by historical incidents or adversarial anal‐
+ysis. For safety-critical applications, it is important to verify that, even under stress,
+the agent does not leak sensitive information, violate policy, or cause downstream
+failures. By continuously extending and refining these tests as the agent evolves,
+developers can build systems that are robust, trustworthy, and ready for the complex‐
+ities of the real world.
+Preparing for Deployment
+As an agentic system matures, transitioning from development to deployment
+requires disciplined readiness checks and quality gates to ensure reliability and trust‐
+worthiness in production. Production readiness is more than passing tests-it is a
+holistic assessment of whether the system can perform its intended function safely,
+consistently, and efficiently in a real-world environment.
+Establishing clear deployment criteria is the first step. These often include meeting
+quantitative performance thresholds on relevant evaluation sets, demonstrating sta‐
+bility under stress and edge cases, and validating that all core workflows behave as
+intended. In practice, teams should use structured checklists to confirm that all com‐
+ponents-tools, planning, memory, learning, and integrations-have been rigorously
+tested and reviewed. Key criteria may include passing end-to-end integration tests,
+meeting latency and uptime targets, and verifying the absence of critical or highseverity bugs.
+For our running customer support agent, deployment criteria might include achiev‐
+ing at least 95% tool recall on refund and cancellation scenarios (e.g., correctly invok‐
+ing issue_refund for damaged items like the cracked mug in order_id A89268),
+with automated gates blocking promotion if regressions appear in multiturn tests like
+address modifications (modify_5). This process, combined with pilot monitoring for
+real-world variations, enables confident rollout while enabling rapid rollback if issues
+arise in production.
+A critical mechanism for enforcing these criteria is the use of gating mechanisms.
+Gates are automated or manual checks that prevent promotion to production unless
+all requirements are satisfied. This might involve blocking deployment if any regres‐
+sion is detected on the latest evaluation suite, or requiring explicit approval from
+technical and product leads after a successful pilot or beta phase. Gates can be config‐
+ured to escalate issues for human review when automated results are ambiguous.
+220
+|
+Chapter 9: Validation and Measurement

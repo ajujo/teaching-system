@@ -1,0 +1,19 @@
+The Rise of Generative AI: From Language Models to Agents
+24
+7.	
+What factors should you consider when selecting an LLM provider for a production ap­
+plication? Name at least three considerations beyond just model performance.
+8.	 How does LangChain help address common challenges like hallucinations, context lim­
+itations, and tool integration that affect all LLM applications?
+9.	
+Explain how the LangChain package structure (langchain-core, langchain, langchain-
+community) affects dependency management and integration options in your applications.
+10.	 What role does LangSmith play in the development lifecycle of production LangChain 
+applications?
+Get This Book’s PDF Version 
+and Exclusive Extras
+Scan the QR code (or go to packtpub.com/unlock). 
+Search for this book by name, confirm the edition, 
+and then follow the steps on the page.
+Note: Keep your invoice handy. Purchases made 
+directly from Packt don’t require one.

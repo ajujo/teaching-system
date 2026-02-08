@@ -1,0 +1,11 @@
+figura 10-16. Google Gemini muestra las respuestas parciales una al lado de la otra
+para obtener una opinión comparativa. Los usuarios tienen que hacer clic en la
+respuesta que quieren seguir leyendo, lo que les da información sobre qué respuesta
+les parece más prometedora.
+Otro ejemplo es una aplicación de organización fotográfica que etiquete
+automáticamente sus fotos para poder responder a consultas del tipo
+"Muéstrame todas las fotos de X". Si no está seguro de si dos personas son
+la misma, puede pedirles su opinión, como hace Google Fotos en la
+Figura 10-17.
+figura 10-17. Google Fotos pide la opinión del usuario cuando no está seguro. Las
+dos imágenes de gatos fueron generadas por ChatGPT.

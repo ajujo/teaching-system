@@ -1,0 +1,21 @@
+figura 9-8. Un proveedor de servicios de inferencia puede utilizar técnicas de
+optimización que pueden alterar el comportamiento de un modelo, lo que hace que los
+distintos proveedores tengan ligeras variaciones en la calidad del modelo. El
+experimento fue realizado por Cerebras (2024).
+Dado que el diseño de hardware queda fuera del ámbito de este libro,
+hablaré de técnicas a nivel de modelo y servicio. Aunque las técnicas se
+abordan por separado, hay que tener en cuenta que, en producción, la
+optimización suele implicar técnicas a más de un nivel.
+Optimización de modelos
+La optimización a nivel de modelo pretende hacer más eficiente al modelo,
+a menudo modificándolo, lo que puede alterar su comportamiento. En el
+momento de escribir estas líneas, muchos modelos fundacionales siguen la
+arquitectura de transformadores e incluyen un componente de modelo
+lingüístico autorregresivo. Estos modelos tienen tres características que
+hacen que la inferencia consuma muchos recursos: el tamaño del modelo, la
+decodificación autorregresiva y el mecanismo de atención. Hablemos de
+cómo afrontar estos retos.
+Compresión del modelo
+La compresión de modelos implica técnicas que reducen el tamaño de un
+modelo. Hacer un modelo más pequeño también puede hacerlo más rápido.
+En este libro ya se han tratado dos técnicas de compresión de modelos: la

@@ -1,0 +1,27 @@
+- destilación de modelos, Linaje de datos oscuro
+- ingeniería de conjuntos de datos, Modelado y entrenamiento
+- modelado y entrenamiento, Modelado y entrenamiento
+- optimización de la inferencia, Ingeniería de conjuntos de datos
+destilación, Razones para hacer un afinado
+- base, Modelos base
+- datos sintéticos y, Por qué la síntesis de datos
+- destilación de modelos, Código abierto, ponderación abierta y
+licencias modelo, Linaje de datos oscuro, Compresión del modelo
+detección de anomalías, Medidas de similitud con los datos de referencia
+detección de deriva, Detección de deriva
+diseño de canalizaciones de evaluación, Manejo de la contaminación de
+datos
+- paso, Introducción a la creación de aplicaciones de IA con modelos
+fundacionales, Introducción a la creación de aplicaciones de IA con
+modelos fundacionales, Modelos lingüísticos, Manejo de la
+contaminación de datos, Paso 1. Evaluar todos los componentes de un
+sistema, Crear rúbricas de puntuación con ejemplos
+- anotar los datos de evaluación, Seleccionar métodos de
+evaluación
+- crear de rúbricas de puntuación con ejemplos, Paso 2. Crear una
+directriz de evaluación
+- definir de los criterios de evaluación, Paso 2. Crear una directriz
+de evaluación
+- evaluación de la canalización de evaluación, Anotar los datos de
+evaluación
+- iteración, Evalúe su proceso de evaluación

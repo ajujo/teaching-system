@@ -1,0 +1,30 @@
+lingüístico" y "autosupervisión". Si ya conoce estos conceptos, puede
+saltarse esta sección si lo desea.
+Modelos lingüísticos
+Un modelo lingüístico codifica información estadística sobre uno o varios
+idiomas. Intuitivamente, esta información nos indica la probabilidad de que
+una palabra aparezca en un contexto determinado. Por ejemplo, dado el
+contexto "Mi color favorito es_", un modelo lingüístico que codifique el
+español debería predecir "azul" con más frecuencia que "coche".
+La naturaleza estadística de los idiomas se descubrió hace siglos. En el
+relato de 1905 "Los bailarines", Sherlock Holmes aprovechó la sencilla
+información estadística del inglés para descifrar secuencias de misteriosos
+monigotes. Como la letra más común en inglés es la E, Holmes dedujo que
+el monigote más común debía representar la E.
+Más tarde, Claude Shannon utilizó estadísticas más sofisticadas para
+descifrar los mensajes enemigos durante la Segunda Guerra Mundial. Sus
+trabajos sobre cómo modelizar el inglés se publicaron en su histórico
+artículo de 1951 "Prediction and Entropy of Printed English". Muchos de
+los conceptos introducidos en este artículo, incluida la entropía, siguen
+utilizándose hoy en día para el modelizado lingüístico.
+Al principio, un modelo lingüístico se basaba en un solo idioma. Sin
+embargo, hoy en día, un modelo lingüístico puede incluir varios idiomas.
+La unidad básica de un modelo lingüístico es el token. Un token puede ser
+un carácter, una palabra o una parte de una palabra (como -ción),
+dependiendo del modelo. 2 Por ejemplo, GPT-4, un modelo detrás de
+ChatGPT, descompone la frase "I can't wait to build AI applications" (Estoy
+deseando crear aplicaciones de IA) en nueve tokens, como se muestra en la
+Figura 1-1. Observe que en este ejemplo, la palabra "can't" se divide en dos
+tokens, can y 't. Puede ver cómo los distintos modelos de OpenAI tokenizan
+el texto en el sitio web de OpenAI.
+figura 1-1. Un ejemplo de cómo GPT-4 tokeniza una frase.

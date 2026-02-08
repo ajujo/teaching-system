@@ -1,0 +1,46 @@
+Uso de API de
+modelos
+Modelos autoalojados
+Funcionalidad
+Es más
+probable que
+admita
+escalado,
+llamada a
+funciones,
+outputs
+estructurados
+Menos
+probabilidades
+de exponer
+logprobs
+Soporte nulo o limit
+para llamadas a
+funciones y outputs
+estructurados
+Puede acceder a log
+y outputs intermedio
+útiles para tareas de
+clasificación, evalua
+e interpretabilidad.
+Costo
+Costo de API
+Talento, tiempo, esfu
+de ingeniería para
+optimizar, alojar,
+mantener (puede
+mitigarse utilizando
+servicios de alojami
+de modelos).
+Afinado
+Solo pueden
+afinar los
+modelos que los
+proveedores de
+modelos les
+permitan
+Pueden afinar, cuant
+y optimizar los mod
+(si sus licencias lo
+permiten), pero quiz
+difícil hacerlo.

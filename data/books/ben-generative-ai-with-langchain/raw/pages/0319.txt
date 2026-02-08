@@ -1,0 +1,31 @@
+Software Development and Data Analysis Agents
+292
+Now we’ll create a vector store from the document splits:
+from langchain_chroma import Chroma
+# Store document embeddings for efficient retrieval
+vectorstore = Chroma.from_documents(documents=splits, embedding=embed­
+dings)
+We’ll also need to initialize the LLM or chat model: 
+from langchain_google_vertexai import VertexAI
+llm = VertexAI(model_name="gemini-pro")
+Then, we set up the RAG components:
+from langchain import hub
+retriever = vectorstore.as_retriever()
+# Use community-created RAG prompt template
+prompt = hub.pull("rlm/rag-prompt")
+Finally, we’ll build the RAG chain:
+from langchain_core.runnables import RunnablePassthrough
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+# Chain combines context retrieval, prompting, and response generation
+rag_chain = (
+    {"context": retriever | format_docs, "question": Runna­
+blePassthrough()}
+    | prompt
+    | llm
+    | StrOutputParser()
+)
+Let’s query the chain:
+response = rag_chain.invoke("What is Task Decomposition?")
+Each component builds on the previous one, creating a complete RAG system that can answer 
+questions using the LangChain documentation.

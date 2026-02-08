@@ -1,0 +1,32 @@
+Appendix A
+436
+Summarizing long videos
+ln Chapter 3, we demonstrated how to summarize long videos (that don't fit into the context
+window) with a map-reduce approach. We used LangGraph to design such a workflow. Of course,
+you can use the same approach to any similar case - for example, to summarize long text or to
+extract information from long audios. Let's now do the same using LangChain only, since it will
+be a useful exercise that will help us to better understand some internals of the framework.
+First, a PromptTemplate doesn't support media types (as of February 2025), so we need to convert
+an input to a list of messages manually. To use a parameterized chain, as a workaround, we will
+create a Python function that takes arguments (always provided by name) and creates a list of
+messages to be processed. Every message instructs an LLM to summarize a certain piece of the
+video (by splitting it into offset intervals), and these messages can be processed in parallel. The
+output will be a list of strings, each summarizing a subpart of the original video.
+When you use an extra asterisk (*) in Python function declarations, it means that arguments after
+the asterisk should be provided by name only. For example, let's create a simple function with
+many arguments that we can call in different ways in Python by passing only a few (or none) of
+the parameters by name:
+def test(a: int, b: int = 2, c: int = 3):
+    print(f"a={a}, b={b}, c={c}")
+    pass
+test(1, 2, 3)
+test(1, 2, c=3)
+test(1, b=2, c=3)
+test(1, c=3)
+But if you change its signature, the first invocation will throw an error:
+def test(a: int, b: int = 2, *, c: int = 3):
+    print(f"a={a}, b={b}, c={c}")
+    pass
+# this doesn't work any more: test(1, 2, 3)
+You might see this a lot if you look at LangChain's source code. That's why we decided to explain
+it in a little bit more detail.

@@ -1,0 +1,36 @@
+MLOps Principles
+464
+Also, you can look at your chunking algorithm and assert that it works properly by using various 
+sentences and chunk sizes.
+When we talk about data tests, we mainly refer to data validity. Your data validity code usually 
+runs when raw data is ingested from the data warehouse or after computing the features. It is 
+part of the feature pipeline. Thus, by writing integration or system tests for your feature pipeline, 
+you can check that your system responds properly to valid and invalid data.
+Testing data validity depends a lot on your application and data type. For example, when working 
+with tabular data, you can check for non-null values, that a categorical variable contains only 
+the expected values, or that a float value is always positive. You can check for length, character 
+encoding, language, special characters, and grammar errors when working with unstructured 
+data such as text.
+Model tests are the trickiest, as model training is the most non-deterministic process of an ML 
+system. However, unlike traditional software, ML systems can successfully complete without 
+throwing any errors. However, the real issue is that they produce incorrect results that can only 
+be observed during evaluations or tests. Some standard model test techniques involve checking:
+•	
+The shapes of the input and model output tensors
+•	
+That the loss decreases after one batch (or more) of training
+•	
+Overfit on a small batch, and the loss approaches 0
+•	
+That your training pipeline works on all the supported devices, such as the CPU and GPU
+•	
+That your early stopping and checkpoint logic works
+All the tests are triggered inside the CI pipeline. If some tests are more costly, for example, the mod-
+el ones, you can execute them only on special terms, such as only when modifying the model code.
+At the other end of the spectrum, you can also perform behavioral testing on your model, which 
+tries to adopt the strategy from code testing and treats the model as a black box while looking 
+solely at the input data and expected outputs. This makes the behavioral testing methods model 
+agnostic. A fundamental paper in this area is Beyond Accuracy: Behavioral Testing of NLP Models 
+with CheckList, which we recommend if you want to dig more into the subject. However, as a 
+quick overview, the paper proposes that you test your model against three types of tests. We use 
+a model that extracts the main subject from a sentence as an example:

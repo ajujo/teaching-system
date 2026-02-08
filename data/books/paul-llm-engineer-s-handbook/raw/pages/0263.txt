@@ -1,0 +1,38 @@
+Fine-Tuning with Preference Alignment
+232
+•	
+Creative writing: For tasks like story generation or poetry writing, the quality of the 
+output is highly subjective and multifaceted. Preference datasets can capture human 
+judgments about style, creativity, and emotional impact better than instruction datasets, 
+which might focus more on technical correctness or adherence to prompts.
+•	
+Translation: While traditional metrics like BLEU scores can measure translation accu-
+racy, they don’t always capture the fluency or naturalness of the translation. Preference 
+datasets can help models learn to produce translations that native speakers prefer, even 
+when multiple translations are technically correct.
+In all these scenarios, preference datasets enable a more refined training approach. They capture 
+subjective quality assessments and human preferences that extend beyond simple correctness or 
+adherence to instructions. This method can produce models that generate output that is not only 
+technically accurate but also better aligned with human judgment and preferences in complex, 
+open-ended tasks.
+Unlike instruction datasets, there are no standardized storage formats like Alpaca or ShareGPT. 
+Most preference datasets follow a structure similar to that shown in Table 6.1, with columns for 
+an instruction, a preferred answer, and a rejected answer. Multi-turn conversations are uncom-
+mon in preference alignment. At the time of writing, major fine-tuning libraries do not support 
+multi-turn conversations and typically extract only the first or last message in a conversation.
+Data quantity
+DPO datasets typically require fewer samples than instruction datasets to significantly impact 
+model behavior. As with instruction datasets, the required sample count depends on model size 
+and task complexity. Larger models are more sample-efficient and thus require less data, while 
+complex tasks demand more examples to capture the desired behavior. Once again, data quality 
+is crucial, and a large number of preference pairs is generally beneficial.
+General-purpose alignment is used by LLM providers to improve the overall performance of the 
+fine-tuned models. This requires preference datasets with millions of samples. Major players in 
+the AI industry, including Nvidia and Meta, are converging on similar post-training pipelines, 
+involving multiple rounds of preference alignment, and extensive use of synthetic data. This 
+consensus suggests that these methods are proving to be the most effective for pushing the 
+boundaries of language model capabilities.
+On a smaller scale, the open-source community uses datasets ranging from 10,000 to 100,000 
+samples to enhance model performance. This approach has proven effective not only in improving 
+benchmark scores but also in healing networks after merging, pruning, and other modifications. 
+Generally, DPO is less destructive than SFT and has a milder impact on the final model.

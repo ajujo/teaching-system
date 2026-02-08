@@ -1,0 +1,39 @@
+Setting up an entity set and creating features automatically
+273
+4.	
+Let’s add a DataFrame to the entity set; we give the DataFrame a name (data). We need to add 
+a unique identifier for each row, which we call rows, and since we do not have a unique row 
+identifier in this dataset, we will create it as an additional column by setting make_index=True. 
+Finally, we indicate that invoice_date is of the datetime type and customer_id 
+should be handled as Categorical:
+es = es.add_dataframe(
+    dataframe=df,
+    dataframe_name=»data»,
+    index="rows",
+    make_index=True,
+    time_index=»invoice_date»,
+    logical_types={ «customer_id»: Categorical},
+)
+5.	
+Next, we add the relationship between the original data DataFrame and invoices. To do 
+this, we indicate the original or base DataFrame, which we called data in step 4, we give the 
+new DataFrame a name, invoices, we add the unique identifier for invoices, and we add 
+the column containing customer_id to this DataFrame:
+es.normalize_dataframe(
+    base_dataframe_name=»data»,
+    new_dataframe_name=»invoices»,
+    index="invoice",
+    copy_columns=[«customer_id»],
+)
+Note
+We copy the customer_id variable to the invoices data because we want to create a 
+subsequent relationship between customers and invoices.
+6.	
+Now, we add a second relationship, which is between customers and invoices. To do this, we 
+indicate the base DataFrame, which we named invoices in step 5, then we give the new 
+DataFrame a name, customers, and add the unique customer identifier:
+es.normalize_dataframe(
+    base_dataframe_name=»invoices»,
+    new_dataframe_name=»customers»,
+    index=»customer_id»,
+)

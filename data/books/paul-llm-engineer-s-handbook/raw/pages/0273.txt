@@ -1,0 +1,35 @@
+Fine-Tuning with Preference Alignment
+242
+            "generated_answer": "...",
+            "extracted_answer": "..."
+        }},
+        ...
+    ]
+}}
+    Extract:
+    {extract}
+"""
+7.	
+In the same function, we use GPT-4o-mini to generate our answers using JSON mode. We 
+specify in the system prompt that we want triples instead of pairs. The JSON answers are 
+directly parsed by our PreferenceSet class to return the expected list of tuples.
+    completion = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful assistant who 
+generates instruction-answer triples based on the given context. 
+Each triple should include an instruction, a generated answer, and 
+an extracted answer from the context. Provide your response in JSON 
+format.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+        response_format={"type": "json_object"},
+        max_tokens=2000,
+        temperature=0.7,
+    )
+    result = PreferenceSet.from_json(completion.choices[0].message.
+content)
+    return result.triples

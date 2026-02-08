@@ -1,0 +1,19 @@
+Optimización de la inferencia
+Optimizar la inferencia significa hacer que los modelos sean más rápidos y
+baratos. La optimización de la inferencia siempre ha sido importante para la
+ingeniería del ML. Los usuarios nunca dicen que no a modelos más rápidos,
+y las empresas siempre pueden beneficiarse de una inferencia más barata.
+Sin embargo, a medida que los modelos fundacionales se escalan para
+acumular un costo y una latencia de inferencia aún mayores, se ha vuelto
+todavía más importante optimizar la inferencia.
+Uno de los problemas de los modelos fundacionales es que suelen ser
+autorregresivos, es decir, que los tokens se generan de manera secuencial.
+Si un modelo tarda 10 ms en generar un token, tardará un segundo en
+generar un output de 100 tokens, y hasta más para outputs más largos. Dado
+que los usuarios son cada vez más impacientes, reducir la latencia de las
+aplicaciones de IA a los 100 ms de latencia esperados para una aplicación
+típica de Internet supone un reto enorme. La optimización de la inferencia
+se ha convertido en un subcampo activo tanto en la industria como en el
+mundo académico.
+En la Tabla 1-4 se muestra un resumen de cómo cambia la importancia de
+las distintas categorías de desarrollo de modelos con la ingeniería de IA.

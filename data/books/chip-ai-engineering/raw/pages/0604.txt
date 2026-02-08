@@ -1,0 +1,31 @@
+et al. (2024) descubrieron que las anotaciones realizadas en la segunda
+mitad de una sesión de anotación son de menor calidad, probablemente
+debido al aburrimiento o la fatiga del anotador.
+Si hay más datos de los que necesita o puede permitirse utilizar (por
+ejemplo, debido a su presupuesto de computo), puede filtrar aún más sus
+datos. Por ejemplo, puede utilizar técnicas de aprendizaje activo para
+seleccionar los ejemplos más útiles para que su modelo aprenda de ellos.
+También puede utilizar el muestreo por importancia para encontrar los
+ejemplos más importantes para su tarea. Su eficacia depende de si se
+dispone de una buena forma de evaluar la importancia de cada ejemplo de
+entrenamiento. Investigadores de Meta, en su artículo sobre la poda de
+datos (Sorscher et al., 2022), llegaron a la conclusión de que el
+descubrimiento de buenas métricas de poda de datos pueden reducir
+significativamente los costos de recursos del deep learning moderno.
+Dar formato a los datos
+Una vez deduplicados y depurados los datos, hay que introducirlos en el
+formato adecuado esperado por el modelo que se esté afinando. Cada
+modelo utiliza un tokenizador específico y espera datos en una plantilla de
+chat concreta, como se explica en el Capítulo 5. Introducir datos en una
+plantilla de chat incorrecta puede provocar errores extraños en su modelo.
+Si está realizando un afinado supervisado, lo más probable es que sus datos
+tengan el formato (instrucción, respuesta). Las instrucciones pueden
+descomponerse a su vez en (prompt del sistema, prompt del usuario). Si
+está pasando de la ingeniería de prompts al afinado, las instrucciones
+utilizadas para este último pueden ser diferentes de las utilizadas durante la
+ingeniería de prompts. Durante el afinado, las instrucciones no suelen
+necesitar descripciones de tareas ni ejemplos. Si dispone de suficientes
+ejemplos de entrenamiento, el modelo puede aprender el comportamiento
+esperado de la tarea directamente de los ejemplos.
+Como ejemplo, imagine que ha estado utilizando esta instrucción de tres
+shots para su tarea de clasificación de alimentos con un modelo base:

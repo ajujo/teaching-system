@@ -1,0 +1,38 @@
+Imputing Missing Data
+12
+Note
+From version 1.4.0, scikit-learn transformers can return numpy arrays, pandas 
+DataFrames, or polar frames as a result of the transform() method.
+With fit(), SimpleImputer() learned the median of each numerical variable in the train set 
+and stored them in its statistics_ attribute. With transform(), it replaced the missing values 
+with the medians.
+To replace missing values with the median using Feature-engine, we used the MeanMedianImputer() 
+with the imputation_method set to median. To restrict the imputation to a subset of variables, 
+we passed the variable names in a list to the variables parameter. With fit(), the transformer 
+learned and stored the median values per variable in a dictionary in its imputer_dict_ attribute. 
+With transform(), it replaced the missing values, returning a pandas DataFrame.
+Imputing categorical variables
+We typically impute categorical variables with the most frequent category, or with a specific string. 
+To avoid data leakage, we find the frequent categories from the train set. Then, we use these values to 
+impute the train, test, and future datasets. scikit-learn and feature-engine find and store 
+the frequent categories for the imputation, out of the box.
+In this recipe, we will replace missing data in categorical variables with the most frequent category, 
+or with an arbitrary string.
+How to do it...
+To begin, let’s make a few imports and prepare the data:
+1.	
+Let’s import pandas and the required functions and classes from scikit-learn 
+and feature-engine:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from feature_engine.imputation import CategoricalImputer
+2.	
+Let’s load the dataset that we prepared in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")
+3.	
+Let’s split the data into train and test sets and their respective targets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],

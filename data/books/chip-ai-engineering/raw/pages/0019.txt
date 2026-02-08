@@ -1,0 +1,26 @@
+O’Reilly Media, Inc.
+141 Stony Circle, Suite 195
+Santa Rosa, CA 95401
+800-889-8969 (en Estados Unidos o Canadá)
+707-827-7019 (internacional o local)
+707-829-0104 (fax)
+support@oreilly.com
+https://oreilly.com/about/contact.html
+Disponemos de una página web para este libro, donde enumeramos erratas,
+ejemplos y cualquier información adicional. Puede acceder a esta página en
+https://oreil.ly/ai-engineering.
+Para noticias e información sobre nuestros libros y cursos, visite
+https://oreilly.com.
+Encuéntrenos en LinkedIn: https://linkedin.com/company/oreilly-media
+Véanos en YouTube: https://youtube.com/oreillymedia
+Agradecimientos
+Este libro habría tardado mucho más en escribirse y habría pasado por alto
+muchos temas importantes si no hubiera sido por todas las personas
+maravillosas que me ayudaron a lo largo del proceso.
+Como el plazo del proyecto era muy ajustado (dos años para un libro de 150
+000 palabras que abarca tantos temas), estoy muy agradecida a los revisores
+técnicos que dedicaron su valioso tiempo a revisar este libro tan
+rápidamente.
+Luke Metz es un consejero increíble que verificó mis suposiciones y evitó
+que me tomara el camino equivocado. Han-chung Lee, siempre al día de las
+últimas noticias sobre IA y desarrollo comunitario, me avisó de recursos

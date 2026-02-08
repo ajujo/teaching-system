@@ -1,0 +1,217 @@
+{
+  "$schema": "chapter_exam_set_v1",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "chapter_number": 1,
+  "chapter_title": "Understanding the LLM Twin Concept and Architecture",
+  "units_included": [
+    "paul-llm-engineer-s-handbook-ch01-u01"
+  ],
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "created_at": "2026-02-05T21:01:40.499482+00:00",
+  "generation_time_ms": 107067,
+  "mode": "json",
+  "difficulty": "mid",
+  "total_points": 6,
+  "passing_threshold": 0.6,
+  "pages_used": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "questions": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q01",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Cuál es el principal beneficio de usar la arquitectura FTI (Feature/Training/Inference) en sistemas LLM según el Capítulo 1?",
+      "correct_answer": 1,
+      "explanation": "La arquitectura FTI permite modularizar los sistemas LLM en etapas reutilizables (feature, training e inference), optimizando recursos y facilitando la escalabilidad. Esto se menciona explícitamente en las páginas 8-15 del capítulo.",
+      "points": 1,
+      "tags": [
+        "arquitectura",
+        "FTI"
+      ],
+      "options": [
+        "Permite entrenar modelos sin necesidad de datos etiquetados",
+        "Facilita la reutilización de componentes entre etapas del pipeline",
+        "Aumenta la capacidad computacional requerida para inferencia",
+        "Elimina la necesidad de validación cruzada en el proceso"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          8,
+          13,
+          15
+        ],
+        "rationale": "La arquitectura FTI es un concepto central en la sección de diseño de sistemas LLM",
+        "section_ids": [
+          "Building ML systems with feature/training/inference pipelines"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q02",
+      "type": "short_answer",
+      "difficulty": "easy",
+      "question": "Defina qué es un MVP (Minimum Viable Product) según el contexto del desarrollo de LLM Twins.",
+      "correct_answer": "Un MVP en este contexto es la versión más simple pero funcional del producto LLM que permite validar conceptos clave con mínima inversión, como se describe en las páginas 6-7.",
+      "explanation": "El MVP se define como el producto mínimo viable que permite probar hipótesis fundamentales sin desarrollar todas las funciones posibles. Esto es crucial para reducir riesgos en proyectos complejos.",
+      "points": 1,
+      "tags": [
+        "MVP",
+        "desarrollo"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          6,
+          7
+        ],
+        "rationale": "La definición de MVP es fundamental para entender el enfoque del capítulo",
+        "section_ids": [
+          "Planning the MVP of the LLM Twin product"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q03",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "El libro afirma que ChatGPT no es adecuado como solución para LLM Twins debido a limitaciones técnicas.",
+      "correct_answer": true,
+      "explanation": "En la página 5 del capítulo, se explica que aunque ChatGPT puede parecer una alternativa, presenta limitaciones específicas que motivan el desarrollo de soluciones personalizadas como los LLM Twins.",
+      "points": 1,
+      "tags": [
+        "LLM Twin",
+        "comparación"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          5
+        ],
+        "rationale": "La comparativa con ChatGPT es un punto clave en la justificación del concepto",
+        "section_ids": [
+          "Understanding the LLM Twin concept"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q04",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "question": "¿Cuál de estos componentes NO forma parte de la arquitectura básica de LLM Twins según el capítulo?",
+      "correct_answer": 2,
+      "explanation": "El sistema de pago por uso no se menciona como componente arquitectónico básico. Los pipelines FTI y bases de datos vectoriales sí son componentes esenciales según páginas 16-22.",
+      "points": 1,
+      "tags": [
+        "arquitectura",
+        "componentes"
+      ],
+      "options": [
+        "Pipeline de características (Feature pipeline)",
+        "Base de datos vectorial para almacenamiento de embeddings",
+        "Sistema de pago por uso basado en tokens",
+        "Pipeline de entrenamiento con ajuste fino"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          16,
+          19,
+          21
+        ],
+        "rationale": "La arquitectura detallada incluye pipelines y bases de datos vectoriales",
+        "section_ids": [
+          "Designing the system architecture of the LLM Twin"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q05",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "¿Cuál es el propósito principal del pipeline de características (Feature Pipeline) en un sistema LLM Twin?",
+      "correct_answer": "El pipeline de características se encarga de transformar y preparar los datos brutos para su uso posterior en entrenamiento e inferencia, como se describe en las páginas 19-20.",
+      "explanation": "Este proceso es fundamental para garantizar que los datos estén estructurados correctamente antes de ser utilizados por otros componentes del sistema LLM.",
+      "points": 1,
+      "tags": [
+        "pipeline",
+        "procesamiento"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          19,
+          20
+        ],
+        "rationale": "El pipeline de características es un componente central en la arquitectura",
+        "section_ids": [
+          "Building ML systems with feature/training/inference pipelines"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q06",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "¿Qué herramienta principal se menciona para gestionar dependencias y entornos virtuales en el libro?",
+      "correct_answer": 1,
+      "explanation": "En la página 27 del capítulo posterior, se explica que Poetry es la herramienta recomendada para gestión de dependencias y entornos virtuales en proyectos LLM.",
+      "points": 1,
+      "tags": [
+        "herramientas",
+        "MLOps"
+      ],
+      "options": [
+        "Docker Compose",
+        "Poetry",
+        "Conda",
+        "Venv"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          27
+        ],
+        "rationale": "La herramienta se menciona como parte de la infraestructura básica",
+        "section_ids": [
+          "Python ecosystem and project installation"
+        ]
+      }
+    }
+  ]
+}

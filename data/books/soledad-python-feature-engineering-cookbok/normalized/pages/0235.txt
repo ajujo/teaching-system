@@ -1,0 +1,36 @@
+Performing Feature Scaling
+212
+Population     0.000140
+AveOccup      -0.000096
+dtype: float64
+By executing X_test_scaled.max(), we see that the maximum values of the variables
+are around 1:
+MedInc           1.000000
+HouseAge        1.000000
+AveRooms        1.071197
+AveBedrms      0.750090
+Population     0.456907
+AveOccup        2.074553
+dtype: float64
+Note
+If you check the maximum values of the variables in the train set after the transformation,
+you'll see that they are exactly 1. Yet, in the test set, we see values greater and smaller than 1.
+This occurs because, in the test set, there are observations with larger or smaller magnitudes
+than those in the train set. In fact, we see the greatest differences in the variables that deviate
+the most from the normal distribution (the last four variables in the dataset). This behavior
+is expected because scaling to the minimum and maximum values is sensitive to outliers and
+very skewed distributions.
+Scaling to the minimum and maximum value does not change the shape of the variable's distribution.
+You can corroborate that by displaying the histograms before and after the transformation.
+How it works...
+In this recipe, we scaled the variables of the California housing dataset to values between 0 and 1.
+MinMaxScaler() from scikit-learn learned the minimum and maximum values and the value range
+of each variable when we called the fit() method and stored these parameters in its data_max_,
+min_, and data_range_ attributes. By using transform(), we made the scaler remove the
+minimum value from each variable in the train and test sets and divide the result by the value range.
+Note
+MinMaxScaler() will scale all variables by default. To scale only a subset of the
+variables in the dataset, you can use ColumnTransformer() from scikit-learn or
+SklearnTransformerWrapper() from Feature-engine.
+MinMaxScaler() will scale the variables between 0 and 1 by default. However, we have the option
+to scale to a different range by adjusting the tuple passed to the feature_range parameter.

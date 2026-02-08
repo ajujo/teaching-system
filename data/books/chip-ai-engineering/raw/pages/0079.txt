@@ -1,0 +1,32 @@
+DIFERENCIAS ENTRE ENTRENAMIENTO, PRE-
+ENTRENAMIENTO, AFINADO Y POST-ENTRENAMIENTO
+El entrenamiento siempre implica cambiar las ponderaciones del
+modelo, pero no todos los cambios en estas constituyen entrenamiento.
+Por ejemplo, la cuantización, que es el proceso de reducir la precisión
+de las ponderaciones del modelo, cambia técnicamente sus valores, pero
+no se considera entrenamiento.
+El término entrenamiento puede utilizarse a menudo en lugar de pre-
+entrenamiento, afinado y post-entrenamiento, que se refieren a distintas
+fases del entrenamiento:
+Pre-entrenamiento
+El pre-entrenamiento consiste en entrenar un modelo
+desde cero: las ponderaciones del modelo se inicializan
+aleatoriamente. En el caso de los LLMs, el pre-
+entrenamiento suele consistir en entrenar a un modelo
+para completar textos. De todos los pasos del
+entrenamiento, el pre-entrenamiento suele ser, con
+diferencia, el que requiere más recursos. En el caso del
+modelo InstructGPT, el pre-entrenamiento consume
+hasta el 98 % de los recursos computacionales y de datos
+totales. El pre-entrenamiento también lleva mucho
+tiempo. Un pequeño error durante el pre-entrenamiento
+puede acarrear importantes pérdidas económicas y
+retrasar considerablemente el proyecto. Debido a que el
+pre-entrenamiento requiere muchos recursos, se ha
+convertido en un arte que solo unos pocos practican. Sin
+embargo, los expertos en pre-entrenamiento de grandes
+modelos están muy solicitados. 24
+Afinado
+Ajustar significa seguir entrenando un modelo
+previamente entrenado: las ponderaciones del modelo se
+obtienen del proceso de entrenamiento anterior. Como el

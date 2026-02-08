@@ -1,0 +1,12 @@
+Data Engineering
+92
+We want to highlight again the power of these artifacts, as they trace each pipeline’s results and 
+metadata, making it extremely easy to monitor and debug each pipeline run individually.
+Figure 3.6: Example of the crawled_links output artifact after running the data collection 
+pipeline using Maxime’s configuration file
+Now, we can download the crawled_links artifact anywhere in our code by running the following 
+code, where the ID of the artifact can be found in ZenML and is unique for every artifact version:
+from zenml.client import Client
+artifact = Client().get_artifact_version('8349ce09-0693-4e28-8fa2-
+20f82c76ddec')
+loaded_artifact = artifact.load()

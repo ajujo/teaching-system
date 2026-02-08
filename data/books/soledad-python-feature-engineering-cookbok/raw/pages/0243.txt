@@ -1,0 +1,26 @@
+Performing Feature Scaling
+220
+Note
+Although we omit this step in the recipe, remember that the maximum absolute values should 
+be learned from a training dataset only. Split the dataset into train and test sets when carrying 
+out your analysis.
+3.	
+Let’s set up MaxAbsScaler() and fit it to the data so that it learns the variables’ maximum values:
+scaler = MaxAbsScaler().set_output(
+    transform="pandas")
+scaler.fit(data)
+4.	
+Now, let’s scale the variables by utilizing the trained scaler:
+data_scaled = scaler.transform(data)
+Note
+MaxAbsScaler () stores the maximum values in its max_abs_ attribute.
+5.	
+Let’s display the maximum values stored by the scaler:
+scaler.max_abs_
+In the following output, we see the maximum number of times each word appeared in a document:
+array([ 7.,  6.,  2.,  2., 11.,  4.,  3.,  6., 52.,  2.])
+To follow up, let’s plot the distributions of the original and scaled variables.
+6.	
+Let’s make a histogram with the bag of words before the scaling:
+data.hist(bins=20, figsize=(20, 20))
+plt.show()

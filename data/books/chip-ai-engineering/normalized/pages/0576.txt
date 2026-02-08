@@ -1,0 +1,31 @@
+Dado que la IA es capaz de generar datos indistinguibles de los generados
+por los humanos, es posible sintetizar datos mucho más sofisticados, como
+notas de médicos, contratos, estados financieros, descripciones de
+productos, imágenes, anuncios de vídeo, etc. Esto facilita la generación de
+datos y permite más casos de uso de datos sintéticos.
+Aunque los datos sintéticos prometen reducir significativamente la presión
+sobre los datos generados por humanos, los datos sintéticos no sustituyen
+por completo a los datos humanos. En muchos casos de uso, como se
+explica en "Limitaciones de los datos generados por IA", la mezcla de datos
+humanos y generados por IA suele producir el mejor valor.
+Por qué la síntesis de datos
+Los datos sintéticos son atractivos por muchas razones. Puede sintetizar los
+datos para mejorar el trío de oro de los datos: cantidad, cobertura y calidad.
+También pueden sintetizar datos para mitigar los problemas de privacidad y
+destilar modelos:
+Para aumentar la cantidad de datos
+La principal razón para la síntesis de datos es que permite
+producir datos a escala, lo que promete un suministro
+abundante de datos para entrenar y probar modelos de IA.
+En teoría, un mayor número de datos ayuda a los modelos a
+generalizarse a una gama más amplia de tareas. Esto es
+especialmente útil cuando los datos del mundo real son
+escasos o difíciles de obtener, como los datos sobre
+condiciones meteorológicas poco frecuentes, los datos para
+la exploración de las profundidades marinas o los datos
+sobre accidentes para los coches sin conductor.
+Para aumentar la cobertura de los datos
+Puede generar datos con características específicas para
+mejorar el rendimiento del modelo o conseguir que exprese
+comportamientos concretos. Por ejemplo, puede generar
+textos muy cortos o muy largos. Puede crear conversaciones

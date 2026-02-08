@@ -1,0 +1,33 @@
+Inference Pipeline Deployment
+366
+Another option is to write the ML and business logic as two different Python packages that you 
+glue together in the same ways as before. This is better because it completely enforces a separation 
+between the two but adds extra complexity at development time. The main idea, therefore, is that 
+if you start with a monolith and down the line you want to move to a microservices architecture, 
+it’s essential to design your software with modularity in mind. Otherwise, if the logic is mixed, 
+you will probably have to rewrite everything from scratch, adding tons of development time, 
+which translates into wasted resources.
+In summary, monolithic architectures offer simplicity and ease of maintenance but at the cost of 
+flexibility and scalability. At the same time, microservices provide the agility to scale and innovate 
+but require more sophisticated management and operational practices.
+Exploring the LLM Twin’s inference pipeline 
+deployment strategy
+Now that we’ve understood all the design choices available for implementing the deployment 
+strategy of the LLM Twin’s inference pipeline, let’s explore the concrete decisions we made to 
+actualize it.
+Our primary objective is to develop a chatbot that facilitates content creation. To achieve this, 
+we will process requests sequentially, with a strong emphasis on low latency. This necessitates 
+the selection of an online real-time inference deployment architecture.
+On the monolith versus microservice aspect, we will split the ML service between a REST API 
+server containing the business logic and an LLM microservice optimized for running the given 
+LLM. As the LLM requires a powerful machine to run the inference, and we can further optimize 
+it with various engines to speed up the latency and memory usage, it makes the most sense to go 
+with the microservice architecture. By doing so, we can quickly adapt the infrastructure based on 
+various LLM sizes. For example, if we run an 8B parameter model, the model can run on a single 
+machine with a Nivida A10G GPU after quantization. But if we want to run a 30B model, we can 
+upgrade to an Nvidia A100 GPU. Doing so allows us to upgrade only the LLM microservice while 
+keeping the REST API untouched.
+As illustrated in Figure 10.4, most business logic is centered around RAG in our particular use case. 
+Thus, we will perform RAG’s retrieval and augmentation parts within the business microservice. 
+It will also include all the advanced RAG techniques presented in the previous chapter to optimize 
+the pre-retrieval, retrieval, and post-retrieval steps. 

@@ -1,0 +1,31 @@
+Chapter 2
+29
+You can install Poetry from here: https://python-poetry.org/docs/. We use Poetry 1.8.3
+throughout the book. Once Poetry is installed, navigate to your cloned LLM-Engineers-Handbook repository and run the following command to install all the necessary Python dependencies:
+poetry install --without aws
+This command knows to pick up all the dependencies from your repository that are listed in
+the pyproject.toml and poetry.lock files. After the installation, you can activate your Poetry
+environment by running poetry shell in your terminal or by prefixing all your CLI commands
+as follows: poetry run <your command>.
+One final note on Poetry is that it locks down the exact versions of the dependency tree in the
+poetry.lock file based on the definitions added to the project.toml file. While the pyproject.
+toml file may specify version ranges (e.g., requests = "^2.25.1"), the poetry.lock file records
+the exact version (e.g., requests = "2.25.1") that was installed. It also locks the versions of
+sub-dependencies (dependencies of your dependencies), which may not be explicitly listed in
+your pyproject.toml file. By locking all the dependencies and sub-dependencies to specific
+versions, the poetry.lock file ensures that all project installations use the same versions of each
+package. This consistency leads to predictable behavior, reducing the likelihood of encountering
+"works on my machine" issues.
+Other tools similar to Poetry are Venv and Conda for creating virtual environments. Still, they lack
+the dependency management option. Thus, you must do it through Python's default requirements.
+txt files, which are less powerful than Poetry's lock files. Another option is Pipenv, which feature-wise is more like Poetry but slower, and uv, which is a replacement for Poetry built in Rust,
+making it blazing fast. uv has lots of potential to replace Poetry, making it worthwhile to test out:
+https://github.com/astral-sh/uv.
+The final piece of the puzzle is to look at the task execution tool we used to manage all our CLI
+commands.
+Poe the Poet: task execution tool
+Poe the Poet is a plugin on top of Poetry that is used to manage and execute all the CLI commands
+required to interact with the project. It helps you define and run tasks within your Python project, simplifying automation and script execution. Other popular options are Makefile, Invoke, or
+shell scripts, but Poe the Poet eliminates the need to write separate shell scripts or Makefiles for
+managing project tasks, making it an elegant way to manage tasks using the same configuration
+file that Poetry already uses for dependencies.

@@ -1,0 +1,44 @@
+Building Intelligent RAG Systems
+128
+2.
+Vector indexing - creating the card catalog
+Once documents are processed, we need a way to make them searchable. This is where
+vector indexing comes in. Here's how it works:
+•
+An embedding model converts each document chunk into a vector (think of it as
+capturing the document's meaning in a list of numbers)
+•
+These vectors are organized in a special data structure (the vector store) that makes
+them easy to search
+•
+The vector store also maintains connections between these vectors and their orig­
+inal documents
+This is similar to how a library's card catalog organizes books by subject, making it easy
+to find related materials.
+3.
+Vector stores - the organized shelves
+Vector stores are like the organized shelves in our library. They:
+•
+Store both the document vectors and the original document content
+•
+Provide efficient ways to search through the vectors
+•
+Offer different organization methods (like HNSW or IVF) that balance speed and
+accuracy
+For example, using FAISS (a popular vector store), we might organize our vectors in a hier­
+archical structure that lets us quickly narrow down which documents to examine in detail.
+4.
+Retrieval - finding the right books
+Retrieval is where everything comes together. When a question comes in:
+•
+The question gets converted into a vector using the same embedding model
+•
+The vector store finds documents whose vectors are most similar to the question
+vector
+The retriever might apply additional logic, like:
+•
+Removing duplicate information
+•
+Balancing relevance and diversity
+•
+Combining results from different search methods

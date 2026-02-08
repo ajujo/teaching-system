@@ -1,0 +1,36 @@
+Imputing Missing Data
+16
+In step 5, we created a dictionary with the variable names as keys and the frequent categories as 
+values. To capture the frequent categories, we used pandas mode(), and to return a dictionary, we 
+used pandas to_dict(). To replace the missing data, we used pandas fillna(), passing the 
+dictionary with the variables and their frequent categories as parameters. There can be more than one 
+mode in a variable, that’s why we made sure to capture only one of those values by using .iloc[0].
+To replace the missing values using scikit-learn, we used SimpleImputer() with 
+the strategy set to most_frequent. To restrict the imputation to categorical variables, 
+we used ColumnTransformer(). With remainder set to passthrough, we made 
+ColumnTransformer() return all the variables present in the training set as a result of the 
+transform() method .
+Note
+ColumnTransformer() changes the names of the variables in the output. The transformed 
+variables show the prefix imputer and the unchanged variables show the prefix remainder.
+With fit(), SimpleImputer() learned the variables’ most frequent categories and stored 
+them in its statistics_ attribute. With transform(), it replaced the missing data with the 
+learned parameters.
+SimpleImputer() and ColumnTransformer() return NumPy arrays by default. We can 
+change this behavior with the set_output() parameter.
+To replace missing values with feature-engine, we used the CategoricalImputer() with 
+imputation_method set to frequent. With fit(), the transformer learned and stored the 
+most frequent categories in a dictionary in its imputer_dict_ attribute. With transform(), 
+it replaced the missing values with the learned parameters.
+Unlike SimpleImputer(), CategoricalImputer() will only impute categorical variables, 
+unless specifically told not to do so by setting the ignore_format parameter to True. In 
+addition, with feature-engine transformers we can restrict the transformations to a subset of 
+variables through the transformer itself. For scikit-learn transformers, we need the additional 
+ColumnTransformer() class to apply the transformation to a subset of the variables.
+Replacing missing values with an arbitrary number
+We can replace missing data with an arbitrary value. Commonly used values are 999, 9999, or -1 
+for positive distributions. This method is used for numerical variables. For categorical variables, the 
+equivalent method is to replace missing data with an arbitrary string, as described in the Imputing 
+categorical variables recipe.
+When replacing missing values with arbitrary numbers, we need to be careful not to select a value 
+close to the mean, the median, or any other common value of the distribution.

@@ -1,0 +1,27 @@
+Chapter 10
+363
+Monolithic architecture
+The LLM (or any other ML model) and the associated business logic (preprocessing and post-processing steps) are bundled into a single service in a monolithic architecture. This approach is
+straightforward to implement at the beginning of a project, as everything is placed within one
+code base. Simplicity makes maintenance easy when working on small to medium projects, as
+updates and changes can be made within a unified system.
+One key challenge of a monolithic architecture is the difficulty of scaling components independently. The LLM typically requires GPU power, while the rest of the business logic is CPU and I/O-bound.
+As a result, the infrastructure must be optimized for both GPU and CPU. This can lead to inefficient
+resource use, with the GPU being idle when the business logic is executed and vice versa. Such
+inefficiency can result in additional costs that could be avoided.
+Moreover, this architecture can limit flexibility, as all components must share the same tech
+stack and runtime environment. For example, you might want to run the LLM using Rust or C++
+or compile it with ONNX or TensorRT while keeping the business logic in Python. Having all the
+code in one system makes this differentiation difficult. Finally, splitting the work across different
+teams is complex, often leading to bottlenecks and reduced agility.
+Microservices architecture
+A microservices architecture breaks down the inference pipeline into separate, independent services-typically splitting the LLM service and the business logic into distinct components. These
+services communicate over a network using protocols such as REST or gRPC.
+As illustrated in Figure 10.3, the main advantage of this approach is the ability to scale each component independently. For instance, since the LLM service might require more GPU resources
+than the business logic, it can be scaled horizontally without impacting the other components.
+This optimizes resource usage and reduces costs, as different types of machines (e.g., GPU versus
+CPU) can be used according to each service's needs.
+For example, let's assume that the LLM inference takes longer, so you will need more ML service
+replicas to meet the demand. But remember that GPU VMs are expensive. By decoupling the two
+components, you will run only what is required on the GPU machine and not block the GPU VM
+with other computing that can be done on a much cheaper machine.

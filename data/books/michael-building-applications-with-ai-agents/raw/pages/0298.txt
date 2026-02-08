@@ -1,0 +1,41 @@
+require strict access controls and encryption measures to secure data in transit and at
+rest.
+A vital but often overlooked factor is alignment with compliance and regulatory
+standards. Certain use cases may require models that meet specific certifications,
+such as GDPR (General Data Protection Regulation) compliance for data privacy or
+SOC 2 certification for operational security. Selecting models that inherently align
+with these standards reduces downstream risk and compliance burdens.
+Lastly, model explainability and interpretability play a key role in risk mitigation.
+Models that provide greater transparency in their reasoning processes make it easier
+to identify and address vulnerabilities or unintended behaviors.
+In practice, the decision rarely boils down to choosing a single model. Many agent
+systems adopt a hybrid approach, using specialized smaller models for high-stakes
+tasks requiring precision and leveraging larger general-purpose models for tasks
+demanding creativity and contextual flexibility.
+Effective model selection is not a onetime decision but an ongoing process. As mod‐
+els evolve and new vulnerabilities emerge, continuous evaluation and adaptation of
+the chosen foundation models are essential for maintaining robust security. Organi‐
+zations must remain vigilant, ensuring their models align with both operational goals
+and the dynamic landscape of security threats.
+Defensive Techniques
+Securing foundation models requires a multilayered approach that blends technical
+safeguards, operational best practices, and continuous monitoring. Defensive tech‐
+niques aim to prevent malicious exploitation, reduce unintended behaviors, and
+ensure that models operate reliably across diverse contexts. These techniques span
+from preprocessing and input validation to runtime monitoring and output filtering,
+creating a robust security posture for foundation model–powered agent systems.
+One of the foundational defensive strategies is input sanitization and validation.
+Agents are often vulnerable to adversarial inputs—carefully crafted prompts designed
+to manipulate model behavior. By implementing robust input validation layers, sys‐
+tems can detect and neutralize harmful prompts before they reach the model. This
+can include filtering for common attack patterns, enforcing strict syntax rules, and
+rejecting inputs containing malicious instructions.
+Another critical defense is prompt injection prevention. Prompt injection occurs
+when an attacker embeds malicious instructions within an otherwise normal-looking
+input, tricking the model into overriding its intended directives. To counteract this,
+developers can use techniques such as instruction anchoring—where the model’s pri‐
+mary instructions are strongly reinforced throughout the prompt—or prompt tem‐
+plates that strictly control how inputs are formatted and interpreted. Here’s one
+276 
+| 
+Chapter 12: Protecting Agentic Systems

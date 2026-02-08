@@ -1,0 +1,15 @@
+Chapter 8
+305
+Figure 8.9 – Comparison the between FP32, FP16, and BF16 formats
+A sign of 0 represents a positive number, while 1 indicates a negative number. Conversely, the 
+exponent controls the range that is represented (big or small). Finally, the significand controls 
+the precision of the number (the number of digits). The formula used to convert these represen-
+tations into real numbers is:
+(−1)sign × baseexponent × significand
+The data types shown in Figure 7.7 display different tradeoffs, as illustrated with different repre-
+sentations of 𝜋𝜋 (≈3.1415926535). FP32 uses 32 bits, providing high precision but also requiring more 
+memory. Conversely, FP16 and BF16 use 16 bits, lowering the memory footprint at the cost of a 
+lower precision. In general, neural networks prefer a bigger range than better precision, which is 
+why BF16 is the most popular data type when the hardware supports it. For example, NVIDIA’s 
+Ampere architecture (A100, A30, etc.) supports BF16, but previous generations like Turing (T4, 
+T40, etc.) do not.

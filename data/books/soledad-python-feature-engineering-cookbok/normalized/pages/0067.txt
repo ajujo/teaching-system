@@ -1,0 +1,29 @@
+Encoding Categorical Variables
+44
+Technical requirements
+In this chapter, we will use the Matplotlib, pandas, NumPy, scikit-learn, featureengine, and Category Encoders Python libraries. If you need to install Python, the free Anaconda
+Python distribution (https://www.anaconda.com/) includes most numerical computing libraries.
+feature-engine can be installed with pip:
+pip install feature-engine
+If you use Anaconda, you can install feature-engine with conda:
+conda install -c conda-forge feature_engine
+To install Category Encoders, use pip as follows:
+pip install category_encoders
+We will use the Credit Approval dataset from the UCI Machine Learning Repository (https://
+archive.ics.uci.edu/), licensed under the CC BY 4.0 creative commons attribution: https://
+creativecommons.org/licenses/by/4.0/legalcode. You'll find the dataset at this
+link: http://archive.ics.uci.edu/dataset/27/credit+approval.
+I downloaded and modified the data as shown in this notebook: https://github.com/
+PacktPublishing/Python-Feature-engineering-Cookbook-Third-Edition/
+blob/main/ch02-categorical-encoding/credit-approval-dataset.ipynb.
+You'll find a copy of the modified data set in the accompanying GitHub repository: https://
+github.com/PacktPublishing/Python-Feature-engineering-Cookbook-
+Third-Edition/blob/main/ch02-categorical-encoding/.
+Note
+Before encoding categorical variables, you might want to impute their missing data. Check out
+the imputation methods for categorical variables in Chapter 1, Imputing Missing Data.
+Creating binary variables through one-hot encoding
+One-hot encoding is a method used to represent categorical data, where each category is represented
+by a binary variable. The binary variable takes a value of 1 if the category is present, or 0 otherwise.
+The following table shows the one-hot encoded representation of the Smoker variable with the
+categories of Smoker and Non-Smoker:

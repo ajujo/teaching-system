@@ -1,0 +1,32 @@
+es el mejor futbolista del mundo", "el cambio climático es una de las crisis
+más acuciantes de nuestro tiempo", "el desayuno es la comida más
+importante del día". Internet está inundado de desinformación: falsas
+afirmaciones de marketing, estadísticas inventadas para promover agendas
+políticas y publicaciones sensacionalistas y tendenciosas en las redes
+sociales. Además, es fácil caer en la falacia de la ausencia de pruebas. Se
+podría creer que la afirmación "no hay relación entre X e Y" es factualmente
+correcta porque no se han encontrado pruebas que respalden dicha relación.
+Una pregunta de investigación interesante es qué pruebas encuentran
+convincentes los modelos de IA, ya que la respuesta arroja luz sobre cómo
+los modelos de IA procesan la información contradictoria y determinan
+cuáles son los hechos. Por ejemplo, Wan et al. (2024) descubrieron que los
+"modelos existentes se basan en gran medida en la relevancia de un sitio
+web para la consulta, mientras que ignoran en gran medida las
+características estilísticas que los humanos consideran importantes, como si
+un texto contiene referencias científicas o está escrito con un tono neutro".
+SUGERENCIA
+Al diseñar métricas para medir las alucinaciones, es importante analizar los
+outputs del modelo para comprender los tipos de consultas con los que es
+más probable que alucine. Su prueba comparativa debería centrarse más en
+estas consultas.
+Por ejemplo, en uno de mis proyectos, descubrí que el modelo con el que
+trabajaba tendía a alucinar con dos tipos de consultas:
+1. Consultas que implican conocimientos de nicho. Por ejemplo, era
+más probable que alucinara cuando le preguntaba por la VMO
+(Olimpiada Matemática Vietnamita) que por la IMO (Olimpiada
+Matemática Internacional), porque la VMO se cita mucho menos
+que la IMO.
+2. Consultas que piden cosas que no existen. Por ejemplo, si
+pregunto al modelo "¿Qué ha dicho X sobre Y?", es más probable
+que el modelo alucine si X nunca ha dicho nada sobre Y que si X sí
+lo ha hecho.

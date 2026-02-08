@@ -1,0 +1,20 @@
+Escribir instrucciones claras y explícitas
+Comunicarse con la IA es lo mismo que comunicarse con los humanos: la
+claridad ayuda. Veamos algunos consejos para redactar instrucciones claras.
+Explique, sin ambigüedades, lo que quiere que haga el modelo.
+Si quiere que el modelo puntúe un ensayo, explique el sistema de
+puntuación a utilizar. ¿Es del 1 al 5 o del 1 al 10? Si el modelo tiene dudas
+sobre un ensayo, ¿quiere que elija una puntuación lo mejor que pueda o que
+diga "no lo sé"?
+A medida que experimente con un prompt, es posible que observe
+comportamientos no deseados que requieran ajustes en el prompt para
+evitarlos. Por ejemplo, si el modelo produce puntuaciones fraccionarias
+(4.5) y ustedes no las desea, actualice su prompt para indicar al modelo que
+solo produzca puntuaciones enteras.
+Pida al modelo que adopte una personalidad
+Una personalidad puede ayudar al modelo a comprender la perspectiva que
+debe utilizar para generar respuestas. Dado el ensayo "Me gustan las
+gallinas. Las gallinas son esponjosas y dan huevos muy ricos" , un modelo
+sin personalizar podría darle una puntuación de 2 sobre 5. Sin embargo, si
+se pide al modelo que adopte la personalidad de un profesor de primer
+grado, el ensayo podría obtener un 4. Consulte la Figura 5-5.

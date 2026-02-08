@@ -1,0 +1,15 @@
+figura 3-7. Los jueces de IA no solo pueden puntuar, sino también explicar sus
+decisiones.
+Cómo utilizar la IA como juez
+Hay muchas formas de utilizar la IA para emitir juicios. Por ejemplo, puede
+utilizar la IA para evaluar la calidad de una respuesta por sí misma,
+comparar esa respuesta con datos de referencia o compararla con otra
+respuesta. Veamos unos prompts de ejemplo ingenuos de estos tres
+enfoques:
+1. Evaluar la calidad de una respuesta por sí misma, dada la pregunta
+original:
+"Dadas la pregunta y la respuesta siguientes, evalúa la 
+adecuación de la
+respuesta a la pregunta. Utiliza la puntuación de 1 a 5.
+- 1 significa muy malo.
+- 5 significa muy bueno. 

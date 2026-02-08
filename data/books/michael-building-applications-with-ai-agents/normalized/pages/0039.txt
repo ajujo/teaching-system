@@ -1,0 +1,28 @@
+CHAPTER 2
+Designing Agent Systems
+Most practitioners don't begin with a grand design document when building agent
+systems. They start with a messy problem, a foundation model API key, and a rough
+idea of what might help. This chapter is your quick start to get you up and running.
+We'll cover each of the following topics in more depth through the rest of the book,
+and many will get their own chapter, but this chapter will give you an overview of
+how to design an agentic system, all grounded in a specific example of managing cus‐
+tomer support for an ecommerce platform.
+Our First Agent System
+Let's start with the problem we're solving. Every day, your customer-support team
+fields dozens or hundreds of emails asking to refund a broken mug, cancel an unship‐
+ped order, or change a delivery address. For each message, a human agent has to read
+free-form text, look up the order in your backend, call the appropriate API, and then
+type a confirmation email. This repetitive two-minute process is ripe for
+automation-but only if we carve off the right slice. When we realize that humans
+type keys and click buttons, often following rules and guidelines, we see that many of
+these same patterns can be performed by well-designed systems that rely on founda‐
+tion models. We want our agent to take a raw customer message plus the order
+record, decide which tool to call (issue_refund, cancel_order, or update_
+address_for_order), invoke that tool with the correct parameters, and then send a
+brief confirmation message. That two-step workflow is narrow enough to build
+quickly, valuable enough to free up human time, and rich enough to showcase intelli‐
+gent behavior. We can build a working agent for this use case in just a few lines of
+code:
+from langchain.tools import tool
+from langchain_openai.chat_models import ChatOpenAI
+17

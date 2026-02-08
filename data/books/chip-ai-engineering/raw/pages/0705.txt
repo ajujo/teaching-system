@@ -1,0 +1,33 @@
+Hay muchas razones por las que el prompt del sistema de su
+aplicación puede cambiar sin que usted lo sepa. El prompt
+del sistema podría haber sido construido sobre una plantilla
+de prompts, y esa plantilla de prompts se podría haber
+actualizado. Un compañero de trabajo podría haber
+encontrado un error tipográfico y haberlo arreglado. Una
+lógica simple debería ser suficiente para detectar un cambio
+en el prompt del sistema de su aplicación.
+Cambios en el comportamiento de los usuarios
+Con el tiempo, los usuarios adaptan su comportamiento a la
+tecnología. Por ejemplo, la gente ya ha descubierto cómo
+modificar sus consultas para obtener mejores resultados en
+Google Search o cómo hacer que sus artículos aparezcan en
+mejores lugares en los resultados de búsqueda. Las personas
+que viven en zonas con coches sin conductor ya han
+descubierto cómo intimidar a los coches sin conductor para
+que les cedan el derecho de paso (Liu et al., 2020. Es
+probable que sus usuarios cambien sus comportamientos
+para obtener mejores resultados de su aplicación. Por
+ejemplo, sus usuarios podrían aprender a redactar
+instrucciones para que las respuestas sean más concisas.
+Esto podría provocar un descenso gradual de la longitud de
+respuesta a lo largo del tiempo. Si nos fijamos únicamente
+en las métricas, puede no resultar obvio cuál ha sido la
+causa de este descenso gradual. Se necesitan investigar para
+comprender la causa raíz.
+Cambios en el modelo subyacente
+Cuando se utiliza un modelo a través de una API, es posible
+que la API permanezca inalterada aunque se actualice el
+modelo subyacente. Como se menciona en el Capítulo 4, es
+posible que los proveedores de modelos no siempre hagan
+públicas estas actualizaciones, dejándole a usted la tarea de
+detectar cualquier cambio. Diferentes versiones de la misma

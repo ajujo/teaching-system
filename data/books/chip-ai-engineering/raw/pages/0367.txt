@@ -1,0 +1,32 @@
+hacer comentarios tóxicos, animar al suicidio y actuar como malvados
+villanos de IA que intentan destruir la humanidad.
+Los ataques de prompts son posibles precisamente porque los modelos
+están entrenados para seguir instrucciones. A medida que los modelos
+mejoran en seguir instrucciones, también mejoran en seguir instrucciones
+maliciosas. Como ya hemos dicho, es difícil para un modelo diferenciar
+entre los prompts del sistema (que pueden pedirle que actúe de forma
+responsable) y los prompts del usuario (que pueden pedirle que actúe de
+forma irresponsable). Al mismo tiempo, a medida que la IA se implementa
+para actividades con altos valores económicos, también aumenta el
+incentivo económico para los ataques de prompts.
+La seguridad de la IA, como cualquier ámbito de la ciberseguridad, es un
+juego del gato y el ratón en evolución, en el que los desarrolladores trabajan
+continuamente para neutralizar las amenazas conocidas, mientras los
+atacantes idean otras nuevas. Estos son algunos enfoques comunes de
+ataque que han tenido éxito en el pasado, presentados por orden creciente
+de sofisticación. La mayoría de ellas ya no son eficaces para la mayoría de
+los modelos.
+Hackeo de prompts manual directo
+Esta familia de ataques consiste en crear manualmente un prompt o una
+serie de prompts que engañen a un modelo para que elimine sus filtros de
+seguridad. Este proceso es similar a la ingeniería social, pero en lugar de
+manipular a seres humanos, los atacantes manipulan y persuaden a modelos
+de IA.
+En los primeros tiempos de los LLMs, un enfoque sencillo era la
+ofuscación. Si un modelo bloquea determinadas palabras clave, los
+atacantes pueden escribirlas mal intencionadamente (como "vacine" en
+lugar de "vaccine" (vacuna) o "el qeada" en lugar de "Al-Qaeda") para
+saltarse este filtro de palabras clave. 16 La mayoría de los LLMs son
+capaces de entender pequeñas erratas de input y utilizar la ortografía
+correcta en sus outputs. Las palabras clave maliciosas también pueden
+ocultarse en una mezcla de idiomas o Unicode.

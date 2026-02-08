@@ -1,0 +1,39 @@
+RAG Inference Pipeline
+320
+By separating concerns between the two components, the vector DB is always populated with the
+latest data, ensuring feature freshness, while the retrieval module can access the latest features
+on every request. The input of the RAG retrieval module is the user's query, based on which we
+have to return the most relevant and similar data points from the vector DB, which will be used
+to guide the LLM in generating the final answer.
+To fully understand the dynamics of the RAG inference pipeline, let's go through the architecture
+flow from Figure 9.1 step by step:
+1.
+User query: We begin with the user who makes a query, such as "Write an article about..."
+2.
+Query expansion: We expand the initial query to generate multiple queries that reflect
+different aspects or interpretations of the original user query. Thus, instead of one query,
+we will use xN queries. By diversifying the search terms, the retrieval module increases
+the likelihood of capturing a comprehensive set of relevant data points. This step is crucial
+when the original query is too narrow or vague.
+3.
+Self-querying: We extract useful metadata from the original query, such as the author's
+name. The extracted metadata will be used as filters for the vector search operation, eliminating redundant data points from the query vector space (making the search more
+accurate and faster).
+4.
+Filtered vector search: We embed each query and perform a similarity search to find
+each search's top K data points. We execute xN searches corresponding to the number of
+expanded queries. We call this step a filtered vector search as we leverage the metadata
+extracted from the self-query step as query filters.
+5.
+Collecting results: We get up to xK results closest to its specific expanded query interpretation for each search operation. Further, we aggregate the results of all the xN searches,
+ending up with a list of N x K results containing a mix of articles, posts, and repositories
+chunks. The results include a broader set of potentially relevant chunks, offering multiple
+relevant angles based on the original query's different facets.
+6.
+Reranking: To keep only the top K most relevant results from the list of N x K potential
+items, we must filter the list further. We will use a reranking algorithm that scores each
+chunk based on the relevance and importance relative to the initial user query. We will
+leverage a neural cross-encoder model to compute the score, a value between 0 and 1,
+where 1 means the result is entirely relevant to the query. Ultimately, we sort the N x K
+results based on the score and pick the top K items. Thus, the output is a ranked list of K
+chunks, with the most relevant data points situated at the top.

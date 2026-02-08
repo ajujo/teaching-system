@@ -1,0 +1,36 @@
+Creating features with bag-of-words and n-grams
+351
+    CountVectorizer
+)
+2.
+Let's load the train set part of the 20 Newsgroup dataset into a pandas DataFrame:
+data = fetch_20newsgroups(subset='train')
+df = pd.DataFrame(data.data, columns=['text'])
+3.
+To make interpreting the results easier, let's remove punctuation and numbers from the
+text variable:
+df['text'] = df['text'].str.replace(
+    ‹[^\w\s]›,››, regex=True).str.replace(
+    ‹\d+›,››, regex=True)
+Note
+To learn more about regex with Python, follow this link: https://docs.python.org/3/
+howto/regex.html
+4.
+Now, let's set up CountVectorizer() so that, before creating the BoW, it puts the text in
+lowercase, removes stop words, and retains words that appear in, at least, 5% of the text pieces:
+vectorizer = CountVectorizer(
+    lowercase=True,
+    stop_words='english',
+    ngram_range=(1, 1),
+    min_df=0.05)
+Note
+To introduce n-grams as part of the returned columns, we can change the value of ngrams_
+range to, for example, (1,2). The tuple provides the lower and upper boundaries of the
+range of n-values for different n-grams. In the case of (1,2), CountVectorizer() will
+return single words and arrays of two consecutive words.
+5.
+Let's fit CountVectorizer() so that it learns which words should be used in the BoW:
+vectorizer.fit(df['text'])
+6.
+Now, let's create the BoW:
+X = vectorizer.transform(df['text'])

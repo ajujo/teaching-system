@@ -1,0 +1,32 @@
+In summary, standard tool selection offers a fast, intuitive way to integrate tools into
+your agent system without additional infrastructure or training overhead. While it
+scales well for small toolsets, careful description engineering becomes essential as
+your tool library grows to maintain accuracy and avoid misselection. By combining
+thoughtful descriptions with iterative prompt testing, you can achieve robust perfor‐
+mance using this simple yet powerful approach.
+Semantic Tool Selection
+Another approach, semantic tool selection, uses semantic representations to index all
+of the available tools and semantic search to retrieve the most relevant tools. This
+reduces the number of tools to choose from and then relies on the foundation model
+to choose the correct tool and parameters from this much smaller set. Ahead of time,
+each tool definition and description is embedded using an encoder-only model—
+such as OpenAI’s Ada model, Amazon’s Titan model, Cohere’s Embed model, Mod‐
+ernBERT, or others—which represents the tool name and description as a vector of
+numbers. This process is illustrated in Figure 5-2, which shows how each tool is
+embedded into a vector representation for efficient retrieval based on semantic simi‐
+larity to the task query.
+Figure 5-2. Semantic tool embedding for retrieval-based selection. Each tool or skill is
+encoded into a dense vector representation using an embedding model. These vectors are
+then stored for efficient semantic search, enabling the system to retrieve the most rele‐
+vant tools based on the task query.
+These tools are then indexed in a lightweight vector database. At runtime, the current
+context is embedded using the same embedding model, a search is performed on the
+database, and the top tools are selected and retrieved. These tools are then passed to
+the foundation model, which can then choose to invoke a tool and choose the param‐
+eters. The tool is then invoked, and the response is used to compose the response for
+the user. This process is illustrated in Figure 5-3, which shows how the system
+retrieves relevant tools and uses the foundation model to select and invoke the appro‐
+priate tool with its parameters to generate the final response.
+Tool Selection 
+| 
+97

@@ -1,0 +1,46 @@
+First Steps with LangChain
+52
+•
+num_gpu=1: Allocates GPU resources. Options include:
+•
+0: CPU-only mode (slower but works without a GPU)
+•
+1: Uses a single GPU (appropriate for most desktop setups)
+•
+Higher values: For multi-GPU systems only
+•
+num_thread=4: Controls CPU parallelization:
+•
+Lower values (2-4): Good for running alongside other applications
+•
+Higher values (8-16): Maximizes performance on dedicated servers
+•
+Optimal setting: Usually matches your CPU's physical core count
+2.
+Error handling: Local models can encounter various errors, from out-of-memory condi­
+tions to unexpected terminations. A robust error-handling strategy is essential:
+def safe_model_call(llm, prompt, max_retries=2):
+    """Safely call a local model with retry logic and graceful
+    failure"""
+    retries = 0
+    while retries <= max_retries:
+        try:
+            return llm.invoke(prompt)
+        except RuntimeError as e:
+            # Common error with local models when running out of VRAM
+            if "CUDA out of memory" in str(e):
+                print(f"GPU memory error, waiting and retrying
+({retries+1}/{max_retries+1})")
+                time.sleep(2)  # Give system time to free resources
+                retries += 1
+            else:
+                print(f"Runtime error: {e}")
+                return "An error occurred while processing your request."
+        except Exception as e:
+            print(f"Unexpected error calling model: {e}")
+            return "An error occurred while processing your request."
+    # If we exhausted retries
+    return "Model is currently experiencing high load. Please try again
+later."
+# Use the safety wrapper in your LCEL chain
+from langchain_core.prompts import PromptTemplate

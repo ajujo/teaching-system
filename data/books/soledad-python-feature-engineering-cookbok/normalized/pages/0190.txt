@@ -1,0 +1,39 @@
+Removing outliers
+167
+3.
+Let's create a function to find the limits beyond which we'll consider a data point an outlier
+using the IQR proximity rule:
+def find_limits(df, variable, fold):
+    q1 = df[variable].quantile(0.25)
+    q3 = df[variable].quantile(0.75)
+    IQR = q3 - q1
+    lower_limit = q1 - (IQR * fold)
+    upper_limit = q3 + (IQR * fold)
+    return lower_limit, upper_limit
+Note
+In step 3, we use the IQR proximity rule to find the limits beyond which data points will be
+considered outliers, which we discussed in the Visualizing outliers with boxplots and the interquartile proximity rule recipe. Alternatively, you can identify outliers with the mean and the
+standard deviation or MAD, as we covered in the Finding outliers using the mean and standard
+deviation and Using the median absolute deviation to find outliers recipes.
+4.
+Using the function from step 3 , let's determine the limits of the MedInc variable:
+lower, upper = find_limits(X_train, "MedInc", 3)
+If you execute print(lower_limit, upper_limit), you'll see the result of the previous
+command: (-3.925900000000002, 11.232600000000001).
+5.
+Let's retain the observations in the train and test sets whose values are greater than or equal
+to (ge) the lower limit:
+inliers = X_train["MedInc"].ge(lower)
+train_t = X_train.loc[inliers]
+inliers = X_test["MedInc"].ge(lower)
+test_t = X_test.loc[inliers]
+6.
+Let's retain the observations whose values are lower than or equal to (le) the upper limit:
+inliers = X_train["MedInc"].le(upper)
+train_t = X_train.loc[inliers]
+inliers = X_test["MedInc"].le(upper)
+test_t = X_test.loc[inliers]
+Go ahead and execute X_train.shape followed by train_t.shape to corroborate that
+the transformed DataFrame contains fewer observations than the original one after removing
+the outliers.
+We can remove outliers across multiple variables simultaneously with feature-engine.

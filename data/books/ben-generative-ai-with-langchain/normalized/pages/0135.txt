@@ -1,0 +1,38 @@
+Building Intelligent RAG Systems
+108
+Let's begin by introducing RAG, its importance, and the main considerations when using the
+RAG framework.
+From indexes to intelligent retrieval
+Information retrieval has been a fundamental human need since the dawn of recorded knowledge.
+For the past 70 years, retrieval systems have operated under the same core paradigm:
+1.
+First, a user frames an information need as a query.
+2.
+They then submit this query to the retrieval system.
+3.
+Finally, the system returns references to documents that may satisfy the information need:
+•
+References may be rank-ordered by decreasing relevance
+•
+Results may contain relevant excerpts from each document (known as snippets)
+While this paradigm has remained constant, the implementation and user experience have under­
+gone remarkable transformations. Early information retrieval systems relied on manual indexing
+and basic keyword matching. The advent of computerized indexing in the 1960s introduced the
+inverted index-a data structure that maps each word to a list of documents containing it. This
+lexical approach powered the first generation of search engines like AltaVista (1996), where results
+were primarily based on exact keyword matches.
+The limitations of this approach quickly became apparent, however. Words can have multiple
+meanings (polysemy), different words can express the same concept (synonymy), and users often
+struggle to articulate their information needs precisely.
+Information-seeking activities come with non-monetary costs: time investment, cognitive load,
+and interactivity costs-what researchers call "Delphic costs." User satisfaction with search
+engines correlates not just with the relevance of results, but with how easily users can extract
+the information they need.
+Traditional retrieval systems aimed to reduce these costs through various optimizations:
+•
+Synonym expansion to lower cognitive load when framing queries
+•
+Result ranking to reduce the time cost of scanning through results
+•
+Result snippeting (showing brief, relevant excerpts from search results) to lower the cost
+of evaluating document relevance

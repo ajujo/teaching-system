@@ -1,0 +1,28 @@
+Building Workflows with LangGraph
+68
+LangGraph fundamentals
+LangGraph is a framework developed by LangChain (as a company) that helps control and or­
+chestrate workflows. Why do we need another orchestration framework? Let's park this question
+until Chapter 5, where we'll touch on agents and agentic workflows, but for now, let us mention
+the flexibility of LangGraph as an orchestration framework and its robustness in handling com­
+plex scenarios.
+Unlike many other frameworks, LangGraph allows cycles (most other orchestration frameworks
+operate only with directly acyclic graphs), supports streaming out of the box, and has many
+pre-built loops and components dedicated to generative AI applications (for example, human
+moderation). LangGraph also has a very rich API that allows you to have very granular control
+of your execution flow if needed. This is not fully covered in our book, but just keep in mind that
+you can always use a more low-level API if you need to.
+For now, let's start with the basics. If you're new to this framework, we would also highly recom­
+mend a free online course on LangGraph that is available at https://academy.langchain.com/
+to deepen your understanding.
+As always, you can find all the code samples on our public GitHub repository as Jupy­
+ter notebooks: https://github.com/benman1/generative_ai_with_langchain/
+tree/second_edition/chapter3.
+A Directed Acyclic Graph (DAG) is a special type of graph in graph theory and com­
+puter science. Its edges (connections between nodes) have a direction, which means
+that the connection from node A to node B is different from the connection from
+node B to node A. It has no cycles. In other words, there is no path that starts at a
+node and returns to the same node by following the directed edges.
+DAGs are often used as a model of workflows in data engineering, where nodes are
+tasks and edges are dependencies between these tasks. For example, an edge from
+node A to node B means that we need output from node A to execute node B.

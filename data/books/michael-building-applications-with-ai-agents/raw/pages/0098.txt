@@ -1,0 +1,44 @@
+Real-time data access is another major benefit of API-based tools. APIs enable agents
+to access the most current information from external sources, ensuring that their
+responses and actions are based on up-to-date data. This is particularly crucial for
+applications that depend on timely and accurate information, such as financial trad‐
+ing or emergency response systems, where decisions must be made quickly based on
+the latest available data.
+To illustrate the implementation of API-based tools, let’s begin with enabling your
+agent to browse the open web for additional information. In this code snippet, we
+register a tool to retrieve information from Wikipedia, a step toward a full web
+browsing agent:
+from langchain_openai import ChatOpenAI
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_core.messages import HumanMessage
+api_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=300)
+tool = WikipediaQueryRun(api_wrapper=api_wrapper)
+# Initialize the LLM with GPT-4o and bind the tools
+llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm_with_tools = llm.bind_tools([tool])
+messages = [HumanMessage("What was the most impressive thing" +
+                         "about Buzz Aldrin?")]
+ai_msg = llm_with_tools.invoke(messages)
+messages.append(ai_msg)
+for tool_call in ai_msg.tool_calls:
+   tool_msg = tool.invoke(tool_call)
+  
+   print(tool_msg.name)
+   print(tool_call['args'])
+   print(tool_msg.content)
+   messages.append(tool_msg)
+   print()
+final_response = llm_with_tools.invoke(messages)
+print(final_response.content)
+The foundation model identifies the object of interest in the query and searches Wiki‐
+pedia for the term. It then uses this additional information to generate its final answer
+when addressing the question:
+{'query': 'Buzz Aldrin'}
+Page: Buzz Aldrin
+Summary: Buzz Aldrin (born Edwin Eugene Aldrin Jr. January 20, 1930) is an 
+American former astronaut, engineer and fighter pilot. He made three spacewalks 
+as pilot of the 1966 Gemini 12 mission, and was the Lunar Module Eagle pilot on 
+76 
+| 
+Chapter 4: Tool Use

@@ -1,0 +1,29 @@
+Standardizing the features
+207
+5.
+Now, let's standardize the train and test sets with the trained scaler:
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+StandardScaler() stores the mean and standard deviation learned from the training set
+during fit(). Let's visualize the learned parameters.
+6.
+First, we'll print the mean values that were learned by scaler:
+scaler.mean_
+We see the mean values of each variable in the following output:
+array([3.86666741e+00, 2.86187016e+01,
+5.42340368e+00,                 1.09477484e+00,1.42515732e+03,
+3.04051776e+00])
+7.
+Now, let's print the standard deviation values that were learned by scaler:
+scaler.scale_
+We see the standard deviation of each variable in the following output:
+array([1.89109236e+00, 1.25962585e+01,
+2.28754018e+00,                          4.52736275e-01,
+1.14954037e+03, 6.86792905e+00])
+Let's compare the transformed data with the original data to understand the changes.
+8.
+Let's print the descriptive statistics from the original variables in the test set:
+X_test.describe()
+In the following output, we see that the variables' mean values are different from zero and the
+variance varies:
+Figure 7.2 - Descriptive statistical parameters of the variables before scaling

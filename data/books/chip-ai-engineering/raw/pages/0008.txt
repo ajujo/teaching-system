@@ -1,0 +1,32 @@
+La familiaridad y facilidad de uso de muchas técnicas de ingeniería de IA
+pueden inducir a pensar que no tienen nada de nuevo. Pero aunque muchos
+principios para crear aplicaciones de IA siguen siendo los mismos, la escala
+y las capacidades mejoradas de los modelos de IA presentan oportunidades
+y retos que requieren nuevas soluciones.
+Este libro abarca todo el proceso de adaptación de los modelos
+fundacionales para la resolución de problemas reales, incluyendo técnicas
+probadas en otros campos de la ingeniería y técnicas que surgieron con los
+modelos fundacionales.
+Me propuse escribir el libro porque quería aprender, y aprendí mucho.
+Aprendí de los proyectos en los que trabajé, de los artículos que leí y de las
+personas a las que entrevisté. Durante el proceso de redacción de este libro,
+he utilizado notas de más de 100 conversaciones y entrevistas a, entre otros,
+investigadores de los principales laboratorios de IA (OpenAI, Google,
+Anthropic, ...), desarrolladores de marcos (NVIDIA, Meta, Hugging Face,
+Anyscale, LangChain, LlamaIndex, etc.), ejecutivos y responsables de
+IA/datos en empresas de diferentes tamaños, jefes de producto,
+investigadores de la comunidad y desarrolladores de aplicaciones
+independientes (véase “Agradecimientos”).
+Aprendí especialmente de los primeros lectores, quienes pusieron a prueba
+mis suposiciones, me presentaron diferentes perspectivas y me mostraron
+nuevos problemas y enfoques. Algunas secciones del libro también han
+recibido miles de comentarios de la comunidad tras ser compartidas en mi
+blog, muchos de ellos aportándome nuevas perspectivas o confirmando
+alguna hipótesis.
+Espero que este proceso de aprendizaje continúe ahora que el libro está en
+sus manos, ya que usted tiene experiencias y perspectivas únicas. No duden
+en hacerme llegar sus comentarios sobre este libro a través de X, LinkedIn
+o por correo electrónico a hi@huyenchip.com.
+De qué trata este libro
+Este libro aporta un marco para adaptar los modelos fundacionales, que
+incluyen tanto los grandes modelos lingüísticos (LLMs) como los grandes

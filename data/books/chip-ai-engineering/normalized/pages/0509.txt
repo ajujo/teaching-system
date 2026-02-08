@@ -1,0 +1,25 @@
+métodos adaptadores más recientes se encuentra IA3 (Liu et al., 2022), cuya
+eficaz estrategia de lotificación de tareas mixtas lo hace especialmente
+atractivo para el afinado de tareas múltiples. Se ha demostrado que supera a
+LoRA e incluso al afinado completo en algunos casos. LongLoRA (Chen et
+al., 2023) es una variante de LoRA que incorpora técnicas de modificación
+de la atención para ampliar la longitud del contexto.
+Si los métodos basados en adaptadores añaden parámetros entrenables a la
+arquitectura del modelo, los métodos basados en prompts suaves modifican
+cómo el modelo procesa el input, introduciendo tokens entrenables
+especiales. Estos tokens adicionales se introducen en el modelo junto con
+los tokens de input. Se denominan prompts suaves porque, al igual que los
+inputs (prompts duros), los prompts suaves también guían los
+comportamientos del modelo. Sin embargo, los prompts suaves se
+diferencian de los duros en dos aspectos:
+Los prompts duros son legibles para el ser humano. Suelen
+contener tokens discretos como "Yo", "escribo" y "mucho". En
+cambio, los prompts suaves son vectores continuos, parecidos a los
+vectores de incrustación, y no son legibles para el ser humano.
+Los prompts duros son estáticos y no se pueden entrenar, mientras
+que los suaves se pueden optimizar mediante retropropagación
+durante el afinado, lo que permite adaptarlos a tareas específicas.
+Algunas personas describen el uso de prompts suaves como un cruce entre
+la ingeniería de prompts y el afinado. En la Figura 7-9 se muestra cómo se
+pueden utilizar prompts suaves junto con prompts duros para guiar el
+comportamiento de un modelo.

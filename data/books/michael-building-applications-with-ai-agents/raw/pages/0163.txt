@@ -1,0 +1,42 @@
+   {
+       "messages": [
+           HumanMessage(
+               reflexion_prompt
+           )
+       ]
+   }
+)
+reflections.append(result)
+print(result)
+update_memory(trial_log_path, env_configs)
+The preceding example is built around a handful of core ideas woven together in
+under 20 lines of code. First, we isolate every call to the LLM behind a simple wrap‐
+per—call_model(state)—so that our graph nodes remain focused and reusable.
+Next, we craft one multiline “reflection prompt” that tells the model: “You attempted
+this task and failed. Don’t rehash the environment; focus on what strategic step you
+missed, and output a concise plan after the word ‘Plan’.” We then log each trial’s full
+transcript to disk, and after a failure we invoke update_memory(...) to read those
+logs, pull in the last few stored reflections to bound context, and ask the LLM to gen‐
+erate a new self-critique, which we append back into our in-memory list. Finally, by
+adding a single “reflexion” node to our StateGraph (wired from START), every run of
+the agent automatically invokes this prompt and enriches its state with the latest
+“Plan: …” output. Over repeated runs, the model effectively becomes its own coach—
+continually refining its strategy without touching a single parameter.
+Experiential Learning
+Experiential learning takes nonparametric learning a step further. In this approach,
+the agent still gathers its experiences into a database, but now it applies a new step of
+aggregating insights across those experiences to improve its future policy. This is
+especially valuable for reflecting on past failures and attempting to develop new tech‐
+niques to improve performance in similar situations in the future. As the agent
+extracts insights from its experience bank, it maintains this list of insights over time,
+and it dynamically modifies these insights, promoting the most valuable insights,
+downvoting the least useful ones, and revising insights based on new experiences.
+This work builds on Reflexion by adding a process for cross-task learning. This
+allows the agent to improve its performance when it moves across different tasks and
+helps identify good practices that can transfer. In this approach, ExpeL maintains a
+list of insights that are extracted from past experiences. Over time, new insights can
+be added, and existing insights can be edited, upvoted, downvoted, or removed, as
+can be seen in Figure 7-3.
+Nonparametric Learning 
+| 
+141

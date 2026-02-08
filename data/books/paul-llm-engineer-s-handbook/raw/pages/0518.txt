@@ -1,0 +1,74 @@
+Index
+487
+production environment  432
+prompt monitoring  411, 449-455
+pull method  136
+push method  136
+Pydantic domain entities  150-154
+data category  151
+OVM  154-159
+state of data category  151
+Pydantic Settings
+reference link  139
+Python ecosystem
+dependency and virtual environment 
+management  27, 29
+project installation  26, 27
+task execution tool  29, 30
+Q
+QA job  436
+Qdrant  47, 48
+reference link  417
+setting up  417, 418
+quantization  303-308
+techniques  313, 314
+with GGUF and llama.cpp  309-311
+with GPTQ and EXL2  311, 312
+Quantization-aware Low-Rank Adaptation 
+(QLoRA)  215, 216, 221
+Quantization-Aware Training (QAT)  304
+query optimization  120
+query rewriting  121
+query routing  120
+R
+RAG evaluation  271, 272
+ARES  274, 275
+Ragas  272-274
+RAG feature pipeline
+chunking  135
+cleaning  135
+data extraction  134
+data loading  135
+data storage, in snapshots  138
+data warehouse and feature store,  
+syncing  136, 137
+embedding  135
+orchestration  138
+RAG feature pipeline, architecture
+batch pipelines  130
+batch pipelines, versus streaming  
+pipelines  130-134
+core steps  134
+designing  129
+feature store  128
+inference pipeline  127
+ingestion pipeline  127
+problem, solution  127, 128
+raw data  128
+RAG inference pipeline
+architecture flow  320, 321
+implementing  318-320, 338
+retrieval module, implementing  339-346
+raw data, into data warehouse
+obtaining  89-94
+troubleshooting  94, 95
+Recall-Oriented Understudy for Gisting 
+Evaluation (ROUGE) metric  267
+reference window  470
+regression tests  462
+Reinforcement Learning from Human 
+Feedback (RLHF)  245-247, 409
+iterative improvement  246
+policy optimization  246
+reward model learning  246
+reinforcement learning (RL)  246

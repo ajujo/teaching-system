@@ -1,0 +1,21 @@
+Performing Feature Scaling
+208
+9.
+Let's now print the descriptive statistical values from the transformed variables:
+X_test_scaled.describe()
+In the following output, we see that the variables' mean is now centered at 0 and the variance
+is approximately 1:
+Figure 7.3 - Descriptive statistical parameters of the scaled variables
+showing a mean of 0 and variance of approximately 1
+Note
+The AveRooms, AveBedrms, and AveOccup variables are highly skewed, which can lead
+to observed values in the test set that are much greater or much smaller than those in the
+training set, and hence we see that the variance deviates from 1. This is to be expected because
+standardization is sensitive to outliers and very skewed distributions.
+We mentioned, in the Getting ready section, that the shape of the distribution does not change with
+standardization. Go ahead and corroborate that by executing X_test.hist() and then X_test_
+scaled.hist() to compare the variables' distribution before and after the transformation.
+How it works...
+In this recipe, we standardized the variables of the California housing dataset by utilizing scikitlearn. We split the data into train and test sets because the parameters for the standardization should
+be learned from the train set. This is to avoid leaking data from the test to the train set during the
+preprocessing steps and to ensure the test set remains naïve to all feature transformation processes.

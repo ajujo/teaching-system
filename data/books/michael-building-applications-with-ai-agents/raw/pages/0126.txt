@@ -1,0 +1,52 @@
+    Use the LLM to determine the most appropriate tool within a group based  
+    on the user's query.
+    
+    Args:
+        query (str): The user's input query.
+        group_name (str): The name of the selected tool group.
+        
+    Returns:
+        str: The name of the selected tool function.
+    """
+    prompt = f'''Based on the query: '{query}', select the most appropriate 
+                 tool from the group '{group_name}'.'''
+    response = llm([HumanMessage(content=prompt)])
+    return response.content.strip()
+# Example user query
+user_query = "Solve this equation: 2x + 3 = 7"
+# Step 1: Select the most relevant tool group using LLM
+selected_group_name = select_group_llm(user_query)
+if not selected_group_name:
+    print("No relevant tool group found for your query.")
+else:
+    logging.info(f"Selected Group: {selected_group_name}")
+    print(f"Selected Tool Group: {selected_group_name}")
+    # Step 2: Select the most relevant tool within the group using LLM
+    selected_tool_name = select_tool_llm(user_query, selected_group_name)
+    selected_tool = globals().get(selected_tool_name, None)
+    
+    if not selected_tool:
+        print("No relevant tool found within the selected group.")
+    else:
+        logging.info(f"Selected Tool: {selected_tool.__name__}")
+        print(f"Selected Tool: {selected_tool.__name__}")
+        
+        # Prepare arguments based on the tool
+        args = {}
+        if selected_tool == query_wolfram_alpha:
+            # Assume the entire query is the expression
+            args["expression"] = user_query
+        elif selected_tool == trigger_zapier_webhook:
+            # Use placeholders for demo
+            args["zap_id"] = "123456"
+            args["payload"] = {"message": user_query}
+        elif selected_tool == send_slack_message:
+            # Use placeholders for demo
+            args["channel"] = "#general"
+            args["message"] = user_query
+        else:
+            print("Selected tool is not recognized.")
+        
+104 
+| 
+Chapter 5: Orchestration

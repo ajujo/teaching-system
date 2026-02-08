@@ -1,0 +1,32 @@
+Etiqueta el siguiente artículo como comestible o no comestible.
+Artículo: hamburguesa
+Etiqueta: comestible
+Artículo: coche
+Etiqueta: no comestible
+Artículo: champiñón
+Etiqueta: comestible
+Elemento: {INPUT}
+Etiqueta:
+Para el afinado, todos los ejemplos incluidos en el prompt de 3 shots
+pueden convertirse en ejemplos de entrenamiento. Los datos de
+entrenamiento para el afinado tendrán el aspecto de la Tabla 8-4.
+tabla 8-4. Ejemplo de datos de entrenamiento
+utilizados para una tarea de clasificación de
+alimentos.
+ID de ejemplo
+Input
+Output
+1
+hamburguesa -->
+comestible
+2
+coche -->
+no comestible
+3
+champiñón -->
+comestible
+...
+...
+...
+Una vez afinado el modelo, puede utilizar un prompt tan sencillo como:
+{INPUT} -->

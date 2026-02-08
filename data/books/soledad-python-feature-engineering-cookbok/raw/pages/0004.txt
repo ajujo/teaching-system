@@ -1,0 +1,19 @@
+This book would not have been possible without the dedicated efforts of those who contribute to the 
+Python open source ecosystem for data science and machine learning. We often overlook the fact 
+that these contributors are real people with families, jobs, and hobbies, who generously allocate their 
+time to develop these essential tools. I am deeply grateful to the developers of scikit-learn and pandas, 
+pivotal libraries for data analysis and processing, as well as the maintainers of tsfresh and category 
+encoders. A special acknowledgment goes to Nathan Parsons, current maintainer of Featuretools, for 
+his invaluable support in crafting Chapter 8 of this book.
+I am grateful to my editor, Tiksha Abhimanyu Lad, and her team for their invaluable support in 
+bringing this book to fruition. Special thanks to our technical reviewer, Hector Patiño, for meticulously 
+reviewing the code and recipes, ensuring smooth execution, and providing valuable resources to our 
+readers.
+A heartfelt thank you to my friend Chris Samiullah for his invaluable support in my growth as a 
+software developer.
+Finally, I am grateful to the users and contributors of Feature-engine for their unwavering support, 
+feedback, and engagement, which have been instrumental in shaping the functionality of the library. 
+Lastly, I owe a debt of gratitude to my students, whose feedback and encouragement have helped me 
+become a better instructor and writer.
+Thank you all for your invaluable contributions to this endeavor.
+– Soledad Galli

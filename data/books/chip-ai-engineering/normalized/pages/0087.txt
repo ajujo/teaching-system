@@ -1,0 +1,37 @@
+Estas nuevas interfaces de IA también implican nuevas formas de recabar y
+extraer los comentarios de los usuarios. La interfaz de conversación facilita
+mucho a los usuarios ofrecer su opinión con un lenguaje natural, pero estos
+comentarios son más difíciles de extraer. El diseño de los comentarios de
+usuario se analiza en el Capítulo 10.
+En la Tabla 1-6 se muestra un resumen de cómo cambia la importancia de
+las distintas categorías de desarrollo de aplicaciones con la ingeniería de IA.
+tabla 1-6. La importancia de las distintas categorías en el desarrollo de
+aplicaciones para la ingeniería de IA y ML.
+Categoría
+Construir con ML
+tradicional
+Construir con modelos
+fundacionales
+Interfaz de la AI
+Menos importante
+Importante
+Ingeniería de
+prompts
+No aplicable
+Importante
+Evaluación
+Importante
+Más importante
+Ingeniería de IA Vs. ingeniería de pila completa
+El énfasis creciente en el desarrollo de aplicaciones, especialmente en las
+interfaces, lleva la ingeniería de IA más cerca del desarrollo de pila
+completa. 27 La creciente importancia de las interfaces conduce a un
+cambio en el diseño de las herramientas de IA para atraer a más ingenieros
+de frontend. Tradicionalmente, la ingeniería de ML se centra en Python.
+Antes de los modelos fundacionales, los marcos de ML más populares
+soportaban principalmente API de Python. Hoy en día, Python sigue siendo
+popular, pero también hay un creciente apoyo a las API de JavaScript, con
+LangChain.js, Transformers.js, la biblioteca Node de OpenAI y el SDK de
+IA de Vercel.
+Aunque muchos ingenieros de IA proceden de entornos tradicionales de
+ML, cada vez son más los que proceden de entornos de desarrollo web o de

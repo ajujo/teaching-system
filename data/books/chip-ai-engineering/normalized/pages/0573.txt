@@ -1,0 +1,28 @@
+RECURSOS PARA CONJUNTOS DE DATOS DE ACCESO
+PÚBLICO
+A continuación se indican algunos recursos donde puede buscar
+conjuntos de datos disponibles públicamente. Aunque debe aprovechar
+los datos disponibles, nunca debe confiar plenamente en ellos. Los
+datos deben inspeccionarse y validarse a fondo.
+Compruebe siempre la licencia de un conjunto de datos antes de
+utilizarlo. Intente comprender de dónde proceden los datos. Aunque un
+conjunto de datos tenga una licencia que permita su uso comercial, es
+posible que parte de él proceda de una fuente que no lo permita:
+1. Hugging Face y Kaggle albergan cientos de miles de conjuntos
+de datos.
+2. Google dispone de una maravillosa e infravalorada función de
+búsqueda de conjuntos de datos.
+3. Los gobiernos suelen ser grandes proveedores de datos
+abiertos. Data.gov alberga cientos de miles de conjuntos de
+datos, y data.gov.in, decenas de miles.
+4. El Instituto de Investigación Social de la Universidad de
+Michigan ICPSR dispone de datos de decenas de miles de
+estudios sociales.
+5. El Machine Learning Repository de UC Irvine y OpenML son
+dos repositorios de conjuntos de datos más antiguos, cada uno
+de los cuales alberga varios miles de conjuntos de datos.
+6. La Red de Datos Abiertos le permite buscar entre decenas de
+miles de conjuntos de datos.
+7. Los proveedores de servicios en la nube suelen albergar una
+pequeña colección de conjuntos de datos abiertos; el más
+notable es Open Data de AWS.

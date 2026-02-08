@@ -1,0 +1,55 @@
+Choosing the Right Stack
+All these open source stacks are viable equivalents—start by assessing your current
+setup. If you have an enterprise-managed solution, extend it with OTel instrumenta‐
+tion for agent signals unless you need LLM-specific features like auto-evals (favor
+Langfuse/Phoenix) or advanced search (ELK). For greenfield projects, Grafana or
+SigNoz offer broad coverage. Evaluate based on team expertise, data volume, and
+integration needs—many can hybridize (e.g., OTel to multiple backends). Table 10-2
+shows these trade-offs at a glance.
+Table 10-2. Comparison of monitoring and observability stacks
+Stack
+Key strength
+Best for
+Trade-off (versus Grafana)
+Grafana + Loki/Tempo Composability and visualization
+Enterprise ops
+More components to manage
+ELK Stack
+Advanced search/analytics
+Large-scale logs
+Higher resource use
+Phoenix
+Tracing and debugging
+Dev iteration
+Limited production scale
+SigNoz
+Unified and lightweight
+Startups/ML teams
+Less extensible
+Langfuse
+Foundation model/agent-specific evals Semantic monitoring
+Narrower infra coverage
+While the observability landscape offers multiple strong options—each with unique
+strengths in scalability, ease of use, or LLM-specific features—this competition drives
+innovation and ensures teams can find a fit for their needs, whether extending enter‐
+prise stacks or starting fresh. For our examples in the following sections, we’ll focus
+on OTel with Grafana, Loki, and Tempo, as it provides a highly composable, open
+source foundation that’s widely adopted and integrates seamlessly with agent frame‐
+works like LangGraph, enabling us to demonstrate core concepts without vendor
+lock-in. With a stack selected, the next step is instrumentation—embedding telemetry
+directly into your agent runtime to capture meaningful signals, as explored in the
+next section.
+OTel Instrumentation
+The first step in building an effective monitoring loop is instrumentation. Without
+high-quality signals embedded directly into your agent runtime, you’re flying blind.
+OTel provides the foundation for structured, interoperable telemetry across traces,
+metrics, and logs—and it integrates well with LangGraph-based agent systems.
+LangGraph is structured as a graph of asynchronous function calls. Each node in the
+graph represents a functional step in an agent workflow—perhaps planning, calling a
+tool, or generating a response with an LLM. Because each step is already isolated and
+explicitly declared, it’s straightforward to instrument each one with OTel spans. These
+spans create a structured trace that records not just when steps started and ended, but
+what they were trying to do and how they performed.
+230 
+| 
+Chapter 10: Monitoring in Production

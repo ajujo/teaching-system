@@ -1,0 +1,108 @@
+{
+  "$schema": "exam_grade_report_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam05-a02",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam05",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "graded_at": "2026-02-06T11:21:34.321298+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "llm",
+  "strict": true,
+  "grading_time_ms": 28164,
+  "results": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El LLM Twin se define como un AI character que emula el estilo de escritura de una persona específica, permitiendo aplicaciones personalizadas en lugar de usar modelos genéricos. Esta definición aparece claramente en la introducción del capítulo.",
+      "expected_answer": "1: Crear un clon exacto del estilo de escritura de una persona específica para aplicaciones personalizadas",
+      "given_answer": "1: Crear un clon exacto del estilo de escritura de una persona específica para aplicaciones personalizadas",
+      "correct_option_text": "Crear un clon exacto del estilo de escritura de una persona específica para aplicaciones personalizadas",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El capítulo menciona Hugging Face, MongoDB y Qdrant como herramientas clave para el desarrollo del LLM Twin. TensorFlow no se especifica en este contexto.",
+      "expected_answer": "2: TensorFlow",
+      "given_answer": "2: TensorFlow",
+      "correct_option_text": "TensorFlow",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q03",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El capítulo explica que el MVP es la versión más simple pero funcional, enfocada en validar conceptos básicos sin necesariamente incluir todas las optimizaciones finales.",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q04",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "La respuesta es completamente correcta y coincide exactamente con la esperada, incluyendo los tres componentes principales (Feature/Training/Inference pipeline) y su propósito de escalabilidad y reproducibilidad. ¡Muy bien hecho!",
+      "expected_answer": "Los tres componentes son: 1) Feature pipeline para procesar datos, 2) Training pipeline para entrenar modelos y 3) Inference pipeline para hacer predicciones. Esta arquitectura permite un flujo escalable y reproducible de datos a producción.",
+      "given_answer": "Los tres componentes son: 1) Feature pipeline para procesar datos, 2) Training pipeline para entrenar modelos y 3) Inference pipeline para hacer predicciones. Esta arquitectura permite un flujo escalable y reproducible de datos a producción.",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El pipeline de datos permite centralizar y organizar los datos en un almacén estructurado, facilitando su acceso y procesamiento para las fases posteriores del proyecto.",
+      "expected_answer": "1: Centralizar y organizar los datos en un almacén estructurado",
+      "given_answer": "1: Centralizar y organizar los datos en un almacén estructurado",
+      "correct_option_text": "Centralizar y organizar los datos en un almacén estructurado",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q06",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "La respuesta es completamente correcta y aborda todos los puntos clave de la respuesta esperada: personalización para necesidades específicas, evitación de limitaciones éticas en modelos genéricos y garantía de coherencia alineada con el estilo emulado. Solo falta un punto final al final, pero no afecta el contenido.",
+      "expected_answer": "El LLM Twin permite personalizar modelos según necesidades específicas, evitar limitaciones éticas de modelos genéricos y garantizar coherencia en respuestas alineadas con el estilo de la persona emulada.",
+      "given_answer": "El LLM Twin permite personalizar modelos según necesidades específicas, evitar limitaciones éticas de modelos genéricos y garantizar coherencia en respuestas alineadas con el estilo de la persona emulada",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    }
+  ],
+  "summary": {
+    "total_questions": 6,
+    "correct_count": 6,
+    "total_score": 9.0,
+    "max_score": 9,
+    "percentage": 1.0,
+    "passed": true,
+    "by_unit": {
+      "paul-llm-engineer-s-handbook-ch01-u01": {
+        "score": 9.0,
+        "max": 9.0
+      }
+    },
+    "by_type": {
+      "multiple_choice": {
+        "correct": 3,
+        "total": 3
+      },
+      "true_false": {
+        "correct": 1,
+        "total": 1
+      },
+      "short_answer": {
+        "correct": 2,
+        "total": 2
+      }
+    }
+  }
+}

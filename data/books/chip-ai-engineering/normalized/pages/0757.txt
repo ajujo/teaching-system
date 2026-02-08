@@ -1,0 +1,26 @@
+escribir acciones, Extensión de capacidades
+establecimiento de expectativas, Defensibilidad de los productos de IA
+evaluación, Optimización de la inferencia
+evaluación basada en tareas, Paso 1. Evaluar todos los componentes de un
+sistema
+evaluación basada en turnos, Paso 1. Evaluar todos los componentes de un
+sistema
+evaluación comparativa, ¿Qué modelos pueden actuar como jueces?
+evaluación de casos de uso, Planificación de aplicaciones de IA
+evaluación de los componentes del sistema, Manejo de la contaminación de
+datos
+- crear de rúbricas de puntuación con ejemplos, Paso 2. Crear una
+directriz de evaluación
+- definir de los criterios de evaluación, Paso 2. Crear una directriz de
+evaluación
+- vincular las métricas de evaluación a las métricas de negocio, Crear
+rúbricas de puntuación con ejemplos
+evaluación de sistemas, Evaluar los sistemas de IA
+- calidad del modelo OpenAI, Tableros de clasificación personalizadas
+con pruebas comparativas públicas
+- criterios de evaluación, Criterios de evaluación
+- capacidad de generación, Capacidades específicas de dominio
+- capacidad de seguimiento de instrucciones, Seguridad
+- capacidad específica de dominio, Criterios de evaluación
+- coste y latencia, Juego de rol
+- desarrollo basado en la evaluación, Criterios de evaluación

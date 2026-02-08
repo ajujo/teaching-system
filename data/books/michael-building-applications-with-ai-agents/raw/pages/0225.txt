@@ -1,0 +1,108 @@
+agents requires a nuanced understanding of task complexity, potential task decompo‐
+sition, and the cost-benefit balance of multiagent collaboration.
+Coordination is critical to success in multiagent systems, and a variety of coordina‐
+tion strategies—such as democratic, manager-based, hierarchical, actor-critic
+approaches, and automated design with ADAS—provide different trade-offs between
+robustness, efficiency, and complexity. Each coordination strategy offers unique
+advantages and limitations, suited to particular scenarios, and careful selection can
+significantly enhance a system’s effectiveness and reliability.
+Equally critical is the choice of communication infrastructure. As systems scale, so
+too does the need for reliable, low-latency, and durable message passing between
+agents. While in-memory queues may suffice in simple settings, production-grade
+systems often rely on message brokers (e.g., Kafka, NATS, RabbitMQ), actor frame‐
+works (e.g., Orleans, Akka), and workflow engines (e.g., Temporal, Conductor) to
+manage not only communication but also state, retries, and execution durability.
+Designing for effective communication is not just an implementation detail—it is a
+first-class concern that shapes how agents perceive, respond to, and collaborate
+within their environment. To help developers navigate these options, Table 8-2 sum‐
+marizes the key communication and execution approaches for multiagent systems,
+comparing their concepts, trade-offs, and ideal use cases in the context of our supply
+chain example.
+Table 8-2. Agent coordination techniques
+Approach
+Key concepts
+Benefits
+Challenges
+Use cases and examples
+Single-
+container
+deployment
+Monolithic agent/service in
+one container; synchronous
+calls, in-memory state/
+orchestration
+Simple setup, low
+latency, easy
+prototyping
+Single failure point,
+poor scalability,
+concurrency issues
+Basic supply chain queries in
+prototypes; quick experiments
+with limited agents/tools (e.g. a
+single agent to handle customer
+support inquiries)
+A2A Protocol
+Standardized discovery via
+Agent Cards, negotiation,
+JSON-RPC for structured
+requests; transport-
+agnostic (HTTP/gRPC)
+Interoperable across
+heterogeneous
+agents, modular,
+secure channels
+Early-stage (security
+gaps, evolving
+specs), discovery
+overhead
+Agent collaboration in dynamic
+ecosystems (e.g., one agent
+requesting summarization from
+another in supply chain
+analysis)
+Message
+brokers
+Decoupled async
+messaging via publish/
+subscribe (Kafka for
+durability, Redis Stream for
+low-latency, NATS for real
+time)
+Loose coupling,
+scalability, fault-
+tolerant replays
+Eventual
+consistency,
+complex error
+handling, potential
+latency
+Distributed task routing in
+supply chain (e.g., supervisor
+publishing to a stream,
+specialists subscribing/
+processing/responding)
+Actor
+frameworks
+Stateful actors processing
+messages sequentially (Ray
+for Python/distributed,
+Orleans for virtual actors,
+Akka for JVM/performance)
+Integrated state/
+behavior, resilience
+(auto-recovery),
+location-transparent
+scaling
+Infrastructure
+investment,
+framework lock-in,
+per actor sequential
+limits
+Per-session isolated agents in
+supply chain (e.g., dynamic
+actor creation for operation-
+specific state in inventory tasks)
+Conclusion 
+| 
+203

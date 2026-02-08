@@ -1,0 +1,18 @@
+20  Esto también significa que si su MFU ya está al máximo, la decodificación
+especulativa tiene menos sentido.
+21  El método de Jacobi es un algoritmo iterativo en el que varias partes de una
+solución pueden actualizarse simultánea e independientemente.
+22  El número de cálculos de atención para un modelo autorregresivo es O(n2)
+23  Las operaciones de convolución se utilizan con frecuencia en modelos de
+generación de imágenes como Stable Diffusion.
+24  Muchas empresas consideran que sus kernels son sus secretos comerciales.
+Disponer de kernels que les permitan ejecutar modelos más rápido y más barato
+que sus competidores es una ventaja competitiva.
+25  Entre las charlas en las que se menciona la relación entre el llenado previo y la
+decodificación de instancias se incluye "Llama Inference at Meta" (Meta, 2024).
+26  Aunque llama.cpp también tiene caché de prompts, en el momento de escribir
+esto parece que solo almacena en caché prompts enteros y funciona para
+consultas en la misma sesión de chat. Su documentación es limitada, pero mi
+suposición al leer el código es que en una conversación larga, almacena en caché
+los mensajes anteriores y procesa solo el mensaje más reciente.
+27  Durante el entrenamiento, la misma técnica se denomina paralelismo de datos.

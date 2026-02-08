@@ -1,0 +1,48 @@
+        model_name,
+        pad_token=ChatmlSpecialTokens.pad_token.value,
+        additional_special_tokens=ChatmlSpecialTokens.list(),
+    )
+    tokenizer.chat_template = CHAT_TEMPLATE
+    return tokenizer
+def build_model(model_name: str, tokenizer, load_4bit: bool = False):
+    kwargs = {
+        "attn_implementation": "eager",
+        "device_map": "auto",
+    }
+    kwargs["quantization_config"] = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+    )
+    model = AutoModelForCausalLM.from_pretrained(model_name, **kwargs)
+    model.resize_token_embeddings(len(tokenizer))
+    return model
+Each example is tokenized and added to a training dataset, and then fine-tuned using
+standard supervised learning techniques with LoRA for efficiency. The training loop
+uses SFTTrainer from Hugging Face’s TRL library, which supports features like
+sequence packing and gradient checkpointing:
+def load_and_prepare_dataset(ds_name: str, tokenizer, max_train: 
+    int, max_eval: int) -> DatasetDict:
+    """Loads the dataset and applies preprocessing & train/test split."""
+    raw = load_dataset(ds_name).rename_column("conversations", "messages")
+    processed = raw.map(build_preprocess_fn(tokenizer), 
+        remove_columns="messages")
+    split = processed["train"].train_test_split(test_size=0.1, seed=42)
+    split["train"] = split["train"].select(range(max_train))
+    split["test"] = split["test"].select(range(max_eval))
+    return split
+def train(
+    model,
+    tokenizer,
+    dataset: DatasetDict,
+    peft_cfg: LoraConfig,
+    output_dir: str,
+    epochs: int = 1,
+    lr: float = 1e-4,
+    batch_size: int = 1,
+    grad_accum: int = 4,
+    max_seq_len: int = 1500,
+156 
+| 
+Chapter 7: Learning in Agentic Systems

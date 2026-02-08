@@ -1,0 +1,12 @@
+MLOps and LLMOps
+428
+Now that ZenML knows to use the AWS stack, our custom Docker image, and has access to our 
+credentials, we are finally done with the setup. Run the end-to-end-data-pipeline with the 
+following command:
+poetry poe run-end-to-end-data-pipeline
+Now you can go to ZenML Cloud → Pipelines → end_to_end_data and open the latest run. On 
+the ZenML dashboard, you can visualize the latest state of the pipeline, as seen in Figure 11.10. 
+Note that this pipeline runs all the data-related pipelines in a single run.
+In the Adding LLMOps to the LLM Twin section, we will explain why we compressed all the steps 
+into a single pipeline.
+Figure 11.10: ZenML example of running the end-to-end-data-pipeline

@@ -1,0 +1,34 @@
+Chapter 7
+299
+The following code instructs our agent to create a single-neuron neural network in PyTorch, train 
+it on synthetic data representing the function y=2x, and make a prediction:
+result = agent_executor.run(
+    """Understand, write a single neuron neural network in PyTorch.
+Take synthetic data for y=2x. Train for 1000 epochs and print every 100 
+epochs.
+Return prediction for x = 5"""
+)
+print(result)
+This concise prompt instructs the agent to implement a full neural network pipeline: generating 
+PyTorch code for a single-neuron model, creating synthetic training data that follows y=2x, train­
+ing the model over 1,000 epochs with periodic progress reports, and, finally, making a prediction 
+for a new input value of x=5.
+Agent execution and results
+When we run this code, the agent begins reasoning through the problem and executing Python 
+code. Here’s the abbreviated verbose output showing the agent’s thought process and execution:
+> Entering new AgentExecutor chain...
+Here is a single neuron neural network in PyTorch that trains on synthetic 
+data for y=2x, prints the loss every 100 epochs, and returns the predic­
+tion for x=5:
+Action: Python_REPL
+Action Input:
+import torch
+import torch.nn as nn
+# Create synthetic data
+X = torch.tensor([[1.0], [2.0], [3.0], [4.0]])
+y = torch.tensor([[2.0], [4.0], [6.0], [8.0]])
+# Define the model
+[...] # Code for creating the model omitted for brevity
+Observation:
+Epoch [100/1000], Loss: 0.0529
+[...] # Training progress for epochs 200-900 omitted for brevity

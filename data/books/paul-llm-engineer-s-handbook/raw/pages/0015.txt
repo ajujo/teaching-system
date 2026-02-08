@@ -1,0 +1,30 @@
+Table of Contents
+xiv
+QLoRA • 215
+Training parameters • 216
+Learning rate and scheduler • 216
+Batch size • 216
+Maximum length and packing • 217
+Number of epochs • 218
+Optimizers • 218
+Weight decay • 219
+Gradient checkpointing • 219
+Fine-tuning in practice .................................................................................................... 219
+Summary ........................................................................................................................ 226
+References .......................................................................................................................  227
+Chapter 6: Fine-Tuning with Preference Alignment 
+ 229
+Understanding preference datasets ................................................................................. 230
+Preference data • 230
+Data quantity • 232
+Data generation and evaluation • 233
+Generating preferences • 233
+Tips for data generation • 234
+Evaluating preferences • 235
+Creating our own preference dataset ..............................................................................  237
+Preference alignment ...................................................................................................... 245
+Reinforcement Learning from Human Feedback • 246
+Direct Preference Optimization • 248
+Implementing DPO ......................................................................................................... 250
+Summary ........................................................................................................................  257
+References ....................................................................................................................... 258

@@ -1,0 +1,51 @@
+import logging
+import numpy as np
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
+# Initialize the LLM
+llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+# Define tool groups with descriptions
+tool_groups = {
+    "Computation": {
+        "description": '''Tools related to mathematical computations and 
+                          data analysis.''',
+        "tools": []
+    },
+    "Automation": {
+        "description": '''Tools that automate workflows and integrate 
+                          different services.''',
+        "tools": []
+    },
+    "Communication": {
+        "description": "Tools that facilitate communication and messaging.",
+        "tools": []
+    }
+}
+# Define Tools
+@tool
+def query_wolfram_alpha(expression: str) -> str:
+    api_url = f'''https://api.wolframalpha.com/v1/result?i=
+    {requests.utils.quote(expression)}&appid={WOLFRAM_ALPHA_APP_ID}'''
+    try:
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            return response.text
+        else:
+            raise ValueError(f'''Wolfram Alpha API Error: {response.status_code}
+                            - {response.text}''')
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Failed to query Wolfram Alpha: {e}")
+@tool
+def trigger_zapier_webhook(zap_id: str, payload: dict) -> str:
+    zapier_webhook_url = f"https://hooks.zapier.com/hooks/catch/{zap_id}/"
+    try:
+        response = requests.post(zapier_webhook_url, json=payload)
+        if response.status_code == 200:
+            return f"Zapier webhook '{zap_id}' successfully triggered."
+        else:
+            raise ValueError(f'''Zapier API Error: {response.status_code} -
+                                 {response.text}''')
+102 
+| 
+Chapter 5: Orchestration

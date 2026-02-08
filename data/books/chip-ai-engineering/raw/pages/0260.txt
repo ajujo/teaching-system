@@ -1,0 +1,17 @@
+figura 4-1. SAFE descompone un output en hechos individuales y luego utiliza un
+motor de búsqueda para verificar cada hecho. Imagen adaptada de Wei et al. (2024).
+Verificar si una afirmación es coherente con un contexto dado también
+puede enmarcarse en la vinculación textual, que es una tarea de PNL desde
+hace mucho tiempo. 4 La vinculación textual es la tarea de determinar la
+relación entre dos enunciados. Dada una premisa (contexto), determina a
+qué categoría pertenece una hipótesis (el output o parte del output):
+Implicación: la hipótesis puede deducirse de la premisa.
+Contradicción: la hipótesis contradice la premisa.
+Neutral: la premisa no implica ni contradice la hipótesis.
+Por ejemplo, dado el contexto "A Mary le gustan todas las frutas", veamos
+unos ejemplos de estas tres relaciones:
+implicación: "A Mary le gustan las manzanas".
+Contradicción: "Mary odia las naranjas".
+Neutral: "A Mary le gustan los pollos".
+La implicación indica coherencia factual, la contradicción indica
+incoherencia factual y la neutralidad indica que no se puede determinar la

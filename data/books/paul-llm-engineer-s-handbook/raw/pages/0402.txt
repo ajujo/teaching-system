@@ -1,0 +1,41 @@
+Chapter 10
+371
+Thus, in this section, we will show you how to:
+•	
+Deploy our fined-tuned LLM Twin model to AWS SageMaker
+•	
+Write an inference client to interact with the deployed model
+•	
+Write the business service in FastAPI
+•	
+Integrate our RAG logic with our fine-tuned LLM
+•	
+Implement autoscaling rules for the LLM microservice
+Implementing the LLM microservice using AWS SageMaker
+We aim to deploy the LLM Twin model, stored in Hugging Face’s model registry, to Amazon 
+SageMaker as an online real-time inference endpoint. We will leverage Hugging Face’s specialized 
+inference container, known as the Hugging Face LLM DLC, to deploy our LLM.
+What are Hugging Face’s DLCs?
+DLCs are specialized Docker images that come pre-loaded with essential deep-learning frame-
+works and libraries, including popular tools like transformers, datasets, and tokenizers from 
+Hugging Face. These containers are designed to simplify the process of training and deploying 
+models by eliminating the need for complex environment setup and optimization. The Hugging 
+Face Inference DLC, in particular, includes a fully integrated serving stack, significantly simpli-
+fying the deployment process and reducing the technical expertise needed to serve deep learning 
+models in production.
+When it comes to serving models, the DLC is powered by the Text Generation Inference (TGI) 
+engine, made by Hugging Face: https://github.com/huggingface/text-generation-inference.
+TGI is an open-source solution for deploying and serving LLMs. It offers high-performance text 
+generation using tensor parallelism and dynamic batching for the most popular open-source LLMs 
+available on Hugging Face, such as Mistral, Llama, and Falcon. To sum up, the most powerful 
+features the DLC image provides are:
+•	
+Tensor parallelism, thus enhancing the computational efficiency of model inference
+•	
+Optimized transformers code for inference, leveraging flash-attention to maximize per-
+formance across the most widely used architectures: https://github.com/Dao-AILab/
+flash-attention
+•	
+Quantization with bitsandbytes that reduces the model size while maintaining per-
+formance, making deployments more efficient: https://github.com/bitsandbytes-
+foundation/bitsandbytes

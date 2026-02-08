@@ -1,0 +1,10 @@
+Imputing Missing Data
+30
+Figure 1.6 – Time series data where missing values were replaced 
+by the last seen observations (dotted line)
+6.	
+Alternatively, we can impute missing data using backward fill:
+df_imputed = df.bfill()
+If we plot the imputed dataset and overlay the imputation values as we did in step 5, we’ll see 
+the following plot:
+Figure 1.7 – Time series data where missing values were replaced by backward fill (dotted line)

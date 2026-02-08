@@ -1,0 +1,33 @@
+Extracting different features from different time series
+325
+3.
+Display the feature creation methods that will be applied when using the dictionary that returns
+the fewest features:
+minimal_feat = settings.MinimalFCParameters()
+minimal_feat.items()
+In the output of step 3, we see a dictionary with the feature extraction method names as keys,
+and the parameters used by those methods, if any, as values:
+ItemsView({'sum_values': None, 'median': None, 'mean': None,
+'length': None, 'standard_deviation': None, 'variance': None,
+'root_mean_square': None, 'maximum': None, 'absolute_maximum':
+None, 'minimum': None})
+Note
+Go ahead and explore the other two predefined dictionaries, s e t t i n g s .
+ComprehensiveFCParameters and settings.EfficientFCParameters, by
+adapting the code from step 3.
+4.
+Now, let's use the dictionary from step 3 to extract only those features from the light time
+series and then display the shape of the resulting DataFrame:
+features = extract_features(
+    X[[«id», «light»]],
+    column_id="id",
+    default_fc_parameters=minimal_feat,
+)
+features.shape
+The output of step 4 is (135, 10), which means that only 10 features were created for each
+of the 135 hours of light consumption data.
+5.
+Let's display the resulting DataFrame:
+features.head()
+We see the values of the resulting features for the first five hours of light consumption in the
+following DataFrame:

@@ -1,0 +1,10 @@
+RAG Feature Pipeline
+118
+•	
+Post-retrieval: This stage mainly targets different ways to filter out noise from the retrieved 
+documents and compress the prompt before feeding it to an LLM for answer generation.
+Figure 4.5: The three stages of advanced RAG
+This section is not meant to be an exhaustive list of all the advanced RAG methods available. The 
+goal is to build an intuition about what can be optimized. We will use only examples based on 
+text data, but the principles of advanced RAG remain the same regardless of the data category. 
+Now, let’s zoom in on all three components.

@@ -1,0 +1,31 @@
+el modelo se está sobreajustando a los datos de entrenamiento, y puede
+intentar reducir el número de épocas.
+Ponderación de pérdida de prompts
+Para el afinado de instrucciones, cada ejemplo consta de un prompt y una
+respuesta, y ambos pueden contribuir a la pérdida del modelo durante el
+entrenamiento. Sin embargo, durante la inferencia, los usuarios suelen
+proporcionar prompts y el modelo solo tiene que generar respuestas. Por lo
+tanto, los tokens de respuesta deberían contribuir más a la pérdida del
+modelo durante el entrenamiento que los tokens de prompt.
+La ponderación del modelo de prompts determina cuánto deben contribuir
+los prompts a esta pérdida en comparación con las respuestas. Si esta
+ponderación es del 100 %, los prompts contribuyen a la pérdida tanto como
+las respuestas, lo que significa que el modelo aprende por igual de ambas.
+Si esta ponderación es del 0 %, el modelo aprende solo de las respuestas.
+Normalmente, esta ponderación se establece en un 10 % por defecto, lo que
+significa que el modelo debería aprender un poco de los prompts, pero
+sobre todo de las respuestas.
+Resumen
+Aparte de los capítulos de evaluación, el de afinado ha sido el más difícil de
+escribir. Abordó una amplia gama de conceptos, tanto antiguos (aprendizaje
+por transferencia) como nuevos (PEFT), fundamentales (factorización de
+bajo rango) como experimentales (fusión de modelos), matemáticos
+(cálculo de memoria) como tácticos (ajuste de hiperparámetros). Me resultó
+difícil organizar todos estos aspectos en una estructura coherente y, al
+mismo tiempo, accesible.
+El proceso de afinado en sí no es difícil. Muchos marcos de afinado se
+encargan del proceso de entrenamiento por ustedes. Estos marcos pueden
+incluso sugerir métodos comunes de afinado con hiperparámetros
+predeterminados razonables.
+Sin embargo, el contexto que rodea al afinado es complejo. Comienza con
+la cuestión de si se debe o no afinar un modelo. Este capítulo comenzó con

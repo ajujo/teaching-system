@@ -1,0 +1,23 @@
+Chapter 6
+255
+We can compare it with the answer provided by the SFT model:
+Supervised fine-tuning is a method used to enhance a language model
+by providing it with a curated dataset of instructions and their
+corresponding answers. This process is designed to align the model's
+responses with human expectations, thereby improving its accuracy
+and relevance. The goal is to ensure that the model can respond
+effectively to a wide range of queries, making it a valuable tool
+for applications such as chatbots and virtual assistants.
+The DPO model provides an answer that is both more accurate and closer to the desired
+writing style. It correctly identifies pre-training language models as source models for
+SFT. It also mentions domain or task-specific finetunes instead of alignment with "human
+expectations," which is closer to the preference alignment stage. The answer is also less
+formal and something we would use in a blog post.
+12.	 Finally, the last step consists of saving the trained model locally and pushing it to the
+Hugging Face Hub.
+model.save_pretrained_merged("model", tokenizer, save_
+method="merged_16bit")
+Congratulations! We have trained and exported our DPO model. It is now available on the Hugging Face Hub at https://huggingface.co/mlabonne/TwinLlama-3.1-8B-DPO. Compared to
+SFT, DPO has a few additional metrics that need to be tracked during training. Figure 6.6 shows
+the Comet ML dashboard with the main metrics. You can publicly access it using the following
+URL: https://www.comet.com/mlabonne/llm-twin-training/

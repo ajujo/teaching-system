@@ -1,0 +1,24 @@
+SUGERENCIA
+Este elemento indica un consejo o sugerencia.
+NOTA
+Este elemento indica una nota general.
+AVISO
+Este elemento indica una advertencia o precaución.
+Uso de ejemplos de código
+El material complementario (ejemplos de código, ejercicios, etc.) puede
+descargarse de https://github.com/chiphuyen/aie-book. El repositorio
+contiene recursos adicionales sobre ingeniería de IA, incluyendo artículos
+importantes y herramientas útiles. También abarca temas demasiado
+profundos para tratarlos en este libro. Para los interesados en el proceso de
+escritura de este libro, el repositorio de GitHub también contiene
+información entre bastidores y estadísticas sobre el libro.
+Si tiene alguna pregunta técnica o algún problema al utilizar los ejemplos
+de código, envíe un correo electrónico a support@oreilly.com.
+Este libro existe para ayudarle a hacer su trabajo. En general, si se ofrece
+código de ejemplo con este libro, puede utilizarlo en sus programas y
+documentación. No es necesario que nos contacte para pedirnos permiso, a
+menos que reproduzca una parte considerable del código. Por ejemplo,
+escribir un programa que utilice varios fragmentos de código de este libro
+no requiere autorización. La venta o distribución de ejemplos de libros de
+O'Reilly requiere autorización. Responder a una pregunta citando este libro
+y citando código de ejemplo no requiere autorización. Incorporar una

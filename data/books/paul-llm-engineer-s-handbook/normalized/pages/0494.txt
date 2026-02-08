@@ -1,0 +1,26 @@
+Appendix
+463
+•
+Stress tests: These tests evaluate the system's performance and stability under extreme
+conditions, such as high load or limited resources. They aim to identify breaking points
+and ensure the system can handle unexpected spikes in demand or adverse situations
+without failing.
+Figure A.2: Test types
+We've intentionally left regression tests out of the preceding figure because they aren't a distinct
+testing phase. Instead, regression testing is applied across all levels-unit, integration, system,
+acceptance, and stress tests-to ensure that changes don't reintroduce previous errors. It's an
+ongoing process within these phases, not a separate type of test, which is why it's not shown as
+a separate category.
+What do we test?
+When writing most tests, you take a component and treat it as a black box. Thus, what you have
+control over is the input and output. You want to test that you get an expected output for a given
+input. With that in mind, here are a few things you should usually test:
+•
+Inputs: Data types, format, length, and edge cases (min/max, small/large, etc.)
+•
+Outputs: Data types, formats, exceptions, and intermediary and final outputs
+Test examples
+When testing your code, you can leverage the standards from classic software engineering. Here
+are a few examples of code tests you can include when writing unit tests to get a better idea of
+what we want to test at this point-for instance, you want to check that a sentence is cleaned
+as expected.

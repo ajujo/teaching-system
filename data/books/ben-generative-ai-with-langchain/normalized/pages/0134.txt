@@ -1,0 +1,29 @@
+4
+Building Intelligent RAG
+Systems
+So far in this book, we've talked about LLMs and tokens and working with them in LangChain.
+Retrieval-Augmented Generation (RAG) extends LLMs by dynamically incorporating external
+knowledge during generation, addressing limitations of fixed training data, hallucinations, and
+context windows. A RAG system, in simple terms, takes a query, converts it directly into a semantic
+vector embedding, runs a search extracting relevant documents, and passes these to a model that
+generates a context-appropriate user-facing response.
+This chapter explores RAG systems and the core components of RAG, including vector stores,
+document processing, retrieval strategies, implementation, and evaluation techniques. After
+that, we'll put into practice a lot of what we've learned so far in this book by building a chatbot.
+We'll build a production-ready RAG pipeline that streamlines the creation and validation of
+corporate project documentation. This corporate use case demonstrates how to generate initial
+documentation, assess it for compliance and consistency, and incorporate human feedback-all
+in a modular and scalable workflow.
+The chapter has the following sections:
+•
+From indexes to intelligent retrieval
+•
+Components of a RAG system
+•
+From embeddings to search
+•
+Breaking down the RAG pipeline
+•
+Developing a corporate documentation chatbot
+•
+Troubleshooting RAG systems

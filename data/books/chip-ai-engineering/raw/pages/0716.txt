@@ -1,0 +1,30 @@
+Entender cómo le falla el bot al usuario es crucial para mejorarlo. Por
+ejemplo, si saben que al usuario no le gustan las respuestas elaboradas,
+pueden cambiar el prompt del bot para que sea más conciso. Si el usuario
+no está satisfecho porque la respuesta carece de detalles, pueden pedir al bot
+que sea más específico.
+Sentimiento
+Las quejas también pueden ser expresiones generales de sentimientos
+negativos (frustración, decepción, burla, etc.) sin explicar el motivo, como
+"Aargh". Esto pueden sonar distópico, pero el análisis de los sentimientos
+de un usuario a lo largo de las conversaciones con un bot pueden darles una
+idea de qué tan bien funciona el bot.
+Algunos centros de llamadas hacen un seguimiento de las voces de los
+usuarios a lo largo de las llamadas. Si un usuario eleva cada vez más la voz,
+algo va mal. Por el contrario, si alguien empieza una conversación enfadado
+pero la termina contento, puede que la conversación haya resuelto su
+problema.
+La retroalimentación en lenguaje natural también pueden deducirse de las
+respuestas del modelo. Una señal importante es la tasa de rechazo del
+modelo. Si un modelo dice cosas como "Lo siento, no lo conozco" o "Como
+modelo lingüístico, no puedo...", probablemente el usuario no esté contento.
+Otra retroalimentación conversacional
+Otros tipos de retroalimentación conversacional puede derivarse de
+acciones del usuario en lugar de mensajes.
+Regeneración
+Muchas aplicaciones permiten a los usuarios generar otra respuesta, a veces
+con un modelo diferente. Si un usuario opta por regenerarla, puede deberse
+a que no esté satisfecho con la primera respuesta. Sin embargo, también
+puede ser que la primera respuesta sea adecuada, pero el usuario quiera
+opciones para comparar. Esto es especialmente común con solicitudes
+creativas, por ejemplo la generación de imágenes o historias.

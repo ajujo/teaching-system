@@ -1,0 +1,30 @@
+Implementing feature binarization
+141
+For a simpler representation of these sparse or highly skewed variables, we can binarize them by 
+clipping all values greater than 1 to 1. In fact, binarization is commonly performed on text count 
+data, where we consider the presence or absence of a feature rather than a quantified number of 
+occurrences of a word.
+In this recipe, we will perform binarization using scikit-learn.
+Getting ready
+We will use a dataset consisting of a bag of words, which is available in the UCI Machine Learning 
+Repository (https://archive.ics.uci.edu/ml/datasets/Bag+of+Words). It is licensed 
+under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode).
+I downloaded and prepared a small bag of words representing a simplified version of one of those 
+datasets. You will find this dataset in the accompanying GitHub repository:
+https://github.com/PacktPublishing/Python-Feature-Engineering-
+Cookbook-Third-Edition/tree/main/ch04-discretization
+How to do it...
+Let’s begin by importing the libraries and loading the data:
+1.	
+Let’s import the required Python libraries, classes, and datasets:
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import Binarizer
+2.	
+Let’s load the bag of words dataset, which contains words as columns and different texts as rows:
+data = pd.read_csv("bag_of_words.csv")
+3.	
+Let’s display histograms to visualize the sparsity of the variables:
+data.hist(bins=30, figsize=(20, 20), layout=(3,4))
+plt.show()

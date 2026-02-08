@@ -1,0 +1,18 @@
+Para generar el token xt + 1 se necesitan los vectores de claves y
+valores de los tokens x1, x2, …,xt – 1, xt.
+Al generar el token xt + 1, en lugar de calcular de nuevo los vectores de
+claves y valores de los tokens x1, x2, ..., xt - 1, se reutilizan estos vectores del
+paso anterior. Esto significa que deberá calcular los vectores de claves y
+valores solo para el token más reciente, xt. La caché que almacena los
+vectores de claves y valores para su reutilización se denomina caché KV. A
+continuación, los vectores de claves y valores recién calculados se añaden a
+la caché KV, lo que se muestra en la Figura 9-12.
+figura 9-12. Para evitar volver a calcular los vectores de claves y valores en cada
+paso de decodificación, utilice una caché KV para almacenar estos vectores y
+reutilizarlos.
+NOTA
+Una caché KV solo se utiliza durante la inferencia, no durante el
+entrenamiento. Durante el entrenamiento, como todos los tokens de una
+secuencia se conocen de antemano, la siguiente generación de tokens puede
+calcularse de una sola vez en lugar de secuencialmente, como durante la
+inferencia. Por lo tanto, no hay necesidad de una caché KV.

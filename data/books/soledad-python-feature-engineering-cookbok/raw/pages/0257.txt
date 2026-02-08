@@ -1,0 +1,36 @@
+Creating New Features
+234
+How it works...
+pandas has many built-in operations to apply mathematical and statistical computations to a group 
+of variables. To combine features mathematically, we first made a list containing the names of the 
+features we wanted to combine. Then, we determined the mean and standard deviation of those 
+features by using pandas mean() and std(). We could also apply any of the sum(), prod(), 
+max(), and min() methods, which return the sum, product, maximum, and minimum values of 
+those features, respectively. To perform these operations across the columns, we added the axis=1 
+argument within the methods.
+With pandas agg(), we applied several mathematical functions simultaneously. It takes as arguments 
+a list of strings, corresponding to the functions to apply and the axis that the functions should be 
+applied to, which can be either 1 for columns or 0 for rows. As a result, pandas agg() returned a 
+pandas DataFrame, resulting from applying the mathematical functions to the groups of features.
+Finally, we created the same features by combining variables with feature-engine. We used the 
+MathFeatures() transformer, which takes the features to combine and the functions to apply as 
+input; it also has the option to indicate the names of the resulting features. When we used fit(), 
+the transformer did not learn parameters but checked that the variables were indeed numerical. The 
+transform() method triggered the use of pandas.agg under the hood, applying the mathematical 
+functions to create the new variables.
+See also
+To find out more about the mathematical operations supported by pandas, visit https://pandas.
+pydata.org/pandas-docs/stable/reference/frame.html#computations-
+descriptive-stats.
+To learn more about pandas aggregate, check out https://pandas.pydata.org/
+pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html.
+Comparing features to reference variables
+In the previous recipe, Combining features with mathematical functions, we created new features by 
+applying mathematical or statistical functions, such as the sum or the mean, to a group of variables. 
+Some mathematical operations, however, such as subtraction or division, are performed between 
+features. These operations are useful to derive ratios, such as the debt-to-income ratio:
+debt-to-income ratio = total debt / total income
+These operations are also useful to compute differences, such as the disposable income:
+disposable income = income - total debt
+In this recipe, we will learn how to create new features by subtracting or dividing variables with 
+pandas and feature-engine.

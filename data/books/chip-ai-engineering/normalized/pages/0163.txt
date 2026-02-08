@@ -1,0 +1,26 @@
+estructurados, pero como los outputs son utilizados por otras
+aplicaciones, necesitan ser analizables por estas aplicaciones.
+Por ejemplo, si utilizan un modelo de IA para escribir un correo
+electrónico, el propio correo no tiene por qué estar estructurado.
+Sin embargo, una aplicación posterior que utilice este correo
+electrónico puede necesitar que tenga un formato específico, por
+ejemplo, un documento JSON con claves específicas, como
+{"title": [TITLE], "body": [EMAIL BODY]}.
+Esto es especialmente importante para los flujos de trabajo
+agénticos, en los que los outputs de un modelo se pasan a menudo
+como inputs a herramientas que el modelo puede utilizar, como se
+explica en el Capítulo 6.
+Los marcos que admiten outputs estructuradas incluyen guidance, outlines,
+instructor y llama.cpp. Cada proveedor de modelos también puede utilizar
+sus propias técnicas para mejorar la capacidad de sus modelos para generar
+outputs estructurados. OpenAI fue el primer proveedor de modelos en
+introducir el modo JSON en su API de generación de texto. Tenga en cuenta
+que el modo JSON de una API normalmente solo garantiza que los outputs
+sean JSON válidos, no el contenido de los objetos JSON. Los JSON
+generados, por lo demás válidos, también pueden truncarse, y por tanto no
+ser analizables, si la generación se detiene demasiado pronto, como cuando
+alcanza la longitud máxima de tokens de output. Sin embargo, si la longitud
+máxima de tokens es demasiado larga, las respuestas del modelo se vuelven
+demasiado lentas y costosas.
+La Figura 2-20 muestra dos ejemplos de uso de la guía para generar outputs
+restringidos a un conjunto de opciones y una regex.

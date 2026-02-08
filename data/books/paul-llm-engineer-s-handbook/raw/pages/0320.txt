@@ -1,0 +1,24 @@
+8
+Inference Optimization
+Deploying LLMs is challenging due to their significant computational and memory requirements. 
+Efficiently running these models necessitates the use of specialized accelerators, such as GPUs or 
+TPUs, which can parallelize operations and achieve higher throughput. While some tasks, like 
+document generation, can be processed in batches overnight, others require low latency and fast 
+generation, such as code completion. As a result, optimizing the inference process – how these 
+models make predictions based on input data – is critical for many practical applications. This 
+includes reducing the time it takes to generate the first token (latency), increasing the number 
+of tokens generated per second (throughput), and minimizing the memory footprint of LLMs.
+Indeed, naive deployment approaches lead to poor hardware utilization and underwhelming 
+throughput and latency. Fortunately, a variety of optimization techniques have emerged to dra-
+matically speed up inference. This chapter will explore key methods like speculative decoding, 
+model parallelism, and weight quantization, demonstrating how thoughtful implementations 
+can achieve speedups of 2–4X or more. We will also introduce three popular inference engines 
+(Text Generation Inference, vLLM, and TensorRT-LLM) and compare their features in terms of 
+inference optimization.
+In this chapter, we will cover the following topics:
+•	
+Model optimization strategies
+•	
+Model parallelism
+•	
+Model quantization

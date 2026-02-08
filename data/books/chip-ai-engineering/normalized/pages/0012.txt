@@ -1,0 +1,28 @@
+ayudarle a crear mejores aplicaciones y evitarle sufrimientos innecesarios.
+Puede leer este libro sin necesidad de poseer conocimientos previos de ML.
+Sin embargo, será más eficaz a la hora de crear aplicaciones de IA si conoce
+los siguientes conceptos:
+Conceptos probabilísticos como muestreo, determinismo y
+distribución.
+Conceptos de ML como supervisión, autosupervisión, logaritmo de
+verosimilitud, descenso de gradiente, retropropagación, función de
+pérdida y ajuste de hiperparámetros.
+Diversas arquitecturas de redes neuronales, incluidas las de tipo
+prealimentación, recurrente y transformadora.
+Métricas como exactitud, F1, precisión, recall, similitud coseno y
+entropía cruzada.
+Si aún no los conoce, no se preocupe: este libro le ofrece explicaciones
+breves y de alto nivel o le remite a recursos que pueden ayudarle a ponerse
+al día.
+A quién va dirigido este libro
+Este libro es para cualquiera que quiera aprovechar los modelos
+fundacionales para resolver problemas del mundo real. Se trata de un libro
+técnico, por lo que su lenguaje está orientado a puestos técnicos, como
+ingenieros de IA, ingenieros de ML, científicos de datos, directores de
+ingeniería y directores técnicos de producto. Este libro es para usted si se
+identifica con alguna de las situaciones siguientes:
+Está creando u optimizando una aplicación de IA, tanto si está
+empezando desde cero como si quiere pasar de la fase de
+demostración a la de producción. Quizá se está enfrentando a
+problemas como alucinaciones, seguridad, latencia o costos, y
+necesite soluciones específicas.

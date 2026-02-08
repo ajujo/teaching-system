@@ -1,0 +1,45 @@
+the 1969 Apollo 11 mission.
+One of the most impressive things about Buzz Aldrin is that he was the Lunar 
+Module Eagle pilot on the 1969 Apollo 11 mission, making him one of the first 
+two humans to land on the Moon. This historic event marked a significant 
+achievement in space exploration and human history. Additionally, Aldrin made 
+three spacewalks as pilot of the 1966 Gemini 12 mission, showcasing his tools 
+and contributions to advancing space travel.
+Let’s now look at a second example, for an agent that is designed to fetch and display
+stock market data. This process involves defining the API interaction, handling the
+response, and integrating the tool into the agent’s workflow. By following this
+approach, agents can integrate external data sources seamlessly, enhancing their over‐
+all functionality and effectiveness.
+First, we define the function that interacts with the stock market API. Then, we regis‐
+ter this function as a tool for our agent, and we can then invoke it just like the previ‐
+ous tools:
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_core.messages import HumanMessage
+import requests
+@tool
+def get_stock_price(ticker: str) -> float:
+   """Get the stock price for the stock exchange ticker for the company."""
+   api_url = f"https://api.example.com/stocks/{ticker}"
+   response = requests.get(api_url)
+   if response.status_code == 200:
+       data = response.json()
+       return data["price"]
+   else:
+       raise ValueError(f"Failed to fetch stock price for {ticker}")
+# Initialize the LLM with GPT-4o and bind the tools
+llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm_with_tools = llm.bind_tools([get_stock_price])
+messages = [HumanMessage("What is the stock price of Apple?")]
+ai_msg = llm_with_tools.invoke(messages)
+messages.append(ai_msg)
+for tool_call in ai_msg.tool_calls:
+   tool_msg = get_stock_price.invoke(tool_call)
+  
+   print(tool_msg.name)
+   print(tool_call['args'])
+LangChain Fundamentals 
+| 
+77

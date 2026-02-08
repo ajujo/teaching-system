@@ -1,0 +1,31 @@
+optimizar otra arquitectura. Analicemos los factores subyacentes de estas
+decisiones.
+Arquitectura de modelos
+En el momento de escribir este artículo, la arquitectura más dominante para
+los modelos fundacionales basados en el lenguaje es la arquitectura de
+transformadores (Vaswani et al., 2017), que se basa en el mecanismo de
+atención. Soluciona muchas limitaciones de las arquitecturas anteriores, por
+lo que es muy popular. Sin embargo, la arquitectura de transformadores
+tiene sus propias limitaciones. Esta sección analiza la arquitectura de
+transformadores y sus alternativas. Como entra en los detalles técnicos de
+las distintas arquitecturas, puede resultar ser técnicamente denso. Si alguna
+parte le parece demasiado complicada, no dude en saltársela.
+Arquitectura de transformador
+Para entender el transformador, veamos el problema para cuya solución fue
+creado. La arquitectura de transformadores se popularizó tras el éxito de la
+arquitectura seq2seq (secuencia a secuencia). En el momento de su
+introducción en 2014, seq2seq supuso una mejora significativa para tareas
+entonces difíciles: traducción automática y resumen. En 2016, Google
+incorporó seq2seq a Google Translate, una actualización que, según
+afirmaron, les había proporcionado las "mayores mejoras hasta la fecha en
+cuanto a calidad de traducción automática". Esto generó un gran interés en
+seq2seq, convirtiéndola en la arquitectura de referencia para tareas
+relacionadas con secuencias de texto.
+A grandes rasgos, seq2seq contiene un codificador que procesa los inputs y
+un decodificador que genera los outputs. Tanto los inputs como los outputs
+son secuencias de tokens, de ahí su nombre. Seq2seq utiliza RNN (redes
+neuronales recurrentes) como codificador y decodificador. En su forma más
+básica, el codificador procesa los tokens de input secuencialmente,
+generando el estado oculto final que representa el input. A continuación, el
+decodificador genera tokens de output secuencialmente, condicionados
+tanto por el estado oculto final del input como por el token generado

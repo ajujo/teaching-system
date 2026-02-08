@@ -1,0 +1,16 @@
+ocupación. El loteo continuo, también llamado loteo in-flight (IFB), se
+visualiza en la Figura 9-16.
+figura 9-16. Con el loteo continuo, las respuestas completadas pueden devolverse
+inmediatamente a los usuarios, y en su lugar pueden procesarse nuevas solicitudes.
+Desacoplamiento del llenado previo y la decodificación
+La inferencia de LLM consta de dos pasos: llenado previo y decodificación.
+Como el llenado previo está limitado por el cómputo y la decodificación
+por el ancho de banda de la memoria, el uso de la misma máquina para
+realizar ambas tareas pueden hacer que compitan de forma ineficiente por
+los recursos y ralentizar significativamente tanto el TTFT como el TPOT.
+Imagine una GPU que ya está manejando el llenado previo y la
+decodificación cerca de su capacidad computacional máxima. Podría ser
+capaz de manejar otro trabajo de bajo nivel computacional como la
+decodificación. Sin embargo, añadir una nueva consulta a esta GPU implica
+introducir un trabajo de llenado previo junto con un trabajo de
+decodificación. Este único trabajo de llenado previo puede agotar los

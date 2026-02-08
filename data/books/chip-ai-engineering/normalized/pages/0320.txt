@@ -1,0 +1,28 @@
+Evalúe su proceso de evaluación
+Evaluar su proceso de evaluación puede ayudarle tanto a mejorar su
+fiabilidad como a encontrar formas de hacerlo más eficaz. La fiabilidad es
+especialmente importante con métodos de evaluación subjetivos, como la
+IA como juez.
+Veamos algunas preguntas que debería plantearse sobre la calidad de su
+proceso de evaluación:
+¿Su proceso de evaluación le envía las señales correctas?
+¿Se obtienen mejores puntuaciones con las mejores
+respuestas? ¿Usar mejores métricas de evaluación conduce a
+mejores resultados empresariales?
+¿Hasta qué punto es fiable su proceso de evaluación?
+Si ejecuta dos veces el mismo proceso, ¿obtiene resultados
+diferentes? Si ejecuta varias veces el proceso con diferentes
+conjuntos de datos de evaluación, ¿cuál sería la variación en
+los resultados de la evaluación? Su objetivo debe ser
+aumentar la reproducibilidad y reducir la varianza en su
+proceso de evaluación. Sea coherentes con las
+configuraciones de su evaluación. Por ejemplo, si usa un juez
+AI, asegúrese de poner la temperatura de su juez a 0.
+¿Hasta qué punto están correlacionadas sus métricas?
+Como se explica en "Selección e integración de pruebas
+comparativas", si dos métricas están perfectamente
+correlacionadas, no se necesitan las dos. Por otro lado, si dos
+métricas no están correlacionadas en absoluto, esto significa
+o bien una visión interesante de su modelo o que sus
+métricas simplemente no son fiables. 29
+¿Cuánto costo y latencia añade su proceso de evaluación a su aplicación?

@@ -1,0 +1,40 @@
+Finding outliers using the mean and standard deviation
+161
+Note
+The interval between the mean plus and minus three times the standard deviation encloses
+99.87% of the observations if the variable is normally distributed. For less conservative limits,
+we could multiply the standard deviation by 2 or 2.5, which would produce intervals that
+enclose 95.4% and 97.6% of the observations, respectively.
+7.
+Create a Boolean vector that flags observations with values beyond the limits determined in step 6:
+outliers = np.where(
+    (X[«mean smoothness»] > upper_limit) |
+    (X[«mean smoothness»] < lower_limit),
+    True,
+    False
+)
+If we now execute outliers.sum(), we will see the value 5, indicating that there are five
+outliers or observations that are smaller or greater than the extreme values found with the mean
+and the standard deviation. According to these limits, we'd identify one outlier less compared
+to the IQR rule.
+8.
+Let's add red vertical lines to the histogram from step 3 to highlight the limits determined by
+using the mean and the standard deviation:
+def plot_boxplot_and_hist(data, variable):
+    f, (ax_box, ax_hist) = plt.subplots(
+        2, sharex=True,
+        gridspec_kw={"height_ratios": (0.50, 0.85)})
+    sns.boxplot(x=data[variable], ax=ax_box)
+    sns.histplot(data=data, x=variable, ax=ax_hist)
+    plt.vlines(
+        x=lower_limit, ymin=0, ymax=80, color='r')
+    plt.vlines(
+        x=upper_limit, ymin=0, ymax=80, color='r')
+     plt.show()
+9.
+And now let's make the plots:
+plot_boxplot_and_hist(X, "mean smoothness")
+In the following plot, we see that the limits observed by the IQR proximity rule in the box plot
+are less conservative than those identified by the mean and the standard deviation. Hence why
+we observe six potential outliers in the boxplot, but only five based on the mean and standard
+deviation calculations:

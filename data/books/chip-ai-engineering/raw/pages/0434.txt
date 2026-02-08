@@ -1,0 +1,32 @@
+confunden los conocimientos generales de planificación extraídos de los
+LLMs con los planes ejecutables. "Los planes que salen de los LLMs
+pueden parecer razonables al usuario profano y, sin embargo, dar lugar a
+interacciones y errores en el momento de ejecución".
+Sin embargo, aunque hay muchas pruebas anecdóticas de que los LLMs son
+malos planificadores, no está claro si se debe a que no sabemos cómo
+utilizarlos correctamente o a que, en el fondo, los LLMs no sepan planificar.
+En el fondo, la planificación es un problema de búsqueda. Se busca entre
+diferentes caminos hacia la meta, se predice el resultado (recompensa) de
+cada camino y se elige el camino con el resultado más prometedor. A
+menudo, quizá se determine que no existe ningún camino que pueda
+conducir a la meta.
+La búsqueda a menudo requiere retroceder. Por ejemplo, imagine que está
+en un paso en el que hay dos acciones posibles: A y B. Después de
+emprender la acción A, entran en un estado que no es prometedor, por lo
+que tienen que volver al estado anterior para emprender la acción B.
+Hay quien sostiene que un modelo autorregresivo solo puede generar
+acciones hacia adelante. No puede retroceder para generar acciones
+alternativas. Por ello, concluyen que los modelos autorregresivos no son
+capaces de planificar. Sin embargo, esto no es necesariamente cierto.
+Después de ejecutar un camino con la acción A, si el modelo determina que
+este camino no tiene sentido, puede revisar el camino utilizando la acción B
+en su lugar, retrocediendo de forma efectiva. Además, el modelo siempre
+puede volver a empezar y elegir otro camino.
+También es posible que los LLMs sean malos planificadores porque no se
+les dan las herramientas necesarias para planificar. Para planificar es
+necesario conocer no solo las acciones disponibles, sino también el
+resultado potencial de cada acción. Un ejemplo sencillo sería suponer que
+quiere subir una montaña. Sus posibles acciones son girar a la derecha, girar
+a la izquierda, dar la vuelta o seguir recto. Sin embargo, si girar a la derecha
+le hará caer por un precipicio, es posible que no quiera considerar esta
+acción. En términos técnicos, una acción lleva de un estado a otro, y es

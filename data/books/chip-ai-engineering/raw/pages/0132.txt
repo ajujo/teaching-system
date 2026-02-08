@@ -1,0 +1,31 @@
+momento de escribir estas líneas, se calcula que los centros de datos
+consumen entre el 1 y el 2 % de la electricidad mundial. Se calcula que esta
+cifra alcanzará entre el 4 y el 20 % en 2030 (Patel, Nishball y Ontiveros,
+2024). Hasta que encontremos una forma de producir más energía, los
+centros de datos pueden crecer como máximo 50 veces su tamaño, lo que
+supone menos de dos órdenes de magnitud. Esto hace temer una escasez de
+energía en un futuro próximo, lo que hará subir el costo de la electricidad.
+Ahora que ya hemos tomado dos decisiones clave sobre el modelado
+(arquitectura y escala), pasemos a la siguiente serie de decisiones críticas
+sobre el diseño: cómo alinear los modelos con las preferencias humanas.
+Post-entrenamiento
+El post-entrenamiento comienza con un modelo pre-entrenado.
+Supongamos que ha pre-entrenado un modelo fundacional mediante
+autosupervisión. Debido a cómo funciona el pre-entrenamiento hoy en día,
+un modelo pre-entrenado suele tener dos problemas. En primer lugar, la
+autosupervisión optimiza el modelo para completar textos, no
+conversaciones. 21 Si esto no les queda claro, no se preocupen, en el
+“Afinado supervisado”, encontrarán ejemplos. En segundo lugar, si el
+modelo se pre-entrena con datos extraídos indiscriminadamente de Internet,
+sus outputs pueden ser racistas, sexistas, groseros o simplemente erróneos.
+La meta del post-entrenamiento es abordar estos dos problemas.
+El post-entrenamiento de cada modelo es diferente. Sin embargo, en
+general, el post-entrenamiento consta de dos pasos:
+1. Afinado supervisado (SFT): Afinar el modelo pre-entrenado con
+datos de instrucción de alta calidad para optimizar los modelos
+para las conversaciones en lugar de la terminación.
+2. Afinado de preferencias: Afinar aún más nuevamente el modelo
+para obtener respuestas que se alineen con las preferencias
+humanas. El afinado de las preferencias suele realizarse mediante
+el aprendizaje por refuerzo (RL). 22 Las técnicas de afinado de
+preferencias incluyen el aprendizaje por refuerzo a partir de la

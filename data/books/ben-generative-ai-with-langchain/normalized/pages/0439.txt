@@ -1,0 +1,29 @@
+The Future of Generative Models: Beyond Scaling
+412
+Price wars and commoditization have intensified. As capabilities have equalized, providers have
+engaged in aggressive price cutting. OpenAI has repeatedly lowered prices in response to com­
+petitive pressure, particularly from Chinese companies offering similar capabilities at lower costs.
+Non-traditional players have demonstrated rapid catch-up. Companies like DeepSeek and By­
+teDance have achieved comparable model quality with dramatically lower training costs, demon­
+strating that innovative training methodologies can overcome resource disparities. Additionally,
+innovation cycles have shortened considerably. New technical advances are being matched or
+surpassed within weeks or months rather than years, making any technological lead increasingly
+temporary.
+Looking at the technology adoption landscape, we can consider two primary scenarios for AI
+implementation. In the centralized scenario, generative AI and LLMs are primarily developed
+and controlled by large tech firms that invest heavily in the necessary computational hardware,
+data storage, and specialized AI/ML talent. These entities produce general proprietary models
+that are often made accessible to customers through cloud services or APIs, but these one-sizefits-all solutions may not perfectly align with the requirements of every user or organization.
+Conversely, in the self-service scenario, companies or individuals take on the task of fine-tuning
+their own AI models. This approach allows them to create models that are customized to the spe­
+cific needs and proprietary data of the user, providing more targeted and relevant functionality.
+As costs decline for computing, data storage, and AI talent, custom fine-tuning of specialized
+models is already feasible for small and mid-sized companies.
+A hybrid landscape is likely to emerge where both approaches fulfill distinct roles based on use
+cases, resources, expertise, and privacy considerations. Large firms might continue to excel in
+providing industry-specific models, while smaller entities could increasingly fine-tune their own
+models to meet niche demands.
+If robust tools emerge to simplify and automate AI development, custom generative models may
+even be viable for local governments, community groups, and individuals to address hyper-local
+challenges. While large tech firms currently dominate generative AI research and development,
+smaller entities may ultimately stand to gain the most from these technologies.

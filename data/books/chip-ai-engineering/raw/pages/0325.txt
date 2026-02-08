@@ -1,0 +1,36 @@
+16  A medida que evoluciona la normativa en todo el mundo, puede aumentar los
+requisitos de información auditable de los modelos y los datos de entrenamiento.
+Los modelos comerciales pueden certificar el uso, ahorrando a las empresas el
+esfuerzo.
+17  Los usuarios quieren que los modelos sean de código abierto porque abierto
+significa más información y más opciones, pero ¿qué ganan los desarrolladores
+de modelos? Han surgido muchas empresas para sacar partido de los modelos de
+código abierto dando servicios de inferencia y afinado. Esto no es malo. Mucha
+gente necesita estos servicios para aprovechar los modelos de código abierto.
+Pero, desde la perspectiva de los creadores de modelos, ¿por qué invertir
+millones (incluso miles de millones) en construir modelos solo para que otros
+ganen dinero? Pensándolo bien, quizá Meta apoya los modelos de código abierto
+solo para mantener a raya a sus competidores (Google, Microsoft/OpenAI).
+Tanto Mistral como Cohere tienen modelos de código abierto, pero también
+tienen API. En algún momento, los servicios de inferencia que usan a los
+modelos Mistral y Cohere se vuelven sus competidores. Puede decirse que el
+código abierto es mejor para la sociedad, y quizá eso sea suficiente incentivo. La
+gente que quiere el bien para la sociedad seguirá presionando a favor del código
+abierto, y quizá haya suficiente buena voluntad colectiva para que el código
+abierto prevalezca. Eso espero.
+18  Las empresas más afectadas por los costos de las API no son probablemente las
+más grandes. Las empresas más grandes pueden ser lo bastante importantes para
+los proveedores de servicios como para negociar condiciones favorables.
+19  Esto es parecido a la filosofía en infraestructura de software de utilizar siempre
+las herramientas más populares que hayan sido ampliamente probadas por la
+comunidad.
+20  Cuando publiqué una pregunta en el Discord de Hugging Face sobre por qué
+elegían determinadas pruebas comparativas, Lewis Tunstall respondió que se
+guiaron por las pruebas comparativas que utilizaban los modelos populares de
+entonces. Gracias al equipo de Hugging Face por ser tan increíblemente
+receptivo y por sus grandes contribuciones a la comunidad.
+21  Me alegra mucho informar de que, mientras escribía este libro, los tableros de
+clasificación se han vuelto mucho más transparentes en cuanto a su proceso de
+selección y agregación de pruebas comparativas. Al lanzar su nuevo tablero de
+clasificación, Hugging Face compartió un gran análisis de la correlación de las
+pruebas comparativas (2024).

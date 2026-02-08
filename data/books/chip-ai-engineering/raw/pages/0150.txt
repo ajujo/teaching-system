@@ -1,0 +1,32 @@
+suele ser necesario acceder a los logits del modelo. Repasemos algunas
+estrategias de muestreo habituales para ver cómo funcionan.
+Temperatura
+Un problema del muestreo del siguiente token según la distribución de
+probabilidad es que el modelo puede ser menos creativo. En el ejemplo
+anterior, los colores comunes como "rojo", "verde", "morado", etc. tienen
+las probabilidades más altas. La respuesta del modelo lingüístico acaba
+sonando como la de un niño de cinco años: "Mi color favorito es verde".
+Dado que "el" tiene una probabilidad baja, el modelo tiene pocas
+posibilidades de generar una frase creativa como "Mi color favorito es el
+color de un lago en calma en una mañana de primavera".
+Para redistribuir las probabilidades de los valores posibles, se puede
+muestrear con una temperatura. Intuitivamente, una temperatura más alta
+reduce las probabilidades de los tokens comunes y, en consecuencia,
+aumenta las probabilidades de los tokens más raros. Esto permite a los
+modelos crear respuestas más creativas.
+La temperatura es una constante utilizada para afinar los logits antes de la
+transformación con softmax. Los logits se dividen por temperatura. Para
+una temperatura T dada, el logit ajustado del i-ésimo token es xi
+T . A
+continuación, se aplica Softmax a este logit ajustado en lugar de a xi.
+Veamos un ejemplo sencillo para examinar el efecto de la temperatura sobre
+las probabilidades. Imaginemos que tenemos un modelo que solo tiene dos
+outputs posibles: A y B. Los logits calculados a partir de la última capa son
+[1, 2]. El logit de A es 1 y el de B es 2.
+Sin utilizar la temperatura, lo que equivale a utilizar la temperatura de 1, las
+probabilidades softmax son [0.27, 0.73]. El modelo elige B el 73 % de las
+veces.
+Con la temperatura = 0.5, las probabilidades son [0.12, 0.88]. El modelo
+ahora elige B el 88 % de las veces.
+Cuanto mayor sea la temperatura, menos probable es que el modelo elija el
+valor más obvio (el valor con el logit más alto), lo que hace que los outputs

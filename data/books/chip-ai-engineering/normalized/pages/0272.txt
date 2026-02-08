@@ -1,0 +1,30 @@
+2. ¿El cuestionario generado está diseñado para los clientes del hotel?
+3. ¿Es útil el cuestionario generado para que los clientes del hotel
+escriban sus opiniones?
+Se considera que un modelo sigue correctamente una instrucción si su
+output cumple todos los criterios de dicha instrucción. Cada una de estas
+preguntas de sí/no puede ser respondida por un evaluador humano o de IA.
+Si la instrucción tiene tres criterios y el evaluador determina que el output
+de un modelo cumple dos de ellos, la puntuación del modelo para esta
+instrucción es de 2/3. La puntuación final de un modelo en esta prueba
+comparativa es el número de criterios que un modelo acierta dividido entre
+el número total de criterios de todas las instrucciones.
+En su experimento, los autores de INFOBench descubrieron que GPT-4 es
+un evaluador razonablemente fiable y rentable. GPT-4 no es tan preciso
+como los expertos humanos, pero es más preciso que los anotadores
+reclutados a través de Amazon Mechanical Turk. Llegaron a la conclusión
+de que su prueba comparativa puede verificarse automáticamente utilizando
+jueces de IA.
+Las pruebas como IFEval e INFOBench son útiles para hacerse una idea de
+la capacidad de los distintos modelos para seguir instrucciones. Aunque
+ambos intentaron incluir instrucciones representativas del mundo real, los
+conjuntos de instrucciones que evalúan son diferentes y, sin duda, pasan por
+alto muchas instrucciones de uso común. 7 Un modelo que tiene un buen
+rendimiento en estas pruebas comparativas no tiene por qué rendir bien bajo
+sus instrucciones.
+SUGERENCIA
+Deberá crear su propia prueba comparativa para evaluar la capacidad de su
+modelo para seguir sus instrucciones utilizando sus propios criterios. Si
+necesita que un modelo produzca YAML, incluya instrucciones YAML en
+su prueba comparativa. Si quiere que un modelo no diga cosas como
+"Como modelo lingüístico", evalúe el modelo siguiendo esta instrucción.

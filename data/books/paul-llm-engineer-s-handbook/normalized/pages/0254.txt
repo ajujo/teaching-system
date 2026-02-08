@@ -1,0 +1,35 @@
+Chapter 5
+223
+{}
+### Response:
+{}"""
+EOS_TOKEN = tokenizer.eos_token
+dataset = dataset.map(format_samples, batched=True, remove_
+columns=dataset.column_names)
+8.	 Once the dataset is ready, we can divide it into training (95%) and test (5%) sets for validation during training.
+dataset = dataset.train_test_split(test_size=0.05)
+9.
+The model is now ready to be trained. The SFTTrainer() class stores all the hyperparameters
+for our training. In addition, we provide the model, tokenizer, LoRA configuration, and
+datasets. Following the recommendations from the previous section, we set a learning
+rate of 3e-4 with a linear scheduler and a maximum sequence length of 2048. We train
+this model for three epochs with a batch size of 2 and 8 gradient accumulation steps (for
+an effective batch size of 16). We also choose the adamw_8bit optimizer with a weight_
+decay of 0.01. Depending on the GPU we use, it will automatically use FP16 or BF16 for
+the activations. Finally, we report our training run to Comet ML for experiment tracking.
+trainer = SFTTrainer(
+    model=model,
+   tokenizer=tokenizer,
+    train_dataset=dataset["train"],
+    eval_dataset=dataset["test"],
+    dataset_text_field="text",
+    max_seq_length=max_seq_length,
+    dataset_num_proc=2,
+    packing=True,
+    args=TrainingArguments(
+        learning_rate=3e-4,
+        lr_scheduler_type="linear",
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=8,
+        num_train_epochs=3,
+        fp16=not is_bfloat16_supported(),

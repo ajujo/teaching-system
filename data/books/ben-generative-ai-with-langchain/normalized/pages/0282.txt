@@ -1,0 +1,34 @@
+Chapter 6
+255
+ return {"is_current_node_final": False, "next_node": child, "max_id":
+max_id}
+async def _get_final_response(state: PlanState) -> PlanState:
+ node = state["current_node"]
+ final_response = await responder.ainvoke({"task": state["task"], "plan":
+node.get_full_plan()})
+ node.final_response = final_response
+ return {"paths_explored": 1, "candidates": [final_response]}
+The _run_node function executes the current step, while _plan_next generates new candidate
+steps and adds them to our exploration queue. When we reach a final node (one where no further
+steps are needed), _get_final_response generates a final solution by picking the best one from
+multiple candidates (originating from different solution paths explored). Hence, in our agent's
+state, we should keep track of the root node, the next node, the queue of nodes to be explored,
+and the nodes we've already explored:
+import operator
+from collections import deque
+from typing import Annotated
+class PlanState(TypedDict):
+   task: str
+   root: TreeNode
+   queue: deque[TreeNode]
+   current_node: TreeNode
+   next_node: TreeNode
+   is_current_node_final: bool
+   paths_explored: Annotated[int, operator.add]
+   visited_ids: set[int]
+   max_id: int
+   candidates: Annotated[list[str], operator.add]
+   best_candidate: str
+This state structure keeps track of everything we need: the original task, our tree structure, ex­
+ploration queue, path metadata, and candidate solutions. Note the special Annotated types that
+use custom reducers (like operator.add) to handle merging state values properly.

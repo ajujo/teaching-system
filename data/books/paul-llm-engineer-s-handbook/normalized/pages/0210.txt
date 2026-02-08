@@ -1,0 +1,35 @@
+Chapter 5
+179
+System
+You are a helpful assistant, who always provide explanation. Think like you are answering to a
+five year old.
+Instruction
+Concepts: building, shop, town
+Write a sentence that includes all these words.
+Output
+In our little town, there is a shop inside a big building where people go to buy their favorite toys
+and candies.
+Table 5.1 - Example of sample from the Open-Orca/SlimOrca dataset
+This example illustrates how the "system" field is used to define specific behaviors for the model,
+such as being helpful, always providing explanations, and tailoring responses as if speaking to
+a five-year-old. The "instruction" field provides the necessary data (the concepts) and the task
+(constructing a sentence). The output field shows the expected answer, which, while not the only
+possible answer, represents a high-quality response.
+To build an instruction dataset, we want to curate data that is representative of how the model will
+be used. Once we have gathered enough samples, our goal is to filter them to only keep high-quality
+data. In this context, high-quality data can be described through three main dimensions:
+•
+Accuracy: It refers to the factual correctness and relevance of the samples. In the context
+of instruction datasets, this means ensuring that responses are not only factually accurate but also relevant to their corresponding instructions. High accuracy is essential for
+training models that can provide reliable and trustworthy information.
+•
+Diversity: A high-quality dataset should encompass a wide range of use cases, covering
+the potential queries and tasks the deployed LLM might encounter. This diversity should
+span topics, contexts, text lengths, and writing styles. By sampling data in a representative
+manner, we allow models to develop robust instruction-following capabilities.
+•
+Complexity: Trivial or overly simplistic samples do little to improve an LLM's capabilities.
+Instead, datasets should include complex, multi-step reasoning problems and challenging
+tasks that push the boundaries of what the model is expected to handle. This complexity
+helps in developing models capable of tackling complex real-world problems.
+In the following sections, we will see techniques to filter and evaluate instruction samples according to these dimensions.

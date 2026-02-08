@@ -1,0 +1,17 @@
+MLOps Principles
+472
+The second aspect is based on the non-deterministic nature of ML processes. For example, when
+training a model from scratch, all the weights are initially randomly initialized. Thus, even if
+you use the same dataset and hyperparameters, you might end up with a model with a different performance. This aspect can be solved by always using a seed before generating random
+numbers, as in reality, we cannot digitally create randomness, only pseudo-random numbers.
+Thus, by providing a seed, we ensure that we always produce the same trace of pseudo-random
+numbers. This can also happen at the feature engineering step, in case we impute values with
+random values or randomly remove data or labels. But as a general rule of thumb, always try to
+make your processes as deterministic as possible, and in case you have to introduce randomness,
+always provide a seed that you have control over.
+Unlock this book's exclusive
+benefits now
+This book comes with additional benefits designed to elevate your learning
+experience.
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

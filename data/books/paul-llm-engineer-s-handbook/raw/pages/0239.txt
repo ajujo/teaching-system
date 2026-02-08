@@ -1,0 +1,38 @@
+Supervised Fine-Tuning
+208
+Even worse, a study showed that fine-tuning a model on new knowledge could result in more 
+frequent hallucinations. Depending on the SFT technique that is used, we’re also at risk of eras-
+ing knowledge that was present in the base model (a common issue referred to as “catastrophic 
+forgetting”).
+Instruction dataset formats
+Instruction datasets are stored in a particular format to organize instructions and answers. Typi-
+cally, each sample in the dataset can be represented as a Python dictionary, where keys are prompt 
+types like system, instruction, output, and values corresponding to the actual text. The three 
+most standard formats are Alpaca, ShareGPT, and OpenAI. The following table shows how these 
+data formats are generally organized.
+Name
+JSONL format
+Alpaca
+{“instruction”: “...”, “input”: “...”, “output”: “...”}
+{“instruction”: “...”, “output”: “...”}
+ShareGPT
+{“conversations”: [{“from”: “...”, “value”: “...”}, …]}
+OpenAI
+{“conversations”: [{“role”: “...”, “content”: “...”}, …]}
+OASST
+{“INSTRUCTION”: “...”, “RESPONSE”: “...”}
+Raw text
+{“text”: “...”}
+Table 5.5 – Examples of instruction data storage format
+Note that for Alpaca, the “input" key is optional. The content of the “input" key is only appended 
+to the content of the “instruction" key when it exists. We also added the “raw text" data format 
+to show that SFT is not inherently different from pre-training. If you choose to re-train a model 
+on raw text, this is a type of fine-tuning generally called “continual pre-training.”
+The dataset we created in the previous section has two columns (“instruction" and “output") 
+and corresponds to the Alpaca format. Alpaca is sufficient for single-turn instructions and an-
+swers, which means it is limited to one instruction and one answer. When you want to process 
+conversations (multiple instructions and answers), formats like ShareGPT or OpenAI are a better 
+fit. By storing each message as a dictionary in a list, they can represent an arbitrarily long con-
+versation in each sample.
+The choice of single-turn and multi-turn conversations directly impacts the storage type and 
+depends on the end use case.

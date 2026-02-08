@@ -1,0 +1,13 @@
+selecciona tokens de borrador del input. El principal reto es desarrollar un
+algoritmo que identifique el tramo de texto más relevante a partir del
+contexto en cada paso de decodificación. La opción más sencilla es
+encontrar un tramo de texto que coincida con los tokens actuales.
+A diferencia de la decodificación especulativa, la inferencia con referencia
+no requiere un modelo adicional. Sin embargo, solo es útil en escenarios de
+generación en los que hay un traslape significativo entre contextos y
+outputs, como en sistemas de recuperación, codificación o conversaciones
+multiturno. En "Inference with Reference: Lossless Acceleration of Large
+Language Models" (Yang et al., 2023), esta técnica permite multiplicar por
+dos la velocidad de generación en estos casos de uso.
+En la Figura 9-10 se muestran ejemplos de cómo funciona la inferencia con
+referencia.

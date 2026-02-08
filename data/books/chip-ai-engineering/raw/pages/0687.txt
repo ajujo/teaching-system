@@ -1,0 +1,12 @@
+figura 10-5. El enrutamiento ayuda al sistema a utilizar la solución óptima para cada
+consulta.
+Puerta de enlace
+Una puerta de enlace de modelos es una capa intermedia que permite a su
+organización interactuar con diferentes modelos de forma unificada y
+segura. La funcionalidad más básica de una puerta de enlace de modelos es
+proporcionar una interfaz unificada a diferentes modelos, incluyendo los
+modelos autoalojados y los modelos detrás de API comerciales. Una puerta
+de enlace de modelos facilita el mantenimiento del código. Si cambia una
+API del modelo, solo tendrá que actualizar la puerta de enlace, en vez de
+todas las aplicaciones que dependen de esta API. La Figura 10-6 muestra
+una visualización a grandes rasgos de una puerta de enlace de modelos.

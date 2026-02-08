@@ -1,0 +1,30 @@
+specialized applications, boosting its relevance and effectiveness on specific tasks
+while retaining its general capabilities. Figure 7-5 illustrates the generic fine-tuning
+process, showing how a large pretrained model is further adapted to specific tasks
+using curated domain datasets.
+Figure 7-5. Fine-tuning workflow. A language model is first pretrained on a broad cor‐
+pus to build general capabilities, then fine-tuned on a smaller, task-specific dataset to
+produce a specialized model aligned with domain needs.
+Deciding whether to invest in fine-tuning hinges on your specific needs, resources,
+and longer-term maintenance plans. Consider fine-tuning in the following scenarios:
+Domain specialization is critical
+You need the model to speak your organization’s jargon, follow a strict style
+guide, or handle highly sensitive content with minimal errors. Off-the-shelf mod‐
+els often struggle with narrow domains, and supervised fine-tuning (SFT) or
+direct preference optimization (DPO) can lock in that expertise.
+Consistent tone and format matter
+If every response must adhere to a precise template—say, financial disclosures or
+legal disclaimers—fine-tuning ensures the model reliably produces the correct
+structure without elaborate prompt engineering.
+Tool and API calls must be precise
+When your agent regularly invokes external functions or services (e.g., medical
+dosages, trading APIs), function-calling fine-tuning can drastically reduce mis‐
+calls and handle edge-case errors more gracefully than in-context prompts alone.
+You have sufficient high-quality data and budget
+Fine-tuning large models demands hundreds to thousands of curated examples,
+expert graders (for reinforcement fine-tuning [RFT]), and GPU hours. If you
+lack data or compute, nonparametric methods like Reflexion or exemplar
+retrieval may offer better ROI.
+Parametric Learning: Fine-Tuning 
+| 
+147

@@ -1,0 +1,51 @@
+tabla 3-1. Los modelos GPT-2 de mayor tamaño ofrecen sistemáticamente un
+LAMBADA
+(PPL)
+LAMBADA
+(ACC)
+CBT-CN
+(ACC)
+CBT
+(ACC
+SOTA
+99.8
+59.23
+85.7
+82.3
+117M
+35.13
+45.99
+87.65
+83.4
+345M
+15.60
+55.48
+92.35
+87.1
+762M
+10.87
+60.12
+93.45
+88.0
+1542M
+8.63
+63.24
+93.30
+89.05
+AVISO
+La perplejidad puede no ser un buen indicador para evaluar modelos que
+hayan sido post-entrenados utilizando técnicas como el SFT y el RLHF. 9
+El post-entrenamiento consiste en enseñar a los modelos cómo realizar las
+tareas. A medida que un modelo mejora en la realización de tareas, puede
+empeorar en la predicción de los siguientes tokens. La perplejidad de un
+modelo lingüístico suele aumentar tras el post-entrenamiento. Hay quien
+dice que el post-entrenamiento colapsa la entropía. Del mismo modo, la
+cuantización -una técnica que reduce la precisión numérica de un modelo
+y, con ella, su huella de memoria- también puede cambiar la perplejidad
+de un modelo de formas inesperadas.10
+Recordemos que la perplejidad de un modelo con respecto a un texto mide
+lo difícil que es para este modelo predecir dicho texto. Para un modelo
+dado, la perplejidad es la más baja para los textos que el modelo ha visto y
+memorizado durante el entrenamiento. Por lo tanto, la perplejidad puede
+utilizarse para detectar si un texto estaba en los datos de entrenamiento de
+un modelo. Esto es útil para detectar la contaminación de los datos: si la

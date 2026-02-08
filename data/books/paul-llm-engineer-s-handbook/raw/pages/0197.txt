@@ -1,0 +1,34 @@
+RAG Feature Pipeline
+166
+            "chunk_size": 500,
+            "chunk_overlap": 50,
+        }
+    @abstractmethod
+    def chunk(self, data_model: CleanedDocumentT) -> list[ChunkT]:
+        pass
+Let’s understand how the ArticleChunkingHandler() class is implemented. The first step is to 
+override the metadata property and customize the type of properties the chunking logic requires. 
+For example, when working with articles, we are interested in the chunk’s minimum and max-
+imum length.
+The handler’s chunk() method inputs cleaned article documents and returns a list of article chunk 
+entities. It uses the chunk_text() function to split the cleaned content into chunks. The chunking 
+function is customized based on the min_length and max_length metadata fields. The chunk_id 
+is computed as the MD5 hash of the chunk’s content. Thus, if the two chunks have precisely the 
+same content, they will have the same ID, and we can easily deduplicate them. Lastly, we create 
+a list of chunk entities and return them.
+class ArticleChunkingHandler(ChunkingDataHandler):
+    @property
+    def metadata(self) -> dict:
+        return {
+            "min_length": 1000,
+            "max_length": 1000,
+        }
+    def chunk(self, data_model: CleanedArticleDocument) -> 
+list[ArticleChunk]:
+        data_models_list = []
+        cleaned_content = data_model.content
+        chunks = chunk_article(
+            cleaned_content, min_length=self.metadata["min_length"], max_
+length=self.metadata["max_length"]
+        )
+        for chunk in chunks:

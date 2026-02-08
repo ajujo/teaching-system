@@ -1,0 +1,25 @@
+Creating features with aggregation primitives
+299
+In the following output, we see a DataFrame with the features created from the text:
+Figure 9.11 - DataFrame with the features created from text
+Note
+The featuretools library removes the original text variable, description, and in its
+place, it returns the new features.
+To create features using the primitives from the nlp_primitives package, you need to import
+them first - for example, by executing from nlp_primitives import DiversityScore
+- and then add the primitives to the text primitive list that we created in step 6. Note that these are
+complex functions, so they may take some time to create the features.
+How it works...
+To create features from text variables, we used the default text primitives from featuretools. These
+primitives can be accessed from dfs by passing a list with strings corresponding to the primitive
+names, such as those from step 6, to the trans_primitives parameter.
+For more advanced primitives, you need to import the primitive functions from the nlp_primitives
+library and then pass them on to the trans_primitives parameter from dfs. With this, dfs
+can tap into the functionality of these primitives to create new features from the text. Thhe nlp_
+primitives library uses the nltk Python library under the hood.
+Creating features with aggregation primitives
+Throughout this chapter, we've created features automatically by mapping existing variables into new
+features through various functions. For example, we extracted date and time parts from datetime
+variables, counted the number of words, characters, and punctuation in texts, combined numerical
+features into new variables, and transformed features with functions such as sine and cosine. To create
+these features, we worked with transform primitives.

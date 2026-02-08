@@ -1,0 +1,26 @@
+11
+Extracting Features from 
+Text Variables
+Text can be one of the variables in our datasets. For example, in insurance, information describing the 
+circumstances of an incident can come from free text fields in a form. If a company gathers customer 
+reviews, this information will be collected as short pieces of text provided by the users. Text data 
+does not show the tabular pattern of the datasets that we have worked with throughout this book. 
+Instead, information in texts can vary in length and content, as well as writing style. We can extract 
+a lot of information from text variables to use as predictive features in machine learning models. The 
+techniques we will cover in this chapter belong to the realm of Natural Language Processing (NLP). 
+NLP is a subfield of linguistics and computer science. It is concerned with the interactions between 
+computer and human language, or, in other words, how to program computers to understand human 
+language. NLP includes a multitude of techniques to understand the syntax, semantics, and discourse 
+of text. Therefore, to do this field justice would require an entire book.
+In this chapter, we will discuss the methods that will allow us to quickly extract features from short 
+pieces of text to complement our predictive models. Specifically, we will discuss how to capture a piece 
+of text’s complexity by looking at some statistical parameters of the text, such as the word length and 
+count, the number of words and unique words used, the number of sentences, and so on. We will 
+use the pandas and scikit-learn libraries, and we will make a shallow dive into a very useful 
+Python NLP toolkit called the Natural Language Toolkit (NLTK).
+This chapter includes the following recipes:
+•	 Counting characters, words, and vocabulary
+•	 Estimating text complexity by counting sentences
+•	 Creating features with bag-of-words and n-grams
+•	 Implementing term frequency-inverse document frequency
+•	 Cleaning and stemming text variables

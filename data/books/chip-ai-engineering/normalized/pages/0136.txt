@@ -1,0 +1,20 @@
+1. Añadir más contexto a la pregunta: "¿para una familia de seis
+miembros?"
+2. Añadir preguntas de seguimiento: "¿Qué ingredientes necesito?
+¿Cuánto tiempo llevaría?"
+3. Dar las instrucciones sobre cómo hacer pizza.
+Si el objetivo es responder adecuadamente a los usuarios, la opción correcta
+es la 3.
+Sabemos que un modelo imita sus datos de entrenamiento. Para animar al
+modelo a generar las respuestas adecuadas, puede mostrarle ejemplos de
+respuestas apropiadas. Estos ejemplos siguen el formato (prompt, respuesta)
+y se denominan datos de demostración. Algunas personas se refieren a este
+proceso como clonación de comportamiento: usted demuestra cómo debería
+comportarse el modelo, y el modelo clona este comportamiento.
+Dado que diferentes tipos de solicitudes requieren diferentes tipos de
+respuestas, sus datos de demostración deben contener la gama de solicitudes
+que desea que su modelo gestione, como responder a preguntas, resumir y
+traducir. La Figura 2-12 muestra una distribución de los tipos de tareas que
+OpenAI utilizó para hacer ajustes finos a su modelo InstructGPT. Tenga en
+cuenta que esta distribución no contiene tareas multimodales, ya que
+InstructGPT es un modelo de solo texto.

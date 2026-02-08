@@ -1,0 +1,34 @@
+Chapter 8
+345
+            "status": "pending"
+        }
+    )
+]
+We can upload this dataset to LangSmith:
+client = Client()
+dataset_name = "Insurance Claims"
+# Create the dataset in LangSmith
+dataset = client.create_dataset(
+    dataset_name=dataset_name,
+    description="Synthetic dataset for insurance claim extraction tasks",
+)
+# Store examples in the dataset
+for input_text, expected_output in example_inputs:
+    client.create_example(
+        inputs={"input": input_text},
+        outputs={"output": expected_output},
+        metadata={"source": "Synthetic"},
+        dataset_id=dataset.id,
+    )
+Now let's run our InsuranceClaim dataset on LangSmith. We'll first define a schema for our claims:
+# Define the extraction schema
+from pydantic import BaseModel, Field
+class InsuranceClaim(BaseModel):
+    claimant_name: str = Field(..., description="The name of the
+claimant")
+    claim_id: str = Field(..., description="The unique insurance claim
+identifier")
+    policy_number: str = Field(..., description="The policy number
+associated with the claim")
+    claim_amount: str = Field(..., description="The claimed amount (e.g.,
+'$5000')")

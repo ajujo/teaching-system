@@ -1,0 +1,40 @@
+Chapter 11
+451
+Then, you have preprocessing and postprocessing functions surrounding the actual LLM call.
+Using the @track() decorator, we log the input and output of each function, which will ultimately
+be aggregated into a single trace. By doing so, we will have access to the initial input text, the
+generated answer, and all the intermediary steps required to debug any potential issues using
+Opik's dashboard.
+The last step is to attach the necessary metadata for your use case to the current trace. As seen
+in the following code snippet, you can easily do that by calling the update() method, where you
+can tag your trace or add any other metadata, such as the number of input tokens, through a
+Python dictionary:
+from opik import track, opik_context
+@track
+def llm_chain(input_text):
+    # LLM chain code
+    # ...
+    opik_context.update_current_trace(
+tags=["inference_pipeline"],
+metadata={
+
+"num_tokens": compute_num_tokens(...)
+},
+feedback_scores=[
+{
+
+"name": "user_feedback",
+
+"value": 1.0,
+
+"reason": "The response was valuable and correct."
+},
+{
+
+"name": "llm_judge_score",
+
+"value": compute_llm_judge_score(...),
+
+"reason": "Computing runtime metrics using an LLM Judge."
+}
+)

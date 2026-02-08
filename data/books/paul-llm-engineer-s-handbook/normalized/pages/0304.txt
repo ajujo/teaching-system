@@ -1,0 +1,25 @@
+Chapter 7
+273
+Additionally, Ragas can generate conversational samples that simulate chat-based question-andfollow-up interactions, allowing developers to evaluate their systems in more realistic scenarios.
+Figure 7.1: Overview of the Ragas evaluation framework
+As illustrated in Figure 7.1, Ragas provides a suite of LLM-assisted evaluation metrics designed to
+objectively measure different aspects of RAG system performance. These metrics include:
+•
+Faithfulness: This metric measures the factual consistency of the generated answer against
+the given context. It works by breaking down the answer into individual claims and verifying if each claim can be inferred from the provided context. The faithfulness score is
+calculated as the ratio of verifiable claims to the total number of claims in the answer.
+•
+Answer relevancy: This metric evaluates how pertinent the generated answer is to the
+given prompt. It uses an innovative approach where an LLM is prompted to generate
+multiple questions based on the answer and then calculates the mean cosine similarity
+between these generated questions and the original question. This method helps identify
+answers that may be factually correct but off-topic or incomplete.
+•
+Context precision: This metric evaluates whether all the ground-truth relevant items
+present in the contexts are ranked appropriately. It considers the position of relevant information within the retrieved context, rewarding systems that place the most pertinent
+information at the top.
+•
+Context recall: This metric measures the extent to which the retrieved context aligns with
+the annotated answer (ground truth). It analyzes each claim in the ground truth answer
+to determine whether it can be attributed to the retrieved context, providing insights into
+the completeness of the retrieved information.

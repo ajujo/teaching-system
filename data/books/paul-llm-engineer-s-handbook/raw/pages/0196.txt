@@ -1,0 +1,33 @@
+Chapter 4
+165
+            content=clean_text(" #### ".join(data_model.content.
+values())),
+            … # Copy the rest of the parameters from the data_model 
+object.
+        )
+The handlers input a raw document domain entity, clean the content, and return a cleaned docu-
+ment. All the handlers use the clean_text() function to clean the text. Out of simplicity, we used 
+the same cleaning technique for all the data categories. Still, in a real-world setup, we would have 
+to further optimize and create a different cleaning function for each data category. The strategy 
+pattern makes this a breeze, as we swap the cleaning function in the handlers, and that’s it.
+The cleaning steps applied in the clean_text() function are the same ones discussed in Chapter 5 
+in the Creating an instruction dataset section. We don’t want to repeat ourselves. Thus, for a re-
+fresher, check out that chapter. At this point, we mostly care about automating and integrating 
+the whole logic into the RAG feature pipeline. Thus, after operationalizing the ML system, all the 
+cleaned data used for fine-tuning will be accessed from the logical feature store, making it the 
+single source of truth for accessing data.
+The chunking handlers
+First, let’s examine the ChunkingDataHandler() strategy handler. We exposed the metadata dic-
+tionary as a property to aggregate all the necessary properties required for chunking in a single 
+structure. By structuring it like this, we can easily log everything to ZenML to track and debug our 
+chunking logic. The handler takes cleaned documents as input and returns chunk entities. All the 
+handlers can be found on GitHub at https://github.com/PacktPublishing/LLM-Engineering/
+tree/main/llm_engineering/application/preprocessing.
+… # Other imports.
+from typing import Generic, TypeVar
+CleanedDocumentT = TypeVar("CleanedDocumentT", bound=CleanedDocument)
+ChunkT = TypeVar("ChunkT", bound=Chunk)
+ class ChunkingDataHandler(ABC, Generic[CleanedDocumentT, ChunkT]):
+    @property
+    def metadata(self) -> dict:
+        return {

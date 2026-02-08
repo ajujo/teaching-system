@@ -1,0 +1,32 @@
+consultas de prueba, genere múltiples respuestas, ya sea manualmente o
+utilizando modelos de IA, y determine si son buenas o malas.
+Crear rúbricas de puntuación con ejemplos
+Para cada criterio, elija un sistema de puntuación: ¿sería binario (0 y 1), de
+1 a 5, entre 0 y 1, o alguna otra cosa? Por ejemplo, para evaluar si una
+respuesta es coherente con un contexto determinado, algunos equipos
+utilizan un sistema de puntuación binario: 0 para la incoherencia factual y 1
+para la coherencia factual. Algunos equipos utilizan tres valores: -1 para
+contradicción, 1 para vinculación y 0 para neutro. El sistema de puntuación
+a utilizar depende de sus datos y sus necesidades.
+Sobre este sistema de puntuación, cree una rúbrica con ejemplos. ¿Cómo es
+una respuesta con una puntuación de 1 y por qué merece un 1? Valide su
+rúbrica con humanos: usted mismo, compañeros de trabajo, amigos, etc. Si
+a los humanos les resulta difícil seguir la rúbrica, hay que perfeccionarla
+para que sea inequívoca. Este proceso puede requerir muchas idas y
+venidas, pero es necesario. Una directriz clara es la columna vertebral de un
+proceso de evaluación fiable. Esta directriz también puede reutilizarse
+posteriormente para anotar datos de entrenamiento, como se explica en el
+Capítulo 8.
+Vincular las métricas de evaluación a las métricas de negocio
+Dentro de una empresa, una aplicación debe servir a un objetivo
+empresarial. Las métricas de la aplicación deben considerarse en el contexto
+del problema empresarial que se pretende resolver.
+Por ejemplo, si la coherencia factual de su chatbot de atención al cliente es
+del 80 %, ¿qué significa esto para la empresa? Por ejemplo, este nivel de
+coherencia factual puede hacer que el chatbot sea inutilizable para
+preguntas sobre facturación, pero lo suficientemente bueno para consultas
+sobre recomendaciones de productos o comentarios generales de los
+clientes. Lo ideal es asignar métricas de evaluación a métricas de negocio, a
+algo parecido a esto:
+Coherencia factual del 80 %: podemos automatizar el 30 % de las
+solicitudes de asistencia al cliente.

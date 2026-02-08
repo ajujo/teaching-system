@@ -1,0 +1,20 @@
+Using the square root to transform variables
+97
+Here, we can see the Poisson distribution in the output:
+Figure 3.6 - The bar and Q-Q plots of the counts1 variable
+5.
+Now, let's make a copy of the dataset:
+df_tf = df.copy()
+6.
+Let's apply the square root transformation to both variables:
+df_tf[["counts1", "counts2"]] = np.sqrt(
+    df[["counts1","counts2"]])
+7.
+Let's round the values to two decimals for a nicer visualization:
+df_tf[["counts1", "counts2"]] = np.round(
+    df_tf[["counts1", "counts2"]], 2)
+8.
+Let's plot the distribution of counts1 after the transformation:
+diagnostic_plots(df_tf, "counts1")
+We see a more stabilized variance, as the dots in the Q-Q plot follow the 45-degree diagonal
+more closely:

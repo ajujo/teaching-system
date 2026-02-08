@@ -1,0 +1,24 @@
+pide que donen (por ejemplo, que compartan) sus datos de interacción
+recientes junto con sus opiniones. Por ejemplo, al enviar retroalimentación,
+es posible que se les pida que marquen una casilla para compartir sus datos
+recientes como contexto de la retroalimentación.
+Explicar a los usuarios cómo se utilizan sus opiniones puede motivarles a
+proporcionar más y mejores retroalimentación. ¿Utiliza la retroalimentación
+de un usuario para personalizar el producto para este usuario, para recopilar
+estadísticas sobre el uso general o para entrenar a un nuevo modelo? Si a
+los usuarios les preocupa la privacidad, asegúreles que sus datos no se
+utilizarán para entrenar modelos o que no saldrán de su dispositivo (solo si
+esto es cierto).
+No pida a los usuarios que hagan lo imposible. Por ejemplo, si recopilan
+señales comparativas de los usuarios, no les pidan que elijan entre dos
+opciones que no entienden. Por ejemplo, una vez me quedé perpleja cuando
+ChatGPT me pidió que eligiera entre dos posibles respuestas a una pregunta
+estadística, como se muestra en la Figura 10-20. Ojalá hubiera existido la
+opción de decir "no lo sé".
+figura 10-20. Un ejemplo de ChatGPT pidiendo a un usuario que seleccione la
+respuesta que prefiere. No obstante, en cuestiones matemáticas como esta, la
+respuesta correcta no debería ser una cuestión de preferencias.
+Añada iconos e información sobre herramientas a una opción si ayudan a la
+gente a entenderla. Evite un diseño que pueda confundir a los usuarios. Las
+instrucciones ambiguas pueden dar lugar a retroalimentación con ruido.
+Una vez organicé un taller de optimización de GPU, utilizando Luma para

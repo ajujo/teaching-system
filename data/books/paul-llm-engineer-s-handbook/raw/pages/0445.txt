@@ -1,0 +1,18 @@
+MLOps and LLMOps
+414
+Understanding the infrastructure
+Before diving into the step-by-step tutorial, where we will show you how to set up all the nec-
+essary components, let’s briefly overview our infrastructure and how all the elements interact. 
+This will help us in mindfully following the tutorials below.
+As shown in Figure 11.5, we have a few services to set up. To keep things simple, for MongoDB and 
+Qdrant, we will leverage their serverless freemium version. As for ZenML, we will leverage the 
+free trial of the ZenML cloud, which will help us orchestrate all the pipelines in the cloud. How 
+will it do that?
+By leveraging the ZenML cloud, we can quickly allocate all the required AWS resources to run, scale, 
+and store the ML pipeline. It will help us spin up, with a few clicks, the following AWS components:
+•	
+An ECR service for storing Docker images
+•	
+An S3 object storage for storing all our artifacts and models
+•	
+SageMaker Orchestrator for orchestrating, running, and scaling all our ML pipelines

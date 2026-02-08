@@ -1,0 +1,39 @@
+Communication Techniques
+As agentic systems grow from single-agent prototypes into multiagent, distributed
+systems, the choice of communication architecture becomes increasingly critical.
+What starts as simple in-memory message passing or function calls quickly becomes
+untenable as systems grow in scope, number of agents, geographic distribution, or
+deployment complexity. This section explores the core techniques and technologies
+available for managing communication, coordination, and task flow across agentsespecially as systems transition from single-device experiments to production-grade
+distributed deployments. The reader will notice there are many valid approaches, all
+with different trade-offs in development effort, latency, scalability, reliability, and
+cost.
+Local Versus Distributed Communication
+At a small scale-such as a single-device or single-process setup-agents often com‐
+municate through direct function calls, shared memory, or in-memory message
+queues. While simple and efficient, these methods don't scale well. As soon as agents
+are distributed across services, containers, or nodes, communication must be made
+explicit, asynchronous, and fault-tolerant.
+In local deployments, frameworks like AutoGen often use in-memory routers to
+orchestrate agent message passing and tool invocation. These setups can work well
+for research and prototyping, especially with single-threaded or single-agent configu‐
+rations. But for production use, communication and state management must evolve.
+Agent-to-Agent Protocol
+The Agent-to-Agent (A2A) Protocol, introduced by Google, is an ambitious and
+promising step toward enabling autonomous agents to work together toward more
+complex goals. It offers a standardized, cross-platform mechanism for agents to dis‐
+cover each other, negotiate collaboration, and exchange structured requests-without
+revealing internal logic or implementation details. By enabling heterogeneous agents
+to interoperate over HTTP-based transports, A2A creates a shared language that
+could, in time, make multiagent coordination as routine as API calls between
+microservices.
+At the core of A2A is the Agent Card, a machine-readable JSON descriptor that each
+agent publishes to advertise its identity, capabilities, endpoints, and supported
+authentication methods. These cards enable agents to find peers, evaluate their func‐
+tions, and negotiate secure communication channels. Capabilities are defined explic‐
+itly-such as generateReport, summarizeLegalDocument-along with schemas for
+inputs and outputs, enabling structured composition of agent workflows. Endpoint
+information and supported authentication methods (e.g., OAuth 2, API key) ensure
+Communication Techniques
+|
+189

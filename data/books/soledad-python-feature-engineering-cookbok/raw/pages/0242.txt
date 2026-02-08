@@ -1,0 +1,28 @@
+Implementing maximum absolute scaling
+219
+Getting ready
+Maximum absolute scaling was specifically designed to scale sparse data. Thus, we will use a bag-of-
+words dataset that contains sparse variables for the recipe. In this dataset, the variables are words, 
+the observations are documents, and the values are the number of times each word appears in the 
+document. Most entries in the data are 0.
+We will use a dataset consisting of a bag of words, which is available in the UCI Machine Learning 
+Repository (https://archive.ics.uci.edu/ml/datasets/Bag+of+Words), which 
+is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/
+legalcode).
+I downloaded and prepared a small bag of words representing a simplified version of one of those 
+datasets. You will find this dataset in the accompanying GitHub repository: https://github.com/
+PacktPublishing/Python-Feature-Engineering-Cookbook-Third-Edition/
+tree/main/ch07-scaling.
+How to do it...
+Let’s begin by importing the required packages and loading the dataset:
+1.	
+Let’s import the required libraries and the scaler:
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.preprocessing import MaxAbsScaler
+2.	
+Let’s load the bag-of-words dataset:
+data = pd.read_csv("bag_of_words.csv")
+If we execute data.head(), we will see the DataFrame consisting of the words as columns, 
+the documents as rows, and the number of times each word appeared in a document as values:
+Figure 7.5 – DataFrame with the bag of words

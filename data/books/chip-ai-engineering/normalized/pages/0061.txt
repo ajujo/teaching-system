@@ -1,0 +1,32 @@
+incorporarla debe ser de la máxima prioridad. En el estudio 2023
+de Gartner, el 7 % citó la continuidad del negocio como su razón
+para adoptar la IA. Esto es más habitual en negocios que implican
+el procesamiento de documentos y la agregación de información,
+como el análisis financiero, los seguros y el tratamiento de datos.
+Esto también es habitual en trabajos creativos como la publicidad,
+el diseño web y la producción de imágenes. Puede consultar el
+estudio de OpenAI 2023, "GPTs are GPTs" (Eloundou et al., 2023),
+para ver cómo se clasifican las industrias en su exposición a la IA.
+2. Si no lo hace, perderá oportunidades de aumentar los beneficios y
+la productividad. La mayoría de las empresas adoptan la IA por las
+oportunidades que ofrece. La IA puede ayudar en la mayoría de las
+operaciones empresariales, si no en todas. La IA puede abaratar la
+captación de usuarios elaborando textos publicitarios,
+descripciones de productos y contenidos visuales promocionales
+más eficaces. La IA puede aumentar la retención de usuarios
+mejorando la atención al cliente y personalizando la experiencia
+del usuario. La IA también puede ayudar con la generación de
+oportunidades de venta, la comunicación interna, los estudios de
+mercado y el seguimiento de la competencia.
+3. Aún no está seguro de dónde encajará la IA en su negocio, pero no
+quiere quedarse atrás. Aunque una empresa no debe perseguir
+todas las últimas modas, muchas han fracasado por esperar
+demasiado para dar el salto (por ejemplo, Kodak, Blockbuster y
+BlackBerry). Invertir recursos en comprender cómo una tecnología
+nueva y transformadora puede afectar a su negocio no es una mala
+idea si pueden permitírselo. En las grandes empresas, esto puede
+formar parte del departamento de I+D. 19
+Una vez que haya encontrado una buena razón para desarrollar este caso de
+uso, puede preguntarse si es necesario construirlo usted mismo. Si la IA
+supone una amenaza existencial para su empresa, quizá le convenga hacerla
+internamente en lugar de subcontratarla a un competidor.

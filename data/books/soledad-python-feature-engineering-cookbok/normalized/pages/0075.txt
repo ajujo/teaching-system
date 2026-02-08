@@ -1,0 +1,37 @@
+Encoding Categorical Variables
+52
+OneHotEncoder() from scikit-learn or feature-engine learned the categories that should
+be represented by binary variables from the train set when we applied fit(). With transform(),
+scikit-learn returned just the binary variables, whereas feature-engine returned the
+numerical variables followed by the one-hot encoded representation of the categorical ones.
+scikit-learn's OneHotEncoder() encodes all variables by default. To restrict the encoding
+to categorical variables, we used ColumnTransformer(). We set the output of transform()
+to pandas to obtain the resulting data as a DataFrame.
+Note
+One-hot encoding is suitable for linear models. It also expands the feature space. If your dataset
+contains many categorical variables or highly cardinal variables, you can restrict the number of
+binary variables by encoding the most frequent categories only. You can do this automatically
+with both scikit-learn and feature-engine as we describe in the Performing one-hot
+encoding of frequent categories recipe.
+There's more...
+We can also perform one-hot encoding using the Category Encoders Python library: https://
+contrib.scikit-learn.org/category_encoders/onehot.html.
+To limit the number of binary variables, we can choose which categories to encode and which to
+ignore; check out a Python demo in the following article: https://www.blog.trainindata.
+com/one-hot-encoding-categorical-variables/.
+Performing one-hot encoding of frequent categories
+One-hot encoding represents each variable's category with a binary variable. Hence, one-hot encoding
+of highly cardinal variables or datasets with multiple categorical features can expand the feature space
+dramatically. This, in turn, may increase the computational cost of using machine learning models
+or deteriorate their performance. To reduce the number of binary variables, we can perform one-hot
+encoding of the most frequent categories. One-hot encoding the top categories is equivalent to treating
+the remaining, less frequent categories as a single, unique category.
+In this recipe, we will implement one-hot encoding of the most popular categories using pandas,
+Scikit-learn, and feature-engine.
+How to do it...
+First, let's import the necessary Python libraries and get the dataset ready:
+1.
+Import the required Python libraries, functions, and classes:
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split

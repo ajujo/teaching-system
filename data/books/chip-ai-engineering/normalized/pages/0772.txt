@@ -1,0 +1,25 @@
+modelos de incrustación, Introducción a la incrustación
+modelos de mezcla de expertos (MoE), Tamaño del modelo, Poda de
+parámetros redundantes específicos de la tarea
+modelos de peso abierto, Código abierto, ponderación abierta y licencias
+modelo
+modelos de preferencias, ¿Qué modelos pueden actuar como jueces?
+modelos de recompensa, Afinado de preferencias, ¿Qué modelos pueden
+actuar como jueces?
+modelos dispersos, Tamaño del modelo, Compresión del modelo
+modelos fundacionales, De los grandes modelos lingüísticos a los modelos
+fundacionales, Comprender los modelos fundacionales
+- casos de uso, De los modelos fundacionales a la ingeniería de IA
+- automatización del flujo de trabajo, Organización de datos
+- bots conversacionales, Bots conversacionales
+- codificación, Casos de uso de modelos fundacionales
+- educación, Redacción
+- organización de datos, Agregación de información
+- producción de imagen y vídeo, Codificación
+- redacción, Codificación
+- datos de entrenamiento, Comprender los modelos fundacionales
+- modelos específicos de dominio, Modelos específicos de dominio
+- modelos multilingües, Datos de entrenamiento
+- escala inversa, Tamaño del modelo
+- modelado, Modelado
+- arquitectura de modelos, Modelado

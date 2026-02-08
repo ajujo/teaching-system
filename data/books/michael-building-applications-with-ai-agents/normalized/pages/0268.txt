@@ -1,0 +1,30 @@
+pipelines distill these patterns into digestible insights, flagging high-impact issues for
+immediate attention.
+Figure 11-2 illustrates a typical automated prompt optimization loop, as employed by
+frameworks like DSPy and APO. In this process, an initial prompt is fed into a target
+model, which generates outputs evaluated against a dataset by an evaluation model.
+The resulting scores inform an optimization model, which iteratively refines and pro‐
+poses new prompts to improve performance. This approach enables continuous,
+data-driven enhancements without manual intervention, making it a cornerstone of
+scalable feedback pipelines in agentic workflows.
+Figure 11-2. Automated prompt optimization pipeline, showing the flow from initial
+prompt through target and evaluation models, with an optimization model generating
+refined prompts based on dataset-driven scores.
+Automated feedback pipelines, powered by tools like DSPy, Trace, and APO, trans‐
+form raw observational data into iterative improvements, ensuring that multiagent
+systems remain robust and adaptive. We'll now discuss several of these approaches in
+more depth. DSPy is an open source Python framework developed by researchers at
+Stanford NLP for automatically optimizing and improving systems using foundation
+models. Unlike traditional prompt engineering, which relies on manual trial and
+error, DSPy treats language model (LM) pipelines as modular, declarative programs
+that can be systematically refined using data. Developers define "signatures" (input/
+output specifications for tasks), compose them into modules (e.g., chain of thought or
+ReAct for reasoning and tool use), and apply optimizers (like BootstrapFewshot or
+MIPROv2) to automatically generate better prompts and few-shot examples and even
+fine-tune model behaviors based on a dataset of examples and a metric (e.g., exact
+match or semantic similarity). This data-driven approach enables self-improving
+loops, where insights from failure patterns are backpropagated to enhance prompts,
+tools, or reasoning strategies-ideal for proactive optimization in agentic systems.
+246
+|
+Chapter 11: Improvement Loops

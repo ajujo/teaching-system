@@ -1,0 +1,16 @@
+todas las categorías de preguntas en la prueba comparativa MMLU, la RAG
+supera al afinado para tres modelos diferentes: Mistral 7B, Llama 2-7B y
+Orca 2-7B.
+Sin embargo, la RAG y el afinado no se excluyen mutuamente. A veces
+pueden utilizarse juntos para maximizar el rendimiento de la aplicación. En
+el mismo experimento, Ovadia et al. (2024) mostraron que la incorporación
+de RAG sobre un modelo afinado puede aumentar su rendimiento en la
+prueba comparativa MMLU el 43 % de las veces. Es importante señalar
+que, en este experimento, el uso de la RAG con modelos ajustados no
+mejora el rendimiento el 57 % de las veces en comparación con el uso de la
+RAG sola.
+No existe un flujo de trabajo universal para todas las aplicaciones. La
+Figura 7-3 muestra algunos caminos que puede seguir un proceso de
+desarrollo de aplicaciones a lo largo del tiempo. La flecha indica el
+siguiente paso que puede intentar. Esta figura se inspira en un ejemplo de
+flujo de trabajo mostrado por OpenAI (2023).

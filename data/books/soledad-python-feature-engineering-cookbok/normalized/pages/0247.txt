@@ -1,0 +1,34 @@
+Performing Feature Scaling
+224
+5.
+Let's include both scalers within a pipeline that returns pandas DataFrames:
+scaler = Pipeline([
+    ("scaler_mean", scaler_mean),
+    ("scaler_max", scaler_maxabs),
+]).set_output(transform="pandas")
+6.
+Let's fit the scalers to the train set so that they learn the required parameters:
+scaler.fit(X_train)
+7.
+Finally, let's transform the train and test sets:
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+The pipeline applies StandardScaler() and MaxAbsScaler() in sequence to first
+remove the mean and then scale the resulting variables to their maximum values.
+Scaling to vector unit length
+Scaling to the vector unit length involves scaling individual observations (not features) to have a unit
+norm. Each sample (that is, each row of the data) is rescaled independently of other samples so that
+its norm equals one. Each row constitutes a feature vector containing the values of every variable for
+that row. Hence, with this scaling method, we rescale the feature vector.
+The norm of a vector is a measure of its magnitude or length in a given space and it can be determined
+by using the Manhattan (l1) or the Euclidean (l2) distance. The Manhattan distance is given by the
+sum of the absolute components of the vector:
+l1(x) = | x 1| + |x 2| + ... ..+ | x n|
+The Euclidean distance is given by the square root of the square sum of the component of the vector:
+l2(x)  =  √
+_____________
+
+x 1 2+ x 2 2 + ... + x n 2
+Here, x 1, x 2, and x n are the values of variables 1, 2, and n for each observation. Scaling to unit norm
+consists of dividing each feature vector's value by either l1 or l2, so that after the scaling, the norm of
+the feature vector is 1. To be clear, we divide each of x 1, x 2, and x n, by l1 or l2.

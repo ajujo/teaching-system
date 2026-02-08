@@ -1,0 +1,28 @@
+CÁLCULO DEL TAMAÑO DE LA CACHÉ KV
+La memoria necesaria para la caché KV, sin ninguna optimización, se
+calcula del siguiente modo:
+2 × B × S × L × H × M
+B: tamaño del lote
+S: longitud de la secuencia
+L: número de capas de transformador
+H: dimensión del modelo
+M: memoria necesaria para la representación numérica de la
+caché (por ejemplo, FP16 o FP32).
+Este valor puede llegar a ser considerable a medida que aumenta la
+longitud del contexto. Por ejemplo, LLama 2 13B tiene 40 capas y una
+dimensión de modelo de 5120. Con un tamaño de lote de 32, una
+longitud de secuencia de 2048 y 2 bytes por valor, la memoria necesaria
+para su caché KV, sin ninguna optimización, es de 2 × 32 × 2.048 × 40
+× 5120 × 2 = 54 GB.
+Rediseñar el mecanismo de atención
+Estas técnicas implican alterar el funcionamiento del mecanismo de
+atención. Aunque estas técnicas ayudan a optimizar la inferencia, como
+cambian directamente la arquitectura de un modelo, solo pueden aplicarse
+durante el entrenamiento o el afinado.
+Por ejemplo, cuando se genera un nuevo token, en lugar de atender a todos
+los tokens anteriores, la atención de ventana local atiende solo a una
+ventana de tamaño fijo de tokens cercanos (Beltagy et al., 2020). Esto
+reduce la longitud efectiva de la secuencia a una ventana de tamaño fijo,
+disminuyendo tanto la caché KV como el cómputo de la atención. Si la
+longitud promedio de la secuencia es de 10 000 tokens, el tamaño de la
+ventana de 1000 tokens reduce 10 veces el tamaño de la caché KV.

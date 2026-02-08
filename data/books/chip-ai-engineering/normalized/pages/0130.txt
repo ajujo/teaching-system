@@ -1,0 +1,16 @@
+figura 2-9. Proyección de la tendencia histórica del tamaño de los conjuntos de datos
+de entrenamiento y del stock de datos disponibles. Fuente: Villalobos et al., 2024.
+Algunos aprovechan este hecho para inyectar los datos que quieren en los
+datos de entrenamiento de futuros modelos. Lo hacen simplemente
+publicando en Internet el texto que desean, con la esperanza de que influya
+en futuros modelos para generar las respuestas que desean. Los actores
+maliciosos también pueden aprovechar este enfoque para realizar ataques de
+inyección de prompts, como se explica en el Capítulo 5.
+NOTA
+Una pregunta de investigación abierta es cómo hacer que un modelo olvide
+la información específica que ha aprendido durante el entrenamiento.
+Imagine que publica una entrada en su blog que termina borrando. Si esa
+entrada de blog se incluyó en los datos de entrenamiento de un modelo, éste
+podría seguir reproduciendo el contenido de la entrada. Como resultado, la
+gente podría potencialmente acceder al contenido eliminado sin su
+consentimiento.

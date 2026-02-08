@@ -1,0 +1,30 @@
+Visualizing outliers with boxplots and the inter-quartile proximity rule
+155
+How to do it...
+We will create boxplots utilizing the seaborn library. Let's begin by importing the Python libraries
+and loading the dataset:
+1.
+Let's import the Python libraries and the dataset:
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import fetch_california_housing
+2.
+Modify the default background from seaborn (it makes prettier plots, but that's subjective,
+of course):
+sns.set(style="darkgrid")
+3.
+Load the California house prices dataset from scikit-learn:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+4.
+Make a boxplot of the MedInc variable to visualize its distribution:
+plt.figure(figsize=(8, 3))
+sns.boxplot(data=X["MedInc"], orient="y")
+plt.title("Boxplot")
+plt.show()
+In the following boxplot, we identify the box containing the observations within the IQR, that is, the
+observations between the first and third quartiles. We also see the whiskers. On the left, the whisker
+extends to the minimum value of MedInc; on the right, the whisker goes up to the third quartile plus
+1.5 times the IQR. Values beyond the right whisker are represented as dots and could constitute outliers:
+Figure 5.1 - Boxplot of the MedInc variable highlighting potential
+outliers on the right tail of the distribution

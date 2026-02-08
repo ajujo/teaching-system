@@ -1,0 +1,34 @@
+Appendix
+471
+On the other hand, a system is considered observable if it generates meaningful data about its 
+internal state, which is essential for diagnosing root causes.
+Alerts
+Once we define our monitoring metrics, we need a way to get notified. The most common ap-
+proaches are to send an alarm in the following scenarios:
+•	
+A metric passes the values of a static threshold—for example, when the accuracy of the 
+classifier is lower than 0.8, send an alarm.
+•	
+Tweaking the p-value of the statistical tests that check for drifts. A lower p-value means 
+a higher confidence that the production distribution differs from the reference one.
+These thresholds and p-values depend on your application. However, it is essential to find the 
+correct values, as you don’t want to overcrowd your alarming system with false positives. In that 
+case, your alarm system won’t be trustworthy, and you will either overreact or not react at all 
+to issues in your system. Some common channels for sending alarms to your stakeholders are 
+Slack, Discord, your email, and PagerDuty. The system’s stakeholders can be the core engineers, 
+managers, or anyone interested in the system.
+Depending on the nature of the alarm, you have to react differently. But before taking any action, 
+you should be able to inspect it and understand what caused it. You should inspect what metric 
+triggered the alarm, with what value, the time it happened, and anything else that makes sense 
+to your application.
+When the model’s performance degrades, the first impulse is to retrain it. But that is a costly op-
+eration. Thus, you first have to check that the data is valid, the schema hasn’t changed, and the 
+data point was not an isolated outlier. If neither is true, you should trigger the training pipeline 
+and train the model on the newly shifted dataset to solve the drift.
+6. Reproducibility
+Reproducibility means that every process within your ML systems should produce identical 
+results given the same input. This has two main aspects.
+The first one is that you should always know what the inputs are—for example, when training 
+a model, you can use a plethora of hyperparameters. Thus, you need a way to always track what 
+assets were used to generate the new assets, such as what dataset version and config were used 
+to train the model.

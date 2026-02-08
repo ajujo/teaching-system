@@ -1,0 +1,99 @@
+G
+Garak (Generative AI Red-Teaming and
+Assessment Kit), 280
+gating mechanisms, deployment preparation,
+220
+GDPR (General Data Protection Regulation),
+310
+Gemini, plug-in tools, 79
+generative AI, 316
+cybersecurity, expanding threat vector, 271
+Generative AI Red-Teaming and Assessment
+Kit (Garak)), 280
+generative UIs, graphical agent interfaces, 48-49
+governance frameworks, agentic system devel‐
+opment, 13
+governor role, 298-299
+GPUs (graphics processing units)
+agentic systems, scalability, 28-29
+large model fine-tuning, 150
+gradient descent, 316
+Grafana, 224
+custom alerts, 234
+observability, 232-234
+observability dashboards, 233
+OTel instrumentation, 232
+graph neural network, 316
+graph population, building knowledge graphs,
+125
+graphical agent interfaces, 46-48
+generative UIs, 48-49
+graphical orchestration, agent workflows, 47-48
+GraphRAG
+compared to baseline RAG, 123
+dynamic knowledge graphs, 130-132
+knowledge graphs, 123-124
+building, 124-130
+H
+hallucinations, 316
+mitigation, 218-219
+Health Insurance Portability and Accountabil‐
+ity Act (HIPPA), 310
+healthcare agents, 8
+HELM Core Scenario leaderboard, 6
+hero scenarios, system measurements, 206
+hidden layers, 316
+hierarchical coordination, multiagent systems,
+182-182
+high composability monitoring stack, 227
+HIPAA (Health Insurance Portability and
+Accountability Act), 310
+HITL (human-in-the-loop) review
+feedback pipelines, 251-254
+validation, 37
+vulnerabilities, 272-273
+mitigation tools, 273
+Holistic Evaluation of Language Models, 22
+human roles in agentic systems, changes over
+time, 298-299
+hybrid human-AI feedback loops, hallucination
+mitigation, 219
+hyperparameters, 316
+I
+immutable storage systems, 285
+implicit feedback, 236
+improvement loops
+continuous learning, 265-268
+experimentation, 260-265
+feedback pipelines, 245-260
+overview, 243-245
+in-context learning, agent improvement,
+265-267
+incident response plans, 292
+indexes, RAG, 121
+indirect prompt injection, 274
+information disclosure, 274
+information provenance and integrity, 285-286
+information retrieval, selection considerations,
+130
+input validation, 276
+input/output validation pipelines, 289
+instruction tuning, 316
+instrumentation
+instrumentation, monitoring loops, 230-232
+integration
+testing, 214
+end-to-end performance, 214-216
+unexpected input handling, 219-220
+integration, building knowledge graphs, 126
+integrity verification workflows, 285
+intent recognition, 316
+interaction modalities, 42
+combining modalities, 54-55
+graphical interfaces, 46-50
+speech interfaces, 50-53
+text-based, 43-46
+video-based interfaces, 53-54
+324
+|
+Index

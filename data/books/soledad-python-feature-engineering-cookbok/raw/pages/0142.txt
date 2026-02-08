@@ -1,0 +1,27 @@
+Performing equal-width discretization
+119
+Figure 4.2 – A DataFrame with three discretized variables: HouseAge, MedInc, and AveRooms
+16.	 Now, let’s make bar plots with the proportion of observations per interval to better understand 
+the effect of equal-width discretization:
+plt.figure(figsize=(6, 12), constrained_layout=True)
+for i in range(3):
+    # location of plot in figure
+    ax = plt.subplot(3, 1, i + 1)
+    # the variable to plot
+    var = variables[i]
+    # determine proportion of observations per bin
+    t1 = train_t[var].value_counts(normalize=True,
+        sort=False)
+    t2 = test_t[var].value_counts(normalize=True,
+        sort=False)
+    # concatenate proportions
+    tmp = pd.concat([t1, t2], axis=1)
+    tmp.columns = ['train', 'test']
+    # sort the intervals
+    tmp.sort_index(inplace=True)
+    # make plot
+    tmp.plot.bar(ax=ax)
+    plt.xticks(rotation=0)
+    plt.ylabel('Observations per bin')
+    ax.set_title(var)
+plt.show()

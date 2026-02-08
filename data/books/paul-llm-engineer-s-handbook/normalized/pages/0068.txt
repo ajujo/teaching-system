@@ -1,0 +1,31 @@
+Chapter 2
+37
+Now that we understand how to define a ZenML pipeline and how to look it up in the dashboard,
+let's quickly look at how to define a ZenML step. In the code snippet below, we defined the get_
+or_create_user() step, which works just like a normal Python function but is decorated with
+@step. We won't go into the details of the logic, as we will cover the ETL logic in Chapter 3. For
+now, we will focus only on the ZenML functionality.
+from loguru import logger
+from typing_extensions import Annotated
+from zenml import get_step_context, step
+from llm_engineering.application import utils
+from llm_engineering.domain.documents import UserDocument
+@step
+def get_or_create_user(user_full_name: str) -> Annotated[UserDocument,
+"user"]:
+    logger.info(f"Getting or creating user: {user_full_name}")
+    first_name, last_name = utils.split_user_full_name(user_full_name)
+    user = UserDocument.get_or_create(first_name=first_name, last_
+name=last_name)
+    return user
+Within a ZenML step, you can define any Python logic your use case needs. In this simple example,
+we are just creating or retrieving a user, but we could replace that code with anything, starting
+from data collection to feature engineering and training. What is essential to notice is that to
+integrate ZenML with your code, you have to write modular code, where each function does just
+one thing. The modularity of your code makes it easy to decorate your functions with @step and
+then glue multiple steps together within a main function decorated with @pipeline. One design
+choice that will impact your application is deciding the granularity of each step, as each will run
+as a different unit on a different machine when deployed in the cloud.
+To decouple our code from ZenML, we encapsulated all the application and domain logic into
+the llm_engineering Python module. We also defined the pipelines and steps folders, where
+we defined our ZenML logic.

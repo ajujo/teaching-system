@@ -1,0 +1,38 @@
+MLOps and LLMOps
+420
+To ship the code to AWS, you must create a ZenML stack. A stack is a set of components, such 
+as the underlying orchestrator, object storage, and container registry, that ZenML needs under 
+the hood to run the pipelines. Intuitively, you can see your stack as your infrastructure. While 
+working locally, ZenML offers a default stack that allows you to quickly develop your code and 
+test things locally. However, by defining different stacks, you can quickly switch between different 
+infrastructure environments, such as local and AWS runs, which we will showcase in this section.
+With that in mind, let’s create an AWS stack for our project. To do so, follow the next steps:
+1.	
+In the left panel, click on the Stacks section and hit the New Stack button.
+2.	
+You will have multiple options for creating a stack, but the easiest is creating one from 
+scratch within the in-browser experience, which doesn’t require additional preparations. 
+This is not very flexible, but it is enough to host our project. Thus, choose Create New 
+Infrastructure → In-browser Experience.
+3.	
+Then, choose AWS as your cloud provider.
+4.	
+Choose Europe (Frankfurt)—eu-central-1 as your location or the region you used to set 
+up MongoDB and Qdrant.
+5.	
+Name it aws-stack. It is essential to name it exactly like this so that the commands that 
+we will use work.
+6.	
+Now ZenML will create a set of IAM roles to give permissions to all the other components 
+to communicate with each other, an S3 bucket as your artifact storage, an ECR repository 
+as your container registry, and SageMaker as your orchestrator.
+7.	
+Click Next.
+Ensure that your ZenML server version matches your local ZenML version. For ex-
+ample, when we wrote this book, both were version 0.64.0. If they don’t match, you 
+might encounter strange behavior, or it might not work correctly. The easiest fix is to 
+go to your pyproject.toml file, find the zenml dependency, and update it with the 
+version of your server. Then run poetry lock --no-update && poetry install 
+to update your local virtual environment.
+Before starting this section, ensure you have an AWS account with admin permis-
+sions ready.

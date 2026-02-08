@@ -1,0 +1,29 @@
+Un modelo lingüístico se entrena para minimizar su entropía cruzada con
+respecto a los datos de entrenamiento. Si el modelo lingüístico aprende
+perfectamente de sus datos de entrenamiento, la entropía cruzada del
+modelo será exactamente igual a la entropía de los datos de entrenamiento.
+La divergencia KL de Q con respecto a P será entonces 0. Se puede pensar
+en la entropía cruzada de un modelo como su aproximación a la entropía de
+sus datos de entrenamiento.
+Bits por carácter y bits por byte
+Una unidad de la entropía y la entropía cruzada son los bits. Si la entropía
+cruzada de un modelo lingüístico es de 6 bits, este modelo lingüístico
+necesita 6 bits para representar cada token.
+Dado que los distintos modelos tienen diferentes métodos de tokenización
+(por ejemplo, un modelo utiliza palabras como tokens y otro utiliza
+caracteres como tokens), el número de bits por token no es comparable
+entre modelos. Algunos utilizan el número de bits por carácter (BPC). Si el
+número de bits por token es 6 y, en promedio, cada token consta de 2
+caracteres, el BPC es 6/2 = 3.
+Una de las complicaciones del BPC surge por los distintos sistemas de
+codificación de caracteres. Por ejemplo, con ASCII, cada carácter se
+codifica utilizando 7 bits, pero con UTF-8, un carácter puede codificarse
+utilizando entre 8 y 32 bits. Una métrica más estandarizada sería bits por
+byte (BPB), el número de bits que necesita un modelo lingüístico para
+representar un byte de los datos de entrenamiento originales. Si el BPC es 3
+y cada carácter tiene 7 bits, o ⅞ de byte, entonces el BPB es 3 / (⅞) = 3.43.
+La entropía cruzada nos indica la eficacia de un modelo lingüístico para
+comprimir texto. Si el BPB de un modelo lingüístico es 3.43, lo que
+significa que puede representar cada byte original (8 bits) utilizando 3.43
+bits, este modelo lingüístico puede comprimir el texto original de
+entrenamiento a menos de la mitad del tamaño original del texto.

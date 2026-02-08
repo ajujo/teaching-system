@@ -1,0 +1,33 @@
+Herramienta
+Prompt
+[omitido parcialmente para
+mantener la brevedad].
+Sistema de
+puntuación
+Información: La tarta de manzana suele t
+ener doble corteza. Contexto: Una tarta
+de manzana es una tarta de fruta... Suel
+e tener doble corteza, con masa por enci
+ma y por debajo del relleno... Respuest
+a: Sí
+Las puntuaciones de fidelidad emitidas por estas tres herramientas no serán
+comparables. Si, dada una dupla (contexto, respuesta), MLflow da una
+puntuación de fidelidad de 3, Ragas da 1 y LlamaIndex da NO, ¿qué
+puntuación utilizaría?
+Una aplicación evoluciona con el tiempo, pero la forma en que se evalúa
+idealmente debería ser fija. De este modo, se pueden utilizar métricas de
+evaluación para supervisar los cambios de la aplicación. Sin embargo, los
+jueces de IA también son aplicaciones de IA, lo que significa que también
+pueden cambiar con el tiempo.
+Imagine que el mes pasado la puntuación de coherencia de su aplicación fue
+del 90 % y que este mes es del 92 %. ¿Significa esto que la coherencia de
+su aplicación ha mejorado? Es difícil responder a esta pregunta a menos que
+se sepa con certeza que los jueces de IA utilizados en ambos casos son
+exactamente los mismos. ¿Qué pasa si el prompt del juez de este mes es
+diferente del mes pasado? Tal vez cambió a un prompt con un rendimiento
+ligeramente mejor o un compañero de trabajo corrigió una errata en el
+prompt del mes pasado, y el juez de este mes es más indulgente.
+Esto puede resultar especialmente confuso si la aplicación y el juez de IA
+son gestionados por equipos diferentes. El equipo de jueces de IA podría
+cambiar los jueces sin informar al equipo de la aplicación. Como resultado,
+el equipo de la aplicación podría atribuir erróneamente los cambios en los

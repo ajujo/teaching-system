@@ -1,0 +1,34 @@
+Creating features with general and cumulative operations
+283
+7.	
+Let’s display the original and new features for one particular invoice:
+df[df["invoice"] == "489434" ][
+    numeric_vars + new_names]
+In the following output, we can see that quantity_cumsum is the cumulative sum for the 
+variable quantity and price_diff is the price difference row after row:
+Figure 9.7 – DataFrame showing cumulative functions applied 
+to numerical features in a single entity (invoice)
+Let’s now apply the sine and cosine transformation to the entire DataFrame.
+8.	
+Let’s create a list with names for the new variables:
+new_names = [
+    f"{var}_{function}"
+    for function in ["sin", "cos"]
+    for var in numeric_vars]
+9.	
+Let’s transform the price and quantity with the sine and cosine:
+df[new_names] = df[numeric_vars].agg(
+    [np.sin, np.cos])
+The transformation in step 9 was applied to the entire dataset, irrespective of the invoice number, 
+which is fine because it maps from one row to the same row, as opposed to from one row to the next, 
+as with cumulative functions. You can inspect the result by executing df[new_names].head().
+Now that we understand the types of features we want to create, let’s automate the process 
+with featuretools.
+How to do it...
+We will apply cumulative transformations for each invoice and general transformations to the 
+entire dataset:
+1.	
+First, we’ll import pandas, featuretools, and the Categorical logical type:
+import pandas as pd
+import featuretools as ft
+from woodwork.logical_types import Categorical

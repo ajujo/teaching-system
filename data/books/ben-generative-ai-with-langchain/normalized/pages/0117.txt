@@ -1,0 +1,20 @@
+Building Workflows with LangGraph
+90
+Figure 3.4: An example of a workflow with a dynamic retrieval of examples to be passed to
+a few-shot prompt
+There are a few already built-in selectors under langchain_core.example_selectors. You can
+directly pass an instance of an example selector to the FewShotPromptTemplate instance during
+instantiation.
+Chain of Thought
+The Google Research team introduced the Chain-of-Thought (CoT) technique early in 2022. They
+demonstrated that a relatively simple modification to a prompt that encouraged a model to gen­
+erate intermediate step-by-step reasoning steps significantly increased the LLM's performance
+on complex symbolic reasoning, common sense, and math tasks. Such an increase in performance
+has been replicated multiple times since then.
+There are different modifications of CoT prompting, and because it has long outputs, typically,
+CoT prompts are zero-shot. You add instructions that encourage an LLM to think about the
+problem first instead of immediately generating tokens representing the answer. A very simple
+example of CoT is just to add to your prompt template something like "Let's think step by step."
+You can read the original paper introducing CoT, Chain-of-Thought Prompting Elicits
+Reasoning in Large Language Models, published by Jason Wei and colleagues: https://
+arxiv.org/abs/2201.11903.

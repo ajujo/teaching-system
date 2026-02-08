@@ -1,0 +1,29 @@
+Preface
+xxii
+Readers can expect to gain a deeper understanding of how to collect and prepare data for LLMs,
+fine-tune models for specific tasks, optimize inference performance, and implement RAG pipelines.
+They will learn how to evaluate LLM performance, align models with human preferences, and
+deploy LLM-based applications. The book also covers essential MLOps principles and practices,
+enabling readers to build scalable, reproducible, and robust LLM applications.
+Who this book is for
+This book is intended for a wide range of technology professionals and enthusiasts interested
+in the practical applications of LLMs. It's ideal for software engineers aiming to transition into
+AI projects. While some familiarity with software development is beneficial, the book explains
+many concepts from the ground up, making it accessible even to those who are new to AI and
+machine learning.
+For those already working with machine learning , this book will enhance your skills in implementing and deploying LLM-based systems. We provide a deep dive into the fundamentals of
+MLOps, guiding you through the process of creating a minimum viable product using an opensource LLM to solve real-world problems.
+What this book covers
+Chapter 1, Understanding the LLM Twin Concept and Architecture, introduces the LLM Twin project,
+which is used throughout the book as an end-to-end example of a production-level LLM application, and defines the FTI architecture for building scalable ML systems and applies it to the
+LLM Twin use case.
+Chapter 2, Tooling and Installation, presents Python, MLOps, and cloud tools used to build real-world LLM applications, such as an orchestrator, experiment tracker, prompt monitoring and
+LLM evaluation tool. It shows how to use and install them locally for testing and development.
+Chapter 3, Data Engineering, shows the implementation of a data collection pipeline that scrapes
+multiple sites, such as Medium, GitHub and Substack and stores the raw data in a data warehouse.
+It emphasizes collecting raw data from dynamic sources over static datasets for real-world ML
+applications.
+Chapter 4, RAG Feature Pipeline, introduces RAG fundamental concepts, such as embeddings, the
+vanilla RAG framework, vector databases, and how to optimize RAG applications. It applies the
+RAG theory by architecting and implementing LLM Twin's RAG feature pipeline using software
+best practices.

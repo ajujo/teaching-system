@@ -1,0 +1,5 @@
+Python Feature Engineering 
+Cookbook
+A complete guide to crafting powerful features for 
+your machine learning models
+Soledad Galli

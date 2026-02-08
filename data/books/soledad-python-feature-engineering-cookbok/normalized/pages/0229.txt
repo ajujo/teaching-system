@@ -1,0 +1,37 @@
+Performing Feature Scaling
+206
+Note
+The mean and the standard deviation are sensitive to outliers; therefore, the features may scale
+differently from each other in the presence of outliers when using standardization.
+In practice, we often apply standardization ignoring the shape of the distribution. However, keep in
+mind that if the models or tests you are using make assumptions about the data's distribution, you might
+benefit from transforming the variables before standardization, or trying a different scaling method.
+How to do it...
+In this recipe, we'll apply standardization to the variables of the California housing dataset:
+1.
+Let's begin by importing the required Python packages, classes, and functions:
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+2.
+Let's load the California housing dataset from scikit-learn into a DataFrame and drop the
+Latitude and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=["Latitude", "Longitude"], axis=1,
+    inplace=True)
+3.
+Now, let's divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.
+Next, we'll set up the StandardScaler() function from scikit-learn and fit it to the train
+set so that it learns each variable's mean and standard deviation:
+scaler = StandardScaler().set_output(
+    transform="pandas")
+scaler.fit(X_train)
+Note
+Scikit-learn scalers, like any scikit-learn transformer, return NumPy arrays by default. To
+return pandas or polars DataFrames, we need to specify the output container with the
+set_output() method, as we did in Step 4.

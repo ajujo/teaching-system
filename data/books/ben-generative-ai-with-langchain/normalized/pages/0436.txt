@@ -1,0 +1,40 @@
+Chapter 10
+409
+The gap in state tracking capabilities is particularly relevant. Despite theoretically unlimited con­
+text windows, AI systems struggle with coherently tracking object states and agent knowledge
+through complex scenarios. Humans, despite limited working memory capacity (typically 3-4
+chunks according to more recent cognitive research), excel at tracking relevant states through
+selective attention and effective information organization strategies.
+While AI systems have made impressive strides in multimodal integration (text, images, audio,
+video), they still lack the seamless cross-modal understanding that humans develop naturally.
+Similarly, in creative generation, AI remains bounded by its training distribution, producing
+variations on known patterns rather than fundamentally new concepts.
+From an architectural perspective, the human brain's modular, hierarchical organization with
+specialized subsystems enables remarkable energy efficiency (~20 watts) compared to AI's largely
+homogeneous architectures requiring massive computational resources. Additionally, AI systems
+can perpetuate and amplify biases present in their training data, raising ethical concerns beyond
+performance limitations.
+These differences suggest that while certain capabilities may improve through better training
+data and techniques, others may require more fundamental architectural innovations to bridge
+the gap between statistical pattern matching and genuine understanding.
+Despite impressive advances in generative AI, fundamental gaps remain between human and AI
+cognition across multiple dimensions. Most critically, AI lacks:
+•
+Real-world grounding for knowledge
+•
+Adaptive flexibility across contexts
+•
+Truly integrated understanding beneath surface fluency
+•
+Energy-efficient processing
+•
+Social and contextual awareness
+These limitations aren't isolated issues but interconnected aspects of the same fundamental
+challenges in developing truly human-like artificial intelligence. Alongside technical advances,
+the regulatory landscape for AI is evolving rapidly, creating a complex global marketplace. The
+European Union's AI Act, implemented in 2024, has created stringent requirements that have
+delayed or limited the availability of some AI tools in European markets. For instance, Meta AI
+became available in France only in 2025, two years after its US release, due to regulatory compli­
+ance challenges. This growing regulatory divergence adds another dimension to the evolution
+of AI beyond technical scaling, as companies must adapt their offerings to meet varying legal
+requirements while maintaining competitive capabilities.

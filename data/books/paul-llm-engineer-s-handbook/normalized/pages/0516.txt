@@ -1,0 +1,72 @@
+Index
+485
+MediumCrawler class  77-79
+metrics 466
+drifts 467
+model metrics 467
+system metrics 467
+metrics-driven development (MDD) 272
+microservices architecture 363-365
+versus monolithic architecture 365, 366
+minimum functionality 465
+minimum viable product (MVP)
+features 6
+ML engineer 408
+ML evaluation
+versus, LLM evaluation 262, 263
+MLOps 399-405, 409, 459
+CI/CD pipeline 460
+continuous training (CT) 459
+engineering 407
+manual process 459
+MLOps and LLMOps tools 31
+Comet ML 45, 46
+Hugging Face 31, 32
+Opik 46, 47
+ZenML 32, 33
+MLOps, core components
+feature store 405
+ML metadata store 405
+ML pipeline orchestrator 405
+model registry 405
+MLOps engineer 408
+MLOps, principles
+automation 406
+experiment tracking 406
+monitoring 406
+operationalization 406
+reproducibility 406
+testing 406
+versioning 406
+ML pipeline automation
+for CT 12
+ML pipelines
+for ML systems 13
+ML systems
+elements 9
+issues, with building 8, 9
+testing 462
+model evaluation 261
+domain-specific LLM evaluations 265-267
+general-purpose LLM evaluations 263-265
+ML, versus LLM evaluation 262, 263
+task-specific LLM evaluations 267-271
+model metrics 467
+model optimization strategies 290
+continuous batching 294, 295
+key-value (KV) cache 291-294
+optimized attention mechanisms 297-299
+speculative decoding 295-297
+model parallelism 299
+data parallelism (DP) 299, 300
+pipeline parallelism (PP) 300, 301
+techniques, combining 303
+tensor parallelism (TP) 301, 302
+model quantization 303, 304
+model tests 464
+Moderation API 411
+MongoDB 47
+setting up 416, 417
+reference link 416
+MongoDB, as data warehouse
+usage, considerations 60

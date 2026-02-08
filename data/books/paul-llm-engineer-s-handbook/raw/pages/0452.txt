@@ -1,0 +1,41 @@
+Chapter 11
+421
+8.	 Click the Deploy to AWS button. It will open a CloudFormation page on AWS. ZenML 
+leverages CloudFormation (an infrastructure as code, or IaC, tool) to create all the AWS 
+resources we enumerated in Step 6.
+9.	 At the bottom, check all the boxes to acknowledge that AWS CloudFormation will create 
+AWS resources on your behalf. Finally, click the Create stack button. Now, we must wait 
+for a couple of minutes for AWS CloudFormation to spin up all the resources.
+10.	 Return to the ZenML page and click the Finish button.
+By leveraging ZenML, we efficiently deployed the entire AWS infrastructure for our ML 
+pipelines. We began with a basic example, sacrificing some control. However, if you seek 
+more control, ZenML offers the option to use Terraform (an IaC tool) to fully control your 
+AWS resources or to connect ZenML with your current infrastructure.
+Before moving to the next step, let’s have a quick recap of the AWS resources we just 
+created:
+•	
+An IAM role is an AWS identity with permissions policies that define what actions 
+are allowed or denied for that role. It is used to grant access to AWS services with-
+out needing to share security credentials.
+•	
+S3 is a scalable and secure object storage service that allows storing and retrieving 
+files from anywhere on the web. It is commonly used for data backup, content 
+storage, and data lakes. It’s more scalable and flexible than Google Drive.
+•	
+ECR is a fully managed Docker container registry that makes storing, managing, 
+and deploying Docker container images easy.
+•	
+SageMaker is a fully managed service that allows developers and data scientists 
+to quickly build, train, and deploy ML models.
+•	
+SageMaker Orchestrator is a feature of SageMaker that helps automate the ex-
+ecution of ML workflows, manage dependencies between steps, and ensure the 
+reproducibility and scalability of model training and deployment pipelines. Other 
+similar tools are Prefect, Dagster, Metaflow, and Airflow.
+•	
+CloudFormation is a service that allows you to model and set up your AWS re-
+sources so that you can spend less time managing them and more time focusing 
+on your applications. It automates the process of provisioning AWS infrastructure 
+using templates.
+Before running the ML pipelines, the last step is to containerize the code and prepare a Docker 
+image that packages our dependencies and code.

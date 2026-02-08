@@ -1,0 +1,29 @@
+Chapter 9
+367
+
+    except Exception as e:
+        # Error handling omitted for brevity
+        return {"results": [], "status": "error", "message": f"Search
+failed: {str(e)}"}
+This code accomplishes several key deployment objectives for our vector search service. First, it
+initializes Ray, which provides the infrastructure for scaling our application. Then, it defines a
+SearchDeployment class that loads our pre-built FAISS index and embedding model during initial­
+ization, with robust error handling to provide clear feedback if the index is missing or corrupted.
+The server startup, meanwhile, is handled in a main block:
+if name == "main": deployment = SearchDeployment.bind() serve.
+run(deployment) print("Service started at: http://localhost:8000/")
+The main block binds and runs our deployment using Ray Serve, making it accessible through a
+RESTful API endpoint. This pattern demonstrates how to transform a local LangChain compo­
+nent into a production-ready microservice that can be scaled horizontally as demand increases.
+Running the application
+To use this system:
+1.
+First, build the index:
+python chapter9/ray/build_index.py
+2.
+Then, start the server:
+python chapter9/ray/serve_index.py
+3.
+Test the service with the provided test client or by accessing the URL directly in a browser.
+For the complete implementation with full error handling, please refer to the book's
+companion code repository.

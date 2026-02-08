@@ -1,0 +1,28 @@
+Desea agilizar el proceso de desarrollo de IA de su equipo,
+haciéndolo más sistemático, rápido y fiable.
+Quiere entender cómo puede su organización aprovechar los
+modelos fundacionales para mejorar los resultados de la empresa y
+cómo crear un equipo para ello.
+También puede beneficiarse del libro si pertenece a uno de los siguientes
+grupos:
+Desarrolladores de herramientas que quieran identificar áreas
+desatendidas en la ingeniería de IA para posicionar sus productos
+en el ecosistema.
+Investigadores que quieran comprender mejor los casos de uso de
+la IA.
+Candidatos a puestos de trabajo que busquen claridad sobre las
+competencias necesarias para desarrollarse profesionalmente como
+ingenieros de IA.
+Cualquiera que desee comprender mejor las capacidades y
+limitaciones de la IA y cómo puede afectar a diferentes puestos.
+Me encanta analizar las cosas a fondo, así que algunas secciones
+profundizan un poco más en el aspecto técnico. Aunque a muchos primeros
+lectores les gusta el detalle, puede que no sea para todos. Le avisaré antes
+de que las cosas se pongan demasiado técnicas. ¡No dude en saltarse partes
+si le parece demasiado enrevesado!
+Cómo explorar este libro
+Este libro está estructurado para seguir el proceso típico de desarrollo de
+una aplicación de IA. Este es el aspecto típico del proceso y cómo encaja
+cada capítulo en el proceso. Como este libro es modular, puede saltarse
+cualquier sección con la que ya esté familiarizados o que le resulte menos
+relevante.

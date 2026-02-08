@@ -1,0 +1,18 @@
+Chapter 11
+431
+ZenML uses, by default, ml.t3.medium EC2 machines, which are part of the AWS freemium tier.
+However, some AWS accounts cannot access these VMs by default. To check your access, search
+your AWS console for Service Quotas. Then, in the left panel, click on AWS services, search for
+Amazon SageMaker, and then for ml.t3.medium. In Figure 11.13, you can see our quotas for these
+types of machines. If yours is 0, you should request that AWS increase them to numbers similar
+to those from Figure 11.13 in the Applied account-level quota value column. The whole process
+is free of charge and only requires a few clicks. Unfortunately, you might have to wait for a few
+hours up to one day until AWS accepts your request.
+Figure 11.13: SageMaker-ml.t3.medium expected quotas
+You can find step-by-step instructions on how to solve this error and request new quotas at this
+link: https://repost.aws/knowledge-center/sagemaker-resource-limit-exceeded-error.
+If you changed the values from your .env file and want to update the ZenML secrets
+with them, first run the following CLI command to delete the old secrets:
+poetry poe delete-settings-zenml
+Then, you can export them again by running:
+poetry poe export-settings-to-zenml

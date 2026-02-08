@@ -1,0 +1,38 @@
+Imputing Missing Data
+18
+5.	
+Let’s make a copy of the original DataFrames:
+X_train_t = X_train.copy()
+X_test_t = X_test.copy()
+6.	
+Now, we replace the missing values with 99:
+X_train_t[["A2", "A3", "A8", "A11"]] = X_train_t[[
+    "A2", "A3", "A8", "A11"]].fillna(99)
+X_test_t[["A2", "A3", "A8", "A11"]] = X_test_t[[
+    "A2", "A3", "A8", "A11"]].fillna(99)
+Note
+To impute different variables with different values using pandas fillna(), use a dictionary 
+like this: imputation_dict = {"A2": -1, "A3": -1, "A8": 999, "A11": 
+9999}.
+Now, we’ll impute missing values with an arbitrary number using scikit-learn.
+1.	
+Let’s set up imputer to replace missing values with 99:
+imputer = SimpleImputer(strategy='constant', fill_value=99)
+Note
+If your dataset contains categorical variables, SimpleImputer() will add 99 to those 
+variables as well if any values are missing.
+2.	
+Let’s fit imputer to a slice of the train set containing the variables to impute:
+vars = ["A2", "A3", "A8", "A11"]
+imputer.fit(X_train[vars])
+3.	
+Replace the missing values with 99 in the desired variables:
+X_train_t[vars] = imputer.transform(X_train[vars])
+X_test_t[vars] = imputer.transform(X_test[vars])
+Go ahead and check the lack of missing values by executing X_test_t[["A2", "A3", 
+"A8", "A11"]].isnull().sum().
+To finish, let’s impute missing values using feature-engine.
+4.	
+Let’s set up the imputer to replace missing values with 99 in 4 specific variables:
+imputer = ArbitraryNumberImputer(
+    arbitrary_number=99,

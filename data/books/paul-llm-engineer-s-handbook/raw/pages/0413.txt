@@ -1,0 +1,34 @@
+Inference Pipeline Deployment
+382
+By setting these parameters, the class ensures that it has sufficient resources to operate efficiently 
+when the model is deployed to a SageMaker endpoint. The precise tuning of these values will 
+vary depending on the LLM’s specific requirements, such as its size, the complexity of the tasks 
+it will perform, and the expected load. To get a better understanding of how to use them, after 
+deploying the endpoint, we suggest modifying them and seeing how the performance of the LLM 
+microservice changes.
+Ultimately, let’s review the settings configuring the LLM engine. The HF_MODEL_ID identifies 
+which Hugging Face model to deploy. For example, in the settings class, we set it to mlabonne/
+TwinLlama-3.1-8B-13 to load our custom LLM Twin model stored in Hugging Face. SM_NUM_GPUS 
+specifies the number of GPUs allocated per model replica, which is crucial for fitting your model 
+into the GPU’s VRAM. HUGGING_FACE_HUB_TOKEN provides access to the Hugging Face Hub for 
+model retrieval. HF_MODEL_QUANTIZE specifies what quantization technique to use, while the rest 
+of the variables control the LLM token generation process.
+hugging_face_deploy_config = {
+    "HF_MODEL_ID": settings.HF_MODEL_ID,
+    "SM_NUM_GPUS": json.dumps(settings.SM_NUM_GPUS),  # Number of GPU used 
+per replica
+    "MAX_INPUT_LENGTH": json.dumps(settings.MAX_INPUT_LENGTH),  # Max 
+length of input text
+    "MAX_TOTAL_TOKENS": json.dumps(settings.MAX_TOTAL_TOKENS),  # Max 
+length of the generation (including input text)
+    "MAX_BATCH_TOTAL_TOKENS": json.dumps(settings.MAX_BATCH_TOTAL_TOKENS),
+    "HUGGING_FACE_HUB_TOKEN": settings.HUGGINGFACE_ACCESS_TOKEN,
+    "MAX_BATCH_PREFILL_TOKENS": "10000",
+    "HF_MODEL_QUANTIZE": "bitsandbytes",
+}
+Using these two configurations, we fully control our infrastructure, what LLM to use, and how 
+it behaves. To start the SageMaker deployment with the configuration shown above, call the 
+create_endpoint() function (presented at the beginning of the section) as follows:
+create_endpoint(endpoint_type=EndpointType.MODEL_BASED)
+For convenience, we also wrapped it up under a poe command:
+poetry poe deploy-inference-endpoint

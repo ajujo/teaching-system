@@ -1,0 +1,33 @@
+Chapter 7
+281
+8.	 We create batches of instruction-answer pairs from our dataset. Each batch contains
+batch_size number of pairs:
+    batches = [
+        (i, list(zip(dataset["instruction"][i:i+batch_size],
+dataset["answers"][i:i+batch_size])))
+        for i in range(0, len(dataset), batch_size)
+    ]
+9.
+We perform parallel evaluation of batches of instruction-answer pairs using multiple
+threads. We use parallel processing to evaluate multiple batches simultaneously, speeding up the overall evaluation process. The ThreadPoolExecutor submits each batch to
+evaluate_batch(). The results are stored in the evaluations list:
+    evaluations = [None] * len(dataset)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_
+threads) as executor:
+        futures = [executor.submit(evaluate_batch, batch, start_
+index) for start_index, batch in batches]
+        for future in tqdm(concurrent.futures.as_completed(futures),
+total=len(futures)):
+            for index, evaluation in future.result():
+                evaluations[index] = evaluation
+10.	 We create a new column with the result of the evaluation process. This column will store
+the raw JSON output of the judge model, including scores and explanations:
+    if 'evaluation' in dataset.column_names:
+        dataset = dataset.remove_columns(['evaluation'])
+    dataset = dataset.add_column("evaluation", evaluations)
+11.	 We can directly parse this JSON object with json.loads() and try to retrieve the accuracy
+and style scores that should have been generated. This generation is in best-effort mode,
+which means that scores are not guaranteed. If there's an error in parsing, we use None
+values as a fallback:
+    accuracy_scores = []
+    style_scores = []

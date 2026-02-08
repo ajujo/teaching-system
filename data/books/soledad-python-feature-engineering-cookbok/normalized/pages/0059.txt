@@ -1,0 +1,37 @@
+Imputing Missing Data
+36
+2.
+Let's load some numerical variables from the dataset described in the Technical requirements section:
+variables = [
+    "A2", "A3", "A8", "A11", "A14", "A15", "target"]
+data = pd.read_csv(
+    "credit_approval_uci.csv",
+    usecols=variables)
+3.
+Let's divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+4.
+Let's create a MICE imputer using Bayes regression, specifying the number of iteration cycles
+and setting random_state for reproducibility:
+imputer = IterativeImputer(
+    estimator= BayesianRidge(),
+    max_iter=10,
+    random_state=0,
+).set_output(transform="pandas")
+Note
+IterativeImputer() contains other useful arguments. For example, we can specify the
+first imputation strategy using the initial_strategy parameter. We can choose from
+the mean, median, mode, or arbitrary imputation. We can also specify how we want to cycle
+over the variables, either randomly or from the one with the fewest missing values to the one
+with the most.
+5.
+Let's fit IterativeImputer() so that it trains the estimators to predict the missing values
+in each variable:
+imputer.fit(X_train)
+Note
+We can use any regression model to estimate the missing data with IterativeImputer().

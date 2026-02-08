@@ -1,0 +1,30 @@
+Consulta original
+¿Qué animal es más rápido: el perro o el
+gato?
+¿Qué animal es más rápido: el perro o el gato?
+La autocrítica consiste en pedir al modelo que compruebe sus propios
+outputs. Esto también se conoce como autoevaluación, como se explica en
+el Capítulo 3. Al igual que la CoT, la autocrítica guía al modelo a pensar
+críticamente sobre un problema.
+De forma similar a la división de prompts, la CoT y la autocrítica pueden
+aumentar la latencia percibida por los usuarios. Un modelo puede realizar
+varios pasos intermedios antes de que el usuario pueda ver el primer token
+de output. Esto es un reto especialmente si se anima al modelo a determinar
+los pasos por sí mismo. La secuencia de pasos resultante puede tardar
+mucho tiempo en completarse, lo que provoca un aumento de la latencia y
+unos costos potencialmente prohibitivos.
+Hacer iteraciones de prompts
+La ingeniería de prompts requiere idas y venidas. A medida que entienda
+mejor un modelo, tendrá mejores ideas sobre cómo escribir sus prompts.
+Por ejemplo, si le pide a un modelo que elija el mejor videojuego, podría
+responder que las opiniones difieren y que ningún videojuego puede
+considerarse el mejor de forma absoluta. Tras esta respuesta, puede revisar
+su prompt para pedir al modelo que elija un juego, aunque las opiniones
+difieran.
+Cada modelo tiene sus peculiaridades. Un modelo puede ser mejor para
+entender los números, mientras que otro para el juego de rol. Un modelo
+puede preferir las instrucciones del sistema al principio del prompt,
+mientras que otro al final. Experimente con su modelo para conocerlo.
+Pruebe con diferentes prompts. Lea la guía para crear prompts
+proporcionada por el desarrollador del modelo, en su caso. Busque las
+experiencias de otras personas en Internet. Aproveche la plataforma de

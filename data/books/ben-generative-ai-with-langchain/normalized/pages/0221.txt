@@ -1,0 +1,25 @@
+Building Intelligent Agents
+194
+Figure 5.2: A pre-built ReACT workflow on LangGraph
+That's exactly what we saw earlier as well-an LLM is calling tools until it decides to stop and
+return the answer to the user. Let's test it out!
+When we stream LangGraph, we get new events that are updates to the graph's state. We're
+interested in the message field of the state. Let's print out the new messages added:
+for event in agent.stream({"messages": [("user", query)]}):
+ update = event.get("agent", event.get("tools", {}))
+ for message in update.get("messages", []):
+    message.pretty_print()
+>> ================================ Ai Message ===========================
+=======
+Tool Calls:
+  duckduckgo_search (a01a4012-bfc0-4eae-9c81-f11fd3ecb52c)
+ Call ID: a01a4012-bfc0-4eae-9c81-f11fd3ecb52c
+  Args:
+    query: weather in Munich tomorrow
+================================= Tool Message ===========================
+======
+Name: duckduckgo_search
+The temperature in Munich tomorrow in the early morning is 4 ° C...
+<TRUNCATED>
+================================== Ai Message ============================
+======

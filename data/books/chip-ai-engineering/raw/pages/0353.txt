@@ -1,0 +1,34 @@
+tabla 5-4. Unas cuantas variaciones de prompt de CoT a la misma consulta
+original. Los añadidos de CoT están en negrita.
+Consulta original
+¿Qué animal es más rápido: el perro o el
+gato?
+CoT de cero shots
+¿Qué animal es más rápido: el perro o el gato?
+Piensa paso a paso antes de llegar a una
+respuesta.
+CoT de cero shots
+¿Qué animal es más rápido: el perro o el gato?
+Explica tu razonamiento antes de dar una
+respuesta.
+CoT de cero shots
+¿Qué animal es más rápido: el perro o el gato?
+Sigue estos pasos para encontrar una
+respuesta:
+1. Determina la velocidad de la raza de perro
+más rápida.
+2. Determinar la velocidad de la raza de gato
+más rápida.
+3. Determina cuál es más rápida.
+CoT de un shot
+(se incluye un ejemplo
+en el prompt)
+¿Qué animal es más rápido: el tiburón o el
+delfín?
+1. La raza de tiburón más rápida es el
+marrajo, que puede alcanzar velocidades de
+unos 74 km/h.
+2. La raza de delfín más rápida es el delfín
+común, que puede alcanzar velocidades de
+unos 60 km/h.
+3. Conclusión: el tiburón es más rápido.

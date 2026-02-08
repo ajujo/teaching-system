@@ -1,0 +1,14 @@
+Chapter 4
+107
+What are embeddings?
+Imagine you're trying to teach a computer to understand the world. Embeddings are like a particular translator that turns these things into a numerical code. This code isn't random, though,
+because similar words or items end up with codes that are close to each other. It's like a map
+where words with similar meanings are clustered together.
+With that in mind, a more theoretical definition is that embeddings are dense numerical representations of objects encoded as vectors in a continuous vector space, such as words, images, or
+items in a recommendation system. This transformation helps capture the semantic meaning
+and relationships between the objects. For instance, in natural language processing (NLP), embeddings translate words into vectors where semantically similar words are positioned closely
+together in the vector space.
+Figure 4.2: What are embeddings?
+A popular method is visualizing the embeddings to understand and evaluate their geometrical
+relationship. As the embeddings often have more than 2 or 3 dimensions, usually between 64
+and 2048, you must project them again to 2D or 3D.

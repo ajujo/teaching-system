@@ -1,0 +1,30 @@
+capítulo 2. Comprender los modelos
+fundacionales
+Para crear aplicaciones con modelos fundacionales, primero se necesitan
+modelos fundacionales. Aunque no es necesario saber desarrollar un
+modelo para utilizarlo, una comprensión a grandes rasgos le ayudará a
+decidir qué modelo utilizar y cómo adaptarlo a sus necesidades.
+Entrenar a un modelo fundacional es un proceso increíblemente complejo y
+costoso. Es probable que los que saben hacerlo bien hayan firmado
+acuerdos de confidencialidad que les impida revelar la fórmula secreta. Este
+capítulo no podrá decirles cómo construir un modelo para competir con
+ChatGPT. En vez de ello, me centraré en las decisiones de diseño que tienen
+repercusiones en las aplicaciones posteriores.
+Con la creciente falta de transparencia en el proceso de entrenamiento de
+modelos fundacionales, es difícil conocer todas las decisiones de diseño que
+intervienen en la elaboración de un modelo. En general, sin embargo, las
+diferencias ente los modelos fundacionales se deben a las decisiones sobre
+los datos de entrenamiento, la arquitectura y el tamaño de los modelos, y a
+cómo se post-entrenan para alinearlos con las preferencias humanas.
+Dado que los modelos aprenden de datos, sus datos de entrenamiento
+revelan mucho sobre sus capacidades y limitaciones. Este capítulo
+comienza explicando cómo los desarrolladores de modelos seleccionan los
+datos de entrenamiento, centrándose en su distribución. El Capítulo 8
+explora en detalle las técnicas de ingeniería de conjuntos de datos,
+incluyendo la evaluación de la calidad de los datos y la síntesis de datos.
+Dado el predominio de la arquitectura de transformadores, podría parecer
+que la arquitectura de modelos es una opción inferior. Quizá se pregunten
+qué hace tan especial a la arquitectura de transformadores para que siga
+dominando. ¿Cuánto tiempo pasará hasta que otra arquitectura tome el
+relevo, y cómo sería esa nueva arquitectura? Este capítulo abordará todas
+estas preguntas. Cada vez que se lanza un nuevo modelo, una de las

@@ -1,0 +1,38 @@
+MLOps and LLMOps
+408
+The ML engineer takes the functional models from the DS team and constructs a layer on top of 
+them, making them modular and extendable and providing access to a database (DB) or expos-
+ing them as an API over the internet. However, the MLOps engineer plays a pivotal role in this 
+process. They take the code from this intermediate layer and place it on a more generic layer, the 
+infrastructure. This action marks the application’s transition to production. From this point, we 
+can start thinking about automation, monitoring, versioning, and more.
+The intermediate layer differentiates a proof of concept from an actual product. In that layer, you 
+design an extendable application that has a state by integrating a DB and is accessible over the 
+internet through an API. When shipping the application on a specific infrastructure, you must 
+consider scalability, latency, and cost-effectiveness. Of course, the intermediate and generic 
+layers depend on each other, and often, you must reiterate to meet the application requirements.
+LLMOps
+LLMOps encompasses the practices and processes essential for managing and running LLMs. 
+This field is a specialized branch of MLOps, concentrating on the unique challenges and demands 
+associated with LLMs. While MLOps addresses the principles and practices of managing various 
+ML models, LLMOps focuses on the distinct aspects of LLMs, including their large size, highly 
+complex training requirements, prompt management, and non-deterministic nature of generating 
+answers. However, note that at its core, LLMOps still inherits all the fundamentals presented in 
+the MLOps section. Thus, here, we will focus on what it adds on top.
+When training LLMs from scratch, the data and model dimensions of an ML system grow sub-
+stantially, which is one aspect that sets LLMOps apart from MLOps. These are the main concerns 
+when training LLMs from scratch:
+•	
+Data collection and preparation involves collecting, preparing, and managing the mas-
+sive datasets required for training LLMs. It involves big data techniques for processing, 
+storing, and sharing training datasets. For example, GPT-4 was trained on roughly 13 
+trillion tokens, equal to approximately 10 trillion words.
+•	
+Managing LLMs’ considerable number of parameters is a significant technical challenge 
+from the infrastructure’s point of view. It requires vast computation resources, usually 
+clusters of machines powered by Nvidia GPUs with CUDA support.
+•	
+The massive size of LLMs directly impacts model training. When training an LLM from 
+scratch, you can’t fit it on a single GPU due to the model’s size or the higher batch size 
+you require for the expected results. Thus, you need multi-GPU training, which involves 
+optimizing your processes and infrastructure to support data, model, or tensor parallelism.

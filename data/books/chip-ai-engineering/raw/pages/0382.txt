@@ -1,0 +1,32 @@
+tener instrucciones de seguridad. El artículo "From Prompt Injections to
+SQL Injection Attacks" (Pedro et al., 2023) descubrió que, en el momento
+del estudio, las plantillas predeterminadas de LangChain eran tan
+permisivas que sus ataques de inyección tuvieron éxito el 100 % de las
+veces. Añadir restricciones a estos prompts frustró significativamente estos
+ataques. Sin embargo, como ya se ha dicho, no hay garantía de que un
+modelo siga las instrucciones dadas.
+Defensa a nivel de sistema
+Su sistema puede diseñarse para mantener su seguridad y la de sus usuarios.
+Una buena práctica, cuando es posible, es el aislamiento. Si su sistema
+implica la ejecución de código generado, ejecute este código
+exclusivamente en una máquina virtual separada de la máquina principal
+del usuario. Este aislamiento ayuda a proteger contra el código no fiable.
+Por ejemplo, si el código generado contiene instrucciones para instalar
+malware, el malware quedaría limitado a la máquina virtual.
+Otra buena práctica es no permitir que se ejecute ningún comando
+potencialmente de impacto sin la aprobación explícita de un humano. Por
+ejemplo, si su sistema de IA tiene acceso a una base de datos SQL, puede
+establecer una regla para que todas las consultas que intenten modificar la
+base de datos, como las que contienen "DELETE", "DROP" o "UPDATE",
+deben ser aprobadas antes de ejecutarse.
+Para reducir la posibilidad de que su aplicación hable de temas para los que
+no está preparada, puede definir qué temas están fuera del alcance de su
+aplicación. Por ejemplo, si su aplicación es un chatbot de atención al
+cliente, no debería responder a preguntas políticas o sociales. Una forma
+sencilla es filtrar los inputs que contengan frases predefinidas típicamente
+asociadas a temas controvertidos, como "inmigración" o "antivacunas".
+Los algoritmos más avanzados utilizan la IA para comprender la intención
+del usuario analizando toda la conversación, no solo el input actual. Pueden
+bloquear solicitudes con intenciones inapropiadas o dirigirlas a operadores
+humanos. Utilice un algoritmo de detección de anomalías para identificar
+prompts inusuales.

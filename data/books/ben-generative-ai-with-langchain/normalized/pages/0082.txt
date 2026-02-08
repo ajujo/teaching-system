@@ -1,0 +1,36 @@
+Chapter 2
+55
+Text-to-image
+LangChain integrates with various image generation models and services, allowing you to:
+•
+Generate images from text descriptions
+•
+Edit existing images based on text prompts
+•
+Control image generation parameters
+•
+Handle image variations and styles
+LangChain includes wrappers and models for popular image generation services. First, let's see
+how to generate images with OpenAI's DALL-E model series.
+Using DALL-E through OpenAI
+LangChain's wrapper for DALL-E simplifies the process of generating images from text prompts.
+The implementation uses OpenAI's API under the hood but provides a standardized interface
+consistent with other LangChain components.
+from langchain_community.utilities.dalle_image_generator import
+DallEAPIWrapper
+dalle = DallEAPIWrapper(
+   model_name="dall-e-3", # Options: "dall-e-2" (default) or "dall-e-3"
+   size="1024x1024", # Image dimensions
+    quality="standard",     # "standard" or "hd" for DALL-E 3
+    n=1                     # Number of images to generate (only for
+DALL-E 2)
+)
+# Generate an image
+image_url = dalle.run("A detailed technical diagram of a quantum
+computer")
+# Display the image in a notebook
+from IPython.display import Image, display
+display(Image(url=image_url))
+# Or save it locally
+import requests
+response = requests.get(image_url)

@@ -1,0 +1,35 @@
+Chapter 4
+127
+Exploring the LLM Twin’s RAG feature pipeline 
+architecture
+Now that you have a strong intuition and understanding of RAG and its workings, we will con-
+tinue exploring our particular LLM Twin use case. The goal is to provide a hands-on end-to-end 
+example to solidify the theory presented in this chapter.
+Any RAG system is split into two independent components:
+•	
+The ingestion pipeline takes in raw data, cleans, chunks, embeds, and loads it into a 
+vector DB.
+•	
+The inference pipeline queries the vector DB for relevant context and ultimately generates 
+an answer by levering an LLM.
+In this chapter, we will focus on implementing the RAG ingestion pipeline, and in Chapter 9, we 
+will continue developing the inference pipeline.
+With that in mind, let’s have a quick refresher on the problem we are trying to solve and where 
+we get our raw data. Remember that we are building an end-to-end ML system. Thus, all the 
+components talk to each other through an interface (or a contract), and each pipeline has a sin-
+gle responsibility. In our case, we ingest raw documents, preprocess them, and load them into 
+a vector DB.
+The problem we are solving
+As presented in the previous chapter, this book aims to show you how to build a production-ready 
+LLM Twin backed by an end-to-end ML system. In this chapter specifically, we want to design a 
+RAG feature pipeline that takes raw social media data (e.g., articles, code repositories, and posts) 
+from our MongoDB data warehouse. The text of the raw documents will be cleaned, chunked, 
+embedded, and ultimately loaded to a feature store. As discussed in Chapter 1, we will implement 
+a logical feature store using ZenML artifacts and a Qdrant vector DB.
+As we want to build a fully automated feature pipeline, we want to sync the data warehouse and 
+logical feature store. Remember that, at inference time, the context used to generate the answer 
+is retrieved from the vector DB. Thus, the speed of synchronization between the data warehouse 
+and the feature store will directly impact the accuracy of our RAG algorithm.
+Another key consideration is how to automate the feature pipeline and integrate it with the rest 
+of our ML system. Our goal is to minimize any desynchronization between the two data storages, 
+as this could potentially compromise the integrity of our system.

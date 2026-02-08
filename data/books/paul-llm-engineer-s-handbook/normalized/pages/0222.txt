@@ -1,0 +1,11 @@
+Chapter 5
+191
+This makes sure that each topic is correctly covered for each programming language.
+Figure 5.5 - Representation of the historical TikTok dataset made with Nomic Atlas
+Several tools are available for performing topic clustering, each with its own strengths and approaches. For example, Hugging Face's text-clustering provides a simple pipeline with sentence
+transformers for embedding text into vector space, UMAP for dimensionality reduction, and
+DBSCAN for clustering. It also automatically labels clusters using an LLM and can output visualizations. Nomic Atlas (see Figure 5.5), BunkaTopics, and Lilac are alternatives proposing similar
+approaches with additional features.
+Data generation
+When the available instruction datasets are not sufficient, creating custom data becomes necessary.
+This is particularly relevant for specialized applications where publicly available data is scarce.

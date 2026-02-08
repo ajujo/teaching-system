@@ -1,0 +1,47 @@
+       for tc in first.tool_calls:
+           print(first)
+           print(tc['name'])
+           # Find the tool (assuming tools are unique by name across all)
+           all_tools = INVENTORY_TOOLS + TRANSPORTATION_TOOLS + SUPPLIER_TOOLS
+           fn = next(t for t in all_tools if t.name == tc['name'])
+           out = fn.invoke(tc["args"])
+           messages.append(ToolMessage(content=str(out), tool_call_id=tc["id"]))
+       second = specialist_llm.invoke(full + messages)
+       messages.append(second)
+   return {"messages": messages}
+# Inventory Specialist Node
+def inventory_node(state: AgentState):
+   inventory_prompt = (
+       "You are an inventory and warehouse management specialist.\n"
+       "When managing:\n"
+       "  1) Analyze the inventory/warehouse challenge\n"
+       "  2) Call the appropriate tool\n"
+       "  3) Follow up with send_logistics_response\n"
+       "Consider cost, efficiency, and scalability."
+   )
+   return specialist_node(state, inventory_llm, inventory_prompt)
+# Transportation Specialist Node
+def transportation_node(state: AgentState):
+   transportation_prompt = (
+       "You are a transportation and logistics specialist.\n"
+       "When managing:\n"
+       "  1) Analyze the shipping/delivery challenge\n"
+       "  2) Call the appropriate tool\n"
+       "  3) Follow up with send_logistics_response\n"
+       "Consider efficiency, sustainability, and risk mitigation."
+   )
+   return specialist_node(state, transportation_llm, transportation_prompt)
+# Supplier Specialist Node
+def supplier_node(state: AgentState):
+   supplier_prompt = (
+       "You are a supplier relations and compliance specialist.\n"
+       "When managing:\n"
+       "  1) Analyze the supplier/compliance issue\n"
+       "  2) Call the appropriate tool\n"
+       "  3) Follow up with send_logistics_response\n"
+       "Consider performance, regulations, and relationships."
+   )
+   return specialist_node(state, supplier_llm, supplier_prompt)
+How Many Agents Do I Need? 
+| 
+175

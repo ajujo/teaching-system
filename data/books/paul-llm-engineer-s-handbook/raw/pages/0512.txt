@@ -1,0 +1,73 @@
+Index
+481
+data decontamination  185
+data deduplication  184, 185
+data drift  468
+data evaluation  233
+data exploration  189-191
+data generation  191, 193, 233
+preference data, evaluating  235-237
+preference data, generating  233, 234
+tips  234
+data indexing techniques  119
+data parallelism (DP)  299, 300
+data quality evaluation  186-189
+data quantity  180-182
+Data Scientist (DS)  407
+dataset formats  208
+data tests  464
+decoder-only model
+architecture  290
+computing   291
+generating  291
+tokenizing  291
+Deep Learning Containers (DLCs)  371
+deployment costs  413
+deployment types, criteria for selection
+data  355
+infrastructure  355, 356
+latency  354
+throughput  354, 355
+DevOps  399-401
+benefits  401
+continuous delivery (CD)  403
+continuous integration (CI)  403
+deployment environments  402
+version control  403
+DevOps lifecycle
+build  402
+code  401
+deploy  402
+monitor  402
+operate  402
+plan  401
+release  402
+test  402
+directional  465
+Direct Preference Optimization  
+(DPO)  229, 245, 248-250, 409
+implementing  250-257
+dispatcher layer  160-162
+DLC image
+features  371
+Docker
+used, for containerizing code  422-427
+Dockerfile  422
+domain-driven design (DDD)  150
+domain-specific LLM evaluations  265-267
+downstream pipelines
+triggering  447-449
+DPO datasets
+human-generated, human-evaluated 
+datasets  233
+human-generated, LLM-evaluated  
+datasets  233
+LLM-generated, human-evaluated  
+datasets  234
+LLM-generated, LLM-evaluated datasets  234
+drifts  467
+concept drift  469
+data drift  468
+detecting  470
+measuring  470
+target drift  468

@@ -1,0 +1,30 @@
+"Cats and mice fight all the time" (Los gatos y los ratones siempre
+están peleando)
+Supongamos que cada token es una palabra. Si solo se tiene en cuenta el
+solapamiento de palabras individuales, la respuesta A contiene 4 de las 5
+palabras de la respuesta de referencia (la puntuación de similitud es del
+80 %), mientras que la respuesta B solo contiene 3 de las 5 (la puntuación
+de similitud es del 60 %). Por lo tanto, la respuesta A se considera más
+similar a la respuesta de referencia.
+Una forma de medir la similitud léxica es la concordancia aproximada de
+cadenas, conocida coloquialmente como coincidencia difusa. Mide la
+similitud entre dos textos contando cuántas ediciones serían necesarias para
+convertir un texto en otro, un número llamado distancia de edición. Las tres
+operaciones de edición habituales son:
+1. Supresión: "brad" -> "bad"
+2. Inserción: "bard" -> "bard"
+3. Sustitución: "bad" -> "bed"
+Algunos buscadores de coincidencias difusas también tratan la
+transposición, es decir, el intercambio de dos letras (por ejemplo, "mats" ->
+"mast"), como una edición. Sin embargo, algunos buscadores de
+coincidencias difusas tratan cada transposición como dos operaciones de
+edición: una eliminación y una inserción.
+Por ejemplo, "bad" es una edición de "bard" y tres ediciones de "cash", por
+lo que "bad" se considera más similar a "bard" que a "cash".
+Otra forma de medir la similitud léxica es la similitud de n-gramas, que se
+mide basándose en la superposición de secuencias de tokens, n-gramas, en
+lugar de tokens individuales. Un 1-grama (unigrama) es un token. Un 2-
+grama (bigrama) es un conjunto de dos tokens. “"My cats scare the mice"
+consta de cuatro bigramas: "my cats", "cats scare", "scare the", y "the
+mice". Se mide qué porcentaje de n-gramas en las respuestas de referencia
+está también en la respuesta generada. 12

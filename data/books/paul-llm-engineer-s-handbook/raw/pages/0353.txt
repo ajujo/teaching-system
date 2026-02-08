@@ -1,0 +1,30 @@
+RAG Inference Pipeline
+322
+    @abstractmethod
+    def create_template(self) -> PromptTemplate:
+        pass
+We also want to define a RAGStep interface used to standardize the interface of advanced RAG 
+steps such as query expansion and self-querying. As these steps are often dependent on other 
+LLMs, it has a mock attribute to reduce costs and debugging time during development:
+from typing import Any
+from llm_engineering.domain.queries import Query
+class RAGStep(ABC):
+    def __init__(self, mock: bool = False) -> None:
+        self._mock = mock
+    @abstractmethod
+    def generate(self, query: Query, *args, **kwargs) -> Any:
+        pass
+Ultimately, we must understand how we modeled the Query domain entity to wrap the user’s 
+input with other metadata required for advanced RAG. Thus, let’s look at its implementation. 
+First, we import the necessary classes:
+from pydantic import UUID4, Field
+from llm_engineering.domain.base import VectorBaseDocument
+from llm_engineering.domain.types import DataCategory
+Next, we define the Query entity class, which inherits from the VectorBaseDocument object-vector 
+mapping (OVM) class, discussed in Chapter 4. Thus, each query can easily be saved or retrieved 
+from the vector DB:
+class Query(VectorBaseDocument):
+    content: str
+    author_id: UUID4 | None = None
+    author_full_name: str | None = None
+    metadata: dict = Field(default_factory=dict)

@@ -1,0 +1,52 @@
+Vector stores—such as VectorDB, FAISS (Facebook AI Similarity Search), or Annoy
+(Approximate Nearest Neighbors Oh Yeah)—are optimized for storing and searching
+high-dimensional vectors. These stores are set up for fast similarity searches, enabling
+the retrieval of embeddings that are semantically similar to a given query.
+When an agent receives a query or needs to retrieve information, it can use the vector
+store to perform similarity searches based on the query’s embedding. By finding and
+retrieving the most relevant embeddings from the vector store, the agent can access
+the stored semantic memory and provide informed, contextually appropriate respon‐
+ses. These lookups can be performed quickly, providing an efficient way to rapidly
+search over large volumes of information to improve the quality of actions and
+responses. This can be implemented as follows:
+from typing import Annotated
+from typing_extensions import TypedDict
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph, MessagesState, START
+llm = ChatOpenAI(model="gpt-5")
+def call_model(state: MessagesState):
+   response = llm.invoke(state["messages"])
+   return {"messages": response}
+from vectordb import Memory
+memory = Memory(chunking_strategy={'mode':'sliding_window', 'window_size': 128, 
+'overlap': 16})
+text = """
+Machine learning is a method of data analysis that automates analytical 
+model building. It is a branch of artificial intelligence based on the 
+idea that systems can learn from data, identify patterns and make 
+decisions with minimal human intervention. Machine learning algorithms 
+are trained on datasets that contain examples of the desired output. 
+For example, a machine learning algorithm that is used to classify 
+images might be trained on a dataset that contains images of cats 
+and dogs. Once an algorithm is trained, it can be used to make 
+predictions on new data. For example, the machine learning algorithm 
+that is used to classify images could be used to predict whether a new 
+image contains a cat or a dog.
+"""
+metadata = {"title": "Introduction to Machine Learning", "url": 
+"https://learn.microsoft.com/en-us/training/modules/" + 
+    "introduction-to-machine-learning"}
+memory.save(text, metadata)
+text2 = """
+Artificial intelligence (AI) is the simulation of human intelligence in machines
+that are programmed to think like humans and mimic their actions.
+The term may also be applied to any machine that exhibits traits associated with
+a human mind such as learning and problem-solving.
+AI research has been highly successful in developing effective techniques for 
+solving a wide range of problems, from game playing to medical diagnosis.
+"""
+metadata2 = {"title": "Artificial Intelligence for Beginners", "url": 
+"https://microsoft.github.io/AI-for-Beginners"}
+120 
+| 
+Chapter 6: Knowledge and Memory

@@ -1,0 +1,33 @@
+responda a instrucciones individuales. Por otro lado, los datos multiturno
+enseñan al modelo a resolver tareas: muchas tareas del mundo real implican
+idas y venidas. Por ejemplo, ante una consulta, un modelo pueden necesitar
+aclarar primero la intención del usuario antes de abordar la tarea. Tras la
+respuesta del modelo, el usuario pueden aportar correcciones o información
+adicional para el siguiente paso.
+Los datos de un solo turno son más sencillos y, por tanto, más fáciles de
+obtener. Los datos multiturno suelen requerir escenarios específicos o
+interacciones más complejas.
+La curación de datos no consiste solo en crear nuevos datos para ayudar a
+un modelo a aprender nuevos comportamientos, sino también en eliminar
+datos existentes para ayudar a un modelo a desaprender malos
+comportamientos. Imagine que trabaja en un chatbot como ChatGPT y oye
+quejas de los usuarios de que el chatbot es un poco arrogante, molesta a los
+usuarios y malgasta sus tokens. Por ejemplo, cuando un usuario le pide que
+verifique si una afirmación es objetivamente correcta, el chatbot responde
+con: "La declaración es correcta, pero su estilo pueden mejorarse para que
+sea mejor". A continuación, reescribe la declaración sin que se le haya
+solicitado.
+Usted investiga y descubre que en los datos de entrenamiento hay varios
+ejemplos de anotaciones con sugerencias no solicitadas. Solicita que se
+eliminen estos ejemplos de los datos de entrenamiento y que se adquieran
+nuevos ejemplos que demuestren la comprobación de hechos sin reescritura
+no solicitada.
+Cada aplicación pueden requerir datos de características diferentes. Las
+distintas fases de entrenamiento también requieren distintas combinaciones
+de datos. A rasgos generales, sin embargo, la curación de datos sigue los
+tres criterios: calidad de datos, cobertura de datos y cantidad de datos.
+Para dar una idea de estos términos, si pensamos en el entrenamiento de un
+modelo como en cocinar, los datos que se introducen en el modelo son los
+ingredientes. La calidad de datos equivale a la calidad de los ingredientes:
+no se pueden comer bien si los ingredientes están en mal estado. La
+cobertura de datos equivale a tener la mezcla adecuada de ingredientes (por

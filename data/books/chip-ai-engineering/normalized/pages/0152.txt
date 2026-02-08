@@ -1,0 +1,22 @@
+Es práctica común establecer la temperatura en 0 para que los outputs del
+modelo sean más coherentes. Técnicamente, la temperatura nunca puede ser
+0: los logits no pueden dividirse por 0. En la práctica, cuando establecemos
+la temperatura en 0, el modelo simplemente elige el token con el logit
+mayor, 25 sin hacer el ajuste logit ni el cálculo softmax.
+SUGERENCIA
+Una técnica de depuración habitual cuando se trabaja con un modelo de IA
+consiste en observar las probabilidades que este modelo computa para unas
+inputs dadas. Por ejemplo, si las probabilidades parecen aleatorias, el
+modelo no ha aprendido mucho.
+Muchos proveedores de modelos devuelven las probabilidades generadas
+por sus modelos como logprobs. Logprobs, abreviatura de "log
+probabilities", son probabilidades en escala logarítmica. Se prefiere la
+escala logarítmica cuando se trabaja con las probabilidades de una red
+neuronal porque ayuda a reducir el problema de subdesbordamiento. 26 Un
+modelo lingüístico puede trabajar con un vocabulario de 100 000 palabras,
+lo que significa que las probabilidades de muchas de las palabras pueden
+ser demasiado pequeñas para ser representadas por una máquina. Los
+números pequeños pueden redondearse a 0. La escala logarítmica ayuda a
+reducir este problema.
+La Figura 2-17 muestra el flujo de trabajo de cómo se computan los logits,
+las probabilidades y los logprobs.

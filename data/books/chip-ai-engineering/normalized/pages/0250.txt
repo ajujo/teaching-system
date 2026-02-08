@@ -1,0 +1,30 @@
+Creo que la evaluación es el mayor cuello de botella para la adopción
+de la IA. La capacidad para crear procesos de evaluación fiables abrirá
+muchas aplicaciones nuevas.
+Por lo tanto, una aplicación de IA debe comenzar con una lista de criterios
+de evaluación específicos para la aplicación. En general, se puede pensar en
+los siguientes criterios: capacidad específica del dominio, capacidad de
+generación, capacidad de seguimiento de instrucciones, y costo y latencia.
+Imagine que le pide a un modelo que le resuma un contrato legal. A grandes
+rasgos, las métricas de capacidad específicas del dominio les indican lo
+bueno que es el modelo a la hora de comprender los contratos legales. Las
+métricas de capacidad de generación miden la coherencia o fidelidad del
+resumen. La capacidad de seguimiento de instrucciones determina si el
+resumen tiene el formato solicitado, por ejemplo, si cumple sus
+restricciones de longitud. Las métricas de costo y latencia le indica cuánto
+le costará este resumen y cuánto tendrá que esperar para recibirlo.
+El capítulo anterior comenzó con un enfoque de evaluación y analizó qué
+criterios puede evaluar un enfoque determinado. Esta sección adopta un
+ángulo diferente: dado un criterio, ¿qué enfoques puede utilizar para
+evaluarlo?
+Capacidades específicas de dominio
+Para construir un agente codificador, necesitan un modelo que pueda
+escribir código. Para crear una aplicación que traduzca del latín al inglés, se
+necesita un modelo que entienda tanto el latín como el inglés. La
+codificación y la comprensión del inglés y el latín son capacidades
+específicas de cada ámbito. Las capacidades específicas de un modelo están
+limitadas por su configuración (como la arquitectura y el tamaño del
+modelo) y los datos de entrenamiento. Si un modelo nunca ha visto el latín
+durante su proceso de entrenamiento, no será capaz de entenderlo. Los
+modelos que no tengan las capacidades que requiere su aplicación no le
+servirán.

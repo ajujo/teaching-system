@@ -1,0 +1,34 @@
+Chapter 9
+397
+As mentioned, this logic uses a lightweight model to classify the query, reserving the more pow­
+erful (and costly) model for complex tasks only.
+Cascading model approach
+In this strategy, the system first attempts a response using a cheaper model and escalates to a 
+stronger one only if the initial output is inadequate. The snippet below illustrates how to imple­
+ment this using an evaluator:
+from langchain_openai import ChatOpenAI
+from langchain.evaluation import load_evaluator
+# Define models with different price points
+affordable_model = ChatOpenAI(model="gpt-3.5-turbo")
+powerful_model = ChatOpenAI(model="gpt-4o")
+# Load an evaluator to assess response quality
+evaluator = load_evaluator("criteria", criteria="relevance", 
+llm=affordable_model)
+def get_response_with_fallback(query):
+    """Try affordable model first, fallback to powerful model if quality 
+is low."""
+    # First attempt with affordable model
+    initial_response = affordable_model.invoke(query)
+  
+    # Evaluate the response
+    eval_result = evaluator.evaluate_strings(
+        prediction=initial_response.content,
+        reference=query
+    )
+  
+    # If quality score is too low, use the more powerful model
+    if eval_result["score"] < 4.0:  # Threshold on a 1-5 scale
+        print("Response quality insufficient, using more powerful model")
+        return powerful_model.invoke(query)
+  
+    return initial_response

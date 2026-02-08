@@ -1,0 +1,26 @@
+- orquestación de canalizaciones de IA, Detección de deriva
+- paso, Introducción a la creación de aplicaciones de IA con modelos
+fundacionales, Introducción a la creación de aplicaciones de IA con
+modelos fundacionales, Modelos lingüísticos, Modelos lingüísticos,
+Modelos lingüísticos, Arquitectura de ingeniería de IA, Paso 1.
+Mejorar el contexto, Paso 3. Añadir enrutador de modelos y puerta de
+enlace, Puerta de enlace, Almacenamiento semántico en caché
+- caché exacta, Paso 4. Reducir la latencia con cachés
+- caché semántica, Paso 4. Reducir la latencia con cachés
+- enrutador, Paso 3. Añadir enrutador de modelos y puerta de
+enlace
+- guardarraíles de input, Paso 1. Mejorar el contexto
+- guardarraíles de output, Barreras de seguridad de output
+- implementación de guardarraíles, Implementación de barreras de
+seguridad
+- pasarela, Puerta de enlace
+arquitectura de ingeniería de IA (ver arquitectura de ingeniería)
+arquitectura de modelos, Modelado
+- (ver también arquitecturas específicas, por ejemplo: arquitectura de
+transformadores)
+arquitectura de transformadores, Modelado
+- bloques transformadores, Mecanismo de atención
+- capas de output, Bloque transformador
+- módulos de atención, Mecanismo de atención
+- módulos de incrustación, Bloque transformador
+- módulos MLP, Mecanismo de atención

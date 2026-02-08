@@ -1,0 +1,33 @@
+Encoding Categorical Variables
+58
+4.	
+Let’s replace the categories in A7 with the counts in a copy of the data sets:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+X_train_enc["A7"] = X_train_enc["A7"].map(counts)
+X_test_enc["A7"] = X_test_enc["A7"].map(counts)
+Go ahead and inspect the data by executing X_train_enc.head() to corroborate that the 
+categories have been replaced by the counts.
+To apply this procedure to multiple variables, we can use feature-engine.
+5.	
+Let’s set up the encoder so that it encodes all categorical variables with the count of observations:
+count_enc = CountFrequencyEncoder(
+    encoding_method="count", variables=None,
+)
+Note
+CountFrequencyEncoder() will automatically find and encode all categorical variables 
+in the train set. To encode only a subset of the variables, pass the variable names in a list 
+to the variables argument. To encode with the frequency instead, use encoding_
+method="frequency".
+6.	
+Let’s fit the encoder to the train set so that it stores the number of observations per category 
+per variable:
+count_enc.fit(X_train)
+7.	
+The encoder found the categorical variables automatically. Let’s check them out:
+count_enc.variables_
+The previous command returns the names of the categorical variables in the train set:
+['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13']
+8.	
+Let’s print the count of observations per category per variable:
+count_enc.encoder_dict_

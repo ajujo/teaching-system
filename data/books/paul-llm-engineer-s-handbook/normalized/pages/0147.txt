@@ -1,0 +1,32 @@
+RAG Feature Pipeline
+116
+3.
+Post-processing results: After identifying potential matches, the results undergo post-processing to refine accuracy. This step ensures that the most relevant vectors are returned
+to the user.
+Vector DBs can filter results based on metadata before or after the vector search. Both approaches
+have trade-offs in terms of performance and accuracy. The query also depends on the metadata
+(along with the vector index), so it contains a metadata index user for filtering operations.
+Algorithms for creating the vector index
+Vector DBs use various algorithms to create the vector index and manage searching data efficiently:
+•
+Random projection: Random projection reduces the dimensionality of vectors by projecting them into a lower-dimensional space using a random matrix. This technique preserves
+the relative distances between vectors, facilitating faster searches.
+•
+PQ: PQ compresses vectors by dividing them into smaller sub-vectors and then quantizing
+these sub-vectors into representative codes. This reduces memory usage and speeds up
+similarity searches.
+•
+LSH: LSH maps similar vectors into buckets. This method enables fast approximate nearest neighbor searches by focusing on a subset of the data, reducing the computational
+complexity.
+•
+HNSW: HNSW constructs a multi-layer graph where each node represents a set of vectors.
+Similar nodes are connected, allowing the algorithm to navigate the graph and find the
+nearest neighbors efficiently.
+These algorithms enable vector DBs to efficiently handle complex and large-scale data, making
+them a perfect fit for a variety of AI and ML applications.
+DB operations
+Vector DBs also share common characteristics with standard DBs to ensure high performance,
+fault tolerance, and ease of management in production environments. Key operations include:
+•
+Sharding and replication: Data is partitioned (sharded) across multiple nodes to ensure
+scalability and high availability. Data replication across nodes helps maintain data integrity and availability in case of node failures.

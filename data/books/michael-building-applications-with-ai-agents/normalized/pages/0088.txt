@@ -1,0 +1,40 @@
+information you're looking for; would you like me to escalate this to a human repre‐
+sentative?" instead of producing an incorrect or nonsensical response.
+Agents should also be designed to anticipate common points of failure and have pre‐
+defined fallback mechanisms in place. For example, if a voice-based agent struggles to
+understand repeated user inputs, it might switch to a text-based option or provide a
+clear explanation, such as: "I'm having trouble understanding your request. Could
+you please try rephrasing it or typing your question instead?"
+In multistep tasks, state preservation is equally important when an agent encounters
+failure. Instead of requiring the user to restart from scratch, the agent should retain
+progress and allow the user to pick up where they left off once the issue is resolved.
+This prevents unnecessary repetition and frustration.
+Another critical aspect of graceful failure is apologetic and empathetic language.
+When something goes wrong, the agent should acknowledge the failure in a way that
+feels human and considerate, avoiding cold or overly technical error messages. For
+example: "I'm sorry; something went wrong while processing your request. Let me
+try again or connect you with someone who can help."
+Additionally, agents should provide clear paths to resolution. Whether it's offering
+troubleshooting steps, escalating to a human operator, or directing the user to an
+alternative resource, users should always know what options are available to them
+when the agent encounters a roadblock.
+Lastly, agents must learn from their failures whenever possible. Logging failure
+points, analyzing recurring issues, and feeding these insights back into the develop‐
+ment process can help reduce the frequency of similar failures in the future. Agents
+that improve iteratively based on their failure patterns will become increasingly resil‐
+ient and reliable over time.
+In summary, failing gracefully is about maintaining user trust and minimizing frus‐
+tration even when things don't go as planned. By being transparent, empathetic, and
+action-oriented, agents can turn failures into opportunities to strengthen their rela‐
+tionship with users, demonstrating reliability even in moments of imperfection.
+Trust in Interaction Design
+Trust is gained in drops and lost in buckets. This certainly applies to agentic systems
+as well. Without it, even the most advanced agent systems will struggle to gain user
+acceptance, regardless of their capabilities. Transparency and predictability are two of
+the most powerful tools for building and maintaining trust between agents and users.
+Users need to understand what an agent can do, why it made a particular decision,
+and what its limitations are. This clarity fosters confidence, reduces anxiety, and
+encourages productive collaboration.
+66
+|
+Chapter 3: User Experience Design for Agentic Systems

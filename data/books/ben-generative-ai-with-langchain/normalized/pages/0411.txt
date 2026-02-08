@@ -1,0 +1,37 @@
+Production-Ready LLM Deployment and Observability
+384
+Remember that your deployment choice isn't permanent. Design your system so you can switch
+approaches as your needs change.
+Model serving infrastructure
+Model serving infrastructure provides the foundation for deploying LLMs as production services.
+These frameworks expose models via APIs, manage memory allocation, optimize inference per­
+formance, and handle scaling to support multiple concurrent requests. The right serving infra­
+structure can dramatically impact costs, latency, and throughput. These tools are specifically for
+organizations deploying their own model infrastructure, rather than using API-based LLMs. These
+frameworks expose models via APIs, manage memory allocation, optimize inference performance,
+and handle scaling to support multiple concurrent requests. The right serving infrastructure can
+dramatically impact costs, latency, and throughput.
+Different frameworks offer distinct advantages depending on your specific needs. vLLM maxi­
+mizes throughput on limited GPU resources through its PagedAttention technology, dramatically
+improving memory efficiency for better cost performance. TensorRT-LLM provides exceptional
+performance through NVIDIA GPU-specific optimizations, though with a steeper learning curve.
+For simpler deployment workflows, OpenLLM and Ray Serve offer a good balance between ease
+of use and efficiency. Ray Serve is a general-purpose scalable serving framework that goes beyond
+just LLMs and will be covered in more detail in this chapter. It integrates well with LangChain
+for distributed deployments.
+LiteLLM provides a universal interface for multiple LLM providers with robust reliability features
+that integrate seamlessly with LangChain:
+# LiteLLM with LangChain
+import os
+from langchain_litellm import ChatLiteLLM, ChatLiteLLMRouter
+from litellm import Router
+from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
+# Configure multiple model deployments with fallbacks
+model_list = [
+    {
+        "model_name": "claude-3.7",
+        "litellm_params": {
+            "model": "claude-3-opus-20240229",  # Automatic fallback
+option
+            "api_key": os.getenv("ANTHROPIC_API_KEY"),

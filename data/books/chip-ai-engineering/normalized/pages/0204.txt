@@ -1,0 +1,26 @@
+NOTA
+En esta sección se explica cómo utilizar las medidas de similitud para
+evaluar la calidad de un output generado. Sin embargo, también puede
+utilizar las mediciones de similitud para muchos otros casos de uso,
+incluidos, entre otros, los siguientes:
+Recuperación y búsqueda
+buscar elementos similares a una consulta
+Clasificación
+clasificar los elementos en función de qué tan similares son
+con una consulta
+Clustering
+juntar elementos en función de su similitud entre ellos
+Detección de anomalías
+detectar los elementos menos similares al resto
+Deduplicación de datos
+eliminar los artículos demasiado parecidos a otros
+Las técnicas tratadas en esta sección se repetirán a lo largo del libro.
+Coincidencia exacta
+Se considera coincidencia exacta si la respuesta generada coincide
+exactamente con una de las respuestas de referencia. La coincidencia exacta
+funciona para tareas que requieren respuestas cortas y exactas, como
+problemas matemáticos sencillos, preguntas de conocimiento común y
+preguntas tipo trivial. Veamos unos ejemplos de inputs que tienen
+respuestas cortas y exactas:
+"¿Cuánto es 2 + 3?"
+"¿Quién fue la primera mujer en ganar un Premio Nobel?"

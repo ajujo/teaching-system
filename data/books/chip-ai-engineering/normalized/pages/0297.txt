@@ -1,0 +1,30 @@
+comparativas. El número de pruebas comparativas crece rápidamente para
+adaptarse al rápido crecimiento del número de casos de uso de la IA.
+Además, a medida que los modelos de IA mejoran, las pruebas
+comparativas antiguas se saturan, y entonces se necesita introducir nuevas.
+Una herramienta que le ayuda a evaluar un modelo en múltiples pruebas
+comparativas es un arnés de evaluación. En el momento de escribir estas
+líneas, lm-evaluation-harness de EleutherAI admite más de 400 pruebas
+comparativas. Evals de OpenAI permite ejecutar cualquiera de las
+aproximadamente 500 pruebas comparativas existentes y registrar nuevas
+para evaluar los modelos de OpenAI. Sus pruebas comparativas evalúan
+una amplia gama de capacidades, desde realizar operaciones matemáticas y
+resolver acertijos hasta identificar el arte ASCII que representa palabras.
+Selección e integración de pruebas comparativas
+Los resultados de las pruebas comparativas le ayuda a identificar modelos
+prometedores para sus casos de uso. Si agrega los resultados de las pruebas
+comparativas para clasificar los modelos, obtiene una tabla de clasificación.
+Hay que hacerse dos preguntas:
+¿Qué pruebas comparativas incluirá en su tabla de clasificación?
+¿Cómo agregarlas para clasificar los modelos?
+Teniendo en cuenta el gran número de pruebas comparativas que existen, es
+imposible examinarlas todas, y mucho menos integrar sus resultados para
+decidir cuál es el mejor modelo. Imagine que está sopesando dos modelos,
+A y B, para la generación de código. Si el modelo A rinde mejor que el
+modelo B en una prueba comparativa de codificación, pero peor en una
+prueba comparativa de toxicidad, ¿qué modelo elegiría? Del mismo modo,
+¿qué modelo elegiría si un modelo rinde bien en una prueba de codificación
+pero mal en otra?
+Para inspirarse sobre cómo crear su propio tablero de clasificación a partir
+de pruebas comparativas públicas, es útil estudiar cómo lo hacen los
+tableros públicos que ya existen.

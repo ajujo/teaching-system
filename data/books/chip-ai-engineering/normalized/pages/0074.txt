@@ -1,0 +1,20 @@
+aproximación para comprender el ecosistema. También incluí en mi análisis
+los repositorios para aplicaciones y modelos, que son los productos de las
+capas de desarrollo de aplicaciones y desarrollo de modelos,
+respectivamente. Encontré un total de 920 repositorios. La Figura 1-15
+muestra el número acumulado de repositorios por categoría mes a mes.
+figura 1-15. Recuento acumulado de repositorios por categoría a lo largo del tiempo.
+Los datos muestran un gran salto en el número de herramientas de IA en
+2023, tras la introducción de Stable Diffusion y ChatGPT. En 2023, las
+categorías que registraron los mayores aumentos fueron las aplicaciones y
+el desarrollo de aplicaciones. La capa de infraestructuras experimentó cierto
+crecimiento, pero fue mucho menor que el observado en otras capas. Esto
+era de esperar. Aunque los modelos y las aplicaciones han cambiado, las
+necesidades infraestructurales básicas (gestión de recursos, servicio,
+monitoreo, etc.) siguen siendo las mismas.
+Esto nos lleva al siguiente punto. Aunque el nivel de entusiasmo y
+creatividad en torno a los modelos fundacionales no tiene precedentes,
+muchos principios de la creación de aplicaciones de IA siguen siendo los
+mismos. En los casos de uso empresarial, las aplicaciones de IA siguen
+necesitando resolver problemas de negocio y, por tanto, sigue siendo
+esencial asignar métricas de negocio a métricas de ML y viceversa. Sigue

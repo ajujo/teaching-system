@@ -1,0 +1,98 @@
+predictability, agent capabilities, 67
+pretrained models, task suitability, 22
+prioritization, feedback pipelines, 259
+privacy
+ensuring, 283-284
+memory persistence, 61
+personalization considerations, 62
+video agents, 54
+proactivity, agent design considerations, 59-60
+production, deployment readiness, 220-221
+prompt engineering, 317
+prompt injection, 274, 276
+JSON-based, 274
+test benchmarks, 278
+Prompt Risk Identification Tool, 280
+proprietary models, task suitability, 22
+pseudonymization, data security, 287
+PSI (population stability index), 238
+PyRIT, 280
+Q
+quantization, 317
+query expansion, 317
+query-decomposition agents, 91
+R
+RabbitMQ, 193
+RACI chart (Responsibility Assignment
+Matrix), 240
+RAG (retrieval-augmented generation), 317
+hallucination mitigation, 218
+project suitability, 9
+runtime workflow, 122
+workflow, 121-122
+rate limiting, 289
+Ray, 196
+RBAC (role-based access control), 287
+RCA (root cause analysis), 250-251
+ReAct agents, 90
+real-time anomaly detection systems, 292
+real-time code generation, tool creation, 86-87
+real-time integrity checks, 286
+real-world testing, 37-38
+recurrent neural networks (RNNs), 317
+red teaming, 278-281
+Redis Streams, 193
+reflection agents, 91-92
+reflex agents, 90
+Reflexion, nonparametric learning, 137-141
+regression tracing, 236
+regulatory compliance, 310-312
+reinforcement fine-tuning (RFT), 149
+reinforcement learning, 243
+(see also improvement loops)
+reinforcement learning from human feedback
+(RLHF), 317
+reinforcement learning with verifiable rewards
+(RLVR), 161
+relationship extraction, building knowledge
+graphs, 125
+reliability
+agent capabilities, 67-68
+agentic systems, design considerations,
+29-30
+reports, internal failure protection, 295
+research agents, 4
+model suitability, 21
+Resource Description Framework data model,
+126
+Responsibility Assignment Matrix (RACI
+chart), 240
+retrieval‐augmented generation (RAG) (see
+RAG (retrieval-augmented generation))
+reviewer role, 298-299
+RFT (reinforcement fine-tuning), 149
+RLHF (reinforcement learning from human
+feedback), 317
+RLVR (reinforcement learning with verifiable
+rewards), 161-162
+RNNs (recurrent neural networks), 317
+robustness, agent-based design principle, 180
+role and permission management, 288
+role-based access control (RBAC), 287
+roles, humans in agentic systems, 298-299
+rolling context windows, 117
+root cause analysis (RCA), 250-251
+rules, experiential learning, 144
+runtime metrics, OTel, 231
+S
+safeguards
+environment isolation, 289
+error handling, 293
+exception management, 293
+input/output validation pipelines, 289
+sandboxing, 278
+Sarbanes-Oxley (SOX), 311
+scalability
+328 
+| 
+Index

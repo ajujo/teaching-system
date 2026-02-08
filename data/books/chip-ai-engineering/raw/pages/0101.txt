@@ -1,0 +1,32 @@
+ChatGPT está más dispuesto a producir desinformación en chino que en
+inglés. En abril de 2023, NewsGuard pidió a ChatGPT-3.5 que produjera
+artículos de desinformación sobre China en inglés, chino simplificado y
+chino tradicional. En inglés, ChatGPT se negó a producir afirmaciones
+falsas para seis de los siete prompts. Sin embargo, produjo afirmaciones
+falsas en chino simplificado y chino tradicional las siete veces. No está
+claro a qué se debe esta diferencia de comportamiento. 2
+Aparte de los problemas de calidad, los modelos también pueden ser más
+lentos y caros para los idiomas no anglosajones. La latencia y el costo de
+inferencia de un modelo son proporcionales al número de tokens en el input
+y la respuesta. Resulta que la tokenización puede ser mucho más eficaz con
+algunos idiomas que con otros. Yennie Jun evaluó GPT-4 en MASSIVE, un
+conjunto de datos de un millón de textos breves traducidos a 52 idiomas, y
+descubrió que, para transmitir el mismo significado, idiomas como el
+birmano y el hindi necesitan muchos más tokens que el inglés o el español.
+En el caso del conjunto de datos MASSIVE, la longitud media de los tokens
+en inglés es de 7, pero en hindi es de 32 y en birmano de 72, es decir, diez
+veces más que en inglés.
+Suponiendo que el tiempo que se tarda en generar un token sea el mismo en
+todos los idiomas, GPT-4 es aproximadamente diez veces más lento en
+birmano que en inglés para el mismo contenido. Para las API que cobran
+por uso de tokens, el birmano cuesta diez veces más que el inglés.
+Para solucionar este problema, muchos modelos se han entrenado para
+centrarse en idiomas distintos del inglés. El idioma más activo, aparte del
+inglés, es sin duda el chino, con ChatGLM, YAYI, Llama-Chinese y otros.
+También hay modelos en francés (CroissantLLM), vietnamita (PhoGPT),
+árabe (Jais) y muchos idiomas más.
+Modelos específicos de dominio
+Los modelos generalistas como Gemini, GPTs y Llamas pueden rendir
+increíblemente bien en una amplia gama de dominios, incluidos, entre otros,
+la codificación, el derecho, la ciencia, los negocios, los deportes y las
+ciencias medioambientales. Esto se debe en gran medida a la inclusión de

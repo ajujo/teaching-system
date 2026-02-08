@@ -1,0 +1,10 @@
+figura 3-5. Un ejemplo en el que Fuyu generó una opción correcta pero recibió una
+puntuación baja debido a la limitación de los subtítulos de referencia.
+Similitud semántica
+La similitud léxica mide si dos textos se parecen, no si tienen el mismo
+significado. Piense en las dos frases "What's up?" y "How are you?" Desde
+el punto de vista léxico, son diferentes: las palabras y las letras que utilizan
+coinciden poco. Sin embargo, semánticamente, se parecen. A la inversa,
+textos de apariencia similar pueden significar cosas muy distintas. "Let's
+eat, grandma" y "Let's eat grandma" significan dos cosas completamente
+distintas.

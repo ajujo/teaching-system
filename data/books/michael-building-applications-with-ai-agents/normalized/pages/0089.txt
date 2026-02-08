@@ -1,0 +1,39 @@
+Transparency begins with clear communication of agent capabilities and constraints.
+Users should never have to guess whether an agent can handle a task or if it is operat‐
+ing within its intended scope. When agents provide explanations for their actionswhether it's how they arrived at a recommendation, why they declined a request, or
+how they interpreted an ambiguous instruction-they give users visibility into their
+reasoning. This isn't just about building trust; it also helps users refine their instruc‐
+tions, improving the quality of future interactions.
+Predictability complements transparency by ensuring that agents behave consistently
+across different scenarios. Users should be able to anticipate how an agent will
+respond based on prior interactions. Erratic or inconsistent behavior, even if techni‐
+cally correct, can quickly erode trust. For example, if an agent suggests a cautious
+approach in one context but appears overly confident in a nearly identical scenario,
+users may start to question the agent's reliability.
+However, transparency does not mean overwhelming the user with unnecessary
+details. Users don't need to see every step of the agent's reasoning process-they just
+need enough insight to feel confident in its actions. Striking this balance requires
+thoughtful interface design, using visual cues, status messages, and brief explanations
+to communicate what's happening without causing cognitive overload.
+When trust and transparency are prioritized, agent systems become more than just
+tools-they become reliable collaborators. Users feel confident delegating tasks, fol‐
+lowing agent recommendations, and relying on their outputs in both casual and highstakes scenarios. In the remainder of this section, we'll explore two key components
+of trust-building: ensuring predictability and reliability in agent behavior.
+Predictability and reliability are foundational to trust. Users must be able to count on
+agents to behave consistently, respond appropriately, and handle errors gracefully.
+Agents that act erratically, give conflicting outputs, or produce unexpected
+behavior-even if occasionally correct-can quickly undermine user confidence.
+Reliability begins with consistency in agent outputs. If a user asks an agent the same
+question under the same conditions, they should receive the same response. In cases
+where variability is unavoidable (e.g., probabilistic outputs from language models),
+agents should clearly signal when an answer is uncertain or context-dependent.
+Agents must also handle edge cases thoughtfully. For example, when they encounter
+incomplete data, conflicting instructions, or ambiguous user input, they should
+respond predictably-either by asking clarifying questions, providing a neutral fall‐
+back response, or escalating the issue appropriately.
+Another critical aspect of reliability is system resilience. Agents should be designed to
+recover from errors, maintain state across interruptions, and prevent cascading fail‐
+ures. For example, if an agent loses connection to an external API, it should notify the
+Trust in Interaction Design
+|
+67

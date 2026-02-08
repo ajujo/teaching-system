@@ -1,0 +1,32 @@
+Visualizing outliers with boxplots and the inter-quartile proximity rule
+157
+Now that we've seen how we can visualize outliers, let's see how to calculate the limits beyond
+which we find outliers at each side of the distribution.
+7.
+Let's create a function that returns the limits based on the IQR proximity rule:
+def find_limits(df, variable, fold):
+    q1 = df[variable].quantile(0.25)
+    q3 = df[variable].quantile(0.75)
+    IQR = q3 - q1
+    lower_limit = q1 - (IQR * fold)
+    upper_limit = q3 + (IQR * fold)
+    return lower_limit, upper_limit
+Note
+Remember that the first and third quartiles are equivalent to the 25th and 75th percentiles.
+That's why we use pandas' quantile to determine those values.
+8.
+With the function from step 7, we'll calculate the extreme limits for MedInc:
+lower_limit, upper_limit = find_limits(
+    X, "MedInc", 1.5)
+If we now execute lower_limit and upper_limit, we will see the values -0.7063
+and 8.013. The lower limit is beyond MedInc's minimum value, hence in the boxplot, the
+whisker only goes up to the minimum value. The upper limit, on the other hand, coincides
+with the right whisker's limit.
+Note
+Common values to multiply the IQR are 1.5, which is the default value in boxplots, or 3 if
+we want to be more conservative.
+9.
+Let's display the box plot and histogram for the HouseAge variable:
+plot_boxplot_and_hist(X, "HouseAge")
+We can see that this variable does not seem to contain outliers, and hence the whiskers in the
+box plot extend to the minimum and maximum values:

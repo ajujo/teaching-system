@@ -1,0 +1,34 @@
+Using power transformations
+99
+Note
+The transformer automatically identifies the numerical variables, which we can explore by 
+executing root_t.variables_.
+12.	 Finally, let’s transform the data:
+df_tf = root_t.transform(df)
+PowerTransformer() returns a pandas DataFrame with the transformed variables.
+How it works…
+In this recipe, we applied the square root transformation using NumPy, scikit-learn, and Feature-engine.
+We used NumPy’s sqrt() function either directly or within scikit-learn’s FunctionTrasnformer() 
+to determine the variables’ square root. Alternatively, we used Feature-engine’s PowerTransformer(), 
+setting the exponent to 0.5, that of the square root function. NumPy modified the variables directly. 
+The transformers of scikit-learn and Feature-engine modified the variables when calling the 
+transform() method.
+Using power transformations
+Power functions are mathematical transformations that follow the ​X​ t​ = ​X​ lambda​ format, where lambda can 
+take any value. The square and cube root transformations are special cases of power transformations 
+where lambda is 1/2 or 1/3, respectively. The challenge resides in finding the value for the lambda 
+parameter. The Box-Cox transformation, which is a generalization of the power transformations, finds 
+the optimal lambda  value via maximum likelihood. We will discuss the Box-Cox transformation in 
+the following recipe. In practice, we will try different lambda values and visually inspect the variable 
+distribution to determine which one offers the best transformation. In general, if the data is right-
+skewed – that is, if observations accumulate toward lower values – we use a lambda value that is 
+smaller than 1, while if the data is left-skewed – that is, there are more observations around higher 
+values – then we use a lambda value that is greater than 1.
+In this recipe, we will carry out power transformations using NumPy, scikit-learn, and Feature-engine.
+How to do it...
+Let’s begin by importing the libraries and getting the dataset ready:
+1.	
+Import the required Python libraries and classes:
+import numpy as np
+import pandas as pd
+from sklearn.datasets import fetch_california_housing

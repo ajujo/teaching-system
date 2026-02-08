@@ -1,0 +1,28 @@
+Chapter 3
+81
+Let's create a fake LLM that fails every second time:
+from langchain_core.language_models import GenericFakeChatModel
+from langchain_core.messages import AIMessage
+class MessagesIterator:
+   def __init__(self):
+       self._count = 0
+   def __iter__(self):
+       return self
+   def __next__(self):
+       self._count += 1
+       if self._count % 2 == 1:
+           raise ValueError("Something went wrong")
+       return AIMessage(content="False")
+fake_llm = GenericFakeChatModel(messages=MessagesIterator())
+When we provide this to our graph (the full code sample is available in our GitHub repo), we can
+see that the workflow continues despite encountering an exception:
+res = graph.invoke({"job_description":"fake_jd"}, config={"configurable":
+{"model_provider": "fake"}})
+print(res)
+>> ERROR:__main__:Exception Expected a Runnable, callable or dict.Instead
+got an unsupported type: <class 'str'> occured while executing analyze_
+job_description
+{'job_description': 'fake_jd', 'is_suitable': False}
+When an error occurs, sometimes it helps to try again. LLMs have a non-deterministic nature, and
+the next attempt might be successful; also, if you're using third-party APIs, various failures might
+happen on the provider's side. Let's discuss how to implement proper retries with LangGraph.

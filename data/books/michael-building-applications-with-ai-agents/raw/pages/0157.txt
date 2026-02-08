@@ -1,0 +1,25 @@
+CHAPTER 7
+Learning in Agentic Systems
+This chapter covers different techniques for approaching and integrating learning
+into agentic systems. Adding the capability for agents to learn and improve over time
+is an incredibly useful addition, but is not necessary when designing agents. Imple‐
+menting learning capabilities takes additional design, evaluation, and monitoring,
+which may or may not be worth the investment depending on the application. By 
+learning, we mean improving the performance of the agentic system through interac‐
+tion with the environment. This process enables agents to adapt to changing condi‐
+tions, refine their strategies, and enhance their overall effectiveness.
+Nonparametric learning refers to techniques to change and improve performance
+automatically without changing the parameters of the models involved. In contrast,
+parametric learning refers to techniques in which we specifically train or fine-tune
+the parameters of the foundation model. We will start by exploring nonparametric
+learning techniques, then cover parametric fine-tuning approaches, including super‐
+vised fine-tuning and direct preference optimization, that adapt model weights for
+targeted improvements.
+Nonparametric Learning
+Multiple techniques exist to do this, and we will explore several of the most common
+and useful approaches.
+Nonparametric Exemplar Learning
+The simplest of these techniques is exemplar learning. In this approach, as the agent
+performs its task, it is provided with a measure of quality, and those examples are
+used to improve future performance. These examples are used as few-shot examples
+135

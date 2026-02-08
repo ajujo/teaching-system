@@ -1,0 +1,73 @@
+Index
+484
+LLMOps  399, 400, 408, 409, 413
+adding, to LLM Twin  432
+guardrails  409, 410
+human feedback  409
+prompt monitoring  411
+LLMs, training from scratch
+concerns  408, 409
+LLM system
+building, with FTI architecture  460, 461
+LLM Twin  2-6
+CD pipeline  440-442
+CI/CD pipeline flow  432, 433
+CI/CD pipeline, testing  443
+CI pipeline  436
+CT pipeline  444-446
+inference pipeline deployment  
+strategy  366-368
+MVP, defining  7
+RAG feature pipeline architecture  127, 139
+significance  3, 4
+system architecture  16
+versus co-pilot  4
+LLM Twin architecture  23
+data collection pipeline  19
+designing, with FTI pipeline design  17
+feature pipeline  19, 20
+inference pipeline  22
+technical details  16, 17
+training pipeline  21, 22
+LLM Twin model
+deploying, to AWS SageMaker  373-384
+LLM Twin RAG feature pipeline
+dispatcher layer  160
+handlers  162
+implementing  139
+pydantic domain entities  150
+setting  139
+ZenML pipeline and steps  140, 141
+LLM Twin's data collection pipeline
+crawlers  59, 69
+designing  56-60
+dispatcher  66-68
+implementing  61
+NoSQL data warehouse documents  79, 80
+ZenML pipeline and steps  61-65
+LLM Twin service
+deploying  370
+LLM Twin's pipelines,  
+cloud deployment  413
+code, containerizing with Docker  422-427
+infrastructure  414-416
+MongoDB, setting up  416, 417
+pipelines, running on AWS  427-430
+Qdrant, setting up  417, 418
+ResourceLimitExceeded error, 
+troubleshooting after running ZenML 
+pipeline on SageMaker  430, 431
+ZenML, setting up  419-421
+logs  466
+low latency  356
+Low-Rank Adaptation (LoRA)  213-215
+M
+machine learning (ML)  1, 353
+engineering  407
+training  462
+manual dataset exploration  189, 190
+manual process  459
+manual triggers  446
+Massive Multi-Task Language Understanding 
+(MMLU)  261
+Maximum Mean Discrepancy (MMD)  470

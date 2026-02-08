@@ -1,0 +1,33 @@
+mientras el modelo más potente, pero más lento, realiza la evaluación en
+segundo plano. Si el modelo fuerte cree que la respuesta del modelo débil
+es mala, puede tomar medidas correctivas, como actualizar la respuesta con
+la del modelo fuerte. Obsérvese que el patrón opuesto también es habitual.
+Se utiliza un modelo fuerte para generar respuestas y un modelo débil que
+se ejecuta en segundo plano para realizar la evaluación.
+Utilizar el modelo más fuerte como juez nos plantea dos retos. En primer
+lugar, el modelo más fuerte se quedará sin juez elegible. En segundo lugar,
+necesitamos un método de evaluación alternativo para determinar qué
+modelo es el más sólido.
+Utilizar un modelo para juzgarse a sí mismo, la autoevaluación o la
+autocrítica, suena a trampa, sobre todo por los sesgos propios. Sin embargo,
+la autoevaluación puede ser muy útil para las comprobaciones de cordura.
+Si un modelo cree que su propia respuesta es incorrecta, puede que el
+modelo no sea tan fiable. Más allá de las comprobaciones de cordura, pedir
+a un modelo que se evalúe a sí mismo puede empujarlo a revisar y mejorar
+sus respuestas (Press et al., 2022; Gou et al., 2023; Valmeekamet et al.,
+2023).20 Este ejemplo muestra cómo podría ser la autoevaluación:
+Prompt [del usuario]: ¿Cuánto es 10+3?
+Primera respuesta [de IA]: 30
+Autocrítica [de IA]: ¿Es correcta esta respuesta?
+Respuesta final [de IA]: No, no lo es. La respuesta correcta es 13.
+Una cuestión en debate es si el juez puede ser más débil que el modelo
+juzgado. Algunos sostienen que juzgar es una tarea más fácil que generar.
+Cualquiera puede opinar si una canción es buena, pero no todo el mundo
+puede escribir una canción. Los modelos más débiles deben ser capaces de
+juzgar los outputs de los modelos más fuertes.
+Zheng et al. (2023) descubrieron que los modelos más potentes se
+correlacionan mejor con las preferencias humanas, lo que hace que las
+personas opten por los modelos más potentes que puedan permitirse. Sin
+embargo, este experimento se limitó a los jueces polivalentes. Una
+dirección de investigación que me entusiasma es la de los jueces pequeños
+y especializados. Los jueces especializados están entrenados para emitir

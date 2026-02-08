@@ -1,0 +1,15 @@
+figura 8-1. Un modelo de 7 MM de parámetros, afinado con conjunto de datos de alta
+calidad y diverso, supera al mismo modelo afinado con un conjunto de datos diverso o
+de alta calidad. Imagen de Zhou et al. (2023). La imagen está bajo licencia CC BY
+4.0.
+Cantidad de datos
+Preguntar cuántos datos se necesitan es como preguntar cuánto dinero se
+necesita. La respuesta varía mucho de una situación a otra. En un extremo,
+Jeremy Howard y Jonathan Whitaker hicieron un divertido experimento
+para demostrar que los LLMs pueden aprender de un solo ejemplo. En otro
+extremo, algunos equipos han afinado modelos con millones de ejemplos.
+Aunque millones de ejemplos parecen muchos, son pocos comparados con
+los datos que se necesitan normalmente para entrenar un modelo
+fundacional desde cero. Como referencia, Llama 2 y Llama 3 se entrenaron
+con 2 y 16 billones de tokens, respectivamente. Si cada ejemplo son 2000
+tokens, equivaldría a 1000 millones y 15 000 millones de ejemplos.

@@ -1,0 +1,29 @@
+capítulo 10. Arquitectura de ingeniería de
+IA y retroalimentación de los usuarios
+Hasta ahora, este libro ha tratado una amplia gama de técnicas para adaptar
+los modelos fundacionales a aplicaciones específicas. En este capítulo se
+explica cómo aunar estas técnicas para construir productos de éxito.
+Dada la amplia gama de técnicas y herramientas de ingeniería de IA
+disponibles, seleccionar las adecuadas puede resultar abrumador. Para
+simplificar este proceso, este capítulo adopta un enfoque gradual. Empieza
+por la arquitectura más sencilla para una aplicación de modelo fundacional,
+destaca los retos de esta arquitectura y añade gradualmente componentes
+para abordarlos.
+Podemos pasarnos una eternidad razonando sobre cómo construir una
+aplicación de éxito, pero la única forma de averiguar si una aplicación logra
+realmente su objetivo es ponerla delante de los usuarios. La opinión de los
+usuarios siempre ha sido muy valiosa para orientar el desarrollo de
+productos, pero en el caso de las aplicaciones de IA, desempeña un papel
+todavía más importante como fuente de datos para mejorar los modelos. La
+interfaz conversacional facilita la retroalimentación de los usuarios, pero
+dificulta la extracción de señales por parte de los desarrolladores. En este
+capítulo se analizarán los distintos tipos de retroalimentación para IA
+conversacional y cómo diseñar un sistema que la recopile adecuadamente
+sin perjudicar la experiencia del usuario.
+Arquitectura de ingeniería de IA
+Una arquitectura de IA completa puede ser compleja. Esta sección va
+examinando el proceso que podría seguir un equipo en producción,
+empezando por la arquitectura más sencilla y añadiendo progresivamente
+más componentes. A pesar de la diversidad de aplicaciones de IA, todas
+comparten muchos componentes comunes. La arquitectura aquí propuesta
+ha sido validada en múltiples empresas para ser general para una amplia

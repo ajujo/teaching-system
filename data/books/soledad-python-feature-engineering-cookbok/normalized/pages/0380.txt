@@ -1,0 +1,33 @@
+Cleaning and stemming text variables
+357
+To allow computers to identify words correctly, it is also necessary to set all the words in the same
+case, since the words Toy and toy would be identified as being different by a computer due to the
+uppercase T in the first one.
+Finally, to focus on the message of the text, we don't want computers to consider words differently if
+they show different conjugations. Hence, we would use word stemming as part of the preprocessing
+pipeline. Word stemming refers to reducing each word to its root or base so that the words playing,
+plays, and played become play, which, in essence, conveys the same or very similar meaning.
+In this recipe, we will learn how to remove punctuation and stop words, set words in lowercase, and
+perform word stemming with pandas and NLTK.
+Getting ready
+We are going to use the NLTK stem package to perform word stemming, which incorporates different
+algorithms to stem words from English and other languages. Each method differs in the algorithm it
+uses to find the root of the word; therefore, they may output slightly different results. I recommend
+reading more about it, trying different methods, and choosing the one that serves the project you
+are working on.
+More information about NLTK stemmers can be found at https://www.nltk.org/api/
+nltk.stem.html.
+How to do it...
+Let's begin by loading the necessary libraries and getting the dataset ready:
+1.
+Load pandas, stopwords, and SnowballStemmer from NLTK and the dataset
+from scikit-learn:
+import pandas as pd
+from nltk.corpus import stopwords
+from nltk.stem.snowball import SnowballStemmer
+from sklearn.datasets import fetch_20newsgroups
+2.
+Let's load the train set part of the 20 Newsgroup dataset into a pandas DataFrame:
+data = fetch_20newsgroups(subset='train')
+df = pd.DataFrame(data.data, columns=['text'])
+Now, let's begin with the text cleaning.

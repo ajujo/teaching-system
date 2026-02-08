@@ -1,0 +1,24 @@
+"for". La siguiente lista proporciona una visión general de cada control de
+flujo, incluyendo el secuencial como comparación:
+Secuencial
+Ejecutar la tarea B una vez finalizada la tarea A,
+probablemente porque la tarea B depende de la tarea A. Por
+ejemplo, la consulta SQL solo puede ejecutarse después de
+haber sido traducida a partir del input en lenguaje natural.
+Paralelo
+Ejecutar las tareas A y B al mismo tiempo. Por ejemplo, dada
+la consulta "Encuéntrame los productos más vendidos por
+debajo de 100 dólares", un agente podría recuperar primero
+los 100 productos más vendidos y, para cada uno de estos
+productos, recuperar su precio.
+Sentencia "if"
+Ejecutar la tarea B o la tarea C en función del output de la
+etapa anterior. Por ejemplo, el agente comprueba primero el
+informe de beneficios de NVIDIA. En función de este
+informe, puede decidir vender o comprar acciones de
+NVIDIA.
+Bucle "for"
+Repetir la ejecución de la tarea A hasta que se cumpla una
+condición específica. Por ejemplo, seguir generando
+números aleatorios hasta llegar a un número primo.
+Estos diferentes controles de flujo se visualizan en la Figura 6-11.

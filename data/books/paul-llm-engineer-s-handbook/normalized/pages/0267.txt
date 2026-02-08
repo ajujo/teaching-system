@@ -1,0 +1,33 @@
+Fine-Tuning with Preference Alignment
+236
+For absolute scoring, you would create a prompt that outlines the evaluation criteria and asks
+the LLM to rate the response on a specific scale (e.g., 1-5 or poor/fair/good/excellent). The prompt
+might look like this: "Rate the following response on a scale of 1-5 based on relevance, coherence,
+and helpfulness: [INSERT RESPONSE]." For pairwise ranking, the prompt could be: "Compare the
+following two responses. Which one is better in terms of relevance, coherence, and helpfulness?
+Response A: [INSERT RESPONSE A] Response B: [INSERT RESPONSE B]."
+The comparative nature of preference datasets makes pairwise ranking an ideal approach for
+evaluation. This method is generally more accurate and more closely correlated to human judgment than absolute scoring. Pairwise ranking mimics the natural way humans compare options,
+making it easier for both human raters and LLMs to provide consistent and meaningful evaluations.
+We can further improve the accuracy of pairwise ranking by providing a ground-truth answer
+and using chain-of-thought reasoning. This approach encourages the evaluating LLM to consider
+multiple aspects of the responses and articulate its decision-making process, leading to more
+thorough and justified evaluations. When no ground-truth answer is available, we can prompt
+the LLM to create a grading note, which is a description of the expected answer. This technique
+works particularly well in scenarios where the LLM doesn't have extensive knowledge about a
+given topic, as it forces the model to establish clear criteria for evaluation before assessing the
+responses.
+Here's a concrete implementation of an LLM-as-a-judge prompt to perform pairwise ranking:
+Instruction
+You are an answer judge. Your goal is to compare answer A and answer B. I want to know
+which answer does a better job of answering the instruction in terms of relevance, accuracy,
+completeness, clarity, structure, and conciseness.
+Instruction: {instruction}
+Answer A: {answer_a}
+Answer B: {answer_b}
+Explain your reasoning step by step and output the letter of the best answer using the following
+structure:
+Reasoning: (compare the two answers)
+Best answer: (A or B)
+Table 6.2 - Example of LLM-as-a-judge prompt for pairwise ranking with one instruction
+and two answers

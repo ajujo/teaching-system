@@ -1,0 +1,24 @@
+figura 2-14. Para generar el siguiente token, el modelo lingüístico calcula primero la
+distribución de probabilidad entre todos los tokens del vocabulario.
+Cuando se trabaja con posibles resultados de diferentes probabilidades, una
+estrategia común es elegir el resultado con la probabilidad más alta. Elegir
+siempre el resultado más probable = se denomina muestreo codicioso. Esto
+suele funcionar para tareas de clasificación. Por ejemplo, si el modelo cree
+que un correo electrónico tiene más probabilidades de ser spam que de no
+serlo, tiene sentido marcarlo como spam. Sin embargo, para un modelo
+lingüístico, el muestreo codicioso crea outputs aburridos. Imagine un
+modelo que, para cualquier pregunta que le haga, responda siempre con las
+palabras más comunes.
+En lugar de elegir siempre el siguiente token más probable, el modelo
+puede muestrear el siguiente token según la distribución de probabilidad
+sobre todos los valores posibles. Dado el contexto de "Mi color favorito
+es...", como se muestra en la Figura 2-14, si "rojo" tiene un 30 % de
+posibilidades de ser el siguiente token y "verde" tiene un 50 % de
+posibilidades, "rojo" se elegirá el 30 % de las veces, y "verde" el 50 % de
+las veces.
+¿Cómo calcula un modelo estas probabilidades? Dado un input, una red
+neuronal produce un vector logit. Cada logit corresponde a un valor posible.
+En el caso de un modelo lingüístico, cada logit corresponde a un token del
+vocabulario del modelo. El tamaño del vector logit es el tamaño del
+vocabulario. En la Figura 2-15 se muestra una visualización del vector
+logits.

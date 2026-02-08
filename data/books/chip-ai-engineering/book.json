@@ -1,0 +1,61 @@
+{
+  "$schema": "book_v1",
+  "book_id": "chip-ai-engineering",
+  "book_uuid": "934f395e-e011-4472-ae12-ff87cb98ebdf",
+  "title": "AI Engineering",
+  "authors": [
+    "Chip Huyen"
+  ],
+  "language": "en",
+  "source_file": "AI_Engineering_Chip_Huyen.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T17:52:00.390342+00:00",
+  "total_pages": 791,
+  "total_chapters": 10,
+  "sha256": "fefbf7318c769882459dfea9ccc07409cebaeca42d53996ec3d05722a3d2d898",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 786,
+    "empty_pages_count": 5,
+    "total_chars": 1237266,
+    "avg_chars_per_page": 1564.2,
+    "detected_language": "es",
+    "is_likely_scanned": false
+  },
+  "pdf_metadata": {
+    "title": "AI Engineering",
+    "author": "Chip Huyen",
+    "creator": "calibre 8.16.2",
+    "producer": "calibre 8.16.2",
+    "creation_date": "D:20260108210441+00'00'",
+    "mod_date": "D:20260108210441+00'00'"
+  },
+  "normalization": {
+    "original_chars": 1239647,
+    "normalized_chars": 1238459,
+    "chars_removed": 1188,
+    "chars_removed_ratio": 0.001,
+    "hyphen_breaks_fixed": 27,
+    "multiple_spaces_collapsed": 263,
+    "multiple_newlines_collapsed": 787,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "auto:headings",
+    "confidence": 0.75,
+    "chapters_found": 10,
+    "sections_found": 225,
+    "needs_review": false
+  },
+  "units_count": 32,
+  "units_version": "1.1",
+  "plan_date": "2026-01-30T06:30:14.008880+00:00",
+  "units_generated_at": "2026-01-30T14:34:24.525840+00:00",
+  "notes_generated_count": 3,
+  "last_notes_generated_at": "2026-02-06T12:49:19.527829+00:00"
+}

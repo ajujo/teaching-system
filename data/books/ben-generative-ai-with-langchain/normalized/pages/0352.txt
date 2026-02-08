@@ -1,0 +1,38 @@
+Chapter 8
+325
+# Initialize the evaluator LLM
+llm = ChatMistralAI(
+    model="mistral-large-latest",
+    temperature=0,
+    max_retries=2
+)
+# Create the ScoreStringEvalChain from the LLM
+chain = ScoreStringEvalChain.from_llm(llm=llm)
+# Define the finance-related input, prediction, and reference answer
+finance_input = "What is the current Federal Reserve interest rate?"
+finance_prediction = "The current interest rate is 0.25%."
+finance_reference = "The Federal Reserve's current interest rate is
+0.25%."
+# Evaluate the prediction using the scoring chain
+result_finance = chain.evaluate_strings(
+    input=finance_input,
+    prediction=finance_prediction,
+)
+print("Finance Evaluation Result:")
+print(result_finance)
+The output demonstrates how the LLM evaluator assesses the response quality with nuanced
+reasoning:
+Finance Evaluation Result:
+{'reasoning': "The assistant's response is not verifiable as it does not
+provide a date or source for the information. The Federal Reserve interest
+rate changes over time and is not static. Therefore, without a specific
+date or source, the information provided could be incorrect. The assistant
+should have advised the user to check the Federal Reserve's official
+website or a reliable financial news source for the most current rate. The
+response lacks depth and accuracy. Rating: [[3]]", 'score': 3}
+This evaluation highlights an important advantage of the LLM-as-a-judge approach: it can iden­
+tify subtle issues that simple matching would miss. In this case, the evaluator correctly identified
+that the response lacked important context. With a score of 3 out of 5, the LLM judge provides a
+more nuanced assessment than binary correct/incorrect evaluations, giving developers action­
+able feedback to improve response quality in financial applications where accuracy and proper
+attribution are critical.

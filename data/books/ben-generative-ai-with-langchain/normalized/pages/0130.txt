@@ -1,0 +1,31 @@
+Chapter 3
+103
+   [HumanMessage(content="test")],
+   config={"configurable": {"thread_id": "thread-a", "checkpoint_id":
+checkpoint_id}})
+>> History length = 0
+We can also start from an intermediate checkpoint, as shown here:
+checkpoint_id = checkpoints[-3].config["configurable"]["checkpoint_id"]
+_ = graph.invoke(
+   [HumanMessage(content="test")],
+   config={"configurable": {"thread_id": "thread-a", "checkpoint_id":
+checkpoint_id}})
+>> History length = 2
+One obvious use case for checkpoints is implementing workflows that require additional input
+from the user. We'll run into exactly the same problem as above - when deploying our produc­
+tion to multiple instances, we can't guarantee that the next request from the user hits the same
+server as before. Our graph is stateful (during the execution), but the application that wraps it
+as a web service should remain stateless. Hence, we can't store checkpoints in local memory, and
+we should write them to the database instead. LangGraph offers two integrations: SqliteSaver
+and PostgresSaver. You can always use them as a starting point and build your own integration
+if you'd like to use another database provider since all you need to implement is storing and re­
+trieving dictionaries that represent a checkpoint.
+Now, you've learned the basics and are fully equipped to develop your own workflows. We'll
+continue to look at more complex examples and techniques in the next chapter.
+Summary
+In this chapter, we dived into building complex workflows with LangChain and LangGraph, going
+beyond simple text generation. We introduced LangGraph as an orchestration framework de­
+signed to handle agentic workflows and also created a basic workflow with nodes and edges, and
+conditional edges, that allow workflow to branch based on the current state. Next, we shifted to
+output parsing and error handling, where we saw how to use built-in LangChain output parsers
+and emphasized the importance of graceful error handling.

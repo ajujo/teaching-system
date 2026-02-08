@@ -1,0 +1,16 @@
+Extracting Features from Date and Time Variables
+182
+We see the day_mo variable in the following output:
+Figure 6.6 - The top rows of a DataFrame with the new variable capturing the day of the month
+9.
+Let's extract the day of the week, with values between 0 and 6 (from Monday to Sunday), in a
+new column, then display the top rows:
+data["day_week"] = data["date"].dt.dayofweek
+data[["date", "day_mo", "day_week"]].head()
+We see the day_week variable in the following output:
+Figure 6.7 - The top rows of a DataFrame with a new variable representing days of a week
+10.	 With the variable from Step 9, we can create a binary variable that indicates whether it was
+a weekend:
+data["is_weekend"] = (
+    data[«date»].dt.dayofweek > 4).astype(int)
+data[["date", "day_week", "is_weekend"]].head()

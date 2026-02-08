@@ -1,0 +1,28 @@
+trust, 42
+V
+VAE (variational autoencoder), 318
+validation
+building knowledge graphs, 126
+internal failure protection, 294
+shadow deployments, 261
+value, optimization strategies, 31
+variational autoencoder (VAE), 318
+vector databases, 119, 318
+video agents, 4
+video-based interfaces, 53-54
+vision fine-tuning, 149
+voice agents, 4
+voice interfaces, 50-53
+W
+weight sharing, 318
+word embedding, 318
+workflow orchestration, 199-201
+X
+XGBoost, 318
+Y
+YAML (Yet Another Markup Language), 318
+Z
+zero-shot learning, 318
+Index 
+| 
+331

@@ -1,0 +1,23 @@
+11
+MLOps and LLMOps
+Throughout the book, we’ve already used machine learning operations (MLOps) components 
+and principles such as a model registry to share and version our fined-tuned large language 
+models (LLMs), a logical feature store for our fine-tuning and RAG data, and an orchestrator to 
+glue all our ML pipelines together. But MLOps is not just about these components; it takes an ML 
+application to the next level by automating data collection, training, testing, and deployment. 
+Thus, the end goal of MLOps is to automate as much as possible and let users focus on the most 
+critical decisions, such as when a change in distribution is detected and a decision must be taken 
+on whether it is essential to retrain the model or not. But what about LLM operations (LLMOps)? 
+How does it differ from MLOps?
+The term LLMOps is a product of the widespread adoption of LLMs. It is built on top of MLOps, 
+which is built on top of development operations (DevOps). Thus, to fully understand what LL-
+MOps is about, we must provide a historical context, starting with DevOps and building on the 
+term from there—which is precisely what this chapter will do. At its core, LLMOps focuses on 
+problems specific to LLMs, such as prompt monitoring and versioning, input and output guardrails 
+to prevent toxic behavior, and feedback loops to gather fine-tuning data. It also focuses on scaling 
+issues that appear when working with LLMs, such as collecting trillions of tokens for training 
+datasets, training models on massive GPU clusters, and reducing infrastructure costs. Fortunately 
+for the common folk, these issues are solved mainly by a few companies that fine-tune founda-
+tional models, such as Meta, which provides the Llama family of models. Most companies will 
+adopt these pre-trained foundational models for their use cases, focusing on LLMOps problems 
+such as prompt monitoring and versioning.

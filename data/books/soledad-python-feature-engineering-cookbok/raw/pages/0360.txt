@@ -1,0 +1,25 @@
+Embedding feature creation into a scikit-learn pipeline
+337
+Both RelevantFeatureAugmenter() and FeatureAugmenter() need two DataFrames 
+to work. The first DataFrame contains the time-series data and the unique identifiers (we loaded this 
+DataFrame in step 2). The second DataFrame should be empty and contain the unique identifiers in its 
+index (we created this DataFrame in step 3). The features are extracted from the first DataFrame with 
+the time series (when applying transform()) and subsequently added to the second DataFrame, 
+which is then used to train the logistic regression or obtain its predictions.
+Note
+The index of the empty DataFrame is used by RelevantFeatureAugmenter() and 
+FeatureAugmenter() to identify the time series from which to extract the features. 
+Hence, when applying fit() while passing X_train, features were extracted from time 
+series whose id value was in the training set. After that, the model was evaluated by observing 
+predictions made using the test set, which triggered the creation of features from time series 
+whose id value was in X_test.
+When we used fit() on the pipeline, we created features from our raw time series and trained 
+a logistic regression model with the resulting features. With the predict() method, we created 
+features from the test set and obtained the predictions of the logistic regression based on those features.
+See also
+For more details about the classes and procedures used in this recipe, visit the following links:
+•	 The tsfresh documentation: https://tsfresh.readthedocs.io/en/latest/
+api/tsfresh.transformers.html#tsfresh.transformers.relevant_
+feature_augmenter.RelevantFeatureAugmenter
+•	 A Jupyter notebook with a demo: https://github.com/blue-yonder/tsfresh/
+blob/main/notebooks/02%20sklearn%20Pipeline.ipynb

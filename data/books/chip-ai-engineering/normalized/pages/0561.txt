@@ -1,0 +1,48 @@
+tabla 8-1. Para Llama 3, las diferentes fases de entrenamiento tienen
+diferentes combinaciones óptimas de dominios.
+Preentrenamiento
+Afinado
+supervisado
+Afinado de
+preferencias
+Conocimientos
+generales
+(inglés)
+50 %
+52.66 %
+81.99 %
+Matemáticas y
+razonamiento
+25 %
+21.19 %
+5.89 %
+Codificación
+17 %
+14.89 %
+6.93 %
+Multilingüe
+8 %
+3.01 %
+5.19 %
+En forma de
+examen
+X
+8.14 %
+X
+Contexto largo
+X
+0.11 %
+X
+Es interesante observar que, durante el pre-entrenamiento y el afinado
+supervisado, el número de tokens combinados de matemáticas,
+razonamiento y código representa casi la mitad de los datos de
+entrenamiento. Aunque no conozco el porcentaje exacto de los datos de
+Internet que son matemáticas y código, creo que está muy por debajo del 50
+%. Los autores de Llama 3 compartieron que el templadodel modelo en
+pequeñas cantidades de código de alta calidad y datos matemáticos
+(entrenar el modelo utilizando una tasa de aprendizaje cada vez más
+pequeña con cada vez más código y datos matemáticos) puede aumentar el
+rendimiento de sus modelos en pruebas comparativas clave. Esto confirma
+la creencia común de que el código de alta calidad y los datos matemáticos
+son más eficaces que el texto en lenguaje natural para potenciar la
+capacidad de razonamiento del modelo.

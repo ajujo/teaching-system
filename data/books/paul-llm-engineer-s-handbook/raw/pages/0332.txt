@@ -1,0 +1,27 @@
+Chapter 8
+301
+The primary advantage of pipeline parallelism is its ability to significantly reduce the memory 
+requirements per GPU. However, this approach introduces new challenges, particularly related 
+to the sequential nature of the pipeline. One of the main issues is the occurrence of “pipeline 
+bubbles.” These bubbles arise when some GPUs are idle, waiting for activations from preceding 
+layers. This idle time can reduce the overall efficiency of the process.
+Micro-batching was developed to mitigate the impact of pipeline bubbles. By splitting the input 
+batch into smaller sub-batches, micro-batching ensures that GPUs remain busier, as the next 
+sub-batch can begin processing before the previous one is fully completed.
+Figure 8.6 – Illustration of pipeline parallelism with micro-batching.
+Figure 8.6 shows an example of pipeline parallelism with micro-batching. In this example, the 
+pipeline has four stages (F0, F1, F2, F3), and the input batch is divided into four micro-batches. 
+GPU 0 will process forward paths F0,0, F0,1, F0,2, and F0,3, sequentially. Once F0,0 is complete, 
+GPU 1 can immediately start processing F1,0 and so on. After completing these forward passes, 
+GPU 0 waits for the other GPUs to finish their respective forward computations before starting 
+the backward paths (B0,3, B0,2, B0,1, and B0,0).
+Pipeline parallelism is implemented in distributed training frameworks like Megatron-LM, Deep-
+Speed (ZeRO), and PyTorch through the dedicated Pipeline Parallelism for PyTorch (PiPPy) 
+library. At the time of writing, only certain inference frameworks like TensorRT-LLM support 
+pipeline parallelism.
+Tensor parallelism
+Introduced by Shoeby, Patwary, Puri et al. in the Megatron-LM paper (2019), tensor parallelism 
+(TP) is another popular technique to distribute the computation of LLM layers across multiple 
+devices. In contrast to pipeline parallelism, TP splits the weight matrices found in individual 
+layers. This enables simultaneous computations, significantly reducing memory bottlenecks and 
+increasing processing speed.

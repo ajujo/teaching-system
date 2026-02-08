@@ -1,0 +1,27 @@
+Colaboración
+De este modo, los expertos en la materia pueden colaborar y
+ayudar a diseñar los prompts sin distraerse con el código.
+Si tiene muchos prompts en varias aplicaciones, es útil asignar metadatos a
+cada prompt para saber a qué prompt y caso de uso está destinado. También
+puede organizar sus prompts para que sea posible buscarlos por modelos,
+aplicaciones, etc. Por ejemplo, puede envolver cada prompt en un objeto
+Python de la siguiente manera:
+from pydantic import BaseModel
+class Prompt(BaseModel):
+    model_name: str
+    date_created: datetime
+    prompt_text: str
+    application: str
+    creator: str
+Su plantilla de prompts también puede contener otra información sobre
+cómo debe utilizarse el prompt, como la siguiente:
+La URL del endpoint del modelo
+Los parámetros ideales de muestreo, como la temperatura o el topp
+El esquema de input
+El esquema de output previsto (para outputs estructurados)
+Varias herramientas han propuesto formatos de archivo .prompt especiales
+para almacenar los prompts. Revise Dotprompt de Google Firebase,
+Humanloop, Continue Dev y Promptfile. Este es un ejemplo de archivo
+Firebase Dotprompt:
+---
+model: vertexai/gemini-1.5-flash

@@ -1,0 +1,16 @@
+Tooling and Installation
+38
+Within the steps module, we only used what we needed from the llm_engineering Python 
+module (similar to how you use a Python package). In the pipelines module, we only aggregated 
+ZenML steps to glue them into the final pipeline. Using this design, we can easily swap ZenML 
+with another orchestrator or use our application logic in other use cases, such as a REST API. We 
+only have to replace the ZenML code without touching the llm_engineering module where all 
+our logic resides. This folder structure is reflected at the root of the LLM-Engineers-Handbook 
+repository, as illustrated in Figure 2.6:
+Figure 2.6: LLM-Engineers-Handbook repository folder structure
+One last thing to consider when writing ZenML steps is that if you return a value, it should be se-
+rializable. ZenML can serialize most objects that can be reduced to primitive data types, but there 
+are a few exceptions. For example, we used UUID types as IDs throughout the code, which aren’t 
+natively supported by ZenML. Thus, we had to extend ZenML’s materializer to support UUIDs. 
+We raised this issue to ZenML. Hence, in future ZenML versions, UUIDs will be supported, but it 
+was an excellent example of the serialization aspect of transforming function outputs in artifacts.

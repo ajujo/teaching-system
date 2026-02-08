@@ -1,0 +1,35 @@
+Chapter 4
+147
+        metadata={"source": "Neural Network Review 2021", "page": 42}
+    ),
+    Document(
+        page_content="BERT uses bidirectional training of the Transformer,
+masked language modeling, and next sentence prediction tasks.",
+        metadata={"source": "Introduction to NLP", "page": 137}
+    ),
+    Document(
+        page_content="GPT models are autoregressive transformers that
+predict the next token based on previous tokens.",
+        metadata={"source": "Large Language Models Survey", "page": 89}
+    )
+]
+Source attribution
+Source attribution explicitly connects generated information to the retrieved sources, helping
+users verify facts and understand where information comes from. Let's set up our foundation
+for source attribution. We'll initialize a vector store with our documents and create a retriever
+configured to fetch the top 3 most relevant documents for each query. The attribution prompt
+template instructs the model to use citations for each claim and include a reference list:
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
+from langchain_community.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings
+# Create a vector store and retriever
+embeddings = OpenAIEmbeddings()
+vector_store = FAISS.from_documents(documents, embeddings)
+retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+# Source attribution prompt template
+attribution_prompt = ChatPromptTemplate.from_template("""
+You are a precise AI assistant that provides well-sourced information.
+Answer the following question based ONLY on the provided sources. For each
+fact or claim in your answer,

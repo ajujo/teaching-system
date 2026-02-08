@@ -1,0 +1,29 @@
+Chapter 8
+333
+    final_response = "Typically, 200-400mg every 4-6 hours, not exceeding 
+3200mg per day."
+    return {
+        "trajectory": trajectory,
+        "response": final_response
+    }
+# Note: This is an async function, so in a notebook you'd need to use 
+await
+experiment_results = await client.aevaluate(
+    run_graph_with_trajectory,
+    data=trajectory_dataset.id,
+    evaluators=[trajectory_subsequence],
+    experiment_prefix="healthcare-agent-trajectory",
+    num_repetitions=1,
+    max_concurrency=4,
+)
+We can also analyze results on the dataset, which we can download from LangSmith:
+results_df = experiment_results.to_pandas()
+print(f"Average trajectory match score: {results_df['feedback.trajectory_
+subsequence'].mean()}")
+In this case, this is nonsensical, but this is to illustrate the idea.
+The following screenshot visually demonstrates what trajectory evaluation results look like in 
+the LangSmith interface. It shows the perfect trajectory match score (1.00), which validates that 
+the agent followed the expected path:
+Figure 8.1: Trajectory evaluation in LangSmith
+Please note that LangSmith displays the actual trajectory steps side by side with the reference 
+trajectory and that it includes real execution metrics like latency and token usage.

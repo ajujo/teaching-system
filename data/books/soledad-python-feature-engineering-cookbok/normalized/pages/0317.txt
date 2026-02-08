@@ -1,0 +1,37 @@
+Extracting Features from Relational Data with Featuretools
+294
+    target_dataframe_name=»invoices»,
+    agg_primitives=[],
+    trans_primitives=date_primitives,
+)
+Note
+In step 4, we entered the invoice_date variable as a time variable. Thus, featuretools
+will use this variable to create date- and time-related features.
+11.	 Let's display the names of the created features:
+feature_defs
+In the following output, we see the names of the original and time features:
+[<Feature: customer_id>,
+<Feature: DAY(first_data_time)>,
+<Feature: DAYS_IN_MONTH(first_data_time)>,
+<Feature: DISTANCE_TO_HOLIDAY(
+     first_data_time, holiday=Boxing Day, country=UK)>,
+<Feature: HOUR(first_data_time)>,
+<Feature: IS_FEDERAL_HOLIDAY(
+     first_data_time, , country=UK)>,
+<Feature: MINUTE(first_data_time)>,
+<Feature: MONTH(first_data_time)>,
+<Feature: PART_OF_DAY(first_data_time)>,
+<Feature: WEEKDAY(first_data_time)>,
+<Feature: YEAR(first_data_time)>]
+Go ahead and execute feature_matrix.head() to take a look at the resulting DataFrame
+with the features created from the invoice date. The DataFrame is quite big, so for reasons of
+space, we'll only display a few columns in the book.
+12.	 Let's display the resulting DataFrame containing three of the new features:
+columns = [
+    "DISTANCE_TO_HOLIDAY(first_data_time,
+        holiday=Boxing Day, country=UK)",
+    "HOUR(first_data_time)",
+    "IS_FEDERAL_HOLIDAY(first_data_time,
+        country=UK)",
+]
+feature_matrix[columns].head()

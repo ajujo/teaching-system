@@ -1,0 +1,23 @@
+Discretizing the variable into arbitrary intervals
+133
+9.
+Finally, we can count and plot the number of observations within each interval:
+X_t['Population_range'
+    ].value_counts().sort_index().plot.bar()
+plt.xticks(rotation=0)
+plt.ylabel("Number of observations")
+plt.title("Population")
+plt.show()
+In the following figure, we can see that the number of observations per interval varies:
+Figure 4.7 - The proportion of observations per interval after the discretization.
+To wrap up the recipe, let's discretize multiple variables utilizing feature-engine:
+10.	 Let's import the transformer:
+from feature_engine.discretisation import
+    ArbitraryDiscretiser
+11.	 Let's create a dictionary with the variables as keys and the interval limits as values:
+intervals = {
+    "Population": [0, 200, 500, 1000, 2000, np.inf],
+    "MedInc": [0, 2, 4, 6, np.inf]}
+12.	 Let's set up the discretizer with the limits from step 11:
+discretizer = ArbitraryDiscretiser(
+    binning_dict=intervals, return_boundaries=True)

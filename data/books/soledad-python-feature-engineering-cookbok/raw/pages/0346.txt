@@ -1,0 +1,37 @@
+Automatically creating and selecting predictive features from time-series data
+323
+The output of step 8 consists of a DataFrame with 135 rows and 968 features, from the original 3,945 
+that are returned by default by tsfresh (you can check that out by executing features.shape). 
+Go ahead and use this DataFrame to train another logistic regression model to predict office occupancy.
+How it works...
+In this recipe, we created hundreds of features from a time series and then selected the most relevant 
+features based on non-parametric statistical tests. The feature creation and selection procedures were 
+carried out automatically by tsfresh.
+To create the features, we used tsfresh’s extract_features function, which we described in 
+detail in the Extracting hundreds of features automatically from a time series recipe.
+To select features, we used the select_features function, also from tsfresh. This function 
+applies different statistical tests, depending on the nature of the feature and the target. Briefly, if the 
+feature and target are binary, it tests their relationship with Fisher’s exact test. If either the feature 
+or the target is binary, and the other variable is continuous, it tests their relationship by using the 
+Kolmogorov-Smirnov test. If neither the features nor the target is binary, it uses the Kendall rank test.
+The result of these tests is a vector with one p-value per feature. Next, tsfresh applies the Benjamini-
+Yekutieli procedure, which aims to reduce the false discovery rate, to select which features to keep based 
+on the p-values. This feature selection procedure has some advantages, the main one being that statistical 
+tests are fast to compute, and therefore the selection algorithm is scalable and can be parallelized. Another 
+advantage is that the tests are non-parametric and hence suitable for linear and non-linear models.
+However, feature selection methods that evaluate each feature individually are unable to remove 
+redundant features. In fact, many of the features automatically created by tsfresh will be highly 
+correlated, like those capturing the different quantiles of light consumption. Hence, they will show 
+similar p-values and be retained. But in practice, we only need one or a few of them to capture the 
+information of the time series. I’d recommend following up the tsfresh selection procedure with 
+alternative feature selection methods that are able to pick up feature interactions.
+Finally, in step 8, we combined the feature creation step (step 3) with the feature selection step (step 
+4) by using the extract_relevant_features function. extract_relevant_features 
+applies the extract_features function to create the features from each time series and imputes 
+them. Next, it applies the select_features function to return a DataFrame containing one 
+row per unique identifier, and the features that were selected for each time series. Note that different 
+features can be selected for different time series.
+See also
+The selection algorithm from tsfresh offers a quick method to remove irrelevant features. However, 
+it does not find the best feature subset for the classification or regression task. Other feature selection 
+methods can be applied at the back of tsfresh’s algorithm to reduce the feature space further.

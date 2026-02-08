@@ -1,0 +1,31 @@
+Modelos base
+En el Capítulo 4 ya se abordaron los criterios de selección de modelos que
+pueden aplicarse tanto a los métodos basados en prompts como al afinado.
+Algunos de los criterios analizados son el tamaño del modelo, las licencias
+y el rendimiento en pruebas comparativas. Al principio de un proyecto de
+IA, cuando aún está explorando la viabilidad de su tarea, es útil empezar
+con el modelo más potente que pueda permitirse. Si este modelo tiene
+dificultades para producir buenos resultados, es probable que los modelos
+más débiles tengan resultados aún peores. Si el modelo más sólido satisface
+sus necesidades, puede explorar modelos más débiles comparándolo con el
+modelo inicial.
+Para hacer un afinado, los modelos de partida varían para diferentes
+proyectos. El documento de OpenAI sobre las mejores prácticas de afinado
+muestra ejemplos de dos rutas de desarrollo: la ruta de progresión y la ruta
+de destilación.
+La ruta de progresión es la siguiente:
+1. Pruebe su código de afinado utilizando el modelo más barato y
+rápido para asegurarse de que el código funcione como se espera.
+35
+2. Pruebe sus datos ajustando un modelo intermedio. Si la pérdida de
+entrenamiento no disminuye con más datos, es posible que algo
+vaya mal.
+3. Realice algunos experimentos más con el mejor modelo para ver
+hasta dónde puede llevar el rendimiento.
+4. Una vez obtenga buenos resultados, haga una prueba de
+entrenamiento con todos los modelos para encontrar el punto
+precio/rendimiento y seleccione el modelo que mejor se adapte a
+su caso de uso.
+La ruta de destilación podría ser la siguiente:
+1. Empiece con un conjunto de datos pequeño y el modelo más
+potente que pueda permitirse. Entrene el mejor modelo posible con

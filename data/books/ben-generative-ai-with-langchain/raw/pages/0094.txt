@@ -1,0 +1,25 @@
+3
+Building Workflows with 
+LangGraph
+So far, we’ve learned about LLMs, LangChain as a framework, and how to use LLMs with LangC­
+hain in a vanilla mode (just asking to generate a text output based on a prompt). In this chapter, 
+we’ll start with a quick introduction to LangGraph as a framework and how to develop more 
+complex workflows with LangChain and LangGraph by chaining together multiple steps. As an 
+example, we’ll discuss parsing LLM outputs and look into error handling patterns with LangChain 
+and LangGraph. Then, we’ll continue with more advanced ways to develop prompts and explore 
+what building blocks LangChain offers for few-shot prompting and other techniques. 
+We’re also going to cover working with multimodal inputs, utilizing the long context, and ad­
+justing your workloads to overcome limitations related to the context window size. Finally, we’ll 
+look into the basic mechanisms of managing memory with LangChain. Understanding these 
+fundamental and key techniques will help us read LangGraph code, understand tutorials and 
+code samples, and develop our own complex workflows. We’ll, of course, discuss what LangGraph 
+workflows are and will continue building on that skill in Chapters 5 and 6.
+In a nutshell, we’ll cover the following main topics in this chapter:
+•	
+LangGraph fundamentals
+•	
+Prompt engineering
+•	
+Working with short context windows
+•	
+Understanding memory mechanisms

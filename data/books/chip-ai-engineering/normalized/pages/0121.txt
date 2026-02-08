@@ -1,0 +1,40 @@
+tabla 2-5. Ejemplos del número de tokens de entrenamiento para modelos
+con distintos números de parámetros. Fuente: "Training Compute-Optimal
+Large Language Models" (DeepMind, 2022).
+Modelo
+Tamaño (nº
+parámetros)
+Tokens de
+entrenamiento
+LaMDA (Thoppilan et
+al., 2022)
+137 000 millones
+168 000 millones
+GPT-3 (Brown et al.,
+2020)
+175 000 millones
+300 000 millones
+Jurassic (Lieber et al.,
+2021)
+178 000 millones
+300 000 millones
+Gopher (Rae et al.,
+2021)
+280 000 millones
+300 000 millones
+MT-NLG 530B (Smith
+et al., 2022)
+530 000 millones
+270 000 millones
+Chinchilla
+70 000 millones
+1.4 billones
+NOTA
+Aunque esta sección se centra en la escala de los datos, la cantidad no es lo
+único que importa. La calidad y la diversidad de los datos también son
+importantes. Cantidad, calidad y diversidad son los tres objetivos de oro de
+los datos de entrenamiento. Se analizan con más detalle en el Capítulo 8.
+El pre-entrenamiento de grandes modelos requiere computación. Una forma
+de medir la cantidad de computación necesaria es considerar el número de
+máquinas, por ejemplo, GPU, CPUs y TPU. Sin embargo, las distintas
+máquinas tienen capacidades y costos muy diferentes. Una GPU NVIDIA

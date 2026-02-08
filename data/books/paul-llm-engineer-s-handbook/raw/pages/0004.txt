@@ -1,0 +1,22 @@
+Forewords
+As my co-founder at Hugging Face, Clement Delangue, and I often say, AI is becoming the default 
+way of building technology.
+Over the past 3 years, LLMs have already had a profound impact on technology, and they are 
+bound to have an even greater impact in the coming 5 years. They will be embedded in more and 
+more products and, I believe, at the center of any human activity based on knowledge or creativity.
+For instance, coders are already leveraging LLMs and changing the way they work, focusing on 
+higher-order thinking and tasks while collaborating with machines. Studio musicians rely on 
+AI-powered tools to explore the musical creativity space faster. Lawyers are increasing their impact 
+through retrieval-augmented generation (RAG) and large databases of case law.
+At Hugging Face, we’ve always advocated for a future where not just one company or a small 
+number of scientists control the AI models used by the rest of the population, but instead for a 
+future where as many people as possible—from as many different backgrounds as possible—are 
+capable of diving into how cutting-edge machine learning models actually work.
+Maxime Labonne and Paul Iusztin have been instrumental in this movement to democratize 
+LLMs by writing this book and making sure that as many people as possible can not only use 
+them but also adapt them, fine-tune them, quantize them, and make them efficient enough to 
+actually deploy in the real world.
+Their work is essential, and I’m glad they are making this resource available to the community. 
+This expands the convex hull of human knowledge.
+Julien Chaumond
+Co-founder and CTO, Hugging Face

@@ -1,0 +1,33 @@
+Imputing Missing Data
+14
+9.	
+Let’s restrict the imputation to the categorical variables:
+ct = ColumnTransformer(
+    [("imputer",imputer, categorical_vars)],
+    remainder="passthrough"
+    ).set_output(transform="pandas")
+Note
+To impute missing data with a string instead of the most frequent category, set SimpleImputer() 
+as follows: imputer = SimpleImputer(strategy="constant", fill_
+value="missing").
+10.	 Fit the imputer to the train set so that it learns the most frequent values:
+ct.fit(X_train)
+11.	 Let’s take a look at the most frequent values learned by the imputer:
+ct.named_transformers_.imputer.statistics_
+The previous command returns the most frequent values per variable:
+array(['b', 'u', 'g', 'c', 'v', 't', 'f', 'f', 'g'], 
+dtype=object)
+12.	 Finally, let’s replace missing values with the frequent categories:
+X_train_t = ct.transform(X_train)
+X_test_t = ct.transform(X_test)
+Make sure to inspect the resulting DataFrames by executing X_train_t.head().
+Note
+The ColumnTransformer() changes the names of the variables. The imputed variables 
+show the prefix imputer and the untransformed variables the prefix remainder.
+Finally, let’s impute missing values using feature-engine.
+13.	 Let’s set up the imputer to replace the missing data in categorical variables with their most 
+frequent value:
+imputer = CategoricalImputer(
+    imputation_method="frequent",
+    variables=categorical_vars,
+)

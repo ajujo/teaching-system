@@ -1,0 +1,13 @@
+Advanced Applications and Multi-Agent Systems
+260
+We can control the maximum number of super-steps, the maximum number of paths in the tree 
+to be explored (in particular, the maximum number of candidates for the final solution to be 
+generated), and the number of candidates per step. Potentially, we could extend our config and 
+control the maximum depth of the tree. Let’s run our graph:
+task = "Write a strategic one-pager of building an AI startup"
+result = await graph.ainvoke({"task": task}, config={"recursion_limit": 
+10000, "configurable": {"max_paths": 10}})
+print(len(result["candidates"]))
+print(result["best_candidate"])
+We can also visualize the explored tree:
+Figure 6.9: Example of an explored execution tree

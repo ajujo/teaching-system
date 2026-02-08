@@ -1,0 +1,32 @@
+paralelización. En esta sección solo veremos algunas de ellas como
+referencia. Dos familias de estrategias de paralelización que pueden
+aplicarse a todos los modelos son el paralelismo de datos y el paralelismo
+de modelos. Una familia de estrategias aplicadas específicamente a los
+LLMs es el paralelismo de contexto y secuencia.
+Una técnica de optimización puede implicar múltiples estrategias de
+paralelismo.
+El paralelismo de réplicas es la estrategia más sencilla de aplicar.
+Simplemente crea múltiples réplicas del modelo que desea servir. 27 Más
+réplicas le permiten gestionar más solicitudes al mismo tiempo,
+potencialmente a costa de utilizar más chips. Intentar encajar modelos de
+diferentes tamaños en diferentes chips es un problema de empaquetado, que
+puede complicarse con más modelos, más réplicas y más chips.
+Digamos que tiene una mezcla de modelos de diferentes tamaños (por
+ejemplo, 8 MM, 13 MM, 34 MM y 70 MM de parámetros) y acceso a GPU
+de diferentes capacidades de memoria (por ejemplo, 24 GB, 40 GB, 48 GB
+y 80 GB). Para simplificar, supongamos que todos los modelos tienen la
+misma precisión, 8 bits:
+Si tiene un número fijo de chips, debe decidir cuántas réplicas
+crear para cada modelo y qué GPU utilizar para cada réplica con el
+fin de maximizar sus métricas. Por ejemplo, ¿debería colocar tres
+modelos de 13 MM en una GPU de 40 GB o reservar esta GPU
+para un modelo de 34 MM?
+Si dispone de un número fijo de réplicas de modelos, debe decidir
+qué chips adquirir para minimizar el costo. Sin embargo, esta
+situación se produce con poca frecuencia.
+A menudo, su modelo es tan grande que no cabe en una sola máquina. El
+paralelismo de modelos se refiere a la práctica de dividir el mismo modelo
+en varias máquinas. La inserción de los modelos en los chips puede
+convertirse en un problema todavía mayor con el paralelismo de modelos.
+Hay varias formas de dividir un modelo. El enfoque más común para la
+inferencia es el paralelismo de tensores, también conocido como

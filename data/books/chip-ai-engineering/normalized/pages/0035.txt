@@ -1,0 +1,31 @@
+NOTA
+En este libro se utiliza el término modelos fundacionales para referirse
+tanto a los grandes modelos lingüísticos como a los grandes modelos
+multimodales.
+Tenga en cuenta que CLIP no es un modelo generativo: no se ha entrenado
+para generar outputs abiertos. CLIP es un modelo de incrustación entrenado
+para producir incrustaciones conjuntas de textos e imágenes. El
+"Introducción a la incrustación" habla en detalle de las incrustaciones. Por
+ahora, pueden pensar en las incrustaciones como vectores que pretenden
+captar los significados de los datos originales. Los modelos de incrustación
+multimodal como CLIP son la base de los modelos generativos
+multimodales, como Flamingo, LLaVA y Gemini (anteriormente Bard).
+Los modelos fundacionales también marcan la transición de los modelos
+para tareas específicas a los modelos de uso general. Antes, los modelos
+solían desarrollarse para tareas específicas, como el análisis de sentimientos
+o la traducción. Un modelo entrenado para el análisis de sentimientos no
+podría hacer traducciones, y viceversa.
+Los modelos fundacionales, gracias a su escala y a la forma en que están
+entrenados, son capaces de realizar una amplia gama de tareas. Los
+modelos de uso general desde el primer momento pueden funcionar
+relativamente bien para muchas tareas. Un LLM puede hacer tanto análisis
+de sentimientos como traducción. Sin embargo, a menudo se puede ajustar
+un modelo de uso general para maximizar su rendimiento en una tarea
+específica.
+La Figura 1-4 muestra las tareas utilizadas por la prueba comparativa
+Super-NaturalInstructions para evaluar los modelos fundacionales (Wang et
+al., 2022), lo que da una idea de los tipos de tareas que puede realizar un
+modelo fundacional.
+Imagine que trabaja con un minorista para crear una aplicación que genere
+descripciones de productos para su sitio web. Un modelo estándar puede
+generar descripciones precisas, pero podría no conseguir captar la voz de la

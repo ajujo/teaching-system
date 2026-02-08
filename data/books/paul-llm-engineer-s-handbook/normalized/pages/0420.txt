@@ -1,0 +1,29 @@
+Chapter 10
+389
+Also, for convenience, we wrap it under a poe command:
+poetry poe test-sagemaker-endpoint
+Now, we must understand how we implement the business microservice using FastAPI. This
+microservice will send HTTP requests to the LLM microservice defined above and call the RAG
+retrieval module implemented in Chapter 9.
+Building the business microservice using FastAPI
+To implement a simple FastAPI application that proves our deployment strategy, we first have to
+define a FastAPI instance as follows:
+from fastapi import FastAPI
+app = FastAPI()
+Next, we define the QueryRequest and QueryResponse classes using Pydantic's BaseModel. These
+classes represent the request and response structure for the FastAPI endpoints:
+class QueryRequest(BaseModel):
+    query: str
+class QueryResponse(BaseModel):
+    answer: str
+Now that we've defined our FastAPI components and have all the SageMaker elements in place,
+let's reiterate over the call_llm_service() and rag() functions we've presented in Chapter 9
+and couldn't run because we haven't deployed our fine-tuned LLM. Thus, as a refresher, the call_
+llm_service() function wraps the inference logic used to call the SageMaker LLM microservice:
+def call_llm_service(query: str, context: str | None) -> str:
+    llm = LLMInferenceSagemakerEndpoint(
+        endpoint_name=settings.SAGEMAKER_ENDPOINT_INFERENCE, inference_
+component_name=None
+    )
+    answer = InferenceExecutor(llm, query, context).execute()
+    return answer

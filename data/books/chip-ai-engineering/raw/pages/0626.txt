@@ -1,0 +1,29 @@
+La MBU se calcula del siguiente modo:
+(recuento de parámetros × bytes/parámetro × tokens/s) / (ancho de 
+banda teórico)
+Por ejemplo, si utiliza un modelo de 7 MM de parámetros en FP16 (dos
+bytes por parámetro) y consiguen 100 tokens/s, el ancho de banda utilizado
+es:
+7 MM × 2 × 100 = 700 GB/s
+Esto recalca la importancia de la cuantización (analizada en el Capítulo 7).
+Menos bytes por parámetro significa que su modelo consume menos ancho
+de banda.
+Si esto se hace en una GPU A100-80GB con un ancho de banda de
+memoria teórico de 2 TB/s, la MBU es:
+(700 GB/s) / (2 TB/s) = 70 %.
+Las relaciones entre throughput (tokens/s) y MBU y entre throughput y
+MFU son lineales, por lo que algunas personas podrían utilizar throughput
+para referirse a MBU y MFU.
+Lo que se considera una buena MFU y MBU depende del modelo, el
+hardware y la carga de trabajo. Las cargas de trabajo limitadas por el
+cálculo suelen tener una MFU más alta y una MBU más baja, mientras que
+las cargas de trabajo limitadas por el ancho de banda suelen mostrar una
+MFU más baja y una MBU más alta.
+Como el entrenamiento puede beneficiarse de una optimización más
+eficiente (por ejemplo, una mejor lotificación) al tener cargas de trabajo
+más predecibles, la MFU para el entrenamiento suele ser mayor que la
+MFU para la inferencia. En el caso de la inferencia, dado que el llenado
+previo está limitado al cómputo y la decodificación al ancho de banda de la
+memoria, la MFU durante el llenado previo suele ser mayor que la MFU
+durante la decodificación. Para el entrenamiento de modelos, en el
+momento de escribir este artículo, una MFU superior al 50 % se considera

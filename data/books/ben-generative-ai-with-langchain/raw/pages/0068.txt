@@ -1,0 +1,34 @@
+Chapter 2
+41
+question_with_context_template = PromptTemplate.from_template( 
+"Context information: {context}\n\nAnswer this question concisely: 
+{question}" )
+# Generate prompts by filling in variables
+prompt_text = question_template.format(question="What is the capital 
+of France?")
+Templates matter – here’s why:
+•	
+Consistency: They standardize prompts across your application.
+•	
+Maintainability: They allow you to change the prompt structure in one place instead of 
+throughout your codebase.
+•	
+Readability: They clearly separate template logic from business logic.
+•	
+Testability: It is easier to unit test prompt generation separately from LLM calls.
+In production applications, you’ll often need to manage dozens or hundreds of prompts. Tem­
+plates provide a scalable way to organize this complexity.
+Chat prompt templates
+For chat models, we can create more structured prompts that incorporate different roles:
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+template = ChatPromptTemplate.from_messages([
+    ("system", "You are an English to French translator."),
+    ("user", "Translate this to French: {text}")
+])
+chat = ChatOpenAI()
+formatted_messages = template.format_messages(text="Hello, how are you?")
+response = chat.invoke(formatted_messages)
+print(response)
+Let’s start by looking at LangChain Expression Language (LCEL), which provides a clean, intu­
+itive way to build LLM applications.

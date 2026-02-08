@@ -1,0 +1,32 @@
+20  Los contenidos generados por IA se multiplican por la facilidad de la
+traducción automática. La IA puede utilizarse para generar un artículo y luego
+traducirlo a varios idiomas, como se muestra en "A Shocking Amount of the
+Web Is Machine Translated" (Thompson et al., 2024).
+21  Un amigo utilizó esta analogía: un modelo pre-entrenado habla como una
+página web, no como un ser humano.
+22  Los fundamentos de RL quedan fuera del ámbito de este libro, pero lo más
+destacado es que el RL permite hacer optimizaciones frente a objetivos difíciles
+como las preferencias humanas.
+23  Hay situaciones en las que los modelos desalineados pueden ser mejores. Por
+ejemplo, si se quiere evaluar el riesgo de que la gente utilice la IA para difundir
+información errónea, se puede intentar construir un modelo que sea lo mejor
+posible inventando noticias falsas, para ver lo convincente que puede ser la IA.
+24  Una imagen visual que tengo en mente al pensar en la temperatura, que no es
+del todo científica, es que una temperatura más alta hace que la distribución de
+probabilidades sea más caótica, lo que permite que afloren tokens de menor
+probabilidad.
+25  Realización de una función arg max.
+26  El problema del subdesbordamiento se produce cuando un número es
+demasiado pequeño para ser representado en un formato determinado, lo que
+hace que se redondee a cero.
+27  Para ser más concretos, en el momento de escribir esto, la API de OpenAI solo
+muestra los logprobs de hasta los 20 tokens más probables. Antes permitía
+obtener los logprobs de un texto arbitrario proporcionado por los usuarios, pero
+dejó de hacerlo en septiembre de 2023. Anthropic no expone los logprobs de sus
+modelos.
+28  Las API de modelos de pago suelen cobrar por número de tokens de output
+29  Hay cosas que se pueden hacer para reducir el costo de generar varios outputs
+para el mismo input. Por ejemplo, el input se puede procesar solo una vez y
+reutilizarse para todos los outputs.
+30  En el momento de escribir esto, en la API de OpenAI, puede establecer el
+parámetro best_of en un valor específico, digamos 10, para pedir a los modelos

@@ -1,0 +1,5 @@
+figura 10-11. Rastreo de una solicitud visualizada por LangSmith.
+Detección de deriva
+Cuantas más partes tenga un sistema, más cosas pueden cambiar. En una
+aplicación de IA pueden ser:
+Cambios en el prompt del sistema

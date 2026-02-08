@@ -1,0 +1,32 @@
+Optimización del servicio de inferencia
+La mayoría de las técnicas de optimización a nivel de servicio se centran en
+la gestión de recursos. Dada una cantidad fija de recursos (computación y
+memoria) y unas cargas de trabajo dinámicas (solicitudes de inferencia de
+usuarios que pueden implicar diferentes modelos), el objetivo es asignar
+eficientemente los recursos a estas cargas de trabajo para optimizar la
+latencia y el costo. A diferencia de muchas técnicas a nivel de modelo, las
+técnicas a nivel de servicio no modifican los modelos y no deberían alterar
+la calidad del output.
+Agrupación por lotes
+Una de las formas más sencillas de reducir costos es la agrupación por
+lotes. En producción, su servicio de inferencia puede recibir múltiples
+solicitudes simultáneamente. En lugar de procesar cada solicitud por
+separado, agrupar las solicitudes que llegan más o menos al mismo tiempo
+puede reducir significativamente el throughput del servicio. Si procesar
+cada solicitud por separado es como si cada uno condujera su propio coche,
+agruparlas por lotes es como ponerlas juntas en un autobús. Un autobús
+puede transportar más personas, pero también puede alargar el trayecto de
+cada una. Sin embargo, si se hace de forma inteligente, el impacto en la
+latencia puede ser mínimo.
+Las tres técnicas principales de agrupación por lotes son: agrupación
+estática, agrupación dinámica y agrupación continua.
+La técnica de agrupación más sencilla es el loteo estático. El servicio
+agrupa un número fijo de inputs en un lote. Es como un autobús que espera
+a que se llenen todos los asientos antes de partir. El inconveniente del loteo
+estático es que todas las solicitudes tienen que esperar a que el lote esté
+lleno para ejecutarse. En consecuencia, la primera petición de un lote se
+retrasa hasta que llega la última petición del lote, sin importar lo tarde que
+llegue la última petición.
+Por su parte, el loteo dinámico establece una ventana temporal máxima para
+cada lote. Si el tamaño del lote es cuatro y la ventana es de 100 ms, el
+servidor procesa el lote cuando tiene cuatro solicitudes o cuando han pasado

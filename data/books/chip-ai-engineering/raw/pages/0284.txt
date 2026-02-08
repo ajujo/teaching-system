@@ -1,0 +1,26 @@
+figura 4-6. Un servicio de inferencia ejecuta el modelo y proporciona una interfaz
+para que los usuarios accedan a él.
+Después de desarrollar un modelo, un desarrollador puede optar por hacerlo
+open source, hacerlo accesible a través de una API, o ambas cosas. Muchos
+creadores de modelos también son proveedores de servicios de modelos.
+Cohere y Mistral hacen algunos modelos de código abierto y proporcionan
+API para otros. OpenAI suele ser conocida por sus modelos comerciales,
+pero también ha desarrollado modelos de código abierto (GPT-2, CLIP).
+Normalmente, los proveedores de modelos abren los modelos más débiles y
+conservan sus mejores modelos tras muros de pago, ya sea a través de API o
+para potenciar sus productos.
+Las API de modelos pueden estar disponibles a través de proveedores de
+modelos (como OpenAI y Anthropic), proveedores de servicios en la nube
+(como Azure y GCP [Plataforma en la nube de Google]) o proveedores de
+API de terceros (como Databricks Mosaic, Anyscale, etc.). El mismo
+modelo puede estar disponible a través de distintas API con características,
+restricciones y precios diferentes. Por ejemplo, GPT-4 está disponible a
+través de las API de OpenAI y Azure. Puede haber ligeras diferencias en el
+rendimiento del mismo modelo proporcionado a través de diferentes API,
+ya que estas pueden utilizar diferentes técnicas para optimizar este modelo,
+así que asegúrese de realizar pruebas exhaustivas cuando cambie entre API
+de modelos.
+Solo se puede acceder a los modelos comerciales a través de API con
+licencia de los creadores de los modelos. 13 Los modelos de código abierto
+pueden ser compatibles con cualquier proveedor de API, lo que le permite
+elegir el proveedor que más le convenga. Para los proveedores de modelos

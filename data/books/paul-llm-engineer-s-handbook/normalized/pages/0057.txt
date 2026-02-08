@@ -1,0 +1,33 @@
+Tooling and Installation
+26
+If you are familiar with these tools, you can safely skip this chapter. We also explain how to install the project and set up all the necessary components in the repository's README. Thus, you
+also have the option to use that as more concise documentation if you plan to run the code while
+reading the book.
+To sum all that up, in this chapter, we will explore the following topics:
+•
+Python ecosystem and project installation
+•
+MLOps and LLMOps tooling
+•
+Databases for storing unstructured and vector data
+•
+Preparing for AWS
+By the end of this chapter, you will be aware of all the tools we will use across the book. Also, you
+will have learned how to install the LLM-Engineers-Handbook repository, set up the rest of the
+tools, and use them if you run the code while reading the book.
+Python ecosystem and project installation
+Any Python project needs three fundamental tools: the Python interpreter, dependency management, and a task execution tool. The Python interpreter executes your Python project as expected.
+All the code within the book is tested with Python 3.11.8. You can download the Python interpreter
+from here: https://www.python.org/downloads/. We recommend installing the exact Python
+version (Python 3.11.8) to run the LLM Twin project using pyenv, making the installation process
+straightforward.
+Instead of installing multiple global Python versions, we recommend managing them using pyenv,
+a Python version management tool that lets you manage multiple Python versions between
+projects. You can install it using this link: https://github.com/pyenv/pyenv?tab=readme-ovfile#installation.
+After you have installed pyenv, you can install the latest version of Python 3.11, using pyenv, as
+follows:
+pyenv install 3.11.8
+Now list all installed Python versions to see that it was installed correctly:
+pyenv versions
+You should see something like this:
+# * system

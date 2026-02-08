@@ -1,0 +1,31 @@
+Un enfoque creativo consiste en utilizar datos sintéticos para afinar un
+modelo de comprensión de contextos más largos. Por ejemplo, si su modelo
+actual procesa un máximo de 8K tokens pero quiere que maneje 128K
+tokens, el proceso de afinado del contexto largo podría ser así:
+Divida los documentos largos en trozos más cortos (por ejemplo,
+de menos de 8K tokens).
+Para cada trozo corto, genere varias duplas (pregunta, respuesta).
+Para cada dupla (pregunta, respuesta), utilice como contexto el
+documento largo original, que puede superar los 8 K tokens pero
+ser más corto que la longitud objetivo. De este modo, se entrena al
+modelo para utilizar el contexto ampliado para responder a las
+preguntas.
+El nivel de detalle en el artículo sobre Llama 3 (Dubey et al., 2024) lo
+convierte en un excelente estudio de caso para la síntesis de datos de
+instrucción. Ya he mencionado dos formas en las que Llama 3 sintetizó
+datos: la traducción de código y la retrotraducción de código. Ambos
+métodos generan más datos a partir de fragmentos de código existentes. Sin
+embargo, los autores también utilizaron la IA para sintetizar datos de
+instrucciones de codificación a partir de cero, utilizando el siguiente flujo
+de trabajo:
+1. Utilizar la IA para generar una gran colección de descripciones de
+problemas de programación que abarquen una amplia gama de
+temas.
+2. Dada la descripción de un problema y un lenguaje de
+programación, generar una solución. Dubey et al. descubrieron que
+incluir reglas generales de buena programación y razonamiento
+CoT ayudaba a mejorar la calidad de las respuestas.
+Para garantizar la calidad de los datos generados, emplearon un riguroso
+proceso de análisis y corrección de errores:
+1. Ejecutar el código generado a través de parseadores sintácticos y
+linters para detectar errores sintácticos como importaciones

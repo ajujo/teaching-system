@@ -1,0 +1,16 @@
+figura 6-10. Un ejemplo de un modelo usando dos herramientas sencillas.
+Dada una consulta, un agente definido de acuerdo a la Figura 6-10 generará
+automáticamente qué herramientas utilizar y sus parámetros. Algunas API
+de llamada a funciones se asegurarán de que solo se generen funciones
+válidas, aunque no podrán garantizar los valores correctos de los
+parámetros.
+Por ejemplo, dada la consulta del usuario "¿Cuántos kilogramos son 40
+libras?", el agente podría decidir que necesita la herramienta
+lbs_to_kg_tool con un valor de parámetro de 40. La respuesta del agente
+podría ser la siguiente:
+response = ModelResponse(
+   finish_reason='tool_calls',
+   message=chat.Message(
+       content=None,
+       role='assistant',
+       tool_calls=[

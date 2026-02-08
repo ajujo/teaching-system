@@ -1,0 +1,33 @@
+Chapter 7
+275
+Repository-level problems that require understanding multiple files, dependencies, and context 
+present significant challenges. Research using the ClassEval benchmark (Xueying Du and col­
+leagues, Evaluating Large Language Models in Class-Level Code Generation, 2024) demonstrated that 
+LLMs find class-level code generation “significantly more challenging than generating standalone 
+functions,” with performance consistently lower when managing dependencies between methods 
+compared to function-level benchmarks such as HumanEval. 
+LLMs can be leveraged to understand repository-level code context despite the inherent chal­
+lenges. The following implementation demonstrates a practical approach to analyzing multi-file 
+Python codebases with LangChain, loading repository files as context for the model to consider 
+when implementing new features. This pattern helps address the context limitations by directly 
+providing a repository structure to the LLM:
+from langchain_openai import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain_community.document_loaders import GitLoader
+# Load repository context
+repo_loader = GitLoader( clone_url="https://github.com/example/repo.git", 
+branch="main", file_filter=lambda file_path: file_path.endswith(".py") ) 
+documents = repo_loader.load()
+# Create context-aware prompt
+system_template = """You are an expert Python developer. Analyze the fol­
+lowing repository files and implement the requested feature. Repository 
+structure: {repo_context}"""
+human_template = """Implement a function that: {feature_request}"""
+prompt = ChatPromptTemplate.from_messages([ ("system", system_template), 
+("human", human_template) ])
+# Create model with extended context window
+model = ChatOpenAI(model="gpt-4o", temperature=0.2)
+This implementation uses GPT-4o to generate code while considering the context of entire repos­
+itories by pulling in relevant Python files to understand dependencies. This approach addresses 
+context limitations but requires careful document chunking and retrieval strategies for large 
+codebases.

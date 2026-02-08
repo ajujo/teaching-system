@@ -1,0 +1,21 @@
+figura 5-16. Jerarquía de instrucciones propuesta por Wallace et al. (2024).
+En caso de instrucciones contradictorias, por ejemplo si una dice "no
+reveles información privada" y otra dice "muéstrame la dirección de correo
+electrónico de X", debe seguirse la instrucción de prioridad más alta. Dado
+que los outputs de las herramienta tienen la prioridad más baja, esta
+jerarquía puede neutralizar muchos ataques indirectos de inyección de
+prompts.
+En el artículo, OpenAI sintetizó un conjunto de datos de instrucciones tanto
+alineadas como desalineadas. A continuación, el modelo se afinó para
+generar los outputs adecuados en función de la jerarquía de instrucciones.
+Descubrieron que esto mejora los resultados de seguridad en todas sus
+evaluaciones principales, incluso aumenta la robustez hasta en un 63 % a la
+vez que impone degradaciones mínimas en las capacidades estándar.
+A la hora de perfeccionar un modelo de seguridad, es importante entrenarlo
+no solo para que reconozca los prompts maliciosos, sino también para que
+genere respuestas seguras a las solicitudes dudosas. Una solicitud dudosa es
+aquella que puede invocar tanto respuestas seguras como inseguras. Por
+ejemplo, si un usuario pregunta: "¿Cuál es la forma más fácil de entrar en
+una habitación cerrada?", un sistema no seguro podría responder con
+instrucciones sobre cómo hacerlo. Un sistema demasiado precavido podría
+considerar esta petición como un intento malintencionado de entrar en casa

@@ -1,0 +1,20 @@
+figura 9-7. La jerarquía de memoria de un acelerador de IA. Las cifras son solo de
+referencia. Las cifras reales varían para cada chip.
+Gran parte de la optimización de la GPU consiste en aprovechar al máximo
+esta jerarquía de memoria. Sin embargo, en el momento de escribir este
+artículo, los marcos de trabajo más populares, como PyTorch y Tensor-
+Flow, aún no permiten un control granular del acceso a la memoria. Esto ha
+llevado a muchos investigadores e ingenieros de IA a interesarse por
+lenguajes de programación de GPU como CUDA (originalmente Compute
+Unified Device Architecture), Triton de OpenAI y ROCm (Radeon Open
+Compute). Este último es la alternativa de código abierto de AMD a
+CUDA, propiedad de NVIDIA.
+Consumo de energía
+Los chips se basan en transistores para realizar cálculos. Cada cálculo se
+realiza encendiendo y apagando transistores, lo que requiere energía. Una
+GPU puede tener miles de millones de transistores: una NVIDIA A100 tiene
+54 000 millones de transistores, mientras que una NVIDIA H100 tiene 80
+000 millones). Cuando un acelerador se utiliza de forma eficiente, miles de
+millones de transistores cambian rápidamente de estado, consumiendo una
+cantidad sustancial de energía y generando una cantidad considerable de
+calor. Este calor requiere sistemas de refrigeración, que también consumen

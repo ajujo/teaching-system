@@ -1,0 +1,38 @@
+Chapter 6
+227
+•
+Query expansion tasks an LLM to generate multiple queries based on initial ones, and
+then you combine search outputs based on reciprocal fusion or another technique.
+•
+Decomposition of reasoning on retrieved chunks allows you to ask an LLM to evaluate
+each individual chunk given the question (and filter it out if it's irrelevant) to compensate
+for retrieval inaccuracies. Or you can ask an LLM to summarize each chunk by keeping
+only information given for the input question. Anyway, instead of throwing a huge piece
+of context in front of an LLM, you perform many smaller reasoning steps in parallel first.
+This can not only improve the RAG quality by itself but also increase the amount of ini­
+tially retrieved chunks (by decreasing the relevance threshold) or expand each individual
+chunk with its neighbors. In other words, you can overcome some retrieval challenges
+with LLM reasoning. It might increase the overall performance of your application, but
+of course, it comes with latency and potential cost implications.
+•
+Reflection steps and iterations task LLMs to dynamically iterate on retrieval and query
+expansion by evaluating the outputs after each iteration. You can also use additional
+grounding and attribution tools as a separate step in your workflow and, based on that,
+reason whether you need to continue working on the answer or the answer can be re­
+turned to the user.
+Based on our definition from the previous chapters, RAG becomes agentic RAG when you have
+shared partial control with the LLM over the execution flow. For example, if the LLM decides
+how to retrieve, reflects on retrieved chunks, and adapts based on the first version of the answer,
+it becomes agentic RAG. From our perspective, at this point, it starts making sense to migrate to
+LangGraph since it's designed specifically for building such applications, but of course, you can
+stay with LangChain or any other framework you prefer (compare how we implemented map-re­
+duce video summarization with LangChain and LangGraph separately in Chapter 3).
+Multi-agent architectures
+In Chapter 5, we learned that decomposing a complex task into simpler subtasks typically in­
+creases LLM performance. We built a plan-and-solve agent that goes a step further than CoT and
+encourages the LLM to generate a plan and follow it. To a certain extent, this architecture was a
+multi-agent one since the research agent (which was responsible for generating and following
+the plan) invoked another agent that focused on a different type of task - solving very specific
+tasks with provided tools. Multi-agentic workflows orchestrate multiple agents, allowing them
+to enhance each other and at the same time keep agents modular (which makes it easier to test
+and reuse them).

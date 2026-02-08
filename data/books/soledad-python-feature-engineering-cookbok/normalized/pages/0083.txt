@@ -1,0 +1,34 @@
+Encoding Categorical Variables
+60
+How it works...
+In this recipe, we replaced categories with the count of observations using pandas and featureengine.
+Using pandas' value_counts(), we determined the number of observations per category of the
+A7 variable, and with pandas' to_dict(), we captured these values in a with counts or frequency
+of observations" dictionary, where each key was a unique category, and each value the number of
+observations for that category. With pandas' map() and using this dictionary, we replaced the
+categories with the observation counts in both the train and test sets.
+Note
+The count of observations for the encoding should be obtained from the train set to avoid data
+leakage. Note that new categories in the test set will not have a corresponding mapping and
+hence will be replaced by nan. To avoid this, use feature-engine. Alternatively, you can
+replace the nan with 0.
+To perform count encoding with feature-engine, we used CountFrequencyEncoder()
+and set encoding_method to 'count'. We left the variables argument set to None so
+that the encoder automatically finds all the categorical variables in the dataset. With fit(), the
+transformer found the categorical variables and stored the observation counts per category in the
+encoder_dict_ attribute. With transform(), the transformer replaced the categories with
+the counts, returning a pandas DataFrame.
+Note
+If there are categories in the test set that were not present in the train set, the encoder will raise
+an error by default. You can make it ignore them, in which case they will appear as nan, or
+encode them as 0.
+See also
+You can also carry out count and frequency encoding with the Python library Category
+Encoders: https://contrib.scikit-learn.org/category_encoders/count.html.
+For some useful applications of count encoding, check out this article: https://letsdatascience.
+com/frequency-encoding/.
+Replacing categories with ordinal numbers
+Ordinal encoding consists of replacing the categories with digits from 1 to k (or 0 to k-1, depending
+on the implementation), where k is the number of distinct categories of the variable. The numbers
+are assigned arbitrarily. Ordinal encoding is better suited for non-linear machine learning models,
+which can navigate through arbitrarily assigned numbers to find patterns that relate to the target.

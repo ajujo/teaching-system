@@ -1,0 +1,38 @@
+Regression Trace Collection
+Every time an agent fails in production-whether through hallucination, planning
+error, or tool misuse-it creates an opportunity for learning. By automatically export‐
+ing these failure traces (from Tempo) or log snapshots (from Loki) into your test
+suite, you build a continuously updated regression corpus.
+This turns production failures into training signals. A failed tool call or misaligned
+output becomes a new test case. Once a fix is implemented, rerunning this trace
+should pass. Over time, this strategy strengthens your evaluation set with real-world
+edge cases and helps prevent recurrence of the same failure modes.
+Self-Healing Agents
+Finally, monitoring can do more than detect failure-it can help agents recover from
+it. Agents that are designed to read their own telemetry in real time can implement
+fallback mechanisms when issues are detected.
+For example, if a tool call fails repeatedly, the agent might reroute to a simpler fall‐
+back plan or ask the user for clarification. If latency spikes, the agent could skip
+optional reasoning steps. If hallucination scores are high, it could issue a disclaimer
+or defer to human review.
+These self-healing behaviors are most effective when supported by detailed monitor‐
+ing data. Each fallback decision can be logged and traced, enabling teams to analyze
+when and why fallbacks were triggered, and whether they helped resolve the issue.
+User Feedback as an Observability Signal
+While much of this chapter has focused on logs, traces, and metrics, user feedback
+offers a complementary lens-direct insight into how well the agent is meeting
+human expectations. Feedback can be implicit, such as users rephrasing their inputs,
+abandoning tasks, or hesitating during interactions. It can also be explicit, like a
+thumbs-down icon, a star rating, or a free-text comment. Both forms provide realtime signals that can and should be integrated into your monitoring stack.
+In practice, implicit feedback metrics-such as task abandonment rate or requery fre‐
+quency-can be logged and aggregated in Loki and visualized in Grafana just like any
+other performance metric. They offer early indicators of friction or confusion.
+Explicit feedback events, like low ratings, can be tied to specific traces in Tempo and
+trigger alerts when dissatisfaction spikes. Dashboards that combine user sentiment
+metrics with trace-based technical data enable teams to correlate performance issues
+with user frustration, giving a fuller picture of agent health.
+Critically, user feedback can also drive improvement loops. For example, traces asso‐
+ciated with low user ratings can be exported directly to the evaluation set for post hoc
+236
+|
+Chapter 10: Monitoring in Production

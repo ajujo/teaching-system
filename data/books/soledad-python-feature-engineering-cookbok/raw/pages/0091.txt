@@ -1,0 +1,33 @@
+Encoding Categorical Variables
+68
+9.	
+Let’s import the encoder:
+from feature_engine.encoding import OrdinalEncoder
+10.	 Next, let’s set up the encoder so that it assigns integers based on the target mean value to all 
+categorical variables in the dataset:
+ordinal_enc = OrdinalEncoder(
+    encoding_method="ordered",
+    variables=None)
+Note
+OrdinalEncoder() will find and encode all categorical variables automatically. To restrict 
+the encoding to a subset of variables, pass their names in a list to the variables argument. 
+To encode numerical variables, set ignore_format=True.
+11.	 Let’s fit the encoder to the train set so that it finds the categorical variables, and then stores the 
+category and integer mappings:
+ordinal_enc.fit(X_train, y_train)
+12.	 Finally, let’s replace the categories with numbers in the train and test sets:
+X_train_enc = ordinal_enc.transform(X_train)
+X_test_enc = ordinal_enc.transform(X_test)
+Note
+You’ll find the digits that will replace each category in the encoder_dict_ attribute.
+Check out the output of the transformation by executing X_train_enc.head().
+How it works...
+In this recipe, we replaced the categories with integers according to the target mean.
+In the first part of this recipe, we worked with the A7 categorical variable. With pandas’ groupby(), 
+we grouped the data based on the categories of A7, and with pandas’ mean(), we determined the 
+mean value of the target for each of those categories. Next, we ordered the categories with pandas’ 
+sort_values() from the ones with the lowest to the ones with the highest target mean response. 
+The output of this operation was a pandas series, with the categories as indices and the target mean 
+as values. With pandas’ index, we captured the ordered categories in an array; then, with Python 
+dictionary comprehension, we created a dictionary of category-to-integer pairs. Finally, we used this 
+dictionary to replace the category with integers using pandas’ map().

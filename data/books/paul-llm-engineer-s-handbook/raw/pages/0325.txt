@@ -1,0 +1,32 @@
+Inference Optimization
+294
+2.	
+To implement the static cache, we change the cache implementation in the model’s gen-
+eration config to static:
+model.generation_config.cache_implementation = "static"
+3.	
+Now that our KV cache is static, we can compile the model using torch.compile:
+compiled_model = torch.compile(model, mode="reduce-overhead", 
+fullgraph=True)
+4.	
+We tokenize an input question, “What is 2+2?", and store it on a GPU if available (if not, 
+we store it on the CPU):
+device = "cuda" if torch.cuda.is_available() else "cpu"
+inputs = tokenizer("What is 2+2?", return_tensors="pt").to(device)
+5.	
+Let’s use the generate() method to get the model’s output and decode it with batch_
+decode() to print its answer:
+outputs = model.generate(**inputs, do_sample=True, temperature=0.7, 
+max_new_tokens=64)
+print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
+['What is 2+2?\n\nThe answer is 4. 2+2 = 4.']
+This returns a list containing both the input and output, correctly answering our question.
+Efficiently managing the KV cache is essential, as it can quickly exhaust available GPU memory 
+and limit the batch sizes that can be processed. This has motivated the development of memo-
+ry-efficient attention mechanisms and other techniques, which we will cover in the last section.
+Continuous batching
+Batching, or processing multiple inference requests simultaneously, is a standard approach to 
+achieve high throughput. Larger batch sizes spread out the memory cost of model weights and 
+transfer more data to the GPU at once, better saturating its parallel compute capacity.
+Note that the static cache doesn’t work with all architectures. For details on which 
+architectures are supported, check out the transformers documentation.

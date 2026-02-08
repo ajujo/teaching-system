@@ -1,0 +1,41 @@
+To ensure your fine-tuned agent generates only well-formed, safe function invoca‐
+tions, it's critical to define and enforce a clear schema for every API or tool you
+expose. By codifying each function's name, argument types, and return structure in a
+machine-readable format-such as JSON Schema or a TypeScript/Zod schema-you
+give the model a precise contract to follow. During fine-tuning, include these schemas
+alongside your examples so the model learns not just what to call but exactly how to
+structure its JSON payload. At runtime, validate every proposed call against the same
+schema (using libraries like Zod, Ajv, or Pydantic) before executing it; any mismatch
+can be caught early and either corrected or rejected, preventing malformed or mali‐
+cious requests. This end-to-end schema discipline drastically reduces errors, simpli‐
+fies debugging, and hardens your system against unexpected inputs.
+Fine-tuning also helps the model learn how to parse user inputs into valid arguments,
+recover from errors (like missing parameters), and gracefully fall back if the function
+call fails. Special tokens and formatting-such as wrapping the agent's internal rea‐
+soning in <think>...</think> or enclosing a call in <tool_call>...</tool_call>-can
+help the model distinguish between dialogue, thought, and action.
+The following is a minimal working pattern for the supervised fine-tuning of a lan‐
+guage model with LoRA (Low-Rank Adaptation) adapters for function calling. This
+includes preprocessing conversations into a consistent chat template:
+1. Attaching special tokens for <think> or <tool_call> segments
+2. Using LoRA to adapt only targeted layers efficiently
+3. Training with SFTTrainer to update the model on your dataset of correct
+(prompt, response) pairs
+We start with the preprocess function, which structures the data appropriately for
+training:
+def build_preprocess_fn(tokenizer):
+    """Returns a function that maps raw samples to tokenized prompts."""
+    def _preprocess(sample):
+        messages = sample["messages"].copy()
+        _merge_system_into_first_user(messages)
+        prompt = tokenizer.apply_chat_template(messages, tokenize=False)
+        return {"text": prompt}
+    return _preprocess
+Here, we wrap the model's internal reasoning and external tool calls in special tokens,
+like <think>...</think> and <tool_call>...</tool_call>. This makes it easy for the
+model to separate its "thoughts" from its API actions:
+def build_tokenizer(model_name: str):
+    tokenizer = AutoTokenizer.from_pretrained(
+Parametric Learning: Fine-Tuning
+|
+155

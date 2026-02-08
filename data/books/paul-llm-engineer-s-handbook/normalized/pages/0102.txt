@@ -1,0 +1,34 @@
+Chapter 3
+71
+Its constructor initializes various Chrome options to optimize performance, enhance security, and
+ensure a headless browsing environment. These options disable unnecessary features like GPU
+rendering, extensions, and notifications, which can interfere with automated browsing. These
+are standard configurations when crawling in headless mode:
+class BaseSeleniumCrawler(BaseCrawler, ABC):
+    def __init__(self, scroll_limit: int = 5) -> None:
+        options = webdriver.ChromeOptions()
+
+        options.add_argument("--no-sandbox")
+        options.add_argument("--headless=new")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--log-level=3")
+        options.add_argument("--disable-popup-blocking")
+        options.add_argument("--disable-notifications")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-background-networking")
+        options.add_argument("--ignore-certificate-errors")
+        options.add_argument(f"--user-data-dir={mkdtemp()}")
+        options.add_argument(f"--data-path={mkdtemp()}")
+        options.add_argument(f"--disk-cache-dir={mkdtemp()}")
+        options.add_argument("--remote-debugging-port=9226")
+After configuring the Chrome options, the code allows subclasses to set any additional driver
+options by calling the set_extra_driver_options() method. It then initializes the scroll limit
+and creates a new instance of the Chrome driver with the specified options:
+        self.set_extra_driver_options(options)
+        self.scroll_limit = scroll_limit
+        self.driver = webdriver.Chrome(
+            options=options,
+        )
+The BaseSeleniumCrawler class includes placeholder methods for set_extra_driver_options()
+and login(), which subclasses can override to provide specific functionality. This ensures modularity, as every platform has a different login page with a different HTML structure:
+    def set_extra_driver_options(self, options: Options) -> None:

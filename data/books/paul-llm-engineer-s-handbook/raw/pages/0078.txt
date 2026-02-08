@@ -1,0 +1,33 @@
+Chapter 2
+47
+When interacting with an LLM application, you chain multiple input prompts and the generated 
+output into a trace, where one prompt depends on previous prompts. 
+Thus, instead of plain text logs, you need an intuitive way to group these traces into a specialized 
+dashboard that makes debugging and monitoring traces of prompts easier.
+We used Opik, an open-source tool made by Comet, as our prompt monitoring tool because it fol-
+lows Comet’s philosophy of simplicity and ease of use, which is currently relatively rare in the LLM 
+landscape. Other options offering similar features are Langfuse (open source, https://langfuse.
+com), Galileo (not open source, rungalileo.io), and LangSmith (not open source, https://www.
+langchain.com/langsmith), but we found their solutions more cumbersome to use and imple-
+ment. Opik, along with its serverless option, also provides a free open-source version that you 
+have complete control over. You can read more on Opik at https://github.com/comet-ml/opik.
+Databases for storing unstructured and vector data
+We also want to present the NoSQL and vector databases we will use within our examples. When 
+working locally, they are already integrated through Docker. Thus, when running poetry poe 
+local-infrastructure-up, as instructed a few sections above, local images of Docker for both 
+databases will be pulled and run on your machine. Also, when deploying the project, we will 
+show you how to use their serverless option and integrate it with the rest of the LLM Twin project.
+MongoDB: NoSQL database
+MongoDB is one of today’s most popular, robust, fast, and feature-rich NoSQL databases. It 
+integrates well with most cloud ecosystems, such as AWS, Google Cloud, Azure, and Databricks. 
+Thus, using MongoDB as our NoSQL database was a no-brainer.
+When we wrote this book, MongoDB was used by big players such as Novo Nordisk, Delivery 
+Hero, Okta, and Volvo. This widespread adoption suggests that MongoDB will remain a leading 
+NoSQL database for a long time.
+We use MongoDB as a NoSQL database to store the raw data we collect from the internet before 
+processing it and pushing it into the vector database. As we work with unstructured text data, 
+the flexibility of the NoSQL database fits like a charm.
+Qdrant: vector database
+Qdrant (https://qdrant.tech/) is one of the most popular, robust, and feature-rich vector 
+databases. We could have used almost any vector database for our small MVP, but we wanted to 
+pick something light and likely to be used in the industry for many years to come. 

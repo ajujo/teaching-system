@@ -1,0 +1,15 @@
+MLOps and LLMOps
+426
+You can get your current AWS_REGION by clicking on the toggle in the top-right corner, as seen in 
+Figure 11.8. Also, you can copy the ECR URL to fill the AWS_ECR_URL variable from the main AWS 
+ECR dashboard, as illustrated in Figure 11.7. After running the previous command, you should see 
+the message Login Succeeded on the CLI.
+Figure 11.8: AWS region and account details
+Now we have to add another tag to the llmtwin Docker image that signals the Docker registry 
+we want to push it to:
+docker tag llmtwin ${AWS_ECR_URL}:latest
+Finally, we push it to ECR by running:
+docker push ${AWS_ECR_URL}:latest
+After the upload is finished, return to your AWS ECR dashboard and open your ZenML repository. 
+The Docker image should appear, as shown here:
+Figure 11.9: AWS ECR repository example after the Docker image is pushed

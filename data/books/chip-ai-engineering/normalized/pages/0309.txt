@@ -1,0 +1,24 @@
+figura 4-10. Diferencia relativa en el rendimiento de GPT-3 cuando se evalúa
+utilizando solo la muestra limpia en comparación con la evaluación utilizando la
+prueba comparativa completa.
+Para combatir la contaminación de los datos, los hosts de tableros de
+clasificación como Hugging Face trazan las desviaciones estándar del
+rendimiento de los modelos en una prueba comparativa determinada para
+detectar valores atípicos. Las pruebas comparativas públicas deberían
+mantener parte de sus datos en privado y dar una herramienta para que los
+desarrolladores de modelos los evalúen automáticamente con los datos
+privados retenidos.
+Las pruebas comparativas públicas le ayudarán a filtrar los modelos malos,
+pero no le ayudarán a encontrar los mejores modelos para su aplicación.
+Después de utilizar pruebas comparativas públicas para reducirlas a un
+grupo de modelos prometedores, tendrá que ejecutar su propio proceso de
+evaluación para encontrar el mejor para su aplicación. Nuestro próximo
+tema será cómo diseñar un proceso de evaluación personalizada.
+Diseñar su proceso de evaluación
+El éxito de una aplicación de IA depende a menudo de la capacidad de
+diferenciar los buenos outputs de los malos. Para ello, necesitan un proceso
+de evaluación en el que pueda confiar. Ante la gran variedad de métodos y
+técnicas de evaluación, puede resultar confuso elegir la combinación
+adecuada para su proceso de evaluación. Esta sección se centra en la
+evaluación de las tareas abiertas. La evaluación de las tareas cerradas es
+más fácil, y de este proceso se puede deducir su proceso.

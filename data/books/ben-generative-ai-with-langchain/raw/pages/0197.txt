@@ -1,0 +1,38 @@
+Building Intelligent RAG Systems
+170
+    [
+        ("system", system_prompt),
+        ("human", "{question}"),
+    ]
+)
+We then have to define the state of the graph. A TypedDict state is used to hold the current state 
+of the application (for example, question, context documents, answer, issues report):
+class State(TypedDict):
+    question: str
+    context: List[Document]
+    answer: str
+    issues_report: str
+    issues_detected: bool
+    messages: Annotated[list, add_messages]
+Each of these fields corresponds to a node in the graph that we’ll define with LangGraph. We 
+have the following processing in the nodes:
+•	
+retrieve function: Uses the retriever to get relevant documents based on the most recent 
+message
+•	
+generate function: Creates a draft answer by combining the retrieved document content 
+with the user question using the chat prompt
+•	
+double_check function: Reviews the generated draft for compliance with corporate stan­
+dards. It checks the draft and sets flags if issues are detected
+•	
+doc_finalizer function: If issues are found, it revises the document based on the provided 
+feedback; otherwise, it returns the original answer
+Let’s start with the retrieval:
+def retrieve(state: State):
+    retrieved_docs = retriever.invoke(state["messages"][-1].content)
+    print(retrieved_docs)
+    return {"context": retrieved_docs}
+def generate(state: State):
+    docs_content = "\n\n".join(doc.page_content for doc in 
+state["context"])

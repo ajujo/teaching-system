@@ -1,0 +1,17 @@
+Building Intelligent Agents
+220
+builder.add_node("response", _get_final_response)
+builder.add_edge(START, "initial_plan")
+builder.add_edge("initial_plan", "run")
+builder.add_conditional_edges("run", _should_continue)
+builder.add_edge("response", END)
+graph = builder.compile()
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))
+Figure 5.3: Plan-and-solve agentic workflow
+Now we can run the workflow:
+task = "Write a strategic one-pager of building an AI startup"
+result = await graph.ainvoke({"task": task})
+You can see the full output on our GitHub, and we encourage you to play with it yourself. It might
+be especially interesting to investigate whether you like the result more compared to a single
+LLM prompt with a given task.

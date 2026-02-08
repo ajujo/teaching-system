@@ -1,0 +1,33 @@
+Inference Pipeline Deployment
+386
+            "return_full_text": False,
+        },
+    }
+This method returns a dictionary that represents the default structure of the payload to be sent
+for inference. The parameters section includes settings that influence the model's behavior during
+inference, such as the number of tokens to generate, the sampling strategy (top_p), and the temperature setting, which controls randomness in the output. These parameters are fetched from
+the application's settings, ensuring consistency across different inference tasks.
+The class allows customization of the payload through the set_payload() method, which enables
+the user to modify the inputs and parameters before sending an inference request:
+def set_payload(self, inputs: str, parameters: Optional[Dict[str, Any]] =
+None) -> None:
+    self.payload["inputs"] = inputs
+    if parameters:
+        self.payload["parameters"].update(parameters)
+This method updates the inputs field of the payload with the new input text provided by the user.
+Additionally, it allows for modifying inference parameters if any are provided.
+Ultimately, we leverage the inference() method to call the SageMaker endpoint with the customized payload:
+def inference(self) -> Dict[str, Any]:
+    try:
+        logger.info("Inference request sent.")
+        invoke_args = {
+            "EndpointName": self.endpoint_name,
+            "ContentType": "application/json",
+            "Body": json.dumps(self.payload),
+        }
+        if self.inference_component_name not in ["None", None]:
+            invoke_args["InferenceComponentName"] = self.inference_
+component_name
+        response = self.client.invoke_endpoint(**invoke_args)
+        response_body = response["Body"].read().decode("utf8")
+        return json.loads(response_body)

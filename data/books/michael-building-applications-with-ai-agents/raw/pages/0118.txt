@@ -1,0 +1,44 @@
+Here’s another example of a tool you might want to register with your agent to notify
+a particular channel when your task is completed or needs attention for a human-in-
+the-loop pattern:
+@tool 
+def send_slack_message(channel: str, message: str) -> str: 
+    """ Send a message to a specified Slack channel. 
+    Args: 
+    channel (str): The Slack channel ID or name where the message will be sent. 
+    message (str): The content of the message to send. 
+    Returns: 
+    str: Confirmation message upon successful sending of the Slack message. 
+    Raises: ValueError: If the API request fails or returns an error. 
+    """ 
+    api_url = "https://slack.com/api/chat.postMessage" 
+        headers = { "Authorization": "Bearer YOUR_SLACK_BOT_TOKEN",
+                    "Content-Type": "application/json" } 
+    payload = { "channel": channel, "text": message } 
+    try: 
+        response = requests.post(api_url, headers=headers, json=payload) 
+        response_data = response.json() 
+        if response.status_code == 200 and response_data.get("ok"): 
+            return f"Message successfully sent to Slack channel '{channel}'." 
+        else: 
+            error_msg = response_data.get("error", "Unknown error") 
+            raise ValueError(f"Slack API Error: {error_msg}") 
+        except requests.exceptions.RequestException as e: 
+            raise ValueError(f'''Failed to send message to Slack channel 
+                             "{channel}": {e}''')
+Now that we’ve defined our tools, we bind them to the model client and allow the
+model to pick which tools to invoke to best address the input:
+# Initialize the LLM with GPT-4o and bind the tools
+llm = ChatOpenAI(model_name="gpt-4o")
+llm_with_tools = llm.bind_tools([get_stock_price, 
+    send_slack_message, query_wolfram_alpha])
+messages = [HumanMessage("What is the stock price of Apple?")]
+ai_msg = llm_with_tools.invoke(messages)
+messages.append(ai_msg)
+for tool_call in ai_msg.tool_calls:
+   tool_msg = get_stock_price.invoke(tool_call)
+final_response = llm_with_tools.invoke(messages)
+print(final_response.content)
+96 
+| 
+Chapter 5: Orchestration

@@ -1,0 +1,37 @@
+Using the median absolute deviation to find outliers
+163
+In the previous equation, xi is each observation in the X variable. The beauty of MAD is that it uses
+the median instead of the mean, which is robust to outliers. The b constant is used to estimate the
+standard deviation from MAD, and if we assume normality, then b = 1.4826.
+Note
+If the variable is assumed to have a different distribution, b is then calculated as 1 divided by
+the 75th percentile. In the case of normality, 1/75th percentile = 1.4826.
+After computing MAD, we use the median and MAD to establish distribution limits, designating
+values beyond these limits as outliers. The limits are set as the median plus and minus a multiple of
+MAD, typically ranging from 2 to 3.5. The multiplication factor we choose reflects how stringent we
+want to be (the higher, the more conservative). In this recipe, we will identify outliers using MAD.
+How to do it...
+Let's begin the recipe by importing the Python libraries and loading the dataset:
+1.
+Let's import the Python libraries and dataset:
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_breast_cancer
+2.
+Load the breast cancer dataset from scikit-learn:
+X, y = load_breast_cancer(
+    return_X_y=True, as_frame=True)
+3.
+Create a function that returns the limits based on MAD:
+def find_limits(df, variable, fold):
+    median = df[variable].median()
+    center = df[variable] - median
+    MAD = center.abs().median() * 1.4826
+    lower_limit = median - fold * MAD
+    upper_limit = median + fold * MAD
+    return lower_limit, upper_limit
+4.
+Let's use the function to capture the extreme limits of the mean smoothness variable:
+lower_limit, upper_limit = find_limits(
+    X, "mean smoothness", 3)

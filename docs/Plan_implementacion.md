@@ -100,36 +100,56 @@ Teaching System/
 │   │   │                            # - grade_exam_attempt()
 │   │   │
 │   │   │  # ═══ FASE 7: Tutoría ═══
-│   │   └── tutor.py                 # ORQUESTACIÓN PRINCIPAL (~1250 líneas)
+│   │   └── tutor.py                 # ORQUESTACIÓN PRINCIPAL (~1800 líneas)
 │   │                                #
 │   │                                # Dataclasses:
 │   │                                # - TutorState, BookProgress
 │   │                                # - StudentProfile, StudentsState
 │   │                                # - TeachingPoint, TeachingPlan
+│   │                                # - TutorEvent, TutorTurnContext (F8)
+│   │                                #
+│   │                                # Enums:
+│   │                                # - TutorPromptKind (F7.4)
+│   │                                # - TutorEventType (F8.3)
 │   │                                #
 │   │                                # Funciones de Estado:
 │   │                                # - load_students_state()
 │   │                                # - save_students_state()
 │   │                                # - Migración de formato legacy
 │   │                                #
-│   │                                # Funciones de Contenido:
-│   │                                # - list_available_books_with_metadata()
-│   │                                # - get_chapter_info()
-│   │                                # - load_chapter_notes()
-│   │                                #
 │   │                                # Funciones Teaching-First:
 │   │                                # - generate_teaching_plan()
 │   │                                # - explain_point()
 │   │                                # - check_comprehension()
 │   │                                # - reexplain_with_analogy()
-│   │                                # - detect_more_examples_intent()
 │   │                                # - generate_more_examples()
 │   │                                #
-│   │                                # Prompts del Sistema:
-│   │                                # - SYSTEM_PROMPT_EXPLAIN_POINT
-│   │                                # - SYSTEM_PROMPT_CHECK_COMPREHENSION
-│   │                                # - SYSTEM_PROMPT_REEXPLAIN
-│   │                                # - SYSTEM_PROMPT_MORE_EXAMPLES
+│   │                                # Intent Detection (F8):
+│   │                                # - is_advance_intent()
+│   │                                # - is_affirmative()
+│   │                                # - is_negative()
+│   │                                # - is_review_intent()
+│   │                                # - parse_confirm_advance_response()
+│   │                                # - parse_post_failure_choice_response()
+│   │
+│   ├── config/                      # CONFIGURACIÓN (F8)
+│   │   ├── __init__.py
+│   │   └── personas.py              # Personas y TeachingPolicy
+│   │                                # - TeachingPolicy dataclass
+│   │                                # - Persona dataclass
+│   │                                # - load_personas()
+│   │                                # - get_persona()
+│   │
+│   ├── web/                         # WEB API (F9)
+│   │   ├── __init__.py
+│   │   ├── api.py                   # FastAPI app factory
+│   │   ├── schemas.py               # Pydantic request/response models
+│   │   ├── sessions.py              # SessionManager con asyncio.Queue
+│   │   └── routes/
+│   │       ├── health.py            # GET /health
+│   │       ├── students.py          # CRUD /api/students
+│   │       ├── personas.py          # GET /api/personas
+│   │       └── sessions.py          # Sessions + SSE
 │   │
 │   ├── llm/                         # CLIENTE LLM
 │   │   ├── __init__.py
@@ -202,25 +222,27 @@ Teaching System/
 ├── configs/                         # CONFIGURACIÓN
 │   └── models.yaml                  # Config de LLM y sistema
 │
-├── tests/                           # TESTS (603 tests, 12K+ líneas)
-│   ├── conftest.py                  # CURRENT_PHASE = 7
+├── tests/                           # TESTS (968 tests)
+│   ├── conftest.py                  # CURRENT_PHASE = 9
 │   ├── test_safety.py
 │   ├── f2/                          # Tests Fase 2
 │   ├── f3/                          # Tests Fase 3
 │   ├── f4/                          # Tests Fase 4
 │   ├── f5/                          # Tests Fase 5
 │   ├── f6/                          # Tests Fase 6
-│   └── f7/                          # Tests Fase 7 (212 tests)
-│       ├── conftest.py              # Fixtures de F7
-│       ├── test_cli_tutor.py
-│       ├── test_tutor_state_persistence.py
-│       ├── test_multi_student.py
-│       ├── test_teaching_plan.py
-│       ├── test_teaching_commands.py
-│       ├── test_teaching_flow_bugs.py
-│       ├── test_streaming.py
-│       ├── test_throttled_streaming.py
-│       └── ...
+│   ├── f7/                          # Tests Fase 7 (212 tests)
+│   ├── f8/                          # Tests Fase 8 (314 tests)
+│   │   ├── test_personas.py
+│   │   ├── test_strictness_policy.py
+│   │   ├── test_teaching_class_flow.py
+│   │   ├── test_flow_stability.py
+│   │   └── test_ask_check_ux.py
+│   └── f9/                          # Tests Fase 9 (51 tests)
+│       ├── test_web_health.py
+│       ├── test_web_students.py
+│       ├── test_web_personas.py
+│       ├── test_web_sessions.py
+│       └── test_session_manager.py
 │
 ├── docs/                            # DOCUMENTACIÓN
 │   ├── Plan_implementacion.md       # Este archivo
@@ -228,6 +250,20 @@ Teaching System/
 │   ├── phase_guardrails.md          # Asignación de fases
 │   ├── contracts_v1.md              # Esquemas de datos
 │   └── cli_spec_v1.md               # Especificación CLI
+│
+├── web/                             # FRONTEND NEXT.JS (F9)
+│   ├── package.json                 # Dependencias Node.js
+│   ├── src/
+│   │   ├── app/                     # App Router pages
+│   │   │   ├── page.tsx             # Lobby (selección estudiante/libro)
+│   │   │   └── session/[sessionId]/ # Página de sesión
+│   │   ├── components/              # React components
+│   │   │   ├── ChatMessage.tsx      # Mensaje del tutor
+│   │   │   └── TypewriterText.tsx   # Efecto typewriter
+│   │   └── lib/
+│   │       ├── api.ts               # Cliente API + SSE
+│   │       └── types.ts             # TypeScript types
+│   └── README_frontend.md           # Documentación frontend
 │
 ├── pyproject.toml                   # Configuración del proyecto
 ├── uv.lock                          # Lock de dependencias
@@ -364,13 +400,22 @@ Teaching System/
 
 ```python
 class TeachingState(Enum):
-    EXPLAINING = auto()      # Profesor explicando un punto
-    WAITING_INPUT = auto()   # Esperando respuesta del estudiante
-    CHECKING = auto()        # Evaluando comprensión
-    AWAITING_RETRY = auto()  # Esperando segundo intento
-    MORE_EXAMPLES = auto()   # Generando más ejemplos
-    REMEDIATION = auto()     # Reexplicando con analogía
-    NEXT_POINT = auto()      # Transición al siguiente punto
+    # F7 original
+    EXPLAINING = auto()           # Profesor explicando un punto
+    WAITING_INPUT = auto()        # Esperando respuesta del estudiante
+    CHECKING = auto()             # Evaluando comprensión
+    AWAITING_RETRY = auto()       # Esperando segundo intento
+    MORE_EXAMPLES = auto()        # Generando más ejemplos
+    REMEDIATION = auto()          # Reexplicando con analogía
+    NEXT_POINT = auto()           # Transición al siguiente punto
+    # F7.4+
+    CONFIRM_ADVANCE = auto()      # Confirmación para avanzar
+    DEEPEN_EXPLANATION = auto()   # Profundizar explicación
+    # F8.2
+    POST_FAILURE_CHOICE = auto()  # Elección post-fallo (A/R)
+    # F8.4
+    UNIT_OPENING = auto()         # Apertura de unidad
+    WAIT_UNIT_START = auto()      # Pausa dura (espera "empezamos")
 ```
 
 ### Diagrama de Transiciones
@@ -477,14 +522,33 @@ class TeachingState(Enum):
 | openai | ≥1.0 | Cliente LLM |
 | structlog | ≥23.0 | Logging estructurado |
 
+### Web API (F9)
+
+| Paquete | Versión | Uso |
+|---------|---------|-----|
+| fastapi | ≥0.110.0 | Framework Web API |
+| uvicorn | ≥0.27.0 | Servidor ASGI |
+
 ### Desarrollo
 
 | Paquete | Versión | Uso |
 |---------|---------|-----|
 | pytest | ≥7.0 | Testing |
 | pytest-cov | ≥4.0 | Cobertura |
+| pytest-asyncio | ≥0.23.0 | Tests async |
+| httpx | ≥0.27.0 | Cliente HTTP para tests |
 | ruff | ≥0.1.0 | Linter |
 | mypy | ≥1.0 | Type checking |
+
+### Frontend (web/)
+
+| Paquete | Versión | Uso |
+|---------|---------|-----|
+| next | ≥14.2.0 | React framework |
+| react | ≥18.2.0 | UI library |
+| react-markdown | ≥9.0.0 | Renderizado Markdown |
+| tailwindcss | ≥3.4.0 | CSS utilities |
+| typescript | ≥5.0.0 | Type checking |
 
 ---
 
@@ -539,10 +603,53 @@ Features:
 Tests: tests/f7/ (13 archivos, 212 tests)
 ```
 
-### F8: Interfaz Gráfica (Planificado)
+### F8: Personas, Policies y Events (Completado)
+```
+Módulos: config/personas.py, core/tutor.py (ampliado)
+Archivos de datos: data/config/personas_v1.yaml
+Features:
+  - 4 tutores con personalidades distintas
+  - TeachingPolicy configurable (max_attempts, remediation_style)
+  - TutorEvent para comunicación con webapp
+  - TutorTurnContext para tracking de eventos
+  - 12 estados de enseñanza
+  - Pausa dura en apertura de unidad
+Prompts: post_failure_choice.md, remediation_brief.md,
+         tutor/unit_opening.md, tutor/plan_from_unit_text.md
+Tests: tests/f8/ (10 archivos, 314 tests)
+```
+
+### F9: Web API + Frontend (Completado)
+```
+Backend:
+  Módulos: web/api.py, web/schemas.py, web/sessions.py
+  Rutas: web/routes/{health,students,personas,sessions}.py
+  Features:
+    - FastAPI con CORS
+    - CRUD de estudiantes
+    - Listado de personas
+    - Sesiones con SSE
+    - SessionManager con asyncio.Queue
+
+Frontend (web/):
+  Stack: Next.js 14 + TypeScript + Tailwind CSS
+  Pages: Lobby (/), Session (/session/[id])
+  Components: ChatMessage, TypewriterText
+  Features:
+    - Crear/eliminar estudiantes
+    - Seleccionar persona y libro
+    - Chat con SSE en tiempo real
+    - Animación typewriter
+    - Botones rápidos (apuntes, siguiente, repasar)
+
+Tests: tests/f9/ (5 archivos, 51 tests)
+Docs: docs/webapi_quickstart.md, web/README_frontend.md
+```
+
+### F10: Interfaz Gráfica Avanzada (Planificado)
 ```
 Estado: En backlog
-Objetivo: UI web con AnythingLLM o similar
+Objetivo: Mejoras de UX, integración completa con tutor logic
 ```
 
 ---
@@ -551,12 +658,14 @@ Objetivo: UI web con AnythingLLM o similar
 
 | Métrica | Valor |
 |---------|-------|
-| Líneas de código (src/) | ~8,500 |
-| Líneas de tests | ~12,500 |
-| Total de tests | 603 |
+| Líneas de código (src/) | ~12,000 |
+| Líneas de tests | ~18,000 |
+| Total de tests | 968 |
 | Comandos CLI | 24 |
-| Archivos Python | 45+ |
-| Fases completadas | 6/8 |
+| Archivos Python | 55+ |
+| Fases completadas | 8/10 |
+| Endpoints API | 10 |
+| Personas disponibles | 4 |
 
 ---
 

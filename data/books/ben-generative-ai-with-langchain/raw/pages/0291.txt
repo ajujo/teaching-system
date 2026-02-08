@@ -1,0 +1,31 @@
+Advanced Applications and Multi-Agent Systems
+264
+We recommend introducing a separate LangGraph node instead that hits an actual cache (based 
+on Redis or another database), since it allows you to control whether you’d like to search for 
+similar questions using the embedding mechanism we discussed in Chapter 4 when we were 
+talking about RAG.
+Store
+As we have learned before, a Checkpointer mechanism allows you to enhance your workflows 
+with a thread-level persistent memory; by thread-level, we mean a conversation-level persistence. 
+Each conversation can be started where it stops, and the workflow executes the previously col­
+lected context.
+A BaseStore is a persistent key-value storage system that organizes your values by namespace 
+(hierarchical tuples of string paths, similar to folders. It supports standard operations such as 
+put, delete and get operations, as well as a search method that implements different semantic 
+search capabilities (typically, based on the embedding mechanism) and accounts for a hierar­
+chical nature of namespaces.
+Let’s initialize a store and add some values to it:
+from langgraph.store.memory import InMemoryStore
+in_memory_store = InMemoryStore()
+in_memory_store.put(namespace=("users", "user1"), key="fact1", 
+value={"message1": "My name is John."})
+in_memory_store.put(namespace=("users", "user1", "conv1"), key="address", 
+value={"message": "I live in Berlin."})
+We can easily query the value:
+in_memory_store.get(namespace=("users", "user1", "conv1"), key="address")
+Item(namespace=['users', 'user1'], key='fact1', value={'conv1': 'I live 
+in Berlin.'}, created_at='2025-03-18T14:25:23.305405+00:00', updated_
+at='2025-03-18T14:25:23.305408+00:00')
+If we query it by a partial path of the namespace, we won’t get any results (we need a full matching 
+namespace). The following would return no results:
+in_memory_store.get(namespace=("users", "user1"), key="conv1")

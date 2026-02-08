@@ -1,0 +1,33 @@
+Chapter 6
+247
+builder.add_edge("ask_question", "research")
+builder.add_edge("research", "reflect")
+graph = builder.compile()
+If we run it, we will see that at every stage, the graph operates on the same (and growing) list of 
+messages.
+LangGraph platform
+LangGraph and LangChain, as you know, are open-source frameworks, but LangChain as a com­
+pany offers the LangGraph platform – a commercial solution that helps you develop, manage, and 
+deploy agentic applications. One component of the LangGraph platform is LangGraph Studio – an 
+IDE that helps you visualize and debug your agents – and another is LangGraph Server.
+You can read more about the LangGraph platform at the official website (https://langchain-ai.
+github.io/langgraph/concepts/#langgraph-platform), but let’s discuss a few key concepts 
+for a better understanding of what it means to develop an agent.
+After you’ve developed an agent, you can wrap it as an HTTP API (using Flask, FastAPI, or any 
+other web framework). The LangGraph platform offers you a native way to deploy agents, and it 
+wraps them with a unified API (which makes it easier for your applications to use these agents). 
+When you’ve built your agent as a LangGraph graph object, you deploy an assistant – a specific 
+deployment that includes an instance of your graph coupled together with a configuration. You 
+can easily version and configure assistants in the UI, but it’s important to keep parameters con­
+figurable (and pass them as RunnableConfig to your nodes and tools).
+Another important concept is a thread. Don’t be confused, a LangGraph thread is a different 
+concept from a Python thread (and when you pass a thread_id in your RunnableConfig, you’re 
+passing a LangGraph thread ID). When you think about LangGraph threads, think about con­
+versation or Reddit threads. A thread represents a session between your assistant (a graph with 
+a specific configuration) and a user. You can add per-thread persistence using the checkpointing 
+mechanism we discussed in Chapter 3.
+A run is an invocation of an assistant. In most cases, runs are executed on a thread (for persistence). 
+LangGraph Server also allows you to schedule stateless runs – they are not assigned to any thread, 
+and because of that, the history of interactions is not persisted. LangGraph Server allows you to 
+schedule long-running runs, scheduled runs (a.k.a. crons), etc., and it also offers a rich mechanism 
+for webhooks attached to runs and polling results back to the user.

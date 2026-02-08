@@ -1,0 +1,48 @@
+Building Intelligent RAG Systems
+136
+•	
+Content requires domain-specific understanding to chunk appropriately
+•	
+Maximum retrieval accuracy justifies the additional expense of LLM-based processing
+The limitations are that it comes with a higher computational cost and latency, and that chunk 
+sizes are less predictable.
+Multi-modal chunking
+Modern documents often contain a mix of text, tables, images, and code. Multi-modal chunking 
+handles these different content types appropriately.
+We can imagine the following process for multi-modal content:
+1.	
+Extract text, images, and tables separately
+2.	
+Process text with appropriate text chunker
+3.	
+Process tables to preserve structure
+4.	
+For images: generate captions or extract text via OCR or a vision LLM
+5.	
+Create metadata linking related elements
+6.	
+Embed each element appropriately
+In practice, you would use specialized libraries such as unstructured for document parsing, vision 
+models for image understanding, and table extraction tools for structured data.
+Choosing the right chunking strategy
+Your chunking strategy should be guided by document characteristics, retrieval needs, and com­
+putational resources as the following table illustrates:
+Factor
+Condition
+Recommended Strategy
+Document 
+Characteristics
+Highly structured documents 
+(markdown, code)
+Document-specific chunking
+Complex technical content
+Semantic chunking
+Mixed media
+Multi-modal approaches
+Retrieval Needs
+Fact-based QA
+Smaller chunks (100-300 
+tokens)
+Complex reasoning
+Larger chunks (500-1000 
+tokens)

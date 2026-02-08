@@ -1,0 +1,9 @@
+Chapter 4
+141
+Figure 4.11 shows how multiple feature engineering pipeline runs look in ZenML’s dashboard.
+Figure 4.11: Feature pipeline runs in the ZenML dashboard
+Figure 8.12 shows the DAG of the RAG feature pipeline, where you can follow all the pipeline steps 
+and their output artifacts. Remember that whatever is returned from a ZenML step is automati-
+cally saved as an artifact, stored in ZenML’s artifact registry, versioned, and shareable across the 
+application.
+Figure 4.12: Feature pipeline DAG in the ZenML dashboard

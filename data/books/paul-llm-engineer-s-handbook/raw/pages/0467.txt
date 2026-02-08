@@ -1,0 +1,34 @@
+MLOps and LLMOps
+436
+The workflows are triggered by events like push, pull_request, or schedule. For example, you 
+might trigger a workflow every time code is pushed to a specific branch. Now that we understand 
+how GitHub Actions works, let’s look at the LLM Twin’s CI pipeline.
+The CI pipeline
+The LLM Twin’s CI pipeline is split into two jobs:
+•	
+A QA job that looks for formatting and linting errors using Ruff. Also, it runs a gitleaks 
+step to scan for leaked secrets throughout our repository.
+•	
+A test job that runs all our automatic tests using Pytest. In our use case, we implemented 
+just a dummy test to showcase the CI pipeline, but using the structure from this book, 
+you can easily extend it with real tests for your use case.
+GitHub Actions CI YAML file
+The YAML file sits under .github/workflows/ci.yaml. It begins by defining the workflow’s 
+name as CI, as you can see in the following snippet. This label will be used to identify the work-
+flow within GitHub’s Actions interface. Next, the section specifies that the workflow should be 
+triggered whenever a pull_request event occurs. Hence, the CI workflow will automatically run 
+whenever a PR is opened, synchronized, or reopened.
+name: CI
+on:
+  pull_request:
+The concurrency section ensures that only one instance of this workflow runs for a given reference 
+(like a branch) at any given time. The group field is defined using GitHub’s expression syntax to 
+create a unique group name based on the workflow and the reference. The cancel-in-progress: 
+true line ensures that if a new workflow run is triggered before the previous one finishes, the 
+previous run is canceled. This is particularly useful to prevent redundant executions of the same 
+workflow.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+The workflow defines two separate jobs: qa and test. Each job runs on the latest version of Ubuntu, 
+specified by runs-on: ubuntu-latest.

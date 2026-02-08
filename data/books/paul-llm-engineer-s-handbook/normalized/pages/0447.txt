@@ -1,0 +1,40 @@
+MLOps and LLMOps
+416
+3.
+Now, we can trigger any pipeline implemented during this book either from the CLI of
+our local machine or ZenML's dashboard.
+4.
+Each step from ZenML's pipeline will be mapped to a SageMaker job that runs on an AWS
+EC2 virtual machine (VM). Based on the dependencies between the directed acyclic
+graph (DAG) steps, some will run in parallel and others sequentially.
+5.
+When running a step, SageMaker pulls the Docker image from ECR, defined in step 2.
+Based on the pulled image, it creates a Docker container that executes the pipeline step.
+6.	 As the job is executed, it can access the S3 artifact storage, MongoDB, and Qdrant vector
+DB to query or push data. The ZenML dashboard is a key tool, providing real-time updates
+on the pipeline's progress and ensuring a clear view of the process.
+Now that we know how the infrastructure works, let's start by setting up MongoDB, Qdrant, and
+the ZenML cloud.
+Setting up MongoDB
+We will show you how to create and integrate a free MongoDB cluster into our projects. To do so,
+these are the steps you have to follow:
+1.
+Go to their site at https://www.mongodb.com and create an account.
+2.
+In the left panel, go to Deployment | Database and click Build a Cluster.
+3.
+Within the creation form, do the following:
+a.
+Choose an M0 Free cluster.
+b.	 Call your cluster twin.
+c.
+Choose AWS as your provider.
+What AWS cloud region should I choose?
+In our tutorials, all the services will be deployed to AWS within the Frankfurt
+(eu-central-1) region. You can select another region, but be consistent across all the
+services to ensure faster responses between components and reduce potential errors.
+How should I manage changes in the services' UIs?
+Unfortunately, MongoDB, Qdrant, or other services may change their UI or naming
+conventions. As we can't update this book each time that happens, please refer to
+their official documentation to check anything that differs from our tutorial. We
+apologize for this inconvenience, but unfortunately, it is not in our control.

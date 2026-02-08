@@ -1,0 +1,34 @@
+Encoding Categorical Variables
+72
+Note
+The fit_transform() method of scikit-learn’s TargetEncoder() is not equivalent 
+to applying fit().transform(). With fit_transform(), the resulting dataset is encoded 
+based on partial fits over the training folds of a cross-validation scheme. This functionality was 
+intentionally designed to prevent overfitting the machine learning model to the train set.
+Now, let’s perform target encoding with feature-engine:
+8.	
+Let’s import the encoder:
+from feature_engine.encoding import MeanEncoder
+9.	
+Let’s set up the target mean encoder to encode all categorical variables while applying smoothing:
+mean_enc = MeanEncoder(smoothing="auto",
+    variables=None)
+Note
+MeanEncoder() does not apply smoothing by default. Make sure you set it to auto or to 
+an integer to control the blend between prior and posterior target estimates.
+10.	 Let’s fit the transformer to the train set so that it learns and stores the mean target value per 
+category per variable:
+mean_enc.fit(X_train, y_train)
+11.	 Finally, let’s encode the train and test sets:
+X_train_enc = mean_enc.transform(X_train)
+X_test_enc = mean_enc.transform(X_test)
+Note
+The category-to-number pairs are stored as a dictionary of dictionaries in the encoder_dict_ 
+attribute. To display the stored parameters, execute mean_enc.encoder_dict_.
+How it works…
+In this recipe, we replaced the categories with the mean target value using scikit-learn 
+and feature-engine.
+To encode with scikit-learn, we used TargetEncoder(), leaving the smooth parameter to 
+its default value of auto. Like this, the transformer used the target variance to determine the weighting 
+factor for the blend of probabilities. With fit(), the transformer learned the value it should use to 
+replace the categories, and with transform(), it replaced the categories.

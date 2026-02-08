@@ -1,0 +1,43 @@
+or performance checks-their result feeds into the single summarize_response node.
+By connecting each of the handler nodes (handle_refund, handle_performance,
+handle_invoice, and handle_login) into summarize_response, you ensure all diver‐
+gent outcomes are unified into one coherent customer reply. Finally, linking
+summarize_response to END cleanly terminates the workflow, guaranteeing every exe‐
+cution path converges on a polished response before the graph finishes:
+# Consolidation: both refund and performance (and invoice/login) lead here
+graph.add_edge(handle_refund, summarize_response)
+graph.add_edge(handle_performance, summarize_response)
+# Also cover paths where invoice or login directly go to summary
+graph.add_edge(handle_invoice, summarize_response)
+graph.add_edge(handle_login, summarize_response)
+# Final: summary → END
+graph.add_edge(summarize_response, END)
+# 3. Execute the graph
+initial_state = {
+    "user_message": "Hi, I need help with my invoice and possibly a refund.",
+    "user_id": "U1234"
+}
+result = graph.run(initial_state, max_depth=5)
+print(result["response"])
+Graphs offer the ultimate flexibility for modeling complex, nonlinear workflowsenabling you to branch, merge, and consolidate multiple tool executions into a uni‐
+fied process. However, this expressiveness comes with added overhead: more LLM
+calls, deeper routing logic, and the potential for cycles or unreachable paths. To har‐
+ness graphs effectively, always anchor your design in your specific use case's require‐
+ments, and resist the temptation to overcomplicate.
+Start with a chain if your task is strictly linear (e.g., prompt → model → parser).
+Chains are easy to reason about and debug. Adopt a graph only when you must both
+branch and later consolidate multiple streams of information (e.g., parallel analysis
+steps that feed a single summary).
+In practice, sketch your topology on paper first: label each node with the tool or logi‐
+cal step, draw arrows for the allowed transitions, and highlight where branches
+reunite. Then implement incrementally-cap your depth and branching factor, write
+unit tests for each router, and leverage LangGraph's built-in tracing to validate that
+every path leads to a terminal node.
+Above all, keep it as simple as possible. Every additional node or edge multiplies the
+potential execution paths and error modes. If a simpler chain or tree meets your
+needs, save the graph patterns for genuinely complex scenarios. By starting simple
+and iterating only as your requirements demand, you'll build robust, maintainable
+orchestration that scales with confidence.
+Tool Topologies
+|
+111

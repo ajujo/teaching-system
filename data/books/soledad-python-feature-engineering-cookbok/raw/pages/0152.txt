@@ -1,0 +1,30 @@
+Implementing equal-frequency discretization
+129
+Now, let’s carry out equal-frequency discretization with scikit-learn:
+14.	 Let’s import the transformer:
+from sklearn.preprocessing import KBinsDiscretizer
+15.	 Let’s set up the discretizer to sort variables into eight equal-frequency bins:
+disc = KBinsDiscretizer(
+    n_bins=8, encode='ordinal', strategy='quantile')
+16.	 Let’s fit the discretizer to a slice of the train set containing the variables from step 10 so that it 
+learns the interval limits:
+disc.fit(X_train[variables])
+Note
+scikit-learn’s KBinsDiscretiser() will discretize all the variables in the dataset. To discretize 
+only a subset, we apply the transformer to the slice of the DataFrame that contains the variables 
+of interest. Alternatively, we can restrict the discretization to a subset of variables by using the 
+ColumnTransformer(), as we did in the Performing equal-width discretization recipe.
+17.	 Let’s make a copy of the DataFrames where we’ll store the discretized variables:
+train_t = X_train.copy()
+test_t = X_test.copy()
+18.	 Finally, let’s transform the variables in both the train and test sets:
+train_t[variables] = disc.transform(
+    X_train[variables])
+test_t[variables] = disc.transform(X_test[variables])
+We can inspect the cut points by executing disc.bin_edges_.
+How it works…
+In this recipe, we sorted the variable values into intervals with a similar proportion of observations.
+We used pandas qcut() to identify the interval limits from the train set and sort the values of the 
+HouseAge variable into those intervals. Next, we passed those interval limits to pandas cut() to 
+discretize HouseAge in the test set. Note that pandas qcut(), like pandas cut(), returned the 
+interval values as ordered integers, which is the equivalent of ordinal encoding,

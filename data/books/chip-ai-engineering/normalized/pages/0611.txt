@@ -1,0 +1,30 @@
+Este capítulo también trata de las métricas de rendimiento y las
+concesiones. A veces, una técnica que acelera un modelo también puede
+reducir su costo. Por ejemplo, reducir la precisión de un modelo lo hace
+más pequeño y más rápido. Pero, a menudo, la optimización requiere hacer
+concesiones. Por ejemplo, el mejor hardware puede hacer que su modelo
+funcione más rápido, pero a un costo mayor.
+Dada la creciente disponibilidad de modelos de código abierto, cada vez
+son más los equipos que crean sus propios servicios de inferencia. Sin
+embargo, aunque no aplique estas técnicas de optimización de la inferencia,
+comprenderlas le ayudará a evaluar los servicios y marcos de inferencia. Si
+la latencia y el costo de su aplicación le están perjudicando, siga leyendo.
+Este capítulo podría ayudarle a diagnosticar las causas y las posibles
+soluciones.
+Comprender la optimización de la inferencia
+Hay dos fases distintas en el ciclo de vida de un modelo de IA: el
+entrenamiento y la inferencia. El entrenamiento se refiere al proceso de
+construcción de un modelo. La inferencia se refiere al proceso de utilizar un
+modelo para calcular un output para un input determinado. 1 A menos que
+entrene o afine un modelo, solo tendrá que preocuparse principalmente de
+la inferencia. 2
+Esta sección comienza con una visión general de la inferencia que le
+presenta un vocabulario compartido para usarse el resto del capítulo. Si ya
+está familiarizados con estos conceptos, puede saltar a la sección que le
+interese.
+Visión general de la inferencia
+En producción, el componente que ejecuta la inferencia del modelo se
+denomina servidor de inferencia. Alberga los modelos disponibles y tiene
+acceso al hardware necesario. En función de las solicitudes de las
+aplicaciones (por ejemplo, prompts de los usuarios), asigna recursos para
+ejecutar los modelos adecuados y devuelve las respuestas a los usuarios. Un

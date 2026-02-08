@@ -1,0 +1,30 @@
+CLAVES PARA ENTENDER LOS CUELLOS DE
+BOTELLA DE LA MEMORIA
+Si decide saltarse esta sección, aquí tiene algunos puntos clave. Si
+alguno de estos puntos no le resulta familiar, los conceptos de esta
+sección deberían ayudarle a comprenderlo:
+1. Debido a la escala de los modelos fundacionales, la memoria
+es un cuello de botella para trabajar con ellos, tanto para la
+inferencia como para el afinado. La memoria necesaria para el
+afinado suele ser mucho mayor que la necesaria para la
+inferencia, debido a la forma en que se entrenan las redes
+neuronales.
+2. El número de parámetros, el número de parámetros entrenables
+y las representaciones numéricas son los factores que más
+influyen en el consumo de memoria de un modelo durante el
+afinado.
+3. Cuantos más parámetros entrenables haya, mayor será la huella
+de memoria. Puede reducir los requisitos de memoria para el
+afinado reduciendo el número de parámetros entrenables.
+Reducir el número de parámetros entrenables es la motivación
+para usar el PEFT, o afinado eficiente en parámetros.
+4. La cuantización consiste en convertir un modelo de un formato
+con más bits a otro con menos bits. La cuantización es una
+forma sencilla y eficaz de reducir el espacio de memoria de un
+modelo. Para un modelo de 13 000 millones de parámetros,
+utilizar FP32 significa 4 bytes por ponderación o 52 GB para la
+totalidad de las ponderaciones. Si pueden reducir cada valor a
+solo 2 bytes, la memoria necesaria para las ponderaciones del
+modelo disminuye a 26 GB.
+5. La inferencia se suele realizar utilizando el menor número de
+bits posible, como 16 bits, 8 bits e incluso 4 bits.

@@ -1,0 +1,37 @@
+Chapter 4
+153
+generated_answer = "The transformer architecture was introduced by OpenAI
+in 2018 and uses recurrent neural networks. BERT is a transformer model
+developed by Google."
+verification_result = verify_response_accuracy(retrieved_docs, generated_
+answer)
+print(verification_result)
+We should get a response like this:
+{
+    "claims": [
+        {
+            "claim": "The transformer architecture was introduced by
+OpenAI in 2018",
+            "status": "contradicted",
+            "evidence": "The transformer architecture was introduced in
+the paper 'Attention is All You Need' by Vaswani et al. in 2017.",
+            "explanation": "The claim is contradicted by the fact that the
+transformer architecture was introduced in 2017 by Vaswani et al., not by
+OpenAI in 2018."
+        },
+        {
+            "claim": "The transformer architecture uses recurrent neural
+networks",
+            "status": "contradicted",
+            "evidence": "It relies on self-attention mechanisms instead of
+recurrent or convolutional neural networks.",
+            "explanation": "The claim is contradicted by the fact that the
+transformer architecture does not use recurrent neural networks but relies
+on self-attention mechanisms."
+        },
+        {
+            "claim": "BERT is a transformer model developed by Google",
+            "status": "fully_supported",
+            "evidence": "BERT is a transformer-based model developed by
+Google that uses masked language modeling and next sentence prediction as
+pre-training objectives.",

@@ -1,0 +1,33 @@
+Extracting Features from Text Variables
+342
+Tip
+You can remove trailing white spaces in a string, including those from new lines, before counting
+the number of characters by adding the strip() method before the len() method, as shown
+here: df['num_char'] = df['text'].str.strip().str.len().
+4.
+Let's capture the number of words in each text in a new column:
+df['num_words'] = df['text'].str.split().str.len()
+To count words, we use the pandas library's split() method, which splits a text at white
+spaces. Check out the output of split() by executing, for instance, df["text"].loc[1].
+split() to separate the words of the second text of the DataFrame.
+5.
+Let's capture the number of unique words in each text in a new column:
+df['num_vocab']df[
+    'text'].str.lower().str.split().apply(
+        set).str.len()
+Note
+Python interprets the same word as two different words if one has a capital letter. To avoid this
+behavior, we can apply the lower() method before the split() method.
+6.
+Let's create a feature that captures the lexical diversity - that is, the total number of words (step
+4) compared to the number of unique words (step 5):
+df['lexical_div'] = df['num_words'] / df['num_vocab']
+7.
+Let's calculate the average word length by dividing the number of characters (step 3) by the
+number of words (step 4):
+df['ave_word_length'] = df[
+    'num_char'] / df['num_words']
+If we execute df.head(), we will see the first five rows of data with the text and the newly
+created features:
+Figure 11.1 - A DataFrame with the text variable and features
+that summarize some of the text's characteristics

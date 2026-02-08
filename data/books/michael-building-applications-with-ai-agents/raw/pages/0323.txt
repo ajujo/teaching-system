@@ -1,0 +1,40 @@
+organizational infrastructure—is essential for designing effective collaboration mod‐
+els, access controls, and governance structures.
+At the smallest scope, agents serve individuals: helping manage calendars, summarize
+emails, or provide research support. These agents benefit from intimate context but
+have limited authority and minimal risk. Their success depends on understanding the
+preferences and working styles of a single user. Over time, individuals often delegate
+more responsibility to these agents, but oversight remains straightforward.
+Team agents represent the next layer of complexity. They assist with shared knowl‐
+edge management, project tracking, or meeting synthesis. These agents must navigate
+shared memory boundaries, respect interpersonal dynamics, and mediate across
+potentially conflicting expectations. They require more sophisticated context man‐
+agement and must surface uncertainties that might require group decision making
+rather than unilateral action.
+We see this in Bank of America’s “Erica” assistant, which today handles over two bil‐
+lion customer requests and more than half of internal IT-help-desk tickets; by surfac‐
+ing its confidence (e.g., “I’m 85% sure this answers your question”) and providing a
+clear handoff to a live agent whenever uncertainty rose above a defined threshold,
+Erica scaled from simple FAQs to trusted enterprise-wide service.
+As we scale to division- or function-level agents—such as agents supporting finance,
+legal, or customer success—responsibilities expand dramatically. These agents inter‐
+act with sensitive systems, touch multiple stakeholders, and influence performance at
+scale.
+At this level, role-based access control (RBAC) becomes crucial. Agents must differ‐
+entiate between public, internal, and restricted knowledge. They should have different
+privileges when acting on behalf of a VP than when assisting an intern. Clear delega‐
+tion frameworks and logging are essential to ensure accountability.
+At the highest level, enterprise-wide agents may coordinate workflows across depart‐
+ments, synthesize cross-functional data, or even advise on strategic decisions. These
+agents must operate within strong governance boundaries, subject to strict policies,
+regular audits, and often human sign-off for critical actions. They must be aware of
+inter-team dependencies, business rules, and organizational politics.
+Critically, the design of these agents is not just a technical challenge—it’s a sociotech‐
+nical one. Agents must align with organizational culture, incentives, and workflows.
+Collaboration interfaces must make it easy for humans to review, approve, or modify
+agent outputs. Escalation pathways must scale with responsibility. And as agents span
+wider scopes, the cost of errors—and the need for well-defined trust boundaries—
+increases.
+Scaling Collaboration 
+| 
+301

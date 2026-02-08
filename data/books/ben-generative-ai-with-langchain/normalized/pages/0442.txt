@@ -1,0 +1,33 @@
+Chapter 10
+415
+Recent advances in reasoning capabilities have moved beyond simple autoregressive token gener­
+ation by introducing the concept of thought-sequences of tokens representing intermediate steps
+in reasoning processes. This paradigm shift enables models to mimic complex human reasoning
+through tree search and reflective thinking approaches. Research shows that encouraging models
+to think with more tokens during test-time inference significantly boosts reasoning accuracy.
+Multiple approaches have emerged to leverage this insight: Process-based supervision, where
+models generate step-by-step reasoning chains and receive rewards on intermediate steps. Mon­
+te Carlo Tree Search (MCTS) techniques that explore multiple reasoning paths to find optimal
+solutions, and revision models trained to solve problems iteratively, refining previous attempts.
+For example, the 2025 rStar-Math paper (rStar-Math: Small LLMs Can Master Math Reasoning
+with Self-Evolved Deep Thinking) demonstrated that a model can achieve reasoning capabilities
+comparable to OpenAI's o1 without distillation from superior models, instead leveraging "deep
+thinking" through MCTS guided by an SLM-based process reward model. This represents a fun­
+damentally different approach to improving AI capabilities than traditional scaling methods.
+RAG grounds model outputs in external knowledge sources, which helps address hallucination
+issues more effectively than simply scaling up model size. This approach allows even smaller
+models to access accurate, up-to-date information without having to encode it all in parameters.
+Advanced memory mechanisms have shown promising results. Recent innovations like Meta
+FAIR's memory layers and Google's Titans neural memory models demonstrate superior perfor­
+mance while dramatically reducing computational requirements. Meta's memory layers use a
+trainable key-value lookup mechanism to add extra parameters to a model without increasing
+FLOPs. They improve factual accuracy by over 100% on factual QA benchmarks while also en­
+hancing performance on coding and general knowledge tasks. These memory layers can scale to
+128 billion parameters and have been pretrained to 1 trillion tokens.
+Other innovative approaches in this paradigm include:
+•
+Neural Attention Memory Models (NAMMs) improve the performance and efficiency
+of transformers without altering their architectures. NAMMs can cut input contexts to
+a fraction of the original sizes while improving performance by 11% on LongBench and
+delivering a 10-fold improvement on InfiniteBench. They've demonstrated zero-shot
+transferability to new transformer architectures and input modalities.

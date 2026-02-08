@@ -1,0 +1,14 @@
+figura 3-1. La tendencia de los artículos sobre evaluación de LLMs a lo largo del
+tiempo. Imagen de Chang et al. (2023).
+En mi propio análisis de los 1000 principales repositorios relacionados con
+la IA en GitHub, ordenados por el número de estrellas, encontré más de 50
+repositorios dedicados a la evaluación (hasta mayo de 2024). 5 Al trazar el
+número de repositorios de evaluación en función de su fecha de creación, la
+curva de crecimiento parece exponencial, como se muestra en la Figura 3-2.
+La mala noticia es que, a pesar del creciente interés por la evaluación, va a
+la zaga en términos de interés por el resto del proceso de la ingeniería de
+IA. Balduzzi et al. de Deep-Mind señalaron en su artículo que "el desarrollo
+de evaluaciones ha recibido poca atención sistemática en comparación con
+el desarrollo de algoritmos". Según el artículo, los resultados de los
+experimentos se utilizan casi exclusivamente para mejorar los algoritmos y
+rara vez para mejorar la evaluación. Reconociendo la falta de inversiones en

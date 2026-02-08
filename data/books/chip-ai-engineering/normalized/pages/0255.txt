@@ -1,0 +1,32 @@
+modelo de IA qué tan fluido y coherente es un texto) o utilizando la
+perplejidad, como se expone en el Capítulo 3.
+Los modelos generativos, con sus nuevas capacidades y nuevos casos de
+uso, tienen nuevos problemas que requieren nuevas métricas de
+seguimiento. El problema más acuciante son las alucinaciones no deseadas.
+Las alucinaciones son deseables para tareas creativas, no para tareas que
+dependen de la facticidad. Una métrica que muchos desarrolladores de
+aplicaciones quieren implementar es la coherencia factual. Otra cuestión
+que se suele tener en cuenta es la seguridad: ¿pueden los productos
+generados causar daños a los usuarios y a la sociedad? "Seguridad" es un
+término genérico que engloba todo tipo de toxicidad y sesgos.
+Hay muchas otras medidas que pueden interesar a un desarrollador de
+aplicaciones. Por ejemplo, cuando construí mi asistente de escritura basado
+en IA, me preocupé por la controversialidad, que mide el contenido que no
+es necesariamente dañino pero puede provocar acalorados debates. A
+algunas personas les puede importar la amabilidad, la positividad, la
+creatividad o la concisión, pero no voy a poder abarcarlas a todas. Esta
+sección se centra en cómo evaluar la seguridad y la coherencia
+factualmente. La incoherencia factual también puede causar daños, así que
+técnicamente entra dentro de la seguridad. Sin embargo, debido a su
+alcance, la he colocado en su propia sección. Las técnicas utilizadas para
+medir estas cualidades pueden darle una idea aproximada de cómo evaluar
+otras cualidades que le interesen.
+Coherencia factual
+Dado que la incoherencia factual puede tener consecuencias catastróficas,
+se han desarrollado y se desarrollarán muchas técnicas para detectarla y
+medirla. Es imposible abarcarlos todos en un solo capítulo, así que solo
+repasaré las líneas generales.
+La coherencia factual de los outputs de un modelo puede verificarse en dos
+contextos: en relación con hechos explícitamente proporcionados (contexto)
+o en relación con el conocimiento abierto:
+Coherencia factual local

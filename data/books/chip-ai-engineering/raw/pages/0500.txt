@@ -1,0 +1,27 @@
+vez es más habitual servir modelos en 16 bits e incluso en una precisión
+inferior. Por ejemplo, Dettmers et al. (2022) realizaron un excelente trabajo
+cuantizando LLMs en 8 bits con LLM.int8() y 4 bits con QLoRA (Dettmers
+et al., 2023).
+Un modelo también puede servirse en precisión mixta, donde los valores se
+reducen en precisión cuando es posible y se mantienen en mayor precisión
+cuando es necesario. Para servir modelos en los dispositivos, Apple (2024)
+aprovechó un esquema de cuantización que utiliza una mezcla de formatos
+de 2 y 4 bits, con una media de 3.5 bits por ponderación. También en 2024,
+anticipándose a las redes neuronales de 4 bits, NVIDIA anunció su nueva
+arquitectura de GPU, Blackwell, que admite la inferencia de modelos en
+punto flotante de 4 bits.
+A los 8 bits y por debajo, las representaciones numéricas son más
+complicadas. Puede mantener los valores de los parámetros como flotantes
+utilizando uno de los formatos minifloat, como FP8 (8 bits) y FP4 (4 bits).
+18 Sin embargo, lo más habitual es que los valores de los parámetros se
+conviertan a un formato entero, como INT8 o INT4.
+La cuantización es eficaz, pero lo que se puede lograr con ella tiene un
+límite. No se puede tener menos de 1 bit por valor, y algunos han intentado
+la representación de 1 bit, por ejemplo, Binary-Connect (Courbariaux et al.,
+2015), Xnor-Net (Rastegari et al., 2016), y BitNet (Wang et al., 2023). 19
+En 2024, los investigadores de Microsoft (Ma et al.) declararon que
+estábamos entrando en la era de los LLMs de 1 bit al presentar BitNet
+b1.58, un modelo lingüístico basado en transformadores que requiere solo
+1.58 bits por parámetro y cuyo rendimiento es comparable al de Llama 2 de
+16 bits (Touvron et al., 2023) hasta 3.9 MM de parámetros, como se
+muestra en la Tabla 7-4.

@@ -1,0 +1,20 @@
+figura 10-4. Arquitectura de la aplicación con la adición de barreras de seguridad de
+input y output.
+Paso 3. Añadir enrutador de modelos y puerta de enlace
+A medida que las aplicaciones crecen e implican a más modelos, surgen
+enrutadores y puertas de enlace para ayudarles a gestionar la complejidad y
+los costos de dar servicio a varios modelos.
+Enrutador
+En lugar de utilizar un modelo para todas las consultas, puede disponer de
+soluciones diferentes para distintos tipos de consultas. Este planteamiento
+tiene varias ventajas. En primer lugar, permite modelos especializados, que
+potencialmente pueden funcionar mejor que un modelo de uso general para
+consultas específicas. Por ejemplo, puede tener un modelo especializado en
+resolución de problemas técnicos y otro especializado en facturación. En
+segundo lugar, esto puede ayudarle a ahorrar costos. En vez de utilizar un
+modelo caro para todas las consultas, puede dirigir las consultas más
+sencillas a modelos más baratos.
+Un enrutador suele consistir en un clasificador de intenciones que predice
+lo que el usuario intenta hacer. Según la intención prevista, la consulta se
+enruta a la solución adecuada. Como ejemplo, considere diferentes
+intenciones relevantes para un chatbot de atención al cliente:

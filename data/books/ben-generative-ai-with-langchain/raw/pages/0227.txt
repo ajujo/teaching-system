@@ -1,0 +1,34 @@
+Building Intelligent Agents
+200
+   Always add * to operations, examples:
+     73i -> 73*i
+     7pi**2 -> 7*pi**2
+   """
+   math_constants = {"pi": math.pi, "i": 1j, "e": math.exp}
+   result = ne.evaluate(expression.strip(), local_dict=math_constants)
+   return str(result)
+Let’s explore the calculator object we have! Notice that LangChain auto-inherited the name, the 
+description, and args schema from the docstring and type hints. Please note that we used a few-
+shot technique (discussed in Chapter 3) to teach LLMs how to prepare the payload for our tool 
+by adding two examples in the docstring:
+from langchain_core.tools import BaseTool
+assert isinstance(calculator, BaseTool)
+print(f"Tool schema: {calculator.args_schema.model_json_schema()}")
+>> Tool schema: {'description': 'Calculates a single mathematical 
+expression, incl. complex numbers.\n\nAlways add * to operations, 
+examples:\n  73i -> 73*i\n  7pi**2 -> 7*pi**2', 'properties': 
+{'expression': {'title': 'Expression', 'type': 'string'}}, 'required': 
+['expression'], 'title': 'calculator', 'type': 'object'}
+Let’s try out our new tool to evaluate an expression with complex numbers, which extend real 
+numbers with a special imaginary unit i that has a property i**2=-1:
+query = "How much is 2+3i squared?"
+agent = create_react_agent(llm, [calculator])
+for event in agent.stream({"messages": [("user", query)]}, stream_
+mode="values"):
+   event["messages"][-1].pretty_print()
+>> ===============================Human Message ==========================
+=======
+How much is 2+3i squared?
+================================== Ai Message ============================
+======
+Tool Calls:

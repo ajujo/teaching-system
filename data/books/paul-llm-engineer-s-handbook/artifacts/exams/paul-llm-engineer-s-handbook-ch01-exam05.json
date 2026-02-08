@@ -1,0 +1,217 @@
+{
+  "$schema": "chapter_exam_set_v1",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam05",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "chapter_number": 1,
+  "chapter_title": "Understanding the LLM Twin Concept and Architecture",
+  "units_included": [
+    "paul-llm-engineer-s-handbook-ch01-u01"
+  ],
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "created_at": "2026-02-06T09:10:17.259755+00:00",
+  "generation_time_ms": 105420,
+  "mode": "json",
+  "difficulty": "mid",
+  "total_points": 9,
+  "passing_threshold": 0.6,
+  "pages_used": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "valid": true,
+  "validation_warnings": [],
+  "questions": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q01",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "question": "¿Cuál es el propósito principal de crear un LLM Twin según el capítulo?",
+      "correct_answer": 1,
+      "explanation": "El LLM Twin se define como un AI character que emula el estilo de escritura de una persona específica, permitiendo aplicaciones personalizadas en lugar de usar modelos genéricos. Esta definición aparece claramente en la introducción del capítulo.",
+      "points": 1,
+      "tags": [
+        "LLM Twin",
+        "Concepto"
+      ],
+      "options": [
+        "Sustituir completamente a los modelos genéricos como ChatGPT",
+        "Crear un clon exacto del estilo de escritura de una persona específica para aplicaciones personalizadas",
+        "Reducir costos computacionales en entornos empresariales",
+        "Mejorar la seguridad cibernética mediante técnicas de machine learning"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          3,
+          16
+        ],
+        "rationale": "La definición y propósito del LLM Twin se explican en las primeras páginas del capítulo.",
+        "section_ids": [
+          "Understanding the LLM Twin concept"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q02",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Cuál de estas herramientas NO es mencionada como parte del ecosistema para construir el LLM Twin?",
+      "correct_answer": 2,
+      "explanation": "El capítulo menciona Hugging Face, MongoDB y Qdrant como herramientas clave para el desarrollo del LLM Twin. TensorFlow no se especifica en este contexto.",
+      "points": 1,
+      "tags": [
+        "Herramientas",
+        "Arquitectura"
+      ],
+      "options": [
+        "Hugging Face",
+        "MongoDB",
+        "TensorFlow",
+        "Qdrant"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          6,
+          32
+        ],
+        "rationale": "Las herramientas mencionadas se detallan en la descripción de la arquitectura del sistema.",
+        "section_ids": [
+          "Designing the system architecture of the LLM Twin"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q03",
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "El MVP (Minimum Viable Product) del LLM Twin se define como una versión funcional con todos los componentes completos y optimizados.",
+      "correct_answer": false,
+      "explanation": "El capítulo explica que el MVP es la versión más simple pero funcional, enfocada en validar conceptos básicos sin necesariamente incluir todas las optimizaciones finales.",
+      "points": 1,
+      "tags": [
+        "MVP",
+        "Desarrollo"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          7
+        ],
+        "rationale": "La definición de MVP se aborda explícitamente en la sección de planificación del producto.",
+        "section_ids": [
+          "Planning the MVP of the LLM Twin product"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q04",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "Explica brevemente los tres componentes principales de la arquitectura FTI (Feature/Training/Inference) mencionados en el capítulo.",
+      "correct_answer": "Los tres componentes son: 1) Feature pipeline para procesar datos, 2) Training pipeline para entrenar modelos y 3) Inference pipeline para hacer predicciones. Esta arquitectura permite un flujo escalable y reproducible de datos a producción.",
+      "explanation": "La arquitectura FTI se describe como solución al problema de construir sistemas ML, separando el procesamiento de datos, entrenamiento y inferencia en pipelines independientes pero integrados.",
+      "points": 2,
+      "tags": [
+        "Arquitectura",
+        "FTI"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          8,
+          14
+        ],
+        "rationale": "La descripción de la arquitectura FTI se detalla en las secciones sobre diseño de sistemas ML.",
+        "section_ids": [
+          "Building ML systems with feature/training/inference pipelines"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q05",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "question": "¿Cuál es el principal beneficio del uso de un pipeline de datos (data collection pipeline) para el LLM Twin?",
+      "correct_answer": 1,
+      "explanation": "El pipeline de datos permite centralizar y organizar los datos en un almacén estructurado, facilitando su acceso y procesamiento para las fases posteriores del proyecto.",
+      "points": 2,
+      "tags": [
+        "Pipeline",
+        "Datos"
+      ],
+      "options": [
+        "Automatizar la selección de modelos preentrenados",
+        "Centralizar y organizar los datos en un almacén estructurado",
+        "Mejorar la capacidad de procesamiento gráfico (GPU)",
+        "Reducir la necesidad de validación cruzada"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          19,
+          79
+        ],
+        "rationale": "La función del data collection pipeline se explica en detalle en la sección correspondiente.",
+        "section_ids": [
+          "Data collection pipeline"
+        ]
+      }
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q06",
+      "type": "short_answer",
+      "difficulty": "hard",
+      "question": "¿Por qué el autor argumenta que construir un LLM Twin es preferible a usar directamente ChatGPT?",
+      "correct_answer": "El LLM Twin permite personalizar modelos según necesidades específicas, evitar limitaciones éticas de modelos genéricos y garantizar coherencia en respuestas alineadas con el estilo de la persona emulada.",
+      "explanation": "Esta justificación se menciona explícitamente en la discusión sobre las ventajas del LLM Twin frente a chatbots existentes, destacando personalización y control.",
+      "points": 2,
+      "tags": [
+        "LLM Twin",
+        "Comparación"
+      ],
+      "source": {
+        "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+        "pages": [
+          5
+        ],
+        "rationale": "La comparación directa con ChatGPT se aborda en la sección mencionada.",
+        "section_ids": [
+          "Why not use ChatGPT (or another similar chatbot)?"
+        ]
+      }
+    }
+  ]
+}

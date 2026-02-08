@@ -1,0 +1,32 @@
+highlights the integration of human judgment to address ambiguities and high-stakes
+decisions, as seen in the SOC agent's escalation for nuanced threat assessments.
+Figure 11-3. HITL review workflow, where input data flows through an agent that gen‐
+erates output candidates, to human review with manual feedback, culminating in
+approved outputs for end users supported by system feedback loops.
+HITL review is not just a safety net for automation; it is a structured escalation pro‐
+cess that brings human judgment to bear on the most complex, ambiguous, or highimpact system issues. Automated pipelines flag incidents that exceed predefined
+thresholds, exhibit unexplained patterns, or present unresolved conflicts-these are
+then routed for human evaluation. Escalation criteria may include:
+• Persistent errors with no clear technical explanation
+• Anomalies in workflows with regulatory or ethical implications
+• Failures in high-value or mission-critical tasks
+• Conflicting recommendations or diagnoses from automated tools
+To find the right balance between human and AI decision making-ensuring humans
+focus on high-value interventions without being overwhelmed-escalation should
+prioritize cases with the least model certainty or the most consequential outcomes.
+For low-certainty cases, integrate confidence scores directly into the agent's outputs:
+many foundation models (e.g., GPT-5) can output a self-assessed certainty score (0-
+1) alongside responses by including instructions like "End your response with: cer‐
+tainty: [0-1 score based on confidence in accuracy]." Thresholds can be set (e.g., esca‐
+late if certainty < 0.7), or entropy measures used on probabilistic outputs (e.g., high
+entropy in classification logits indicates ambiguity). Variance across multiple runs
+(e.g., ensemble 3-5 inferences and escalate if outputs diverge > 20%) or external eval‐
+uators (e.g., a secondary foundation model critic scoring coherence) can further
+quantify uncertainty. In the SOC agent, low-certainty triages (e.g., a threat classifica‐
+tion with score < 0.8) could auto-escalate for review, filtering out routine highconfidence cases.
+For high-consequence cases, assess impact based on domain-specific severity: in the
+SOC agent, flag incidents with "high" severity ratings (e.g., potential data breaches) or
+those affecting critical assets (e.g., admin accounts). Combine this with risk scoringe.g., multiply uncertainty by consequence (escalate if score > threshold)-to
+252
+|
+Chapter 11: Improvement Loops

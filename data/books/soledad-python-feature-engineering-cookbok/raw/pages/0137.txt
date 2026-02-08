@@ -1,0 +1,37 @@
+Performing Variable Discretization
+114
+Discretization procedures can be classified as supervised and unsupervised. Unsupervised discretization 
+methods only use the variable’s distribution to determine the limits of the contiguous bins. On the 
+other hand, supervised methods use target information to create the intervals.
+In this chapter, we will discuss widely used supervised and unsupervised discretization procedures 
+that are available in established open source libraries. Among these, we will cover equal-width, equal-
+frequency, arbitrary, k-means, and decision tree-based discretization. More elaborate methods, such 
+as ChiMerge and CAIM, are out of the scope of this chapter, as their implementation is not yet open 
+source available.
+This chapter contains the following recipes:
+•	 Performing equal-width discretization
+•	 Implementing equal-frequency discretization
+•	 Discretizing the variable into arbitrary intervals
+•	 Performing discretization with k-means clustering
+•	 Implementing feature binarization
+•	 Using decision trees for discretization
+Technical requirements
+In this chapter, we will use the numerical computing libraries pandas, numpy, matplotlib, 
+scikit-learn, and feature-engine. We will also use the yellowbrick Python open 
+source library, which you can install with pip:
+ pip install yellowbrick
+For more details about yellowbrick, visit the documentation here:
+https://www.scikit-yb.org/en/latest/index.html
+Performing equal-width discretization
+Equal-width discretization consists of dividing the range of observed values for a variable into k 
+equally sized intervals, where k is supplied by the user. The interval width for the X variable is given 
+by the following:
+​Width = ​ Max ​(X)​ − Min​(​X​)​ 
+ 
+_____________ 
+k 
+​
+Then, if the values of the variable vary between 0 and 100, we can create five bins like this: width = 
+(100-0) / 5 = 20. The bins will be 0–20, 20–40, 40–60, and 80–100. The first and final bins (0–20 and 
+80–100) can be expanded to accommodate values smaller than 0 or greater than 100 by extending 
+the limits to minus and plus infinity.

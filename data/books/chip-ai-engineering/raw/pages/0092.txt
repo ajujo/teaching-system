@@ -1,0 +1,18 @@
+20  Un chiste recurrente en los inicios de la IA generativa es que las startups de IA
+son envoltorios de OpenAI o Claude.
+21  Durante el proceso de escritura de este libro, casi no podía hablar con ninguna
+startup de IA sin escuchar la frase "círculo virtuoso de datos".
+22  Descargo de responsabilidad: Soy inversora de Photoroom.
+23  Como me dijo el responsable de IA de una empresa del Fortune 500: su equipo
+sabe cómo trabajar con 10 GPU, pero no sabe cómo hacerlo con 1000 GPU.
+24  Y se les ofrecen paquetes de prestaciones increíbles.
+25  Si los términos "pre-entrenamiento" y "post-entrenamiento" le parecen poco
+imaginativos, no es el único. La comunidad investigadora de la IA es excelente
+en muchas cosas, pero poner nombres no es una de ellas. Ya hemos hablado de
+que "grandes modelos lingüísticos" no es un término muy científico por la
+ambigüedad de la palabra "grandes". Y me encantaría que la gente dejara de
+publicar artículos con el título "Todo lo que se necesita es X".
+26  Streamlit, Gradio y Plotly Dash son herramientas muy usadas para crear
+aplicaciones web de IA.
+27  Anton Bacaj me dijo que "la ingeniería de IA no es más que ingeniería de
+software con modelos de IA introducidos en la pila".

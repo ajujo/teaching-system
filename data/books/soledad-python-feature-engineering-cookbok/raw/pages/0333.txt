@@ -1,0 +1,21 @@
+Creating Features from a Time Series with tsfresh
+310
+Figure 10.1 – Diagram showing the process of feature creation 
+from a time series for classification or regression
+These feature vectors, which are represented as ​x​ 1​, ​x​ 2​, and ​x​ 3​ in Figure 10.1, should capture the 
+characteristics of the time series. For example, ​x​ 1​could be the mean value of the time series and ​x​ 2​its 
+variance. We can create many features to characterize the time series concerning the distribution of 
+data points, correlation properties, stationarity, or entropy, among others. Therefore, the feature vector, 
+N, can be constructed by applying a series of characterization methods that take a time series as 
+input and return one or more scalars as output. The mean, or the sum, takes the time-series sequence 
+as input and returns a single scalar as output, with the mean value of the time series or the sum of its 
+values. We can also fit a linear trend to the time-series sequence, which will return two scalars – one 
+with the slope and one with the intercept.
+tsfresh applies 63 characterization methods to a time series, each of which returns one or more 
+scalars, therefore resulting in more than 750 features for any given time series. In this recipe, we will 
+use tsfresh to transform time-series data into an M x N feature table, which we will then use to 
+predict office occupancy.
+Getting ready
+In this recipe, we will use the Occupancy Detection dataset described in the Technical requirements 
+section. This dataset contains measurements of temperature, humidity, ​CO​ 2​ level, and light consumption 
+in an office taken at one-minute intervals. There are 135 hours of measurements, and each hour is 

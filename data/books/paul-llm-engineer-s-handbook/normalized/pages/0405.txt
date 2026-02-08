@@ -1,0 +1,7 @@
+Inference Pipeline Deployment
+374
+In this section, we will walk you through the code presented in Figure 10.5 that helps us fully automate the deployment process, starting with the create_endpoint() function. Ultimately, we will
+test the CLI command and check the AWS console to see whether the deployment was successful.
+The SageMaker deployment code is available at https://github.com/PacktPublishing/LLM-
+Engineers-Handbook/tree/main/llm_engineering/infrastructure/aws/deploy.
+Figure 10.5: AWS SageMaker deployment steps

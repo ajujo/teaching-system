@@ -1,0 +1,19 @@
+Praise for Building Applications with AI Agents
+Finally, a book about really scaling AI into the human workforce. Michael does a great job
+leveraging his expertise at scalable organizations like Uber and Microsoft to teach any
+technical leader in a small and medium business how to really create scalable agentic
+solutions for their transformation.
+—Birju Shah, professor of product management and AI at
+Kellogg School of Management, Northwestern University,
+former head of Uber AI product team
+A sharp, practical guide, Building Applications with AI Agents equips leaders to move
+from generative AI hype to real-world systems. It distills complex concepts into
+actionable strategies, bridging vision and execution for organizations seeking measurable
+efficiency and competitive edge.
+—Amanda Cheng, partner of Founders Bay
+As a clinician working at the intersection of medicine and technology, I found this to be
+an essential read for anyone building AI agents—clear, practical, and rich with insight
+into tools, orchestration, and design patterns relevant to healthcare use cases like intake,
+triage, and workflow integration.
+—Carrie Ho, MD, assistant professor,
+hematologist/oncologist, UCSF

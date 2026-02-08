@@ -1,0 +1,33 @@
+Extracting Features from Relational Data with Featuretools
+296
+Note
+For a full list of the default text primitives, visit https://featuretools.alteryx.
+com/en/stable/api_reference.html#naturallanguage-transform-
+primitives.
+In addition, there is an accompanying Python library, nlp_primitives, which contains additional 
+primitives to create more advanced features based on NLP. Among these functions, we find primitives 
+for determining the diversity score, the polarity score, or the count of stop words.
+Note
+There is no documentation at the time of writing to learn more about the primitives 
+supported by the nlp_primitives library, so to find out more, you need to 
+check the source code: https://github.com/alteryx/nlp_primitives/
+tree/6243ef2379501bfec2c3f19e35a30b5954605e57/nlp_primitives.
+In this recipe, we will first create multiple features from a text variable utilizing featuretools’ 
+default functionality and then highlight how to use primitives from the nlp_primitives library.
+Getting ready
+To follow along with this recipe, you need to install the nlp_primitives library, which you can 
+do with pip:
+pip install nlp_primitives
+Otherwise, you can use conda:
+conda install -c conda-forge nlp-primitives
+Note
+For more details, visit the nlp_primitives GitHub repository: https://github.
+com/alteryx/nlp_primitives
+How to do it...
+Let’s begin by importing the libraries and getting the dataset ready:
+1.	
+First, we’ll import pandas, featuretools, and the logical types:
+import pandas as pd
+import featuretools as ft
+from woodwork.logical_types import (
+   Categorical, NaturalLanguage)

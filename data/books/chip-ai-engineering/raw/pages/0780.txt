@@ -1,0 +1,23 @@
+– generación de planes, Modelos fundacionales como planificadores
+– granularidad, Llamada a funciones
+– llamada a funciones, Generación de planes
+– planes complejos, Granularidad de la planificación
+– reflexión y corrección de errores, Planes complejos
+planificación de aplicaciones, Organización de datos
+– establecimiento de expectativas, Defensibilidad de los productos de IA
+– evaluación de casos de uso, Planificación de aplicaciones de IA
+– mantenimiento, Planificación de hitos
+– planificación de hitos, Establecimiento de expectativas
+planificación de aplicaciones de IA (ver planificación de aplicaciones)
+planificación de hitos, Establecimiento de expectativas
+políticas de evicción, Paso 4. Reducir la latencia con cachés
+post-entrenamiento, Modelado y entrenamiento, Post-entrenamiento
+– ajuste fino de preferencias, Afinado supervisado
+– ajuste fino supervisado, Post-entrenamiento
+post-procesamiento, Prompting
+PPO (optimización de la política de proximidad), Modelo de recompensa
+pre-entrenamiento, Modelado y entrenamiento
+precisión contextual, Comparación de algoritmos de recuperación
+precisión mixta automática (AMP), Cuantización del entrenamiento
+preguntas tipo test (MCQ), Capacidades específicas de dominio
+privacidad de los datos, Modelos de código abierto frente a API de modelos

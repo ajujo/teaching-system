@@ -1,0 +1,18 @@
+Chapter 3
+95
+Selenium issues
+It is a well-known issue that running Selenium can cause problems due to issues with the 
+browser driver, such as the ChromeDriver. Thus, if the crawlers that use Selenium, such as the 
+MediumCrawler, fail due to problems with your ChromeDriver, you can easily bypass this by 
+commenting out the Medium links added to the data collection YAML configs. To do so, go to 
+the configs/ directory and find all the YAML files that start with digital_data_etl_*, such as 
+digital_data_etl_maxime_labonne.yaml. Open them and comment on all the Medium-related 
+URLs, as illustrated in Figure 3.7. You can leave out the Substack or personal blog URLs as these 
+use the CustomArticleCrawler, which is not dependent on Selenium.
+Figure 3.7: Fix Selenium issues when crawling raw data
+Import our backed-up data
+If nothing works, there is the possibility of populating the MongoDB database with your backed-
+up data saved under the data/data_warehouse_raw_data directory. This will allow you to 
+proceed to the fine-tuning and inference sections without running the data collection ETL code. 
+To import all the data within this directory, run:
+poetry poe run-import-data-warehouse-from-json

@@ -1,0 +1,25 @@
+Data Engineering
+60
+For our proof of concept, crawling a few hundred documents is enough, but if we want to scale it
+to a real-world product, we would probably need more data sources to crawl from. LLMs are data-hungry. Thus, you need thousands of documents for ideal results instead of just a few hundred.
+But in many projects, it's an excellent strategy to implement an end-to-end project version that
+isn't the most accurate and iterate through it later. Thus, by using this architecture, you can easily
+add more data sources in future iterations to gather a larger dataset. More on LLM fine-tuning
+and dataset size will be covered in the next chapter.
+How is the ETL process connected to the feature pipeline? The feature pipeline ingests the raw
+data from the MongoDB data warehouse, cleans it further, processes it into features, and stores it
+in the Qdrant vector DB to make it accessible for the LLM training and inference pipelines. Chapter 4 provides more information on the feature pipeline. The ETL process is independent of the
+feature pipeline. The two pipelines communicate with each other strictly through the MongoDB
+data warehouse. Thus, the data collection pipeline can write data for MongoDB, and the feature
+pipeline can read from it independently and on different schedules.
+Why did we use MongoDB as a data warehouse? Using a transactional database, such as MongoDB, as a data warehouse is uncommon. However, in our use case, we are working with small
+amounts of data, which MongoDB can handle. Even if we plan to compute statistics on top of our
+MongoDB collections, it will work fine at the scale of our LLM Twin's data (hundreds of documents). We picked MongoDB to store our raw data primarily because of the nature of our unstructured data: text crawled from the internet. By mainly working with unstructured text, selecting
+a NoSQL database that doesn't enforce a schema made our development easier and faster. Also,
+MongoDB is stable and easy to use. Their Python SDK is intuitive. They provide a Docker image
+that works out of the box locally and a cloud freemium tier that is perfect for proofs of concept,
+such as the LLM Twin. Thus, we can freely work with it locally and in the cloud. However, when
+working with big data (millions of documents or more), using a dedicated data warehouse such
+as Snowflake or BigQuery will be ideal.
+Now that we've understood the architecture of the LLM Twin's data collection pipeline, let's
+move on to its implementation.

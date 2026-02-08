@@ -1,0 +1,30 @@
+para hacer llamadas y añadir citas a su calendario. Las IA capaces de
+planificar y utilizar herramientas se denominan agentes. El nivel de interés
+en torno a los agentes roza la obsesión, pero no es del todo injustificado.
+Los agentes de IA tienen el potencial de hacer que cada persona sea mucho
+más productiva y genere mucho más valor económico. Los agentes son un
+tema central del Capítulo 6.
+Ha sido muy divertido estudiar distintas aplicaciones de la IA. Una de las
+cosas con las que más me gusta fantasear es con las distintas aplicaciones
+que puedo crear. Sin embargo, no todas las aplicaciones deben construirse.
+La siguiente sección trata de lo que debemos tener en cuenta antes de crear
+una aplicación de IA.
+Planificación de aplicaciones de IA
+Dado el potencial aparentemente ilimitado de la IA, resulta tentador
+lanzarse a crear aplicaciones. Si solo quiere aprender y divertirse, adelante.
+Construir es una de las mejores formas de aprender. En los inicios de los
+modelos fundacionales, varios responsables de IA me contaron que
+animaban a sus equipos a experimentar con aplicaciones de IA para mejorar
+sus habilidades.
+Sin embargo, si se gana la vida con esto, puede que merezca la pena dar un
+paso atrás y considerar por qué está construyendo esto y cómo debería
+hacerlo. Crear una demostración atractiva con modelos fundacionales es
+fácil. Crear un producto rentable es difícil.
+Evaluación de casos de uso
+La primera pregunta que debe hacerse es por qué quiere crear esta
+aplicación. Al igual que muchas decisiones empresariales, la creación de
+una aplicación de IA suele ser una respuesta a riesgos y oportunidades.
+Estos son algunos ejemplos de distintos niveles de riesgo, ordenados de
+mayor a menor:
+1. Si no lo hace, los competidores con IA pueden dejarle obsoleto. Si
+la IA supone una amenaza existencial importante para su empresa,

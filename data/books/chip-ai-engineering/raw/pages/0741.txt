@@ -1,0 +1,24 @@
+– combinación, Combinar los algoritmos de recuperación
+– comparación, Comparación de algoritmos de recuperación
+– recuperación basada en incrustaciones, Recuperación basada en
+términos
+– recuperación basada en términos, Algoritmos de recuperación
+alucinaciones
+– causas de, Incoherencia
+– definidas, La naturaleza probabilística de la IA
+– imitación superficial y, Verificación de datos
+– medición, Coherencia factual
+– métricas para, Monitoreo y observabilidad
+– y ajuste fino, Afinado y RAG
+ambigüedad de los criterios, Incoherencia
+AMP (precisión mixta automática), Cuantización del entrenamiento
+ANN (vecino más cercano aproximado), Recuperación basada en
+incrustaciones
+Annoy (vecinos más cercanos, oh sí), Recuperación basada en
+incrustaciones
+anotación de datos, Cantidad de datos
+– e inspección de datos, Inspeccionar los datos
+– ingeniería de conjuntos de datos y, Modelado y entrenamiento
+– y curación de datos, Ingeniería de conjuntos de datos
+Anthropic
+– caché de prompts, Almacenamiento en cache de prompts

@@ -1,0 +1,16 @@
+que cualquier otra herramienta de ingeniería de software anterior. En solo
+dos años, cuatro herramientas de ingeniería de IA de código abierto
+(AutoGPT, Stable Diffusion eb UI, LangChain, Ollama) ya han conseguido
+más estrellas en GitHub que Bitcoin. Van camino de superar incluso a los
+marcos de desarrollo web más populares, incluidos React y Vue, en el
+recuento de estrellas. La Figura 1-6 muestra el crecimiento de estrellas en
+GitHub de las herramientas de ingeniería de IA en comparación con
+Bitcoin, Vue y React.
+Una encuesta de LinkedIn de agosto de 2023 muestra que el número de
+profesionales que añaden términos como "IA generativa", "ChatGPT",
+"Ingeniería de prompts" o "Creación de prompts" a su perfil aumentó un
+promedio del 75 % cada mes. ComputerWorld declaró que "enseñar a la IA
+a comportarse es la habilidad profesional de más rápido crecimiento".
+figura 1-6. Las herramientas de ingeniería de IA de código abierto crecen más rápido
+que cualquier otra herramienta de ingeniería de software, según su recuento de
+estrellas en GitHub.

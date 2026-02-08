@@ -1,0 +1,14 @@
+Ya que diferentes consultas pueden necesitar diferentes
+herramientas, muchas API permiten especificar una lista de
+herramientas declaradas que se utilizarán por consulta. Algunas
+permiten controlar todavía más el uso de las herramientas mediante
+los siguientes ajustes:
+required
+El modelo debe utilizar al menos una herramienta.
+none
+El modelo no debe usar ninguna herramienta.
+auto
+El modelo decide qué herramientas utilizar.
+La llamada a funciones se ilustra en la Figura 6-10. Esto se escribe en
+pseudocódigo para que sea representativo de varias API. Para utilizar una
+API en concreto, consulte su documentación.

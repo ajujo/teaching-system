@@ -1,0 +1,35 @@
+Pregunta: [PREGUNTA]
+Respuesta: [RESPUESTA]
+Puntuación:"
+2. Comparar una respuesta generada con una respuesta de referencia
+para evaluar si la respuesta generada es la misma que la respuesta
+de referencia. Este puede ser un enfoque alternativo a las medidas
+de similitud diseñadas por humanos:
+"Dada la siguiente pregunta, respuesta de referencia y
+respuesta generada,
+evalúa si esta respuesta generada es la misma que la
+respuesta de referencia.
+Da como resultado Verdadero o Falso.
+Pregunta: [PREGUNTA]
+Respuesta de referencia: [RESPUESTA DE REFERENCIA]
+Respuesta generada: [RESPUESTA GENERADA]"
+3. Comparar dos respuestas generadas y determinar cuál es mejor o
+predecir cuál preferirán probablemente los usuarios. Esto resulta
+útil para generar datos de preferencias para la alineación postentrenamiento (analizada en el Capítulo 2), el cálculo en tiempo de
+prueba (analizado en el Capítulo 2) y la clasificación de modelos
+mediante evaluación comparativa (analizada en la siguiente
+sección):
+"Dada la siguiente pregunta y dos respuestas, evalúa qué
+respuesta es mejor.
+Da como resultado A o B.
+Pregunta: [PREGUNTA]
+A: [PRIMERA RESPUESTA]
+B: [SEGUNDA RESPUESTA]
+La mejor respuesta es:"
+A un juez de IA de propósito general se le puede pedir que evalúe una
+respuesta basándose en cualquier criterio. Si está construyendo un chatbot
+de juego de rol, puede que quiera evaluar si la respuesta de un chatbot es
+coherente con el rol que los usuarios quieren que desempeñe, como por
+ejemplo: "¿Suena esta respuesta como algo que diría Gandalf?". Si está
+creando una aplicación para generar fotos promocionales de productos,
+quizá quiera preguntar "Del 1 al 5, ¿cómo calificaría la fiabilidad del

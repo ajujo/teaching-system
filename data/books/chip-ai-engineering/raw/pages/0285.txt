@@ -1,0 +1,29 @@
+comerciales, los modelos son sus ventajas competitivas. Para los
+proveedores de API que no tienen sus propios modelos, las API son sus
+ventajas competitivas. Esto significa que los proveedores de API podrían
+estar más motivados para ofrecer mejores API con mejores precios.
+Dado que construir servicios de inferencia escalables para modelos más
+grandes no es trivial, muchas empresas no quieren construirlos ellas
+mismas. Esto ha llevado a que se creen muchos servicios de inferencia y
+afinado de terceros sobre modelos de código abierto. Los principales
+proveedores de la nube, como AWS, Azure y GCP, proporcionan acceso
+mediante API a modelos populares de código abierto. Una plétora de
+startups están haciendo lo mismo.
+NOTA
+También hay proveedores comerciales de API que pueden implementar sus
+servicios dentro de sus redes privadas. En este debate, trato estas API
+comerciales implementadas de forma privada igual que a los modelos
+autoalojados.
+La respuesta a si debe alojar un modelo usted mismo o utilizar una API de
+modelos depende del caso de uso. Y un mismo caso de uso puede cambiar
+con el tiempo. Veamos siete ejes a tener en cuenta: privacidad de los datos,
+linaje de los datos, rendimiento, funcionalidad, costos, control e
+implementación en los dispositivos.
+Privacidad de datos
+Las API de modelos alojados externamente están descartadas para las
+empresas con políticas estrictas de privacidad de datos que no pueden
+enviar datos fuera de la organización. 14 Uno de los primeros incidentes
+más notables fue cuando los empleados de Samsung introdujeron
+información propiedad de Samsung en ChatGPT, filtrando accidentalmente
+secretos de la empresa. 15 No está claro cómo descubrió Samsung esta
+filtración ni cómo se utilizó la información filtrada contra Samsung. Sin

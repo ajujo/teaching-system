@@ -1,0 +1,39 @@
+Automating the datetime feature extraction with Feature-engine
+199
+5.
+Let's capture the names of the new variables in a list:
+vars_ = [v for v in dft.columns if "date" in v]
+Note
+DatetimeFeatures() names the new variables with the original variable name (in this
+case, date) followed by an underscore and then the type of feature created, for example,
+date_day_of_week contains the day of the week extracted from the date variable.
+If we execute vars_, we'll see the names of the features that were created:
+['date_month',
+ 'date_quarter',
+ 'date_semester',
+ 'date_year',
+ 'date_week',
+ 'date_day_of_week',
+ 'date_day_of_month',
+ 'date_day_of_year',
+ 'date_weekend',
+ 'date_month_start',
+ 'date_month_end',
+ 'date_quarter_start',
+ 'date_quarter_end',
+ 'date_year_start',
+ 'date_year_end',
+ 'date_leap_year',
+ 'date_days_in_month',
+ 'date_hour',
+ 'date_minute',
+ 'date_second']
+To visualize the resulting DataFrame, go ahead and execute dft[vars_].head(). We can't
+show the resulting DataFrame in the book because it is too big.
+Note
+We can create specific features by passing their names to the features_to_extract parameter.
+For example, to extract week and year, we set the transformer like this: dtfs =
+DatetimeFeatures(features_to_extract=["week", "year"]). We can also
+extract all supported features by setting the features_to_extract parameter to "all".
+DatetimeFeatures() can also create features from variables in different time zones. Let's
+learn how to correctly set up the transformer in this situation.

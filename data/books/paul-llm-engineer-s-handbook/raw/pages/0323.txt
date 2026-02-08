@@ -1,0 +1,15 @@
+Inference Optimization
+292
+You can see an illustration of this technique in Figure 8.2:
+Figure 8.2 – Illustration of the KV cache
+When a new token is generated, only the key and value for that single token need to be computed 
+and added to the cache. The KV cache is an immediate optimization that is implemented in every 
+popular tool and library. Some implementations maintain a separate KV cache for each layer of 
+the model.
+The size of the KV cache scales with the number of tokens (𝑛𝑛𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡) and several model dimensions, 
+like the number of layers (𝑛𝑛𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙), the number of attention heads (𝑛𝑛ℎ𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 ), their dimension (dimℎ𝑒𝑒𝑒𝑒𝑒𝑒
+), and the precision of the parameters in bytes (𝑛𝑛𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏):
+𝑠𝑠𝑠𝑠𝑠𝑠𝑠𝑠(𝐾𝐾𝐾𝐾 𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐𝑐) = 2𝑛𝑛𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡𝑡 𝑛𝑛𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙𝑙 𝑛𝑛ℎ𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 dimℎ𝑒𝑒𝑒𝑒𝑒𝑒 𝑛𝑛𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏𝑏
+For a typical 7B parameter model using 16-bit precision, this exceeds 2 GB for high sequence 
+lengths (higher than 2,048 tokens). Larger models with more layers and higher embedding di-
+mensions will see even greater memory requirements.

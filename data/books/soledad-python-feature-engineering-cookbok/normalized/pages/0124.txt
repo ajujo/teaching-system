@@ -1,0 +1,24 @@
+Using power transformations
+101
+5.
+Let's capture the variables to transform in a list:
+variables = ["MedInc", "Population"]
+6.
+Let's make a copy of the DataFrame and then apply a power transformation to the variables
+from step 5, where the exponent is 0.3:
+X_tf = X.copy()
+X_tf[variables] = np.power(X[variables], 0.3)
+Note
+With np.power(), we can apply any power transformation by changing the value of the
+exponent in the second position of the function.
+7.
+Let's examine the change in the distribution of Population:
+diagnostic_plots(X_tf, "Population")
+As shown in the plots returned by the previous command, Population is now more evenly
+distributed across the value range and follows the quantiles of the normal distribution more closely:
+Figure 3.9 - A histogram and Q-Q plot of the Population variable after the transformation
+Now, let's apply a power transformation with scikit-learn.
+8.
+Let's set up FunctionTransformer() with a power transformation with an exponent of 0.3:
+transformer = FunctionTransformer(
+    lambda x: np.power(x,0.3))

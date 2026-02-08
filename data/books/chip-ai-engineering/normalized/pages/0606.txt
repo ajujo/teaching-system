@@ -1,0 +1,30 @@
+Esto es mucho más corto que el prompt utilizado con el modelo base. Por lo
+tanto, si le preocupan los tokens de input de sus instrucciones, el afinado
+puede ser una forma de ayudar a gestionar el costo.
+Los distintos formatos de datos de afinado pueden afectar al rendimiento de
+su modelo afinado. Puede ser útil experimentar para determinar cuál
+formato le conviene más.
+Cuando utilice el modelo afinado, asegúrese de que los prompts que use
+coinciden con el formato de los datos de afinado. Por ejemplo, si los datos
+de entrenamiento utilizan el prompt en el formato "hamburguesa -->",
+cualquiera de los siguientes prompts pueden causar problemas:
+"hamburguesa": falta la flecha final
+"Artículo: hamburguesa -->": prefijo extra
+"hamburguesa --> ": espacio extra añadido
+Resumen
+Aunque el proceso real de creación de datos de entrenamiento es
+increíblemente intrincado, los principios de creación de un conjunto de
+datos son sorprendentemente sencillos. Para crear un conjunto de datos para
+entrenar un modelo, hay que empezar por pensar en los comportamientos
+que se desea que aprenda el modelo y, a continuación, diseñar un conjunto
+de datos que muestre estos comportamientos. Debido a la importancia de
+los datos, los equipos están introduciendo roles dedicados a los datos, que
+son responsables de adquirir los conjuntos de datos adecuados a la vez que
+garantizar la privacidad y el cumplimiento de la normativa.
+Los datos que necesita no solo dependen de su caso de uso, sino también de
+la fase de entrenamiento. El pre-entrenamiento requiere datos distintos del
+afinado de las instrucciones y del afinado de preferencias. Sin embargo, el
+diseño de los conjuntos de datos en todas las fases de entrenamiento
+comparte los mismos tres criterios básicos: calidad, cobertura y cantidad.
+Aunque la cantidad de datos con los que se entrena un modelo acapara
+titulares, disponer de datos de alta calidad con suficiente cobertura es igual

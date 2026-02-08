@@ -1,0 +1,40 @@
+Production-Ready LLM Deployment and Observability
+362
+            base_url="https://python.langchain.com/docs/how_to/",
+            batch_size=5,
+            max_depth=1
+        )
+    """
+    # Create directories
+    os.makedirs(index_dir, exist_ok=True)
+    os.makedirs(checkpoint_dir, exist_ok=True)
+
+    # Check for cached chunks first
+    chunks_file = os.path.join(checkpoint_dir, "chunks.pkl")
+    if os.path.exists(chunks_file):
+        print("Loading cached chunks...")
+        with open(chunks_file, 'rb') as f:
+            all_chunks = pickle.load(f)
+        print(f"Loaded {len(all_chunks)} cached chunks")
+    else:
+        print(f"Loading documentation from {base_url}")
+        loader = RecursiveUrlLoader(
+            base_url,
+            max_depth=max_depth,
+            prevent_outside=True
+        )
+        docs = loader.load()
+        print(f"Loaded {len(docs)} documents")
+
+        # Preprocess in parallel with smaller batches
+        chunks_futures = []
+        for i in range(0, len(docs), batch_size):
+            batch = docs[i : i + batch_size]
+            chunks_futures.append(preprocess_documents.remote(batch))
+
+        print("Waiting for preprocessing to complete...")
+        all_chunks = []
+        for chunks in ray.get(chunks_futures):
+            all_chunks.extend(chunks)
+
+        print(f"Total chunks: {len(all_chunks)}")

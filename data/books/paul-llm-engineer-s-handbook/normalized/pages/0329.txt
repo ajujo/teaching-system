@@ -1,0 +1,34 @@
+Inference Optimization
+298
+This partitioning allows for near-optimal memory utilization. This is useful for batching more
+sequences together, which increases throughput and GPU utilization. Moreover, PagedAttention's
+block-based approach naturally supports memory sharing across multiple output sequences
+generated from the same prompt. This is particularly advantageous in parallel sampling and
+beam search, where the same prompt is used to generate multiple outputs. The shared memory
+blocks reduce redundant computations and memory usage, cutting the memory overhead by
+up to 55% and improving throughput by up to 2.2x, according to the authors. The vLLM library
+received the first implementation of PagedAttention. Since then, PagedAttention has also been
+implemented in TGI and TensorRT-LLM.
+Another popular option is FlashAttention-2. Developed by Tri Dao (2023), it introduced several
+key innovations that are designed to address the quadratic runtime and memory constraints in
+traditional attention. By dividing input and output matrices into smaller blocks, FlashAttention-2 ensures that these blocks can fit into the GPU's on-chip SRAM, which is much faster than
+high-bandwidth memory. This approach significantly reduces the frequency of data transfers
+between the GPU's main memory and its processing units. This is combined with online softmax,
+which computes the softmax function independently for each block of the attention scores matrix,
+rather than for the entire matrix at once. By maintaining a running maximum and a running sum
+of exponentials, FlashAttention-2 can calculate attention probabilities without needing to store
+large intermediate matrices.
+Additionally, FlashAttention-2's online softmax computation enables block-wise processing,
+maintaining accuracy while significantly reducing memory requirements. This is particularly important for training, where the recomputation of intermediate values (instead of storing them) in
+the backward pass reduces memory usage from quadratic to linear, in relation to sequence length.
+Unlike PagedAttention, FlashAttention-2 can easily be used with the transformers library through
+the attn_implementation parameter:
+1.
+Install the flash-attn library with --no-build-isolation so that we don't install the
+dependencies:
+pip install flash-attn --no-build-isolation
+2.
+To use FlashAttention-2 for inference, specify flash_attention_2 in the attn_
+implementation parameter when loading a model. For example, this is how to load Mistral-7B-Instruct-v0.3 with FlashAttention-2:
+from transformers import AutoModelForCausalLM
+model = AutoModelForCausalLM.from_pretrained(

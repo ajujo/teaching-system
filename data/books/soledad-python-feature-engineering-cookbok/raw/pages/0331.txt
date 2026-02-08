@@ -1,0 +1,35 @@
+Creating Features from a Time Series with tsfresh
+308
+Creating features from time series can be very time-consuming; we need to apply various signal processing 
+and time-series analysis algorithms to identify and extract meaningful features. The tsfresh Python 
+package, which stands for Time Series FeatuRe Extraction on the basis of Scalable Hypothesis tests, 
+streamlines this process. It integrates 63 time-series characterization methods to compute more than 
+750 features automatically. Additionally, tsfresh includes a feature selection algorithm that identifies 
+the most predictive features for a given time series. By automating the application of complex time-
+series methods, tsfresh bridges the gap between signal-processing experts and machine learning 
+practitioners, making it easier to extract valuable features from time-series data.
+In this chapter, we will learn how to automatically create hundreds of features from time-series data 
+by utilizing tsfresh. Following that, we will discuss how to fine-tune this feature creation process 
+by selecting the most relevant features, extracting different features from different time series, and 
+integrating the feature creation process into a scikit-learn pipeline to classify time-series data.
+In this chapter, we will go through the following recipes:
+•	 Extracting hundreds of features automatically from a time series
+•	 Automatically creating and selecting predictive features from time-series data
+•	 Extracting different features from different time series
+•	 Creating a subset of features identified through feature selection
+•	 Embedding feature creation into a scikit-learn pipeline
+Technical requirements
+In this chapter, we will use the open source tsfresh Python library. You can install tsfresh with 
+pip by executing pip install tsfresh.
+Note
+If you have an old Microsoft operating system, you may need to update the Microsoft C++ build 
+tools to proceed with the tsfresh package’s installation. Follow the steps in this thread to 
+do so: https://stackoverflow.com/questions/64261546/how-to-solve-
+error-microsoft-visual-c-14-0-or-greater-is-required-when-inst.
+We will work with the Occupancy Detection dataset from the UCI Machine Learning Repository, 
+available at http://archive.ics.uci.edu/ml/datasets/Occupancy+Detection and 
+licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license: https://
+creativecommons.org/licenses/by/4.0/legalcode. The corresponding citation for 
+this data is as follows:
+Candanedo, Luis. (2016). Occupancy Detection. UCI Machine Learning Repository. https://
+doi.org/10.24432/C5X01N.

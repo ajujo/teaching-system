@@ -1,0 +1,39 @@
+Evaluating LLMs
+266
+•	
+BigCodeBench Leaderboard: Evaluates the performance of code LLMs, featuring two main 
+categories: BigCodeBench-Complete for code completion based on structured docstrings, 
+and BigCodeBench-Instruct for code generation from natural language instructions. Mod-
+els are ranked by their Pass@1 scores using greedy decoding, with an additional Elo rating 
+for the Complete variant. It covers a wide range of programming scenarios that test LLMs’ 
+compositional reasoning and instruction-following capabilities.
+•	
+Hallucinations Leaderboard: Evaluates LLMs’ tendency to produce false or unsupported 
+information across 16 diverse tasks spanning 5 categories. These include Question Answer-
+ing (with datasets like NQ Open, TruthfulQA, and SQuADv2), Reading Comprehension (using 
+TriviaQA and RACE), Summarization (employing HaluEval Summ, XSum, and CNN/DM), 
+Dialogue (featuring HaluEval Dial and FaithDial), and Fact Checking (utilizing MemoTrap, 
+SelfCheckGPT, FEVER, and TrueFalse). The leaderboard also assesses instruction-follow-
+ing ability using IFEval.
+•	
+Enterprise Scenarios Leaderboard: Evaluates the performance of LLMs on six real-world 
+enterprise use cases, covering diverse tasks relevant to business applications. The bench-
+marks include FinanceBench (100 financial questions with retrieved context), Legal Con-
+fidentiality (100 prompts from LegalBench for legal reasoning), Writing Prompts (cre-
+ative writing evaluation), Customer Support Dialogue (relevance in customer service 
+interactions), Toxic Prompts (safety assessment for harmful content generation), and 
+Enterprise PII (business safety for sensitive information protection). Some test sets are 
+closed-source to prevent gaming of the leaderboard. The evaluation focuses on specific 
+capabilities such as answer accuracy, legal reasoning, creative writing, contextual rele-
+vance, and safety measures, providing a comprehensive assessment of LLMs’ suitability 
+for enterprise environments.
+Leaderboards can have different approaches based on their domain. For example, BigCodeBench 
+is significantly different from others because it relies on only two metrics that sufficiently cap-
+ture the entire domain. On the other hand, the Hallucinations Leaderboard regroups 16 metrics, 
+including many general-purpose evaluations. It shows that in addition to custom benchmarks, 
+reusing general-purpose ones can complete your own suite.
+In particular, language-specific LLMs often reuse translated versions of general-purpose bench-
+marks. This can be completed with original evaluations in the native language. While some of 
+these benchmarks use machine translation, it is better to rely on human-translated evaluations 
+to improve their quality. We selected the following three task-specific leaderboards and their 
+respective evaluation suites to give you an idea of how to build your own:

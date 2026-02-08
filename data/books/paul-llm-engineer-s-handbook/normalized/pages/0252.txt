@@ -1,0 +1,35 @@
+Chapter 5
+221
+To install the Unsloth library and its dependencies, we recommend directly installing from the
+GitHub repository of the book (https://github.com/PacktPublishing/LLM-Engineering) or
+Unsloth's repo (https://github.com/unslothai/unsloth). This approach is recommended because the installation steps are regularly updated to address potential conflicts with dependencies:
+1.
+First, we want to access a gated model and (optionally) upload our fine-tuned model to
+Hugging Face (https://huggingface.co/). This requires being logged in to an account.
+If you don't have an account, you can create it and store your API key (Settings | Access
+Tokens | Create new token) in the .env file:
+HF_TOKEN = YOUR_API_KEY
+2.
+Make sure that your Comet ML API key is also in the .env file:
+COMET_API_KEY = YOUR_API_KEY
+3.
+Import all the necessary packages:
+import os
+import torch
+from trl import SFTTrainer
+from datasets import load_dataset, concatenate_datasets
+from transformers import TrainingArguments, TextStreamerfrom unsloth
+import FastLanguageModel, is_bfloat16_supported
+4.
+Let's now load the model to fine-tune and its corresponding tokenizer. We use Unsloth's
+FastLaguageModel class with the .from_pretrained() method. In addition to the model name, we need to specify the max sequence length (2,048 in this example). Finally,
+the load_in_4bit argument indicates if we want to use QLoRA (quantized pre-trained
+weights) or LoRA.
+We'll use LoRA in this example because of faster training and higher quality, but you can
+easily switch to QLoRA if you don't meet the VRAM requirements.
+max_seq_length = 2048
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name="meta-llama/Meta-Llama-3.1-8B",
+    max_seq_length=max_seq_length,
+    load_in_4bit=False,
+)

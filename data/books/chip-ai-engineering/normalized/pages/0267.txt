@@ -1,0 +1,28 @@
+similar, Claude-v2 sigue mejor la mayoría de las instrucciones que Claudev1.
+Supongamos que se pide al modelo que detecte el sentimiento de un tuit y
+emita un output entre NEGATIVO, POSITIVO o NEUTRAL. El modelo
+parece entender el sentimiento de cada tuit, pero genera outputs inesperados
+como FELIZ y ENFADADO. Esto significa que el modelo tiene la
+capacidad específica del dominio para hacer análisis de sentimiento en los
+tweets, pero su capacidad de seguimiento de instrucciones es pobre.
+La capacidad de seguimiento de instrucciones es esencial para las
+aplicaciones que requieren outputs estructuradas, como en formato JSON o
+que coincidan con una expresión regular (regex). 6 Por ejemplo, si se pide a
+un modelo que clasifique un input como A, B o C, pero el modelo da como
+output "Es correcto", este output no es muy útil y es probable que no
+funcione en aplicaciones derivadas que solo esperan A, B o C.
+Pero la capacidad de seguir instrucciones va más allá de generar outputs
+estructurados. Si pide a un modelo que utilice solo palabras de cuatro
+caracteres como máximo, no es necesario que los outputs del modelo estén
+estructurados, pero deben seguir la instrucción de contener solo palabras de
+cuatro caracteres como máximo. Ello, una startup que ayuda a los niños a
+leer mejor, quiere construir un sistema que genere automáticamente
+historias para un niño utilizando solo las palabras que pueda entender. El
+modelo que utilizan requiere la capacidad de seguir las instrucciones para
+trabajar con un conjunto limitado de palabras.
+La capacidad de seguir instrucciones no es fácil de definir o medir, ya que
+puede confundirse fácilmente con la capacidad específica de un dominio o
+con la capacidad de generación. Imagine que le pide a un modelo que
+escriba un poema lục bát, que es una forma de verso vietnamita. Si el
+modelo no lo hace, puede ser porque el modelo no sabe cómo escribir lục
+bát, o porque no entiende lo que se supone que debe hacer.

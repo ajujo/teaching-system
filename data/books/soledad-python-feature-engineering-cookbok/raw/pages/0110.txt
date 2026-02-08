@@ -1,0 +1,26 @@
+Transforming variables with the logarithm function
+87
+Note
+If we execute X_tf = X instead of using pandas’ copy()function, X_tf will not be a copy 
+of the DataFrame; instead, it will be another view of the same data. Therefore, changes made 
+in X_tf will be reflected in X as well.
+7.	
+Let’s make a list with the variables that we want to transform:
+vars = ["MedInc", "AveRooms", "AveBedrms",
+    "Population"]
+8.	
+Let’s apply the logarithmic transformation with NumPy to the variables from step 7 and capture 
+the transformed variables in the new DataFrame:
+X_tf[vars] = np.log(X[vars])
+Note
+Remember that the logarithm transformation can only be applied to strictly positive variables. 
+If the variables have zero or negative values, sometimes, it is useful to add a constant to 
+make those values positive. We could add a constant value of 1 using X_tf[vars] = 
+np.log(X[vars] + 1).
+9.	
+Let’s check the distribution of MedInc after the transformation with the diagnostic function 
+from step 4:
+diagnostic_plots(X_tf, "MedInc")
+In the following output, we can see that the logarithmic transformation returned a more evenly 
+distributed variable that better approximates the theoretical normal distribution in the Q-Q plot:
+Figure 3.3 – A histogram and Q-Q plot of the MedInc variable after the logarithm transformation

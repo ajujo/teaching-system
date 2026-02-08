@@ -1,0 +1,34 @@
+Software Development and Data Analysis Agents
+288
+We get an algorithm and a very detailed explanation:
+To calculate the prime numbers up to a given number N, we can follow the
+Sieve of Eratosthenes algorithm. Here's a step-by-step approach to solve
+the problem:
+```python
+def calculate_primes(n):
+    """Create a list of consecutive integers from 2 up to N."""
+    # Create a list of consecutive integers from 2 to N
+    numbers = list(range(2, n + 1))
+    # Initialize an empty list to store the prime numbers
+    primes = []
+    while numbers:
+        # Take the first number as prime
+        prime = numbers[0]
+        primes.append(prime)
+        # Remove all multiples of the prime number from the list
+        numbers = [num for num in numbers if num % prime != 0]
+    return primes
+```
+Step-by-step explanation:
+We create a list called `numbers` that contains consecutive integers from 2
+to N using the `range()` function.
+We initialize an empty list called `primes` to store the prime numbers that
+we will calculate.
+We start a loop that continues as long as there are numbers in the `numbers`
+list.
+Inside the loop, we take the first number from the `numbers` list and con­
+sider it as a prime number. We append this prime number to the `primes`
+list.
+We remove all the multiples of the prime number from the `numbers` list us­
+ing a list comprehension. The list comprehension creates a new list contain­
+ing only the numbers that are not divisible by the current prime number.

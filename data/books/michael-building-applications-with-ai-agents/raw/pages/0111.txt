@@ -1,0 +1,16 @@
+CHAPTER 5
+Orchestration
+Now that your agent has a set of tools that can be used, it’s time to orchestrate them to
+solve real tasks. Orchestration involves more than just deciding which tools to call
+and when—it also requires constructing the right context for each model invocation
+to ensure effective, grounded actions. While simple tasks may only need a single tool
+and minimal context, more complex workflows demand careful planning, memory
+retrieval, and dynamic context assembly to perform each step accurately. In this chap‐
+ter, we’ll cover orchestration strategies, context engineering, tool selection, execution,
+and planning topologies to build agents capable of handling realistic, multistep tasks
+efficiently and reliably. As we can see in Figure 5-1, orchestration is how the system
+utilizes the resources at its disposal to address the user query effectively.
+Figure 5-1. Orchestration as the core logic that handles user queries and coordinates calls
+to the foundation models, external and local tools, and to various databases to retrieve
+additional information.
+89

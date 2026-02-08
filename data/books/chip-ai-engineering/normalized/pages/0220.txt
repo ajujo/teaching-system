@@ -1,0 +1,29 @@
+justificación de por qué este input tiene una puntuación baja. Se ha
+suprimido parte del prompt por brevedad.
+Tu tarea es puntuar la relevancia entre una respuesta generada y la
+pregunta
+basándote en la respuesta canónica en un rango entre 1 y 5, y por
+favor, proporciona
+también la razón de la puntuación.
+Tu objetivo principal debe ser determinar si la respuesta generada
+contiene
+suficiente información para responder a la pregunta dada de acuerdo
+con la
+respuesta canónica...
+Si la respuesta generada contradice la respuesta canónica, recibirá
+una puntuación
+baja de 1-2.
+Por ejemplo, para la pregunta "¿Es azul el cielo?", la respuesta
+canónica
+es "Sí, el cielo es azul" y la respuesta generada es "No, el cielo
+no es azul".
+En este ejemplo, la respuesta generada contradice la respuesta real
+al afirmar
+que el cielo no es azul, cuando en realidad sí lo es.
+Esta incoherencia daría lugar a una puntuación baja de 1-2, y la
+razón de la
+puntuación baja reflejaría la contradicción entre la respuesta
+generada y la
+respuesta canónica.
+La Figura 3-8 muestra un ejemplo de un juez de IA que evalúa la calidad de
+una respuesta cuando se le da la pregunta.

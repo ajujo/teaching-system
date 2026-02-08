@@ -1,0 +1,36 @@
+Supervised Fine-Tuning
+214
+Mathematically, this can be represented as:
+𝑊𝑊𝑊𝑊𝑊𝑊𝑊𝐵𝐵𝐵𝐵
+Here, 𝑊𝑊 is the original weight matrix, 𝐵𝐵 and 𝐴𝐴 are the LoRA matrices, and 𝑊𝑊𝑊 is the effective weight
+matrix used during inference.
+The dimensions of matrices A and B are chosen such that their product has the same shape as
+𝑊𝑊, but with a much lower rank. This rank, typically denoted as 𝑟𝑟 , is a crucial hyperparameter
+in LoRA. During training, the original weights 𝑊𝑊 remain frozen, while only 𝐴𝐴 and 𝐵𝐵 are updated.
+This approach significantly reduces the number of trainable parameters, leading to substantial
+memory savings and faster training times.
+To implement LoRA effectively, we need to select the correct hyperparameters and target modules.
+LoRA comes with two hyperparameters:
+•
+Rank (𝑟𝑟 ): Determines the size of the LoRA matrices. A common starting point is 𝑟𝑟𝑟𝑟, but
+values up to 256 have shown good results in some cases. Larger ranks may capture more
+diverse tasks but could lead to overfitting.
+•
+Alpha (𝛼𝛼): A scaling factor applied to the LoRA update. In practice, we update the frozen
+weights 𝑊𝑊 by a factor of 𝛼𝛼𝛼𝛼𝛼 . This is why a common heuristic is to set 𝛼𝛼 to twice the
+value of 𝑟𝑟 , effectively applying a scaling factor of 2 to the LoRA update. You can experiment
+with different ratios in case of overfitting or underfitting.
+In addition, it is possible to add a drop-out layer to prevent overfitting. The dropout rate is usually
+set between 0 and 0.1 as an optional regularization factor, which slightly decreases training speed.
+LoRA can be applied to various parts of the model architecture. Initially, LoRA was primarily focused on modifying the attention mechanism, specifically the query (Q) and value (V) matrices
+in transformer layers. However, experiments have demonstrated significant benefits in extending
+LoRA's application to other key components of the model. These additional target modules include:
+•
+Key (K) matrices in attention layers
+•
+Output projection layers (often denoted as O) in attention mechanisms
+•
+Feed-forward or Multi-Layer Perceptron (MLP) blocks between attention layers
+•
+Linear output layers
+However, it's important to note that increasing the number of LoRA-adapted modules also increases the number of trainable parameters and, consequently, the memory requirements.

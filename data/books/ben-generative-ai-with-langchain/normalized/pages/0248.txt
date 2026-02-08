@@ -1,0 +1,36 @@
+Chapter 5
+221
+Summary
+In this chapter, we explored how to enhance LLMs by integrating tools and design patterns for tool
+invocation, including the ReACT pattern. We started by building a ReACT agent from scratch and
+then demonstrated how to create a customized one with just one line of code using LangGraph.
+Next, we delved into advanced techniques for controlled generation-showing how to force
+an LLM to call any tool or a specific one, and instructing it to return responses in structured
+formats (such as JSON, enums, or Pydantic models). In that context, we covered LangChain's
+with_structured_output method, which transforms your data structure into a tool schema,
+prompts the model to call the tool, parses the output, and compiles it into a corresponding Py­
+dantic instance.
+Finally, we built our first plan-and-solve agent with LangGraph, applying all the concepts we've
+learned so far: tool calling, ReACT, structured outputs, and more. In the next chapter, we'll con­
+tinue discussing how to develop agents and look into more advanced architectural patterns.
+Questions
+1.
+What are the key benefits of using tools with LLMs, and why are they important?
+2.
+How does LangChain's ToolMessage class facilitate communication between the LLM
+and the external environment?
+3.
+Explain the ReACT pattern. What are its two main steps? How does it improve LLM per­
+formance?
+4.
+How would you define a generative AI agent? How does this relate to or differ from Lang­
+Chain's definition?
+5.
+Explain some advantages and disadvantages of using the with_structured_output method
+compared to using a controlled generation directly.
+6.
+How can you programmatically define a custom tool in LangChain?
+7.
+Explain the purpose of the Runnable.bind() and bind_tools() methods in LangChain.
+8.	 How does LangChain handle errors that occur during tool execution? What options are
+available for configuring this behavior?

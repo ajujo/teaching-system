@@ -1,0 +1,16 @@
+Evaluating LLMs
+288
+•
+Giwon Hong et al.. "The Hallucinations Leaderboard -- An Open Effort to Measure Hallucinations in Large Language Models." arXiv preprint arXiv:2404.05904, April 2024.
+•
+Shahul Es et al.. "RAGAS: Automated Evaluation of Retrieval Augmented Generation." arXiv
+preprint arXiv:2309.15217, September 2023.
+•
+Jon Saad-Falcon et al.. "ARES: An Automated Evaluation Framework for Retrieval-Augmented
+Generation Systems." arXiv preprint arXiv:2311.09476, November 2023.
+Unlock this book's exclusive
+benefits now
+This book comes with additional benefits designed to elevate your learning
+experience.
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

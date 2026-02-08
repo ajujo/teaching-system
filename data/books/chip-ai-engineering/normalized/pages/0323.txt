@@ -1,0 +1,31 @@
+durante todo el proceso de desarrollo de aplicaciones. El Capítulo 6 explora
+la evaluación de los sistemas de recuperación y de los sistemas agénticos,
+mientras que el Capítulo 7 y el Capítulo 9 se centran en el cálculo del uso
+de memoria, la latencia y los costos de un modelo. La verificación de la
+calidad de los datos se aborda en el Capítulo 8, y el uso de los comentarios
+de los usuarios para evaluar las aplicaciones de producción, en el
+Capítulo 10.
+Y ahora, pasemos al proceso real de adaptación de modelos, empezando por
+un tema que mucha gente asocia con la ingeniería de IA: la ingeniería de
+prompts.
+1 Las recomendaciones pueden aumentar las compras, pero el aumento de las
+compras no siempre se debe a buenas recomendaciones. Otros factores, como
+las campañas promocionales o el lanzamiento de nuevos productos, también
+pueden aumentar las compras. Es importante realizar pruebas A/B para
+diferenciar el impacto. Gracias a Vittorio Cretella por la nota.
+2 Una de las razones por las que GPT-2 de OpenAI creó tanto revuelo en 2019
+fue que era capaz de generar textos notablemente más fluidos y coherentes que
+cualquier modelo lingüístico anterior.
+3 El prompt contiene una errata porque se ha copiado textualmente del artículo
+de Liu et al. (2023), que contiene una errata. Esto muestra lo fácil que es
+cometer errores al trabajar con prompts.
+4 La vinculación textual también se conoce como inferencia en lenguaje natural
+(NLI).
+5 Anthropic tiene un buen tutorial sobre el uso de Claude para la moderación de
+contenidos.
+6 Los outputs estructurados se abordan en profundidad en el Capítulo 2.
+7 No se han realizado muchos estudios exhaustivos sobre la distribución de las
+instrucciones para las que la gente utiliza los modelos fundacionales. LMSYS
+publicó un estudio de un millón de conversaciones en Chatbot Arena, pero estas
+conversaciones no se basan en aplicaciones del mundo real. Estoy esperando
+estudios de proveedores de modelos y proveedores de API.

@@ -1,0 +1,42 @@
+Anthropic's Claude, by contrast, exposes its full "tool use" capability directly through
+the Anthropic Messages API (and on platforms like Amazon Bedrock or Google
+Cloud's Vertex AI). You simply register your custom tools (or use Anthropicprovided ones), and Claude can call them at inference time-no separate UI required.
+This API-first approach makes it straightforward to integrate content moderation,
+bias detection, or domain-specific services into any Claude-powered workflow.
+Google's Gemini models support function calling via the Vertex AI API, letting you
+declare tools in a FunctionCallingConfig and have Gemini invoke them as struc‐
+tured calls. Whether you need natural language understanding, image recognition, or
+database lookups, you define the functions up front and process the returned argu‐
+ments in your code-no proprietary UI layer stands between your app and the
+model.
+Microsoft's Phi models are offered through Azure AI Foundry, where they integrate
+seamlessly with other Azure services-such as cognitive search, document process‐
+ing, and data visualization APIs-via the same public endpoints you use for other
+Azure AI models. Though not branded as "plug-ins," Phi's tight coupling with Azure's
+productivity and analytics tools delivers a similarly smooth experience: you call the
+model, receive structured outputs, and feed them directly into your existing Azure
+workflows without switching contexts.
+One of the significant advantages of plug-in tools is their integration at the model
+execution layer. This means these tools can be added to AI models with minimal dis‐
+ruption to existing workflows. Developers can simply plug these modules into their
+AI systems, instantly enhancing their capabilities without extensive customization or
+development effort. This ease of integration makes plug-in tools an attractive option
+for rapidly deploying new functionalities in AI applications. However, this ease of use
+comes with certain limitations. Plug-in tools, while powerful, do not offer the same
+level of customizability and adaptability as custom-developed tools that can be served
+either locally or remotely. They are designed to be general-purpose tools that can
+address a broad range of tasks, but they may not be tailored to the specific needs and
+nuances of every application. This trade-off between ease of integration and custom‐
+izability is an important consideration for developers when choosing between plug-in
+tools and bespoke development.
+Despite the current limitations, the catalogs of plug-in tools offered by leading plat‐
+forms are rapidly growing. As these catalogs expand, the breadth of capabilities avail‐
+able through plug-in tools will increase, providing developers with even more tools to
+enhance their AI agents. This growth is driven by continuous advancements in AI
+research and the development of new techniques and technologies. In the near future,
+we can expect these plug-in tool catalogs to include more specialized and advanced
+functionalities, catering to a wider range of applications and industries. This expan‐
+sion will facilitate agent development by providing developers with readily available
+LangChain Fundamentals
+|
+79

@@ -1,0 +1,26 @@
+5
+Building Intelligent Agents
+As generative AI adoption grows, we start using LLMs for more open and complex tasks that re­
+quire knowledge about fresh events or interaction with the world. This is what is generally called 
+agentic applications. We’ll define what an agent is later in this chapter, but you’ve likely seen the 
+phrase circulating in the media: 2025 is the year of agentic AI. For example, in a recently introduced 
+RE-Bench benchmark that consists of complex open-ended tasks, AI agents outperform humans 
+in some settings (for example, with a thinking budget of 30 minutes) or on some specific class of 
+tasks (like writing Triton kernels).
+To understand how these agentic capabilities are built in practice, we’ll start by discussing tool 
+calling with LLMs and how it is implemented on LangChain. We’ll look in detail at the ReACT 
+pattern, and how LLMs can use tools to interact with the external environment and improve 
+their performance on specific tasks. Then, we’ll touch on how tools are defined in LangChain, 
+and which pre-built tools are available. We’ll also talk about developing your own custom tools, 
+handling errors, and using advanced tool-calling capabilities. As a practical example, we’ll look 
+at how to generate structured outputs with LLM using tools versus utilizing built-in capabilities 
+offered by model providers.
+Finally, we’ll talk about what agents are and look into more advanced patterns of building agents 
+with LangGraph before we then develop our first ReACT agent with LangGraph—a research 
+agent that follows a plan-and-solve design pattern and uses tools such as web search, arXiv, and 
+Wikipedia. 
+In a nutshell, the following topics will be covered in this chapter:
+•	
+What is a tool?
+•	
+Defining built-in LangChain tools and custom tools

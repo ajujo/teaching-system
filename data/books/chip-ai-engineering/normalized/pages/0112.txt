@@ -1,0 +1,14 @@
+denomina capa de desincrustación. Algunas personas se
+refieren a la capa de output como el cabezal del modelo, ya
+que es la última capa del modelo antes de la generación del
+output.
+La Figura 2-6 visualiza la arquitectura de un modelo de transformadores. El
+tamaño de un modelo de transformadores viene determinado por las
+dimensiones de sus bloques de construcción. Algunos de los valores clave
+son:
+La dimensión del modelo determina los tamaños de las matrices de
+proyección de clave, consulta, valor y outputs en el bloque
+transformador.
+El número de bloques transformadores.
+La dimensión de la capa de prealimentación.
+El tamaño del vocabulario.

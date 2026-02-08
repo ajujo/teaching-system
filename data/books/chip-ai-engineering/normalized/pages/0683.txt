@@ -1,0 +1,34 @@
+usuarios antes de que las barreras de seguridad del sistema puedan
+determinar que deben ser bloqueadas.
+El número de barreras de seguridad que necesite implementar también
+depende de si aloja sus modelos usted mismo o utiliza API de terceros.
+Aunque se pueden implementar barreras de seguridad en ambos casos, las
+API de terceros pueden reducir los guardarraíles que hace falta
+implementar, ya que los proveedores de API suelen proporcionar muchas
+barreras listas para usar. Al mismo tiempo, si lo alojan usted mismo, no es
+necesario enviar solicitudes externamente, lo que reduce la necesidad de
+muchos tipos de barreras de seguridad de input.
+Dada la gran variedad de lugares en los que una aplicación puede fallar, las
+barreras de seguridad pueden implementarse a muchos niveles diferentes.
+Los proveedores de modelos dotan a sus modelos de barreras de seguridad
+para hacerlos mejores y más seguros. Sin embargo, los proveedores de
+modelos tienen que encontrar el equilibrio entre la seguridad y la
+flexibilidad. Las restricciones pueden hacer que un modelo sea más seguro,
+pero también pueden hacer que sea menos utilizable para casos de uso
+específicos.
+Las barreras de seguridad también pueden ser implementadas por los
+desarrolladores de aplicaciones. Muchas técnicas se discuten en el
+"Defensas contra los ataques de prompts". Entre las soluciones de barreras
+de seguridad listas para usar se encuentran Purple Llama de Meta, las
+NeMo Guardrails de NVIDIA, PyRIT de Azure, los filtros de contenido de
+IA de Azure, la API Perspective y la API de moderación de contenidos de
+OpenAI. Debido al traslape de riesgos en los inputs y outputs, una solución
+de barreras de seguridad probablemente proporcionará protección tanto para
+los inputs como para los outputs. Algunas puertas de enlace de modelos
+también ofrecen funciones de barreras de seguridad, como se explica en la
+sección siguiente.
+Con barreras de seguridad, la arquitectura se parece a la Figura 10-4. He
+incluido los calificadores en las API de modelos porque suelen funcionar
+con IA, aunque los calificadores suelen ser más pequeños y rápidos que los
+modelos generativos. Sin embargo, los calificadores también pueden
+colocarse en la casilla de las barreras de seguridad de output.

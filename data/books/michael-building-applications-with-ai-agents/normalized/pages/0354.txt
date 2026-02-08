@@ -1,0 +1,34 @@
+About the Author
+Michael Albada is a machine learning engineer with nine years of experience design‐
+ing, building, and deploying large-scale machine learning solutions at Microsoft,
+Uber, and ServiceNow, with expertise in large language models, reasoning models,
+fine-tuning, recommendation systems, geospatial modeling, cybersecurity, and the
+development of large scale multiagent systems for cybersecurity. He received his B.A.
+from Stanford University, M.Phil. from the University of Cambridge, and M.S. from
+Georgia Tech. Depending on the season, you can find him on a bike, skis, or
+kiteboard.
+Colophon
+The animal on the cover of Building Applications with AI Agents is the northern pigtailed macaque (Macaca leonina). The northern pig-tailed macaque was originally a
+subspecies of the southern pig-tailed macaque but is now a separate species due to
+differences in genetics, physical traits, and geographic distribution. They can be
+found in parts of South and Southeast Asia, including northeastern India, Bangla‐
+desh, Myanmar, Thailand, Laos, Cambodia, and Vietnam. They are mainly frugivo‐
+rous feeders (they eat mostly fruits); however, they also eat seeds, leaves,
+invertebrates, and even small vertebrates.
+Known and named for its distinctive short, curled tail that resembles a pig's, the
+northern pig-tailed macaque is typically light brown or grayish with a pale belly, and
+individuals have a characteristic pink face that darkens with age. They also have a red
+stripe on their face, beginning at the outer corners of both eyes and extending diago‐
+nally toward the sides of the face. Males are significantly larger than females, weigh‐
+ing around 18 pounds while females average closer to 13.
+Northern pig-tailed macaques are social creatures, often traveling in large hierarchi‐
+cal packs of males and females-along with their offspring-but breaking into
+smaller groups when feeding. Female macaques remain in their birth group for life,
+often forming close bonds with the other females in their line, while males usually
+leave upon reaching maturity. They communicate using a variety of gestures and
+vocalizations, with facial expressions being the most important.
+The cover illustration is by José Marzan Jr. based on an antique line engraving from
+Lydekker's Royal Natural History. The series design is by Edie Freedman, Ellie Volck‐
+hausen, and Karen Montgomery. The cover fonts are Gilroy Semibold and Guardian
+Sans. The text font is Adobe Minion Pro; the heading font is Adobe Myriad Con‐
+densed; and the code font is Dalton Maag's Ubuntu Mono.

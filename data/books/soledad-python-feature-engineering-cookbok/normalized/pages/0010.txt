@@ -1,0 +1,100 @@
+Table of Contents
+ix
+How it works...
+99
+Using power transformations
+99
+How to do it...
+99
+How it works...
+102
+Performing Box-Cox
+transformations
+103
+How to do it...
+103
+How it works...
+108
+There's more...
+109
+Performing Yeo-Johnson
+transformations
+109
+How to do it...
+109
+How it works...
+112
+There's more...
+112
+4
+Performing Variable Discretization
+113
+Technical requirements
+114
+Performing equal-width
+discretization
+114
+How to do it...
+115
+How it works...
+122
+See also
+123
+Implementing equal-frequency
+discretization
+123
+How to do it...
+124
+How it works...
+129
+Discretizing the variable
+into arbitrary intervals
+130
+How to do it...
+131
+How it works...
+134
+Performing discretization with
+k-means clustering
+135
+How to do it...
+135
+How it works...
+140
+See also
+140
+Implementing feature binarization
+140
+Getting ready
+141
+How to do it...
+141
+How it works...
+144
+Using decision trees
+for discretization
+144
+How to do it...
+145
+How it works...
+151
+There's more...
+151
+5
+Working with Outliers
+153
+Technical requirements
+154
+Visualizing outliers with boxplots
+and the inter-quartile proximity rule 154
+How to do it...
+155
+How it works...
+158
+Finding outliers using the mean
+and standard deviation
+159
+How to do it...
+159
+How it works...
+162

@@ -1,0 +1,37 @@
+Implementing target mean encoding
+69
+Note
+To avoid data leakage, we determine the category-to-integer mappings from the train set.
+To perform the encoding with feature-engine, we used OrdinalEncoder(), setting the
+encoding_method to ordered. We left the argument variables set to None so that the encoder
+automatically detects all categorical variables in the dataset. With fit(), the encoder found the
+categorical variables and assigned digits to their categories according to the target mean value.
+The categorical variables' names and dictionaries with category-to-digit pairs were stored in the
+variables_ and encoder_dict_ attributes, respectively. Finally, using transform(), we
+replaced the categories with digits in the train and test sets, returning pandas DataFrames.
+See also
+For an implementation of this recipe with Category Encoders, visit this book's GitHub
+repository: https://github.com/PacktPublishing/Python-Feature-engineering-
+Cookbook-Third-Edition/blob/main/ch02-categorical-encoding/Recipe-
+05-Ordered-ordinal-encoding.ipynb.
+Implementing target mean encoding
+Mean encoding or target encoding maps each category to the probability estimate of the target attribute.
+If the target is binary, the numerical mapping is the posterior probability of the target conditioned
+to the value of the category. If the target is continuous, the numerical representation is given by the
+expected value of the target given the value of the category.
+In its simplest form, the numerical representation for each category is given by the mean value of
+the target variable for a particular category group. For example, if we have a City variable, with the
+categories of London, Manchester, and Bristol, and we want to predict the default rate (the
+target takes values of 0 and 1); if the default rate for London is 30%, we replace London with 0.3;
+if the default rate for Manchester is 20%, we replace Manchester with 0.2; and so on. If the
+target is continuous - say we want to predict income - then we would replace London, Manchester,
+and Bristol with the mean income earned in each city.
+In mathematical terms, if the target is binary, the replacement value, S, is determined like so:
+S i  =  n i(y=1) / n i
+Here, the numerator is the number of observations with a target value of 1 for category i and the
+denominator is the number of observations with a category value of i.
+If the target is continuous, S, this is determined by the following formula:
+S i =
+∑ y i
+_
+n i

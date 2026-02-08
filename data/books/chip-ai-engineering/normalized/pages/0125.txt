@@ -1,0 +1,33 @@
+3. El cómputo cuesta dinero.
+A menos que disponga de una cantidad ilimitada de dinero, presupuestar es
+esencial. No hay que empezar con un modelo de tamaño arbitrario para ver
+cuánto costaría. Se empieza con un presupuesto (cuánto dinero quiere
+gastar) y luego se calcula el mejor modelo de prestaciones que puede
+permitirse. Como la computación suele ser el factor limitante (la
+infraestructura computacional no solo es cara, sino también difícil de
+instalar), los equipos suelen empezar con un presupuesto para computo.
+Dada una cantidad fija de FLOPs, ¿qué tamaño de modelo y de conjunto de
+datos daría el mejor rendimiento? Un modelo que pueda lograr el mejor
+rendimiento con un presupuesto de cómputo fijo es opcional para cómputo.
+Dado un presupuesto de computo, la regla que ayuda a calcular el tamaño
+óptimo del modelo y del conjunto de datos se denomina ley de escalado de
+Chinchilla, propuesta en el artículo de Chinchilla "Training Compute-
+Optimal Large Language Models" (DeepMind, 2022). Para estudiar la
+relación entre el tamaño del modelo, el tamaño del conjunto de datos, el
+presupuesto de computo y el rendimiento del modelo, los autores
+entrenaron 400 modelos lingüísticos de entre 70 millones y más de 16 000
+millones de parámetros con entre 5000 y 500 000 millones de tokens.
+Descubrieron que para un entrenamiento de computo optimizado, se
+necesita que el número de tokens de entrenamiento sea aproximadamente
+20 veces el tamaño del modelo. Esto significa que un modelo de 3 MM de
+parámetros necesita aproximadamente 60 MM de tokens de entrenamiento.
+El tamaño del modelo y el número de tokens de entrenamiento deben
+escalarse por igual: por cada duplicación del tamaño del modelo, el número
+de tokens de entrenamiento también debe duplicarse.
+Hemos recorrido un largo camino desde que el proceso de entrenamiento se
+consideraba alquimia. La Figura 2-8 muestra que podemos predecir no solo
+el número óptimo de parámetros y tokens para cada presupuesto de FLOP,
+sino también la pérdida de entrenamiento esperada a partir de estos ajustes
+(suponiendo que hacemos las cosas bien).
+Este cálculo de computo optimizado supone que el costo de adquisición de
+datos es mucho más barato que el costo de computo. El mismo artículo de

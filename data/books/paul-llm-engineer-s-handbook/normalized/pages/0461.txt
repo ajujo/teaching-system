@@ -1,0 +1,19 @@
+MLOps and LLMOps
+430
+To find even more details about the runs, you can go to AWS SageMaker. In the left panel, click
+SageMaker dashboard, and on the right, in the Processing column, click on the green Running
+section, as shown in Figure 11.12.
+This will open a list of all the processing jobs that execute your ZenML pipelines.
+Figure 11.12: SageMaker dashboard
+Troubleshooting the ResourceLimitExceeded error after running
+a ZenML pipeline on SageMaker
+Let's assume, you've encountered a ResourceLimitExceeded error after running a ZenML pipeline
+on SageMaker using the AWS stack. In this case, you have to explicitly ask AWS to give you access
+to a specific type of AWS EC2 VM.
+To run other pipelines, you have to update the settings.docker.parent_image
+attribute in their config file under the configs/ directory.
+If you want to run the pipelines locally again, use the following CLI command:
+poetry poe set-local-stack
+If you want to disconnect from the ZenML cloud dashboard and use the local version
+again, run the following:
+zenml disconnect

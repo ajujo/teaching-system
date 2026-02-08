@@ -1,0 +1,32 @@
+significado del término original. Una forma de mitigar este problema es
+tratar los n-gramas más comunes como términos. Si el bigrama "hot dog" es
+común, se tratará como un término.
+Además, quizá quiera convertir todos los caracteres a minúsculas, eliminar
+los signos de puntuación y las palabras vacías (como "el", "y", "es", etc.).
+Las soluciones de recuperación basadas en términos a menudo las gestionan
+automáticamente. Los paquetes clásicos de NLP, como NLTK (Natural
+Language Toolkit), spaCy y CoreNLP de Stanford, también ofrecen
+funcionalidades de tokenización.
+En el Capítulo 4 se analiza la medición de la similitud léxica entre dos
+textos a partir de su traslape de n-gramas. ¿Podemos recuperar documentos
+basándonos en el grado de traslape de sus n-gramas con la consulta? Sí,
+podemos. Este enfoque funciona mejor cuando la consulta y los
+documentos tienen longitudes similares. Si los documentos son mucho más
+largos que la consulta, aumenta la probabilidad de que contengan los ngramas de la consulta, lo que hace que muchos documentos tengan
+puntuaciones de traslape igualmente altas. Esto hace difícil distinguir los
+documentos verdaderamente relevantes de los menos relevantes.
+Recuperación basada en incrustaciones
+La recuperación basada en términos calcula la relevancia a nivel léxico en
+lugar de a nivel semántico. Como se menciona en el Capítulo 3, la
+apariencia de un texto no capta necesariamente su significado. Esto puede
+dar lugar a que se recuperen documentos irrelevantes para su intención. Por
+ejemplo, la consulta "arquitectura de transformadores" podría devolver
+documentos sobre el dispositivo eléctrico o la película Transformers. Por
+otro lado, los recuperadores basados en incrustaciones buscan ordenar los
+documentos en función de la concordancia de sus significados con la
+consulta. Este enfoque también se conoce como recuperación semántica.
+Con la recuperación basada en incrustaciones, la indexación tiene una
+función adicional: convertir los fragmentos de datos originales en
+incrustaciones. La base de datos en la que se almacenan las incrustaciones
+generadas se denomina base de datos vectorial. La consulta consta entonces
+de dos pasos, como se muestra en la Figura 6-3:

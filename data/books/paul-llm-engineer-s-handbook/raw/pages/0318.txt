@@ -1,0 +1,38 @@
+Chapter 7
+287
+We focused on two techniques (multiple-choice question answering and LLM-as-a-judge) as the 
+backbone of these custom evaluation frameworks.
+However, models are commonly integrated into broader systems that provide additional context. 
+We introduced two evaluation frameworks for RAG systems, Ragas and ARES. We saw both simi-
+larities (for example, synthetic data generation) and differences in how they evaluate RAG systems 
+(context-based metrics versus trained classifiers). Finally, we evaluated TwinLlama-3.1-8B with 
+a judge LLM according to three criteria: relevance, coherence, and conciseness. This provided 
+insights into how we can improve it.
+In the next chapter, we will explore inference optimization techniques to improve speed and 
+reduce memory usage, without significantly compromising model performance. We will also 
+delve into optimization methods, model parallelism techniques and examine different quanti-
+zation approaches.
+References
+•	
+Lianmin Zheng et al.. “Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.” arXiv 
+preprint arXiv:2306.05685, June 2023.
+•	
+Aymeric Roucher. “Using LLM-as-a-judge for an automated and versatile evaluation - Hugging 
+Face Open-Source AI Cookbook.” huggingface.co, No date found, https://huggingface.co/
+learn/cookbook/en/llm_judge.
+•	
+LangChain. “Aligning LLM-as-a-Judge with Human Preferences.” blog.langchain.dev, June 
+26, 2024, https://blog.langchain.dev/aligning-llm-as-a-judge-with-human-
+preferences/.
+•	
+Dan Hendrycks et al.. “Measuring Massive Multitask Language Understanding.” arXiv pre-
+print arXiv:2009.03300, September 2020.
+•	
+Jeffrey Zhou et al.. “Instruction-Following Evaluation for Large Language Models.” arXiv 
+preprint arXiv:2311.07911, November 2023.
+•	
+Yann Dubois et al.. “Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Eval-
+uators.” arXiv preprint arXiv:2404.04475, April 2024.
+•	
+Grégoire Mialon et al.. “GAIA: a benchmark for General AI Assistants.” arXiv preprint arX-
+iv:2311.12983, November 2023.

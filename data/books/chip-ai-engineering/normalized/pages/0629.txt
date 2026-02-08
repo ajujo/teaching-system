@@ -1,0 +1,31 @@
+los factores que contribuyeron al primer invierno de la IA en los años 70.13
+El resurgimiento del interés por el deep learning en 2012 también estuvo
+estrechamente relacionado con la computación. Una razón comúnmente
+reconocida de la popularidad de AlexNet (Krizhevsky et al., 2012) es que
+fue el primer trabajo que utilizó con éxito GPU, unidades de procesamiento
+gráfico, para entrenar redes neuronales. 14 Antes de las GPU, si querían
+entrenar un modelo a la escala de AlexNet, tenían que utilizar miles de
+CPU, como el que Google lanzó unos meses antes de AlexNet. En
+comparación con miles de CPU, un par de GPU eran mucho más accesibles
+para estudiantes de doctorado e investigadores, lo que desencadenó el boom
+de la investigación en deep learning.
+¿Qué es un acelerador?
+Un acelerador es un chip diseñado para acelerar un tipo específico de carga
+de trabajo computacional. Un acelerador de IA está diseñado para cargas de
+trabajo de IA. El tipo dominante de acelerador de IA son las GPU, y el
+mayor motor económico durante el auge de la IA a principios de la década
+de 2020 es, sin duda, NVIDIA.
+La principal diferencia entre las CPU y las GPU es que las primeras están
+diseñadas para un uso general, mientras que las segundas están pensadas
+para el procesamiento paralelo:
+Las CPU tienen unos cuantos núcleos potentes, normalmente hasta
+64 núcleos en las máquinas de consumo de gama alta. Aunque
+muchos núcleos de CPU pueden gestionar eficazmente cargas de
+trabajo multihilo, destacan en tareas que requieren un alto
+rendimiento de un solo hilo, como ejecutar un sistema operativo,
+gestionar operaciones de E/S (entrada/salida) o manejar procesos
+secuenciales complejos.
+Las GPU tienen miles de núcleos más pequeños y menos potentes
+optimizados para tareas que pueden dividirse en muchos cálculos
+más pequeños e independientes, como el renderizado de gráficos o
+el aprendizaje automático. La operación que constituye la mayor

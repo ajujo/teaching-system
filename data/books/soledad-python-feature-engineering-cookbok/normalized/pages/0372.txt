@@ -1,0 +1,30 @@
+Creating features with bag-of-words and n-grams
+349
+Finally, we applied sent_tokenizer to each row in the DataFrame with the pandas apply()
+method to separate the strings into sentences, and then applied the built-in Python len() method to
+the list of sentences to return the number of sentences per string. This way, we created a new feature
+that contained the number of sentences per text.
+There's more...
+NLTK has functionalities for word tokenization among other useful features, which we can use
+instead of pandas to count and return the number of words. You can find out more about NLTK's
+functionality here:
+•	 Python 3 Text Processing with NLTK 3 Cookbook, by Jacob Perkins, Packt Publishing
+•	 The NLTK documentation at http://www.nltk.org/.
+Creating features with bag-of-words and n-grams
+A Bag-of-Words (BoW) is a simplified representation of a piece of text that captures the words that
+are present in the text and the number of times each word appears in the text. So, for the text string
+Dogs like cats, but cats do not like dogs, the derived BoW is as follows:
+Figure 11.4 - The BoW derived from the sentence Dogs like cats, but cats do not like dogs
+Here, each word becomes a variable, and the value of the variable represents the number of times the
+word appears in the string. As you can see, the BoW captures multiplicity but does not retain word
+order or grammar. That is why it is a simple, yet useful way of extracting features and capturing some
+information about the texts we are working with.
+To capture some syntax, BoW can be used together with n-grams. An n-gram is a contiguous sequence
+of n items in a given text. Continuing with the sentence Dogs like cats, but cats do not like dogs, the
+derived 2-grams are as follows:
+•	 Dogs like
+•	 like cats
+•	 cats but
+•	 but do
+•	 do not
+•	 like dogs

@@ -1,0 +1,17 @@
+9
+RAG Inference Pipeline
+Back in Chapter 4, we implemented the retrieval-augmented generation (RAG) feature pipeline
+to populate the vector database (DB). Within the feature pipeline, we gathered data from the data
+warehouse, cleaned, chunked, and embedded the documents, and, ultimately, loaded them to the
+vector DB. Thus, at this point, the vector DB is filled with documents and ready to be used for RAG.
+Based on the RAG methodology, you can split your software architecture into three modules: one
+for retrieval, one to augment the prompt, and one to generate the answer. We will follow a similar pattern by implementing a retrieval module to query the vector DB. Within this module, we
+will implement advanced RAG techniques to optimize the search. Afterward, we won't dedicate
+a whole module to augmenting the prompt, as that would be overengineering, which we try to
+avoid. However, we will write an inference service that inputs the user query and context, builds
+the prompt, and calls the LLM to generate the answer. To summarize, we will implement two core
+Python modules, one for retrieval and one for calling the LLM using the user's input and context
+as input. When we glue these together, we will have an end-to-end RAG flow.
+In Chapters 5 and 6, we fine-tuned our LLM Twin model, and in Chapter 8, we learned how to
+optimize it for inference. Thus, at this point, the LLM is ready for production. What is left is to
+build and deploy the two modules described above.

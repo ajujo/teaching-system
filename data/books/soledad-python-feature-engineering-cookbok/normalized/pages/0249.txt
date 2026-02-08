@@ -1,0 +1,38 @@
+Performing Feature Scaling
+226
+How to do it...
+To begin, we'll import the required packages, load the dataset, and prepare the train and test sets:
+1.
+Let's import the required Python packages, classes, and functions:
+import numpy as np
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import Normalizer
+2.
+Let's load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=[
+    "Latitude", "Longitude"], axis=1, inplace=True)
+3.
+Let's divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.
+Let's set up the scikit-learn library's Normalizer() transformer to scale each observation
+to the Manhattan distance or l1:
+scaler = Normalizer(norm='l1')
+Note
+To normalize to the Euclidean distance, you need to set the norm to l2 using scaler =
+Normalizer(norm='l2').
+5.
+Let's transform the train and test sets - that is, we'll divide each observation's feature vector
+by its norm:
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+We can calculate the length (that is, the Manhattan distance of each observation's feature vector)
+using linalg() from NumPy.
+6.
+Let's calculate the norm (Manhattan distance) before scaling the variables:
+np.round(np.linalg.norm(X_train, ord=1, axis=1), 1)

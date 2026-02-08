@@ -1,0 +1,34 @@
+Chapter 5
+217
+Plan-and-solve agent
+What do we as humans typically do when we have a complex task ahead of us? We plan! In 2023,
+Lei Want et al. demonstrated that plan-and-solve prompting improves LLM reasoning. It has
+been also demonstrated by multiple studies that LLMs' performance tends to deteriorate as the
+complexity (in particular, the length and the number of instructions) of the prompt increases.
+Hence, the first design pattern to keep in mind is task decomposition-to decompose complex tasks
+into a sequence of smaller ones, keep your prompts simple and focused on a single task, and don't
+hesitate to add examples to your prompts. In our case, we are going to develop a research assistant.
+Faced with a complex task, let's first ask the LLM to come up with a detailed plan to solve this
+task, and then use the same LLM to execute on every step. Remember, at the end of the day, LLMs
+autoregressively generate output tokens based on input tokens. Such simple patterns as ReACT
+or plan-and-solve help us to better use their implicit reasoning capabilities.
+First, we need to define our planner. There's nothing new here; we're using building blocks that we
+have already discussed-chat prompt templates and controlled generation with a Pydantic model:
+from pydantic import BaseModel, Field
+from langchain_core.prompts import ChatPromptTemplate
+class Plan(BaseModel):
+   """Plan to follow in future"""
+   steps: list[str] = Field(
+       description="different steps to follow, should be in sorted order"
+   )
+system_prompt_template = (
+   "For the given task, come up with a step by step plan.\n"
+   "This plan should involve individual tasks, that if executed correctly
+will "
+   "yield the correct answer. Do not add any superfluous steps.\n"
+   "The result of the final step should be the final answer. Make sure
+that each "
+   "step has all the information needed - do not skip steps."
+)
+planner_prompt = ChatPromptTemplate.from_messages(
+   [("system", system_prompt_template),

@@ -1,0 +1,6 @@
+Performing Feature Scaling
+222
+In the following output, we can corroborate the change of scale of the variables, but their 
+distribution shape remains the same:
+Figure 7.7 – Histograms of the word counts after the scaling
+With scaling to the maximum absolute value, we linearly scale down the magnitude of the features.

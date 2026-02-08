@@ -1,0 +1,44 @@
+In this, the agent performs tasks and chooses when to invoke tools or submit the
+answer. The primary benefits include:
+Simplicity
+Easier implementation and management
+Lower resource requirements
+Less computational overhead
+Latency
+Quicker response for users
+Single-agent systems offer a strong starting point for building agentic applications.
+Their simplicity, lower cost, and reduced latency make them well suited for many
+practical scenarios-especially when the task scope is limited and performance
+requirements are tight. While they may not scale well to highly complex or multiface‐
+ted tasks, starting with a single-agent architecture enables teams to validate core func‐
+tionality quickly and iterate efficiently. Only when the complexity, toolset, or task
+coordination needs outgrow the capacity of a single agent should developers consider
+transitioning to more sophisticated multiagent systems.
+To illustrate, consider a single-agent system for supply chain logistics management.
+This agent handles a broad set of tools for inventory, shipping, and supplier tasks in
+one unified prompt and graph. While effective for basic queries, performance can
+degrade with too many tools, as the agent must select from a large set. Here's how we
+set up a single agent with 16 tools:
+from __future__ import annotations
+"""
+supply_chain_logistics_agent.py
+LangGraph workflow for a Supply Chain & Logistics Management agent,
+handling inventory management, shipping operations, supplier relations,
+and warehouse optimization.
+"""
+import os
+import json
+import operator
+import builtins
+from typing import Annotated, Sequence, TypedDict, Optional
+from langchain_openai.chat_models import ChatOpenAI
+from langchain.schema import AIMessage, BaseMessage, HumanMessage, SystemMessage
+from langchain_core.messages.tool import ToolMessage
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain.tools import tool
+from langgraph.graph import StateGraph, END
+from traceloop.sdk import Traceloop
+from src.common.observability.loki_logger import log_to_loki
+164
+|
+Chapter 8: From One Agent to Many

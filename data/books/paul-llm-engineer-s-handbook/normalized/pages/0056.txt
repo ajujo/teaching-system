@@ -1,0 +1,21 @@
+2
+Tooling and Installation
+This chapter presents all the essential tools that will be used throughout the book, especially in
+implementing and deploying the LLM Twin project. At this point in the book, we don't plan to
+present in-depth LLM, RAG, MLOps, or LLMOps concepts. We will quickly walk you through our
+tech stack and prerequisites to avoid repeating ourselves throughout the book on how to set up
+a particular tool and why we chose it. Starting with Chapter 3, we will begin exploring our LLM
+Twin use case by implementing a data collection ETL that crawls data from the internet.
+In the first part of the chapter, we will present the tools within the Python ecosystem to manage
+multiple Python versions, create a virtual environment, and install the pinned dependencies required for our project to run. Alongside presenting these tools, we will also show how to install
+the LLM-Engineers-Handbook repository on your local machine (in case you want to try out the
+code yourself): https://github.com/PacktPublishing/LLM-Engineers-Handbook.
+Next, we will explore all the MLOps and LLMOps tools we will use, starting with more generic tools,
+such as a model registry, and moving on to more LLM-oriented tools, such as LLM evaluation and
+prompt monitoring tools. We will also understand how to manage a project with multiple ML
+pipelines using ZenML, an orchestrator bridging the gap between ML and MLOps. Also, we will
+quickly explore what databases we will use for NoSQL and vector storage. We will show you how
+to run all these components on your local machine using Docker. Lastly, we will quickly review
+AWS and show you how to create an AWS user and access keys and install and configure the AWS
+CLI to manipulate your cloud resources programmatically. We will also explore SageMaker and
+why we use it to train and deploy our open-source LLMs.

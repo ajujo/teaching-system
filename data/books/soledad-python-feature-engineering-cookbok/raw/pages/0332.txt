@@ -1,0 +1,35 @@
+Extracting hundreds of features automatically from a time series
+309
+I downloaded and modified the data as shown in this notebook: https://github.com/
+PacktPublishing/Python-Feature-engineering-Cookbook-Third-Edition/
+blob/main/ch10-tsfresh/prepare-occupancy-dataset.ipynb
+For a copy of the modified dataset and a target variable, check out the files called occupancy.
+csv and occupancy_target.csv, available at the following link: https://github.com/
+PacktPublishing/Python-Feature-engineering-Cookbook-Third-Edition/
+blob/main/ch10-tsfresh
+The Occupancy Detection dataset contains time-series data taken over 135 hours at one-minute 
+intervals. The variables measure the temperature, humidity, ​CO​ 2​ level, and light consumption in an 
+office. Camera footage was used to determine whether someone was in the office. The target variable 
+shows whether the office was occupied at any one hour. If the target takes the value 1, it means that 
+the office was occupied during that hour; otherwise, it takes the value 0.
+The dataset with the time series and that with the target variable have different numbers of rows. The 
+time-series dataset contains 135 hours of records at one-minute intervals – that is, 8,100 rows. The target 
+has only 135 rows, with a label indicating whether the office was occupied at each of the 135 hours.
+Note
+Check out the notebook in this book’s GitHub repository for plots of the different time series 
+to become familiar with the dataset: https://github.com/PacktPublishing/
+Python-Feature-Engineering-Cookbook-Third-Edition/blob/main/
+ch10-tsfresh/prepare-occupancy-dataset.ipynb
+Extracting hundreds of features automatically from a time 
+series
+Time series are data points indexed in time order. Analyzing time-series sequences allows us to make 
+various predictions. For example, sensor data can be used to predict pipeline failures, sound data 
+can help identify music genres, health history or personal measurements such as glucose levels can 
+indicate whether a person is sick, and, as we will show in this recipe, patterns of light usage, humidity, 
+and ​CO​ 2​ levels can determine whether an office is occupied.
+To train regression and classification models using traditional machine learning algorithms, such as 
+linear regression or random forests, we require a dataset of size M x N, where M is the number of 
+rows and N is the number of features or columns. However, with time-series data, what we have is a 
+collection of M time series, and each time series has multiple rows indexed chronologically. To use 
+time series in supervised learning models, each time series needs to be mapped into a well-defined 
+feature vector, N, as shown in the following diagram:

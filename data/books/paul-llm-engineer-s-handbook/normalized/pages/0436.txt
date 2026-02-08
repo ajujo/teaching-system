@@ -1,0 +1,35 @@
+Chapter 11
+405
+•
+After serving the model in the production environment and collecting feedback from the
+end users, we might recognize that the assumptions we made for training the model are
+wrong, so we must change our model.
+So, what is MLOps?
+A more official definition of MLOps is the following: MLOps is the extension of the DevOps field
+that makes data and models their first-class citizen while preserving the DevOps methodology.
+Like DevOps, MLOps originates from the idea that isolating ML model development from its
+deployment process (ML operations) diminishes the system's overall quality, transparency, and
+agility. With that in mind, an optimal MLOps experience treats ML assets consistently as other
+software assets within a CI/CD environment as part of a cohesive release process.
+MLOps core components
+We have already used all of these components throughout the book, but let's have a quick refresher on the MLOps core components now that we better understand the field. Along with source
+control and CI/CD, MLOps revolves around:
+•
+Model registry: A centralized repository for storing trained ML models (tools: Comet
+ML, W&B, MLflow, ZenML)
+•
+Feature store: Preprocessing and storing input data as features for both model training
+and inference pipelines (tools: Hopsworks, Tecton, Featureform)
+•
+ML metadata store: This store tracks information related to model training, such as model
+configurations, training data, testing data, and performance metrics. It is mainly used to
+compare multiple models and look at the model lineages to understand how they were
+created (tools: Comet ML, W&B, MLflow)
+•
+ML pipeline orchestrator: Automating the sequence of steps in ML projects (tools: ZenML,
+Airflow, Prefect, Dagster)
+You might have noticed an overlap between the MLOps components and its specific tooling. This
+is common, as most MLOps tools offer unified solutions, often called MLOps platforms.
+MLOps principles
+Six core principles guide the MLOps field. These are independent of any tool and sit at the core
+of building robust and scalable ML systems.

@@ -1,0 +1,24 @@
+N
+naturaleza probabilística de la IA, La naturaleza probabilística de la IA
+– alucinación, Incoherencia
+– incoherencia, Incoherencia
+O
+observabilidad, Monitoreo y observabilidad
+Open CLIP, Modelos específicos de dominio
+OpenAI
+– API por lotes, Cuellos de botella de cómputo
+– arneses de evaluación, Implementación en el dispositivo
+– calidad de los modelos actualizados, Tableros de clasificación
+personalizadas con pruebas comparativas públicas
+– cómputo en tiempo de prueba, Cómputo de tiempo de prueba
+– de GPT, Autosupervisión
+– jerarquía de instrucciones para la defensa a nivel de modelo, Defensas
+contra los ataques de prompts
+– modelo como servicio, De los modelos fundacionales a la ingeniería de
+IA
+– rutas de progresión/destilación, Concatenación
+– supervisión del lenguaje natural, De los grandes modelos lingüísticos a
+los modelos fundacionales, Código abierto, ponderación abierta y
+licencias modelo
+optimización
+– de los sistemas de recuperación, Optimización de la recuperación

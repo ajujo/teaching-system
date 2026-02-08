@@ -1,0 +1,34 @@
+Table of Contents
+ix
+Chapter 3: Building Workflows with LangGraph 
+ 67
+LangGraph fundamentals ................................................................................................. 68
+State management • 69
+Reducers • 73
+Making graphs configurable • 75
+Controlled output generation • 76
+Output parsing • 76
+Error handling • 79
+Prompt engineering .......................................................................................................... 85
+Prompt templates • 85
+Zero-shot vs. few-shot prompting • 87
+Chaining prompts together • 88
+Dynamic few-shot prompting • 89
+Chain of Thought • 90
+Self-consistency • 92
+Working with short context windows ............................................................................... 93
+Summarizing long video • 95
+Understanding memory mechanisms ............................................................................... 97
+Trimming chat history • 97
+Saving history to a database • 99
+LangGraph checkpoints • 101
+Summary ........................................................................................................................ 103
+Questions ........................................................................................................................ 104
+Chapter 4: Building Intelligent RAG Systems 
+ 107
+From indexes to intelligent retrieval ............................................................................... 108
+Components of a RAG system ........................................................................................... 110
+When to implement RAG • 112
+From embeddings to search ............................................................................................. 113
+Embeddings • 114
+Vector stores • 115

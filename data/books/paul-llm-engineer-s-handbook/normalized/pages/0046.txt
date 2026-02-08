@@ -1,0 +1,34 @@
+Chapter 1
+15
+Benefits of the FTI architecture
+To conclude, the most important thing you must remember about the FTI pipelines is their interface:
+•
+The feature pipeline takes in data and outputs the features and labels saved to the feature
+store.
+•
+The training pipeline queries the features store for features and labels and outputs a
+model to the model registry.
+•
+The inference pipeline uses the features from the feature store and the model from the
+model registry to make predictions.
+It doesn't matter how complex your ML system gets, these interfaces will remain the same.
+Now that we understand better how the pattern works, we want to highlight the main benefits
+of using this pattern:
+•
+As you have just three components, it is intuitive to use and easy to understand.
+•
+Each component can be written into its tech stack, so we can quickly adapt them to specific
+needs, such as big or streaming data. Also, it allows us to pick the best tools for the job.
+•
+As there is a transparent interface between the three components, each one can be developed by a different team (if necessary), making the development more manageable
+and scalable.
+•
+Every component can be deployed, scaled, and monitored independently.
+The final thing you must understand about the FTI pattern is that the system doesn't have to
+contain only three pipelines. In most cases, it will include more. For example, the feature pipeline
+can be composed of a service that computes the features and one that validates the data. Also, the
+training pipeline can be composed of the training and evaluation components.
+The FTI pipelines act as logical layers. Thus, it is perfectly fine for each to be complex and contain
+multiple services. However, what is essential is to stick to the same interface on how the FTI pipelines interact with each other through the feature store and model registries. By doing so, each
+FTI component can evolve differently, without knowing the details of each other and without
+breaking the system on new changes.

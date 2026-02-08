@@ -1,0 +1,27 @@
+modelos multimodales (LMMs), a aplicaciones específicas.
+Hay muchas formas diferentes de crear una aplicación. Este libro esboza
+varias soluciones y también sugiere preguntas que puede plantearse para
+evaluar la mejor solución para sus necesidades. Algunas de las muchas
+preguntas que este libro puede ayudarle a responder son:
+¿Debería crear esta aplicación de IA?
+¿Cómo evalúo mi aplicación? ¿Puedo utilizar la IA para evaluar
+sus propios outputs?
+¿Qué causa las alucinaciones? ¿Cómo las detecto y mitigo?
+¿Cuáles son las mejores prácticas para la ingeniería de prompts?
+¿Por qué funciona la RAG? ¿Cuáles son las estrategias de RAG?
+¿Qué es un agente? ¿Cómo creo y evalúo uno?
+¿Cuándo ajustar un modelo? ¿Cuándo no?
+¿Cuántos datos necesito? ¿Cómo puedo validar la calidad de mis
+datos?
+¿Cómo puedo hacer que mi modelo sea más rápido, barato y
+seguro?
+¿Cómo puedo crear un ciclo de retroalimentación para mejorar
+continuamente mi aplicación?
+El libro también le ayudará a navegar por el abrumador panorama de la IA:
+tipos de modelos, pruebas comparativas de evaluación y un número
+aparentemente infinito de casos de uso y patrones de aplicación.
+El contenido de este libro se ilustra mediante estudios de casos, en muchos
+de los cuales he trabajado, respaldados por amplias referencias y revisados
+exhaustivamente por expertos de muy diversa procedencia. Aunque he
+tardado dos años en escribir el libro, se basa en mi experiencia de trabajo
+con modelos lingüísticos y sistemas de ML de la última década.

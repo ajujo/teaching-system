@@ -1,0 +1,19 @@
+podría haber entrenado originalmente un modelo para que cupiera en su
+GPU de 40 GB. Sin embargo, adquirieron una nueva máquina con 80 GB,
+lo que les permite servir un modelo más grande. En lugar de entrenar un
+nuevo modelo desde cero, pueden utilizar el apilamiento de capas para crear
+un modelo mayor a partir del modelo existente.
+Uno de los métodos para la ampliación de capas es el escalado en
+profundidad. Kim et al. (2023) utilizaron esta técnica para crear SOLAR
+10.7B a partir de un modelo de 7 MM de parámetros con 32 capas. El
+procedimiento es el siguiente:
+1. Hacer una copia del modelo original pre-entrenado.
+2. Fusionar estas dos copias sumando determinadas capas (sumando
+dos capas y convirtiéndolas en una) y apilando el resto. Las capas
+que hay que sumar se seleccionan cuidadosamente para que
+coincidan con el tamaño del modelo objetivo. Para SOLAR 10.7B,
+se suman 16 capas, lo que deja el modelo final con 32 × 2 - 16 = 48
+capas.
+3. Seguir entrenando este modelo ampliado para alcanzar el objetivo
+de rendimiento.
+La Figura 7-19 ilustra este proceso.

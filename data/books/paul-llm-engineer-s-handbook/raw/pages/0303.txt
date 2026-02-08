@@ -1,0 +1,34 @@
+Evaluating LLMs
+272
+To illustrate how these metrics are applied in practice, consider a RAG system designed for a 
+customer support chatbot in an e-commerce setting. In this scenario, the user asks “What’s your 
+return policy for laptops purchased during the holiday sale?” The RAG pipeline finds relevant 
+documents on the electronics return policy and documents on holiday sale terms. This additional 
+context is appended at the end of the question, and the model uses it to respond:
+For laptops purchased during our holiday sale, you have an extended return 
+period of 60 days from the date of purchase. This is longer than our 
+standard 30-day return policy for electronics. Please ensure the laptop is 
+in its original packaging with all accessories to be eligible for a full 
+refund.
+Table 7.3: Example of output from a RAG pipeline designed for customer support
+In this pipeline, we can evaluate if the retrieved documents correspond to what was expected 
+(retrieval accuracy). We can also measure the difference between responses with and without 
+additional context (integration quality). Finally, we can assess whether the output is relevant and 
+grounded in the information provided by the documents (factuality and relevance).
+In this section, we will cover two methods to evaluate how well RAG models incorporate external 
+information into their responses.
+Ragas
+Retrieval-Augmented Generation Assessment (Ragas) is an open-source toolkit designed to 
+provide developers with a comprehensive set of tools for RAG evaluation and optimization. It’s 
+designed around the idea of metrics-driven development (MDD), a product development ap-
+proach that relies on data to make well-informed decisions, involving the ongoing monitoring 
+of essential metrics over time to gain valuable insights into an application’s performance. By 
+embracing this methodology, Ragas enables developers to objectively assess their RAG systems, 
+identify areas for improvement, and track the impact of changes over time.
+One of the key capabilities of Ragas is its ability to synthetically generate diverse and complex 
+test datasets. This feature addresses a significant pain point in RAG development, as manually 
+creating hundreds of questions, answers, and contexts is both time-consuming and labor-inten-
+sive. Instead, it uses an evolutionary approach paradigm inspired by works like Evol-Instruct to 
+craft questions with varying characteristics such as reasoning complexity, conditional elements, 
+and multi-context requirements. This approach ensures a comprehensive evaluation of different 
+components within the RAG pipeline. 

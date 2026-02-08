@@ -1,0 +1,20 @@
+figura 1-11. El costo del razonamiento de la IA se reduce rápidamente con el tiempo.
+Imagen de Katrina Nguyen (2024).
+Sin embargo, incluso estos cambios positivos pueden causar fricciones en
+sus flujos de trabajo. Tendrá que estar constantemente en guardia y realizar
+un análisis costo-beneficio de cada inversión tecnológica. La mejor opción
+hoy puede convertirse en la peor mañana. Quizá decida crear un modelo
+internamente porque le parece más barato que pagar a proveedores de
+modelos, solo para descubrir al cabo de tres meses que los proveedores de
+modelos han bajado sus precios a la mitad, convirtiendo la opción interna
+en la más cara. Quizá invierta en una solución de terceros y adapte su
+infraestructura a ella, solo para que el proveedor quiebre tras no conseguir
+financiación.
+A algunos cambios es más fácil adaptarse. Por ejemplo, a medida que los
+proveedores de modelos convergen hacia la misma API, cada vez es más
+fácil cambiar una API de modelos por otra. No obstante, como cada modelo
+tiene sus peculiaridades, puntos fuertes y puntos débiles, los desarrolladores
+que trabajen con el nuevo modelo tendrán que ajustar sus flujos de trabajo,
+prompts y datos a este nuevo modelo. Sin una infraestructura adecuada de
+versionado y evaluación, el proceso puede provocar muchos quebraderos de
+cabeza.

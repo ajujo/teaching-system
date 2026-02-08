@@ -1,0 +1,28 @@
+5
+Working with Outliers
+An outlier is a data point that diverges notably from other values within a variable. Outliers may stem
+from the inherent variability of the feature itself, manifesting as extreme values that occur infrequently
+within the distribution (typically found in the tails). They can be the result of experimental errors
+or inaccuracies in data collection processes, or they can signal important events. For instance, an
+unusually high expense in a card transaction may indicate fraudulent activity, warranting flagging and
+potentially blocking the card to safeguard customers. Similarly, unusually distinct tumor morphologies
+can suggest malignancy, prompting further examination.
+Outliers can exert a disproportionately large impact on a statistical analysis. For example, a small
+number of outliers can reverse the statistical significance of a test in either direction (think A/B testing)
+or directly influence the estimation of the parameters of the statistical model (think coefficients). Some
+machine learning models are well known for being susceptible to outliers, such as linear regression.
+Other models are known for being robust to outliers, such as decision-tree-based models. AdaBoost
+is said to be sensitive to outliers in the target variable, and in principle, distance-based models, such
+as PCA and KNN, could also be affected by the presence of outliers.
+There isn't a strict mathematical definition for what qualifies as an outlier, and there is also no consensus
+on how to handle outliers in statistical or machine learning models. If outliers stem from flawed data
+collection, discarding them seems like a safe option. However, in many datasets, pinpointing the exact
+nature of outliers is challenging. Ultimately, detecting and handling outliers remains a subjective
+exercise, reliant on domain knowledge and an understanding of their potential impact on models.
+In this chapter, we will begin by discussing methods to identify potential outliers, or more precisely,
+observations that significantly deviate from the rest. Then, we'll proceed under the assumption that
+these observations are not relevant for the analysis, and show how to either remove them or reduce
+their impact on models through truncation.
+This chapter contains the following recipes:
+•	 Visualizing outliers with boxplots and the inter-quartile proximity rule
+•	 Finding outliers using the mean and standard deviation

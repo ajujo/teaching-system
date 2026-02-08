@@ -1,0 +1,32 @@
+Tetris, pueden saber lo bueno que es por la puntuación que obtiene. Las
+tareas con objetivos medibles suelen evaluarse mediante la corrección
+funcional. Por ejemplo, si se le pide a la IA que programe sus cargas de
+trabajo para optimizar el consumo de energía, el rendimiento de la IA puede
+medirse por la cantidad de energía que ahorra. 11
+Medidas de similitud con los datos de referencia
+Si la tarea que les interesa no puede evaluarse automáticamente utilizando
+la corrección funcional, un enfoque común es evaluar los outputs de la IA
+con datos de referencia. Por ejemplo, si pide a un modelo que traduzca una
+frase del francés al inglés, puede evaluar la traducción al inglés generada
+comparándola con la traducción correcta al inglés.
+Cada ejemplo de los datos de referencia sigue el formato (input, respuestas
+de referencia). Un input puede tener varias respuestas de referencia, como
+varias traducciones posibles al inglés de una frase en francés. Las
+respuestas de referencia también se denominan verdades básicas o
+respuestas canónicas. Las métricas que requieren referencias se denominan
+basadas en referencias, y las que no, libres de referencias.
+Dado que este enfoque de evaluación requiere datos de referencia, se ve
+limitado por la cantidad y la rapidez con que pueden generarse dichos datos.
+Los datos de referencia suelen ser generados por humanos y, cada vez más,
+por IA. Utilizar datos generados por humanos como referencia significa que
+tratamos el rendimiento humano como el estándar de referencia, y el
+rendimiento de la IA se mide en función del rendimiento humano. Los datos
+generados por humanos pueden ser caros y requerir mucho tiempo, por lo
+que muchos utilizan la IA para generar datos de referencia en su lugar. Los
+datos generados por IA pueden seguir necesitando la revisión humana, pero
+la mano de obra necesaria para revisarlos es mucho menor que la requerida
+para generar datos de referencia desde cero.
+Las respuestas generadas que son más similares a las respuestas de
+referencia se consideran mejores. Hay cuatro formas de medir la similitud
+entre dos textos abiertos:
+1. Pedir a un evaluador que juzgue si dos textos son iguales

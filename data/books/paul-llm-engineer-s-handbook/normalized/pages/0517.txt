@@ -1,0 +1,68 @@
+Index
+486
+monitoring 466
+logs 466
+metrics 466
+versus observability 470
+monolithic architecture 363
+monolithic batch pipeline architecture 10
+MT-Bench 264
+N
+NoSQL data warehouse documents 79, 80
+data categories and user
+document classes 87-89
+ODM class, implementing 82-87
+ORM and ODM software patterns 80-82
+O
+object-relational mapping (ORM) 154
+object-vector mapping (OVM)
+implementation 139
+observability
+versus monitoring 470
+ODM class
+implementing 82-87
+ODM software patterns 80-82
+offline batch transform 360
+online real-time inference 358, 359
+Open Arabic LLM Leaderboard 267
+OpenKo-LLM Leaderboard 267
+Open Medical-LLM Leaderboard 265
+Open Portuguese LLM Leaderboard 267
+Opik 46, 47, 411
+Optimal Brain Quantization (OBQ)
+approach 312
+optimized attention mechanisms 297, 298
+ORM software patterns 80-82
+output guardrails 411
+output test 463
+P
+parameter-efficient fine-tuning techniques
+full fine-tuning 211, 212
+LoRA 213-215
+QLoRA 215, 216
+pipeline parallelism (PP) 300, 301
+PiPPy (Pipeline Parallelism for PyTorch)
+library 301
+policy optimization 246
+position bias 237
+post-retrieval step, performing
+prompt compression 124
+re-ranking 124
+Post-Training Quantization (PTQ) 304
+preference alignment 245
+preference-based reinforcement learning
+(PbRL) 246
+preference dataset 230-232
+Chatbots 231
+code generation 231
+content moderation 231
+creating 230, 237-245
+creative writing 232
+data evaluation 233
+data generation 233
+data quantity 232
+summarization 231
+translation 232
+pre-retrieval steps, performing
+data indexing 119
+query optimizing 119

@@ -1,0 +1,32 @@
+Software Development and Data Analysis Agents
+284
+Hugging Face
+Hugging Face hosts a lot of open-source models, many of which have been trained on code, some
+of which can be tried out in playgrounds, where you can ask them to either complete (for older
+models) or write code (instruction-tuned models). With LangChain, you can either download
+these models and run them locally, or you can access them through the Hugging Face API. Let's
+try the local option first with a prime number calculation example:
+from langchain.llms import HuggingFacePipeline
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+# Choose a more up-to-date model
+checkpoint = "google/codegemma-2b"
+# Load the model and tokenizer
+model = AutoModelForCausalLM.from_pretrained(checkpoint)
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+# Create a text generation pipeline
+pipe = pipeline(
+    task="text-generation",
+    model=model,
+    tokenizer=tokenizer,
+    max_new_tokens=500
+)
+# Integrate the pipeline with LangChain
+llm = HuggingFacePipeline(pipeline=pipe)
+# Define the input text
+text = """
+def calculate_primes(n):
+    \"\"\"Create a list of consecutive integers from 2 up to N.
+    For example:
+    >>> calculate_primes(20)
+    Output: [2, 3, 5, 7, 11, 13, 17, 19]
+    \"\"\"

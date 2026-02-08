@@ -1,0 +1,33 @@
+Chapter 7
+271
+However, judge LLMs can exhibit biases favoring assertive or verbose responses, potentially
+overrating answers that sound more confident but are less accurate. They may also lack domain
+expertise for specialized topics, leading to misjudgments. Consistency is also a concern, as LLMs
+might score similar responses differently. Additionally, they could have implicit preferences for
+certain writing styles unrelated to actual answer quality. To mitigate these issues, it's possible to
+combine LLM evaluations with other metrics, use multiple judges, and carefully design prompts
+to address biases.
+Once a model has been properly evaluated and works as intended, it might be included within a
+broader system. In the next section, we will see how systems change the evaluation framework.
+RAG evaluation
+While traditional LLM evaluation focuses on the model's inherent capabilities, RAG evaluation
+requires a more comprehensive approach that considers both the model's generative abilities
+and its interaction with external information sources.
+RAG systems combine the strengths of LLMs with information retrieval mechanisms, allowing
+them to generate responses that are not only coherent and contextually appropriate but also
+grounded in up-to-date, externally sourced information. This makes RAG particularly valuable
+in fields where current and accurate information is crucial, such as news reporting, research, and
+customer support.
+The evaluation of RAG systems goes beyond assessing a standalone LLM. It requires examining
+the entire system's performance, including:
+•
+Retrieval accuracy: How well does the system fetch relevant information?
+•
+Integration quality: How effectively is the retrieved information incorporated into the
+generated response?
+•
+Factuality and relevance: Does the final output address the query appropriately while
+seamlessly blending retrieved and generated content?
+Key metrics for RAG evaluation include retrieval precision and recall, which measure the accuracy and comprehensiveness of the retrieved information. Additionally, the quality of integration
+between retrieved data and generated text is crucial, as is the overall factuality and coherence
+of the output.

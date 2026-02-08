@@ -1,0 +1,27 @@
+Performing Variable Discretization
+146
+    cv=3,
+    scoring="neg_mean_squared_error",
+    variables=variables,
+    regression=True,
+    param_grid={
+        "max_depth": [1, 2, 3],
+        "min_samples_leaf": [10, 20, 50]},
+)
+5.
+Let's fit the discretizer using the train set so that it finds the best decision trees for each of
+the variables:
+disc.fit(X_train, y_train)
+Note
+You can inspect the limits of the found intervals for each variable in the binner_dict_
+attribute by executing disc.binner_dict_. Note how the discretizer appended minus
+and plus infinity to the limits to accommodate smaller and greater values than those observed
+in the training set.
+6.
+Let's discretize the variables and then display the first five rows of the transformed training set:
+train_t = disc.transform(X_train)
+test_t = disc.transform(X_test)
+train_t[variables].head()
+In the following output, we can see the limits of the intervals to which each observation
+was allocated:
+Figure 4.13 - The first five rows of the transformed training set containing the discretized variables

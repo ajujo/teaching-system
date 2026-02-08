@@ -1,0 +1,28 @@
+al contexto del modelo, lo que le permite aprovecharlos para
+generar respuestas futuras. El contexto de un modelo puede
+considerarse su memoria a corto plazo, ya que no persiste
+entre tareas (consultas). Es de acceso rápido, pero su
+capacidad es limitada. Por lo tanto, suele utilizarse para
+almacenar la información más importante para la tarea
+actual.
+Memoria a largo plazo
+Las fuentes de datos externas a las que un modelo puede
+acceder mediante recuperación, como en un sistema RAG,
+son un mecanismo de memoria. Esto puede considerarse la
+memoria a largo plazo del modelo, ya que puede persistir
+entre tareas. A diferencia del conocimiento interno de un
+modelo, la información de memoria a largo plazo puede
+borrarse sin actualizar el modelo.
+Los humanos tienen acceso a mecanismos de memoria similares. Cómo
+respirar es un conocimiento interno. Normalmente no se nos olvida cómo
+respirar a menos que estemos en serios problemas. La memoria a corto
+plazo contiene información inmediatamente relevante para lo que estamos
+haciendo, como el nombre de una persona que acabamos de conocer. La
+memoria a largo plazo se amplía con libros, computadoras, apuntes, etc.
+El mecanismo de memoria a utilizar para sus datos depende de su
+frecuencia de uso. La información esencial para todas las tareas debe
+incorporarse al conocimiento interno del modelo mediante entrenamiento o
+ajuste. La información que rara vez se necesita debe residir en la memoria a
+largo plazo. La memoria a corto plazo está reservada a la información
+inmediata y específica del contexto. Estos tres mecanismos de memoria se
+ilustran en la Figura 6-16.

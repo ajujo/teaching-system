@@ -1,0 +1,26 @@
+Chapter 5
+189
+The Allen Institute for AI's RewardBench leaderboard, hosted on Hugging Face (allenai/reward-bench), is a good resource for comparing different reward models. It combines various
+types of reward models (generative, classifiers, DPO, etc.) and evaluates them on a curated set
+of chosen and rejected answers for each instruction. While this task is not directly related to instruction data quality, it is a good resource for finding models capable of differentiating between
+good and bad answers.
+Classifiers or encoder-only models can be trained to perform data quality evaluation. A good
+example is HuggingFaceFW/fineweb-edu-classifier, a classifier designed to judge the educational
+value of web pages. This model was designed as a quality filter for pretraining data but a similar
+approach can be taken to evaluate instruction samples at scale. In practice, fineweb-edu-classifier
+adds a classification head to an embedding model (Snowflake/snowflake-arctic-embed-m) and
+trains it for 20 epochs on 450,000 samples that are annotated by Llama 3 70B Instruct.
+This approach relies on encoder-only models, which are both smaller and better suited to classification tasks. Thanks to their low number of parameters, these models are faster to run and can
+scale to millions of samples. However, they are not as accurate as bigger models, particularly for
+complex reasoning tasks where they lack the ability to capture nuances. At smaller scale, encoder-only models are still valuable to filter out outliers or as part of an automated data pipeline,
+which requires faster processing.
+Data exploration
+Data exploration is a continuous process that requires practitioners to become familiar with the
+training data. It involves both manual inspection and automated analysis, each playing a crucial
+role in understanding the dataset's characteristics, strengths, and potential shortcomings.
+Manual dataset exploration, though time-consuming, is an important step. It reveals errors and
+inconsistencies that automated processes might miss, including formatting issues, data entry
+mistakes, incoherent reasoning, and factual inaccuracies. This process provides qualitative insights
+into the dataset's content and style. To enhance efficiency, researchers can employ techniques
+like stratified sampling (selecting diverse samples), systematic review (using a criteria checklist),
+and collaborative review (involving multiple reviewers).

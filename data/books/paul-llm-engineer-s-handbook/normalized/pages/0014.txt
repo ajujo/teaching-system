@@ -1,0 +1,32 @@
+Table of Contents
+xiii
+Pydantic domain entities • 150
+OVM • 154
+The dispatcher layer • 160
+The handlers • 162
+The cleaning handlers • 163
+The chunking handlers • 165
+The embedding handlers • 169
+Summary ......................................................................................................................... 173
+References ........................................................................................................................ 174
+Chapter 5: Supervised Fine-Tuning 
+ 177
+Creating an instruction dataset ...................................................................................... 178
+General framework • 178
+Data quantity • 180
+Data curation • 182
+Rule-based filtering • 183
+Data deduplication • 184
+Data decontamination • 185
+Data quality evaluation • 186
+Data exploration • 189
+Data generation • 191
+Data augmentation • 193
+Creating our own instruction dataset ............................................................................. 196
+Exploring SFT and its techniques .................................................................................... 206
+When to fine-tune • 207
+Instruction dataset formats • 208
+Chat templates • 209
+Parameter-efficient fine-tuning techniques • 211
+Full fine-tuning • 211
+LoRA • 213

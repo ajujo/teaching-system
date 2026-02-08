@@ -1,0 +1,26 @@
+Es posible afinar un modelo para ampliar su longitud de contexto. El
+afinado de contexto largo suele requerir modificar la arquitectura del
+modelo, por ejemplo ajustando las incrustaciones posicionales. Una
+secuencia larga significa más posiciones posibles para los tokens, y las
+incrustaciones posicionales deberían ser capaces de manejarlas. En
+comparación con otras técnicas, el afinado de contexto largo es más difícil
+de realizar. El modelo resultante también podría degradarse en secuencias
+más cortas.
+La Figura 7-1 muestra la elaboración de diferentes modelos Code Llama
+(Rozière et al., 2024), a partir del modelo base Llama 2, utilizando
+diferentes técnicas de afinado. Gracias al afinado de contexto largo,
+pudieron aumentar la longitud máxima del contexto del modelo de 4096 a
+16 384 tokens para dar cabida a archivos de código más largos. En la
+imagen, el afinado de instrucciones se refiere al afinado supervisado.
+El afinado puede ser realizado tanto por los desarrolladores de modelos
+como por los desarrolladores de aplicaciones. Los desarrolladores de
+modelos suelen post-entrenar un modelo con distintas técnicas de afinado
+antes de publicarlo. Un desarrollador de modelos también puede publicar
+distintas versiones del modelo con diferentes niveles de afinado, para que
+los desarrolladores de aplicaciones puedan elegir la versión que más les
+convenga.
+figura 7-1. Diferentes técnicas de afinado utilizadas para realizar distintos modelos de
+Code Llama. Imagen del estudio Rozière et al. (2024). Adaptación de una imagen
+original con licencia CC BY 4.0.
+Como desarrollador de aplicaciones, es posible que afine un modelo preentrenado, pero lo más probable es que afine un modelo post-entrenado.
+Cuanto más refinado sea un modelo y más relevantes sean sus

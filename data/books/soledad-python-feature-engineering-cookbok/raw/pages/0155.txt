@@ -1,0 +1,42 @@
+Performing Variable Discretization
+132
+4.	
+Let’s create a list with arbitrary interval limits, setting the upper limit to infinity to accommodate 
+bigger values:
+intervals = [0, 200, 500, 1000, 2000, np.inf]
+5.	
+Let’s create a list with the interval limits as strings:
+labels = ["0-200", "200-500", "500-1000", "1000-2000",
+    ">2000"]
+6.	
+Let’s make a copy of the dataset and discretize the Population variable into the pre-defined 
+limits from step 4:
+X_t = X.copy()
+X_t[«Population_limits»] = pd.cut(
+    X["Population"],
+    bins=intervals,
+    labels=None,
+    include_lowest=True)
+7.	
+Now, let’s discretize Population into pre-defined intervals and name the intervals with the 
+labels that we defined in step 5 for comparison:
+X_t[«Population_range»] = pd.cut(
+    X[„Population"],
+    bins=intervals,
+    labels=labels,
+    include_lowest=True)
+8.	
+Let’s inspect the first five rows of the original and discretized variables:
+X_t[['Population', 'Population_range',
+    'Population_limits']].head()
+In the last two columns of the DataFrame, we can see the discretized variables: the first one 
+with the strings that we created in step 5 as values, and the second one with the interval limits:
+   Population Population_range Population_limits
+0       322.0          200-500    (200.0, 500.0]
+1      2401.0            >2000     (2000.0, inf]
+2       496.0          200-500    (200.0, 500.0]
+3       558.0         500-1000   (500.0, 1000.0]
+4       565.0         500-1000   (500.0, 1000.0]
+Note
+We only need one of the variable versions, either the one with the value range or the one with the 
+interval limits. In this recipe, I created both to highlight the different options offered by pandas.

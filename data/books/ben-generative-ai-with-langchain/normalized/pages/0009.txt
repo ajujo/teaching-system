@@ -1,0 +1,32 @@
+Table of Contents
+viii
+Chapter 2: First Steps with LangChain 
+ 25
+Setting up dependencies for this book .............................................................................. 26
+API key setup • 28
+Exploring LangChain's building blocks ............................................................................ 32
+Model interfaces • 32
+LLM interaction patterns • 32
+Development testing • 33
+Working with chat models • 34
+Reasoning models • 36
+Controlling model behavior • 38
+Choosing parameters for applications • 40
+Prompts and templates • 40
+Chat prompt templates • 41
+LangChain Expression Language (LCEL) • 42
+Simple workflows with LCEL • 44
+Complex chain example • 45
+Running local models ....................................................................................................... 48
+Getting started with Ollama • 49
+Working with Hugging Face models locally • 50
+Tips for local models • 51
+Multimodal AI applications .............................................................................................. 54
+Text-to-image • 55
+Using DALL-E through OpenAI • 55
+Using Stable Diffusion • 57
+Image understanding • 58
+Using Gemini 1.5 Pro • 58
+Using GPT-4 Vision • 61
+Summary .......................................................................................................................... 63
+Review questions .............................................................................................................. 63

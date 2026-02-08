@@ -1,0 +1,36 @@
+Chapter 6
+239
+2.	
+Instead of the InstructionAnswerSet class, we now have a PreferenceSet class. This 
+class is designed to handle triples of instructions, generated answers (rejected), and ex-
+tracted answers (chosen).
+class PreferenceSet:
+    def __init__(self, triples: List[Tuple[str, str, str]]):
+        self.triples = triples
+    @classmethod
+    def from_json(cls, json_str: str) -> 'PreferenceSet':
+        data = json.loads(json_str)
+        triples = [(triple['instruction'], triple['generated_
+answer'], triple['extracted_answer'])
+                   for triple in data['preference_triples']]
+        return cls(triples)
+    def __iter__(self):
+        return iter(self.triples)
+3.	
+The load_articles_from_json, clean_text, and extract_substrings functions remain 
+unchanged from the original code. Let’s start with load_articles_from_json, which takes 
+our JSON file (cleaned_documents.json) containing the articles as input and returns a 
+Hugging Face dataset with the text and metadata (ID, platform, author ID, author full 
+name, link).
+def load_articles_from_json(file_path: str) -> Dataset:
+    with open(file_path, "r") as file:
+        data = json.load(file)
+    return Dataset.from_dict(
+        {
+            "id": [item["id"] for item in data["artifact_data"]],
+            "content": [item["content"] for item in data["artifact_
+data"]],
+            "platform": [item["platform"] for item in 
+data["artifact_data"]],
+            "author_id": [item["author_id"] for item in 
+data["artifact_data"]],

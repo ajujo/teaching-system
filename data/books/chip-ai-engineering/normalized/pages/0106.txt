@@ -1,0 +1,17 @@
+previamente. En la mitad superior de la Figura 2-4 se muestra una
+visualización de la arquitectura seq2seq.
+figura 2-4. Arquitectura Seq2seq vs. arquitectura de transformadores. Para la
+arquitectura de transformadores, las flechas muestran los tokens a los que atiende el
+decodificador al generar cada token de output.
+Hay dos problemas con seq2seq de los que hablan Vaswani et al. (2017). En
+primer lugar, el decodificador seq2seq estándar genera tokens de output
+utilizando únicamente el estado oculto final del input. Intuitivamente, esto
+es como generar respuestas acerca de un libro utilizando su resumen. Esto
+limita la calidad de los outputs generados. En segundo lugar, el codificador
+y decodificador RNN implican que tanto el procesamiento del input como
+la generación del output se realizan secuencialmente, lo que lo hace lento
+para secuencias largas. Si un input tiene 200 tokens, seq2seq tiene que
+esperar a que cada token de input termine de procesarse antes de pasar al
+siguiente. 6
+La arquitectura de transformadores aborda ambos problemas con el
+mecanismo de atención. El mecanismo de atención permite al modelo

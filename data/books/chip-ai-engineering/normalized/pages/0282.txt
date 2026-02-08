@@ -1,0 +1,29 @@
+mientras que el término "modelo abierto" se utiliza para los modelos que
+vienen con datos abiertos.
+NOTA
+Hay quien sostiene que el término "código abierto" debería reservarse
+únicamente a los modelos totalmente abiertos. En este libro, para
+simplificar, utilizo código abierto para referirme a todos los modelos cuyas
+ponderaciones se hacen públicas, independientemente de la disponibilidad
+y las licencias de sus datos de entrenamiento.
+En el momento de escribir estas líneas, la inmensa mayoría de los modelos
+de código abierto son solo de ponderación abierta. Los desarrolladores de
+modelos pueden ocultar información sobre los datos de entrenamiento a
+propósito, ya que esta información puede exponer a los desarrolladores de
+modelos al escrutinio público y a posibles demandas.
+Otro atributo importante de los modelos de código abierto son sus licencias.
+Antes de los modelos fundacionales, el mundo del código abierto era
+bastante confuso, con tantas licencias diferentes, como MIT (Massachusetts
+Institute of Technology), Apache 2.0, GNU General Public License (GPL),
+BSD (Berkely Software Distribution), Creative Commons, etc. Los modelos
+de código abierto empeoraron la situación de las licencias. Muchos modelos
+se comercializan con sus propias licencias. Por ejemplo, Meta lanzó Llama
+2 bajo el Acuerdo de Licencia Comunitaria de Llama 2 y Llama 3 bajo el
+Acuerdo de Licencia Comunitaria de Llama 3. Hugging Face publicó su
+modelo BigCode bajo la licencia BigCode Open RAIL- M v1. Sin embargo,
+espero que, con el tiempo, la comunidad converja hacia algunas licencias
+estándar. Tanto Gemma como Mistral-7B de Google se publicaron bajo
+Apache 2.0.
+Cada licencia tiene sus propias condiciones, por lo que deberá evaluarlas en
+función de tus necesidades. Sin embargo, veamos algunas preguntas que
+creo que todo el mundo debería hacerse:

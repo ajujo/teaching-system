@@ -1,0 +1,40 @@
+autonomously, the system is more resilient and adaptable, capable of responding
+efficiently to dynamic scenarios.
+Robustness
+Robustness is essential for enhancing fault tolerance and resilience. Redundancy
+involves adding agents that can take over if others fail, providing backup support
+that ensures uninterrupted operation. In high-stakes environments, redundancy
+is invaluable for maintaining system stability and reliability. Robustness also
+encompasses designing agents and workflows that can withstand unexpected dis‐
+ruptions, such as network failures or agent downtime. By embedding redun‐
+dancy and robustness into the system, developers can ensure that it remains
+functional even in adverse conditions.
+Efficiency
+Efficiency helps in assessing the trade-offs between adding agents and the poten‐
+tial complexity or resource demands that come with them. Each additional agent
+increases computational requirements and coordination overhead, so it is crucial
+to weigh the advantages of expanded functionality against these costs. By care‐
+fully evaluating the costs and benefits of each agent addition, developers can
+make informed decisions that balance system performance, resource efficiency,
+and scalability.
+By following these principles, developers can determine the optimal number and
+configuration of agents required to achieve the desired balance of performance, effi‐
+ciency, and complexity. This thoughtful approach enables the creation of multiagent
+systems that are both capable and sustainable, maximizing the benefits of additional
+agents while minimizing potential downsides.
+Multiagent Coordination
+Effective coordination among agents is critical for the success of multiagent systems.
+Various coordination strategies can be employed, each with its advantages and chal‐
+lenges. This section explores several of the leading coordination strategies, but we
+may see new approaches emerge.
+Democratic Coordination
+In democratic coordination, each agent within the system is given equal decision-
+making power, with the goal of reaching consensus on actions and solutions. This
+approach is characterized by decentralized control, where no single agent is designa‐
+ted as the leader. Instead, agents collaborate and share information equally, contribu‐
+ting their unique perspectives to collectively arrive at a decision. The key strength of
+democratic coordination is its robustness; because no agent holds a dominant role,
+the system has no single point of failure. This means that even if one or more agents
+180 
+| 
+Chapter 8: From One Agent to Many

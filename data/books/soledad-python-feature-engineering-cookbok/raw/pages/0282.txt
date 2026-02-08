@@ -1,0 +1,38 @@
+Creating spline features
+259
+How it works…
+In this recipe, we encoded cyclical features with values obtained from the sine and cosine functions, 
+applied to the normalized values of the variable. First, we normalized the variable values between 
+0 and 2 π. To do this, we divided the variable values by the variable maximum value, which we 
+obtained with pandas.max(), to scale the variables between 0 and 1. Then, we multiplied those 
+values by 2π, using numpy.pi. Finally, we used np.sin and np.cos to apply the sine and cosine 
+transformations, respectively.
+To automate this procedure for multiple variables, we used the Feature-engine library’s 
+CyclicalFeatures(). With fit(), the transformer learned the maximum values of each variable, 
+and with transform(), it added the features resulting from the sine and cosine transformations 
+to the DataFrame.
+Note
+In theory, to apply the sine and cosine transformation, we need to scale the original variable 
+between 0 and 1. Dividing by the maximum of the variable will only result in this scaling 
+if the minimum value is 0. scikit-learn’s documentation and Feature-engine’s current 
+implementation divide the variable by its maximum value (or an arbitrary period), without 
+paying too much attention to whether the variable starts at 0. In practice, you won’t see a big 
+difference in the resulting variables if you divide the hour feature by 23 or 24, or the month 
+feature by 12 or 11. Discussions are underway on whether Feature-engine’s implementation 
+should be updated, so the default behavior might change by the time this book is published. 
+Check out the documentation for more details.
+Creating spline features
+Linear models expect a linear relationship between the predictor variables and the target. However, we 
+can use linear models to model non-linear effects if we first transform the features. In the Performing 
+polynomial expansion recipe, we saw how we can unmask linear patterns by creating features with 
+polynomial functions. In this recipe, we will discuss the use of splines.
+Splines are used to mathematically reproduce flexible shapes. They consist of piecewise low-degree 
+polynomial functions. To create splines, we must place knots at several values of x. These knots indicate 
+where the pieces of the function join. Then, we fit low-degree polynomials to the data between two 
+consecutive knots.
+There are several types of splines, such as smoothing splines, regression splines, and B-splines. scikit-
+learn supports the use of B-splines to create features. The procedure to fit and, therefore, return the 
+spline values for a certain variable, based on a polynomial degree and the number of knots, exceeds the 
+scope of this recipe. For more details, check out the resources in the See also section of this recipe. In 
+this recipe, we’ll get a sense of what splines are and how we can use them to improve the performance 
+of linear models.

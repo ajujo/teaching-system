@@ -1,0 +1,39 @@
+most likely actions based on current user inputs, historical behavior, or workflow
+stage ensures the agent feels supportive rather than cluttered. Visual grouping and
+clear hierarchy within menus or suggested actions help users navigate available
+options efficiently.
+These principles apply across modalities. In text-based chat interfaces, quick-reply
+buttons and example prompts improve clarity. In graphical dashboards, capability
+menus and tooltips communicate functions without crowding the interface. Voice
+agents must balance brevity with clarity, listing only a few high-priority options at a
+time to avoid cognitive overload. Generative UI systems can combine natural lan‐
+guage and dynamically generated visual outputs to make available capabilities imme‐
+diately visible and actionable.
+Ultimately, communicating agent capabilities is not merely about stating what the
+agent can do; it is about designing an experience that empowers users to harness
+those capabilities confidently and efficiently. When users understand an agent’s scope
+and limitations, they are far more likely to engage productively, trust its outputs, and
+integrate it into their workflows. Thoughtful UX design turns invisible functions into
+visible affordances, transforming agents from opaque black boxes into transparent,
+collaborative digital partners.
+Communicating Confidence and Uncertainty
+Agents often operate in probabilistic environments, generating outputs based on stat‐
+istical models rather than deterministic rules. As a result, not every response or
+action carries the same degree of confidence. Communicating uncertainty effectively
+is essential for building user trust and helping users make informed decisions.
+Confidence levels can be expressed in several ways:
+Explicit statements
+“I’m 90% certain this is the correct answer.”
+Visual cues
+Icons, color-coded alerts, or confidence meters in graphical interfaces.
+Behavioral adjustments
+Offering suggestions rather than firm recommendations when confidence is low.
+Agents must avoid appearing overly confident when uncertainty is high—users are
+quick to lose trust if an agent confidently delivers an incorrect or misleading
+response. Similarly, excessive hedging in low-stakes interactions can make an agent
+appear hesitant or unreliable.
+Communicating confidence and uncertainty isn’t just about sharing probabilities; it’s
+about framing responses in a way that aligns with user expectations and the stakes of
+64 
+| 
+Chapter 3: User Experience Design for Agentic Systems

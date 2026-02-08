@@ -1,0 +1,41 @@
+Implementing target mean encoding
+71
+In this recipe, we will perform mean encoding using scikit-learn and feature-engine.
+How to do it...
+Let's begin with this recipe:
+1.
+Import pandas and the data split function:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+2.
+Let's load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.
+Let's import the transformers from scikit-learn:
+from sklearn.preprocessing import TargetEncoder
+from sklearn.compose import ColumnTransformer
+4.
+Let's make a list with the names of the categorical variables:
+cat_vars = X_train.select_dtypes(
+    include="O").columns.to_list()
+5.
+Let's set up the encoder to use the target variance to determine the weighting factor, as described
+at the beginning of the recipe:
+enc = TargetEncoder(smooth="auto", random_state=9)
+6.
+Let's restrict the imputation to categorical variables:
+ct = ColumnTransformer(
+    [("encoder", enc, cat_vars)],
+    remainder="passthrough",
+).set_output(transform="pandas")
+7.
+Let's fit the encoder and transform the datasets:
+X_train_enc = ct.fit_transform(X_train, y_train)
+X_test_enc = ct.transform(X_test)
+Check out the result by executing X_train_enc.head().

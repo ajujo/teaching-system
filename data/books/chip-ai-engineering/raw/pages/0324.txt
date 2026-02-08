@@ -1,0 +1,34 @@
+8  La parte de los conocimientos es complicada, ya que el modelo de
+interpretación no debe decir cosas que Jackie Chan no sepa. Por ejemplo, si
+Jackie Chan no habla vietnamita, debe comprobar que el modelo de
+interpretación no hable vietnamita. La comprobación del "conocimiento
+negativo" es muy importante para los videojuegos. No querrá que un NPC dé
+accidentalmente spoilers a los jugadores.
+9  Sin embargo, el costo de la electricidad puede variar en función del uso.
+10  Otro argumento a favor de hacer públicos los datos de entrenamiento es que,
+dado que los modelos probablemente se entrenan a partir de datos extraídos de
+Internet, generados por el público, este debería tener derecho a acceder a los
+datos de entrenamiento de los modelos.
+11  En espíritu, esta restricción es similar a la Licencia Elastic que prohíbe a las
+empresas ofrecer la versión de código abierto de Elastic como servicio alojado y
+competir con la plataforma Elasticsearch.
+12  Es posible que los outputs de un modelo no puedan utilizarse para mejorar
+otros modelos, aunque su licencia lo permita. Pensemos en el modelo X
+entrenado con los outputs de ChatGPT. X puede tener una licencia que lo
+permita, pero si ChatGPT no la tiene, entonces X violó los términos de uso de
+ChatGPT, y por lo tanto, X no puede ser usado. Por eso es tan importante
+conocer el linaje de datos de un modelo.
+13  Por ejemplo, en el momento de escribir este artículo, solo se puede acceder a
+los modelos GPT-4 a través de OpenAI o Azure. Algunos podrían argumentar
+que la posibilidad de ofrecer servicios basados en los modelos patentados de
+OpenAI es una de las razones principales por la que Microsoft invirtió en
+OpenAI.
+14  Curiosamente, algunas empresas con estrictos requisitos de privacidad de datos
+me han dicho que, aunque normalmente no pueden enviar datos a servicios de
+terceros, no tienen problema en enviar sus datos a modelos alojados en GCP,
+AWS y Azure. Para estas empresas, la política de privacidad de datos se refiere
+más bien a los servicios en los que pueden confiar. Confían en los grandes
+proveedores de la nube, pero no en otras startups.
+15  Varios medios se hicieron eco de la historia, entre ellos TechRadar (véase
+"Samsung Workers Made a Major Error by Using ChatGPT", de Lewis
+Maddison (abril de 2023)).

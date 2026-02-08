@@ -1,0 +1,21 @@
+Using the median absolute deviation to find outliers
+165
+Figure 5.6 - Comparison of the limits between the whiskers in the
+boxplot and those determined by using MAD
+Note
+Detecting outliers with MAD requires that the variable has certain variability. If more than 50%
+of the values in a variable are identical, the median coincides with the most frequent value, and
+MAD=0. This means that all values different from the median will be flagged as outliers. This
+constitutes another limitation of using MAD in outlier detection.
+That's it! You now know how to identify outliers using the median and MAD.
+How it works...
+We determined the median with pandas' median() and the absolute difference with pandas' abs().
+Next, we used the NumPy where() function to create a Boolean vector with True if a value was
+greater than the upper limit or smaller than the lower limit, otherwise False. Finally, we used pandas'
+sum() over this Boolean vector to calculate the total number of outliers.
+Finally, we compared the boundaries to determine outliers returned by the IQR proximity rule, which
+we discussed in the Visualizing outliers with boxplots and the inter-quartile range proximity rule recipe,
+and those returned by using MAD. The limits returned by the IQR rule were less conservative. This
+behavior can be changed by multiplying the IQR by 3 instead of 1.5, which is the default value in
+boxplots. In addition, we noted that MAD returns symmetric boundaries, whereas the boxplot provided
+asymmetric limits, which could be better suited for asymmetric distributions.

@@ -1,0 +1,45 @@
+DSPy integrates with popular LM APIs (e.g., OpenAI, Anthropic) and supports mul‐
+tistage compilation for complex workflows.
+Complementing DSPy, Microsoft's Trace is an open source framework for generative
+optimization of AI systems. It enables end-to-end training and refinement of AI
+agents using general feedback signals (e.g., scores, natural language critiques, or pair‐
+wise preferences) rather than requiring gradients or differentiable objectives. By
+treating optimization as a generative process, Trace uses a foundation model to pro‐
+pose and evaluate improvements iteratively, making it suitable for black box systems
+where traditional methods fall short. This is particularly useful for refining agent
+behaviors in dynamic, multistep environments, such as incorporating feedback from
+clustered errors to evolve reasoning strategies or tool invocations over time.
+To illustrate the concepts in this section, we'll use a running example of a Security
+Operations Center (SOC) analyst agent built with LangGraph. This agent handles
+cybersecurity tasks like investigating threats, analyzing logs, and triaging incidents. Its
+core components include a system prompt guiding the agent's methodology, tools for
+actions like querying logs or isolating hosts, and a workflow that invokes a founda‐
+tion model (e.g., GPT-5) bound to those tools. Here's a simplified excerpt of the
+agent's system prompt and a tool definition:
+You are an experienced Security Operations Center (SOC) analyst specializing
+in cybersecurity incident response.
+Your expertise covers:
+- Threat intelligence analysis and IOC research
+- Security log analysis and correlation across multiple systems
+- Incident triage and classification (true positive/false positive)
+- Malware analysis and threat hunting
+- Network security monitoring and anomaly detection
+- Incident containment and response coordination
+- SIEM/SOAR platform operations
+Your investigation methodology:
+  1) Analyze security alerts and gather initial indicators
+  2) Use lookup_threat_intel to research IPs, hashes, URLs, and domains
+  3) Use query_logs to search relevant log sources for evidence
+  4) Use triage_incident to classify findings as true/false positives
+  5) Use isolate_host when containment is needed to prevent spread
+  6) Follow up with send_analyst_response to document findings
+Always prioritize rapid threat containment and accurate incident classification.
+Our agent has several tools defined here:
+@tool
+def lookup_threat_intel(indicator: str, type: str, **kwargs) -> str:
+   """Look up threat intelligence for IP addresses, file hashes,
+   URLs, and domains."""
+   print(f'''[TOOL] lookup_threat_intel(indicator={indicator},
+Feedback Pipelines
+|
+247

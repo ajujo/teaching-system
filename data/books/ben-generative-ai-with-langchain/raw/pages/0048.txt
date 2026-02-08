@@ -1,0 +1,24 @@
+Chapter 1
+21
+•	
+External partner packages: Some partners maintain their integration packages inde­
+pendently. For example, several packages from the Google organization (github.com/
+orgs/googleapis/repositories?q=langchain), such as the langchain-google-cloud-
+sql-mssql package, are developed and maintained outside the LangChain ecosystem.
+Figure 1.2: Integration ecosystem map
+LangGraph, LangSmith, and companion tools
+LangChain’s core functionality is extended by the following companion projects:
+•	
+LangGraph: An orchestration framework for building stateful, multi-actor applications 
+with LLMs. While it integrates smoothly with LangChain, it can also be used independent­
+ly. LangGraph facilitates complex applications with cyclic data flows and supports stream­
+ing and human-in-the-loop interactions. We’ll talk about LangGraph in more detail in 
+Chapter 3.
+•	
+LangSmith: A platform that complements LangChain by providing robust debugging, 
+testing, and monitoring capabilities. Developers can inspect, monitor, and evaluate their 
+applications, ensuring continuous optimization and confident deployment.
+For full details on the dozens of available modules and packages, refer to the compre­
+hensive LangChain API reference: https://api.python.langchain.com/. There 
+are also hundreds of code examples demonstrating real-world use cases: https://
+python.langchain.com/v0.1/docs/use_cases/.

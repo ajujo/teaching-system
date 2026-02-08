@@ -1,0 +1,28 @@
+etiquetador. Esta opinión fue defendida por primera vez por Leo Gao,
+investigador de OpenAI. Durante el SFT, los modelos se entrenan para
+imitar las respuestas escritas por los etiquetadores. Si estas respuestas
+utilizan el conocimiento que los etiquetadores tienen pero el modelo no
+tiene, estamos enseñando efectivamente al modelo a alucinar. En teoría, si
+los etiquetadores pueden incluir los conocimientos que utilizan con cada
+respuesta que escriben para que el modelo sepa que las respuestas no son
+inventadas, quizá podamos enseñar al modelo a utilizar solo lo que sabe.
+Sin embargo, esto es imposible en la práctica.
+En abril de 2023, John Schulman, cofundador de OpenAI, expresó la misma
+opinión en su charla en UC Berkeley. Schulman también cree que los LLMs
+saben si saben algo, lo cual, en sí mismo, es una afirmación muy atrevida.
+Si esto es cierto, las alucinaciones pueden arreglarse obligando a un modelo
+a dar respuestas basadas únicamente en la información que conoce. Propuso
+dos soluciones. Una es la verificación: para cada respuesta, pida al modelo
+que recupere las fuentes en las que basa esta respuesta. Otra es utilizar el
+aprendizaje por refuerzo. Recuerde que el modelo de recompensa se entrena
+utilizando solo comparaciones (la respuesta A es mejor que la respuesta B)
+sin una explicación de por qué A es mejor. Schulman argumentó que una
+mejor función de recompensa que castigue más a un modelo por inventarse
+cosas puede ayudar a mitigar las alucinaciones.
+En esa misma charla, Schulman mencionó que OpenAI descubrió que el
+RLHF ayuda a reducir las alucinaciones. Sin embargo, el artículo de
+InstructGPT muestra que el RLHF empeoró las alucinaciones, como se
+muestra en la Figura 2-26. Aunque el RLHF pareció empeorar las
+alucinaciones en el caso de InstructGPT, mejoró otros aspectos y, en
+general, los etiquetadores humanos prefieren el modelo de RLHF al modelo
+de SFT solo.

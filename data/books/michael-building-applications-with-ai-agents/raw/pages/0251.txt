@@ -1,0 +1,40 @@
+SigNoz
+SigNoz is a unified, OTel-native platform that combines metrics, traces, and logs in a
+single tool, suitable for streamlined extensions of basic monitoring setups:
+Setup and integration
+SigNoz ingests OTel data directly, with auto-instrumentation for Python (e.g.,
+LangGraph). Add spans for agent steps (e.g., planning latency) and query via its
+UI. Example: trace a multistep agent flow, filtering by token_usage > 1000 to
+spot inefficiencies, with built-in evals for LLM quality.
+Key features
+It has integrated AI-powered insights (e.g., anomaly detection on agent traces);
+custom dashboards for LLM metrics (e.g., prompt drift); and lightweight self-
+hosting with ClickHouse backend for efficiency.
+Trade-offs
+The pros include a simpler setup (single app), lower overhead for small teams,
+and strong OTel support with AI extensions (e.g., 2025 updates for hallucination
+auto-scoring). The cons are that it has a less extensible ecosystem (fewer plug-
+ins) and that visualization is functional but not as advanced. It is well suited for
+startups or ML-focused teams extending lightweight monitoring without heavy
+infra additions.
+Langfuse
+Langfuse specializes in foundation model and agent observability, making it easy to
+extend existing stacks with semantic-focused tracing for agents:
+Setup and integration
+Integrate via SDK in LangGraph (e.g., wrap nodes with Langfuse tracers). It cap‐
+tures prompts, outputs, and evals (e.g., custom scorers for coherence). Example:
+log a full agent session, auto-evaluate for hallucination, and export traces for
+regression testing.
+Key features
+It has LLM-native metrics (e.g., token cost tracking, A/B testing for prompts);
+session replay for debugging; and it is self-hostable with database backends like
+PostgreSQL.
+Trade-offs
+The pros are that it is tailored for agents/LLMs (as built-in evals save custom
+work) and easy for dev teams (focus on app-level insights). The cons are that it
+has a narrower scope (weaker on infra metrics like CPU; pair with Prometheus)
+and it is less scalable for non-LLM telemetry. It is ideal for extending enterprise
+logging with agent-specific features without overhauling the core stack.
+Monitoring Stacks 
+| 
+229

@@ -1,0 +1,29 @@
+Diffusion. Muchas de estas imágenes extraídas contienen logotipos de
+empresas con marca registrada. La Figura 5-14 muestra ejemplos de
+imágenes generadas y sus casi duplicados reales. El autor concluye que los
+modelos de difusión son mucho menos privados que los modelos
+generativos anteriores, como los GANs, y que mitigar estas
+vulnerabilidades puede requerir nuevos avances en el entrenamiento para
+preservar la privacidad.
+figura 5-14. Muchas de las imágenes generadas por Stable Diffusion son casi
+duplicados de imágenes del mundo real, lo que probablemente se deba a que estas
+imágenes del mundo real se incluyeron en los datos de entrenamiento del modelo.
+Imagen de Carlini et al. (2023).
+Es importante recordar que la extracción de datos de entrenamiento no
+siempre conduce a la extracción de datos de PII (información de
+identificación personal). En muchos casos, los datos extraídos son textos
+comunes, como textos bajo licencia del MIT o la letra de "Cumpleaños
+feliz". El riesgo de extracción de datos de PII puede mitigarse colocando
+filtros para bloquear solicitudes que pidan datos de PII y respuestas que los
+contengan.
+Para evitar este ataque, algunos modelos bloquean las solicitudes
+sospechosas tipo rellenar espacios en blanco. La Figura 5-15 muestra una
+captura de pantalla de Claude bloqueando una solicitud tipo rellenar
+espacios en blanco, confundiéndola con una petición para que el modelo
+produzca un trabajo protegido por derechos de autor.
+Los modelos también pueden regurgitar los datos de entrenamiento sin que
+haya ataques de actores maliciosos. Si un modelo se entrenó con datos
+protegidos por derechos de autor, la regurgitación de los derechos de autor
+podría ser perjudicial para los desarrolladores del modelo, los
+desarrolladores de la aplicación y los propietarios de los derechos de autor.
+Si un modelo fue entrenado con contenidos protegidos por derechos de

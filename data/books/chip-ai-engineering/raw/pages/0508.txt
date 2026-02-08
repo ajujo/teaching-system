@@ -1,0 +1,32 @@
+comparativa GLUE, lograron un rendimiento a un 0.4% del afinado
+completo utilizando solo el 3% del número de parámetros entrenables. La
+línea naranja de la Figura 7-7 muestra el delta de rendimiento entre el
+afinado completo y el afinado utilizando diferentes tamaños de adaptador.
+Sin embargo, el inconveniente de este enfoque es que aumenta la latencia
+de inferencia del modelo afinado. Los adaptadores introducen capas
+adicionales, que añaden más pasos computacionales a la pasada hacia
+delante, ralentizando la inferencia.
+El PEFT permite el afinado en hardware más asequible, lo que lo hace
+accesible para muchos más desarrolladores. Por lo general, los métodos
+PEFT no solo son eficientes desde el punto de vista de los parámetros, sino
+también desde el punto de vista de la muestra.
+Mientras que el afinado completo puede requerir entre decenas de miles y
+millones de ejemplos para lograr mejoras notables de la calidad, algunos
+métodos PEFT pueden ofrecer un gran rendimiento con solo unos pocos
+miles de ejemplos.
+Dado el evidente atractivo del PEFT, sus técnicas se están desarrollando
+rápidamente. En la siguiente sección se ofrece una visión general de estas
+técnicas antes de profundizar en la técnica PEFT más común: LoRA.
+Técnicas PEFT
+El prolífico mundo actual del PEFT se divide en dos categorías: métodos
+basados en adaptadores y métodos basados en prompts suaves. Sin
+embargo, es probable que en el futuro se introduzcan nuevas categorías.
+Los métodos basados en adaptadores se refieren a todos los métodos que
+implican módulos adicionales a las ponderaciones del modelo, como el
+desarrollado por Houlsby et al. (2019). Dado que los métodos basados en
+adaptadores implican la adición de parámetros, también se denominan
+métodos aditivos.
+En el momento de escribir esto, LoRA (Hu et al., 2021) es, por mucho, el
+método basado en adaptadores más popular, y será el tema de la siguiente
+sección. Otros métodos basados en adaptadores incluyen BitFit (Zaken et
+al., 2021), que apareció más o menos al mismo tiempo que LoRA. Entre los

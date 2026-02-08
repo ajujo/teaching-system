@@ -1,0 +1,39 @@
+Chapter 10
+425
+Misinformation and cybersecurity
+AI presents a dual-edged sword for information integrity and security. While it enables better
+detection of false information, it simultaneously facilitates the creation of increasingly sophis­
+ticated misinformation at unprecedented scale and personalization. Generative AI can create
+targeted disinformation campaigns tailored to specific demographics and individuals, making it
+harder for people to distinguish between authentic and manipulated content. When combined
+with micro-targeting capabilities, this enables precision manipulation of public opinion across
+social platforms.
+Beyond pure misinformation, generative AI accelerates social engineering attacks by enabling
+personalized phishing messages that mimic the writing styles of trusted contacts. It can also
+generate code for malware, making sophisticated attacks accessible to less technically skilled
+threat actors.
+The deepfake phenomenon represents perhaps the most concerning development. AI systems can
+now generate realistic fake videos, images, and audio that appear to show real people saying or
+doing things they never did. These technologies threaten to erode trust in media and institutions
+while providing plausible deniability for actual wrongdoing ("it's just an AI fake").
+The asymmetry between creation and detection poses a significant challenge-it's generally
+easier and cheaper to generate convincing fake content than to build systems to detect it. This
+creates a persistent advantage for those spreading misinformation.
+The limitations in the scaling approach have important implications for misinformation concerns.
+While more powerful models were expected to develop better factual grounding and reasoning
+capabilities, persistent hallucinations even in the most advanced systems suggest that technical
+solutions alone may be insufficient. This has shifted focus toward hybrid approaches that combine
+AI with human oversight and external knowledge verification.
+To address these threats, several complementary approaches are needed:
+•
+Technical safeguards: Content provenance systems, digital watermarking, and advanced
+detection algorithms
+•
+Media literacy: Widespread education on identifying manipulated content and evaluating
+information sources
+•
+Regulatory frameworks: Laws addressing deepfakes and automated disinformation
+•
+Platform responsibility: Enhanced content moderation and authentication systems
+•
+Collaborative detection networks: Cross-platform sharing of disinformation patterns

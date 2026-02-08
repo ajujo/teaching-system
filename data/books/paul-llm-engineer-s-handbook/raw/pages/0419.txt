@@ -1,0 +1,32 @@
+Inference Pipeline Deployment
+388
+User query: {query}
+Context: {context}
+            """
+        else:
+            self.prompt = prompt
+The execute() method is the key component of the InferenceExecutor class. This method is 
+responsible for actually performing the inference. When execute is called, it prepares the payload 
+sent to the LLM by formatting the prompt with the user’s query and context.
+Then, it configures several parameters that influence the behavior of the LLM, such as the maxi-
+mum number of new tokens the model is allowed to generate, a repetition penalty to discourage 
+the model from generating repetitive text, and the temperature setting that controls the ran-
+domness of the output.
+Once the payload and parameters are set, the method calls the inference function from 
+LLMInferenceSagemakerEndpoint and waits for the generated answer:
+def execute(self) -> str:
+    self.llm.set_payload(
+        inputs=self.prompt.format(query=self.query, context=self.context),
+        parameters={
+            "max_new_tokens": settings.MAX_NEW_TOKENS_INFERENCE,
+            "repetition_penalty": 1.1,
+            "temperature": settings.TEMPERATURE_INFERENCE,
+        },
+    )
+    answer = self.llm.inference()[0]["generated_text"]
+    return answer
+By making the inference through an object that implements the Inference interface we decouple, 
+we can easily inject other Inference strategies and the LLMInferenceSagemakerEndpoint imple-
+mentation presented above without modifying different parts of the code.
+Running a test example is straightforward. Simply call the following Python file, as shown below:
+poetry run python -m llm_engineering.model.inference.test

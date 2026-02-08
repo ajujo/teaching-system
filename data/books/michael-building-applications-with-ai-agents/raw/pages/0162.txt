@@ -1,0 +1,47 @@
+The prompt is built in three sections to turn the model into its own coach: first, a
+brief framing instruction tells the model “you failed your task—focus on strategic
+missteps rather than summarizing the environment and output your corrective plan
+after the word ‘Plan,’” which ensures a concise, parseable response. Next, under
+“Instruction:” we restate the original goal (“find a dairy-free, apple variety pack of
+chips under $30”), anchoring the reflection in the true objective. Finally, we include
+the complete Action/Observation transcript of the failed run—every search, click,
+and internal thought ending with STATUS: FAIL—so the model has concrete evidence
+of what went wrong. By ending with the cue “Plan:” we signal the model to shift from
+diagnosis to prescription, yielding a focused set of next-step recommendations. Here’s
+the Python implementation that sets up our three-part coaching prompt—framing
+instruction, restated goal under “Instruction:” and the full Action/Observation
+transcript—ending with the cue “Plan:”:
+def get_completion(prompt: str) -> str:
+    # Wraps our `call_model` helper for one‐off text completions
+    result = llm.invoke([{"role":"user","content":prompt}])
+    return result[0].content
+def _generate_reflection_query(trial_log: str, recent_reflections: List[str]):
+    history = "\n\n".join(recent_reflections)
+    return f'''{history}
+        {trial_log}
+        Based on the above, what plan would you follow next? Plan:'''
+def update_memory(trial_log_path: str, env_configs: List[Dict[str, Any]]): 
+    """Updates the given env_config with the appropriate reflections."""
+    with open(trial_log_path, 'r') as f:
+        full_log: str = f.read()
+        
+    env_logs: List[str] = full_log.split('#####\n\n#####')
+    assert len(env_logs) == len(env_configs), print(f'bad: {env_logs}')
+    for i, env in enumerate(env_configs):
+        # if unsolved, get reflection and update env config
+        if not env['is_success'] and not env['skip']:
+            if len(env['memory']) > 3:
+                memory: List[str] = env['memory'][-3:]
+            else:
+                memory: List[str] = env['memory']
+            reflection_query = _generate_reflection_query(env_logs[i], memory)
+            reflection = get_completion(reflection_query)
+            env_configs[i]['memory'] += [reflection]
+builder = StateGraph(MessagesState)
+builder.add_node("reflexion", call_model)
+builder.add_edge(START, "reflexion")
+graph = builder.compile()
+result = graph.invoke(
+140 
+| 
+Chapter 7: Learning in Agentic Systems

@@ -1,0 +1,31 @@
+Chapter 7
+287
+    task="text-generation",
+    model_kwargs={
+        "temperature": 0.5,
+        "max_length": 1000
+    }
+)
+# Use the LangChain LLM to generate text
+output = llm.invoke(text)
+print(output)
+When executed, this code connects to Hugging Face’s servers to run the StarCoder model, a 
+specialized code generation model trained on a vast corpus of source code. The expected output 
+would be similar to our previous example—a complete implementation of the prime number 
+calculator—but potentially with different algorithmic approaches since we’re using a different 
+model. This hosted approach trades some flexibility and control for convenience and reduced 
+local resource requirements, making it ideal for quick prototyping or when working on hardware 
+with limited capabilities.
+Anthropic
+Anthropic Claude series models have been particularly good in coding-related tasks. Let’s see 
+how Claude does at a coding task:
+from langchain_anthropic import ChatAnthropic
+from langchain_core.prompts.prompt import PromptTemplate
+template = """Question: {question}
+Let's think step by step.
+Answer:
+"""
+prompt = PromptTemplate(template=template, input_variables=["question"])
+llm = ChatAnthropic(model='claude-3-opus-20240229')
+llm_chain = prompt | llm
+print(llm_chain.invoke(text))

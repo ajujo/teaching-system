@@ -1,0 +1,28 @@
+Combining features with decision trees
+251
+    param_grid=param_grid,
+    scoring="neg_mean_squared_error"
+)
+dtf.fit(X_train, y_train)
+16.	 We fitted the transformer in the previous step, so we can go ahead and add the features to 
+training and test sets:
+train_t = dtf.transform(X_train)
+test_t = dtf.transform(X_test)
+17.	 Display the new features:
+tree_features = [
+    var for var in test_t.columns if "tree" in var]
+test_t[tree_features].head()
+In the following output, we can see the new features derived from predictions of decision trees 
+in the test set:
+    Figure 8.10 – A portion of the testing set containing the features derived from the decision trees
+To wrap up the recipe, we’ll compare the performance of a Lasso linear regression model 
+trained using the original features with one using the features derived from the decision trees.
+18.	 Import Lasso and the cross_validate function from scikit-learn:
+from sklearn.linear_model import Lasso
+from sklearn.model_selection import cross_validate
+19.	 Set up a Lasso regression model:
+lasso = Lasso(random_state=0, alpha=0.0001)
+20.	 Train and evaluate the model using the original data with cross-validation, and then print out 
+the resulting r-squared:
+cv_results = cross_validate(lasso, X_train, y_train,
+    cv=3)

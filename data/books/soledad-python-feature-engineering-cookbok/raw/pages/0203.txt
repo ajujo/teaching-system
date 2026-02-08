@@ -1,0 +1,16 @@
+Extracting Features from Date and Time Variables
+180
+We see the new year variable in the following output:
+Figure 6.2 – First five rows of the DataFrame with the year variable extracted from the date
+4.	
+Let’s extract the quarter of the year out of the date into a new column and display the top five rows:
+data["quarter"] = data["date"].dt.quarter
+data[["date", "quarter"]].head()
+We see the new quarter variable in the following output:
+Figure 6.3 – The first five rows of a DataFrame with the quarter variable extracted from the date
+5.	
+With quarter, we can now create the semester feature:
+data["semester"] = np.where(data["quarter"] < 3, 1, 2)
+Note
+You can explore the distinct values of the new variables utilizing pandas’ unique(), for 
+example, by executing df["quarter"].unique() or df["semester"].unique().

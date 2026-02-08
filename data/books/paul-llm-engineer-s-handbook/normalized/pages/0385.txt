@@ -1,0 +1,34 @@
+Inference Pipeline Deployment
+354
+Hence, in this chapter, we will cover the following topics:
+•
+Criteria for choosing deployment types
+•
+Understanding inference deployment types
+•
+Monolithic versus microservices architecture in model serving
+•
+Exploring the LLM Twin's inference pipeline deployment strategy
+•
+Deploying the LLM Twin service
+•
+Autoscaling capabilities to handle spikes in usage
+Criteria for choosing deployment types
+When it comes to deploying ML models, the first step is to understand the four requirements
+present in every ML application: throughput, latency, data, and infrastructure.
+Understanding them and their interaction is essential. When designing the deployment architecture for your models, there is always a trade-off between the four that will directly impact the
+user's experience. For example, should your model deployment be optimized for low latency or
+high throughput?
+Throughput and latency
+Throughput refers to the number of inference requests a system can process in a given period.
+It is typically measured in requests per second (RPS). Throughput is crucial when deploying
+ML models when you expect to process many requests. It ensures the system can handle many
+requests efficiently without becoming a bottleneck.
+High throughput often requires scalable and robust infrastructure, such as machines or clusters
+with multiple high-end GPUs.Latency is the time it takes for a system to process a single inference
+request from when it is received until the result is returned. Latency is critical in real-time applications where quick response times are essential, such as in live user interactions, fraud detection,
+or any system requiring immediate feedback. For example, the average latency of OpenAI's API
+is the average response time from when a user sends a request, and the service provides a result
+that is accessible within your application.
+The latency is the sum of the network I/O, serialization and deserialization, and the LLM's inference time. Meanwhile, the throughput is the average number of requests the API processes and
+serves a second.

@@ -1,0 +1,36 @@
+Chapter 8
+307
+Zero-point quantization, on the other hand, considers asymmetric input distributions and maps 
+the weights 
+0.0008to the range [-128, 127] by introducing a zero-point offset:
+𝐗𝐗quant = round(scale ⋅𝐗𝐗𝐗𝐗𝐗𝐗𝐗𝐗𝐗𝐗𝐗𝐗) 
+Where scale =
+255
+max(𝐗𝐗)−min(𝐗𝐗)  and zeropoint = −round(scale ⋅min(𝐗𝐗)) −128.
+If we take the same example with a weight of 0.1, we get a scale of 
+255
+3.2+3.0 ≈41.13 and a zero-point 
+value of −round (
+255
+3.2+3.0 ⋅−3.0) −128 = −5. The weight of 0.1 would be quantized to round(41.13 ⋅0.1 −5) = −1, 
+unlike the value of 4 provided by absmax.
+We can easily get the dequantization by applying the inverse operation:
+𝐗𝐗dequant = 𝐗𝐗quant −zeropoint
+scale
+ 
+In Python, zero-point quantization can be implemented as follows:
+def zeropoint_quantize(X):
+    # Calculate value range (denominator)
+    x_range = torch.max(X) - torch.min(X)
+    x_range = 1 if x_range == 0 else x_range
+    # Calculate scale
+    scale = 255 / x_range
+    # Shift by zero-point
+    zeropoint = (-scale * torch.min(X) - 128).round()
+    # Scale and round the inputs
+    X_quant = torch.clip((X * scale + zeropoint).round(), -128, 127)
+   
+    return X_quant.to(torch.int8)
+However, naïve quantization methods have limitations, particularly when dealing with outlier 
+features in LLMs. Outlier features are extreme weight values (about 0.1% of total values) that 
+can significantly impact the quantization process, leading to reduced precision for other values.

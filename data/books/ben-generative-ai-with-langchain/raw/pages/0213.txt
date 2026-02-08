@@ -1,0 +1,35 @@
+Building Intelligent Agents
+186
+The LLM itself doesn’t bother about this mechanism, it only produces instructions for when and 
+how to call a tool. For LangChain, a tool is also something that can be called (and we will see later 
+that tools are inherited from Runnables) when we execute our program.
+The wording that you use in the title and description fields is extremely important, and you can treat 
+it as a part of the prompt engineering exercise. Better wording helps LLMs make better decisions 
+on when and how to call a specific tool. Please note that for more complex tools, writing a sche­
+ma like this can become tedious, and we’ll see a simpler way to define tools later in this chapter:
+search_tool = {
+"type": "function",
+    "function": {
+        "name": "google_search",
+        "description": "Returns about common facts, fresh events and news 
+from Google Search engine based on a query.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "title": "search_query",
+                    "description": "Search query to be sent to the search 
+engine"
+                }
+            },
+            "required": ["query"]
+        }
+    }
+}
+result = llm.invoke(question, tools=[search_tool])
+If we inspect the result.content field, it would be empty. That’s because the LLM has decided 
+to call a tool, and the output message has a hint for that. What happens under the hood is that 
+LangChain maps a specific output format of the model provider into a unified tool-calling format:
+Please note that the Schema definitions between model providers can show small 
+differences

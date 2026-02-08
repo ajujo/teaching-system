@@ -1,0 +1,39 @@
+Extracting Features from Relational Data with Featuretools
+284
+2.	
+Let’s load the dataset described in the Technical requirements section:
+df = pd.read_csv(
+    «retail.csv», parse_dates=[«invoice_date»])
+3.	
+Let’s set up an entity set:
+es = ft.EntitySet(id="data")
+4.	
+Let’s add the DataFrame to the entity set:
+es = es.add_dataframe(
+    dataframe=df,
+    dataframe_name=»data»,
+    index="rows",
+    make_index=True,
+    time_index=»invoice_date»,
+    logical_types={
+        "customer_id": Categorical,
+        "invoice": Categorical,
+    }
+)
+Note
+By default, featuretools only retains categorical, numeric, and Boolean features in the 
+feature matrix that is generated after creating new features. The type of the invoice variable 
+is not accurately inferred, so we need to enforce it as categorical by setting its logical type as we 
+do in step 4, if we want featuretools to retain it in the dataset containing the new features. 
+To learn the datatypes inferred by featuretools, you can execute es["data"].ww.
+5.	
+Let’s create a new DataFrame with a relationship to the DataFrame from step 4:
+es.normalize_dataframe(
+    base_dataframe_name=»data»,
+    new_dataframe_name=»invoices»,
+    index="invoice",
+    copy_columns=[«customer_id»],
+)
+Note
+For more details about steps 4 and 5, visit the Setting up an entity set and creating features 
+automatically recipe.

@@ -1,0 +1,39 @@
+Orchestration
+Orchestration is what turns isolated capabilities into end-to-end solutions: it’s the
+logic that composes, schedules, and supervises a series of skills so that each action
+flows into the next and works toward a clear objective. At its core, orchestration eval‐
+uates possible sequences of tool or skill invocations, forecasts their likely outcomes,
+and picks the path most likely to succeed in multistep tasks—whether that’s plotting
+an optimal delivery route that balances traffic, time windows, and vehicle availability,
+or assembling a complex data-processing pipeline.
+Because real-world conditions can change in an instant—new information arrives,
+priorities shift, or resources become unavailable—an orchestrator must continuously
+monitor both progress and environment, pausing or rerouting workflows as needed
+to stay on course. In many scenarios, agents build plans incrementally: they execute a
+handful of steps, then reassess and update the remaining workflow based on fresh
+results. A conversational assistant, for example, might confirm each subtask’s out‐
+come before planning the next, dynamically adapting its sequence to ensure respon‐
+siveness and robustness.
+Without a solid orchestration layer, even the most powerful skills risk running at
+cross-purposes or stalling entirely. We’ll dig into the patterns, architectures, and best
+practices for building resilient, flexible orchestration engines in Chapter 5.
+Design Trade-Offs
+Designing agent-based systems involves balancing multiple trade-offs to optimize
+performance, scalability, reliability, and cost. These trade-offs require developers to
+make strategic decisions that can significantly impact how the agent performs in real-
+world environments. This section explores the critical trade-offs involved in creating
+effective agent systems and provides guidance on how to approach these challenges.
+Performance: Speed/Accuracy Trade-Offs
+A key trade-off in agent design is balancing speed and accuracy. High performance
+often enables an agent to quickly process information, make decisions, and execute
+tasks, but this can come at the expense of precision. Conversely, focusing on accuracy
+can slow the agent down, particularly when complex models or computationally
+intensive techniques are required.
+In real-time environments, such as autonomous vehicles or trading systems, rapid
+decision making is essential, with milliseconds sometimes making a critical differ‐
+ence; here, prioritizing speed over accuracy may be necessary to ensure timely
+responses. However, tasks like legal analysis or medical diagnostics require high pre‐
+cision, making it acceptable to sacrifice some speed to ensure reliable results.
+Design Trade-Offs 
+| 
+27

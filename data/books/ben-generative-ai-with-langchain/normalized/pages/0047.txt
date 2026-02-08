@@ -1,0 +1,39 @@
+The Rise of Generative AI: From Language Models to Agents
+20
+LangChain's package architecture evolved as a direct response to scaling challenges. As the frame­
+work rapidly expanded to support hundreds of integrations, the original monolithic structure
+became unsustainable-forcing users to install unnecessary dependencies, creating maintenance
+bottlenecks, and hindering contribution accessibility. By dividing into specialized packages with
+lazy loading of dependencies, LangChain elegantly solved these issues while preserving a cohesive
+ecosystem. This architecture allows developers to import only what they need, reduces version
+conflicts, enables independent release cycles for stable versus experimental features, and dramat­
+ically simplifies the contribution path for community developers working on specific integrations.
+The LangChain codebase follows a well-organized structure that separates concerns while main­
+taining a cohesive ecosystem:
+Core structure
+•
+docs/: Documentation resources for developers
+•
+libs/: Contains all library packages in the monorepo
+Library organization
+•
+langchain-core/: Foundational abstractions and interfaces that define the framework
+•
+langchain/: The main implementation library with core components:
+•
+vectorstores/: Integrations with vector databases (Pinecone, Chroma, etc.)
+•
+chains/: Pre-built chain implementations for common workflows
+Other component directories for retrievers, embeddings, etc.
+•
+langchain-experimental/: Cutting-edge features still under development
+•
+langchain-community: Houses third-party integrations maintained by the LangChain
+community. This includes most integrations for components like LLMs, vector stores, and
+retrievers. Dependencies are optional to maintain a lightweight package.
+•
+Partner packages: Popular integrations are separated into dedicated packages (e.g., lang­
+chain-openai, langchain-anthropic) to enhance independent support. These packages
+reside outside the LangChain repository but within the GitHub "langchain-ai" organiza­
+tion (see github.com/orgs/langchain-ai). A full list is available at python.langchain.
+com/v0.3/docs/integrations/platforms/.

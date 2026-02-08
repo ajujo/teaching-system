@@ -1,0 +1,38 @@
+ISBN: 978-1-098-17650-1
+US $79.99	 CAN $99.99
+DATA
+Generative AI has revolutionized how organizations tackle problems, accelerating the journey from
+concept to prototype to solution. As the models become increasingly capable, we have witnessed a new
+design pattern emerge: AI agents. By combining tools, knowledge, memory, and learning with advanced
+foundation models, we can now sequence multiple model inferences together to solve ambiguous and
+difficult problems. From coding agents to research agents to analyst agents and more, we've already
+seen agents accelerate teams and organizations. While these agents enhance efficiency, they often require
+extensive planning, drafting, and revising to complete complex tasks, and deploying them remains a
+challenge for many organizations, especially as technology and research rapidly develops.
+This book is your indispensable guide through this intricate and fast-moving landscape. Author Michael
+Albada provides a practical and research-based approach to designing and implementing single- and
+multiagent systems. It simplifies the complexities and equips you with the tools to move from concept
+to solution efficiently.
+•	 Understand the distinct features of
+foundation model-enabled AI agents
+•	 Discover the core components and design
+principles of AI agents
+•	 Explore design trade-offs and implement
+effective multiagent systems
+•	 Design and deploy tailored AI solutions,
+enhancing efficiency and innovation
+in your field
+Michael Albada is a seasoned
+machine learning engineer with
+expertise in deploying large-scale
+solutions for major tech firms
+including Uber, ServiceNow, and
+Microsoft. He holds degrees from
+Stanford University, the University
+of Cambridge, and Georgia Tech,
+specializing in machine learning.
+Building Applications with AI Agents
+"The best single-volume introduction to building AI agent systems-you can read
+hundreds of papers or this one book."
+Arun Rao
+Ex-Meta GenAI group, adjunct professor at UCLA

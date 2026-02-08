@@ -1,0 +1,39 @@
+Imputing Missing Data
+40
+The value for the imputation is given by (value1 × w1 + value2 × w2 + value3 × w3) / 3, where w1, 
+w2, and w3 are proportional to the distance of the neighbor to the data to impute.
+In this recipe, we will perform KNN imputation using scikit-learn.
+How to do it...
+To proceed with the recipe, let’s import the required libraries and prepare the data:
+1.	
+Let’s import the required libraries, classes, and functions:
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.impute import KNNImputer
+2.	
+Let’s load the dataset described in the Technical requirements section (only some numerical variables):
+variables = [
+    "A2", "A3", "A8", "A11", "A14", "A15", "target"]
+data = pd.read_csv(
+    "credit_approval_uci.csv",
+    usecols=variables,
+)
+3.	
+Let’s divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+4.	
+Let’s set up the imputer to replace missing data with the weighted mean of its closest five neighbors:
+imputer = KNNImputer(
+    n_neighbors=5, weights="distance",
+).set_output(transform="pandas")
+Note
+The replacement values can be calculated as the uniform mean of the k-nearest neighbors, by 
+setting weights to uniform or as the weighted average, as we do in the recipe. The weight 
+is based on the distance of the neighbor to the observation to impute. The nearest neighbors 
+carry more weight.

@@ -1,0 +1,20 @@
+Understanding the LLM Twin Concept and Architecture
+10
+The issue with previous solutions
+In Figure 1.2, you can observe the typical architecture present in most ML applications. It is based
+on a monolithic batch architecture that couples the feature creation, model training, and inference into the same component. By taking this approach, you quickly solve one critical problem in
+the ML world: the training-serving skew. The training-serving skew happens when the features
+passed to the model are computed differently at training and inference time.
+In this architecture, the features are created using the same code. Hence, the training-serving
+skew issue is solved by default. This pattern works fine when working with small data. The
+pipeline runs on a schedule in batch mode, and the predictions are consumed by a third-party
+application such as a dashboard.
+Figure 1.2: Monolithic batch pipeline architecture
+Unfortunately, building a monolithic batch system raises many other issues, such as the following:
+•
+Features are not reusable (by your system or others)
+•
+If the data increases, you have to refactor the whole code to support PySpark or Ray
+•
+It's hard to rewrite the prediction module in a more efficient language such as C++, Java,
+or Rust

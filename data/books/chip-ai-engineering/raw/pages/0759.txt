@@ -1,0 +1,25 @@
+– ambigüedad terminológica: prompt frente a contexto, Aprendizaje
+en contexto: Cero shot y pocos shots
+– defensa contra ataques de prompts, Defensas contra los ataques
+de prompts
+– definida, Ingeniería de prompts y construcción de contextos
+– jailbreaking e inyección de prompts, Prompts patentados e
+ingeniería inversa de prompts
+– prompts patentados e ingeniería de prompts inversa, Ingeniería de
+prompts defensiva
+– restringir el conocimiento del modelo a su contexto, Aportar
+suficiente contexto
+extrapolación de escalas, Ley de escalado: Construir modelos de
+computación optimizada
+F
+factorización de bajo rango, LoRA
+fiabilidad, latencia frente a, Implementación de barreras de seguridad
+fidelidad, Capacidad de generación
+FLOP (operación de coma flotante), Tamaño del modelo
+flujo de control, Granularidad de la planificación
+formato de los datos, Limpiar y filtrar datos
+fragmentación, Arquitectura RAG, Optimización de la recuperación
+frecuencia de términos (TF), Recuperación basada en términos
+frecuencia inversa de documentos (IDF), Recuperación basada en términos
+funciones proactivas, Evaluación de casos de uso
+fusión de modelos, LoRA cuantizado

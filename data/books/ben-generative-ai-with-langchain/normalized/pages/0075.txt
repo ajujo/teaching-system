@@ -1,0 +1,49 @@
+First Steps with LangChain
+48
+These patterns are essential for production applications where you need to:
+•
+Track the provenance of generated content
+•
+Combine results from multiple operations
+•
+Structure data for downstream processing or display
+•
+Implement more sophisticated error handling
+While our previous examples used cloud-based models like OpenAI and Google's Gemini, Lang­
+Chain's LCEL and other functionality work seamlessly with local models as well. This flexibility
+allows you to choose the right deployment approach for your specific needs.
+Running local models
+When building LLM applications with LangChain, you need to decide where your models will run.
+•
+Advantages of local models:
+•
+Complete data control and privacy
+•
+No API costs or usage limits
+•
+No internet dependency
+•
+Control over model parameters and fine-tuning
+•
+Advantages of cloud models:
+•
+No hardware requirements or setup complexity
+•
+Access to the most powerful, state-of-the-art models
+•
+Elastic scaling without infrastructure management
+•
+Continuous model improvements without manual updates
+•
+When to choose local models:
+•
+Applications with strict data privacy requirements
+•
+Development and testing environments
+•
+Edge or offline deployment scenarios
+•
+Cost-sensitive applications with predictable, high-volume usage
+While LCEL handles many complex workflows elegantly, for state management and
+advanced branching logic, you'll want to explore LangGraph, which we'll cover in
+Chapter 3.

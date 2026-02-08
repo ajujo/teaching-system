@@ -1,0 +1,36 @@
+Chapter 2
+43
+The last step in exploring ZenML is understanding how to run and configure a ZenML pipeline.
+How to run and configure a ZenML pipeline
+All the ZenML pipelines can be called from the run.py file, accessed at tools/run.py in our GitHub 
+repository. Within the run.py file, we implemented a simple CLI that allows you to specify what 
+pipeline to run. For example, to call the digital_data_etl pipeline to crawl Maxime’s content, 
+you have to run:
+python -m tools.run --run-etl --no-cache --etl-config-filename digital_
+data_etl_maxime_labonne.yaml
+Or, to crawl Paul’s content, you can run:
+python -m tools.run --run-etl --no-cache --etl-config-filename digital_
+data_etl_paul_iusztin.yaml
+As explained when introducing Poe the Poet, all our CLI commands used to interact with the proj-
+ect will be executed through Poe to simplify and standardize the project. Thus, we encapsulated 
+these Python calls under the following poe CLI commands:
+poetry poe run-digital-data-etl-maxime
+poetry poe run-digital-data-etl-paul
+We only change the ETL config file name when scraping content for different people. ZenML 
+allows us to inject specific configuration files at runtime as follows:
+config_path = root_dir / "configs" / etl_config_filename
+assert config_path.exists(), f"Config file not found: { config_path }"
+run_args_etl = {
+	
+"config_path": config_path,
+	
+"run_name": f"digital_data_etl_run_{dt.now().
+strftime('%Y_%m_%d_%H_%M_%S')}"
+}
+ digital_data_etl.with_options()(**run_args_etl)
+In the config file, we specify all the parameters that will input the pipeline as parameters. For ex-
+ample, the configs/digital_data_etl_maxime_labonne.yaml configuration file looks as follows:
+parameters:
+  user_full_name: Maxime Labonne # [First Name(s)] [Last Name]
+  links:
+    # Personal Blog

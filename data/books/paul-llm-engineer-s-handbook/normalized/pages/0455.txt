@@ -1,0 +1,32 @@
+MLOps and LLMOps
+424
+Poetry, the dependency management tool, is then installed using pip. The --no-cache-dir option
+prevents pip from caching packages, helping to keep the image smaller. After installation, Poetry
+is configured to use up to 20 parallel workers when installing packages, which can speed up the
+installation process.
+RUN pip install --no-cache-dir "poetry==$POETRY_VERSION"
+RUN poetry config installer.max-workers 20
+The working directory inside the container is set to WORKSPACE_ROOT, which defaults to /app/,
+where the application code will reside. The pyproject.toml and poetry.lock files define the
+Python's project dependencies and are copied into this directory.
+WORKDIR $WORKSPACE_ROOT
+COPY pyproject.toml poetry.lock $WORKSPACE_ROOT
+With the dependency files in place, the project's dependencies are installed using Poetry. The
+configuration turns off the creation of a virtual environment, meaning the dependencies will be
+installed directly into the container's Python environment. The installation excludes development dependencies and prevents caching to minimize space usage. Additionally, the poethepoet
+plugin is installed to help manage tasks within the project. Finally, any remaining Poetry cache
+is removed to keep the container as lean as possible.
+RUN poetry config virtualenvs.create false && \
+    poetry install --no-root --no-interaction --no-cache --without dev &&
+\
+    poetry self add 'poethepoet[poetry_plugin]' && \
+    rm -rf ~/.cache/pypoetry/cache/ && \
+    rm -rf ~/.cache/pypoetry/artifacts/
+In the final step, the entire project directory from the host machine is copied into the container's
+working directory. This step ensures that all the application files are available within the container.
+One important trick when writing a Dockerfile is to decouple your installation steps from copying the rest of the files. This is useful because each Docker command is cached and layered on
+top of each other. Thus, whenever you change one layer when rebuilding the Docker image, all
+the layers below the one altered are executed again. Because you rarely change your system and
+project dependencies but mostly change your code, copying your project files in the last step makes
+rebuilding Docker images fast by taking advantage of the caching mechanism's full potential.
+COPY . $WORKSPACE_ROOT

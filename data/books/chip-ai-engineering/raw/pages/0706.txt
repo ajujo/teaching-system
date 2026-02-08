@@ -1,0 +1,30 @@
+API pueden tener un impacto significativo en el
+rendimiento. Por ejemplo, Chen et al. (2023) observaron
+diferencias notables en las puntuaciones de pruebas
+comparativas entre las versiones de marzo de 2023 y junio
+de 2023 de GPT-4 y GPT-3.5. Asimismo, Voiceflow informó de
+un descenso del rendimiento del 10 % al cambiar del antiguo
+GPT-3.5-turbo-0301 al más reciente GPT-3.5-turbo-1106.
+Orquestación de procesos de IA
+Una aplicación de IA puede llegar a ser bastante compleja, al constar de
+múltiples modelos, recuperar datos de muchas bases de datos y tener acceso
+a una amplia gama de herramientas. Un orquestador le ayuda a especificar
+cómo deben trabajar juntos estos distintos componentes para crear un
+proceso único de extremo a extremo. Garantiza que los datos fluyan sin
+problemas entre los componentes. A grandes rasgos, un orquestador opera
+en dos pasos, definición de componentes y encadenamiento:
+Definición de componentes
+Debe indicar al orquestador los componentes que utiliza su
+sistema, incluyendo los distintos modelos, las fuentes de
+datos externas para la recuperación y las herramientas que
+puede utilizar. Una puerta de enlace de modelos puede
+facilitar la adición de un modelo. 6 También puede indicar al
+orquestador si utiliza alguna herramienta de evaluación y
+monitoreo.
+Encadenamiento
+El encadenamiento es básicamente la composición de
+funciones: combina diferentes funciones (componentes). En
+el encadenamiento (alineación en un proceso), le indica al
+orquestador los pasos que sigue su sistema desde que recibe
+la consulta del usuario hasta que completa la tarea. Este es
+un ejemplo de los pasos:

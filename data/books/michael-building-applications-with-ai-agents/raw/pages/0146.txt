@@ -1,0 +1,40 @@
+example-graphrag) unpack the same end‑to‑end pipeline in just a few hundred lines
+of Python. This system leverages the power of graph databases or knowledge graphs
+to store and query interconnected data. In GraphRAG, the retrieval phase doesn’t just
+pull relevant documents or snippets; it analyzes and retrieves nodes and edges from a
+graph that represents complex relationships and contexts within the data. GraphRAG
+consists of the following three components:
+Knowledge graph
+This component stores data in a graph format, where entities (nodes) and their
+relationships (edges) are explicitly defined. Graph databases are highly efficient at
+managing connected data and supporting complex queries that involve multiple
+hops or relationships.
+Retrieval system
+The retrieval system in GraphRAG is designed to query the graph database effi‐
+ciently, extracting subgraphs or clusters of nodes that are most relevant to the
+input query or context.
+Generative model
+Once relevant data is retrieved in the form of a graph, the generative model syn‐
+thesizes this information to create coherent and contextually rich responses.
+GraphRAG represents a significant leap forward in the capabilities of agentic systems,
+offering sophisticated tools to handle and generate responses based on complex inter‐
+connected data. As this technology evolves, it promises to open new frontiers in AI
+applications, making systems smarter, more context-aware, and capable of handling
+increasingly complex tasks. Using knowledge graphs in GraphRAG systems trans‐
+forms the way information is retrieved and utilized for generation, enabling more
+intelligent, contextual, and accurate responses across various applications. We will
+not cover the details of the algorithm here, but multiple open source implementations
+of GraphRAG are now available, and setting them up on your dataset is easier to do.
+If you have a large set of data you need to reason over, and standard chunking with a
+vector retrieval is running into limitations, GraphRAG is a more expensive and com‐
+plex approach that frequently produces better results in practice.
+Building Knowledge Graphs
+Knowledge graphs are fundamental in providing structured and semantically rich
+information that enhances the capabilities of intelligent systems, including Graph‐
+RAG systems. Building an effective knowledge graph involves a series of steps, from
+data collection and processing to integration and maintenance. This section will
+cover the methodology for constructing knowledge graphs that can significantly
+impact the performance of GraphRAG systems. This process consists of several steps:
+124 
+| 
+Chapter 6: Knowledge and Memory

@@ -1,0 +1,28 @@
+Working with time in different time zones
+195
+Note
+The time zone is indicated with the +02 and -05 values, respectively, which indicates the time 
+difference to the Coordinated Universal Time (UTC).
+4.	
+To work with different time zones, we typically set the variables in the same time zone, in this 
+case, we chose the UTC:
+df['time1_utc'] = pd.to_datetime(
+    df['time1'], utc=True)
+df['time2_utc'] = pd.to_datetime(
+    df['time2'], utc=True)
+If we now execute df, we’ll see the new variables, which have a difference of 00 hours with respect 
+to UTC:
+Figure 6.20 – A DataFrame containing the new variables in the UTC
+1.	
+Let’s calculate the difference in days between the variables and then display the first five rows 
+of the DataFrame:
+df['elapsed_days'] = (
+    df[‹time2_utc›] - df[‹time1_utc›]). dt.days
+df['elapsed_days'].head()
+We see the time difference between the variables in the following output:
+0    21
+1    21
+2    21
+0   -40
+1   -40
+Name: elapsed_days, dtype: int64

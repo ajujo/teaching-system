@@ -1,0 +1,34 @@
+Chapter 5
+215
+     Default month and day are 1 (January) and 1.
+     Examples in YYYY-MM-DD format:
+       2023-07-27 -> date(2023, 7, 27)
+       2022-12-15 -> date(2022, 12, 15)
+       March 2022 -> date(2022, 3)
+       2021 -> date(2021)
+   """
+   return date(year, month, day).isoformat()
+@tool
+def time_difference(days: int = 0, weeks: int = 0, months: int = 0, years:
+int = 0) -> date:
+   """Returns a date given a difference in days, weeks, months and years
+relative to the current date.
+
+   By default, days, weeks, months and years are 0.
+   Examples:
+     two weeks ago -> time_difference(weeks=2)
+     last year -> time_difference(years=1)
+   """
+   dt = date.today() - timedelta(days=days, weeks=weeks)
+   new_year = dt.year+(dt.month-months) // 12 - years
+   new_month = (dt.month-months) % 12
+   return dt.replace(year=new_year, month=new_month)
+Now it works like a charm:
+from langchain_google_vertexai import ChatVertexAI
+llm = ChatVertexAI(model="gemini-2.0-flash")
+agent = create_react_agent(
+   llm, [get_date, time_difference], prompt="Extract the starting date of
+a contract. Current year is 2025.")
+for example in examples:
+ result = agent.invoke({"messages": [("user", example)]})
+ print(example, result["messages"][-1].content)

@@ -1,0 +1,20 @@
+Dado que para generar un token es necesario calcular las puntuaciones de
+atención con todos los tokens anteriores, el número de cálculos de atención
+crece exponencialmente con la longitud de la secuencia. 22 En cambio, el
+tamaño de la caché KV crece linealmente con la longitud de la secuencia.
+El tamaño de la caché KV también crece con tamaños de lote mayores. Un
+artículo de Google calculó que para un modelo de 500 MM o más con
+atención multicabezal, tamaño de lote 512 y longitud de contexto 2048, la
+caché KV alcanza un total de 3 TB (Pope et al., 2022). Esto equivale al
+triple del tamaño de las ponderaciones de ese modelo.
+En última instancia, el tamaño de la caché KV está limitado por el
+almacenamiento de hardware disponible, lo que crea un cuello de botella
+para ejecutar aplicaciones con contextos largos. Una caché de gran tamaño
+también tarda en cargarse en memoria, lo que puede ser un problema para
+las aplicaciones con una latencia estricta.
+Los requisitos de cómputo y memoria del mecanismo de atención son una
+de las razones por las que es tan difícil tener un contexto más largo.
+Se han desarrollado muchas técnicas para que el mecanismo de atención sea
+más eficaz. En general, se dividen en tres categorías: rediseñar el
+mecanismo de atención, optimizar la caché KV y escribir kernels para el
+cómputo de la atención.

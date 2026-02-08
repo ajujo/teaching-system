@@ -1,0 +1,92 @@
+Model
+Maintainer
+MMLU Parameters
+(billion)
+VRAM (full precision
+model in GB)
+Sample hardware
+required
+NeMo
+Mistral
+65.3
+12
+24
+RTX 3090
+Phi-3
+Microsoft
+77.5
+14.7
+29.4
+A100
+Qwen1.5
+Alibaba
+74.4
+32
+60.11
+A100
+Llama 3
+Meta
+79.3
+70
+160
+4xA100
+Conversely, this means moderate performance can be obtained at a small fraction of
+the cost. As you’ll see in Table 2-1, models up to roughly 14 billion parameters can be
+run on a single consumer-grade graphics processing unit (GPU), such as NVIDIA’s
+RTX 3090 with 24 GB of video RAM. Above this threshold, though, you will probably
+want a server-grade GPU such as NVIDIA’s A100, which comes in 40 GB and 80 GB
+varieties. Models are called “open weight” when the architecture and weights (or
+parameters) of the model have been released freely to the public, so anyone with the
+necessary hardware can load and use the model for inference without paying for
+access. We will not get into the details of hardware selection, but these select open
+weight models show a range of performance levels at different sizes. These small,
+open weight models continue to improve at a rapid pace, bringing increasing
+amounts of intelligence into smaller form factors. While they might not work well for
+your hardest problems, they can handle easier, more routine tasks at a fraction of the
+price. For our example ecommerce support agent, a small fast model suffices—but if
+we expanded into product recommendations or sentiment-based escalation, a larger
+model could unlock new capabilities.
+Now let’s take a look at several of the large flagship models. Note that two of these
+models, DeepSeek-v3 and Llama 3.1 Instruct Turbo 405B, have been released as open
+weight models but the others have not. That said, these large models typically require
+at least 12 GPUs for reasonable performance, but they can require many more. These
+large models are almost always used on servers in large data centers. Typically, the
+model trainers charge for access to these models based on the number of input and
+output tokens. The advantage of this is that the developer does not need to worry
+about servers and GPU utilization but can begin building right away. Table 2-2 shows
+the model costs and performance on the same MMLU benchmark.
+Table 2-2. Selected large models by performance and cost
+Model
+Maintainer
+MMLU Relative price per million
+input tokens
+Relative price per million
+output tokens
+DeepSeek-v3
+DeepSeek
+87.2
+2.75
+3.65
+Claude 4 Opus Extended Thinking
+Anthropic
+86.5
+75
+125
+Gemini 2.5 Pro
+Google
+86.2
+12.5
+25
+Llama 3.1 Instruct Turbo 405B
+Meta
+84.5
+1
+1
+o4-mini
+OpenAI
+83.2
+5.5
+7.33
+Model Selection 
+| 
+23

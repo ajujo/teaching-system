@@ -1,0 +1,31 @@
+Chapter 10
+361
+Unlike the asynchronous inference architecture, a batch transform design is optimized for high
+throughput with permissive latency requirements. When real-time predictions are unnecessary,
+this approach can significantly reduce costs, as processing data in big batches is the most economical method. Moreover, the batch transform architecture is the simplest way to serve a model,
+accelerating development time.
+The client pulls the results directly from data storage, decoupling its interaction with the ML
+service. Taking this approach, the client never has to wait for the ML service to process its input,
+but at the same time, it doesn't have the flexibility to ask for new results at any time. You can
+see the data storage, where the results are stored as a large cache, from where the client can take
+what is required. If you want to make your application more responsive, the client can be notified
+when the processing is complete and can retrieve the results.
+Unfortunately, this approach will always introduce a delay between the time the predictions
+were computed and consumed. That's why not all applications can leverage this design choice.
+For example, if we implement a recommender system for a video streaming application, having a
+delay of one day for the predicted movies and TV shows might work because you don't consume
+these products at a high frequency. But suppose you make a recommender system for a social
+media platform. In that case, delaying one day or even one hour is unacceptable, as you constantly
+want to provide fresh content to the user.
+Batch transform shines in scenarios where high throughput is needed, like data analytics or periodic reporting. However, it's unsuitable for real-time applications due to its high latency and
+requires careful planning and scheduling to manage large datasets effectively. That's why it is
+an offline serving method.
+To conclude, we examined the three most common architectures for serving ML models. We
+started with online real-time inference, which serves clients when they request a prediction.
+Then, we looked at the asynchronous inference method, which sits between online and offline.
+Ultimately, we presented the offline batch transform, which is used to process large amounts of
+data and store them in data storage, from where the client later consumes them.
+Monolithic versus microservices architecture in
+model serving
+In the previous section, we saw three different methods of deploying the ML service. The differences in architecture were mainly based on the interaction between the client and the ML service,
+such as the communication protocol, the ML service responsiveness, and prediction freshness.

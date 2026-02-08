@@ -1,0 +1,36 @@
+Chapter 9
+389
+Now, we set up an agent that uses this tool with an LLM to make the calls given a prompt:
+from langchain_openai.chat_models import ChatOpenAI
+from langchain.agents import initialize_agent, AgentType
+llm = ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)
+agent = initialize_agent(
+    llm=llm,
+    tools=[ping_tool],
+    agent=AgentType.OPENAI_MULTI_FUNCTIONS,
+    return_intermediate_steps=True, # IMPORTANT!
+)
+result = agent("What's the latency like for https://langchain.com?")
+The agent reports the following:
+The latency for https://langchain.com is 13.773 ms
+For complex agents with multiple steps, visualizing the execution path provides critical insights. 
+In results["intermediate_steps"], we can see a lot more information about the agent’s actions:
+[(_FunctionsAgentAction(tool='ping', tool_input={'url': 'https://
+langchain.com', 'return_error': False}, log="\nInvoking: `ping` with 
+`{'url': 'https://langchain.com', 'return_error': False}`\n\n\n", message_
+log=[AIMessage(content='', additional_kwargs={'function_call': {'name': 
+'tool_selection', 'arguments': '{\n "actions": [\n {\n "action_name": 
+"ping",\n "action": {\n "url": "https://langchain.com",\n "return_
+error": false\n }\n }\n ]\n}'}}, example=False)]), 'PING langchain.com 
+(35.71.142.77): 56 data bytes\n64 bytes from 35.71.142.77: icmp_seq=0 
+ttl=249 time=13.773 ms\n\n--- langchain.com ping statistics ---\n1 packets 
+transmitted, 1 packets received, 0.0% packet loss\nround-trip min/avg/max/
+stddev = 13.773/13.773/13.773/0.000 ms\n')]
+For RAG applications, it’s essential to track not just what the model outputs, but what information 
+it retrieves and how it uses that information:
+•	
+Retrieved document metadata
+•	
+Similarity scores
+•	
+Whether and how retrieved information was used in the response

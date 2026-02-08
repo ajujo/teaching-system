@@ -1,0 +1,33 @@
+también muchos datos para cambiar significativamente este
+comportamiento? ¿Cómo es posible que se necesiten millones o miles de
+millones de ejemplos para pre-entrenar un modelo, pero solo unos cientos o
+miles de ejemplos para afinarlo?
+Muchos trabajos han argumentado que aunque los LLMs tienen muchos
+parámetros, tienen dimensiones intrínsecas muy bajas; véase Li et al.
+(2018); Aghajanyan et al. (2020) y Hu et al. (2021). Demostraron que el
+pre-entrenamiento minimiza implícitamente la dimensión intrínseca del
+modelo. Sorprendentemente, los modelos más grandes tienden a tener
+dimensiones intrínsecas más bajas tras el pre-entrenamiento. Esto sugiere
+que el pre-entrenamiento actúa como marco de compresión para las tareas
+posteriores. En otras palabras, cuanto mejor entrenado esté un LLM, más
+fácil será ajustar el modelo utilizando un pequeño número de parámetros
+entrenables y una pequeña cantidad de datos.
+Se preguntarán, si la factorización de bajo rango funciona tan bien, ¿por qué
+no utilizamos LoRA también para el pre-entrenamiento? En lugar de pre-
+entrenar un modelo grande y aplicar la factorización de bajo rango solo
+durante el afinado, ¿podríamos factorizar un modelo desde el principio para
+el pre-entrenamiento? El pre-entrenamiento de bajo rango puede reducir
+significativamente el número de parámetros del modelo, lo que reduce
+considerablemente el tiempo y el costo del pre-entrenamiento del modelo.
+A lo largo de la década de 2010, muchas personas intentaron entrenar redes
+neuronales de bajo rango, ejemplificadas en estudios como "Low-Rank
+Matrix Factorization for Deep Neural Network Training with High-
+Dimensional Output Targets" (Sainath et al., 2013), "Semi-Orthogonal
+Low-Rank Matrix Factorization for Deep Neural Networks" (Povey et al.,
+2018) y "Speeding up Convolutional Neural Networks with Low Rank
+Expansions" (Jaderberg et al., 2014).
+La factorización de bajo rango ha demostrado su eficacia a escalas más
+pequeñas. Por ejemplo, al aplicar varias estrategias de factorización,
+incluida la sustitución de la convolución 3 × 3 por la convolución 1 × 1,
+SqueezeNet (Iandola et al., 2016) alcanza una precisión del nivel de
+AlexNet en ImageNet utilizando 50 veces menos parámetros.

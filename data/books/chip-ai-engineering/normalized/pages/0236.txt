@@ -1,0 +1,32 @@
+Bradley-Terry y TrueSkill. El Chatbot Arena de LMSYS utilizaba
+originalmente Elo para calcular el ranking de los modelos, pero más tarde
+cambió al algoritmo Bradley-Terry porque consideraron que Elo era
+sensible al orden de los evaluadores y los prompts. 23
+Un ranking es correcto si, para cualquier pareja de modelos, el modelo
+mejor rankeado tiene más probabilidades de ganar en un encuentro contra
+el modelo peor rankeado. Si el modelo A tiene mejor ranking que el modelo
+B, los usuarios deberían preferir el modelo A al modelo B más de la mitad
+de las veces.
+Desde este punto de vista, el ranking de modelos es un problema de
+predicción. Calculamos un ranking a partir de los outputs históricos de los
+encuentros y la utilizamos para predecir los outputs futuros. Diferentes
+algoritmos de ranking pueden producir rankings diferentes, y no existe una
+verdad básica sobre cuál es el ranking correcto. La calidad de un ranking
+viene determinada por su capacidad para predecir los outputs futuros de los
+encuentros. Mi análisis del ranking de Chatbot Arena muestra que el
+ranking producido es bueno, al menos para las parejas de modelos con
+suficientes encuentros. Consulte el repositorio GitHub del libro para ver el
+análisis.
+Retos de la evaluación comparativa
+Con la evaluación por puntos, la parte más pesada del proceso consiste en
+diseñar la prueba de referencia y las métricas para recopilar las señales
+adecuadas. Calcular las puntuaciones para rankear los modelos es fácil. En
+la evaluación comparativa, tanto la recopilación de señales como la
+clasificación de modelos suponen un reto. Esta sección repasa los tres retos
+habituales de la evaluación comparativa.
+Cuellos de botella en la escalabilidad
+La evaluación comparativa requiere muchos datos. El número de parejas de
+modelos que comparar crece cuadráticamente con el número de modelos.
+En enero de 2024, LMSYS evaluó 57 modelos utilizando 244 000
+comparaciones. Aunque parezcan muchas comparaciones, la media es de
+solo 153 comparaciones por pareja de modelos (57 modelos corresponden a

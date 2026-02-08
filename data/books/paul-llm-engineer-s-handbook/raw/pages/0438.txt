@@ -1,0 +1,18 @@
+Chapter 11
+407
+ML vs. MLOps engineering
+There is a fine line between ML engineering and MLOps. If we want to define a rigid job description 
+for the two rules, it cannot be easy to completely differentiate what responsibilities go into ML 
+engineering (MLE) and what goes into MLOps. I have seen many job roles that bucket the MLOps 
+role with the platform and cloud engineers. From one perspective, that makes a lot of sense: as 
+an MLOps engineer, you have a lot of work to do on the infrastructure side. On the other hand, as 
+seen in this section, an MLOps engineer still has to implement things such as experiment tracking, 
+model registries, versioning, and more. A good strategy would be to let the ML engineer integrate 
+these into the code and the MLOps engineer focus on making them work on their infrastructure.
+At a big corporation, ultimately, differentiating the two roles might make sense. But when work-
+ing in small to medium-sized teams, you will wear multiple hats and probably work on the ML 
+system’s MLE and MLOps aspects.
+Figure 11.3: DS vs. MLE vs. MLOps
+For instance, in Figure 11.3, we see a clear division of responsibilities among the three key roles: 
+data scientist/ML researcher, ML engineer, and MLOps engineer. The Data Scientist (DS) imple-
+ments specific models to address problems. 

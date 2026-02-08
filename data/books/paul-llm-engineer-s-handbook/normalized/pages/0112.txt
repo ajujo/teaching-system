@@ -1,0 +1,31 @@
+Chapter 3
+81
+# Define a class that maps to the users table.
+   class User(Base):
+   	 __tablename__ = "users"
+   	 id = Column(Integer, primary_key=True)
+
+name = Column(String)
+Using the User ORM, we can quickly insert or query users directly from Python without writing a
+line of SQL. Note that an ORM usually supports all CRUD operations. Here is a code snippet that
+shows how to save an instance of the User ORM to a SQLite database:
+engine = create_engine("sqlite:///:memory:")
+Base.metadata.create_all(engine)
+# Create a session used to interact with the database.
+Session = sessionmaker(bind=engine)
+session = Session()
+# Add a new user.
+new_user = User(name="Alice")
+session.add(new_user)
+session.commit()
+Also, this is how we can query a user from the users SQLite table:
+user = session.query(User).first()
+if user:
+print(f"User ID: {user.id}")
+print(f"User name: {user.name}")
+The ODM pattern is extremely similar to ORM, but instead of working with SQL databases and
+tables, it works with NoSQL databases (such as MongoDB) and unstructured collections. As we
+work with NoSQL databases, the data structure is centered on collections, which store JSON-like
+documents rather than rows in tables.
+Find the entire script and how to run it in the GitHub repository at code_snippets/03_
+orm.py.

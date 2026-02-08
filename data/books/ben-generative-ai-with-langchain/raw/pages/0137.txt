@@ -1,0 +1,37 @@
+Building Intelligent RAG Systems
+110
+As transformer-based language models grew in scale, researchers discovered they not only learned 
+linguistic patterns but also memorized factual knowledge from their training data. Studies by 
+Google researchers showed that models like T5 could answer factual questions without exter­
+nal retrieval, functioning as implicit knowledge bases. This suggested a paradigm shift—from 
+retrieving documents containing answers to directly generating answers from internalized 
+knowledge. However, these “closed-book” generative systems faced limitations: hallucination 
+risks, knowledge cutoffs limited to training data, inability to cite sources, and challenges with 
+complex reasoning. The solution emerged in RAG, which bridges traditional retrieval systems 
+with generative language models, combining their respective strengths while addressing their 
+individual weaknesses.
+Components of a RAG system
+RAG enables language models to ground their outputs in external knowledge, providing an elegant 
+solution to the limitations that plague pure LLMs: hallucinations, outdated information, and 
+restricted context windows. By retrieving only relevant information on demand, RAG systems 
+effectively bypass the context window constraints of language models, allowing them to lever­
+age vast knowledge bases without squeezing everything into the model’s fixed attention span.
+Rather than simply retrieving documents for human review (as traditional search engines do) or 
+generating answers solely from internalized knowledge (as pure LLMs do), RAG systems retrieve 
+information to inform and ground AI-generated responses. This approach combines the verifi­
+ability of retrieval with the fluency and comprehension of generative AI.
+At its core, RAG consists of these main components working in concert:
+•	
+Knowledge base: The storage layer for external information
+•	
+Retriever: The knowledge access layer that finds relevant information
+•	
+Augmenter: The integration layer that prepares retrieved content
+•	
+Generator: The response layer that produces the final output
+From a process perspective, RAG operates through two interconnected pipelines:
+•	
+An indexing pipeline that processes, chunks, and stores documents in the knowledge base
+•	
+A query pipeline that retrieves relevant information and generates responses using that 
+information

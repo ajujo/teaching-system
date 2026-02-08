@@ -1,0 +1,4 @@
+de que saliera ChatGPT. La Figura 5-6 muestra cómo CoT mejoró el
+rendimiento de modelos de distintos tamaños (LaMDA, GPT-3 y PaLM) en
+diferentes pruebas comparativas. LinkedIn descubrió que la CoT también
+reduce las alucinaciones de los modelos.

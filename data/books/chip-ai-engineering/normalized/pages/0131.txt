@@ -1,0 +1,34 @@
+Además, Internet se está poblando rápidamente de datos generados por
+modelos de IA. Si las empresas siguen utilizando datos de Internet para
+entrenar futuros modelos, estos nuevos modelos se entrenarán parcialmente
+con datos generados por IA. En diciembre de 2023, se encontró que Grok,
+un modelo entrenado por X, rechazó una petición diciendo que iba en
+contra de la política de casos de uso de OpenAI. Esto hizo que algunas
+personas especularan con la posibilidad de que Grok hubiera sido entrenado
+utilizando los outputs de ChatGPT. Igor Babuschkin, un desarrollador
+principal de Grok, respondió que se debía a que Grok se entrenó con datos
+de la web, y "la web está llena de outputs de ChatGPT". 20
+A algunos investigadores les preocupa que el entrenamiento recursivo de
+nuevos modelos de IA sobre datos generados por la IA haga que los nuevos
+modelos olviden gradualmente los patrones de datos originales, degradando
+su rendimiento con el tiempo (Shumailov et al., 2023). Sin embargo, el
+impacto de los datos generados por la IA en los modelos es más matizado y
+se analiza en el Capítulo 8.
+Una vez agotados los datos disponibles públicamente, las vías más factibles
+para obtener más datos de entrenamiento generados por humanos son los
+datos patentados. Los datos exclusivos patentados (libros protegidos por
+derechos de autor, traducciones, contratos, historiales médicos, secuencias
+genómicas, etc.) serán una ventaja competitiva en la carrera de la IA. Por
+eso, OpenAI negoció acuerdos con editoriales y medios de comunicación
+como Axel Springer y Associated Press.
+No es de extrañar que, ante el impacto de ChatGPT, muchas empresas, entre
+ellas Reddit y Stack Overflow, hayan cambiado sus condiciones de datos
+para impedir que otras empresas puedan escrapear sus datos para sus
+modelos. Longpre et al. (2024) observaron que entre 2023 y 2024, el rápido
+crescendo de las restricciones de datos de fuentes web hizo que más del 28
+% de las fuentes más críticas del popular conjunto de datos públicos C4
+quedaran totalmente restringidas en uso. Debido a cambios en sus
+condiciones de servicio y restricciones en el rastreo, un 45 % de C4 está
+ahora restringido.
+El otro cuello de botella, menos evidente pero más acuciante, es la
+electricidad. Las máquinas necesitan electricidad para funcionar. En el

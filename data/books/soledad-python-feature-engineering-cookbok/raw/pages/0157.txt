@@ -1,0 +1,25 @@
+Performing Variable Discretization
+134
+13.	 Now, we can go ahead and discretize the variables:
+X_t = discretizer.fit_transform(X)
+If we execute X_t.head(), we will see the following output, where the Population and 
+MedInc variables have been discretized:
+Figure 4.8 – A DataFrame containing the discretized variables
+The advantage of using feature-engine is that we can discretize multiple variables at the 
+same time and apply arbitrary discretization as part of a scikit-learn Pipeline.
+How it works...
+In this recipe, we sorted the values of a variable into user-defined intervals. First, we plotted a histogram 
+of the Population variable to get an idea of its value range. Next, we arbitrarily determined the 
+limits of the intervals and captured them in a list. We created intervals that included 0–200, 200–500, 
+500–1000, 1000–2000, and more than 2,000 by setting the upper limit to infinite with np.inf. Next, 
+we created a list with the interval names as strings. Using pandas cut() and passing the list with the 
+interval limits, we sorted the variable values into the pre-defined bins. We executed the command 
+twice; in the first run, we set the labels argument to None, returning the interval limits as a result. 
+In the second run, we set the labels argument to the list of strings. We captured the returned output 
+in two variables: the first one displays the interval limits as values and the second one has strings as 
+values. Finally, we counted the number of observations per variable using pandas value_counts().
+Finally, we automated the procedure with feature-engine’s ArbitraryDiscretiser(). 
+This transformer takes a dictionary with the variables to discretize as keys and the interval limits in a 
+list as values, and then uses pandas cut() under the hood to discretize the variables. With fit(), 
+the transformer does not learn any parameters but checks that the variables are numerical. With 
+transform(), it discretizes the variables.

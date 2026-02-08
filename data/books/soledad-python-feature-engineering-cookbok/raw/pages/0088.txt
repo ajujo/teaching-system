@@ -1,0 +1,39 @@
+Performing ordinal encoding based on the target value
+65
+This encoding method creates a monotonic relationship between the categorical variable and the 
+response and therefore makes the variables more adequate for use in linear models.
+In this recipe, we will encode categories while following the target value using pandas and feature-
+engine.
+How to do it...
+First, let’s import the necessary Python libraries and get the dataset ready:
+1.	
+Import the required Python libraries, functions, and classes:
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.	
+Let’s determine the mean target value per category in A7, then sort the categories from that 
+with the lowest to that with the highest target value:
+y_train.groupby(X_train["A7"]).mean().sort_values()
+The following is the output of the preceding command:
+A7
+o          0.000000
+ff         0.146341
+j          0.200000
+dd         0.400000
+v          0.418773
+bb         0.512821
+h          0.603960
+n          0.666667
+z          0.714286
+Missing    1.000000
+Name: target, dtype: float64

@@ -1,0 +1,43 @@
+Understanding the LLM Twin Concept and Architecture
+16
+Now that we understand the FTI pipeline architecture, the final step of this chapter is to see how 
+it can be applied to the LLM Twin use case.
+Designing the system architecture of the LLM Twin
+In this section, we will list the concrete technical details of the LLM Twin application and under-
+stand how we can solve them by designing our LLM system using the FTI architecture. However, 
+before diving into the pipelines, we want to highlight that we won’t focus on the tooling or the 
+tech stack at this step. We only want to define a high-level architecture of the system, which is 
+language-, framework-, platform-, and infrastructure-agnostic at this point. We will focus on 
+each component’s scope, interface, and interconnectivity. In future chapters, we will cover the 
+implementation details and tech stack.
+Listing the technical details of the LLM Twin architecture
+Until now, we defined what the LLM Twin should support from the user’s point of view. Now, 
+let’s clarify the requirements of the ML system from a purely technical perspective:
+•	
+On the data side, we have to do the following:
+•	
+Collect data from LinkedIn, Medium, Substack, and GitHub completely autono-
+mously and on a schedule
+•	
+Standardize the crawled data and store it in a data warehouse
+•	
+Clean the raw data
+•	
+Create instruct datasets for fine-tuning an LLM
+•	
+Chunk and embed the cleaned data. Store the vectorized data into a vector DB 
+for RAG.
+•	
+For training, we have to do the following:
+•	
+Fine-tune LLMs of various sizes (7B, 14B, 30B, or 70B parameters)
+•	
+Fine-tune on instruction datasets of multiple sizes
+•	
+Switch between LLM types (for example, between Mistral, Llama, and GPT)
+•	
+Track and compare experiments
+To learn more about the FTI pipeline pattern, consider reading From MLOps to ML 
+Systems with Feature/Training/Inference Pipelines by Jim Dowling, CEO and co-founder 
+of Hopsworks: https://www.hopsworks.ai/post/mlops-to-ml-systems-with-
+fti-pipelines. His article inspired this section.

@@ -1,0 +1,38 @@
+Cleaning and stemming text variables
+359
+Note
+To be able to process the data with the scikit-learn library’s CountVectorizer() or 
+TfidfVectorizer(), we need the text to be in string format. Therefore, after removing 
+the stop words, we need to return the words as a single string. We have transformed the NLTK 
+library’s stop words list into a set because sets are faster to scan than lists. This improves the 
+computation time.
+7.	
+Now, let’s use the function from step 6 to remove stop words from the text variable:
+df['text'] = df['text'].apply(remove_stopwords)
+If you want to know which words are stop words, execute stopwords.words('english').
+Finally, let’s stem the words in our data. We will use SnowballStemmer from NLTK to do so.
+8.	
+Let’s create an instance of SnowballStemer for the English language:
+stemmer = SnowballStemmer("english")
+Tip
+Try the stemmer in a single word to see how it works; for example, run stemmer.
+stem('running'). You should see run as the result of that command. Try different words!
+9.	
+Let’s create a function that splits a string into a list of words, applies stemmer to each word, 
+and finally concatenates the stemmed word list back into a string:
+def stemm_words(text):
+    text = [
+        stemmer.stem(word) for word in text.split()
+    ]
+    text = ‹ ‹.join(x for x in text)
+    return text
+10.	 Let’s use the function from step 9 to stem the words in our data:
+df['text'] = df['text'].apply(stemm_words)
+Now, our text is ready to create features based on character and word counts, as well as create 
+BoWs or TF-IDF matrices, as described in the previous recipes of this chapter.
+If we execute print(df['text'][10]), we will see a text example after cleaning:
+irwincmptrclonestarorg irwin arnstein subject recommend duc 
+summari what worth distribut usa expir sat may gmt organ 
+computrac inc richardson tx keyword ducati gts much line line 
+ducati gts model k clock run well paint bronzebrownorang fade 
+leak bit oil pop st hard accel shop fix tran oil leak sold bike 

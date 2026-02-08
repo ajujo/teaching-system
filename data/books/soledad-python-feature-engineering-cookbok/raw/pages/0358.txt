@@ -1,0 +1,39 @@
+Embedding feature creation into a scikit-learn pipeline
+335
+    «abs_energy": None,
+    «sum_of_reoccurring_data_points": None,
+    «sum_of_reoccurring_values": None,
+    },
+"temperature": {"c3": [{"lag": 1},
+    {«lag»: 2},{«lag»: 3}], «abs_energy": None},
+}
+We discussed the parameters of this dictionary in the Extracting different features from different 
+time series recipe.
+6.	
+Let’s set up RelevantFeatureAugmenter(), which is a wrapper around the extract_
+relevant_features function, to create the features specified in step 5:
+augmenter = RelevantFeatureAugmenter(
+    column_id="id",
+    column_sort="date",
+    kind_to_fc_parameters=kind_to_fc_parameters,
+)
+Note
+To create all possible features, use the FeatureAugmenter() class instead in step 6.
+7.	
+Let’s combine the feature creation instance from step 6 with a logistic regression model in a 
+scikit-learn pipeline:
+pipe = Pipeline(
+    [
+        ("augmenter", augmenter),
+        («classifier», LogisticRegression(
+    random_state=10, C=0.01)),
+    ]
+)
+8.	
+Now, let’s tell RelevantFeatureAugmenter() which dataset it needs to use to create 
+the features:
+pipe.set_params(augmenter__timeseries_container=X)
+9.	
+Let’s fit the pipeline, which will trigger the feature creation process, followed by the training 
+of the logistic regression model:
+pipe.fit(X_train, y_train)

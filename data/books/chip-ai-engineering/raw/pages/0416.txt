@@ -1,0 +1,26 @@
+EVALUACIÓN DE SOLUCIONES DE RECUPERACIÓN
+Estos son algunos factores clave que hay que tener en cuenta a la hora
+de evaluar una solución de recuperación:
+¿Qué mecanismos de recuperación admite? ¿Es compatible con
+la búsqueda híbrida?
+Si se trata de una base de datos vectorial, ¿qué modelos de
+incrustación y algoritmos de búsqueda vectorial admite?
+¿Hasta qué punto es escalable, tanto en términos de
+almacenamiento de datos como de tráfico de consultas? ¿Se
+adapta a sus pautas de tráfico?
+¿Cuánto se tarda en indexar los datos? ¿Cuántos datos pueden
+procesar (por ejemplo, añadir/eliminar) en lote de una sola
+vez?
+¿Cuál es su latencia de consulta para distintos algoritmos de
+recuperación?
+Si es una solución gestionada, ¿cuál es su estructura de
+precios? ¿Se basa en el volumen de documentos/vectores o en
+el volumen de consultas?
+Esta lista no incluye las funciones típicamente asociadas con las
+soluciones empresariales, como el control de acceso, el cumplimiento,
+la separación del plano de datos y el plano de control, etc.
+RAG más allá de los textos
+En la sección anterior se trataron los sistemas de RAG basados en texto, en
+los que las fuentes de datos externas son documentos de texto. Sin embargo,
+las fuentes de datos externas también pueden ser datos multimodales y
+tabulares.

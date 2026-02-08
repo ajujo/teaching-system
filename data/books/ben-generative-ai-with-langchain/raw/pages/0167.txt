@@ -1,0 +1,45 @@
+Building Intelligent RAG Systems
+140
+Modern retrieval systems often combine multiple approaches for better results:
+1.	
+Hybrid search: Combines semantic and lexical search to leverage:
+•	
+Vector similarity for semantic understanding
+•	
+Keyword matching for precise terminology
+•	
+Weighted combinations for optimal results
+2.	
+Maximal Marginal Relevance (MMR): Optimizes for both relevance and diversity by:
+•	
+Selecting documents similar to the query
+•	
+Ensuring retrieved documents are distinct from each other
+•	
+Balancing exploration and exploitation
+3.	
+Custom retrieval logic: LangChain allows the creation of specialized retrievers by imple­
+menting the BaseRetriever class.
+Advanced RAG techniques
+When building production RAG systems, a simple vector similarity search often isn’t enough. Mod­
+ern applications need more sophisticated approaches to find and validate relevant information. 
+Let’s explore how to enhance a basic RAG system with advanced techniques that dramatically 
+improve result quality.
+A standard vector search has several limitations:
+•	
+It might miss contextually relevant documents that use different terminology
+•	
+It can’t distinguish between authoritative and less reliable sources
+•	
+It might return redundant or contradictory information
+•	
+It has no way to verify if generated responses accurately reflect the source material
+Modern retrieval systems often employ multiple complementary techniques to improve result 
+quality. Two particularly powerful approaches are hybrid retrieval and re-ranking.
+Hybrid retrieval: Combining semantic and keyword search
+Hybrid retrieval combines two retrieval methods in parallel and the results are fused to leverage 
+the strengths of both approaches:
+•	
+Dense retrieval: Uses vector embeddings for semantic understanding
+•	
+Sparse retrieval: Employs lexical methods like BM25 for keyword precision

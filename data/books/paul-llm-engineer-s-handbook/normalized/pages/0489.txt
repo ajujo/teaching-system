@@ -1,0 +1,21 @@
+MLOps and LLMOps
+458
+•
+Preston-Werner, T. (n.d.). Semantic Versioning 2.0.0. Semantic Versioning. https://semver.
+org/
+•
+Ribeiro, M. T., Wu, T., Guestrin, C., & Singh, S. (2020, May 8). Beyond Accuracy: Behavioral
+Testing of NLP models with CheckList. arXiv.org. https://arxiv.org/abs/2005.04118
+•
+Wandb. (2023, November 30). Understanding LLMOps: Large Language Model Operations.
+Weights & Biases. https://wandb.ai/site/articles/understanding-llmops-largelanguage-model-operations/
+•
+Zenml-Io. (n.d.). GitHub-zenml-io/zenml-huggingface-sagemaker: An example MLOps overview of ZenML pipelines from a Hugging Face model repository to a deployed AWS SageMaker
+endpoint. GitHub. https://github.com/zenml-io/zenml-huggingface-sagemaker/tree/
+main
+Unlock this book's exclusive
+benefits now
+This book comes with additional benefits designed to elevate your learning
+experience.
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

@@ -1,0 +1,32 @@
+Building Workflows with LangGraph
+104
+We then looked into prompt engineering and discussed how to use zero-shot and dynamic few-
+shot prompting with LangChain, how to construct advanced prompts such as CoT prompting, 
+and how to use substitution mechanisms. Finally, we discussed how to work with long and short 
+contexts, exploring techniques for managing large contexts by splitting the input into smaller 
+pieces and combining the outputs in a Map-Reduce fashion, and worked on an example of pro­
+cessing a large video that doesn’t fit into a context.
+Finally, we covered memory mechanisms in LangChain, emphasized the need for statelessness in 
+production deployments, and discussed methods for managing chat history, including trimming 
+based on length and summarizing conversations.
+We will use what we learned here to develop a RAG system in Chapter 4 and more complex agentic 
+workflows in Chapters 5 and 6.
+Questions
+1.	
+What is LangGraph, and how does LangGraph workflow differ from LangChain’s vanilla 
+chains?
+2.	 What is a “state” in LangGraph, and what are its main functions?
+3.	
+Explain the purpose of add_node and add_edge in LangGraph.
+4.	
+What are “supersteps” in LangGraph, and how do they relate to parallel execution?
+5.	
+How do conditional edges enhance LangGraph workflows compared to sequential chains?
+6.	 What is the purpose of the Literal type hint when defining conditional edges?
+7.	
+What are reducers in LangGraph, and how do they allow modification of the state?
+8.	 Why is error handling crucial in LangChain workflows, and what are some strategies for 
+achieving it?
+9.	
+How can memory mechanisms be used to trim the history of a conversational bot?
+10.	 What is the use case of LangGraph checkpoints?

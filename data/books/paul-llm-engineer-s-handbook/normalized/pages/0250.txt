@@ -1,0 +1,31 @@
+Chapter 5
+219
+Weight decay
+Weight decay works by adding a penalty for large weights to the loss function, encouraging the
+model to learn simpler, more generalizable features. This helps the model avoid relying too heavily
+on any single input feature, which can improve its performance on unseen data. Typically, weight
+decay values range from 0.01 to 0.1, with 0.01 being a common starting point. For example, if
+you're using the AdamW optimizer, you might set the weight decay to 0.01.
+While weight decay can be beneficial, setting it too high can impede learning by making it difficult
+for the model to capture important patterns in the data. Conversely, setting it too low may not
+provide sufficient regularization. The optimal weight decay value often depends on the specific
+model architecture and dataset, so it's generally a good practice to experiment with different
+values.
+Gradient checkpointing
+Gradient checkpointing is a technique that reduces memory consumption during training by storing only a subset of intermediate activations generated in the forward pass. In standard training
+procedures, all intermediate activations are retained in memory to facilitate gradient calculation
+during the backward pass. However, for very deep networks like LLMs, this approach can quickly
+become impractical due to hardware limitations, especially on GPUs with limited memory capacity.
+Gradient checkpointing addresses this challenge by selectively saving activations at specific layers
+within the network. For layers where activations are not saved, they are recomputed during the
+backward pass as needed for gradient computation. This approach creates a trade-off between
+computation time and memory usage. While it significantly reduces memory requirements, it
+may increase overall computation time due to the need to recalculate some activations.
+Other parameters and techniques exist but play a minor role compared to those previously discussed. In the next section, we will explore how to select and tune these parameters using a
+concrete example.
+Fine-tuning in practice
+Let's now fine-tune an open-source model on our custom dataset. In this section, we will show an
+example that implements LoRA and QLoRA for efficiency. Depending on the hardware you have
+available, you can select the technique that best corresponds to your configuration.
+There are many efficient open-weight models we can leverage for task or domain-specific use
+cases. To select the most relevant LLM, we need to consider three main parameters:

@@ -1,0 +1,24 @@
+– apilamiento de capas, Poda de parámetros redundantes específicos de
+la tarea
+– compresión del modelo, Compresión del modelo
+– concatenación, Concatenación
+– cuello de botella de la decodificación autorregresiva, Superar el cuello
+de botella de la decodificación autorregresiva
+– decodificación especulativa, Superar el cuello de botella de la
+decodificación autorregresiva
+– decodificación paralela, Decodificación paralela
+– inferencia con referencia, Decodificación especulativa
+– kernels y compiladores, Kernels y compiladores
+– optimización de modelos, Optimización de la inferencia
+– escribir kernels para el cálculo de la atención, Rediseñar el
+mecanismo de atención
+– optimización del mecanismo de atención, Decodificación paralela
+– optimización del tamaño de la caché KV, Rediseñar el mecanismo
+de atención
+– rediseño del mecanismo de atención, Optimización del
+mecanismo de atención
+– suma, Fusión de modelos y afinado multitarea
+fusión de operadores, Kernels y compiladores
+G
+GAR (generación aumentada por recuperación)
+– ajuste fino y, Afinado y RAG

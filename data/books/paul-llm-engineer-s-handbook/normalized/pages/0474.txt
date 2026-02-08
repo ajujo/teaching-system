@@ -1,0 +1,22 @@
+Chapter 11
+443
+The last step in setting up the CI/CD pipeline is to test it and see how it works.
+Test out the CI/CD pipeline
+To test the CI/CD pipelines yourself, you must fork the LLM-Engineering repository to have full
+write access to the GitHub repository. Here is the official tutorial on how to fork a GitHub project:
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/workingwith-forks/fork-a-repo
+The last step is to set up a few secrets that will allow the CD pipeline to log in to AWS and point
+to the right ECR resource. To do so, go to the Settings tab at the top of the forked repository in
+GitHub. In the left panel, in the Security section, click on the Secrets and Variables toggle and,
+finally, on Actions. Then, on the Secrets tab, create four repository secrets, as shown in Figure
+11.17. These secrets will be securely stored and accessible only by the GitHub Actions CD pipeline.
+The AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are the AWS credentials you used across
+the book. In Chapter 2, you see how to create them. The AWS_REGION (e.g., eu-central-1) and
+AWS_ECR_NAME are the same ones used in the Deploying the LLM Twin's pipelines to the cloud
+section.
+To trigger the CI pipeline, create a feature branch, modify the code or documentation, and create
+a PR to the main branch. To trigger the CD pipeline, merge the PR into the main branch.
+For the AWS_ECR_NAME, you should configure only the name of the repository (e.g.,
+zenml-vrsopg) and not the full URI (e.g., 992382797823.dkr.ecr.eu-central-1.
+amazonaws.com/zenml-vrsopg), as seen in the image below:
+Figure 11.17: Configuring only repository name

@@ -1,0 +1,38 @@
+Working with Outliers
+168
+7.
+Set up a transformer to identify outliers in three variables by using the IQR rule:
+trimmer = OutlierTrimmer(
+    variables = [«MedInc", "HouseAge", "Population"],
+    capping_method="iqr",
+    tail="both",
+    fold=1.5,
+)
+Note
+OutlierTrimmer can identify boundaries using the IQR, as we show in this recipe, as well as
+by using the mean and standard deviation, or MAD. You need to change capping_method
+to gaussian or mad, respectively.
+8.
+Fit the transformer to the training set so that it learns those limits:
+trimmer.fit(X_train)
+Note
+By executing trimmer.left_tail_caps_, we can visualize the lower limits for the
+three variables: {'MedInc': -0.6776500000000012, 'HouseAge': -10.5,
+'Population': -626.0}. By executing trimmer.right_tail_caps_, we can
+see the variables' upper limits: {'MedInc': 7.984350000000001, 'HouseAge':
+65.5, 'Population': 3134.0}.
+9.
+Finally, let's remove outliers from the train and test sets:
+X_train_t = trimmer.transform(X_train)
+X_test_t = trimmer.transform(X_test)
+To finish with the recipe, let's compare the distribution of a variable before and after
+removing outliers.
+10.	 Let's create a function to display a boxplot on top of a histogram:
+def plot_boxplot_and_hist(data, variable):
+    f, (ax_box, ax_hist) = plt.subplots(
+        2, sharex=True,
+        gridspec_kw={"height_ratios": (0.50, 0.85)}
+    )
+    sns.boxplot(x=data[variable], ax=ax_box)
+    sns.histplot(data=data, x=variable, ax=ax_hist)
+    plt.show()

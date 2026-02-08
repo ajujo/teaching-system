@@ -1,0 +1,43 @@
+from langchain_core.tools import tool 
+import requests
+@tool 
+def query_wolfram_alpha(expression: str) -> str: 
+    """
+    Query Wolfram Alpha to compute expressions or retrieve information. 
+    Args: expression (str): The mathematical expression or query to evaluate. 
+    Returns: str: The result of the computation or the retrieved information. 
+        """
+    api_url = f'''https://api.wolframalpha.com/v1/result?
+        i={requests.utils.quote(expression)}&
+        appid=YOUR_WOLFRAM_ALPHA_APP_ID'''  
+    try:
+        response = requests.get(api_url)
+        if response.status_code == 200: 
+            return response.text 
+        else: raise ValueError(f"Wolfram Alpha API Error: 
+            {response.status_code} - {response.text}") 
+    except requests.exceptions.RequestException as e: 
+        raise ValueError(f"Failed to query Wolfram Alpha: {e}")
+@tool 
+def trigger_zapier_webhook(zap_id: str, payload: dict) -> str: 
+    """ Trigger a Zapier webhook to execute a predefined Zap. 
+    Args: 
+    zap_id (str): The unique identifier for the Zap to be triggered. 
+    payload (dict): The data to send to the Zapier webhook. 
+    Returns: 
+    str: Confirmation message upon successful triggering of the Zap. 
+    Raises: ValueError: If the API request fails or returns an error. 
+    """ 
+    zapier_webhook_url = f"https://hooks.zapier.com/hooks/catch/{zap_id}/" 
+    try: 
+        response = requests.post(zapier_webhook_url, json=payload) 
+        if response.status_code == 200: 
+            return f"Zapier webhook '{zap_id}' successfully triggered." 
+        else: 
+        raise ValueError(f'''Zapier API Error: {response.status_code} - 
+                         {response.text}''') 
+    except requests.exceptions.RequestException as e: 
+        raise ValueError(f"Failed to trigger Zapier webhook '{zap_id}': {e}") 
+Tool Selection 
+| 
+95

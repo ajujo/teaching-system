@@ -1,0 +1,29 @@
+CHAPTER 6
+Knowledge and Memory
+Now that your agent has tools and orchestration, it is more than capable of taking
+actions to do real work. In most cases, though, you will want your agents to both
+remember what’s happened and know additional information beyond what lives in
+the model’s weights. In this chapter, we’ll focus on knowledge and memory—two
+complementary but distinct ways to enrich your agent’s context. Knowledge (often
+implemented via retrieval-augmented generation) pulls in factual or domain-specific
+content—technical specs, policy documents, product catalogs, customer or system
+logs—at generation time so the agent “knows” verifiable information beyond the
+immediate conversation to complement the information stored in the model itself,
+specifically in its weights and biases. Memory, on the other hand, captures the agent’s
+own history: prior user exchanges, tool outputs, and state updates. It lets your agent
+maintain continuity across turns and sessions so that it “remembers” past interactions
+and uses that history to inform future decisions.
+In Chapter 5, we introduced context engineering as the discipline of dynamically
+selecting, structuring, and assembling all inputs into the model’s context window to
+produce the best outcomes. Memory is a foundational enabler of context engineering:
+it provides the knowledge, history, and facts that can be selected and assembled into
+effective prompts. In other words, memory is where knowledge is stored, while con‐
+text engineering is how that knowledge is leveraged to produce intelligent behavior.
+This chapter will offer examples in LangGraph, a low-level orchestration framework
+for building stateful agentic workflows that was introduced in Chapter 1. LangGraph
+defines your application as a directed graph of nodes (pure functions such as founda‐
+tion model calls, memory updates, or tool invocations) and edges (control-flow tran‐
+sitions), enabling developers to model complex, multistep processes declaratively.
+LangGraph treats your entire application state as a single, strongly typed Python
+object (often a TypedDict) that flows through the graph at runtime, keeping data
+115

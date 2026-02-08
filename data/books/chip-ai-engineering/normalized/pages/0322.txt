@@ -1,0 +1,34 @@
+evalúan. Se analizó cómo evaluar tanto las capacidades específicas del
+dominio como las capacidades de generación, incluyendo la seguridad y la
+coherencia factual. Muchos criterios para evaluar los modelos
+fundacionales evolucionaron a partir de la NLP tradicional, como la fluidez,
+la coherencia y la fidelidad.
+Para ayudar a responder a la pregunta de si es mejor alojar un modelo o
+utilizar una API de modelos, este capítulo esboza los pros y los contras de
+cada enfoque a lo largo de siete ejes, incluyendo la privacidad de los datos,
+el linaje de los datos, el rendimiento, la funcionalidad, el control y el costo.
+Esta decisión, como todas las de construir uno nuevo o comprar uno ya
+establecido, es única para cada equipo, y depende no solo de lo que el
+equipo necesita, sino también de lo que el equipo quiere.
+Este capítulo también explora los miles de pruebas comparativas públicos
+disponibles. Las pruebas comparativas públicas puede ayudarles a descartar
+los modelos malos, pero no les ayudará a encontrar los mejores modelos
+para sus aplicaciones. También es probable que las pruebas comparativas
+públicos estén contaminadas, ya que sus datos se incluyen en los datos de
+entrenamiento de muchos modelos. Existen tableros de clasificación
+públicos que agregan múltiples pruebas comparativas para clasificar los
+modelos, pero no está claro cómo las seleccionan y agregan las pruebas.
+Las lecciones aprendidas de los tableros de clasificación públicos son útiles
+para la selección de modelos, ya que esto es similar a la creación de un
+tablero de clasificación privado para clasificar los modelos en función de
+sus necesidades.
+Este capítulo termina con la forma de utilizar todas las técnicas y criterios
+de evaluación tratados en el capítulo anterior y cómo crear un proceso de
+evaluación para su aplicación. No existe un método de evaluación perfecto.
+Es imposible captar la capacidad de un sistema de alta dimensión utilizando
+puntuaciones de una o pocas dimensiones. La evaluación de los sistemas
+modernos de IA tiene muchas limitaciones y sesgos. Sin embargo, esto no
+significa que no debamos hacerlo. La combinación de diferentes métodos y
+enfoques puede ayudar a mitigar muchos de estos retos.
+Aunque aquí terminan las discusiones específicas sobre la evaluación, este
+tema aparecerá una y otra vez, no solo a lo largo del libro, sino también

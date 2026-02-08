@@ -1,0 +1,23 @@
+7
+Software Development and Data
+Analysis Agents
+This chapter explores how natural language-our everyday English or whatever language you
+prefer to interact in with an LLM-has emerged as a powerful interface for programming, a par­
+adigm shift that, when taken to its extreme, is called vibe coding. Instead of learning acquiring
+new programming languages or frameworks, developers can now articulate their intent in natural
+language, leaving it to advanced LLMs and frameworks such as LangChain to translate these ideas
+into robust, production-ready code. Moreover, while traditional programming languages remain
+essential for production systems, LLMs are creating new workflows that complement existing
+practices and potentially increase accessibility This evolution represents a significant shift from
+earlier attempts at code generation and automation.
+We'll specifically discuss LLMs' place in software development and the state of the art of perfor­
+mance, models, and applications. We'll see how to use LLM chains and agents to help in code
+generation and data analysis, training ML models, and extracting predictions. We'll cover writing
+code with LLMs, giving examples with different models be it on Google's generative AI services,
+Hugging Face, or Anthropic. After this, we'll move on to more advanced approaches with agents
+and RAG for documentation or a code repository.
+We'll also be applying LLM agents to data science: we'll first train a model on a dataset, then we'll
+analyze and visualize a dataset. Whether you're a developer, a data scientist, or a technical deci­
+sion-maker, this chapter will equip you with a clear understanding of how LLMs are reshaping
+software development and data analysis while maintaining the essential role of conventional
+programming languages.

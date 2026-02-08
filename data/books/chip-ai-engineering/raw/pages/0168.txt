@@ -1,0 +1,32 @@
+Durante el afinado, puede volver a entrenar todo el modelo de extremo a
+extremo o parte del modelo, como esta cabeza clasificadora. El
+entrenamiento integral requiere más recursos, pero promete un mejor
+rendimiento.
+Necesitamos técnicas para obtener outputs estructurados porque suponemos
+que el modelo, por sí mismo, no es capaz de generar outputs estructurados.
+Sin embargo, a medida que los modelos se vuelven más potentes, podemos
+esperar que mejoren a la hora de seguir instrucciones. Sospecho que en el
+futuro será más fácil conseguir que los modelos produzcan exactamente lo
+que necesitamos con un mínimo de prompting, y estas técnicas perderán
+importancia.
+La naturaleza probabilística de la IA
+La forma en que los modelos de IA muestrean sus respuestas los convierte
+en probabilísticos. Aquí tiene un ejemplo sobre qué significa ser
+probabilístico. Imagine que quiere saber cuál es la mejor cocina del mundo.
+Si le hace esta pregunta a su amigo dos veces, con un minuto de diferencia,
+las respuestas de su amigo deberían ser las mismas las dos veces. Si le hace
+a un modelo de IA la misma pregunta dos veces, su respuesta puede
+cambiar. Si un modelo de IA piensa que la cocina vietnamita tiene un 70 %
+de posibilidades de ser la mejor cocina del mundo y la italiana un 30 %,
+responderá "cocina vietnamita" el 70 % de las veces y "cocina italiana" el
+30 %. Lo contrario de probabilístico es determinista, cuando el output
+puede determinarse sin ninguna variación aleatoria.
+Esta naturaleza probabilística puede provocar incoherencias y
+alucinaciones. Se habla de incoherencia cuando un modelo genera
+respuestas muy diferentes para los mismos prompts o prompts ligeramente
+diferentes. Alucinación es cuando un modelo da una respuesta que no está
+basada en hechos. Imagínese que alguien en Internet escribiera un ensayo
+sobre cómo todos los presidentes de EE. UU. son extraterrestres, y que este
+ensayo se incluyera en los datos de entrenamiento. Posteriormente, el
+modelo ofrecerá probabilísticamente el output de que el actual presidente de
+EE. UU. es un extraterrestre. Desde la perspectiva de alguien que no cree

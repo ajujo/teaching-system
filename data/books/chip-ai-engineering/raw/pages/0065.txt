@@ -1,0 +1,31 @@
+analizar bien los PDF o no puede hacerlo a escala. Su capacidad para ser
+competitivos se debilitará si este supuesto deja de ser cierto. Sin embargo,
+incluso en este caso, una aplicación de análisis de PDF podría tener sentido
+si se construye sobre modelos de código abierto, orientando su solución a
+los usuarios que desean alojar modelos en sus propias instalaciones.
+Una socia general de una importante empresa de capital de riesgo me dijo
+que había visto muchas startups cuyos productos completos podrían ser una
+función de Google Docs o Microsoft Office. Si sus productos se lanzan,
+¿qué impediría a Google o Microsoft destinar tres ingenieros a replicarlos
+en dos semanas?
+La IA suele tener tres tipos de ventajas competitivas: la tecnología, los datos
+y la distribución, es decir, la capacidad de hacer llegar el producto a los
+usuarios. Con los modelos fundacionales, las tecnologías centrales de la
+mayoría de las empresas serán similares. La ventaja de la distribución
+pertenece probablemente a las grandes empresas.
+La ventaja de los datos es más sutil. Es probable que las grandes empresas
+dispongan de más datos. Sin embargo, si una empresa emergente puede
+llegar primero al mercado y recopilar suficientes datos de uso para mejorar
+continuamente sus productos, los datos serán su barrera de defensa. Incluso
+cuando los datos de los usuarios no se puedan utilizar directamente para
+entrenar modelos, la información de uso puede proporcionar información
+muy valiosa sobre el comportamiento de los usuarios y las carencias de los
+productos, lo que puede orientar la recopilación de datos y el proceso de
+entrenamiento. 21
+Ha habido muchas empresas de éxito cuyos productos originales podrían
+haber sido características de productos más grandes. Calendly podría haber
+sido una función de Google Calendar. Mailchimp podría haber sido una
+función de Gmail. Photoroom podría haber sido una función de Google
+Photos.22 Muchas startups que acaban superando a competidores más
+grandes empiezan por crear una función que estos competidores más
+grandes pasaron por alto. Quizá la suya pueda ser la próxima.

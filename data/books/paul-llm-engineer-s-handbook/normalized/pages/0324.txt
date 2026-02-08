@@ -1,0 +1,24 @@
+Chapter 8
+293
+Since the KV cache grows with each generation step and is dynamic, it prevents you from taking
+advantage of torch.compile, a powerful optimization tool that fuses PyTorch code into fast and
+optimized kernels. The static KV cache solves this issue by pre-allocating the KV cache size to a
+maximum value, which allows you to combine it with torch.compile for up to a 4x speedup in
+the forward pass.
+To configure a model to use a static KV cache with the transformers library, follow these steps:
+1.
+We import the tokenizer and the model we want to optimize:
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+model_id = "google/gemma-2b-it"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id, device_
+map="auto")
+ Quick tip: Enhance your coding experience with the AI Code Explainer
+and Quick Copy features. Open this book in the next-gen Packt Reader. Click
+the Copy button (1) to quickly copy code into your coding environment,
+or click the Explain button (2) to get the AI assistant to explain a block of
+code to you.
+ The next-gen Packt Reader is included for free with the purchase of this
+book. Unlock it by scanning the QR code below or visiting https://www.
+packtpub.com/unlock/9781836200079.

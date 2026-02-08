@@ -1,0 +1,32 @@
+Si algo le importa, póngale un conjunto de prueba. Los datos seleccionados
+y anotados para la evaluación pueden utilizarse posteriormente para
+sintetizar más datos para el entrenamiento, como se explica en el
+Capítulo 8.
+La cantidad de datos que necesita para cada conjunto de evaluación
+dependerá de la aplicación y de los métodos de evaluación que utilice. En
+general, el número de ejemplos de un conjunto de evaluación debe ser lo
+bastante grande como para que el resultado de la evaluación sea fiable, pero
+lo suficientemente pequeño como para que no resulte prohibitivamente caro
+de ejecutar.
+Supongamos que dispone de un conjunto de evaluación de 100 ejemplos.
+Para saber si 100 son suficientes para que el resultado sea fiable, puede
+crear múltiples secuencias de estos 100 ejemplos y ver si dan resultados de
+evaluación similares. Básicamente, lo que le interesa saber es: si evalúa el
+modelo en un conjunto de evaluación diferente de 100 ejemplos, ¿obtendría
+un resultado distinto? Si obtiene un 90 % en una secuencia pero un 70 % en
+otra, su proceso de evaluación no es tan fiable.
+Concretamente, así es como funciona cada secuencia:
+1. Extraiga 100 muestras, con reemplazamiento, de los 100 ejemplos
+de evaluación originales.
+2. Evalúe su modelo en estas 100 muestras secuenciadas y obtenga
+los resultados de la evaluación.
+Repítalo varias veces. Si los resultados de la evaluación varían mucho para
+diferentes secuencias, necesitará un conjunto de evaluación mayor.
+Los resultados de la evaluación no solo se utilizan para evaluar un sistema
+de forma aislada, sino también para comparar sistemas. Deben ayudarles a
+decidir qué modelo, prompt u otro componente es mejor. Supongamos que
+un nuevo prompt obtiene un 10 % más de puntuación que el anterior: ¿qué
+tamaño debe tener el conjunto de evaluación para que podamos estar
+seguros de que el nuevo prompt es realmente mejor? En teoría, puede
+utilizarse una prueba de significación estadística para computar el tamaño
+de la muestra necesario para un determinado nivel de confianza (por

@@ -1,0 +1,7 @@
+This is the book I wish every team had before deploying agents, a clear, rigorous approach
+to architecture, safety, and measurement that accelerates delivery and reduces risk.
+—Brad Sarsfield, senior director, Microsoft Security
+AI Research & Development
+The best single-volume introduction to building AI agent systems—you can read
+hundreds of papers or this one book.
+—Arun Rao, ex-Meta GenAI group, adjunct professor at UCLA

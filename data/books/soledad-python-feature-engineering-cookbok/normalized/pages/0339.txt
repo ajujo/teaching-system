@@ -1,0 +1,31 @@
+Creating Features from a Time Series with tsfresh
+316
+               1         1.00        1.00        1.0
+0            3
+     accu­
+racy                                       1.00           14
+   macro avg         1.00        1.00        1.00           14
+weighted avg         1.00        1.00        1.00           14
+Note
+To keep the recipe simple, I have not optimized the model hyperparameters or tuned the
+probability threshold - things that we normally do to ensure our models are accurate.
+10.	 To finish off, let's extract features from every time series, that is, light, temperature,
+humidity, and co2, and this time, we will impute the features right after the extraction:
+features = extract_features(
+    X,
+    column_id="id",
+    impute_function=impute,
+    column_sort="date",
+)
+Note
+In step 10, we indicated that we want to sort our time series based on the timestamp containing the
+time and date of the measurement, by passing the date variable to the column_sort parameter.
+This is useful when our time series are not equidistant or not ordered chronologically. If we leave
+this parameter set to None, tsfresh assumes that the time series are ordered and equidistant.
+The output of step 10 consists of a DataFrame with 135 rows, containing 3,945 features (execute
+features.shape to check that out) that characterize the five original time series - temperature,
+light, humidity and its ratio, and CO 2 in the office. These features were imputed in step 10, so you can
+go ahead and use this DataFrame to train another logistic regression model to predict office occupancy.
+How it works...
+In this recipe, we used tsfresh to automatically create hundreds of features from five time series, and
+then used those features to train a logistic regression model to predict whether the office was occupied.

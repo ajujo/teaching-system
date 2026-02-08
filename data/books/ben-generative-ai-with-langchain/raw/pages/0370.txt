@@ -1,0 +1,27 @@
+Chapter 8
+343
+Evaluating a benchmark with HF datasets and Evaluate
+As a reminder: the pass@k metric is a way to evaluate the performance of an LLM in solving 
+programming exercises. It measures the proportion of exercises for which the LLM generated 
+at least one correct solution within the top k candidates. A higher pass@k score indicates better 
+performance, as it means the LLM was able to generate a correct solution more often within the 
+top k candidates.
+Hugging Face’s Evaluate library makes it very easy to calculate pass@k and other metrics. Here’s 
+an example:
+from datasets import load_dataset
+from evaluate import load
+from langchain_core.messages import HumanMessage
+human_eval = load_dataset("openai_humaneval", split="test")
+code_eval_metric = load("code_eval")
+test_cases = ["assert add(2,3)==5"]
+candidates = [["def add(a,b): return a*b", "def add(a, b): return a+b"]]
+pass_at_k, results = code_eval_metric.compute(references=test_cases, 
+predictions=candidates, k=[1, 2])
+print(pass_at_k)
+We should get an output like this:
+{'pass@1': 0.5, 'pass@2': 1.0}
+This shows how to evaluate code generation models using HuggingFace’s code_eval metric, 
+which measures a model’s ability to produce functioning code solutions. This is great. Let’s see 
+another example.
+For this code to run, you need to set the HF_ALLOW_CODE_EVAL environment vari­
+able to 1. Please be cautious: running LLM code on your machine comes with a risk.

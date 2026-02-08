@@ -1,0 +1,34 @@
+Preface
+xvii
+Chapter 11, Extracting Features from Text Variables, explores effective methods to clean and extract
+features from short text segments for use in supervised learning models. The chapter covers techniques
+to count words, sentences, and characters and measure lexical diversity. Additionally, it guides you
+through text cleaning processes and demonstrates how to build feature matrices by counting words.
+To get the most out of this book
+This book provides practical tools and techniques to streamline your feature engineering pipelines,
+allowing you to enhance code quality and simplify processes. The book explores methods to transform
+and create features to effectively train machine learning models with Python. Therefore, familiarity
+with machine learning and Python programming will benefit your understanding and application of
+the concepts presented.
+The recipes have been tested in the following library versions:
+•	 category-encoders == 2.6.3
+•	 Feature-engine == 1.8.0
+•	 featuretools == 1.31.0
+•	 matplotlib==3.8.3
+•	 nltk=3.8.1
+•	 numpy==1.26.4
+•	 pandas==2.2.1
+•	 scikit-learn==1.5.0
+•	 scipy==1.12.0
+•	 seaborn==0.13.2
+•	 tsfresh==0.20.0
+Software/hardware covered in the book
+OS requirements
+Python 3.9 or greater
+Windows, macOS, or Linux
+Note that earlier or newer versions of the Python libraries may prevent code from running. If you are
+using newer versions, make sure to check their documentation for any recent updates, parameter name
+changes, or deprecation.
+If you are using the digital version of this book, we advise you to type the code yourself or access
+the code via the GitHub repository (the link is available in the next section). Doing so will help
+you avoid any potential errors related to the copying and pasting of code.

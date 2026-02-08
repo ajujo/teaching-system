@@ -1,0 +1,31 @@
+La cuantización únicamente de las ponderaciones es, con diferencia, el
+método más popular, ya que es fácil de usar, funciona con muchos modelos
+y es muy eficaz. Reducir la precisión de un modelo de 32 a 16 bits reduce a
+la mitad el espacio de memoria que ocupa. Sin embargo, estamos cerca del
+límite de la cuantización: no podemos bajar de 1 bit por valor. La
+destilación también es habitual porque puede producir un modelo más
+pequeño cuyo comportamiento es comparable al de uno mucho más grande
+para sus necesidades.
+Superar el cuello de botella de la decodificación autorregresiva
+Como se explica en el Capítulo 2, los modelos lingüísticos autorregresivos
+generan un token tras otro. Si se tarda 100 ms en generar un token, una
+respuesta de 100 tokens tardará 10 s. 19 Este proceso no solo es lento,
+además es caro. Entre los proveedores de API de modelo, un token de
+output cuesta aproximadamente entre dos y cuatro veces un token de input.
+En un experimento, Anyscale descubrió que un solo token de output puede
+tener el mismo impacto en la latencia que 100 tokens de input (Kadous et
+al., 2023). Mejorar el proceso de generación autorregresiva en un pequeño
+porcentaje puede mejorar significativamente la experiencia del usuario.
+Como el espacio evoluciona rápidamente, se están desarrollando nuevas
+técnicas para superar este cuello de botella aparentemente imposible. Quizá
+algún día haya arquitecturas que no tengan este cuello de botella. Las
+técnicas aquí expuestas sirven para ilustrar cómo podría ser la solución,
+pero siguen evolucionando.
+Decodificación especulativa
+La decodificación especulativa (también llamada muestreo especulativo)
+utiliza un modelo más rápido pero menos potente para generar una
+secuencia de tokens, que luego son verificados por el modelo objetivo. El
+modelo objetivo es el modelo que desea utilizar. El modelo más rápido se
+denomina modelo de borrador o propuesta de modelo, porque propone el
+resultado del borrador.
+Imagine que los tokens de input son x1, x2, …, xt:

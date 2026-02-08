@@ -1,0 +1,28 @@
+Daños sociales
+Los modelos de IA ayudan a los atacantes a adquirir
+conocimientos y tutoriales sobre actividades peligrosas o
+delictivas, como fabricar armas, evadir impuestos y filtrar
+información personal.
+Información errónea
+Los atacantes pueden manipular los modelos para que
+genere información errónea que apoye sus intereses.
+Interrupción del servicio y subversión
+Esto incluye dar acceso a un usuario que no debería tenerlo,
+otorgar puntuaciones altas a entradas de datos erróneas o
+rechazar una solicitud de préstamo que debería haber sido
+aprobada. Una instrucción maliciosa que pida al modelo que
+se niegue a responder a todas las preguntas puede provocar
+la interrupción del servicio.
+Riesgo para la marca
+Que se coloquen declaraciones políticamente incorrectas y
+tóxicas junto a un logotipo puede provocar una crisis de
+relaciones públicas, como cuando la búsqueda de IA de
+Google instó a los usuarios a comer piedras (2024) o cuando
+el chatbot Tay de Microsoft generó comentarios racistas
+(2016). Aunque la gente entienda que su intención no es que
+su aplicación resulte ofensiva, puede atribuir las ofensas a
+su falta de preocupación por la seguridad o simplemente a
+su incompetencia.
+A medida que la IA adquiere mayor capacidad, estos riesgos se vuelven
+cada vez más críticos. Analicemos cómo pueden producirse estos riesgos
+con cada tipo de ataque de prompts.

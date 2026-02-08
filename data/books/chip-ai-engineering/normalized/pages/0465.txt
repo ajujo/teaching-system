@@ -1,0 +1,33 @@
+del Deep Learning para el procesamiento del lenguaje natural (NLP) antes de
+que la arquitectura transformadora tomara el relevo en 2018.
+2 Más o menos en misma época, otro artículo, también de Facebook, "How
+Context Affects Language Models' Factual Predictions" (Petroni et al., arXiv,
+mayo de 2020), mostró que aumentar un modelo lingüístico pre-entrenado con
+un sistema de recuperación puede mejorar drásticamente el rendimiento del
+modelo para preguntas sobre hechos reales.
+3 Gracias a Chetan Tekur por el ejemplo.
+4 La Ley de Parkinson suele expresarse como "El trabajo se expande hasta llenar
+el tiempo disponible para su realización". Tengo una teoría similar que dice que
+el contexto de una aplicación se expande para llenar el límite de contexto
+soportado por el modelo que utiliza.
+5 La recuperación de información se describió ya en los años 20 en las patentes
+de Emanuel Goldberg de una "máquina estadística" para buscar documentos
+almacenados en cintas. Véase "The History of Information Retrieval Research"
+(Sanderson y Croft, Proceedings of the IEEE, 100.: Special Centennial Issue,
+abril de 2012).
+6 Para los interesados en saber más sobre BM25, recomiendo este artículo de los
+autores de BM25: "The Probabilistic Relevance Framework: BM25 and
+Beyond" (Robertson y Zaragoza, Foundations and Trends in Information
+Retrieval 3 No. 4, 2009)
+7 Aravind Srinivas, el CEO de Perplexity, tuiteó que "lograr una auténtica mejora
+respecto a BM25 o la búsqueda de texto completo es difícil".
+8 Un flujo de trabajo de recuperación RAG comparte muchos pasos similares con
+el sistema de recomendación tradicional.
+9 Algunos equipos me han dicho que sus sistemas de recuperación funcionan
+mejor cuando los datos están organizados en un formato de preguntas y
+respuestas.
+10 Artificial Intelligence: A Modern Approach (1995) define un agente como todo
+aquello que puede percibir su entorno mediante sensores y actuar sobre él
+mediante actuadores.
+11 En los primeros días de los agentes, una queja habitual era que solo servían
+para gastar créditos API.

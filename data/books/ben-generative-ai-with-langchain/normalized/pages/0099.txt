@@ -1,0 +1,31 @@
+Building Workflows with LangGraph
+72
+We used a very simple graph as an example. With your real workflows, you can define parallel steps
+(for example, you can easily connect one node with multiple nodes) and even cycles. LangGraph
+executes the workflow in so-called supersteps that can call multiple nodes at the same time (and
+then merge state updates from these nodes). You can control the depth of recursion and amount of
+overall supersteps in the graph, which helps you avoid cycles running forever, especially because
+the LLMs output is non-deterministic.
+In our example, we used direct edges from one node to another. It makes our graph no different
+from a sequential chain that we could have defined with LangChain. One of the key LangGraph
+features is the ability to create conditional edges that can direct the execution flow to one or an­
+other node depending on the current state. A conditional edge is a Python function that gets the
+current state as an input and returns a string with the node's name to be executed.
+Let's look at an example:
+from typing import Literal
+builder = StateGraph(JobApplicationState)
+builder.add_node("analyze_job_description", analyze_job_description)
+builder.add_node("generate_application", generate_application)
+def is_suitable_condition(state: JobApplicationState) ->
+Literal["generate_application", END]:
+   if state.get("is_suitable"):
+       return "generate_application"
+   return END
+builder.add_edge(START, "analyze_job_description")
+builder.add_conditional_edges("analyze_job_description", is_suitable_
+condition)
+builder.add_edge("generate_application", END)
+graph = builder.compile()
+A superstep on LangGraph represents a discrete iteration over one or a few nodes, and
+it's inspired by Pregel, a system built by Google for processing large graphs at scale.
+It handles parallel execution of nodes and updates sent to the central graph's state.

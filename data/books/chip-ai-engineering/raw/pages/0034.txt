@@ -1,0 +1,21 @@
+Un modelo que pueda trabajar con más de una modalidad de datos también
+se denomina modelo multimodal. Un modelo multimodal generativo
+también se denomina gran modelo multimodal (LMM). Si un modelo
+lingüístico genera el siguiente token condicionado a tokens de solo texto, un
+modelo multimodal genera el siguiente token en función tanto de tokens de
+texto como de imagen, o a las modalidades que admita el modelo, como se
+muestra en la Figura 1-3.
+figura 1-3. Un modelo multimodal puede generar el siguiente token utilizando
+información tanto de tokens textuales como visuales.
+Al igual que los modelos lingüísticos, los modelos multimodales necesitan
+datos para escalarse. La autosupervisión también funciona con modelos
+multimodales. Por ejemplo, OpenAI utilizó una variante de la
+autosupervisión denominada supervisión del lenguaje natural para entrenar
+su modelo de lenguaje-imagen CLIP (OpenAI, 2021). En vez de generar
+manualmente etiquetas para cada imagen, encontraron duplas (imagen,
+texto) que coincidían en Internet. Fueron capaces de generar un conjunto de
+datos de 400 millones de duplas (imagen, texto), 400 veces mayor que
+ImageNet, sin costo de etiquetado manual. Este conjunto de datos permitió
+a CLIP convertirse en el primer modelo capaz de generalizarse a múltiples
+tareas de clasificación de imágenes sin necesidad de entrenamiento
+adicional.

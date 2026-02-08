@@ -1,0 +1,36 @@
+Finally, red teaming is not a onetime exercise—it must be an ongoing process. As
+models are fine-tuned, updated, or deployed in new contexts, their security profile
+changes, necessitating regular red team reviews. Continuous collaboration between
+red teams, model developers, and operational security experts ensures that vulnera‐
+bilities are identified and addressed before they can be exploited in real-world
+scenarios.
+In essence, red teaming acts as both a stress test and an early warning system for
+foundation model–powered agent systems. It fosters a culture of proactive security,
+where weaknesses are discovered and mitigated internally before they can be exploi‐
+ted externally. Organizations that integrate robust red teaming practices into their
+development lifecycle are far better equipped to handle the complex and evolving
+threats facing modern agent systems.
+Threat Modeling with MAESTRO
+As agentic AI systems grow in complexity, traditional threat modeling frameworks
+like STRIDE or PASTA often fall short in addressing their unique attributes, such as
+autonomy, dynamic learning, and multiagent interactions. MAESTRO (Multi-Agent
+Environment, Security, Threat, Risk, and Outcome), a specialized framework released
+by the Cloud Security Alliance (CSA), was designed explicitly for threat modeling in
+agentic AI.
+MAESTRO provides a layered reference architecture to systematically identify vul‐
+nerabilities, assess risks, and implement mitigations across the AI lifecycle. By break‐
+ing down agentic systems into seven interconnected layers, it enables developers,
+security engineers, and AI practitioners to build resilient architectures that anticipate
+evolving threats, such as those amplified by generative AI’s content creation capabili‐
+ties or agentic autonomy in enterprise settings.
+The framework’s purpose is to foster proactive security by mapping threats, risks, and
+outcomes in a modular way, ensuring separation of concerns while highlighting inter-
+layer dependencies. This is particularly relevant for agentic systems, where a vulnera‐
+bility in one layer (e.g., data poisoning in foundational models) can cascade into
+others (e.g., unauthorized actions in the ecosystem).
+Figure 12-2 illustrates the MAESTRO framework as a vertical stack of layers, from
+the agent ecosystem at the top to foundation models at the base, with downward
+arrows indicating layer dependencies and buildup from foundational elements.
+Securing Foundation Models 
+| 
+281

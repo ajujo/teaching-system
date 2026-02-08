@@ -1,0 +1,14 @@
+Aunque un mayor número de ejemplos de afinado suele mejorar el
+rendimiento de un modelo, la diversidad de los ejemplos también es
+importante. El artículo "Scaling Instruction-Finetuned Language Models"
+(Chung et al., 2022) muestra que el rendimiento del modelo aumentó
+significativamente cuando el número de tareas de afinado pasó de 9 a 282.
+Más allá de las 282 tareas, las ganancias de rendimiento empiezan a
+estancarse, aunque sigue habiendo mejoras positivas pero incrementales
+hasta las 1836 tareas, como se muestra en la Figura 8-4. Esto sugiere que el
+modelo se beneficia enormemente de la exposición a un conjunto diverso de
+tareas durante el afinado.
+La diversidad de datos pueden reflejarse en los tipos de tareas (como
+resumir y responder preguntas), la diversidad de temas (como moda,
+finanzas y tecnología) y los formatos de output esperados (como outputs
+JSON o respuestas sí o no).

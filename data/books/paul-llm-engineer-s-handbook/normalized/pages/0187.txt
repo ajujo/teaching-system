@@ -1,0 +1,35 @@
+RAG Feature Pipeline
+156
+            vector = vector.tolist()
+        return PointStruct(id=_id, vector=vector, payload=payload)
+•
+The VectorBaseDocument class inherits from Pydantic's BaseModel and helps us structure
+a single record's attributes from the vector DB. Every OVM will be initialized by default
+with UUID4 as its unique identifier. Using generics-more precisely, by inheriting from
+Generic[T]-the signatures of all the subclasses of the VectorBaseDocument class will
+adapt to that given class. For example, the from_record() method of the Chunk() class,
+which inherits VectorBaseDocument, will return the Chunk type, which drastically helps
+the static analyzer and type checkers such as mypy (https://mypy.readthedocs.io/en/
+stable/).
+The from_record() method adapts a data point from Qdrant's format to our internal structure
+based on Pydantic. On the other hand, the to_point() method takes the attributes of the current
+instance and adapts them to Qdrant's PointStruct() format. We will leverage these two methods
+for our create and read operations.
+Ultimately, all operations made to Qdrant will be done through the connection instance, which
+is instantiated in the application's infrastructure layer.
+The bulk_insert() method maps each document to a point. Then, it uses the Qdrant connection
+instance to load all the points to a given collection in Qdrant. If the insertion fails once, it tries
+to create the collection and do the insertion again. Often, it is good practice to split your logic
+into two functions. One private function contains the logic, in our case _bulk_insert(), and one
+public function handles all the errors and failure scenarios.
+class VectorBaseDocument(BaseModel, Generic[T], ABC):
+    ... # Rest of the class
+    @classmethod
+    def bulk_insert(cls: Type[T], documents: list["VectorBaseDocument"])
+-> bool:
+        try:
+            cls._bulk_insert(documents)
+        except exceptions.UnexpectedResponse:
+            logger.info(
+                f"Collection '{cls.get_collection_name()}' does not exist.
+Trying to create the collection and reinsert the documents."

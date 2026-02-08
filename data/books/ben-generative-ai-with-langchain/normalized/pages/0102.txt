@@ -1,0 +1,33 @@
+Chapter 3
+75
+from langchain_core.messages import AnyMessage
+from langgraph.graph.message import add_messages
+class JobApplicationState(TypedDict):
+  ...
+  messages: Annotated[list[AnyMessage], add_messages]
+Since this is such an important reducer, there's a built-in state that you can inherit from:
+from langgraph.graph import MessagesState
+class JobApplicationState(MessagesState):
+  ...
+Now, as we have discussed reducers, let's talk about another important concept for any developer
+- how to write reusable and modular workflows by passing configurations to them.
+Making graphs configurable
+LangGraph provides a powerful API that allows you to make your graph configurable. It allows
+you to separate parameters from user input - for example, to experiment between different LLM
+providers or pass custom callbacks. A node can also access the configuration by accepting it as a
+second argument. The configuration will be passed as an instance of RunnableConfig.
+RunnableConfig is a typed dictionary that gives you control over execution control settings. For
+example, you can control the maximum number of supersteps with the recursion_limit pa­
+rameter. RunnableConfig also allows you to pass custom parameters as a separate dictionary
+under a configurable key.
+Let's allow our node to use different LLMs during application generation:
+from langchain_core.runnables.config import RunnableConfig
+def generate_application(state: JobApplicationState, config:
+RunnableConfig):
+   model_provider = config["configurable"].get("model_provider", "Google")
+   model_name = config["configurable"].get("model_name", "gemini-2.0-
+flash-lite")
+   print(f"...generating application with {model_provider} and {model_
+name} ...")
+   return {"application": "some_fake_application", "actions": ["action2",
+"action3"]}

@@ -1,0 +1,68 @@
+Index
+449
+dependencies
+setting up  26, 27
+Directed Acyclic Graph (DAG)  68
+distributed approach  414, 415
+Docker  27
+documentation RAG  290-292
+document processing, RAG pipeline
+chunking strategies  132
+retrieval  137
+dynamic few-shot prompting  89, 90
+E
+efficiency innovations approach
+key techniques  414
+email extraction
+evaluating  344-347
+embeddings  109, 114, 115
+challenges  115
+migrating, to search  113
+error handling  79-81, 206-209
+fallback  84
+retries  82, 83
+external partner packages  21
+F
+Faiss  126
+fallback  84
+FastAPI
+using, for web framework 
+deployment  354-358
+few-shot prompting
+versus zero-shot prompting  87, 88
+FizzBuzz  282
+Foundational Model Orchestration 
+(FOMO)  353
+G
+gcloud CLI
+installation link  434
+Gemini 1.5 Pro
+using  58-60
+generative AI applications
+deploying  353
+generative AI economic and industry 
+transformation  419-421
+competitive dynamics  421, 422
+economic distribution  423, 424
+equity considerations  423, 424
+industry-specific transformations  421, 422
+job evolution and skills implications  422
+generative AI models  404-409
+limitations  405
+versus human cognition  407, 408
+Google AI platform  434
+Google Cloud Vertex AI  434
+Google Colab  26
+Google Gemini  30
+google generative AI  282, 283
+Google Vertex AI  31
+GPT-4  7
+GPT4All  51
+GPT-4 Vision
+using  61, 62
+Gradient Notebooks  26
+graph configuration  75, 76
+graphs  69
+H
+HF datasets and Evaluate
+benchmark, evaluating with  343

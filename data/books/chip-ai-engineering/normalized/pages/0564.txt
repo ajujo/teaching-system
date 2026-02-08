@@ -1,0 +1,30 @@
+NOTA
+Se preguntará: si tengo millones de ejemplos, ¿no debería entrenar un
+modelo desde cero? Puede y debe evaluar si entrenar un modelo desde cero
+mejoraría su rendimiento. Aunque afinar sobre un modelo pre-entrenado
+suele ser más eficaz que el entrenamiento desde cero, hay situaciones en las
+que el afinado pueden ser peor, especialmente cuando se dispone de
+muchos datos de entrenamiento. Esto se debe a un fenómeno llamado
+osificación, en el que el pre-entrenamiento pueden osificar (es decir,
+congelar) las ponderaciones del modelo, de modo que no se adapten tan
+bien a los datos de afinado (Hernández et al., 2021). Los modelos más
+pequeños son más susceptibles a la osificación que los grandes.
+Además de la calidad y la diversidad de los datos, hay otros tres factores
+que influyen en la cantidad de datos que se necesitan:
+Técnicas de afinado
+El afinado completo promete dar el mejor rendimiento, pero
+requiere órdenes de magnitud de datos más que los métodos
+PEFT como LoRA. Si tiene entre decenas de miles y millones
+de pareas (instrucción, respuesta), es posible que desee
+intentar un afinado completo. Si solo tiene unos pocos
+cientos o miles de ejemplos, el PEFT podría funcionar mejor.
+Complejidad de la tarea
+Una tarea sencilla, como clasificar si la reseña de un
+producto es positiva o negativa, requerirá muchos menos
+datos que una tarea compleja, como responder a una
+pregunta sobre declaraciones financieras.
+Prestaciones del modelo base
+Cuanto más se acerque el modelo base al rendimiento
+deseado, menos ejemplos serán necesarios para alcanzarlo.
+Suponiendo que los modelos de base más grandes sean
+mejores, es posible que se necesite menos ejemplos para

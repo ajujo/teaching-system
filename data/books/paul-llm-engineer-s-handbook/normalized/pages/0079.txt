@@ -1,0 +1,31 @@
+Tooling and Installation
+48
+We will use Qdrant to store the data from MongoDB after it's processed and transformed for
+GenAI usability.
+Qdrant is used by big players such as X (formerly Twitter), Disney, Microsoft, Discord, and Johnson & Johnson. Thus, it is highly probable that Qdrant will remain in the vector database game
+for a long time.
+While writing the book, other popular options were Milvus, Redis, Weaviate, Pinecone, Chroma,
+and pgvector (a PostgreSQL plugin for vector indexes). We found that Qdrant offers the best
+trade-off between RPS, latency, and index time, making it a solid choice for many generative AI
+applications.
+Comparing all the vector databases in detail could be a chapter in itself. We don't want to do
+that here. Still, if curious, you can check the Vector DB Comparison resource from Superlinked at
+https://superlinked.com/vector-db-comparison, which compares all the top vector databases
+in terms of everything you can think about, from the license and release year to database features,
+embedding models, and frameworks supported.
+Preparing for AWS
+This last part of the chapter will focus on setting up an AWS account (if you don't already have
+one), an AWS access key, and the CLI. Also, we will look into what SageMaker is and why we use it.
+We picked AWS as our cloud provider because it's the most popular out there and the cloud in
+which we (the writers) have the most experience. The reality is that other big cloud providers,
+such as GCP or Azure, offer similar services. Thus, depending on your specific application, there is
+always a trade-off between development time (in which you have the most experience), features,
+and costs. But for our MVP, AWS, it's the perfect option as it provides robust features for everything we need, such as S3 (object storage), ECR (container registry), and SageMaker (compute
+for training and inference).
+Setting up an AWS account, an access key, and the CLI
+As AWS could change its UI/UX, the best way to instruct you on how to create an AWS account is
+by redirecting you to their official tutorial: https://docs.aws.amazon.com/accounts/latest/
+reference/manage-acct-creating.html.
+After successfully creating an AWS account, you can access the AWS console at http://console.
+aws.amazon.com. Select Sign in using root user email (found under the Sign in button), then
+enter your account's email address and password.

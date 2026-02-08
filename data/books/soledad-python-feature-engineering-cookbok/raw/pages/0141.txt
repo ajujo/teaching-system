@@ -1,0 +1,31 @@
+Performing Variable Discretization
+118
+With feature-engine, we can perform equal-width discretization in fewer lines of code 
+and for many variables at a time.
+12.	 First, let’s import the discretizer:
+from feature_engine.discretisation import EqualWidthDiscretiser
+13.	 Let’s set up the discretizer to sort three continuous variables into eight intervals:
+variables = ['MedInc', 'HouseAge', 'AveRooms']
+disc = EqualWidthDiscretiser(
+    bins=8, variables=variables)
+Note
+EqualWidthDiscretiser() returns an integer indicating whether the value was sorted 
+into the first, second, or eighth bin by default. That is the equivalent of ordinal encoding, which 
+we described in the Replacing categories with ordinal numbers recipe of Chapter 2, Encoding 
+Categorical Variables. To carry out a different encoding with the feature-engine or 
+category encoders Python libraries, cast the returned variables as objects by setting 
+return_object to True. Alternatively, make the transformer return the interval limits 
+by setting return_boundaries to True.
+14.	 Let’s fit the discretizer to the train set so that it learns the cut points for each variable:
+disc.fit(X_train)
+After fitting, we can inspect the cut points in the binner_dict_ attribute by 
+executing print(disc.binner_dict_).
+Note
+feature-engine will automatically extend the limits of the lower and upper intervals to 
+infinite to accommodate potential outliers in future data.
+15.	 Let’s discretize the variables in the train and test sets:
+train_t = disc.transform(X_train)
+test_t = disc.transform(X_test)
+EqualWidthDiscretiser() returns a DataFrame where the selected variables are 
+discretized. If we run test_t.head(), we will see the following output where the original 
+values of MedInc, HouseAge, and AveRooms are replaced by the interval numbers:

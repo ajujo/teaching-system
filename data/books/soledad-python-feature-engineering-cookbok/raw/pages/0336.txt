@@ -1,0 +1,24 @@
+Extracting hundreds of features automatically from a time series
+313
+Figure 10.4 – Time-series values during the fifteenth hour of data collection, when the office was occupied
+Notice that the lights were on this time (top-right panel).
+In this recipe, we will extract features from each of these one-hour windows of time-series data, 
+capturing various aspects of their characteristics. From each of these 60-minute time-series segments, 
+we will automatically generate more than 750 features using tsfresh, ensuring a comprehensive 
+representation of the data’s properties.
+How to do it...
+We will begin by automatically creating hundreds of features from one time series, lights, and then 
+use those features to predict whether the office was occupied at any given hour:
+1.	
+Let’s import the required Python libraries and functions:
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from tsfresh import extract_features
+from tsfresh.utilities.dataframe_functions import (
+    impute
+)
+2.	
+Load the dataset described in the Technical requirements section:
+X = pd.read_csv("occupancy.csv", parse_dates=["date"])

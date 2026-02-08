@@ -1,0 +1,43 @@
+Extracting features from date and time
+293
+7.	
+Let’s check out which bank holidays are included in this primitive:
+hols = is_bank_hol.holidayUtil.federal_holidays.values()
+available_hols = list(set(hols))
+If we execute available_hols, we’ll see a list of bank holidays supported for the UK:
+['May Day',
+ 'Good Friday',
+ 'Wedding of William and Catherine',
+ 'Coronation of Charles III',
+ 'Christmas Day',
+ 'Wedding of Charles and Diana',
+ 'Christmas Day (observed)',
+ 'State Funeral of Queen Elizabeth II',
+ 'Silver Jubilee of Elizabeth II',
+ 'Spring Bank Holiday',
+ 'Diamond Jubilee of Elizabeth II',
+ 'Boxing Day (observed)',
+ 'Platinum Jubilee of Elizabeth II',
+ "New Year's Day (observed)",
+ 'Boxing Day',
+ 'Golden Jubilee of Elizabeth II',
+ 'Millennium Celebrations',
+ "New Year's Day"]
+8.	
+Let’s create another primitive that determines the days to a certain date – in this case, the 
+distance to Boxing Day:
+days_to_boxing = DistanceToHoliday(
+    holiday="Boxing Day", country="UK")
+9.	
+Now, let’s make a list containing strings that identify common features that we can get from 
+datetime and include the primitives from steps 6 and 8:
+date_primitives = [
+    "day", "year", "month", "weekday",
+    "days_in_month", "part_of_day",
+    "hour", "minute",
+    is_bank_hol,
+    days_to_boxing
+]
+10.	 Let’s now create date and time features from step 9 based on the invoice_date date variable:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,

@@ -1,0 +1,36 @@
+Chapter 5
+207
+To understand what happens, let’s take a look at the LangChain source code for the _handle_
+tool_error function:
+def _handle_tool_error(
+    e: ToolException,
+    *,
+    flag: Optional[Union[Literal[True], str, Callable[[ToolException], 
+str]]],
+) -> str:
+    if isinstance(flag, bool):
+        content = e.args[0] if e.args else "Tool execution error"
+    elif isinstance(flag, str):
+        content = flag
+    elif callable(flag):
+        content = flag(e)
+    else:
+        msg = (
+            f"Got an unexpected type of `handle_tool_error`. Expected 
+bool, str "
+            f"or callable. Received: {flag}"
+        )
+        raise ValueError(msg)  # noqa: TRY004
+    return content
+As we can see, we can set this flag to a Boolean, string, or callable (that converts a ToolException 
+to a string). Based on this, LangChain would try to handle ToolException and pass a string to 
+the next stage instead. We can incorporate this feedback into our workflow and add an auto-re­
+cover loop.
+Let’s look at an example. We adjust our calculator function by removing a substitution i->j (a 
+substitution from an imaginary unit in math to an imaginary unit in Python), and we also make 
+StructuredTool auto-inherit descriptions and arg_schema from the docstring:
+from langchain_core.tools import StructuredTool
+def calculator(expression: str) -> str:
+   """Calculates a single mathematical expression, incl. complex 
+numbers."""
+   return str(ne.evaluate(expression.strip(), local_dict={}))

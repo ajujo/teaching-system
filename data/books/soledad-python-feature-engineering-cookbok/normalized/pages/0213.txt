@@ -1,0 +1,22 @@
+Extracting Features from Date and Time Variables
+190
+We see the difference in weeks between the variables in the following screenshot:
+Figure 6.15 - A DataFrame with the time difference between the datetime
+variables expressed in number of days and number of weeks
+5.
+Now, let's calculate the time in between the variables in minutes and seconds and then display
+the DataFrame's top rows:
+df["diff_seconds"] = (
+    df[«date2»] - df[«date1»])/np.timedelta64(1, «s»)
+df["diff_minutes"] = (
+    df[«date2»] - df[«date1»])/ np.timedelta64(1,»m»)
+df.head()
+We see the new variables in the following output:
+Figure 6.16 - A DataFrame with the time difference between the two
+datetime variables expressed in different time units
+6.
+Finally, let's calculate the difference between one variable and the current day, expressed in
+number of days, and then display the first five rows of the DataFrame:
+df["to_today"] = (
+    datetime.datetime.today() - df["date1"])
+df.head()

@@ -1,0 +1,7 @@
+205 aplicaciones de IA de código abierto con al menos 500 estrellas en
+GitHub. 11 Clasifiqué las aplicaciones en ocho grupos, como se muestra en
+la Tabla 1-3. La lista limitada que figura a continuación sirve sobre todo
+como referencia. A medida que aprenda más sobre cómo construir modelos
+fundacionales en el Capítulo 2 y cómo evaluarlos en el Capítulo 3, también
+podrán hacerse una mejor idea de para qué casos de uso pueden y deben
+utilizarse los modelos fundacionales.

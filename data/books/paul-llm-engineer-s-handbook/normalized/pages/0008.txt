@@ -1,0 +1,12 @@
+About the reviewer
+Rany ElHousieny is an AI solutions architect and AI engineering manager with over two decades
+of experience in AI, NLP, and ML. Throughout his career, he has focused on the development and
+deployment of AI models, authoring multiple articles on AI systems architecture and ethical AI deployment. He has led groundbreaking projects at companies like Microsoft, where he spearheaded
+advancements in NLP and the Language Understanding Intelligent Service (LUIS). Currently, he
+plays a pivotal role at Clearwater Analytics, driving innovation in GenAI and AI-driven financial
+and investment management solutions.
+I would like to thank Clearwater Analytics for providing a supportive and learning environment that fosters
+growth and innovation. The vision of our leaders, always staying ahead with the latest technologies, has been
+a constant source of inspiration. Their commitment to AI advancements made my experience of reviewing
+this book insightful and enriching. Special thanks to my family for their ongoing encouragement throughout
+this journey.

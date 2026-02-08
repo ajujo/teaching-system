@@ -1,0 +1,41 @@
+Advanced Applications and Multi-Agent Systems
+232
+Agents can work collaboratively on a task by providing critique and reflection. There are multiple
+reflection patterns starting from self-reflection, when the agent analyzes its own steps and identi­
+fies areas for improvements (but as mentioned above, you might initiate the reflecting agent with
+a slightly different system prompt); cross-reflection, when you use another agent (for example,
+using another foundational model); or even reflection, which includes Human-in-the-Loop (HIL)
+on critical checkpoints (we'll see in the next section how to build adaptive systems of this kind).
+You can keep one agent as a supervisor, allow agents to communicate in a network (allowing them
+to decide which agent to send a message or a task), introduce a certain hierarchy, or develop more
+complex flows (for inspiration, take a look at some diagrams on the LangGraph documentation
+page at https://langchain-ai.github.io/langgraph/concepts/multi_agent/).
+Designing multi-agent workflows is still an open area of research and experimentation, and you
+need to answer a lot of questions:
+•
+What and how many agents should we include in our system?
+•
+What roles should we assign to these agents?
+•
+What tools should each agent have access to?
+•
+How should agents interact with each other and through which mechanism?
+•
+What specific parts of the workflow should we automate?
+•
+How do we evaluate our automation and how can we collect data for this evaluation?
+Additionally, what are our success criteria?
+Now that we've examined some core considerations and open questions around multi-agent
+communication, let's explore two practical mechanisms to structure and facilitate agent inter­
+actions: semantic routing, which directs tasks intelligently based on their content, and organizing
+interaction, detailing the specific formats and structures that agents can use to effectively exchange
+information.
+Semantic router
+Among many different ways to organize communication between agents in a true multi-agent
+setup, an important one is a semantic router. Imagine developing an enterprise assistant. Typically
+it becomes more and more complex because it starts dealing with various types of questions -
+general questions (requiring public data and general knowledge), questions about the company
+(requiring access to the proprietary company-wide data sources), and questions specific to the
+user (requiring access to the data provided by the user itself). Maintaining such an application
+as a single agent becomes very difficult very soon. Again, we can apply our design patterns - de­
+composition and collaboration!

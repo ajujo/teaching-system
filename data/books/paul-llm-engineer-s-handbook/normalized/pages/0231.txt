@@ -1,0 +1,82 @@
+Supervised Fine-Tuning
+200
+73
+68795a4d-
+26c2-43b7-
+9900-
+739a80b9b-
+7dc
+DML: 4 key
+ideas you
+must know to
+train an LLM...
+decodingml.
+substack.
+com
+1519b1d1-
+1a5d-444ca880-926c9eb6539e
+Paul
+Iusztin
+h t t p s : / /
+d e c o d i n g m l .
+substack.com/p/
+dml-4-key-id...
+74
+d91b17c0-
+05d8-
+4838-bf61-
+e2abc1573622
+DML: How to
+add real-time
+monitoring &
+metrics...
+decodingml.
+substack.
+com
+1519b1d1-
+1a5d-444ca880-926c9eb6539e
+Paul
+Iusztin
+h t t p s : / /
+d e c o d i n g m l .
+substack.com/p/
+dml-how-to-a...
+75
+dcf55b28-
+2814-
+4480-a18ba77d01d44f5f
+DML: Top 6
+ML Platform
+Features You
+Must Know ...
+decodingml.
+substack.
+com
+1519b1d1-
+1a5d-444ca880-926c9eb6539e
+Paul
+Iusztin
+h t t p s : / /
+d e c o d i n g m l .
+substack.com/p/
+dml-top-6-ml...
+4.
+If we inspect the content of some articles a little further, we realize that some of them
+have special characters and redundant whitespaces. We can clean this with a simple regex.
+First, we use [^\w\s.,!?'] to remove non-alphanumeric characters except for apostrophes, periods, commas, exclamation marks, and question marks. Then, we use \s+
+to replace multiple consecutive whitespace characters with a single space. Finally, we
+implement strip() to remove any leading or trailing whitespace.
+def clean_text(text):
+    text = re.sub(r"[^\w\s.,!?']", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+5.
+Now that we can load our articles, we need to chunk them before turning them into pairs
+of instructions and answers. Ideally, you would want to use headlines or paragraphs to
+produce semantically meaningful chunking.
+However, in our example, like in the real world, raw data tends to be messy. Due to improper formatting, we cannot extract paragraphs or headlines for every article in our raw
+dataset. Instead, we will extract sentences using a regex to get chunks between 1,000
+and 2,000 characters. This number can be optimized depending on the density of the
+information contained in the text.
+The extract_substrings function processes each article in the dataset by first cleaning the
+text and then using a regex to split it into sentences. It then builds chunks of text by concatenating these sentences until each chunk is between 1,000 and 2,000 characters long.

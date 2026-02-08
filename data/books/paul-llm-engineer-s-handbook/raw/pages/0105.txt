@@ -1,0 +1,35 @@
+Data Engineering
+74
+        os.chdir(local_temp)
+        subprocess.run(["git", "clone", link])
+After successfully cloning the repository, the crawler constructs the path to the cloned repository. 
+It initializes an empty dictionary used to aggregate the content of the files in a standardized way. 
+It walks through the directory tree, skipping over any directories or files that match the ignore 
+patterns. For each relevant file, it reads the content, removes any spaces, and stores it in the dic-
+tionary with the file path as the key:
+        repo_path = os.path.join(local_temp, os.listdir(local_temp)[0])  # 
+        tree = {}
+        for root, _, files in os.walk(repo_path):
+            dir = root.replace(repo_path, "").lstrip("/")
+            if dir.startswith(self._ignore):
+                continue
+            for file in files:
+                if file.endswith(self._ignore):
+                    continue
+                file_path = os.path.join(dir, file)
+                with open(os.path.join(root, file), "r", errors="ignore") 
+as f:
+                    tree[file_path] = f.read().replace(" ", "")
+It then creates a new instance of the RepositoryDocument model, populating it with the repos-
+itory content, name, link, platform information, and author details. The instance is then saved 
+to MongoDB:
+        user = kwargs["user"]
+        instance = self.model(
+            content=tree,
+            name=repo_name,
+            link=link,
+            platform="github",
+            author_id=user.id,
+            author_full_name=user.full_name,
+        )
+        instance.save()

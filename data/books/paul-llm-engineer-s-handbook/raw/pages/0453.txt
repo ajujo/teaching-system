@@ -1,0 +1,35 @@
+MLOps and LLMOps
+422
+Containerize the code using Docker
+So far, we have defined our infrastructure, MongoDB, Qdrant, and AWS, for storage and computing. 
+The last step is to find a way to take our code and run it on top of this infrastructure. The most 
+popular solution is Docker, a tool that allows us to create an isolated environment (a container) 
+that contains everything we need to run our application, such as system dependencies, Python 
+dependencies, and the code.
+We defined our Docker image at the project’s root in the Dockerfile. This is the standard naming 
+convention for Docker. Before digging into the code, if you want to build the Docker image your-
+self, ensure that you have Docker installed on your machine. If you don’t have it, you can install it 
+by following the instructions provided here: https://docs.docker.com/engine/install. Now, 
+let’s look at the content of the Dockerfile step by step.
+The Dockerfile begins by specifying the base image, which is a lightweight version of Python 3.11 
+based on the Debian Bullseye distribution. The environment variables are then set up to configure 
+various aspects of the container, such as the workspace directory, turning off Python bytecode 
+generation, and configuring Python to output directly to the terminal. Additionally, the version of 
+Poetry to be installed is specified, and a few environment variables are set to ensure that package 
+installations are non-interactive, which is vital for automated builds.
+FROM python:3.11-slim-bullseye AS release
+ENV WORKSPACE_ROOT=/app/
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV POETRY_VERSION=1.8.3
+ENV DEBIAN_FRONTEND=noninteractive
+ENV POETRY_NO_INTERACTION=1
+Next, we install Google Chrome in the container. The installation process begins by updating the 
+package lists and installing essential tools like gnupg, wget, and curl. The Google Linux signing 
+key is added, and the Google Chrome repository is configured. After another package list update, 
+the stable version of Google Chrome is installed. The package lists are removed after installation 
+to keep the image as small as possible.
+RUN apt-get update -y && \
+    apt-get install -y gnupg wget curl --no-install-recommends && \
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | 
+gpg --dearmor -o /usr/share/keyrings/google-linux-signing-key.gpg && \

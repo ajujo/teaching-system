@@ -1,0 +1,30 @@
+RAG Feature Pipeline
+140
+    # QdrantDB Vector DB
+    USE_QDRANT_CLOUD: bool = False
+    QDRANT_DATABASE_HOST: str = "localhost"
+    QDRANT_DATABASE_PORT: int = 6333
+    QDRANT_CLOUD_URL: str = "str"
+    QDRANT_APIKEY: str | None = None
+    … # More settings…
+settings = Settings()
+As stated in the internal Config class, all the variables have default values or can be overridden 
+by providing a .env file.
+ZenML pipeline and steps
+The ZenML pipeline is the entry point for the RAG feature engineering pipeline. It reflects the 
+five core phases of RAG ingestion code: extracting raw documents, cleaning, chunking, embed-
+ding, and loading them to the logical feature store. The calls within the feature_engineering() 
+function are ZenML steps, representing a single execution unit performing the five phases of RAG. 
+The code is available in the GitHub repository at https://github.com/PacktPublishing/LLM-
+Engineers-Handbook/blob/main/pipelines/feature_engineering.py:
+from zenml import pipeline
+from llm_engineering.interfaces.orchestrator.steps import feature_
+engineering as fe_steps
+@pipeline
+def feature_engineering(author_full_names: list[str]) -> None:
+    raw_documents = fe_steps.query_data_warehouse(author_full_names)
+    cleaned_documents = fe_steps.clean_documents(raw_documents)
+     last_step_1 = fe_steps.load_to_vector_db(cleaned_documents)
+    embedded_documents = fe_steps.chunk_and_embed(cleaned_documents)
+    last_step_2 = fe_steps.load_to_vector_db(embedded_documents)
+    return [last_step_1.invocation_id, last_step_2.invocation_id]

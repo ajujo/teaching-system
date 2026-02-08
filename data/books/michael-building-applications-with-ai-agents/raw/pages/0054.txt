@@ -1,0 +1,39 @@
+Architecture Design Patterns
+The architectural design of agent-based systems determines how agents are struc‐
+tured, how they interact with their environment, and how they perform tasks. The
+choice of architecture influences the system’s scalability, maintainability, and flexibil‐
+ity. This section explores three common design patterns for agent-based systems—
+single-agent and multiagent architectures—and discusses their advantages, chal‐
+lenges, and appropriate use cases. We’ll discuss this in far more detail in Chapter 8.
+Single-Agent Architectures
+A single-agent architecture is among the simplest and most straightforward designs,
+where a single agent is responsible for managing and executing all tasks within a sys‐
+tem. This agent interacts directly with its environment and independently handles
+decision making, planning, and execution without relying on other agents.
+Ideal for well-defined and narrow tasks, this architecture is best suited for workloads
+that are manageable by a single entity. The simplicity of single-agent systems makes
+them easy to design, develop, and deploy, as they avoid complexities related to coor‐
+dination, communication, and synchronization across multiple components. With
+clear use cases, single-agent architectures excel in narrow-scope tasks that do not
+require collaboration or distributed efforts, such as simple chatbots handling basic
+customer queries (like FAQs and order tracking) and task-specific automation for
+data entry or file management.
+Single-agent setups work well in environments where the problem domain is well-
+defined, tasks are straightforward, and there is no significant need for scaling. This
+makes them a fit for customer service chatbots, general-purpose assistants, and code
+generation agents. We’ll discuss single-agent and multiagent architectures much more
+in Chapter 8.
+Multiagent Architectures: Collaboration, Parallelism,
+and Coordination
+In multiagent architectures, multiple agents work together to achieve a common goal.
+These agents may operate independently, in parallel, or through coordinated efforts,
+depending on the nature of the tasks. Multiagent systems are often used in complex
+environments where different aspects of a task need to be managed by specialized
+agents or where parallel processing can improve efficiency and scalability, and they
+bring many advantages:
+Collaboration and specialization
+Each agent in a multiagent system can be designed to specialize in specific tasks
+or areas. For example, one agent may focus on data collection while another
+32 
+| 
+Chapter 2: Designing Agent Systems

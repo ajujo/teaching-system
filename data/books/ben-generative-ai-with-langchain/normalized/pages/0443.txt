@@ -1,0 +1,39 @@
+The Future of Generative Models: Beyond Scaling
+416
+•
+Concept-level modeling, as seen in Meta's Large Concept Models, operates at higher
+levels of abstraction than tokens, enabling more efficient processing. Instead of operating
+on discrete tokens, LCMs perform computations in a high-dimensional embedding space
+representing abstract units of meaning (concepts), which correspond to sentences or ut­
+terances. This approach is inherently modality-agnostic, supporting over 200 languages
+and multiple modalities, including text and speech.
+•
+Vision-centric enhancements like OLA-VLM optimize multimodal models specifically for
+visual tasks without requiring multiple visual encoders. OLA-VLM improves performance
+over baseline models by up to 8.7% in depth estimation tasks and achieves a 45.4% mIoU
+score for segmentation tasks (compared to a 39.3% baseline).
+This shift suggests that the future of AI development may not be dominated solely by organi­
+zations with the most computational resources. Instead, innovation in training methodologies,
+architecture design, and strategic specialization may determine competitive advantage in the
+next phase of AI development.
+Evolution of training data quality
+The evolution of training data quality has become increasingly sophisticated and follows three
+key developments. First, leading models discovered that books provided crucial advantages over
+web-scraped content. GPT-4 was found to have extensively memorized literary works, including
+the Harry Potter series, Orwell's Nineteen Eighty-Four, and The Lord of the Rings trilogy-sources
+with coherent narratives, logical structures, and refined language that web content often lacks.
+This helped explain why early models with access to book corpora often outperformed larger
+models trained primarily on web data.
+Second, data curation has evolved into a multi-tiered approach:
+•
+Golden datasets: Traditional subject-expert-created collections representing the highest
+quality standard
+•
+Silver datasets: LLM-generated content that mimics expert-level instruction, enabling
+massive scaling of training examples
+•
+Super golden datasets: Rigorously validated collections curated by diverse experts with
+multiple verification layers
+•
+Synthetic reasoning data: Specially generated datasets focusing on step-by-step prob­
+lem-solving approaches

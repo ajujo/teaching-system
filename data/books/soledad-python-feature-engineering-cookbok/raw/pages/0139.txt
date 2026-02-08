@@ -1,0 +1,38 @@
+Performing Variable Discretization
+116
+If we now execute print(interval_limits), we will see the interval limits:
+[1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51]
+7.	
+Let’s expand the limits of the first and last intervals to accommodate smaller or greater values 
+that we could find in the test set or in future data sources:
+interval_limits[0] = -np.inf
+interval_limits[-1] = np.inf
+8.	
+Let’s make a copy of the DataFrames so we don’t overwrite the original ones, which we will 
+need for later steps in the recipe:
+train_t = X_train.copy()
+test_t = X_test.copy()
+9.	
+Let’s sort the HouseAge variable into the intervals that we defined in step 6:
+train_t["HouseAge_disc"] = pd.cut(
+    x=X_train["HouseAge"],
+    bins=interval_limits,
+    include_lowest=True)
+test_t["HouseAge_disc"] = pd.cut(
+    x=X_test["HouseAge"],
+    bins=interval_limits,
+    include_lowest=True)
+Note
+We have set include_lowest=True to include the lowest value in the first interval. Note 
+that we used the train set to find the intervals and then used those limits to sort the variable 
+in both datasets.
+10.	 Let’s print the top 5 observations of the discretized and original variables:
+print(train_t[["HouseAge", "HouseAge_disc"]].head(5))
+In the following output, we can see that the 52 value was allocated to the 46–infinite interval, 
+the 43 value was allocated to the 41–46 interval, and so on:
+         HouseAge HouseAge_disc
+1989         52.0   (46.0, inf]
+256           43.0  (41.0, 46.0]
+7887         17.0  (16.0, 21.0]
+4581         17.0  (16.0, 21.0]
+1993         50.0   (46.0, inf]

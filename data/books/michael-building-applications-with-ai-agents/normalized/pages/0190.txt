@@ -1,0 +1,49 @@
+multiagent decomposition. Now, let's complete the agent setup with the foundation
+model binding, state definition, and graph construction:
+Traceloop.init(disable_batch=True, app_name="supply_chain_logistics_agent")
+llm = ChatOpenAI(model="gpt-5", temperature=0.0,
+                callbacks=[StreamingStdOutCallbackHandler()],
+                verbose=True).bind_tools(TOOLS)
+class AgentState(TypedDict):
+   operation: Optional[dict] # Supply chain operation information
+   messages: Annotated[Sequence[BaseMessage], operator.add]
+def call_model(state: AgentState):
+   history = state["messages"]
+
+   # Handle missing or incomplete operation data gracefully
+   operation = state.get("operation", {})
+   if not operation:
+       operation = {"operation_id": "UNKNOWN", "type": "general",
+           "priority": "medium", "status": "active"}
+
+   operation_json = json.dumps(operation, ensure_ascii=False)
+   system_prompt = (
+       "You are an experienced Supply Chain & Logistics professional.\n"
+       "Your expertise covers:\n"
+       "- Inventory management and demand forecasting\n"
+       "- Transportation and shipping optimization\n"
+       "- Supplier relationship management and evaluation\n"
+       "- Warehouse operations and capacity planning\n"
+       "- Quality control and compliance management\n"
+       "- Cost optimization and operational efficiency\n"
+       "- Risk management and disruption response\n"
+       "- Sustainability and green logistics initiatives\n"
+       "\n"
+       "When managing supply chain operations:\n"
+       "  1) Analyze the logistics challenge or opportunity\n"
+       "  2) Call the appropriate supply chain management tool\n"
+       "  3) Follow up with send_logistics_response to provide recommendations\n"
+       "  4) Consider cost, efficiency, quality, and sustainability impacts\n"
+       "  5) Prioritize customer satisfaction and business continuity\n"
+       "\n"
+       "Always balance cost with quality and risk mitigation.\n"
+       f"OPERATION: {operation_json}"
+   )
+   full = [SystemMessage(content=system_prompt)] + history
+   first: ToolMessage | BaseMessage = llm.invoke(full)
+   messages = [first]
+   if getattr(first, "tool_calls", None):
+       for tc in first.tool_calls:
+168
+|
+Chapter 8: From One Agent to Many

@@ -1,0 +1,31 @@
+Se reduce cada vector a una representación mucho más
+simple y de menor dimensión, descomponiéndolo en varios
+subvectores. A continuación, se calculan las distancias
+utilizando las representaciones de menor dimensión, con las
+que es mucho más rápido trabajar. La cuantización de
+productos es un componente clave de FAISS y es compatible
+con casi todas las bibliotecas de búsqueda vectorial más
+populares.
+IVF (inverted file index) (Sivic and Zisserman, 2003)
+El IVF utiliza el clustering de medias de K para organizar
+vectores similares en el mismo clúster. Según número de
+vectores de la base de datos, es habitual establecer el
+número de clústeres de forma que, en promedio, haya entre
+100 y 10 000 vectores en cada clúster. Durante la consulta, el
+IVF encuentra los centroides de los clústeres más cercanos a
+la incrustación de la consulta, y los vectores de estos
+clústeres se convierten en vecinos candidatos. Junto con la
+cuantización de productos, el IVF constituye la espina dorsal
+del FAISS.
+Annoy (Approximate Nearest Neighbors Oh Yeah) (Bernhardsson, 2013)
+Annoy es un enfoque basado en árboles. Construye múltiples
+árboles binarios, donde cada árbol divide los vectores en
+clústeres utilizando criterios aleatorios, como dibujar
+aleatoriamente una línea y dividir los vectores en dos ramas
+a partir de ella. Durante una búsqueda, recorre estos árboles
+para reunir vecinos candidatos. Spotify ha puesto su
+implementación como código abierto.
+Existen otros algoritmos, como SPTAG de Microsoft (Space Partition Tree
+And Graph) y FLANN (Fast Library for Approximate Nearest Neighbors).
+Aunque las bases de datos vectoriales surgieron como categoría propia con
+el auge de la RAG, a cualquier base de datos capaz de almacenar vectores

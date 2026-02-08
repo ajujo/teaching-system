@@ -1,0 +1,53 @@
+Metric/activity
+Product team
+ML engineers
+Infra/SRE team
+Fallback/retry
+frequency
+C (consults on UX fallbacks)
+R (refines planning logic)
+A (owns reliability) / I
+(informed on patterns)
+User feedback/
+sentiment
+A/R (owns aggregation and
+prioritization)
+C (consults on model ties)
+I (informed for ops alerts)
+Dashboard
+maintenance and
+triage rituals
+C (provides product context)
+C (provides ML insights)
+A/R (owns platform and cross-
+team reviews)
+A trace that shows a tool being called four times in a loop, followed by a long genera‐
+tion, a vague response, and user abandonment—that’s not just an engineering detail.
+That’s a product failure. And it’s only visible when logs and spans are routed through
+a shared platform like Loki and Tempo, not hidden in disconnected metrics tabs.
+To make this work, use the following practice:
+• Use shared observability dashboards with version tags and semantic metrics.
+Highly effective teams don’t debate which dashboard is more accurate—they
+work across functional boundaries to improve the experience for customers
+together.
+• Tag spans and logs with product context (feature flag, user tier, workflow ID).
+• Create cross-functional triage rituals, where product, infra, and ML review tele‐
+metry together—especially after launches or major regressions.
+• Avoid double standards: don’t hold foundation model latency to a different bar
+than other services. Slowness that impacts users is everyone’s problem.
+Agentic systems demand cross-functional observability. The monitoring stack isn’t
+just for detecting outages—it’s the interface through which engineering, ML, and
+product learn to speak the same language about what the system is doing, how well
+it’s performing, and where it needs to evolve.
+Conclusion
+Monitoring agent-based systems is more than a safety check—it is the discipline that
+enables intelligent systems to thrive in real-world environments. In this chapter, we’ve
+seen that monitoring is not just reactive; it is how teams learn from production, adapt
+to change, and accelerate progress.
+From foundational instrumentation with OpenTelemetry, to real-time log and trace
+collection via Loki and Tempo, to dashboards and alerts in Grafana, we outlined how
+to build an open source feedback loop that surfaces issues before they become
+outages—and turns every deployment into an opportunity for refinement.
+Conclusion 
+| 
+241

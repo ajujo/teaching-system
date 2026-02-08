@@ -1,0 +1,33 @@
+Data Engineering
+64
+from tqdm import tqdm
+from typing_extensions import Annotated
+from zenml import get_step_context, step
+from llm_engineering.application.crawlers.dispatcher import
+CrawlerDispatcher
+from llm_engineering.domain.documents import UserDocument
+Following the imports, the main function inputs a list of links written by a specific author. Within
+this function, a crawler dispatcher is initialized and configured to handle specific domains such
+as LinkedIn, Medium, and GitHub:
+@step
+def crawl_links(user: UserDocument, links: list[str]) ->
+Annotated[list[str], "crawled_links"]:
+    dispatcher = CrawlerDispatcher.build().register_linkedin().register_
+medium().register_github()
+    logger.info(f"Starting to crawl {len(links)} link(s).")
+The function initializes variables to store the output metadata and count successful crawls. It then
+iterates over each link. It attempts to crawl and extract data for each link, updating the count of
+successful crawls and accumulating metadata about each URL:
+    metadata = {}
+    successfull_crawls = 0
+    for link in tqdm(links):
+        successfull_crawl, crawled_domain = _crawl_link(dispatcher, link,
+user)
+        successfull_crawls += successfull_crawl
+        metadata = _add_to_metadata(metadata, crawled_domain, successfull_
+crawl)
+After processing all links, the function attaches the accumulated metadata to the output artifact:
+    step_context = get_step_context()
+    step_context.add_output_metadata(output_name="crawled_links",
+metadata=metadata)
+    logger.info(f"Successfully crawled {successfull_crawls} / {len(links)}

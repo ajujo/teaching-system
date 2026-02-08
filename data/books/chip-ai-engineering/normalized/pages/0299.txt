@@ -1,0 +1,30 @@
+3. HellaSwag (Zellers et al., 2019): Midiendo la capacidad de
+predecir la finalización de una frase o una escena de una historia o
+un vídeo. El objetivo es poner a prueba el sentido común y la
+comprensión de actividades cotidianas.
+4. TruthfulQA (Lin et al., 2021): Midiendo la capacidad de generar
+respuestas que no solo sean precisas, sino también veraces y no
+engañosas, centrándose en cómo el modelo comprende los hechos.
+5. WinoGrande (Sakaguchi et al., 2019): Midiendo la capacidad de
+resolver problemas complejos de resolución de pronombres
+diseñados para que fueran difíciles para los modelos lingüísticos y
+que requieran un razonamiento sofisticado basado en el sentido
+común.
+6. GSM-8K (Grade School Math, OpenAI, 2021): Midiendo la
+capacidad de resolver un conjunto diverso de problemas
+matemáticos típicos de los planes de estudios de primaria.
+Más o menos al mismo tiempo, el tablero de clasificación de HELM de
+Stanford utilizaba diez pruebas comparativas, de las cuales solo dos
+(MMLU y GSM-8K) estaban en el tablero de clasificación de Hugging
+Face. Las otras ocho pruebas comparativas son:
+Una prueba comparativa para matemáticas de competición
+(MATH)
+Una para el sector jurídico (LegalBench), otra para el sector
+médico (MedQA) y otra para el sector de la traducción (WMT
+2014).
+Dos para la comprensión lectora: responder a preguntas basadas en
+un libro o una historia larga (NarrativeQA y OpenBookQA).
+Dos para responder a preguntas generales (Natural Questions en
+dos ambientes, con y sin páginas de Wikipedia en el input)
+Hugging Face explicó que eligieron estas pruebas comparativas porque
+"ponen a prueba una variedad de razonamientos y conocimientos generales

@@ -1,0 +1,30 @@
+Data Engineering
+76
+            logger.info(f"Article already exists in the database: {link}")
+            return
+If the article doesn't exist, we proceed to scrape it. We use the AsyncHtmlLoader class to load the
+HTML from the provided link. After, we transform it into plain text using the Html2TextTransformer
+class, which returns a list of documents. We are only interested in the first document. As we delegate the whole logic to these two classes, we don't control how the content is extracted and parsed.
+That's why we used this class as a fallback system for domains where we don't have anything custom implemented. These two classes follow the LangChain paradigm, which provides high-level
+functionality that works decently in most scenarios. It is fast to implement but hard to customize.
+That is one of the reasons why many developers avoid using LangChain in production use cases:
+        logger.info(f"Starting scrapping article: {link}")
+        loader = AsyncHtmlLoader([link])
+        docs = loader.load()
+        html2text = Html2TextTransformer()
+        docs_transformed = html2text.transform_documents(docs)
+        doc_transformed = docs_transformed[0]
+We get the page content from the extracted document, plus relevant metadata such as the title,
+subtitle, content, and language:
+        content = {
+            "Title": doc_transformed.metadata.get("title"),
+            "Subtitle": doc_transformed.metadata.get("description"),
+            "Content": doc_transformed.page_content,
+            "language": doc_transformed.metadata.get("language"),
+        }
+Next, we parse the URL to determine the platform (or domain) from which the article was scraped:
+        parsed_url = urlparse(link)
+        platform = parsed_url.netloc
+We then create a new instance of the article model, populating it with the extracted content.
+Finally, we save this instance to the MongoDB data warehouse:
+        user = kwargs["user"]

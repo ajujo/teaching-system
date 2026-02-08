@@ -1,0 +1,39 @@
+Extracting Features from Relational Data with Featuretools
+280
+Note
+The relationship between the tables dictates how features will be created. The invoices and 
+items tables are related to the original data. Thus, we can only create features with depth 1. The 
+customers table is, on the other hand, related to invoices, which is related to data. Thus, we 
+can create features with depth 2. That means that new features will consist of aggregations from 
+the entire dataset or aggregations for invoices first, which will then be subsequently aggregated 
+for customers. We can regulate the features to create with the max_depth parameter in dfs.
+After setting up the data and the relationships, we used dfs from featuretools to automatically 
+create features. When creating features with dfs, we need to set the target DataFrame – that is, the 
+data table for which the features should be created. The dfs class creates features by transforming and 
+aggregating existing variables, through what are called transform and aggregate primitives.
+A transform primitive transforms variables. For example, from datetime variables, using a transform 
+primitive, dfs extracts the month, year, day, and week values.
+An aggregate primitive aggregates information for a unique identifier. It uses mathematical operations 
+such as the mean, standard deviation, maximum and minimum values, the sum, and the skew coefficient 
+for numerical variables. For categorical variables, aggregate primitives use the mode and the count of 
+unique items. For unique identifiers, they count the number of occurrences.
+With the functionality of transform and aggregate primitives in mind, let’s try to understand the features 
+that we created in this recipe. We used the default parameters of dfs to create the default features.
+Note
+For more details on the default features returned by featuretools, visit https://
+featuretools.alteryx.com/en/stable/generated/featuretools.dfs.
+html#featuretools.dfs.
+We first created features for each customer. featuretools returned 114 features for each customer. 
+Because the customers data is related to the invoices data, which is related to the entire 
+dataset, the features were created by aggregating data at two levels. First, the data was aggregated for 
+each customer using the entire dataset. Next, it was aggregated for each invoice first, and then the 
+pre-aggregated data was aggregated again for each customer.
+The featuretools library names the new features with the function used to aggregate the 
+data – for example, COUNT, MEAN, STD, and SKEW, among others. Next, it uses the data that was 
+used for the aggregation and follows it with the variable that was aggregated. For example, the 
+MEAN(data.quantity) feature contains the mean quantity of items bought by the customer 
+calculated from the entire dataset, which is the equivalent of df.groupby("customer_id"])
+["quantity"].mean(), if you are familiar with pandas. On the other hand, the MEAN(invoices.
+MEAN(data.quantity)) feature first takes the mean quantity of items for each invoice – that is, 
+df.groupby("invoice"])["quantity"].mean() – and from the resulting series, it takes 
+the mean value, considering the invoices for a particular customer.

@@ -1,0 +1,29 @@
+Advanced Applications and Multi-Agent Systems
+250
+The graph returns us a special __interrupt__ state and stops. Now our application (the client) 
+should ask the user this question, and then we can resume. Please note that we’re providing the 
+same thread_id to restore from the checkpoint:
+for chunk in graph.stream(Command(resume="Munich"), config):
+   print(chunk)
+>> {'human_input': {'home_address': 'Munich'}}
+Note that the graph continued to execute the human_input node, but this time the interrupt 
+function returned the result, and the graph’s state was updated.
+So far, we’ve discussed a few architectural patterns on how to develop an agent. Now let’s take 
+a look at another interesting one that allows LLMs to run multiple simulations while they’re 
+looking for a solution.
+Exploring reasoning paths
+In Chapter 3, we discussed CoT prompting. But with CoT prompting, the LLM creates a reasoning 
+path within a single turn. What if we combine the decomposition pattern and the adaptation 
+pattern by splitting this reasoning into pieces?
+Tree of Thoughts
+Researchers from Google DeepMind and Princeton University introduced the ToT technique in 
+December 2023. They generalize the CoT pattern and use thoughts as intermediate steps in the 
+exploration process toward the global solution.
+Let’s return to the plan-and-solve agent we built in the previous chapter. Let’s use the non-deter­
+ministic nature of LLMs to improve it. We can generate multiple candidates for the next action in 
+the plan on every step (we might need to increase the temperature of the underlying LLM). That 
+would help the agent to be more adaptive since the next plan generated will take into account 
+the outputs of the previous step.
+Now we can build a tree of various options and explore this tree with the depth-for-search or 
+breadth-for-search method. At the end, we’ll get multiple solutions, and we’ll use some of the 
+consensus mechanisms discussed above to pick the best one (for example, LLM-as-a-judge).

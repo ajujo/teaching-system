@@ -1,0 +1,33 @@
+max_tokens=max_tokens)
+    return {"response": response["choices"][0]["message"]
+["content"]}
+@app.route('/model', methods=['POST'])
+def model_gateway():
+    data = request.get_json()
+    model_type = data.get("model_type")
+          model_name = data.get("model_name")
+          input_data = data.get("input_data")
+          max_tokens = data.get("max_tokens")
+          if model_type == "openai":
+              result = openai_model(input_data, model_name,
+max_tokens)
+          elif model_type == "gemini":
+              result = gemini_model(input_data, model_name,
+max_tokens)
+          return jsonify(result)
+Una puerta de enlace de modelos proporciona control de acceso y gestión
+de costos. En lugar de dar a todos los que quieran acceder a la API de
+OpenAI sus tokens de organización, que pueden filtrarse fácilmente, dé a la
+gente acceso solo a la puerta de enlace del modelo, creando un punto de
+acceso centralizado y controlado. La puerta de enlace también puede
+implementar controles de acceso detallados, especificando qué usuario o
+aplicación debe tener acceso a qué modelo. Además, la puerta de enlace
+puede supervisar y limitar el uso de llamadas a la API, evitando abusos y
+gestionando los costos con eficacia.
+Una puerta de enlace de modelos también puede utilizarse para aplicar
+políticas de emergencia que permitan superar los límites de velocidad o los
+fallos de la API (esto último, por desgracia, es habitual). Cuando la API
+principal no está disponible, la puerta de enlace puede dirigir las solicitudes
+a modelos alternativos, reintentar tras una breve espera o gestionar los
+fallos de otras formas. Esto garantiza que su aplicación funcione con fluidez
+y sin interrupciones.

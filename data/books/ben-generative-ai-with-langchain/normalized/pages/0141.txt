@@ -1,0 +1,32 @@
+Building Intelligent RAG Systems
+114
+Embeddings
+Embeddings are numerical representations of text that capture semantic meaning. When we
+create an embedding, we're converting words or chunks of text into vectors (lists of numbers)
+that computers can process. These vectors can be either sparse (mostly zeros with few non-zero
+values) or dense (most values are non-zero), with modern LLM systems typically using dense
+embeddings.
+What makes embeddings powerful is that texts with similar meanings have similar numerical
+representations, enabling semantic search through nearest neighbor algorithms.
+In other words, the embedding model transforms text into numerical vectors. The same model
+is used for both documents as well as queries to ensure consistency in the vector space. Here's
+how you'd use embeddings in LangChain:
+from langchain_openai import OpenAIEmbeddings
+# Initialize the embeddings model
+embeddings_model = OpenAIEmbeddings()
+# Create embeddings for the original example sentences
+text1 = "The cat sat on the mat"
+text2 = "A feline rested on the carpet"
+text3 = "Python is a programming language"
+# Get embeddings using LangChain
+embeddings = embeddings_model.embed_documents([text1, text2, text3])
+# These similar sentences will have similar embeddings
+embedding1 = embeddings[0] # Embedding for "The cat sat on the mat"
+embedding2 = embeddings[1] # Embedding for "A feline rested on the
+carpet"
+embedding3 = embeddings[2] # Embedding for "Python is a programming
+language"
+# Output shows 3 documents with their embedding dimensions
+print(f"Number of documents: {len(embeddings)}")
+print(f"Dimensions per embedding: {len(embeddings[0])}")
+# Typically 1536 dimensions with OpenAI's embeddings

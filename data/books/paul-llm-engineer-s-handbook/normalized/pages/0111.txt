@@ -1,0 +1,34 @@
+Data Engineering
+80
+By leveraging Python packages such as Pydantic, we have out-of-the-box type validation, which
+ensures consistency in our datasets. Thus, we modeled the data categories as the following document classes, which we already used in the code up until point:
+•
+ArticleDocument class
+•
+PostDocument class
+•
+RepositoryDocument class
+These are not simple Python data classes or Pydantic models. They support read and write operations on top of the MongoDB data warehouse. To inject the read-and-write functionality into
+all the document classes without repeating any code, we used the Object-Document Mapping
+(ODM) software pattern, which is based on the object-relational mapping (ORM) pattern. Thus,
+let's first explore ORM, then move to ODM, and, finally, dig into our custom ODM implementation
+and document classes.
+The ORM and ODM software patterns
+Before we talk about software patterns, let's see what ORM is. It's a technique that lets you query
+and manipulate data from a database using an object-oriented paradigm. Instead of writing SQL
+or API-specific queries, you encapsulate all the complexity under an ORM class that knows how
+to handle all the database operations, most commonly CRUD operations. Thus, working with
+ORM removes the need to handle the database operations manually and reduces the need to write
+boilerplate code manually. An ORM interacts with a SQL database, such as PostgreSQL or MySQL.
+Most modern Python applications use ORMs when interacting with the database. Even though
+SQL is still a popular choice in the data world, you rarely see raw SQL queries in Python backend
+components. The most popular Python ORM is SQLAlchemy (https://www.sqlalchemy.org/).
+Also, with the rise of FastAPI, SQLModel is (https://github.com/fastapi/sqlmodel) a common
+choice, which is a wrapper over SQLAlchemy that makes the integration easier with FastAPI.
+For example, using SQLAlchemy, we defined a User ORM with the ID and name fields. The User
+ORM is mapped to the users table within the SQL database. Thus, when we create a new user
+and commit it to the database, it is automatically saved to the users table. The same applies to
+all the CRUD operations on top of the User class.
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
+   Base = declarative_base()

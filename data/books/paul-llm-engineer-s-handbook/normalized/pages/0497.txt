@@ -1,0 +1,35 @@
+MLOps Principles
+466
+5. Monitoring
+Monitoring is vital for any ML system that reaches production. Traditional software systems are
+rule-based and deterministic. Thus, once it is built, it will always work as defined. Unfortunately, that is not the case with ML systems. When implementing ML models, we haven't explicitly
+described how they should work. We have used data to compile a probabilistic solution, which
+means that our ML model will constantly be exposed to a level of degradation. This happens
+because the data from production might differ from the data the model was trained on. Thus, it
+is natural that the shipped model doesn't know how to handle these scenarios.
+We shouldn't try to avoid these situations but create a strategy to catch and fix these errors in time.
+Intuitively, monitoring detects the model's performance degradation, which triggers an alarm that
+signals that the model should be retrained manually, automatically, or with a combination of both.
+Why retrain the model? As the model performance degrades due to a drift in the training dataset
+and what it inputs from production, the only solution is to adapt or retrain the model on a new
+dataset that captures all the new scenarios from production.
+As training is a costly operation, there are some tricks that you can perform to avoid retraining,
+but before describing them, let's quickly understand what we can monitor to understand our
+ML system's health.
+Logs
+The approach to logging is straightforward, which is to capture everything, such as:
+•
+Document the system configurations.
+•
+Record the query, the results, and any intermediate outputs.
+•
+Log when a component begins, ends, crashes, and so on.
+•
+Ensure that each log entry is tagged and identified in a way that clarifies its origin within
+the system.
+While capturing all activities can rapidly increase the volume of logs, you can take advantage of
+numerous tools for automated log analysis and anomaly detection that leverage AI to efficiently
+scan all the logs, providing you with the confidence to manage the logs effectively.
+Metrics
+To quantify your application's healthiness, you must define a set of metrics. Each metric measures
+different aspects of your application, such as the infrastructure, data, and model.

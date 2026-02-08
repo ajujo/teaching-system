@@ -1,0 +1,39 @@
+Chapter 9
+335
+Ultimately, we pick the top K most relevant chunks from the sorted list of N x K items based on 
+the reranking score. Reranking works well when combined with query expansion. First, let’s 
+understand how reranking works without query expansion:
+1.	
+Search for > K chunks: Retrieve more than K chunks to have a broader pool of potentially 
+relevant information.
+2.	
+Reorder using rerank: Apply reranking to this larger set to evaluate the actual relevance 
+of each chunk relative to the query.
+3.	
+Take top K: Select the top K chunks to use them as context in the final prompt.
+Thus, when combined with query expansion, we gather potential valuable context from multiple 
+points in space rather than just looking for more than K samples in a single location. Now the 
+flow looks like this:
+1.	
+Search for N × K chunks: Retrieve multiple sets of chunks using the expanded queries.
+2.	
+Reorder using rerank: Rerank all the retrieved chunks based on their relevance.
+3.	
+Take top K: Select the most relevant chunks for the final prompt.
+Integrating reranking into the RAG pipeline enhances the quality and relevance of the re-
+trieved context and efficiently uses computational resources. Let’s look at implementing the 
+LLM Twin’s reranking step to understand what we described above, which can be accessed on 
+GitHub at https://github.com/PacktPublishing/LLM-Engineers-Handbook/blob/main/llm_
+engineering/application/rag/reranking.py.
+We begin by importing the necessary modules and classes for our reranking process:
+from llm_engineering.application.networks import 
+CrossEncoderModelSingleton
+from llm_engineering.domain.embedded_chunks import EmbeddedChunk
+from llm_engineering.domain.queries import Query
+from .base import RAGStep
+Next, we define the Reranker class, which is responsible for reranking the retrieved documents 
+based on their relevance to the query:
+class Reranker(RAGStep):
+    def __init__(self, mock: bool = False) -> None:
+        super().__init__(mock=mock)
+        self._model = CrossEncoderModelSingleton()

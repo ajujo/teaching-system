@@ -1,0 +1,29 @@
+Transforming Numerical Variables
+100
+from sklearn.preprocessing import FunctionTransformer
+from feature_engine.transformation import PowerTransformer
+2.
+Let's load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+3.
+To evaluate variable distributions, we'll create a function that takes a DataFrame and a variable
+name as inputs and plots a histogram next to a Q-Q plot:
+def diagnostic_plots(df, variable):
+    plt.figure(figsize=(15,6))
+    plt.subplot(1, 2, 1)
+    df[variable].hist(bins=30)
+    plt.title(f"Histogram of {variable}")
+    plt.subplot(1, 2, 2)
+    stats.probplot(df[variable], dist="norm",
+        plot=plt)
+    plt.title(f"Q-Q plot of {variable}")
+    plt.show()
+4.
+Let's plot the distribution of the Population variable with the previous function:
+diagnostic_plots(X, "Population")
+In the plots returned by the previous command, we can see that Population is heavily
+skewed to the right:
+Figure 3.8 - A histogram and Q-Q plot of the Population variable
+Now, let's apply a power transformation to the MedInc and Population variables. As both are
+skewed to the right, an exponent smaller than 1 might return a better spread of the variable values.

@@ -1,0 +1,34 @@
+Chapter 8
+297
+3.	
+We can now use model.generate() with the argument assistant_model to enable specu-
+lative decoding:
+outputs = model.generate(**inputs, do_sample=True, assistant_
+model=draft_model, temperature=0.7, max_new_tokens=64)
+print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
+['What is 2+2? 2 + 2 equals 4!']
+The speedup in this small example is not significant, but it is clearly noticeable with bigger models.
+Prompt lookup decoding is a variant of speculative decoding, tailored to input-grounded tasks like 
+summarization where there is often overlap between the prompt and output. Shared n-grams 
+are used as the LLM candidate tokens. We can enable prompt lookup decoding by using the 
+prompt_lookup_num_tokens parameter in model.generate():
+outputs = model.generate(**inputs, prompt_lookup_num_tokens=4)
+By combining the static KV cache with torch.compile, implementing continuous batching, and 
+leveraging speculative decoding techniques, LLMs can see inference speedups of 2–4x or more 
+with no loss in quality.
+Another approach to creating a small proxy model consists of jointly fine-tuning a small model 
+alongside a large model for maximum fidelity. A representative technique here is Medusa, which 
+inserts dedicated speculation heads into the main model. The Medusa-1 approach fine-tunes 
+these speculation heads while freezing the large model, while the Medusa-2 approach jointly fine-
+tunes both the speculation heads and the large model. The Medusa method has demonstrated 
+impressive results, enabling a 70M parameter model to closely approximate the performance 
+of a 7B parameter model on a range of tasks. Speculative decoding is natively supported by TGI.
+Optimized attention mechanisms
+The Transformer architecture is based on the attention mechanism, which scales quadratically 
+with the number of input tokens (or sequence length). This is particularly inefficient for longer 
+sequences, where the size of the KV cache can blow up.
+Introduced by Kwon, Li, et al. (2023), PagedAttention addresses these memory challenges by 
+drawing inspiration from virtual memory and paging in operating systems. It partitions the KV 
+cache into blocks, eliminating the need for contiguous memory allocation. Each block contains the 
+keys and values for a fixed number of tokens. During attention computation, the PagedAttention 
+kernel efficiently fetches these blocks, regardless of their physical memory location.

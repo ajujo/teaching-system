@@ -1,0 +1,39 @@
+Chapter 7
+263
+In the following section, we will see a more fine-grained exploration of different types of LLMs.
+While evaluating general-purpose models is fairly disconnected from ML evaluation, task-specific
+LLMs are more closely aligned with traditional ML.
+General-purpose LLM evaluations
+General-purpose evaluations refer to metrics dedicated to base and general-purpose fine-tuned
+models. They cover a breadth of capabilities that are correlated with knowledge and usefulness
+without focusing on specific tasks or domains. This allows developers to get an overview of
+these capabilities, compare themselves with competitors, and identify strengths and weaknesses.
+Based on these results, it is possible to tweak the dataset and hyperparameters, or even modify
+the architecture.
+We can broadly categorize general-purpose evaluations in three phases: during pre-training, after
+pre-training, and after fine-tuning.
+During pre-training, we closely monitor how the model learns, as shown at the end of Chapter
+5. The most straightforward metrics are low-level and correspond to how models are trained:
+•
+Training loss: Based on the cross-entropy loss, measures the difference between the
+model's predicted probability distribution and the true distribution of the next token
+•
+Validation loss: Calculates the same loss as training loss, but on a held-out validation
+set to assess generalization
+•
+Perplexity: Exponential of the cross-entropy loss, representing how "surprised" the model
+is by the data (lower is better)
+•
+Gradient norm: Monitors the magnitude of gradients during training to detect potential
+instabilities or vanishing/exploding gradients
+It's also possible to include benchmarks like HellaSwag (common sense reasoning) during this
+stage but there's a risk of overfitting these evaluations.
+After pre-training, it is common to use a suite of evaluations to evaluate the base model. This
+suite can include internal and public benchmarks. Here's a non-exhaustive list of common public
+pre-training evaluations:
+•
+MMLU (knowledge): Tests models on multiple-choice questions across 57 subjects, from
+elementary to professional levels
+•
+HellaSwag (reasoning): Challenges models to complete a given situation with the most
+plausible ending from multiple choices

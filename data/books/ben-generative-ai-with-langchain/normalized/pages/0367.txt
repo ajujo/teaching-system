@@ -1,0 +1,32 @@
+Evaluation and Testing
+340
+When this code executes, it performs a simple interaction with the ChatOpenAI model and auto­
+matically logs the request, response, and performance metrics to LangSmith. These logs appear
+in the LangSmith project dashboard at https://smith.langchain.com/projects, allowing for
+detailed inspection of each interaction.
+We can create a dataset from existing agent runs with the create_example_from_run() func­
+tion-or from anything else. Here's how to create a dataset with a set of questions:
+from langsmith import Client
+client = Client()
+# Create dataset in LangSmith
+dataset_name = "Financial Advisory RAG Evaluation"
+dataset = client.create_dataset(
+    dataset_name=dataset_name,
+    description="Evaluation dataset for financial advisory RAG systems
+covering retirement, investments, and tax planning."
+)
+# Add examples to the dataset
+for example in financial_examples:
+    client.create_example(
+        inputs=example["inputs"],
+        outputs=example["outputs"],
+        dataset_id=dataset.id
+    )
+print(f"Created evaluation dataset with {len(financial_examples)}
+examples")
+This code creates a new evaluation dataset in LangSmith containing financial advisory questions.
+Each example includes an input query and an expected output answer, establishing a reference
+standard against which we can evaluate our LLM application responses.
+We can now define our RAG system with a function like this:
+def construct_chain():
+    return None

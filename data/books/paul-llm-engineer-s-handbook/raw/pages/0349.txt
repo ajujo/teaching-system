@@ -1,0 +1,25 @@
+RAG Inference Pipeline
+318
+We will dedicate the next chapter entirely to deploying our fine-tuned LLM Twin model to AWS 
+SageMaker, as an AWS SageMaker inference endpoint. Thus, the focus of this chapter is to dig 
+into the advanced RAG retrieval module implementation. We have dedicated a whole chapter to 
+the retrieval step because this is where the magic happens in an RAG system. At the retrieval step 
+(and not when calling the LLM), you write most of the RAG inference code. This step is where 
+you have to wrangle your data to ensure that you retrieve the most relevant data points from the 
+vector DB. Hence, most of the advanced RAG logic goes within the retrieval step.
+To sum up, in this chapter, we will cover the following topics:
+•	
+Understanding the LLM Twin’s RAG inference pipeline
+•	
+Exploring the LLM Twin’s advanced RAG techniques
+•	
+Implementing the LLM Twin’s RAG inference pipeline
+By the end of this chapter, you will know how to implement an advanced RAG retrieval module, 
+augment a prompt using the retrieved context, and call an LLM to generate the final answer. 
+Ultimately, you will know how to build a production-ready RAG inference pipeline end to end.
+Understanding the LLM Twin’s RAG inference 
+pipeline
+Before implementing the RAG inference pipeline, we want to discuss its software architecture 
+and advanced RAG techniques. Figure 9.1 illustrates an overview of the RAG inference flow. The 
+inference pipeline starts with the input query, retrieves the context using the retrieval module 
+(based on the query), and calls the LLM SageMaker service to generate the final answer.

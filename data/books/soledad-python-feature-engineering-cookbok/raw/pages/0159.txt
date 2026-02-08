@@ -1,0 +1,30 @@
+Performing Variable Discretization
+136
+2.	
+Let’s load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+3.	
+The k-means optimal clusters should be determined using the train set, so let’s divide the data 
+into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.	
+Let’s make a list with the variables to transform:
+variables = ['MedInc', 'HouseAge', 'AveRooms']
+5.	
+Let’s set up a k-means clustering algorithm:
+k_means = KMeans(random_state=10)
+6.	
+Now, using Yellowbrick’s visualizer and the elbow method, let’s find the optimal number of 
+clusters for each variable:
+for variable in variables:
+    # set up a visualizer
+    visualizer = KElbowVisualizer(
+        k_means, k=(4,12),
+        metric='distortion',
+        timings=False)
+    visualizer.fit(X_train[variable].to_frame())
+    visualizer.show()
+In the following plots, we see that the optimal number of clusters is six for the first two variables 
+and seven for the third:

@@ -1,0 +1,37 @@
+Data Engineering
+96
+After running the CLI command from above, you will have a one-to-one replica of the dataset 
+we used while developing the code. To ensure the import is completed successfully, you should 
+have 88 articles and 3 users in your MongoDB database.
+Summary
+In this chapter, we’ve learned how to design and build the data collection pipeline for the LLM 
+Twin use case. Instead of relying on static datasets, we collected our custom data to mimic re-
+al-world situations, preparing us for real-world challenges in building AI systems.
+First, we examined the architecture of LLM Twin’s data collection pipeline, which functions 
+as an ETL process. Next, we started digging into the pipeline implementation. We began by 
+understanding how we can orchestrate the pipeline using ZenML. Then, we looked into the 
+crawler implementation. We learned how to crawl data in three ways: using CLI commands in 
+subprocesses or using utility functions from LangChain or Selenium to build custom logic that 
+programmatically manipulates the browser. Finally, we looked into how to build our own ODM 
+class, which we used to define our document class hierarchy, which contains entities such as 
+articles, posts, and repositories.
+At the end of the chapter, we learned how to run ZenML pipelines with different YAML configura-
+tion files and explore the results in the dashboard. We also saw how to interact with the MongoDB 
+data warehouse through the ODM classes.
+In the next chapter, we will cover the key steps of the RAG feature pipeline, including chunking 
+and embedding documents, ingesting these documents into a vector DB, and applying pre-re-
+trieval optimizations to improve performance. We will also set up the necessary infrastructure 
+programmatically using Pulumi and conclude by deploying the RAG ingestion pipeline to AWS.
+References
+•	
+Breuss, M. (2023, July 26). Beautiful Soup: Build a Web Scraper With Python. https://
+realpython.com/beautiful-soup-web-scraper-python/
+•	
+David, D. (2024, July 8). Guide to Web Scraping with Selenium in 2024. Bright Data. https://
+brightdata.com/blog/how-tos/using-selenium-for-web-scraping
+•	
+Hjelle, G. A. (2023, October 21). Python 3.12 Preview: Static Typing Improvements. https://
+realpython.com/python312-typing/
+•	
+ORM Quick Start — SQLAlchemy 2.0 documentation. (n.d.). https://docs.sqlalchemy.
+org/en/20/orm/quickstart.html

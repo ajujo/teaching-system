@@ -1,0 +1,14 @@
+idiomas en los datos? ¿Qué relevancia tienen estos temas e idiomas para su
+tarea?
+Puede ser creativos con las estadísticas a utilizar para entender sus datos.
+Por ejemplo, un grupo de investigadores de Microsoft (2023) utilizó la
+distribución de duplas (verbo, sustantivo objeto directo) y la longitud de
+respuesta para comparar la diferencia entre las generaciones de GPT-3 y
+GPT-4 para el mismo conjunto de instrucciones, como se muestra en la
+Figura 8-6 y Figura 8-7. Este tipo de análisis es útil no solo para evaluar
+datos, sino también modelos.
+figura 8-6. Una estadística que puede utilizar es la distribución de (verbo, sustantivo
+objeto directo) en sus datos. Imagen de "Instruction Tuning with GPT-4" (Peng et al.,
+2023).
+figura 8-7. Distribución de la longitud de respuesta para GPT-4 y GPT-3. Imagen de
+"Instruction Tuning with GPT-4" (Peng et al., 2023).

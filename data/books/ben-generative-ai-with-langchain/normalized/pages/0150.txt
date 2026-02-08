@@ -1,0 +1,55 @@
+Chapter 4
+123
+Tree-Based
+(KD-Tree,
+Ball Tree)
+Recursively
+partitions
+space into
+regions
+Search:
+O(D log N)
+best case
+Build: O(N
+log N)
+Medi­
+um - tree
+structure
+•	 Low dimensional
+data
+•	 Static datasets
+•	 Works well for
+D < 100
+•	 Expensive
+updates
+Table 4.2: Vector store comparison by deployment options, licensing, and key features
+When selecting an indexing strategy for your RAG system, consider these practical tradeoffs:
+•
+For maximum accuracy with small datasets (<100K vectors): Exact Search provides
+perfect recall but becomes prohibitively expensive as your dataset grows.
+•
+For production systems with millions of vectors: HNSW offers the best balance of search
+speed and accuracy, making it the industry standard for large-scale applications. While it
+requires more memory than other approaches, its logarithmic search complexity delivers
+consistent performance even as your dataset scales.
+•
+For memory-constrained environments: IVF+PQ (Inverted File Index with Product Quan­
+tization) dramatically reduces memory requirements-often by 10-20x compared to raw
+vectors-with a modest accuracy tradeoff. This combination is particularly valuable for
+edge deployments or when embedding billions of documents.
+•
+For frequently updated collections: LSH provides efficient updates without rebuilding
+the entire index, making it suitable for streaming data applications where documents are
+continuously added or removed.
+Most modern vector databases default to HNSW for good reason, but understanding these
+tradeoffs allows you to optimize for your specific constraints when necessary. To illustrate the
+practical difference between indexing strategies, let's compare the performance and accuracy of
+exact search versus HNSW indexing using FAISS:
+import numpy as np
+import faiss
+import time
+# Create sample data - 10,000 vectors with 128 dimensions
+dimension = 128
+num_vectors = 10000
+vectors = np.random.random((num_vectors, dimension)).astype('float32')
+query = np.random.random((1, dimension)).astype('float32')

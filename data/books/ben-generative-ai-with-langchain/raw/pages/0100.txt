@@ -1,0 +1,22 @@
+Chapter 3
+73
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))
+We’ve defined an edge is_suitable_condition that takes a state and returns either an END or 
+generate_application string by analyzing the current state. We used a Literal type hint since 
+it’s used by LangGraph to determine which destination nodes to connect the source node with 
+when it’s creating conditional edges. If you don’t use a type hint, you can provide a list of destina­
+tion nodes directly to the add_conditional_edges function; otherwise, LangGraph will connect 
+the source node with all other nodes in the graph (since it doesn’t analyze the code of an edge 
+function itself when creating a graph). The following figure shows the output generated:
+ 
+Figure 3.2: A workflow with conditional edges (represented as dotted lines)
+Conditional edges are visualized with dotted lines, and now we can see that, depending on the 
+output of the analyze_job_description step, our graph can perform different actions.
+Reducers
+So far, our nodes have changed the state by updating the value for a corresponding key. From 
+another point of view, at each superstep, LangGraph can produce a new value for a given key. In 
+other words, for every key in the state, there’s a sequence of values, and from a functional pro­
+gramming perspective, a reduce function can be applied to this sequence. The default reducer 
+on LangGraph always replaces the final value with the new value. Let’s imagine we want to track 
+custom actions (produced by nodes) and compare three options.

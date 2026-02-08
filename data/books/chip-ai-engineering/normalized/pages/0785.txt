@@ -1,0 +1,24 @@
+sesgos, Ambigüedad de los criterios, Limitaciones de la retroalimentación
+SFT (ajuste fino supervisado), Post-entrenamiento, Post-entrenamiento,
+Visión general del afinado
+similitud de n-gramas, Similitud léxica
+similitud léxica, Coincidencia exacta
+similitud semántica, Similitud semántica
+simulación, Síntesis de datos basada en reglas
+síntesis de datos, Adquisición y anotación de datos (ver síntesis de datos)
+- destilación de modelos, Linaje de datos oscuro
+- impulsado por IA, Simulación
+- colapso potencial del modelo, Colapso potencial del modelo
+- limitaciones, Verificación de datos
+- problemas de control de calidad, Verificación de datos
+- problemas de imitación superficial, Verificación de datos
+- problemas de linajes de datos oscuros, Linaje de datos oscuro
+- razones para sintetizar datos, Aumento y síntesis de datos
+- síntesis de datos de instrucción, Síntesis de datos con IA
+- verificación de datos, Síntesis de datos de instrucción
+- técnicas tradicionales, Técnicas tradicionales de síntesis de datos
+- basado en reglas, Técnicas tradicionales de síntesis de datos
+- simulación, Síntesis de datos basada en reglas
+síntesis de datos con IA (ver síntesis de datos, con IA)
+síntesis de datos de instrucción, Síntesis de datos con IA
+SLERP (interpolación lineal esférica), Combinación lineal

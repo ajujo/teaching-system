@@ -1,0 +1,24 @@
+características dinámicas, Evaluación de casos de uso
+características estáticas, Evaluación de casos de uso
+características reactivas, Evaluación de casos de uso
+casos de uso de modelos fundacionales, De los modelos fundacionales a la
+ingeniería de IA
+– pila de ingeniería
+– agregación de información, Bots conversacionales
+– automatización del flujo de trabajo, Organización de datos
+– bots conversacionales, Bots conversacionales
+– codificación, Casos de uso de modelos fundacionales
+– educación, Redacción
+– organización de datos, Agregación de información
+– producción de imagen y vídeo, Codificación
+– redacción, Codificación
+catálogos de prompts, Organizar y versionar prompts
+CharacterEval, Juego de rol
+ChatGPT
+– alucinaciones, Incoherencia
+– ataques de ingeniería de prompts inversa, Prompts patentados e
+ingeniería inversa de prompts
+– e idiomas distintos del inglés, Modelos multilingües
+– efecto en la inversión en IA, De los modelos fundacionales a la
+ingeniería de IA
+– en las escuelas, Redacción

@@ -1,0 +1,26 @@
+A10 es diferente de una GPU NVIDIA H100 y un procesador Intel Core
+Ultra.
+Una unidad más estandarizada para los requisitos de cálculo de un modelo
+es FLOP, u operación en coma flotante. FLOP mide el número de
+operaciones en coma flotante realizadas para una tarea determinada. El
+modelo PaLM-2 más grande de Google, por ejemplo, se entrenó utilizando
+1022 FLOPs (Chowdhery et al., 2022). GPT-3-175B se entrenó utilizando
+3.14 × 1023 FLOPs (Brown et al., 2020).
+La forma plural de FLOP, FLOPs, se confunde a menudo con FLOP/s,
+operaciones en coma flotante por segundo. Los FLOPs miden las
+necesidades de cálculo de una tarea, mientras que los FLOP/s miden el
+rendimiento máximo de una máquina. Por ejemplo, una GPU NVIDIA
+H100 NVL puede proporcionar un máximo de 60 TeraFLOP/s: 6 × 1013
+FLOPs por segundo o 5.2 × 1018 FLOPs al día. 16
+AVISO
+Tenga cuidado de no confundirse al manejar las notaciones. FLOP/s se
+escribe a menudo como FLOPS, que se parece a FLOPs. Para evitar esta
+confusión, algunas empresas, como OpenAI, utilizan FLOP/s-día en lugar
+de FLOPs para medir los requisitos de computación:
+1 FLOP/s-día = 60 × 60 × 24 = 86,400 FLOPs
+Este libro utiliza FLOPs para contar las operaciones en coma flotante y
+FLOP/s para FLOPs por segundo.
+Supongamos que tiene 256 H100. Si puede utilizarlos a su máxima
+capacidad y no comete errores de entrenamiento, les llevaría (3.14 × 1023) /
+(256 × 5.2 × 1018) = ~236 días, o aproximadamente 7.8 meses, entrenar al
+GPT-3-175B.

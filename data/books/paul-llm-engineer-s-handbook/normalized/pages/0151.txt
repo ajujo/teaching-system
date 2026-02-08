@@ -1,0 +1,12 @@
+RAG Feature Pipeline
+120
+The intuition behind this is that if we use the whole text for computing the embedding, we
+might introduce too much noise, or the text could contain multiple topics, which results
+in a poor overall semantic representation of the embedding.
+Figure 4.6: Query routing
+On the query optimization side, we can leverage techniques such as query routing, query rewriting,
+and query expansion to refine the retrieved information for the LLM further:
+•
+Query routing: Based on the user's input, we might have to interact with different categories of data and query each category differently. Query rooting is used to decide what
+action to take based on the user's input, similar to if/else statements. Still, the decisions
+are made solely using natural language instead of logical statements.

@@ -1,0 +1,43 @@
+Inference Pipeline Deployment
+380
+    resources: Optional[dict] = None,
+    endpoint_type: enum.Enum = EndpointType.MODEL_BASED,
+) -> None:
+    logger.info("Starting deployment using Sagemaker Huggingface 
+Strategy...")
+    logger.info(
+        f"Deployment parameters: nb of replicas: {settings.COPIES}, nb of 
+gpus:{settings.GPUS}, instance_type:{settings.GPU_INSTANCE_TYPE}"
+    )
+The parameters passed into the method are crucial to the deployment process:
+•	
+role_arn: The AWS IAM role that provides permissions for the SageMaker deployment.
+•	
+llm_image: The URI of the DLC Docker image
+•	
+config: A dictionary containing configuration settings for the model environment.
+•	
+endpoint_name and endpoint_config_name: Names for the SageMaker endpoint and its 
+configuration, respectively.
+•	
+gpu_instance_type: The type of the GPU EC2 instances used for the deployment.
+•	
+resources: Optional resources dictionary used for multi-model endpoint deployments.
+•	
+endpoint_type: This can either be MODEL_BASED or INFERENCE_COMPONENT, determining 
+whether the endpoint includes an inference component.
+The method delegates the actual deployment process to the deployment_service. This delega-
+tion is a critical aspect of the strategy pattern, allowing for flexibility in how the deployment is 
+carried out without altering the high-level deployment logic.
+try:
+    self.deployment_service.deploy(
+        role_arn=role_arn,
+        llm_image=llm_image,
+        config=config,
+        endpoint_name=endpoint_name,
+        endpoint_config_name=endpoint_config_name,
+        gpu_instance_type=gpu_instance_type,
+        resources=resources,
+        endpoint_type=endpoint_type,
+    )
+    logger.info("Deployment completed successfully.")

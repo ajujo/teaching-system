@@ -1,0 +1,33 @@
+Replacing categories with counts or the frequency of observations
+57
+Note
+If two different categories are present in the same number of observations, they will be replaced 
+by the same value, which may lead to information loss.
+In this recipe, we will perform count and frequency encoding using pandas and feature-engine.
+How to do it...
+We’ll start by encoding one variable with pandas and then we’ll automate the process with feature-
+engine:
+1.	
+Let’s start with the imports:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from feature_engine.encoding import CountFrequencyEncoder
+2.	
+Let’s load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.	
+Let’s with counts or frequency of observations” capture the number of observations per category 
+of the A7 variable in a dictionary:
+counts = X_train["A7"].value_counts().to_dict()
+Note
+To find the frequency instead, execute X _ t r a i n [ " A 7 " ] . v a l u e _
+counts(normalize=True).to_dict().
+If we execute print(counts), we’ll see the count of observations per category of A7:
+{'v': 277, 'h': 101, 'ff': 41, 'bb': 39, 'z': 7, 'dd': 5, 'j': 
+5, 'Missing': 4, 'n': 3, 'o': 1}

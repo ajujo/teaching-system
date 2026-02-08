@@ -1,0 +1,30 @@
+Limitaciones de los datos generados por IA
+Dada la creciente utilidad de los datos sintéticos, es emocionante imaginar
+la posibilidad de no tener que preocuparse nunca más por los datos
+anotados por humanos. Sin embargo, aunque la importancia de los datos
+sintéticos seguirá creciendo con el tiempo, es posible que los datos
+generados por IA nunca sustituyan por completo a los generados por
+humanos. Hay muchas razones para ello, pero las cuatro principales son la
+diferencia de calidad, las limitaciones de la imitación, el posible colapso del
+modelo y la forma en que la generación de datos por IA oscurece su linaje.
+Control de calidad
+Los datos generados por la IA pueden ser de baja calidad y, como dice el
+dicho, "basura entra, basura sale". Como ya se mencionó, la gente dudará en
+utilizar datos sintéticos si no pueden verificar su calidad. Poder desarrollar
+métodos y parámetros fiables para evaluar los datos será esencial para que
+los datos sintéticos sean más útiles.
+Imitación superficial
+Como se advierte en "The False Promise of Imitating Proprietary LLMs"
+(Gudibande et al., 2023), el rendimiento percibido que se consigue con la
+imitación podría ser superficial. Esta investigación muestra que los modelos
+de imitación son buenos imitando el estilo de los modelos maestros, pero
+pueden tener problemas con la precisión de los hechos y la generalización a
+tareas fuera de los datos de entrenamiento.
+Peor aún, la imitación pueden llevar al modelo alumno a alucinar. Imagine
+que el modelo maestro es capaz de responder a preguntas matemáticas
+complejas, de modo que sus respuestas a esas preguntas son soluciones.
+Entrenar un modelo alumno con estas soluciones le enseña a producir
+respuestas que parecen soluciones, incluso si el modelo alumno no es capaz
+de resolver estas preguntas. 13 Gudibande et al. (2023) sugieren que para
+mejorar las capacidades de razonamiento, debemos centrarnos en mejorar la
+calidad de los modelos base.

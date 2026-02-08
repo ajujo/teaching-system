@@ -1,0 +1,28 @@
+Appendix A
+This appendix serves as a practical reference guide to the major LLM providers that integrate 
+with LangChain. As you develop applications with the techniques covered throughout this book, 
+you’ll need to connect to various model providers, each with its own authentication mechanisms, 
+capabilities, and integration patterns.
+We’ll first cover the detailed setup instructions for the major LLM providers, including OpenAI, 
+Hugging Face, Google, and others. For each provider, we walk through the process of creating ac­
+counts, generating API keys, and configuring your development environment to use these services 
+with LangChain. We then conclude with a practical implementation example that demonstrates 
+how to process content exceeding an LLM’s context window—specifically, summarizing long 
+videos using map-reduce techniques with LangChain. This pattern can be adapted for various 
+scenarios where you need to process large volumes of text, audio transcripts, or other content 
+that won’t fit into a single LLM context.
+OpenAI
+OpenAI remains one of the most popular LLM providers, offering models with various levels of 
+power suitable for different tasks, including GPT-4 and GPT-o1. LangChain provides seamless 
+integration with OpenAI’s APIs, supporting both their traditional completion models and chat 
+models. Each of these models has its own price, typically per token.
+To work with OpenAI models, we need to obtain an OpenAI API key first. To create an API key, 
+follow these steps:
+1.	
+You need to create a login at https://platform.openai.com/.
+2.	
+Set up your billing information.
+3.	
+You can see the API keys under Personal | View API Keys.
+4.	
+Click on Create new secret key and give it a name.

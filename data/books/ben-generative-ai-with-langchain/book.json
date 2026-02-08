@@ -1,0 +1,53 @@
+{
+  "$schema": "book_v1",
+  "book_id": "ben-generative-ai-with-langchain",
+  "book_uuid": "0d46e365-2f2a-448d-bb7d-b9c55aad5f7f",
+  "title": "Generative AI with LangChain",
+  "authors": [
+    "Ben Auffart & Leonid Kuligin"
+  ],
+  "language": "en",
+  "source_file": "Generative_AI_with_LangChain.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T18:40:01.692455+00:00",
+  "total_pages": 485,
+  "total_chapters": 10,
+  "sha256": "74c9fc43b6aeab8323617b2ec63d74c30cf26fd80c5c42c8fa710b86ff05ccfa",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 476,
+    "empty_pages_count": 9,
+    "total_chars": 847607,
+    "avg_chars_per_page": 1747.6,
+    "detected_language": "en",
+    "is_likely_scanned": false
+  },
+  "pdf_metadata": {
+    "creator": "Adobe InDesign 19.5 (Windows)",
+    "producer": "Adobe PDF Library 17.0",
+    "creation_date": "D:20251114114450+05'30'",
+    "mod_date": "D:20251114160820+05'30'"
+  },
+  "normalization": {
+    "original_chars": 849043,
+    "normalized_chars": 841113,
+    "chars_removed": 7930,
+    "chars_removed_ratio": 0.0093,
+    "hyphen_breaks_fixed": 36,
+    "multiple_spaces_collapsed": 537,
+    "multiple_newlines_collapsed": 475,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "auto:toc",
+    "confidence": 1.0,
+    "chapters_found": 10,
+    "sections_found": 65,
+    "needs_review": false
+  }
+}

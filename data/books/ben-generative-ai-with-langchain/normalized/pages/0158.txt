@@ -1,0 +1,67 @@
+Chapter 4
+131
+Cloud Stor­
+age
+Access
+cloud-hosted
+files
+S3DirectoryLoader, GCSFileLoad­
+er, DropboxLoader
+Enterprise data
+integration
+Databases
+Load from
+structured data
+stores
+MongoDBLoader, Snowflake­
+Loader, BigQueryLoader
+Business intelli­
+gence, data analysis
+Social Media
+Import social
+platform con­
+tent
+TwitterTweetLoader, RedditPost­
+sLoader, DiscordChatLoader
+Social media anal­
+ysis
+Productivity
+Tools
+Access work­
+space docu­
+ments
+NotionDirectoryLoader, SlackDi­
+rectoryLoader, TrelloLoader
+Knowledge base
+creation
+Scientific
+Sources
+Load academic
+content
+ArxivLoader, PubMedLoader
+Research applica­
+tions
+Table 4.3: Document loaders in LangChain
+Finally, modern document loaders offer several sophisticated capabilities:
+•
+Concurrent loading for better performance
+•
+Metadata extraction and preservation
+•
+Format-specific parsing (like table extraction from PDFs)
+•
+Error handling and validation
+•
+Integration with transformation pipelines
+Let's go through an example of loading a JSON file. Here's a typical pattern for using a document
+loader:
+from langchain_community.document_loaders import JSONLoader
+# Load a json file
+loader = JSONLoader(
+    file_path="knowledge_base.json",
+    jq_schema=".[].content",  # This extracts the content field from each
+array item
+    text_content=True
+)
+documents = loader.load()
+print(documents)

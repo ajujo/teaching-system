@@ -1,0 +1,14 @@
+superior a la concordancia entre humanos (81 %). Los autores de
+AlpacaEval (Dubois et al., 2023) también descubrieron que sus jueces de IA
+tienen una correlación casi perfecta (0.98) con el tablero de clasificación
+Chat Arena de LMSYS, evaluada por humanos.
+La IA no solo puede evaluar una respuesta, sino que también es capaz de
+explicar su decisión, lo que puede ser especialmente útil cuando se desea
+auditar los resultados de la evaluación. La Figura 3-7 muestra un ejemplo
+de GPT-4 explicando su juicio.
+Su flexibilidad hace que la IA como juez sea útil para una amplia gama de
+aplicaciones y, para algunas de ellas, es la única opción de evaluación
+automática. Incluso cuando los juicios de la IA no son tan buenos como los
+de humanos, pueden ser lo suficientemente buenos como para guiar el
+desarrollo de una aplicación y dar la confianza suficiente para poner en
+marcha un proyecto.

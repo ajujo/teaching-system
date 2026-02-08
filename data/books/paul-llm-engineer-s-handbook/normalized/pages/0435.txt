@@ -1,0 +1,21 @@
+MLOps and LLMOps
+404
+In ML systems, a build can be triggered by any change in these areas-whether it's an update in
+the code, modifications in the data, or adjustments to the model.
+Figure 11.2: Relationship between data, model, and code changes
+In DevOps, everything is centered around the code. For example, when a new feature is added to
+the codebase, you have to trigger the CI/CD pipeline. In MLOps, the code can remain unchanged
+while only the data changes. In that case, you must train (or fine-tune) a new model, resulting
+in a new dataset and model version. Intuitively, when one component changes, it affects one or
+more of the others. Thus, MLOps has to take into consideration all this extra complexity. Here are
+a few examples that can trigger a change in the data and indirectly in the model:
+•
+After deploying the ML model, its performance might decay as time passes, so we need
+new data to retrain it.
+•
+After understanding how to collect data in the real world, we might recognize that getting
+the data for our problem is challenging, so we need to re-formulate it to work with our
+real-world setup.
+•
+While in the experimentation stage and training the model, we often must collect more
+data or re-label it, which generates a new set of models.

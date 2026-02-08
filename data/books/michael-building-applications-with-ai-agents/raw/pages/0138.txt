@@ -1,0 +1,40 @@
+management both explicit and type-safe. Unlike DAG-only (directed acyclic graph)
+orchestration tools, it natively supports cycles and conditional branches, making it
+straightforward to implement loops, retries, and dynamic decision paths without
+bespoke code. It also provides built-in streaming—emitting partial outcomes as they
+are generated—and checkpointing, so long-running agents can persist and resume
+exactly where they left off.
+By treating memory mechanisms (rolling context windows, keyword extraction,
+semantic retrieval, etc.) as first-class graph nodes, LangGraph keeps memory logic
+modular and testable. Edges ensure memory updates occur in the correct sequence
+relative to LLM calls, so your agent always has the right context injected at the right
+time. And because state—including memory contents—can be checkpointed and
+resumed, your agents maintain continuity across sessions and withstand failures, all
+within the same unified graph framework.
+In this chapter, we will first cover the fundamentals of memory for agentic systems,
+from simple rolling context windows to semantic memory, retrieval-augmented gen‐
+eration, and advanced knowledge graph approaches. Throughout, we will emphasize
+how these memory systems integrate into context engineering pipelines to build
+agents that are grounded, capable, and aligned with your specific goals and 
+environment.
+Foundational Approaches to Memory
+We begin by discussing the simplest approaches to memory: relying on a rolling con‐
+text window for the foundation model, and keyword-based memory. Despite their
+simplicity, they are more than sufficient for a wide range of use cases.
+Managing Context Windows
+We start with the simplest approach to memory: relying on the context window. The
+“context window” refers to the information that is passed to the foundation model as
+an input in a single call. The maximum number of tokens a foundational model can
+ingest and attend to in a single call is called the “context length.” This context is effec‐
+tively the working memory for that request. One token averages about ¾ of a word or
+roughly four characters; for example, 1,000 tokens correspond to about 750 English
+words. Many popular models today have stepped through roughly 4,000-token
+(≈3,000 words, ~12 pages) and 8,000-token (≈6,000 words, ~24 pages) limits. GPT-5
+and Claude 3.7 Sonnet now offer a maximum number of 272,000 tokens in their
+input, while Gemini 2.5 accepts up to a million tokens in the input.
+The context window is a critical resource for developers to use effectively. We want to
+provide the foundation model with all the information it needs to complete the task,
+but no more. The context window is all of the information that is provided to the
+116 
+| 
+Chapter 6: Knowledge and Memory

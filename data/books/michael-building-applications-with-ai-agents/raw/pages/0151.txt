@@ -1,0 +1,43 @@
+MATCH
+  (pytorch:Tool {name:'PyTorch'}),
+  (nn:Concept {name:'Neural Networks'})
+CREATE (pytorch)-[:IMPLEMENTS]->(nn);
+MATCH
+  (nlp:Concept {name:'Natural Language Processing'}),
+  (bert:Model {name:'BERT'})
+CREATE (bert)-[:BELONGS_TO]->(nlp);
+MATCH
+  (cv:Concept {name:'Computer Vision'}),
+  (resnet:Model {name:'ResNet'})
+CREATE (resnet)-[:BELONGS_TO]->(cv);
+MATCH
+  (tensorflow:Tool {name:'TensorFlow'}),
+  (bert:Model {name:'BERT'})
+CREATE (bert)-[:BUILT_WITH]->(tensorflow);
+MATCH
+  (pytorch:Tool {name:'PyTorch'}),
+  (resnet:Model {name:'ResNet'})
+CREATE (resnet)-[:BUILT_WITH]->(pytorch);
+// Query for finding relationships between concepts
+MATCH path = shortestPath(
+  (concept1:Concept {name: 'Natural Language Processing'})-[*]-(concept2:Concept 
+      {name: 'Deep Learning'})
+)
+RETURN path;
+// Query for finding all models that use TensorFlow
+MATCH (model:Model)-[:BUILT_WITH]->(tool:Tool {name: 'TensorFlow'})
+RETURN model.name AS model, model.year AS year;
+Once loaded, your knowledge graph supports multihop traversals (e.g., shortestPath
+queries) and rich relationship patterns that far exceed what a flat table or vector store
+can express. This foundation enables advanced GraphRAG workflows—where an
+agent can traverse the graph at runtime to gather context spanning several degrees of
+separation—unlocking truly powerful reasoning over structured knowledge. These
+structures make it easy to discover underlying relationships in the data. For instance,
+it is now possible to search for elements on the graph, then retrieve all the elements
+that are one or more links away from that node. As you can see in Figure 6-4, when
+answering complex queries, the controller can traverse the graph and perform multi‐
+hop reasoning over structured data, expanding the range and complexity of questions
+these types of systems can answer.
+GraphRAG 
+| 
+129

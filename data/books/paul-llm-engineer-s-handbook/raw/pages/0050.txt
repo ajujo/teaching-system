@@ -1,0 +1,35 @@
+Chapter 1
+19
+Data collection pipeline
+The data collection pipeline involves crawling your personal data from Medium, Substack, Linke-
+dIn, and GitHub. As a data pipeline, we will use the extract, load, transform (ETL) pattern to 
+extract data from social media platforms, standardize it, and load it into a data warehouse.
+The output of this component will be a NoSQL DB, which will act as our data warehouse. As we 
+work with text data, which is naturally unstructured, a NoSQL DB fits like a glove.
+Even though a NoSQL DB, such as MongoDB, is not labeled as a data warehouse, from our point 
+of view, it will act as one. Why? Because it stores standardized raw data gathered by various ETL 
+pipelines that are ready to be ingested into an ML system.
+The collected digital data is binned into three categories:
+•	
+Articles (Medium, Substack)
+•	
+Posts (LinkedIn)
+•	
+Code (GitHub)
+We want to abstract away the platform where the data was crawled. For example, when feeding 
+an article to the LLM, knowing it came from Medium or Substack is not essential. We can keep 
+the source URL as metadata to give references. However, from the processing, fine-tuning, and 
+RAG points of view, it is vital to know what type of data we ingested, as each category must be 
+processed differently. For example, the chunking strategy between a post, article, and piece of 
+code will look different.
+Also, by grouping the data by category, not the source, we can quickly plug data from other plat-
+forms, such as X into the posts or GitLab into the code collection. As a modular system, we must 
+attach an additional ETL in the data collection pipeline, and everything else will work without 
+further code modifications.
+Feature pipeline
+The feature pipeline’s role is to take raw articles, posts, and code data points from the data ware-
+house, process them, and load them into the feature store. 
+It is critical to highlight that the data collection pipeline is designed to crawl data 
+only from your social media platform. It will not have access to other people. As an 
+example for this book, we agreed to make our collected data available for learning 
+purposes. Otherwise, using other people’s data without their consent is not moral.

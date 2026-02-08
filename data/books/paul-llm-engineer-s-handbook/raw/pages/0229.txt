@@ -1,0 +1,25 @@
+Supervised Fine-Tuning
+198
+2.	 We import all the required libraries as follows.
+import concurrent.futures
+import json
+import random
+import re
+from concurrent.futures import ThreadPoolExecutor
+from typing import List, Tuple
+from datasets import Dataset
+from openai import OpenAI
+from pydantic import BaseModel, Field
+from tqdm.auto import tqdm
+3.	
+The raw data we have is a JSON file. We create a Hugging Face dataset from this JSON file 
+by extracting specific fields from each article: id, content, platform, author_id, author 
+name, and link.
+ Quick tip: Enhance your coding experience with the AI Code Explainer 
+and Quick Copy features. Open this book in the next-gen Packt Reader. Click 
+the Copy button (1) to quickly copy code into your coding environment, 
+or click the Explain button (2) to get the AI assistant to explain a block of 
+code to you.
+ The next-gen Packt Reader is included for free with the purchase of this 
+book. Unlock it by scanning the QR code below or visiting https://www.
+packtpub.com/unlock/9781836200079.

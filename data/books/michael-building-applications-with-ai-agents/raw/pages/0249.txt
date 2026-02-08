@@ -1,0 +1,40 @@
+not only traditional infrastructure metrics (e.g., latency, uptime) but also semantic
+insights like hallucination rates, tool efficacy, and distribution shifts in user inputs.
+The current landscape emphasizes open source tools that integrate seamlessly with
+frameworks like LangGraph, CrewAI, and AutoGen, supporting distributed tracing,
+logging, and alerting while handling the probabilistic nature of foundation models.
+Many companies already have established enterprise plans for managed logging
+stacks (e.g., Splunk, Datadog, or New Relic), and foundation models or agents don’t
+necessarily require an entirely new monitoring solution. In most cases, it’s wise to
+extend your existing stack—leveraging its familiarity, scalability, and integrations—
+unless you have strong needs for specialized features like evaluations that are native
+to foundation models or lightweight self-hosting. We’ll explore several equivalent
+open source options in the following subsections, highlighting features, integrations,
+and trade-offs to help you choose or adapt based on your environment.
+Grafana with OpenTelemetry, Loki, and Tempo
+This stack offers high composability, making it a flexible choice for teams building
+custom observability around agents:
+Setup and integration
+Initialize OpenTelemetry (OTel) in your LangGraph application to export spans
+(e.g., for tool calls or LLM generations) and metrics (e.g., token usage). The logs
+route to Loki for structured querying, while traces go to Tempo for end-to-end
+visibility. Grafana pulls from both, establishing dashboards that correlate agent
+behavior (e.g., planning latency) with system health. Example: wrap a LangGraph
+node with OTel spans to track tool_recall metrics, exporting to Tempo for
+querying failed sessions.
+Key features
+The key features are the real-time dashboards for semantic metrics (e.g., halluci‐
+nation scores via custom plug-ins); alerting on anomalies like retry spikes; and
+strong community for AI extensions (e.g., 2025 Grafana plug-ins for LLM drift
+detection). It’s scalable for production, with low overhead when self-hosted.
+Trade-offs
+Pros include flexibility (mix-and-match components) and no vendor lock-in;
+cons are the multitool setup (requires managing Loki/Tempo separately) and a
+steeper learning curve for noninfra teams. This is ideal for enterprises extending
+existing infra monitoring to agents.
+ELK Stack (Elasticsearch, Logstash/Fluentd, Kibana)
+The ELK Stack is a mature option emphasizing powerful search and analytics, often
+extended from existing enterprise setups for AI workloads:
+Monitoring Stacks 
+| 
+227

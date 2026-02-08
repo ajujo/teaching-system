@@ -1,0 +1,32 @@
+Chapter 7
+301
+This example showcases how LangChain agents can successfully implement ML workflows with
+minimal human intervention. The agent demonstrated strong capabilities in understanding the
+requested task, generating correct PyTorch code without reference examples, creating appropri­
+ate synthetic data, configuring and training the neural network, and evaluating results against
+expected outcomes.
+In a real-world scenario, you could extend this approach to more complex ML tasks such as
+classification problems, time series forecasting, or even custom model architectures. Next, we'll
+explore how agents can assist with data analysis and visualization tasks that build upon these
+fundamental ML capabilities.
+Analyzing a dataset
+Next, we'll demonstrate how LangChain agents can analyze structured datasets by examining the
+well-known Iris dataset. The Iris dataset, created by British statistician Ronald Fisher, contains
+measurements of sepal length, sepal width, petal length, and petal width for three species of iris
+flowers. It's commonly used in machine learning for classification tasks.
+Creating a pandas DataFrame agent
+Data analysis is a perfect application for LLM agents. Let's explore how to create an agent special­
+ized in working with pandas DataFrames, enabling natural language interaction with tabular data.
+First, we'll load the classic Iris dataset and save it as a CSV file for our agent to work with:
+from sklearn.datasets import load_iris
+df = load_iris(as_frame=True)["data"]
+df.to_csv("iris.csv", index=False)
+Now we'll create a specialized agent for working with pandas DataFrames:
+from langchain_experimental.agents.agent_toolkits.pandas.base import
+create_pandas_dataframe_agent
+from langchain import PromptTemplate
+PROMPT = (
+    "If you do not know the answer, say you don't know.\n"
+    "Think step by step.\n"
+    "\n"
+    "Below is the query.\n"

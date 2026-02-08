@@ -1,0 +1,26 @@
+- pirateo de prompts manual directo, Jailbreaking e inyección de
+prompts
+cuantización del entrenamiento, Cuantización de inferencia, Cuantización
+de inferencia
+cuello de botella de la decodificación autorregresiva, Superar el cuello de
+botella de la decodificación autorregresiva
+- decodificación especulativa, Superar el cuello de botella de la
+decodificación autorregresiva
+- decodificación paralela, Decodificación paralela
+- inferencia con referencia, Decodificación especulativa
+- modelo lingüístico autorregresivo, Modelos lingüísticos
+cuellos de botella
+- computacional, Visión general de la inferencia
+- decodificación autorregresiva, Superar el cuello de botella de la
+decodificación autorregresiva
+- escalado, Extrapolación de escalas, Retos de la evaluación
+comparativa
+- limitado por el cálculo, Visión general de la inferencia
+- memoria, Afinado y RAG, Visión general de la inferencia
+cuellos de botella computacionales, Visión general de la inferencia, Visión
+general de la inferencia
+cuellos de botella de escala, Extrapolación de escalas, Retos de la
+evaluación comparativa
+cuellos de botella en la memoria, Afinado y RAG
+- cuantización, Representaciones numéricas
+- cuantización de la inferencia, Cuantización

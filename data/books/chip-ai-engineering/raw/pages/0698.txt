@@ -1,0 +1,31 @@
+MONITOREO VS. OBSERVABILIDAD
+Desde mediados de la década de 2010, el sector ha adoptado el término
+"observabilidad" en lugar de "monitoreo". El monitoreo no presupone
+ninguna relación entre el estado interno de un sistema y sus resultados.
+Se monitorean los outputs externos del sistema para averiguar si algo va
+mal dentro del sistema; no hay garantía de que los outputs externos
+ayuden a averiguar qué va mal.
+La observabilidad, por otro lado, parte de un supuesto más sólido que el
+monitoreo tradicional: que los estados internos de un sistema pueden
+deducirse a partir conocer sus outputs externos. Cuando algo va mal en
+un sistema observable, deberíamos ser capaces de averiguar qué ha
+fallado consultando los registros y métricas del sistema sin tener que
+enviar nuevo código al sistema. La observabilidad consiste en
+instrumentar el sistema de forma que se garantice la recopilación y el
+análisis de información suficiente sobre el tiempo de ejecución del
+sistema para que, cuando algo vaya mal, pueda ayudar a descubrir qué
+es lo que falla.
+En este libro, utilizaré el término "monitoreo" para referirme al acto de
+rastrear la información de un sistema y "observabilidad" para referirme
+a todo el proceso de instrumentación, seguimiento y depuración del
+sistema.
+Métricas
+Cuando se habla de monitoreo, la mayoría de la gente piensa en métricas.
+Sin embargo, las métricas en sí no son el objetivo. Francamente, a la
+mayoría de las empresas no les importa cuál es la puntuación de relevancia
+de outputs de su aplicación, a menos que sirva para algo. El propósito de
+una métrica es indicar cuándo algo va mal e identificar oportunidades de
+mejora.
+Antes de hacer una lista de las métricas que se deben seguir, es importante
+comprender qué modos de fallo se quieren detectar y diseñar sus métricas
+en torno a ellos. Por ejemplo, si no quiere que su aplicación alucine, diseñe

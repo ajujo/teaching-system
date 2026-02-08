@@ -1,0 +1,19 @@
+Inference Optimization
+302
+In TP, large matrices, such as the weight matrices in MLPs or the attention heads in self-attention layers, are partitioned across several GPUs. Each GPU holds a portion of these matrices and
+performs computations on its respective slice.
+Figure 8.7 - Illustration of column-wise tensor parallelism in an MLP layer (W)
+For instance, in an MLP layer, the weight matrix is divided so that each GPU processes only a subset
+of the weights (see Figure 8.7). The inputs are broadcast to all GPUs, which then independently
+compute their respective outputs. The partial results are then aggregated through an all-reduce
+operation, combining them to form the final output.
+In the context of self-attention layers, TP is particularly efficient due to the inherent parallelism
+of attention heads. Each GPU can compute a subset of these heads independently, allowing the
+model to process large sequences more effectively. This makes TP more efficient than pipeline
+parallelism, which requires waiting for the completion of previous layers.
+Despite its advantages, TP is not universally applicable to all layers of a neural network. Layers
+like LayerNorm and Dropout, which have dependencies spanning the entire input, cannot be efficiently partitioned and are typically replicated across devices instead. However, these operations
+can be split on the sequence dimension of the input instead (sequence parallelism). Different
+GPUs can compute these layers on different slices of the input sequence, avoiding replication of
+weights. This technique is limited to a few specific layers, but it can provide additional memory
+savings, especially for very large input sequence lengths.

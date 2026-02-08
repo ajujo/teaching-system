@@ -1,0 +1,27 @@
+Chapter 3
+87
+We can configure each subclass using the nested Settings class, such as defining the collection 
+name, or anything else specific to that subclass. Within the Python ecosystem, there is an ODM 
+implementation on top of MongoDB, called mongoengine, which you can find on GitHub. It follows 
+a pattern similar to ours but more comprehensive. We implemented it by ourselves, as it was an 
+excellent exercise to practice writing modular and generic code following best OOP principles, 
+which are essential for implementing production-level code.
+Data categories and user document classes
+The last piece of the puzzle is to see the implementation of the subclasses that inherit from the 
+NoSQLBaseDocument base class. These are the concrete classes that define our data categories. 
+You’ve seen these classes used across the chapter when working with articles, repositories, and 
+posts within the crawler classes.
+We begin by importing the essential Python modules and the ODM base class:
+from abc import ABC
+from typing import Optional
+from pydantic import UUID4, Field
+from .base import NoSQLBaseDocument
+from .types import DataCategory
+We define an enum class, where we centralize all our data category types. These variables will act 
+as constants in configuring all our ODM classes throughout the book.
+from enum import StrEnum
+class DataCategory(StrEnum):
+    PROMPT = "prompt"
+    QUERIES = "queries"
+    INSTRUCT_DATASET_SAMPLES = "instruct_dataset_samples"
+The class can be found in the repository at llm_engineering/domain/types.py.

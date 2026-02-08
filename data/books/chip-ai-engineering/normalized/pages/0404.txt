@@ -1,0 +1,31 @@
+precisión y recall (recuerdo) para abreviar (la precisión del contexto
+también se denomina relevancia del contexto):
+Precisión contextual
+De todos los documentos recuperados, ¿qué porcentaje es
+pertinente para la consulta?
+Recall del contexto
+De todos los documentos pertinentes para la consulta, ¿qué
+porcentaje se recupera?
+Para calcular estas métricas, se crea un conjunto de evaluación con una lista
+de consultas de prueba y un conjunto de documentos. Para cada consulta de
+prueba, se anota cada documento de prueba como relevante o no relevante.
+La anotación puede ser realizada tanto por humanos como por jueces de IA.
+A continuación, se calcula la puntuación de precisión y recall del
+recuperador en este conjunto de evaluación.
+Durante la producción, algunos marcos RAG solo permiten precisión
+contextual, no el recall contextual. Para calcular el recall contextual de una
+consulta determinada, es necesario anotar la relevancia de todos los
+documentos de la base de datos para esa consulta. La precisión contextual
+es más sencilla de calcular. Solo hay que comparar los documentos
+recuperados con la consulta, lo que puede hacer un juez de IA.
+Si le interesa la clasificación de los documentos recuperados, por ejemplo,
+en caso de que los documentos más relevantes deban clasificarse en primer
+lugar, puede utilizar métricas como NDCG (normalized discounted
+cumulative gain), MAP (Mean Average Precision) y MRR (Mean
+Reciprocal Rank).
+Para la recuperación semántica, también hay que evaluar la calidad de las
+incrustaciones. Como se explica en el Capítulo 3, las incrustaciones pueden
+evaluarse de forma independiente: se consideran buenas si los documentos
+más similares tienen incrustaciones más parecidas. Las incrustaciones
+también pueden evaluarse por su eficacia en tareas específicas. La prueba
+comparativa MTEB (Muennighoff et al., 2023) evalúa incrustaciones para

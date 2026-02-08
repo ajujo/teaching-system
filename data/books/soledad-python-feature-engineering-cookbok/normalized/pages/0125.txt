@@ -1,0 +1,33 @@
+Transforming Numerical Variables
+102
+9.
+Let's make a copy of the DataFrame and transform the variables from step 5:
+X_tf = X.copy()
+X_tf[variables] = transformer.transform(X[variables])
+That's it - we can now examine the variable distribution. Finally, let's perform an exponential
+transformation with Feature-engine.
+10.	 Let's set up PowerTransformer() with an exponent of 0.3 to transform the variables
+from step 5. Then, we'll fit it to the data:
+power_t = PowerTransformer(variables=variables,
+    exp=0.3)
+power_t.fit(X)
+Note
+If we don't define the variables to transform, PowerTransformer() will select and transform
+all of the numerical variables in the DataFrame.
+11.	 Finally, let's transform those two variables:
+X_tf = power_t.transform(X)
+The transformer returns a DataFrame containing the original variables, where the two variables
+specified in step 5 are transformed with the power function.
+How it works...
+In this recipe, we applied power transformations using NumPy, scikit-learn, and Feature-engine.
+To apply power functions with NumPy, we applied the power() method to the slice of the dataset
+containing the variables to transform. To apply this transformation with scikit-learn, we set up the
+FunctionTransformer()with np.power() within a lambda function, using 0.3 as the
+exponent. To apply power functions with Feature-engine, we set up the PowerTransformer()
+with a list of the variables to transform and an exponent of 0.3.
+scikit-learn and Feature-engine transformers applied the transformation when we called the
+transform() method. scikit-learn's FunctionTransformer() modifies the entire dataset and
+returns NumPy arrays by default. To return pandas DataFrames, we need to set the transform output to
+pandas, and to apply the transformation to specific variables, we can use ColumnTransformer().
+Feature-engine's PowerTransformer(), on the other hand, can apply the transformation to a
+subset of variables out of the box, returning pandas DataFrames by default.

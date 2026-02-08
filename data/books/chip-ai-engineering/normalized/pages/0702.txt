@@ -1,0 +1,31 @@
+Registros y rastros
+Las métricas suelen ser agregadas. Condensan la información de los eventos
+ocurridos en su sistema a lo largo del tiempo. Le ayudan a comprender, de
+un vistazo, cómo va su sistema. Sin embargo, hay muchas preguntas que las
+métricas no pueden ayudarle a responder. Por ejemplo, tras observar un
+repunte en una actividad concreta, es posible que se pregunte: "¿Ha pasado
+esto antes?" Los registros pueden ayudarle a responder a esta pregunta.
+Si las métricas son mediciones numéricas que representan atributos y
+eventos, los registros son un registro de eventos de solo adición. En
+producción, un proceso de depuración podría verse así:
+1. Las métricas le dicen que algo ha ido mal hace cinco minutos, pero
+no lo que ha pasado.
+2. Examina los registros de los eventos de unos cinco minutos atrás
+para averiguar qué ha pasado.
+3. Correlaciona los errores de los registros con las métricas, para
+asegurarse de haber identificado el problema correcto.
+Para una detección rápida, las métricas deben calcularse con rapidez. Para
+una respuesta rápida, los registros deben estar disponibles y accesibles. Si
+sus registros tienen un retraso de 15 minutos, tendrá que esperar a que
+lleguen para localizar un problema que se haya producido hace 5 minutos.
+Como no sabe exactamente qué registros necesitará consultar en el futuro,
+la regla general para llevar registros es registrarlo todo. Registre todas las
+configuraciones, incluyendo el endpoint de la API del modelo, el nombre
+del modelo, los ajustes de muestreo (temperatura, top-p, top-k, condición de
+parada, etc.) y la plantilla de prompts.
+Registre la consulta del usuario, el prompt final enviado al modelo, el
+output y los outputs intermedios. Registre si llama a alguna herramienta.
+Registre los resultados de la herramienta. Registre cuándo se inicia un
+componente, cuándo finaliza, cuándo algo se bloquea, etc. Al incluir un
+registro, asegúrese de asignarle etiquetas e identificadores que le ayuden a
+saber de dónde procede dentro del sistema.

@@ -1,0 +1,26 @@
+Criterios de evaluación
+¿Qué es peor, una aplicación que nunca se ha implementado o una
+aplicación que se ha implementado pero nadie sabe si funciona? Cuando
+planteaba esta pregunta en las conferencias, la mayoría respondía lo
+segundo. Una aplicación que se implementa pero no se puede evaluar es
+peor. Tiene un costo mantenerla, pero si quiere desactivarla, puede costar
+aún más.
+Por desgracia, es común que las aplicaciones de IA tengan un retorno de
+inversión cuestionable. Esto ocurre no solo porque la aplicación es difícil de
+evaluar, sino también porque los desarrolladores de aplicaciones no pueden
+ver cómo se utilizan sus aplicaciones. Un ingeniero de ML de un
+concesionario de coches usados me contó que su equipo construyó un
+modelo para predecir el valor de un coche basándose en las especificaciones
+dadas por el propietario. Un año después de implementar el modelo, a sus
+usuarios parecía gustarles la función, pero no tenía ni idea de si las
+predicciones del modelo eran exactas. Al principio de la fiebre de ChatGPT,
+las empresas se apresuraron a implementar chatbots de atención al cliente.
+Muchos de ellos aún no están seguros de si estos chatbots ayudan o
+perjudican su experiencia de usuario.
+Antes de invertir tiempo, dinero y recursos en crear una aplicación, es
+importante saber cómo se evaluará. Yo llamo a este enfoque desarrollo
+basado en la evaluación. El nombre se inspira en el desarrollo basado en
+pruebas en ingeniería de software, que se refiere al método de escribir
+pruebas antes de escribir código. En ingeniería de IA, el desarrollo basado
+en la evaluación significa definir los criterios de evaluación antes de
+construir la aplicación.

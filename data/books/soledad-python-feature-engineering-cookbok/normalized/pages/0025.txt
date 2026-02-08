@@ -1,0 +1,32 @@
+Imputing Missing Data
+2
+Technical requirements
+In this chapter, we will use the Python libraries Matplotlib, pandas, NumPy, scikit-learn, and Featureengine. If you need to install Python, the free Anaconda Python distribution (https://www.
+anaconda.com/) includes most numerical computing libraries.
+feature-engine can be installed with pip as follows:
+pip install feature-engine
+If you use Anaconda, you can install feature-engine with conda:
+conda install -c conda-forge feature_engine
+Note
+The recipes from this chapter were created using the latest versions of the Python libraries at
+the time of publishing. You can check the versions in the requirements.txt file in the
+accompanying GitHub repository, at https://github.com/PacktPublishing/
+Python-Feature-engineering-Cookbook-Third-Edition/blob/main/
+requirements.txt.
+We will use the Credit Approval dataset from the UCI Machine Learning Repository (https://
+archive.ics.uci.edu/), licensed under the CC BY 4.0 creative commons attribution: https://
+creativecommons.org/licenses/by/4.0/legalcode. You'll find the dataset at this
+link: http://archive.ics.uci.edu/dataset/27/credit+approval.
+I downloaded and modified the data as shown in this notebook: https://github.com/
+PacktPublishing/Python-Feature-engineering-Cookbook-Third-Edition/
+blob/main/ch01-missing-data-imputation/credit-approval-dataset.ipynb
+We will also use the air passenger dataset located in Facebook's Prophet GitHub repository (https://
+github.com/facebook/prophet/blob/main/examples/example_air_passengers.
+csv), licensed under the MIT license: https://github.com/facebook/prophet/blob/
+main/LICENSE
+I modified the data as shown in this notebook: https://github.com/PacktPublishing/
+Python-Feature-engineering-Cookbook-Third-Edition/blob/main/ch01-
+missing-data-imputation/air-passengers-dataset.ipynb
+You'll find a copy of the modified data sets in the accompanying GitHub repository: https://
+github.com/PacktPublishing/Python-Feature-engineering-Cookbook-
+Third-Edition/blob/main/ch01-missing-data-imputation/

@@ -1,0 +1,36 @@
+Chapter 9
+387
+Operational metrics for LLM applications
+LLM applications require tracking specialized metrics that have no clear parallels in traditional
+ML systems. These metrics provide insights into the unique operational characteristics of lan­
+guage models in production:
+•
+Latency dimensions: Time to First Token (TTFT) measures how quickly the model begins
+generating its response, creating the initial perception of responsiveness for users. This
+differs from traditional ML inference time because LLMs generate content incrementally.
+Time Per Output Token (TPOT) measures generation speed after the first token appears,
+capturing the streaming experience quality. Breaking down latency by pipeline compo­
+nents (preprocessing, retrieval, inference, and postprocessing) helps identify bottlenecks
+specific to LLM architectures.
+•
+Token economy metrics: Unlike traditional ML models, where input and output sizes are
+often fixed, LLMs operate on a token economy that directly impacts both performance
+and cost. The input/output token ratio helps evaluate prompt engineering efficiency by
+measuring how many output tokens are generated relative to input tokens. Context win­
+dow utilization tracks how effectively the application uses available context, revealing
+opportunities to optimize prompt design or retrieval strategies. Token utilization by com­
+ponent (chains, agents, and tools) helps identify which parts of complex LLM applications
+consume the most tokens.
+•
+Cost visibility: LLM applications introduce unique cost structures based on token usage
+rather than traditional compute metrics. Cost per request measures the average expense
+of serving each user interaction, while cost per user session captures the total expense
+across multi-turn conversations. Model cost efficiency evaluates whether the application
+is using appropriately sized models for different tasks, as unnecessarily powerful models
+increase costs without proportional benefit.
+•
+Tool usage analytics: For agentic LLM applications, monitoring tool selection accuracy and
+execution success becomes critical. Unlike traditional applications with predetermined
+function calls, LLM agents dynamically decide which tools to use and when. Tracking
+tool usage patterns, error rates, and the appropriateness of tool selection provides unique
+visibility into agent decision quality that has no parallel in traditional ML applications.

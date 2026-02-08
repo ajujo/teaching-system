@@ -1,0 +1,31 @@
+Chapter 11
+427
+For every change in the code that you need to ship and test, you would have to go through all 
+these steps, which are tedious and error-prone. The Adding LLMOps to the LLM Twin section of this 
+chapter will teach us how to automate these steps within the CD pipeline using GitHub Actions. 
+Still, we first wanted to go through them manually to fully understand the behind-the-scenes 
+process and not treat it as a black box. Understanding these details is vital for debugging your CI/
+CD pipelines, where you must understand the error messages and how to fix them.
+Now that we have built our Docker image and pushed it to AWS ECR, let’s deploy it to AWS.
+Run the pipelines on AWS
+We are very close to running the ML pipelines on AWS, but we have to go through a few final steps. 
+Let’s switch from the default ZenML stack to the AWS one we created in this chapter. From the 
+root of your project, run the following in the CLI:
+zenml stack set aws-stack
+Return to your AWS ECR ZenML repository and copy the image URI as shown in Figure 11.9. 
+Then, go to the configs directory, open the configs/end_to_end_data.yaml file, and update 
+the settings.docker.parent_image attribute with your ECR URL, as shown below:
+settings:
+  docker:
+    parent_image: <YOUR ECR URL> #e.g., 992382797823.dkr.ecr.eu-central-1.
+amazonaws.com/zenml-rlwlcs:latest
+    skip_build: True
+We’ve configured the pipeline to always use the latest Docker image available in ECR. This means 
+that the pipeline will automatically pick up the latest changes made to the code whenever we 
+push a new image.
+We must export all the credentials from our .env file to ZenML secrets, a feature that safely stores 
+your credentials and makes them accessible within your pipelines:
+poetry poe export-settings-to-zenml
+The last step is setting up to run the pipelines asynchronously so we don’t have to wait until they 
+are finished, which might result in timeout errors:
+zenml orchestrator update aws-stack --synchronous=False

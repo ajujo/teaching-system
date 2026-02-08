@@ -1,0 +1,39 @@
+Chapter 6
+251
+The dependencies are the same as those in Chapter 5 with SFT and can be found in the book's
+GitHub repository (https://github.com/PacktPublishing/LLM-Engineering) or in Unsloth's
+repo (https://github.com/unslothai/unsloth):
+1.
+First, we want to access a gated model and (optionally) upload our fine-tuned model to
+Hugging Face (https://huggingface.co/). This requires us to log in to an account. If
+you don't have an account, you can create one and store your API key (Settings | Access
+Tokens | Create new token) in the .env file:
+HF_TOKEN = YOUR_API_KEY
+2.
+Make sure that your Comet ML API key is also in the .env file. Otherwise, the code will
+crash and raise an error when training starts.
+COMET_API_KEY = YOUR_API_KEY
+3.
+Before we import all the necessary packages, we want to apply a patch for the DPOTrainer
+class from TRL. This fixes the DPO logs in notebook environments.
+from unsloth import PatchDPOTrainer
+PatchDPOTrainer()
+4.
+We can now import the other libraries. The main difference between DPO and SFT is the
+import of DPOConfig and DPOTrainer from TRL, which are specific to DPO training.
+import os
+import torch
+from datasets import load_dataset
+from transformers import TrainingArguments, TextStreamer
+from unsloth import FastLanguageModel, is_bfloat16_supportedfrom trl
+import DPOConfig, DPOTrainer
+5.
+This step loads our fine-tuned model from Chapter 5. We use the same configuration with
+a max_seq_length of 2048. You can activate QLoRA by setting load_in_4bit to True. In
+the following, we will perform LoRA DPO fine-tuning for increased speed and quality.
+max_seq_length = 2048
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name="mlabonne/TwinLlama-3.1-8B",
+    max_seq_length=max_seq_length,
+    load_in_4bit=False,
+)

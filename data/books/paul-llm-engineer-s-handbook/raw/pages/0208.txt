@@ -1,0 +1,24 @@
+5
+Supervised Fine-Tuning
+Supervised Fine-Tuning (SFT) is a crucial step in preparing LLMs for real-world applications. Fol-
+lowing the initial pre-training phase, where an LLM learns to predict the next token in a sequence, 
+SFT refines the model’s capabilities using carefully curated pairs of instructions and correspond-
+ing answers. This process serves two primary purposes: it teaches the model to understand and 
+follow a specific chat format, effectively transforming it into a conversational agent, and it allows 
+the model to adapt its broad knowledge base to excel in targeted tasks or specialized domains.
+The importance of SFT lies in its ability to bridge the gap between a model’s general language 
+understanding and its practical utility. By exposing the model to examples of desired input-output 
+patterns, SFT shapes the LLM’s behavior to align with specific goals, whether they involve task 
+completion (such as summarization or translation) or domain expertise (like medical or legal 
+knowledge). This tailored approach not only enhances the model’s performance in intended ar-
+eas but also improves its ability to follow instructions and generate more relevant and coherent 
+responses.
+In this chapter, we will cover the following topics:
+•	
+Creating a high-quality instruction dataset
+•	
+SFT techniques
+•	
+Implementing fine-tuning in practice
+By the end of this chapter, you will be able to create your own instruction datasets and efficiently 
+fine-tune LLMs on them.

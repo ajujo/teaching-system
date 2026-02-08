@@ -1,0 +1,32 @@
+Interpretación y casos prácticos de la perplejidad
+Como ya se ha dicho, la entropía cruzada, la perplejidad, la BPC y la BPB
+son variaciones de las medidas de precisión predictiva de los modelos
+lingüísticos. Cuanto más preciso sea un modelo a la hora de predecir un
+texto, más bajas serán estas métricas. En este libro, utilizaré la perplejidad
+como métrica de modelado lingüístico por default. Recuerde que cuanta
+más incertidumbre tenga el modelo a la hora de predecir lo que viene a
+continuación en un conjunto de datos determinado, mayor será la
+perplejidad.
+Lo que se considera un buen valor de perplejidad depende de los propios
+datos y de cómo se computa exactamente la perplejidad, por ejemplo, a
+cuántos tokens anteriores tiene acceso un modelo. Veamos algunas reglas
+generales:
+Cuanto más estructurados son los datos, menor será la perplejidad prevista
+Los datos más estructurados son más predecibles. Por
+ejemplo, el código HTML es más predecible que el texto
+cotidiano. Si ve una etiqueta HTML de apertura como <head>,
+puede predecir que debe haber una etiqueta de cierre,
+</head>, cerca. Por lo tanto, la perplejidad esperada de un
+modelo sobre código HTML debería ser menor que la
+perplejidad prevista de un modelo sobre texto cotidiano.
+Cuanto mayor sea el vocabulario, mayor será la perplejidad
+Intuitivamente, cuantos más tokens posibles haya, más
+difícil será para el modelo predecir el siguiente token. Por
+ejemplo, la perplejidad de un modelo ante un libro infantil
+será probablemente menor que la perplejidad del mismo
+modelo ante Guerra y paz. Para el mismo conjunto de datos,
+digamos en inglés, la perplejidad basada en caracteres
+(predicción del siguiente carácter) será menor que la
+perplejidad basada en palabras (predicción de la siguiente
+palabra), porque el número de caracteres posibles es menor
+que el número de palabras posibles.

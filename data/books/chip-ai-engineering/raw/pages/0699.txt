@@ -1,0 +1,32 @@
+métricas que le ayuden a detectar alucinaciones. Una métrica relevante
+podría ser si el output de una aplicación puede inferirse a partir del
+contexto. Si no quiere que su aplicación agote su crédito de API, monitoree
+las métricas relacionadas con los costos de la API, como el número de
+tokens de input y output por solicitud o el costo y la tasa de aciertos de su
+caché.
+Como los modelos fundacionales pueden generar outputs abiertos, hay
+muchas formas en que las cosas pueden salir mal. El diseño de métricas
+requiere pensamiento analítico, conocimientos estadísticos y, a menudo,
+creatividad. Las métricas que debe seguir son muy específicas de cada
+aplicación.
+En este libro se han tratado muchos tipos diferentes de métricas de calidad
+de modelos (Capítulo 4 a Capítulo 6, y más adelante en este capítulo) y
+muchas formas distintas de calcularlas (Capítulo 3 y Capítulo 5). Aquí haré
+un rápido resumen.
+Los tipos de fallos más fáciles de rastrear son los fallos de formato, porque
+son fáciles de advertir y verificar. Por ejemplo, si espera outputs JSON,
+haga un seguimiento de la frecuencia con la que el modelo emite JSON no
+válidos y, entre estos outputs JSON no válidos, cuántos pueden arreglarse
+fácilmente (la falta de un corchete de cierre es fácil de arreglar, pero la falta
+de claves esperadas es más difícil).
+En el caso de las generaciones abiertas, considere la posibilidad de
+monitorear la coherencia de los hechos y las métricas de calidad de la
+generación pertinentes, como la concisión, la creatividad o la positividad.
+Muchas de estas métricas pueden calcularse utilizando jueces de IA.
+Si la seguridad es un problema, puede monitorear las métricas relacionadas
+con la toxicidad y detectar información privada y sensible tanto en los
+inputs como en los outputs. Haga un seguimiento de la frecuencia con la
+que se activan las barreras de seguridad y la frecuencia con la que el
+sistema se niega a responder. Detecte también consultas anómalas a su
+sistema, ya que podrían revelar casos interesantes excepcionales o ataques
+de prompts.

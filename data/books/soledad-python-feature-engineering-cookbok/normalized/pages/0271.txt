@@ -1,0 +1,43 @@
+Creating New Features
+248
+3.
+Separate the dataset into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.
+Check out Pearson's correlation coefficient between the features and the target, which is a
+measure of a linear relationship:
+for var in X_train.columns:
+    pearson = np.corrcoef(X_train[var], y_train)[0, 1]
+    pearson = np.round(pearson, 2)
+    print(
+        f"corr {var} vs target: {pearson}")
+In the following output, we can see that, apart from MedInc, most variables do not show a
+strong linear relationship with the target; the correlation coefficient is smaller than 0.5:
+corr MedInc vs target: 0.69
+corr HouseAge vs target: 0.1
+corr AveRooms vs target: 0.16
+corr AveBedrms vs target: -0.05
+corr Population vs target: -0.03
+corr AveOccup vs target: -0.03
+The feature-engine library's DecisionTreeFeatures() selects the best tree by
+using cross-validation.
+5.
+Create a grid of hyperparameters to optimize each decision tree:
+param_grid = {"max_depth": [2, 3, 4, None]}
+The feature-engine library's DecisionTreeFeatures() allows us to add features
+resulting from the predictions of a decision tree, trained on one or more features. There are
+many ways in which we can instruct the transformer to combine the features. We'll start by
+creating all possible combinations between two variables.
+6.
+Make a list with the two features that we want to use as inputs:
+variables = ["AveRooms", "AveBedrms"]
+7.
+Set up DecisionTreeFeatures() to create all possible combinations between the features
+from step 6:
+dtf = DecisionTreeFeatures(
+    variables=variables,
+    features_to_combine=None,
+    cv=5,
+    param_grid=param_grid,
+    scoring="neg_mean_squared_error",

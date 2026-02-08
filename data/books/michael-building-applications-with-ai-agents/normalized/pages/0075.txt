@@ -1,0 +1,44 @@
+                last_assistant_item = msg.get("item_id")
+            # user started talking → cancel assistant speech
+            started = "input_audio_buffer.speech_started"
+            if msg["type"] == started and last_assistant_item:
+                await openai_ws.send(json.dumps({
+                    "type": "conversation.item.truncate",
+                    "item_id": last_assistant_item,
+                    "content_index": 0,
+                    "audio_end_ms": 0   # stop immediately
+                }))
+                last_assistant_item = None
+                pending_marks.clear()
+    try:
+        await asyncio.gather(from_client(), to_client())
+    finally:
+        await openai_ws.close()
+        await ws.close()
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("realtime_voice_minimal:app", host="0.0.0.0", port=PORT)
+Looking ahead, we are likely to see significant adoption of advanced voice interfaces
+in the coming years, driven by falling costs, reduced latency, improved speech recog‐
+nition, and better orchestration with backend tools. In healthcare, voice agents can
+assist doctors with hands-free note-taking during patient consultations. In customer
+service, they are replacing rigid interactive voice response (IVR) systems with fluid,
+humanlike conversations that resolve issues end to end. In industrial applications,
+workers can control machinery, log observations, or access manuals without stopping
+their tasks.
+Ultimately, voice interfaces are most effective for short, hands-free tasks, quick quer‐
+ies, and action-oriented workflows, rather than for dense information consumption
+or complex decision making that requires rapid skimming or side-by-side
+comparison.
+When thoughtfully designed, speech and voice interfaces offer unparalleled conve‐
+nience, accessibility, and flexibility in agent interactions. As these technologies con‐
+tinue to mature and integrate deeply with backend tools and knowledge systems, they
+are poised to become indispensable in daily workflows, personal assistants, and enter‐
+prise solutions-fundamentally transforming how users interact with AI-powered
+agents.
+Video-Based Interfaces
+Video-based interfaces are an emerging modality for agent interactions, blending vis‐
+ual, auditory, and sometimes textual elements into a single cohesive experience.
+Interaction Modalities
+|
+53

@@ -1,0 +1,32 @@
+Quizá se pregunte: ¿y qué pasa con la retroalimentación cuando ocurre algo
+bueno? Entre las acciones que los usuarios pueden realizar para expresar su
+satisfacción se incluyen pulgares arriba, favoritos o compartir. Sin embargo,
+la directriz de Apple sobre la interfaz humana advierte de que no se deben
+pedir opiniones tanto positivas como negativas. Su aplicación debería
+producir buenos resultados por defecto. Pedir opinión sobre los buenos
+resultados puede dar a los usuarios la impresión de que los buenos
+resultados son excepciones. En última instancia, si los usuarios están
+contentos, seguirán utilizando su aplicación.
+Sin embargo, muchas personas con las que he hablado creen que los
+usuarios deberían tener la opción de dar retroalimentación cuando
+encuentran algo increíble. Un director de producto de un popular producto
+basado en IA mencionó que su equipo necesita retroalimentación positiva
+porque revela las características que a los usuarios les gustan tanto como
+para hacer comentarios entusiastas. Esto permite al equipo concentrarse en
+perfeccionar un pequeño conjunto de funciones de gran impacto, en lugar
+de repartir los recursos entre muchas con un valor añadido mínimo.
+Algunos evitan pedir retroalimentación positiva por temor a que puedan
+saturar la interfaz o molestar a los usuarios. Sin embargo, este riesgo puede
+gestionarse limitando la frecuencia de las peticiones de retroalimentación.
+Por ejemplo, si tiene una gran base de usuarios, mostrar la solicitud solo al
+1 % de los usuarios a la vez podría ayudar a recopilar suficiente
+retroalimentación sin interrumpir la experiencia de la mayoría de los
+usuarios. Tenga en cuenta que cuanto menor sea el porcentaje de usuarios
+encuestados, mayor será el riesgo de que se produzcan sesgos en la
+respuesta. Sin embargo, con un grupo lo suficientemente grande, la
+retroalimentación pueden proporcionar información valiosa sobre el
+producto.
+Cómo recabar retroalimentación
+La retroalimentación debe integrarse perfectamente en el flujo de trabajo
+del usuario. Debe ser fácil para los usuarios dar su opinión sin esfuerzo
+adicional. La recopilación de opiniones no debe interrumpir la experiencia

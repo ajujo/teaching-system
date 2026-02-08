@@ -1,0 +1,33 @@
+MLOps and LLMOps
+400
+On the implementation side of things, to add LLMOps to our LLM Twin use case, we will deploy 
+all our ZenML pipelines to AWS. We will implement a continuous integration and continuous 
+deployment (CI/CD) pipeline to test the integrity of our code and automate the deployment 
+process, a continuous training (CT) pipeline to automate our training, and a monitoring pipeline 
+to track all our prompts and generated answers. This is a natural progression in any ML project, 
+regardless of whether you use LLMs.
+In previous chapters, you learned how to build an LLM application. Now, it’s time to explore three 
+main goals related to LLMOps. The first one is to gain a theoretical understanding of LLMOps, 
+starting with DevOps, then moving to the fundamental principles of MLOps, and finally, digging 
+into LLMOps. We don’t aim to provide the whole theory on DevOps, MLOps, and LLMOps, as 
+you could easily write an entire book on these topics. However, we want to build a strong  under-
+standing of why we make certain decisions when implementing the LLM Twin use case.
+Our second goal is to deploy the ZenML pipelines to AWS (currently, we’ve deployed only our 
+inference pipeline to AWS in Chapter 10). This section will be hands-on, showing you how to 
+leverage ZenML to deploy everything to AWS. We need this to implement our third and last goal, 
+which is to apply what we’ve learned in the theory section to our LLM Twin use case. We will 
+implement a CI/CD pipeline using GitHub Actions, a CT and alerting pipeline using ZenML, and 
+a monitoring pipeline using Opik from Comet ML.
+Thus, in this chapter, we will cover the following topics:
+•	
+The path to LLMOps: Understanding its roots in DevOps and MLOps
+•	
+Deploying the LLM Twin’s pipelines to the cloud
+•	
+Adding LLMOps to the LLM Twin
+The path to LLMOps: Understanding its roots in 
+DevOps and MLOps
+To understand LLMOps, we have to start with the field’s beginning, which is DevOps, as it inherits 
+most of its fundamental principles from there. Then, we will move to MLOps to understand how 
+the DevOps domain was adapted to support ML systems. Finally, we will explain what LLMOps 
+is and how it emerged from MLOps after the widespread adoption of LLMs.

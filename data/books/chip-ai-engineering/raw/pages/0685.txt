@@ -1,0 +1,33 @@
+Si el usuario desea restablecer la contraseña, diríjalo a la página de
+preguntas frecuentes sobre la recuperación de la contraseña.
+Si la solicitud es para corregir un error de facturación, diríjala a un
+operador humano.
+Si la solicitud es para resolver un problema técnico, diríjala a un
+chatbot especializado en resolución de problemas.
+Un clasificador de intenciones puede evitar que su sistema entable
+conversaciones fuera de su ámbito. Si la consulta se considera inapropiada,
+el chatbot puede negarse amablemente a responder utilizando una de las
+respuestas predeterminadas sin malgastar una llamada a la API. Por
+ejemplo, si el usuario pregunta a quién votaría en las próximas elecciones,
+un chatbot puede responder con: "Como chatbot, no puedo votar. Si tiene
+preguntas sobre nuestros productos, estaré encantado de ayudarle".
+Un clasificador de intenciones puede ayudar al sistema a detectar consultas
+ambiguas y pedir aclaraciones. Por ejemplo, en respuesta a la consulta
+"Congelación", el sistema podría preguntar: "¿Quiere congelar su cuenta o
+está hablando del clima?" o simplemente responder: "Lo siento. ¿Puede
+explicar su pregunta?"
+Otros enrutadores pueden ayudar al modelo a decidir qué hacer a
+continuación. Por ejemplo, para un agente capaz de realizar múltiples
+acciones, un enrutador puede adoptar la forma de un predictor de la
+próxima acción: ¿debería el modelo utilizar a continuación un intérprete de
+código o una API de búsqueda? En un modelo con un sistema de memoria,
+un enrutador puede predecir de qué parte de la jerarquía de memoria debe
+extraer información el modelo. Imagine que un usuario adjunta a la
+conversación en curso un documento que menciona Melbourne. Más tarde,
+el usuario pregunta: "¿Cuál es el animal más lindo de Melbourne?" El
+modelo tiene que decidir si se basa en la información del documento
+adjunto o busca esta consulta en Internet.
+Los clasificadores de intenciones y los predictores de próximas acciones
+pueden implementarse sobre modelos fundacionales. Muchos equipos
+adaptan modelos lingüísticos más pequeños como GPT-2, BERT y Llama
+7B como sus clasificadores de intención. Muchos equipos optan por

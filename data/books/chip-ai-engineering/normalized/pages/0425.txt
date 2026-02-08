@@ -1,0 +1,32 @@
+Herramientas
+Un sistema no necesita acceder a herramientas externas para ser un agente.
+No obstante, sin herramientas externas, las capacidades del agente serían
+limitadas. Aislado, un modelo normalmente es capaz de realizar una acción:
+por ejemplo, un LLM puede generar texto y un generador de imágenes
+puede generar imágenes. Las herramientas externas hacen que un agente sea
+capaz de mucho más.
+Las herramientas ayudan al agente a percibir el entorno y a actuar en
+consecuencia. Las acciones que permiten a un agente percibir el entorno
+son acciones de solo lectura, mientras que las acciones que permiten a un
+agente actuar sobre el entorno son acciones de escritura.
+Esta sección ofrece una visión general de las herramientas externas. En la
+sección "Planificación" se explica cómo utilizar las herramientas.
+El conjunto de herramientas a las que tiene acceso un agente es su
+inventario de herramientas. Como el inventario de herramientas de un
+agente determina lo que puede hacer, es importante pensar bien qué y
+cuántas herramientas darle. Cuantas más herramientas tenga un agente, más
+capacidades tendrá. Sin embargo, cuantas más herramientas haya, más
+difícil es comprenderlas y utilizarlas bien. Es necesario experimentar para
+encontrar el conjunto de herramientas adecuado, como se explica en el
+"Selección de herramientas".
+Dependiendo del entorno del agente, hay muchas herramientas posibles.
+Hay tres categorías de herramientas que pueden considerar: aumento de
+conocimientos (es decir, construcción de contextos), extensión de las
+capacidades y herramientas que permiten al agente actuar sobre su entorno.
+Aumento de conocimientos
+Espero que este libro, hasta ahora, le haya convencido de la importancia de
+disponer del contexto pertinente para la calidad de respuesta de un modelo.
+Una categoría importante de herramientas son las que ayudan a aumentar
+los conocimientos de su agente. Ya hemos hablado de algunas de ellas:
+recuperador de texto, recuperador de imágenes y ejecutor SQL. Otras
+herramientas potenciales son la búsqueda interna de personas, una API de

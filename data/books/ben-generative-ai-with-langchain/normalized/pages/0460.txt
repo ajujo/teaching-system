@@ -1,0 +1,28 @@
+Appendix
+433
+Hugging Face
+Hugging Face is a very prominent player in the NLP space and has considerable traction in opensource and hosting solutions. The company is a French American company that develops tools for
+building ML applications. Its employees develop and maintain the Transformers Python library,
+which is used for NLP tasks, includes implementations of state-of-the-art and popular models
+like Mistral 7B, BERT, and GPT-2, and is compatible with PyTorch, TensorFlow, and JAX.
+In addition to their products, Hugging Face has been involved in initiatives such as the BigScience
+Research Workshop, where they released an open LLM called BLOOM with 176 billion parameters.
+Hugging Face has also established partnerships with companies like Graphcore and Amazon
+Web Services to optimize their offerings and make them available to a broader customer base.
+LangChain supports leveraging the Hugging Face Hub, which provides access to a massive num­
+ber of models, datasets in various languages and formats, and demo apps. This includes inte­
+grations with Hugging Face Endpoints, enabling text generation inference powered by the Text
+Generation Inference service. Users can connect to different Endpoint types, including the free
+Serverless Endpoints API and dedicated Inference Endpoints for enterprise workloads that come
+with support for AutoScaling.
+For local use, LangChain provides integration with Hugging Face models and pipelines. The
+ChatHuggingFace class allows using Hugging Face models for chat applications, while the
+HuggingFacePipeline class enables running Hugging Face models locally through pipe­
+lines. Additionally, LangChain supports embedding models from Hugging Face, including
+HuggingFaceEmbeddings, HuggingFaceInstructEmbeddings, and HuggingFaceBgeEmbeddings.
+The HuggingFaceHubEmbeddings class allows leveraging the Hugging Face Text Embed­
+dings Inference (TEI) toolkit for high-performance extraction. LangChain also provides a
+HuggingFaceDatasetLoader to load datasets from the Hugging Face Hub.
+To use Hugging Face as a provider for your models, you can create an account and API keys at
+https://huggingface.co/settings/profile. Additionally, you can make the token available
+in your environment as HUGGINGFACEHUB_API_TOKEN.

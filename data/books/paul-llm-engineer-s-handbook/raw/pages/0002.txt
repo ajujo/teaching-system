@@ -1,0 +1,5 @@
+LLM Engineer’s Handbook
+Master the art of engineering large language models from 
+concept to production
+Paul Iusztin
+Maxime Labonne

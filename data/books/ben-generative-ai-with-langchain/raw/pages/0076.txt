@@ -1,0 +1,35 @@
+Chapter 2
+49
+Let’s start with one of the most developer-friendly options for running local models.
+Getting started with Ollama
+Ollama provides a developer-friendly way to run powerful open-source models locally. It provides 
+a simple interface for downloading and running various open-source models. The langchain-
+ollama dependency should already be installed if you’ve followed the instructions in this chapter; 
+however, let’s go through them briefly anyway:
+1.	
+Install the LangChain Ollama integration:
+pip install langchain-ollama
+2.	
+Then pull a model. From the command line, a terminal such as bash or the Window­
+sPowerShell, run:
+ollama pull deepseek-r1:1.5b
+3.	
+Start the Ollama server:
+ollama serve
+Here’s how to integrate Ollama with the LCEL patterns we’ve explored:
+from langchain_ollama import ChatOllama
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+# Initialize Ollama with your chosen model
+local_llm = ChatOllama(
+    model="deepseek-r1:1.5b",
+    temperature=0,
+)
+# Create an LCEL chain using the local model
+prompt = PromptTemplate.from_template("Explain {concept} in simple terms")
+local_chain = prompt | local_llm | StrOutputParser()
+# Use the chain with your local model
+result = local_chain.invoke({"concept": "quantum computing"})
+print(result)
+This LCEL chain functions identically to our cloud-based examples, demonstrating LangChain’s 
+model-agnostic design.

@@ -1,0 +1,43 @@
+Integrating Evaluation into the Development Lifecycle                                       207
+Creating and Scaling Evaluation Sets                                                                      207
+Component Evaluation                                                                                                 209
+Evaluating Tools                                                                                                         209
+Evaluating Planning                                                                                                   210
+Evaluating Memory                                                                                                    212
+Evaluating Learning                                                                                                   213
+Holistic Evaluation                                                                                                        214
+Performance in End-to-End Scenarios                                                                   214
+Consistency                                                                                                                 216
+Coherence                                                                                                                   217
+Hallucination                                                                                                              218
+Handling Unexpected Inputs                                                                                   219
+Preparing for Deployment                                                                                            220
+Conclusion                                                                                                                      221
+10. Monitoring in Production. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  223
+Monitoring Is How You Learn                                                                                     224
+Monitoring Stacks                                                                                                          226
+Grafana with OpenTelemetry, Loki, and Tempo                                                   227
+ELK Stack (Elasticsearch, Logstash/Fluentd, Kibana)                                          227
+Arize Phoenix                                                                                                             228
+SigNoz                                                                                                                          229
+Langfuse                                                                                                                       229
+Choosing the Right Stack                                                                                              230
+OTel Instrumentation                                                                                                    230
+Visualization and Alerting                                                                                            232
+Monitoring Patterns                                                                                                      235
+Shadow Mode                                                                                                             235
+Canary Deployments                                                                                                 235
+Regression Trace Collection                                                                                     236
+Self-Healing Agents                                                                                                   236
+User Feedback as an Observability Signal                                                                  236
+Distribution Shifts                                                                                                         237
+Metric Ownership and Cross-Functional Governance                                            239
+Conclusion                                                                                                                      241
+11. Improvement Loops. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  243
+Feedback Pipelines                                                                                                         245
+Automated Issue Detection and Root Cause Analysis                                          250
+Human-in-the-Loop Review                                                                                    251
+Prompt and Tool Refinement                                                                                   254
+Table of Contents 
+| 
+ix

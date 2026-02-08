@@ -1,0 +1,32 @@
+Tooling and Installation
+30
+When working with Poe the Poet, instead of having all your commands documented in a README
+file or other document, you can add them directly to your pyproject.toml file and execute them
+in the command line with an alias. For example, using Poe the Poet, we can define the following
+tasks in a pyproject.toml file:
+[tool.poe.tasks]
+test = "pytest"
+format = "black ."
+start = "python main.py"
+You can then run these tasks using the poe command:
+poetry poe test
+poetry poe format
+poetry poe start
+You can install Poe the Poet as a Poetry plugin, as follows:
+poetry self add 'poethepoet[poetry_plugin]'
+To conclude, using a tool as a façade over all your CLI commands is necessary to run your application. It significantly simplifies the application's complexity and enhances collaboration as it
+acts as out-of-the-box documentation.
+Assuming you have pyenv and Poetry installed, here are all the commands you need to run to
+clone the repository and install the dependencies and Poe the Poet as a Poetry plugin:
+git clone https://github.com/PacktPublishing/LLM-Engineers-Handbook.gitcd
+LLM-Engineers-Handbook
+poetry install --without aws
+poetry self add 'poethepoet[poetry_plugin]'
+To make the project fully operational, there are still a few steps to follow, such as filling out a
+.env file with your credentials and getting tokens from OpenAI and Hugging Face. But this book
+isn't an installation guide, so we've moved all these details into the repository's README as
+they are useful only if you plan to run the repository: https://github.com/PacktPublishing/
+LLM-Engineers-Handbook.
+Now that we have installed our Python project, let's present the MLOps tools we will use in the
+book. If you are already familiar with these tools, you can safely skip the following tooling section
+and move on to the Databases for storing unstructured and vector data section.

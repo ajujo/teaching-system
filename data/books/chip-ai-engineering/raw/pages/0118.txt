@@ -1,0 +1,30 @@
+Tamaño del modelo
+Gran parte del progreso de la IA en los últimos años puede atribuirse al
+aumento del tamaño de los modelos. Es difícil hablar de modelos
+fundacionales sin hablar de su número de parámetros. El número de
+parámetros suele añadirse al final del nombre del modelo. Por ejemplo,
+Llama-13B se refiere a la versión de Llama, una familia de modelos
+desarrollada por Meta, con 13 000 millones de parámetros.
+En general, aumentar los parámetros de un modelo aumenta su capacidad
+de aprendizaje, lo que da lugar a mejores modelos. Dados dos modelos de la
+misma familia de modelos, es probable que el que tiene 13 000 millones de
+parámetros funcione mucho mejor que el que tiene 7 000 millones de
+parámetros.
+NOTA
+A medida que la comunidad va comprendiendo mejor cómo entrenar
+modelos de gran tamaño, los modelos de nueva generación tienden a
+superar a los de generaciones anteriores del mismo tamaño. Por ejemplo,
+Llama 3-8B (2024) supera incluso a Llama 2-70B (2023) en la prueba
+comparativa MMLU.
+El número de parámetros nos ayuda a estimar los recursos computacionales
+necesarios para entrenar y ejecutar este modelo. Por ejemplo, si un modelo
+tiene 7 000 millones de parámetros y cada parámetro se almacena utilizando
+2 bytes (16 bits), podemos calcular que la memoria de GPU necesaria para
+hacer inferencia utilizando este modelo será de al menos 14 000 millones de
+bytes (14 GB).13
+El número de parámetros puede inducir a error si el modelo es disperso. Un
+modelo disperso tiene un gran porcentaje de parámetros de valor cero. Un
+modelo de 7 MM de parámetros disperso al 90 % solo tiene 700 millones de
+parámetros distintos de cero. La dispersión permite aumentar la eficacia de
+almacenamiento y cálculo de datos. Esto significa que un modelo disperso
+grande puede requerir menos cálculo que un modelo denso pequeño.

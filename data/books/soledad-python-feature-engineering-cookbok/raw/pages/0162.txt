@@ -1,0 +1,47 @@
+Performing discretization with k-means clustering
+139
+With print(test_features), we can inspect the DataFrame that is returned by the 
+discretizer. It contains 18 binary variables corresponding to the one-hot-encoded transformation 
+of the six clusters returned for each of the three numerical variables:
+         MedInc_0.0  MedInc_1.0  MedInc_2.0  MedInc_3.0  
+MedInc_4.0  MedInc_5.0  \
+14740            0.0            0.0            1.0            
+0.0            0.0            0.0
+10101            0.0            0.0            0.0            
+1.0            0.0            0.0
+20566            0.0            0.0            1.0            
+0.0            0.0            0.0
+2670              1.0            0.0            0.0            
+0.0            0.0            0.0
+15709            0.0            0.0            0.0            
+1.0            0.0            0.0
+         HouseAge_0.0  HouseAge_1.0  HouseAge_2.0  HouseAge_3.0  
+HouseAge_4.0  \
+14740               0.0               0.0               1.0      
+         0.0               0.0
+10101               0.0               0.0               0.0      
+         1.0               0.0
+20566               0.0               0.0               0.0      
+         1.0               0.0
+2670                 0.0               0.0               0.0     
+          0.0               1.0
+15709               0.0               0.0               1.0      
+         0.0               0.0
+         HouseAge_5.0  AveRooms_0.0  AveRooms_1.0  AveRooms_2.0  
+AveRooms_3.0  \
+14740               0.0               0.0               1.0      
+         0.0               0.0
+10101               0.0               0.0               1.0      
+         0.0               0.0
+20566               0.0               0.0               1.0      
+         0.0               0.0
+2670                 0.0               0.0               1.0     
+          0.0               0.0
+15709               0.0               1.0               0.0      
+         0.0               0.0
+         AveRooms_4.0  AveRooms_5.0
+14740               0.0               0.0
+10101               0.0               0.0
+20566               0.0               0.0
+2670                 0.0               0.0
+15709               0.0               0.0

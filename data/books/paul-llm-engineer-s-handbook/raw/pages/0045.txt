@@ -1,0 +1,32 @@
+Understanding the LLM Twin Concept and Architecture
+14
+Before going into the details, it is essential to understand that each pipeline is a different com-
+ponent that can run on a different process or hardware. Thus, each pipeline can be written using 
+a different technology, by a different team, or scaled differently. The key idea is that the design 
+is very flexible to the needs of your team. It acts as a mind map for structuring your architecture.
+The feature pipeline
+The feature pipeline takes raw data as input, processes it, and outputs the features and labels 
+required by the model for training or inference. Instead of directly passing them to the model, the 
+features and labels are stored inside a feature store. Its responsibility is to store, version, track, and 
+share the features. By saving the features in a feature store, we always have a state of our features. 
+Thus, we can easily send the features to the training and inference pipelines.
+As the data is versioned, we can always ensure that the training and inference time features match. 
+Thus, we avoid the training-serving skew problem.
+The training pipeline
+The training pipeline takes the features and labels from the features stored as input and outputs 
+a train model or models. The models are stored in a model registry. Its role is similar to that of 
+feature stores, but this time, the model is the first-class citizen. Thus, the model registry will store, 
+version, track, and share the model with the inference pipeline.
+Also, most modern model registries support a metadata store that allows you to specify essential 
+aspects of how the model was trained. The most important are the features, labels, and their 
+version used to train the model. Thus, we will always know what data the model was trained on.
+The inference pipeline
+The inference pipeline takes as input the features and labels from the feature store and the trained 
+model from the model registry. With these two, predictions can be easily made in either batch 
+or real-time mode.
+As this is a versatile pattern, it is up to you to decide what you do with your predictions. If it’s a 
+batch system, they will probably be stored in a DB. If it’s a real-time system, the predictions will 
+be served to the client who requested them. Additionally, the features, labels, and models are 
+versioned. We can easily upgrade or roll back the deployment of the model. For example, we will 
+always know that model v1 uses features F1, F2, and F3, and model v2 uses F2, F3, and F4. Thus, 
+we can quickly change the connections between the model and features.

@@ -1,0 +1,34 @@
+Chapter 4
+137
+In summary, the push method is ideal for applications demanding immediate data access, where-
+as the pull method is better suited for large-scale data transfers where real-time updates aren’t 
+critical. With that in mind, there are different methods to detect changes in data. Thus, let’s list 
+the main CDC patterns that are used in the industry:
+•	
+Timestamp-based: The approach involves adding a modification time column to DB 
+tables, usually called LAST_MODIFIED or LAST_UPDATED. Downstream systems can query 
+this column to identify records that have been updated since their last check. While sim-
+ple to implement, this method is limited to tracking changes, not deletions, and imposes 
+performance overhead due to the need to scan entire tables.
+•	
+Trigger-based: The trigger-based approach utilizes DB triggers to automatically record 
+data modifications in a separate table upon INSERT, UPDATE, or DELETE operations, often 
+known as the event table. This method provides comprehensive change tracking but can 
+impact the DB performance due to the additional write operations involved for each event.
+•	
+Log-based: DBs maintain transaction logs to record all data modifications, including 
+timestamps. Primarily used for recovery, these logs can also be leveraged to propagate 
+changes to target systems in real time. This approach minimizes the performance impact 
+on the source DB. As a huge advantage, it avoids additional processing overhead on the 
+source DB, captures all data changes, and requires no schema modification. But on the op-
+posite side, it lacks standardized log formats, leading to vendor-specific implementations.
+With these CDC techniques in mind, we could quickly implement a pull timestamp-based strategy 
+in our RAG feature pipeline to sync the data warehouse and feature store more optimally when 
+the data grows. Our implementation is still pull-based but doesn’t check any last updated field 
+in the source DB; it just pulls everything from the data warehouse.
+However, the most popular and optimal technique in the industry is the log-based one. It doesn’t 
+add any I/O overhead to the source DB, has low latency, and supports all CRUD operations. The 
+biggest downside is its development complexity, which requires a queue to capture all the CRUD 
+events and a streaming pipeline to process them.
+For more details on CDC, I recommend What is Change Data Capture? from Conflu-
+ent’s blog: https://www.confluent.io/en-gb/learn/change-data-capture/.

@@ -1,0 +1,35 @@
+Building Intelligent RAG Systems
+166
+    model="text-embedding-3-large",
+)
+# Avoiding unnecessary costs by caching the embeddings.
+EMBEDDINGS = CacheBackedEmbeddings.from_bytes_store(
+    underlying_embeddings, store, namespace=underlying_embeddings.model
+)
+To reduce API costs and speed up repeated queries, it wraps the embeddings with a caching mech­
+anism (CacheBackedEmbeddings) that stores vectors locally in a file-based store (LocalFileStore).
+Document retrieval
+The rag.py module implements document retrieval based on semantic similarity. We have these 
+main components:
+•	
+Text splitting
+•	
+In-memory vector store
+•	
+DocumentRetriever class
+Let’s start with the imports again:
+import os
+import tempfile
+from typing import List, Any
+from langchain_core.callbacks import CallbackManagerForRetrieverRun
+from langchain_core.documents import Document
+from langchain_core.retrievers import BaseRetriever
+from langchain_core.vectorstores import InMemoryVectorStore
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from chapter4.document_loader import load_document
+from chapter4.llms import EMBEDDINGS
+We need to set up a vector store for the retriever to use:
+VECTOR_STORE = InMemoryVectorStore(embedding=EMBEDDINGS)
+The document chunks are stored in an InMemoryVectorStore using the cached embeddings, al­
+lowing for fast similarity searches. The module uses RecursiveCharacterTextSplitter to break 
+documents into smaller chunks, which makes them more manageable for retrieval:

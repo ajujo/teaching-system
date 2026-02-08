@@ -1,0 +1,6 @@
+Chapter 9
+319
+Figure 9.1: RAG inference pipeline architecture
+The feature pipeline and the retrieval module, defined in Figure 9.1, are independent processes. The
+feature pipeline runs on a different machine on a schedule to populate the vector DB. At the same
+time, the retrieval module is called on demand, within the inference pipeline, on every user request.

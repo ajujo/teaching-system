@@ -1,0 +1,14 @@
+We explored practical techniques like shadow mode, canarying, fallback logging, and
+user sentiment tracking. We emphasized not only what to measure but also how to
+act. And we showed how monitoring helps detect not just failures but slow drifts in
+context, data, or behavior that can quietly undermine performance if left unchecked.
+The path forward is clear: teams that build agent systems with observability in
+mind-who instrument, visualize, and learn from their agents in flight-gain a pow‐
+erful edge. They iterate faster. They trust their metrics. They recover gracefully when
+things go wrong.
+In a world where agentic systems are becoming core infrastructure, robust monitor‐
+ing isn't optional-it's foundational. And those who master it will lead the way in cre‐
+ating intelligent, resilient, and trustworthy agents at scale.
+242
+|
+Chapter 10: Monitoring in Production

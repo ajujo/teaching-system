@@ -1,0 +1,41 @@
+   print(f’{tool_msg.name} {tool_call['args']} {tool_msg.content}’)
+   messages.append(tool_msg)
+   final_response = llm_with_tools.invoke(messages)
+   print(final_response.content)
+With those added print statements for visibility, we can see that the foundation model
+invokes two function calls—one each for multiply and add:
+multiply {'x': 393, 'y': 12.25} Result: 4814.25
+add {'x': 11, 'y': 49} 60.0
+The model will then include this result from the tool call in the generated final
+response, producing a result such as:
+393 times 12.25 is 4814.25, and 11 + 49 is 60.
+While the effect of this is simple, the implications are profound. The foundation
+model is now able to execute the computer programs that we bind with it. This is a
+simple example, but we can bind arbitrarily useful and consequential programs to the
+foundation model, and we now rely on the foundation model to choose which pro‐
+grams to execute with which parameters. Doing so responsibly, and only binding
+tools that the foundation model will execute in ways that produce more good than
+harm, is among the paramount responsibilities of developers building agents and
+agentic systems.
+API-Based Tools
+API-based tools enable autonomous agents to interact with external services, enhanc‐
+ing their capabilities by accessing additional information, processing data, and exe‐
+cuting actions that are not feasible to perform locally. These tools leverage application
+programming interfaces (APIs) to communicate with public or private services, pro‐
+viding a dynamic and scalable way to extend the functionality of an agent.
+API-based tools are particularly valuable in scenarios where the agent needs to inte‐
+grate with various external systems, retrieve real-time data, or perform complex com‐
+putations that would be too resource-intensive to handle internally. By connecting to
+APIs, agents can access a vast array of services, such as weather information, stock
+market data, translation services, and more, enabling them to provide richer and
+more accurate responses to user queries. These API-based tools have multiple
+benefits.
+By leveraging external services, these tools can dramatically expand the range of tasks
+an agent can perform. For instance, an agent can use a weather API to provide cur‐
+rent weather conditions and forecasts, a financial API to fetch stock prices, or a trans‐
+lation API to offer multilingual support. This ability to integrate diverse external
+services greatly broadens the agent’s functionality, all without having to retrain a
+model.
+LangChain Fundamentals 
+| 
+75

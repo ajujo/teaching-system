@@ -1,0 +1,30 @@
+Extracting Features from Relational Data with Featuretools
+290
+In the following output, we see the feature names, the last one of which corresponds to the 
+combination of the price and quantity variables:
+[<Feature: customer_id>,
+<Feature: stock_code>,
+<Feature: description>,
+<Feature: quantity>,
+<Feature: price>,
+<Feature: price * quantity>]
+8.	
+To finish off, let’s inspect the new DataFrame created in step 6:
+feature_matrix.head()
+In the following output, we can see that the new feature was appended to the right of the 
+original DataFrame:
+Figure 9.9 – DataFrame with the new feature resulting from the product of price with quantity
+Combining features with featuretools may seem like a lot of work compared to the df["price"].
+mul(df["quantity"]) pandas functionality. The real power comes in when we create new 
+features in this way and follow it up with aggregations at the invoice or customer level. We will discuss 
+aggregation functions in the Creating features with aggregation primitives recipe.
+How it works...
+To multiply features, we used the MultiplyNumeric primitive from featuretools, which can 
+be accessed from dfs using the multiply_numeric string. We passed the former string to the 
+trans_primitive parameter and then used the primitive_options parameter to specify 
+which variables to multiply. Note that in addition, we passed an empty list to the agg_primitives 
+parameter to avoid returning the default aggregation primitives, and we ignored the features coming 
+from the invoices DataFrame.
+To check out other functions that allow you to combine variables, visit https://featuretools.
+alteryx.com/en/stable/api_reference.html#binary-transform-primitives. 
+At the time of writing, I noticed that MultiplyNumeric and DivideNumeric are not in the 

@@ -1,0 +1,27 @@
+modelo. Por ejemplo, para el modelo de chat Llama 3, Meta cambió la
+plantilla por la siguiente:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+{{ system_prompt }}<|eot_id|>
+<|start_header_id|>user<|end_header_id|>
+{{ user_message }}<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>
+El modelo trata cada espacio de texto entre <| y |>, como
+<|begin_of_text|> y <|start_header_id|>, como un único token.
+Utilizar accidentalmente la plantilla equivocada puede provocar problemas
+de rendimiento desconcertantes. Los pequeños errores al utilizar una
+plantilla, como una nueva línea de más, también pueden hacer que el
+modelo cambie significativamente su comportamiento. 3
+SUGERENCIA
+A continuación se indican algunas mejores prácticas a seguir para evitar
+problemas con plantillas no coincidentes:
+Cuando construya inputs para un modelo fundacional, asegúrese
+de que sus inputs siguen exactamente la plantilla de chat del
+modelo.
+Si utiliza una herramienta de terceros para crear prompts,
+compruebe que dicha herramienta utiliza la plantilla de chat
+correcta. Los errores de plantilla son, por desgracia, muy
+comunes. 4 Estos errores son difíciles de detectar porque
+provocan fallos silenciosos: el modelo hará algo razonable aunque
+la plantilla sea incorrecta. 5
+Antes de enviar un prompt a un modelo, imprima el prompt final
+para comprobar si sigue el modelo esperado.

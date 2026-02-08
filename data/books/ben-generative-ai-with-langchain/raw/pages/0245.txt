@@ -1,0 +1,35 @@
+Building Intelligent Agents
+218
+    ("user", "Prepare a plan how to solve the following task:\
+n{task}\n")])
+planner = planner_prompt | ChatVertexAI(
+   model_name="gemini-2.0-flash", temperature=1.0
+).with_structured_output(Plan)
+For a step execution, let’s use a ReACT agent with built-in tools—DuckDuckGo search, retrievers 
+from arXiv and Wikipedia, and our custom calculator tool we developed earlier in this chapter:
+from langchain.agents import load_tools
+tools = load_tools(
+ tool_names=["ddg-search", "arxiv", "wikipedia"],
+ llm=llm
+) + [calculator_tool]
+Next, let’s define our workflow state. We need to keep track of the initial task and initially gen­
+erated plan, and let’s add past_steps and final_response to the state:
+class PlanState(TypedDict):
+   task: str
+   plan: Plan
+   past_steps: Annotated[list[str], operator.add]
+   final_response: str
+   past_steps: list[str]
+def get_current_step(state: PlanState) -> int:
+ """Returns the number of current step to be executed."""
+ return len(state.get("past_steps", []))
+  
+def get_full_plan(state: PlanState) -> str:
+ """Returns formatted plan with step numbers and past results."""
+ full_plan = []
+ for i, step in enumerate(state["plan"]):
+   full_step = f"# {i+1}. Planned step: {step}\n"
+   if i < get_current_step(state):
+     full_step += f"Result: {state['past_steps'][i]}\n"
+   full_plan.append(full_step)
+ return "\n".join(full_plan)

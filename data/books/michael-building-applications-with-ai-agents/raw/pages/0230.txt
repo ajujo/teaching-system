@@ -1,0 +1,46 @@
+    "delivered_at": "2025-05-15"
+  },
+  "conversation": [
+    {"role": "customer", "content": '''Hi, my coffee mug arrived cracked. Can I 
+        get a replacement or refund?'''},
+    {"role": "assistant", "content": '''I'm very sorry about that! Could you 
+        please send us a quick photo of the damage so we can process a full 
+        refund?'''},
+    {"role": "customer", "content": "Sure, here's the photo."}
+  ],
+  "expected": {
+    "final_state": {
+      "tool_calls": [
+        {"tool": "issue_refund", "params": {"order_id": "A12345", 
+         "amount": 19.99}}
+      ],
+      "customer_msg_contains": ["been processed", "business days"]
+    }
+  }
+}
+This single example tests several things at once. It verifies whether the agent can rea‐
+son correctly over multi-item orders, match conversational context to tool use, and
+produce human-friendly confirmations. Evaluation metrics such as tool recall,
+parameter accuracy, and phrase recall quantify these behaviors. If the agent instead
+refunded the entire order or failed to include appropriate language in its final mes‐
+sage, those metrics would reflect the error—providing precise, actionable signals for
+improvement.
+By formalizing evaluation examples in a structured format—including input state,
+conversation history, and expected final state—teams can automate scoring and
+aggregate metrics across a wide variety of scenarios. This format scales well. Once
+established, new examples can be added by hand, mined from production logs, or
+even generated using foundation models. Language models can be prompted to intro‐
+duce ambiguity, inject rare idioms, or mutate working examples into edge cases.
+These model-generated samples can then be reviewed and refined by humans before
+inclusion in the test set.
+To push the boundaries further, teams can apply targeted generation techniques such
+as adversarial prompting (e.g., “Find a user message that causes the agent to contra‐
+dict itself”), counterfactual editing (e.g., “Change one word in the prompt and see if
+the agent fails”), or distributional interpolation (e.g., “Blend two intents to create a
+deliberately ambiguous request”). These strategies  uncover subtle errors and probe
+the robustness of agent behavior.
+In domains with access to real-world data, such as customer support logs or API call
+traces, domain-specific mining provides another rich source of evaluation material.
+208 
+| 
+Chapter 9: Validation and Measurement

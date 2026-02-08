@@ -1,0 +1,32 @@
+Chapter 10
+365
+The increased network communication between services can also introduce latency and potential
+points of failure, necessitating robust monitoring and resilience mechanisms.
+Note that the proposed design for decoupling the ML model and business logic into two services
+can be extended if necessary. For example, you can have one service for preprocessing the data,
+one for the model, and another for post-processing the data. Depending on the four pillars (latency, throughput, data, and infrastructure), you can get creative and design the most optimal
+architecture for your application needs.
+Choosing between monolithic and microservices
+architectures
+The choice between monolithic and microservices architectures for serving ML models largely
+depends on the application's specific needs. A monolithic approach might be ideal for smaller
+teams or more straightforward applications where ease of development and maintenance is a
+priority. It's also a good starting point for projects without frequent scaling requirements. Also,
+if the ML models are smaller, don't require a GPU, or don't require smaller and cheaper GPUs,
+the trade-off between reducing costs and complicating your infrastructure is worth considering.
+On the other hand, microservices, with their adaptability and scalability, are well suited for larger,
+more complex systems where different components have varying scaling needs or require distinct
+tech stacks. This architecture is particularly advantageous when scaling specific system parts, such
+as GPU-intensive LLM services. As LLMs require powerful machines with GPUs, such as Nvidia
+A100, V100, or A10g, which are incredibly costly, microservices offer the flexibility to optimize
+the system for keeping these machines busy all the time or quickly scaling down when the GPU
+is idle. However, this flexibility comes at the cost of increased complexity in both development
+and operations.
+A common strategy is to start with a monolithic design and further decouple it into multiple
+services as the project grows. However, to successfully do so without making the transition too
+complex and costly, you must design the monolith application with this in mind. For instance,
+even if all the code runs on a single machine, you can completely decouple the modules of the
+application at the software level. This makes it easier to move these modules to different microservices when the time comes. When working with Python, for example, you can implement the
+ML and business logic into two different Python modules that don't interact with each other. Then,
+you can glue these two modules at a higher level, such as through a service class, or directly into
+the framework you use to expose your application over the internet, such as FastAPI.

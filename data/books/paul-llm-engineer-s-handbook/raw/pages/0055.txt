@@ -1,0 +1,35 @@
+Understanding the LLM Twin Concept and Architecture
+24
+•	
+Dowling, J. (2024b, August 5). Modularity and Composability for AI Systems with AI Pipe-
+lines and Shared Storage. Hopsworks. https://www.hopsworks.ai/post/modularity-and-
+composability-for-ai-systems-with-ai-pipelines-and-shared-storage
+•	
+Joseph, M. (2024, August 23). The Taxonomy for Data Transformations in AI Systems. Hop-
+sworks. https://www.hopsworks.ai/post/a-taxonomy-for-data-transformations-
+in-ai-systems
+•	
+MLOps: Continuous delivery and automation pipelines in machine learning. (2024, August 
+28). Google Cloud. https://cloud.google.com/architecture/mlops-continuous-
+delivery-and-automation-pipelines-in-machine-learning
+•	
+Qwak. (2024a, June 2). CI/CD for Machine Learning in 2024: Best Practices to build, test, 
+and Deploy | Infer. Medium. https://medium.com/infer-qwak/ci-cd-for-machine-
+learning-in-2024-best-practices-to-build-test-and-deploy-c4ad869824d2
+•	
+Qwak. (2024b, July 23). 5 Best Open Source Tools to build End-to-End MLOPs Pipeline in 2024. 
+Medium. https://medium.com/infer-qwak/building-an-end-to-end-mlops-pipeline-
+with-open-source-tools-d8bacbf4184f
+•	
+Salama, K., Kazmierczak, J., & Schut, D. (2021). Practitioners guide to MLOPs: A framework 
+for continuous delivery and automation of machine learning (1
+st ed.) [PDF]. Google Cloud. 
+https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_
+whitepaper.pdf
+Unlock this book’s exclusive 
+benefits now
+This book comes with additional ben-
+efits designed to elevate your learning 
+experience. 
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

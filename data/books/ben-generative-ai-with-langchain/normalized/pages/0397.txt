@@ -1,0 +1,40 @@
+Production-Ready LLM Deployment and Observability
+370
+Kubernetes provides orchestration capabilities that are particularly valuable for LLM applications,
+including:
+•
+Horizontal scaling to handle variable load patterns
+•
+Secret management for API keys
+•
+Resource constraints to control costs
+•
+Health checks and automatic recovery
+•
+Rolling updates for zero-downtime deployments
+Let's walk through a complete example of deploying a LangChain application to Kubernetes,
+examining each component and its purpose. First, we need to securely store API keys using Ku­
+bernetes Secrets. This prevents sensitive credentials from being exposed in your codebase or
+container images:
+# secrets.yaml - Store API keys securely
+apiVersion: v1
+kind: Secret
+metadata:
+  name: langchain-secrets
+type: Opaque
+data:
+  # Base64 encoded secrets (use: echo -n "your-key" | base64)
+  OPENAI_API_KEY: BASE64_ENCODED_KEY_HERE
+This YAML file creates a Kubernetes Secret that securely stores your OpenAI API key in an encrypted
+format. When applied to your cluster, this key can be securely mounted as an environment variable
+in your application without ever being visible in plaintext in your deployment configurations.
+Next, we define the actual deployment of your LangChain application, specifying resource re­
+quirements, container configuration, and health monitoring:
+# deployment.yaml - Main application configuration
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: langchain-app
+  labels:
+    app: langchain-app
+spec:

@@ -1,0 +1,38 @@
+Comparing features to reference variables
+235
+Note
+In the recipe, we will show you how to create features with subtraction and division. We hope 
+that the examples, relating to the financial sector, shed some light on how to use domain 
+knowledge to decide which features to combine and how.
+How to do it…
+Let’s begin by loading the necessary Python libraries and the breast cancer dataset from scikit-learn:
+1.	
+Load the necessary libraries, classes, and data:
+import pandas as pd
+from feature_engine.creation import RelativeFeatures
+from sklearn.datasets import load_breast_cancer
+2.	
+Load the breast cancer dataset into a pandas DataFrame:
+data = load_breast_cancer()
+df = pd.DataFrame(data.data,
+    columns=data.feature_names)
+In the breast cancer dataset, some features capture the worst and the mean characteristics of 
+the cell nuclei of breast cells. For example, for each image (that is, for each row), we have the 
+worst compactness observed in all nuclei and the mean compactness of all nuclei. A feature 
+that captures the difference between the worst and the mean value could predict malignancy.
+3.	
+Let’s capture the difference between two features, the worst compactness and mean 
+compactness of cell nuclei, in a new variable and display its values:
+df["difference"] = df["worst compactness"].sub(
+    df["mean compactness"])
+df["difference"].head()
+In the following output, we can see the difference between these feature values:
+0    0.38800
+1    0.10796
+2    0.26460
+3    0.58240
+4    0.07220
+Name: difference, dtype: float64
+Note
+We can perform the same calculation by executing df["difference"] = df["worst 
+compactness"] - (df["mean compactness"]).

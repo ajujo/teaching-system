@@ -1,0 +1,32 @@
+enorme aumento del rendimiento en algunas aplicaciones, pero solo un
+aumento mínimo en otras.
+A la hora de decidir cambiar A por B, las preferencias humanas no lo son
+todo. También nos importan otros factores, como el costo. No saber qué
+aumento de rendimiento cabe esperar dificulta el análisis costo-beneficio. Si
+el modelo B cuesta el doble que el A, la evaluación comparativa no es
+suficiente para ayudarnos a determinar si el aumento de rendimiento de B
+valdrá la pena por el costo añadido.
+El futuro de la evaluación comparativa
+Dada la gran cantidad de limitaciones de la evaluación comparativa, cabe
+preguntarse si tiene futuro. La evaluación comparativa tiene muchas
+ventajas. En primer lugar, como se explica en "Post-entrenamiento", es más
+fácil comparar dos outputs que dar una puntuación concreta a cada uno. A
+medida que los modelos se hacen más fuertes, superando el rendimiento
+humano, podría resultar imposible para los evaluadores humanos dar
+puntuaciones concretas a las respuestas de los modelos. Sin embargo, es
+posible que los evaluadores humanos sigan siendo capaces de detectar la
+diferencia, por lo que la evaluación comparativa podría seguir siendo la
+única opción. Por ejemplo, el artículo sobre Llama 2 dice que cuando el
+modelo se adentra en el tipo de escritura más allá de la capacidad de los
+mejores anotadores humanos, los humanos todavía pueden dar una valiosa
+retroalimentación al comparar dos respuestas (Touvron et al., 2023).
+En segundo lugar, la evaluación comparativa pretende captar la cualidad
+que nos importa: la preferencia humana. Reduce la presión de tener que
+crear constantemente más pruebas comparativas para seguir el ritmo de las
+capacidades en constante expansión de la IA. A diferencia de las pruebas
+comparativas, que se vuelven inútiles cuando el rendimiento de los modelos
+alcanza puntuaciones perfectas, las evaluaciones comparativas nunca se
+saturarán mientras se introduzcan modelos más nuevos y potentes.
+La evaluación comparativa es relativamente difícil de manipular, ya que no
+hay una forma fácil de hacer trampa, como entrenar el modelo con datos de
+referencia. Por ello, muchos confían más en los resultados de los tableros

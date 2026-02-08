@@ -1,0 +1,25 @@
+– métricas de rendimiento de inferencia, API de inferencia en línea y por
+lotes
+– latencia, TTFT y TPOT, API de inferencia en línea y por lotes
+– throughput/goodput, Latencia, TTFT y TPOT
+– utilización, MFU y MBU, Utilización, MFU y MBU
+– optimización del servicio de inferencia, Kernels y compiladores
+– agrupación, Kernels y compiladores
+– caché de prompts, Desacoplamiento del llenado previo y la
+decodificación
+– desacoplamiento de llenado previo y decodificación,
+Desacoplamiento del llenado previo y la decodificación
+– paralelismo, Almacenamiento en cache de prompts
+– visión general de la inferencia
+– API de inferencia, Cuellos de botella de cómputo
+– cuellos de botella computacionales, Visión general de la
+inferencia
+optimización de la política proximal (PPO), Modelo de recompensa
+optimización de la recuperación
+– estrategia de fragmentación, Optimización de la recuperación
+– recuperación contextual, Reescritura de consultas
+– reescritura de consultas, Reranking
+– reordenamiento, Estrategia de fragmentación
+optimización de la recuperación de información, Optimización de la
+recuperación
+– estrategia de fragmentación, Optimización de la recuperación

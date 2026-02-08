@@ -1,0 +1,32 @@
+ponderaciones completas de múltiples modelos afinados puede mejorar la
+precisión sin aumentar el tiempo de inferencia. Sin embargo, es más
+habitual fusionar modelos combinando linealmente componentes
+específicos, como sus adaptadores.
+Aunque se puede combinar linealmente cualquier conjunto de modelos, la
+combinación lineal es la más eficaz para los modelos afinados sobre el
+mismo modelo base. En este caso, la combinación lineal puede verse a
+través del concepto de vectores de tareas. La idea es que, una vez afinado
+un modelo para una tarea específica, al restarle el modelo base se obtenga
+un vector que capte la esencia de la tarea. Los vectores de tareas también se
+denominan parámetros delta. Si afina usando LoRA, puede construir el
+vector de tareas a partir de las ponderaciones LoRA.
+Los vectores de tareas nos permiten hacer aritmética de tareas (Ilharco et
+al., 2022), como sumar dos vectores de tareas para combinar capacidades de
+tareas o restar un vector de tareas para reducir capacidades específicas. La
+sustracción de tareas puede ser útil para eliminar comportamientos
+indeseables del modelo, por ejemplo capacidades invasivas como el
+reconocimiento facial o sesgos obtenidos durante el pre-entrenamiento.
+La combinación lineal es sencilla cuando los componentes que hay que
+fusionar tienen la misma arquitectura y el mismo tamaño. No obstante,
+también puede funcionar con modelos que no compartan la misma
+arquitectura o el mismo tamaño. Por ejemplo, si la capa de un modelo es
+mayor que la del otro, puede proyectar una o ambas capas en la misma
+dimensión.
+Se ha propuesto alinear los modelos antes de promediarlos para garantizar
+que los parámetros relacionados funcionalmente se promedien juntos, como
+en "Model Fusion via Optimal Transport" (Singh y Jaggi, 2020), "Git Re-
+Basin: Merging Models Modulo Permutation Symmetries" (Ainsworth et
+al., 2022) y "Merging by Matching Models in Task Parameter Subspaces"
+(Tam et al., 2023). Aunque tiene sentido combinar parámetros alineados,
+alinear parámetros puede ser un reto y, por lo tanto, este enfoque es menos
+común en combinaciones lineales ingenuas.

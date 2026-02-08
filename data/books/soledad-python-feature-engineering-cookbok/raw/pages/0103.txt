@@ -1,0 +1,30 @@
+Encoding Categorical Variables
+80
+We automated the preceding steps for multiple categorical variables using feature-engine’s 
+RareLabelEncoder(). By setting tol to 0.05, we retained categories present in more than 5% 
+of the observations. By setting n_categories to 4, we only grouped categories in variables with 
+more than four unique values. With fit(), the transformer identified the categorical variables and 
+then learned and stored their frequent categories. With transform(), the transformer replaced 
+infrequent categories with the Rare string.
+Performing binary encoding
+Binary encoding uses binary code – that is, a sequence of zeroes and ones – to represent the different 
+categories of the variable. How does it work? First, the categories are arbitrarily replaced with ordinal 
+numbers, as shown in the intermediate step of the following table. Then, those numbers are converted 
+into binary code. For example, integer 1 can be represented with the sequence of 1-0, integer 2 with 
+0-1, integer 3 with 1-1, and integer 0 with 0-0. The digits in the two positions of the binary string 
+become the columns, which are the encoded representations of the original variable:
+Figure 2.10 – Table showing the steps required for binary encoding the color variable
+Binary encoding encodes the data in fewer dimensions than one-hot encoding. In our example, the 
+Color variable would be encoded into k-1 categories by one-hot encoding – that is, three variables 
+– but with binary encoding, we can represent the variable with only two features. More generally, 
+we determine the number of binary features needed to encode a variable as log2(number of distinct 
+categories); in our example, log2(4) = 2 binary features.
+Binary encoding is an alternative method to one-hot encoding where we do not lose information 
+about the variable, yet we obtain fewer features after the encoding. This is particularly useful when 
+we have highly cardinal variables. For example, if a variable contains 128 unique categories, with 
+one-hot encoding, we would need 127 features to encode the variable, whereas with binary encoding, 
+we will only need 7 (log2(128)=7). Thus, this encoding prevents the feature space from exploding. In 
+addition, binary-encoded features are also suitable for linear models. On the downside, the derived 
+binary features lack human interpretability, so if we need to interpret the decisions made by our 
+models, this encoding method may not be a suitable option.
+In this recipe, we will learn how to perform binary encoding using Category Encoders.

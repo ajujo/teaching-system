@@ -1,0 +1,92 @@
+Chapter 5
+199
+def load_articles_from_json(file_path: str) -> Dataset:
+    with open(file_path, "r") as file:
+        data = json.load(file)
+    return Dataset.from_dict(
+        {
+            "id": [item["id"] for item in data["artifact_data"]],
+            "content": [item["content"] for item in data["artifact_
+data"]],
+            "platform": [item["platform"] for item in
+data["artifact_data"]],
+            "author_id": [item["author_id"] for item in
+data["artifact_data"]],
+            "author_full_name": [item["author_full_name"] for item
+in data["artifact_data"]],
+            "link": [item["link"] for item in data["artifact_
+data"]],
+        }
+    )
+If we simply load our dataset as a pandas dataframe, it returns the following table.
+id
+content
+platform
+author_id
+author_
+full_
+name
+link
+0
+ab2f9e2e-
+5459-4dd6-
+97d6-
+c291de4a7093
+The Importance of Data
+Pipelines in
+the Era of...
+medium
+e6b945ba-
+6a9a-
+4cde-b2bf-
+0890af79732b
+Alex Vesa
+https://medium.
+com/decodingml/
+t
+h
+e
+-
+importance-o...
+1
+ccfe70f3-
+d324-
+40b6-ba38-
+86e72786dcf4
+Change Data
+Capture:
+Enabling
+Event-Driven
+Arc...
+medium
+e6b945ba-
+6a9a-
+4cde-b2bf-
+0890af79732b
+Alex Vesa
+https://medium.
+com/decodingml/
+the-3nd-outof-1...
+2
+4c9f68aeec8b-4534-
+8ad5-
+92372bf8bb37
+The Role of
+Feature Stores
+in Fine-Tuning LLMs...
+medium
+e6b945ba-
+6a9a-
+4cde-b2bf-
+0890af79732b
+Alex Vesa
+https://medium.
+com/decodingml/
+the-role-offeat...
+...
+...
+...
+...
+...
+...
+...

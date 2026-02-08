@@ -1,0 +1,22 @@
+Chapter 6
+233
+Imagine we have implemented three types of agents - one answering general questions grounded
+on public data, another one grounded on a company-wide dataset and knowing about company
+specifics, and the third one specialized on working with a small source of user-provided docu­
+ments. Such specialization helps us to use patterns such as few-shot prompting and controlled
+generation. Now we can add a semantic router - the first layer that asks an LLM to classify the
+question and routes it to the corresponding agent based on classification results. Each agent (or
+some of them) might even use a self-consistency approach, as we learned in Chapter 3, to increase
+the LLM classification accuracy.
+Figure 6.5: Semantic router pattern
+It's worth mentioning that a task might fall into two or more categories - for example, I can
+ask, "What is X and how can I do Y? " This might not be such a common use case in an assistant
+setting, and you can decide what to do in that case. First of all, you might just educate the user
+by replying with an explanation that they should task your application with a single problem per
+turn. Sometimes developers tend to be too focused on trying to solve everything programmat­
+ically. But some product features are relatively easy to solve via the UI, and users (especially in
+the enterprise setup) are ready to provide their input. Maybe, instead of solving a classification
+problem on the prompt, just add a simple checkbox in the UI, or let the system double-check if
+the level of confidence is low.
+You can also use tool calling or other controlled generation techniques we've learned about to
+extract both goals and route the execution to two specialized agents with different tasks.

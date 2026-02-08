@@ -1,0 +1,31 @@
+generar encuentros debe muestrear los encuentros que reduzcan más la
+incertidumbre en el ranking general.
+Falta de normalización y control de calidad
+Una forma de recopilar señales comparativas es realizar comparaciones
+mediante crowdsourcing con la comunidad, como hace LMSYS Chatbot
+Arena. Cualquiera puede entrar en el sitio web, introducir un prompt,
+obtener dos respuestas de dos modelos anónimos y votar por la mejor. Los
+nombres de los modelos no se revelarán hasta que se haya votado.
+La ventaja de este enfoque es que capta una amplia gama de señales y es
+relativamente difícil manipularlo. 24 Sin embargo, el inconveniente es que
+resulta difícil aplicar la normalización y el control de calidad.
+En primer lugar, cualquiera con acceso a Internet puede utilizar cualquier
+prompt para evaluar estos modelos, y no hay ninguna norma sobre lo que
+debería constituir una mejor respuesta. Tal vez sea demasiado esperar que
+los voluntarios comprueben los hechos de las respuestas, por lo que podrían
+preferir, sin saberlo, respuestas que suenen mejor pero que sean
+factualmente incorrectas.
+Algunas personas prefieren respuestas educadas y moderadas, mientras que
+otras prefieren respuestas sin filtro. Esto es bueno y malo a la vez. Es bueno
+porque ayuda a captar las preferencias humanas al natural. Es malo porque
+la preferencia humana al natural podría no ser apropiada para todos los
+casos de uso. Por ejemplo, si un usuario pide a un modelo que cuente un
+chiste inapropiado y el modelo se niega, el usuario podría darle un voto
+negativo. Sin embargo, como desarrollador de aplicaciones, es posible que
+prefiera que el modelo se niegue. Algunos usuarios podrían incluso elegir
+maliciosamente las respuestas tóxicas como las preferidas, contaminando el
+ranking.
+En segundo lugar, las comparaciones de crowdsourcing requieren que los
+usuarios evalúen los modelos fuera de sus entornos de trabajo. Sin una base
+real, es posible que los prompts de prueba no reflejen cómo se utilizan estos
+modelos en el mundo real. Es posible que las personas se limiten a utilizar

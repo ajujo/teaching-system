@@ -1,0 +1,17 @@
+afinar los modelos grandes. Esto es lo contrario del pre-
+entrenamiento, en el que los modelos más grandes necesitan
+más datos de entrenamiento.
+La guía de afinado de OpenAI muestra que si se dispone de menos ejemplos
+(100), los modelos más avanzados ofrecen un mejor rendimiento de
+afinado. Es probable que esto se deba a que los modelos más avanzados ya
+ofrecen mejores resultados desde el primer momento. Sin embargo, tras
+ajustar con un gran número de ejemplos (550 000), los cinco modelos del
+experimento obtuvieron resultados similares, como se ilustra en la Figura 8-
+2.
+figura 8-2. Con 100 ejemplos, los modelos más avanzados ofrecen un rendimiento
+mucho mejor tras el afinado. Con 550 000 ejemplos, todos los modelos ofrecen un
+rendimiento similar tras el afinado. Experimentos realizados con el corpus Stanford
+Natural Language Inference (SNLI).
+En resumen, si dispone de pocos datos, quizá le convenga utilizar métodos
+PEFT en modelos más avanzados. Si dispone de una gran cantidad de datos,
+utilicen el afinado completo con modelos más pequeños.

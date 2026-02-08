@@ -1,0 +1,35 @@
+Transforming Numerical Variables
+112
+9.	
+YeoJohnsonTransformer() stores the best parameters per variable in its lambda_dict_ 
+attribute, which we can display as follows:
+yjt.lambda_dict_
+The previous command returns the following dictionary:
+{'MedInc': -0.1985098937827175,
+'HouseAge': 0.8081480895997063,
+'AveRooms': -0.5536698033957893,
+'AveBedrms': -4.3940822236920365,
+'Population': 0.23352363517075606,
+'AveOccup': -0.9013456270549428}
+Now you know how to implement the Yeo-Johnson transformation with two different open source libraries.
+How it works...
+In this recipe, we applied the Yeo-Johnson transformation using scikit-learn and Feature-
+engine.
+scikit-learn’s PowerTransformer() can apply both Box-Cox and Yeo-Johnson transformations, 
+so we specified the transformation with the yeo-johnson string. The standardize argument 
+allowed us to determine whether we wanted to standardize (scale) the transformed values. Next, 
+we fit the transformer to the DataFrame so that it learned the optimal lambdas for each variable. 
+PowerTransformer() stored the learned lambdas in its lambdas_ attribute. Finally, we used 
+the transform() method to return the transformed variables. We set the transform output to 
+pandas to return DataFrames after the transformation.
+After that, we applied the Yeo-Johnson transformation using Feature-engine. We set up 
+YeoJohnsonTransformer() so that it transforms all numerical variables seen during fit(). 
+We fitted the transformer to the data so that it learned the optimal lambdas per variable, which were 
+stored in lambda_dict_, and finally transformed the variables using the transform() method. 
+Feature-engine’s YeoJohnnsonTransformer() can take the entire DataFrame as input, yet it 
+will only transform the selected variables.
+There’s more…
+We can apply the Yeo-Johnson transformation with the SciPy library. For a code implementation, 
+visit this book’s GitHub repository: https://github.com/PacktPublishing/Python-
+Feature-Engineering-Cookbook-Second-Edition/blob/main/ch03-variable-
+transformation/Recipe-6-Yeo-Johnson-transformation.ipynb

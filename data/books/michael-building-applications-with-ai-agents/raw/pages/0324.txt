@@ -1,0 +1,69 @@
+By recognizing the different scopes at which agents operate and designing accord‐
+ingly, organizations can safely and effectively unlock their full potential—from indi‐
+vidual productivity to systemic transformation.
+Agent Scope and Organizational Roles
+Not all agents are created equal—or rather, not all are created to serve the same entity.
+As organizations scale their use of agentic systems, they naturally adopt agents that
+operate at different levels of abstraction and authority. Understanding and intention‐
+ally designing around these scopes is critical for safe, effective deployment. Agent
+deployments typically fall into one of five scopes, as shown in Table 13-2. As agents
+scale from personal assistants to organizational systems, their access scope, decision
+autonomy, and stakeholder impact increase. Each scope requires tailored design
+choices for permissions, oversight, and context management.
+Table 13-2. Agent scopes across organizational levels
+Scope
+Primary user(s)
+Access scope
+Decision
+autonomy
+Examples
+Personal
+Individual
+Email, calendar, documents,
+code
+Low to moderate
+Executive assistant, dev copilot
+Team
+Group or manager
+Shared drives, meetings,
+goals
+Moderate
+Sprint planning assistant,
+meeting bot
+Project
+Cross-functional
+group
+Task tracking, deliverables
+Moderate to high
+R&D program agent, launch
+coordination bot
+Functional
+Department
+Customer relationship
+management, human
+resource information services,
+financial systems
+High (within
+domain)
+HR agent, compliance agent,
+marketing agent
+Organizational Leadership/IT/chief
+information officer
+Enterprise systems, analytics
+High or restricted
+Company-wide analytics agent,
+AI help desk
+Each scope comes with different requirements for autonomy, oversight, data access,
+and trust calibration. For example, a personal agent can take small risks with limited
+scope, while an organizational agent must operate with rigorous guardrails, explaina‐
+bility, and auditing.
+The first and most critical implication is the need for differentiated access control. As
+agents expand in scope, they must adhere to increasingly strict role-based access con‐
+trols (RBAC) that align with their responsibilities and the sensitivity of the data they
+touch.
+Personal agents may inherit permissions from the individual they assist, while func‐
+tional or organizational agents require explicit privileges that reflect their designated
+role within enterprise systems. Designing this access architecture demands
+302 
+| 
+Chapter 13: Human-Agent Collaboration

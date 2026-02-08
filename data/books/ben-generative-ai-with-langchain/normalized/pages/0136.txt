@@ -1,0 +1,31 @@
+Chapter 4
+109
+These improvements reflected an understanding that the ultimate goal of search is not just finding
+documents but satisfying information needs.
+Google's PageRank algorithm (late 1990s) improved results by considering link structures, but
+even modern search engines faced fundamental limitations in understanding meaning. The
+search experience evolved from simple lists of matching documents to richer presentations with
+contextual snippets (beginning with Yahoo's highlighted terms in the late 1990s and evolving to
+Google's dynamic document previews that extract the most relevant sentences containing search
+terms), but the underlying challenge remained: bridging the semantic gap between query terms
+and relevant information.
+A fundamental limitation of traditional retrieval systems lies in their lexical approach to docu­
+ment retrieval. In the Uniterm model, query terms were mapped to documents through inverted
+indices, where each word in the vocabulary points to a "postings list" of document positions. This
+approach efficiently supported complex boolean queries but fundamentally missed semantic rela­
+tionships between terms. For example, "turtle" and "tortoise" are treated as completely separate
+words in an inverted index, despite being semantically related. Early retrieval systems attempted
+to bridge this gap through pre-retrieval stages that augmented queries with synonyms, but the
+underlying limitation remained.
+The breakthrough came with advances in neural network models that could capture the mean­
+ing of words and documents as dense vector representations-known as embeddings. Unlike
+traditional keyword systems, embeddings create a semantic map where related concepts clus­
+ter together-"turtle," "tortoise," and "reptile" would appear as neighbors in this space, while
+"bank" (financial) would cluster with "money" but far from "river." This geometric organization
+of meaning enabled retrieval based on conceptual similarity rather than exact word matching.
+This transformation gained momentum with models like Word2Vec (2013) and later transform­
+er-based models such as BERT (2018), which introduced contextual understanding. BERT's inno­
+vation was to recognize that the same word could have different meanings depending on its con­
+text-"bank" as a financial institution versus "bank" of a river. These distributed representations
+fundamentally changed what was possible in information retrieval, enabling the development
+of systems that could understand the intent behind queries rather than just matching keywords.

@@ -1,0 +1,34 @@
+Encoding Categorical Variables
+76
+b         -0.042410
+dtype: float64
+7.	
+Finally, let’s replace the categories of A1 with the WoE in a copy of the datasets:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+X_train_enc["A1"] = X_train_enc["A1"].map(woe)
+X_test_enc["A1"] = X_test_enc["A1"].map(woe)
+You can inspect the encoded variable by executing X_train_enc["A1"].head().
+Now, let’s perform WoE encoding using feature-engine.
+8.	
+Let’s import the encoder:
+from feature_engine.encoding import WoEEncoder
+9.	
+Next, let’s set up the encoder to encode three categorical variables:
+woe_enc = WoEEncoder(variables = ["A1", "A9", "A12"])
+Note
+For rare categories, it might happen that p(0)=0 or p(1)=0, and then the division or the 
+logarithm is not defined. To avoid this, group infrequent categories as shown in the Grouping 
+rare or infrequent categories recipe.
+10.	 Let’s fit the transformer to the train set so that it learns and stores the WoE of the different categories:
+woe_enc.fit(X_train, y_train)
+Note
+We can display the dictionaries with the categories to WoE pairs by executing woe_enc.
+encoder_dict_.
+11.	 Finally, let’s encode the three categorical variables in the train and test sets:
+X_train_enc = woe_enc.transform(X_train)
+X_test_enc = woe_enc.transform(X_test)
+feature-engine returns pandas DataFrames, which contain the encoded categorical variables 
+ready to use in machine learning models.
+How it works...
+In this recipe, we encoded categorical variables using the WoE with pandas and feature-engine.

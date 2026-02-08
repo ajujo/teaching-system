@@ -1,0 +1,34 @@
+Chapter 7
+297
+The transformation brought by LLMs enables both technical and non-technical stakeholders to 
+interact with data effectively. Its primary value lies in reducing the cognitive load associated with 
+repetitive coding tasks, allowing data scientists to maintain the flow and focus on higher-level 
+analytical challenges. However, rigorous validation remains essential—independent studies 
+consistently identify concerns regarding code quality, security, and maintainability. These consid­
+erations are especially critical in two key workflows that LangChain has revolutionized: training 
+ML models and analyzing datasets. 
+When training ML models, LLMs can now generate synthetic training data, assist in feature engi­
+neering, and automatically tune hyperparameters—dramatically reducing the expertise barrier 
+for model development. Moreover, for data analysis, LLMs serve as intelligent interfaces that 
+translate natural language questions into code, visualizations, and insights, allowing domain 
+experts to extract value from data without deep programming knowledge. The following sections 
+explore both of these areas with LangChain.
+Training an ML model
+As you know by now, LangChain agents can write and execute Python code for data science tasks, 
+including building and training ML models. This capability is particularly valuable when you 
+need to perform complex data analysis, create visualizations, or implement custom algorithms 
+on the fly without switching contexts.
+In this section, we’ll explore how to create and use Python-capable agents through two main 
+steps: setting up the Python agent environment and configuring the agent with the right model 
+and tools; and implementing a neural network from scratch, guiding the agent to create a com­
+plete working model.
+Setting up a Python-capable agent
+Let’s start by creating a Python-capable agent using LangChain’s experimental tools:
+from langchain_experimental.agents.agent_toolkits.python.base import cre­
+ate_python_agent
+from langchain_experimental.tools.python.tool import PythonREPLTool
+from langchain_anthropic import ChatAnthropic
+from langchain.agents.agent_types import AgentType
+agent_executor = create_python_agent(
+    llm=ChatAnthropic(model='claude-3-opus-20240229'),
+    tool=PythonREPLTool(),

@@ -1,0 +1,29 @@
+Handle errors gracefully
+Provide clear, polite fallbacks when the agent can't fulfill a request.
+Build trust
+Be transparent about limitations, confidence, and reasoning.
+Equally important is how agents communicate their capabilities, limitations, and
+uncertainties. Clear expectations, honest confidence signals, and thoughtful clarifica‐
+tion questions create trust, reduce frustration, and prevent misunderstandings.
+Agents must also know how to fail gracefully, guiding users toward alternative solu‐
+tions without leaving them stranded or confused.
+Finally, building trust through predictability, transparency, and responsible design
+choices ensures that users can rely on agents. Trust is earned not just through success
+but also through how agents handle ambiguity, failure, and recovery.
+As the agent landscape continues to shift and expand, designers and developers must
+remain agile-continually reevaluating interaction paradigms, adapting to new multi‐
+modal capabilities, and experimenting with novel UX patterns. The design patterns
+described here provide a robust starting point, but the future of agentic UX will be
+shaped by rapid innovation in modalities, context management, and human-agent
+collaboration. In the years ahead, agent systems will continue to evolve, becoming
+more deeply embedded in our personal and professional lives. The principles out‐
+lined in this chapter-focused on clarity, adaptability, transparency, and trust-pro‐
+vide a blueprint for creating agent experiences that are not just functional, but
+intuitive, engaging, and deeply aligned with human needs.
+By prioritizing UX at every stage of development, we can ensure that agents become
+not just tools, but indispensable partners in our increasingly intelligent digital ecosys‐
+tems. In Chapter 4, we'll cover tool use, which is how we move from ordinary chat‐
+bots to systems that can do real work for users.
+Conclusion
+|
+69

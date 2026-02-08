@@ -1,0 +1,33 @@
+Chapter 6
+235
+Now it's time to look at a practical example. Let's develop a research agent that uses tools to
+answer complex multiple-choice questions based on the public MMLU dataset (we'll use high
+school geography questions). First, we need to grab a dataset from Hugging Face:
+from datasets import load_dataset
+ds = load_dataset("cais/mmlu", "high_school_geography")
+ds_dict = ds["test"].take(2).to_dict()
+print(ds_dict["question"][0])
+>> The main factor preventing subsistence economies from advancing
+economically is the lack of
+These are our answer options:
+print(ds_dict["choices"][0])
+>> ['a currency.', 'a well-connected transportation infrastructure.',
+'government activity.', 'a banking service.']
+Let's start with a ReACT agent, but let's deviate from a default system prompt and write our own
+prompt. Let's focus this agent on being creative and working on an evidence-based solution (please
+note that we used elements of CoT prompting, which we discussed in Chapter 3):
+from langchain.agents import load_tools
+from langgraph.prebuilt import create_react_agent
+from langchain_google_vertexai import ChatVertexAI
+llm = ChatVertexAI(model="gemini-2.0-flash-lite", temperature=1.0)
+research_tools = load_tools(
+  tool_names=["ddg-search", "arxiv", "wikipedia"],
+  llm=llm)
+system_prompt = (
+   "You're a hard-working, curious and creative student. "
+   "You're preparing an answer to an exam quesion. "
+   "Work hard, think step by step."
+   "Always provide an argumentation for your answer. "
+   "Do not assume anything, use available tools to search "
+   "for evidence and supporting statements."
+)

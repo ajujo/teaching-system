@@ -1,0 +1,42 @@
+LangChain Fundamentals
+Before diving deeper into tool selection and orchestration, it is helpful to understand
+some core LangChain concepts. At the heart of LangChain are foundation models
+and chat models, which process prompts and generate responses. For example, Chat
+OpenAI is a wrapper class that provides a simple interface to interact with OpenAI's
+chat-based models like GPT-5. You initialize it with parameters such as the model
+name to specify which model to use:
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(model_name="gpt-4o")
+LangChain structures interactions as messages to maintain conversational context.
+The two main message types are HumanMessage, which represents user inputs, and
+AIMessage, which represents the model's responses:
+from langchain_core.messages import
+HumanMessage messages = [HumanMessage("What is the weather today?")]
+Tools, meanwhile, are external functions that your model can call to extend its capa‐
+bilities beyond text generation-for instance, calling APIs, retrieving database entries,
+or performing calculations. You define a tool in LangChain using the @tool decora‐
+tor, which registers the function and automatically generates the schema describing
+its inputs and outputs:
+from langchain_core.tools import tool
+@tool
+def add_numbers(x: int, y: int) -> int:
+    """Adds two numbers and returns the sum."""
+    return x + y
+Once you have defined your tools, you bind them to the model using .bind_tools(),
+which enables the model to select and invoke these tools in response to user inputs.
+To interact with the model, you use the .invoke() method, providing it with a list of
+messages representing the current conversation. If the model decides to call a tool, it
+will output a tool call, which you then execute by invoking the corresponding func‐
+tion and appending its result back into the conversation before generating the final
+response:
+llm_with_tools = llm.bind_tools([add_numbers])
+ai_msg = llm_with_tools.invoke(messages)
+for tool_call in ai_msg.tool_calls:
+    tool_response = add_numbers.invoke(tool_call)
+These building blocks-chat models, messages, tools, and tool invocation-form the
+foundation of LangChain-based systems. Understanding how they fit together will
+help you follow the examples in this chapter and build your own agents that can
+seamlessly integrate language understanding with real-world actions.
+72
+|
+Chapter 4: Tool Use

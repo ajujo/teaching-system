@@ -1,0 +1,39 @@
+When thoughtfully integrated into a continuous learning pipeline, in-context learn‐
+ing provides not only a powerful mechanism for immediate improvement but also a
+vital foundation for scalable, longer-term system optimization.
+Offline Retraining
+Offline retraining represents a structured, periodic approach to embedding lasting
+improvements in agent systems, drawing on accumulated data from feedback pipe‐
+lines and experiments. Unlike in-context adaptations, which are session-bound, off‐
+line retraining involves collecting batches of interaction data-such as user queries,
+agent outputs, and labeled outcomes-and using them to update prompts and tools
+or even fine-tune underlying models in a controlled, nonproduction environment.
+This method is particularly suited for addressing systemic issues identified over time,
+such as recurring misalignments in reasoning or tool usage, without disrupting live
+operations.
+In the SOC agent example, suppose feedback reveals a pattern of false positives in
+threat triages due to evolving attack vectors. Teams can aggregate historical logs and
+annotations into a dataset, then use frameworks like DSPy to optimize prompts or
+fine-tune a lightweight adapter on the base foundation model (as discussed in Chap‐
+ter 7). The process typically follows these steps:
+Data curation
+Gather and label examples from production traces, ensuring diversity and bal‐
+ance to avoid bias.
+Model updates
+Apply techniques like few-shot optimization or full fine-tuning on held-out data,
+focusing on metrics like accuracy or latency.
+Validation
+Test the retrained components offline against benchmarks, then via shadow
+deployments before rollout.
+Key strengths include:
+Durability
+Changes persist across sessions and users, providing long-term alignment with
+shifting environments.
+Scalability
+Batched updates are efficient for high-volume systems, enabling teams to incor‐
+porate large datasets without real-time overhead.
+Risk mitigation
+Offline nature enables thorough testing, reducing the chance of regressions.
+Continuous Learning
+|
+267

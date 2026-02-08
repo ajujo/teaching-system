@@ -1,0 +1,39 @@
+]
+# Define ReAct module for SOC incident handling
+react = dspy.ReAct("alert -> response", tools=[lookup_threat_intel, query_logs])
+# Optimizer with a simple metric 
+# (exact match for illustration; 
+# use a more nuanced metric like 
+# semantic similarity in production)
+tp = dspy.MIPROv2(metric=dspy.evaluate.answer_exact_match, auto="light", 
+                  num_threads=24)
+optimized_react = tp.compile(react, trainset=trainset)
+This code optimizes the ReAct module’s prompts (e.g., for reasoning steps and tool
+invocation) to better match the provided examples, effectively refining the agent’s
+behavior without manual prompt tweaking. The resulting optimized_react can be
+integrated into the SOC agent’s workflow, leading to more reliable handling of diverse
+alerts and reducing issues like hallucinations or off-task outputs.
+In advanced feedback systems, prompt adjustments can even be automated in
+response to observed failure patterns, though all changes should be validated—pref‐
+erably in both offline testing and live shadow deployments—to prevent regressions or
+unintended side effects.
+Tool Refinement
+In modern agentic architectures, prompts alone rarely suffice. Agents increasingly
+rely on a suite of external tools—APIs, code functions, database queries, or custom
+skills—to retrieve information, perform transactions, or take concrete actions. Feed‐
+back pipelines frequently surface issues such as:
+• Incorrect or suboptimal tool selection for a given user task
+• Parameter mismatches or malformed inputs to tool calls
+• Gaps in the toolset—tasks the agent cannot accomplish due to missing or incom‐
+plete tools
+• Tool chaining failures, where the output of one step is not properly formatted for
+the next
+Tool refinement is a multilevel process:
+Refining internal logic
+Optimizing prompts or models within tools to better process and classify data
+Expanding capabilities
+Enhancing tools to cover broader scenarios by incorporating optimized
+reasoning
+256 
+| 
+Chapter 11: Improvement Loops

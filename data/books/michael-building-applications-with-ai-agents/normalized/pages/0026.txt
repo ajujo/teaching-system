@@ -1,0 +1,39 @@
+Conversational agents
+This category includes chatbots and customer service agents that engage users
+through natural language interfaces. They are optimized for dialogue manage‐
+ment, intent recognition, and conversational turn-taking, such as virtual assis‐
+tants embedded in customer support platforms.
+Research agents
+Research agents conduct information gathering, synthesis, and summarization
+tasks. They scan documents, knowledge bases, or the web to provide structured
+outputs that assist human analysts. Examples include Perplexity AI and Elicit.
+Analytics agents
+Analytics agents, such as Power BI Copilot or Glean, focus on interpreting struc‐
+tured datasets and generating insights, dashboards, and reports. They often inte‐
+grate tightly with enterprise data warehouses, enabling users to query complex
+data in natural language.
+Developer agents
+Tools like Cursor, Windsurf, and GitHub Copilot represent coding agents, which
+assist developers by generating, refactoring, and explaining code. They integrate
+deeply into IDE workflows to augment software development productivity.
+Domain-specific agents
+These agents are tuned for specialized professional domains, such as legal (Har‐
+vey), medical (Hippocratic AI), or finance agents. They combine domain-specific
+knowledge with structured workflows to deliver targeted, expert-level assistance.
+Browser-using agents
+These agents navigate, interact with, extract information from, and take actions
+on websites without human interaction. As opposed to traditional robotic pro‐
+cess automation, which follows prescripted steps, modern browser-using agents
+combine language understanding, visual perception, and dynamic planning to
+adapt on the fly.
+In addition to these seven types of agents, voice and video agents are important and
+also expected to increase in adoption in the coming years:
+Voice agents
+Powered by end-to-end speech understanding and generation, these agents are
+enabling conversational automation in areas like customer service, appointment
+scheduling, and even real-time order processing.
+Video agents
+These agents present users with avatar-based video responses, combining lipsynced speech, facial expression, and gesture. They're emerging rapidly in sales,
+4
+|
+Chapter 1: Introduction to Agents

@@ -1,0 +1,39 @@
+Multiagent architectures are well suited for environments where tasks are complex,
+distributed, or require specialization across different components. In these systems,
+multiple agents contribute to solving complex, distributed problems, such as in finan‐
+cial trading systems, cybersecurity investigations, or collaborative AI research
+platforms.
+Single-agent systems offer simplicity and are ideal for well-defined tasks. Multiagent
+systems provide collaboration, parallelism, and scalability, making them suitable for
+complex environments. Choosing the right architecture depends on the complexity of
+the task, the need for scalability, and the expected lifespan of the system. In the next
+section, we’ll discuss some principles we can follow to get the best results from the 
+agentic systems we build.
+Best Practices
+Designing agent-based systems requires more than just building agents with the right
+models, skills, and architecture. To ensure that these systems perform optimally in
+real-world conditions and continue to evolve as the environment changes, it’s essen‐
+tial to follow best practices throughout the development lifecycle. This section high‐
+lights three critical best practices—iterative design, evaluation strategy, and real-world
+testing—that contribute to creating adaptable, efficient, and reliable agent systems.
+Iterative Design
+Iterative design is a fundamental approach in agent development, emphasizing the
+importance of building systems incrementally while continually incorporating feed‐
+back. Instead of aiming for a perfect solution in the initial build, iterative design focu‐
+ses on creating small, functional prototypes that you can evaluate, improve, and
+refine over multiple cycles. This process allows for quick identification of flaws, rapid
+course correction, and continuous system improvement, and it has multiple benefits:
+Early detection of issues
+By releasing early prototypes, developers can identify design flaws or perfor‐
+mance bottlenecks before they become deeply embedded in the system. This ena‐
+bles swift remediation of issues, reducing long-term development costs and
+avoiding major refactors.
+User-centric design
+Iterative design encourages frequent feedback from stakeholders, end users, and
+other developers. This feedback ensures that the agent system remains aligned
+with the users’ needs and expectations. As agents are tested in real-world scenar‐
+ios, iterative improvements can fine-tune their behaviors and responses to better
+suit the users they serve.
+34 
+| 
+Chapter 2: Designing Agent Systems

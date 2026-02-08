@@ -1,0 +1,15 @@
+figura 7-10. Número de incidencias correspondientes a diferentes técnicas de afinado
+del repositorio GitHub huggingface/peft. Se trata de una aproximación para estimar la
+popularidad de cada técnica.
+De este análisis se desprende que LoRA es la dominante. La técnica de
+prompts suaves es menos común, pero parece haber un interés creciente por
+parte de quienes quieren más personalización de la que permite la ingeniería
+de prompts, pero no quieren invertir en un afinado.
+Debido a la popularidad de LoRA, la siguiente sección se centra en cómo
+funciona y cómo resuelve el reto planteado por los primeros métodos
+basados en adaptadores. Incluso si no utiliza LoRA, esta inmersión en
+profundidad debería darle una base para explorar otros métodos de afinado.
+LoRA
+A diferencia del método adaptador original de Houlsby et al. (2019), LoRA
+(Low-Rank Adaptation) (Hu et al., 2021) incorpora parámetros adicionales
+de un modo que no incurre en latencia de inferencia extra. En lugar de

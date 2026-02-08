@@ -1,0 +1,40 @@
+The first step is to involve stakeholders early in the design process—not just as test‐
+ers, but as co-creators. This includes defining clear goals: what specific outcomes
+should the agent improve? What decisions should it take on, and which should
+remain human-led? What would success—and failure—look like?
+Crucially, success metrics must go beyond technical performance. An agent that com‐
+pletes tasks quickly but undermines trust or adds friction will not be adopted. Stake‐
+holder buy-in depends on perceived usefulness, reliability, and alignment with
+existing workflows and values.
+Implementing agentic systems is also an opportunity for broader organizational
+learning. When expectations diverge—between users and developers, or between
+what the agent can do and what stakeholders believe it should do—those moments
+can be used to clarify priorities, refine requirements, and recalibrate roles. Friction, if
+handled transparently, becomes fuel for iteration.
+To support ongoing adoption, organizations should invest in training, feedback
+loops, and responsive support. Just as agents evolve, so should their onboarding
+materials and integration guides. Teams need spaces to voice concerns, propose
+improvements, and celebrate small wins as the agent grows into its role.
+For example, ZoomInfo’s four-phase rollout of GitHub Copilot began with a small
+pilot of 50 engineers and only expanded to its full team of more than 400+ people
+once metrics (a 33% suggestion acceptance rate and 72% developer satisfaction) met
+carefully established thresholds—and qualitative feedback confirmed that Copilot
+suggestions were genuinely helpful. By tying each expansion to concrete trust signals,
+ZoomInfo transformed Copilot from a nice-to-have into a core productivity tool.
+Ultimately, adoption is not a binary switch—it’s a journey of coevolution between
+humans and their agent teammates. Systems that succeed are those where stakehold‐
+ers don’t just use the agent—they believe in its value and see it as an extension of their
+goals.
+Bridging this gap is not optional. It’s the difference between agentic systems that qui‐
+etly fade and those that truly transform how work gets done. With human roles
+defined and adoption strategies in place, we now turn to how collaboration itself
+scales—moving from individual assistants to team-wide and enterprise-level agents.
+Scaling Collaboration
+In this section, we examine how agents expand from individual assistants to team and
+enterprise collaborators—and what each stage demands of human and system design.
+As organizations adopt agents more broadly, their roles evolve from isolated assis‐
+tants to collaborative participants embedded across teams, departments, and strategic
+workflows. Understanding how agent responsibilities scale—from personal tools to
+300 
+| 
+Chapter 13: Human-Agent Collaboration

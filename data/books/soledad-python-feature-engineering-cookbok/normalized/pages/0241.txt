@@ -1,0 +1,35 @@
+Performing Feature Scaling
+218
+Note
+To divide by the difference between the minimum and maximum values, we need to specify
+(0, 100) in the quantile_range argument of RobustScaler().
+4.
+Let's fit the scalers to the train set so that they learn and store the mean, maximum, and
+minimum values:
+scaler_mean.fit(X_train)
+scaler_minmax.fit(X_train)
+5.
+Finally, let's apply mean normalization to the train and test sets:
+X_train_scaled = scaler_minmax.transform(
+    scaler_mean.transform(X_train)
+)
+X_test_scaled = scaler_minmax.transform(
+    scaler_mean.transform(X_test)
+)
+We transformed the data with StandardScaler() to remove the mean and then transformed
+the resulting DataFrame with RobustScaler() to divide the result by the range between the
+minimum and maximum values. We described the functionality of StandardScaler() in this
+chapter's Standardizing the features recipe and RobustScaler() in the Scaling with the median
+and quantiles recipe of this chapter.
+Implementing maximum absolute scaling
+Maximum absolute scaling scales the data to its maximum value - that is, it divides every observation
+by the maximum value of the variable:
+x scaled =
+x
+_
+max(x)
+As a result, the maximum value of each feature will be 1.0. Note that maximum absolute scaling does
+not center the data, and hence, it's suitable for scaling sparse data. In this recipe, we will implement
+maximum absolute scaling with scikit-learn.
+Note
+Scikit-learn recommends using this transformer on data that is centered at 0 or on sparse data.

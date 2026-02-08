@@ -1,0 +1,33 @@
+RAG Inference Pipeline
+342
+            num_queries=len(n_generated_queries),
+        )
+We then perform the search concurrently for all expanded queries using a thread pool. Each que-
+ry is processed by the _search() method, which we’ll explore shortly. The results are flattened, 
+deduplicated, and collected into a single list:
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            search_tasks = [executor.submit(self._search, _query_model, k) 
+for _query_model in n_generated_queries]
+            n_k_documents = [task.result() for task in concurrent.futures.
+as_completed(search_tasks)]
+            n_k_documents = utils.misc.flatten(n_k_documents)
+            n_k_documents = list(set(n_k_documents))
+        logger.info("All documents retrieved successfully.", num_
+documents=len(n_k_documents))
+After retrieving the documents, we rerank them based on their relevance to the original query 
+and keep only the top k documents:
+        if len(n_k_documents) > 0:
+            k_documents = self.rerank(query, chunks=n_k_documents, keep_
+top_k=k)
+        else:
+            k_documents = []
+        return k_documents
+The _search() method performs the filtered vector search across different data categories like 
+posts, articles, and repositories. It uses the EmbeddingDispatcher to convert the query into an 
+EmbeddedQuery, which includes the query’s embedding vector and any extracted metadata:
+    def _search(self, query: Query, k: int = 3) -> list[EmbeddedChunk]:
+        assert k >= 3, "k should be >= 3"
+        def _search_data_category(
+            data_category_odm: type[EmbeddedChunk], embedded_query: 
+EmbeddedQuery
+        ) -> list[EmbeddedChunk]:

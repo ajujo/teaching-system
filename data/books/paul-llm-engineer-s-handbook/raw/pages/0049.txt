@@ -1,0 +1,10 @@
+Understanding the LLM Twin Concept and Architecture
+18
+Given our goal of building an MVP with a small team, we must implement the entire application. 
+This includes defining the data collection and FTI pipelines. Tackling a problem end to end is 
+often encountered in start-ups that can’t afford dedicated teams. Thus, engineers have to wear 
+many hats, depending on the state of the product. Nevertheless, in any scenario, knowing how 
+an end-to-end ML system works is valuable for better understanding other people’s work.
+Figure 1.6 shows the LLM system architecture. The best way to understand it is to review the four 
+components individually and explain how they work.
+Figure 1.6: LLM Twin high-level architecture

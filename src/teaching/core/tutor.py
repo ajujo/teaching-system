@@ -71,15 +71,68 @@ class TutorEventType(Enum):
 
 @dataclass
 class TutorEvent:
-    """Evento emitido por el tutor (F8.3).
+    """Evento emitido por el tutor (F8.3, F8.4).
 
     Encapsula la información para renderizar en CLI o webapp.
+
+    F8.4 additions:
+    - event_id: Unique identifier for this event (for webapp tracking)
+    - turn_id: Increments with each user input (groups related events)
+    - seq: Sequence within a turn (ordering)
     """
 
     event_type: TutorEventType
     title: str = ""  # Título opcional (ej: "Punto 1: Tokenización")
     markdown: str = ""  # Contenido principal en Markdown
-    data: dict = field(default_factory=dict)  # Datos adicionales (ej: point_number, unit_id)
+    data: dict = field(default_factory=dict)  # Datos adicionales
+    # F8.4: Event tracking for webapp
+    event_id: str = ""  # Unique ID (uuid4 or empty for CLI)
+    turn_id: int = 0  # Increments per user input
+    seq: int = 0  # Order within turn
+
+
+# F8.4: Event ID generator
+_event_counter: int = 0
+
+
+def generate_event_id() -> str:
+    """Generate a unique event ID (incremental for stability)."""
+    global _event_counter
+    _event_counter += 1
+    return f"evt_{_event_counter:06d}"
+
+
+def reset_event_counter() -> None:
+    """Reset event counter (for testing)."""
+    global _event_counter
+    _event_counter = 0
+
+
+@dataclass
+class TutorTurnContext:
+    """Context for tracking events within a turn (F8.4).
+
+    Helps ensure all events from one user action share turn_id.
+    """
+
+    turn_id: int = 0
+    seq: int = 0
+
+    def next_event(self, event_type: TutorEventType, **kwargs) -> TutorEvent:
+        """Create next event in this turn with proper IDs."""
+        self.seq += 1
+        return TutorEvent(
+            event_type=event_type,
+            event_id=generate_event_id(),
+            turn_id=self.turn_id,
+            seq=self.seq,
+            **kwargs,
+        )
+
+    def advance_turn(self) -> None:
+        """Advance to next turn (after user input)."""
+        self.turn_id += 1
+        self.seq = 0
 
 # =============================================================================
 # CONSTANTS
@@ -181,6 +234,10 @@ class StudentProfile:
     created_at: str = ""
     updated_at: str = ""
     tutor_state: TutorState = field(default_factory=TutorState)
+    # F8.4: UI resume fields (optional, with defaults for backward compatibility)
+    last_turn_id: int = 0  # Last turn ID for event tracking
+    last_event_id: str = ""  # Last event ID emitted
+    current_point_index: int = 0  # Current point being taught
 
     def __post_init__(self):
         """Set timestamps if not provided."""
@@ -209,6 +266,10 @@ class StudentProfile:
             "created_at": self.created_at,
             "updated_at": self.updated_at,
             "tutor_state": self.tutor_state.to_dict(),
+            # F8.4: UI resume fields
+            "last_turn_id": self.last_turn_id,
+            "last_event_id": self.last_event_id,
+            "current_point_index": self.current_point_index,
         }
 
 
@@ -468,6 +529,10 @@ def load_students_state(data_dir: Path | None = None) -> StudentsState:
                         created_at=s_data.get("created_at", ""),
                         updated_at=s_data.get("updated_at", ""),
                         tutor_state=tutor_state,
+                        # F8.4: UI resume fields (with defaults for backward compat)
+                        last_turn_id=s_data.get("last_turn_id", 0),
+                        last_event_id=s_data.get("last_event_id", ""),
+                        current_point_index=s_data.get("current_point_index", 0),
                     )
                 )
 

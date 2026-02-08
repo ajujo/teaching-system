@@ -1,0 +1,29 @@
+Chapter 4
+145
+                logger.exception(f"'{query_name}' request failed.")
+                results[query_name] = []
+    return results
+The _get_metadata() function takes the list of queried documents and authors and counts the 
+number of them relative to each data category:
+def _get_metadata(documents: list[Document]) -> dict:
+    metadata = {
+        "num_documents": len(documents),
+    }
+    for document in documents:
+        collection = document.get_collection_name()
+        if collection not in metadata:
+            metadata[collection] = {}
+        if "authors" not in metadata[collection]:
+            metadata[collection]["authors"] = list()
+        metadata[collection]["num_documents"] = metadata[collection].
+get("num_documents", 0) + 1
+        metadata[collection]["authors"].append(document.author_full_name)
+    for value in metadata.values():
+        if isinstance(value, dict) and "authors" in value:
+            value["authors"] = list(set(value["authors"]))
+    return metadata
+We will expose this metadata in the ZenML dashboard to quickly see some statistics on the loaded 
+data. For example, in Figure 4.13, we accessed the metadata tab of the query_data_warehouse() 
+step, where you can see that, within that particular run of the feature pipeline, we loaded 76 
+documents from three authors. This is extremely powerful for monitoring and debugging batch 
+pipelines. 

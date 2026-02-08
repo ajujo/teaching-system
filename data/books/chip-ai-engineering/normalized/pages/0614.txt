@@ -1,0 +1,32 @@
+AMBIGÜEDAD TERMINOLÓGICA: LIMITADO POR LA
+MEMORIA VS. LIMITADO POR EL ANCHO DE BANDA
+Algunas personas también utilizan el término "limitado por la memoria"
+para referirse a tareas cuyo tiempo de ejecución está limitado por la
+capacidad de memoria en lugar de por el ancho de banda de ésta. Esto
+ocurre cuando el hardware no tiene memoria suficiente para manejar la
+tarea, por ejemplo, si la máquina no tiene memoria suficiente para
+almacenar todo Internet. Esta limitación se manifiesta a menudo en el
+error que todos los ingenieros del mundo reconocen: OOM, memoria
+insuficiente. 3
+Sin embargo, esta situación a menudo puede mitigarse dividiendo la
+tarea en partes más pequeñas. Por ejemplo, si está limitados por la
+memoria de la GPU y no puede introducir un modelo completo en la
+GPU, puede dividir el modelo entre la memoria de la GPU y la de la
+CPU. Esta división ralentizará el cálculo debido al tiempo que se tarda
+en transferir los datos entre la CPU y la GPU. Sin embargo, si la
+transferencia de datos es lo suficientemente rápida, esto deja de ser un
+problema. Por tanto, la limitación de la capacidad de memoria tiene que
+ver más con el ancho de banda de la memoria.
+Los conceptos de limitado por el cómputo o limitado por el ancho de banda
+de la memoria se introdujeron en el artículo "Roofline" (Williams et al.,
+2009). 4 Matemáticamente, una operación puede clasificarse como
+vinculada al cálculo o vinculada al ancho de banda de memoria en función
+de su intensidad aritmética, que es el número de operaciones aritméticas por
+byte de acceso a memoria. Las herramientas de perfilado como NVIDIA
+Nsight les mostrarán un gráfico Roofline para indicarle si su carga de
+trabajo está limitada por el cómputo o por el ancho de banda de memoria,
+como se muestra en la Figura 9-2. Este gráfico es un gráfico Roofline
+porque se parece a un tejado. Los gráficos Roofline son habituales en los
+análisis de rendimiento de hardware.
+Diferentes técnicas de optimización pretenden mitigar distintos cuellos de
+botella. Por ejemplo, una carga de trabajo computacional puede acelerarse

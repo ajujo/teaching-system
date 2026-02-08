@@ -1,0 +1,25 @@
+Extracting features from time with pandas
+185
+Getting ready
+We can extract hours, minutes, and seconds using the following pandas’ datetime properties:
+•	 pandas.Series.dt.hour
+•	 pandas.Series.dt.minute
+•	 pandas.Series.dt.second
+How to do it...
+In this recipe, we’ll extract the hour, minute, and second part of a time variable. Let’s begin by 
+importing the libraries and creating a sample dataset:
+1.	
+Let’s import pandas and numpy:
+import numpy as np
+import pandas as pd
+2.	
+Let’s begin by creating 20 datetime observations, starting on 2024-05-17 at midnight 
+and followed by increments of 1 hour, 15 minutes, and 10 seconds. Next, we’ll capture the time 
+range in a DataFrame and display the top five rows:
+rng_ = pd.date_range(
+    "2024-05-17", periods=20, freq="1h15min10s")
+df = pd.DataFrame({"date": rng_})
+df.head()
+In the following output, we see the variable from Step 2, with a date part and a time part, 
+and the values increasing by intervals of 1 hour, 15 minutes, and 10 seconds:
+Figure 6.9 – The first five rows of a sample DataFrame with a datetime variable

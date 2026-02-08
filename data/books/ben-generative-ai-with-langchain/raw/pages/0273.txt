@@ -1,0 +1,32 @@
+Advanced Applications and Multi-Agent Systems
+246
+The nodes themselves also look simpler, but we add Command after the reflection node since we 
+decide what to call next with the node itself. Also, we don’t wrap a ReACT research agent as a 
+node anymore:
+from langgraph.types import Command
+question_template = PromptTemplate.from_template(
+   "QUESTION:\n{question}\n\nANSWER OPTIONS:\n{options}\n\n"
+)
+def _ask_question(state):
+ return {"messages": [("human", question_template.invoke(state).text)]}
+def _give_feedback(state, config: RunnableConfig):
+ messages = event["messages"] + [("human", reflection_prompt)]
+ max_messages = config["configurable"].get("max_messages", 20)
+ if len(messages) > max_messages:
+   return Command(update={}, goto=END)
+ result = llm.invoke(messages)
+ if result.content:
+   return Command(
+     update={"messages": [("assistant", result.content)]},
+     goto="research"
+ )
+ return Command(update={}, goto=END)
+The graph itself also looks very simple:
+class ReflectionAgentState(MessagesState):
+ question: str
+ options: str
+builder = StateGraph(ReflectionAgentState)
+builder.add_node("ask_question", _ask_question)
+builder.add_node("research", research_agent)
+builder.add_node("reflect", _give_feedback)
+builder.add_edge(START, "ask_question")

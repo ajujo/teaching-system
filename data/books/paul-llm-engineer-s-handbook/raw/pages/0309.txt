@@ -1,0 +1,37 @@
+Evaluating LLMs
+278
+    'meta-llama/Meta-Llama-3.1-8B-Instruct'
+]
+for model_id in model_ids:
+    generate_answers(model_id, "mlabonne/llmtwin")
+Now that we have the answer generation, we can move on to the evaluation process.
+Evaluating answers
+To evaluate our answers, we will rely on GPT-4o-mini as a judge. This strategy is similar to what 
+we used for data generation. As a matter of fact, you could adapt it to filter out bad samples during 
+the data generation process. Here, we will score every generated answer from every model in 
+terms of accuracy and style. The average scores will inform us about the quality of our fine-tuning 
+compared to Llama-3.1-8B-Instruct:
+1.	
+First, we import the required libraries, including openai:
+import json
+from typing import List
+from datasets import Dataset, load_dataset
+from openai import OpenAI
+from tqdm.auto import tqdm
+import concurrent.futures
+2.	 We then define the evaluate_answer() function. This function contains our evaluation 
+prompt, which sets up the context for evaluating answers based on accuracy and style:
+def evaluate_answer(
+    instruction: str, answer: str, client: OpenAI
+) -> dict:
+    prompt = f"""You are an expert judge. Please evaluate the 
+quality of a given answer to an instruction based on two criteria:
+1. Accuracy: How factually correct is the information presented in 
+the answer? You are a technical expert in this topic.
+2. Style: Is the tone and writing style appropriate for a blog post 
+or social media content? It should use simple but technical words 
+and avoid formal or academic language.
+3.	
+In the same prompt, we define our scales for each metric. Those are three-point Likert 
+scales with a precise definition for each score:
+Accuracy scale:

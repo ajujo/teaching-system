@@ -1,0 +1,47 @@
+Chapter 1
+17
+•	
+Test potential production LLM candidates before deploying them
+•	
+Automatically start the training when new instruction datasets are available.
+•	
+The inference code will have the following properties:
+•	
+A REST API interface for clients to interact with the LLM Twin
+•	
+Access to the vector DB in real time for RAG
+•	
+Inference with LLMs of various sizes
+•	
+Autoscaling based on user requests
+•	
+Automatically deploy the LLMs that pass the evaluation step.
+•	
+The system will support the following LLMOps features:
+•	
+Instruction dataset versioning, lineage, and reusability
+•	
+Model versioning, lineage, and reusability
+•	
+Experiment tracking
+•	
+Continuous training, continuous integration, and continuous delivery (CT/
+CI/CD)
+•	
+Prompt and system monitoring
+The preceding list is quite comprehensive. We could have detailed it even more, but at this point, 
+we want to focus on the core functionality. When implementing each component, we will look 
+into all the little details. But for now, the fundamental question we must ask ourselves is this: 
+How can we apply the FTI pipeline design to implement the preceding list of requirements?
+How to design the LLM Twin architecture using the FTI 
+pipeline design
+We will split the system into four core components. You will ask yourself this: “Four? Why not 
+three, as the FTI pipeline design clearly states?” That is a great question. Fortunately, the answer 
+is simple. We must also implement the data pipeline along the three feature/training/inference 
+pipelines. According to best practices:
+•	
+The data engineering team owns the data pipeline
+•	
+The ML engineering team owns the FTI pipelines.
+If any technical requirement doesn’t make sense now, bear with us. To avoid repe-
+tition, we will examine the details in their specific chapter.

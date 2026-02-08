@@ -1,0 +1,29 @@
+Creating New Features
+232
+5.
+Similarly, to capture the general variability of the cell nuclei, let's determine the standard
+deviation of the mean characteristics, and then display the resulting feature:
+df["std_features"] = df[features].std(axis=1)
+df["std_features"].head()
+The following output shows the standard deviation of the features from step 3:
+0    0.080321
+1    0.045671
+2    0.042333
+3    0.078097
+4    0.044402
+Name: std_features, dtype: float64
+Note
+When we craft new features based on domain knowledge, we know exactly how we want to
+combine the variables. We could also combine features with multiple operations and then
+evaluate whether they are predictive, using, for example, a feature selection algorithm or
+deriving feature importance from the machine learning model.
+6.
+Let's make a list containing mathematical functions that we want to use to combine the features:
+math_func = [
+    "sum", "prod", "mean", "std", "max", "min"]
+7.
+Now, let's apply the functions from step 6 to combine the features from step 3, capturing the
+resulting variables in a new DataFrame:
+df_t = df[features].agg(math_func, axis="columns")
+If we execute df_t.head(), we will see the DataFrame with the newly created features:
+Figure 8.1 - A DataFrame with the newly created features

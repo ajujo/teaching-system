@@ -1,0 +1,32 @@
+Chapter 5
+213
+from langchain_core.output_parsers import JsonOutputParser
+llm_json = ChatVertexAI(
+  model_name="gemini-2.0-flash", response_mime_type="application/json",
+  response_schema=plan_schema)
+result = (prompt | llm_json | JsonOutputParser()).invoke(query)
+assert(isinstance(result, list))
+We can also ask Gemini to return an enum-in other words, only one value from a set of values:
+from langchain_core.output_parsers import StrOutputParser
+response_schema = {"type": "STRING", "enum": ["positive", "negative",
+"neutral"]}
+prompt = PromptTemplate.from_template(
+   "Classify the tone of the following customer's review:"
+   "\n{review}\n"
+)
+review = "I like this movie!"
+llm_enum = ChatVertexAI(model_name="gemini-1.5-pro-002", response_mime_
+type="text/x.enum", response_schema=response_schema)
+result = (prompt | llm_enum | StrOutputParser()).invoke(review)
+print(result)
+>> positive
+LangChain abstracts the details of the model provider's implementation with the method="json_
+mode" parameter or by allowing custom kwargs to be passed to the model. Some of the controlled
+generation capabilities are model-specific. Check your model's documentation for supported
+schema types, constraints, and arguments.
+ToolNode
+To simplify agent development, LangGraph has built-in capabilities such as ToolNode and tool_
+conditions. The ToolNode checks the last message in messages (you can redefine the key name).
+If this message contains tool calls, it invokes the corresponding tools and updates the state. On
+the other hand, tool_conditions is a conditional edge that checks whether ToolNode should be
+called (or finishes otherwise).

@@ -1,0 +1,37 @@
+Performing Variable Discretization
+124
+In this recipe, we will perform equal-frequency discretization using pandas, scikit-learn, 
+and feature-engine.
+How to do it...
+First, let’s import the necessary Python libraries and get the dataset ready:
+1.	
+Let’s import the required Python libraries and functions:
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load the California housing dataset into a DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+Note
+To avoid data leakage, we will determine the interval boundaries or quantiles from the train set.
+3.	
+Let’s divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.	
+Let’s make a copy of the DataFrames:
+train_t = X_train.copy()
+test_t = X_test.copy()
+5.	
+We’ll use pandas qcut()to obtain a discretized copy of the HouseAge variable, which we 
+will store as a new column in the training set, and the limits of eight equal-frequency intervals:
+train_t["House_disc"], interval_limits = pd.qcut(
+    x=X_train["HouseAge"],
+    q=8,
+    labels=None,
+    retbins=True,
+)
+If you execute print(interval_limits), you’ll see the following interval limits: array([ 
+1., 14., 18., 24., 29., 34., 37., 44., 52.]).

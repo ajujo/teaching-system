@@ -1,0 +1,39 @@
+Agent Types
+Before diving into specific orchestration strategies, it’s important to understand the
+different types of agents you can build. Each agent type embodies a distinct approach
+to reasoning, planning, and action, shaping how tasks are decomposed and executed.
+Some agents respond instantly with preprogrammed mappings, while others itera‐
+tively reason and reflect to handle complex, open-ended goals. The choice of agent
+type directly influences your system’s performance, cost, and capabilities. In this sec‐
+tion, we will explore the spectrum: from reflex agents that provide lightning-fast
+responses, to deep research agents that tackle multistage investigations with adaptive
+plans and synthesis. Understanding these archetypes will help design agents aligned
+with your application needs and constraints and will illuminate how orchestration
+patterns, tool selection, and context construction come together within each type to
+achieve effective, reliable outcomes.
+Reflex Agents
+Reflex agents implement a direct mapping from input to action without any internal
+reasoning trace. Simple reflex agents follow “if-condition, then-action” rules, calling
+the appropriate tool immediately upon detecting predefined triggers. Because they
+bypass intermediate thought steps, reflex agents deliver responses with minimal 
+latency and predictable performance, making them well suited for use cases like
+keyword-based routing, single-step data lookups, or basic automations (e.g., “If X,
+call tool Y”). However, their limited expressiveness means they cannot handle tasks
+requiring multistep reasoning or context beyond the immediate input.
+ReAct Agents
+ReAct agents interleave Reasoning and Action in an iterative loop: the model gener‐
+ates a thought, selects and invokes a tool, observes the result, and repeats as needed.
+This pattern enables the agent to break complex tasks into manageable steps, updat‐
+ing its plan based on intermediate observations:
+• ZERO_SHOT_REACT_DESCRIPTION (LangChain) presents tools and instructions in a
+single prompt, relying on the LLM’s innate reasoning to select and call tools
+without example traces.
+• CHAT_ZERO_SHOT_REACT_DESCRIPTION extends this by incorporating conversa‐
+tional history, enabling the agent to use past exchanges when deciding on its next
+action.
+ReAct agents excel in exploratory scenarios—dynamic data analysis, multisource
+aggregation, or troubleshooting—where the ability to adapt midstream outweighs the
+additional latency and computational overhead. Their looped structure also provides
+90 
+| 
+Chapter 5: Orchestration

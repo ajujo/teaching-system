@@ -1,0 +1,35 @@
+Supervised Fine-Tuning
+218
+Packing maximizes the utilization of each training batch. Instead of assigning one sample per 
+batch, packing combines multiple smaller samples into a single batch, effectively increasing the 
+amount of data processed in each iteration. For example, if your maximum sequence length is 
+1,024 tokens, but many of your samples are only 200-300 tokens long, packing could allow you 
+to fit 3-4 samples into each batch slot. This approach can significantly improve training efficien-
+cy, especially when dealing with datasets containing many short sequences. However, packing 
+requires careful implementation to ensure that model attention doesn’t cross between packed 
+samples. This is typically achieved by using attention masks that prevent the model from attend-
+ing to tokens from different samples within the same packed sequence.
+Number of epochs
+The number of epochs is another important parameter, representing the number of complete 
+passes through the entire training dataset. For LLM fine-tuning, the typical range is 1 to 10 epochs, 
+with many successful runs using 2 to 5 epochs. The optimal number depends on factors such as 
+task complexity, dataset size, and model architecture. More epochs allow the model to refine its 
+learning, potentially improving performance. However, there’s a crucial trade-off: too few epochs 
+may lead to underfitting, while too many can cause overfitting. For example, a large model fine-
+tuned on a small dataset might only need 1-3 epochs, while a smaller model fine-tuned on a larger 
+dataset could benefit from 5-10 epochs. It is helpful to monitor validation performance during 
+training and implement early stopping if the model’s performance plateaus or degrades. This 
+approach helps determine the optimal number of epochs dynamically and prevents overfitting.
+Optimizers
+Optimizers adjust the model’s parameters to minimize the loss function. For LLM fine-tuning, 
+AdamW (Adaptive Moment Estimation with Weight Decay) is highly recommended, particularly 
+its 8-bit version. AdamW 8-bit performs comparably to the 32-bit version while using less GPU 
+memory (but it doesn’t improve training speed). AdamW combines adaptive learning rates with 
+weight decay regularization, often leading to better training stability and model performance.
+For scenarios with severe memory constraints, AdaFactor presents an alternative designed for 
+memory efficiency. It works well without explicit learning rate tuning, making it particularly 
+useful in resource-constrained environments. However, it may not always match AdamW’s perfor-
+mance in all cases. In situations involving extremely large models or limited GPU memory, paged 
+versions of optimizers, such as paged AdamW 8-bit, can further reduce memory consumption 
+by offloading to CPU RAM. If memory allows and maximum performance is the priority, the 
+non-quantized adamw_torch optimizer may be the best choice.

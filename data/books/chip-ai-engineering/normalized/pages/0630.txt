@@ -1,0 +1,33 @@
+parte de las cargas de trabajo de ML es la multiplicación de
+matrices, que es altamente paralelizable. 15
+Aunque la búsqueda de un procesamiento paralelo eficiente aumenta las
+capacidades de cómputo, plantea retos a nivel de diseño de la memoria y
+consumo de energía.
+El éxito de las GPU de NVIDIA ha inspirado muchos aceleradores
+diseñados para acelerar las cargas de trabajo de IA, incluidas las nuevas
+generaciones de GPU de Advanced Micro Devices (AMD), la TPU de
+Google (Tensor Processing Unit), la Habana Gaudí de Intel, la unidad de
+procesamiento inteligente de Graphcore (IPU), la unidad de procesamiento
+de lenguaje de Groq (LPU), la unidad de procesamiento cuántico a escala
+de oblea de Cerebras (QPU), y muchas más que se están introduciendo.
+Aunque muchos chips pueden encargarse tanto del entrenamiento como de
+la inferencia, está surgiendo un gran tema: los chips especializados en
+inferencia. Un estudio de Desislavov et al. (2023) comparte que la
+inferencia puede superar el costo del entrenamiento en los sistemas de uso
+común, y que la inferencia representa hasta el 90 % de los costos del
+aprendizaje automático de los sistemas de IA implementados.
+Como se discute en el Capítulo 7, el entrenamiento exige mucha más
+memoria debido a la retropropagación, y es generalmente más difícil de
+realizar en baja precisión. Además, el entrenamiento suele hacer hincapié en
+el throughput, mientras que la inferencia pretende minimizar la latencia.
+En consecuencia, los chips diseñados para la inferencia suelen estar
+optimizados para una menor precisión y un acceso más rápido a la
+memoria, en lugar de una gran capacidad de memoria. Algunos ejemplos de
+estos chips son Apple Neural Engine, AWS Inferentia y MTIA (Meta
+Training and Inference Accelerator). Los chips diseñados para la
+computación perimetral, como el Edge TPU de Google y el NVIDIA Jetson
+Xavier, también suelen estar orientados a la inferencia.
+También hay chips especializados para diferentes arquitecturas de modelos,
+como los chips especializados para el transformador. 16 Muchos chips están
+diseñados para centros de datos, y cada vez son más los que se diseñan para
+dispositivos de consumo (como teléfonos y portátiles).

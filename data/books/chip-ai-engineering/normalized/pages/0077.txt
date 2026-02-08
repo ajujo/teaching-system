@@ -1,0 +1,32 @@
+cosas no son posibles sin cambiar las ponderaciones del modelo, como
+adaptar el modelo a una nueva tarea a la que no estuvo expuesto durante el
+entrenamiento.
+A continuación, nos centraremos en las capas de desarrollo de aplicaciones
+y desarrollo de modelos para ver cómo ha cambiado cada una de ellas con
+la ingeniería de IA, empezando por aquello con lo que los ingenieros de ML
+están más familiarizados. Esta sección ofrece una visión general de los
+distintos procesos que intervienen en el desarrollo de una aplicación de IA.
+A lo largo de este libro se explicará cómo funcionan estos procesos.
+Desarrollo de modelos
+El desarrollo de modelos es la capa más comúnmente asociada con la
+ingeniería tradicional de ML. Tiene tres responsabilidades principales:
+modelado y entrenamiento, ingeniería de conjuntos de datos y optimización
+de la inferencia. También es necesaria una evaluación, pero como la
+mayoría de la gente se encontrará con ella primero en la capa de desarrollo
+de aplicaciones, hablaré de la evaluación en la siguiente sección.
+Modelado y entrenamiento
+El modelado y el entrenamiento se refieren al proceso de crear una
+arquitectura de modelo, entrenarla y ajustarla. Ejemplos de herramientas de
+esta categoría son TensorFlow de Google, Transformers de Hugging Face y
+PyTorch de Meta.
+El desarrollo de modelos de ML requiere conocimientos especializados de
+ML. Requiere conocer distintos tipos de algoritmos de ML (como el
+clustering, la regresión logística, los árboles de decisión o el filtrado
+colaborativo) y arquitecturas de redes neuronales (como de
+prealimentación, recurrente, convolucional y transformadora). También
+requiere comprender cómo aprende un modelo, incluyendo conceptos como
+el descenso de gradiente, la función de pérdida, la regularización, etc.
+Con la disponibilidad de modelos fundacionales, los conocimientos de ML
+ya no son imprescindibles para crear aplicaciones de IA. He conocido a
+muchos creadores de aplicaciones de IA maravillosas y de éxito que no
+están en absoluto interesados en aprender sobre el descenso de gradiente.

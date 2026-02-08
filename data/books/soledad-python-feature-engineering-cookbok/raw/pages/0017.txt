@@ -1,0 +1,39 @@
+Preface
+xvi
+Chapter 2, Encoding Categorical Variables, covers methods to transform categorical variables into 
+numerical features. It begins with common techniques such as one-hot and ordinal encoding and 
+then explores adaptations for high cardinality and linear models. The chapter also discusses domain-
+specific methods, such as weight of evidence, and demonstrates how to encode highly cardinal variables 
+using methods such as target encoding, ensuring that you understand how to regularize the process 
+to avoid overfitting.
+Chapter 3, Transforming Numerical Variables, discusses when and why you need to transform variables 
+for use in machine learning models. Then, it shows you different variable transformation functions 
+and highlights which types of variables each function is best suited for. By the end of this chapter, 
+you’ll understand when you need to transform your variables and why you apply the logarithm or 
+the square root, among other functions.
+Chapter 4, Performing Variable Discretization, introduces the concept of discretization, highlighting 
+its uses in machine learning. The chapter then explores various discretization methods, detailing 
+their advantages and limitations. It covers the basic equal-with and equal-frequency discretization 
+procedures, as well as discretization using decision trees and k-means. Finally, it pairs discretization 
+with encoding to return variables that are monotonic with the target.
+Chapter 5, Working with Outliers, presents methods to identify outliers and understand their 
+characteristics. It then discusses techniques to remove outliers or adjust their values to fit within 
+accepted boundaries, utilizing pandas and Feature-engine.
+Chapter 6, Extracting Features from Date and Time Variables, describes how to create features from 
+dates and time variables. It covers how to extract date and time components from features, as well as 
+how to combine datetime variables and how to work with different time zones.
+Chapter 7, Performing Feature Scaling, covers methods to put the variables on a similar scale. It 
+discusses standardization, how to scale to maximum and minimum values, and how to perform 
+more robust forms of variable scaling. You’ll also find guidelines about which method to use, based 
+on your model and variables.
+Chapter 8, Creating New Features, describes various methods to combine existing variables to generate 
+new features. It shows the use of mathematical operations to combine features based on domain 
+knowledge. Then, it discusses how to transform features through the sine, cosine, and the use of splines. 
+Finally, it shows you the value of creating features from one or more variables through decision trees.
+Chapter 9, Extracting Features from Relational Data with Featuretools, introduces relational datasets 
+and then moves on to explain how we can create features at different data aggregation levels, utilizing 
+Featuretools. You will learn how to automatically create dozens of features from numerical and 
+categorical variables, datetime, and text.
+Chapter 10, Creating Features from a Time Series with tsfresh, discusses how to automatically create 
+hundreds of features from time series data for use in supervised classification or regression. You’ll 
+leverage the power of tsfresh to automatically create and select relevant features from your time series.

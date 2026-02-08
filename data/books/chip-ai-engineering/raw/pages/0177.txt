@@ -1,0 +1,32 @@
+hipótesis del conocimiento interno desajustado se centra en cómo la
+supervisión provoca alucinaciones.
+Si no podemos acabar con las alucinaciones, ¿podemos al menos detectar
+cuándo alucina un modelo para no ofrecer esas respuestas alucinadas a los
+usuarios? Bueno, detectar las alucinaciones tampoco es tan sencillo: piense
+en lo difícil que nos resulta detectar cuándo otro ser humano está mintiendo
+o inventándose cosas. Pero la gente lo ha intentado. En el Capítulo 4 se
+explica cómo detectar y medir las alucinaciones.
+Resumen
+En este capítulo se han analizado las principales decisiones de diseño a la
+hora de construir un modelo fundacional. Dado que la mayoría de la gente
+va a utilizar modelos fundacionales ya hechos en lugar de entrenar uno
+desde cero, me he saltado los detalles de entrenamiento en favor de los
+factores de modelado que ayudan a determinar qué modelos utilizar y cómo
+hacerlo.
+Un factor crucial que afecta al rendimiento de un modelo son sus datos de
+entrenamiento. Los grandes modelos requieren una gran cantidad de datos
+de entrenamiento, cuya adquisición puede resultar cara y requerir mucho
+tiempo. Los proveedores de modelos, por tanto, suelen aprovechar
+cualesquiera datos disponibles. Esto conduce a modelos que pueden
+funcionar bien en las muchas tareas presentes en los datos de
+entrenamiento, que pueden no incluir la tarea específica que usted desea. En
+este capítulo se ha explicado por qué a menudo es necesario recopilar datos
+de entrenamiento para desarrollar modelos orientados a idiomas concretos,
+sobre todo a lenguas con pocos recursos, y a ámbitos específicos.
+Una vez obtenidos los datos, puede comenzar el desarrollo del modelo.
+Aunque el entrenamiento de modelos es famoso, la arquitectura del modelo
+es un paso previo importante. En este capítulo se analizan las opciones de
+modelado, como la arquitectura y el tamaño del modelo. La arquitectura
+dominante para los modelos fundacionales basados en el lenguaje es la de
+transformador. En este capítulo se han analizado los problemas para los que
+se diseñó la arquitectura de transformadores, así como sus limitaciones.

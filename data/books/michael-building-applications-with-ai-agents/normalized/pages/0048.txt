@@ -1,0 +1,37 @@
+operate efficiently in dynamic environments and adapt to new situations based on
+historical data. We'll discuss memory in much more detail in Chapter 6.
+Short-Term Memory
+Short-term memory refers to an agent's ability to store and manage information rele‐
+vant to the current task or conversation. This type of memory is typically used to
+maintain context during an interaction, enabling the agent to make coherent deci‐
+sions in real time. A customer service agent that remembers a user's previous queries
+within a session can provide more accurate and context-aware responses, enhancing
+user experience.
+Short-term memory is often implemented using rolling context windows, which
+enable the agent to maintain a sliding window of recent information while discarding
+outdated data. This is particularly useful in applications like chatbots or virtual assis‐
+tants, where the agent must remember recent interactions but can forget older, irrele‐
+vant details.
+Long-Term Memory
+Long-term memory, on the other hand, enables agents to store knowledge and expe‐
+riences over extended periods, enabling them to draw on past information to inform
+future actions. This is particularly important for agents that need to improve over
+time or provide personalized experiences based on user preferences.
+Long-term memory is often implemented using databases, knowledge graphs, or
+fine-tuned models. These structures enable agents to store structured data (e.g., user
+preferences, historical performance metrics) and retrieve it when needed. A health‐
+care monitoring agent might retain long-term data on a patient's vital signs, enabling
+it to detect trends or provide historical insights to healthcare providers.
+Memory Management and Retrieval
+Effective memory management involves organizing and indexing stored data so that
+it can be easily retrieved when needed. Agents that rely on memory must be able to
+differentiate between relevant and irrelevant data and retrieve information quickly to
+ensure seamless performance. In some cases, agents may also need to forget certain
+information to avoid cluttering their memory with outdated or unnecessary details.
+An ecommerce recommendation agent must store user preferences and past purchase
+history to provide personalized recommendations. However, it must also prioritize
+recent data to ensure that recommendations remain relevant and accurate as user
+preferences change over time.
+26
+|
+Chapter 2: Designing Agent Systems

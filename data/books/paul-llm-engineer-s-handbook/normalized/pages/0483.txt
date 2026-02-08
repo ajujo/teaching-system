@@ -1,0 +1,13 @@
+MLOps and LLMOps
+452
+You can expand on this idea and log various feedback scores. The most common is asking the user
+if the generated answer is valuable and correct. Another option is to compute various metrics
+automatically through heuristics or LLM judges.
+Finally, let's see how to add prompt monitoring to our LLM Twin project. First, look at Figure
+11.21 and remember our model-serving architecture. We have two microservices, the LLM and
+business microservices. The LLM microservice has a narrow scope, as it only takes as input a
+prompt that already contains the user's input and context and returns an answer that is usually
+post-processed. Thus, the business microservice is the right place to implement the monitoring
+pipeline, as it coordinates the end-to-end flow. More concretely, Opik implementation will be in
+the FastAPI server developed in Chapter 10.
+Figure 11.21: Inference pipeline serving architecture

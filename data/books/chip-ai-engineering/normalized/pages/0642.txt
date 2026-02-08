@@ -1,0 +1,20 @@
+figura 9-9. Un modelo de borrador genera una secuencia de K tokens y el modelo
+principal acepta la subsecuencia más larga con la que esté de acuerdo. La imagen
+procede de "Blockwise Parallel Decoding for Deep Autoregressive Models" (Stern et
+al., 2018).
+Si se rechazan todas las secuencias de borradores, el modelo objetivo debe
+generar la respuesta completa además de verificarla, lo que puede provocar
+un aumento de la latencia. Sin embargo, esto puede evitarse gracias a estas
+tres ideas:
+1. El tiempo que tarda el modelo objetivo en verificar una secuencia
+de tokens es menor que el tiempo que tarda en generarla, porque la
+verificación es paralelizable, mientras que la generación es
+secuencial. La decodificación especulativa convierte el perfil de
+cómputo de la decodificación en el del llenado previo.
+2. En una secuencia de tokens de output, algunos tokens son más
+fáciles de predecir que otros. Es posible encontrar un modelo de
+borrador más débil capaz de acertar estos tokens más fáciles de
+predecir, lo que lleva a una alta tasa de aceptación de los tokens de
+borrador.
+3. La decodificación está limitada por el ancho de banda de la
+memoria, lo que significa que durante el proceso de codificación

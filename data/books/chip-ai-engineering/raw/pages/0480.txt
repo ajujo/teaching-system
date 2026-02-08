@@ -1,0 +1,15 @@
+figura 7-2. En lugar de incluir ejemplos en cada prompt, lo que aumenta el costo y la
+latencia, se afina un modelo con estos ejemplos.
+Afinado y RAG
+Una vez hayan maximizado las ganancias de rendimiento mediante
+prompts, quizá se pregunte si lo siguiente que debe hacer es RAG o afinado.
+La respuesta depende de si los fallos de su modelo se basan en la
+información o en el comportamiento.
+Si el modelo falla porque le falta información, puede ser útil un sistema
+RAG que le dé acceso a las fuentes de información pertinentes. Los fallos
+basados en la información se producen cuando los outputs son erróneos o
+no están actualizados. Estos son dos ejemplos de situaciones en las que se
+producen fallos basados en la información:
+El modelo no tiene la información.
+Es poco probable que los modelos públicos contengan
+información privada suya o de su organización. Cuando un

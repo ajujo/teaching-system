@@ -1,0 +1,29 @@
+Creating New Features
+250
+In the following output, we can see the first five rows of the new features, resulting from the 
+decision trees trained in step 8:
+    Figure 8.9 – A portion of the testing set containing the features derived from the decision trees
+13.	 To check the power of this transformation, calculate Pearson’s correlation coefficient between 
+the new features and the target:
+for var in tree_features:
+    pearson = np.corrcoef(test_t[var], y_test)[0, 1]
+    pearson = np.round(pearson, 2)
+    print(
+        f"corr {var} vs target: {pearson}")
+In the following output, we can see that the correlation between the new variables and the 
+target is greater than the correlation shown by the original features (compare these values 
+with those of step 4):
+corr tree(AveRooms) vs target: 0.37
+corr tree(AveBedrms) vs target: 0.12
+corr tree(['AveRooms', 'AveBedrms']) vs target: 0.47
+If you want to combine specific features instead of getting all possible combinations between 
+variables, you can do so by specifying the input features in tuples.
+14.	 Create a tuple of tuples with the different features that we want to use as input for decision trees:
+features = (('Population'), ('Population','AveOccup'),
+    ('Population', 'AveOccup', 'HouseAge'))
+15.	 Now, we need to pass these tuples to the features_to_combine parameter 
+of DecisionTreeFeatures():
+dtf = DecisionTreeFeatures(
+    variables=None,
+    features_to_combine=features,
+    cv=5,

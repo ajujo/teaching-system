@@ -1,0 +1,38 @@
+ReflAct framework-the agent continuously grounds its reasoning in goal-state
+reflections, measuring its current state against the intended outcome and adjusting its
+plan when misalignments arise. Reflection prompts encourage the model to critique
+its own chain of thought, correct logical errors, and reinforce successful strategies,
+effectively simulating human-style self-assessment during complex problem-solving.
+This pattern shines in high-stakes workflows where early errors can cascade into
+costly failures-such as financial transaction orchestration, medical diagnosis sup‐
+port, or critical incident response. By pairing each action with a reflection step, agents
+detect when tool outputs deviate from expectations and can replan or roll back before
+committing to irreversible operations. The added metareasoning overhead does incur
+extra latency and compute, but for tasks where correctness and reliability outweigh
+speed, reflection agents offer a powerful guardrail against error propagation and help
+maintain alignment with overarching goals.
+Deep Research Agents
+Deep research agents specialize in tackling open-ended, highly complex investiga‐
+tions that require extensive external knowledge gathering, hypothesis testing, and
+synthesis-think literature reviews, scientific discovery, or strategic market analysis.
+They combine multiple patterns: a planner-executor phase to chart research work‐
+flows; query-decomposition to break down big questions into targeted searches; and
+ReAct loops to iteratively refine hypotheses based on new findings. In a typical cycle,
+a deep research agent will:
+1. Plan the overall research agenda (e.g., identify key subtopics or data sources).
+2. Decompose each subtopic into concrete queries (via SELF_ASK or similar).
+3. Invoke tools-from academic search APIs to domain-specific databases-and
+reflect on the relevance and reliability of each result.
+4. Synthesize the insights into an evolving report or set of recommendations, using
+LLM-driven summarization and critique at each step.
+Strengths
+Capability
+It can handle high-complexity, multistage investigations that lean on specialized
+databases and cross-disciplinary sources.
+Adaptive
+Research direction is adjusted as new evidence emerges.
+Transparent
+Explicit plans and decomposition steps make it easier to audit methodology.
+92
+|
+Chapter 5: Orchestration

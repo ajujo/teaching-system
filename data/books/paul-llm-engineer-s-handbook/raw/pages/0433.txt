@@ -1,0 +1,29 @@
+MLOps and LLMOps
+402
+3.	
+Build: Package your applications and dependencies into an executable format.
+4.	
+Test: This stage is crucial. It’s where you confirm that your code functions correctly and 
+meets quality standards, ideally through automated testing.
+5.	
+Release: If the tests pass, flag the tested build as a new release, which is now ready to be 
+shipped.
+6.	
+Deploy: Deploy the latest release to the end users.
+7.	
+Operate: Manage and maintain the infrastructure on which the software runs effectively 
+once it is live. This involves scaling, security, data management, and backup and recovery.
+8.	 Monitor: Track performance metrics and errors to reduce the severity and frequency of 
+incidents.
+Figure 11.1: DevOps lifecycle steps
+The core DevOps concepts
+DevOps encompasses various practices throughout the application lifecycle, but the core ones 
+that we will touch on throughout this book are:
+•	
+Deployment environments: To thoroughly test your code before shipping it to produc-
+tion, you must define multiple pre-production environments that mimic the production 
+one. The most common approach is to create a dev environment where the developers 
+can test their latest features. Then, you have a staging environment where the QA team 
+and stakeholders tinker with the application to find bugs and experience the latest fea-
+tures before they ship to the users. Lastly, we have the production environment, which 
+is exposed to end users.

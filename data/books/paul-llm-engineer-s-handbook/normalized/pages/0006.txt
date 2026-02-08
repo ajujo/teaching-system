@@ -1,0 +1,24 @@
+The LLM Engineer's Handbook serves as an invaluable resource for anyone seeking a hands-on
+understanding of LLMs. Through practical examples and a comprehensive exploration of the
+LLM Twin project, the author effectively demystifies the complexities of building and deploying
+production-level LLM applications.
+One of the book's standout features is its use of the LLM Twin project as a running example. This
+AI character, designed to emulate the writing style of a specific individual, provides a tangible
+illustration of how LLMs can be applied in real-world scenarios.
+The author skillfully guides readers through the essential tools and technologies required for LLM
+development, including Hugging Face, ZenML, Comet, Opik, MongoDB, and Qdrant. Each tool
+is explained in detail, making it easy for readers to understand their functions and how they can
+be integrated into an LLM pipeline.
+LLM Engineer's Handbook also covers a wide range of topics related to LLM development, such as
+data collection, fine-tuning, evaluation, inference optimization, and MLOps. Notably, the chapters
+on supervised fine-tuning, preference alignment, and Retrieval Augmented Generation (RAG)
+provide in-depth insights into these critical aspects of LLM development.
+A particular strength of this book lies in its focus on practical implementation. The author excels
+at providing concrete examples and guidance on how to optimize inference pipelines and deploy
+LLMs effectively. This makes the book a valuable resource for both researchers and practitioners.
+This book is highly recommended for anyone interested in learning about LLMs and their practical
+applications. By providing a comprehensive overview of the tools, techniques, and best practices
+involved in LLM development, the authors have created a valuable resource that will undoubtedly
+be a reference for many LLM Engineers
+Antonio Gulli
+Senior Director, Google

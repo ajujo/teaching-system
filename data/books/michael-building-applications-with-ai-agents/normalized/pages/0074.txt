@@ -1,0 +1,49 @@
+    await ws.accept()
+    openai_ws = await websockets.connect(
+        "wss://api.openai.com/v1/realtime?" +
+            "model=gpt-4o-realtime-preview-2024-10-01" (split across two lines)
+        extra_headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "OpenAI-Beta" : "realtime=v1"
+        },
+        max_size=None, max_queue=None # unbounded for demo simplicity
+    )
+    # initialize the realtime session
+    await openai_ws.send(json.dumps({
+        "type": "session.update",
+        "session": {
+            "turn_detection": {"type": "server_vad"},
+            "input_audio_format": f"pcm_{PCM_SR}",
+            "output_audio_format": f"pcm_{PCM_SR}",
+            "voice": VOICE,
+            "modalities": ["audio"],
+            "instructions": "You are a concise AI assistant."
+        }
+    }))
+    last_assistant_item = None          # track current assistant response
+    latest_pcm_ts       = 0             # ms timestamp from client
+    pending_marks       = []
+    async def from_client() -> None:
+        """Relay microphone PCM chunks from browser → OpenAI."""
+        nonlocal latest_pcm_ts
+        async for msg in ws.iter_text():
+            data = json.loads(msg)
+            pcm = base64.b64decode(data["audio"])
+            latest_pcm_ts += int(len(pcm) / (PCM_SR * 2) * 1000)
+            await openai_ws.send(json.dumps({
+                "type": "input_audio_buffer.append",
+                "audio": base64.b64encode(pcm).decode("ascii")
+            }))
+    async def to_client() -> None:
+        """Relay assistant audio + handle interruptions."""
+        nonlocal last_assistant_item, pending_marks
+        async for raw in openai_ws:
+            msg = json.loads(raw)
+            # assistant speaks
+            if msg["type"] == "response.audio.delta":
+                pcm = base64.b64decode(msg["delta"])
+                await ws.send_json({"audio":
+                    base64.b64encode(pcm).decode("ascii")})
+52
+|
+Chapter 3: User Experience Design for Agentic Systems

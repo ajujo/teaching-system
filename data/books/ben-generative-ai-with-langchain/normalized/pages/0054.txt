@@ -1,0 +1,37 @@
+Chapter 2
+27
+6.
+Launch Jupyter Notebook:
+jupyter notebook
+This approach provides a clean, isolated environment for working with LangChain. For experi­
+enced developers with established workflows, we also support:
+•
+pip with venv: Instructions in the GitHub repository
+•
+Docker containers: Dockerfiles provided in the GitHub repository
+•
+Poetry: Configuration files available in the GitHub repository
+Choose the method you're most comfortable with but remember that all examples assume a
+Python 3.10+ environment with the dependencies listed in requirements.txt.
+For developers, Docker, which provides isolation via containers, is a good option. The downside
+is that it uses a lot of disk space and is more complex than the other options. For data scientists,
+I'd recommend Conda or Poetry.
+Conda handles intricate dependencies efficiently, although it can be excruciatingly slow in large
+environments. Poetry resolves dependencies well and manages environments; however, it doesn't
+capture system dependencies.
+All tools allow sharing and replicating dependencies from configuration files. You can find a set
+of instructions and the corresponding configuration files in the book's repository at https://
+github.com/benman1/generative_ai_with_langchain.
+Once you are finished, please make sure you have LangChain version 0.3.17 installed. You can
+check this with the command pip show langchain.
+With the rapid pace of innovation in the LLM field, library updates are frequent. The
+code in this book is tested with LangChain 0.3.17, but newer versions may introduce
+changes. If you encounter any issues running the examples:
+•
+Create an issue on our GitHub repository
+•
+Join the discussion on Discord at https://packt.link/lang
+•
+Check the errata on the book's Packt page
+This community support ensures you'll be able to successfully implement all projects
+regardless of library updates.

@@ -1,0 +1,30 @@
+expensive proprietary endpoints. In essence, SFT uses carefully curated (prompt,
+response) pairs to help the model learn the desired output style, structure, or behav‐
+ior. The same technique can adapt an agent for consistent tone, structured output, or
+-in this example-precise tool use. You can see this process illustrated in Figure 7-6.
+Figure 7-6. SFT workflow. A foundation model is first pretrained on a broad corpus to
+build general capabilities, then further fine-tuned using a task-specific supervised data‐
+set to adapt it for specialized applications.
+To make function calls robust, you'll typically define an explicit schema for each API
+you expose-specifying function names, valid arguments, types, and return formats.
+This ensures your examples teach the agent the contract it must follow. To do this,
+you assemble a fine-tuning dataset of structured examples that mirror your exact API
+schema-function names, argument types, and return formats-so the model inter‐
+nalizes your toolset's contract. The result is a model that not only formats calls cor‐
+rectly on the first try, but also makes contextual judgments about whether a function
+should be invoked at all. Because this approach demands extra data curation, com‐
+pute resources, and maintenance, we recommend starting with the pretrained mod‐
+els' built-in function-calling and runtime schema validation. Only once you've
+confirmed that prompt engineering and standard APIs fall short, should you consider
+this more heavyweight investment-ideally when your scale and precision require‐
+ments justify the up-front effort.
+This involves presenting the model with structured examples where the agent must
+choose whether to make a function call, populate arguments accurately, and wrap the
+result appropriately. For example, if a user asks, "What's the weather in Boston?", a
+well-tuned agent should call a get_weather(location="Boston") function, and then
+incorporate the result into its reply. But if the user says, "Imagine it's snowing in Bos‐
+ton-what should I wear?", the agent should reason hypothetically without triggering
+a real call. This type of contextual judgment is learned through targeted examples.
+154
+|
+Chapter 7: Learning in Agentic Systems

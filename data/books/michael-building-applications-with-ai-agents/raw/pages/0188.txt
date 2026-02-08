@@ -1,0 +1,49 @@
+   """Arrange shipping methods, expedited delivery, 
+   and multi-modal transportation."""
+   print(f"[TOOL] arrange_shipping(shipping_type={shipping_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.arrange_shipping", f"shipping_type={shipping_type}")
+   return "shipping_arranged"
+@tool
+def coordinate_operations(operation_type: str = None, **kwargs) -> str:
+   """Coordinate complex operations like cross-docking, consolidation, 
+   and transfers."""
+   print(f"[TOOL] coordinate_operations(operation_type={operation_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.coordinate_operations", f"operation_type={operation_type}")
+   return "operations_coordinated"
+@tool
+def manage_special_handling(product_type: str = None, **kwargs) -> str:
+   """Handle special requirements for hazmat, cold chain, and 
+   sensitive products."""
+   print(f"[TOOL] manage_special_handling(product_type={product_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.manage_special_handling", f"product_type={product_type}")
+   return "special_handling_managed"
+@tool
+def handle_compliance(compliance_type: str = None, **kwargs) -> str:
+   """Manage regulatory compliance, customs, documentation, 
+   and certifications."""
+   print(f"[TOOL] handle_compliance(compliance_type={compliance_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.handle_compliance", f"compliance_type={compliance_type}")
+   return "compliance_handled"
+@tool
+def process_returns(returned_quantity: str = None, **kwargs) -> str:
+   """Process returns, reverse logistics, and product disposition."""
+   print(f"[TOOL] process_returns(returned_quantity={returned_quantity}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.process_returns", f"returned_quantity={returned_quantity}")
+   return "returns_processed"
+@tool
+def scale_operations(scaling_type: str = None, **kwargs) -> str:
+   """Scale operations for peak seasons, capacity planning, 
+   and workforce management."""
+   print(f"[TOOL] scale_operations(scaling_type={scaling_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.scale_operations", f"scaling_type={scaling_type}")
+   return "operations_scaled"
+@tool
+166 
+| 
+Chapter 8: From One Agent to Many

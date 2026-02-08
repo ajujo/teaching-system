@@ -1,0 +1,35 @@
+Production-Ready LLM Deployment and Observability
+398
+This cascading fallback method helps minimize costs while ensuring high-quality responses 
+when needed.
+Output token optimization
+Since output tokens typically cost more than input tokens, optimizing response length can yield 
+significant cost savings. You can control response length through prompts and model parameters:
+from langchain_openai import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+# Initialize the LLM with max_tokens parameter
+llm = ChatOpenAI(
+    model="gpt-4o",
+    max_tokens=150  # Limit to approximately 100-120 words
+)
+# Create a prompt template with length guidance
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant that provides concise, 
+accurate information. Your responses should be no more than 100 words 
+unless explicitly asked for more detail."),
+    ("human", "{query}")
+])
+# Create a chain
+chain = prompt | llm | StrOutputParser()
+This approach ensures that responses never exceed a certain length, providing predictable costs.
+Other strategies
+Caching is another powerful strategy for reducing costs, especially for applications that receive 
+repetitive queries. As we explored in detail in Chapter 6, LangChain provides several caching 
+mechanisms that are particularly valuable in production environments such as these:
+•	
+In-memory caching: Simple caching to help reduce costs appropriate in a development 
+environment.
+•	
+Redis cache: Robust cache appropriate for production environments enabling persistence 
+across application restarts and across multiple instances of your application.

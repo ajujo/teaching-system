@@ -1,0 +1,25 @@
+texto a SQL, Cómputo de tiempo de prueba, Corrección funcional, RAG
+multimodal
+throughput, Latencia, TTFT y TPOT
+tiempo de construcción, Comparación de algoritmos de recuperación
+tiempo entre tokens (TBT), Latencia, TTFT y TPOT
+tiempo hasta la primera señal (TTFT), Establecimiento de expectativas, API
+de inferencia en línea y por lotes
+tiempo medio de respuesta (MTTR), Monitoreo y observabilidad
+tiempo medio hasta la detección (MTTD), Monitoreo y observabilidad
+tiempo por token de output (TPOT), Establecimiento de expectativas, API
+de inferencia en línea y por lotes
+tokenización, Modelos multilingües, Tamaño del modelo, Entropía cruzada,
+Recuperación basada en términos, Estrategia de fragmentación
+– definida, Modelos lingüísticos
+tokenizador, Estrategia de fragmentación
+tokens, Modelos lingüísticos, Tamaño del modelo
+top-k, Top-k
+top-p, Top-k
+TPOT (tiempo por token de output), Establecimiento de expectativas, API
+de inferencia en línea y por lotes
+transferencias basadas en características, Afinado, Visión general del
+afinado
+transferencias sin funciones, Afinado
+tratamiento de datos, Destilación de modelos
+– deduplicación de datos, Inspeccionar los datos

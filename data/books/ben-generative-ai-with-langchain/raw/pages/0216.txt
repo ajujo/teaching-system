@@ -1,0 +1,35 @@
+Chapter 5
+189
+Let’s build a ReACT application ourselves. First, let’s create mocked search and calculator tools: 
+import math
+def mocked_google_search(query: str) -> str:
+ print(f"CALLED GOOGLE_SEARCH with query={query}")
+ return "Donald Trump is a president of USA and he's 78 years old"
+def mocked_calculator(expression: str) -> float:
+ print(f"CALLED CALCULATOR with expression={expression}")
+ if "sqrt" in expression:
+   return math.sqrt(78*132)
+ return 78*132
+In the next section, we’ll see how we can build actual tools. For now, let’s define a schema for the 
+calculator tool and make the LLM aware of both tools it can use. We’ll also use building blocks 
+that we’re already familiar with—ChatPromptTemplate and MessagesPlaceholder—to prepend 
+a predetermined system message when we call our graph:
+from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+calculator_tool = {
+  "title": "calculator",
+   "description": "Computes mathematical expressions",
+  "type": "object",
+  "properties": {
+      "expression": {
+          "description": "A mathematical expression to be evaluated by a 
+calculator",
+          "title": "expression",
+          "type": "string"},
+  },
+  "required": ["expression"]
+}
+prompt = ChatPromptTemplate.from_messages([
+   ("system", "Always use a calculator for mathematical computations, and 
+use Google Search for information about fresh events and news."), 
+   MessagesPlaceholder(variable_name="messages"),
+])

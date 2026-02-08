@@ -1,0 +1,27 @@
+Extracting Features from Date and Time Variables
+196
+2.
+Finally, let's change the time zone of the datetime variables to the London and Berlin
+time zones, and then display the resulting variables:
+df['time1_london'] = df[
+    ‹time1_utc›].dt.tz_convert('Europe/London')
+df['time2_berlin'] = df[
+    ‹time1_utc›].dt.tz_convert('Europe/Berlin')
+df[['time1_london', 'time2_berlin']]
+We see the variables in their respective time zones in the following output:
+Figure 6.21 - Variables reformatted into different time zones
+When changing time zones, not only do the values of the zone change - that is, the +01 and +02
+values in the previous image - but the value of the hour changes as well.
+How it works...
+In this recipe, we changed time zones and performed operations between variables in different
+time zones. To begin, we created a DataFrame with two variables, the values of which started at an
+arbitrary date and increased hourly; these were set in different time zones. To combine the different
+time zone variables in one DataFrame column, we concatenated the series returned by pandas'
+date_range() by utilizing pandas' concat(). We set the axis argument to 0 to indicate we
+wanted to concatenate the series vertically in one column. We covered the arguments of pandas'
+date_range() extensively in former recipes in this chapter; see the Extracting features from dates
+with pandas and Extracting features from time with pandas recipes for more details.
+To reset the time zone of the variables to the central zone, we used pandas' to_datetime(),
+passing utc=True. Finally, we determined the time difference between the variables by subtracting
+one series from the other and capturing the difference in days. To reassign a different time zone, we
+used pandas' tz_convert(), indicating the new time zone as an argument.

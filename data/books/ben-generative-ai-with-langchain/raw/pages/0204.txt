@@ -1,0 +1,36 @@
+Chapter 4
+177
+Evaluation and performance considerations
+In Chapter 3, we explored implementing RAG with citations in the Corporate Documentation 
+Manager example. To further enhance reliability, additional mechanisms can be incorporated into 
+the pipeline. One improvement is to integrate a robust retrieval system such as FAISS, Pinecone, 
+or Elasticsearch to fetch real-time sources. This is complemented by scoring mechanisms like 
+precision, recall, and mean reciprocal rank to evaluate retrieval quality. Another enhancement 
+involves assessing answer accuracy by comparing generated responses against ground-truth data 
+or curated references and incorporating human-in-the-loop validation to ensure the outputs are 
+both correct and useful.
+It is also important to implement robust error-handling routines within each node. For example, 
+if a citation retrieval fails, the system might fall back to default sources or note that citations could 
+not be retrieved. Building observability into the pipeline by logging API calls, node execution 
+times, and retrieval performance is essential for scaling up and maintaining reliability in pro­
+duction. Optimizing API use by leveraging local models when possible, caching common queries, 
+and managing memory efficiently when handling large-scale embeddings further supports cost 
+optimization and scalability.
+Evaluating and optimizing our documentation chatbot is vital for ensuring both accuracy and 
+efficiency. Modern benchmarks focus on whether the documentation meets corporate standards 
+and how accurately it addresses the original request. Retrieval quality metrics such as precision, 
+recall, and mean reciprocal rank measure the effectiveness of retrieving relevant content during 
+compliance checks. Comparing the AI-generated documentation against ground-truth or manual­
+ly curated examples provides a basis for assessing answer accuracy. Performance can be improved 
+by fine-tuning search parameters for faster retrieval, optimizing memory management for large-
+scale embeddings, and reducing API costs by using local models for inference when applicable.
+Troubleshooting tips
+•	
+Please make sure you’ve installed all required packages. You can ensure you 
+have Python installed on your system by using pip or other package man­
+agers as explained in Chapter 2.
+•	
+If you encounter import errors, verify that you’re in the correct directory and 
+that PYTHONPATH is set correctly.
+By following these steps, you should be able to run the application and use it to 
+generate, check, and finalize corporate documentation with ease.

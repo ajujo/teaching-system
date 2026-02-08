@@ -1,0 +1,32 @@
+Chapter 9
+321
+7.
+Build the prompt and call the LLM: We map the final list of the most relevant K chunks
+to a string used to build the final prompt. We create the prompt using a prompt template,
+the retrieved context, and the user's query. Ultimately, the augmented prompt is sent to
+the LLM (hosted on AWS SageMaker exposed as an API endpoint).
+8.	 Answer: We are waiting for the answer to be generated. After the LLM processes the
+prompt, the RAG logic finishes by sending the generated response to the user.
+That wraps up the overview of the RAG inference pipeline. Now, let's dig deeper into the details.
+Exploring the LLM Twin's advanced RAG techniques
+Now that we understand the overall flow of our RAG inference pipeline, let's explore the advanced
+RAG techniques we used in our retrieval module:
+•
+Pre-retrieval step: Query expansion and self-querying
+•
+Retrieval step: Filtered vector search
+•
+Post-retrieval step: Reranking
+Before digging into each method individually, let's lay down the Python interfaces we will use
+in this section, which are available at https://github.com/PacktPublishing/LLM-Engineers-
+Handbook/blob/main/llm_engineering/application/rag/base.py.
+The first is a prompt template factory that standardizes how we instantiate prompt templates.
+As an interface, it inherits from ABC and exposes the create_template() method, which returns
+a LangChain PromptTemplate instance. Even if we avoid being heavily reliant on LangChain, as
+we want to implement everything ourselves to understand the engineering behind the scenes,
+some objects, such as the PromptTemplate class, are helpful to speed up the development without
+hiding too much functionality:
+from abc import ABC, abstractmethod
+from langchain.prompts import PromptTemplate
+from pydantic import BaseModel
+class PromptTemplateFactory(ABC, BaseModel):

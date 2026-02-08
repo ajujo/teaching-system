@@ -1,0 +1,39 @@
+Chapter 2
+47
+from operator import itemgetter
+# Alternative approach using dictionary construction
+manual_chain = (
+    RunnablePassthrough() |  # Pass through input
+    {
+        "story": story_chain,  # Add story result
+        "topic": itemgetter("topic")  # Preserve original topic
+    } |
+    RunnablePassthrough().assign(  # Add analysis based on story
+        analysis=analysis_chain
+    )
+)
+result = manual_chain.invoke({"topic": "a rainy day"})
+print(result.keys())  # Output: dict_keys(['story', 'topic', 'analysis'])
+We can simplify this with dictionary conversion using a LCEL shorthand:
+# Simplified dictionary construction
+simple_dict_chain_corrected = story_chain | {
+    "story": RunnablePassthrough(),  # Pass the story output as 'story'
+    "analysis": analysis_chain
+}
+# analysis_chain will receive {'story': 'the actual story content'} as 
+expected.
+result_corrected = simple_dict_chain_corrected.invoke({"topic": "a rainy 
+day"})
+print(result_corrected.keys())
+What makes these examples more complex than our simple joke generator?
+•	
+Multiple LLM calls: Rather than a single prompt  LLM  parser flow, we’re chaining 
+multiple LLM interactions
+•	
+Data transformation: Using tools like RunnablePassthrough and itemgetter to manage 
+and transform data
+•	
+Dictionary preservation: Maintaining context throughout the chain rather than just 
+passing single values
+•	
+Structured outputs: Creating structured output dictionaries rather than simple strings

@@ -1,0 +1,45 @@
+natural voice interaction with structured backend operations is transforming what
+voice agents can achieve.
+Despite these impressive technological advances, it is important to note that voice
+interfaces remain a frontier technology. It is true that they have entered mainstream
+use in smart speakers and simple assistants. However, fully conversational, multiturn,
+context-aware voice agents with action-taking capabilities are not yet widely deployed
+across industries. Many enterprises are only beginning to explore voice interfaces for
+customer service, healthcare, logistics, and field operations.
+A key consideration in deploying voice interfaces is understanding the speed at which
+humans process spoken versus written information. Humans typically speak at 150-
+180 words per minute, whereas reading speeds average 250-300 words per minute,
+with skimming speeds exceeding 500 words per minute. This means spoken inter‐
+faces are inherently slower for dense or complex information, where text-based inter‐
+faces enable faster comprehension and easier reference. However, voice excels in
+scenarios where hands-free convenience, natural interaction, and immediate contex‐
+tual responsiveness outweigh these speed constraints.
+The following example demonstrates a minimal FastAPI server using the OpenAI
+Realtime Voice API. It streams microphone audio from a browser to the agent and
+plays back the assistant's audio responses in real time. Notably, it handles interrup‐
+tions gracefully: if the user starts speaking mid-response, it immediately truncates the
+assistant's output to keep the conversation natural. This compact implementation
+shows the core architecture for building low-latency, interruption-aware voice inter‐
+faces with agents:
+import os, json, base64, asyncio, websockets
+from fastapi import FastAPI, WebSocket
+from dotenv import load_dotenv
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+VOICE = "alloy" # GPT-4o voice
+PCM_SR = 16000 # sample-rate we'll use client-side
+PORT = 5050
+app = FastAPI()
+@app.websocket("/voice")
+async def voice_bridge(ws: WebSocket) -> None:
+    """
+    1. Browser opens ws://host:5050/voice
+    2. Browser streams base64-encoded 16-bit mono PCM chunks: {"audio": "<b64>"}
+    3. We forward chunks to OpenAI Realtime (`input_audio_buffer.append`)
+    4. We relay assistant audio deltas back to the browser the same way
+    5. We listen for 'speech_started' events and send a truncate if
+       user interrupts
+    """
+Interaction Modalities
+|
+51

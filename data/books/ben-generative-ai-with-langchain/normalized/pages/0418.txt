@@ -1,0 +1,35 @@
+Chapter 9
+391
+
+    USER QUERY: {query}
+    MODEL RESPONSE: {response}
+
+    Evaluate if the response contains any factual errors or unsupported
+claims.
+    Return a JSON with these keys:
+    - hallucination_detected: true/false
+   - confidence: 1-10
+    - reasoning: brief explanation
+    """
+
+    validation_result = validator_llm.invoke(validator_prompt)
+    return validation_result
+Bias detection and monitoring
+Tracking bias in model outputs is critical for maintaining fair and ethical systems. In the exam­
+ple below, we use the demographic_parity_difference function from the Fairlearn library to
+monitor potential bias in a classification setting:
+from fairlearn.metrics import demographic_parity_difference
+# Example of monitoring bias in a classification context
+demographic_parity = demographic_parity_difference(
+    y_true=ground_truth,
+    y_pred=model_predictions,
+    sensitive_features=demographic_data
+)
+Let's have a look at LangSmith now, which is another companion project of LangChain, developed
+for observability!
+LangSmith
+LangSmith, previously introduced in Chapter 8, provides essential tools for observability in Lang­
+Chain applications. It supports tracing detailed runs of agents and chains, creating benchmark
+datasets, using AI-assisted evaluators for performance grading, and monitoring key metrics
+such as latency, token usage, and cost. Its tight integration with LangChain ensures seamless
+debugging, testing, evaluation, and ongoing monitoring.

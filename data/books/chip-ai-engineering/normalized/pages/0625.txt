@@ -1,0 +1,32 @@
+métricas que muestra esta herramienta es la utilización de la GPU, que
+representa el porcentaje de tiempo durante el cual la GPU está procesando
+tareas activamente. Por ejemplo, si ejecutan inferencia en un clúster de
+GPU durante 10 horas, y las GPU están procesando activamente tareas
+durante 5 de esas horas, la utilización de su GPU sería del 50 %.
+Sin embargo, procesar activamente las tareas no significa hacerlo de forma
+eficiente. Para simplificar, consideremos una GPU diminuta capaz de
+realizar 100 operaciones por segundo. En la definición de utilización de
+nvidia-smi, esta GPU puede informar de una utilización del 100 % aunque
+solo esté realizando una operación por segundo.
+Si paga por una máquina que pueda realizar 100 operaciones y solo la
+utiliza para 1 operación, está malgastando el dinero. Por tanto, la métrica de
+optimización de GPU de nvidia-smi no es muy útil. Una métrica de
+utilización que le puede interesar, de todas las operaciones que una máquina
+es capaz de computar, es cuántos cálculos está haciendo en un tiempo
+determinado. Esta métrica se denomina MFU (Utilización de los FLOP/s
+del modelo), lo que la distingue de la métrica de utilización de la GPU
+NVIDIA.
+La MFU es la relación entre el throughput observado (tokens/s) y el
+throughput máximo teórico de un sistema que funciona a FLOP/s máximos.
+Si a los FLOP/s máximos anunciados por el fabricante de chips, el chip es
+capaz generar 100 tokens/s, pero cuando se utiliza para su servicio de
+inferencia, solo puede generar 20 tokens/s, su MFU es del 20 %. 11
+Del mismo modo, dado que el ancho de banda de la memoria es caro, es
+posible que también le interese conocer la eficiencia con la que se utiliza el
+ancho de banda de su hardware. La MBU (Utilización del ancho de banda
+del modelo) mide el porcentaje de ancho de banda de memoria utilizable. Si
+el ancho de banda máximo del chip es de 1 TB/s y su inferencia utiliza solo
+500 GB/s, su MBU es del 50 %.
+Calcular el ancho de banda de memoria utilizado para la inferencia LLM es
+sencillo:
+recuento de parámetros × bytes/parám. × tokens/s

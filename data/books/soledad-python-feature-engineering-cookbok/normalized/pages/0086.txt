@@ -1,0 +1,30 @@
+Replacing categories with ordinal numbers
+63
+Now, let's do ordinal encoding with feature-engine.
+11.	 Let's import the encoder:
+from feature_engine.encoding import OrdinalEncoder
+12.	 Let's set up the encoder so that it replaces categories with arbitrary integers in the categorical
+variables specified in Step 7:
+enc = OrdinalEncoder(
+    encoding_method="arbitrary",
+    variables=cat_vars,
+)
+Note
+feature-engine's OrdinalEncoder() automatically finds and encodes all categorical
+variables if the variables parameter is None. Alternatively, it will encode the variables
+indicated in the list. In addition, it can assign the integers according to the target mean value
+(see the Performing ordinal encoding based on the target value recipe).
+13.	 Let's fit the encoder to the train set so that it learns and stores the category-to-integer mappings:
+enc.fit(X_train)
+Note
+The category to integer mappings are stored in the encoder_dict_ attribute and can be
+accessed by executing enc.encoder_dict_.
+14.	 Finally, let's encode the categorical variables in the train and test sets:
+X_train_enc = enc.transform(X_train)
+X_test_enc = enc.transform(X_test)
+feature-engine returns pandas DataFrames where the values of the original variables are
+replaced with numbers, leaving the DataFrame ready to use in machine learning models.
+How it works...
+In this recipe, we replaced categories with integers assigned arbitrarily.
+We used pandas' unique() to find the unique categories of the A7 variable. Next, we created a dictionary
+of category-to-integer and passed it to pandas' map() to replace the strings in A7 with the integers.

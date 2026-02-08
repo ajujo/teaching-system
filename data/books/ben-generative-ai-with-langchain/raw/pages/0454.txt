@@ -1,0 +1,35 @@
+Chapter 10
+427
+Regulations and implementation challenges
+Realizing the potential of generative AI in a responsible manner involves addressing legal, ethical, 
+and regulatory issues. The European Union’s AI Act takes a comprehensive, risk-based approach 
+to regulating AI systems. It categorizes AI systems based on risk levels:
+•	
+Minimal risk: Basic AI applications with limited potential for harm
+•	
+Limited risk: Systems requiring transparency obligations
+•	
+High risk: Applications in critical infrastructure, education, employment, and essential 
+services
+•	
+Unacceptable risk: Systems deemed to pose fundamental threats to rights and safety
+High-risk AI applications like medical software and recruitment tools face strict requirements 
+regarding data quality, transparency, human oversight, and risk mitigation. The law explicitly 
+bans certain AI uses considered to pose “unacceptable risks” to fundamental rights, such as 
+social scoring systems and manipulative practices targeting vulnerable groups. The AI Act also 
+imposes transparency obligations on developers and includes specific rules for general-purpose 
+AI models with high impact potential.
+There is additionally a growing demand for algorithmic transparency, with tech companies and 
+developers facing pressure to reveal more about the inner workings of their systems. However, 
+companies often resist disclosure, arguing that revealing proprietary information would harm 
+their competitive advantage. This tension between transparency and intellectual property pro­
+tection remains unresolved, with open-source models potentially driving greater transparency 
+while proprietary systems maintain more opacity.
+Current approaches to content moderation, like the German Network Enforcement Act (NetzDG), 
+which imposes a 24-hour timeframe for platforms to remove fake news and hate speech, have 
+proven impractical. 
+The recognition of scaling limitations has important implications for regulation. Early approaches 
+to AI governance focused heavily on regulating access to computational resources. However, recent 
+innovations demonstrate that state-of-the-art capabilities can be achieved with dramatically less 
+compute. This has prompted a shift in regulatory frameworks toward governing AI’s capabilities 
+and applications rather than the resources used to train them.

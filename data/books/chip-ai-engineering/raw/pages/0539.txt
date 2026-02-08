@@ -1,0 +1,30 @@
+afinado. Al igual que las API de inferencia de modelos, las API de afinado
+pueden obtenerse de proveedores de modelos, proveedores de servicios en
+la nube y proveedores externos. Una limitación de este enfoque es que
+estará limitado a los modelos base que admita la API. Otra limitación es que
+es posible que la API no muestre todos los controles que usted podría
+utilizar para obtener un rendimiento afinado óptimo. Las API de afinado
+son adecuadas para quienes quieran algo rápido y sencillo, pero pueden
+resultar frustrantes para quienes desean una mayor personalización.
+También puede usar uno de los muchos marcos de afinado disponibles,
+como LLaMA-Factory, unsloth, PEFT, Axolotl o LitGPT. Admiten una
+amplia gama de métodos de ajuste, especialmente técnicas basadas en
+adaptadores. Si quiere hacer un afinado completo, muchos modelos base
+proporcionan su código de entrenamiento de código abierto en GitHub que
+usted puede clonar y ejecutar con sus propios datos. Llama Police tiene una
+lista más completa y actualizada de marcos de afinado y repositorios de
+modelos.
+Hacer su propio afinado le da más flexibilidad, pero tendrá que aportar el
+poder de cómputo necesario. Si solo realiza técnicas basadas en
+adaptadores, una GPU de nivel medio puede ser suficiente para la mayoría
+de los modelos. Si necesita más capacidad de cómputo, puede elegir un
+marco que se integre perfectamente con su proveedor en la nube.
+Para afinar un modelo utilizando más de una máquina, necesitará un marco
+que le ayude a realizar un entrenamiento distribuido, como DeepSpeed,
+PyTorch Distributed y ColossalAI.
+Afinado de hiperparámetros
+Dependiendo del modelo base y del método de afinado, hay muchos
+hiperparámetros que se pueden ajustar para mejorar la eficacia del afinado.
+Para conocer los hiperparámetros específicos para su caso de uso, consulte
+la documentación del modelo base o el marco de afinado que utilice. Aquí
+trataré algunos hiperparámetros importantes que aparecen con frecuencia.

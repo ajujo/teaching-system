@@ -1,0 +1,33 @@
+riesgo si se explota. Un atacante podría engañar a un modelo de IA para que
+lo identifique erróneamente como un empleado autorizado o hacer que un
+coche sin conductor confunda un divisor con un carril, provocando
+accidentes.
+Puede entrenar su modelo con datos perturbados. La perturbación puede
+tanto mejorar el rendimiento del modelo como hacerlo más robusto frente a
+los ataques; véanse Goodfellow et al., 2013 y Moosavi-Dezfooli et al.,
+2015). En 2019, Hendrycks y Dietterich crearon ImageNet-C e ImageNet-P
+aplicando 15 corrupciones visuales comunes, como cambiar el brillo, añadir
+nieve, cambiar el contraste o añadir ruido a las imágenes de ImageNet.
+La perturbación también puede utilizarse para los textos. Por ejemplo, para
+entrenar BERT, los autores sustituyeron el 1.5 % de los tokens por palabras
+aleatorias (Devlin et al., 2018). Descubrieron que esta perturbación
+producía un pequeño aumento del rendimiento.
+Los datos visuales pueden ampliarse mediante algoritmos más sofisticados.
+Snap (2022) tiene un fantástico estudio de caso sobre cómo aumentan sus
+activos para crear casos de rincones no representados y mitigar los sesgos
+implícitos en sus datos. Dado un personaje, sintetizan personajes similares
+pero con diferentes colores de piel, tipos de cuerpo, peinados, ropa e incluso
+expresiones faciales. Estos activos aumentados se utilizan después para
+entrenar modelos de IA.
+Simulación
+En vez de realizar experimentos para recopilar datos en el mundo real, lo
+que puede resultar caro y peligroso, puede simular estos experimentos
+virtualmente. Por ejemplo, para probar cómo reacciona un coche sin
+conductor al encontrarse con un caballo en la carretera, sería peligroso
+soltar un caballo real en la carretera. En su lugar, se simula esta situación en
+un entorno virtual. Algunos ejemplos de motores de simulación de
+conducción autónoma son CARLA (Dosovitskiy et al., 2017),
+SimulationCity de Waymo y la simulación de San Francisco de Tesla.
+Del mismo modo, es muy común simular datos de entrenamiento para
+robótica en un entorno virtual. Supongamos que quiere entrenar a un robot
+para que sirva café, pero no sabe exactamente cómo debe moverse cada

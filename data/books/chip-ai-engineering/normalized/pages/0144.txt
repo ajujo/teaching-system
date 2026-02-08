@@ -1,0 +1,4 @@
+figura 2-13. Los etiquetadores de interfaz utilizados para generar datos de
+comparación para InstructGPT de OpenAI.
+Si solo tenemos datos de comparación, ¿cómo entrenamos el modelo para
+que otorgue puntuaciones concretas? Igual que se puede conseguir que los

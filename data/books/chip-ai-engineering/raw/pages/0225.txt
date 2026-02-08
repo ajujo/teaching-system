@@ -1,0 +1,28 @@
+resultados de la evaluación a cambios en la aplicación, en lugar de a
+cambios en los jueces.
+SUGERENCIA
+No se fíe de ningún juez de IA si no puede ver el modelo y el prompt
+utilizado para el juez.
+Lleva tiempo normalizar los métodos de evaluación. A medida que el
+campo evolucione y se introduzcan más barreras de seguridad, espero que
+los futuros jueces de IA estén mucho más estandarizados y sean más fiables.
+Mayores costos y latencia
+Puede utilizar jueces de IA para evaluar aplicaciones tanto durante la
+experimentación como en la producción. Muchos equipos utilizan jueces de
+IA como barreras de seguridad en producción para reducir riesgos,
+mostrando a los usuarios solo las respuestas generadas que el juez de IA
+considera buenas.
+Utilizar modelos potentes para evaluar las respuestas puede resultar caro. Si
+utiliza GPT-4 tanto para generar como para evaluar respuestas, hará el doble
+de llamadas GPT-4, lo que duplicará aproximadamente sus costos de API.
+Si tiene tres prompts de evaluación porque desea evaluar tres criterios (por
+ejemplo, la calidad general de la respuesta, la coherencia factual y la
+toxicidad), multiplicará por cuatro el número de llamadas a la API. 17
+Puede reducir costos utilizando modelos más débiles como jueces (ver
+“¿Qué modelos pueden actuar como jueces?”). También puede reducir
+costos con la comprobación aleatoria: evaluar solo un subconjunto de
+respuestas. 18 La comprobación puntual significa que puede que no detecten
+algunos fallos. Cuanto mayor sea el porcentaje de muestras que evalúe, más
+confianza tendrá en los resultados de su evaluación, pero también mayores
+serán los costos. Encontrar el equilibrio adecuado entre costo y confianza
+puede requerir ensayo y error. Este proceso se analiza con más detalle en el

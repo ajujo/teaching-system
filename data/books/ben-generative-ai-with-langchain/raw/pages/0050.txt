@@ -1,0 +1,40 @@
+Chapter 1
+23
+In the UI above, you can see an agent connected to a search interface (Serp API), an LLM, and a 
+calculator. LangChain and similar tools can be deployed locally using libraries like Chainlit, or 
+on various cloud platforms, including Google Cloud.
+In summary, LangChain simplifies the development of LLM applications through its modular 
+design, extensive integrations, and supportive ecosystem. This makes it an invaluable tool for de­
+velopers looking to build sophisticated AI systems without reinventing fundamental components.
+Summary
+This chapter introduced the modern LLM landscape and positioned LangChain as a powerful 
+framework for building production-ready AI applications. We explored the limitations of raw 
+LLMs and then showed how these frameworks transform models into reliable, agentic systems 
+capable of solving complex real-world problems. We also examined the LangChain ecosystem’s 
+architecture, including its modular components, package structure, and companion projects 
+that support the complete development lifecycle. By understanding the relationship between 
+LLMs and the frameworks that extend them, you’re now equipped to build applications that go 
+beyond simple text generation.
+In the next chapter, we’ll set up our development environment and take our first steps with 
+LangChain, translating the conceptual understanding from this chapter into working code. You’ll 
+learn how to connect to various LLM providers, create your first chains, and begin implementing 
+the patterns that form the foundation of enterprise-grade AI applications.
+Questions
+1.	
+What are the three primary limitations of raw LLMs that impact production applications, 
+and how does LangChain address each one?
+2.	
+Compare and contrast open-source and closed-source LLMs in terms of deployment op­
+tions, cost considerations, and use cases. When might you choose each type?
+3.	
+What is the difference between a LangChain chain and a LangGraph agent? When would 
+you choose one over the other?
+4.	
+Explain how LangChain’s modular architecture supports the rapid development of AI ap­
+plications. Provide an example of how this modularity might benefit an enterprise use case.
+5.	
+What are the key components of the LangChain ecosystem, and how do they work to­
+gether to support the development lifecycle from building to deployment to monitoring?
+6.	
+How does agentic AI differ from traditional LLM applications? Describe a business scenario 
+where an agent would provide significant advantages over a simple chain.

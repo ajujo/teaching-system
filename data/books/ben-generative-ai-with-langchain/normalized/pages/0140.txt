@@ -1,0 +1,34 @@
+Chapter 4
+113
+This analysis, drawn from both research and practical implementations, suggests that specific
+requirements for knowledge currency, accuracy, and domain expertise should guide the choice
+between RAG and pure LLMs, balanced against the organizational capacity to manage the addi­
+tional architectural complexity.
+Development teams should consider RAG when their applications require:
+•
+Access to current information not available in LLM training data
+•
+Domain-specific knowledge integration
+•
+Verifiable responses with source attribution
+•
+Processing of specialized data formats
+•
+High precision in regulated industries
+With that, let's explore the implementation details, optimization strategies, and production
+deployment considerations for each RAG component.
+From embeddings to search
+As mentioned, a RAG system comprises a retriever that finds relevant information, an augmenta­
+tion mechanism that integrates this information, and a generator that produces the final output.
+When building AI applications with LLMs, we often focus on the exciting parts - prompts, chains,
+and model outputs. However, the foundation of any robust RAG system lies in how we store and
+retrieve our vector embeddings. Think of it like building a library - before we can efficiently find
+books (vector search), we need both a building to store them (vector storage) and an organiza­
+tion system to find them (vector indexing). In this section, we introduce the core components
+of a RAG system: vector embeddings, vector stores, and indexing strategies to optimize retrieval.
+To make RAG work, we first need to solve a fundamental challenge: how do we help computers
+understand the meaning of text so they can find relevant information? This is where embeddings
+come in.
+At Chelsea AI Ventures, our team has observed that clients in regulated industries
+particularly benefit from RAG's verifiability, while creative applications often perform
+adequately with pure LLMs.

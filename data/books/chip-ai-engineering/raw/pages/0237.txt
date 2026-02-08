@@ -1,0 +1,33 @@
+1596 parejas de modelos). Es un número pequeño, teniendo en cuenta la
+amplia gama de tareas que queremos que realice un modelo fundacional.
+Afortunadamente, no siempre necesitamos comparaciones directas entre
+dos modelos para determinar cuál es mejor. Los algoritmos de ranking
+suelen asumir la transitividad. Si el modelo A es mejor que B, y B es mejor
+que C, entonces con la transitividad, se puede inferir que A es mejor que C.
+Esto significa que si el algoritmo está seguro de que A es mejor que B y B
+es mejor que C, no necesita comparar A contra C para saber que A es mejor.
+Sin embargo, no está claro si este supuesto de transitividad es válido para
+los modelos de IA. Muchos artículos que analizan Elo para la evaluación de
+IA citan el supuesto de transitividad como una limitación (Boubdir et al.;
+Balduzzi et al.; y Munos et al.). Ellos argumentaron que la preferencia
+humana no es necesariamente transitiva. Además, la falta de transitividad
+puede deberse a que diferentes parejas de modelos son evaluadas por
+diferentes evaluadores y con diferentes prompts.
+También está el reto de evaluar nuevos modelos. Con la evaluación
+independiente, solo hay que evaluar el nuevo modelo. Con la evaluación
+comparativa, el nuevo modelo tiene que ser evaluado frente a los modelos
+existentes, lo que puede cambiar la clasificación de los modelos existentes.
+Esto también dificulta la evaluación de los modelos privados. Imagine que
+ha creado un modelo para su empresa a partir de datos internos. Quiere
+comparar este modelo con los modelos públicos para decidir si sería más
+beneficioso utilizar uno público. Si desea utilizar la evaluación comparativa
+para su modelo, probablemente tendrá que recopilar sus propias señales
+comparativas y crear su propia clasificación o pagar a uno de esos tableros
+de clasificación públicos para que haga una evaluación privada por usted.
+El cuello de botella en el escalado puede mitigarse con mejores algoritmos
+para generar encuentros. Hasta ahora, hemos dado por supuesto que los
+modelos se seleccionan aleatoriamente para cada encuentro, de modo que
+todas las parejas de modelos aparecen aproximadamente en el mismo
+número de encuentros. Sin embargo, no todas las parejas de modelos deben
+compararse por igual. Cuando estemos seguros del output de una pareja de
+modelos, podemos dejar de compararlos entre sí. Un algoritmo eficaz para

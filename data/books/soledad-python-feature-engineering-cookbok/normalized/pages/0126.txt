@@ -1,0 +1,36 @@
+Performing Box-Cox transformations
+103
+Performing Box-Cox transformations
+The Box-Cox transformation is a generalization of the power family of transformations and is defined
+as follows:
+y (λ) =  ( y λ − 1)
+_
+λ
+ if λ  ≠  0
+y (λ) = log(y) if λ  =  0
+Here, y is the variable and λ is the transformation parameter. It includes important special cases of
+transformations, such as untransformed (λ = 1), the logarithm (λ = 0), the reciprocal (λ = - 1), the
+square root (when λ = 0.5, it applies a scaled and shifted version of the square root function), and
+the cube root.
+The Box-Cox transformation evaluates several values of λ using the maximum likelihood and selects
+the λ parameter that returns the best transformation.
+In this recipe, we will perform the Box-Cox transformation using scikit-learn and Feature-engine.
+Note
+The Box-Cox transformation can only be used on positive variables. If your variables have
+negative values, try the Yeo-Johnson transformation, which is described in the next recipe,
+Performing Yeo-Johnson transformation. Alternatively, you can shift the variable distribution
+by adding a constant before the transformation.
+How to do it...
+Let's begin by importing the necessary libraries and getting the dataset ready:
+1.
+Import the required Python libraries and classes:
+import numpy as np
+import pandas as pd
+import scipy.stats as stats
+from sklearn.datasets import fetch_california_housing
+from sklearn.preprocessing import PowerTransformer
+from feature_engine.transformation import BoxCoxTransformer
+2.
+Let's load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)

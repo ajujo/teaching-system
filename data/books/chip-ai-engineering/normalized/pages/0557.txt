@@ -1,0 +1,31 @@
+Los ejemplos de entrenamiento deben ser relevantes para la
+tarea para la que se está entrenando el modelo. Por ejemplo,
+si la tarea consiste en responder a cuestiones jurídicas
+actuales, un conjunto de datos jurídicos del siglo XIX podría
+no ser relevante. Sin embargo, si la tarea trata sobre el
+sistema jurídico en el siglo XIX, este conjunto de datos es
+muy relevante.
+Ajustados a los requisitos de la tarea
+Las anotaciones deben ajustarse a los requisitos de la tarea.
+Por ejemplo, si la tarea requiere coherencia factual, las
+anotaciones deben ser factualmente correctas. Si la tarea
+requiere creatividad, las anotaciones deben ser creativas. Si
+la tarea exige no solo una puntuación, sino también una
+justificación de esa puntuación, las anotaciones deben
+incluir tanto las puntuaciones como las justificaciones. Pero
+si la tarea exige respuestas concisas, las anotaciones deben
+ser concisas
+He utilizado "ajustado" en lugar de "preciso" o "correcto"
+porque, dependiendo de la tarea, una respuesta precisa o
+correcta pueden no ser lo que el usuario desea.
+Consistente
+Las anotaciones deben ser consistentes entre ejemplos y
+anotadores. Si le pide a dos anotadores que anoten el mismo
+ejemplo, sus anotaciones no deberían ser demasiado
+diferentes. Si la tarea consiste en puntuar los ensayos del 1
+al 5, ¿tendrían la misma calidad dos ensayos con la misma
+puntuación? Las anotaciones inconsistentes pueden
+confundir al modelo y dificultar su aprendizaje.
+Disponer de unas buenas directrices de anotación es
+esencial para que las anotaciones estén alineadas con los
+requisitos de la tarea y sean consistentes.

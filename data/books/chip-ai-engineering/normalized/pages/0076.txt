@@ -1,0 +1,33 @@
+más presión para optimizar el entrenamiento y la inferencia de
+manera eficiente.
+Un corolario de los modelos de cálculo intensivo es que muchas
+empresas ahora necesitan más GPU y trabajan con clústeres de
+computación más grandes que antes, lo que significa que hay más
+necesidad de ingenieros que sepan trabajar con GPU y grandes
+clústeres. 23
+3. La ingeniería de IA trabaja con modelos que pueden producir
+outputs abiertos. Los outputs abiertos dan a los modelos la
+flexibilidad necesaria para ser utilizados en más tareas, pero
+también son más difíciles de evaluar. Esto hace que la evaluación
+sea un problema mucho mayor en la ingeniería de IA.
+En resumen, la ingeniería de IA difiere de la ingeniería de ML en que el
+objetivo no es desarrollar modelos, sino adaptarlos y evaluarlos. He
+mencionado la adaptación de modelos varias veces en este capítulo, así que
+antes de seguir adelante, quiero asegurarme de que estamos de acuerdo
+sobre lo que esto significa. En general, las técnicas de adaptación de
+modelos pueden dividirse en dos categorías, dependiendo de si requieren o
+no actualizar las ponderaciones del modelo.
+Las técnicas basadas en prompts, que incluyen la ingeniería de prompts,
+adaptan un modelo sin actualizar las ponderaciones del modelo. Se trata de
+adaptar un modelo dándole instrucciones y contexto en lugar de cambiar el
+modelo en sí. La ingeniería de prompts es más fácil de poner en marcha y
+requiere menos datos. Se han creado muchas aplicaciones de éxito solo con
+ingeniería de prompts. Su facilidad de uso permite experimentar con más
+modelos, lo que aumenta las posibilidades de encontrar un modelo
+inesperadamente bueno para sus aplicaciones. Sin embargo, la ingeniería de
+prompts puede no ser suficiente para tareas complejas o para aplicaciones
+con estrictos requisitos de rendimiento.
+En cambio, el afinado requiere actualizar las ponderaciones del modelo.
+Para adaptar un modelo, hay que modificarlo. En general, las técnicas de
+afinado son más complicadas y requieren más datos, pero pueden mejorar
+significativamente la calidad, la latencia y el costo del modelo. Muchas

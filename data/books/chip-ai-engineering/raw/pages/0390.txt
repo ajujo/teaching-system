@@ -1,0 +1,19 @@
+cada consulta, reduciendo el número de tokens de input y aumentando
+potencialmente el rendimiento del modelo.
+Los esfuerzos para ampliar la longitud del contexto van de la mano con los
+esfuerzos para que los modelos utilicen el contexto de forma más eficaz. No
+me sorprendería que un proveedor de modelos incorporara un mecanismo
+similar al de recuperación o atención para ayudar a un modelo a elegir las
+partes más destacadas de un contexto para utilizarlas.
+NOTA
+Anthropic sugirió que, para los modelos Claude, si "su base de
+conocimientos es inferior a 200 000 tokens (unas 500 páginas de material),
+basta con incluir toda la base de conocimientos en el prompt que se da al
+modelo, sin necesidad de RAG ni métodos similares" (Anthropic, 2024).
+Sería asombroso que otros desarrolladores de modelos ofrecieran guías
+similares para RAG vs. contexto largo para sus modelos.
+Arquitectura RAG
+Un sistema RAG tiene dos componentes: un recuperador que recupera
+información de fuentes de memoria externas y un generador que genera una
+respuesta basada en la información recuperada. La Figura 6-2 muestra una
+arquitectura de alto nivel de un sistema RAG.

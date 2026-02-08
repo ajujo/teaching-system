@@ -1,0 +1,30 @@
+Building Intelligent RAG Systems
+162
+•	
+Interactive interface: Integrates the pipeline with Gradio for real-time user interactions
+Let’s get started! Each file in the project serves a specific role in the overall documentation chatbot. 
+Let’s first look at document loading.
+Document loading
+The main purpose of this module is to give an interface to read different document formats.
+While this chapter provides a brief overview of performance measurements and 
+evaluation metrics, an in-depth discussion of performance and observability will 
+be covered in Chapter 8. Please make sure you have installed all the dependencies 
+needed for this book, as explained in Chapter 2. Otherwise, you might run into issues.
+Additionally, given the pace of the field and the development of the LangChain li­
+brary, we are making an effort to keep the GitHub repository up to date. Please see 
+https://github.com/benman1/generative_ai_with_langchain.
+For any questions, or if you have any trouble running the code, please create an issue 
+on GitHub or join the discussion on Discord: https://packt.link/lang.
+The Document class in LangChain is a fundamental data structure for storing and 
+manipulating text content along with associated metadata. It stores text content 
+through its required page_content parameter along with optional metadata stored 
+as a dictionary.
+The class also supports an optional id parameter that ideally should be formatted as 
+a UUID to uniquely identify documents across collections, though this isn’t strictly 
+enforced. Documents can be created by simply passing content and metadata, as 
+in this example:
+Document(page_content="Hello, world!", metadata={"source": 
+"https://example.com"})
+This interface serves as the standard representation of text data throughout LangC­
+hain’s document processing pipelines, enabling consistent handling during loading, 
+splitting, transformation, and retrieval operations. 

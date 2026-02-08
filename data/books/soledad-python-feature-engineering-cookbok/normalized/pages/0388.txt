@@ -1,0 +1,65 @@
+Index
+365
+featuretools
+reference link 275
+feature vector 224
+forward and backward fill
+implementing 27-31
+frequent categories
+one-hot encoding, performing 52-56
+G
+general transform primitive 281
+features, creating 281-288
+H
+house occupancy 91
+I
+imputation 1
+extreme values, finding 19-22
+imputed values
+marking 23-27
+interactions 241
+interpolation
+executing 31-34
+inter-quartile range (IQR) 20, 154, 213
+Inverse Document Frequency (idf) 353
+IQR proximity rule 154
+using, to visualize outliers 154
+K
+k-means clustering
+discretization, performing with 135-140
+K-Nearest Neighbors (KNN) 39
+Knowledge Discovery and Data
+Mining (KDD) 247
+L
+logarithm function 84
+used, for transforming variables 84-90
+M
+mathematical functions
+features, combining with 230-234
+maximum absolute scaling 218, 219
+implementing 219-223
+maximum values
+scaling to 209-213
+mean and standard deviation
+using, to find outliers 159-162
+mean imputation
+performing 7-12
+mean normalization
+performing 214-217
+median
+scaling with 213, 214
+Median Absolute Deviation (MAD) 159
+using, to find outliers 162-165
+median imputation
+performing 7-12
+minimum values
+scaling to 209-213
+missing data 1
+estimating, with nearest neighbors 39-41
+used, for removing observations 3-6
+missing values
+replacing, with arbitrary value 16-19
+multivariate imputation 35
+performing, by chained equations 34-39
+Multivariate Imputation by Chained
+Equations (MICE) 34

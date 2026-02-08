@@ -1,0 +1,38 @@
+Chapter 11
+435
+Quick overview of GitHub Actions
+GitHub Actions is a CI/CD platform provided by GitHub that allows developers to automate their
+workflows directly within a GitHub repository. It enables users to build, test, and deploy their
+code directly from GitHub by defining workflows in YAML files. Since it's part of GitHub, it works
+seamlessly with repositories, issues, PRs, and other GitHub features. Here are the key components
+you should know about:
+•
+Workflows: A workflow is an automated process defined in a YAML file located in your
+repository's .github/workflows directory. It specifies what should happen (e.g., build,
+test, and deploy) and when (e.g., on push, on PR).
+•
+Jobs: Workflows are made up of jobs, which are groups of steps that execute on the same
+runner. Each job runs in its own virtual environment.
+•
+Steps: Jobs are made up of multiple independent steps, which can be actions or shell
+commands.
+•
+Actions: Actions are reusable commands or scripts. You can use pre-built actions from
+GitHub Marketplace or create your own. You can think of them as Python functions.
+•
+Runners: Runners are the servers that run your jobs. GitHub provides hosted runners
+(Linux, Windows, macOS), or you can even self-host your runners.
+A workflow is described using YAML syntax. For example, a simple workflow that clones the
+current GitHub repository and installs Python 3.11 on an Ubuntu machine looks like this:
+name: Example
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+         - name: Checkout
+           uses: actions/checkout@v3
+         - name: Setup Python
+           uses: actions/setup-python@v3
+           with:
+               python-version: "3.11"

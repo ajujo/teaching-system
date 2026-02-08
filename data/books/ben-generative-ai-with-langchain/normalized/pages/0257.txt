@@ -1,0 +1,27 @@
+Advanced Applications and Multi-Agent Systems
+230
+Figure 6.3: A parallel execution of the task with a final consensus step
+We saw an example of implementing a consensus mechanism based on majority voting in Chapter
+3. You can wrap it as a separate LangGraph node, and there are alternative ways of coming to a
+consensus across multiple agents:
+•
+Let each agent see other solutions and score each of them on a scale of 0 to 1, and then
+take the solution with the maximum score.
+•
+Use an alternative voting mechanism.
+•
+Use majority voting. It typically works for classification or similar tasks, but it might be
+difficult to implement majority voting if you have a free-text output. This is the fastest
+and the cheapest (in terms of token consumption) mechanism since you don't need to
+run any additional prompts.
+•
+Use an external oracle if it exists. For instance, when solving a mathematical equation, you
+can easily verify if the solution is feasible. Computational costs depend on the problem
+but typically are low.
+•
+Use another (maybe more powerful) LLM as a judge to pick the best solution. You can ask
+an LLM to come up with a score for each solution, or you can task it with a multi-class
+classification problem by presenting all of them and asking it to pick the best one.
+•
+Develop another agent that excels at the task of selecting the best solution for a general
+task from a set of solutions.

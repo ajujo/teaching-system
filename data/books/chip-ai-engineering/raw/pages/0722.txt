@@ -1,0 +1,20 @@
+Cuando el modelo tiene poca confianza
+Cuando un modelo no está seguro de una acción, puede pedir al usuario que
+le dé su opinión para aumentar su confianza. Por ejemplo, ante una petición
+de resumen de un artículo, si el modelo no está seguro de si el usuario
+prefiere un resumen breve de alto nivel o un resumen detallado sección por
+sección, el modelo puede generar ambos resúmenes uno al lado del otro,
+suponiendo que la generación de dos resúmenes no aumente la latencia para
+el usuario. El usuario puede elegir el que prefiera. Este tipo de señales
+comparativas puede utilizarse para ajustar las preferencias. En la Figura 10-
+15x se muestra un ejemplo de evaluación comparativa en producción.
+figura 10-15. Comparación de dos respuestas de ChatGPT.
+Mostrar dos respuestas completas para que el usuario elija significa pedirle
+una opinión explícita. Es posible que los usuarios no tengan tiempo de leer
+dos respuestas completas o no les importe lo bastante como para dar una
+opinión meditada. Esto puede dar lugar a votaciones con ruido. Algunas
+aplicaciones, como Google Gemini, solo muestran el principio de cada
+respuesta, como se muestra en la Figura 10-16. Los usuarios pueden hacer
+clic para ampliar la respuesta que deseen leer. Sin embargo, no está claro si
+mostrar las respuestas completas o parciales una al lado de la otra
+proporciona retroalimentación más fiable. 10

@@ -1,0 +1,31 @@
+así que simplemente eligen positivo para acabar rápido. Por
+eso tampoco deben obligar a la gente a hacer un trabajo
+extra para recibir su retroalimentación.
+En una escala de valoración de cinco estrellas, cuatro y cinco
+suelen indicar una buena experiencia. No obstante, en
+muchos casos, los usuarios pueden sentirse presionados
+para dar valoraciones de cinco estrellas, reservando las
+cuatro estrellas para cuando algo va mal. Según Uber, en
+2015, la valoración media de los conductores fue de 4.8, y las
+puntuaciones por debajo de 4.6 ponen a los conductores en
+riesgo de ser desactivados.
+Este sesgo no tiene por qué ser necesariamente un
+obstáculo. El objetivo de Uber es diferenciar a los buenos
+conductores de los malos. Incluso con este sesgo, su sistema
+de clasificación parece ayudarles a lograr este objetivo. Es
+esencial observar la distribución de las valoraciones de los
+usuarios para detectar este sesgo.
+Si desea una opinión más detallada, puede eliminar la fuerte
+connotación negativa asociada a las valoraciones bajas para
+ayudar a las personas a romper este sesgo. Por ejemplo, en
+lugar de mostrar a los usuarios los números del uno al cinco,
+muéstreles opciones como las siguientes:
+"Gran viaje. Gran conductor".
+"Bastante bien".
+"Nada de lo que quejarse pero tampoco nada estelar".
+"Podría haber ido mejor".
+"No me asignen a este conductor otra vez". 12
+Aleatoriedad
+A menudo, los usuarios dan retroalimentación al azar, no
+por maldad, sino porque carecen de motivación para hacer
+aportaciones más meditadas. Por ejemplo, cuando se

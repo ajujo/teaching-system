@@ -1,0 +1,23 @@
+– herramientas, Visión general de los agentes
+– aumento de los conocimientos, Herramientas
+– escribir acciones, Extensión de capacidades
+– extensión de las capacidades, Herramientas
+– modos de fallo de los agentes y evaluación, Selección de herramientas
+– eficacia, Fallos de las herramientas
+– fallos de las herramientas, Fallos de planificación
+– fallos de planificación, Selección de herramientas
+– visión general, Agentes
+agregación de información, Bots conversacionales
+agrupación
+– API de inferencia por lotes, Cuellos de botella de cómputo
+– continua, Agrupación por lotes
+– dinámica, Agrupación por lotes
+– estática, Kernels y compiladores
+– tamaño de lote, Tasa de aprendizaje
+agrupación continua, Agrupación por lotes
+agrupación dinámica, Agrupación por lotes
+agrupación estática, Kernels y compiladores
+AI engineering (AIE)
+– rise of AI engineering, El auge de la ingeniería de IA
+ajuste fino, Afinado
+– ajuste fino y GAR, Afinado y RAG

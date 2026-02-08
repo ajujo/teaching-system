@@ -1,0 +1,36 @@
+Evaluation and Testing
+310
+In the realm of developing LLM agents, evaluations play a pivotal role in ensuring these complex 
+systems function reliably and effectively across real-world applications. Let’s start discussing 
+why rigorous evaluation is indispensable!
+Why evaluation matters
+LLM agents represent a new class of AI systems that combine language models with reasoning, 
+decision-making, and tool-using capabilities. Unlike traditional software with predictable behav­
+iors, these agents operate with greater autonomy and complexity, making thorough evaluation 
+essential before deployment.
+Consider the real-world consequences: unlike traditional software with deterministic behavior, 
+LLM agents make complex, context-dependent decisions. If unevaluated before being implement­
+ed, an AI agent in customer support might provide misleading information that damages brand 
+reputation, while a healthcare assistant could influence critical treatment decisions—highlighting 
+why thorough evaluation is essential.
+You can find the code for this chapter in the chapter8/ directory of the book’s GitHub 
+repository. Given the rapid developments in the field and the updates to the Lang­
+Chain library, we are committed to keeping the GitHub repository current. Please 
+visit https://github.com/benman1/generative_ai_with_langchain for the 
+latest updates.
+See Chapter 2 for setup instructions. If you have any questions or encounter issues 
+while running the code, please create an issue on GitHub or join the discussion on 
+Discord at https://packt.link/lang.
+Before diving into specific evaluation techniques, it’s important to distinguish be­
+tween two fundamentally different types of evaluation:
+LLM model evaluation:
+•	
+Focuses on the raw capabilities of the base language model
+•	
+Uses controlled prompts and standardized benchmarks
+•	
+Evaluates inherent abilities like reasoning, knowledge recall, and language 
+generation
+•	
+Typically conducted by model developers or researchers comparing different 
+models

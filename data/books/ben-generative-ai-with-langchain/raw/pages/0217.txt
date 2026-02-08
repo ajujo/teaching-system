@@ -1,0 +1,32 @@
+Building Intelligent Agents
+190
+llm_with_tools = prompt | llm.bind_tools([search_tool, calculator_tool])
+Now that we have an LLM that can call tools, let’s create the nodes we need. We need one function 
+that calls an LLM, another function that invokes tools and returns tool-calling results (by append­
+ing ToolMessages to the list of messages in the state), and a function that will determine whether 
+the orchestrator should continue calling tools or whether it can return the result to the user:
+from typing import TypedDict
+from langgraph.graph import MessagesState, StateGraph, START, END
+def invoke_llm(state: MessagesState):
+   return {"messages": [llm_with_tools.invoke(state["messages"])]}
+def call_tools(state: MessagesState):
+   last_message = state["messages"][-1]
+   tool_calls = last_message.tool_calls
+   new_messages = []
+   for tool_call in tool_calls:
+     if tool_call["name"] == "google_search":
+       tool_result = mocked_google_search(**tool_call["args"])
+       new_messages.append(ToolMessage(content=tool_result, tool_call_
+id=tool_call["id"]))
+     elif tool_call["name"] == "calculator":
+       tool_result = mocked_calculator(**tool_call["args"])
+       new_messages.append(ToolMessage(content=tool_result, tool_call_
+id=tool_call["id"]))
+     else:
+       raise ValueError(f"Tool {tool_call['name']} is not defined!")
+   return {"messages": new_messages}
+def should_run_tools(state: MessagesState):
+   last_message = state["messages"][-1]
+   if last_message.tool_calls:
+     return "call_tools"
+   return END

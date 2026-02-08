@@ -1,0 +1,26 @@
+El último capítulo del libro reúne los diferentes conceptos de este libro para
+construir una aplicación de inicio a fin. La segunda parte del capítulo se
+centra más en el producto, con debates sobre cómo diseñar un sistema de
+comentarios de los usuarios que le ayude a recopilar comentarios útiles y, al
+mismo tiempo, mantener una buena experiencia de usuario.
+NOTA
+A menudo utilizo "nosotros" en este libro para referirme a usted (el lector)
+y a mí. Se trata de un hábito que adquirí en mi época de profesora, ya que
+consideraba la escritura como una experiencia de aprendizaje compartido
+tanto para el escritor como para los lectores.
+Convenciones utilizadas en este libro
+En este libro se utilizan las siguientes convenciones tipográficas:
+Cursiva
+Indica nuevos términos, URL, direcciones de correo electrónico, nombres
+de archivo y extensiones de archivo.
+Anchura constante
+Se utiliza para código de programas, así como dentro de párrafos para
+referirse a elementos del programa como nombres de variables o
+funciones, bases de datos, tipos de datos, variables de entorno,
+sentencias, entradas de prompts en modelos y palabras clave.
+Anchura constante en negrita
+Muestra comandos u otro texto que debe ser tecleado literalmente por el
+usuario.
+Anchura constante en cursiva
+Muestra el texto que debe sustituirse por valores proporcionados por el
+usuario o por valores determinados por el contexto.

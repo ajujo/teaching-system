@@ -1,0 +1,100 @@
+agentic systems, design considerations,
+28-29
+design principle, 11, 12
+evaluation sets, 208
+local tools, 73
+swarm systems, 178
+scaling laws, 317
+scope
+agents, creating, 17-19
+types, 302
+access control considerations, 302
+search and analytics monitoring stack, 227
+searches
+full-text, 117-118
+RAG, 121-122
+semantic, 119
+secure network architecture, 290
+security, 273
+(see also logs; threats)
+agents, 288
+safeguards, 288-290
+audits, 292
+foundation models
+defensive strategies, 276-278
+selecting, 275-276
+personnel training, 288
+red teaming, 278-281
+sensitive data, 286-288
+stateful tools, 84
+testing, 292
+self-attention, 317
+semantic experience memory, 122
+semantic memory, 119
+implementing, 119-120
+semantic searches, 119, 317
+semantic triples, extracting, 126
+semi-automated workflows, project suitability,
+9
+Seq2Seq (sequence-to-sequence), 317
+session-based memory, 61
+SFT (supervised fine-tuning), 149
+shadow deployments, experimentation frame‐
+works, 261-262
+shadow mode development, 235
+short-term memory, agentic systems, 26
+SigNoz monitoring stack, 229
+single-agent architecture, 32
+single-agent systems
+benefits, 163-164
+bottleneck sources, 169
+example, 164-169
+small foundation models, 151
+advantages, 151
+cost, 151
+fine-tuning, 152
+performance, 152
+selection considerations, 152-153
+sustainability, 152
+SOC (Security Operations Center) agent, 8
+Bayesian Bandit, 264
+feedback pipeline example, 247-248
+human-in-the-loop (HITL) review, 251
+social engineering, 274
+red teaming, 280
+Softmax, 317
+Software Development Kit, 14
+SOX (Sarbanes-Oxley), 311
+specialist nodes, multiagent systems, 174-177
+specialization
+agent-based design principle, 179
+multiagent systems, 170
+speech interfaces, 50-53
+stakeholder alignment, agentic systems,
+299-300
+state management
+agent design, 61-62
+failing gracefully, 66
+internal failure protection, 294
+multiagent systems, 201-202
+stateful tools, 84-85
+stores, vector, 119
+supervised fine-tuning (SFT), 153-157
+supervisor nodes, multiagent systems, 174-177
+supply chain agent, 8
+supply chain attacks, 291
+sustainability, small foundation models, 152
+swarm systems, 177
+advantages, 178
+challenges, 178
+synchronous agents, 58
+design considerations, 58
+design principles, 58-59
+T
+task decomposition, agent-based design princi‐
+ple, 179
+telemetry systems, internal failure protection,
+293
+Index 
+| 
+329

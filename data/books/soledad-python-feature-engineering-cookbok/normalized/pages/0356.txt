@@ -1,0 +1,34 @@
+Embedding feature creation into a scikit-learn pipeline
+333
+Note
+In step 9, we passed the entire dataset to the extract_features function. The resulting
+features only contained features extracted from three of the five time series. The additional
+two time series were ignored.
+Embedding feature creation into a scikit-learn pipeline
+Throughout this chapter, we've discussed how to automatically create and select features from timeseries data by utilizing tsfresh. Then, we used these features to train a classification model to
+predict whether an office was occupied at any given hour.
+tsfresh includes wrapper classes around its main functions, extract_features and extract_
+relevant_features, to make the creation and selection of features compatible with the
+scikit-learn pipeline.
+In this recipe, we will set up a scikit-learn pipeline that extracts features from time series using
+tsfresh and then trains a logistic regression model with those features to predict office occupancy.
+How to do it...
+Let's begin by importing the necessary libraries and getting the dataset ready:
+1.
+Let's import the required libraries and functions:
+import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from tsfresh.transformers import (
+    RelevantFeatureAugmenter)
+2.
+Load the Occupancy Detection dataset described in the Technical requirements section:
+X = pd.read_csv("occupancy.csv", parse_dates=["date"])
+y = pd.read_csv(
+    "occupancy_target.csv",
+    index_col="id")["occupancy"]
+3.
+Create an empty DataFrame that contains the index of the target variable:
+tmp = pd.DataFrame(index=y.index)

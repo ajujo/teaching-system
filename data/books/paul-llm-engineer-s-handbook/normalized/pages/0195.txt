@@ -1,0 +1,33 @@
+RAG Feature Pipeline
+164
+    @abstractmethod
+    def clean(self, data_model: DocumentT) -> CleanedDocumentT:
+        pass
+Now, for every post, article and repository, we have to implement a different handler, as follows:
+class PostCleaningHandler(CleaningDataHandler):
+    def clean(self, data_model: PostDocument) -> CleanedPostDocument:
+        return CleanedPostDocument(
+            id=data_model.id,
+            content=clean_text(" #### ".join(data_model.content.
+values())),
+            ... # Copy the rest of the parameters from the data_model
+object.
+        )
+class ArticleCleaningHandler(CleaningDataHandler):
+    def clean(self, data_model: ArticleDocument) ->
+CleanedArticleDocument:
+        valid_content = [content for content in data_model.content.
+values() if content]
+        return CleanedArticleDocument(
+            id=data_model.id,
+            content=clean_text(" #### ".join(valid_content)),
+            platform=data_model.platform,
+            link=data_model.link,
+            author_id=data_model.author_id,
+            author_full_name=data_model.author_full_name,
+        )
+class RepositoryCleaningHandler(CleaningDataHandler):
+    def clean(self, data_model: RepositoryDocument) ->
+CleanedRepositoryDocument:
+        return CleanedRepositoryDocument(
+            id=data_model.id,

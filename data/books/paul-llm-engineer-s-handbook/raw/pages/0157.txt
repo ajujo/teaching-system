@@ -1,0 +1,10 @@
+RAG Feature Pipeline
+126
+For example, if you work with multi-modal data such as text and images, most of the techniques 
+from earlier won’t work as they are designed for text only.
+Figure 4.8: The re-ranking algorithm
+To summarize, the primary goal of these optimizations is to enhance the RAG algorithm at three key 
+stages: pre-retrieval, retrieval, and post-retrieval. This involves preprocessing data for improved 
+vector indexing, adjusting user queries for more accurate searches, enhancing the embedding 
+model, utilizing classic filtering DB operations, and removing noisy data. By keeping these goals 
+in mind, you can effectively optimize your RAG workflow for data processing and retrieval

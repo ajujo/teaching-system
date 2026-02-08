@@ -1,0 +1,39 @@
+Chapter 2
+35
+    SystemMessage(content="You're a helpful programming assistant"),
+    HumanMessage(content="Write a Python function to calculate factorial")
+]
+response = chat.invoke(messages)
+print(response)
+Claude comes up with a function, an explanation, and examples for calling the function.
+Here's a Python function that calculates the factorial of a given number:
+```python
+def factorial(n):
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    elif n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n + 1):
+            result *= i
+        return result
+```
+Let's break that down. The factorial function is designed to take an
+integer n as input and calculate its factorial. It starts by checking if
+n is negative, and if so, it raises a ValueError since factorials aren't
+defined for negative numbers. If n is zero, the function returns 1, which
+makes sense because, by definition, the factorial of 0 is 1.
+When dealing with positive numbers, the function kicks things off by
+setting a variable result to 1. From there, it enters a loop that runs
+from 1 to n, inclusive, thanks to the range function. During each step
+of the loop, it multiplies the result by the current number, gradually
+building up the factorial. Once the loop completes, the function returns
+the final calculated value. You can call this function by providing a nonnegative integer as an argument. Here are a few examples:
+```python
+print(factorial(0)) # Output: 1
+print(factorial(5)) # Output: 120
+print(factorial(10)) # Output: 3628800
+print(factorial(-5)) # Raises ValueError: Factorial is not defined for
+negative numbers.
+```

@@ -1,0 +1,31 @@
+figura 9-10. Dos ejemplos de inferencia con referencia. Los tramos de texto que se
+copian correctamente del input aparecen en rojo y verde. Imagen de Yang et al.
+(2023). La imagen está bajo licencia CC BY 4.0.
+Decodificación paralela
+En vez de agilizar la generación autorregresiva con tokens de borrador,
+algunas técnicas pretenden romper la dependencia secuencial. Dada una
+secuencia existente de tokens x1, x2,…,xt, estas técnicas intentan generar xt +
+1, xt + 2,…,xt + k simultáneamente. Esto significa que el modelo genera xt + 2
+antes de saber que el token que tiene delante es xt + 1.
+Esto puede funcionar porque el conocimiento de la secuencia existente a
+menudo es suficiente para predecir los siguientes tokens. Por ejemplo,
+teniendo "el gato se sienta", sin saber que el siguiente token es "encima",
+"debajo" o "detrás", sigue pudiendo predecir que la palabra que le sigue es
+"del".
+Los tokens paralelos pueden ser generados por el mismo decodificador,
+como en la decodificación Lookahead (Fu et al., 2024), o por diferentes
+cabezales de decodificación, como en Medusa (Cai et al., 2024). En
+Medusa, el modelo original se amplía con varios cabezales de
+decodificación, y cada cabezal es una pequeña capa de red neuronal que se
+entrena para predecir un token futuro en una posición específica. Si el
+modelo original está entrenado para predecir el siguiente token xt + 1, el k-
+ésimo cabezal predecirá el token xt + k + 1. Estos cabezales se entrenan junto
+con el modelo original, pero este último está congelado. NVIDIA afirmó
+que Medusa ayudó a aumentar la generación de tokens de Llama 3.1 hasta
+1.9 veces en sus GPU HGX H200 (Eassa et al., 2024).
+Sin embargo, como estos tokens no se generan secuencialmente, es
+necesario verificarlos para asegurarse de que encajan entre sí. Una parte
+esencial de la decodificación paralela es la verificación y la integración. La
+decodificación Lookahead utiliza el método de Jacobi 21 para verificar los
+tokens generados, que funciona del siguiente modo:
+1. Se generan en paralelo K tokens futuros.

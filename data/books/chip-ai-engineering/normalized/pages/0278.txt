@@ -1,0 +1,38 @@
+Criterios
+Métrica
+Prueba
+comparativa
+Requisito
+estricto
+Idea
+Coherencia
+factual
+Métrica GPT
+interna
+Conjunto de
+datos de
+alucinaciones
+internas
+> 0.8
+> 0.9
+Ahora que ya tiene sus criterios, vayamos al siguiente paso y utilicémoslos
+para seleccionar el mejor modelo para su aplicación.
+Selección de modelos
+Al fin y al cabo, lo que menos le importa es qué modelo es el mejor. A usted
+le importa qué modelo es el mejor para sus aplicaciones. Una vez definidos
+los criterios de su aplicación, debe evaluar los modelos en función de ellos.
+Durante el proceso de desarrollo de la aplicación, a medida que recorra
+distintas técnicas de adaptación, tendrá que realizar la selección del modelo
+una y otra vez. Por ejemplo, la ingeniería de prompts podría empezar con el
+modelo más sólido en general para evaluar la viabilidad y luego trabajar
+hacia atrás para ver si funcionarían modelos más pequeños. Si decide hacer
+un afinado, puede empezar con un modelo pequeño para probar su código y
+avanzar hacia el modelo más grande que se ajuste a sus limitaciones de
+hardware (por ejemplo, una GPU).
+En general, el proceso de selección de cada técnica suele constar de dos
+pasos:
+1. Determinar el mejor rendimiento posible
+2. Mapear los modelos siguiendo los ejes costo-rendimiento y elegir
+el modelo que ofrezca el mejor rendimiento por su dinero
+Sin embargo, el proceso de selección real es mucho más matizado. Veamos
+como es.

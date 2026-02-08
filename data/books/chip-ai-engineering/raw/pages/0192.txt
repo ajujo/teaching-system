@@ -1,0 +1,29 @@
+que, si puede predecir perfectamente lo que voy a decir a continuación, lo
+que diga no aportará ninguna información nueva.
+Entropía cruzada
+Cuando se entrena un modelo lingüístico en un conjunto de datos, el
+objetivo es conseguir que el modelo aprenda la distribución de estos datos
+de entrenamiento. En otras palabras, su objetivo es conseguir que el modelo
+prediga lo que viene a continuación en los datos de entrenamiento. La
+entropía cruzada de un modelo lingüístico en un conjunto de datos mide la
+dificultad que tiene el modelo lingüístico para predecir lo que viene a
+continuación en este conjunto de datos.
+La entropía cruzada de un modelo en los datos de entrenamiento depende
+de dos cualidades:
+1. La predictibilidad de los datos de entrenamiento, medida por la
+entropía de los datos de entrenamiento.
+2. Cómo diverge la distribución captada por el modelo lingüístico de
+la distribución real de los datos de entrenamiento
+La entropía y la entropía cruzada comparten la misma notación matemática,
+H. Sea P la distribución real de los datos de entrenamiento y Q la
+distribución aprendida por el modelo lingüístico. En consecuencia, lo
+siguiente es cierto:
+La entropía de los datos de entrenamiento es, por tanto, H(P).
+La divergencia de Q con respecto a P puede medirse mediante la
+divergencia de Kullback-Leibler (KL), que se representa
+matemáticamente como DKL(P||Q).
+Por tanto, la entropía cruzada del modelo con respecto a los datos
+de entrenamiento es: H(P, Q) = H(P) + DKL(P||Q)
+La entropía cruzada no es simétrica. La entropía cruzada de Q con respecto
+a P (H(P, Q)) es diferente de la entropía cruzada de P con respecto a Q
+(H(Q, P)).

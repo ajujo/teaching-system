@@ -1,0 +1,43 @@
+API-Based Tools 75
+Plug-In Tools 78
+Model Context Protocol 81
+Stateful Tools 84
+Automated Tool Development 85
+Foundation Models as Tool Makers 85
+Real-Time Code Generation 86
+Tool Use Configuration 87
+Conclusion 88
+5. Orchestration. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+Agent Types 90
+Reflex Agents 90
+ReAct Agents 90
+Planner-Executor Agents 91
+Query-Decomposition Agents 91
+Reflection Agents 91
+Deep Research Agents 92
+Tool Selection 93
+Standard Tool Selection 94
+Semantic Tool Selection 97
+Hierarchical Tool Selection 101
+Tool Execution 105
+Tool Topologies 105
+Single Tool Execution 106
+Parallel Tool Execution 107
+Chains 107
+Graphs 109
+Context Engineering 112
+Conclusion 113
+6. Knowledge and Memory. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115
+Foundational Approaches to Memory 116
+Managing Context Windows 116
+Traditional Full-Text Search 117
+Semantic Memory and Vector Stores 119
+Introduction to Semantic Search 119
+Implementing Semantic Memory with Vector Stores 119
+Retrieval-Augmented Generation 121
+Semantic Experience Memory 122
+GraphRAG 123
+Using Knowledge Graphs 123
+Table of Contents
+|
+vii

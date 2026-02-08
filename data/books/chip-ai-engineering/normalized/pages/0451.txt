@@ -1,0 +1,19 @@
+SUGERENCIA
+Al evaluar un marco de agentes, evalúe qué planificadores y herramientas
+admite. Los distintos marcos pueden centrarse en diferentes categorías de
+herramientas. Por ejemplo, AutoGPT se centra en las API de redes sociales
+(Reddit, X y Wikipedia), mientras que Composio se centra en las API
+empresariales (Google Apps, GitHub y Slack).
+Como es probable que sus necesidades cambien con el tiempo, evalúe lo
+fácil que es ampliar su agente para incorporar nuevas herramientas.
+Como humanos, nos volvemos más productivos no solo utilizando las
+herramientas que nos dan, sino también creando herramientas cada vez más
+potentes a partir de otras más sencillas. ¿Puede la IA crear nuevas
+herramientas a partir de sus herramientas iniciales?
+Chameleon (Lu et al., 2023) propone el estudio de la transición de
+herramientas: después de la herramienta X, ¿qué probabilidad hay de que el
+agente llame a la herramienta Y? La Figura 6-15 muestra un ejemplo de
+transición de herramientas. Si dos herramientas se utilizan juntas con
+frecuencia, pueden combinarse en una herramienta mayor. Si un agente
+conoce esta información, el propio agente puede combinar las herramientas
+iniciales para construir continuamente herramientas más complejas.

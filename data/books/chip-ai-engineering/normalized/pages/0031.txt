@@ -1,0 +1,30 @@
+La autosupervisión ayuda a superar el cuello de botella del etiquetado de
+datos. En la autosupervisión, en lugar de necesitar etiquetas explícitas, el
+modelo puede inferirlas a partir de los datos del input. La creación de
+modelos lingüísticos es autosupervisada porque cada secuencia de input
+proporciona tanto las etiquetas (tokens que hay que predecir) como los
+contextos que el modelo puede utilizar para predecir estas etiquetas. Por
+ejemplo, la frase "I love street food" (Me encanta la comida callejera) da
+seis muestras de entrenamiento, como se muestra en la Tabla 1-1.
+tabla 1-1. Muestras de entrenamiento de la frase "I love street
+food" para el modelado lingüístico.
+Input (contexto)
+Output (token siguiente)
+<BOS>
+I
+<BOS>, I
+love
+<BOS>, I, love
+street
+<BOS>, I, love, street
+food
+<BOS>, I, love, street, food
+.
+<BOS>, I, love, street, food, .
+<EOS>
+En la Tabla 1-1, <BOS> y <EOS> marcan el principio y el final de una
+secuencia. Estos marcadores son necesarios para que un modelo lingüístico
+funcione con secuencias múltiples. El modelo suele tratar cada marcador
+como un token especial. El marcador de fin de secuencia es especialmente
+importante, ya que ayuda a los modelos lingüísticos a saber cuándo deben
+terminar sus respuestas. 6

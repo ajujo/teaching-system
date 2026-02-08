@@ -1,0 +1,15 @@
+The Rise of Generative AI: From Language Models to Agents
+22
+These extensions, along with the core framework, provide a comprehensive ecosystem for devel­
+oping, managing, and visualizing LLM applications, each with unique capabilities that enhance 
+functionality and user experience.
+LangChain also has an extensive array of tool integrations, which we’ll discuss in detail in Chapter 
+5. New integrations are added regularly, expanding the framework’s capabilities across domains.
+Third-party applications and visual tools
+Many third-party applications have been built on top of or around LangChain. For example, 
+LangFlow and Flowise introduce visual interfaces for LLM development, with UIs that allow for 
+the drag-and-drop assembly of LangChain components into executable workflows. This visual 
+approach enables rapid prototyping and experimentation, lowering the barrier to entry for com­
+plex pipeline creation, as illustrated in the following screenshot of Flowise:
+Figure 1.3: Flowise UI with an agent that uses an LLM, a calculator, and a search tool
+(Source: https://github.com/FlowiseAI/Flowise)

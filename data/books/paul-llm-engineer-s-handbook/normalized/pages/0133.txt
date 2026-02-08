@@ -1,0 +1,29 @@
+RAG Feature Pipeline
+102
+A RAG system is composed of three main modules independent of each other:
+•
+Ingestion pipeline: A batch or streaming pipeline used to populate the vector DB
+•
+Retrieval pipeline: A module that queries the vector DB and retrieves relevant entries to
+the user's input
+•
+Generation pipeline: The layer that uses the retrieved data to augment the prompt and
+an LLM to generate answers
+As these three components are classes or services of their own, we will dig into each separately.
+But for now, let's try to answer the question "How are these three modules connected?". Here is
+a very simplistic overview:
+1.
+On the backend side, the ingestion pipeline runs either on a schedule or constantly to
+populate the vector DB with external data.
+2.
+On the client side, the user asks a question.
+3.
+The question is passed to the retrieval module, which preprocesses the user's input and
+queries the vector DB.
+4.
+The generation pipelines use a prompt template, user input, and retrieved context to
+create the prompt.
+5.
+The prompt is passed to an LLM to generate the answer.
+6.
+The answer is shown to the user.

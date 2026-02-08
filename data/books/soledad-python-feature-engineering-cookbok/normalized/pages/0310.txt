@@ -1,0 +1,17 @@
+Creating features with general and cumulative operations
+287
+Figure 9.8 - DataFrame resulting from the deep feature synthesis,
+containing the original variables and the new features
+For more details about the created features, check the How it works... section.
+How it works...
+To create features using general and cumulative transformations with featuretools, we first need
+to set up an entity set with the data and define the relationships between its variables. We described
+how to set up an entity set in the Setting up an entity set and creating features automatically recipe.
+To apply cumulative and general transforms, we used the dfs class from featuretools. General
+transformations are applied to the entire DataFrame without grouping by a specific variable. To
+perform general transformations, we passed a list of strings with the transformation names to the
+trans_primitives parameter from dfs.
+We applied cumulative transformation after grouping by invoice. To do this, we passed a list of strings
+with the names of the cumulative transformation to the groupby_trans_primitives parameter
+from dfs. The featuretools library knows it should group by invoice because we established
+this unique identifier by using the normalize_dataframe method from EntitySet in step 5.

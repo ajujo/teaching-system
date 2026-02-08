@@ -1,0 +1,31 @@
+Las tareas complejas requieren planificación. El output del proceso de
+planificación es un plan, que es una hoja de ruta en la que se describen los
+pasos necesarios para llevar a cabo una tarea. Una planificación eficaz suele
+requerir que el modelo comprenda la tarea, considere distintas opciones
+para lograrla y elija la más prometedora.
+Si ha asistido alguna vez a una reunión de planificación, sabrá que
+planificar es difícil. Como problema computacional importante, la
+planificación se ha estudiado bien y requeriría varios volúmenes para
+abarcarla. Aquí solo podré abordar el tema de manera superficial.
+Visión general de la planificación
+Dada una tarea, hay muchas formas posibles de descomponerla, pero no
+todas conducirán a un resultado satisfactorio. Entre las soluciones correctas,
+algunas son más eficaces que otras. Considere la pregunta: "¿Cuántas
+empresas sin ingresos han recaudado al menos 1000 millones de dólares?".
+Hay muchas maneras posibles de resolver esto, pero a modo de ilustración,
+considere estas dos opciones:
+1. Buscar todas las empresas sin ingresos y luego filtrarlas por el
+importe recaudado.
+2. Buscar todas las empresas que hayan recaudado al menos 1000
+millones de dólares y filtrarlas por ingresos.
+La segunda opción es más eficaz. Hay muchas más empresas sin ingresos
+que empresas que hayan recaudado 1000 millones de dólares. Si solo tiene
+estas dos opciones, un agente inteligente debería elegir la opción 2.
+Puede combinar la planificación con la ejecución en el mismo prompt. Por
+ejemplo, se le da al modelo un prompt, se le pide que piense paso a paso
+(por ejemplo, con un prompt de cadena de pensamiento) y, a continuación,
+ejecuta todos esos pasos en un solo prompt. Pero, ¿y si el modelo propone
+un plan de 1000 pasos que ni siquiera cumple el objetivo? Sin supervisión,
+un agente puede ejecutar esos pasos durante horas, perdiendo tiempo y
+dinero en llamadas a la API, antes de que se dé cuenta de que no está yendo
+a ninguna parte.

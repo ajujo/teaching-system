@@ -1,0 +1,41 @@
+RAG Feature Pipeline
+162
+Intuitively, in our dispatcher layer, the combination of the factory and strategy patterns works 
+as follows:
+1.	
+Initially, we knew we wanted to clean the data, but as we knew the data category only at 
+runtime, we couldn’t decide on what strategy to apply.
+2.	 We can write the whole code around the cleaning code and abstract away the logic under 
+a Handler() interface, which will represent our strategy.
+3.	
+When we get a data point, we apply the abstract factory pattern and create the correct 
+cleaning handler for its data type.
+4.	
+Ultimately, the dispatcher layer uses the handler and executes the right strategy.
+By doing so, we:
+•	
+Isolate the logic for a given data category.
+•	
+Leverage polymorphism to avoid filling up the code with hundreds of if-else statements.
+•	
+Make the code modular and extendable. When a new data category arrives, we must 
+implement a new handler and modify the Factory class without touching any other part 
+of the code.
+The last component of the RAG feature pipeline is the implementation of the cleaning, chunking, 
+and embedding handlers.
+The handlers
+The handler has a one-on-one structure with our domain, meaning that every entity has its own 
+handler, as shown in Figure 8.17. In total, we will have nine Handler classes that follow the next 
+base interfaces:
+•	
+class CleaningDataHandler()
+•	
+class ChunkingDataHandler()
+•	
+class EmbeddingDataHandler()
+Until now, we have just modeled our entities and how the data flows in our appli-
+cation. We haven’t written a single piece of cleaning, chunking, or embedding code. 
+That is one big difference between a quick demo and a production-ready application. 
+In a demo, you don’t care about software engineering best practices and structuring 
+your code to make it future-proof. However, writing clean, modular, and scalable 
+code is critical for its longevity when building a real-world application.

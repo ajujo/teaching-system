@@ -1,0 +1,32 @@
+Antes de decidirse a crear una aplicación de IA, es necesario entender lo
+que implica este proceso y responder a preguntas como: ¿Es necesaria esta
+aplicación? ¿Hace falta usar IA? ¿Tengo que crear yo mismo esta
+aplicación? El primer capítulo del libro le ayudará a responder a estas
+preguntas. También cubre una serie de casos de uso con éxito, para darles
+una idea de lo que pueden hacer los modelos fundacionales.
+Aunque no es necesario tener conocimientos de ML para crear aplicaciones
+de IA, es útil comprender cómo funciona un modelo básico para sacarle el
+máximo partido. El capítulo Capítulo 2 analiza la elaboración de un modelo
+fundacional y las decisiones de diseño con repercusiones significativas en
+las aplicaciones posteriores, incluyendo su receta de datos de
+entrenamiento, las arquitecturas y escalas del modelo, y cómo se entrena el
+modelo para alinearlo con las preferencias humanas. A continuación,
+analiza cómo genera un modelo una respuesta, lo que ayuda a explicar los
+comportamientos aparentemente desconcertantes del modelo, como la
+incoherencia y las alucinaciones. Cambiar la configuración de generación
+de un modelo también suele ser una forma barata y fácil de aumentar
+significativamente el rendimiento del modelo.
+Una vez se haya comprometido a crear una aplicación con modelos
+fundacionales, la evaluación formará parte integral de cada paso del
+camino. La evaluación es uno de los retos más difíciles de la ingeniería de
+IA, si no el más difícil. Este libro dedica dos capítulos, Capítulo 3 y
+Capítulo 4, a explorar distintos métodos de evaluación y cómo utilizarlos
+para crear un proceso de evaluación fiable y sistemático para su aplicación.
+Dada una consulta, la calidad de la respuesta de un modelo depende de los
+siguientes aspectos (fuera de la configuración de generación del modelo):
+Las instrucciones sobre cómo debe comportarse el modelo
+El contexto que el modelo puede utilizar para responder a la
+consulta
+El modelo en sí
+Los tres próximos capítulos del libro se centran en cómo optimizar cada
+uno de estos aspectos para mejorar el rendimiento de un modelo para una

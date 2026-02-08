@@ -1,0 +1,33 @@
+Preface
+xxiv
+To get the most out of this book
+To maximize your learning experience, you are expected to have, at the very least, a foundational 
+understanding of software development principles and practices. Familiarity with Python pro-
+gramming is particularly beneficial, as the book’s examples and code snippets are predominantly 
+in Python. While prior experience with machine learning concepts is advantageous, it is not 
+strictly necessary, as the book provides explanations for many fundamental AI and ML concepts. 
+However, you should be comfortable with basic data structures, algorithms, and have some ex-
+perience working with APIs and cloud services. 
+Familiarity with version control systems like Git is assumed, as this book has a GitHub reposi-
+tory for code examples. While this book is designed to be accessible to those who are new to AI 
+and LLMs, if you have some background in these areas, you will find it easier to grasp the more 
+advanced concepts and techniques we present.
+Download the example code files
+The code bundle for the book is hosted on GitHub at https://github.com/PacktPublishing/
+LLM-Engineers-Handbook. We also have other code bundles from our rich catalog of books and 
+videos available at https://github.com/PacktPublishing/. Check them out!
+Download the color images
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. 
+You can download it here: https://packt.link/gbp/9781836200079.
+Conventions used
+There are a number of text conventions used throughout this book.
+CodeInText: Indicates code words in text, database table names, folder names, filenames, file 
+extensions, pathnames, dummy URLs, user input, and Twitter handles. For example: “In the 
+format_samples function, we apply the Alpaca chat template to each individual message.”
+A block of code is set as follows:
+def format_samples(example):
+    example["prompt"] = alpaca_template.format(example["prompt"])
+    example["chosen"] = example['chosen'] + EOS_TOKEN
+    example["rejected"] = example['rejected'] + EOS_TOKEN
+    return {"prompt": example["prompt"], "chosen": example["chosen"], 
+"rejected": example["rejected"]}

@@ -1,0 +1,34 @@
+RAG Feature Pipeline
+128
+To conclude, we must design a feature pipeline that constantly syncs the data warehouse and 
+logical feature store while processing the data accordingly. Having the data in a feature store 
+is critical for a production-ready ML system. The LLM Twin inference pipeline will query it for 
+RAG, while the training pipeline will consume tracked and versioned fine-tuning datasets from it.
+The feature store
+The feature store will be the central access point for all the features used within the training and 
+inference pipelines. The training pipeline will use the cleaned data from the feature store (stored 
+as artifacts) to fine-tune LLMs. The inference pipeline will query the vector DB for chunked doc-
+uments for RAG. That is why we are designing a feature pipeline and not only a RAG ingestion 
+pipeline. In practice, the feature pipeline contains multiple subcomponents, one of which is the 
+RAG logic.
+Remember that the feature pipeline is mainly used as a mind map to navigate the complexity of 
+ML systems. It clearly states that it takes raw data as input and then outputs features and optional 
+labels, which are stored in the feature store. Thus, a good intuition is to consider that all the logic 
+between the data warehouse and the feature store goes into the feature pipeline namespace, con-
+sisting of one or more sub-pipelines. For example, we will implement another pipeline that takes 
+in cleaned data, processes it into instruct datasets, and stores it in artifacts; this also sits under 
+the feature pipeline umbrella as the artifacts are part of the logical feature store. Another example 
+would be implementing a data validation pipeline on top of the raw data or computed features.
+Another important observation to make is that text data stored as strings are not considered 
+features if you follow the standard conventions. A feature is something that is fed directly into 
+the model. For example, we would have to tokenize the instruct datasets or chunked documents 
+to be considered features. Why? Because the tokens are fed directly to the model and not the 
+sentences as strings. Unfortunately, this makes the system more complex and unflexible. Thus, 
+we will do the tokenization at runtime. But this observation is important to understand as it’s 
+a clear example that you don’t have to be too rigid about the feature/training/inference (FTI) 
+architecture. You have to take it and adapt it to your own use case.
+Where does the raw data come from?
+As a quick reminder, all the raw documents are stored in a MongoDB data warehouse. The data 
+warehouse is populated by the data collection ETL pipeline presented in Chapter 3. The ETL pipe-
+line crawls various platforms such as Medium and Substack, standardizes the data, and loads it 
+into MongoDB. Check out Chapter 3 for more details on this topic.

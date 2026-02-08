@@ -1,0 +1,31 @@
+Data Engineering
+78
+If the article is new, the method proceeds to navigate to the article's link and scroll through the
+page to ensure all content is loaded:
+    def extract(self, link: str, **kwargs) -> None:
+        old_model = self.model.find(link=link)
+        if old_model is not None:
+            logger.info(f"Article already exists in the database: {link}")
+            return
+        logger.info(f"Starting scrapping Medium article: {link}")
+        self.driver.get(link)
+        self.scroll_page()
+After fully loading the page, the method uses BeautifulSoup to parse the HTML content and
+extract the article's title, subtitle, and full text. BeautifulSoup is a popular Python library for
+web scraping and parsing HTML or XML documents. Thus, we used it to extract all the HTML
+elements we needed from the HTML accessed with Selenium. Finally, we aggregate everything
+into a dictionary:
+        soup = BeautifulSoup(self.driver.page_source, "html.parser")
+        title = soup.find_all("h1", class_="pw-post-title")
+        subtitle = soup.find_all("h2", class_="pw-subtitle-paragraph")
+        data = {
+            "Title": title[0].string if title else None,
+            "Subtitle": subtitle[0].string if subtitle else None,
+            "Content": soup.get_text(),
+        }
+Finally, the method closes the WebDriver to free up resources. It then creates a new ArticleDocument
+instance, populates it with the extracted content and user information provided via kwargs, and
+saves it to the database:
+        self.driver.close()
+        user = kwargs["user"]
+        instance = self.model(

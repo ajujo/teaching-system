@@ -1,0 +1,41 @@
+For example, a user might begin interacting with an agent via voice while driving,
+continue the conversation on their phone through text while walking into a meeting,
+and later review a graphical dashboard summarizing results on their laptop. In
+another scenario, a voice assistant might read out a summary of an analytics report
+before emailing a detailed, text-based version with accompanying charts for later ref‐
+erence. This fluid transition between modalities preserves user context, respects sit‐
+uational constraints, and delivers the right interaction style at each moment.
+Designing for modality fluidity requires careful state management and context persis‐
+tence so that information, task progress, and user preferences are never lost in transi‐
+tion. Agents must also adapt their communication style to suit each modality-for
+example, delivering concise spoken summaries while providing more detailed textual
+outputs for review.
+This is an exciting time for the field of human-computer interaction. Recent advances
+in foundation models, multimodal architectures, and agent orchestration are unlock‐
+ing entirely new ways of interacting with intelligent systems. For the first time, it is
+technically feasible to build agents that engage users across text, voice, images, and
+video in a single, unified workflow.
+However, while the technology frontier is expanding rapidly, it is critical to remember
+that core UX and product principles remain unchanged. Building successful agent
+experiences isn't about showcasing the latest modality integrations or generative UI
+capabilities for their own sake. It is about understanding users deeply, meeting them
+where they are, and creating intuitive, trustworthy, and delightful experiences that
+solve real problems in their lives.
+The best products are not those that merely demonstrate technological sophistica‐
+tion, but those that use technology to amplify human capability in elegant and unob‐
+trusive ways. As we continue to push the boundaries of modality design, let us stay
+grounded in the timeless goal of great product design: creating tools that people love
+to use, that make their lives easier, and that empower them to achieve what matters
+most.
+The Autonomy Slider
+A critical yet often overlooked dimension in UX design is the level of autonomy gran‐
+ted to agents. As Andrej Karpathy described, effective agentic systems should allow
+users to smoothly adjust an agent's autonomy-from fully manual control to partial
+automation to fully autonomous operation. This concept, often called an autonomy
+slider, empowers users to choose how much control they wish to retain versus dele‐
+gate at any given time. Figure 3-4 illustrates a simple example of an autonomy slider
+interface, enabling users to set the agent to "Manual," "Ask," or "Agent" mode depend‐
+ing on their task, trust, and context.
+Interaction Modalities
+|
+55

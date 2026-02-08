@@ -1,0 +1,24 @@
+- formato de los datos, Limpiar y filtrar datos
+- inspección de datos, Procesamiento de datos
+- limpieza/filtrado de datos, Limpiar y filtrar datos
+TruthfulQA, Selección e integración de pruebas comparativas
+TTFT (tiempo hasta el primer token), Establecimiento de expectativas, API
+de inferencia en línea y por lotes
+U
+umbral de utilidad, Establecimiento de expectativas
+uso de herramientas, Selección de herramientas
+utilización de FLOPs del modelo (MFU), Utilización, MFU y MBU
+utilización del ancho de banda del modelo (MBU), Utilización, MFU y
+MBU
+V
+vecino más cercano aproximado (ANN), Recuperación basada en
+incrustaciones
+vecinos más cercanos (k-NN), Recuperación basada en incrustaciones
+vector de clave (K), Arquitectura de transformador
+vector de valor (V), Mecanismo de atención, Recuperación basada en
+incrustaciones
+vectores de claves-valores, Memoria necesaria para la inferencia
+vectores logit, Fundamentos de muestreo
+vectorización, Kernels y compiladores
+verdades básicas, Medidas de similitud con los datos de referencia
+verificación aumentada por el conocimiento, Coherencia factual

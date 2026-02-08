@@ -1,0 +1,26 @@
+MFU (utilización de FLOPs del modelo), Utilización, MFU y MBU
+MMLU (Massive Multitask Language Understanding), Planificación de
+hitos, Selección e integración de pruebas comparativas
+modelado, Modelado
+– arquitectura de modelos, Modelado
+– tamaño del modelo, Tamaño del modelo
+modelo de incrustación, De los grandes modelos lingüísticos a los modelos
+fundacionales
+– RAG multimodal y, RAG más allá de los textos
+– recuperación basada en incrustaciones, Recuperación basada en
+términos
+modelos de código abierto, API de modelos frente a, Código abierto,
+ponderación abierta y licencias modelo
+– control, acceso y transparencia, Costo de API vs. costo de ingeniería
+– coste de API frente a coste de ingeniería, Funcionalidad
+– funcionalidad, Rendimiento
+– implementación en el dispositivo, Control, acceso y transparencia
+– linaje de datos y derechos de autor, Privacidad de datos
+– privacidad de los datos, Modelos de código abierto frente a API de
+modelos
+– rendimiento, Linaje de datos y derechos de autor
+modelos de computación optimizada, Ley de escalado: Construir modelos
+de computación optimizada
+modelos de datos de entrenamiento específicos de dominio, Modelos
+específicos de dominio
+modelos de datos de entrenamiento multilingües, Datos de entrenamiento

@@ -1,0 +1,23 @@
+Para evitar una ejecución infructuosa, la planificación debe desacoplarse de
+la ejecución. Primero se pide al agente que genere un plan, que solo se
+ejecuta después de validarlo. El plan puede validarse mediante heurísticas.
+Por ejemplo, una heurística sencilla consiste en eliminar los planes con
+acciones no válidas. Si el plan generado requiere una búsqueda en Google y
+el agente no tiene acceso a Google Search, este plan no será válido. Otra
+heurística sencilla podría ser eliminar todos los planes con más de X pasos.
+También puede validars un plan mediante jueces de IA. Puede pedir a un
+modelo que evalúe si el plan le parece razonable o cómo mejorarlo.
+Si el plan generado se evalúa como malo, puede pedir al planificador que
+genere otro plan. Si el plan generado es bueno, ejecútelo. Si el plan requiere
+herramientas externas, se invocará la llamada a funciones. Los outputs de la
+ejecución de este plan deberán evaluarse de nuevo. Tenga en cuenta que el
+plan generado no tiene por qué ser un plan de principio a fin para toda la
+tarea. Puede ser un pequeño plan para una subtarea. Todo el proceso se ve
+como en la Figura 6-9.
+figura 6-9. Desacoplamiento de la planificación y la ejecución para que solo se
+ejecuten los planes validados.
+Su sistema tiene ahora tres componentes: uno para generar planes, otro para
+validarlos y otro para ejecutarlos. Si se considera que cada componente es
+un agente, se trata de un sistema multiagente. 12
+Para acelerar el proceso, en lugar de generar planes secuencialmente, puede
+generar varios planes en paralelo y pedir al evaluador que elija el más

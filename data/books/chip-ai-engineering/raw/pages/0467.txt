@@ -1,0 +1,31 @@
+capítulo 7. Afinado
+El afinado es el proceso de adaptación de un modelo a una tarea específica
+mediante el entrenamiento adicional de todo el modelo o de una parte del
+mismo. El Capítulo 5 y Capítulo 6 tratan de los métodos basados en
+prompts, que adaptan un modelo dándole instrucciones, contexto y
+herramientas. El afinado adapta un modelo ajustando sus ponderaciones.
+El afinado puede mejorar varios aspectos de un modelo. Puede mejorar las
+capacidades específicas del dominio del modelo, como la codificación o la
+respuesta a preguntas médicas, y también puede reforzar su seguridad. Sin
+embargo, la mayoría de las veces se utiliza para mejorar la capacidad de
+seguimiento de instrucciones del modelo, sobre todo para garantizar que se
+adhiera a estilos y formatos de output específicos.
+Aunque el afinado puede ayudar a crear modelos más adaptados a sus
+necesidades, también requiere una mayor inversión inicial. Una pregunta
+que escucho muy a menudo es cuándo hacer un afinado y cuándo hacer
+RAG. Tras una visión general del afinado, este capítulo tratará las razones
+para hacerlo y para no hacerlo, así como un marco sencillo para reflexionar
+sobre la elección entre el afinado y otros métodos alternativos.
+En comparación con los métodos basados en prompts, el afinado requiere
+mucha más memoria. A la escala de los modelos fundacionales actuales, el
+afinado ingenuo suele requerir más memoria que la disponible en una sola
+GPU. Por ello los afinados son caros y difíciles de realizar. Como se ha
+comentado a lo largo de este capítulo, una de las principales motivaciones
+de muchas técnicas de afinado es la reducción de los requisitos de memoria.
+Este capítulo dedica una sección a esbozar los factores que contribuyen a la
+huella de memoria de un modelo, lo que es importante para comprender
+estas técnicas.
+Un enfoque de memoria eficiente que se ha impuesto en el ámbito del
+afinado es el PEFT (parameter-efficient finetuning). En este capítulo se
+analiza el PEFT y sus diferencias con el afinado tradicional; también se
+ofrece una visión general de sus técnicas en evolución. Me centraré

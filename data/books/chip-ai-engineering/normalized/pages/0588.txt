@@ -1,0 +1,25 @@
+figura 8-5. Una tarea semilla y una tarea generada utilizadas para entrenar a Alpaca.
+También hay muchas formas creativas de sintetizar datos de instrucción con
+determinadas características. Por ejemplo, al igual que es más difícil para
+los humanos escribir contenidos más largos que más cortos, es más difícil
+para la IA generar respuestas largas de alta calidad que instrucciones cortas.
+Cuanto más larga sea la respuesta, más posibilidades tiene la IA de alucinar.
+¿Y si utilizamos respuestas generadas por humanos con instrucciones
+generadas por IA? Algunos investigadores, como Köksal et al. (2023), Li et
+al. (2023) y Chen et al. (2023), siguen el planteamiento de la instrucción
+inversa: tomar contenidos existentes de formato largo y alta calidad, como
+relatos, libros y artículos de Wikipedia, y utilizar la IA para generar prompts
+que provoquen dichos contenidos. Así se obtienen datos de instrucción de
+mayor calidad, evitando las alucinaciones generadas por la IA en las
+respuestas.
+Es posible utilizar la instrucción inversa para desarrollar modelos cada vez
+más potentes sin añadir datos anotados manualmente. 11 Li et al. (2023)
+muestra cómo funcionaría:
+1. Empiece con un pequeño número de ejemplos semilla para
+entrenar a un modelo débil.
+2. Utilice este modelo débil para generar instrucciones para los
+contenidos de alta calidad existentes con el fin de crear datos de
+instrucción de alta calidad.
+3. Afine el modelo débil con estos nuevos datos de instrucción de alta
+calidad.
+4. Repita el proceso hasta alcanzar el rendimiento deseado.

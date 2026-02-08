@@ -1,0 +1,19 @@
+caro, ya que requiere muchas consultas de IA para evaluar
+una respuesta.
+Verificación aumentada por el conocimiento
+SAFE (evaluador de factualidad aumentada por búsqueda),
+introducido por Google DeepMind (Wei et al., 2024) en el
+artículo "Long-Form Factuality in Large Language Models",
+funciona aprovechando los resultados de los motores de
+búsqueda para verificar la respuesta. Funciona en cuatro
+pasos, como se visualiza en la Figura 4-1:
+1. Usar un modelo de IA para descomponer la respuesta en
+enunciados individuales.
+2. Revisar cada enunciado para que sea autónomo. Por
+ejemplo, el "it" de la afirmación "It opened in the 20th
+century" debe cambiarse por el sujeto original.
+3. Para cada enunciado, proponer consultas de
+comprobación de hechos para enviarlas a una API de
+búsqueda de Google.
+4. Usar la IA para determinar si la afirmación es coherente
+con los resultados de la investigación.

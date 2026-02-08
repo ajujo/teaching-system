@@ -1,0 +1,35 @@
+Building Intelligent Agents
+212
+Controlled generation provided by the vendor
+Another way is vendor-dependent. Some foundational model providers offer additional API param­
+eters that can instruct a model to generate a structured output (typically, a JSON or enum). You can 
+force the model to use JSON generation the same way as above using with_structured_output, 
+but provide another argument, method="json_mode" (and double-check that the underlying 
+model provider supports controlled generation as JSON):
+plan_schema = {
+   "type": "ARRAY",
+   "items": {
+       "type": "OBJECT",
+         "properties": {
+             "step": {"type": "STRING"},
+         },
+     },
+}
+query = "How to write a bestseller on Amazon about generative AI?"
+result = (prompt | llm.with_structured_output(schema=plan_schema, 
+method="json_mode")).invoke(query)
+Note that the JSON schema doesn’t contain descriptions of the fields, hence typically, your prompts 
+should be more detailed and informative. But as an output, we get a full-qualified Python dic­
+tionary:
+assert(isinstance(result, list))
+print(f"Amount of steps: {len(result)}")
+print(result[0])
+>> Amount of steps: 10
+{'step': 'Step 1: Define your niche and target audience. Generative AI is 
+a broad topic. Focus on a specific area, like generative AI in marketing, 
+art, music, or writing. Identify your ideal reader (such as  marketers, 
+artists, developers).'}
+You can instruct the LLM instance directly to follow controlled generation instructions. Note 
+that specific arguments and functionality might vary from one model provider to another (for 
+example, OpenAI models use a response_format argument). Let’s look at how to instruct Gemini 
+to return JSON:

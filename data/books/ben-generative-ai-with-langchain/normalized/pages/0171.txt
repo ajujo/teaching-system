@@ -1,0 +1,34 @@
+Building Intelligent RAG Systems
+144
+Let's see this in practice:
+# Generate expanded queries
+original_query = "What are the effects of climate change?"
+expanded_queries = expansion_chain.invoke(original_query)
+print(expanded_queries)
+We should be getting something like this:
+What impacts does climate change have?
+2. How does climate change affect the environment?
+3. What are the consequences of climate change?
+A more advanced approach is Hypothetical Document Embeddings (HyDE).
+Hypothetical Document Embeddings (HyDE)
+HyDE uses an LLM to generate a hypothetical answer document based on the query, and then
+uses that document's embedding for retrieval. This technique is especially powerful for complex
+queries where the semantic gap between query and document language is significant:
+from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+# Create prompt for generating hypothetical document
+hyde_template = """Based on the question: {question}
+Write a passage that could contain the answer to this question:"""
+hyde_prompt = PromptTemplate(
+    input_variables=["question"],
+    template=hyde_template
+)
+llm = ChatOpenAI(temperature=0.2)
+hyde_chain = hyde_prompt | llm | StrOutputParser()
+# Generate hypothetical document
+query = "What dietary changes can reduce carbon footprint?"
+hypothetical_doc = hyde_chain.invoke(query)
+# Use the hypothetical document for retrieval
+embeddings = OpenAIEmbeddings()
+embedded_query = embeddings.embed_query(hypothetical_doc)
+results = vector_db.similarity_search_by_vector(embedded_query, k=3)

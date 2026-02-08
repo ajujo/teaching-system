@@ -1,0 +1,33 @@
+Hay muchas personas maravillosas cuya compañía y conversaciones me
+dieron ideas que guiaron el contenido de este libro. He hecho todo lo
+posible por incluir aquí los nombres de todos los que me han ayudado, pero
+debido a los fallos inherentes a la memoria humana, sin duda me he
+olvidado de mencionar a muchos. Si olvidé incluir su nombre, sepa que no
+ha sido porque no aprecie su contribución, y le ruego que me lo recuerde
+para que pueda rectificarlo lo antes posible.
+Andrew Francis, Anish Nag, Anthony Galczak, Anton Bacaj, Balázs
+Galambosi, Charles Frye, Charles Packer, Chris Brousseau, Eric Hartford,
+Goku Mohandas, Hamel Husain, Harpreet Sahota, Hassan El Mghari, Huu
+Nguyen, Jeremy Howard, Jesse Silver, John Cook, Juan Pablo Bottaro,
+Kyle Gallatin, Lance Martin, Lucio Dery, Matt Ross, Maxime Labonne,
+Miles Brundage, Nathan Lambert, Omar Khattab, Phong Nguyen, Purnendu
+Mukherjee, Sam Reiswig, Sebastian Raschka, Shahul ES, Sharif Shameem,
+Soumith Chintala, Teknium, Tim Dettmers, Undi95, Val Andrei Fajardo,
+Vern Liang, Victor Sanh, Wing Lian, Xiquan Cui, Ying Sheng y Kristofer.
+Me gustaría agradecer a todos los primeros lectores que me han enviado sus
+comentarios. Douglas Bailley es un lector estupendo que compartió muchos
+comentarios reflexivos. Gracias a Nutan Sahoo por sugerir una manera
+elegante de explicar la perplejidad.
+Aprendí mucho en las conversaciones en línea mantenidas con tantas
+personas. Gracias a todos los que han respondido a mis preguntas, han
+comentado mis artículos o me han enviado un correo electrónico con sus
+opiniones.
+Por supuesto, el libro no habría sido posible sin el equipo de O'Reilly,
+especialmente mis editores de desarrollo (Melissa Potter, Corbin Collins,
+Jill Leonard) y mi editora de producción (Elizabeth Kelly). Liz Wheeler es
+la correctora más exigente con la que he trabajado. Nicole Butterfield es
+una fuerza de la naturaleza que supervisó este libro desde la idea hasta el
+producto final.
+Este libro, al fin y al cabo, es una acumulación de lecciones inestimables
+que he aprendido a lo largo de mi carrera. Debo estas lecciones a mis
+compañeros y antiguos compañeros, extremadamente competentes y

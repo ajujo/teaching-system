@@ -1,0 +1,40 @@
+Implicit signals
+Analyze user-agent interactions to identify common points of failure, such as
+misinterpretations, delays, sentiment, or inappropriate responses. Interaction
+logs can be mined for insights into areas where the agent needs improvement.
+In some cases, it's necessary to involve human experts in the evaluation process to
+assess the agent's decision-making accuracy. Human-in-the-loop validation combines
+automated evaluation with human judgment, ensuring that the agent's performance
+aligns with real-world standards. When feasible, human experts should review a sam‐
+ple of the agent's outputs to verify correctness, ethical compliance, and alignment
+with best practices, and these reviews can then be used to calibrate and improve auto‐
+mated evaluations.
+We should evaluate agents in environments that closely simulate their real-world
+applications. This helps ensure that the system can perform reliably outside of con‐
+trolled development conditions. Evaluate the agent across the full spectrum of its
+operational environment, from data ingestion and processing to task execution and
+output generation. End-to-end testing ensures that the agent functions as expected
+across multiple systems, data sources, and platforms.
+Real-World Testing
+While building agents in a controlled development environment is crucial for initial
+testing, it's equally important to validate agents in real-world settings to ensure they
+perform as expected when interacting with live users or environments. Real-world
+testing involves deploying agents in actual production environments and observing
+their behavior under real-life conditions. This stage of testing enables developers to
+uncover issues that may not have surfaced during earlier development stages and to
+evaluate the agent's robustness, reliability, and user impact.
+Real-world testing is essential for ensuring agents can manage the unpredictability
+and complexity of live environments. Unlike controlled testing, this approach reveals
+edge cases, unexpected user inputs, and performance under high demand, helping
+developers refine the agent for robust, reliable operation:
+Exposure to real-world complexity
+In controlled environments, agents operate with predictable inputs and respon‐
+ses. However, real-world environments are dynamic and unpredictable, with
+diverse users, edge cases, and unforeseen challenges. Testing in these environ‐
+ments ensures that the agent can handle the complexity and variability of realworld scenarios.
+Uncovering edge cases
+Real-world interactions often expose edge cases that may not have been accoun‐
+ted for in the design or testing phases. For example, a chatbot tested with scripted
+Best Practices
+|
+37

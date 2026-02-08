@@ -1,0 +1,29 @@
+prompts contra los que, como desarrollador de aplicaciones, conviene
+defenderse:
+Extracción de prompts
+Extraer el prompt de la aplicación, incluyendo el prompt del
+sistema, ya sea para replicar o vulnerar la aplicación.
+Jailbreaking e inyección de prompts
+Conseguir que el modelo haga cosas malas
+Extracción de información
+Conseguir que el modelo revele sus datos de entrenamiento
+o la información utilizada en su contexto.
+Los ataques de prompts plantean múltiples riesgos para las aplicaciones;
+algunos son más devastadores que otros. Aquí puede ver algunos de ellos:
+12
+Ejecución remota de código o herramientas
+En el caso de las aplicaciones con acceso a herramientas
+potentes, los actores maliciosos pueden invocar la ejecución
+de código o herramientas no autorizadas. Imagine que
+alguien encuentra la forma de hacer que su sistema ejecute
+una consulta SQL que revele todos los datos confidenciales
+de sus usuarios o envíe correos electrónicos no autorizados
+a sus clientes. Otro ejemplo: supongamos que utiliza la IA
+para realizar un experimento de investigación, lo que
+implica generar código para el experimento y ejecutarlo en
+su computadora. Un atacante puede encontrar la forma de
+conseguir que el modelo genere código malicioso para
+vulnerar su sistema. 13
+Fugas de datos
+Los actores maliciosos pueden extraer información privada
+sobre su sistema y sus usuarios.

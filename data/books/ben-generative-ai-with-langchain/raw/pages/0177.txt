@@ -1,0 +1,36 @@
+Building Intelligent RAG Systems
+150
+[1] Neural Network Review 2021, page 42
+[2] Introduction to NLP, page 137
+[3] Large Language Models Survey, page 89
+Self-consistency checking compares the generated response against the retrieved context to verify 
+accuracy and identify potential hallucinations.
+Self-consistency checking: ensuring factual accuracy
+Self-consistency checking verifies that generated responses accurately reflect the information in 
+retrieved documents, providing a crucial layer of protection against hallucinations. We can  use 
+LCEL to create streamlined verification pipelines:
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_openai import ChatOpenAI
+from typing import List, Dict
+from langchain_core.documents import Document
+def verify_response_accuracy(
+    retrieved_docs: List[Document],
+    generated_answer: str,
+    llm: ChatOpenAI = None
+) -> Dict:
+    """
+    Verify if a generated answer is fully supported by the retrieved 
+documents.
+    Args:
+        retrieved_docs: List of documents used to generate the answer
+        generated_answer: The answer produced by the RAG system
+        llm: Language model to use for verification
+    Returns:
+        Dictionary containing verification results and any identified 
+issues
+    """
+    if llm is None:
+        llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+      
+    # Create context from retrieved documents

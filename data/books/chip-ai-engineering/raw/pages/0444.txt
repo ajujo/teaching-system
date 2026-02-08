@@ -1,0 +1,18 @@
+figura 6-11. Ejemplos de diferentes órdenes en los que se puede ejecutar un plan.
+En la ingeniería de software tradicional, las condiciones de los controles de
+flujo son exactas. Con los agentes impulsados por de IA, los modelos de IA
+determinan los controles de flujo. Los planes con controles de flujo no
+secuenciales son más difíciles tanto de generar como de traducir a
+comandos ejecutables.
+Al evaluar un marco de agentes, verifique qué controles de flujo admite.
+Por ejemplo, si el sistema necesita navegar por diez sitios web, ¿puede
+hacerlo simultáneamente? La ejecución en paralelo puede reducir
+significativamente la latencia percibida por los usuarios.
+Reflexión y corrección de errores
+Incluso los mejores planes deben evaluarse y ajustarse constantemente para
+maximizar sus posibilidades de éxito. Aunque la reflexión no es
+estrictamente necesaria para que un agente funcione, sí lo es para que tenga
+éxito.
+La reflexión puede ser útil en muchos momentos del proceso de una tarea:
+Después de recibir una consulta del usuario para evaluar si la
+solicitud es factible.

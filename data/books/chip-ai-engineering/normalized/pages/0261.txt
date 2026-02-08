@@ -1,0 +1,18 @@
+coherencia.
+En lugar de utilizar jueces de IA de uso general, pueden entrenar a
+calificadores especializados en la predicción de la coherencia factual. Estos
+calificadores toman una dupla (premisa, hipótesis) como input y dan como
+output una de las clases predefinidas, como implicación, contradicción o
+neutral. Esto convierte la coherencia factual en una tarea de clasificación.
+Por ejemplo, DeBERTa-v3-base-mnli-fever-anli es un modelo de 184
+millones de parámetros entrenado en 764 000 duplas anotados (hipótesis,
+premisa) para predecir la implicación.
+Entre las pruebas comparativas de coherencia factual se incluye
+TruthfulQA. Comprende 817 preguntas que algunos seres humanos
+responderían incorrectamente debido a una creencia falsa o a un concepto
+erróneo. Estas preguntas abarcan 38 categorías, entre ellas salud, derecho,
+finanzas y política. Esta prueba comparativa viene con un juez de IA
+especializado, GPT-judge, que se ha perfeccionado para evaluar
+automáticamente si una respuesta es factualmente coherente con la
+respuesta de referencia. La Tabla 4-1 muestra ejemplos de preguntas y
+respuestas falsas generadas por GPT-3.

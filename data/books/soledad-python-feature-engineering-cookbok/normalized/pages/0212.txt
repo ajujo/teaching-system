@@ -1,0 +1,19 @@
+Capturing the elapsed time between datetime variables
+189
+We see the first five rows of the DataFrame from Step 2 in the following output:
+Figure 6.13 - The first five rows of a DataFrame with two datetime variables
+3.
+Let's capture the difference in days between the two variables in a new feature, and then display
+the DataFrame's top rows:
+df["elapsed_days"] = (
+    df["date2"] - df["date1"]).dt.days
+df.head()
+We see the difference in days in the following output:
+Figure 6.14 - Top rows of a DataFrame with a new variable capturing
+the time difference between the two datetime features
+4.
+Let's capture the difference in weeks between the two datetime variables and then display
+the DataFrame's top rows:
+df["weeks_passed"] = (
+    (df[«date2»] - df[«date1»]) / np.timedelta64(1, "W"))
+df.head()

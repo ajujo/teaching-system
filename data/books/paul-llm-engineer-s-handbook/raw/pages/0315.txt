@@ -1,0 +1,36 @@
+Evaluating LLMs
+284
+Llama-3.1-8B-Instruct
+Algorithm bias, also known as algorithmic bias, refers to the unintended or inherent bias in 
+machine learning models that can affect their performance, accuracy, and fairness. This bias 
+can be caused by various factors, including the data used to train the model, the algorithm 
+itself, and the biases present in the society or culture. One of the most significant implications 
+of algorithm bias is its potential to perpetuate and exacerbate existing social inequalities. For 
+instance, facial recognition software has been shown to be less accurate for people of color, 
+leading to wrongful arrests and discrimination. Similarly, language processing models have 
+been found to be biased towards the language and dialect of the dominant group, making it 
+difficult for marginalized communities to access information and services. Algorithm bias 
+can also have severe consequences in areas such as healthcare, education, and employment. 
+For example, a medical diagnosis algorithm that is biased towards certain demographics 
+may misdiagnose or underdiagnose conditions in other groups, leading to delayed or 
+inadequate treatment. In education, an algorithm that is biased towards certain learning 
+styles may disproportionately affect students with different learning abilities, leading to 
+unequal opportunities. To mitigate the effects of algorithm bias, it is essential to address 
+the root causes of bias and implement measures to ensure fairness and transparency in 
+machine learning models. This can be achieved through techniques such as data cleansing, 
+regularization, and debiasing, as well as implementing diverse and representative datasets. 
+Additionally, it is crucial to involve diverse stakeholders, including members of marginalized 
+communities, in the development and testing of algorithms to ensure that they are fair and 
+equitable. In conclusion, algorithm bias is a significant concern that can have far-reaching 
+implications for individuals and society as a whole. It is essential to recognize the potential 
+biases in machine learning models and take proactive steps to mitigate their effects. By doing 
+so, we can create more equitable and just systems that benefit everyone, regardless of their 
+background or demographic characteristics.
+Table 7.4: Example of generated answers for a given instruction
+Immediately, we can see that the answers from our models are very close to each other. This is not 
+the case with Llama-3.1-8B-Instruct’s answer, which is extremely verbose and lists many examples. 
+This is typically the kind of answer that is correct but can feel artificial and unpleasant to read 
+because of its length. On the other hand, the DPO model slightly simplifies the language of the 
+SFT version, making it less academic. This is exactly the behavior we want to capture, modifying 
+the writing style but not the actual content of the answer.
+Let’s now review the evaluations provided by GPT-4o-mini for each answer.

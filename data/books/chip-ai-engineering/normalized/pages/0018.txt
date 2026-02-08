@@ -1,0 +1,23 @@
+cantidad significativa de código de ejemplo de este libro en la
+documentación de su producto requiere autorización.
+Agradecemos, pero en general no exigimos, la atribución. Una atribución
+suele incluir el título, el autor, la editorial y el ISBN. Por ejemplo:
+"Ingeniería de IA" por Chip Huyen (O'Reilly). Copyright 2025 Developer
+Experience Advisory LLC, 978-1-098-18020-1."
+Si cree que el uso que hace de los ejemplos de código no se ajusta al uso
+legítimo o al permiso concedido anteriormente, no dude en contactarnos en
+permissions@oreilly.com.
+Capacitación en línea de O'Reilly
+NOTA
+Durante más de 40 años, O'Reilly Media ha ofrecido capacitación
+tecnológica y empresarial, conocimientos y perspectivas para ayudar a las
+empresas a alcanzar el éxito.
+Nuestra exclusiva red de expertos e innovadores comparte sus
+conocimientos y experiencia a través de libros, artículos y nuestra
+plataforma de aprendizaje en línea. La plataforma de aprendizaje en línea
+de O'Reilly ofrece acceso bajo demanda a cursos de capacitación en
+directo, rutas de aprendizaje en profundidad, entornos de codificación
+interactivos y una amplia colección de textos y vídeos de O'Reilly y más de
+200 editoriales. Para más información, visite https://oreilly.com.
+Cómo contactarnos
+Por favor, dirija sus comentarios y preguntas sobre este libro a la editorial:

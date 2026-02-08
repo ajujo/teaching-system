@@ -1,0 +1,98 @@
+in-context learning, 265-267
+offline retraining, 267-268
+conversational agents, 4
+coordination, agent-based design principle, 179
+corpus, 315
+cost
+agentic systems, design considerations,
+30-31
+model selection, 22
+small foundation models, 151
+CrewAI, 14
+cryptographic chaining techniques, data secu‐
+rity, 287
+custom-trained models, task suitability, 22
+customer support agent, 7
+customer support systems, autonomy levels, 56
+cybersecurity, generative AI, 271
+D
+dashboards, Grafana, 233
+data
+encryption, 284
+integrity, 285-286
+provenance, 285, 286
+retention and deletion, 287
+secure handling, 286-288
+data collection, building knowledge graphs, 125
+data dependence, hallucination mitigation, 218
+data minimization, 286
+data preprocessing, building knowledge graphs,
+125
+data-sharing protocols, data security, 288
+debug-oriented monitoring, 228
+Declarative Self-Improving Language Programs
+(DSPy) (see DSPy (Declarative Self-
+Improving Language Programs))
+decoder, 315
+deep research agents, 92-93
+DeepTeam, 280
+defensive strategies, 278
+(see also red teaming)
+foundation model security, 276-278
+democratic coordination, multiagent systems,
+180-181
+dense vector, 315
+dependency isolation, internal failure protec‐
+tion, 294
+deployment
+agentic systems, 38
+preparation, 220-221
+design
+agentic systems
+cost considerations, 30-31
+performance considerations, 27
+reliability considerations, 29-30
+scalability considerations, 28-29
+escalation design, 309
+iterative, 34-35
+principles
+asynchronous agents, 59
+autonomy slider, 57
+synchronous agents, 58-59
+state management, 61-62
+UX, context retention and continuity, 60-61
+deterministic workflows, project suitability, 9
+developer agents agents, 4
+development
+agentic systems, costs, 30
+monitoring-aware development, 235
+canary deployment, 235
+regression trace collection, 236
+shadow mode, 235
+development lifecycle, evaluation, 206-207
+direct preference optimization (DPO), 149,
+158-161
+distributed communication, compared to local,
+189
+distribution shifts, monitoring, 237-239
+documents, indexing, 121
+domain adaptation, 315
+domain-specific agents, 4
+domain-specific mining, evaluating agents, 208
+DPO (direct preference optimization) , 149,
+158-161
+dropout, 315
+DSPy (Declarative Self-Improving Language
+Programs)
+feedback pipelines, 245
+prompt refinement, 255-256
+tool refinement, 257-258
+duplication, local tools, 73
+dynamic knowledge graphs, 130
+drawbacks, 131
+features, 131
+implementation strategies, 132
+dynamic model routing, 22
+322 
+| 
+Index

@@ -1,0 +1,30 @@
+Chapter 5
+211
+Later in this chapter, we’ll discuss a plan-and-solve agent, so let’s start preparing a building block. 
+Let’s ask our LLM to generate a plan for a given action, but instead of parsing the plan, let’s define 
+it as a Pydantic model (a Plan is a list of Steps):
+from pydantic import BaseModel, Field
+class Step(BaseModel):
+   """A step that is a part of the plan to solve the task."""
+   step: str = Field(description="Description of the step")
+class Plan(BaseModel):
+   """A plan to solve the task."""
+   steps: list[Step]
+Keep in mind that we use nested models (one field is referencing another), but LangChain will 
+compile a unified schema for us. Let’s put together a simple workflow and run it:
+prompt = PromptTemplate.from_template(
+   "Prepare a step-by-step plan to solve the given task.\n"
+   "TASK:\n{task}\n"
+)
+result = (prompt | llm.with_structured_output(Plan)).invoke(
+  "How to write a bestseller on Amazon about generative AI?")
+If we inspect the output, we’ll see that we got a Pydantic model as a result. We don’t need to 
+parse the output anymore; we got a list of specific steps out of the box (and later, we’ll see how 
+we can use it further):
+assert isinstance(result, Plan)
+print(f"Amount of steps: {len(result.steps)}")
+for step in result.steps:
+ print(step.step)
+ break
+>> Amount of steps: 21
+**1. Idea Generation and Validation:**

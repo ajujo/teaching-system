@@ -1,0 +1,25 @@
+Chapter 2
+49
+Next, we must generate access keys to access AWS programmatically. The best option to do so is
+first to create an IAM user with administrative access as described in this AWS official tutorial:
+https://docs.aws.amazon.com/streams/latest/dev/setting-up.html
+For production accounts, it is best practice to grant permissions with a policy of least privilege,
+giving each user only the permissions they require to perform their role. However, to simplify the
+setup of our test account, we will use the AdministratorAccess managed policy, which gives our
+user full access, as explained in the tutorial above and illustrated in Figure 2.13.
+Figure 2.13: IAM user permission policies example
+Next, you have to create an access key for the IAM user you just created using the following tutorial:
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html.
+The access keys will look as follows:
+aws_access_key_id = <your_access_key_id>
+aws_secret_access_key = <your_secret_access_key>
+Just be careful to store them somewhere safe, as you won't be able to access them after you create them. Also, be cautious with who you share them, as they could be used to access your AWS
+account and manipulate various AWS resources.
+The last step is to install the AWS CLI and configure it with your newly created access keys. You
+can install the AWS CLI using the following link: https://docs.aws.amazon.com/cli/latest/
+userguide/getting-started-install.html.
+After installing the AWS CLI, you can configure it by running aws configure. Here is an example
+of our AWS configuration:
+[default]
+aws_access_key_id = *************
+aws_secret_access_key = ************

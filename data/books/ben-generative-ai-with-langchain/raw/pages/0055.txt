@@ -1,0 +1,51 @@
+First Steps with LangChain
+28
+API key setup
+LangChain’s provider-agnostic approach supports a wide range of LLM providers, each with 
+unique strengths and characteristics. Unless you use a local LLM, to use these services, you’ll 
+need to obtain the appropriate authentication credentials.
+Provider
+Environment Variable
+Setup URL
+Free 
+Tier?
+OpenAI
+OPENAI_API_KEY
+platform.openai.com
+No
+HuggingFace
+HUGGINGFACEHUB_API_TOKEN
+huggingface.co/settings/
+tokens
+Yes
+Anthropic
+ANTHROPIC_API_KEY
+console.anthropic.com
+No
+Google AI
+GOOGLE_API_KEY
+ai.google.dev/gemini-api
+Yes
+Google 
+VertexAI
+Application Default 
+Credentials
+cloud.google.com/vertex-ai
+Yes (with 
+limits)
+Replicate
+REPLICATE_API_TOKEN
+replicate.com
+No
+Table 2.1: API keys reference table (overview)
+Most providers require an API key, while cloud providers like AWS and Google Cloud also support 
+alternative authentication methods like Application Default Credentials (ADC). Many providers 
+offer free tiers without requiring credit card details, making it easy to get started.
+To set an API key in an environment, in Python, we can execute the following lines:
+import os
+os.environ["OPENAI_API_KEY"] = "<your token>"
+Here, OPENAI_API_KEY is the environment key that is appropriate for OpenAI. Setting the keys in 
+your environment has the advantage of not needing to include them as parameters in your code 
+every time you use a model or service integration.
+Refer to the Appendix A at the end of the book to learn how to get API keys for OpenAI, 
+Hugging Face, Google, and other providers.

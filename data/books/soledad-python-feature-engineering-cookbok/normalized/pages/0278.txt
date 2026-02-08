@@ -1,0 +1,21 @@
+Creating periodic features from cyclical variables
+255
+3.
+Next, create two features using the sine and cosine transformations, after normalizing the
+variable values between 0 and 2π:
+df["hour_sin"] = np.sin(
+    df["hour"] / df["hour"].max() * 2 * np.pi)
+df["hour_cos"] = np.cos(
+    df["hour"] / df["hour"].max() * 2 * np.pi)
+If we execute df.head(), we will see the original and new features:
+Figure 8.12 - A DataFrame with the hour variable and the new features
+obtained through the sine and cosine transformations
+4.
+Make a scatter plot between the hour and its sine-transformed values:
+plt.scatter(df["hour"], df["hour_sin"])
+plt.ylabel("Sine of hour")
+plt.xlabel("Hour")
+plt.title("Sine transformation")
+In the following plot, we can see how the values of the hour circle between -1 and 1, just like
+the sine function after the transformation:
+Figure 8.13 - A scatter plot of the hour versus its sine transformed values

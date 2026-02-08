@@ -1,0 +1,49 @@
+Index
+A
+aggregate primitive 280, 300
+features, creating 299-305
+reference link 300
+arbitrary intervals
+variable, discretizing into 131-134
+arbitrary value
+used, for replacing missing values 16-19
+AveOccup variable 92
+B
+Bag-of-Words (BoW)
+used, for creating features 349-352
+binary encoding 80
+performing 80-82
+binary variables
+creating, through one-hot encoding 44-52
+bins 113
+Box-Cox transformation 99, 103
+performing 103-105
+performing, with Feature-engine 107, 108
+performing, with scikit-learn 105, 107
+boxplots 154
+using, to visualize outliers 154
+C
+categorical encoding 43
+categorical variables 43
+imputing 12-16
+nominal categorical variables 43
+ordinal categorical variables 43
+categories
+replacing, with counts or frequency
+of observations 56-60
+replacing, with ordinal numbers 60-64
+chained equations
+multivariate imputation, performing 34-39
+characterization methods 310
+characters
+counting 340-345
+clip() function 173
+Complete Case Analysis (CCA) 3
+Coordinated Universal Time (UTC) 195
+cosine transformation 286
+Creative Commons Attribution 4.0
+International (CC BY 4.0) license 270
+cumulative transform primitive 281
+features, creating 281-288
+cyclical variables
+periodic features, creating from 253-259

@@ -1,0 +1,25 @@
+Supervised Fine-Tuning
+178
+Creating an instruction dataset
+In most use cases, creating an instruction dataset is the most difficult part of the fine-tuning 
+process. This is due to multiple factors. Most use cases can be connected to raw text, but it is rare 
+to find natural pairs of instructions and answers. This raw text needs to be transformed into a for-
+mat that includes both instructions and answers. Moreover, the quality of the data is also crucial. 
+Because of this, a lot of time is invested in manually checking and verifying individual samples. 
+This careful review helps ensure that the dataset is accurate and useful for training the model.
+Figure 5.1 – Overview of the post-training data pipeline covered in this chapter
+In this section, we will introduce a general framework to create your own instruction datasets, 
+regardless of the final use case. We will then leverage the scraped data from Chapter 3 and trans-
+form it into an instruction dataset. The different stages in our data generation pipeline are sum-
+marized in Figure 5.1.
+General framework
+Instruction datasets are defined as pairs of instructions and answers. The instructions are the 
+inputs of the model, used as context during fine-tuning. The answers are the expected outputs of 
+the model. During fine-tuning, you can choose to train the model on the instructions and answers, 
+or on answers only. Pairs of instructions and answers follow a certain template. Some instruction 
+templates, such as Alpaca, introduce additional fields like inputs and system. Both of them can 
+be considered subfields of the instruction field. In this case, “inputs” contain the data the model 
+needs to complete the instruction, and “system” is a meta-prompt to steer the general behavior 
+of the model. Here is an example from the SlimOrca dataset, with “system” and “instruction”:
+All the code examples from this chapter can be found on GitHub at https://github.
+com/PacktPublishing/LLM-Engineering.

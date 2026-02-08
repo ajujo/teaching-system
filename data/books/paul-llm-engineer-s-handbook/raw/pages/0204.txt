@@ -1,0 +1,35 @@
+Chapter 4
+173
+            embeddings = embeddings.tolist()
+        return embeddings
+The embedding model class implements the singleton pattern (https://refactoring.guru/
+design-patterns/singleton), a creational design pattern that ensures a class has only one instance 
+while providing a global access point to this instance. The EmbeddingModelSingleton() class inher-
+its from the SingletonMeta class, which ensures that whenever an EmbeddingModelSingleton() 
+is instantiated, it returns the same instance. This works well with ML models, as you load them 
+once in memory through the singleton pattern, and afterward, you can use them anywhere in the 
+code base. Otherwise, you risk loading the model in memory every time you use it or loading it 
+multiple times, resulting in memory issues. Also, this makes it very convenient to access properties 
+such as embedding_size, where you have to make a dummy forward pass into the embedding 
+model to find the size of its output. As a singleton, you do this forward pass only once, and then 
+you have it accessible all the time during the program’s execution.
+Summary
+This chapter began with a soft introduction to RAG and why and when you should use it. We 
+also understood how embeddings and vector DBs work, representing the cornerstone of any 
+RAG system. Then, we looked into advanced RAG and why we need it in the first place. We built 
+a strong understanding of what parts of the RAG can be optimized and proposed some popular 
+advanced RAG techniques for working with textual data. Next, we applied everything we learned 
+about RAG to designing the architecture of LLM Twin’s RAG feature pipeline. We also understood 
+the difference between a batch and streaming pipeline and presented a short introduction to the 
+CDC pattern, which helps sync two DBs.
+Ultimately, we went step-by-step into the implementation of the LLM Twin’s RAG feature pipeline, 
+where we saw how to integrate ZenML as an orchestrator, how to design the domain entities of 
+the application, and how to implement an OVM module. Also, we understood how to apply some 
+software engineering best practices, such as the abstract factory and strategy software patterns, 
+to implement a modular and extendable layer that applies different cleaning, chunking, and 
+embedding techniques based on the data category of each document.
+This chapter focused only on implementing the ingestion pipeline, which is just one component 
+of a standard RAG application. In Chapter 9, we will conclude the RAG system by implementing 
+the retrieval and generation components and integrating them into the inference pipeline. But 
+first, in the next chapter, we will explore how to generate a custom dataset using the data we 
+collected and fine-tune an LLM with it. 

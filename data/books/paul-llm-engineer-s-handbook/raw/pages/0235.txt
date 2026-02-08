@@ -1,0 +1,37 @@
+Supervised Fine-Tuning
+204
+            },
+            {"role": "user", "content": prompt},
+        ],
+        response_format={"type": "json_object"},
+        max_tokens=1200,
+        temperature=0.7,
+    )
+    # Parse the structured output
+    result = InstructionAnswerSet.from_json(completion.choices[0].
+message.content)
+    # Convert to list of tuples
+    return result.pairs
+9.	
+Let’s create a main function to automate the process. It extracts substrings from the input 
+dataset, then uses concurrent processing via Python’s ThreadPoolExecutor to efficiently 
+generate instruction-answer pairs for each extract. We use a default max_workers value 
+of 4 because higher values tend to exceed OpenAI’s rate limits, potentially causing API 
+request failures or throttling.
+def create_instruction_dataset(
+    dataset: Dataset, client: OpenAI, num_workers: int = 4
+) -> Dataset:
+    extracts = extract_substrings(dataset)
+    instruction_answer_pairs = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_
+workers) as executor:
+        futures = [executor.submit(generate_instruction_answer_
+pairs, extract, client)
+            for extract in extracts
+        ]
+        for future in tqdm(concurrent.futures.as_completed(futures), 
+total=len(futures)
+        ):
+            instruction_answer_pairs.extend(future.result())
+    instructions, answers = zip(*instruction_answer_pairs)
+    return Dataset.from_dict(

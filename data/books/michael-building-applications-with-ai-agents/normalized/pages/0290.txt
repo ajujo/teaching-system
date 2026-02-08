@@ -1,0 +1,39 @@
+However, offline retraining requires careful management to prevent overfitting to
+historical data or ignoring emerging trends. Limitations include computational costs
+(though mitigated by efficient methods like LoRA) and the need for periodic schedul‐
+ing to keep models fresh. It's best used for foundational refinements, such as updating
+the SOC agent's prompt with new threat examples or retraining tool classifiers on
+recent logs.
+When integrated with feedback and experimentation, offline retraining closes the
+improvement loop by translating insights into enduring enhancements. For teams
+relying on pretrained models, it offers a bridge to customization without constant
+online adjustments, ensuring agents evolve robustly over time.
+Conclusion
+Continuous improvement is not merely a feature of multiagent systems-it is a fun‐
+damental requirement for their long-term success. As these systems grow more com‐
+plex, interact with diverse users, and operate across ever-changing environments,
+their ability to adapt, learn, and refine themselves becomes essential for maintaining
+reliability, performance, and alignment with user needs. This chapter has explored
+the key pillars of continuous improvement: feedback pipelines, experimentation, and
+continuous learning, each playing a distinct yet interconnected role in driving itera‐
+tive progress.
+Feedback pipelines serve as the diagnostic engine of the improvement cycle, captur‐
+ing data from live interactions, identifying recurring failure patterns, and surfacing
+actionable insights through both automated and human-driven processes. From root
+cause analysis to aggregating and prioritizing improvements, these pipelines create a
+systematic foundation for identifying what needs to change and why.
+Experimentation frameworks provide the controlled environments necessary to vali‐
+date improvements before full deployment. Techniques like shadow deployments,
+A/B testing, and Bayesian Bandits enable teams to minimize risk, measure impact,
+and ensure that every change contributes positively to the overall system.
+Finally, continuous learning ensures that improvements extend beyond isolated
+patches, embedding adaptability directly into the system's behavior, focusing on incontext learning, which provides instant, session-level refinements.
+Crucially, none of these components operate in isolation. Feedback loops feed into
+experimentation workflows, which in turn guide fine-tuning retraining. Automated
+pipelines accelerate insight generation, while human oversight ensures that changes
+are aligned with strategic goals. Documentation serves as the connective tissue across
+these processes, preserving organizational memory and enabling cross-team
+collaboration.
+268
+|
+Chapter 11: Improvement Loops

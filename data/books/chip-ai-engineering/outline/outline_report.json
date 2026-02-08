@@ -1,0 +1,12 @@
+{
+  "method_used": "auto:headings",
+  "confidence": 0.75,
+  "chapters_found": 10,
+  "sections_found": 225,
+  "warnings": [],
+  "method_scores": {
+    "toc": 0.0,
+    "headings": 0.75
+  },
+  "index_only_detected": false
+}

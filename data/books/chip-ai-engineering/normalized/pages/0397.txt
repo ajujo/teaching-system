@@ -1,0 +1,39 @@
+tabla 6-1. Un ejemplo simplificado de índice invertido.
+Término
+Recuento de
+documentos
+(índice del documento,
+frecuencia del término) para
+todos los documentos que
+contienen el término
+plátano
+2
+(10, 3), (5, 2)
+automático
+4
+(1, 5), (10, 1), (38, 9), (42, 5)
+aprendizaje
+3
+(1, 5), (38, 7), (42, 5)
+...
+...
+...
+Okapi BM25, la 25ª generación del algoritmo Best Matching, fue
+desarrollado por Robertson et al. en la década de los 80. Su puntuador es
+una modificación de TF-IDF. En comparación con el TF-IDF ingenuo, el
+BM25 normaliza las puntuaciones de frecuencia de términos en función de
+la longitud del documento. Los documentos más largos tienen más
+probabilidades de contener un término determinado y presentan valores de
+frecuencia de términos más elevados. 6
+El BM25 y sus variantes (BM25+, BM25F) siguen siendo ampliamente
+utilizados en la industria y sirven como formidables líneas de base para
+compararse con algoritmos de recuperación modernos y más sofisticados,
+como la recuperación basada en incrustaciones, que se analiza a
+continuación. 7
+Uno de los procesos que he pasado por alto es la tokenización, que consiste
+en dividir una consulta en términos individuales. El método más sencillo
+consiste en dividir la consulta en palabras, tratando cada palabra como un
+término independiente. Sin embargo, esto puede provocar que los términos
+compuestos por varias palabras se dividan en palabras individuales,
+perdiendo su significado original. Por ejemplo, "hot dog" se dividiría en
+"hot" y "dog". Cuando esto ocurre, ninguno de los dos conserva el

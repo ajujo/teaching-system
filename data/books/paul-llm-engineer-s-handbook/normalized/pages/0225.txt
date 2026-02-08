@@ -1,0 +1,25 @@
+Supervised Fine-Tuning
+194
+In-depth evolving focuses on enhancing the complexity of existing instructions. It includes
+several techniques:
+•
+Constraints: It involves introducing additional requirements or limitations to the original
+instruction, making it more challenging to fulfill.
+•
+Deepening: Instead of shallow questions, it tries to find more deep questions, requiring
+more comprehensive responses.
+•
+Concretizing: It replaces general concepts with more specific ones, adding detail and
+precision to the instruction.
+•
+Increasing reasoning steps: It modifies instructions to explicitly request multiple-step
+reasoning, promoting more complex problem-solving.
+•
+Complicating input: This involves adding more complex data formats or structures to
+the instruction, such as XML, JSON, or code snippets.
+In-breadth evolving, on the other hand, aims to expand the diversity of the instruction dataset.
+It generates entirely new instructions inspired by existing ones, focusing on creating more rare
+or long-tailed examples within the same domain.
+As an example of concrete implementation, in-depth evolving can be automated with the following prompt, from the AutoEvol paper. You simply need to provide the instruction you want
+to evolve as input, and a powerful model like GPT-4o will return a more complex version of the
+original instruction.

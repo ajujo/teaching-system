@@ -1,0 +1,33 @@
+Creating Features from a Time Series with tsfresh
+314
+3.
+Load the target variable into a pandas Series:
+y = pd.read_csv("occupancy_target.csv",
+    index_col="id")["occupancy"]
+4.
+Let's create hundreds of features automatically for each hour of light records using tsfresh. To
+create features from the light variable, we pass the DataFrame containing this variable and the
+unique identifier for each time series to the extract_features function from tsfresh:
+features = extract_features(
+    X[[«id», «light»]], column_id="id")
+If we execute features.shape, we'll obtain (135, 789) corresponding to the size of the
+resulting DataFrame, where each row represents an hour of records and each column one of
+the features created by tsfresh. There are 789 features that characterize light consumption
+at any given hour. Go ahead and execute features.head() to get a view of the resulting
+DataFrame. For space reasons, we can't display the entire DataFrame in the book. So, instead,
+we will explore some of the features.
+5.
+Let's capture the names of five of the created features in an array:
+feats = features.columns[10:15]
+If we execute feats, we'll see the names of five features corresponding to the mean, length,
+standard deviation, coefficient of variation, and variance of the light consumption per hour:
+Index(['light__mean', 'light__length',
+    'light__standard_deviation',
+    'light__variation_coefficient',
+    'light__variance'], dtype='object')
+6.
+Now, let's display the values of the features from step 5 for the first five hours:
+features[feats].head()
+In the following DataFrame, we see the features extracted from the time series for the first five
+hours of light consumption:
+Figure 10.5 - Features created for each hour of light consumption

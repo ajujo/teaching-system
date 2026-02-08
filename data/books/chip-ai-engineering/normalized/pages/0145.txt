@@ -1,0 +1,27 @@
+humanos hagan básicamente cualquier cosa con el incentivo adecuado, se
+puede conseguir que un modelo lo haga dada la función objetivo adecuada.
+Una función comúnmente utilizada representa la diferencia en las
+puntuaciones de output para la respuesta ganadora y la perdedora. El
+objetivo es maximizar esta diferencia. Para los interesados en los detalles
+matemáticos, esta es la fórmula utilizada por InstructGPT:
+rθ: el modelo de recompensa que se está entrenando, parametrizado
+por θ. La meta del proceso de entrenamiento es encontrar la θ para
+la que se minimiza la pérdida.
+Formato de los datos de entrenamiento:
+- x: prompt
+- yw: respuesta ganadora
+- yl: respuesta perdedora
+sw = r(x, yw): puntuación escalar del modelo de recompensa para la
+respuesta ganadora
+sl = r(x, yl): puntuación escalar del modelo de recompensa para la
+respuesta perdedora
+σ: la función sigmoidea
+Para cada muestra de entrenamiento (x, yw, yl), el valor de pérdida se calcula
+del siguiente modo:
+log (σ(rθ(x, yw) - rθ(x, yl)))
+Meta: encontrar θ para minimizar la pérdida esperada para todas
+las muestras de entrenamiento.
+-Ex log (σ(rθ(x, yw) - rθ(x, yl)))
+El modelo de recompensa puede entrenarse desde cero u obtenerse
+ajustando otro modelo, como el modelo pre-entrenado o SFT. El afinado
+sobre el modelo fundacional más sólido parece ofrecer el mejor

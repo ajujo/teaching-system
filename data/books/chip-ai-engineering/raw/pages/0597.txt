@@ -1,0 +1,26 @@
+es posible utilizar datos sintéticos para entrenar a un modelo alumno que
+sea de mayor tamaño y más potente que el maestro.
+Un ejemplo de ello es el bootstrapping de modelos con instrucción inversa
+(Li et al., 2023), que vimos en la sección anterior. Otro ejemplo es el
+Nemotron-4 de NVIDIA. Un equipo de investigadores de NVIDIA primero
+pre-entrenó un modelo base de 340 MM de parámetros. A continuación,
+este modelo base se afinó utilizando datos de instrucciones y preferencias
+generados por Mixtral-8x7B-Instruct-v0.1 (Jiang et al., 2024), un modelo de
+mezcla de expertos de 56 000 millones de parámetros. 15 El modelo alumno
+resultante, Nemotron-4-340B-Instruct, superó al modelo maestro en
+diversas tareas (NVIDIA, 2024).
+El artículo sobre Llama 3 señala que, mientras que el entrenamiento con
+datos generados por un modelo más competente pueden mejorar
+significativamente el rendimiento de un modelo, el entrenamiento
+indiscriminado con datos autogenerados no mejora el rendimiento del
+modelo, e incluso pueden degradarlo. Sin embargo, al introducir
+mecanismos para verificar la calidad de los datos sintéticos y utilizar
+únicamente datos sintéticos verificados, pudieron mejorar continuamente un
+modelo utilizando sus datos generados.
+Procesamiento de datos
+Los datos deben procesarse en función de los requisitos de cada caso de
+uso. En esta sección se comentan algunos pasos del procesamiento de datos
+a modo de referencia.
+Me resulta útil leer artículos sobre modelos que revelan los detalles de sus
+conjuntos de datos, ya que a menudo contienen grandes consejos sobre
+cómo curaron, generaron y procesaron los datos los investigadores.

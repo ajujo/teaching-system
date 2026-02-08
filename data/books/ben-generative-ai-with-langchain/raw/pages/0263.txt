@@ -1,0 +1,35 @@
+Advanced Applications and Multi-Agent Systems
+236
+Now, let’s create the agent itself. Since we have a custom prompt for the agent, we need a prompt 
+template that includes a system message, a template that formats the first user message based 
+on a question and answers provided, and a placeholder for further messages to be added to the 
+graph’s state. We also redefine the default agent’s state by inheriting from AgentState and adding 
+additional keys to it:
+from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
+from langgraph.graph import MessagesState
+from langgraph.prebuilt.chat_agent_executor import AgentState
+raw_prompt_template = (
+   "Answer the following multiple-choice question. "
+   "\nQUESTION:\n{question}\n\nANSWER OPTIONS:\n{option}\n"
+)
+prompt = ChatPromptTemplate.from_messages(
+   [("system", system_prompt),
+    ("user", raw_prompt_template),
+    ("placeholder", "{messages}")
+    ]
+)
+class MyAgentState(AgentState):
+ question: str
+ options: str
+research_agent = create_react_agent(
+  model=llm_small, tools=research_tools, state_schema=MyAgentState,
+  prompt=prompt)
+We could have stopped here, but let’s go further. We used a specialized research agent based on the 
+ReACT pattern (and we slightly adjusted its default configuration). Now let’s add a reflection step 
+to it, and use another role profile for an agent who will actionably criticize our “student’s” work:
+reflection_prompt = (
+   "You are a university professor and you're supervising a student who is 
+"
+   "working on multiple-choice exam question. "
+   "nQUESTION: {question}.\nANSWER OPTIONS:\n{options}\n."
+   "STUDENT'S ANSWER:\n{answer}\n"

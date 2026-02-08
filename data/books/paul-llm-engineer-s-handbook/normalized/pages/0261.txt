@@ -1,0 +1,21 @@
+Fine-Tuning with Preference Alignment
+230
+By the end of this chapter, you will be able to create your own preference datasets and align
+models with diverse techniques.
+Understanding preference datasets
+The principles for creating high-quality preference datasets are the same as those discussed in
+Chapter 5 for instruction datasets. We want to maximize the accuracy, diversity, and complexity
+of our samples. To achieve this, we follow the same stages, as outlined in Figure 6.1: data curation,
+deduplication, decontamination, quality evaluation, exploration, generation, and augmentation.
+Figure 6.1 - Overview of the post-training data pipeline covered in this chapter
+To avoid repetition, this section will focus on the main differences between instruction and preference datasets. We will introduce the structure of preference samples and the ideal size for preference datasets. Then, we will focus on the two stages that differ most from creating instruction
+datasets: data generation and evaluation.
+Preference data
+Preference datasets lack the standardization of instruction datasets due to varying data requirements across different training algorithms. Preference data comprises a collection of responses
+to a given instruction, ranked by humans or language models. This chapter focuses on DPO, so
+we will examine the specific data format required by this algorithm.
+As illustrated in Table 6.1, the structure of DPO datasets is straightforward: each instruction is
+paired with one preferred answer and one rejected answer. The objective is to train the model to
+generate the preferred response rather than the rejected one.
+All the code examples from this chapter can be found on GitHub at https://github.
+com/PacktPublishing/LLM-Engineering.

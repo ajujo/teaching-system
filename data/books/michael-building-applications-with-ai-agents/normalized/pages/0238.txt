@@ -1,0 +1,42 @@
+and emerging failure modes. Incorporating feedback-from internal reviewers or
+pilot users-helps reveal blind spots that automated pipelines miss. Iterative refine‐
+ment of both evaluation methods and metrics ensures that agents are measured
+against what truly matters for success in the target environment.
+By structuring each evaluation as a complete interaction-from input state to agent
+outputs-we can track how well the system performs in real-world tasks, detect
+regressions over time, and surface weaknesses in planning, grounding, or communi‐
+cation. These tests can also be extended to capture latency, throughput, and behavior
+under load-ensuring that the system remains robust and responsive under realistic
+operating conditions. And in failure cases, we can validate whether the agent
+degrades gracefully: does it attempt fallback strategies or escalate the issue appropri‐
+ately? In this way, integration testing becomes a rigorous and essential safeguard for
+deploying agentic systems with confidence.
+Consistency
+Consistency testing for agent-based systems is particularly challenging because these
+systems often rely on foundation models that are inherently probabilistic and nonde‐
+terministic. Unlike traditional systems, where deterministic behavior ensures the
+same outputs for identical inputs, LLM-powered agents may produce varied respon‐
+ses due to their probabilistic nature. As a result, consistency testing focuses on ensur‐
+ing that the agent's outputs align with its inputs, remain coherent over extended
+exchanges, and reliably address the user's intended questions or tasks.
+In our running example of the customer support agent, consistency testing ensures
+that responses to a cracked coffee mug refund request (e.g., order_id A89268)
+remain aligned across probabilistic variations, such as always requesting a photo of
+the damage before invoking the issue_refund tool, even if the user's phrasing differs
+slightly. For extended interactions, like evolving from a refund to an order cancella‐
+tion (as in cancel_1_refund, where the order is delivered), the agent must proceed
+without contradicting prior statements on order status.
+One key goal of consistency testing is to validate that the agent's responses remain
+aligned with the given input across diverse scenarios. This involves assessing whether
+the agent provides relevant and accurate answers that directly address the user's quer‐
+ies. Automated tools can help detect cases where responses deviate from the expected
+alignment. Automated validation systems can cross-check outputs against the input
+context to flag inconsistencies for further review.
+Longer interactions introduce additional complexity, as performance may degrade
+over time. Agents must maintain logical progression across multiturn conversations,
+avoiding scenarios where their responses contradict earlier statements or stray from
+the topic at hand. For example, a customer service bot must preserve context
+throughout an interaction, ensuring that its responses are consistent with the user's
+216
+|
+Chapter 9: Validation and Measurement

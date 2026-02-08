@@ -1,0 +1,32 @@
+embargo, la corrección funcional no siempre es fácil de medir ni de
+automatizar.
+La generación de código es un ejemplo de tarea en la que se puede
+automatizar la medición de la corrección funcional. La corrección funcional
+en codificación es a veces precisión de ejecución. Digamos que le pide al
+modelo que escriba una función en Python, gcd(num1, num2), para
+encontrar el máximo común denominador (gcd) de dos números, num1 y
+num2. El código generado puede introducirse en un intérprete de Python
+para comprobar si es válido y, en caso afirmativo, si produce el resultado
+correcto de una dupla dada (num1, num2). Por ejemplo, dada la dupla
+(num1=15, num2=20), si la función gcd(15, 20) no devuelve 5, la
+respuesta correcta, sabrá que la función funciona mal.
+Mucho antes de que se utilizara la IA para escribir código, la verificación
+automática de la corrección funcional del código era una práctica habitual
+en la ingeniería de software. El código se suele validar con pruebas
+unitarias en las que el código se ejecuta en distintos escenarios para
+garantizar que genera los outputs esperados. La evaluación de la corrección
+funcional es la forma en que plataformas de codificación como LeetCode y
+HackerRank validan las soluciones presentadas.
+Las pruebas comparativas más populares para evaluar las capacidades de
+generación de código de la IA, como HumanEval de OpenAI y MBPP de
+Google (Mostly Basic Python Problems Dataset) utilizan la corrección
+funcional como métrica. Las pruebas comparativas para text-to-SQL
+(generación de consultas SQL a partir de lenguaje natural) como Spider (Yu
+et al., 2018), BIRD-SQL (Big Bench for Large-scale Database Grounded
+Text-to-SQL Evaluation) (Li et al., 2023), y WikiSQL (Zhong, et al., 2017)
+también se basan en la corrección funcional.
+Un problema de prueba comparativa viene acompañado de un conjunto de
+casos de prueba. Cada caso de prueba consiste en un escenario que el
+código debe ejecutar y el output esperado para ese escenario. Veamos un
+ejemplo de un problema y sus casos de prueba en HumanEval:
+Problema

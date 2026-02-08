@@ -1,0 +1,28 @@
+Chapter 8
+295
+However, decoder-only models pose a particular challenge due to the high variability in input
+prompt lengths and desired output lengths. Some requests may have short prompts and only
+need a one-word answer, while others may input a lengthy context and expect a multi-paragraph
+response.
+With traditional batching, we would have to wait for the longest request in a batch to complete before starting a new batch. This leads to under-utilization as the accelerator sits partly idle waiting
+for a straggling request to finish. Continuous batching, also known as in-flight batching, aims to
+prevent idle time by immediately feeding a new request into the batch as soon as one completes.
+The batching process begins the same - by filling the batch with initial requests. But as soon as
+a request completes its generation, it is evicted from the batch and a new request takes its place.
+This way, the accelerator is always processing a full batch, leading to maximally efficient hardware
+utilization. An additional consideration is the need to periodically pause the generation process
+to run prefill, or the embedding and encoding of waiting requests. Finding the optimal balance
+between generation and prefill requires some tuning of the waiting-served ratio hyperparameter.
+Continuous batching is natively implemented in most inference frameworks, like Hugging Face's
+Text Generation Inference (TGI), vLLM, and NVIDIA TensorRT-LLM.
+Speculative decoding
+Another powerful optimization technique is speculative decoding, also called assisted generation.
+The key insight is that even with continuous batching, the token-by-token generation process
+fails to fully saturate the parallel processing capabilities of the accelerator. Speculative decoding
+aims to use this spare compute capacity to predict multiple tokens simultaneously, using a smaller
+proxy model (see Figure 8.3).
+Figure 8.3 - Illustration of traditional decoding (left) and speculative decoding (right)
+The general approach is:
+•
+Apply a smaller model, like a distilled or pruned version of the main model, to predict
+multiple token completions in parallel. This could be 5-10 tokens predicted in a single step.

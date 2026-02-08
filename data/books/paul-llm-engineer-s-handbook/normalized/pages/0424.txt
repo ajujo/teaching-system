@@ -1,0 +1,13 @@
+Chapter 10
+393
+Using this configuration, we always have four replicas serving the clients, regardless of idle time
+or spikes in traffic. The solution is to implement an autoscaling strategy that scales the number
+of replicas up and down dynamically based on various metrics, such as the number of requests.
+For example, Figure 10.8 shows a standard architecture where the SageMaker Inference endpoints
+scale in and out based on the number of requests. When there is no traffic, we can have one online
+replica so the server remains responsive to new user requests or even scales down to zero if the
+latency is not super critical. Then, let's assume that when we have around 10 requests per second,
+we have to keep two replicas online, and when the number of requests spikes to 100 per second,
+the autoscaling service should spin up to 20 replicas to keep up with the demand. Note that these
+are fictional numbers that should be adapted to your specific use case.
+Figure 10.8: Autoscaling possible use cases

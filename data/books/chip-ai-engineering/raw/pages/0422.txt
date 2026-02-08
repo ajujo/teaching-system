@@ -1,0 +1,29 @@
+agente de usuario, agente conversacional y agente de aprendizaje por
+refuerzo. Así pues, ¿qué es exactamente un agente?
+Un agente es todo aquello que puede percibir su entorno y actuar sobre él.
+10 Esto significa que un agente se caracteriza por el entorno en el que opera
+y el conjunto de acciones que puede realizar.
+El entorno en el que puede operar un agente viene definido por su caso de
+uso. Si un agente se desarrolla para jugar a un juego (por ejemplo,
+Minecraft, Go, Dota), ese juego es su entorno. Si quiere que un agente
+extraiga documentos de Internet, el entorno es Internet. Si su agente es un
+robot de cocina, su entorno es la cocina. El entorno de un agente de un
+coche sin conductor es el sistema de carreteras y sus zonas adyacentes.
+El conjunto de acciones que puede realizar un agente de IA aumenta con las
+herramientas a las que tiene acceso. Muchas aplicaciones de IA generativa
+con las que used interactúa a diario son agentes con acceso a herramientas,
+aunque sean sencillas. ChatGPT es un agente. Puede buscar en Internet,
+ejecutar código Python y generar imágenes. Los sistemas de RAG son
+agentes, y los recuperadores de texto, los recuperadores de imágenes y los
+ejecutores SQL son sus herramientas.
+Existe una fuerte dependencia entre el entorno de un agente y su conjunto
+de herramientas. El entorno determina las herramientas que un agente puede
+utilizar potencialmente. Por ejemplo, si el entorno es una partida de ajedrez,
+las únicas acciones posibles para un agente son las jugadas de ajedrez
+válidas. Sin embargo, el inventario de herramientas de un agente restringe
+el entorno en el que es capaz operar. Por ejemplo, si la única acción de un
+robot es nadar, estará confinado a un entorno acuático.
+La Figura 6-8 muestra una visualización del agente SWE-agent (Yang et al.,
+2024), un agente construido sobre GPT-4. Su entorno es la computadora
+con la terminal y el sistema de archivos. Su conjunto de acciones incluye
+explorar el repositorio, buscar archivos, ver archivos y editar líneas.

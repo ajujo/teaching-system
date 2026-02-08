@@ -1,0 +1,40 @@
+Working with Outliers
+174
+See also
+feature-engine has ArbitraryOutlierCapper(), which caps variables at arbitrary
+minimum and maximum values: https://feature-engine.readthedocs.io/en/
+latest/api_doc/outliers/ArbitraryOutlierCapper.html.
+Applying winsorization
+Winsorizing, or winsorization, consists of replacing extreme, poorly known observations, that is,
+outliers, with the magnitude of the next largest (or smallest) observation. It's similar to the procedure
+described in the previous recipe, Bringing outliers back within acceptable limits, but not exactly the same.
+Winsorization involves replacing the same number of outliers at both ends of the distribution, which
+makes Winsorization a symmetric process. This guarantees that the Winsorized mean, that is, the mean
+estimated after replacing outliers, remains a robust estimator of the central tendency of the variable.
+In practice, to remove a similar number of observations at both tails, we'd use percentiles. For example,
+the 5th percentile is the value below which 5% of the observations lie and the 95th percentile is the
+value beyond which 5% of the observations lie. Using these values as replacements might result in
+replacing a similar number of observations on both tails, but it's not guaranteed. If the dataset contains
+repeated values, obtaining reliable percentiles is challenging and can lead to an uneven replacement
+of values at each tail. If this happens, then the winsorized mean is not a good estimator of the central
+tendency. In this recipe, we will apply winsorization.
+How to do it...
+We will cap all variables of the breast cancer dataset at their 5th and 95th percentiles:
+1.
+Let's import the required Python libraries and functions:
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+2.
+Load the breast cancer dataset from scikit-learn:
+X, y = load_breast_cancer(
+    return_X_y=True, as_frame=True)
+3.
+Separate the data into a train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.3,
+    random_state=0,
+)

@@ -1,0 +1,36 @@
+Evaluation and Testing
+322
+Academic research on conversational agent optimization has demonstrated the effectiveness of 
+controlled experiments in identifying specific improvements to agent configurations.
+System-level evaluation
+System-level evaluation is crucial for complex LLM agents, particularly RAG systems, because test­
+ing individual components isn’t enough. Research indicates that a significant portion of failures 
+(over 60% in some studies) stem from integration issues between components that otherwise 
+function correctly in isolation. For example, issues can arise from retrieved documents not being 
+used properly, query reformulation altering original intent, or context windows truncating infor­
+mation during handoffs. System-level evaluation addresses this by examining how information 
+flows between components and how the agent performs as a unified system.
+Core approaches to system-level evaluation include using diagnostic frameworks that trace in­
+formation flow through the entire pipeline to identify breakdown points, like the RAG Diagnostic 
+Tool. Tracing and observability tools (such as LangSmith, Langfuse, and DeepEval) provide vis­
+ibility into the agent’s internal workings, allowing developers to visualize reasoning chains and 
+pinpoint where errors occur. End-to-end testing methodologies use comprehensive scenarios 
+to assess how the entire system handles ambiguity, challenge inputs, and maintain context over 
+multiple turns, using frameworks like GAIA.
+Effective evaluation of LLM applications requires running multiple assessments. Rather than 
+presenting abstract concepts, here are a few practical steps!
+•	
+Define business metrics: Start by identifying metrics that matter to your organization. Focus 
+on functional aspects like accuracy and completeness, technical factors such as latency and 
+token usage, and user experience elements including helpfulness and clarity. Each application 
+should have specific criteria with clear measurement methods.
+•	
+Create diverse test datasets: Develop comprehensive test datasets covering common user 
+queries, challenging edge cases, and potential compliance issues. Categorize examples sys­
+tematically to ensure broad coverage. Continuously expand your dataset as you discover new 
+usage patterns or failure modes.
+•	
+Combine multiple evaluation methods: Use a mix of evaluation approaches for thorough 
+assessment. Automated checks for factual accuracy and correctness should be combined with 
+domain-specific criteria. Consider both quantitative metrics and qualitative assessments from 
+subject matter experts when evaluating responses.

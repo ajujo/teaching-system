@@ -1,0 +1,23 @@
+Discretizing the variable into arbitrary intervals
+131
+In this recipe, we will discretize a variable into pre-defined user intervals using pandas and featureengine.
+How to do it...
+First, let's import the necessary Python libraries and get the dataset ready:
+1.
+Import Python libraries and classes:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+2.
+Let's load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+3.
+Let's plot a histogram of the Population variable to find out its value range:
+X["Population"].hist(bins=30)
+plt.title("Population")
+plt.ylabel("Number of observations")
+plt.show()
+Population values vary between 0 and approximately 40,000:
+Figure 4.6 - Histogram of the Population variable

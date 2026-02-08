@@ -1,0 +1,31 @@
+vietnamita. El afinado autosupervisado también se denomina preentrenamiento continuado.
+Como ya se comentó en el Capítulo 1, los modelos lingüísticos pueden ser
+autorregresivos o enmascarados. Un modelo autorregresivo predice el
+siguiente token de una secuencia utilizando los tokens anteriores como
+contexto. Un modelo enmascarado rellena el espacio en blanco utilizando
+los tokens anteriores y posteriores. Del mismo modo, con el afinado
+supervisado, también se puede afinar un modelo para predecir el siguiente
+token o rellenar el espacio en blanco. Este último caso, también conocido
+como afinado para rellenar, es especialmente útil para tareas como la
+edición de texto o la depuración de código. Puede afinar un modelo para
+rellenar incluso si se ha pre-entrenado autorregresivamente.
+La enorme cantidad de datos de los que puede aprender un modelo durante
+el aprendizaje autosupervisado le proporciona un rico conocimiento del
+mundo, pero a los usuarios puede resultarles difícil extraer ese
+conocimiento para sus tareas, o el modo en que se comporta el modelo
+puede no ajustarse a las preferencias humanas. El afinado supervisado
+utiliza datos anotados de alta calidad para perfeccionar el modelo y
+alinearlo con el uso y las preferencias humanas.
+Durante el afinado supervisado, el modelo se entrena utilizando duplas
+(input, output): el input puede ser una instrucción y el output una respuesta.
+Una respuesta puede ser abierta, como en el caso de la tarea de resumir un
+libro. Una respuesta también puede ser cerrada, como en el caso de una
+tarea de clasificación. La creación de datos de instrucción de alta calidad
+puede resultar difícil y costosa, sobre todo en el caso de las instrucciones
+que requieren coherencia factual, conocimientos especializados o
+corrección política. En el Capítulo 8 se explica cómo adquirir los datos de
+instrucción.
+Un modelo también puede afinarse con el aprendizaje por refuerzo para
+generar respuestas que maximicen las preferencias humanas. El afinado de
+preferencias requiere datos comparativos que suelen seguir el formato
+(instrucción, respuesta ganadora, respuesta perdedora).

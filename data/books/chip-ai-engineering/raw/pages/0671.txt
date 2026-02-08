@@ -1,0 +1,32 @@
+el paralelismo de tensores (que reduce la latencia y permite servir modelos
+más grandes), el paralelismo de réplicas (que es relativamente sencillo de
+implementar) y la optimización del mecanismo de atención (que puede
+acelerar significativamente los modelos de transformadores).
+La optimización de la inferencia concluye la lista de técnicas de adaptación
+de modelos tratadas en este libro. El próximo capítulo estudiará cómo
+integrar estas técnicas en un sistema cohesionado.
+1  Como se explica en el Capítulo 7, la inferencia implica la pasada hacia delante,
+mientras que el entrenamiento implica tanto la pasada hacia delante como hacia
+atrás.
+2  Un amigo, Mark Saroufim, me señaló una interesante relación entre el costo de
+entrenamiento de un modelo y el costo de inferencia. Imagine que es un
+proveedor de modelos. Sea T el costo total de entrenamiento, p el costo que
+cobra por inferencia y N el número de llamadas de inferencia que puede vender.
+Desarrollar un modelo solo tiene sentido si el dinero que se puede recuperar de
+la inferencia de un modelo es superior a su costo de entrenamiento, es decir, T
+<= p × N. Cuanto más se utilice un modelo en producción, más pueden los
+proveedores de modelos reducir el costo de inferencia. Sin embargo, esto no
+aplica a los proveedores de API de terceros que venden llamadas de inferencia
+sobre modelos de código abierto.
+3  Anecdóticamente, me parece que las personas con formación en sistemas (por
+ejemplo, ingenieros de optimización e ingenieros de GPU) utilizan limitado por
+la memoria para referirse a limitado por el ancho de banda, y las personas con
+formación en IA (por ejemplo, ingenieros de ML e IA) utilizan limitado por la
+memoria para referirse a limitado por la capacidad de la memoria.
+4  El documento de Roofline utiliza el término limitado por la memoria para
+referirse a limitado por el ancho de banda de la memoria.
+5  El llenado previo rellena eficazmente la caché inicial de KV para el modelo de
+transformador.
+6  Si ejecuta un servicio de inferencia, separar sus API de inferencia en línea y por
+lotes puede ayudarle a priorizar la latencia para las solicitudes en las que la
+latencia es más importante. Suponiendo que su servidor de inferencia solo puede

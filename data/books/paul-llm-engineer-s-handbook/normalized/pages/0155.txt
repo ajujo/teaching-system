@@ -1,0 +1,22 @@
+RAG Feature Pipeline
+124
+In practice, on the retrieval side, you usually start with filtered vector search or hybrid search, as
+they are fairly quick to implement. This approach gives you the flexibility to adjust your strategy
+based on performance. If the results are not as expected, you can always fine-tune your embedding model.
+Post-retrieval
+The post-retrieval optimizations are solely performed on the retrieved data to ensure that the
+LLM's performance is not compromised by issues such as limited context windows or noisy data.
+This is because the retrieved context can sometimes be too large or contain irrelevant information,
+both of which can distract the LLM.
+Two popular methods performed at the post-retrieval step are:
+•
+Prompt compression: Eliminate unnecessary details while keeping the essence of the data.
+•
+Re-ranking: Use a cross-encoder ML model to give a matching score between the user's
+input and every retrieved chunk. The retrieved items are sorted based on this score. Only
+the top N results are kept as the most relevant. As you can see in Figure 4.7, this works
+because the re-ranking model can find more complex relationships between the user input
+and some content than a simple similarity search. However, we can't apply this model at
+the initial retrieval step because it is costly. That is why a popular strategy is to retrieve
+the data using a similarity distance between the embeddings and refine the retrieved
+information using a re-raking model, as illustrated in Figure 4.8.

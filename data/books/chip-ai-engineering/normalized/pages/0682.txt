@@ -1,0 +1,32 @@
+Sin embargo, esta política de reintentos puede generar latencia y costos
+adicionales. Cada reintento significa otra ronda de llamadas a la API. Si el
+reintento se realiza tras un fallo, la latencia percibida por el usuario se
+duplicará. Para reducir la latencia, puede realizar llamadas en paralelo. Por
+ejemplo, para cada consulta, en lugar de esperar a que falle la primera antes
+de volver a intentarlo, se envía esta consulta al modelo dos veces al mismo
+tiempo, se obtienen dos respuestas y se elige la mejor. Esto aumenta el
+número de llamadas redundantes a la API a la vez que mantiene una
+latencia manejable.
+También es habitual recurrir a los humanos para solicitudes complicadas.
+Por ejemplo, puede transferir a operadores humanos las consultas que
+contengan frases específicas. Algunos equipos utilizan un modelo
+especializado para decidir cuándo transferir una conversación a un humano.
+Un equipo, por ejemplo, transfiere una conversación a operadores humanos
+cuando su modelo de análisis de sentimientos detecta enfado en los
+mensajes de los usuarios. Otro equipo transfiere una conversación tras un
+determinado número de turnos, para evitar que los usuarios se queden
+atascados en un bucle.
+Implementación de barreras de seguridad
+Con las barreras de seguridad también se tienen que hacer sus concesiones.
+Una es la equilibrio entre fiabilidad y latencia. Aunque reconocen la
+importancia de las barreras de seguridad, algunos equipos me dijeron que la
+latencia es más importante. Los equipos decidieron no instalar barreras de
+seguridad, porque pueden aumentar considerablemente la latencia de la
+aplicación. 3
+Es posible que las barreras de seguridad de output no funcionen bien en el
+modo de finalización de flujo. Por defecto, se genera toda la respuesta antes
+de mostrársela al usuario, lo que puede llevar mucho tiempo. En el modo de
+finalización de flujo, los nuevos tokens se transmiten al usuario a medida
+que se generan, lo que reduce el tiempo que el usuario ha de esperar para
+ver la respuesta. La desventaja es que es difícil evaluar las respuestas
+parciales, por lo que las respuestas no seguras pueden ser enviadas a los

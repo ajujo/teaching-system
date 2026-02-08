@@ -1,0 +1,28 @@
+pila completa. Una ventaja que los ingenieros de pila completa tienen sobre
+los ingenieros de ML tradicionales es su capacidad para convertir
+rápidamente las ideas en demos, obtener retroalimentación e iterar.
+Con la ingeniería de ML tradicional, normalmente se empieza por recopilar
+datos y entrenar a un modelo. Construir el producto es lo último. Sin
+embargo, con los modelos de IA disponibles hoy en día, es posible empezar
+primero por crear el producto e invertir en datos y modelos solo cuando el
+producto resulte prometedor, como se muestra en la Figura 1-16.
+figura 1-16. El nuevo flujo de trabajo de la ingeniería de IA recompensa a quienes
+pueden iterar con rapidez. Imagen recreada a partir de "The Rise of the AI Engineer"
+(Shawn Wang, 2023).
+En la ingeniería de ML tradicional, el desarrollo de modelos y el desarrollo
+de productos suelen ser procesos inconexos, durante los que los ingenieros
+de ML rara vez participan en las decisiones sobre productos en muchas
+organizaciones. Sin embargo, con los modelos fundacionales, los ingenieros
+de IA suelen participar mucho más en la construcción del producto.
+Resumen
+Quería que este capítulo sirviera para dos cosas. La primera es explicar la
+aparición de la ingeniería de IA como disciplina, gracias a la disponibilidad
+de modelos fundacionales. La segunda es ofrecer una visión general del
+proceso necesario para crear aplicaciones a partir de estos modelos. Espero
+que este capítulo haya logrado este objetivo. Siendo un capítulo general,
+solo trata superficialmente muchos conceptos. Estos conceptos se
+estudiarán más a fondo en el resto del libro.
+En este capítulo se analizó la rápida evolución de la IA en los últimos años.
+Recorrió algunas de las transformaciones más notables, empezando por la
+transición de modelos lingüísticos a grandes modelos lingüísticos, gracias a
+un enfoque de entrenamiento denominado autosupervisión. A continuación,

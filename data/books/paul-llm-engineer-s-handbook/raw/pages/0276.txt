@@ -1,0 +1,23 @@
+Chapter 6
+245
+The create_preference_dataset() function generated 2,970 samples. This dataset is then heav-
+ily filtered to only retain 1,467 samples by removing answers that are too short or not properly 
+formatted (for example, answers that start with an uppercase letter or end with a period, excla-
+mation mark, or question mark).
+The final dataset is available on the Hugging Face Hub at the following address: https://
+huggingface.co/datasets/mlabonne/llmtwin-dpo. You can see in Figure 6.3 an example that 
+captures a subtle nuance in terms of writing style. Both answers are correct, but the chosen (ex-
+tracted) answer sounds slightly more casual.
+Figure 6.3 – Screenshot of the mlabonne/llmtwin-dpo preference dataset on the Hugging 
+Face Hub
+To produce this dataset, we iterated many times over the prompt to generate the data. This re-
+quired some manual evaluation and experiments until we reached satisfying results. The quality 
+of the prompt is fundamental in this process, which is why it is recommended to follow a similar 
+process to generate your own preference datasets.
+In the next section, we will introduce concepts related to Reinforcement Learning from Human 
+Feedback (RLHF) and DPO. This will cover new parameters and ideas that are implemented in 
+the final section of this chapter.
+Preference alignment
+Preference alignment regroups techniques to fine-tune models on preference data. In this section, 
+we provide an overview of this field and then focus on the technique we will implement: Direct 
+Preference Optimization (DPO).

@@ -1,0 +1,48 @@
+def optimize_costs(cost_type: str = None, **kwargs) -> str:
+   """Analyze and optimize transportation, storage, and operational costs."""
+   print(f"[TOOL] optimize_costs(cost_type={cost_type}, kwargs={kwargs})")
+   log_to_loki("tool.optimize_costs", f"cost_type={cost_type}")
+   return "cost_optimization_initiated"
+@tool
+def optimize_delivery(delivery_type: str = None, **kwargs) -> str:
+   """Optimize delivery routes, last-mile logistics,
+   and sustainability initiatives."""
+   print(f"[TOOL] optimize_delivery(delivery_type={delivery_type},
+         kwargs={kwargs})")
+   log_to_loki("tool.optimize_delivery", f"delivery_type={delivery_type}")
+   return "delivery_optimization_complete"
+@tool
+def manage_disruption(disruption_type: str = None, **kwargs) -> str:
+   """Manage supply chain disruptions, contingency planning,
+   and risk mitigation."""
+   print(f"[TOOL] manage_disruption(disruption_type={disruption_type},
+         kwargs={kwargs})")
+   log_to_loki("tool.manage_disruption", f"disruption_type={disruption_type}")
+   return "disruption_managed"
+@tool
+def send_logistics_response(operation_id: str = None, message: str = None):
+   """Send logistics updates, recommendations, or status reports
+   to stakeholders."""
+   print(f"[TOOL] send_logistics_response → {message}")
+   log_to_loki("tool.send_logistics_response", f"operation_id={operation_id},
+              message={message}")
+   return "logistics_response_sent"
+TOOLS = [
+   manage_inventory, track_shipments, evaluate_suppliers, optimize_warehouse,
+   forecast_demand, manage_quality, arrange_shipping, coordinate_operations,
+   manage_special_handling, handle_compliance, process_returns, scale_operations,
+   optimize_costs, optimize_delivery, manage_disruption, send_logistics_response
+]
+These tools encompass the core functions of a supply chain agent, from tracking
+shipments to forecasting demand and managing disruptions. By defining them with
+the @tool decorator in LangChain, we enable the agent to call them dynamically
+based on the user's query. This setup is straightforward, requiring no complex coordi‐
+nation-the agent simply analyzes the prompt and selects the appropriate tool. For
+example, a basic agent might handle inventory shortages by invoking manage_
+inventory and forecast_demand in sequence, as we'll see in the execution flow.
+However, as the toolset expands-here, to 16-the agent's system prompt must
+describe all possibilities, potentially leading to confusion or suboptimal choices. This
+is where the single-agent model's limitations begin to show, paving the way for
+How Many Agents Do I Need?
+|
+167

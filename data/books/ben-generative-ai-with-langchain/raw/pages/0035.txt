@@ -1,0 +1,31 @@
+The Rise of Generative AI: From Language Models to Agents
+8
+Some models like Llama 2 take a middle ground, offering permissive licenses for both research 
+and commercial use while maintaining certain usage conditions. For detailed information about 
+specific model licenses and their implications, refer to the documentation of each model or consult 
+the model openness framework: https://isitopen.ai/.
+In general, open-source licenses promote wide adoption, collaboration, and innovation around 
+the models, benefiting both research and commercial development. Proprietary licenses typically 
+give companies exclusive control but may limit academic research progress. Non-commercial 
+licenses often restrict commercial use while enabling research.
+By making knowledge and knowledge work more accessible and adaptable, generative AI mod­
+els have the potential to level the playing field and create new opportunities for people from all 
+walks of life.
+The evolution of AI has brought us to a pivotal moment where AI systems can not only process 
+information but also take autonomous action. The next section explores the transformation from 
+basic language models to more complex, and finally, fully agentic applications.
+From models to agentic applications
+As discussed so far, LLMs have been demonstrating remarkable fluency in natural language 
+processing. However, as impressive as they are, they remain fundamentally reactive rather than 
+proactive. They lack the ability to take independent actions, interact meaningfully with external 
+systems, or autonomously achieve complex objectives.
+The model openness framework (MOF) evaluates language models based on cri­
+teria such as access to model architecture details, training methodology and hy­
+perparameters, data sourcing and processing information, documentation around 
+development decisions, ability to evaluate model workings, biases, and limitations, 
+code modularity, published model card, availability of servable model, option to run 
+locally, source code availability, and redistribution rights.
+The information provided about AI model licensing is for educational purposes only 
+and does not constitute legal advice. Licensing terms vary significantly and evolve 
+rapidly. Organizations should consult qualified legal counsel regarding specific li­
+censing decisions for their AI implementations.

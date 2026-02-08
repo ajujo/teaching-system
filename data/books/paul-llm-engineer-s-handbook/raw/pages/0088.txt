@@ -1,0 +1,6 @@
+Chapter 3
+57
+Figure 3.1: LLM Twin’s data collection ETL pipeline architecture
+We want to design an ETL pipeline that inputs a user and a list of links as input. Afterward, it 
+crawls each link individually, standardizes the collected content, and saves it under that specific 
+author in a MongoDB data warehouse. 

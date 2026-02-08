@@ -1,0 +1,20 @@
+Fine-Tuning with Preference Alignment
+256
+Figure 6.6 – Experiment tracking in Comet ML with DPO metrics
+Let’s review these metrics:
+•	
+Training loss: We still want the loss to continuously decrease on average. Note that it can 
+rapidly fall to zero, meaning that the model is no longer learning anything. This behavior 
+doesn’t necessarily lead to overfitting or bad models but needs to be monitored closely.
+•	
+Validation loss: The same thing can be said about the validation loss. We expect a small 
+gap compared to the training loss.
+•	
+Gradient norm: We expect small gradient norms with few spikes.
+•	
+Rewards: We have two different rewards: chosen and rejected. They correspond to the 
+mean difference between the log probabilities output by the trained and reference mod-
+els. Over time, we expect the model to choose the chosen answers and reject the rejected 
+answers, which means that the gap between them should increase. This difference is 
+directly tracked by the margins metric, defined as the difference between chosen and 
+rejected rewards. A well-trained model’s margin will quickly increase and then plateau.

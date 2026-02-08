@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.prose {
+  @apply leading-relaxed;
+}
+
+.prose p {
+  @apply mb-2;
+}
+
+.prose ul, .prose ol {
+  @apply ml-4 mb-2;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-100 p-3 rounded overflow-x-auto mb-2;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Quick action buttons */
+.quick-btn {
+  @apply px-3 py-1.5 text-sm rounded-full border transition-colors;
+}
+
+.quick-btn:hover {
+  @apply bg-gray-100;
+}
+
+/* Reconnecting overlay */
+.reconnecting-overlay {
+  @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg shadow-lg flex items-center gap-2;
+}
+
+/* Animation for typewriter cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}

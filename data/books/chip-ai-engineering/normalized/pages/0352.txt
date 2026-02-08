@@ -1,0 +1,10 @@
+figura 5-6. La CoT mejoró el rendimiento de LaMDA, GPT-3 y PaLM en las pruebas
+comparativas MAWPS (Math Word Problem Solving), SVAMP (sequence variation
+analysis, maps, and phylogeny) y GSM-8K. Captura de pantalla de Wei et al., 2022.
+Esta imagen está bajo licencia CC BY 4.0.
+La forma más sencilla de hacerlo es añadir "piensa paso a paso" o "explica
+tu decisión" a su prompt. A continuación, el modelo determina los pasos a
+seguir. También puede especificar los pasos que debe seguir el modelo o
+incluir ejemplos de cómo deben ser los pasos en su prompt. La Tabla 5-4
+muestra cuatro variantes de respuesta de CoT al mismo prompt original.
+Qué variante funcione mejor dependerá de la aplicación.

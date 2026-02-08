@@ -1,0 +1,33 @@
+menudo es necesario observar cómo realizan los humanos
+estas tareas para garantizar la precisión.
+No obstante, lo que es eficiente para los humanos pueden no
+serlo para la IA, y viceversa. En consecuencia, las
+anotaciones humanas pueden no ser ideales para los agentes
+de IA. Por ejemplo, un humano pueden preferir una interfaz
+web, mientras que para un modelo es más fácil utilizar una
+API. Para buscar algo, un humano puede abrir primero un
+navegador, copiar y pegar esa consulta en la barra de
+búsqueda, y luego hacer clic en cada resultado. Por su parte,
+un modelo pueden simplemente enviar una solicitud a la
+API de búsqueda con la consulta y procesar todos los
+resultados a la vez. Por este motivo, muchos recurren a
+simulaciones y otras técnicas sintéticas para generar datos
+sobre el uso de las herramientas, como se explica más
+adelante en este capítulo.
+Los datos sobre el uso de herramientas también pueden
+requerir formatos especiales. En los datos típicos de una
+conversación, el usuario y la IA se turnan, y cada turno
+contiene un mensaje. Sin embargo, para el uso de
+herramientas, la IA podría necesitar generar múltiples
+mensajes cada turno, con cada mensaje enviado a una
+ubicación diferente. Por ejemplo, puede enviar un mensaje
+al intérprete de código y otro al usuario (por ejemplo, para
+informarle de lo que está haciendo). Para ello, los autores de
+Llama 3 (Dubey et al., 2024) diseñaron un formato de chat
+multimensaje que consta de cabeceras de mensaje que
+especifican el origen y el destino de cada mensaje, y tokens
+de terminación especiales para especificar dónde comienzan
+los turnos humano y de IA.
+A la hora de curar datos para aplicaciones con interfaces de conversación,
+hay que tener en cuenta si se necesitan datos de un solo turno, multiturno o
+de ambos. Los datos de un solo turno ayudan a entrenar un modelo para que

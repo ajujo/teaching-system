@@ -1,0 +1,32 @@
+instrucciones se denomina generación aumentada por recuperación (RAG).
+También puede afinar (seguir entrenando) el modelo con un conjunto de
+datos de descripciones de productos de alta calidad.
+La ingeniería de prompts, la RAG y el afinado son tres técnicas de
+ingeniería de IA muy comunes que puede utilizar para adaptar un modelo a
+sus necesidades. En el resto del libro se tratarán todos ellos a detalle.
+Adaptar a su tarea un modelo potente ya existente suele ser mucho más fácil
+que construir un modelo desde cero para su tarea; por ejemplo, diez
+ejemplos y un fin de semana frente a un millón de ejemplos y seis meses.
+Los modelos fundacionales abaratan el desarrollo de aplicaciones de IA y
+reducen el tiempo hasta la comercialización. La cantidad exacta de datos
+necesarios para adaptar un modelo depende de la técnica que se utilice. Este
+libro también abordará esta cuestión al hablar de cada técnica. Sin embargo,
+los modelos para tareas específicas siguen teniendo muchas ventajas. Por
+ejemplo, pueden ser mucho más pequeños, lo que los hace más rápidos y
+baratos de usar.
+Sobre si construir su propio modelo o aprovechar uno existente los equipos
+tendrán que responder por sí mismos la clásica pregunta de "comprar uno
+hecho o construir uno nuevo". Los debates a lo largo del libro pueden
+ayudar a tomar esa decisión.
+De los modelos fundacionales a la ingeniería de IA
+La ingeniería de IA hace referencia al proceso de construcción de
+aplicaciones basándose en modelos fundacionales. Llevamos más de una
+década creando aplicaciones de IA, un proceso conocido como ingeniería
+de ML o MLOps (abreviatura de operaciones de ML). ¿Por qué hablamos
+ahora de ingeniería de IA?
+Si la ingeniería de ML tradicional implica desarrollar modelos de ML, la
+ingeniería de IA aprovecha los ya existentes. La disponibilidad y
+accesibilidad de potentes modelos fundacionales produce tres factores que,
+juntos, crean las condiciones ideales para el rápido crecimiento de la
+ingeniería de IA como disciplina:
+Factor 1: Capacidades de IA de uso general

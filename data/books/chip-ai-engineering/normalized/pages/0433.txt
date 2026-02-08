@@ -1,0 +1,31 @@
+antes de ejecutarlo o dejar que los humanos ejecuten estas operaciones. Para
+que esto sea posible, es necesario definir claramente el nivel de
+automatización que puede tener un agente para cada acción.
+Para resumir, la resolución de una tarea suele implicar los siguientes
+procesos. Tenga en cuenta que la reflexión no es obligatoria para un agente,
+pero aumentará considerablemente su rendimiento:
+1. Generación de planes: elaborar un plan para llevar a cabo esta
+tarea. Un plan es una secuencia de acciones manejables, por lo que
+este proceso también se denomina descomposición de tareas.
+2. Reflexión y corrección de errores: evaluar el plan generado. Si es
+un mal plan, generar uno nuevo.
+3. Ejecución: llevar a cabo las acciones descritas en el plan generado.
+A menudo implica llamar a funciones específicas.
+4. Reflexión y corrección de errores: tras recibir los resultados de la
+acción, evaluar dichos resultados y determinar si se ha cumplido el
+objetivo. Identificar y corregir errores. Si el objetivo no se
+completa, generar un nuevo plan.
+Ya ha visto algunas técnicas de generación de planes y reflexión en este
+libro. Cuando le pide a un modelo que "piense paso a paso", le está
+pidiendo que descomponga una tarea. Cuando le pide a un modelo que
+"verifique si la respuesta es correcta", le está pidiendo que reflexione.
+Modelos fundacionales como planificadores
+Un tema abierto a discusión es qué tan bien pueden planificar los modelos
+fundacionales. Muchos investigadores creen que los modelos fundacionales,
+al menos los construidos sobre modelos lingüísticos autorregresivos, no
+pueden hacerlo. El científico jefe de IA de Meta, Yann LeCun, afirma
+inequívocamente que los LLMs autorregresivos no pueden planificar
+(2023). En el artículo "¿Can LLMs Really Reason and Plan?"
+Kambhampati (2023) sostiene que los LLMs son excelentes extrayendo
+conocimientos, pero no planificando. Kambhampati sugiere que los
+artículos que reivindican las capacidades de planificación de los LLMs

@@ -1,0 +1,36 @@
+Understanding the LLM Twin Concept and Architecture
+2
+These three steps are natural in building a real-world product. Even if the first two do not require
+much ML knowledge, it is critical to go through them to understand "how" to build the product
+with a clear vision. In a nutshell, this chapter covers the following topics:
+•
+Understanding the LLM Twin concept
+•
+Planning the MVP of the LLM Twin product
+•
+Building ML systems with feature/training/inference pipelines
+•
+Designing the system architecture of the LLM Twin
+By the end of this chapter, you will have a clear picture of what you will learn to build throughout
+the book.
+Understanding the LLM Twin concept
+The first step is to have a clear vision of what we want to create and why it's valuable to build it.
+The concept of an LLM Twin is new. Thus, before diving into the technical details, it is essential
+to understand what it is, what we should expect from it, and how it should work. Having a solid
+intuition of your end goal makes it much easier to digest the theory, code, and infrastructure
+presented in this book.
+What is an LLM Twin?
+In a few words, an LLM Twin is an AI character that incorporates your writing style, voice, and
+personality into an LLM, which is a complex AI model. It is a digital version of yourself projected
+into an LLM. Instead of a generic LLM trained on the whole internet, an LLM Twin is fine-tuned
+on yourself. Naturally, as an ML model reflects the data it is trained on, this LLM will incorporate
+your writing style, voice, and personality. We intentionally used the word "projected." As with
+any other projection, you lose a lot of information along the way. Thus, this LLM will not be you;
+it will copy the side of you reflected in the data it was trained on.
+It is essential to understand that an LLM reflects the data it was trained on. If you feed it Shakespeare, it will start writing like him. If you train it on Billie Eilish, it will start writing songs in
+her style. This is also known as style transfer. This concept is prevalent in generating images, too.
+For example, let's say you want to create a cat image using Van Gogh's style. We will leverage the
+style transfer strategy, but instead of choosing a personality, we will do it on our own persona.
+To adjust the LLM to a given style and voice along with fine-tuning, we will also leverage various
+advanced retrieval-augmented generation (RAG) techniques to condition the autoregressive
+process with previous embeddings of ourselves.

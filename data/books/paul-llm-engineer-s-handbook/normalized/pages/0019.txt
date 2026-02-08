@@ -1,0 +1,32 @@
+Table of Contents
+xviii
+Deploying the LLM Twin's pipelines to the cloud ............................................................ 413
+Understanding the infrastructure • 414
+Setting up MongoDB • 416
+Setting up Qdrant • 417
+Setting up the ZenML cloud • 419
+Containerize the code using Docker • 422
+Run the pipelines on AWS • 427
+Troubleshooting the ResourceLimitExceeded error after running a ZenML pipeline on SageMaker
+• 430
+Adding LLMOps to the LLM Twin ................................................................................... 432
+LLM Twin's CI/CD pipeline flow • 432
+More on formatting errors • 434
+More on linting errors • 434
+Quick overview of GitHub Actions • 435
+The CI pipeline • 436
+GitHub Actions CI YAML file • 436
+The CD pipeline • 440
+Test out the CI/CD pipeline • 443
+The CT pipeline • 444
+Initial triggers • 446
+Trigger downstream pipelines • 447
+Prompt monitoring • 449
+Alerting • 455
+Summary ........................................................................................................................ 456
+References ....................................................................................................................... 457
+Appendix: MLOps Principles 
+ 459
+1. Automation or operationalization ............................................................................... 459
+2. Versioning ................................................................................................................... 461
+3. Experiment tracking ................................................................................................... 462

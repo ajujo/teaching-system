@@ -1,0 +1,34 @@
+Building Workflows with LangGraph
+76
+Let's now compile and execute our graph with a custom configuration (if you don't provide any,
+LangGraph will use the default one):
+res = graph.invoke({"job_description":"fake_jd"}, config={"configurable":
+{"model_provider": "OpenAI", "model_name": "gpt-4o"}})
+print(res)
+>> ...Analyzing a provided job description ...
+...generating application with OpenAI and OpenAI ...
+{'job_description': 'fake_jd', 'is_suitable': True, 'application': 'some_
+fake_application', 'actions': ['action1', 'action2', 'action3']}
+Now that we've established how to structure complex workflows with LangGraph, let's look at a
+common challenge these workflows face: ensuring LLM outputs follow the exact structure needed
+by downstream components. Robust output parsing and graceful error handling are essential for
+reliable AI pipelines.
+Controlled output generation
+When you develop complex workflows, one of the common tasks you need to solve is to force an
+LLM to generate an output that follows a certain structure. This is called a controlled generation.
+This way, it can be consumed programmatically by the next steps further down the workflow. For
+example, we can ask the LLM to generate JSON or XML for an API call, extract certain attributes
+from a text, or generate a CSV table. There are multiple ways to achieve this, and we'll start ex­
+ploring them in this chapter and continue in Chapter 5. Since an LLM might not always follow the
+exact output structure, the next step might fail, and you'll need to recover from the error. Hence,
+we'll also begin discussing error handling in this section.
+Output parsing
+Output parsing is essential when integrating LLMs into larger workflows, where subsequent
+steps require structured data rather than natural language responses. One way to do that is to
+add corresponding instructions to the prompt and parse the output.
+Let's see a simple task. We'd like to classify whether a certain job description is suitable for a
+junior Java programmer as a step of our pipeline and, based on the LLM's decision, we'd like to
+either continue with an application or ignore this specific job description. We can start with a
+simple prompt:
+from langchain_google_vertexai import ChatVertexAI
+llm = ChatVertexAI(model="gemini-2.0-flash-lite")

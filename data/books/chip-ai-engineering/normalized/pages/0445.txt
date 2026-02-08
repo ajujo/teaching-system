@@ -1,0 +1,30 @@
+Después de la generación del plan inicial para evaluar si el plan
+tiene sentido.
+Después de cada paso de ejecución para evaluar si va por buen
+camino.
+Una vez ejecutado todo el plan para determinar si se ha cumplido
+la tarea.
+La reflexión y la corrección de errores son dos mecanismos diferentes que
+van de la mano. La reflexión genera percepciones que ayudan a descubrir
+errores que hay que corregir.
+La reflexión puede hacerse con el mismo agente utilizando prompts de
+autocrítica. También puede hacerse con un componente independiente,
+como un puntuador especializado: un modelo que emite una puntuación
+concreta para cada resultado.
+Propuesto por primera vez por ReAct (Yao et al., 2022), intercalar el
+razonamiento y la acción se ha convertido en un patrón habitual para los
+agentes. Yao et al. utilizaron el término "razonamiento" para englobar tanto
+la planificación como la reflexión. En cada paso, se pide al agente que
+explique su forma de pensar (planificación), emprenda acciones y, a
+continuación, analice las observaciones (reflexión), hasta que el agente
+considere que la tarea ha finalizado. Normalmente se pide al agente,
+mediante ejemplos, que genere outputs en el siguiente formato:
+Pensamiento 1: ...
+Acción 1: ...
+Observación 1: ...
+... [continuar hasta que la reflexión determine que la tarea ha
+finalizado] ...
+Pensamiento N: ...
+Acción N: Fin [Respuesta a la consulta]
+La Figura 6-12 muestra un ejemplo de un agente que sigue el marco ReAct
+respondiendo a una pregunta de HotpotQA (Yang et al., 2018), una prueba

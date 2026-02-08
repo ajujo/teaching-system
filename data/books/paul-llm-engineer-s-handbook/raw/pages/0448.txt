@@ -1,0 +1,42 @@
+Chapter 11
+417
+d.	 Choose Frankfurt (eu-central-1) as your region. You can choose another region, 
+but be careful to choose the same region for all future AWS services.
+e.	
+Leave the rest of the attributes with their default values.
+f.	
+In the bottom right, click the Create Deployment green button.
+4.	
+To test that your newly created MongoDB cluster works fine, we must connect to it from 
+our local machine. We used the MongoDB VS Code extension to do so, but you can use any 
+other tool. Thus, from their Choose a connection method setup flow, choose MongoDB 
+for VS Code. Then, follow the steps provided on their site.
+5.	
+To connect, you must paste the DB connection URL in the VS Code extension (or another 
+tool of your liking), which contains your username, password, and cluster URL, similar 
+to this one: mongodb+srv://<username>:<password> @twin.vhxy1.mongodb.net. Make 
+sure to save this URL somewhere you can copy it from later.
+6.	
+If you don’t know or want to change your password, go to Security → Quickstart in the 
+left panel. There, you can edit your login credentials. Be sure to save them somewhere 
+safe, as you won’t be able to access them later.
+7.	
+After verifying that your connections work, go to Security → Network Access in the left 
+panel and click ADD IP ADDRESS. Then click ALLOW ACCESS FROM ANYWHERE and 
+hit Confirm. Out of simplicity, we allow any machine from any IP to access our MongoDB 
+cluster. This ensures that our pipelines can query or write to the DB without any addi-
+tional complex networking setup. It’s not the safest option for production, but for our 
+example, it’s perfectly fine.
+8.	 The final step is to return to your project and open your .env file. Now, either add or re-
+place the DATABASE_HOST variable with your MongoDB connection string. It should look 
+something like this: DATABASE_HOST= mongodb+srv://<username>:<password> @twin.
+vhxy1.mongodb.net.
+That’s it! Now, instead of reading and writing from your local MongoDB, you will do it from the 
+cloud MongoDB cluster we just created. Let’s repeat a similar process with Qdrant.
+Setting up Qdrant
+We have to repeat a similar process to what we did for MongoDB. Thus, to create a Qdrant cluster 
+and hook it to our project, follow these steps:
+1.	
+Go to Qdrant at https://cloud.qdrant.io/ and create an account.
+2.	
+In the left panel, go to Clusters and click Create.

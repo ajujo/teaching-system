@@ -1,0 +1,47 @@
+os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "http://localhost:4317"
+os.environ["OTEL_EXPORTER_OTLP_INSECURE"] = "true"
+@tool
+def manage_inventory(sku: str = None, **kwargs) -> str:
+   """Manage inventory levels, stock replenishment, audits, 
+   and optimization strategies."""
+   print(f"[TOOL] manage_inventory(sku={sku}, kwargs={kwargs})")
+   log_to_loki("tool.manage_inventory", f"sku={sku}")
+   return "inventory_management_initiated"
+@tool
+def track_shipments(origin: str = None, **kwargs) -> str:
+   """Track shipment status, delays, and coordinate delivery logistics."""
+   print(f"[TOOL] track_shipments(origin={origin}, kwargs={kwargs})")
+   log_to_loki("tool.track_shipments", f"origin={origin}")
+   return "shipment_tracking_updated"
+@tool
+def evaluate_suppliers(supplier_name: str = None, **kwargs) -> str:
+   """Evaluate supplier performance, conduct audits, 
+   and manage supplier relationships."""
+   print(f"[TOOL] evaluate_suppliers(supplier_name={supplier_name}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.evaluate_suppliers", f"supplier_name={supplier_name}")
+   return "supplier_evaluation_complete"
+@tool
+def optimize_warehouse(operation_type: str = None, **kwargs) -> str:
+   """Optimize warehouse operations, layout, capacity, and storage efficiency."""
+   print(f"[TOOL] optimize_warehouse(operation_type={operation_type}, 
+         kwargs={kwargs})")
+   log_to_loki("tool.optimize_warehouse", f"operation_type={operation_type}")
+   return "warehouse_optimization_initiated"
+@tool
+def forecast_demand(season: str = None, **kwargs) -> str:
+   """Analyze demand patterns, seasonal trends, and create forecasting models."""
+   print(f"[TOOL] forecast_demand(season={season}, kwargs={kwargs})")
+   log_to_loki("tool.forecast_demand", f"season={season}")
+   return "demand_forecast_generated"
+@tool
+def manage_quality(supplier: str = None, **kwargs) -> str:
+   """Manage quality control, defect tracking, and supplier quality standards."""
+   print(f"[TOOL] manage_quality(supplier={supplier}, kwargs={kwargs})")
+   log_to_loki("tool.manage_quality", f"supplier={supplier}")
+   return "quality_management_initiated"
+@tool
+def arrange_shipping(shipping_type: str = None, **kwargs) -> str:
+How Many Agents Do I Need? 
+| 
+165

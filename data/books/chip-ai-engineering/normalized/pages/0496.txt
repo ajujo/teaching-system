@@ -1,0 +1,6 @@
+figura 7-6. Diferentes formatos numéricos con su rango y precisión.
+Los formatos con más bits se consideran de mayor precisión. Convertir un
+número con un formato de alta precisión en un formato de baja precisión
+(por ejemplo, de FP32 a FP16) significa reducir su precisión. Reducir la
+precisión puede hacer que un valor cambie o provocar errores. La Tabla 7-3
+muestra cómo se pueden convertir los valores FP32 en FP16, BF16 y TF32.

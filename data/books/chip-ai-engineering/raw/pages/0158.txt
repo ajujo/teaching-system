@@ -1,0 +1,33 @@
+logprob(I love food) = logprob(I) + logprob(I | love) + 
+logprob(food | I, love)
+Al sumar, es probable que las secuencias más largas tengan un logprob total
+más bajo (los valores de logprob suelen ser negativos, porque el log de los
+valores entre 0 y 1 es negativo). Para evitar el sesgo hacia secuencias cortas,
+puede utilizar el logprob promedio dividiendo la suma de una secuencia por
+su longitud. Tras muestrear varios outputs, se elige el que tenga el logprob
+promedio más alto. En el momento de escribir este artículo, esto es lo que
+utiliza la API de OpenAI. 30
+Otro método de selección consiste en utilizar un modelo de recompensa
+para puntuar cada output, como se ha comentado en la sección anterior.
+Recordemos que tanto Stitch Fix como Grab eligen los outputs que han
+recibido puntuaciones altas por parte de sus modelos de recompensa o
+verificadores. Nextdoor descubrió que utilizar un modelo de recompensa
+era el factor clave para mejorar el rendimiento de su aplicación (2023).
+OpenAI también entrenó a verificadores para ayudar a sus modelos a elegir
+las mejores soluciones a problemas matemáticos (Cobbe et al., 2021).
+Comprobaron que el uso de un verificador mejoraba significativamente el
+rendimiento del modelo. De hecho, el uso de verificadores resultó
+aproximadamente en el mismo aumento de rendimiento que un incremento
+de 30 veces el tamaño del modelo. Esto significa que un modelo de 100
+millones de parámetros que utilice un verificador puede rendir a la par que
+un modelo de 3000 millones de parámetros que no utilice un verificador.
+DeepMind demuestra además el valor del cómputo de tiempo de prueba,
+argumentando que escalarlo (por ejemplo, asignando más cómputo para
+generar más outputs durante la inferencia) puede ser más eficiente que
+escalar los parámetros del modelo (Snell et al., 2024). El mismo artículo
+plantea una pregunta interesante: Si a un LLM se le permite utilizar una
+cantidad fija pero no trivial de cálculo en tiempo de inferencia, ¿cuánto
+puede mejorar su rendimiento en un prompt difícil?
+En el experimento de OpenAI, el muestreo de más outputs condujo a un
+mejor rendimiento, pero solo hasta cierto punto. En este experimento, ese
+punto fueron 400 outputs. Más allá, el rendimiento disminuye, como se

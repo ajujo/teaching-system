@@ -1,0 +1,25 @@
+1. Procesar la consulta tal y como se da.
+2. Recuperar los datos pertinentes en función de la consulta
+procesada.
+3. Combinar la consulta original y los datos recuperados
+para crear un prompt en el formato esperado por el
+modelo.
+4. El modelo genera una respuesta en función del prompt.
+5. Evaluar la respuesta.
+6. Si la respuesta se considera buena, devolvérsela al
+usuario. Si no, dirigir la consulta a un operador humano.
+El orquestador es responsable de pasar los datos entre los componentes.
+Debe proporcionar herramientas que ayuden a garantizar que el output del
+paso actual está en el formato esperado por el siguiente paso. Lo ideal sería
+que le notificara cuando este flujo de datos se interrumpe debido a errores
+como fallos de componentes o fallos de desajuste de datos.
+AVISO
+Un orquestador de proceso de IA es diferente de un orquestador de flujo de
+trabajo general, como Airflow o Metaflow.
+Al diseñar el proceso para una aplicación con requisitos estrictos de
+latencia, hay que intentar hacer todo lo posible en paralelo. Por ejemplo, si
+tiene un componente de enrutamiento (que decide dónde enviar una
+consulta) y un componente de eliminación de PII, ambos pueden realizarse
+al mismo tiempo.
+Existen muchas herramientas de orquestación de IA, como LangChain,
+LlamaIndex, Flowise, Langflow y Haystack. Dado que la recuperación y el

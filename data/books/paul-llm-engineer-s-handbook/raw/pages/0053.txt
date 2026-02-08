@@ -1,0 +1,35 @@
+Understanding the LLM Twin Concept and Architecture
+22
+Then, we can trigger the feature pipeline when new data is available in the data warehouse and 
+the training pipeline when new instruction datasets are available.
+Inference pipeline
+The inference pipeline is the last piece of the puzzle. It is connected to the model registry and log-
+ical feature store. It loads a fine-tuned LLM from the model registry, and from the logical feature 
+store, it accesses the vector DB for RAG. It takes in client requests through a REST API as queries. 
+It uses the fine-tuned LLM and access to the vector DB to carry out RAG and answer the queries.
+All the client queries, enriched prompts using RAG, and generated answers are sent to a prompt 
+monitoring system to analyze, debug, and better understand the system. Based on specific require-
+ments, the monitoring system can trigger alarms to take action either manually or automatically.
+At the interface level, this component follows exactly the FTI architecture, but when zooming in, 
+we can observe unique characteristics of an LLM and RAG system, such as the following:
+•	
+A retrieval client used to do vector searches for RAG
+•	
+Prompt templates used to map user queries and external information to LLM inputs
+•	
+Special tools for prompt monitoring
+Final thoughts on the FTI design and the LLM Twin 
+architecture
+We don’t have to be highly rigid about the FTI pattern. It is a tool used to clarify how to design 
+ML systems. For example, instead of using a dedicated features store just because that is how 
+it is done, in our system, it is easier and cheaper to use a logical feature store based on a vector 
+DB and artifacts. What was important to focus on were the required properties a feature store 
+provides, such as a versioned and reusable training dataset.
+Ultimately, we will explain the computing requirements of each component briefly. The data 
+collection and feature pipeline are mostly CPU-based and do not require powerful machines. The 
+training pipeline requires powerful GPU-based machines that could load an LLM and fine-tune it. 
+The inference pipeline is somewhere in the middle. It still needs a powerful machine but is less 
+compute-intensive than the training step. However, it must be tested carefully, as the inference 
+pipeline directly interfaces with the user. Thus, we want the latency to be within the required 
+parameters for a good user experience. However, using the FTI design is not an issue. We can pick 
+the proper computing requirements for each component.

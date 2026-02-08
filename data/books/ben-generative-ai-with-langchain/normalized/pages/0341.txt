@@ -1,0 +1,36 @@
+Evaluation and Testing
+314
+End users evaluate agents primarily through the lens of practical task completion and interaction
+quality. Their assessment revolves around the agent's ability to understand and fulfill requests
+accurately (task success rate), respond with relevant information (answer relevancy), maintain
+conversation coherence, and operate with reasonable speed (response time). This group values
+satisfaction metrics most highly, with user satisfaction scores and communication efficiency
+being particularly important in conversational contexts. In application-specific domains like web
+navigation or software engineering, users may prioritize domain-specific success metrics-such
+as whether an e-commerce agent successfully completed a purchase or a coding agent resolved
+a software issue correctly.
+Technical stakeholders require a deeper evaluation of the agent's internal processes rather than
+just outcomes. They focus on the quality of planning (plan feasibility, plan optimality), reason­
+ing coherence, tool selection accuracy, and adherence to technical constraints. For SWE agents,
+metrics like code correctness and test case passing rate are critical. Technical teams also closely
+monitor computational efficiency metrics such as token consumption, latency, and resource uti­
+lization, as these directly impact operating costs and scalability. Their evaluation extends to the
+agent's robustness-measuring how it handles edge cases, recovers from errors, and performs
+under varying loads.
+Business stakeholders evaluate agents through metrics connecting directly to organizational
+value. Beyond basic ROI calculations, they track domain-specific KPIs that demonstrate tangible
+impact: reduced call center volume for customer service agents, improved inventory accuracy for
+retail applications, or decreased downtime for manufacturing agents. Their evaluation framework
+includes the agent's alignment with strategic goals, competitive differentiation, and scalability
+across the organization. In sectors like finance, metrics bridging technical performance to busi­
+ness outcomes-such as reduced fraud losses while maintaining customer convenience-are
+especially valuable.
+Regulatory stakeholders, particularly in high-stakes domains like healthcare, finance, and legal
+services, evaluate agents through strict compliance and safety lenses. Their assessment encom­
+passes the agent's adherence to domain-specific regulations (like HIPAA in healthcare or financial
+regulations in banking), bias detection measures, robustness against adversarial inputs, and
+comprehensive documentation of decision processes. For these stakeholders, the thoroughness
+of safety testing and the agent's consistent performance within defined guardrails outweigh pure
+efficiency or capability metrics. As autonomous agents gain wider deployment, this regulatory
+evaluation dimension becomes increasingly crucial to ensure ethical operation and minimize
+potential harm.

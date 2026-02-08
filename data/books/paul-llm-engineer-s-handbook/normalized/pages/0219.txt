@@ -1,0 +1,19 @@
+Supervised Fine-Tuning
+188
+In general, to improve evaluation reliability, strategies such as using multiple LLMs as a jury
+reduce bias and improve consistency. Leveraging a jury of smaller LLMs can also reduce costs
+while increasing accuracy and mitigating intra-model favoritism. For specific applications like
+chatbots, it's advisable to aim for high agreement between LLM judges and human evaluators
+(around 80%). Simple grading scales (with few-shot prompting) and task-specific benchmarks
+are also recommended to ensure relevant and interpretable evaluations.
+Reward models are another way to re-purpose LLMs for data quality evaluation. The term "reward
+model" comes from Reinforcement Learning from Human Feedback (RLHF, see Chapter 6). They
+can be broadly defined as models that take an instruction and answer pair and return a score as
+output. Generally, reward models are created by adding a linear head on top of a decoder-only
+architecture like Gemma or Llama. They are then trained for this specific purpose, using either
+reinforcement learning or traditional fine-tuning. Figure 5.3 shows ArmoRM-Llama3-8B-v0.1's
+architecture, which adds regression and gating layers on top of a Llama 3 8B model. This model
+outputs multiple scores to target specific dimensions, such as helpfulness, correctness, coherence,
+complexity, and verbosity. This allows for a more fine-grained approach to data quality evaluation.
+Figure 5.3 - Architecture of RLHFlow/ArmoRM-Llama3-8B-v0.1, based on Llama 3 (Source:
+https://doi.org/10.48550/arXiv.2406.12845)

@@ -1,0 +1,37 @@
+RAG Inference Pipeline
+336
+In the initializer of the Reranker class, we instantiate our cross-encoder model by creating an
+instance of CrossEncoderModelSingleton. This is the cross-encoder model used to score the
+relevance of each document chunk with respect to the query.
+The core functionality of the Reranker class is implemented in the generate() method:
+    def generate(self, query: Query, chunks: list[EmbeddedChunk], keep_
+top_k: int) -> list[EmbeddedChunk]:
+        if self._mock:
+            return chunks
+        query_doc_tuples = [(query.content, chunk.content) for chunk in
+chunks]
+        scores = self._model(query_doc_tuples)
+        scored_query_doc_tuples = list(zip(scores, chunks, strict=False))
+        scored_query_doc_tuples.sort(key=lambda x: x[0], reverse=True)
+        reranked_documents = scored_query_doc_tuples[:keep_top_k]
+        reranked_documents = [doc for _, doc in reranked_documents]
+        return reranked_documents
+The generate() method takes a query, a list of chunks (document segments), and the number
+of top documents to keep (keep_top_k). If we're in mock mode, it simply returns the original
+chunks. Otherwise, it performs the following steps:
+1.
+Creates pairs of the query content and each chunk's content
+2.
+Uses the cross-encoder model to score each pair, assessing how well the chunk matches
+the query
+3.
+Zips the scores with the corresponding chunks to create a scored list of tuples
+4.
+Sorts this list in descending order based on the scores
+5.
+Selects the top keep_top_k chunks
+6.
+Extracts the chunks from the tuples and returns them as the reranked documents
+Before defining the CrossEncoder class, we import the necessary components:
+from sentence_transformers.cross_encoder import CrossEncoder
+from .base import SingletonMeta

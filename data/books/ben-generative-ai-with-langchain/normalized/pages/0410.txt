@@ -1,0 +1,46 @@
+Chapter 9
+383
+•
+Look at your data requirements first: If you're handling medical records, financial data, or
+other regulated information, you'll likely need self-hosting. For less sensitive data, cloud
+APIs are simpler and faster to implement.
+•
+On-premises when you need complete control: Choose on-premises deployment when
+you need absolute data sovereignty or have strict security requirements. Be ready for seri­
+ous hardware costs ($50K-$300K for server setups), dedicated MLOps staff, and physical
+infrastructure management. The upside is complete control over your models and data,
+with no per-token fees.
+•
+Cloud self-hosting for the middle ground: Running models on cloud GPU instances gives
+you most of the control benefits without managing physical hardware. You'll still need
+staff who understand ML infrastructure, but you'll save on physical setup costs and can
+scale more easily than with on-premises hardware.
+•
+Try hybrid approaches for complex needs: Route sensitive data to your self-hosted models
+while sending general queries to cloud APIs. This gives you the best of both worlds but
+adds complexity. You'll need clear routing rules and monitoring at both ends. Common
+patterns include:
+•
+Sending public data to cloud APIs and private data to your own servers
+•
+Using cloud APIs for general tasks and self-hosted models for specialized domains
+•
+Running base workloads on your hardware and bursting to cloud APIs during
+traffic spikes
+•
+Be honest about your customization needs: If you need to deeply modify how the model
+works, you'll need self-hosted open-source models. If standard prompting works for your
+use case, cloud APIs will save you significant time and resources.
+•
+Calculate your usage realistically: High, steady volume makes self-hosting more cost-ef­
+fective over time. Unpredictable or spiky usage patterns work better with cloud APIs where
+you only pay for what you use. Run the numbers before deciding.
+•
+Assess your team's skills truthfully: On-premises deployment requires hardware ex­
+pertise on top of ML knowledge. Cloud self-hosting requires strong container and cloud
+infrastructure skills. Hybrid setups demand all these plus integration experience. If you
+lack these skills, budget for hiring or start with simpler cloud APIs.
+•
+Consider your timeline: Cloud APIs let you launch in days rather than months. Many
+successful products start with cloud APIs to test their idea, then move to self-hosting
+once they've proven it works and have the volume to justify it.

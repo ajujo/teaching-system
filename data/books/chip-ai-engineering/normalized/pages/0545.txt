@@ -1,0 +1,32 @@
+11 Google presentó BFloat16 como "el secreto del alto rendimiento en las TPU de
+la nube".
+12 Los formatos enteros también se denominan formatos de punto fijo.
+13 Los bits de rango se denominan exponentes. Los bits de precisión se
+denominan significandos.
+14 Tenga en cuenta que, normalmente, el número que aparece al final del nombre
+de un formato indica cuántos bits ocupa, pero TF32 tiene 19 bits, no 32. Creo
+que se llamó así para sugerir su compatibilidad funcional con FP32. Pero,
+sinceramente, que se llame TF32 y no TF19 me quita el sueño. Un antiguo
+compañero de trabajo de NVIDIA se atrevió a conjeturar que la gente podría
+mostrarse escéptica ante formatos extraños (19 bits), por lo que denominar a este
+formato TF32 lo hace parecer más amigable.
+15 La confusión entre FP16 y BF16 continuó con Llama 3.1. Algunas
+conversaciones al respecto en X y Threads: 1, 2, 3, 4; y la prueba comparativa
+de llama.cpp entre BF16 y FP16, el escrito de Bloke, y el escrito de Raschka.
+16 El diseño de formatos numéricos es una disciplina fascinante. Ser capaz de
+crear un formato de menor precisión que no ponga en riesgo la calidad de un
+sistema puede hacer que ese sistema sea mucho más barato y rápido,
+permitiendo nuevos casos de uso.
+17 Otro factor importante que contribuye a la huella de memoria de los modelos
+basados en transformadores es la caché KV, que se aborda en el Capítulo 9.
+18 El tamaño de flotante más pequeño posible que sigue todos los principios IEEE
+es de 4 bits.
+19 Los autores del artículo Xnor-Net crearon Xnor.ai, una startup centrada en la
+compresión de modelos. A principios de 2020, fue adquirida por Apple por 200
+millones de dólares.
+20 Durante el entrenamiento, las ponderaciones del modelo se actualizan a través
+de múltiples pasos. Los pequeños cambios de redondeo pueden agravarse
+durante el proceso de entrenamiento, dificultando que el modelo alcance el
+rendimiento deseable. Adicionalmente, los valores de las pérdidas requieren un
+cálculo preciso. Pequeños cambios en el valor de la pérdida pueden orientar la
+actualización de los parámetros en la dirección equivocada.

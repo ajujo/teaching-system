@@ -1,0 +1,42 @@
+Communicating Agent Capabilities
+One of the most critical aspects of designing effective agent experiences is ensuring
+users understand what the agent can do and how to interact with it effectively. While
+backend agent design determines what functions an agent supports, the user experi‐
+ence determines whether those capabilities are discoverable, intuitive, and usable in
+practice. In traditional applications, discoverability is straightforward: menus, but‐
+tons, and interface elements visually communicate available actions. In agentic sys‐
+tems, especially those using text or voice interfaces, the absence of visible affordances
+often leaves users guessing what the agent can and cannot do.
+Effective agent UX addresses this challenge by proactively communicating capabili‐
+ties through the interface itself. For example, many chat-based agents include sug‐
+gested action buttons below the input field, highlighting common or contextually
+relevant actions such as "Track order," "Generate summary," or "Create meeting note."
+These buttons serve as visual affordances, guiding users toward supported workflows
+without requiring them to remember specific commands or guess what is possible.
+Similarly, onboarding tutorials or first-use walkthroughs can introduce users to an
+agent's core functions, helping them build confidence early on.
+Another useful pattern is the inclusion of expandable menus or capability cards that
+list available functions in a structured way. In a graphical agent interface, for instance,
+a sidebar might contain sections for data retrieval, analysis, summarization, and
+workflow automation. This mirrors the menu structures that users expect in tradi‐
+tional apps while communicating the breadth of agent capabilities upfront. Dynamic
+suggestions, where the system recommends actions based on user input, also help
+bridge the gap between open-ended natural language and structured tool invocation.
+If a user begins typing "book...," the agent might suggest "Book meeting with
+[name]," "Book conference room," or "Book travel," anticipating intent and making
+actions easier to execute.
+In systems relying primarily on open-ended text input, agents themselves must com‐
+municate their capabilities clearly in conversation. This can include proactive intro‐
+ductions when a session begins, such as: "Hi, I can help you generate content, analyze
+data, or summarize documents. What would you like to do today?" When users
+request actions beyond current capabilities, the agent should not simply reject the
+request but provide alternatives: "I can't process payments directly, but I can update
+your billing preferences or connect you with an agent who can assist." Such responses
+reduce user frustration while reinforcing the agent's utility.
+While it is important to surface capabilities, it is equally critical not to overwhelm
+users with too many options at once. Effective designs prioritize progressive disclo‐
+sure, showing core capabilities initially and revealing advanced features as users
+become more comfortable. Contextual relevance also plays a key role. Displaying the
+Communicating Agent Capabilities
+|
+63

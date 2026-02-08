@@ -1,0 +1,31 @@
+La IA puede generar cuestionarios, tanto de opción múltiple como abiertos,
+así como evaluar las respuestas. La IA puede convertirse en un compañero
+de debate, ya que es mucho mejor que el ser humano promedio a la hora de
+presentar diferentes puntos de vista sobre un mismo tema. Por ejemplo,
+Khan Academy ofrece asistentes de enseñanza basados en IA a los
+estudiantes y asistentes de curso a los profesores. Un método de enseñanza
+innovador que he visto es que los profesores asignan redacciones generadas
+por IA para que los alumnos encuentren y corrijan los errores.
+Si bien muchas empresas de educación adoptan la IA para crear mejores
+productos, muchas se encuentran con que les ha quitado su medio de vida.
+Por ejemplo, Chegg, una empresa que ayuda a los estudiantes con sus tareas
+escolares, vio cómo el precio de sus acciones se desplomaba de 28 dólares
+cuando se lanzó ChatGPT en noviembre de 2022 a 2 dólares en septiembre
+de 2024, a medida que los estudiantes han ido recurriendo a la IA para que
+les ayude.
+Si el riesgo es que la IA pueda sustituir muchas habilidades, la oportunidad
+es que pueda utilizarse como profesor particular para aprender cualquier
+habilidad. Para muchas habilidades, la IA puede ayudar a alguien a ponerse
+al día rápidamente y luego seguir aprendiendo por su cuenta para llegar a
+ser mejor que la IA.
+Bots conversacionales
+Los bots conversacionales son versátiles. Pueden ayudarnos a encontrar
+información, explicar conceptos y aportar ideas. La IA puede hacer
+compañía y ofrecer terapia. Puede emular personalidades, permitiéndole
+hablar con una copia digital de quien quiera. Las novias y novios digitales
+se han hecho extrañamente populares en muy poco tiempo. Muchos ya
+pasan más tiempo hablando con bots que con humanos (véanse los debates
+aquí y aquí). A algunos les preocupa que la IA arruine las citas amorosas.
+En la investigación también se ha descubierto que se puede utilizar un
+grupo de bots conversacionales para simular una sociedad, lo que permite
+realizar estudios sobre la dinámica social (Park et al., 2023).

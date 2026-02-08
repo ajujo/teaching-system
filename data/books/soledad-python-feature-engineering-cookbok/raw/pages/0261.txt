@@ -1,0 +1,30 @@
+Creating New Features
+238
+'mean smoothness_div_mean radius',
+'mean compactness_div_mean radius',
+'mean concavity_div_mean radius',
+'mean symmetry_div_mean radius',
+'mean smoothness_div_mean area',
+'mean compactness_div_mean area',
+'mean concavity_div_mean area',
+'mean symmetry_div_mean area']
+Finally, we can display the first five rows of the resulting variables by executing df_t[new_
+features].head():
+Figure 8.3 – A DataFrame with the newly created features
+feature-engine adds new features as columns at the right of the original DataFrame and 
+automatically adds variable names to those features. By doing so, feature-engine automates 
+much of the manual work that we would do with pandas.
+How it works...
+pandas has many built-in operations to compare a feature or a group of features to a reference 
+variable. In this recipe, we used pandas sub() and div() to determine the difference or the ratio 
+between two variables, or a subset of variables and one reference feature.
+To subtract one variable from another, we applied sub() to a pandas series with the first variable, 
+passing the pandas series with the second variable as an argument to sub(). This operation 
+returned a third pandas series with the difference between the first and second variables. To divide 
+one variable from another, we used div(), which works identically to sub() – that is, it divides 
+the variable on the left by the variable passed as an argument of div().
+Then, we combined several variables with two reference variables automatically via subtraction or division, 
+by utilizing ReferenceFeatures() from Feature-engine. The ReferenceFeatures() 
+transformer takes the variables to be combined, the reference variables, and the functions to use to 
+combine them. When using fit(), the transformer did not learn about parameters but checked that 
+the variables were numerical. Executing transform() added the new features to the DataFrame.

@@ -1,0 +1,32 @@
+Chapter 6
+239
+   options: str
+   answer: str
+   steps: Annotated[int, add]
+   response: Response
+def _should_end(state: ReflectionAgentState, config: RunnableConfig) ->
+Literal["research", END]:
+   max_reasoning_steps = config["configurable"].get("max_reasoning_steps",
+10)
+   if state.get("response") and state["response"].answer:
+       return END
+   if state.get("steps", 1) > max_reasoning_steps:
+       return END
+   return "research"
+reflection_chain = PromptTemplate.from_template(reflection_prompt) | llm.
+with_structured_output(Response)
+def _reflection_step(state):
+   result = reflection_chain.invoke(state)
+   return {"response": result, "steps": 1}
+def _research_start(state):
+ answer = research_agent.invoke(state)
+ return {"answer": answer["messages"][-1].content}
+def _research(state):
+ agent_state = {
+     "answer": state["answer"],
+     "question": state["question"],
+     "options": state["options"],
+     "feedback": state["response"].critique
+ }
+ answer = research_agent_with_critique.invoke(agent_state)
+ return {"answer": answer["messages"][-1].content}

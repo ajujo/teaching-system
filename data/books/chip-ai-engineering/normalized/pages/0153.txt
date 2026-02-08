@@ -1,0 +1,25 @@
+figura 2-17. Cómo se calculan los logits, las probabilidades y los logprobs.
+Como verá a lo largo del libro, los logprobs son útiles para construir
+aplicaciones (especialmente para clasificación), evaluar aplicaciones y
+entender cómo funcionan los modelos desde el interior. Sin embargo, en el
+momento de escribir esto, muchos proveedores de modelos no exponen los
+logprobs de sus modelos o, si lo hacen, la API de logprobs es limitada. 27
+La API de logprobs limitados seguramente se deba a cuestiones de
+seguridad, ya que los logprobs expuestos del modelo facilitan que otros
+repliquen el modelo.
+Top-k
+Top-k es una estrategia de muestreo para reducir la carga de trabajo
+computacional sin sacrificar demasiado la diversidad de respuesta del
+modelo. Recordemos que se utiliza una capa softmax para computar la
+distribución de probabilidad sobre todos los valores posibles. Softmax
+requiere dos pasadas sobre todos los valores posibles: una para realizar la
+suma exponencial ∑j e xj, y otra para realizar
+exi
+∑jexj para cada valor. Para un
+modelo lingüístico con un vocabulario amplio, este proceso es costoso
+desde el punto de vista informático.
+Para evitar este problema, después de que el modelo haya computado los
+logits, elegimos los logits top-k y realizamos softmax solo sobre estos logits
+top-k. Dependiendo de lo diversa que quiera que sea su aplicación, k puede
+ser cualquier valor de 50 a 500, mucho menor que el tamaño del
+vocabulario de un modelo. A continuación, el modelo toma muestras de

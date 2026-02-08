@@ -1,0 +1,31 @@
+peculiaridades y sesgos, que es preciso tener en cuenta para mantener una
+relación productiva con ellos.
+Los modelos fundacionales son útiles porque pueden seguir instrucciones.
+Sin embargo, esta capacidad también los expone a ataques de prompts en
+los que los actores maliciosos consiguen que los modelos sigan
+instrucciones maliciosas. En este capítulo se analizan diferentes enfoques
+de ataques y posibles defensas contra ellos. Como la seguridad es un juego
+del gato y el ratón en constante evolución, ninguna medida de seguridad
+será infalible. Los riesgos de seguridad seguirán siendo un obstáculo
+importante para adoptar la IA en entornos de alto riesgo. 22
+En este capítulo también vemos técnicas para escribir mejores instrucciones
+y conseguir que los modelos hagan lo que queremos. Sin embargo, para
+realizar una tarea, un modelo no solo necesita instrucciones, también
+requiere un contexto pertinente. En el próximo capítulo se explicará cómo
+dar la información pertinente a un modelo.
+1  En su corta existencia, la ingeniería de prompts ha logrado generar una
+increíble cantidad de animosidad. Las quejas sobre cómo la ingeniería de
+prompts no es algo real han reunido miles de comentarios de apoyo; véase 1, 2,
+3, 4. Cuando le dije a la gente que mi próximo libro tenía un capítulo sobre
+ingeniería de prompts, muchos hicieron gesto de fastidio.
+2  A finales de 2023, Stanford eliminó la robustez de su prueba comparativa
+HELM Lite.
+3  Normalmente, las desviaciones de la plantilla de chat esperada hacen que el
+rendimiento del modelo se degrade. Sin embargo, aunque poco común, puede
+hacer que el modelo funcione mejor, como se muestra en una discusión de
+Reddit.
+4  Si pasa suficiente tiempo en GitHub y Reddit, encontrará muchos problemas de
+desajuste de plantillas de chat, como este. Una vez me pasé un día depurando un
+problema de afinado solo para darme cuenta al final de que se debía a que una
+biblioteca que utilizaba no actualizaba la plantilla de chat a la nueva versión del
+modelo.

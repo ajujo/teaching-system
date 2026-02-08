@@ -1,0 +1,27 @@
+RAG Inference Pipeline
+330
+Here, we instantiate the prompt using the SelfQueryTemplate factory class and create a ChatOpenAI
+model instance (similar to the query expansion implementation). We then combine the prompt
+and the model into a chain and invoke it with the user's query.
+        chain = prompt | model
+        response = chain.invoke({"question": query})
+        user_full_name = response.content.strip("\n ")
+We extract the content from the LLM response and strip any leading or trailing whitespace to
+obtain the user_full_name value. Next, we check if the model was able to extract any user information.
+        if user_full_name == "none":
+            return query
+If the response is "none", it means no user name was found in the query, so we return the original query object. If a user name is found, we will split the user_full_name into the first_name
+and last_name variables using a utility function. Then, based on the user's details, we retrieve
+or create a UserDocument user instance:
+        first_name, last_name = utils.split_user_full_name(user_full_name)
+        user = UserDocument.get_or_create(first_name=first_name, last_
+name=last_name)
+Finally, we update the query object with the extracted author information and return it:
+        query.author_id = user.id
+        query.author_full_name = user.full_name
+        return query
+The updated query now contains the author_id and author_full_name values, which can be
+used in subsequent steps of the RAG pipeline.
+Let's look at the SelfQueryTemplate class, which defines the prompt to extract user information:
+from langchain.prompts import PromptTemplate
+from .base import PromptTemplateFactory

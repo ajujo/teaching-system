@@ -1,0 +1,34 @@
+Chapter 4
+143
+•
+LLM-based custom rerankers: Using any LLM to score document relevance:
+# Simplified example - LangChain provides more streamlined
+implementations
+relevance_score_chain = ChatPromptTemplate.from_template(
+    "Rate relevance of document to query on scale of 1-10:
+{document}"
+) | llm | StrOutputParser()
+Please note that while Hybrid retrieval focuses on how documents are retrieved, re-ranking fo­
+cuses on how they're ordered after retrieval. These approaches can, and often should, be used
+together in a pipeline. When evaluating re-rankers, use position-aware metrics like Recall@k,
+which measures how effectively the re-ranker surfaces all relevant documents in the top positions.
+Cross-encoder re-ranking typically improves these metrics by 10-20% over initial retrieval, es­
+pecially for the top positions.
+Query transformation: Improving retrieval through better queries
+Even the best retrieval system can struggle with poorly formulated queries. Query transformation
+techniques address this challenge by enhancing or reformulating the original query to improve
+retrieval results.
+Query expansion generates multiple variations of the original query to capture different aspects
+or phrasings. This helps bridge the vocabulary gap between users and documents:
+from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+expansion_template = """Given the user question: {question}
+Generate three alternative versions that express the same information need but with different
+wording:
+1."""
+expansion_prompt = PromptTemplate(
+    input_variables=["question"],
+    template=expansion_template
+)
+llm = ChatOpenAI(temperature=0.7)
+expansion_chain = expansion_prompt | llm | StrOutputParser()

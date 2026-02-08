@@ -1,0 +1,32 @@
+Chapter 8
+317
+Financial services applications demonstrate task performance evaluation in practice, though we
+should view industry-reported metrics with appropriate skepticism. While many institutions
+claim high accuracy rates for document analysis systems, independent academic assessments
+have documented significantly lower performance in realistic conditions. A particularly import­
+ant dimension in regulated industries is an agent's ability to correctly identify instances where it
+lacks sufficient information-a critical safety feature that requires specific evaluation protocols
+beyond simple accuracy measurement.
+Tool usage evaluation
+Tool usage capability-an agent's ability to select, configure, and leverage external systemshas emerged as a crucial evaluation dimension that distinguishes advanced agents from simple
+question-answering systems. Effective tool usage evaluation encompasses multiple aspects:
+the agent's ability to select the appropriate tool for a given subtask, provide correct parameters,
+interpret tool outputs correctly, and integrate these outputs into a coherent solution strategy.
+The T-Eval framework, developed by Liu and colleagues (2023), decomposes tool usage into dis­
+tinct measurable capabilities: planning the sequence of tool calls, reasoning about the next steps,
+retrieving the correct tool from available options, understanding tool documentation, correctly
+formatting API calls, and reviewing responses to determine if goals were met. This granular
+approach allows organizations to identify specific weaknesses in their agent's tool-handling
+capabilities rather than simply observing overall failures.
+Recent benchmarks like ToolBench and ToolSandbox demonstrate that even state-of-the-art
+agents struggle with tool usage in dynamic environments. In production systems, evaluation in­
+creasingly focuses on efficiency metrics alongside basic correctness-measuring whether agents
+avoid redundant tool calls, minimize unnecessary API usage, and select the most direct path to
+solve user problems. While industry implementations often claim significant efficiency improve­
+ments, peer-reviewed research suggests more modest gains, with optimized tool selection typically
+reducing computation costs by 15-20% in controlled studies while maintaining outcome quality.
+RAG evaluation
+RAG system evaluation represents a specialized but crucial area of agent assessment, focusing on
+how effectively agents retrieve and incorporate external knowledge. Four key dimensions form
+the foundation of comprehensive RAG evaluation: retrieval quality, contextual relevance, faithful
+generation, and information synthesis.

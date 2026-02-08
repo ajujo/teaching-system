@@ -1,0 +1,50 @@
+production agent coordination. Assume Temporal is set up (e.g., via pip install
+temporalio), with activities defined for each specialist (wrapping their foundation
+model/tool logic). Here’s a simplified workflow definition:
+from datetime import timedelta
+from temporalio import workflow
+from temporalio.common import RetryPolicy
+# Assume activities are defined elsewhere, e.g., inventory_activity, 
+# transportation_activity, supplier_activity
+# Each takes operation dict and messages, returns result
+@workflow.defn
+class SupplyChainWorkflow:
+    @workflow.run
+    async def run(self, operation: dict, initial_messages: list) -> dict:
+        # Step 1: Inventory management with retry
+        inventory_result = await workflow.execute_activity(
+            "inventory_activity",
+            {"operation": operation, "messages": initial_messages},
+            start_to_close_timeout=timedelta(seconds=30),
+            retry_policy=RetryPolicy(maximum_attempts=3)
+        )
+        
+        # Update state and proceed to transportation
+        updated_messages = initial_messages + inventory_result["messages"]
+        transportation_result = await workflow.execute_activity(
+            "transportation_activity",
+            {"operation": operation, "messages": updated_messages},
+            start_to_close_timeout=timedelta(seconds=30),
+            retry_policy=RetryPolicy(maximum_attempts=3)
+        )
+        
+        # Final step: Supplier compliance
+        final_messages = updated_messages + transportation_result["messages"]
+        supplier_result = await workflow.execute_activity(
+            "supplier_activity",
+            {"operation": operation, "messages": final_messages},
+            start_to_close_timeout=timedelta(seconds=30),
+            retry_policy=RetryPolicy(maximum_attempts=3)
+        )
+        
+        # Compile and return results
+        return {
+            "inventory": inventory_result,
+            "transportation": transportation_result,
+            "supplier": supplier_result
+        }
+This workflow durably sequences the agents. Each activity (agent step) runs with
+retries, and Temporal persists progress—e.g., if transportation fails, it retries without
+200 
+| 
+Chapter 8: From One Agent to Many

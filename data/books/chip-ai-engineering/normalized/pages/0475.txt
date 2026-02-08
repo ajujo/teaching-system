@@ -1,0 +1,33 @@
+Razones para no hacer un afinado
+Aunque el afinado puede mejorar un modelo de muchas maneras, muchas
+de estas mejoras también pueden lograrse, hasta cierto punto, sin afinarlo.
+Afinarlo puede mejorar el rendimiento de un modelo, pero también los
+prompts y el contexto cuidadosamente elaborados pueden lograrlo. El
+afinado puede ayudar con los outputs estructuradas, pero muchas otras
+técnicas, como se explica en el Capítulo 2, también pueden hacerlo.
+En primer lugar, aunque afinar un modelo para una tarea específica puede
+mejorar su rendimiento para esa tarea, también puede degradar su
+rendimiento para otras tareas. 1 Esto puede resultar frustrante cuando se
+destina este modelo a una aplicación que espera diversos prompts.
+Imagine que necesita un modelo para tres tipos de consultas:
+recomendaciones de productos, modificación de pedidos y comentarios
+generales. Al principio, el modelo funciona bien para las recomendaciones
+de productos y los comentarios generales, pero mal para los cambios de
+pedidos. Para solucionarlo, se ajusta el modelo con un conjunto de datos de
+pares (consulta, respuesta) sobre los cambios en los pedidos. Es posible que
+el modelo afinado funcione mejor para este tipo de consulta, pero peor para
+las otras dos tareas.
+¿Qué hacer en esta situación? Puede afinar el modelo con todas las
+consultas que le interesen, no solo en el cambio de órdenes. Si no consigue
+que un modelo funcione bien en todas sus tareas, considere la posibilidad de
+utilizar modelos distintos para tareas diferentes. Si desea combinar estos
+modelos separados en uno solo para facilitar el servicio, también puede
+considerar la posibilidad de fusionarlos, como se explica más adelante en
+este capítulo.
+Si acaba de empezar a experimentar con un proyecto, usualmente el afinado
+no es lo primero que debe intentar. El afinado requiere grandes inversiones
+iniciales y un mantenimiento continuo. En primer lugar, necesita datos. Los
+datos anotados pueden ser lentos y costosos de obtener manualmente, sobre
+todo para tareas que exigen pensamiento crítico y conocimientos
+especializados. Los datos de código abierto y los generados por IA pueden
+mitigar el costo, pero su eficacia es muy variable.

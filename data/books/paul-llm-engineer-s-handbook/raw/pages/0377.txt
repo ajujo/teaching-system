@@ -1,0 +1,35 @@
+RAG Inference Pipeline
+346
+com/decodingml/the-4-advanced-rag-algorithms-you-must-know-to-implement-
+5d0c7f1199d2'
+As you can observe in the output above, along with the retrieved content, we have access to all 
+kinds of metadata, such as the embedding model used for retrieval or the link from which the 
+chunk was taken. These can quickly be added to a list of references when generating the result 
+for the user, increasing trust in the final results.
+Now that we understand how the retrieval module works, let’s take a final step and examine the 
+end-to-end RAG inference pipeline.
+Bringing everything together into the RAG inference 
+pipeline
+To fully implement the RAG flow, we still have to build the prompt using the context from the 
+retrieval model and call the LLM to generate the answer. This section will discuss these two steps 
+and wrap everything together into a single rag() function. The functions from this section can 
+be accessed on GitHub at https://github.com/PacktPublishing/LLM-Engineers-Handbook/
+blob/main/llm_engineering/infrastructure/inference_pipeline_api.py.
+Let’s start by looking at the call_llm_service()function, responsible for interfacing with the 
+LLM service. It takes in a user’s query and an optional context, sets up the language model end-
+point, executes the inference, and returns the generated answer. The context is optional; you can 
+call the LLM without it, as you would when interacting with any other LLM:
+def call_llm_service(query: str, context: str | None) -> str:
+    llm = LLMInferenceSagemakerEndpoint(
+        endpoint_name=settings.SAGEMAKER_ENDPOINT_INFERENCE, inference_
+component_name=None
+    )
+    answer = InferenceExecutor(llm, query, context).execute()
+    return answer
+This function makes an HTTP request to our fine-tuned LLM Twin model, which is hosted as 
+an AWS SageMaker inference endpoint. We will explore all the SageMaker details in the next 
+chapter, where we will dig into the LLMInferenceSagemakerEndpoint and InferenceExecutor 
+classes. For now, what is essential to know is that we use this function to call our fine-tuned LLM. 
+Still, we must highlight how the query and context, passed to the InferenceExecutor class, are 
+transformed into the final prompt. We do that using a simple prompt template that is customized 
+using the user query and retrieved context:

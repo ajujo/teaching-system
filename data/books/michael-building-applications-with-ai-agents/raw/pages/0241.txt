@@ -1,0 +1,42 @@
+on outdated, incomplete, or poorly vetted data are more prone to generating errone‐
+ous information. Testing processes must ensure that the agent consistently draws
+from accurate, relevant, and up-to-date sources. For example, an AI summarizing
+news articles should rely on credible, well-regarded publications and avoid unverified
+sources.
+Feedback mechanisms are essential for detecting and addressing hallucination. These
+systems monitor the agent’s outputs, flagging inaccuracies for review and correction.
+Human-in-the-loop feedback loops can be particularly effective, enabling domain
+experts to refine the system’s responses over time. In dynamic applications, automa‐
+ted feedback mechanisms can identify discrepancies between the agent’s predictions
+and actual outcomes, triggering updates to models or data sources to improve
+reliability.
+Mitigations for hallucinations have evolved to emphasize hybrid human-AI feedback
+loops, where domain experts collaborate with AI systems in real-time oversight—
+such as in crisis self-rescue scenarios—to refine outputs, reduce cognitive load on
+users, and correct fabrications before they propagate. This approach integrates auto‐
+mated detection with human judgment, enhancing reliability in high-stakes applica‐
+tions like healthcare or legal advice. Additionally, cost-aware evaluations are gaining
+traction, focusing on balancing hallucination reduction with inference expenses; for
+instance, frameworks now quantify “hallucination cost” through metrics that weigh
+accuracy improvements against computational overhead, enabling more efficient
+deployments without sacrificing performance.
+By prioritizing content accuracy, enforcing data dependence, leveraging feedback
+mechanisms, and rigorously testing for diverse scenarios, developers can minimize
+the risk of hallucination and build agents that deliver reliable, grounded, and trust‐
+worthy outputs. This disciplined approach ensures that the system operates as a relia‐
+ble partner in its intended domain, meeting user expectations and adhering to high 
+standards of accuracy and integrity.
+Handling Unexpected Inputs
+Real-world environments are unpredictable, and agents must be robust in the face of
+unanticipated, malformed, or even malicious inputs. Integration tests in this area
+intentionally supply inputs that fall outside the training or design assumptions—such
+as unexpected data formats, slang or typos in user language, or partial failures of
+external services. The goal is to ensure that the agent neither crashes nor produces
+harmful outputs, but instead responds gracefully: by clarifying, declining, or escalat‐
+ing as appropriate.
+In the context of our ecommerce agent, unexpected inputs could include malformed
+order IDs (e.g., a typo in “A89268” during a cracked mug refund) or ambiguous
+requests blending intents (as in cancel_4_refund, where a cancellation is requested
+Holistic Evaluation 
+| 
+219

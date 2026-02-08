@@ -1,0 +1,32 @@
+La atención de ventana local puede intercalarse con la atención global; la
+atención local capta el contexto cercano, mientras que la atención global
+capta la información específica de la tarea en todo el documento.
+Tanto la atención entre capas (Brandon et al., 2024) como la atención a
+múltiples consultas (Shazeer, 2019) reducen la huella de memoria de la
+caché KV al reducir el número de duplas clave-valor. La atención entre
+capas comparte vectores clave y de valor entre capas adyacentes. Tener tres
+capas que comparten los mismos vectores clave-valor significa reducir tres
+veces la caché KV. Por otro lado, la atención a múltiples consultas comparte
+vectores de clave-valor entre cabezales de consulta.
+La atención a consultas agrupadas (Ainslie et al., 2023) es una
+generalización de la atención a múltiples consultas. En lugar de utilizar un
+único conjunto de duplas clave-valor para todas los cabezales de consulta,
+su atención a las consultas agrupadas coloca los cabezales de consulta en
+grupos más pequeños y comparte las duplas clave-valor solo entre los
+cabezales de consulta del mismo grupo. Esto permite un equilibrio más
+flexible entre el número de cabezales de consulta y el número de duplas
+clave-valor.
+Character.AI, una aplicación de chatbot de IA, comparte que su
+conversación promedio tiene un historial de diálogo de 180 mensajes
+(2024). Dadas las secuencias típicamente largas, el principal cuello de
+botella para el throughput de la inferencia es el tamaño de la caché KV. Tres
+diseños de mecanismos de atención (atención a múltiples consultas,
+intercalación de atención local y atención global, y atención entre capas) les
+ayudan a reducir la caché de KV más de 20 veces. Y lo que es más
+importante, esta considerable reducción de la caché de KV significa que la
+memoria ya no es un cuello de botella a la hora de servir lotes de gran
+tamaño.
+Optimización del tamaño de la caché KV
+La forma en que se gestiona la caché KV es fundamental para mitigar el
+cuello de botella de la memoria durante la inferencia y permitir un tamaño
+de lote mayor, especialmente para aplicaciones con contexto largo. Se están

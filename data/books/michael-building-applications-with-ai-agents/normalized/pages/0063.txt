@@ -1,0 +1,48 @@
+CHAPTER 3
+User Experience Design for Agentic Systems
+As agent systems become an integral part of our digital environments-whether
+through chatbots, virtual assistants, or fully autonomous workflows-the user experi‐
+ence (UX) they deliver plays a pivotal role in their success. While foundation models
+and agent architectures enable remarkable technical capabilities, how users interact
+with these agents ultimately determines their effectiveness, trustworthiness, and
+adoption. A well-designed agent experience not only empowers users but also builds
+confidence, minimizes frustration, and ensures clarity in agent capabilities and limi‐
+tations. The field of agent UX is evolving at an unprecedented pace. New interface
+paradigms, modality combinations, and user interaction models are emerging almost
+monthly. This chapter provides foundational design principles that remain relevant
+even as the specific technologies and capabilities continue to advance rapidly. Design‐
+ing UX for agent systems introduces unique challenges and opportunities. Agents can
+interact through a variety of modalities, including text, graphical interfaces, speech,
+and even video.
+Table 3-1. Placeholder
+Modality
+Prevalence
+Example use cases
+Ideal situations
+Text
+Very common
+Customer service chatbots, productivity
+assistants
+When clear, asynchronous, or searchable
+communication is needed
+Graphical user
+interfaces
+(GUI)
+Common
+Workflow orchestration dashboards, AI
+coding assistants like Cursor
+When visual structure, context management, or
+multistep workflows are important
+Speech/voice
+Less common
+Siri, smart home assistants (Alexa,
+Google Home), call center automation
+When hands-free interaction or natural
+conversation is required
+Video
+Rare
+Virtual tutors, therapy avatars,
+interactive learning agents
+When visual demonstration, rich expression, or
+immersive learning is needed
+41

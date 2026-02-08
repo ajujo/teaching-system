@@ -1,0 +1,16 @@
+Creating binary variables through one-hot encoding
+49
+Figure 2.3 – Arrays with the categories that will be encoded into binary variables (one array per variable)
+Note
+scikit-learn’s OneHotEncoder() will only encode the categories learned from the 
+train set. If there are new categories in the test set, we can instruct the encoder to ignore them, 
+return an error, or replace them with an infrequent category, by setting the handle_unknown 
+parameter to ignore, error, or infrequent_if_exists.
+14.	 Let’s encode the categorical variables:
+X_train_enc = ct.transform(X_train)
+X_test_enc = ct.transform(X_test)
+Make sure to inspect the result by executing X_test_enc.head().
+15.	 To get familiar with the output, let’s print the variable names of the resulting DataFrame:
+ct.get_feature_names_out()
+In the following image, we see the names of the variables in the transformed DataFrame:
+Figure 2.4 – Arrays with the names of the variables in the resulting DataFrame

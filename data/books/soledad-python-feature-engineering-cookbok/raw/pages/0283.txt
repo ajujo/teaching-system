@@ -1,0 +1,14 @@
+Creating New Features
+260
+Getting ready
+Let’s get a sense of what splines are. In the following figure, on the left, we can see a spline with a degree of 
+1. It consists of two linear pieces – one from 2.5 to 5 and the other from 5 to 7.5. There are three knots – 2.5, 
+5, and 7.5. Outside the interval between 2.5 and 7.5, the spline takes a value of 0. The latter is characteristic 
+of splines; they are only non-negative between certain values. On the right panel of the figure, we can see 
+three splines of degree 1. We can construct as many splines as we want by introducing more knots:
+Figure 8.18 – The splines with a degree of 1
+In the following figure, on the left, we can see a quadratic spline, also known as a spline with a degree 
+of 2. It is based on four adjacent knots – 0, 2.5, 5, and 7.5. On the right-hand side of the figure, we 
+can see several splines of degree 2:
+Figure 8.19 – The splines with a degree of 2
+We can use splines to model non-linear functions, and we will learn how to do this in the next section.

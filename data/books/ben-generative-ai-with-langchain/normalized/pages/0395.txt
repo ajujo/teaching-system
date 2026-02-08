@@ -1,0 +1,15 @@
+Production-Ready LLM Deployment and Observability
+368
+Starting the server, you should see something like this-indicating the server is running:
+Figure 9.2: Ray Server
+Ray Serve makes it easy to deploy complex ML pipelines to production, allowing you to focus
+on building your application rather than managing infrastructure. It seamlessly integrates with
+FastAPI, making it compatible with the broader Python web ecosystem.
+This implementation demonstrates best practices for building scalable, maintainable NLP applica­
+tions with Ray and LangChain, with a focus on robust error handling and separation of concerns.
+Ray's dashboard, accessible at http://localhost:8265, looks like this:
+Figure 9.3: Ray dashboard
+This dashboard is very powerful as it can give you a whole bunch of metrics and other information.
+Collecting metrics is easy, since all you must do is set up and update variables of the type Counter,
+Gauge, Histogram, and others within the deployment object or actor. For time-series charts, you
+should have either Prometheus or the Grafana server installed.

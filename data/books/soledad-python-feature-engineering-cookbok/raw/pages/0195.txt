@@ -1,0 +1,38 @@
+Working with Outliers
+172
+5.	
+Let’s make a copy of the original datasets:
+train_t = X_train.copy()
+test_t = X_test.copy()
+6.	
+Now, replace outliers with the lower or upper limits from step 4 in the new DataFrames:
+train_t[var] = train_t[var].clip(
+    lower=lower_limit, upper=upper_limit)
+test_t[var] = test_t[var].clip(
+    lower=lower_limit, upper=upper_limit)
+To corroborate that the outliers were replaced with the values determined in step 4, execute 
+train_t["worst smoothness"].agg(["min", "max"]) to obtain the new 
+maximum and minimum values. They should coincide with the minimum and maximum 
+values of the variable, or the limits returned in step 4.
+We can replace outliers in multiple variables simultaneously by utilizing feature-engine.
+7.	
+Let’s set up a transformer to replace outliers in two variables, using limits determined with the 
+mean and standard deviation:
+capper = Winsorizer(
+    variables=[«worst smoothness», «worst texture»],
+    capping_method="gaussian",
+    tail="both",
+    fold=3,
+)
+Note
+Winsorizer can identify boundaries using the mean and standard deviation, as we show in 
+this recipe, as well as the IQR proximity rule and MAD. You need to change capping_method 
+to iqr or mad, respectively.
+8.	
+Let’s fit the transformer to the data so that it learns those limits:
+capper.fit(X_train)
+By executing capper.left_tail_caps_, we can visualize the lower limits for the two 
+variables: {'worst smoothness': 0.06364743973736293, 'worst texture': 
+7.115307053129349}. By executing capper.right_tail_caps_, we can see the 
+variables’ upper limits: {'worst smoothness': 0.20149734880520967, 'worst 
+texture': 43.97692158753917}.

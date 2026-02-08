@@ -1,0 +1,71 @@
+Alert fatigue
+Continuous or low-priority alerts can lead human operators to overlook critical
+warnings, reducing their effectiveness in preventing errors.
+Skill decay
+As agents handle more routine tasks, human skills required for effective over‐
+sight may deteriorate, making it challenging to intervene effectively in critical
+situations.
+Misaligned incentives
+Differences between human and agent goals, such as efficiency versus safety, can
+create conflicts that complicate real-time oversight and decision making.
+To mitigate these vulnerabilities, systems should include clear escalation paths, adap‐
+tive alerting mechanisms, and ongoing training for human operators to maintain
+proficiency and readiness. As part of this ongoing training, interactive platforms can
+provide hands-on experience in recognizing and countering AI vulnerabilities, such
+as jailbreaking and prompt injections, which directly tie to risks like goal misalign‐
+ment and probabilistic reasoning. These tools simulate adversarial scenarios to build
+practical skills in red teaming and defense strategies. Examples are given in
+Table 12-1.
+Table 12-1. Red team tools
+Tool
+Description
+Purpose
+Platform
+Gandalf by
+Lakera
+An educational game where players craft
+strategic prompts to bypass evolving AI
+defenses and extract secrets, progressing
+through levels that teach concepts like input/
+output filtering and multilayered safeguards
+To raise awareness of foundation
+model vulnerabilities, allow for
+practice of jailbreaking techniques,
+and advance red teaming skills for
+securing agentic systems
+https://www.lakera.ai/la
+kera-gandalf
+Red by
+Giskard
+An interactive game with progressively harder
+levels focused on breaking foundation models
+using short, creative prompts, such as
+exploiting biases or toxicity, with community
+resources like Discord for sharing hacks
+To provide hands-on learning in
+targeted adversarial testing and
+social engineering risks, enhancing
+oversight proficiency
+https://red.giskard.ai
+Prompt
+Airlines CTF
+by Wiz.io
+A capture-the-flag style challenge where users
+jailbreak an airline customer service chatbot
+via prompt injections to extract hidden
+information, like free tickets, with postchallenge revelations of guardrail instructions
+for mitigation
+To illustrate human-agent
+interface exploits and context
+manipulation attacks, training
+operators on real-world prompt
+injection defenses
+https://promptairlin
+es.com
+Emerging Threat Vectors
+As agent systems gain complexity and become integral to critical infrastructures, they
+attract sophisticated threats specifically designed to exploit their unique architectures
+and reliance on foundation models. Adversarial attacks are especially common.
+Emerging Threat Vectors
+|
+273

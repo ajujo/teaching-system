@@ -1,0 +1,30 @@
+ambiguas que pueden inducir a error. Si no sabe cómo serían las respuestas
+inadecuadas, no podrá detectarlas.
+Al crear la pauta de evaluación, es importante definir no solo lo que debe
+hacer la aplicación, sino también lo que no debe hacer. Por ejemplo, si
+construye un chatbot de atención al cliente, ¿debería responder a preguntas
+no relacionadas con su producto, como sobre unas próximas elecciones? Si
+no es así, debe definir qué inputs están fuera del alcance de su aplicación,
+cómo detectarlos y cómo ésta debe responder a ellos.
+Definir los criterios de evaluación
+A menudo, lo más difícil de la evaluación no es determinar si un output es
+bueno, sino qué significa "bueno". Tras un año de implementar aplicaciones
+de IA generativa, LinkedIn compartió que el primer obstáculo fue la
+creación de una directriz de evaluación. Una respuesta correcta no siempre
+es una buena respuesta. Por ejemplo, para su aplicación de evaluación de
+puestos de trabajo basada en IA, la respuesta "Eres un candidato horrible"
+podría ser correcta pero no útil, lo que la convertiría en una mala respuesta.
+Una buena respuesta debe explicar la diferencia entre los requisitos de este
+puesto y la formación del candidato, y qué puede hacer el candidato para
+salvar esta diferencia.
+Antes de elaborar su solicitud, piense en lo que constituye una buena
+respuesta. Lang-Chain's State of AI 2023 descubrió que, en promedio, sus
+usuarios utilizaban 2.3 tipos diferentes de comentarios (criterios) para
+evaluar una aplicación. Por ejemplo, para una aplicación de atención al
+cliente, una buena respuesta podría definirse utilizando tres criterios:
+1. Pertinencia: la respuesta es pertinente para la consulta del usuario.
+2. Coherencia factual: la respuesta es factualmente coherente con el
+contexto.
+3. Seguridad: la respuesta no es tóxica.
+Para llegar a estos criterios, puede que tenga que jugar con consultas de
+prueba, idealmente consultas de usuarios reales. Para cada una de estas

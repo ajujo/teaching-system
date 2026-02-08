@@ -1,0 +1,172 @@
+Building Intelligent RAG Systems
+158
+Choosing the right techniques
+When implementing advanced RAG techniques, consider the specific requirements and constraints
+of your application. To guide your decision-making process, the following table provides a com­
+prehensive comparison of RAG approaches discussed throughout this chapter:
+RAG Ap­
+proach
+Chapter
+Section
+Core Mech­
+anism
+Key Strengths
+Key Weaknesses
+Primary Use
+Cases
+Relative
+Com­
+plexity
+Naive
+RAG
+Breaking
+down the
+RAG pipe­
+line
+Basic index
+ retrieve
+ generate
+workflow
+with single
+retrieval
+step
+•	 Simple imple­
+mentation
+•	 Low initial
+resource usage
+•	 Straightfor­
+ward debug­
+ging
+•	 Limited retrieval
+quality
+•	 Vulnerability to
+hallucinations
+•	 No handling of
+retrieval failures
+•	 Simple Q&A
+systems
+•	 Basic docu­
+ment lookup
+•	 Prototyping
+Low
+Hybrid
+Retrieval
+Advanced
+RAG
+techniques
+- hybrid
+retrieval
+Combines
+sparse
+(BM25)
+and dense
+(vector)
+retrieval
+methods
+•	 Balances key­
+word precision
+with semantic
+understanding
+•	 Handles vocab­
+ulary mismatch
+•	 Improves recall
+without sacri­
+ficing precision
+•	 Increased system
+complexity
+•	 Challenge in
+optimizing fusion
+weights
+•	 Higher computa­
+tional overhead
+•	 Technical doc­
+umentation
+•	 Content with
+specialized
+terminology
+•	 Multi-domain
+knowledge
+bases
+Medium
+Re-rank­
+ing
+Advanced
+RAG
+techniques -
+re-ranking
+Post-pro­
+cesses
+initial
+retrieval
+results with
+more so­
+phisticated
+relevance
+models
+•	 Improves result
+ordering
+•	 Captures nu­
+anced relevance
+signals
+•	 Can be applied
+to any retrieval
+method
+•	 Additional com­
+putation layer
+•	 May create bot­
+tlenecks for large
+result sets
+•	 Requires training
+or configuring
+re-rankers
+•	 When retrieval
+quality is
+critical
+•	 For handling
+ambiguous
+queries
+•	 High-value
+information
+needs
+Medium
+Query
+Transfor­
+mation
+(HyDE)
+Advanced
+RAG
+techniques -
+query trans­
+formation
+Generates
+hypothet­
+ical docu­
+ment from
+query for
+improved
+retrieval
+•	 Bridges que­
+ry-document
+semantic gap
+•	 Improves re­
+trieval for com­
+plex queries
+•	 Handles implic­
+it information
+needs
+•	 Additional LLM
+generation step
+•	 Depends on
+hypothetical doc­
+ument quality
+•	 Potential for
+query drift
+•	 Complex or
+ambiguous
+queries
+•	 Users with
+unclear infor­
+mation needs
+•	 Domain-spe­
+cific search
+Medium

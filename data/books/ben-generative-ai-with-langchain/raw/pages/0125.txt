@@ -1,0 +1,40 @@
+Building Workflows with LangGraph
+98
+There are five ways to trim the chat history:
+•	
+Discard messages based on length (like tokens or messages count): You keep only the 
+most recent messages so their total length is shorter than a threshold. The special Lang­
+Chain function from langchain_core.messages import trim_messages allows you to 
+trim a sequence of messages. You can provide a function or an LLM instance as a token_
+counter argument to this function (and a corresponding LLM integration should support 
+a get_token_ids method; otherwise, a default tokenizer might be used and results might 
+differ from token counts for this specific LLM provider). This function also allows you to 
+customize how to trim the messages – for example, whether to keep a system message and 
+whether a human message should always come first since many model providers require 
+that a chat always starts with a human message (or with a system message). In that case, 
+you should trim the original sequence of human, ai, human, ai to a human, ai one and 
+not ai, human, ai even if all three messages do fit within the context window threshold.
+•	
+Summarize the previous conversation: On each turn, you can summarize the previous 
+conversation to a single message that you prepend to the next user’s input. LangChain 
+offered some building blocks for a running memory implementation but, as of March 2025, 
+the recommended way is to build your own summarization node with LangGraph.You can 
+find a detailed guide in the LangChain documentation section: https://langchain-ai.
+github.io/langgraph/how-tos/memory/add-summary-conversation-history/).
+When implementing summarization or trimming, think about whether you should keep 
+both histories in your database for further debugging, analytics, etc. You might want to 
+keep the short-memory history of the latest summary and the message after that summary 
+for the application itself, and you probably want to keep track of the whole history (all 
+raw messages and all the summaries) for further analysis. If yes, design your application 
+carefully. For example, you probably don’t need to load all the raw history and summary 
+messages; it’s enough to dump new messages into the database keeping track of the raw 
+history.
+•	
+Combine both trimming and summarization: Instead of simply discarding old mes­
+sages that make the context window too long, you could summarize these messages and 
+prepend the remaining history.
+•	
+Summarize long messages into a short one: You could also summarize long messages. 
+This might be especially relevant for RAG use cases, which we’re going to discuss in the 
+next chapter, when your input to the model might include a lot of additional context 
+added on top of the actual user’s input.

@@ -1,0 +1,40 @@
+Production-Ready LLM Deployment and Observability
+378
+To streamline the deployment of your LangGraph apps, you can choose between automated CI/
+CD or a simple manual flow. For automated CI/CD (GitHub Actions):
+•
+Add a workflow that runs your test suite against the LangGraph code.
+•
+Build and validate the application.
+•
+On success, trigger deployment to the LangGraph platform.
+For manual deployment, on the other hand:
+•
+Push your code to a GitHub repo.
+•
+In LangSmith, open LangGraph Platform | New Deployment.
+•
+Select your repo, set any required environment variables, and hit Submit.
+•
+Once deployed, grab the auto-generated URL and monitor performance in LangGraph
+Studio.
+LangGraph Cloud then transparently handles horizontal scaling (with separate dev/prod tiers),
+durable state persistence, and built-in observability via LangGraph Studio. For full reference
+and advanced configuration options, see the official LangGraph docs: https://langchain-ai.
+github.io/langgraph/.
+LangGraph Studio enhances development and production workflows through its comprehensive
+visualization and debugging tools. Developers can observe application flows in real time with in­
+teractive graph visualization, while trace inspection functionality allows for detailed examination
+of execution paths to quickly identify and resolve issues. The state visualization feature reveals how
+data transforms throughout graph execution, providing insights into the application's internal
+operations. Beyond debugging, LangGraph Studio enables teams to track critical performance
+metrics including latency measurements, token consumption, and associated costs, facilitating
+efficient resource management and optimization.
+When you deploy to the LangGraph cloud, a LangSmith tracing project is automatically created,
+enabling comprehensive monitoring of your application's performance in production.
+Serverless deployment options
+Serverless platforms provide a way to deploy LangChain applications without managing the
+underlying infrastructure:
+•
+AWS Lambda: For lightweight LangChain applications, though with limitations on ex­
+ecution time and memory

@@ -1,0 +1,58 @@
+overhead. By contrast, proprietary models like GPT-5, Claude, and Cohere offer pow‐
+erful capabilities via API and come with managed infrastructure, monitoring, and
+performance optimizations. These models are ideal for teams seeking rapid develop‐
+ment and deployment, though customization is often limited and costs can scale
+quickly with usage.
+The choice between using a pretrained general-purpose model or a custom-trained
+model depends on the specificity and stakes of the agent’s domain. Pretrained
+models—trained on broad internet-scale corpora—work well for general language
+tasks, rapid prototyping, and scenarios where domain precision is not critical. These
+models can often be lightly fine-tuned or adapted through prompting techniques to
+achieve strong performance with minimal effort. However, in specialized domains—
+such as medicine, law, or technical support—custom-trained models can provide sig‐
+nificant advantages. By training on curated, domain-specific datasets, developers can
+endow agents with deeper expertise and contextual understanding, leading to more
+accurate and trustworthy outputs.
+Cost and latency considerations often tip the scales in real-world deployments. Large
+models deliver high performance but are expensive to run and may introduce
+response delays. In cases where that is untenable, smaller models or compressed ver‐
+sions of larger models provide a better balance. Many developers adopt hybrid strate‐
+gies, where a powerful model handles the most complex queries and a lightweight
+model handles routine tasks. In some systems, dynamic model routing ensures that
+each request is evaluated and routed to the most appropriate model based on com‐
+plexity or urgency—enabling systems to optimize both cost and quality.
+The Center for Research on Foundation Models at Stanford University has released
+the Holistic Evaluation of Language Models, providing rigorous third-party perfor‐
+mance measurement across a wide range of models. In Table 2-1, a small selection of
+language models are shown along with their performance on the Massive Multitask
+Language Understanding (MMLU) benchmark, a commonly used general assessment
+of these models’ abilities. These measurements are not perfect, but they provide us
+with a common ruler with which to compare performance. In general, we see that
+larger models perform better, but inconsistently (some models perform better than
+their size would suggest). Significantly more computation resources are required to
+obtain high performance.
+Table 2-1. Selected open weight models by performance and size
+Model
+Maintainer
+MMLU Parameters
+(billion)
+VRAM (full precision
+model in GB)
+Sample hardware
+required
+Llama 3.1 Instruct
+Turbo
+Meta
+56.1
+8
+20
+RTX 3090
+Gemma 2
+Google
+72.1
+9
+22.5
+RTX 3090
+22 
+| 
+Chapter 2: Designing Agent Systems

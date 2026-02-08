@@ -1,0 +1,44 @@
+Chapter 1
+7
+Defining the LLM Twin MVP
+As a thought experiment, let's assume that instead of building this project for this book, we want
+to make a real product. In that case, what are our resources? Well, unfortunately, not many:
+•
+We are a team of three people with two ML engineers and one ML researcher
+•
+Our laptops
+•
+Personal funding for computing, such as training LLMs
+•
+Our enthusiasm
+As you can see, we don't have many resources. Even if this is just a thought experiment, it reflects
+the reality for most start-ups at the beginning of their journey. Thus, we must be very strategic
+in defining our LLM Twin MVP and what features we want to pick. Our goal is simple: we want
+to maximize the product's value relative to the effort and resources poured into it.
+To keep it simple, we will build the features that can do the following for the LLM Twin:
+•
+Collect data from your LinkedIn, Medium, Substack, and GitHub profiles
+•
+Fine-tune an open-source LLM using the collected data
+•
+Populate a vector database (DB) using our digital data for RAG
+•
+Create LinkedIn posts leveraging the following:
+•
+User prompts
+•
+RAG to reuse and reference old content
+•
+New posts, articles, or papers as additional knowledge to the LLM
+•
+Have a simple web interface to interact with the LLM Twin and be able to do the following:
+•
+Configure your social media links and trigger the collection step
+•
+Send prompts or links to external resources
+That will be the LLM Twin MVP. Even if it doesn't sound like much, remember that we must make
+this system cost effective, scalable, and modular.
+Even if we focus only on the core features of the LLM Twin defined in this section, we
+will build the product with the latest LLM research and best software engineering
+and MLOps practices in mind. We aim to show you how to engineer a cost-effective
+and scalable LLM application.

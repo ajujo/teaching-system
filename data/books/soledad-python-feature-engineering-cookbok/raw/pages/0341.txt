@@ -1,0 +1,36 @@
+Creating Features from a Time Series with tsfresh
+318
+In step 5, we explored some of the resulting features, which captured the time series mean, variance, 
+and coefficient of variation, as well as their length. Let’s explore a few more of the resulting features.
+Some of the created variables are self-explanatory. For example, the 'light__skewness' and 
+'light__kurtosis' variables contain the skewness and kurtosis coefficients, which characterize the 
+data distribution. The 'light__has_duplicate_max', 'light__has_duplicate_min', 
+and 'light__has_duplicate' variables indicate whether the time series has duplicated values or 
+duplicated minimum or maximum values within the time interval. The 'light__quantile__q_0.1', 
+'light__quantile__q_0.2', and 'light__quantile__q_0.3' variables display the 
+different quantile values of the time series. Finally, the 'light__autocorrelation__lag_0', 
+'light__autocorrelation__lag_1', and 'light__autocorrelation__lag_2' 
+variables show the autocorrelation of the time series with its past values, lagged by 0, 1, or 2 steps – 
+information that is generally useful in forecasting.
+Other characterization methods return features obtained from signal processing algorithms, 
+such as the continuous wavelet transform for the Ricker wavelet, which returns the 'light__
+cwt_coefficients__coeff_0__w_2__widths_(2, 5, 10, 20)', 'light__
+cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20)', 'light__
+cwt_coefficients__coeff_0__w_10__widths_(2, 5, 10, 20)', and 
+'light__cwt_coefficients__coeff_0__w_20__widths_(2, 5, 10, 20)' 
+features, among others.
+Note
+We can’t discuss each of these feature characterization methods or their outputs in detail in 
+this book because there are too many. You can find more details about the transformations 
+supported by tsfresh and their formulation at https://tsfresh.readthedocs.
+io/en/latest/api/tsfresh.feature_extraction.html.
+Some of the features that are automatically created by tsfresh may not make sense or even be 
+possible to calculate for some time series because they require a certain length or data variability, or 
+the time series must meet certain distribution assumptions. Therefore, the suitability of the features 
+will depend on the nature of the time series.
+Note
+You can decide which features to extract from your time series based on domain knowledge, or 
+by creating all possible features and then applying feature selection algorithms or following up 
+with data analysis. In fact, from our dataset, many of the resulting features were either constant 
+or contained only missing data. Hence, we can reduce the feature space to informative features 
+by taking those features out of the data.

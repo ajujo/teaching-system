@@ -1,0 +1,51 @@
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Failed to trigger Zapier webhook '{zap_id}': {e}")
+@tool
+def send_slack_message(channel: str, message: str) -> str:
+    api_url = "https://slack.com/api/chat.postMessage"
+    headers = {
+        "Authorization": f"Bearer {SLACK_BOT_TOKEN}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "channel": channel,
+        "text": message
+    }
+    try:
+        response = requests.post(api_url, headers=headers, json=payload)
+        response_data = response.json()
+        if response.status_code == 200 and response_data.get("ok"):
+            return f"Message successfully sent to Slack channel '{channel}'."
+        else:
+            error_msg = response_data.get("error", "Unknown error")
+            raise ValueError(f"Slack API Error: {error_msg}")
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f'''Failed to send message to Slack channel 
+                        '{channel}': {e}''')
+# Assign tools to their respective groups
+tool_groups["Computation"]["tools"].append(query_wolfram_alpha)
+tool_groups["Automation"]["tools"].append(trigger_zapier_webhook)
+tool_groups["Communication"]["tools"].append(send_slack_message)
+# -------------------------------
+# LLM-Based Hierarchical Tool Selection
+# -------------------------------
+def select_group_llm(query: str) -> str:
+    """
+    Use the LLM to determine the most appropriate tool group based on the  
+    user's query.
+    
+    Args:
+        query (str): The user's input query.
+        
+    Returns:
+        str: The name of the selected group.
+    """
+    prompt = f'''Select the most appropriate tool group for the following query: 
+        '{query}'.\nOptions are: Computation, Automation, Communication.'''
+    response = llm([HumanMessage(content=prompt)])
+    return response.content.strip()
+def select_tool_llm(query: str, group_name: str) -> str:
+    """
+Tool Selection 
+| 
+103

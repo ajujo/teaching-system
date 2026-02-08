@@ -1,0 +1,38 @@
+Local Tools
+These tools are designed to run locally. They are often based on predefined rules and
+logic, tailored to specific tasks. These local tools can be easily built and modified, and
+are co-deployed with the agent. They can especially augment weaknesses in language
+models that traditional programming techniques perform better at, such as arith‐
+metic, time-zone conversions, calendar operations, or interactions with maps. These
+local tools offer precision, predictability, and simplicity. As the logic is explicitly
+defined, local tools tend to be predictable and reliable.
+The metadata-the tool's name, description, and schema-is just as critical as its
+logic. The model uses that metadata to decide which tool to invoke. Therefore, the
+following is important:
+• Choose precise, narrowly scoped names. If your name is too general, the LLM
+may call it when it's not needed.
+• Write clear, distinctive descriptions. Overly broad or overlapping descriptions
+across multiple tools guarantee confusion and poor performance.
+• Define strict input/output schemas. Explicit schemas help the foundation model
+understand exactly when and how to use the tool, reducing misfires.
+Despite these benefits, local tools have some important drawbacks:
+Scalability
+Designing, building, and deploying local tools can be cumbersome, timeconsuming, and challenging, and local tools are harder to share across use cases.
+While tools can be exposed as libraries and shared across multiple agent use
+cases, this can be challenging in practice and at scale.
+Duplication
+Every team or agent deployment that wants to use local tools will need to deploy
+the same library along with their agent service, and pushing changes to these
+tools will require coordinating deployments to each agent service that uses these
+tools. In practice, many teams simply reimplement the same tools independently
+to avoid the coordination overhead.
+Maintenance
+As the environment or requirements change, handcrafted tools may need fre‐
+quent updates and adjustments. This ongoing maintenance can be resourceintensive and typically requires a redeployment of your agent service.
+Despite these drawbacks, manually crafted tools are especially useful in addressing
+areas of traditional weakness for foundation models. Simple mathematical operations
+are a great example of this. Unit conversions, calculator operations, calendar changes,
+operations on dates and times, and operations over maps and graphs, for example,
+LangChain Fundamentals
+|
+73

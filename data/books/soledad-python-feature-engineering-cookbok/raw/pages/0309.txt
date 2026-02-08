@@ -1,0 +1,32 @@
+Extracting Features from Relational Data with Featuretools
+286
+9.	
+Let’s now display the names of the created features:
+feature_defs
+In the following output, we see the names of the features that we created, including the sine 
+and cosine of the price and quantity, and the cumulative transformations of these variables 
+after grouping them by invoice number:
+[<Feature: customer_id>,
+<Feature: invoice>,
+<Feature: stock_code>,
+<Feature: description>,
+<Feature: quantity>,
+<Feature: price>,
+<Feature: COSINE(price)>,
+<Feature: COSINE(quantity)>,
+<Feature: SINE(price)>,
+<Feature: SINE(quantity)>,
+<Feature: CUM_MAX(price) by invoice>,
+<Feature: CUM_MAX(quantity) by invoice>,
+<Feature: CUM_SUM(price) by invoice>,
+<Feature: CUM_SUM(quantity) by invoice>,
+<Feature: DIFF(price) by invoice>,
+<Feature: DIFF(quantity) by invoice>,
+<Feature: TIME_SINCE_PREVIOUS(invoice_date) by invoice>]
+Note
+The sine and cosine transformation of price and quantity will probably not add much value 
+because these are not cyclical features. I kept these transformations in the recipe to show you 
+how to apply transformation primitives in general, if you ever need them.
+As you can see from the previous list, the new features were appended as new columns to the 
+original DataFrame. You can display the final DataFrame by executing feature_matrix.
+head():

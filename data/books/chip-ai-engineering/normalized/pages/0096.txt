@@ -1,0 +1,32 @@
+ayuda a filtrar los enlaces que no interesan a nadie, Reddit no es
+precisamente el culmen de la corrección y el buen gusto.
+El planteamiento de "utilizar lo que tenemos, no lo que queremos" puede
+dar lugar a modelos que funcionen bien en tareas presentes en los datos de
+entrenamiento, pero no necesariamente en las tareas que a usted le
+interesan. Para resolver este problema, es fundamental recopilar conjuntos
+de datos que se ajusten a sus necesidades específicas. Esta sección se centra
+en la conservación de datos para idiomas y dominios específicos,
+proporcionando una base amplia pero especializada para aplicaciones
+dentro de estas áreas. El Capítulo 8 explora estrategias de datos para
+modelos adaptados a tareas muy específicas.
+Aunque los modelos fundacionales específicos de un idioma o un dominio
+pueden entrenarse desde cero, también es habitual perfeccionarlos a partir
+de modelos de uso general.
+Algunos se preguntarán: ¿por qué no entrenar a un modelo con todos los
+datos disponibles, tanto generales como especializados, para que pueda
+hacerlo todo? Esto es lo que hace mucha gente. Sin embargo, entrenar con
+más datos suele requerir más recursos computacionales y no siempre se
+traduce en un mejor rendimiento. Por ejemplo, un modelo entrenado con
+una cantidad menor de datos de alta calidad podría superar a un modelo
+entrenado con una gran cantidad de datos de baja calidad. Utilizando 7mil
+millones de tokens de datos de codificación de alta calidad, Gunasekar et al.
+(2023) fueron capaces de entrenar un modelo de 1.3 mil millones de
+parámetros que supera a modelos mucho mayores en varias pruebas de
+referencia de codificación importantes. El impacto de la calidad de los datos
+se analiza con más detalle en el Capítulo 8.
+Modelos multilingües
+El inglés domina Internet. Un análisis del conjunto de datos Common
+Crawl muestra que el inglés representa casi la mitad de los datos (45.88 %),
+lo que lo hace ocho veces más prevalente que el segundo idioma más
+común, el ruso (5.97 %) (Lai et al., 2023). Consulte la Tabla 2-1 para ver
+una lista de idiomas con al menos un 1 % en Common Crawl. Los idiomas

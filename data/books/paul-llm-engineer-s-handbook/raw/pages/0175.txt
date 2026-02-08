@@ -1,0 +1,35 @@
+RAG Feature Pipeline
+144
+    step_context.add_output_metadata(output_name="raw_documents", 
+metadata=_get_metadata(documents))
+    return documents
+The fetch function leverages a thread pool that runs each query on a different thread. As we have 
+multiple data categories, we have to make a different query for the articles, posts, and reposi-
+tories, as they are stored in different collections. Each query calls the data warehouse, which is 
+bounded by the network I/O and data warehouse latency, not by the machine’s CPU. Thus, by 
+moving each query to a different thread, we can parallelize them. Ultimately, instead of adding 
+the latency of each query as the total timing, the time to run this fetch function will be the max 
+between all the calls.
+Using threads to parallelize I/O-bounded calls is good practice in Python, as they are not locked 
+by the Python Global Interpreter Lock (GIL). In contrast, adding each call to a different process 
+would add too much overhead, as a process takes longer to spin off than a thread.
+In Python, you want to parallelize things with processes only when the operations are CPU or 
+memory-bound because the GIL affects them. Each process has a different GIL. Thus, paralleliz-
+ing your computing logic, such as processing a batch of documents or images already loaded in 
+memory, isn’t affected by Python’s GIL limitations.
+def fetch_all_data(user: UserDocument) -> dict[str, 
+list[NoSQLBaseDocument]]:
+    user_id = str(user.id)
+    with ThreadPoolExecutor() as executor:
+        future_to_query = {
+            executor.submit(__fetch_articles, user_id): "articles",
+            executor.submit(__fetch_posts, user_id): "posts",
+            executor.submit(__fetch_repositories, user_id): 
+"repositories",
+        }
+        results = {}
+        for future in as_completed(future_to_query):
+            query_name = future_to_query[future]
+            try:
+                results[query_name] = future.result()
+            except Exception:

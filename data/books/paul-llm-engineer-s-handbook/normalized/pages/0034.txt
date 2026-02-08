@@ -1,0 +1,35 @@
+Chapter 1
+3
+We will explore the details in Chapter 5 on fine-tuning and Chapters 4 and 9 on RAG, but for now,
+let's look at a few examples to intuitively understand what we stated previously.
+Here are some scenarios of what you can fine-tune an LLM on to become your twin:
+•
+LinkedIn posts and X threads: Specialize the LLM in writing social media content.
+•
+Messages with your friends and family: Adapt the LLM to an unfiltered version of yourself.
+•
+Academic papers and articles: Calibrate the LLM in writing formal and educative content.
+•
+Code: Specialize the LLM in implementing code as you would.
+All the preceding scenarios can be reduced to one core strategy: collecting your digital data (or
+some parts of it) and feeding it to an LLM using different algorithms. Ultimately, the LLM reflects
+the voice and style of the collected data. Easy, right?
+Unfortunately, this raises many technical and moral issues. First, on the technical side, how can
+we access this data? Do we have enough digital data to project ourselves into an LLM? What kind
+of data would be valuable? Secondly, on the moral side, is it OK to do this in the first place? Do
+we want to create a copycat of ourselves? Will it write using our voice and personality, or just try
+to replicate it?
+Remember that the role of this section is not to bother with the "What" and "How" but with the
+"Why." Let's understand why it makes sense to have your LLM Twin, why it can be valuable, and
+why it is morally correct if we frame the problem correctly.
+Why building an LLM Twin matters
+As an engineer (or any other professional career), building a personal brand is more valuable than
+a standard CV. The biggest issue with creating a personal brand is that writing content on platforms such as LinkedIn, X, or Medium takes a lot of time. Even if you enjoy writing and creating
+content, you will eventually run out of inspiration or time and feel like you need assistance. We
+don't want to transform this section into a pitch, but we have to understand the scope of this
+product/project clearly.
+We want to build an LLM Twin to write personalized content on LinkedIn, X, Instagram, Substack, and Medium (or other blogs) using our style and voice. It will not be used in any immoral
+scenarios, but it will act as your writing co-pilot. Based on what we will teach you in this book,
+you can get creative and adapt it to various use cases, but we will focus on the niche of generating
+social media content and articles. Thus, instead of writing the content from scratch, we can feed
+the skeleton of our main idea to the LLM Twin and let it do the grunt work.

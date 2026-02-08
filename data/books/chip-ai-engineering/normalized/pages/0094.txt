@@ -1,0 +1,31 @@
+primeras cosas que quiere conocer la gente es su tamaño. En este capítulo
+también veremos cómo un desarrollador de modelos puede determinar el
+tamaño adecuado para su modelo.
+Como se mencionó en el Capítulo 1, el proceso de entrenamiento de un
+modelo suele dividirse en pre-entrenamiento y post-entrenamiento. El preentrenamiento hace que un modelo sea capaz, pero no necesariamente
+seguro o fácil de usar. Aquí es donde entra en juego el post-entrenamiento.
+El objetivo del post-entrenamiento es alinear el modelo con las preferencias
+humanas. Pero, ¿qué son exactamente las preferencias humanas? ¿Cómo se
+puede representar de manera que permita a un modelo aprender? La forma
+en que un desarrollador de modelos alinea su modelo tiene un impacto
+significativo sobre su usabilidad, lo que trataremos en este capítulo.
+Aunque la mayoría de la gente entiende el impacto del entrenamiento en el
+rendimiento de un modelo, a menudo se pasa por alto el impacto del
+muestreo. El muestreo es la forma en que un modelo elige un output entre
+todos los opciones posibles. Quizá sea uno de los conceptos más
+infravalorados de la IA. El muestreo no solo explica muchos
+comportamientos aparentemente desconcertantes de la IA, como las
+alucinaciones o las incoherencias, sino que, además, elegir la estrategia de
+muestreo adecuada también puede aumentar considerablemente el
+rendimiento de un modelo con relativamente poco esfuerzo. Por ello, el
+muestreo es la sección sobre la que más ilusión me hacía escribir en este
+capítulo.
+Los conceptos tratados en este capítulo son fundamentales para comprender
+el resto del libro. Sin embargo, dado que estos conceptos son
+fundamentales, es posible que ya esté familiarizados con ellos. Siéntase
+libre de saltarse cualquier concepto que ya domine. Si más adelante
+encuentra algún concepto confuso, puede volver a consultar este capítulo.
+Datos de entrenamiento
+Un modelo de IA es tan bueno como los datos con los que se ha entrenado.
+Si no hay vietnamita en los datos de entrenamiento, el modelo no podrá
+traducir del inglés al vietnamita. De manera similar, si un modelo de

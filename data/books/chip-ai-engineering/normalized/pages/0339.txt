@@ -1,0 +1,29 @@
+También se pueden utilizar pruebas similares, como RULER (Hsieh et al.,
+2024), para evaluar la capacidad de un modelo para procesar prompts
+largos. Si el rendimiento del modelo empeora cada vez más con un contexto
+más largo, tal vez deberían encontrar la manera de acortar sus prompts.
+Los componentes clave de un prompt son el prompt del sistema, el prompt
+de usuario, los ejemplos y el contexto. Ahora que ya hemos hablado de lo
+que es un prompt y de por qué funciona el prompting, vamos a hablar de las
+mejores prácticas para escribir prompts eficaces.
+Mejores prácticas de ingeniería de prompts
+La ingeniería de prompts puede ser increíblemente complicada,
+especialmente para los modelos más débiles. En los primeros tiempos de la
+ingeniería de prompts, muchas guías ofrecían consejos, como escribir "P:"
+en lugar de "Preguntas:" o animar a los modelos a responder mejor con la
+promesa de una "propina de 300 dólares por la respuesta correcta". Aunque
+estos consejos pueden ser útiles para algunos modelos, pueden quedar
+obsoletos a medida que los modelos mejoran en el seguimiento de las
+instrucciones y se hacen más resistentes a las perturbaciones a los prompts.
+Esta sección se centra en técnicas generales que han demostrado funcionar
+con una amplia gama de modelos y que probablemente sigan siendo
+relevantes en un futuro próximo. Se han extraído de tutoriales de ingeniería
+de prompts creados por proveedores de modelos, como OpenAI, Anthropic,
+Meta, y Google, y de las mejores prácticas compartidas por equipos que han
+implementado con éxito aplicaciones de IA generativa. Estas empresas
+también suelen ofrecer bibliotecas de prompts preelaborados que pueden
+servir de referencia: vea Anthropic, Google, y OpenAI.
+Aparte de estas prácticas generales, es probable que cada modelo tenga sus
+propias peculiaridades que responden a trucos específicos para prompts.
+Cuando trabaje con un modelo, debe buscar guías de ingeniería de prompts
+específicos para él.

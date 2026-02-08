@@ -1,0 +1,34 @@
+Chapter 3
+97
+Now, let’s put everything together and run our graph. We can pass all arguments to the pipeline 
+in a simple manner:
+graph = StateGraph(AgentState)
+graph.add_node("summarize_video_chunk", _summarize_video_chunk)
+graph.add_node("generate_final_summary", _generate_final_summary)
+graph.add_conditional_edges(START, _map_summaries, ["summarize_video_
+chunk"])
+graph.add_edge("summarize_video_chunk", "generate_final_summary")
+graph.add_edge("generate_final_summary", END)
+app = graph.compile()
+result = await app.ainvoke(
+   {"video_uri": video_uri, "chunks": 5, "interval_secs": 600},
+   {"max_concurrency": 3}
+)["final_summary"]
+Now, as we’re prepared to build our first workflows with LangGraph, there’s one last important 
+topic to discuss. What if your history of conversations becomes too long and won’t fit into the 
+context window or it would start distracting an LLM from the last input? Let’s discuss the various 
+memory mechanisms LangChain offers.
+Understanding memory mechanisms
+LangChain chains and any code you wrap them with are stateless. When you deploy LangChain 
+applications to production, they should also be kept stateless to allow horizontal scaling (more 
+about this in Chapter 9). In this section, we’ll discuss how to organize memory to keep track of 
+interactions between your generative AI application and a specific user.
+Trimming chat history
+Every chat application should preserve a dialogue history. In prototype applications, you can 
+store it in a variable, though this won’t work for production applications, which we’ll address 
+in the next section.
+The chat history is essentially a list of messages, but there are situations where trimming this 
+history becomes necessary. While this was a very important design pattern when LLMs had a 
+limited context window, these days, it’s not that relevant since most of the models (even small 
+open-sourced models) now support 8192 tokens or even more. Nevertheless, understanding 
+trimming techniques remains valuable for specific use cases.

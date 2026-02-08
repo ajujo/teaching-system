@@ -1,0 +1,32 @@
+Síntesis de datos con IA
+Del mismo modo que los seres humanos tienen prácticamente infinitas
+formas de generar datos, la IA también pueden hacerlo de muchas maneras.
+Las técnicas aquí expuestas no son exhaustivas, pero le darán una buena
+visión de conjunto.
+Los potentes modelos de IA abren muchas nuevas posibilidades para las
+simulaciones. La IA puede simular los resultados de programas arbitrarios.
+Por ejemplo, "StableToolBench" (Guo et al., 2024) demuestra cómo utilizar
+la IA para simular API sin tener que invocarlas. Imagine que quiere entrenar
+un modelo para interactuar con un conjunto de API. En lugar de realizar
+llamadas reales a las API, lo que puede ser costoso o lento, puede utilizar un
+modelo de IA para simular los resultados esperados de esas llamadas.
+La IA puede simular a los humanos. Por ejemplo, imagine que quiere
+entrenar a un robot para que juegue al ajedrez. Un juego jugado por
+humanos podría llevar demasiado tiempo. Las partidas con jugadores de IA
+serían mucho más rápidas. Para entrenar a su bot de Dota 2, OpenAI utilizó
+un simulador que permitía al bot jugar cada día el equivalente a 180 años de
+partidas. El bot aprendió jugando contra sí mismo, un enfoque denominado
+autojuego, que le ayudó a desarrollar y perfeccionar estrategias con el
+tiempo (OpenAI, 2019). Del mismo modo, DeepMind utilizó el autojuego
+para recopilar datos de millones de partidas de Go para entrenar a AlphaGo
+(Silver et al., 2016).
+El autojuego es útil no solo para los robots para juegos, sino también para
+los agentes en general. Puede hacer que las IA negocien entre sí utilizando
+diferentes estrategias para ver cuál funciona mejor. Puede hacer que una
+versión del modelo desempeñe el papel de un cliente con problemas y otra
+el de un agente de atención al cliente.
+Las capacidades de parafraseo y traducción de la IA pueden utilizarse para
+aumentar los conjuntos de datos existentes. Por ejemplo, dada la consulta
+"¿Cómo restablecer mi contraseña?", la IA pueden parafrasearla para crear
+tres nuevas consultas:
+1. "He olvidado mi contraseña".

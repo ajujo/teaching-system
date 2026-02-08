@@ -1,0 +1,28 @@
+prompt de usuario. Pero también puede ser creativo y mover las
+instrucciones de un lado a otro, por ejemplo, poniendo todo en el prompt
+del sistema o en el prompt de usuario. Puede experimentar con diferentes
+formas de estructurar sus prompts para ver cuál funciona mejor.
+Dado un prompt del sistema y otro de usuario, el modelo los combina en un
+único prompt, normalmente siguiendo una plantilla. A modo de ejemplo,
+veamos la plantilla del modelo de chat Llama 2:
+<s>[INST] <<SYS>>
+{{ system_prompt }}
+<</SYS>>
+{{ user_message }} [/INST]
+Si el prompt del sistema es "Traduce el texto siguiente al francés" y el
+prompt del usuario es "¿Cómo estás?", el prompt final introducido en Llama
+2 debería ser:
+<s>[INST] <<SYS>>
+Traduce el texto siguiente al francés
+<</SYS>>
+¿Cómo estás? [/INST]
+AVISO
+La plantilla de chat de un modelo, que se describe en esta sección, es
+diferente de la plantilla de prompts que utilizan los desarrolladores de
+aplicaciones para rellenar (hidratar) sus prompts con datos específicos. La
+plantilla de chat de un modelo la definen los desarrolladores del modelo y
+normalmente se puede encontrar en la documentación del modelo.
+Cualquier desarrollador de aplicaciones puede definir una plantilla de
+prompt.
+Los distintos modelos utilizan diferentes plantillas de chat. El mismo
+proveedor de modelos puede cambiar la plantilla entre versiones del

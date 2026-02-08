@@ -1,0 +1,19 @@
+servidor de inferencia forma parte de un servicio de inferencia más amplio,
+que también es responsable de recibir, enrutar y posiblemente preprocesar
+las solicitudes antes de que lleguen al servidor de inferencia. En la Figura 9-
+1 se muestra una visualización de un servicio de inferencia sencillo.
+figura 9-1. Un servicio sencillo de inferencia.
+Las API de modelos como las que ofrecen OpenAI y Google son servicios
+de inferencia. Si utiliza uno de estos servicios, no aplicará la mayoría de las
+técnicas tratadas en este capítulo. Sin embargo, si usted mismo aloja un
+modelo, será responsables de construir, optimizar y mantener su servicio de
+inferencia.
+Cuellos de botella de cómputo
+La optimización consiste en identificar los cuellos de botella y resolverlos.
+Por ejemplo, para optimizar el tráfico, los urbanistas pueden identificar los
+puntos de congestión y tomar medidas para aliviarlos. Del mismo modo, un
+servidor de inferencia debe diseñarse para hacer frente a los cuellos de
+botella computacionales de las cargas de trabajo de inferencia a las que
+sirve. Hay dos cuellos de botella computacionales principales: limitación
+por el cómputo y limitación por ancho de banda de la memoria:
+Limitación por el cómputo

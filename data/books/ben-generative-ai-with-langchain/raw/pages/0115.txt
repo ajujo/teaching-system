@@ -1,0 +1,29 @@
+Building Workflows with LangGraph
+88
+The Gemini prompting guide recommends that each prompt should have four parts: a persona, a 
+task, a relevant context, and a desired format. Keep in mind that different model providers might 
+have different recommendations on prompt writing or formatting, hence if you have complex 
+prompts, always check the documentation of the model provider, evaluate the performance of 
+your workflows before switching to a new model provider, and adjust prompts accordingly if 
+needed. If you want to use multiple model providers in production, you might end up with mul­
+tiple prompt templates and select them dynamically based on the model provider.
+Another big improvement can be to provide an LLM with a few examples of this specific task as 
+input-output pairs as part of the prompt. This is called few-shot prompting. Typically, few-shot 
+prompting is difficult to use in scenarios that require a long input (such as RAG, which we’ll talk 
+about in the next chapter) but it’s still very useful for tasks with relatively short prompts, such 
+as classification, extraction, etc.
+Of course, you can always hard-code examples in the prompt template itself, but this makes it 
+difficult to manage them as your system grows. A better way might be to store examples in a 
+separate file on disk or in a database and load them into your prompt.
+Chaining prompts together
+As your prompts become more advanced, they tend to grow in size and complexity. One common 
+scenario is to partially format your prompts, and you can do this either by string or function 
+substitution. The latter is relevant if some parts of your prompt depend on dynamically changing 
+variables (for example, current date, user name, etc.). Below, you can find an example of a partial 
+substitution in a prompt template:
+system_template = PromptTemplate.from_template("a: {a} b: {b}")
+system_template_part = system_template.partial(
+   a="a" # you also can provide a function here
+)
+print(system_template_part.invoke({"b": "b"}).text)
+>> a: a b: b

@@ -1,0 +1,19 @@
+del modelo sean más creativos, pero potencialmente menos coherentes.
+Cuanto más baja sea la temperatura, más probable es que el modelo elija el
+valor más obvio, lo que hace que el output del modelo sea más coherente,
+pero potencialmente más aburrido. 24
+La Figura 2-16 muestra las probabilidades softmax para los tokens A y B a
+diferentes temperaturas. A medida que la temperatura se acerca a 0, la
+probabilidad de que el modelo elija el token B se acerca a 1. En nuestro
+ejemplo, para una temperatura inferior a 0.1, el modelo casi siempre da
+como resultado B. A medida que aumenta la temperatura, la probabilidad de
+que se elija el token A aumenta, mientras que la probabilidad de que se elija
+el token B disminuye. Los proveedores de modelos suelen limitar la
+temperatura a entre 0 y 2. Si es dueño de su modelo, puede utilizar
+cualquier temperatura no negativa. Se suele recomendar una temperatura de
+0.7 para casos de uso creativo, ya que equilibra creatividad y previsibilidad,
+pero debería experimentar y encontrar la temperatura que mejor le funcione.
+figura 2-16. Las probabilidades softmax para los tokens A y B a diferentes
+temperaturas, dado que sus logits son [1, 2]. Sin fijar el valor de la temperatura, lo
+que equivale a utilizar la temperatura de 1, la probabilidad softmax de B sería del
+73 %.

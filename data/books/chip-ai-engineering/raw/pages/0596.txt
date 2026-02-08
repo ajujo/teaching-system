@@ -1,0 +1,30 @@
+imitar a un modelo más grande (maestro) (Hinton et al., 2015). El
+conocimiento del modelo grande se destila en el modelo pequeño, de ahí el
+término destilación.
+Tradicionalmente, el objetivo de la destilación de modelos es producir
+modelos más pequeños para su implementación. Implementar un modelo
+grande pueden consumir muchos recursos. La destilación pueden producir
+un modelo alumno más pequeño y rápido que conserve un rendimiento
+comparable al del maestro. Por ejemplo, DistilBERT, un modelo destilado
+de BERT, reduce el tamaño de un modelo BERT en un 40 %, a la vez que
+conserva el 97 % de sus capacidades de comprensión del lenguaje y es un
+60 % más rápido (Sanh et al., 2019).
+El modelo alumno puede entrenarse desde cero, como DistilBERT, o
+afinarse a partir de un modelo pre-entrenado, como Alpaca. En 2023, Taori
+et al. afinaron Llama-7B, la versión de 7000 millones de parámetros de
+Llama, sobre ejemplos generados por text-davinci-003, un modelo de 175
+000 millones de parámetros. El modelo resultante, Alpaca, se comporta de
+forma similar a text-davinci-003, aunque tiene un 4 % del tamaño del
+modelo maestro.
+NOTA
+No todos los modelos pueden destilarse. Muchas licencias de modelos
+prohíben utilizar sus resultados para entrenar otros modelos, en particular
+para entrenar modelos competidores.
+Suelen utilizarse datos sintéticos de instrucción junto con técnicas basadas
+en adaptadores, como LoRA. Por ejemplo, BuzzFeed afinó un modelo Flan-
+T5 utilizando LoRA y ejemplos generados por text-davinci-003 de OpenAI.
+El modelo resultante redujo su costo de inferencia en un 80 %, aunque no
+estaba claro qué tan bueno era el rendimiento del modelo (2023).
+Tenga en cuenta que no todo entrenamiento con datos sintéticos es
+destilación de modelos. La destilación de modelos implica que el
+rendimiento del modelo maestro es el patrón oro del alumno. Sin embargo,

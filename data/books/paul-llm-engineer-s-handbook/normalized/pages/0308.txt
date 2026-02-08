@@ -1,0 +1,36 @@
+Chapter 7
+277
+    def format(sample):
+        return "Below is an instruction that describes a task.
+Write a response that appropriately completes the request.\n\n###
+Instruction:\n{}\n\n### Response:\n".format(sample["instruction"])
+    dataset = dataset.map(lambda sample: {"prompt": format(sample)})
+4.
+Let's initialize the LLM object used by vLLM with a maximum length of 4,096 tokens. We
+can also specify sampling parameters, which correspond to variables used in the decoding strategy. Here, we use parameters to encourage diversity (high temperature) while
+removing the most unlikely tokens (top_p and min_p). Finally, we start the generation
+by providing the list of prompts with dataset["prompt"]:
+    llm = LLM(model=model_id, max_model_len=4096)
+    sampling_params = SamplingParams(temperature=0.8, top_p=0.95,
+min_p=0.05, max_tokens=4096)
+    outputs = llm.generate(dataset["prompt"], sampling_params)
+5.
+This process should take a few minutes with our 334 prompts. Once this is done, we extract the answers from the object that is outputted by vLLM. We then add these answers
+as a new column to our dataset. This is useful to log the answers and review them later:
+    answers = [output.outputs[0].text for output in outputs]
+    dataset = dataset.add_column("answers", answers)
+6.
+We save our results to the Hugging Face Hub for easy access later. Then, we clear our GPU
+memory to prevent running out of space when we process the next model:
+    print(f"Uploading results for {model_id}")
+    dataset.push_to_hub(f"mlabonne/{model_id.split('/')
+[-1]}-results")
+    gc.collect()
+    return dataset
+7.
+We create a list of the three models we want to test. Then, we run our generate_answers()
+function for each of these models, one at a time. This will create and upload a separate
+set of results for each model:
+model_ids = [
+    'mlabonne/TwinLlama-3.1-8B',
+    'mlabonne/TwinLlama-3.1-8B-DPO',

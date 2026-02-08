@@ -1,0 +1,25 @@
+Inference Optimization
+304
+By default, weights are typically stored in a 16-bit or 32-bit floating-point format (FP16 or FP32), 
+which provides high precision but comes at the cost of increased memory usage and computa-
+tional complexity. Quantization is a solution to reduce the memory footprint and accelerate the 
+inference of LLMs.
+In addition to these benefits, larger models with over 30 billion parameters can outperform 
+smaller models (7B–13B LLMs) in terms of quality when quantized to 2- or 3-bit precision. This 
+means they can achieve superior performance while maintaining a comparable memory footprint.
+In this section, we will introduce the concepts of quantization, GGUF with llama.cpp, GPTQ, 
+and EXL2, along with an overview of additional techniques. In addition to the code provided in 
+this section, you can refer to AutoQuant (bit.ly/autoquant) to quantize their models using a 
+Google Colab notebook.
+Introduction to quantization
+There are two main approaches to weight quantization: Post-Training Quantization (PTQ) and 
+Quantization-Aware Training (QAT). PTQ is a straightforward technique where the weights of 
+a pre-trained model are directly converted to a lower precision format without any retraining. 
+While PTQ is easy to implement, it may result in some performance degradation. Conversely, QAT 
+performs quantization during the training or fine-tuning stage, allowing the model to adapt to 
+the lower precision weights. QAT often yields better performance compared to PTQ but requires 
+additional computational resources and representative training data.
+The choice of data type plays a crucial role in quantization. Floating-point numbers, such as 
+FP32, FP16 (half-precision), and BF16 (brain floating-point), are commonly used in deep learning. 
+These formats allocate a fixed number of bits to represent the sign, exponent, and significand 
+(mantissa) of a number.

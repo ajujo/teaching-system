@@ -1,0 +1,35 @@
+Counting characters, words, and vocabulary
+343
+With that, we have extracted five different features that capture the text complexity, which we can use 
+as inputs for our machine learning algorithms.
+Note
+In this recipe, we created new features from the raw data straight away without doing any data 
+cleaning, removing punctuation, or even stemming words. Note that these are steps that are 
+performed ahead of most standard NLP procedures. To learn more about this, visit the Cleaning 
+and stemming text variables recipe at the end of this chapter.
+How it works...
+In this recipe, we created five new features that capture text complexity by utilizing pandas’ str to 
+access the built-in pandas functionality to work with strings. We worked with the text column of 
+the train subset of the 20 Newsgroup dataset that comes with scikit-learn. Each row in this 
+dataset is composed of a string with text.
+We used pandas’ str, followed by len(), to count the number of characters in each string – that 
+is, the total number of letters, numbers, symbols, and spaces. We also combined str.len() with 
+str.strip() to remove trailing white spaces at the beginning and end of the string and in new 
+lines, before counting the number of characters.
+To count the number of words, we used pandas’ str, followed by split(), to divide the string into a list 
+of words. The split() method creates a list of words by breaking the string at the white spaces between 
+words. Next, we counted those words with str.len(), obtaining the number of words per string.
+Note
+We can change the behavior of str.split() by passing a string or character that we would 
+like to use to split the string. For example, df['text'].str.split(';') divides a 
+string at each occurrence of ;.
+To determine the number of unique words, we used pandas’ str.split() function to divide the string 
+into a list of words. Next, we applied the built-in Python set() method within pandas’ apply() to 
+return a set of words. Remember that a set contains unique occurrences of the elements in a list – that is, 
+unique words. Next, we counted those words with pandas’ str.len() function to return the vocabulary, 
+or in other words, the number of unique words in the string. Python interprets words that are written in 
+uppercase differently from those in lowercase; therefore, we introduced pandas’ lower() function to 
+set all the characters to lowercase before splitting the string and counting the number of unique words.
+To create the lexical diversity and average word length features, we simply performed a vectorized 
+division of two pandas series. That’s it; we created five new features with information about the 
+complexity of the text.

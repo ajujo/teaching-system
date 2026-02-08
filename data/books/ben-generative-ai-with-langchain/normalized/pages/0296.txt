@@ -1,0 +1,34 @@
+Chapter 7
+269
+What makes this current evolution particularly distinctive is its fundamental departure from
+previous approaches. Rather than creating new artificial languages for humans to learn, we're
+adapting intelligent tools to understand natural human communication, significantly lowering
+the barrier to entry. Unlike traditional low-code platforms that often result in proprietary im­
+plementations, natural language programming generates standard code without vendor lock-in,
+preserving developer freedom and compatibility with existing ecosystems. Perhaps most impor­
+tantly, this approach offers unprecedented flexibility across the spectrum, from simple tasks to
+complex applications, serving both novices seeking quick solutions and experienced developers
+looking to accelerate their workflow.
+The future of development
+Analysts at International Data Corporation (IDC) project that, by 2028, natural language will be
+used to create 70% of new digital solutions (IDC FutureScape, Worldwide Developer and DevOps
+2025 Predictions). However, this doesn't mean traditional programming will disappear; rather,
+it's evolving into a two-tier system where natural language serves as a high-level interface while
+traditional programming languages handle precise implementation details.
+However, this evolution does not spell the end for traditional programming languages. While
+natural language can streamline the design phase and accelerate prototyping, the precision and
+determinism of languages like Python remain essential for building reliable, production-ready
+systems. In other words, rather than replacing code entirely, English (or Mandarin, or whichever
+natural language best suits our cognitive process) is augmenting it-acting as a high-level layer
+that bridges human intent with executable logic.
+For software developers, data scientists, and technical decision-makers, this shift means em­
+bracing a hybrid workflow where natural language directives, powered by LLMs and frameworks
+such as LangChain, coexist with conventional code. This integrated approach paves the way for
+faster innovation, personalized software solutions, and, ultimately, a more accessible develop­
+ment process.
+Implementation considerations
+For production environments, the current evolution manifests in several ways that are transform­
+ing how development teams operate. Natural language interfaces enable faster prototyping and
+reduce time spent on boilerplate code, while traditional programming remains essential for the
+optimization and implementation of complex features. However, recent independent research
+shows significant limitations in current AI coding capabilities.

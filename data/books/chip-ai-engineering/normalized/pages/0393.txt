@@ -1,0 +1,10 @@
+NOTA
+La recuperación suele limitarse a una base de datos o sistema, mientras que
+la búsqueda implica la recuperación en varios sistemas. En este capítulo se
+utilizan indistintamente los términos recuperación y búsqueda.
+En esencia, la recuperación consiste en obtener una lista ordenada de los
+documentos en función de su relevancia para una consulta determinada. Los
+algoritmos de recuperación difieren en función de cómo se calculan las
+puntuaciones de relevancia. Empezaré con dos mecanismos comunes de
+recuperación: la recuperación basada en términos y la recuperación basada
+en incrustaciones.

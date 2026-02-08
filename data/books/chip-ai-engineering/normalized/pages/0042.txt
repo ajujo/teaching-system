@@ -1,0 +1,29 @@
+¿POR QUÉ EL TÉRMINO "INGENIERÍA DE IA"?
+Se están utilizando muchos términos para describir el proceso de
+creación de aplicaciones basándose en modelos fundacionales, como
+ingeniería de ML, MLOps, AIOps, LLMOps, etc. ¿Por qué elegí
+"ingeniería de IA" para este libro?
+No utilicé el término ingeniería de ML porque, como se explica en
+"Ingeniería de IA Vs. ingeniería de ML", trabajar con modelos
+fundacionales difiere de trabajar con modelos de ML tradicionales en
+varios aspectos importantes. El término ingeniería de ML no será
+suficiente para captar esta diferenciación. Sin embargo, la ingeniería del
+ML es un gran término para englobar ambos procesos.
+No he utilizado todos los términos que terminan en "Ops" porque,
+aunque hay componentes operativos en el proceso, la atención se centra
+más en la adaptación (ingeniería) de los modelos fundacionales para
+que hagan lo que uno quiere.
+Por último, encuesté a 20 personas que desarrollaban aplicaciones sobre
+modelos fundacionales para preguntarles qué término utilizarían para
+describir lo que hacían. La mayoría prefería ingeniería de IA. Decidí
+hacerles caso.
+La comunidad de ingenieros de IA, en rápida expansión, ha demostrado una
+creatividad considerable con una gran variedad de aplicaciones
+apasionantes. La sección siguiente explorará algunos de los patrones de
+aplicación más comunes.
+Casos de uso de modelos fundacionales
+Si todavía no está creando aplicaciones de IA, espero que la sección
+anterior le haya convencido de que ahora es un buen momento para hacerlo.
+Si tiene una aplicación en mente, quizá le interese pasar al "Planificación de
+aplicaciones de IA". Si busca inspiración, esta sección cubre una amplia
+gama de casos de uso prometedores y probados en la industria.

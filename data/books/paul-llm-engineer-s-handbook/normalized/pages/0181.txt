@@ -1,0 +1,30 @@
+RAG Feature Pipeline
+150
+As ML systems can break at any time while in production due to drifts or untreated use cases, leveraging the metadata section to monitor the ingested data can be a powerful tool that will save
+debugging days, translating to tens of thousands of dollars or more for your business.
+Loading the documents to the vector DB
+As each article, post, or code repository sits in a different collection inside the vector DB, we have
+to group all the documents based on their data category. Then, we load each group in bulk in the
+Qdrant vector DB:
+@step
+def load_to_vector_db(
+    documents: Annotated[list, "documents"],
+) -> None:
+    logger.info(f"Loading {len(documents)} documents into the vector
+database.")
+    grouped_documents = VectorBaseDocument.group_by_class(documents)
+    for document_class, documents in grouped_documents.items():
+        logger.info(f"Loading documents into {document_class.get_
+collection_name()}")
+        for documents_batch in utils.misc.batch(documents, size=4):
+            try:
+                document_class.bulk_insert(documents_batch)
+            except Exception:
+                return False
+    return True
+Pydantic domain entities
+Before investigating the dispatchers, we must understand the domain objects we work with. To
+some extent, in implementing the LLM Twin, we are following the domain-driven design (DDD)
+principles, which state that domain entities are the core of your application. Thus, before proceeding, it's important to understand the hierarchy of the domain classes we are working with.
+The code for the domain entities is available on GitHub at https://github.com/
+PacktPublishing/LLM-Engineering/tree/main/llm_engineering/domain.

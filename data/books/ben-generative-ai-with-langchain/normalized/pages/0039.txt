@@ -1,0 +1,41 @@
+The Rise of Generative AI: From Language Models to Agents
+12
+Agency in AI refers to a system's ability to act independently to achieve goals. True agency means
+an AI system can perceive its environment, make decisions, act, and adapt over time by learning
+from interactions and feedback. The distinction between raw AI and agents parallels the differ­
+ence between knowledge and expertise. Consider a brilliant researcher who understands complex
+theories but struggles with practical application. An agent system adds the crucial element of
+purposeful action, turning abstract capability into concrete results.
+In the context of LLMs, agentic AI involves developing systems that act autonomously, understand
+context, adapt to new information, and collaborate with humans to solve complex challenges.
+These AI agents leverage LLMs to process information, generate responses, and execute tasks
+based on defined objectives.
+Particularly, AI agents extend the capabilities of LLMs by integrating memory, tool use, and de­
+cision-making frameworks. These agents can:
+•
+Retain and recall information across interactions.
+•
+Utilize external tools, APIs, and databases.
+•
+Plan and execute multi-step workflows.
+The value of agency lies in reducing the need for constant human oversight. Instead of manually
+prompting an LLM for every request, an agent can proactively execute tasks, react to new data,
+and integrate with real-world applications.
+AI agents are systems designed to act on behalf of users, leveraging LLMs alongside external tools,
+memory, and decision-making frameworks. The hope behind AI agents is that they can automate
+complex workflows, reducing human effort while increasing efficiency and accuracy. By allowing
+systems to act autonomously, agents promise to unlock new levels of automation in AI-driven
+applications. But are the hopes justified?
+Despite their potential, AI agents face significant challenges:
+•
+Reliability: Ensuring agents make correct, context-aware decisions without supervision
+is difficult.
+•
+Generalization: Many agents work well in narrow domains but struggle with open-ended,
+multi-domain tasks.
+•
+Lack of trust: Users must trust that agents will act responsibly, avoid unintended actions,
+and respect privacy constraints.
+•
+Coordination complexity: Multi-agent systems often suffer from inefficiencies and mis­
+communication when executing tasks collaboratively.

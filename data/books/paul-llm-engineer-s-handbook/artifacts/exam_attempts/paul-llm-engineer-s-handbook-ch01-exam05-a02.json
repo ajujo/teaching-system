@@ -1,0 +1,36 @@
+{
+  "$schema": "exam_attempt_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam05-a02",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam05",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "created_at": "2026-02-06T11:21:06.154235+00:00",
+  "status": "graded",
+  "answers": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q01",
+      "response": 1
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q02",
+      "response": 2
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q03",
+      "response": false
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q04",
+      "response": "Los tres componentes son: 1) Feature pipeline para procesar datos, 2) Training pipeline para entrenar modelos y 3) Inference pipeline para hacer predicciones. Esta arquitectura permite un flujo escalable y reproducible de datos a producción."
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q05",
+      "response": 1
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam05-q06",
+      "response": "El LLM Twin permite personalizar modelos según necesidades específicas, evitar limitaciones éticas de modelos genéricos y garantizar coherencia en respuestas alineadas con el estilo de la persona emulada"
+    }
+  ],
+  "total_questions": 6
+}

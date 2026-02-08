@@ -1,0 +1,47 @@
+The Rise of Generative AI: From Language Models to Agents
+6
+Let’s now discuss a comparative overview of various LLMs, highlighting their key characteristics 
+and differentiating factors. We’ll delve into aspects such as open-source vs. closed-source models, 
+model size and capabilities, and specialized models. By understanding these distinctions, you 
+can select the most suitable LLM for your specific needs and applications.
+LLM provider landscape
+You can access LLMs from major providers like OpenAI, Google, and Anthropic, along with a 
+growing number of others, through their websites or APIs. As the demand for LLMs grows, nu­
+merous providers have entered the space, each offering models with unique capabilities and 
+trade-offs. Developers need to understand the various access options available for integrating 
+these powerful models into their applications. The choice of provider will significantly impact 
+development experience, performance characteristics, and operational costs.
+The table below provides a comparative overview of leading LLM providers and examples of the 
+models they offer:
+Provider
+Notable models
+Key features and strengths
+OpenAI
+GPT-4o, GPT-4.5; o1; 
+o3-mini
+Strong general performance, proprietary models, 
+advanced reasoning; multimodal reasoning across text, 
+audio, vision, and video in real time
+Anthropic
+Claude 3.7 Sonnet; 
+Claude 3.5 Haiku
+Toggle between real-time responses and extended 
+“thinking” phases; outperforms OpenAI’s o1 in coding 
+benchmarks
+Google
+Gemini 2.5, 2.0 (flash 
+and pro), Gemini 1.5
+Low latency and costs, large context window (up to 
+2M tokens), multimodal inputs and outputs, reasoning 
+capabilities
+Cohere
+Command R, 
+Command R Plus
+Retrieval-augmented generation, enterprise AI solutions
+Mistral AI
+Mistral Large; Mistral 
+7B
+Open weights, efficient inference, multilingual support
+AWS
+Titan
+Enterprise-scale AI models, optimized for the AWS cloud

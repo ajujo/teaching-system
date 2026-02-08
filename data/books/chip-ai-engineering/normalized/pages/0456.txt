@@ -1,0 +1,30 @@
+Los fallos de las herramientas también pueden deberse a que el agente no
+tenga acceso a las herramientas adecuadas para la tarea. Un ejemplo obvio
+es cuando la tarea consiste en recuperar los precios actuales de acciones de
+Internet, y el agente no tiene acceso a Internet.
+Los fallos de herramientas son dependientes de ellas. Cada herramienta
+debe probarse por separado. Muestre en pantalla siempre cada llamada a la
+herramienta y su output para poder inspeccionarlas y evaluarlas. Si tiene un
+traductor, cree pruebas comparativas para evaluarlo.
+Para detectar fallos por la falta de herramientas es necesario saber qué
+herramientas deben utilizarse. Si su agente falla con frecuencia en un
+dominio específico, esto puede deberse a que le faltan herramientas para ese
+dominio. Trabaje con expertos humanos en la materia y observe qué
+herramientas utilizarían.
+Eficiencia
+Un agente puede generar un plan válido utilizando las herramientas
+adecuadas para realizar una tarea, pero puede resultar ineficiente. Estos son
+algunos de los aspectos que puede tener en cuenta para evaluar la eficiencia
+de un agente:
+¿Cuántos pasos necesita el agente, en promedio, para completar
+una tarea?
+¿Cuánto dinero cuesta que el agente, en promedio, complete una
+tarea?
+¿Cuánto tiempo suele durar cada acción? ¿Hay acciones que
+requieran mucho tiempo o sean especialmente caras?
+Puede comparar estas métricas con su línea de base, que puede ser otro
+agente o un operador humano. Cuando se comparan agentes de IA con
+agentes humanos, hay que tener en cuenta que los humanos y la IA tienen
+modos de operar muy diferentes, por lo que lo que se considera eficiente
+para los humanos puede ser ineficiente para la IA, y viceversa. Por ejemplo,
+visitar 100 páginas web puede ser ineficiente para un agente humano, que

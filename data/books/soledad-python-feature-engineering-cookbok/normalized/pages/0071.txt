@@ -1,0 +1,29 @@
+Encoding Categorical Variables
+48
+Let's do one-hot encoding using scikit-learn instead.
+8.
+Let's import the encoder and ColumnTransformer from scikit-learn:
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+9.
+Let's create a list with the names of the categorical variables:
+cat_vars = X_train.select_dtypes(
+    include="O").columns.to_list()
+10.	 Let's set up the encoder to create k-1 binary variables:
+encoder = OneHotEncoder(drop="first",
+    sparse_output=False)
+Note
+To encode variables into k dummies, set the drop parameter to None. To encode only binary
+variables into k-1, set the drop parameter to if_binary. The latter is useful because encoding
+binary variables into k dummies is redundant.
+11.	 Let's restrict the encoding to the categorical variables:
+ct = ColumnTransformer(
+    [("encoder", encoder, cat_vars)],
+    remainder="passthrough",
+    force_int_remainder_cols=False,
+).set_output(transform="pandas")
+12.	 Let's fit the encoder so that it identifies the categories to encode:
+ct.fit(X_train)
+13.	 Let's inspect the categories that will be represented with binary variables:
+ct.named_transformers_["encoder"].categories_
+The transformer will add binary variables for the following categories:

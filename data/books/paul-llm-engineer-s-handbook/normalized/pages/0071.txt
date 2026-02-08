@@ -1,0 +1,11 @@
+Tooling and Installation
+40
+By clicking on the crawled_links artifact and navigating to the Metadata tab, we can quickly
+see all the domains we crawled for a particular author, the number of links we crawled for each
+domain, and how many were successful, as illustrated in Figure 2.8:
+Figure 2.8: ZenML metadata example using the digital_data_etl pipeline as an example
+A more interesting example of an artifact and its metadata is the generated dataset artifact. In
+Figure 2.9, we can visualize the metadata of the instruct_datasets artifact, which was automatically generated and will be used to fine-tune the LLM Twin model. More details on the
+instruction datasets are in Chapter 5. For now, we want to highlight that within the dataset's
+metadata, we have precomputed a lot of helpful information about it, such as how many data
+categories it contains, its storage size, and the number of samples per training and testing split.

@@ -1,0 +1,26 @@
+Supervised Fine-Tuning
+186
+Another aspect of data decontamination is filtering out samples that may have been derived from 
+the same source as evaluation data. This can involve checking for overlapping phrases, similar 
+sentence structures, or common metadata. Practitioners may also use provenance tracking (source 
+the data they use) to identify and exclude data from specific sources that are known to be used 
+in evaluation sets.
+Data quality evaluation
+Data quality evaluation is a critical aspect of machine learning, particularly for LLMs. The process 
+involves assessing various characteristics of datasets, including accuracy, diversity, and complexity. 
+While some aspects like mathematical accuracy can be easily verified using tools such as Python 
+interpreters, evaluating subjective or open-ended content remains challenging.
+Traditional methods of data quality assessment include human annotation, which generally 
+provides high accuracy but is resource-intensive. To address scalability issues, machine learning 
+techniques have been developed to automate the evaluation process. These include using LLMs 
+as judges, reward models, and classifiers trained for quality prediction.
+The LLM-as-a-judge strategy involves prompting LLMs to evaluate the quality of each sample. 
+This approach has become popular due to its flexibility and ease of use, though it does present 
+some challenges. Different LLMs have different levels of performance across tasks, and their 
+evaluations often align more closely with those of non-experts. With domain-specific datasets, 
+you might want to use domain-specific models instead of better, general-purpose LLMs. Com-
+parative assessment methods (e.g., “Is answer A better than answer B?”) generally outperform 
+absolute scoring approaches (e.g., “Rate answer A between 1 and 4”), though both can be used 
+at scale with sufficient prompt engineering. We recommend iterating through different prompts 
+over a representative subset to manually verify the quality of the responses. Table 5.2 shows an 
+example of a custom prompt for a judge LLM.

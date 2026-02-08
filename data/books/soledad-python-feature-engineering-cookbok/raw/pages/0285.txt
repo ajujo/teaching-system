@@ -1,0 +1,25 @@
+Creating New Features
+262
+4.	
+Fit a linear model to predict y from X by utilizing a Ridge regression, and then obtain the 
+predictions of the model:
+linmod = Ridge(random_state=10)
+linmod.fit(X.reshape(-1, 1), y)
+pred = linmod.predict(X.reshape(-1, 1))
+5.	
+Now, plot the relationship between X and y, and overlay the predictions:
+plt.plot(X, y)
+plt.plot(X, pred)
+plt.ylabel("y")
+plt.xlabel("X")
+plt.legend(
+    ["y", "linear"],
+    bbox_to_anchor=(1, 1),
+    loc="upper left")
+In the following figure, we can see that the linear model makes a very poor fit of the non-linear 
+relationship between X and y:
+Figure 8.21 – The linear fit between X and y
+6.	
+Now, set up SplineTransformer() to obtain spline features from X, by utilizing third-
+degree polynomials and five knots at equidistant places within the values of X:
+spl = SplineTransformer(degree=3, n_knots=5)

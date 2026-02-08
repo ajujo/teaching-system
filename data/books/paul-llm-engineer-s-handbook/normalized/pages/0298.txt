@@ -1,0 +1,31 @@
+Chapter 7
+267
+•
+OpenKo-LLM Leaderboard: Evaluates the performance of Korean LLMs using nine metrics.
+These metrics are a combination of general-purpose benchmarks translated into Korean
+(GPQA, Winogrande, GSM8K, EQ-Bench, and IFEval) and custom evaluations (Knowledge,
+Social Value, Harmlessness, and Helpfulness).
+•
+Open Portuguese LLM Leaderboard: Evaluates the performance of Portuguese language
+LLMs using nine diverse benchmarks. These benchmarks include educational assessments
+(ENEM with 1,430 questions, and BLUEX with 724 questions from university entrance exams), professional exams (OAB Exams with over 2,000 questions), language understanding tasks (ASSIN2 RTE and STS, FAQUAD NLI), and social media content analysis (HateBR
+with 7,000 Instagram comments, PT Hate Speech with 5,668 tweets, and tweetSentBR).
+•
+Open Arabic LLM Leaderboard: Evaluates the performance of Arabic language LLMs
+using a comprehensive set of benchmarks, including both native Arabic tasks and translated datasets. The leaderboard features two native Arabic benchmarks: AlGhafa and
+Arabic-Culture-Value-Alignment. Additionally, it incorporates 12 translated benchmarks
+covering various domains, such as MMLU, ARC-Challenge, HellaSwag, and PIQA.
+Both general-purpose and domain-specific evaluations are designed with three main principles.
+First, they should be complex and challenge models to distinguish good and bad outputs. Second,
+they should be diverse and cover as many topics and scenarios as possible. When one benchmark
+is not enough, additional ones can create a stronger suite. Finally, they should be practical and
+easy to run. This is more connected to evaluation libraries, which can be more or less complex to
+work with. We recommend lm-evaluation-harness (github.com/EleutherAI/lm-evaluationharness) from Eleuther AI and lighteval (github.com/huggingface/lighteval) from Hugging
+Face to run your benchmarks.
+Task-specific LLM evaluations
+While general-purpose and domain-specific evaluations indicate strong base or instruct models,
+they cannot provide insights into how well these models work for a given task. This requires
+benchmarks specifically designed for this purpose, measuring downstream performance.
+Because of their narrow focus, task-specific LLMs can rarely rely on pre-existing evaluation datasets. This can be advantageous because their outputs also tend to be more structured and easier
+to evaluate using traditional ML metrics. For example, a summarization task can leverage the
+Recall-Oriented Understudy for Gisting Evaluation (ROUGE) metric, which measures the overlap between the generated text and reference text using n-grams.

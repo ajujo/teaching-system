@@ -1,0 +1,21 @@
+7
+Evaluating LLMs
+LLM evaluation is a crucial process used to assess the performance and capabilities of LLM models.
+It can take multiple forms, such as multiple-choice question answering, open-ended instructions,
+and feedback from real users. Currently, there is no unified approach to measuring a model's
+performance but there are patterns and recipes that we can adapt to specific use cases.
+While general-purpose evaluations are the most popular ones, with benchmarks like Massive
+Multi-Task Language Understanding (MMLU) or LMSYS Chatbot Arena, domain- and task-specific models benefit from more narrow approaches. This is particularly true when dealing with
+entire LLM systems (as opposed to models), often centered around a retrieval-augmented generation (RAG) pipeline. In these scenarios, we need to expand our evaluation framework to encompass the entire system, including new modules like retrievers and post-processors.
+In this chapter, we will cover the following topics:
+•
+Model evaluation
+•
+RAG evaluation
+•
+Evaluating TwinLlama-3.1-8B
+By the end of this chapter, you will know the most popular LLM evaluations and how to evaluate
+models and RAG systems using different techniques.
+Model evaluation
+In model evaluation, the objective is to assess the capabilities of a single model without any
+prompt engineering, RAG pipeline, and so on.

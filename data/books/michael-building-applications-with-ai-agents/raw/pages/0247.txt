@@ -1,0 +1,39 @@
+This flowchart, applied in tools like Grafana, prevents overreaction to noise while
+catching real degradations early.
+Effective monitoring spans infrastructure signals (latency, error rates, CPU) and
+semantic behaviors (intent grasp, tool selection, hallucination, task abandonment).
+Was the user’s intent understood? Was the right tool selected? Did the system produce
+hallucinated content? Did the user abandon the task halfway through? These are not
+questions traditional monitoring systems are built to answer, but they are critical to
+ensuring agents remain trustworthy, helpful, and aligned.
+Build a layered feedback loop: instrument runtime events (tool calls, generations, fall‐
+backs) with context, streaming to backends like Loki (logs), Tempo (traces), and Gra‐
+fana (visualization/alerting). Append evaluation signals—hallucination scores or drift
+indicators—via external critics in real time.
+It’s worth emphasizing that all of this can—and should—be part of the same observa‐
+bility pipeline used for production services. The same Prometheus instance that
+tracks service health can also track agent success rates. The same Grafana dashboards
+used by SREs can include semantic error rates, model latency distributions, and tool
+usage graphs. There is no need for a separate monitoring stack; agents benefit from
+the same rigor and visibility as any other critical software service.
+Of course, observability data often contains sensitive content. Logs may include user
+messages, tool inputs, or intermediate LLM generations. To maintain compliance and
+user privacy, teams should configure separate monitoring clusters with strict role-
+based access control (RBAC). Sensitive data can be routed to isolated backends with
+encryption-at-rest and access auditing, ensuring that debugging and performance
+analysis remain possible without compromising trust or compliance obligations. It’s
+also common practice to redact, hash, or mask personally identifiable information
+(PII) from observability logs before export. OpenTelemetry provides hooks for data
+scrubbing during span export, enabling fine-grained control over what leaves the
+boundary of the application.
+Ultimately, monitoring turns metrics into action—helping teams spot what’s critical
+and respond fast. The following sections show how open source tools build this loop,
+accelerating development, robustness, and reliability in live environments.
+Before diving into instrumentation details, it’s helpful to define what you actually
+want to observe. Effective monitoring begins with choosing the right metrics—those
+that reveal not just whether the system is up, but whether it’s working as intended.
+Table 10-1 is a practical taxonomy of metrics, organized by layer of abstraction, that
+can guide what to collect, visualize, and alert on.
+Monitoring Is How You Learn 
+| 
+225

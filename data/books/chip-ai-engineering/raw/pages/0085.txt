@@ -1,0 +1,41 @@
+tabla 1-5. Diferentes prompts pueden hacer que los modelos funcionen de fo
+Gemini Ultra
+Gemini Pro
+GPT-4
+GPT
+Rendimiento
+de MMLU
+90.04 %
+CoT@32
+79.13 %
+CoT@8
+87.29 %
+CoT@32 (a
+través de API)
+70 %
+83.7 % 5 shots
+71.8 % 5 shots
+86.4 % 5 shots
+(informado)
+Ingeniería de prompts y construcción de contextos
+La ingeniería de prompts consiste en conseguir que los modelos de IA
+expresen los comportamientos deseables exclusivamente a partir del input,
+sin cambiar las ponderaciones del modelo. La historia de la evaluación de
+Gemini pone de relieve el impacto de la ingeniería de prompts en el
+rendimiento del modelo. Utilizando una técnica de ingeniería de prompts
+diferente, el rendimiento de Gemini Ultra en MMLU pasó del 83.7 % al
+90.04 %.
+Es posible conseguir que un modelo haga cosas increíbles con solo darle
+prompts. Las instrucciones adecuadas pueden conseguir que un modelo
+realice la tarea que desea, en el formato que elija. La ingeniería de prompts
+no consiste solo en decirle a un modelo lo que tiene que hacer. También se
+trata de dar al modelo el contexto y las herramientas necesarias para llevar a
+cabo una tarea determinada. En el caso de tareas complejas con un contexto
+largo, puede que también sea necesario dotar al modelo de un sistema de
+gestión de memoria, para que el modelo pueda hacer un seguimiento de su
+historial. En el Capítulo 5 se aborda la ingeniería de prompts y en el
+Capítulo 6 la construcción de contextos.
+Interfaz de la IA
+Para la interfaz de la IA hay crear una interfaz para que los usuarios finales
+interactúen con sus aplicaciones de IA. Antes de los modelos fundacionales,
+solo las organizaciones con recursos suficientes para desarrollar modelos de

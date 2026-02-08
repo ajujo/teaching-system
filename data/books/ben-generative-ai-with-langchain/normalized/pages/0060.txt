@@ -1,0 +1,27 @@
+Chapter 2
+33
+# Either one or both can be used with the same interface
+response = openai_llm.invoke("Tell me a joke about light bulbs!")
+print(response)
+Please note that you must set your environment variables to the provider keys when you run this.
+For example, when running this I'd start the file by calling set_environment() from config:
+from config import set_environment
+set_environment()
+We get this output:
+Why did the light bulb go to therapy?
+Because it was feeling a little dim!
+For the Gemini model, we can run:
+response = gemini_pro.invoke("Tell me a joke about light bulbs!")
+For me, Gemini comes up with this joke:
+Why did the light bulb get a speeding ticket?
+Because it was caught going over the watt limit!
+Notice how we use the same invoke() method regardless of the provider. This consistency makes
+it easy to experiment with different models or switch providers in production.
+Development testing
+During development, you might want to test your application without making actual API calls.
+LangChain provides FakeListLLM for this purpose:
+from langchain_community.llms import FakeListLLM
+# Create a fake LLM that always returns the same response
+fake_llm = FakeListLLM(responses=["Hello"])
+result = fake_llm.invoke("Any input will return Hello")
+print(result) # Output: Hello

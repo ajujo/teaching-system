@@ -1,0 +1,26 @@
+9
+Extracting Features from 
+Relational Data with 
+Featuretools
+In previous chapters, we worked with data organized in rows and columns, where the columns are 
+the variables, the rows are the observations, and each observation is independent. In this chapter, we 
+will focus on creating features from relational datasets. In relational datasets, data is structured across 
+various tables, which can be joined together via unique identifiers. These unique identifiers indicate 
+relationships that exist between the different tables.
+A classic example of relational data is that held by retail companies. One table contains information 
+about customers, such as names and addresses. A second table has information about the purchases 
+made by the customers, such as the type and number of items bought per purchase. A third table 
+contains information about the customers’ interactions with the company’s website, variables such as 
+session duration, the mobile device used, and pages visited. Customers, purchases, and sessions are 
+identified with unique identifiers. These unique identifiers allow us to put these tables together, and 
+in this way, we can get information about customers’ purchases or sessions.
+If we want to know more about the types of customers we have (that is, customer segmentation) or 
+make predictions about whether they would buy a product, we can create features that aggregate 
+or summarize information across different tables at the customer level. For example, we can create 
+features that capture the maximum amount spent by a customer on a purchase, the number of 
+purchases they have made, the time between sessions, or the average session duration. The number 
+of features we can create and the various ways we can aggregate data across tables are abundant. 
+In this chapter, we will discuss some common ways of creating aggregated views of relational data 
+utilizing the featuretools Python library. We will begin by setting up various data tables and 
+their relationships and automatically creating features, and next, we will follow up with more detail 
+on the different features we can create.

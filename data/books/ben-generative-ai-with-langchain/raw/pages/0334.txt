@@ -1,0 +1,43 @@
+Chapter 7
+307
+Our practical demonstrations illustrated diverse approaches to LLM integration through LangC­
+hain. We used multiple models to generate code solutions, built RAG systems to augment LLMs 
+with documentation and repository knowledge, and created agents capable of training neural 
+networks and analyzing datasets with minimal human intervention. Throughout these imple­
+mentations, we looked at critical security considerations, providing validation frameworks and 
+risk mitigation strategies essential for production deployments. 
+Having explored the capabilities and integration strategies for LLMs in software and data work­
+flows, we now turn our attention to ensuring these solutions work reliably in production. In 
+Chapter 8, we’ll delve into evaluation and testing methodologies that help validate AI-generated 
+code and safeguard system performance, setting the stage for building truly production-ready 
+applications.
+Questions
+1.	
+What is vibe coding, and how does it change the traditional approach to writing and 
+maintaining code?
+2.	 What key differences exist between traditional low-code platforms and LLM-based de­
+velopment approaches?
+3.	
+How do independent research findings on productivity gains from AI coding assistants 
+differ from vendor claims, and what factors might explain this discrepancy?
+4.	
+What specific benchmark metrics show that LLMs struggle more with class-level code 
+generation compared to function-level tasks, and why is this distinction important for 
+practical implementations?
+5.	
+Describe the validation framework presented in the chapter for LLM-generated code. What 
+are the six key areas of assessment, and why is each important for production systems?
+6.	
+Using the repository RAG example from the chapter, explain how you would modify the 
+implementation to better handle large codebases with thousands of files.
+7.	
+What patterns emerged in the dataset analysis examples that demonstrate how LLMs 
+perform in structured data analysis tasks versus unstructured text processing?
+8.	 How does the agentic approach to data science, as demonstrated in the neural network 
+training example, differ from traditional programming workflows? What advantages and 
+limitations did this approach reveal?
+9.	
+How do LLM integrations in LangChain enable more effective software development and 
+data analysis?
+10.	 What critical factors should organizations consider when implementing LLM-based de­
+velopment or analysis tools?

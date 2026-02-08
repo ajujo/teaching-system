@@ -1,0 +1,45 @@
+First Steps with LangChain
+64
+5.
+What role do Runnables play in LangChain? How do they contribute to building modular
+LLM applications?
+6.	 When running models locally, which factors affect model performance? (Select all that
+apply)
+•
+Available RAM
+•
+CPU/GPU capabilities
+•
+Internet connection speed
+•
+Model quantization level
+•
+Operating system type
+7.
+Compare the following model deployment options and identify scenarios where each
+would be most appropriate:
+•
+Cloud-based models (e.g., OpenAI)
+•
+Local models with llama.cpp
+•
+GPT4All integration
+8.	 Design a basic chain using LCEL that would:
+•
+Take a user question about a product
+•
+Query a database for product information
+•
+Generate a response using an LLM
+9.
+Provide a sketch outlining the components and how they connect.
+10.	 Compare the following approaches for image analysis and mention the trade-offs be­
+tween them:
+•
+Approach A
+from langchain_openai import ChatOpenAI
+chat = ChatOpenAI(model="gpt-4-vision-preview")
+•
+Approach B
+from langchain_community.llms import Ollama
+local_model = Ollama(model="llava")

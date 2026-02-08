@@ -1,0 +1,8 @@
+Chapter 4
+111
+The workflow in a RAG system follows a clear sequence: when a query arrives, it’s processed for 
+retrieval; the retriever then searches the knowledge base for relevant information; this retrieved 
+context is combined with the original query through augmentation; finally, the language model 
+generates a response grounded in both the query and the retrieved information. We can see this 
+in the following diagram:
+Figure 4.1: RAG architecture and workflow

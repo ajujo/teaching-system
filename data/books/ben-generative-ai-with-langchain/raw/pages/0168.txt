@@ -1,0 +1,36 @@
+Chapter 4
+141
+For example, a hybrid retriever might use vector similarity to find semantically related documents 
+while simultaneously running a keyword search to catch exact terminology matches, then com­
+bine the results using rank fusion algorithms.
+from langchain.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+from langchain.vectorstores import FAISS
+# Setup semantic retriever
+vector_retriever = vector_store.as_retriever(search_kwargs={"k": 5})
+# Setup lexical retriever
+bm25_retriever = BM25Retriever.from_documents(documents)
+bm25_retriever.k = 5
+# Combine retrievers
+hybrid_retriever = EnsembleRetriever(
+    retrievers=[vector_retriever, bm25_retriever],
+    weights=[0.7, 0.3]  # Weight semantic search higher than keyword 
+search
+)
+results = hybrid_retriever.get_relevant_documents("climate change 
+impacts")
+Re-ranking
+Re-ranking is a post-processing step that can follow any retrieval method, including hybrid re­
+trieval:
+1.	
+First, retrieve a larger set of candidate documents
+2.	 Apply a more sophisticated model to re-score documents
+3.	
+Reorder based on these more precise relevance scores
+Re-ranking follows three main paradigms:
+•	
+Pointwise rerankers: Score each document independently (for example, on a scale of 
+1-10) and sort the resulting array of documents accordingly
+•	
+Pairwise rerankers: Compare document pairs to determine preferences, then construct a 
+final ordering by ranking documents based on their win/loss record across all comparisons

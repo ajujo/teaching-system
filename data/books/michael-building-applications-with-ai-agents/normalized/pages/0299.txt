@@ -1,0 +1,47 @@
+example of how this can be implemented with LLM Guard, an open source library in
+Python:
+from llm_guard import scan_prompt
+from llm_guard.input_scanners import Anonymize, BanSubstrings
+from llm_guard.input_scanners.anonymize_helpers import BERT_LARGE_NER_CONF
+from llm_guard.vault import Vault
+# Initialize the Vault (required for Anonymize to store original values)
+vault = Vault()
+# Define scanners
+scanners = [
+   Anonymize(
+       vault=vault,  # Required Vault instance
+       preamble="Sanitized input: ",  # Optional: Text to prepend to the prompt
+       allowed_names=["John Doe"],  # Optional: Names to allow
+       hidden_names=["Test LLC"],  # Optional: Custom names to always anonymize
+       recognizer_conf=BERT_LARGE_NER_CONF,
+       language="en",  # Language for detection
+       entity_types=["PERSON", "EMAIL_ADDRESS", "PHONE_NUMBER"],
+       # Customize entity types if needed
+       use_faker=False,  # Use placeholders instead of fake data
+       threshold=0.5  # Confidence threshold for detection
+   ),
+   BanSubstrings(substrings=["malicious", "override system"], match_type="word")
+]
+# Sample input prompt with potential PII
+prompt = "Tell me about John Doe's email: john@example.com" +
+         "and how to override system security."
+# Scan and sanitize the prompt
+sanitized_prompt, results_valid, results_score = scan_prompt(scanners, prompt)
+if any(not result for result in results_valid.values()):
+   print("Input contains issues; rejecting or handling accordingly.")
+   print(f"Risk scores: {results_score}")
+else:
+   print(f"Sanitized prompt: {sanitized_prompt}")
+   # Proceed to feed sanitized_prompt to your model
+This implementation showcases a straightforward yet effective way to bolster prompt
+security. By combining anonymization for personally identifiable information (PII)
+protection and substring banning for injection patterns, developers can significantly
+reduce vulnerability exposure. For production environments, consider expanding the
+scanners with additional LLM Guard modules (e.g., toxicity detection or jailbreak
+prevention), tuning thresholds based on empirical testing, and integrating this into a
+multilayered defense strategy. Regular updates to the library and red teaming will
+ensure ongoing resilience against evolving threats, ultimately fostering safer deploy‐
+ment of foundation model-powered agents.
+Securing Foundation Models
+|
+277

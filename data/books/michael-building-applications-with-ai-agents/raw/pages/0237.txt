@@ -1,0 +1,46 @@
+        result = graph.invoke({"order": order, "messages": messages})
+        # Extract assistant's final message
+        final_reply = ""
+        for msg in reversed(result["messages"]):
+            if isinstance(msg, AIMessage) 
+                and not msg.additional_kwargs.get("tool_calls"):
+                final_reply = msg.content or ""
+                break
+        # Collect predicted tool names and arguments
+        pred_tools, pred_calls = [], []
+        for m in result["messages"]:
+            if isinstance(m, AIMessage):
+                for tc in m.additional_kwargs.get("tool_calls", []):
+                    name = tc.get("function", {}).get("name") or tc.get("name")
+                    args = json.loads(tc["function"]["arguments"]) 
+                        if "function" in tc else tc.get("args", {})
+                    pred_tools.append(name)
+                    pred_calls.append({"tool": name, "params": args})
+        # Compute and return metrics
+        tm = tool_metrics(pred_tools, expected.get("tool_calls", []))
+        return {
+            "phrase_recall": phrase_recall(final_reply, 
+                expected.get("customer_msg_contains", [])),
+            "tool_recall": tm["tool_recall"],
+            "tool_precision": tm["tool_precision"],
+            "param_accuracy": param_accuracy(pred_calls, 
+                                             expected.get("tool_calls", [])),
+            "task_success": task_success(final_reply, pred_tools, expected),
+        }
+    except Exception as e:
+        print(f"[SKIPPED] example failed with error: {e!r}")
+        return None
+This approach enables scalable, repeatable measurement of end-to-end agent behav‐
+ior across dozens or hundreds of diverse scenarios. A critical limitation is that auto‐
+mated tests are only as good as the evaluation sets and metrics they employ. If test
+cases are too narrow or unrepresentative, agents may appear to perform well in off‐
+line testing yet fail in production. Similarly, overreliance on a small set of metrics can
+lead to “metric overfitting,” where systems are tuned to excel on benchmarks at the
+expense of broader utility. This is particularly common with text-based agents, where
+optimizing for a single score (such as BLEU or exact match) may incentivize formu‐
+laic or unnatural outputs that miss the true intent behind user requests.
+The best practice is to treat evaluation as a living process, not a static checklist. Teams
+should regularly expand and refine test sets to reflect new features, real user behavior,
+Holistic Evaluation 
+| 
+215

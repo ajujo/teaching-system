@@ -1,0 +1,22 @@
+1
+Imputing Missing Data
+Missing data—meaning the absence of values for certain observations—is an unavoidable problem 
+in most data sources. Some machine learning model implementations can handle missing data out of 
+the box. To train other models, we must remove observations with missing data or transform them 
+into permitted values.
+The act of replacing missing data with their statistical estimates is called imputation. The goal of 
+any imputation technique is to produce a complete dataset. There are multiple imputation methods. 
+We select which one to use, depending on whether the data is missing at random, the proportion 
+of missing values, and the machine learning model we intend to use. In this chapter, we will discuss 
+several imputation methods.
+This chapter will cover the following recipes:
+•	 Removing observations with missing data
+•	 Performing mean or median imputation
+•	 Imputing categorical variables
+•	 Replacing missing values with an arbitrary number
+•	 Finding extreme values for imputation
+•	 Marking imputed values
+•	 Implementing forward and backward fill
+•	 Carrying out interpolation
+•	 Performing multivariate imputation by chained equations
+•	 Estimating missing data with nearest neighbors

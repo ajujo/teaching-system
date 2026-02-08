@@ -1,0 +1,37 @@
+Chapter 11
+403
+•	
+Version control: Used to track, manage, and version every change made to the source code. 
+This allows you to have complete control over the evolution of the code and deployment 
+processes. For example, without versioning, tracking changes between the dev, staging, 
+and production environments would be impossible. By versioning your software, you 
+always know what version is stable and ready to be shipped.
+•	
+Continuous integration (CI): Before pushing the code into the dev, staging, and produc-
+tion main branches, you automatically build your application and run automated tests 
+on each change. After all the automated tests pass, the feature branch can be merged into 
+the main one.
+•	
+Continuous delivery (CD): Continuous delivery works in conjunction with CI and au-
+tomates the infrastructure provisioning and application deployment steps. For example, 
+after the code is merged into the staging environment, the application with the latest 
+changes will be automatically deployed on top of your staging infrastructure. After, the 
+QA team (or stakeholders) starts manually testing the latest features to verify that they 
+work as expected. These two steps are commonly referred to together as CI/CD.
+Note that DevOps suggests a set of core principles that are platform/tool agnostic. However, 
+within our LLM Twin use case, we will add a version control layer using GitHub, which aims to 
+track the evolution of the code. Another popular tool for version control is GitLab. To implement 
+the CI/CD pipeline, we will leverage the GitHub ecosystem and GitHub Actions, which are free 
+for open-source projects. Other tool choices are GitLab CI/CD, CircleCI, and Jenkins. Usually, 
+you pick the DevOps tool based on your development environment, customization, and privacy 
+needs. For example, Jenkins is an open-source DevOps tool you can host yourself and control 
+fully. The downside is that you must host and maintain it yourself, adding a complexity layer. 
+Thus, many companies choose what works best with their version control ecosystem, such as 
+GitHub Actions or GitLab CI/CD.
+Now that we’ve established a solid understanding of DevOps, let’s explore how the MLOps field 
+has emerged to keep these same core principles in the AI/ML world.
+MLOps
+As you might have worked out by now, MLOps tries to apply the DevOps principles to ML. The core 
+issue is that an ML application has many other moving parts compared to a standard software 
+application, such as the data, model, and, finally, the code. MLOps aims to track, operationalize, 
+and monitor all these concepts for better reproducibility, robustness, and control.

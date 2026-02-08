@@ -1,0 +1,32 @@
+Verificación de datos
+Dada la importancia de la calidad de los datos en el rendimiento del
+modelo, es crucial que tengamos una forma de verificar la calidad de los
+datos. La calidad de los datos generados por la IA pueden medirse del
+mismo modo que se evalúan otros resultados de la IA: mediante la
+corrección funcional y los jueces de IA.
+Aunque esta sección se centra en los datos sintéticos, la mayoría de las
+técnicas pueden utilizarse para evaluar la calidad de los datos de
+entrenamiento en general.
+Recordemos el concepto de desarrollo basado en la evaluación del
+Capítulo 4, según el cual es más probable que las empresas creen
+aplicaciones que puedan evaluar. Del mismo modo, se tiende a sintetizar los
+datos que se pueden verificar. La codificación es uno de los casos de uso de
+modelos fundacionales más populares porque pueden evaluarse
+funcionalmente y, por la misma razón, los ejemplos relacionados con la
+codificación se encuentran entre los datos sintetizados con más frecuencia.
+La mayor parte de los datos sintéticos utilizados para entrenar a Llama 3
+están relacionados con la codificación. Los tres métodos utilizados por los
+autores para sintetizar los datos producen datos que pueden verificarse
+programáticamente, x, mediante la ejecución del código y la
+retrotraducción.
+Para los datos sintéticos que no pueden verificarse por corrección funcional
+es habitual utilizar verificadores de IA. Un verificador de IA puede ser un
+juez de IA de propósito general o un puntuador especializado. Hay muchas
+maneras de plantear el problema de la verificación. En su forma más
+simple, el verificador de IA puede asignar a cada ejemplo generado una
+puntuación de 1 a 5 o clasificar cada ejemplo como bueno o malo. También
+puede describir a un modelo base los requisitos de calidad e indicar al
+modelo que determine si un ejemplo de datos cumple estos requisitos.
+Si le preocupa la coherencia factual de los datos, puede utilizar las técnicas
+de detección de incoherencias factuales comentadas en el Capítulo 4 para
+filtrar los ejemplos que probablemente contengan alucinaciones.

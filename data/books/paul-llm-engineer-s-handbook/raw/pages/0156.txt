@@ -1,0 +1,7 @@
+Chapter 4
+125
+Figure 4.7: Bi-encoder (the standard embedding model) versus cross-encoder
+The abovementioned techniques are far from an exhaustive list of all potential solutions. We 
+used them as examples to get an intuition on what you can (and should) optimize at each step 
+in your RAG workflow. The truth is that these techniques can vary tremendously by the type of 
+data you work with. 

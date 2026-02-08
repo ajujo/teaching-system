@@ -1,0 +1,31 @@
+Flujo de trabajo de selección de modelos
+Al examinar los modelos, es importante diferenciar entre atributos duros (lo
+que es imposible o poco práctico que cambie) y atributos blandos (lo que
+puede y está dispuesto a cambiar).
+Los atributos duros suelen ser resultado de decisiones tomadas por los
+proveedores de modelos (licencias, datos de entrenamiento, tamaño del
+modelo) o de sus propias políticas (privacidad, control). Para algunos casos
+de uso, los atributos duros pueden reducir significativamente el conjunto de
+modelos potenciales.
+Los atributos blandos son atributos que pueden mejorarse, como la
+precisión, la toxicidad o la coherencia factual. A la hora de estimar cuánto
+puede mejorar en un determinado atributo, puede ser difícil encontrar el
+equilibrio entre ser optimista y ser realista. He tenido situaciones en las que
+la precisión de un modelo rondaba el 20 % durante los primeros prompts.
+Sin embargo, la precisión subió al 70 % después de descomponer la tarea en
+dos pasos. Por otro lado, ha habido situaciones en las que un modelo seguía
+siendo inutilizable para mi tarea incluso después de semanas de retoques, y
+he tenido que abandonarlo.
+Lo que defina como atributos duros y blandos depende tanto del modelo
+como de su caso de uso. Por ejemplo, la latencia es un atributo suave si
+tiene acceso al modelo para optimizarlo y que funcione más rápido. Es un
+atributo difícil si utiliza un modelo alojado por otra persona.
+A grandes rasgos, el flujo de trabajo de la evaluación consta de cuatro pasos
+(véase la Figura 4-5):
+1. Filtrar los modelos cuyos atributos duros no le sirvan. Su lista de
+atributos duros depende en gran medida de sus propias políticas
+internas, de si desea utilizar API comerciales o alojar sus propios
+modelos.
+2. Utilizar la información disponible públicamente, por ejemplo, el
+rendimiento de referencia y la clasificación de los líderes, para
+reducir los modelos más prometedores con los que experimentar,

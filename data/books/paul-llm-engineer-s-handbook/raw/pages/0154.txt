@@ -1,0 +1,28 @@
+Chapter 4
+123
+embeddings = model.encode([[instruction, sentence]])
+print(embeddings.shape) # noqa
+# Output: (1, 768)
+The source code can be found at https://github.com/PacktPublishing/LLM-Engineering/
+blob/main/code_snippets/08_instructor_embeddings.py.
+python3 -m venv instructor_venv && source instructor_venv/bin/activate
+pip install sentence-transformers==2.2.2 InstructorEmbedding==1.0.1
+On the other side of the spectrum, here is how you can improve your retrieval by leveraging classic 
+filter and search DB features:
+•	
+Hybrid search: This is a vector and keyword-based search blend. Keyword-based search 
+excels at identifying documents containing specific keywords. When your task demands 
+pinpoint accuracy and the retrieved information must include exact keyword matches, 
+hybrid search shines. Vector search, while powerful, can sometimes struggle with finding 
+exact matches, but it excels at finding more general semantic similarities. You leverage 
+both keyword matching and semantic similarities by combining the two methods. You 
+have a parameter, usually called alpha, that controls the weight between the two methods. 
+The algorithm has two independent searches, which are later normalized and unified.
+•	
+Filtered vector search: This type of search leverages the metadata index to filter for specific 
+keywords within the metadata. It differs from a hybrid search in that you retrieve the data 
+once using only the vector index and perform the filtering step before or after the vector 
+search to reduce your search space.
+To run the instructor code, you have to create a different virtual environment and 
+activate it:
+And install the required Python dependencies:

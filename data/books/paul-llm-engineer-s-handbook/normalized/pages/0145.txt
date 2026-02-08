@@ -1,0 +1,35 @@
+RAG Feature Pipeline
+114
+image = Image.open(BytesIO(response.content))
+model = SentenceTransformer("clip-ViT-B-32")
+img_emb = model.encode(image)
+text_emb = model.encode(
+["A crazy cat smiling.",
+"A white and brown cat with a yellow bandana.",
+"A man eating in the garden."]
+)
+print(text_emb.shape) # noqa
+# Output: (3, 512)
+similarity_scores = model.similarity(img_emb, text_emb)
+print(similarity_scores) # noqa
+# Output: tensor([[0.3068, 0.3300, 0.1719]])
+The source code can be found at https://github.com/PacktPublishing/LLM-Engineering/
+blob/main/code_snippets/08_text_image_embeddings.py.
+Here, we provided a small introduction to how embeddings can be computed. The realm of specific
+implementations is vast, but what is important to know is that embeddings can be computed for
+most digital data categories, such as words, sentences, documents, images, videos, and graphs.
+It's crucial to grasp that you must use specialized models when you need to compute the distance
+between two different data categories, such as the distance between the vector of a sentence and
+of an image. These models are designed to project both data types into the same vector space,
+such as CLIP, ensuring accurate distance computation.
+Applications of embeddings
+Due to the generative AI revolution, which uses RAG, embeddings have become extremely popular in information retrieval tasks, such as semantic search for text, code, images, and audio, and
+long-term memory of agents. But before generative AI, embeddings were already heavily used in:
+•
+Representing categorical variables (e.g., vocabulary tokens) that are fed to an ML model
+•
+Recommender systems by encoding the users and items and finding their relationship
+•
+Clustering and outlier detection
+•
+Data visualization by using algorithms such as UMAP

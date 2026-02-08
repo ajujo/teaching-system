@@ -1,0 +1,46 @@
+Building Intelligent RAG Systems
+118
+For many applications starting with RAG, lightweight options like ChromaDB provide an excellent
+balance of simplicity and functionality, while enterprise deployments might benefit from the ad­
+vanced features of Pinecone or AnalyticDB-V. Modern vector stores support several search patterns:
+•
+Exact search: Returns precise nearest neighbors but becomes computationally prohibitive
+with large vector collections
+•
+Approximate search: Trades accuracy for speed using techniques like LSH, HNSW, or
+quantization; measured by recall (the percentage of true nearest neighbors retrieved)
+•
+Hybrid search: Combines vector similarity with text-based search (like keyword matching
+or BM25) in a single query
+•
+Filtered vector search: Applies traditional database filters (for example, metadata con­
+straints) alongside vector similarity search
+Vector stores also handle different types of embeddings:
+•
+Dense vector search: Uses continuous embeddings where most dimensions have non-zero
+values, typically from neural models (like BERT, OpenAI embeddings)
+•
+Sparse vector search: Uses high-dimensional vectors where most values are zero, resem­
+bling traditional TF-IDF or BM25 representations
+•
+Sparse-dense hybrid: Combines both approaches to leverage semantic similarity (dense)
+and keyword precision (sparse)
+They also often give a choice of multiple similarity measures, for example:
+•
+Inner product: Useful for comparing semantic directions
+•
+Cosine similarity: Normalizes for vector magnitude
+•
+Euclidean distance: Measures the L2 distance in vector space (note: with normalized
+embeddings, this becomes functionally equivalent to the dot product)
+•
+Hamming distance: For binary vector representations
+When implementing vector storage for RAG applications, one of the first architectural decisions
+is whether to use local storage or a cloud-based solution. Let's explore the tradeoffs and consid­
+erations for each approach.
+•
+Choose local storage when you need maximum control, have strict privacy requirements,
+or operate at a smaller scale with predictable workloads.
+•
+Choose cloud storage when you need elastic scaling, prefer managed services, or operate
+distributed applications with variable workloads.

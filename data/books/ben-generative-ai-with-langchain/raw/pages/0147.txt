@@ -1,0 +1,39 @@
+Building Intelligent RAG Systems
+120
+The vectorstore base class in LangChain provides these essential operations:
+1.	
+Adding documents:
+docs = [Document(page_content="Content 1"), Document(page_
+content="Content 2")]
+ids = vector_store.add_documents(docs)
+2.	
+Similarity search:
+results = vector_store.similarity_search("How does LangChain work?", 
+k=3)
+3.	
+Deletion:
+vector_store.delete(ids=["doc_1", "doc_2"])
+4.	
+Maximum marginal relevance search:
+# Find relevant BUT diverse documents (reduce redundancy)
+results = vector_store.max_marginal_relevance_search(
+    "How does LangChain work?",
+    k=3,
+    fetch_k=10,
+    lambda_mult=0.5  # Controls diversity (0=max diversity, 1=max 
+relevance)
+)
+It’s important to also briefly highlight applications of vector stores apart from RAG:
+•	
+Anomaly detection in large datasets
+•	
+Personalization and recommendation systems
+•	
+NLP tasks
+•	
+Fraud detection
+•	
+Network security monitoring
+Storing vectors isn’t enough, however. We need to find similar vectors quickly when processing 
+queries. Without proper indexing, searching through vectors would be like trying to find a book 
+in a library with no organization system – you’d have to check every single book.

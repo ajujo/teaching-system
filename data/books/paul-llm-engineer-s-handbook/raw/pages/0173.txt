@@ -1,0 +1,31 @@
+RAG Feature Pipeline
+142
+The final puzzle piece is understanding how to configure the RAG feature pipeline dynamically. 
+All its available settings are exposed as function parameters. Here, we need only a list of au-
+thor’s names, as seen in the function’s signature: feature_engineering(author_full_names: 
+list[str]). We inject a YAML configuration file at runtime that contains all the necessary values 
+based on different use cases. For example, the following configuration includes a list of all the 
+authors of this book as we want to populate the feature store with data from all of us (available 
+in the GitHub repository at configs/feature_engineering.yaml):
+parameters:
+  author_full_names:
+    - Alex Vesa
+    - Maxime Labonne
+    - Paul Iusztin
+The beauty of this approach is that you don’t have to modify the code to configure the feature 
+pipeline with different input values. You have to provide a different configuration file when run-
+ning it, as follows:
+feature_engineering.with_options(config_path="…/feature_engineering.yaml")
+()
+You can either hardcode the path to the config file or provide the config_path from the CLI, which 
+allows you to modify the pipeline’s configuration between different runs. Out of simplicity, we 
+hard-coded the configuration file. Thus, we can call the feature engineering pipeline calling the 
+run.py script as follows:
+python -m tools.run --no-cache --run-feature-engineering
+However, you can easily add another CLI argument to pass the config_path variable. Also, you 
+can run the feature pipeline using the following poe command:
+poetry poe run-feature-engineering-pipeline
+Let’s move forward to the ZenML steps and sequentially zoom in on all of them. The source code for 
+all the feature engineering pipeline steps is available on GitHub at "steps/feature_engineering". 
+We will begin with the first step, which involves querying the data warehouse for new content 
+to process into features.

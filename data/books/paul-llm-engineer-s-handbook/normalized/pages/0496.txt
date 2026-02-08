@@ -1,0 +1,30 @@
+Appendix
+465
+•
+Invariance: Changes in your input should not affect the output-for example, below is
+an example based on synonym injection:
+model(text="The advancements in AI are changing the world rapidly.")
+# output: ai
+model(text="The progress in AI is changing the world rapidly.")
+# output: ai
+•
+Directional: Changes in your input should affect the outputs-for example, below is an
+example where we know the outputs should change based on the provided inputs:
+model(text="Deep learning used for sentiment analysis.")
+# output: deep-learning
+model(text="Deep learning used for object detection.")
+# output: deep-learning
+model(text="RNNs for sentiment analysis.")
+# output: rnn
+•
+Minimum functionality: The most simple combination of inputs and expected outputsfor example, below is a set of simple examples that we expect the model should always
+get right:
+model(text="NLP is the next big wave in machine learning.")
+# output: nlp
+model(text="MLOps is the next big wave in machine learning.")
+# output: mlops
+model(text="This is about graph neural networks.")
+# output: gnn
+For more on testing, we recommend reading Testing Machine Learning Systems: Code,
+Data, and Models by Goku Mohandas: https://madewithml.com/courses/mlops/
+testing/.

@@ -1,0 +1,24 @@
+Table of Contents
+Preface 
+ xvii
+Free Benefits with Your Book ......................................................................................... xxiv
+Chapter 1: The Rise of Generative AI: From Language Models to Agents 
+ 1
+The modern LLM landscape ................................................................................................ 2
+Model comparison • 4
+LLM provider landscape • 6
+Licensing • 7
+From models to agentic applications .................................................................................. 8
+Limitations of traditional LLMs • 9
+Understanding LLM applications • 10
+Understanding AI agents • 11
+Introducing LangChain ..................................................................................................... 14
+Challenges with raw LLMs • 14
+How LangChain enables agent development • 16
+Exploring the LangChain architecture • 17
+Ecosystem • 18
+Modular design and dependency management • 19
+LangGraph, LangSmith, and companion tools • 21
+Third-party applications and visual tools • 22
+Summary .......................................................................................................................... 23
+Questions .......................................................................................................................... 23

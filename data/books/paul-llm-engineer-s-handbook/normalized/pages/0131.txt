@@ -1,0 +1,36 @@
+RAG Feature Pipeline
+100
+Understanding RAG
+RAG enhances the accuracy and reliability of generative AI models with information fetched from
+external sources. It is a technique complementary to the internal knowledge of the LLMs. Before
+going into the details, let's understand what RAG stands for:
+•
+Retrieval: Search for relevant data
+•
+Augmented: Add the data as context to the prompt
+•
+Generation: Use the augmented prompt with an LLM for generation
+Any LLM is bound to understand the data it was trained on, sometimes called parameterized
+knowledge. Thus, even if the LLM can perfectly answer what happened in the past, it won't have
+access to the newest data or any other external sources on which it wasn't trained.
+Let's take the most powerful model from OpenAI as an example, which, in the summer of 2024, is
+GPT-4o. The model is trained on data up to October 2023. Thus, if we ask what happened during
+the 2020 pandemic, it can be answered perfectly due to its parametrized knowledge. However,
+it will not know the answer if we ask about the 2024 European Football Championship results
+due to its bounded parametrized knowledge. Another scenario is that it will start confidently
+hallucinating and provide a faulty answer.
+RAG overcomes these two limitations of LLMs. It provides access to external or latest data and
+prevents hallucinations, enhancing generative AI models' accuracy and reliability.
+Why use RAG?
+We briefly explained the importance of using RAG in generative AI applications earlier. Now, we
+will dig deeper into the "why," following which we will focus on what a naïve RAG framework
+looks like.
+For now, to get an intuition about RAG, you have to know that when using RAG, we inject the
+necessary information into the prompt to answer the initial user question. After that, we pass
+the augmented prompt to the LLM for the final answer. Now, the LLM will use the additional
+context to answer the user question.
+There are two fundamental problems that RAG solves:
+•
+Hallucinations
+•
+Old or private information

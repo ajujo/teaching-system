@@ -1,0 +1,30 @@
+Aunque FP64 se sigue utilizando en muchos cálculos (en el momento de
+escribir esto, FP64 es el formato por defecto para NumPy y pandas), rara
+vez se utiliza en redes neuronales debido a su huella de memoria. FP32 y
+FP16 son más comunes. Otros formatos de punto flotante populares en las
+cargas de trabajo de IA son BF16 (BFloat16) y TF32 (TensorFloat-32).
+BF16 fue diseñado por Google para optimizar el rendimiento de la IA en
+TPU y TF32 fue diseñado por NVIDIA para GPU. 11
+Los números también pueden representarse como números enteros. Aunque
+todavía no son tan comunes como los formatos flotantes, las
+representaciones de números enteros son cada vez más populares. Los
+formatos de enteros más comunes son INT8 (enteros de 8 bits) e INT4
+(enteros de 4 bits). 12
+Cada formato flotante suele tener 1 bit para representar el signo del número,
+es decir, negativo o positivo. El resto de los bits se reparten entre alcance y
+precisión: 13
+Rango
+El número de bits de rango determina el rango de valores
+que puede representar el formato. Más bits significan un
+rango más amplio. Esto es similar a la forma en que tener
+más dígitos permite representar una gama más amplia de
+números.
+Precisión
+El número de bits de precisión determina la exactitud con la
+que se puede representar un número. Reducir el número de
+bits de precisión hace que un número sea menos preciso.
+Por ejemplo, si convierte 10.1234 a un formato que solo
+admite dos dígitos decimales, este valor se convierte en
+10.12, que es menos preciso que el valor original.
+La Figura 7-6 muestra diferentes formatos de punto flotante junto con sus
+bits de rango y precisión. 14

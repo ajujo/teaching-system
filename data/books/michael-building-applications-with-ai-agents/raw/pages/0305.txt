@@ -1,0 +1,59 @@
+Layer
+Key threats
+Recommended mitigations
+Real-world example
+5. Evaluation and
+observability
+Metric poisoning, log leakage
+Drift detection (e.g., Evidently
+AI), immutable logs
+Manipulated benchmarks hiding
+biases in AI evaluations
+6. Security and
+compliance
+Agent evasion, bias,
+nonexplainability
+Audits, explainable AI
+techniques
+GDPR fines for opaque agent
+decisions in EU cases
+7. Agent ecosystem
+Unauthorized actions, inter-
+agent attacks
+Role-based controls, quorum
+decision making
+Enterprise agent swarms escalating
+privileges in simulations
+Best practices for using MAESTRO include integrating it iteratively into the software
+development lifecycle and updating models based on emerging threats like those in
+OWASP’s 2025 LLM Top 10. Start with a high-level system diagram, assess each lay‐
+er’s assets and entry points, prioritize risks using a scoring system (e.g., Common
+Vulnerability Scoring System [CVSS] for AI), and simulate attacks via red teaming (as
+in the previous section). In practice, tools like Microsoft’s Threat Modeling Tool can
+be adapted for MAESTRO, ensuring agentic systems remain secure amid 2025’s rising
+AI threats, where 97% of enterprises report incidents averaging $4.4 million. By
+adopting MAESTRO, organizations can transform reactive defenses into a proactive,
+layered strategy, directly supporting the safeguards discussed in “Securing Agents” on
+page 288.
+Protecting Data in Agentic Systems
+Data serves as both the fuel and the foundation of agent systems, driving decision
+making, enabling contextual reasoning, and ensuring meaningful interactions with
+users. However, the reliance on large datasets, continuous data exchange, and com‐
+plex multiagent workflows introduces significant risks to data privacy, integrity, and
+security. Agents often handle sensitive information, including personal data, propri‐
+etary business insights, or confidential records, making them attractive targets for
+malicious actors and prone to accidental data leaks. Protecting data in agentic sys‐
+tems is not merely a technical challenge—it’s a fundamental requirement for building
+trust, ensuring compliance with regulations, and maintaining operational integrity.
+In this section, we will explore key strategies for securing data across the agent lifecy‐
+cle, beginning with data privacy and encryption, followed by measures for ensuring
+data provenance and integrity, and concluding with techniques for handling sensitive
+data securely.
+Data Privacy and Encryption
+In agentic systems, data privacy and encryption form the first line of defense against
+unauthorized access, data breaches, and unintended data exposure. These systems
+often interact with multiple data sources—structured databases, real-time user inputs,
+and third-party APIs—each introducing potential vulnerabilities. Ensuring that data
+Protecting Data in Agentic Systems 
+| 
+283

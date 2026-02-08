@@ -1,0 +1,14 @@
+figura 2-26. Las alucinaciones son peores para el modelo que utiliza tanto el RLHF
+como el SFT (InstructGPT) en comparación con el mismo modelo que solo utiliza el
+SFT (Ouyang et al., 2022).
+Partiendo de la base de que un modelo fundacional sabe lo que sabe,
+algunas personas intentan reducir las alucinaciones con prompts, como
+añadiendo "Responde con la mayor sinceridad posible y, si no estás seguro
+de la respuesta, di: 'Lo siento, no lo sé'". Pedir a los modelos respuestas
+concisas también parece ayudar con las alucinaciones: cuantos menos
+tokens tenga que generar un modelo, menos posibilidades tendrá de
+inventarse cosas. Las técnicas de prompting y construcción de contextos del
+Capítulo 5 y el Capítulo 6 también pueden ayudar a mitigar las
+alucinaciones.
+Las dos hipótesis analizadas se complementan. La hipótesis del autoengaño
+se centra en cómo la autosupervisión provoca alucinaciones, mientras que la

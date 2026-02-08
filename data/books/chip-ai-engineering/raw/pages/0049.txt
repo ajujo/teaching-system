@@ -1,0 +1,23 @@
+figura 1-8. Las empresas están más dispuestas a implementar aplicaciones internas
+Incluso después de ver cientos de aplicaciones de IA, sigo encontrando cada
+semana nuevas aplicaciones que me sorprenden. En los primeros días de
+Internet, poca gente preveía que el caso de uso dominante en Internet algún
+día serían las redes sociales. A medida que aprendemos a sacar el máximo
+partido a la IA, el caso de uso que acabará dominando podría
+sorprendernos. Con suerte, la sorpresa será buena.
+Codificación
+En múltiples encuestas sobre IA generativa, la codificación es sin duda el
+caso de uso más popular. Las herramientas de codificación de IA son
+populares tanto porque la IA es buena codificando como porque los
+primeros ingenieros de IA son de los codificadores más expuestos a los
+retos de la codificación.
+Uno de los primeros éxitos de los modelos fundacionales en producción es
+la herramienta de completado de código GitHub Copilot, cuyos ingresos
+recurrentes anuales superaron los 100 millones de dólares solo dos años
+después de su lanzamiento. En el momento de escribir este artículo, las
+startups de codificación impulsadas por IA han recaudado cientos de
+millones de dólares, con Magic recaudando 320 millones de dólares y
+Anysphere recaudando 60 millones de dólares, ambas en agosto de 2024.
+Las herramientas de código abierto como gpt-engineer y screenshot-to-code
+obtuvieron 50 000 estrellas en GitHub en un año, y muchas más se están
+introduciendo rápidamente.

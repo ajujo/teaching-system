@@ -1,0 +1,52 @@
+Chapter 2
+39
+Max tokens
+Limits maximum
+response length
+Modelspecific
+Controlling costs and
+preventing verbose
+outputs
+Presence/frequency
+penalties
+Discourages repetition
+by penalizing tokens
+that have appeared
+-2.0 to 2.0
+Longer content
+generation where
+repetition is undesirable
+Stop sequences
+Tells model when to
+stop generating
+Custom
+strings
+Controlling exact ending
+points of generation
+Table 2.2: Parameters offered by LLMs
+These parameters work together to shape model output:
+•
+Temperature + Top-k/Top-p: First, Top-k/Top-p filter the token distribution, and then
+temperature affects randomness within that filtered set
+•
+Penalties + Temperature: Higher temperatures with low penalties can produce creative
+but potentially repetitive text
+LangChain provides a consistent interface for setting these parameters across different LLM
+providers:
+from langchain_openai import OpenAI
+# For factual, consistent responses
+factual_llm = OpenAI(temperature=0.1, max_tokens=256)
+# For creative brainstorming
+creative_llm = OpenAI(temperature=0.8, top_p=0.95, max_tokens=512)
+A few provider-specific considerations to keep in mind are:
+•
+OpenAI: Known for consistent behavior with temperature in the 0.0-1.0 range
+•
+Anthropic: May need lower temperature settings to achieve similar creativity levels to
+other providers
+•
+Gemini: Supports temperature up to 2.0, allowing for more extreme creativity at higher
+settings
+•
+Open-source models: Often require different parameter combinations than commercial
+APIs

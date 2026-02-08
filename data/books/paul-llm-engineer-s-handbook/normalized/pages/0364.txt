@@ -1,0 +1,32 @@
+Chapter 9
+333
+This exhaustive search slows response times and consumes more computational resources, making
+it inefficient for real-time or large-scale applications.
+Filtered vector search emerges as a solution by filtering after additional criteria, such as metadata
+tags or categories, reducing the search space before computing vector similarities. By applying
+these filters, the search algorithm narrows the pool of potential results to those contextually
+aligned with the query's intent. This targeted approach enhances accuracy by eliminating irrelevant documents that might have otherwise been considered due to their semantic similarities
+alone.
+Additionally, filtered vector search improves latency by reducing the number of comparisons the
+algorithm needs to perform. Working with a smaller, more relevant subset of data decreases the
+computational overhead, leading to faster response times. This efficiency is crucial for applications requiring real-time interactions or handling large queries.
+As the metadata used within the filtered vector search is often part of the user's input, we have
+to extract it before querying the vector DB. That's precisely what we did during the self-query
+step, where we extracted the author's name to reduce the vector space only to the author's content. Thus, as we processed the query within the self-query step, it went into the pre-retrieval
+optimization category, whereas when the filtered vector search optimized the query, it went into
+the retrieval optimization bin.
+For example, when using Qdrant, to add a filter that looks for a matching author_id within the
+metadata of each document, you must implement the following code:
+from qdrant_client.models import FieldCondition, Filter, MatchValue
+records = qdrant_connection.search(
+            collection_name="articles",
+            query_vector=query_embedding,
+            limit=3,
+            with_payload=True,
+            query_filter= Filter(
+                    must=[
+                        FieldCondition(
+                            key="author_id",
+                            match=MatchValue(
+                                value=str("1234"),
+                            ),

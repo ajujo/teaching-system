@@ -1,0 +1,8 @@
+Implementación en el dispositivo
+Si desea ejecutar un modelo en un dispositivo, quedan descartadas las API
+de terceros. En muchos casos de uso, es deseable ejecutar un modelo
+localmente. Podría deberse a que su caso de uso se centra en una zona sin
+acceso fiable a Internet. Podría ser por razones de privacidad, por ejemplo,
+si quisiera dar a un asistente de IA acceso a todos sus datos, pero no quiere
+que sus datos salgan de su dispositivo. La Tabla 4-4 resume los pros y los
+contras de utilizar API de modelos y modelos autoalojados.

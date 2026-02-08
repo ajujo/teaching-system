@@ -1,0 +1,39 @@
+Chapter 8
+311
+Safety and alignment
+Alignment in the context of LLMs has a dual meaning: as a process, referring to the post-training
+techniques used to ensure that models behave according to human expectations and values; and
+as an outcome, measuring the degree to which a model's behavior conforms to intended human
+values and safety guidelines. Unlike task-related performance which focuses on accuracy and
+completeness, alignment addresses the fundamental calibration of the system to human behav­
+ioral standards. While fine-tuning improves a model's performance on specific tasks, alignment
+specifically targets ethical behavior, safety, and reduction of harmful outputs.
+This distinction is crucial because a model can be highly capable (well fine-tuned) but poorly
+aligned, creating sophisticated outputs that violate ethical norms or safety guidelines. Conversely,
+a model can be well-aligned but lack task-specific capabilities in certain domains. Alignment
+with human values is fundamental to responsible AI deployment. Evaluation must verify that
+agents align with human expectations across multiple dimensions: factual accuracy in sensitive
+domains, ethical boundary recognition, safety in responses, and value consistency.
+Alignment evaluation methods must be tailored to domain-specific concerns. In financial services,
+alignment evaluation focuses on regulatory compliance with frameworks like GDPR and the EU
+AI Act, particularly regarding automated decision-making. Financial institutions must evalu­
+ate bias in fraud detection systems, implement appropriate human oversight mechanisms, and
+document these processes to satisfy regulatory requirements. In retail environments, alignment
+evaluation centers on ethical personalization practices, balancing recommendation relevance
+with customer privacy concerns and ensuring transparent data usage policies when generating
+personalized content.
+LLM system/application evaluation:
+•
+Assesses the complete application that includes the LLM plus additional
+components
+•
+Examines real-world performance with actual user queries and scenarios
+•
+Evaluates how components work together (retrieval, tools, memory, etc.)
+•
+Measures end-to-end effectiveness at solving user problems
+While both types of evaluation are important, this chapter focuses on system-level
+evaluation, as practitioners building LLM agents with LangChain are concerned with
+overall application performance rather than comparing base models. A weaker base
+model with excellent prompt engineering and system design might outperform a
+stronger model with poor integration in real-world applications.

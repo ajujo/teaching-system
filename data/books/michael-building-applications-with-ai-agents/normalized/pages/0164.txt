@@ -1,0 +1,28 @@
+Figure 7-3. Experiential learning agents.
+This process begins with a simple effort of asking the foundation model to reflect on
+the observation returned from the environment, with the goal of identifying insights
+that can lead to better performance on the task in the future:
+from typing import Annotated
+from typing_extensions import TypedDict
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph, MessagesState, START
+from langchain_core.messages import HumanMessage
+# Initialize the LLM
+llm = ChatOpenAI(model="gpt-5")
+# Function to call the LLM
+def call_model(state: MessagesState):
+   response = llm.invoke(state["messages"])
+   return {"messages": response}
+class InsightAgent:
+   def __init__(self):
+       self.insights = []
+       self.promoted_insights = []
+       self.demoted_insights = []
+       self.reflections = []
+   def generate_insight(self, observation):
+       # Use the LLM to generate an insight based on the observation
+       messages = [HumanMessage(content=f'''Generate an insightful analysis based
+           on the following observation: '{observation}'''')]
+142
+|
+Chapter 7: Learning in Agentic Systems

@@ -1,0 +1,32 @@
+correlacionadas con sus métricas cruciales pueden darles ideas sobre cómo
+mejorar dichas métricas. Las métricas que no están correlacionadas en
+absoluto también pueden darles ideas sobre hacia donde no debe optimizar.
+Monitorear la latencia es esencial para comprender la experiencia del
+usuario. Las métricas de latencia más comunes, tal y como se comenta en el
+Capítulo 9, incluyen:
+Tiempo hasta el primer token (TTFT): tiempo que tarda en
+generarse el primer token.
+Tiempo por token de output (TPOT): el tiempo que se tarda en
+generar cada token de output.
+Latencia total: el tiempo total necesario para completar una
+respuesta.
+Haga un seguimiento de todas estas métricas por usuario para ver cómo se
+escala su sistema con más usuarios.
+También querrán llevar un control de los costos. Las métricas relacionadas
+con los costos son el número de consultas y el volumen de tokens de input y
+output, como tokens por segundo (TPS). Si utiliza una API con límites de
+velocidad, el seguimiento del número de solicitudes por segundo es
+importante para garantizar que se mantenga dentro de los límites asignados
+y evitar posibles interrupciones del servicio.
+Al calcular las métricas, puede elegir entre comprobaciones puntuales o
+exhaustivas. Las comprobaciones puntuales consisten en muestrear un
+subconjunto de datos para identificar rápidamente los problemas, mientras
+que las comprobaciones exhaustivas evalúan cada solicitud para obtener
+una visión completa del rendimiento. La elección depende de los requisitos
+de su sistema y de los recursos disponibles, y una combinación de ambos
+ofrece una estrategia de monitoreo equilibrada.
+Al calcular las métricas, asegúrense de que puedan desglosarse por ejes
+relevantes, como usuarios, versiones de software, versiones de
+prompt/cadena, tipos de prompt/cadena y tiempo. Esta granularidad ayuda a
+comprender las variaciones de rendimiento y a identificar problemas
+específicos.

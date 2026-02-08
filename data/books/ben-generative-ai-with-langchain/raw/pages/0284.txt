@@ -1,0 +1,34 @@
+Chapter 6
+257
+ )
+ return {"best_candidate": candidates[int(result)-1]}
+This voting mechanism presents all candidate solutions to the model and asks it to select the best 
+one, leveraging the model’s ability to evaluate and compare options. 
+Now let’s add the remaining nodes and edges of the agent. We need two nodes – the one that 
+creates an initial plan and another that evaluates the final output. Alongside these, we define 
+two corresponding edges that evaluate whether the agent should continue on its exploration and 
+whether it’s ready to provide a final response to the user:
+from typing import Literal
+from langgraph.graph import StateGraph, START, END
+from langchain_core.runnables import RunnableConfig
+from langchain_core.output_parsers import StrOutputParser
+from langgraph.types import Command
+final_prompt = PromptTemplate.from_template(
+   "You're a helpful assistant that has executed on a plan."
+   "Given the results of the execution, prepare the final response.\n"
+   "Don't assume anything\nTASK:\n{task}\n\nPLAN WITH RESUlTS:\n{plan}\n"
+   "FINAL RESPONSE:\n"
+)
+responder = final_prompt | llm | StrOutputParser()
+async def _build_initial_plan(state: PlanState) -> PlanState:
+ plan = await planner.ainvoke(state["task"])
+ queue = deque()
+ root = TreeNode(step=plan.steps[0], node_id=1)
+ queue.append(root)
+ current_root = root
+ for i, step in enumerate(plan.steps[1:]):
+   child = TreeNode(node_id=i+2, step=step, parent=current_root)
+   current_root.children.append(child)
+   queue.append(child)
+   current_root = child
+ return {"root": root, "queue": queue, "max_id": i+2}

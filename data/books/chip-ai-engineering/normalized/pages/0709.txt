@@ -1,0 +1,30 @@
+Considere la facilidad de uso del orquestador. Busque API
+intuitivas, documentación completa y un fuerte apoyo de la
+comunidad, ya que todo esto puede reducir
+significativamente la curva de aprendizaje para usted y su
+equipo. Evite los orquestadores que inicien llamadas a API
+ocultas o introduzcan latencia en sus aplicaciones. Además,
+asegúrese de que el orquestador pueda escalarse
+eficazmente a medida que crezca el número de aplicaciones,
+desarrolladores y tráfico.
+Retroalimentación de los usuarios
+La retroalimentación de los usuarios siempre ha desempeñado un papel
+fundamental en las aplicaciones computacionales de dos maneras:
+evaluando el rendimiento de la aplicación y siendo informativas para su
+desarrollo. Sin embargo, en las aplicaciones de IA, la opinión del usuario
+adquiere un papel aún más significativo. La retroalimentación de los
+usuarios son datos propios, y los datos son una ventaja competitiva. Para
+crear el círculo virtuoso de datos del que se habla en el Capítulo 8, se
+necesita un sistema de retroalimentación de usuarios bien diseñado. 7
+La retroalimentación de los usuarios puede utilizarse no solo para
+personalizar modelos para usuarios individuales, sino también para entrenar
+futuras iteraciones de los modelos. Como los datos son cada vez más
+escasos, los datos privados son más valiosos que nunca. Un producto que se
+lance rápidamente y atraiga a los usuarios desde el principio puede recopilar
+datos para mejorar continuamente los modelos, lo que dificulta a los
+competidores alcanzarlo.
+Es importante recordar que la retroalimentación de los usuarios son datos de
+ellos. aprovechar las opiniones de los usuarios exige tomar las mismas
+precauciones que cualquier otro tipo de datos. Debe respetarse la privacidad
+de los usuarios. Los usuarios tienen derecho a saber cómo se utilizan sus
+datos.

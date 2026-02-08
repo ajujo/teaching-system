@@ -1,0 +1,29 @@
+relevante. Cuando se inicie en el uso de la RAG, comience por
+utilizar métodos básicos de recuperación, como la búsqueda basada
+en términos. Incluso con una recuperación sencilla, añadir
+conocimientos relevantes y precisos debería suponer alguna mejora
+en el rendimiento de su modelo.
+4. Dependiendo de los modos de fallo de su modelo, podría explorar
+uno de los siguientes pasos:
+a. Si el modelo sigue teniendo fallos basados en la
+información, quizá desee probar métodos de RAG aún
+más avanzados, como la recuperación basada en
+incrustaciones.
+b. Si el modelo sigue teniendo problemas de
+comportamiento, por ejemplo, sigue generando respuestas
+irrelevantes, mal formateadas o inseguras, puede optar por
+afinarlo. La recuperación basada en incrustaciones
+aumenta la complejidad de la inferencia al introducir
+componentes adicionales en el proceso, mientras que el
+afinado aumenta la complejidad del desarrollo de modelos
+pero no modifica la inferencia.
+5. Combine la RAG y el afinado para aumentar todavía más el
+rendimiento.
+Si, tras considerar todos los pros y los contras del afinado y otras técnicas
+alternativas, decide afinar su modelo, el resto del capítulo le interesa. En
+primer lugar, analicemos el reto número uno del afinado: su cuello de
+botella en la memoria.
+Cuellos de botella en la memoria
+Dado que el afinado requiere mucha memoria, muchas técnicas de afinado
+intentan minimizar su huella de memoria. Es necesario entender qué causa
+este cuello de botella de memoria para comprender por qué y cómo

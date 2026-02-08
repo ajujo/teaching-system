@@ -1,0 +1,19 @@
+producto y a lidiar con las alucinaciones. La lentitud con la que se
+conseguía cada 1% de aumento posterior resultaba desalentadora.
+Mantenimiento
+La planificación de productos no termina con la consecución de sus metas.
+Debe pensar en cómo puede cambiar este producto con el tiempo y cómo
+debe mantenerse. El mantenimiento de un producto de IA tiene el reto
+añadido del rápido ritmo de cambio de la IA. El espacio de la IA ha
+avanzado a una velocidad increíble en la última década. Probablemente
+seguirá avanzando con rapidez durante la próxima década. Al día de hoy,
+construir basándose en modelos fundacionales implica comprometerse a
+subirse a este tren bala.
+Muchos cambios son buenos. Por ejemplo, se están abordando las
+limitaciones de muchos modelos. Las longitudes de los contextos son cada
+vez más largas. Los outputs de los modelos son cada vez mejores. La
+inferencia de modelos, el proceso de calcular un output a partir de un input,
+es cada vez más rápida y barata. La Figura 1-11 muestra la evolución del
+costo de inferencia y el rendimiento del modelo en Massive Multitask
+Language Understanding (MMLU) (Hendrycks et al., 2020), un popular
+modelo de referencia de fundamentos, entre 2022 y 2024.

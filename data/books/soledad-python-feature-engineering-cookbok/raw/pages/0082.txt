@@ -1,0 +1,13 @@
+Replacing categories with counts or the frequency of observations
+59
+The previous attribute stores the mappings that will be used to replace the categories:
+Figure 2.7 – Dictionary containing the number of observations per category, for 
+each variable; these values will be used to encode the categorical variables
+9.	
+Finally, let’s with counts or frequency of observations” replace the categories with counts in 
+the train and test sets:
+X_train_enc = count_enc.transform(X_train)
+X_test_enc = count_enc.transform(X_test)
+Check out the result by executing X_train_enc.head(). The encoder returns pandas DataFrames 
+with the strings of the categorical variables replaced with the counts of observations, leaving the 
+variables ready to use in machine learning models.

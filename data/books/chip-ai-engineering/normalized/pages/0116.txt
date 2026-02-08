@@ -1,0 +1,20 @@
+mejora con datos reales hasta secuencias con una longitud de un
+millón.
+Jamba, presentado en "Jamba: A Hybrid Transformer-Mamba
+Language Model"" (Lieber et al., 2024), intercala bloques de capas
+de transformador y Mamba para escalar todavía más los SSMs. Los
+autores publicaron un modelo de mezcla de expertos con 52 MM
+de parámetros totales disponibles (12 MM de parámetros activos)
+diseñado para caber en una sola GPU de 80 GB. Jamba demuestra
+un gran rendimiento en pruebas comparativas de modelos
+lingüísticos estándar y evaluaciones de contextos largos para una
+longitud de contexto de hasta 256 000 tokens. Además, ocupa poca
+memoria por comparación con los transformadores estándar.
+En la Figura 2-7 se visualizan los bloques transformador, Mamba y Jamba.
+Aunque es difícil desarrollar una arquitectura que supere al transformador,
+sus muchas limitaciones son un gran incentivo para hacerlo. Si
+efectivamente otra arquitectura supera al transformador, algunas de las
+técnicas de adaptación de modelos analizadas en este libro podrían cambiar.
+Sin embargo, al igual que el paso de la ingeniería de ML a la ingeniería de
+IA ha mantenido muchas cosas inalteradas, cambiar la arquitectura del
+modelo subyacente no alterará los planteamientos fundamentales.

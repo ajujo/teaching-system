@@ -1,0 +1,17 @@
+figura 5-3. Un ejemplo de un prompt de aguja en un pajar utilizado por Liu et al.,
+2023
+La Figura 5-4 muestra el resultado del artículo. Todos los modelos probados
+parecen encontrar mejor la información cuando esta se encuentra más cerca
+del principio y del final del prompt que en el medio.
+figura 5-4. El efecto de cambiar la posición de la información insertada en el prompt
+sobre el rendimiento de los modelos. Las posiciones más bajas están más cerca del
+inicio del contexto de input.
+El documento utilizaba una cadena generada aleatoriamente, pero también
+se pueden utilizar preguntas y respuestas reales. Por ejemplo, si tiene la
+transcripción de una larga visita al médico, puede pedir al modelo que
+extraiga información mencionada a lo largo de la reunión, como el
+medicamento que está utilizando el paciente o su grupo sanguíneo. 7
+Asegúrese de que la información que utiliza para las pruebas es privada,
+para evitar que se incluya en los datos de entrenamiento del modelo. En ese
+caso, un modelo podría basarse en su conocimiento interno, en lugar del
+contexto, para responder a la pregunta.

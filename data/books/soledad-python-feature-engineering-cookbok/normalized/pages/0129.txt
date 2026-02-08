@@ -1,0 +1,20 @@
+Transforming Numerical Variables
+106
+).set_output(transform="pandas")
+transformer.fit(X)
+Note
+To avoid data leakage, the λ parameter should be learned from the train set and then used to
+transform the train and test sets. Thus, remember to split your data into train and test sets
+before fitting PowerTransformer().
+9.
+Now, let's transform the dataset:
+X_tf = transformer.transform(X)
+Note
+scikit-learn's PowerTransformer() stores the learned lambdas in its lambdas_ attribute,
+which you can display by executing transformer.lambdas_.
+10.	 Let's inspect the distributions of the transformed data with histograms:
+X_tf.hist(bins=30, figsize=(12, 12), layout=(3, 3))
+plt.show()
+In the following output, we can see that the variables' values are more evenly spread across
+their ranges:
+Figure 3.12 - Histograms of the variables after the transformation

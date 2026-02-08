@@ -1,0 +1,30 @@
+Chapter 4
+175
+The retriever processes all uploaded files and embeds them for semantic search:
+docs = retriever.add_uploaded_docs(st.session_state.uploaded_files)
+We need a function next to invoke the graph and return a string:
+def process_message(message):
+    """Assistant response."""
+    response = graph.invoke({"messages": HumanMessage(message)},
+config=config)
+    return response["messages"][-1].content
+This ignores the previous messages. We could change the prompt to provide previous messages
+to the LLM. We can then show a project description using markdown. Just briefly:
+st.markdown("""
+#  Corporate Documentation Manager with Citations
+""")
+Next, we present our UI in two columns, one for chat and one for file management:
+col1, col2 = st.columns([2, 1])
+Column 1 looks like this:
+with col1:
+    st.subheader("Chat Interface")
+    # React to user input
+    if user_message := st.chat_input("Enter your message:"):
+        # Display user message in chat message container
+        with st.chat_message("User"):
+            st.markdown(user_message)
+        # Add user message to chat history
+        st.session_state.chat_history.append({"role": "User", "content":
+user_message})
+        response = process_message(user_message)
+Please remember to avoid repeated calls for the same documents, we're using a cache.

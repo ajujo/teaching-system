@@ -1,0 +1,16 @@
+dar su opinión en forma de conversación: "Te equivocas", "Demasiado
+típico" o "Quiero algo más corto".
+Lo ideal es que, cuando su producto cometa errores, los usuarios puedan
+seguir realizando sus tareas. Por ejemplo, si el modelo clasifica
+erróneamente un producto, que los usuarios puedan editar la categoría.
+Permita que los usuarios colaboren con la IA. Si eso no funciona, que
+colaboren con humanos. Muchos bots de atención al cliente ofrecen
+transferir a los usuarios a agentes humanos si la conversación se alarga o si
+los usuarios parecen frustrados.
+Un ejemplo de colaboración entre humanos e IA es la función de retoque de
+imágenes para la generación de imágenes. 9 Si una imagen generada no es
+exactamente lo que el usuario necesita, puede seleccionar una región de la
+imagen y describir con una prompt cómo mejorarla. La Figura 10-14
+muestra un ejemplo de retoque con DALL-E (OpenAI, 2021). Esta función
+permite a los usuarios obtener mejores resultados a la vez que ofrece a los
+desarrolladores información de alta calidad.

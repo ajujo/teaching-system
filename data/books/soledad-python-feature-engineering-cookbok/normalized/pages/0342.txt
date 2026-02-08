@@ -1,0 +1,35 @@
+Automatically creating and selecting predictive features from time-series data
+319
+See also
+For more details about tsfresh, check out the article Christ M., Braun N., , Neuffer J., and Kempa-
+Liehr A., (2018). Time Series FeatuRe Extraction on basis of Scalable Hypothesis tests (tsfresh - A Python
+package). Neurocomputing 307 (2018). Pages 72-77. https://dl.acm.org/doi/10.1016/j.
+neucom.2018.03.067.
+Automatically creating and selecting predictive features
+from time-series data
+In the previous recipe, we automatically extracted several hundred features from time-series variables
+using tsfresh. If we have more than one time-series variable, we can easily end up with a dataset
+containing thousands of features. In addition, many of the resulting features had only missing data
+or were constant and were therefore not useful for training machine learning models.
+When we create classiﬁcation and regression models to solve real-life problems, we often want our
+models to take a small number of relevant features as input to produce interpretable machine learning
+outputs. Simpler models have many advantages. First, their output is easier to interpret. Second, simpler
+models are cheaper to store and faster to train. They also return their outputs faster.
+tsfresh includes a highly parallelizable feature selection algorithm based on non-parametric statistical
+hypothesis tests, which can be executed at the back of the feature creation procedure to quickly remove
+irrelevant features. The feature selection procedure utilizes different tests for different features.
+tsfresh uses the following tests to select features:
+•	 Fisher's exact test of independence, if both the feature and the target are binary
+•	 Kolmogorov-Smirnov test, if either the feature or the target is binary
+•	 Kendall rank test, if neither the feature nor the target is binary
+The advantage of these tests is that they are non-parametric, and thus make no assumptions on the
+underlying distribution of the variables being tested.
+The result of these tests is a vector of p-values that measures the significance of the association between
+each feature and the target. These p-values are then evaluated based on the Benjamini-Yekutieli
+procedure to decide which features to keep.
+Note
+For more details about tsfresh's feature selection procedure, check out the article Christ,
+Kempa-Liehr, and Feindt, Distributed and parallel time series feature extraction for industrial
+big data applications. Asian Machine Learning Conference (ACML) 2016, Workshop on
+Learning on Big Data (WLBD), Hamilton (New Zealand), arXiv, https://arxiv.org/
+abs/1610.07717v1.

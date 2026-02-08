@@ -1,0 +1,33 @@
+Performing Variable Discretization
+148
+To wrap up the recipe, we will make the discretizer return the predictions of the trees as
+replacement values for the discretized variables:
+9.
+Let's set up the transformer to return the predictions, then fit it to the training set, and finally
+transform both datasets:
+disc = DecisionTreeDiscretiser(
+    bin_output="prediction",
+    precision=1,
+    cv=3,
+    scoring="neg_mean_squared_error",
+    variables=variables,
+    regression=True,
+    param_grid=
+        {"max_depth": [1, 2, 3],
+            "min_samples_leaf": [10, 20, 50]},
+)
+train_t = disc.fit_transform(X_train, y_train)
+test_t = disc.transform(X_test)
+10.	 Let's explore the number of unique values of the AveRooms variable before and after
+the discretization:
+X_test["AveRooms"].nunique(), test_t["AveRooms"].nunique()
+In the following output, we can see that the predictions of the decision trees are also discrete
+or finite because the trees contain a finite number of end leaves; 7, while the original variable
+contained more than 6000 different values:
+(6034, 7)
+11.	 To better understand the structure of the tree, we can capture it into a variable:
+tree = disc.binner_dict_["AveRooms"].best_estimator_
+Note
+When we set the transformer to return integers or bin limits, we will obtain the bin limits
+in the binner_dict_ attribute. If we set the transformer to return the tree predictions,
+binner_dict_ will contain the trained tree for each variable.

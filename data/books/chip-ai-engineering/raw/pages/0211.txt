@@ -1,0 +1,33 @@
+tabla 3-2. Tamaños de incrustación utilizados por los modelos
+habituales.
+Modelo
+Tamaño de incrustación
+BERT de Google
+BERT base: 768
+BERT grande: 1024
+CLIP de OpenAI
+Imagen: 512
+Texto: 512
+API de incrustación de OpenAI
+text-embedding-3-small: 1536
+text-embedding-3-large: 3072
+Embed v3 de Cohere
+embed-english-v3.0: 1024
+embed-english-light-3.0: 384
+Dado que los modelos suelen requerir que sus inputs se transformen
+primero en representaciones vectoriales, muchos modelos de ML, incluidos
+GPT y Llamas, también implican un paso para generar incrustaciones. El
+“Arquitectura de transformador” visualiza la capa de incrustación en un
+modelo de transformador. Si tiene acceso a las capas intermedias de estos
+modelos, puede utilizarlas para extraer incrustaciones. Sin embargo, la
+calidad de estas incrustaciones puede no ser tan buena como la de las
+incrustaciones generadas por modelos de incrustación especializados.
+El objetivo del algoritmo de incrustación es producir incrustaciones que
+capturen la esencia de los datos originales. ¿Cómo lo verificamos? El vector
+de incrustación [0.11, 0.02, 0.54] no se parece en nada al texto original
+"the cat sits on a mat".
+A grandes rasgos, un algoritmo de incrustación se considera bueno si los
+textos más similares tienen incrustaciones más cercanas, medidas por la
+similitud del coseno o métricas relacionadas. La incrustación de la frase
+"the cat sits on a mat" debería estar más cerca de la incrustación de "the dog
+plays on the grass" que de la incrustación de "AI research is super fun".

@@ -1,0 +1,29 @@
+capítulo 8. Ingeniería de conjuntos de
+datos
+La calidad de un modelo depende de la calidad de sus datos de
+entrenamiento. El mejor equipo de ML del mundo, con una capacidad de
+cómputo infinita, no puede ayudarle a afinar un buen modelo si no dispone
+de datos. El objetivo de la ingeniería de conjuntos de datos es crear un
+conjunto de datos que permita entrenar al mejor modelo, idealmente dentro
+del presupuesto asignado.
+Como cada vez son menos las empresas que pueden permitirse desarrollar
+modelos desde cero, cada vez más recurren a los datos para diferenciar su
+rendimiento de IA. A medida que los modelos exigen más datos, su
+procesamiento se convierte en un reto y exige más inversiones en talento e
+infraestructura. 1
+Las operaciones de datos han pasado de ser tareas secundarias de las que la
+gente se ocupaba cuando tenía tiempo a convertirse en funciones dedicadas.
+Muchas empresas de IA emplean ahora a etiquetadores de datos, creadores
+de conjuntos de datos e ingenieros de calidad de datos, ya sea integrados en
+sus equipos centrales de ingeniería o trabajando junto a ellos.
+Si el panorama de los modelos ya es bastante confuso con las numerosas
+ofertas, el de los datos es aún más complejo, con un abanico cada vez
+mayor de conjuntos de datos y técnicas que se van introduciendo. Este
+capítulo le ofrece una visión general del panorama de los datos y lo que
+debe tener en cuenta a la hora de crear su propio conjunto de datos.
+Todo comienza con la curación de datos, abordando cuestiones como ¿Qué
+datos se necesitan? ¿Cuántos se necesitan? ¿Qué significa que los datos
+sean de alta calidad? A continuación, se analizan las técnicas de síntesis y
+procesamiento de datos. La curación, generación y procesamiento de datos
+no siguen una trayectoria lineal. Es probable que tenga que ir y venir entre
+diferentes pasos.

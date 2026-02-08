@@ -1,0 +1,24 @@
+Cada ejemplo proporcionado en el prompt se denomina un shot. Enseñar a
+un modelo a aprender a partir de ejemplos en el prompt también se
+denomina aprendizaje de pocos shots. Con cinco ejemplos, es un
+aprendizaje de 5 shots. Cuando no se proporciona ningún ejemplo, se trata
+de un aprendizaje de cero shots.
+El número exacto de ejemplos necesarios depende del modelo y de la
+aplicación. Tendrá que experimentar para determinar el número óptimo de
+ejemplos para sus aplicaciones. En general, cuantos más ejemplos se
+muestren a un modelo, mejor podrá aprender. El número de ejemplos está
+limitado por la longitud máxima del contexto del modelo. Cuantos más
+ejemplos haya, más largo será el prompt, lo que aumentará el costo de la
+inferencia.
+Para GPT-3, el aprendizaje de pocos shots mostró una mejora significativa
+en comparación con el aprendizaje de zero shot. Sin embargo, para los
+casos de uso del análisis 2023 de Microsoft, el aprendizaje de pocos shots
+solo supuso una mejora limitada en comparación con el aprendizaje de zero
+shot en GPT-4 y algunos otros modelos. Este resultado sugiere que, a
+medida que los modelos se vuelven más potentes, comprenden y siguen
+mejor las instrucciones, lo que conduce a un mejor rendimiento con menos
+ejemplos. Sin embargo, es posible que el estudio haya subestimado el
+impacto de los pocos ejemplos sobre casos de uso específicos del dominio.
+Por ejemplo, si un modelo no ve muchos ejemplos de la API de marco de
+datos Ibis en sus datos de entrenamiento, incluir ejemplos Ibis en el prompt
+puede suponer una gran diferencia.

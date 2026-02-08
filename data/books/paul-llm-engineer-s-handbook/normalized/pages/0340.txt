@@ -1,0 +1,38 @@
+Chapter 8
+309
+Introduced by Dettmers et al. (2023), NF4 is a 4-bit precision format designed for QLoRA (discussed
+in Chapter 5). It is also integrated into the transformers library but requires the bitsandbytes
+library as a dependency. To load a model in NF4 (4-bit precision), you can use the load_in_4bit
+parameter, as follows:
+from transformers import AutoModelForCausalLM
+model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
+model = AutoModelForCausalLM.from_pretrained(model_name, device_
+map="auto", load_in_4bit=True)
+Quantization with GGUF and llama.cpp
+The llama.cpp project is an open-source C++ software library created by Georgi Gerganov, designed to perform inference with various LLMs. It is the most popular quantization technique,
+with many quantized models available on the Hugging Face Hub.
+Compared to other libraries that rely on hardware-specific closed-source libraries like CUDA,
+llama.cpp can run on a broader range of hardware. It has gained significant popularity, particularly among users without specialized hardware, as it can operate on CPUs and Android
+devices. Moreover, llama.cpp can also offload layers to the GPU, accelerating inference speed. It
+is compatible with different inference optimization techniques, such as FlashAttention-2 and
+speculative decoding.
+This project features its own quantization format, GGUF, designed to simplify and speed up
+model loading. GGUF files store tensors and metadata, supporting various formats, from 1-bit
+to 8-bit precision. It follows a naming convention based on the number of bits used and specific
+variants, such as:
+•
+IQ1_S and IQ1_M: 1-bit precision - very low quality
+•
+IQ2_XXS/XS/S/M and Q2_K: 2-bit precision - generally low quality but IQ2 can be usable
+for large models
+•
+IQ3_XXS/XS/S/M and Q3_K_S/M/L: 3-bit precision - low quality but usable for large models
+•
+IQ4_XS/NL and Q4_K_S/M, Q4_0/1: 4-bit precision - good quality and usable for most
+models
+•
+Q5_K_S/M and Q5_0/1: 5-bit precision - high quality
+•
+Q6_K: 6-bit precision -very high quality
+•
+Q8_0: 8-bit precision - highest quality

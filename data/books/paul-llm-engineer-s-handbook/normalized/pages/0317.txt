@@ -1,0 +1,32 @@
+Evaluating LLMs
+286
+According to our judge LLM, there is no issue with the accuracy of the answers, which get a perfect
+score. However, the style is considered too formal for TwinLlama-3.1-8B (SFT) and Llama-3.1-
+8B-Instruct, with a score of 2. The judge LLM agreed with our previous analysis and assigned a
+perfect score to TwinLlama-3.1-8B-DPO's answer for communicating "the technical concept of
+algorithm bias without becoming overly formal."
+This trend is confirmed by the average scores obtained by each model:
+TwinLlama-3.1-8B - Accuracy: 2.45
+TwinLlama-3.1-8B - Style: 2.04
+TwinLlama-3.1-8B-DPO - Accuracy: 2.46
+TwinLlama-3.1-8B-DPO - Style: 2.12
+Llama-3.1-8B-Instruct - Accuracy: 2.62
+Llama-3.1-8B-Instruct - Style: 1.86
+In terms of accuracy, our two fine-tuned models get similar scores, while Llama-3.1-8B-Instruct
+achieves the highest accuracy score of 2.62. This suggests that the instruct-tuned Llama model
+may have a slight edge in providing factually correct information. This is probably due to its
+extensive post-training process with over 10 million samples (compared to 13,000 in our case).
+However, when it comes to style, we see a different pattern. TwinLlama-3.1-8B-DPO leads with
+a score of 2.12, successfully achieving a more accessible and less formal writing style without
+sacrificing content quality. TwinLlama-3.1-8B (SFT) follows with 2.04, showing improvement but
+retaining some formality, while Llama-3.1-8B-Instruct trails with 1.86, tending toward verbosity.
+Based on this feedback and the manual review of the generated answers, we can detect mistakes
+and identify areas for improvement. This is essential for refining the data generation process
+through additional filtering or augmenting the dataset with missing information. While this first
+version already shows promising results, iterating over different datasets and models will allow
+us to significantly outperform our baseline and create the best possible model for our use case.
+Summary
+In this chapter, we explored LLM evaluation with models and RAG systems. We saw how to
+interpret classic benchmarks like MMLU to select strong candidates to use or fine-tune. We also
+detailed how domain-specific and task-specific evaluations work, and how to create our own
+based on publicly available examples.

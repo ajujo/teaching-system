@@ -1,0 +1,26 @@
+Estimating missing data with nearest neighbors
+39
+We set it to repeat this process 10 times. By the end of this procedure, IterativeImputer() had
+one Bayes regressor trained to predict the values of each variable based on the other variables in the
+dataset. With transform(), it uses the predictions of these Bayes models to impute the missing data.
+IterativeImputer() can only impute missing data in numerical variables based on numerical
+variables. If you want to use categorical variables as input, you need to encode them first. However,
+keep in mind that it will only carry out regression. Hence it is not suitable to estimate missing data
+in discrete or categorical variables.
+See also
+To learn more about MICE, take a look at the following resources:
+•	 A multivariate technique for multiplying imputing missing values using a sequence of regression
+models: https://www.researchgate.net/publication/244959137
+•	 Multiple Imputation by Chained Equations: What is it and how does it work?: https://www.
+jstatsoft.org/article/download/v045i03/550
+Estimating missing data with nearest neighbors
+Imputation with K-Nearest Neighbors (KNN) involves estimating missing values in a dataset by
+considering the values of their nearest neighbors, where similarity between data points is determined
+based on a distance metric, such as the Euclidean distance. It assigns the missing value the average of
+the nearest neighbors' values, weighted by their distance.
+Consider the following data set containing 4 variables (columns) and 11 observations (rows). We
+want to impute the dark value in the fifth row of the second variable. First, we find the row's k-nearest
+neighbors, where k=3 in our example, and they are highlighted by the rectangular boxes (middle
+panel). Next, we take the average value shown by the closest neighbors for variable 2.
+Figure 1.11 - Diagram showing a value to impute (dark box), the three closest rows to the value
+to impute (square boxes), and the values considered to take the average for the imputation

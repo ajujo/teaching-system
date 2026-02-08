@@ -1,0 +1,90 @@
+Masked language model (MLM)
+A pretraining technique where words in a
+sentence are randomly masked and
+predicted.
+Memory-augmented AI
+AI systems that maintain persistent
+knowledge beyond a single session.
+Meta-Agent Search (MAS)
+An automated process that explores, com‐
+bines, and evaluates different agent archi‐
+tectures, components, and configurations
+to
+discover
+high-performing
+agentic
+systems.
+Meta-prompting
+Using structured prompts to guide an AI
+system's behavior.
+Named entity recognition (NER)
+A technique for identifying entities like
+names, dates, and locations in text.
+Natural language processing (NLP)
+The field of AI focused on understanding
+and generating human language.
+Neural network (NN)
+A computational model inspired by the
+human brain, used in deep learning.
+Optimization
+The process of improving a model's accu‐
+racy and efficiency.
+Overfitting
+When a model learns patterns that are too
+specific to the training data and fails to
+generalize.
+Parameter-efficient fine-tuning (PEFT)
+Techniques that adapt large models with
+minimal changes.
+Perplexity
+A measure of a language model's uncer‐
+tainty in predicting text.
+Prompt engineering
+The process of crafting inputs to maxi‐
+mize AI performance.
+Quantization
+Reducing a model's precision to speed up
+inference.
+Query expansion
+Improving search results by adding
+related terms to a user's query.
+Recurrent neural network (RNN)
+A type of neural network that processes
+sequential data.
+Reinforcement learning from human feedback (RLHF)
+A training technique where human pref‐
+erences guide model behavior.
+Retrieval-augmented generation (RAG)
+A method where external knowledge is
+retrieved
+to
+enhance
+AI-generated
+responses.
+Scaling laws
+Principles governing how model perfor‐
+mance improves with increased size and
+data.
+Self-attention
+A mechanism in transformers that deter‐
+mines the importance of different input
+tokens.
+Semantic search
+A search technique that retrieves relevant
+information based on meaning rather
+than exact words.
+Sequence-to-sequence (Seq2Seq)
+A model architecture used for translation
+and summarization tasks.
+Softmax
+A function that converts logits into proba‐
+bility distributions.
+Temperature
+A hyperparameter that controls random‐
+ness in AI-generated outputs.
+Tokenization
+The process of splitting text into units
+(tokens) for model input.
+Glossary
+|
+317

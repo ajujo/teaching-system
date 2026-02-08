@@ -1,0 +1,57 @@
+coordination between IT, data governance teams, and agent developers to ensure that
+agents never exceed their intended scope.
+These varying scopes also demand differentiated policies. Organizations should not
+apply a one-size-fits-all approach to autonomy, escalation, or logging. For instance, a
+personal agent might be permitted to send emails or schedule meetings autono‐
+mously, whereas a functional agent in finance may be required to route every action
+through a human-in-the-loop approval.
+Organizational agents-those operating with the widest access-may require multiple
+layers of authorization or an internal governance board to review and approve behav‐
+iors and system updates. As agent scope increases from personal to organizational,
+both the autonomy level and associated risk rise. As is shown in Table 13-3, this pro‐
+gression demands increasingly robust governance-moving from lightweight user
+controls to enterprise-wide compliance, auditing, and oversight mechanisms.
+Table 13-3. Agent scope and risk
+Scope
+Autonomy level
+Risk profile
+Governance needs
+Personal
+Low to moderate
+Low
+User-managed preferences; minimal oversight;
+explainability optional
+Team
+Moderate
+Moderate
+Shared memory boundaries; peer-level escalation; trust
+calibration needed
+Project
+Moderate to high
+Moderate to high
+Cross-functional visibility; logging; conflict resolution
+mechanisms
+Functional
+High (domain-bounded)
+High
+RBAC; audit logs; compliance alignment
+Organizational
+High or restricted
+Very high (systemwide)
+Multitier sign-off; governance board review; ongoing
+ethical audits and traceability
+Ultimately, defining agent scope is not just a technical architecture decision-it is a
+governance one. As agents become more essential to organizational workflows, their
+scope determines not only what they can do, but what they should do, and under
+whose watch. In the next section, we turn to the closely related question of how mem‐
+ory and context should be managed across these different scopes, and the trust, pri‐
+vacy, and continuity implications that arise when agents begin to remember not just
+for individuals-but for teams, departments, and the organization as a whole.
+Shared Memory and Context Boundaries
+As agents expand beyond individual use to support teams and organizations, how
+they manage memory becomes a critical design concern. Memory enables agents to
+personalize experiences, maintain context across sessions, and improve over timebut at larger scopes, it also introduces serious risks around privacy, misuse, and gov‐
+ernance. Agents should never assume access to personal or sensitive data across
+Scaling Collaboration
+|
+303

@@ -1,0 +1,26 @@
+Creating New Features
+242
+from sklearn import set_config
+from sklearn.preprocessing import PolynomialFeatures
+2.	
+Let’s set scikit-learn library’s set_output API globally so that all transformers return 
+a DataFrame as a result of the transform() method:
+set_config(transform_output="pandas")
+3.	
+Let’s create a DataFrame containing one variable, with values from 1 to 10:
+df = pd.DataFrame(np.linspace(
+    0, 10, 11), columns=["var"])
+4.	
+Let’s set up PolynomialFeatures() to create all possible combinations up to a third-
+degree polynomial of the single variable and exclude the bias term from the result – that is, 
+we will exclude the value 1:
+poly = PolynomialFeatures(
+    degree=3,
+    interaction_only=False,
+    include_bias=False)
+5.	
+Now, let’s create the polynomial combinations:
+dft = poly.fit_transform(df)
+If we execute dft, we’ll see a DataFrame with the original feature, followed by its values squared, 
+and then its values to the power of three:
+Figure 8.6 – A DataFrame with the polynomial expansion of the third degree of a single variable

@@ -1,0 +1,37 @@
+Finding outliers using the mean and standard deviation
+159
+Finding outliers using the mean and standard deviation
+In normally distributed variables, around 99.8% of the observations lie within the interval comprising
+the mean plus and minus three times the standard deviation. Thus, values beyond those limits can
+be considered outliers; they are rare.
+Note
+Using the mean and standard deviation to detect outliers has some drawbacks. Firstly, it assumes
+a normal distribution, including outliers. Secondly, outliers strongly influence the mean and
+standard deviation. Therefore, a recommended alternative is the Median Absolute Deviation
+(MAD), which we'll discuss in the next recipe.
+In this recipe, we will identify outliers as those observations that lie outside the interval delimited by
+the mean plus and minus three times the standard deviation.
+How to do it...
+Let's begin the recipe by importing the Python libraries and loading the dataset:
+1.
+Let's import the Python libraries and dataset:
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_breast_cancer
+2.
+Load the breast cancer dataset from scikit-learn:
+X, y = load_breast_cancer(
+    return_X_y=True, as_frame=True)
+3.
+Create a function to plot a boxplot next to a histogram:
+def plot_boxplot_and_hist(data, variable):
+    f, (ax_box, ax_hist) = plt.subplots(
+        2, sharex=True,
+        gridspec_kw={"height_ratios": (0.50, 0.85)})
+    sns.boxplot(x=data[variable], ax=ax_box)
+    sns.histplot(data=data, x=variable, ax=ax_hist)
+    plt.show()
+Note
+We discussed the function from step 3 in the previous recipe, Visualizing outliers with boxplots
+and the inter-quartile proximity rule.

@@ -1,0 +1,30 @@
+Supervised Fine-Tuning
+196
+It then leverages advanced language models like GPT-4 to provide detailed critiques and numerical
+scores for these responses across multiple dimensions such as instruction-following, truthfulness,
+honesty, and helpfulness.
+Based on these ideas, you can create your own augmentation techniques to create a more challenging and diverse instruction dataset. By refining and evolving existing instructions and answers,
+the resulting dataset can better train models to handle complex, multi-step tasks, and improve
+their performance across a wider range of applications.
+Creating our own instruction dataset
+In this section, we will create our own instruction dataset based on the crawled data from Chapter
+3. To create a high-quality instruction dataset, we need to address two main issues: the unstructured nature of our data and the limited number of articles we can crawl.
+This unstructured nature comes from the fact that we are dealing with raw text (articles), instead
+of pairs of instructions and answers. To address this issue, we will use an LLM to perform this
+transformation. Specifically, we will employ a combination of backtranslation and rephrasing.
+Backtranslation refers to the process of providing the expected answer as output and generating its corresponding instruction. However, using a chunk of text like a paragraph as an answer
+might not always be appropriate. This is why we want to rephrase the raw text to ensure we're
+outputting properly formatted, high-quality answers. Additionally, we can ask the model to
+follow the author's writing style to stay close to the original paragraph. While this process involves extensive prompt engineering, it can be automated and used at scale, as we will see in the
+following implementation.
+Our second issue regarding the limited number of samples is quite common in real-world use
+cases. The number of articles we can retrieve is limited, which constrains the size of the instruction
+dataset we are able to create. In this example, the more samples we have, the better the model
+becomes at imitating the original authors. To address this problem, we will divide our articles
+into chunks and generate three instruction-answer pairs for each chunk. This will multiply the
+number of samples we create while maintaining diversity in the final dataset. For simplicity, we
+will do it using OpenAI's GPT-4o-mini model, but you can also use open-source models.
+However, LLMs are not reliable when it comes to producing structured output. Even when given
+specific templates or instructions, there's no guarantee that the model will consistently adhere
+to them. This inconsistency often necessitates additional string parsing to ensure the output
+meets the desired format.

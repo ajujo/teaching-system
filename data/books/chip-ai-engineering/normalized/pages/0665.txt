@@ -1,0 +1,46 @@
+un 90 % de ahorro de costos (cuanto mayor sea el contexto almacenado en
+caché, mayor será el ahorro) y hasta un 75 % de reducción de latencia. En la
+Tabla 9-3 se muestra el impacto del almacenamiento en caché de los
+prompts en el costo y la latencia de diferentes escenarios. 26
+tabla 9-3. Reducción del costo y la latencia gracias a la caché de prompts.
+Información de Anthropic (2024).
+Caso de uso
+Latencia sin
+caché
+(tiempo hasta
+el primer
+token)
+Latencia con
+caché
+(tiempo hasta
+el primer
+token)
+Reducción
+de costos
+Chatear con un
+libro (prompt en
+caché de 100 000
+tokens)
+11.5 s
+2.4 s (-79 %)
+-90 %
+Prompting de
+muchos shots
+(prompt de 10
+000 tokens)
+1.6 s
+1.1 s (-31 %)
+-86 %
+Conversación
+multiturno
+(conversación de
+10 turnos con un
+prompt del
+sistema largo)
+~10 s
+~2.5 s (-75 %)
+-53 %
+Paralelismo
+Los aceleradores están diseñados para el procesamiento paralelo, y las
+estrategias de paralelismo son la columna vertebral de la computación de
+alto rendimiento. Se están desarrollando muchas nuevas estrategias de

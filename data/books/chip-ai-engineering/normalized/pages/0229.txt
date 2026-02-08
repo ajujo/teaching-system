@@ -1,0 +1,32 @@
+juicios específicos, utilizando criterios concretos y siguiendo sistemas de
+puntuación específicos. Para juicios específicos, un juez pequeño y
+especializado puede ser más fiable que jueces más grandes y polivalentes.
+Como hay muchas formas posibles de utilizar jueces de IA, hay muchos
+posibles jueces de IA especializados. Aquí repasaré ejemplos de tres jueces
+especializados: modelos de recompensa, jueces basados en referencias y
+modelos de preferencia:
+Modelo de recompensa
+Un modelo de recompensa toma una dupla (prompt,
+respuesta) y puntúa lo buena que es la respuesta dado el
+prompt. Los modelos de recompensa se han utilizado con
+éxito en el RLHF durante muchos años. Cappy es un ejemplo
+de modelo de recompensa desarrollado por Google (2023).
+Dada una dupla (prompt, respuesta), Cappy produce una
+puntuación entre 0 y 1, indicando lo correcta que es la
+respuesta. Cappy es un puntuador ligero con 360 millones de
+parámetros, mucho más pequeño que los modelos
+fundacionales de uso general.
+Juez basado en referencias
+Un juez basado en referencias evalúa la respuesta generada
+con respecto a una o más respuestas de referencia. Este juez
+puede emitir una puntuación de similitud o una puntuación
+de calidad (lo buena que es la respuesta generada en
+comparación con las respuestas de referencia). Por ejemplo,
+BLEURT (Sellam et al., 2020) toma una dupla (respuesta
+candidata, respuesta de referencia) y emite una puntuación
+de similitud entre la respuesta candidata y la de referencia.
+21 Prometheus (Kim et al., 2023) recibe (prompt, respuesta
+generada, respuesta de referencia, rúbrica de puntuación) y
+emite una puntuación de calidad entre 1 y 5, asumiendo que
+la respuesta de referencia obtiene un 5.
+Modelo de preferencias

@@ -1,0 +1,30 @@
+Chapter 5
+191
+Now let's bring everything together in a LangGraph workflow:
+builder = StateGraph(MessagesState)
+builder.add_node("invoke_llm", invoke_llm)
+builder.add_node("call_tools", call_tools)
+builder.add_edge(START, "invoke_llm")
+builder.add_conditional_edges("invoke_llm", should_run_tools)
+builder.add_edge("call_tools", "invoke_llm")
+graph = builder.compile()
+question = "What is a square root of the current US president's age
+multiplied by 132?"
+result = graph.invoke({"messages": [HumanMessage(content=question)]})
+print(result["messages"][-1].content)
+>> CALLED GOOGLE_SEARCH with query=age of Donald Trump
+CALLED CALCULATOR with expression=78 * 132
+CALLED CALCULATOR with expression=sqrt(10296)
+The square root of 78 multiplied by 132 (which is 10296) is approximately
+101.47.
+This demonstrates how the LLM made several calls to handle a complex question-first, to Google
+Search and then two calls to Calculator-and each time, it used the previously received infor­
+mation to adjust its actions. This is the ReACT pattern in action.
+With that, we've learned how the ReACT pattern works in detail by building it ourselves. The
+good news is that LangGraph offers a pre-built implementation of a ReACT pattern, so you don't
+need to implement it yourself:
+from langgraph.prebuilt import create_react_agent
+agent = create_react_agent(
+    model=llm,
+    tools=[search_tool, calculator_tool],
+    prompt=system_prompt)

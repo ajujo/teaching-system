@@ -1,0 +1,36 @@
+Building Intelligent RAG Systems
+172
+    return {
+        "issues_report": "",
+        "issues_detected": False
+}
+The final node integrates any feedback to produce the finalized, compliant document:
+def doc_finalizer(state: State):
+    """Finalize documentation by integrating feedback."""
+    if "issues_detected" in state and state["issues_detected"]:
+        response = chat_model.invoke(
+            messages=[{
+                "role": "user",
+                "content": (
+                    f"Revise the following documentation to address these 
+feedback points: {state['issues_report']}\n"
+                    f"Original Document: {state['answer']}\n"
+                    f"Always return the full revised document, even if no 
+changes are needed."
+                )
+            }]
+        )
+        return {
+            "messages": [AIMessage(response.content)]
+        }
+    return {
+        "messages": [AIMessage(state["answer"])]
+    }
+With our nodes defined, we construct the state graph:
+graph_builder = StateGraph(State).add_sequence(
+    [retrieve, generate, double_check, doc_finalizer])
+graph_builder.add_edge(START, "retrieve")
+graph_builder.add_edge("doc_finalizer", END)
+memory = MemorySaver()
+graph = graph_builder.compile(checkpointer=memory)
+config = {"configurable": {"thread_id": "abc123"}}

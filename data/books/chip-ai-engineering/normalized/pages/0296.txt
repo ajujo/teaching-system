@@ -1,0 +1,45 @@
+Uso de API de
+modelos
+Modelos autoalojados
+Control,
+acceso y
+transparencia
+Límites de
+tarifa
+Riesgo de
+perder el
+acceso al
+modelo
+Falta de
+transparencia
+en los cambios
+y versiones del
+modelo
+Mayor facilidad par
+inspeccionar los cam
+en los modelos de có
+abierto
+Puede congelar un
+modelo para manten
+acceso, pero usted s
+responsable de cons
+y darle mantenimien
+las API de modelos
+Casos de uso
+periféricos
+No se puede
+ejecutar en un
+dispositivo sin
+acceso a
+Internet
+Puede ejecutarse en
+dispositivo, pero, rep
+podría ser difícil
+Esperamos que los pros y los contras de cada enfoque le ayuden a decidir si
+utilizar una API comercial o alojar un modelo usted mismo. Esto debería
+reducir significativamente sus opciones. A continuación, puede depurar aún
+más su selección utilizando los datos sobre el rendimiento de los modelos
+públicamente disponibles.
+Explorar las pruebas comparativas públicas
+Existen miles de pruebas comparativas diseñadas para evaluar las distintas
+capacidades de un modelo. BIG-bench de Google (2022) tiene 214 pruebas

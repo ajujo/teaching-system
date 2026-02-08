@@ -1,0 +1,35 @@
+Building Intelligent Agents
+192
+In Chapter 6, we’ll see some additional adjustments you can use with the create_react_agent 
+function.
+Defining tools
+So far, we have defined tools as OpenAPI schemas. But to run the workflow end to end, LangGraph 
+should be able to call tools itself during the execution. Hence, in this section, let’s discuss how 
+we define tools as Python functions or callables. 
+A LangChain tool has three essential components: 
+•	
+Name: A unique identifier for the tool 
+•	
+Description: Text that helps the LLM understand when and how to use the tool 
+•	
+Payload schema: A structured definition of the inputs the tool accepts
+It allows an LLM to decide when and how to call a tool. Another important distinction of a Lang­
+Chain tool is that it can be executed by an orchestrator, such as LangGraph. The base interface 
+for a tool is BaseTool, which inherits from a RunnableSerializable itself. That means it can be 
+invoked or batched as any Runnable, or serialized or deserialized as any Serializable.
+Built-in LangChain tools
+LangChain has many tools already available across various categories. Since tools are often pro­
+vided by third-party vendors, some tools require paid API keys, some of them are completely 
+free, and some of them have a free tier. Some tools are grouped together in toolkits—collections 
+of tools that are supposed to be used together when working on a specific task.  Let’s see some 
+examples of using tools.
+Tools give an LLM access to search engines, such as Bing, DuckDuckGo, Google, and Tavily. Let’s 
+take a look at DuckDuckGoSearchRun as this search engine doesn’t require additional registration 
+and an API key. 
+Please see Chapter 2 for setup instructions. If you have any questions or encounter issues while 
+running the code, please create an issue on GitHub or join the discussion on Discord at https://
+packt.link/lang.
+As with any tool, this tool has a name, description, and schema for input arguments:
+from langchain_community.tools import DuckDuckGoSearchRun
+search = DuckDuckGoSearchRun()
+print(f"Tool's name = {search.name}")

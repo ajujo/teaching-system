@@ -1,0 +1,44 @@
+Integrating Evaluation into the Development Lifecycle
+Measurement must not be an afterthought, nor can it be left to informal methods
+such as simply “eyeballing” outputs or relying on gut instinct. In the absence of sys‐
+tematic evaluation, it is all too easy for even expert teams to fool themselves into
+believing their agentic systems are improving, when in fact progress is illusory or
+uneven. Leading teams integrate automated, offline evaluation into every stage of
+development. As new tools or workflows are added to an agent, corresponding test
+cases and evaluation examples should be added to a growing evaluation set. This dis‐
+ciplined approach ensures that progress is measured not just against a fixed bench‐
+mark, but across the expanding scope of the system’s capabilities.
+High-quality evaluation sets can act as a living specification for what the agent must
+handle, supporting reproducibility and regression detection as the system evolves. By
+tracking historical results on these evaluation sets, teams can identify when apparent
+improvements come at the cost of newly introduced errors or degradations elsewhere
+in the system. In contrast to ad hoc or manual review, this rigorous practice enforces
+a culture of accountability and provides a quantitative foundation for decision mak‐
+ing. Ultimately, it is the careful curation and continual extension of evaluation sets—
+matched to both legacy and emerging features—that enables teams to maintain trust
+in their metrics and ensures that agentic systems are truly advancing toward their
+intended goals.
+Creating and Scaling Evaluation Sets
+The foundation of any measurement strategy is a high-quality evaluation set—one
+that reflects the diversity, ambiguity, and edge cases the system will face in the real
+world. Static, hand-curated test suites are insufficient for modern agentic systems:
+they risk overfitting, miss long-tail failure modes, and can’t keep pace with evolving
+workflows and user behaviors.
+A good evaluation set defines both the input state and the expected outcome, ena‐
+bling automated validation of agent behavior. Consider this illustrative example from
+a customer support agent, which extends our cracked mug scenario, now with multi‐
+ple items:
+{
+  "order": {
+    "order_id": "A89268",
+    "status": "Delivered",
+    "total": 39.99,
+    "items": [
+      {"sku": "MUG-001", "name": "Ceramic Coffee Mug", "qty": 1, 
+       "unit_price": 19.99},
+      {"sku": "TSHIRT-S", "name": "T-Shirt-Small", "qty": 1, 
+       "unit_price": 20.00}
+    ],
+Measuring Agentic Systems 
+| 
+207

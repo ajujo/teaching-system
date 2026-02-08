@@ -1,0 +1,29 @@
+puede utilizar humanos para escribir instrucciones y la IA para generar
+respuestas:
+Para la generación de instrucciones, para asegurarse de que
+generan suficientes instrucciones para cubrir su caso de uso, puede
+empezar con una lista de temas, palabras clave y/o los tipos de
+instrucciones que desea en su conjunto de datos. A continuación,
+para cada elemento de esta lista, genere un número determinado de
+instrucciones. También puede empezar con un conjunto de
+plantillas y generar un número determinado de ejemplos por
+plantilla. Tenga en cuenta que tanto la lista de temas como las
+plantillas pueden ser generadas por AI.
+Para la generación de respuestas, pueden generar una o varias
+respuestas por instrucción.
+Por ejemplo, para crear UltraChat (Ding et al., 2023), un conjunto de datos
+de diálogo multiturno, los autores pidieron primero a ChatGPT que
+generara 30 temas sobre diversos aspectos de nuestra vida cotidiana, como
+tecnología, comida y bebida, moda, naturaleza, educación, finanzas, viajes,
+etc. Para cada tema, pidieron a ChatGPT que generara entre 30 y 50
+subtemas. A continuación, los autores utilizaron el mismo modelo para
+generar las instrucciones y las respuestas correspondientes a estos
+subtemas.
+Del mismo modo, para entrenar Alpaca (Taori et al., 2023), los
+investigadores de Stanford comenzaron con 175 ejemplos (instrucción,
+respuesta) del conjunto de datos semilla Self-Instruct (Wang et al., 2022).
+Estos ejemplos se escribieron originalmente para cubrir una gama de usos
+diversa e interesante. A continuación, los autores de Alpaca utilizaron un
+modelo GPT-3, text-davinci-003, para generar 52 000 duplas (instrucción,
+respuesta) que reflejaban estos ejemplos semilla, como se muestra en la
+Figura 8-5.

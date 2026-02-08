@@ -1,0 +1,36 @@
+Data Engineering
+72
+        pass
+    def login(self) -> None:
+        pass
+Finally, the scroll_page() method implements a scrolling mechanism to navigate through pages, 
+such as LinkedIn, up to a specified scroll limit. It scrolls to the bottom of the page, waits for new 
+content to load, and repeats the process until it reaches the end of the page or the scroll limit is 
+exceeded. This method is essential for feeds where the content appears as the user scrolls:
+    def scroll_page(self) -> None:
+        """Scroll through the LinkedIn page based on the scroll limit."""
+        current_scroll = 0
+        last_height = self.driver.execute_script("return document.body.
+scrollHeight")
+        while True:
+            self.driver.execute_script("window.scrollTo(0, document.body.
+scrollHeight);")
+            time.sleep(5)
+            new_height = self.driver.execute_script("return document.body.
+scrollHeight")
+            if new_height == last_height or (self.scroll_limit and 
+current_scroll >= self.scroll_limit):
+                break
+            last_height = new_height
+            current_scroll += 1
+We’ve understood what the base classes of our crawlers look like. Next, we will look into the 
+implementation of the following specific crawlers:
+•	
+GitHubCrawler(BaseCrawler)
+•	
+CustomArticleCrawler(BaseCrawler)
+•	
+MediumCrawler(BaseSeleniumCrawler)
+You can find the implementation of the above crawlers in the GitHub repository at 
+https://github.com/PacktPublishing/LLM-Engineers-Handbook/tree/main 
+/llm_engineering/application/crawlers.

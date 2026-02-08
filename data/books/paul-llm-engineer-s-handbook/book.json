@@ -1,0 +1,58 @@
+{
+  "$schema": "book_v1",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "book_uuid": "79fddd16-4fee-4a2c-b337-e0a77c4132b4",
+  "title": "LLM Engineer's Handbook",
+  "authors": [
+    "Paul Lusztin & Maxime Labonne"
+  ],
+  "language": "en",
+  "source_file": "LLM_ENGINEERS_HANDBOOK.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T13:04:22.843671+00:00",
+  "total_pages": 523,
+  "total_chapters": 11,
+  "sha256": "5f888c998d3b3ab5728f99284d3b756a2b96d5f42a30120ac0e0c6cb2e98dced",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 514,
+    "empty_pages_count": 9,
+    "total_chars": 897236,
+    "avg_chars_per_page": 1715.6,
+    "detected_language": "en",
+    "is_likely_scanned": false
+  },
+  "pdf_metadata": {
+    "creator": "Adobe InDesign 19.4 (Windows)",
+    "producer": "Adobe PDF Library 17.0",
+    "creation_date": "D:20250704203750+05'30'",
+    "mod_date": "D:20250704204601+05'30'"
+  },
+  "normalization": {
+    "original_chars": 898849,
+    "normalized_chars": 889649,
+    "chars_removed": 9200,
+    "chars_removed_ratio": 0.0102,
+    "hyphen_breaks_fixed": 746,
+    "multiple_spaces_collapsed": 651,
+    "multiple_newlines_collapsed": 513,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "toc:packt",
+    "confidence": 1.0,
+    "chapters_found": 11,
+    "sections_found": 63,
+    "needs_review": false
+  },
+  "units_count": 12,
+  "units_version": "units_v1",
+  "plan_date": "2026-01-30T06:32:46.057266+00:00",
+  "notes_generated_count": 3,
+  "last_notes_generated_at": "2026-02-02T08:40:05.143272+00:00"
+}

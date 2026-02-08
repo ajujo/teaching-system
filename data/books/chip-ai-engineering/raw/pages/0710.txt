@@ -1,0 +1,32 @@
+Extracción de retroalimentación conversacional
+Tradicionalmente, la retroalimentación puede ser explícita o implícita. La
+retroalimentación explícita es información que los usuarios proporcionan en
+respuesta a peticiones explícitas de retroalimentación en la aplicación,
+como pulgares arriba/pulgares abajo, votos positivos/negativos, valoración
+con estrellas o una respuesta sí/no a la pregunta "¿Resolvimos su
+problema?". La retroalimentación explícita es bastante habitual en todas las
+aplicaciones: hay un número limitado de formas de preguntar a una persona
+si le gusta algo. Por ello, la retroalimentación explícita se entiende mejor.
+La retroalimentación implícita es la información inferida de las acciones del
+usuario. Por ejemplo, si alguien compra un producto que le han
+recomendado, significa que fue una buena recomendación. Lo que pueden
+considerarse retroalimentación implícita depende de las acciones que un
+usuario pueda realizar dentro de cada aplicación y, por tanto, depende en
+gran medida de la aplicación. Los modelos fundacionales permiten un
+nuevo mundo de aplicaciones y, con ellas, muchos géneros de
+retroalimentación implícita.
+La interfaz conversacional que utilizan muchas aplicaciones de IA facilita
+que los usuarios den su opinión. Los usuarios pueden fomentar los buenos
+comportamientos y corregir los errores del mismo modo que darían su
+opinión en los diálogos cotidianos. El lenguaje que un usuario utiliza para
+dar instrucciones a la IA puede transmitir información tanto sobre el
+rendimiento de la aplicación como sobre las preferencias del usuario.
+Por ejemplo, imagine que utiliza un asistente de IA para ayudarle a
+planificar su viaje a Australia. Le pide a la IA que les busque un hotel para
+tres noches en Sídney. Responde con tres recomendaciones:
+Aquí tiene tres sugerencias de hoteles en Sídney para una estancia 
+de 3 noches:
+1. Histórico Rocks Boutique Hotel (The Rocks)
+-Precio: ~$400/noche
+-Vecindario: Calles con encanto y cerca de lugares emblemáticos.
+2. Elegante Surry Hills House Hotel (Surry Hills)

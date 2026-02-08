@@ -1,0 +1,44 @@
+tabla 10-1. Tipos de retroalimentación derivada del clustering automático de
+datos FITS (Xu et al., 2022). Resultados de Yuan et al. (2023).
+Grupo
+Tipo de retroalimentación
+Núm.
+1
+Aclara de nuevo su petición.
+3702
+2
+Se queja de que el bot (1) no
+responde a la pregunta o (2)
+proporciona información irrelevante
+o (3) pide al usuario que averigüe la
+respuesta por su cuenta.
+2260
+3
+Señala resultados de búsqueda
+específicos que puedan responder a la
+pregunta.
+2255
+4
+Sugiere que el bot utilice los
+resultados de la búsqueda.
+2130
+5
+Indica que la respuesta (1) es
+objetivamente incorrecta, o (2) no
+está fundamentada en los resultados
+de la búsqueda.
+1572
+6
+Señala que la respuesta del bot no es
+específica/precisa/completa/detallada.
+1309
+7
+Señala que el bot no está seguro de
+sus respuestas y que siempre empieza
+sus respuestas con "no estoy seguro"
+o "no lo sé".
+582
+8
+Se queja de repetición/grosería en las
+respuestas de los bots.
+137

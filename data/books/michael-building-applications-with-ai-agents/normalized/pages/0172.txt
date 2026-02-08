@@ -1,0 +1,43 @@
+Large foundation models excel at absorbing vast amounts of general knowledge, but
+their true power emerges when you fine-tune them on domain-specific data. A
+GPT-5 model customized for financial documents, for example, will not only parse
+jargon correctly but also adhere to your organization's precise reporting conventions.
+Similarly, a legal-tuned model can surface case law insights with the right tone of
+voice, while a customer-support tune can ensure every reply follows your corporate
+guidelines. This tight alignment between the model's internal representations and
+your real-world context is why fine-tuning remains indispensable for mission-critical
+applications.
+That said, fine-tuning large models demands serious resources. Billions of parameters
+translate into heavy GPU requirements, lengthy training runs, and nontrivial cloud
+costs. Retraining to keep up with evolving data or to correct drift can multiply these
+expenses, and real-time deployments may suffer from higher inference latency as a
+result. For organizations without dedicated ML infrastructure, these barriers can
+make large-model fine-tuning impractical.
+Equally important is the need for high-quality, task-specific training data. Large mod‐
+els only become "better" in your domain when they see enough representative exam‐
+ples-often in the thousands-to internalize subtle patterns. Curating, labeling, and
+validating these datasets is time-consuming and can introduce bias if not handled
+carefully. Without rigorous data governance and robust hold-out testing, you risk
+overfitting your model to stale or unrepresentative examples, limiting its ability to
+generalize and retain fairness.
+Despite these challenges, fine-tuning large models remains a powerful approach,
+especially in cases where high performance is critical and the resources to support
+such models are available. The unparalleled capacity of large models enables them to
+perform at exceptional levels when fine-tuned for specific tasks, often surpassing the
+performance of smaller, task-specific models. This makes them ideal for applications
+where accuracy, depth of understanding, and nuanced language handling are neces‐
+sary, such as healthcare diagnostics, legal analysis, or complex technical support.
+Fine-tuning language models is a large and complex domain, encompassing a wide
+range of techniques, architectures, and trade-offs. In this section, we are not attempt‐
+ing to cover every nuance or training approach in depth. Instead, the examples pro‐
+vided here are intended as an introduction to the topic-offering practical
+illustrations to help you assess whether fine-tuning might be worth deeper invest‐
+ment for your own projects. If you find that these methods align with your goals,
+there are many excellent resources, papers, and open source toolkits available to con‐
+tinue your learning journey into fine-tuning strategies, scalable optimization, and
+production deployment.
+Large foundation models offer a powerful solution for applications requiring high
+accuracy, adaptability, and nuanced understanding. Fine-tuning these models enables
+150
+|
+Chapter 7: Learning in Agentic Systems

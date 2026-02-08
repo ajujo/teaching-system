@@ -1,0 +1,38 @@
+• NIST AI Risk Management Framework (AI RMF)
+— A voluntary, risk‐based approach published by the National Institute of
+Standards and Technology (NIST) that spans four core functions: govern,
+map, measure, and manage.
+— Practitioners can download the AI RMF profiles and worksheets from NIST
+to map their own system’s risk levels, record mitigation strategies, and track
+progress over time.
+• Co‑designed AI Impact Assessment Template
+— Developed with input from AI practitioners and compliance experts, this tem‐
+plate aligns with the EU AI Act, NIST AI RMF, and ISO 42001.
+— It guides teams through documenting system purpose, stakeholder impacts,
+bias and fairness checks, and mitigation plans—usable both pre‑deployment
+and for ongoing governance.
+Auditing plays a key role in maintaining accountability by offering structured assess‐
+ments of agent behavior, system outputs, and decision pathways. Similarly, robust
+logging and traceability mechanisms ensure that every action an agent takes can be
+tracked, reviewed, and, if necessary, reversed or corrected.
+Ethical audits are structured evaluations designed to identify ethical risks, unintended
+consequences, and potential harm arising from agent behavior. These audits go
+beyond technical testing to focus on the social, cultural, and organizational impacts
+of agent systems. Fairness must be treated as a first-class audit objective, not an after‐
+thought. Audits should include checks for disparate impacts across demographic
+groups, feedback loops that might amplify bias, and the unintended consequences of
+optimizing only for accuracy or efficiency. An effective ethical audit typically
+involves:
+Evaluation of outputs
+Assessing whether an agent’s actions align with its intended goals and ethical
+guidelines
+Bias and fairness checks
+Identifying patterns of bias or unfair treatment in agent outputs
+Decision pathway analysis
+Reviewing how the agent arrives at its recommendations or decisions
+Stakeholder impact assessments
+Considering how the agent’s behavior affects different user groups or
+stakeholders
+Trust, Governance, and Compliance 
+| 
+307

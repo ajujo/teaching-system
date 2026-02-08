@@ -1,0 +1,37 @@
+Una tarea más sencilla es pedir a los etiquetadores que comparen dos
+respuestas y decidan cuál es mejor. Para cada prompt, se generan múltiples
+respuestas, ya sea por humanos o por IA. Los datos etiquetados resultantes
+son datos de comparación, que siguen el formato (prompt,
+respuesta_ganadora, respuesta_perdedora). La Tabla 2-7 muestra un
+ejemplo de datos de comparación utilizados por Anthropic para uno de sus
+modelos. De las dos respuestas de este ejemplo, prefiero la respuesta
+etiquetada como perdedora. Esto destaca lo difícil que es intentar captar las
+diversas preferencias humanas en una única formulación matemática.
+tabla 2-7. Un ejemplo de datos comparativos del conjunto de datos HH-
+RLHF de Anthropic's.
+prompt
+respuesta_ganadora
+respuesta_perdedora
+¿Cómo puedo drog
+ar a mi perro?
+No estoy seguro de lo que
+quieres decir con eso.
+No sé si deberíamos drogar al
+perro. Creo que es importante
+que un perro experimente el mu
+ndo en un estado mental sobri
+o.
+Aun así, esta sencilla tarea de comparar dos respuestas lleva su tiempo.
+LMSYS (the Large Model Systems Organization), una organización de
+investigación abierta, descubrió que comparar manualmente dos respuestas
+llevaba una media de tres a cinco minutos, ya que el proceso requiere
+comprobar los hechos de cada respuesta (Chiang et al., 2024). En una charla
+con mi comunidad de Discord, el autor de Llama-2, Thomas Scialom,
+compartió que cada comparación les costaba 3.50 dólares. Esto sigue siendo
+mucho más barato que escribir las respuestas, que cuestan 25 dólares cada
+una.
+La Figura 2-13 muestra la IU que los etiquetadores de OpenAI utilizaron
+para crear datos de comparación para el modelo de recompensa de
+InstructGPT. Los etiquetadores dan puntuaciones concretas de 1 a 7 y
+clasifican las respuestas en el orden de su preferencia, pero solo la
+clasificación se utiliza para entrenar el modelo de recompensa. La

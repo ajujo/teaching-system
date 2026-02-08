@@ -1,0 +1,15 @@
+figura 6-16. La jerarquía de información de un agente.
+La memoria es esencial para el funcionamiento de los seres humanos. A
+medida que las aplicaciones de IA han ido evolucionando, los
+desarrolladores se han dado cuenta rápidamente de que la memoria también
+es importante para los modelos de IA. Se han desarrollado muchas
+herramientas de gestión de memoria para modelos de IA, y muchos
+proveedores de modelos han incorporado memoria externa. Aumentar un
+modelo de IA con un sistema de memoria tiene muchas ventajas. Por
+ejemplo:
+Gestionar el desbordamiento de información dentro de una sesión
+Durante el proceso de ejecución de una tarea, un agente
+adquiere mucha información nueva, que puede superar la
+longitud máxima de contexto del agente. El exceso de
+información puede almacenarse en un sistema de memoria
+a largo plazo.

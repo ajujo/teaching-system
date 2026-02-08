@@ -1,0 +1,40 @@
+Chapter 5
+227
+We applied this framework to real-world data from Chapter 3, using an LLM to convert raw text 
+into instruction-answer pairs. We then explored SFT techniques. This included an analysis of 
+SFT’s advantages and limitations, methods for storing and parsing instruction datasets with chat 
+templates, and an overview of three primary SFT techniques: full fine-tuning, LoRA, and QLoRA. 
+We compared these methods based on their impact on memory usage, training efficiency, and 
+output quality. The chapter concluded with a practical demonstration that involved fine-tuning 
+a Llama 3.1 8 B model on our custom instruction dataset. This example highlighted key steps and 
+implementation details for successful fine-tuning.
+In the next chapter, we will use preference alignment techniques to create a new version of Twin-
+Llama-3.1-8B. We will generate a new dataset with chosen and rejected answers that will help us 
+calibrate the type of answers we expect from our model. We will detail many applications that 
+can benefit from this framework and how to implement it.
+References
+•	
+Tahori, Gulrajani, Zhang, Dubois, et al.. “Alpaca: A Strong, Replicable Instruction-Following 
+Model” crfm.stanford.edu, March 13, 2023, https://crfm.stanford.edu/2023/03/13/
+alpaca.html.
+•	
+Subhabrata Mukherjee et al.. “Orca: Progressive Learning from Complex Explanation Traces 
+of GPT-4.” arXiv preprint arXiv:2306.02707, June 2023.
+•	
+Wing Lian and Bleys Goodson and Eugene Pentland and Austin Cook and Chanvichet Vong 
+and “Teknium”. “Open-Orca/OpenOrca.” huggingface.co, 2023, https://huggingface.co/
+datasets/Open-Orca/OpenOrca.
+•	
+Weihao Zeng et al.. “Automatic Instruction Evolving for Large Language Models.” arXiv pre-
+print arXiv:2406.00770, June 2024.
+•	
+Chunting Zhou et al.. “LIMA: Less Is More for Alignment.” arXiv preprint arXiv:2305.11206, 
+May 2023
+•	
+01. AI. “Yi: Open Foundation Models by 01.AI.” arXiv preprint arXiv:2403.04652, March 2024.
+•	
+Alex Birch. “LLM finetuning memory requirements.” blog.scottlogic.com, November 24, 
+2023, https://blog.scottlogic.com/2023/11/24/llm-mem.html.
+•	
+Quentin Anthony et al.. “Transformer Math 101.” blog.eleuther.ai, April 18, 2023, https://
+blog.eleuther.ai/transformer-math/.

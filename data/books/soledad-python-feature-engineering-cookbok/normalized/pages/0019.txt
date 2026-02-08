@@ -1,0 +1,30 @@
+Preface
+xviii
+Download the example code files
+You can download the example code files for this book from GitHub at https://github.com/
+PacktPublishing/Python-Feature-Engineering-Cookbook-Third-Edition. If
+there's an update to the code, it will be updated on the existing GitHub repository.
+We also have other code bundles from our rich catalog of books and videos available at https://
+github.com/PacktPublishing/. Check them out!
+Conventions used
+There are a number of text conventions used throughout this book.
+Code in text: Indicates code words in text, database table names, folder names, filenames, file
+extensions, pathnames, dummy URLs, user input, and Twitter handles. Here is an example: "We used
+year, month, and quarter to capture the year, month, and quarter, respectively, in new columns
+of the DataFrame."
+A block of code is set as follows:
+date = "2024-05-17"
+rng_hr = pd.date_range(date, periods=20, freq="h")
+rng_month = pd.date_range(date, periods=20, freq="ME")
+df = pd.DataFrame({"date1": rng_hr, "date2": rng_month})
+Any command-line input or output is written as follows:
+pip install yellowbrick
+Tips or important notes
+Appear like this.
+Sections
+In this book, you will find several headings that appear frequently (Getting ready, How to do it..., How
+it works..., There's more..., and See also).
+To give clear instructions on how to complete a recipe, use these sections as follows:
+Getting ready
+This section tells you what to expect in the recipe and describes how to set up any software or any
+preliminary settings required for the recipe.

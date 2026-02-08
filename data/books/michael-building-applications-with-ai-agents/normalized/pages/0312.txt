@@ -1,0 +1,42 @@
+the issue to a human operator. Fallback strategies can include reverting to predefined
+workflows, triggering alert notifications, or temporarily halting certain operations.
+However, safeguards are not static-they must evolve in response to emerging
+threats, shifting operational requirements, and real-world incidents. Organizations
+must conduct regular reviews, penetration testing, and red teaming exercises to
+ensure safeguards remain effective under evolving conditions.
+In essence, safeguards are the foundation of secure agent systems, acting as proactive
+barriers against misuse, misalignment, and exploitation. By implementing robust role
+management, behavior constraints, sandboxing, anomaly detection, and fallback
+mechanisms, organizations can create agents that operate securely, predictably, and
+within well-defined boundaries. These safeguards not only protect agents from exter‐
+nal threats but also minimize the risks associated with unintended behaviors and
+internal misconfigurations, building confidence in the deployment and operation of
+agentic systems.
+Protections from External Threats
+Agent systems are inherently exposed to external threats due to their reliance on
+APIs, data streams, third-party plug-ins, and dynamic user inputs. These connec‐
+tions, while essential for the agent's functionality, also create numerous entry points
+for malicious actors to exploit. External threats can range from adversarial attacks
+designed to manipulate agent behavior, to data exfiltration attempts, to distributed
+denial-of-service (DDoS) attacks targeting agent endpoints. Protecting agents from
+these threats requires a layered defense strategy that combines technical controls,
+real-time monitoring, and proactive mitigation techniques.
+A key aspect of this layered strategy is a secure network architecture that isolates
+public-facing components from sensitive internal resources. Figure 12-3 illustrates a
+simplified DMZ (demilitarized zone) configuration with an internal router, showcas‐
+ing how firewalls, routers, and segmented networks work together to filter and con‐
+trol traffic flows from the internet to the agent's core infrastructure. This design
+minimizes exposure by placing web servers in the DMZ for handling external inter‐
+actions, while routing internal communications through dedicated controls to protect
+databases and other critical assets.
+To further enhance the protections illustrated in Figure 12-3, the internal network
+can also be divided into subnets for additional isolation and control. This segmenta‐
+tion-such as placing web servers in one subnet and the database in another-limits
+the blast radius of any potential internal compromise, ensuring that even if an
+attacker gains access to one area (e.g., a web server), they cannot easily pivot to others
+without passing through the internal router's access control lists (ACLs) and moni‐
+toring checks. Subnetting complements the overall zero-trust model by enforcing
+granular network policies, such as restricting traffic to specific ports or protocols, and
+290
+|
+Chapter 12: Protecting Agentic Systems

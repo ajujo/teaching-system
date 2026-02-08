@@ -1,0 +1,17 @@
+Chapter 1
+13
+But here is where the FTI pipeline architectures kick in. The following section will show you how 
+to solve these fundamental issues using an intuitive ML design.
+The solution – ML pipelines for ML systems
+The solution is based on creating a clear and straightforward mind map that any team or person 
+can follow to compute the features, train the model, and make predictions. Based on these three 
+critical steps that any ML system requires, the pattern is known as the FTI pipeline. So, how does 
+this differ from what we presented before?
+The pattern suggests that any ML system can be boiled down to these three pipelines: feature, 
+training, and inference (similar to the DB, business logic, and UI layers from classic software). 
+This is powerful, as we can clearly define the scope and interface of each pipeline. Also, it’s easier 
+to understand how the three components interact. Ultimately, we have just three instead of 20 
+moving pieces, as suggested in Figure 1.4, which is much easier to work with and define.
+As shown in Figure 1.5, we have the feature, training, and inference pipelines. We will zoom in on 
+each of them and understand their scope and interface.
+Figure 1.5: FTI pipelines architecture

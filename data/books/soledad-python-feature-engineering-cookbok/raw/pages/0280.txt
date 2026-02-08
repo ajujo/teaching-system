@@ -1,0 +1,23 @@
+Creating periodic features from cyclical variables
+257
+In the following plot, we can see how the two trigonometric transformations of the hour reflect 
+the cyclical nature of the hour, in a plot that reminds us of a clock:
+Figure 8.15 – A scatter plot of the trigonometric transformation of the hour
+Note
+The code implementation and idea for this plot were taken from scikit-learn’s 
+documentation: https://scikit-learn.org/stable/auto_
+examples/applications/plot_cyclical_feature_engineering.
+html#trigonometric-features.
+Now that we understand the nature and effect of the transformation, let’s create new features 
+using the sine and cosine transformations from multiple variables automatically. We will use 
+the feature-engine library’s CyclicalFeatures().
+7.	
+Import CyclicalFeatures():
+from feature_engine.creation import CyclicalFeatures
+8.	
+Let’s create a toy DataFrame that contains the hour, month, and week variables, whose values 
+vary between 0 and 23, 1 and 12, and 0 and 6, respectively:
+df = pd.DataFrame()
+df["hour"] = pd.Series([i for i in range(24)])
+df["month"] = pd.Series([i for i in range(1, 13)]*2)
+df["week"] = pd.Series([i for i in range(7)]*4)

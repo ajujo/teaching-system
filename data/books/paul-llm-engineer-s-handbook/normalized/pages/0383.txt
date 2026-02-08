@@ -1,0 +1,38 @@
+RAG Inference Pipeline
+352
+•
+How to route between sub-chains | LangChain. (n.d.). https://python.langchain.com/
+docs/how_to/routing/#routing-by-semantic-similarity
+•
+How to use the MultiQueryRetriever | LangChain. (n.d.). https://python.langchain.com/
+docs/how_to/MultiQueryRetriever/
+•
+Hybrid Search explained. (2023, January 3). Weaviate. https://weaviate.io/blog/hybridsearch-explained
+•
+Iusztin, P. (2024, August 20). 4 Advanced RAG Algorithms You Must Know | Decoding
+ML. Medium. https://medium.com/decodingml/the-4-advanced-rag-algorithms-youmust-know-to-implement-5d0c7f1199d2
+•
+Monigatti, L. (2024, February 19). Advanced Retrieval-Augmented Generation: From Theory
+to LlamaIndex Implementation. Medium. https://towardsdatascience.com/advancedretrieval-augmented-generation-from-theory-to-llamaindex-implementation-
+4de1464a9930
+•
+Multi-attribute search with vector embeddings | VectorHub by Superlinked. (n.d.). https://
+superlinked.com/vectorhub/articles/multi-attribute-semantic-search
+•
+Optimizing RAG with Hybrid Search & Reranking | VectorHub by Superlinked. (n.d.). https://
+superlinked.com/vectorhub/articles/optimizing-rag-with-hybrid-searchreranking
+•
+Refactoring.Guru. (2024, January 1). Singleton. https://refactoring.guru/designpatterns/singleton
+•
+Stoll, M. (2024, September 7). Visualize your RAG Data-Evaluate your Retrieval-Augmented Generation System with Ragas. Medium. https://towardsdatascience.com/
+visualize-your-rag-data-evaluate-your-retrieval-augmented-generation-systemwith-ragas-fc2486308557
+•
+Using LLM's for retrieval and reranking-LlamaIndex, data framework for LLM applications.
+(n.d.). https://www.llamaindex.ai/blog/using-llms-for-retrieval-and-reranking-
+23cf2d3a14b6
+Unlock this book's exclusive
+benefits now
+This book comes with additional benefits designed to elevate your learning
+experience.
+https://www.packtpub.com/unlock/9781836200079
+Note: Have your purchase invoice ready before you begin.

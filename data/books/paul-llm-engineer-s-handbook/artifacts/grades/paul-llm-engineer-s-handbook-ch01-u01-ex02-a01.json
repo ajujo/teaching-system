@@ -1,0 +1,45 @@
+{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex02-a01",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex02",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-02T16:05:08.946909+00:00",
+  "provider": "lmstudio",
+  "model": "default",
+  "mode": "mixed",
+  "strict": false,
+  "grading_time_ms": 19196,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex02-q01",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es: Entrenar modelos ML utilizando los datos procesados. El pipeline de entrenamiento se enfoca en preparar y ejecutar el proceso de entrenamiento de modelos ML, diferenciándose del pipeline de características (que procesa datos) y del pipeline de inferencia (que genera respuestas).",
+      "expected_answer": "2"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex02-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La dificultad mencionada en el texto (página 10) se centraba en la gestión compleja del ciclo de vida del modelo y la falta de reproducibilidad, no necesariamente en escalabilidad distribuida.",
+      "expected_answer": "False"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex02-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta está vacía o indica que no se proporcionó información. Se esperaban tres beneficios clave de la arquitectura FTI: reproducción de procesos, modularidad y facilitación de actualizaciones incrementales. Por favor revise el capítulo correspondiente para comprender estos conceptos.",
+      "expected_answer": "Reproduciendo procesos, modularidad, facilita actualizaciones incrementales.",
+      "confidence": 1.0
+    }
+  ],
+  "summary": {
+    "total_questions": 3,
+    "correct_count": 1,
+    "total_score": 1.0,
+    "max_score": 4,
+    "percentage": 0.25,
+    "passed": false
+  }
+}

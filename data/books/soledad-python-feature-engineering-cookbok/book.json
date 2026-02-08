@@ -1,0 +1,53 @@
+{
+  "$schema": "book_v1",
+  "book_id": "soledad-python-feature-engineering-cookbok",
+  "book_uuid": "9899ff1e-1222-4c98-aea7-f6351f073d8f",
+  "title": "Python Feature Engineering Cookbok",
+  "authors": [
+    "Soledad Galli"
+  ],
+  "language": "en",
+  "source_file": "Python_Feature_Engineering_Cookbook.pdf.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T17:54:55.447330+00:00",
+  "total_pages": 396,
+  "total_chapters": 11,
+  "sha256": "a3e4cba44bd11c6e1880d57e9fafc435d2c1037db46249d59a242a2a6d334fe2",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 386,
+    "empty_pages_count": 10,
+    "total_chars": 611382,
+    "avg_chars_per_page": 1543.9,
+    "detected_language": "en",
+    "is_likely_scanned": false
+  },
+  "pdf_metadata": {
+    "creator": "Adobe InDesign 18.5 (Windows)",
+    "producer": "Adobe PDF Library 17.0",
+    "creation_date": "D:20240730162105+05'30'",
+    "mod_date": "D:20240730224732+05'30'"
+  },
+  "normalization": {
+    "original_chars": 612545,
+    "normalized_chars": 607476,
+    "chars_removed": 5069,
+    "chars_removed_ratio": 0.0083,
+    "hyphen_breaks_fixed": 65,
+    "multiple_spaces_collapsed": 229,
+    "multiple_newlines_collapsed": 385,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "auto:toc",
+    "confidence": 1.0,
+    "chapters_found": 11,
+    "sections_found": 282,
+    "needs_review": false
+  }
+}

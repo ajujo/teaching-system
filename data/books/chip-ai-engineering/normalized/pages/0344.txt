@@ -1,0 +1,33 @@
+Tabla 5-3. Asegúrese de elegir marcadores que sea poco probable que
+aparezcan en sus inputs. De lo contrario, el modelo podría confundirse.
+tabla 5-3. Sin marcadores explícitos que indiquen el final del input, un
+modelo podría seguir añadiendo datos en lugar de generar outputs
+estructurados.
+Prompt
+Output del
+modelo
+Etiqueta el siguiente artículo como c
+omestible
+o no comestible.
+pizza de piña --> comestible cartón -
+-> no comestible pollo
+tacos --> comestibl
+e
+❌
+Etiqueta el siguiente artículo como c
+omestible
+o no comestible.
+pizza de piña --> comestible
+cartón --> no comestible
+pollo -->
+comestible
+✅
+Aportar suficiente contexto
+Al igual que los textos de referencia pueden ayudar a los alumnos a rendir
+mejor en un examen, un contexto suficiente puede ayudar a los modelos a
+tener mejor rendimiento. Si quiere que el modelo responda a preguntas
+sobre un artículo, probablemente las respuestas del modelo mejorarán si
+incluye dicho artículo en el contexto. El contexto también puede mitigar las
+alucinaciones. Si el modelo no recibe la información necesaria, tendrá que
+basarse en sus conocimientos internos, que pueden ser poco fiables y
+provocar alucinaciones.

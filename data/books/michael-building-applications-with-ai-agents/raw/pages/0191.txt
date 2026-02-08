@@ -1,0 +1,42 @@
+           print(first)
+           print(tc['name'])
+           fn = next(t for t in TOOLS if t.name == tc['name'])
+           out = fn.invoke(tc["args"])
+           messages.append(ToolMessage(content=str(out), tool_call_id=tc["id"]))
+       second = llm.invoke(full + messages)
+       messages.append(second)
+   return {"messages": messages}
+def construct_graph():
+   g = StateGraph(AgentState)
+   g.add_node("assistant", call_model)
+   g.set_entry_point("assistant")
+   return g.compile()
+graph = construct_graph()
+if __name__ == "__main__":
+   example = {"operation_id": "OP-12345", "type": "inventory_management", 
+              "priority": "high", "location": "Warehouse A"}
+   convo = [HumanMessage(content="We're running critically low on SKU-12345. 
+   Current stock is 50 units but we have 200 units on backorder. What's our 
+   reorder strategy?")]
+   result = graph.invoke({"operation": example, "messages": convo})
+   for m in result["messages"]:
+       print(f"{m.type}: {m.content}")
+With the agent fully assembled, we see the elegance of a single-node LangGraph: the
+state holds operation details and messages, the model call analyzes queries and
+invokes tools, and the graph is minimal—just one “assistant” node. This structure
+minimizes overhead, ensuring low latency as there’s no inter-agent communication.
+In practice, as demonstrated in 2025 LangGraph tutorials for supply chain agents,
+such setups can process queries in under a second on standard hardware, making
+them ideal for operational dashboards or real-time alerts.
+For most use cases, though, the key bottleneck arises when the number of tools and
+responsibilities increases. When an agent is expected to choose the correct tool from
+a set, performance degrades as the potential number of tools increases. Before jump‐
+ing to multiagents, consider scaling within the single-agent framework: for instance,
+encapsulate multiple tools into larger groupings (e.g., via hierarchical tool selection),
+or use semantic tool selection using a vector database as described in Chapter 5 on
+orchestration. If these approaches still fall short, decomposing tools into distinct
+agents with appropriate responsibilities can then improve reliability and perfor‐
+mance, though it introduces coordination overhead.
+How Many Agents Do I Need? 
+| 
+169

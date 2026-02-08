@@ -1,0 +1,21 @@
+Transforming variables with the reciprocal function
+93
+7.	
+Let’s check the distribution of the AveOccup variable after the transformation with the 
+diagnostic function we created in step 3:
+diagnostic_plots(X_tf, "AveOccup")
+Note
+After the transformation, AveOccup is now the ratio of the number of houses and the number 
+of people in a certain area – in other words, houses per citizen.
+Here, we can see a dramatic change in the distribution of the AveOccup variable after the 
+reciprocal transformation:
+Figure 3.5 – A histogram and Q-Q plot of the AveOccup variable after the reciprocal transformation
+Now, let’s apply the reciprocal transformation with scikit-learn.
+8.	
+Let’s import the FunctionTransformer():
+from sklearn.preprocessing import FunctionTransformer
+9.	
+Let’s set up the transformer by passing np.reciprocal as an argument:
+transformer = FunctionTransformer(np.reciprocal)
+Note
+By default, FunctionTransformer() does not need to be fit before transforming the data.

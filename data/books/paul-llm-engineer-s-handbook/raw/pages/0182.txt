@@ -1,0 +1,39 @@
+Chapter 4
+151
+We used Pydantic to model all our domain entities. When we wrote the book, choosing Pydantic 
+was a no-brainer, as it is the go-to Python package for writing data structures with out-of-the-box 
+type validation. As Python is a dynamically typed language, using Pydantic for type validation at 
+runtime makes your system order of times more robust, as you can be sure that you are always 
+working with the right type of data.
+The domain of our LLM Twin application is split into two dimensions:
+•	
+The data category: Post, article, and repository
+•	
+The state of the data: Cleaned, chunked, and embedded
+We decided to create a base class for each state of the document, resulting in having the following 
+base abstract classes:
+•	
+class CleanedDocument(VectorBaseDocument, ABC)
+•	
+class Chunk(VectorBaseDocument, ABC)
+•	
+class EmbeddedChunk(VectorBaseDocument, ABC)
+Note that all of them inherit the VectorBaseDocument class, which is our custom OVM implemen-
+tation, which we will explain in the next section of this chapter. Also, it inherits from ABC, which 
+makes the class abstract. Thus, you cannot initialize an object out of these classes; you may only 
+inherit from them. That is why base classes are always marked as abstract.
+Each base abstract class from above (which models the state) will have a subclass that adds 
+the data category dimension. For example, the CleanedDocument class will have the following 
+subclasses:
+•	
+class CleanedPostDocument(CleanedDocument)
+•	
+class CleanedArticleDocument(CleanedDocument)
+•	
+class CleanedRepositoryDocument(CleanedDocument)
+As we can see in Figure 8.16, we will repeat the same logic for the Chunk and EmbeddedChunk base 
+abstract classes. We will implement a specific document class for each data category and state com-
+bination, resulting in nine types of domain entities. For example, when ingesting a raw document, 
+the cleaning step will yield a CleanedArticleDocument instance, the chunking step will return a 
+list of ArticleChunk objects, and the embedding operation will return EmbeddedArticleChunk in-
+stances that encapsulate the embedding and all the necessary metadata to ingest in the vector DB. 

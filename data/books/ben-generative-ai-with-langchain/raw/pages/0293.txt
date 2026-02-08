@@ -1,0 +1,33 @@
+Advanced Applications and Multi-Agent Systems
+266
+Questions
+1.	
+Name at least three design patterns to consider when building generative AI agents.
+2.	
+Explain the concept of “dynamic retrieval” in the context of agentic RAG.
+3.	
+How can cooperation between agents improve the outputs of complex tasks? How can 
+you increase the diversity of cooperating agents, and what impact on performance might 
+it have?
+4.	
+Describe examples of reaching consensus across multiple agents’ outputs.
+5.	
+What are the two main ways to organize communication in a multi-agent system with 
+LangGraph?
+6.	
+Explain the differences between stream, astream, and astream_events in LangGraph.
+7.	
+What is a command in LangGraph, and how is it related to handoffs? 
+8.	 Explain the concept of a thread in the LangGraph platform. How is it different from Py­
+thonic threads?
+9.	
+Explain the core idea behind the Tree of Thoughts (ToT) technique. How is ToT related 
+to the decomposition pattern?
+10.	 Describe the difference between short-term and long-term memory in the context of 
+agentic systems.
+Subscribe for a free eBook
+New frameworks, evolving architectures, research drops, production breakdowns—AI_Distilled 
+filters the noise into a weekly briefing for engineers and researchers working hands-on with LLMs 
+and GenAI systems. Subscribe now and receive a free eBook, along with weekly insights that help 
+you stay focused and informed.
+Subscribe at https://packt.link/8Oz6Y or scan the QR code below.

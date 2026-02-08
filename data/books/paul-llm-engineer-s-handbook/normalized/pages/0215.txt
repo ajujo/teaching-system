@@ -1,0 +1,33 @@
+Supervised Fine-Tuning
+184
+However, rule-based filtering also has limitations that must be considered. Predefined rules may
+lack the nuance required to capture the full complexity of language and context, potentially leading to the removal of valid but unusual samples. The typically binary nature of rules (pass/fail)
+may not always align with the nuanced nature of language and instruction quality. Additionally,
+as data patterns and quality standards evolve, rules need regular review and updates to remain
+effective. There's also a risk that poorly designed rules could inadvertently introduce or amplify
+biases in the dataset.
+Data deduplication
+Dataset diversity is fundamental to training models that can generalize well to new, unseen data.
+When a dataset contains duplicates or near-duplicates, it can lead to several issues:
+•
+Overfitting: Models may memorize specific examples rather than learning general patterns.
+•
+Biased performance: Overrepresented data points may skew the model's performance
+towards certain types of inputs.
+•
+Inefficient training: Redundant data can increase training time without providing additional valuable information.
+•
+Inflated evaluation metrics: Duplicate data in test sets may lead to overly optimistic performance estimates.
+To deduplicate datasets, we distinguish between exact and fuzzy deduplication. Exact deduplication removes identical samples through a straightforward process involving data normalization,
+hash generation, and duplicate removal. Data normalization standardizes the format of entries,
+such as converting text to lowercase. Hash generation then creates unique hashes for each entry
+using algorithms like MD5 or SHA-256. These hashes are compared to find matches, and duplicates are removed, leaving only one instance of each. While effective for identical entries, exact
+deduplication does not detect near-duplicates or semantically similar content, requiring more
+advanced techniques for those cases.
+The most popular approach to fuzzy deduplication is MinHash deduplication. Compared to
+other fuzzy techniques, it maintains high accuracy while significantly reducing computational
+complexity. MinHash operates by generating compact representations, or signatures, for each
+data item. These signatures serve as fingerprints that capture the essence of the data while drastically reducing its dimensionality. In practice, MinHash transforms data items (such as text
+documents) into sets of shingles, applies multiple hash functions to these sets, and selects the
+minimum hash values to form signature vectors. These signatures can then be compared using
+similarity measures like Jaccard similarity to efficiently identify near-duplicates.

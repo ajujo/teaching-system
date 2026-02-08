@@ -1,0 +1,36 @@
+to rapidly improve the agent performance on given tasks. As the number of successful
+examples increases, it then becomes wise to retrieve the most relevant successful
+examples by type, text retrieval, or semantic retrieval. Note that this technique can be
+applied to the agentic task execution as a whole, or it can be performed independently
+on subsets of the task.
+Reflexion
+Reflexion equips an agent with a simple, language-based habit of self-critique: after
+each unsuccessful attempt, the agent writes a brief reflection on what went wrong and
+how to improve its next try. Over time, these reflections live in a “memory buffer”
+alongside the agent’s prior actions and observations. Before each new attempt, the
+agent rereads its most recent reflections, allowing it to adjust its strategy without ever
+retraining the model.
+At a high level, the Reflexion loop works like this:
+1. Perform an action sequence. The agent interacts with the environment using its
+usual prompt-driven planning.
+2. Log the trial. Every step—actions taken, observations received, success or
+failure—is appended to a log in persistent storage (for example, a JSON file or
+database table).
+3. Generate a reflection. If the trial fails, the agent constructs a short “reflection
+prompt” that includes the recent interaction history plus a template asking:
+“What strategy did I miss? What should I do differently next time?” The LLM
+produces a concise plan.
+4. Update memory. A helper function (update_memory) reads the trial logs, invokes
+the LLM on the reflection prompt, and then saves the new reflection back into
+the agent’s memory structure.
+5. Inject reflections on the next run. When the agent attempts the same (or a similar)
+task again, it prepends its most recent reflections into the prompt, guiding the
+model toward the improved strategy.
+Reflexion is very lightweight. You don’t touch model weights; you simply use the
+foundation model as its own coach. Reflexion accommodates both numerical feed‐
+back (e.g., a success flag) and free-form comments, and it has been shown to boost
+performance on tasks ranging from code debugging to multistep reasoning. You can
+see how this works in Figure 7-2.
+Nonparametric Learning 
+| 
+137

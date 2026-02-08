@@ -1,0 +1,37 @@
+Building Workflows with LangGraph
+80
+Logging is essential, especially as you approach production deployment. Proper logging ensures
+that exceptions don't go unnoticed, allowing you to monitor their occurrence. Modern observabil­
+ity tools provide alerting mechanisms that group similar errors and notify you about frequently
+occurring issues.
+Converting exceptions to text enables your workflow to continue execution while providing
+downstream LLMs with valuable context about what went wrong and potential recovery paths.
+Here is a simple example of how you can log the exception but continue executing your workflow
+by sticking to the default behavior:
+import logging
+logger = logging.getLogger(__name__)
+llms = {
+   "fake": fake_llm,
+   "Google": llm
+}
+def analyze_job_description(state, config: RunnableConfig):
+   try:
+     llm = config["configurable"].get("model_provider", "Google")
+     llm = llms[model_provider]
+     analyze_chain = llm | parser
+     prompt = prompt_template_enum.format(job_description=job_description)
+     result = analyze_chain.invoke(prompt)
+     return {"is_suitable": result}
+   except Exception as e:
+     logger.error(f"Exception {e} occurred while executing analyze_job_
+description")
+     return {"is_suitable": False}
+To test our error handling, we need to simulate LLM failures. LangChain has a few FakeChatModel
+classes that help you to test your chain:
+•
+GenericFakeChatModel returns messages based on a provided iterator
+•
+FakeChatModel always returns a "fake_response" string
+•
+FakeListChatModel takes a list of messages and returns them one by one on each invo­
+cation

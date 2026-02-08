@@ -1,0 +1,41 @@
+Aggregating and Prioritizing Improvements                                                         259
+Experimentation                                                                                                            260
+Shadow Deployments                                                                                                261
+A/B Testing                                                                                                                  262
+Bayesian Bandits                                                                                                         263
+Continuous Learning                                                                                                    265
+In-Context Learning                                                                                                  265
+Offline Retraining                                                                                                      267
+Conclusion                                                                                                                      268
+12. Protecting Agentic Systems. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  271
+The Unique Risks of Agentic Systems                                                                        272
+Emerging Threat Vectors                                                                                              273
+Securing Foundation Models                                                                                       275
+Defensive Techniques                                                                                                276
+Red Teaming                                                                                                               278
+Threat Modeling with MAESTRO                                                                           281
+Protecting Data in Agentic Systems                                                                            283
+Data Privacy and Encryption                                                                                   283
+Data Provenance and Integrity                                                                                285
+Handling Sensitive Data                                                                                            286
+Securing Agents                                                                                                             288
+Safeguards                                                                                                                   288
+Protections from External Threats                                                                          290
+Protections from Internal Failures                                                                          292
+Conclusion                                                                                                                      296
+13. Human-Agent Collaboration. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  297
+Roles and Autonomy                                                                                                     297
+The Changing Role of Humans in Agent Systems                                                298
+Aligning Stakeholders and Driving Adoption                                                       299
+Scaling Collaboration                                                                                                    300
+Agent Scope and Organizational Roles                                                                   302
+Shared Memory and Context Boundaries                                                              303
+Trust, Governance, and Compliance                                                                          305
+The Lifecycle of Trust                                                                                                305
+Accountability Frameworks                                                                                      306
+Escalation Design and Oversight                                                                             309
+Privacy and Regulatory Compliance                                                                       310
+Conclusion: The Future of Human-Agent Teams                                                     312
+x 
+| 
+Table of Contents

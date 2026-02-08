@@ -1,0 +1,28 @@
+- desarrollo basado en la evaluación, Criterios de evaluación
+- diseño de canalizaciones de evaluación, Manejo de la contaminación
+de datos
+- paso, Introducción a la creación de aplicaciones de IA con
+modelos fundacionales, Introducción a la creación de aplicaciones
+de IA con modelos fundacionales, Modelos lingüísticos, Manejo
+de la contaminación de datos, Paso 1. Evaluar todos los
+componentes de un sistema, Crear rúbricas de puntuación con
+ejemplos
+- selección de modelos, Costo y latencia
+- contaminación de datos con puntos de referencia públicos,
+Tableros de clasificación personalizadas con pruebas
+comparativas públicas
+- crear un modelo frente a comprar un modelo, Flujo de trabajo de
+selección de modelos
+- flujo de trabajo de selección de modelos, Costo y latencia
+- navegar por los puntos de referencia públicos, Implementación en
+el dispositivo
+evaluación de sistemas de IA (ver evaluación de sistemas)
+evaluación exacta, Interpretación y casos prácticos de la perplejidad
+- corrección funcional, Corrección funcional
+- medidas de similitud con los datos de referencia, Corrección funcional
+evaluación puntual, Afinado de preferencias, ¿Qué modelos pueden actuar
+como jueces?
+extensión de las capacidades, Herramientas
+extracción de información, Inyección indirecta de prompts, Inyección
+indirecta de prompts
+- ingeniería defensiva

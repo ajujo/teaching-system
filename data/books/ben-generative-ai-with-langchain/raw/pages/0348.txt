@@ -1,0 +1,35 @@
+Chapter 8
+321
+LLM-as-a-judge approaches represent a rapidly evolving evaluation methodology where powerful 
+language models serve as automated evaluators, assessing outputs according to defined rubrics. 
+Research by Zheng and colleagues (Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena, 
+2023) demonstrates that with carefully designed prompting, models like GPT-4 can achieve sub­
+stantial agreement with human evaluators on dimensions like factual accuracy, coherence, and 
+relevance. This approach can help evaluate subjective qualities that traditional metrics struggle 
+to capture, though researchers emphasize the importance of human verification to mitigate 
+potential biases in the evaluator models themselves.
+Human-in-the-loop evaluation
+Human evaluation remains essential for assessing subjective dimensions of agent performance 
+that automated metrics cannot fully capture. Effective human-in-the-loop evaluation requires 
+structured methodologies to ensure consistency and reduce bias while leveraging human judg­
+ment where it adds the most value.
+Expert review provides in-depth qualitative assessment from domain specialists who can identify 
+subtle errors, evaluate reasoning quality, and assess alignment with domain-specific best prac­
+tices. Rather than unstructured feedback, modern expert review employs standardized rubrics 
+that decompose evaluation into specific dimensions, typically using Likert scales or comparative 
+rankings. Research in healthcare and financial domains has developed standardized protocols 
+for expert evaluation, particularly for assessing agent responses in complex regulatory contexts.
+User feedback captures the perspective of end users interacting with the agent in realistic contexts. 
+Structured feedback collection through embedded rating mechanisms (for example, thumbs up/
+down, 1-5 star ratings) provides quantitative data on user satisfaction, while free-text comments 
+offer qualitative insights into specific strengths or weaknesses. Academic studies of conversational 
+agent effectiveness increasingly implement systematic feedback collection protocols where user 
+ratings are analyzed to identify patterns in agent performance across different query types, user 
+segments, or time periods.
+A/B testing methodologies allow controlled comparison of different agent versions or config­
+urations by randomly routing users to different implementations and measuring performance 
+differences. This experimental approach is particularly valuable for evaluating changes to agent 
+prompting, tool integration, or retrieval mechanisms. When implementing A/B testing, research­
+ers typically define primary metrics (like task completion rates or user satisfaction) alongside 
+secondary metrics that help explain observed differences (such as response length, tool usage 
+patterns, or conversation duration). 

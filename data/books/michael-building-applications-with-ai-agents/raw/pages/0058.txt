@@ -1,0 +1,38 @@
+Correctness
+Ensuring that the agent consistently delivers accurate and expected outputs based
+on its design
+Boundary testing
+Evaluating how the agent handles edge cases and extreme inputs, such as very
+large datasets, unusual queries, or ambiguous instructions
+Task-specific metrics
+For agents handling domain-specific tasks (e.g., legal analysis, medical diagnos‐
+tics), ensuring the system meets the domain’s accuracy and compliance
+requirements
+For agent systems, particularly those powered by ML models, it is essential to evaluate
+the agent’s ability to generalize beyond the specific scenarios it was trained on. This
+ensures the agent can handle new, unseen situations while maintaining accuracy and
+reliability.
+Agents often encounter tasks outside of their original training domain. A robust eval‐
+uation should test the agent’s ability to adapt to these new tasks without requiring
+extensive retraining. This is particularly important for general-purpose agents or
+those designed to operate in dynamic environments.
+User experience is a key factor in determining the success of agent systems. It’s
+important to evaluate not only the technical performance of the agent but also how
+well it meets user expectations in real-world applications.
+Collecting feedback from actual users provides critical insights into how well the
+agent performs in practice. This feedback helps refine the agent’s behaviors, improv‐
+ing its effectiveness and user satisfaction, and can consist of the following:
+User satisfaction scores
+Use metrics like net promoter score (NPS) or customer satisfaction (CSAT) to
+gauge how users feel about their interactions with the agent.
+Task completion rates
+Measure how often users successfully complete tasks with the agent’s help. Low
+completion rates may indicate confusion or inefficiencies in the agent’s design.
+Explicit signals
+Create opportunities for users to provide their feedback, in such forms as
+thumbs-up and thumbs-down, star ratings, and the ability to accept, reject, or
+modify the generated results, depending on the context. These signals can pro‐
+vide a wealth of insight.
+36 
+| 
+Chapter 2: Designing Agent Systems

@@ -1,0 +1,31 @@
+Puede proporcionar al modelo el contexto necesario o darle herramientas
+para que lo reúna. El proceso de recopilar el contexto necesario para una
+consulta determinada se denomina construcción del contexto. Las
+herramientas de construcción del contexto incluyen la recuperación de
+datos, como en un proceso RAG, y la búsqueda en Internet. Estas
+herramientas se analizan en el Capítulo 6.
+CÓMO RESTRINGIR EL CONOCIMIENTO DE UN
+MODELO SOLO A SU CONTEXTO
+En muchos escenarios, es deseable que el modelo utilice solo la
+información proporcionada en el contexto para responder. Esto es
+especialmente habitual en los juegos de rol y otras simulaciones. Por
+ejemplo, si quiere que un modelo interprete a un personaje del juego
+Skyrim, este personaje solo debe conocer el universo de Skyrim y no
+debe ser capaz de responder a preguntas como "¿Cuál es su objeto
+favorito de Starbucks?".
+Restringir un modelo únicamente al contexto es complicado. Puede
+ayudar dar instrucciones claras, como "responde utilizando solo el
+contexto proporcionado", junto con ejemplos de preguntas que no
+debería poder responder. También puede ordenar al modelo que cite
+específicamente de qué parte del corpus proporcionado extrae su
+respuesta. Este enfoque puede llevar al modelo a generar solo
+respuestas que estén respaldadas por el contexto.
+Sin embargo, dado que no hay garantías de que el modelo siga todas las
+instrucciones, es posible que el prompting por sí solo no produzca de
+forma fiable el resultado deseado. Otra opción es afinar un modelo con
+su propio corpus, pero los datos de pre-entrenamiento pueden seguir
+filtrándose en sus respuestas. El método más seguro es entrenar a un
+modelo exclusivamente con el corpus de conocimientos permitido,
+aunque esto no suele ser factible para la mayoría de los casos de uso.
+Además, el corpus puede ser demasiado limitado para entrenar a un
+modelo de alta calidad.

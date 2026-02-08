@@ -1,0 +1,38 @@
+rerunning inventory. For long-running processes, add signals for user input or pau‐
+ses, similar to the full example's confirmation handling.
+Apache Airflow is widely used for data pipelines but can also coordinate agent flows
+via DAGs (directed acyclic graphs). While powerful, Airflow is best suited to batch or
+time-triggered workflows. Airflow remains a staple for scheduled, tool-agnostic
+orchestration in data engineering and business operations, such as ETL (extract,
+transform, load) jobs or ML model training. Opt for Airflow when dealing with peri‐
+odic, dependency-heavy pipelines that benefit from its mature ecosystem and visuali‐
+zation tools, but not for real-time or highly dynamic agent interactions.
+For developers preferring to prototype and run orchestration locally before scaling to
+distributed environments, tools like Dagger can be particularly useful, enabling work‐
+flows to be composed as code using containers, foundation models, and other
+resources with automatic caching and type safety. This ensures consistency across
+local development, CI/CD pipelines, and production, and even supports agentic inte‐
+grations such as automation enabled by foundation models, making it a flexible
+option depending on your stack. Workflow engines offer a higher layer of abstraction
+-separating coordination logic from communication mechanics. They help ensure
+idempotency, recoverability, and durable state-features that become essential when
+agents fail, stall, or must respond to changing environments.
+Managing State and Persistence
+Communication alone is not enough-multiagent systems must also manage shared
+state, agent memory, and task metadata that often span multiple executions, work‐
+flows, or system restarts. This introduces significant complexity in terms of data
+durability, consistency, and access patterns, particularly as the system scales.
+As you can see in Table 8-1, traditional solutions rely on stateful databases like Post‐
+greSQL, Redis, or vector stores to persist task outcomes, interaction logs, and agent
+memories. These offer fine-grained control and can be tailored to the needs of each
+agent, but they also require developers to explicitly manage schema design, read/
+write consistency, caching, and recovery logic-adding engineering overhead and
+opportunities for subtle bugs.
+For unstructured or large-scale outputs (e.g., plans, tool traces, JSON blobs), object
+storage options like Amazon S3 or Azure Blob Storage provide durable, low-cost
+storage with high availability. This is ideal for immutable artifacts, but it comes with
+trade-offs in access latency and the need for separate indexing or tracking systems to
+relate artifacts back to agent tasks or states.
+Managing State and Persistence
+|
+201

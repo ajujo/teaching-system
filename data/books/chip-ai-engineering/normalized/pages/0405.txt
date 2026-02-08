@@ -1,0 +1,25 @@
+una amplia gama de tareas, incluyendo recuperaciones, clasificación y
+clustering.
+La calidad de un recuperador también debe evaluarse en el contexto de todo
+el sistema RAG. En última instancia, un recuperador es bueno si ayuda al
+sistema a generar respuestas de alta calidad. La evaluación de los outputs de
+los modelos generativos se aborda en el Capítulo 3 y el Capítulo 4.
+Que la promesa de rendimiento de un sistema de recuperación semántica
+valga o no la pena depende de la prioridad que se dé al costo y la latencia,
+sobre todo durante la fase de consulta. Dado que gran parte de la latencia de
+la RAG proviene de la generación de outputs, especialmente si son largos,
+la latencia añadida por la generación de incrustación de consultas y la
+búsqueda de vectores podría ser mínima por comparación con la latencia
+total de la RAG. Aun así, la latencia añadida puede afectar la experiencia
+del usuario.
+Otra preocupación es el costo. Generar incrustaciones cuesta dinero. Esto
+resulta especialmente problemático si sus datos cambian con frecuencia y es
+necesario regenerar incrustaciones con frecuencia. Imagínese tener que
+generar incrustaciones para 100 millones de documentos cada día.
+Dependiendo de las bases de datos vectoriales que utilice, el
+almacenamiento de vectores y las consultas de búsqueda de vectores
+también pueden resultar caros. No es raro ver que el gasto de una empresa
+en bases de datos vectoriales sea una quinta parte o incluso la mitad de su
+gasto en API de modelos.
+La Tabla 6-2 muestra una comparación entre la recuperación basada en
+términos y la basada en incrustaciones.

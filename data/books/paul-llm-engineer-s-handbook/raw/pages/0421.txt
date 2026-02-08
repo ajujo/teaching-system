@@ -1,0 +1,30 @@
+Inference Pipeline Deployment
+390
+Next, we define the rag() function that implements all the RAG business logic. To avoid repeating 
+ourselves, check Chapter 9 for the complete function explanation. What is important to highlight 
+is that the rag() function only implements the business steps required to do RAG, which are CPU- 
+and I/O-bounded. For example, the ContextRetriever class makes API calls to OpenAI and Qdrant, 
+which are network I/O bounded, and calls the embedding model, which runs directly on the CPU. 
+Also, as the LLM inference logic is moved to a different microservice, the call_llm_service() 
+function is only network I/O bounded. To conclude, the whole function is light to run, where the 
+heavy computing is done on other services, which allows us to host the FastAPI server on a light 
+and cheap machine that doesn’t need a GPU to run at low latencies:
+def rag(query: str) -> str:
+    retriever = ContextRetriever(mock=False)
+    documents = retriever.search(query, k=3 * 3)
+    context = EmbeddedChunk.to_context(documents)
+    answer = call_llm_service(query, context)
+    return answer
+Ultimately, we define the rag_endpoint() function, used to expose our RAG logic over the internet 
+as an HTTP endpoint. We use a Python decorator to expose it as a POST endpoint in the FastAPI 
+application. This endpoint is mapped to the /rag route and expects a QueryRequest as input. The 
+function processes the request by calling the rag function with the user’s query. If successful, it 
+returns the answer wrapped in a QueryResponse object. If an exception occurs, it raises an HTTP 
+500 error with the exception details:
+@app.post("/rag", response_model=QueryResponse)
+async def rag_endpoint(request: QueryRequest):
+    try:
+        answer = rag(query=request.query)
+        return {"answer": answer}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e)) from e

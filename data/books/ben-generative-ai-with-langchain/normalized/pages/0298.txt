@@ -1,0 +1,31 @@
+Chapter 7
+271
+When it comes to understanding complex systems, developers can use LLMs to generate explana­
+tions and visualizations of intricate architectures, legacy codebases, or third-party dependencies,
+accelerating onboarding and system comprehension. For example, Salesforce's system landscape
+diagrams show how their LLM-integrated platforms connect across various services, though recent
+earnings reports indicate these AI initiatives have yet to significantly impact their financial results.
+System architecture itself is evolving as applications increasingly need to be designed with nat­
+ural language interfaces in mind, both for development and potential user interaction. BMW
+reported implementing a platform that uses generative AI to produce real-time insights via chat
+interfaces, reducing the time from data ingestion to actionable recommendations from days to
+minutes. However, this architectural transformation reflects a broader industry pattern where
+consulting firms have become major financial beneficiaries of the generative AI boom. Recent
+industry analysis shows that consulting giants such as Accenture are generating more revenue
+from generative AI services ($3.6 billion in annualized bookings) than most generative AI startups
+combined, raising important questions about value delivery and implementation effectiveness
+that organizations must consider when planning their AI architecture strategies.
+For software developers, data scientists, and decision-makers, this integration means faster it­
+eration, lower costs, and a smoother transition from idea to deployment. While LLMs help gen­
+erate boilerplate code and automate routine tasks, human oversight remains critical for system
+architecture, security, and performance. As the case studies demonstrate, companies integrating
+natural language interfaces into development and operational pipelines are already realizing
+tangible business value while maintaining necessary human guidance.
+Evolution of code LLMs
+The development of code-specialized LLMs has followed a rapid trajectory since their inception,
+progressing through three distinct phases that have transformed software development practices.
+The first Foundation phase (2021 to early 2022) introduced the first viable code generation models
+that proved the concept was feasible. This was followed by the Expansion phase (late 2022 to early
+2023), which brought significant improvements in reasoning capabilities and contextual under­
+standing. Most recently, the Diversification phase (mid-2023 to 2024) has seen the emergence of
+both advanced commercial offerings and increasingly capable open-source alternatives.

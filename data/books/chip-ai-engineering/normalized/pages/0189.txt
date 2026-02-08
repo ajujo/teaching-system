@@ -1,0 +1,17 @@
+proyecto, pero no será suficiente para la iteración de aplicaciones. Este libro
+se centra en un enfoque sistemático de la evaluación.
+figura 3-3. Según datos extraídos de mi lista de los 1000 repositorios de IA más
+populares en GitHub, la evaluación va a la zaga de otros aspectos de la ingeniería de
+IA en cuanto a herramientas de código abierto.
+Comprender las métricas de modelado lingüístico
+Los modelos fundacionales evolucionaron a partir de los modelos
+lingüísticos. Muchos modelos fundacionales siguen teniendo como
+componentes principales los modelos lingüísticos. Para estos modelos, el
+rendimiento del componente del modelo lingüístico tiende a estar bien
+correlacionado con el rendimiento del modelo fundacional en aplicaciones
+derivadas (Liu et al., 2023). Por lo tanto, una comprensión aproximada de
+las métricas de modelado lingüístico puede ser bastante útil para entender el
+rendimiento derivado. 6
+Como ya se comentó en el Capítulo 1, el modelado lingüístico existe desde
+hace décadas, popularizado por Claude Shannon en su artículo de 1951
+"Prediction and Entropy of Printed English". Las métricas utilizadas para

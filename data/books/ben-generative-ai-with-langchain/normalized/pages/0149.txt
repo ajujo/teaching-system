@@ -1,0 +1,149 @@
+Building Intelligent RAG Systems
+122
+Here's a table to provide an overview of different strategies:
+Strategy
+Core algo­
+rithm
+Complex­
+ity
+Memory
+usage
+Best for
+Notes
+Exact Search
+(Brute Force)
+Compares
+query
+vector with
+every vector
+in database
+Search:
+O(DN)
+Build: O(1)
+Low -
+only
+stores raw
+vectors
+•	 Small datasets
+•	 When 100% recall
+needed
+•	 Testing/baseline
+•	 Easiest to im­
+plement
+•	 Good baseline
+for testing
+HNSW
+(Hierarchical
+Naviga­
+ble Small
+World)
+Creates
+layered
+graph with
+decreasing
+connec­
+tivity from
+bottom to
+top
+Search:
+O(log N)
+Build: O(N
+log N)
+High -
+stores
+graph
+connec­
+tions plus
+vectors
+•	 Production
+systems
+•	 When high
+accuracy needed
+•	 Large-scale search
+•	 Industry stan­
+dard
+•	 Requires care­
+ful tuning of M
+(connections)
+and ef (search
+depth)
+LSH (Local­
+ity Sensitive
+Hashing)
+Uses hash
+functions
+that map
+similar
+vectors to
+the same
+buckets
+Search:
+O(N )
+Build: O(N)
+Medium
+- stores
+multiple
+hash
+tables
+•	 Streaming data
+•	 When updates
+frequent
+•	 Approximate
+search OK
+•	 Good for dy­
+namic data
+•	 Tunable accu­
+racy vs speed
+IVF (In­
+verted File
+Index)
+Clusters
+vectors and
+searches
+within
+relevant
+clusters
+Search:
+O(DN/k)
+Build:
+O(kN)
+Low -
+stores
+cluster
+assign­
+ments
+•	 Limited memory
+•	 Balance of speed/
+accuracy
+•	 Simple implemen­
+tation
+•	 k = number of
+clusters
+•	 Often com­
+bined with
+other methods
+Product
+Quantiza­
+tion (PQ)
+Compresses
+vectors by
+splitting
+into sub­
+spaces and
+quantizing
+Search:
+varies
+Build: O(N)
+Very Low
+- com­
+pressed
+vectors
+•	 Memory-con­
+strained systems
+•	 Massive datasets
+•	 Often com­
+bined with IVF
+•	 Requires train­
+ing codebooks
+•	 Complex im­
+plementation

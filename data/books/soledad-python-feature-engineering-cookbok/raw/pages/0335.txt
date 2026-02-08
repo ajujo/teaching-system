@@ -1,0 +1,19 @@
+Creating Features from a Time Series with tsfresh
+312
+    ax=axes[1, 0], title="co2")
+    X[X[«id»] == n_id]["humidity_ratio"].plot(
+        ax=axes[1,1], title="humidity_ratio")
+    plt.show()
+4.	
+Let’s plot the time series corresponding to an hour when the office was not occupied:
+plot_timeseries(2)
+In the following figure, we can see the time-series values during the second hour of records, 
+when the office was empty:
+Figure 10.3 – Time-series values during the second hour of data collection when the office was empty
+Note that the lights were off, and that is why we see the flat line at 0 in the plot of light 
+consumption in the top-right corner.
+5.	
+Now, let’s plot the time-series data corresponding to an hour when the office was occupied:
+plot_timeseries(15)
+In the following figure, we can see the time-series values during the fifteenth hour of records, 
+when the office was occupied:

@@ -1,0 +1,15 @@
+Contributors
+About the author
+Soledad Galli is a bestselling data science instructor, book author, and open source Python developer. 
+As the leading instructor at Train in Data, Sole teaches intermediate and advanced courses in machine 
+learning that have enrolled 64k+ students worldwide and continue to receive positive reviews. Sole 
+is also the developer and maintainer of the Python open source library Feature-engine, which offers 
+an extensive array of methods for feature engineering and selection.
+Sole worked as a data scientist in finance and insurance companies, where she developed and put into 
+production machine learning models to assess insurance claims and credit risk and prevent fraud.
+Sole has been selected multiple times as a LinkedIn voice in data science. She is passionate about 
+sharing her knowledge and experience, and that is why you’ll often hear her talking at meetups, 
+podcasts, or authoring articles online.
+Sole is constantly looking for people like you, who can support her in enhancing the functionality of 
+Feature-engine or delivering more and better courses, so if you are interested, contact her over social 
+media or at her Train in Data website.

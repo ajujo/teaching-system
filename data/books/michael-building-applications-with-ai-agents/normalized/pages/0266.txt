@@ -1,0 +1,28 @@
+Figure 11-1. The interaction between an agent and its environment in a reinforcement
+learning system, showing how the agent receives observations, takes actions, and receives
+rewards and new observations from the environment.
+Many teams rely on pretrained foundation models without directly training their
+agents-and often lack structured improvement loops altogether. This chapter
+explores how to close that gap by implementing feedback-driven mechanisms that
+enable agents to adapt and refine over time based on real-world interactions with
+their environment. Fine-tuning, as we discussed in Chapter 7, is an effective way to
+close this loop, but in this chapter, we'll discuss a wider range of techniques beyond
+fine-tuning.
+However, improvement is not purely a technical challenge-it's also an organizational
+one. Effective improvement loops require alignment across engineering, data science,
+product management, and UX teams. They require systems for documenting
+insights, prioritizing improvements, and safeguarding against unintended conse‐
+quences. Most importantly, they require a culture of curiosity and iteration-one that
+sees every failure as a valuable source of information and every success as a founda‐
+tion for further refinement.
+This chapter breaks down continuous improvement into three core sections. The first
+section explores the architecture of feedback pipelines, detailing how to collect, ana‐
+lyze, and prioritize insights from both automated tools and human reviewers. Next,
+I'll delve into experimentation frameworks, explaining how techniques like shadow
+deployments and A/B testing can validate proposed changes in low-risk environ‐
+ments. Then I'll cover continuous learning, showing how systems can adapt dynami‐
+cally through in-context strategies and periodic offline updates. Table 11-1 provides
+an overview of what we'll cover.
+244
+|
+Chapter 11: Improvement Loops

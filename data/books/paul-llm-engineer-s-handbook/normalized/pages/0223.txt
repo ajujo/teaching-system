@@ -1,0 +1,36 @@
+Supervised Fine-Tuning
+192
+Additionally, it serves as a method to augment underrepresented areas in a dataset, like insufficient
+examples of JavaScript error-handling techniques in our previous example. While data can be
+generated manually by individuals or through crowdsourcing, these approaches often incur significant costs and time investments. Synthetic data generation using LLMs offers a more efficient
+and scalable alternative. This method, when combined with well-designed prompt engineering,
+can produce high-quality data at a much larger scale, effectively addressing the limitations of
+manual data creation processes.
+The process of synthetic data generation typically begins with the preparation of a set of carefully
+designed prompts (sometimes called taxonomy). These serve as the foundation for generating
+new, diverse examples. Five seed prompts used in the original Alpaca dataset can be seen in Table
+5.3. The quality of synthetically generated data largely depends on the prompts and techniques
+used in the generation process. Well-crafted prompts can guide the language model to produce
+diverse, relevant, and high-quality instruction-response pairs. These prompts often include specific instructions, examples, and constraints to ensure the generated data aligns with the desired
+format and content.
+Seed instructions
+•
+Is there anything I can eat for breakfast that doesn't include eggs, yet includes protein,
+and has roughly 700-1000 calories?
+•
+What is the relation between the given pairs? Input: Night : Day :: Right : Left
+•
+Generate a one-sentence description for each of the following people. Input: -Barack
+Obama\n- Elon Musk\n- Taylor Swift
+•
+Describe a situation in which the given stereotype can harm you. Input: All Asians are
+smart!
+•
+Generate an appropriate subjective title for the following email: Input: "Hi [person
+name],\n\nI'm writing to ask you if you are happy to be a panelist in our workshop on
+multimodality at CVPR. The workshop will be held on June 20, 2023. \n\nBest,\n[my
+name]
+Table 5.3 - Examples of seed prompts used in the original Alpaca dataset
+Many synthetic data generation pipelines incorporate multiple steps to ensure data quality. This
+may include generating an initial set of questions or instructions, followed by generating corresponding answers or responses. Some systems also implement validation steps, where another
+model or set of rules checks the generated pairs for accuracy, relevance, and adherence to specified criteria.

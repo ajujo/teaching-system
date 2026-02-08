@@ -1,0 +1,29 @@
+SUGERENCIA
+Con una gran cantidad de datos, cada uno de estos pasos de procesamiento
+puede llevar horas, si no días. Algunos consejos para ayudar a optimizar la
+eficiencia durante el proceso incluyen:
+Pueden realizar estos pasos de procesamiento de datos en
+cualquier orden que les ahorre tiempo y cómputo. Por ejemplo, si
+se tarda más tiempo en limpiar cada ejemplo que en deduplicar los
+datos, quizá les interese eliminar primero los ejemplos duplicados
+antes de limpiarlos. Pero si la deduplicación lleva más tiempo que
+filtrar los datos de baja calidad, filtren y elminen primero los datos
+de baja calidad.
+Realicen siempre ejecuciones de prueba para validar que sus
+scripts de procesamiento funcionan como se espera antes de
+aplicar los scripts a todos sus datos.
+Eviten modificar los datos in situ. Consideren la posibilidad de
+conservar una copia de los datos originales por dos razones:
+– Es posible que ustedes u otro equipos necesiten procesar
+los datos de forma diferente para otras aplicaciones.
+– Los errores en sus scripts pueden corromper
+potencialmente sus datos.
+Inspeccionar los datos
+Supongamos que, tras revisar minuciosamente datos públicos e internos, ha
+reunido un conjunto de datos en bruto. Lo primero que hay que hacer es
+inspeccionar los datos para hacerse una idea de su calidad. Obtenga la
+información y las estadísticas de los datos. ¿De dónde proceden los datos?
+¿Cómo se han procesado? ¿Para qué más se han utilizado?
+Grafique la distribución de los tokens (para ver qué tokens son comunes),
+las longitudes de input, las longitudes de respuesta, etc. ¿Utilizan los datos
+algún token especial? ¿Puede obtener una distribución de los temas y los

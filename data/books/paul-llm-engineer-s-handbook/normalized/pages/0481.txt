@@ -1,0 +1,31 @@
+MLOps and LLMOps
+450
+We want to log the entire trace from the user's input until the final result is available. Before
+diving into the LLM Twin use case, let's look at a simpler example:
+from opik import track
+import openai
+from opik.integrations.openai import track_openai
+openai_client = track_openai(openai.OpenAI())
+@track
+def preprocess_input(text: str) -> str:
+    return text.strip().lower()
+@track
+def generate_response(prompt: str) -> str:
+    response = openai_client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.choices[0].message.content
+@track
+def postprocess_output(response: str) -> str:
+    return response.capitalize()
+@track(name="llm_chain")
+def llm_chain(input_text: str) -> str:
+    preprocessed = preprocess_input(input_text)
+    generated = generate_response(preprocessed)
+    postprocessed = postprocess_output(generated)
+    return postprocessed
+result = llm_chain("Hello, do you enjoy reading the book?")
+The preceding code snippet reflects in a simplistic way what most LLM applications will look
+like. You have the llm_chain() main function, which takes the initial input as a parameter and
+returns the final result.

@@ -1,0 +1,30 @@
+capítulo 3. Metodología de evaluación
+Cuanto más se utiliza la IA, más oportunidades hay de que se produzcan
+fallos catastróficos. Ya hemos visto muchos fracasos en el poco tiempo que
+llevan existiendo los modelos fundacionales. Un hombre se suicidó tras ser
+animado a ello por un chatbot. Unos abogados presentaron pruebas falsas
+alucinadas por la IA. Air Canada fue condenada a pagar daños y perjuicios
+cuando su chatbot de inteligencia artificial dio información falsa a un
+pasajero. Sin una forma de controlar la calidad de los outputs de la IA, el
+riesgo que plantea podría ser mayor que sus beneficios para muchas
+aplicaciones.
+A medida que los equipos se apresuran a adoptar la IA, muchos se dan
+cuenta rápidamente de que el mayor obstáculo para hacer realidad las
+aplicaciones de IA es la evaluación. En algunas aplicaciones, determinar el
+proceso de evaluación puede suponer la mayor parte del esfuerzo de
+desarrollo. 1
+Debido a la importancia y complejidad de la evaluación, este libro tiene dos
+capítulos dedicados a ella. Este capítulo aborda los distintos métodos de
+evaluación utilizados para evaluar los modelos abiertos, su funcionamiento
+y sus limitaciones. El siguiente capítulo se centra en cómo utilizar estos
+métodos para seleccionar modelos para su aplicación y construir un proceso
+de evaluación para evaluar su aplicación.
+Aunque hablo de la evaluación en sus propios capítulos, hay que
+considerarla en el contexto de todo un sistema, no de forma aislada. La
+evaluación busca mitigar los riesgos y descubrir oportunidades. Para
+mitigar los riesgos, primero hay que identificar los puntos en los que es
+probable que falle el sistema y diseñar la evaluación en torno a ellos. A
+menudo, esto puede requerir rediseñar su sistema para mejorar la visibilidad
+de sus fallos. Sin una comprensión clara de dónde falla su sistema, ninguna
+cantidad de métricas o herramientas de evaluación puede hacer que el
+sistema sea robusto.

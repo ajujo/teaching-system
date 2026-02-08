@@ -1,0 +1,40 @@
+Chapter 2
+43
+LCEL truly shines when you need to build complex applications that combine multiple compo­
+nents in sophisticated workflows. In the next sections, we'll explore how to use LCEL to build
+real-world applications, starting with the basic building blocks and gradually incorporating
+more advanced patterns.
+The pipe operator (|) serves as the cornerstone of LCEL, allowing you to chain components se­
+quentially:
+# 1. Basic sequential chain: Just prompt to LLM
+basic_chain = prompt | llm | StrOutputParser()
+Here, StrOutputParser() is a simple output parser that extracts the string response from an LLM.
+It takes the structured output from an LLM and converts it to a plain string, making it easier to
+work with. This parser is especially useful when you need just the text content without metadata.
+Under the hood, LCEL uses Python's operator overloading to transform this expression into a
+RunnableSequence where each component's output flows into the next component's input. The
+pipe (|) is syntactic sugar that overrides the __or__ hidden method, in other words, A | B is
+equivalent to B.__or__(A).
+The pipe syntax is equivalent to creating a RunnableSequence programmatically:
+chain = RunnableSequence(first= prompt, middle=[llm], last= output_parser)
+LCEL also supports adding transformations and custom functions:
+LCEL offers several advantages that make it the preferred approach for building
+LangChain applications:
+•
+Rapid development: The declarative syntax enables faster prototyping and
+iteration of complex chains.
+•
+Production-ready features: LCEL provides built-in support for streaming,
+asynchronous execution, and parallel processing.
+•
+Improved readability: The pipe syntax makes it easy to visualize data flow
+through your application.
+•
+Seamless ecosystem integration: Applications built with LCEL automati­
+cally work with LangSmith for observability and LangServe for deployment.
+•
+Customizability: Easily incorporate custom Python functions into your
+chains with RunnableLambda.
+•
+Runtime optimization: LangChain can automatically optimize the execu­
+tion of LCEL-defined chains.

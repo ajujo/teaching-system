@@ -1,0 +1,15 @@
+figura 1-7. Distribución de casos de uso en los 205 repositorios de código abierto en
+GitHub.
+En general, el mundo empresarial prefiere aplicaciones con menos riesgos.
+Por ejemplo, un informe de 2024 de a16z Growth mostraba que las
+empresas implementan más rápido las aplicaciones orientadas al interior
+(gestión del conocimiento interno) que las orientadas al exterior (chatbots
+de atención al cliente), como se muestra en la Figura 1-8. Las aplicaciones
+internas ayudan a las empresas a desarrollar su experiencia en ingeniería de
+IA a la vez que minimizan los riesgos asociados a la privacidad de los datos,
+el cumplimiento de la normativa y los posibles fallos catastróficos. De
+manera similar, mientras que los modelos fundacionales son abiertos y
+pueden utilizarse para cualquier tarea, muchas aplicaciones creadas
+basándose en ellos siguen siendo cerradas, como la clasificación. Las tareas
+de clasificación son más fáciles de evaluar, lo que facilita la estimación de
+sus riesgos.

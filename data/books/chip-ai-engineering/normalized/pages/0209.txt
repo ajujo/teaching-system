@@ -1,0 +1,29 @@
+La similitud semántica pretende calcular la similitud en la semántica. Para
+ello, primero hay que transformar un texto en una representación numérica,
+lo que se denomina una incrustación. Por ejemplo, la frase "the cat sits on a
+mat" podría representarse utilizando una incrustación con el siguiente
+aspecto: [0.11, 0.02, 0.54]. Por lo tanto, la similitud semántica también
+se denomina similitud de incrustación.
+En el capítulo "Introducción a la incrustación" en la página 134 se explica
+cómo funcionan las incrustaciones. Por ahora, vamos a suponer que tiene
+una forma de transformar textos en incrustaciones. La similitud entre dos
+incrustaciones puede calcularse utilizando métricas como la similitud
+coseno. Dos incrustaciones exactamente iguales tienen una puntuación de
+similitud de 1. Dos incrustaciones opuestas tienen una puntuación de
+similitud de -1.
+Estoy utilizando ejemplos de texto, pero puede calcularse la similitud
+semántica para incrustaciones de cualquier modalidad de datos,
+incluyendo imágenes y audio. La similitud semántica de un texto se
+denomina a veces similitud semántica textual.
+AVISO
+Aunque incluyo la similitud semántica en la categoría de evaluación exacta,
+puede considerarse subjetiva, ya que distintos algoritmos de incrustación
+pueden producir incrustaciones diferentes. Sin embargo, dadas dos
+incrustaciones, la puntuación de similitud entre ellas se calcula
+exactamente.
+Matemáticamente, sea A una incrustación de la respuesta generada, y sea B
+una incrustación de una respuesta de referencia. La similitud coseno entre A
+y B se calcula como fracA⋅B||A||||B||, con:
+A · B siendo el producto punto de A y B
+||A|| siendo la norma euclidiana (también conocida como norma
+L2) de A. Si A es [0.11, 0.02, 0.54],

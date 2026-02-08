@@ -1,0 +1,36 @@
+memory.save(text2, metadata2)
+query = "What is the relationship between AI and machine learning?"
+results = memory.search(query, top_n=3)
+builder = StateGraph(MessagesState)
+builder.add_node("call_model", call_model)
+builder.add_edge(START, "call_model")
+graph = builder.compile()
+input_message = {"type": "user", "content": "hi! I'm bob"}
+for chunk in graph.stream({"messages": [input_message]}, {},
+stream_mode="values"):
+   chunk["messages"][-1].pretty_print()
+print(results)
+Retrieval-Augmented Generation
+Incorporating memory into agentic systems not only involves storing and managing
+knowledge but also enhancing the system's ability to generate contextually relevant
+and accurate responses. Retrieval-augmented generation (RAG) is a powerful techni‐
+que that combines the strengths of retrieval-based methods and generative models to
+achieve this goal. By integrating retrieval mechanisms with foundation models, RAG
+enables agentic systems to generate more informed and contextually enriched
+responses, improving their performance in a wide range of applications.
+First, we begin with a set of documents that might be useful to help the system answer
+questions. We then break these documents into smaller chunks. The idea is that the
+model, like a person, doesn't need to refer to an entire long resource-it only needs
+the small, relevant part. We then take these chunks, embed them with an encoder
+model, and index them in a vector database, as illustrated in Figure 6-1.
+Figure 6-1. Indexing pipeline for RAG. Source documents are first split into smaller
+chunks. Each chunk is converted into a dense embedding by an encoder model, and the
+resulting vectors are stored in a vector database-enabling fast semantic lookup at query
+time.
+During retrieval, the system searches a large corpus of documents or a vector store of
+embeddings to find pieces of information that are relevant to the given query or
+context. This phase relies on efficient retrieval mechanisms to quickly identify and
+extract pertinent information.
+Semantic Memory and Vector Stores
+|
+121

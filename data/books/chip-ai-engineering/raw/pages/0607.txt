@@ -1,0 +1,32 @@
+de importante. Una pequeña cantidad de datos de alta calidad pueden
+superar a una gran cantidad de datos llenos de ruido. Del mismo modo,
+muchos equipos han descubierto que aumentar la diversidad de sus
+conjuntos de datos es clave para mejorar el rendimiento de sus modelos.
+Ante la dificultad de obtener datos de alta calidad, muchos equipos han
+recurrido a los datos sintéticos. Aunque la generación programática de datos
+lleva mucho tiempo siendo un objetivo, no fue hasta que la IA pudo crear
+datos realistas y complejos que los datos sintéticos se convirtieron en una
+solución práctica para muchos más casos de uso. En este capítulo se
+analizaron diferentes técnicas de síntesis de datos y se ha profundizado en
+la síntesis de datos de instrucciones para el afinado.
+Al igual que los datos reales, los datos sintéticos deben evaluarse para
+garantizar su calidad antes de utilizarlos para entrenar modelos. Evaluar los
+datos generados por la IA es tan complicado como evaluar cualquier otro de
+sus outputs, y es más probable que las personas utilicen datos generados
+que puedan evaluar de forma fiable.
+Los datos son un reto porque muchos pasos de la creación de conjuntos de
+datos no son fácilmente automatizables. Es difícil anotar datos, pero es
+todavía más difícil crear directrices de anotación. Es difícil automatizar la
+generación de datos, pero es todavía más difícil automatizar su verificación.
+Aunque la síntesis de datos ayuda a generar más datos, no se puede
+automatizar la reflexión sobre qué datos se quieren. No es fácil automatizar
+las directrices de anotación. No se puede automatizar la atención a los
+detalles.
+Sin embargo, los problemas desafiantes conducen a soluciones creativas.
+Una de las cosas que más me llamó la atención al investigar para este
+capítulo es el grado de creatividad que implica el diseño de los conjuntos de
+datos. Hay muchas maneras de construir y evaluar los datos. Espero que el
+abanico de técnicas de síntesis y verificación de datos analizado en este
+capítulo le sirva de inspiración para diseñar su conjunto de datos.
+Supongamos que ha creado un maravilloso conjunto de datos que le permite
+entrenar un modelo asombroso. ¿Cómo debe servir este modelo? En el

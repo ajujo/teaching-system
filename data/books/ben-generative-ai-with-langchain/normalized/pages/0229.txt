@@ -1,0 +1,32 @@
+Building Intelligent Agents
+202
+2.
+Then, it again called the search engine with the query "donald trump age".
+3.
+As the last step, the LLM called the calculator tool with the expression "sqrt(78*132)".
+4.
+Finally, it returned the correct answer to the user.
+At every step, the LLM reasoned based on the previously collected information and then acted
+with an appropriate tool-that's the essence of the ReACT approach.
+Creating a tool from a Runnable
+Sometimes, LangChain might not be able to derive a passing description or args schema from a
+function, or we might be using a complex callable that is difficult to wrap with a decorator. For
+example, we can use another LangChain chain or LangGraph graph as a tool. We can create a
+tool from any Runnable by explicitly specifying all needed descriptions. Let's create a calculator
+tool from a function in an alternative fashion, and we will tune the retry behavior (in our case,
+we're going to retry three times and add an exponential backoff between consecutive attempts):
+from langchain_core.runnables import RunnableLambda, RunnableConfig
+from langchain_core.tools import tool, convert_runnable_to_tool
+def calculator(expression: str) -> str:
+   math_constants = {"pi": math.pi, "i": 1j, "e": math.exp}
+   result = ne.evaluate(expression.strip(), local_dict=math_constants)
+   return str(result)
+calculator_with_retry = RunnableLambda(calculator).with_retry(
+   wait_exponential_jitter=True,
+   stop_after_attempt=3,
+)
+calculator_tool = convert_runnable_to_tool(
+   calculator_with_retry,
+   name="calculator",
+Please note that we use the same function as above but we removed the @tool dec­
+orator.

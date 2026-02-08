@@ -1,0 +1,34 @@
+Chapter 8
+313
+4.
+Quantize the model at a given precision (for example, 4.5):
+!mkdir quant
+!python exllamav2/convert.py \
+    -i {MODEL_NAME} \
+    -o quant \
+    -c wikitext-test.parquet \
+    -b 4.5
+The quantized model can then be uploaded to the Hugging Face Hub, as seen previously.
+GPTQ and EXL2 quants are not as widely supported as GGUF. For example, frontends like LM
+Studio do not currently integrate them. You can use other tools instead, like oobabooga's Text
+Generation Web UI. It is also directly integrated into the transformers library and supported by
+TGI. GPTQ models are also supported in TensorRT-LLM.
+While less popular than GGUF, you can find a lot of GPTQ and EXL2 models on the Hugging Face
+Hub.
+Other quantization techniques
+There is a variety of quantization techniques beyond GGUF, GPTQ, and EXL2. This subsection will
+briefly introduce Activate-aware Weight Quantization (AWQ) as well as extreme quantization
+techniques, like QuIP# (Quantization with Incoherence Processing) and HQQ (Half-Quadratic
+Quantization).
+Introduced by Lin et al. (2023), AWQ is another popular quantization algorithm. It identifies
+and protects the most important weights, which are determined based on activation magnitude
+instead of weight magnitude. This approach involves applying optimal per-channel scaling to
+these salient weights, without relying on backpropagation or reconstruction, ensuring that the
+LLM does not overfit the calibration set. While it relies on a different paradigm, AWQ is quite close
+to the GPTQ and EXL2 versions, although slightly slower. They are well-supported by inference
+engines and integrated into TGI, vLLM, and TensorRT-LLM.
+An interesting trend is the quantization of models into 1- or 2-bit precision. While some formats,
+like EXL2, allow extreme quantization, the quality of the models often suffers significantly. However, recent algorithms like QuIP# and HQQ have targeted this regime and offer quantization
+methods that better preserve the performance of the original models. This is particularly true for
+large models (over 30B parameters), which can end up taking less space than 7B or 13B parameter
+models while providing higher-quality outputs.

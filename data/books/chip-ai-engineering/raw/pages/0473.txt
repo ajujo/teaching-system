@@ -1,0 +1,30 @@
+conocimientos para la tarea que usted busca, menos trabajo tendrá que
+hacer para adaptarlo.
+Cuándo hacer un afinado
+Antes de entrar en detalle sobre diferentes técnicas de afinado, es necesario
+considerar si el afinado es la opción adecuada para ustedes. En comparación
+con los métodos basados en prompts, el afinado requiere muchos más
+recursos, no solo en datos y hardware, sino también en talento ML. Por lo
+tanto, el afinado suele intentarse después de realizar amplios experimentos
+con métodos basados en los prompts. Sin embargo, el afinado y el
+prompting no son mutuamente excluyentes. Los problemas del mundo real
+suelen requerir ambos enfoques.
+Razones para hacer un afinado
+La razón principal para hacer un afinado es mejorar la calidad de un
+modelo, tanto en términos de capacidades generales como de capacidades
+específicas de la tarea. Se suele afinar un modelo para mejorar su capacidad
+de generar outputs que sigan estructuras específicas, como los formatos
+JSON o YAML.
+Un modelo de uso general que funcione bien en una amplia gama de
+pruebas comparativas puede no hacerlo bien en su tarea específica. Si el
+modelo que desea utilizar no ha sido suficientemente entrenado para su
+tarea, puede ser especialmente útil afinarlo con sus datos.
+Por ejemplo, un modelo genérico puede ser bueno convirtiendo texto al
+dialecto SQL estándar, pero puede fallar con un dialecto SQL menos
+común. En este caso, será útil afinarlo con datos que contengan este
+dialecto SQL. Del mismo modo, si el modelo funciona bien en SQL
+estándar para consultas comunes, pero falla a menudo en consultas
+específicas del cliente, podría ser útil afinarlo con consultas específicas del
+cliente.
+Un caso especialmente interesante de afinado es la mitigación del sesgo. La
+idea es que si el modelo base perpetúa ciertos sesgos a partir de sus datos de

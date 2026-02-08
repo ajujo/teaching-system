@@ -1,0 +1,36 @@
+under supervision. Designing systems that support this staged growth of trust is
+essential for safe, scalable adoption.
+To support that growth, agents should make trustworthiness visible. That means clear
+versioning, change logs, and audit trails. It means surfacing uncertainty, not hiding it.
+And it means giving users ways to override, intervene, or correct agent behavior
+without friction.
+Organizations also need mechanisms for trust repair. When agents make mistakesor when expectations shift-there should be a way to reset behavior, retrain, or
+restrict capabilities. Without a recovery path, even minor missteps can lead to lasting
+damage in confidence.
+Ultimately, trust in agents mirrors trust in people: it must be earned, maintained, and
+rebuilt when broken. Designing for the lifecycle of trust-rather than treating it as a
+given-is one of the most important governance responsibilities for any system that
+seeks to integrate agents into meaningful human workflows. Yet trust alone is not
+enough. For agentic systems to truly transform work, they must be embraced-not
+merely tolerated-by the people they're intended to support. That leap from reliabil‐
+ity to real-world impact happens in the hands of users, teams, and leaders. But even
+strong trust must be anchored in systems of accountability. Trust may guide daily
+interactions, but governance must answer: what happens when things go wrong?
+Accountability Frameworks
+Accountability is critical for ethical agent design, ensuring that clear lines of responsi‐
+bility exist for an agent's actions, decisions, and consequences. Without accountabil‐
+ity, failures-whether technical, ethical, or operational-can easily go unaddressed,
+eroding trust and leaving users or stakeholders without recourse. Establishing
+accountability requires both structural measures, such as oversight policies and esca‐
+lation pathways, and technical measures, such as logging, traceability, and ethical
+audits.
+Effective accountability frameworks ensure that failures are detected, analyzed, and
+addressed systematically, rather than being dismissed as unintended side effects of
+complex systems. These frameworks also define who is ultimately responsible-be it
+developers, system operators, or deploying organizations-when agent systems cause
+harm or make incorrect decisions.
+To make accountability tangible, teams can adopt or adapt established frameworksrather than inventing processes from scratch. Here are two readily available templates
+and resources:
+306
+|
+Chapter 13: Human-Agent Collaboration

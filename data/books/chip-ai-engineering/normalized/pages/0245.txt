@@ -1,0 +1,32 @@
+quiere evaluar la habilidad de alguien para jugar al ajedrez. Es más fácil evaluar
+el output final de la partida (ganar/perder/empatar) que evaluar una sola jugada.
+12 También es posible que desee realizar algún procesamiento en función de si
+desea que "cats" y "cat" o "will not" y "won't" se consideren dos tokens
+distintos.
+13 Aunque un espacio vectorial de 10 000 elementos parece de alta
+dimensionalidad, es mucho menor que la dimensionalidad de los datos brutos.
+Una incrustación se considera, por tanto, una representación de datos complejos
+en un espacio de menor dimensión.
+14 También existen modelos que generan incrustaciones de palabras, en
+contraposición a las incrustaciones de documentación, como word2vec
+(Mikolov et al., "Efficient Estimation of Word Representations in Vector Space",
+arXiv, v3, 7 de septiembre de 2013) y GloVe (Pennington et al., "GloVe: Global
+Vectors for Word Representation", The Stanford University Natural Language
+Processing Group (blog), 2014.
+15 El término juez de IA no debe confundirse con el caso de uso en el que se
+utiliza la IA como juez en un tribunal.
+16 En 2017, presenté en un taller de NeurIPS MEWR (métrica de evaluación de
+traducción automática sin texto de referencia), un método de evaluación que
+aprovecha modelos lingüísticos más sólidos para evaluar automáticamente las
+traducciones automáticas. Lamentablemente, nunca seguí esta línea de
+investigación porque la vida se interpuso en mi camino.
+17 En algunos casos, la evaluación puede absorber la mayor parte del presupuesto,
+incluso más que la generación de respuestas.
+18 La comprobación puntual es lo mismo que el muestreo.
+19 Saito et al. (2023) descubrieron que los humanos también tienden a favorecer
+las respuestas más largas, pero en mucha menor medida.
+20 Esta técnica se denomina a veces autocrítica o autopregunta.
+21 El rango de puntuación BLEURT es raro. Es aproximadamente entre -2.5 y 1.0.
+Esto pone de relieve el reto de la ambigüedad de criterios con los jueces de IA:
+el rango de puntuación puede ser arbitrario.
+22 Por ejemplo, utilizando una escala de Likert.

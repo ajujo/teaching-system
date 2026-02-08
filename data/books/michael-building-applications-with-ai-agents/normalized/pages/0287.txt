@@ -1,0 +1,39 @@
+Vigilant oversight
+Teams must watch for pathological feedback loops or exploitation of short-term
+trends at the expense of long-term objectives.
+Bayesian Bandits shine in fluid, data-rich agentic worlds-think real-time personali‐
+zation in recommendation agents or adaptive workflows in autonomous teamsdelivering faster, smarter evolution than traditional methods.
+Continuous Learning
+We now move to continuous learning, where the agentic system is designed to adapt,
+improve, and optimize performance over time based on real-world interactions, feed‐
+back, and evolving user needs. Unlike static models or prescripted workflows, contin‐
+uously learning agents are designed to ingest new data, refine their behavior, and
+update reasoning strategies dynamically. This process blends automated adaptation
+with carefully managed oversight to prevent unintended consequences, such as over‐
+fitting to short-term trends or introducing regressions.
+Continuous learning encompasses two core mechanisms: in-context learning and
+online learning. These enable improvements at varying scales-from real-time tweaks
+within a session to incremental updates across workflows. As discussed in Chapter 7,
+these build on foundational nonparametric techniques (e.g., exemplar retrieval,
+Reflexion) and can incorporate parametric methods like fine-tuning where appropri‐
+ate. Here, we emphasize integrating them into improvement loops, using live produc‐
+tion data (e.g., user interactions, telemetry, and failure logs) to tighten the cycle:
+feedback pipelines surface issues, experimentation validates fixes, and continuous
+learning embeds them for immediate or ongoing impact.
+In-Context Learning
+In-context learning offers the most immediate and flexible means of adaptation in
+foundation model-based systems. Rather than relying on model fine-tuning or archi‐
+tectural changes, in-context learning empowers agents to modify their behavior
+dynamically within a single session. By embedding examples, intermediate reasoning
+steps, or contextual signals directly into prompts, agents can be "taught" new behav‐
+iors on the fly-adapting at runtime rather than depending solely on static, pre‐
+trained weights.
+Consider an agent assisting users with code debugging. If the agent consistently
+struggles with a particular type of error, an engineer can revise the prompt to include
+an illustrative example that demonstrates the correct solution. This change takes
+effect instantly, scoped only to the current session, enabling the agent to improve its
+responses without requiring broader system retraining. Additionally, agents can lev‐
+erage user feedback in real time-such as corrections or clarifications-to further
+Continuous Learning
+|
+265

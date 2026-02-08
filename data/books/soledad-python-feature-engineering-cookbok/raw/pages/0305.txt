@@ -1,0 +1,39 @@
+Extracting Features from Relational Data with Featuretools
+282
+In this recipe, we will create features using the general and cumulative transform primitives 
+from featuretools.
+Getting ready
+Variable transformations such as the square root or the logarithm are useful when we want to change the 
+distribution of a variable, as we saw in Chapter 3, Transforming Numerical Variables. Other mathematical 
+derivations such as the sine and cosine help to capture underlying data patterns, as we described in 
+the Creating periodic features from cyclical variables recipe in Chapter 8, Creating New Features. From 
+the transformations described in those chapters, featuretools supports the square root and the 
+logarithm transformation and the sine and cosine (but without the normalization between 0 and 2π).
+With a cumulative transformation, we can, for example, get the total number of items bought per 
+invoice by adding up the item’s quantity on each row at the invoice level. To understand the features 
+that we will create in this recipe, let’s create them with pandas first:
+1.	
+Let’s import pandas and numpy:
+import numpy as np
+import pandas as pd
+2.	
+Let’s load the retail dataset described in the Technical requirements section:
+df = pd.read_csv(
+    «retail.csv», parse_dates=[«invoice_date»])
+3.	
+Let’s capture the two numerical variables, price and quantity, in a list:
+numeric_vars = ["quantity", "price"]
+4.	
+Let’s capture the names of the cumulative functions in a list:
+func = ["cumsum", "cummax", "diff"]
+5.	
+Let’s create a list with new names for the variables that we will create:
+new_names = [f"{var}_{function}"
+    for function in func for var in numeric_vars]
+6.	
+Let’s create new variables using the cumulative functions from step 4, applied to the variables 
+from step 3, and add them to the DataFrame:
+df[new_names] = df.groupby(
+    "invoice")[numeric_vars].agg(func)
+The previous step returns the cumulative sum, cumulative maximum value, and the difference 
+between rows, within each invoice. As soon as it encounters a new invoice number, it starts afresh.

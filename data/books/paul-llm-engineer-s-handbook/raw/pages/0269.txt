@@ -1,0 +1,19 @@
+Fine-Tuning with Preference Alignment
+238
+As seen in the previous section, preference and instruction datasets rely on the same principles. 
+Instead of pairs of instructions and answers, we need triples (instruction, answer 1, answer 2). 
+What’s interesting in this setting is that we have ground-truth answers in the text chunks, which 
+means we don’t need complex evaluation processes like LLM judges. To make sure that these 
+extracts are high-quality, we will implement two additional quality filters, based on length and 
+punctuation. Figure 6.2 summarizes the end-to-end process:
+Figure 6.2 – Synthetic data generation pipeline from raw text to preference dataset
+We are now ready to implement the preference data generation pipeline:
+1.	
+We start by importing the necessary libraries.
+import concurrent.futures
+import json
+import re
+from typing import List, Tuple
+from datasets import Dataset
+from openai import OpenAI
+from tqdm.auto import tqdm

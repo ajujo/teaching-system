@@ -1,0 +1,38 @@
+Extracting different features from different time series
+327
+     accu­
+racy                                       0.93           14
+   macro avg         0.88        0.95        0.90           14
+weighted avg         0.95        0.93        0.93           14
+Note
+Because light consumption is a very good indicator of office occupancy, with very simple
+features, we can obtain a predictive logistic regression model.
+Now, let's learn how to specify the creation of different features for different time series.
+8.
+Let's create a dictionary with the names of the methods that we want to use to create features
+from the light time series. We enter the method's names as keys, and if the methods take a
+parameter, we pass it as an additional dictionary to the corresponding key; otherwise, we pass
+None as the values:
+light_feat = {
+    «sum_values": None,
+    "median": None,
+    «standard_deviation": None,
+    "quantile": [{"q": 0.2}, {"q": 0.7}],
+}
+9.
+Now, let's create a dictionary with the features that we want to create from the co2 time series:
+co2_feat = {
+    «root_mean_square": None,
+    «number_peaks": [{"n": 1}, {"n": 2}],
+}
+10.	 Let's combine these dictionaries into a new dictionary:
+kind_to_fc_parameters = {
+    «light»: light_feat,
+    "co2": co2_feat,
+}
+11.	 Finally, let's use the dictionary from step 10 to create the features from both time series:
+features = extract_features(
+    X[[«id», «light», «co2»]],
+    column_id="id",
+    kind_to_fc_parameters=kind_to_fc_parameters,
+)

@@ -1,0 +1,35 @@
+Chapter 4
+119
+•
+Consider hybrid storage architecture when you want to balance performance and scal­
+ability, combining local caching with cloud-based persistence.
+Hardware considerations for vector stores
+Regardless of your deployment approach, understanding the hardware requirements is crucial
+for optimal performance:
+•
+Memory requirements: Vector databases are memory-intensive, with production systems
+often requiring 16-64GB RAM for millions of embeddings. Local deployments should plan
+for sufficient memory headroom to accommodate index growth.
+•
+CPU vs. GPU: While basic vector operations work on CPUs, GPU acceleration significantly
+improves performance for large-scale similarity searches. For high-throughput applica­
+tions, GPU support can provide 10-50x speed improvements.
+•
+Storage speed: SSD storage is strongly recommended over HDD for production vector
+stores, as index loading and search performance depend heavily on I/O speed. This is
+especially critical for local deployments.
+•
+Network bandwidth: For cloud-based or distributed setups, network latency and band­
+width become critical factors that can impact query response times.
+For development and testing, most vector stores can run on standard laptops with 8GB+ RAM,
+but production deployments should consider dedicated infrastructure or cloud-based vector
+store services that handle these resource considerations automatically.
+Vector store interface in LangChain
+Now that we've explored the role of vector stores and compared some common options, let's look
+at how LangChain simplifies working with them. LangChain provides a standardized interface
+for working with vector stores, allowing you to easily switch between different implementations:
+from langchain_openai import OpenAIEmbeddings
+from langchain_chroma import Chroma
+# Initialize with an embedding model
+embeddings = OpenAIEmbeddings()
+vector_store = Chroma(embedding_function=embeddings)

@@ -1,0 +1,39 @@
+Software Development and Data Analysis Agents
+280
+•
+Performance assessment requires looking beyond mere functionality. Benchmark the
+execution time of LLM-generated code against existing solutions to identify potential
+inefficiencies. Testing with progressively larger datasets often reveals scaling limitations
+that weren't apparent with sample data. Profile memory usage systematically, as LLMs
+may not optimize for resource constraints unless explicitly instructed. This performance
+data provides crucial information for deployment decisions and identifies opportunities
+for optimization.
+•
+Security screening should never be an afterthought when working with generated code.
+Scan for unsafe functions, potential injection vulnerabilities, and insecure API calls-is­
+sues that LLMs may introduce despite their training in secure coding practices. Verify the
+proper handling of authentication credentials and sensitive data, especially when the
+model has been instructed to include API access. Check carefully for hardcoded secrets
+or unintentional data exposures that could create security vulnerabilities in production.
+•
+Robustness testing extends validation beyond the happy path scenarios. Test with edge
+cases and unexpected inputs that reveal how the code handles extreme conditions. Verify
+that error handling mechanisms are comprehensive and provide meaningful feedback
+rather than cryptic failures. Evaluate the code's resilience to malformed or missing data,
+as production environments rarely provide the pristine data conditions assumed in de­
+velopment.
+•
+Business logic verification focuses on domain-specific requirements that LLMs may
+not fully understand. Confirm that industry-specific constraints and business rules are
+correctly implemented, especially regulatory requirements that vary by sector. Verify
+calculations and transformations against manual calculations for critical processes, as
+subtle mathematical differences can significantly impact business outcomes. Ensure all
+regulatory or policy requirements relevant to your industry are properly addressed-a
+crucial step when LLMs may lack domain-specific compliance knowledge.
+•
+Documentation and explainability complete the validation process by ensuring sustain­
+able use of the generated code. Either require the LLM to provide or separately generate
+inline comments that explain complex sections and algorithmic choices. Document any
+assumptions made by the model that might impact future maintenance or enhancement.
+Create validation reports that link code functionality directly to business requirements,
+providing traceability that supports both technical and business stakeholders.

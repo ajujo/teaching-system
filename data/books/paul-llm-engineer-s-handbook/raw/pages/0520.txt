@@ -1,0 +1,66 @@
+Index
+489
+T
+target drift  468
+TargetTrackingScaling policy  395
+task-specific LLM evaluations  267-271
+tensor parallelism (TP)  301, 302
+Terraform  391
+test example  463
+test job  436
+test types  463
+acceptance tests  462
+integration tests  462
+regression tests  462
+stress tests  463
+system tests  462
+unit tests  462
+test window  470
+Text Generation Inference (TGI)  295, 371
+throughput  354, 355
+Time between Tokens (TBT)  411
+Time per Output Token (TPOT)  411
+Time to First Token (TTFT)  411
+Tokens per Second (TPS)  411
+topic clustering  190, 191
+Total Latency  411
+training pipeline  14, 21, 22
+versus inference pipeline  369, 370
+triggers
+manual triggers  446
+REST API triggers  446
+scheduled triggers  446
+TwinLlama-3.1-8B
+answers, evaluating  278-283
+answers, generating  276-278
+evaluating  275, 276
+results, analyzing  283-286
+TwinLlama-3.1-8B model  250
+U
+UltraFeedback method  195
+unit tests  462
+User Acceptance Testing (UAT)  462
+V
+vector DBs  115
+algorithms, for creating vector index  116
+DB operations  116
+working  115
+versioning
+code  461
+data  461
+model  461
+Video Random-Access Memory (VRAM)  291
+W
+window types
+reference window  470
+test window  470
+workflow  435
+Z
+ZenML  32, 33
+artifacts and metadata  39-43
+orchestrator  33-37
+reference link  419
+setting up  419-421
+ZenML pipeline  140-142
+cleaned documents, chunking  147-150
+cleaned documents, embedding  147-150

@@ -1,0 +1,19 @@
+Muestreo restringido
+El muestreo restringido es una técnica para guiar la generación de texto
+hacia determinadas restricciones. Suele ir seguido de herramientas de
+output estructurados.
+A grandes rasgos, para generar un token, el modelo muestrea entre los
+valores que cumplen las restricciones. Recuerde que para generar un token,
+su modelo produce primero un vector logit, cada logit se corresponde con
+un token posible. El muestreo restringido filtra este vector logit para
+conservar solo los tokens que cumplen las restricciones. A continuación,
+toma muestras de estos tokens válidos. Este proceso se muestra en la
+Figura 2-21.
+figura 2-21. Filtrar los logits que no cumplan las restricciones para muestrear solo
+entre los outputs válidos.
+En el ejemplo de la Figura 2-21, el filtro de la restricción es fácil de aplicar.
+Sin embargo, la mayoría de los casos no son tan sencillos. Es necesario
+tener una gramática que especifique lo que está permitido y lo que no en
+cada paso. Por ejemplo, la gramática JSON dicta que después de {, no se
+puede tener otro { a menos que sea parte de una cadena, como en {"key":
+"{{string}}"}.

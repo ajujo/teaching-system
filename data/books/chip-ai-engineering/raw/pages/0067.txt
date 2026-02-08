@@ -1,0 +1,30 @@
+Otras métricas como la interpretabilidad y la equidad.
+Si todavía no tiene claro qué métricas desea utilizar, no se preocupe. En el
+resto del libro se tratarán muchas de estas métricas.
+Planificación de hitos
+Una vez fijados unas metas medibles, necesita un plan para alcanzarlos.
+Cómo alcance sus metas dependerá de su punto de partida. Evalúe los
+modelos existentes para comprender sus capacidades. Cuanto más sólidos
+sean los modelos estándar, menos trabajo tendrán que hacer. Por ejemplo, si
+su objetivo es automatizar el 60 % de las incidencias de atención al cliente
+y el modelo estándar que desean utilizar ya es capaz de automatizar el 30
+%, el esfuerzo que deben realizar puede ser menor que si no fuese capaz de
+automatizar ninguna incidencia.
+Es probable que sus metas cambien tras la evaluación. Por ejemplo, tras la
+evaluación, puede que se de cuenta de que los recursos necesarios para que
+la aplicación alcance el umbral de utilidad serán superiores a su rentabilidad
+potencial y, por tanto, no desee seguir adelante con ella.
+La planificación de un producto de IA debe tener en cuenta el reto de la
+última milla. El éxito inicial con los modelos fundacionales puede ser
+engañoso. Dado que las capacidades básicas de los modelos fundacionales
+ya son bastante impresionantes, puede que no haga falta mucho tiempo para
+construir una demo divertida. Sin embargo, una buena demo inicial no
+garantiza un buen producto final. Construir una demo puede llevar un fin de
+semana, pero construir un producto puede llevar meses, e incluso años.
+En el artículo UltraChat, Ding et al. (2023) compartieron que "el viaje de 0
+a 60 es fácil, pero avanzar de 60 a 100 se convierte en un reto excesivo".
+LinkedIn (2024) compartió el mismo sentimiento. Tardaron un mes en
+conseguir el 80 % de la experiencia que deseaban.
+Este éxito inicial les hizo subestimar enormemente el tiempo que les
+llevaría mejorar el producto. Tardaron cuatro meses más en superar
+finalmente el 95 %. Se dedicó mucho tiempo a solucionar los problemas del

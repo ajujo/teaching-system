@@ -1,0 +1,25 @@
+Table of Contents
+Preface 
+ xxi
+Making the Most Out of This Book – Get to Know Your Free Benefits ............................ xxvii
+Chapter 1: Understanding the LLM Twin Concept and Architecture 
+ 1
+Understanding the LLM Twin concept ............................................................................... 2
+What is an LLM Twin? • 2
+Why building an LLM Twin matters • 3
+Why not use ChatGPT (or another similar chatbot)? • 5
+Planning the MVP of the LLM Twin product ....................................................................... 6
+What is an MVP? • 6
+Defining the LLM Twin MVP • 7
+Building ML systems with feature/training/inference pipelines ......................................... 8
+The problem with building ML systems • 8
+The issue with previous solutions • 10
+The solution – ML pipelines for ML systems • 13
+The feature pipeline • 14
+The training pipeline • 14
+The inference pipeline • 14
+Benefits of the FTI architecture • 15
+Designing the system architecture of the LLM Twin .........................................................  16
+Listing the technical details of the LLM Twin architecture • 16
+How to design the LLM Twin architecture using the FTI pipeline design • 17
+Data collection pipeline • 19

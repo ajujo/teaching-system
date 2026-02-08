@@ -1,0 +1,17 @@
+figura 2-5. Un ejemplo del mecanismo de atención en acción junto a su visualización
+de alto nivel del famoso artículo sobre transformadores "Attention Is All You Need"
+(Vaswani et al., 2017).
+Como cada token anterior tiene su correspondiente vector de clave y valor,
+cuanto más larga sea la secuencia, más vectores de claves y valores habrá
+que calcular y almacenar. Esta es una de las razones por las que es tan
+difícil ampliar la longitud del contexto para los modelos de
+transformadores. En el Capítulo 7 y el Capítulo 9 se explica cómo calcular
+y almacenar vectores de claves y valores.
+Veamos cómo funciona la función de atención. Dado un input x, los
+vectores de clave, valor y consulta se calculan aplicando matrices de clave,
+valor y consulta al input. Denominemos WK, WV y WQ a las matrices de clave,
+valor y consulta. Los vectores de clave, valor y consulta se calculan del
+siguiente modo:
+K = xWK
+V = xWV
+Q = xWQ

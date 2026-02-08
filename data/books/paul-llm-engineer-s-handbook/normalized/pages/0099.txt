@@ -1,0 +1,28 @@
+Data Engineering
+68
+        return self
+    def register_linkedin(self) -> "CrawlerDispatcher":
+        self.register("https://linkedin.com", LinkedInCrawler)
+        return self
+    def register_github(self) -> "CrawlerDispatcher":
+        self.register("https://github.com", GithubCrawler)
+        return self
+The generic register() method normalizes each domain to ensure its format is consistent before it's added as a key to the self._crawlers registry of the dispatcher. This is a critical step, as
+we will use the key of the dictionary as the domain pattern to match future links with a crawler:
+    def register(self, domain: str, crawler: type[BaseCrawler]) -> None:
+        parsed_domain = urlparse(domain)
+        domain = parsed_domain.netloc
+        self._crawlers[r"https://(www\.)?{}/*".format(re.escape(domain))]
+= crawler
+Finally, the get_crawler() method determines the appropriate crawler for a given URL by matching it against the registered domains. If no match is found, it logs a warning and defaults to using
+the CustomArticleCrawler.
+    def get_crawler(self, url: str) -> BaseCrawler:
+        for pattern, crawler in self._crawlers.items():
+            if re.match(pattern, url):
+                return crawler()
+        else:
+            logger.warning(f"No crawler found for {url}. Defaulting to
+CustomArticleCrawler.")
+            return CustomArticleCrawler()
+The next step in understanding how the data collection pipeline works is analyzing each crawler
+individually.

@@ -1,0 +1,39 @@
+Production-Ready LLM Deployment and Observability
+364
+    print("Merging indices...")
+    index = indices[0]
+    for idx in indices[1:]:
+        index.merge_from(idx)
+  
+    # Save the index
+print(f"Saving index to '{index_dir}'...")More actions
+    index.save_local(index_dir)
+    print(f"Index saved successfully! Contains {index.index.ntotal} 
+vectors")
+  
+    return index
+To execute this, we define a main block:
+if __name__ == "__main__":
+"""Main execution block with example usage patterns."""More actions
+    
+    # Example 1: LangChain tutorials (smaller, faster - recommended for 
+testing)
+    print("Building index from LangChain tutorials...")
+    index = build_index(
+        base_url="https://python.langchain.com/docs/tutorials/",
+        batch_size=10,
+        max_depth=2
+    )
+    
+    # Example 2: LangGraph documentation (alternative)
+    # print("Building index from LangGraph documentation...")
+    # index = build_index(
+    #     base_url="https://langchain-ai.github.io/langgraph/",
+    #     batch_size=5,
+    #     max_depth=1
+    # )
+    
+    # Example 3: LangChain how-to guides (larger dataset)
+    # index = build_index(
+    #     base_url="https://python.langchain.com/docs/how_to/",
+    #     batch_size=10,

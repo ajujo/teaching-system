@@ -1,0 +1,13 @@
+371
+Other Books You May Enjoy
+
+Mastering Transformers
+Savaş Yıldırım, Meysam Asgari- Chenaghlu
+ISBN: 978-1-83763-378-4
+•	 Focus on solving simple-to-complex NLP problems with Python
+•	 Discover how to solve classification/regression problems with traditional NLP approaches
+•	 Train a language model and explore how to fine-tune models to the downstream tasks
+•	 Understand how to use transformers for generative AI and computer vision tasks
+•	 Build transformer-based NLP apps with the Python transformers library
+•	 Focus on language generation such as machine translation and conversational AI in any language
+•	 Speed up transformer model inference to reduce latency

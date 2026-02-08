@@ -1,0 +1,37 @@
+Chapter 7
+279
+  input_variables=["code"], 
+    partial_variables={"format_instructions": parser.get_format_instruc­
+tions()}
+)
+# Initialize the language model
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+# Compose the chain using LCEL
+security_chain = security_prompt | llm | parser
+The Pydantic output parser ensures that results are properly structured and can be program­
+matically processed for automated gatekeeping. LLM-generated code should never be directly 
+executed in production environments without validation. LangChain provides tools to create 
+safe execution environments for testing generated code.
+To ensure security when building LangChain applications that handle code, a layered approach 
+is crucial, combining LLM-based validation with traditional security tools for robust defense. 
+Structure security findings using Pydantic models and LangChain’s output parsers for consistent, 
+actionable outputs. Always isolate the execution of LLM-generated code in sandboxed environ­
+ments with strict resource limits, never running it directly in production. Explicitly manage de­
+pendencies by verifying imports against available packages to avoid hallucinations. Continuously 
+improve code generation through feedback loops incorporating execution results and validation 
+findings. Maintain comprehensive logging of all code generation steps, security findings, and mod­
+ifications for auditing. Adhere to the principle of least privilege by generating code that follows 
+security best practices such as minimal permissions and proper input validation. Finally, utilize 
+version control to store generated code and implement human review for critical components.
+Validation framework for LLM-generated code
+Organizations should implement a structured validation process for LLM-generated code and 
+analyses before moving to production. The following framework provides practical guidance for 
+teams adopting LLMs in their data science workflows:
+•	
+Functional validation forms the foundation of any assessment process. Start by executing 
+the generated code with representative test data and carefully verify that outputs align 
+with expected results. Ensure all dependencies are properly imported and compatible 
+with your production environment—LLMs occasionally reference outdated or incom­
+patible libraries. Most importantly, confirm that the code actually addresses the original 
+business requirements, as LLMs sometimes produce impressive-looking code that misses 
+the core business objective.

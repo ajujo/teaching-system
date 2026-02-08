@@ -1,0 +1,30 @@
+Mosaico de bucles
+Optimizar el orden de acceso a los datos en un bucle para la
+distribución de la memoria y la caché del hardware. Esta
+optimización depende del hardware. Un patrón de mosaico
+eficiente para CPU puede no funcionar bien en GPU.
+Fusión de operadores
+Combinar varios operadores en una sola pasada para evitar
+accesos redundantes a la memoria. Por ejemplo, si dos
+bucles operan sobre el mismo arreglo, pueden fusionarse en
+uno, reduciendo el número de veces que se leen y escriben
+datos.
+Mientras que la vectorización, la paralelización y el
+entrenamiento de mosaicos de bucles pueden aplicarse
+ampliamente a distintos modelos, la fusión de operadores
+requiere un conocimiento más profundo de los operadores y
+la arquitectura específicos de un modelo. En consecuencia,
+la fusión de operadores exige más atención por parte de los
+ingenieros de optimización.
+Los kernels se optimizan para una arquitectura de hardware. Esto significa
+que cada vez que se introduce una nueva arquitectura de hardware, hay que
+desarrollar nuevos kernels. Por ejemplo, FlashAttention (Dao et al., 2022)
+se desarrolló originalmente para las GPU NVIDIA A100. Posteriormente, se
+introdujo FlashAttention-3 para las GPU H100 (Shah et al., 2024).
+Un script de modelo especifica una serie de operaciones que deben
+realizarse para ejecutar ese modelo. Para ejecutar este código en una pieza
+de hardware, como una GPU, hay que convertirlo a un lenguaje compatible
+con ese hardware. Este proceso se denomina rebajado. Una herramienta que
+rebaja el código para que funcione en un hardware específico se llama
+compilador. Los compiladores sirven de puente entre los modelos de ML y
+el hardware en el que se ejecutan. Durante el proceso de rebajado, siempre

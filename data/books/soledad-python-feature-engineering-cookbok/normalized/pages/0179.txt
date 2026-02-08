@@ -1,0 +1,25 @@
+Working with Outliers
+156
+Note
+As shown in Figure 5.1, the boxplot returns asymmetric boundaries denoted by the varying
+lengths of the left and right whiskers. This makes boxplots a suitable method for identifying
+outliers in highly skewed distributions. As we'll see in the coming recipes, alternative methods
+to identify outliers create symmetric boundaries around the center of the distribution, which
+may not be the best option for asymmetric distributions.
+5.
+Let's now create a function to plot a boxplot next to a histogram:
+def plot_boxplot_and_hist(data, variable):
+    f, (ax_box, ax_hist) = plt.subplots(
+        2, sharex=True,
+        gridspec_kw={"height_ratios": (0.50, 0.85)})
+    sns.boxplot(x=data[variable], ax=ax_box)
+    sns.histplot(data=data, x=variable, ax=ax_hist)
+    plt.show()
+6.
+Let's use the previous function to create the plots for the MedInc variable:
+plot_boxplot_and_hist(X, "MedInc")
+In the following figure, we can see the relationship between the boxplot and the variable's
+distribution shown in the histogram. Note how most of MedInc's observations are located
+within the IQR box. MedInc's potential outliers lie on the right tail, corresponding to people
+with unusually high-income salaries:
+Figure 5.2 - Boxplot and histogram - two ways of displaying a variable's distribution

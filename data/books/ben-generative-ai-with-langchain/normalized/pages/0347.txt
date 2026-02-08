@@ -1,0 +1,33 @@
+Evaluation and Testing
+320
+Identifying the core capabilities to evaluate is the first critical step. The next is determining how
+to effectively measure them, given the complexities and subjective aspects inherent in LLM agents
+compared to traditional software. Relying on a single metric or approach is insufficient. In the
+next subsection, we'll explore the various methodologies and approaches available for evaluating
+agent performance in a robust, scalable, and insightful manner. We'll cover the role of automated
+metrics for consistency, the necessity of human feedback for subjective assessment, the impor­
+tance of system-level analysis for integrated agents, and how to combine these techniques into
+a practical evaluation framework that drives improvement.
+How we evaluate: methodologies and approaches
+LLM agents, particularly those built with flexible frameworks like LangChain or LangGraph, are
+typically composed of different functional parts or skills. An agent's overall performance isn't
+a single monolithic metric; it's the result of how well it executes these individual capabilities
+and how effectively they work together. In the following subsection, we'll delve into these core
+capabilities that distinguish effective agents, outlining the specific dimensions we should assess
+to understand where our agent excels and where it might be failing.
+Automated evaluation approaches
+Automated evaluation methods provide scalable, consistent assessment of agent capabilities,
+enabling systematic comparison across different versions or implementations. While no single
+metric can capture all aspects of agent performance, combining complementary approaches
+allows for comprehensive automated evaluation that complements human assessment.
+Reference-based evaluation compares each agent output against one or more gold-standard
+answers or trajectories. While BLEU/ROUGE and early embedding measures like BERTScore /
+Universal Sentence Encoder (USE) were vital first steps, today's state-of-the-art relies on learned
+metrics (BLEURT, COMET, BARTScore), QA-based frameworks (QuestEval), and LLM-powered
+judges, all backed by large human‐rated datasets to ensure robust, semantically aware evaluation.
+Rather than using direct string comparison, modern evaluation increasingly employs criteri­
+on-based assessment frameworks that evaluate outputs against specific requirements. For exam­
+ple, the T-Eval framework evaluates tool usage through a multi-stage process examining planning,
+reasoning, tool selection, parameter formation, and result interpretation. This structured approach
+allows precise identification of where in the process an agent might be failing, providing far more
+actionable insights than simple success/failure metrics.

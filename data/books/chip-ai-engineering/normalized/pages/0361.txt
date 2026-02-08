@@ -1,0 +1,31 @@
+input:
+  schema:
+    theme: string
+output:
+  format: json
+  schema:
+    name: string
+    price: integer
+    ingredients(array): string
+---
+Generate a menu item that could be found at a {{theme}} themed
+restaurant.
+Si los archivos de prompts son parte de su repositorio git, estos prompts
+pueden ser versionados usando git. El inconveniente de este enfoque es que
+si varias aplicaciones comparten el mismo prompt y este se actualiza, todas
+las aplicaciones que dependan de él se verán obligadas automáticamente a
+actualizarse a este nuevo prompt. En otras palabras, si versionan sus
+prompts junto con su código en git, es muy difícil que un equipo decida
+quedarse con una versión antigua de un prompt para su aplicación.
+Muchos equipos utilizan un catálogo de prompts por separado que
+explícitamente versiona cada prompt para que diferentes aplicaciones
+puedan utilizar diferentes versiones. Un catálogo de prompts también debe
+proporcionar a cada prompt los metadatos pertinentes y permitir la
+búsqueda de prompts. Un catálogo de prompts bien implementado podría
+incluso mantener un registro de las aplicaciones que dependen de cada uno
+y notificar a los propietarios de la aplicación de nuevas versiones de ese
+prompt.
+Ingeniería de prompts defensiva
+Una vez que su aplicación se coloque como disponible, puede ser utilizada
+tanto por los usuarios previstos como por atacantes malintencionados que
+intenten aprovecharse de ella. Existen tres tipos principales de ataques de

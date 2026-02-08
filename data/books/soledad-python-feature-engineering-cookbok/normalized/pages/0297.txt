@@ -1,0 +1,33 @@
+Extracting Features from Relational Data with Featuretools
+274
+7.
+We can add a third relationship between the original data and the products:
+es.normalize_dataframe(
+    base_dataframe_name=»data»,
+    new_dataframe_name=»items»,
+    index=»stock_code»,
+)
+8.
+Let's display the information in the entity set:
+es
+In the following output, we see that the entity set contains four DataFrames: the original data, the
+invoices DataFrame, the customers DataFrame, and the product or items DataFrame.
+The entity also contains the relationships between invoices or items with the original data, as
+well as between customers and invoices:
+Entityset: data
+  DataFrames:
+    data [Rows: 741301, Columns: 8]
+    invoices [Rows: 40505, Columns: 3]
+    customers [Rows: 5410, Columns: 2]
+    items [Rows: 4631, Columns: 2]
+  Relationships:
+    data.invoice -> invoices.invoice
+    invoices.customer_id -> customers.customer_id
+    data.stock_code -> items.stock_code
+9.
+Let's display the invoices DataFrame:
+es["invoices"].head()
+We see in the following output that featuretools automatically created a DataFrame
+containing the invoice's unique identifier, followed by the customer's unique identifier and the
+first date registered for each invoice:
+Figure 9.3 - DataFrame with information at the invoice level

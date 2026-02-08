@@ -1,0 +1,38 @@
+Chapter 10
+419
+New scaling laws for post-training phases
+Unlike traditional pre-training scaling, where performance improvements eventually plateau 
+with increased parameter count, reasoning performance consistently improves with more time 
+spent thinking during inference. Several studies indicate that allowing models more time to work 
+through complex problems step by step could enhance their problem-solving capabilities in 
+certain domains. This approach, sometimes called inference-time scaling, is still an evolving area 
+of research with promising initial results.
+This emerging scaling dynamic suggests that while pre-training scaling may be approaching 
+diminishing returns, post-training and inference-time scaling represent promising new frontiers. 
+The relationship between these scaling laws and instruction-following capabilities is particularly 
+notable—models must have sufficiently strong instruction-following abilities to demonstrate 
+these test-time scaling benefits. This creates a compelling case for concentrating research efforts 
+on enhancing inference-time reasoning rather than simply expanding model size.
+Having examined the technical limitations of scaling and the emerging alternatives, we now turn 
+to the economic consequences of these developments. As we’ll see, the shift from pure scaling to 
+more efficient approaches has significant implications for market dynamics, investment patterns, 
+and value creation opportunities.
+Economic and industry transformation
+Integrating generative AI promises immense productivity gains through automating tasks across 
+sectors, while potentially causing workforce disruptions due to the pace of change. According to 
+PwC’s 2023 Global Artificial Intelligence Impact Index and JPMorgan’s 2024 The Economic Impact 
+of Generative AI reports, AI could contribute up to $15.7 trillion to the global economy by 2030, 
+boosting global GDP by up to 14%. This economic impact will be unevenly distributed, with China 
+potentially seeing a 26% GDP boost and North America around 14%. The sectors expected to see 
+the highest impact include (in order):
+•	
+Healthcare
+•	
+Automotive
+•	
+Financial services
+•	
+Transportation and logistics
+JPM’s report highlights that AI is more than simple automation—it fundamentally enhances 
+business capabilities. Future gains will likely spread across the economy as technology sector 
+leadership evolves and innovations diffuse throughout various industries.

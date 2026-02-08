@@ -1,0 +1,32 @@
+Colofón
+El animal de la portada de Ingeniería de IA es un cárabo de Omán (Strix
+butleri), llamado "búho sin orejas", originario de Omán, Irán y los EAU.
+Un búho recogido en 1878 fue bautizado como Strix butleri en honor a su
+descubridor, el ornitólogo coronel Edward Arthur Butler. Este ave se
+conocía comúnmente como búho de Hume y se creía que estaba extendida
+por todo Oriente Próximo.
+En 2013, se descubrió en Omán una especie de búho desconocida hasta
+entonces y se le dio el nombre de Strix omanensis, el cárabo de Omán. No
+se recogió ningún espécimen físico, pero se describió el búho a partir de
+fotografías y grabaciones sonoras. Después, en 2015, un análisis del
+holotipo de Strix butleri (el espécimen original encontrado en 1878) reveló
+que el búho era en realidad el mismo que Strix omanensis, y distinto del
+búho más común que se encuentra en todo Oriente Medio. Siguiendo las
+convenciones de nomenclatura, la especie conservó el nombre original de
+Strix butleri y al búho más común se le dio el nombre de Strix hadorami, el
+búho del desierto.
+El cárabo de Omán tiene la cara de color gris pálido y oscuro y los ojos
+anaranjados. Sus partes superiores son de color marrón grisáceo oscuro y
+las inferiores son de color gris pálido con estrechas vetas oscuras. Es un
+búho de tamaño mediano, cabeza redonda y sin penachos en las orejas. Se
+trata de un descubrimiento relativamente reciente, por lo que los ornitólogos
+siguen investigando su comportamiento, ecología y distribución.
+Según la UICN, el estado de conservación del cárabo de Omán es
+deficiente. Muchos de los animales de la portada de O'Reilly están en
+peligro de extinción; todos ellos son importantes para el mundo.
+La ilustración de la portada es obra de Karen Montgomery, basada en un
+antiguo grabado de la Royal Natural History de Lydekker. El diseño de la
+serie es obra de Edie Freedman, Ellie Volckhausen y Karen Montgomery.
+Los tipos de letra de la portada son Gilroy Semibold y Guardian Sans. La
+fuente del texto es Adobe Minion Pro; la de los encabezados, Adobe Myriad
+Condensed; y la del código, Ubuntu Mono de Dalton Maag.

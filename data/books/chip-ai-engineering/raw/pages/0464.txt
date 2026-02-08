@@ -1,0 +1,31 @@
+algoritmos de búsqueda vectorial desarrollados para estas aplicaciones
+pueden utilizarse para la RAG.
+El modelo RAG puede verse como un caso especial de agente en el que el
+recuperador es una herramienta que el modelo puede utilizar. Ambos
+patrones le permiten a los modelos eludir su limitación de contexto y
+mantenerse más actualizado, pero el patrón agéntico puede hacer incluso
+más que eso. Un agente se define por su entorno y las herramientas a las
+que puede acceder. En un agente impulsado por IA, la IA es el planificador
+que analiza la tarea encomendada, considera distintas soluciones y elige la
+más prometedora. Una tarea compleja puede requerir muchos pasos para
+resolverla, lo que exige un modelo potente para planificarla. La capacidad
+de planificación de un modelo puede aumentarse con la reflexión y con un
+sistema de memoria que le ayude a realizar un seguimiento de su progreso.
+Cuantas más herramientas se den a un modelo, más capacidades tendrá, lo
+que le permitirá resolver tareas más difíciles. Sin embargo, cuanto más
+automatizado esté el agente, más catastróficos pueden ser sus fallos. El uso
+de herramientas expone a los agentes a muchos riesgos de seguridad
+tratados en el Capítulo 5. Para que los agentes funcionen en el mundo real,
+es necesario implementar mecanismos defensivos rigurosos.
+Tanto la RAG como los agentes trabajan con mucha información, que a
+menudo supera la longitud máxima de contexto del modelo subyacente.
+Para ello es necesario establecer un sistema de memoria que permita
+gestionar y utilizar toda la información de que dispone un modelo. Este
+capítulo finalizó con un breve debate sobre cómo es este componente.
+Tanto la RAG como los agentes son métodos basados en prompts, ya que
+influyen en la calidad del modelo únicamente a través de los inputs sin
+modificar el modelo en sí. Aunque pueden permitir muchas aplicaciones
+increíbles, modificar el modelo subyacente puede abrir camino a todavía
+más posibilidades. Cómo hacerlo será el tema del próximo capítulo.
+1  El modelo utilizado fue un tipo de red neuronal recurrente conocida como
+LSTM (Memoria a corto-largo plazo). La LSTM fue la arquitectura dominante

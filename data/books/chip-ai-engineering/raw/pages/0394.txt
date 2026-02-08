@@ -1,0 +1,31 @@
+RECUPERACIÓN DISPERSA VS. RECUPERACIÓN
+DENSA
+En la literatura es posible encontrar la división de los algoritmos de
+recuperación en las siguientes categorías: dispersos vs. densos. Este
+libro, sin embargo, opta por la categorización basada en términos vs. la
+basada en incrustaciones.
+Los recuperadores dispersos representan los datos mediante vectores
+dispersos. Un vector disperso es un vector en el que la mayoría de los
+valores son 0. La recuperación basada en términos se considera
+dispersa, ya que cada término puede representarse mediante un vector
+one-hot disperso, un vector que es 0 en todos los valores excepto en un
+valor de 1. El tamaño del vector es la longitud del vocabulario. El valor
+1 está en el índice correspondiente al del término en el vocabulario.
+Si tenemos un diccionario simple, {"food": 0, “banana”: 1,
+“slug”: 2}, entonces los vectores one hot de "comida", "plátano" y
+"babosa" son [1, 0, 0], [0, 1, 0] y [0, 0, 1], respectivamente.
+Los recuperadores densos representan los datos mediante vectores
+densos. Un vector denso es un vector en el que la mayoría de los
+valores no son 0. La recuperación basada en incrustaciones suele
+considerarse densa, ya que las incrustaciones suelen ser vectores
+densos. Sin embargo, también existen incrustaciones dispersas. Por
+ejemplo, SPLADE (Sparse Lexical and Expansion) es un algoritmo de
+recuperación que funciona utilizando incrustaciones dispersas (Formal
+et al., 2021). Aprovecha las incrustaciones generadas por BERT, pero
+utiliza la regularización para llevar a 0 la mayoría de los valores de
+incrustación. La dispersión hace que las operaciones de incrustación
+sean más eficaces.
+La división entre algoritmos dispersos y densos hace que SPLADE se
+agrupe con los algoritmos basados en términos, a pesar de que las
+operaciones, las fortalezas y las debilidades de SPLADE son mucho
+más similares a los de la recuperación de incrustaciones densas que a

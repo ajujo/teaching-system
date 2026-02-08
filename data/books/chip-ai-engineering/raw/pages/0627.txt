@@ -1,0 +1,37 @@
+generalmente bueno, pero pueden ser difícil de conseguir en hardware
+específico. 12 La Tabla 9-1 muestra la MFU para varios modelos y
+aceleradores.
+tabla 9-1. Ejemplos de MFU de "PaLM: Scaling Language Modeling with
+Pathways" (Chowdhery et al., 2022).
+Modelo
+Número de
+parámetros
+(en miles de
+millones)
+Chips
+aceleradores
+Utilización de
+FLOP/s del
+modelo
+GPT-3
+175B
+V100
+21.3 %
+Gopher
+280B
+4096 TPU v3
+32.5 %
+Megatron-
+Turing NLG
+530B
+2240 A100
+30.2 %
+PaLM
+540B
+6144 TPU v4
+46.2 %
+La Figura 9-5 muestra la MBU para el proceso de inferencia usando Llama
+2-70B en FP16 en diferente hardware. El descenso se debe probablemente a
+la mayor carga computacional por segundo con más usuarios, lo que hace
+que la carga de trabajo pase de estar limitada por el ancho de banda a estar
+limitada por el cómputo.

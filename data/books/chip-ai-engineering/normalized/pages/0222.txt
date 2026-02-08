@@ -1,0 +1,19 @@
+Es posible conseguir que un juez de IA sea más coherente. En el Capítulo 2
+se explica cómo hacerlo con variables de muestreo. Zheng et al. (2023)
+mostraron que la inclusión de ejemplos de evaluación en el prompt puede
+aumentar la consistencia de GPT-4 del 65 % al 77.5 %. Sin embargo,
+reconocieron que una alta coherencia puede no implicar una alta precisión:
+el juez puede cometer sistemáticamente los mismos errores. Además, incluir
+más ejemplos alarga los prompts, y los prompt más largos suponen mayores
+costos de inferencia. En el experimento de Zheng et al., incluir más
+ejemplos en sus prompts hizo que el gasto en GPT-4 se cuadruplicara.
+Ambigüedad de los criterios
+A diferencia de muchas métricas diseñadas por humanos, las métricas de la
+IA como juez no están estandarizadas, lo que facilita su interpretación y uso
+erróneos. En el momento de escribir este artículo, las herramientas de
+código abierto MLflow, Ragas y LlamaIndex incorporan el criterio de
+fidelidad para medir el grado de fidelidad de un output generado con
+respecto al contexto dado, pero sus instrucciones y sistemas de puntuación
+son diferentes. Como se muestra en la Tabla 3-4, MLflow utiliza un sistema
+de puntuación de 1 a 5, Ragas utiliza 0 y 1, mientras que el prompt de
+LlamaIndex pide al juez un output de Sí y NO.

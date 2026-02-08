@@ -1,0 +1,43 @@
+Holistic Evaluation
+While unit tests validate the correctness of individual components in isolation, inte‐
+gration tests are designed to evaluate the agentic system as a whole, ensuring that all
+subsystems—tools, planning, memory, and learning—work together seamlessly in
+realistic settings. Integration testing exposes complex interactions, emergent behav‐
+iors, and end-to-end issues that cannot be predicted from unit testing alone. In agent-
+based systems, where the outputs of one module often become the inputs for another,
+integration tests are essential for surfacing problems that arise only during real-world
+use.
+Performance in End-to-End Scenarios
+The primary objective of integration testing is to validate the system’s ability to per‐
+form complete tasks from start to finish, under conditions that closely resemble
+actual usage. This involves constructing representative workflows or user journeys
+that exercise the full stack of the agentic system—perception, planning, tool invoca‐
+tion, and communication. For example, a customer support agent might be tested on
+multistep conversations that involve interpreting user requests, making decisions
+based on order data, calling business tools like issue_refund, and providing appro‐
+priate follow-up messages to the customer. These evaluations must ensure that the
+agent not only selects the right actions but also communicates clearly and stays
+aligned with user intent.
+In our framework, this kind of evaluation is operationalized through an
+evaluate_single_instance function, which executes a complete test case and com‐
+putes a set of metrics. The agent is given a structured input—including the order data
+and conversation history—and its outputs are compared against an expected final
+state. This includes checking which tools were called, with what parameters, and
+whether the final message includes required phrases. The results are summarized in
+metrics such as tool recall, tool precision, parameter accuracy, phrase recall, and an
+aggregate task success score. This makes it possible to assess the agent’s full behavior
+—did it understand the situation, take the right actions, and explain them well? The
+following code is a helper function that executes an end-to-end integration test for a
+single scenario—invoking the agent on structured input and computing metrics for
+tool usage, parameter accuracy, phrase recall, and overall task success:
+def evaluate_single_instance(raw: str, graph) -> Optional[Dict[str, float]]:
+    if not raw.strip():
+        return None
+    try:
+        ex = json.loads(raw)
+        order = ex["order"]
+        messages = [to_lc_message(t) for t in ex["conversation"]]
+        expected = ex["expected"]["final_state"]
+214 
+| 
+Chapter 9: Validation and Measurement

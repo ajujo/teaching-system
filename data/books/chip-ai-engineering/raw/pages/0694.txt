@@ -1,0 +1,16 @@
+Además, la caché semántica puede llevar mucho tiempo y consumir muchos
+recursos computacionales, ya que implica una búsqueda vectorial. La
+velocidad y el costo de esta búsqueda vectorial dependen del tamaño de las
+incrustaciones almacenadas en caché.
+El almacenamiento semántico en caché puede seguir valiendo la pena si el
+índice de aciertos de la caché es alto, lo que significa que una buena parte
+de las consultas puedan responderse eficazmente aprovechando los
+resultados almacenados en la caché. Sin embargo, antes de incorporar las
+complejidades del almacenamiento semántico en caché, asegúrese de
+evaluar los riesgos de eficiencia, costo y rendimiento asociados.
+Con los sistemas de caché añadidos, la plataforma tiene el aspecto de la
+Figura 10-8. La caché KV y la caché de prompts suelen ser implementadas
+por proveedores de API de modelos, por lo que no se muestran en esta
+imagen. Para visualizarlas, las pondría en la casilla de API del modelo. Hay
+una nueva flecha para añadir las respuestas generadas a la caché.
+figura 10-8. Una arquitectura de aplicación de IA con las cachés añadidas.

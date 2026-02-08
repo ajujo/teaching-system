@@ -1,0 +1,42 @@
+Chapter 4
+115
+Once we have these OpenAI embeddings (the 1536-dimensional vectors we generated for our 
+example sentences above), we need a purpose-built system to store them. Unlike regular database 
+values, these high-dimensional vectors require specialized storage solutions.
+This brings us to vector stores – specialized databases optimized for similarity searches in high-di­
+mensional spaces.
+Vector stores
+Vector stores are specialized databases designed to store, manage, and efficiently search vector 
+embeddings. As we’ve seen, embeddings convert text (or other data) into numerical vectors that 
+capture semantic meaning.
+Vector stores solve the fundamental challenge of how to persistently and efficiently search through 
+these high-dimensional vectors. Please note that the vector database operates as an independent 
+system that can be:
+•	
+Scaled independently of the RAG components
+•	
+Maintained and optimized separately
+•	
+Potentially shared across multiple RAG applications
+•	
+Hosted as a dedicated service
+When working with embeddings, several challenges arise:
+•	
+Scale: Applications often need to store millions of embeddings
+•	
+Dimensionality: Each embedding might have hundreds or thousands of dimensions
+•	
+Search performance: Finding similar vectors quickly becomes computationally intensive
+•	
+Associated data: We need to maintain connections between vectors and their source 
+documents
+ The Embeddings class in LangChain provides a standard interface for all embed­
+ding models from various providers (OpenAI, Cohere, Hugging Face, and others). It 
+exposes two primary methods:
+•	
+embed_documents: Takes multiple texts and returns embeddings for each
+•	
+embed_query: Takes a single text (your search query) and returns its em­
+bedding
+Some providers use different embedding methods for documents versus queries, 
+which is why these are separate methods in the API.

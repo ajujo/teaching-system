@@ -1,0 +1,25 @@
+– optimización de la inferencia (ver optimización de la inferencia)
+optimización de la inferencia, Ingeniería de conjuntos de datos,
+Optimización de la inferencia
+– aceleradores de IA
+– capacidad de cálculo, ¿Qué es un acelerador?
+– consumo de energía, Tamaño y ancho de banda de la memoria
+– definido, ¿Qué es un acelerador?
+– tamaño y ancho de banda de la memoria, ¿Qué es un acelerador?
+– cálculo del tamaño de la caché KV, Optimización del mecanismo de
+atención
+– comprensión, Optimización de la inferencia
+– aceleradores de IA, Utilización, MFU y MBU
+– métricas de rendimiento de inferencia, API de inferencia en línea
+y por lotes
+– visión general de la inferencia, Optimización de la inferencia
+– estudio de caso de PyTorch, Kernels y compiladores
+– interferencia limitada por la memoria frente a interferencia limitada
+por el ancho de banda, Cuellos de botella de cómputo
+– a nivel de modelo/hardware/servicio, Optimización de la
+inferencia, Optimización de la inferencia
+– compresión del modelo, Compresión del modelo
+– cuello de botella de la decodificación autorregresiva, Superar el
+cuello de botella de la decodificación autorregresiva
+– kernels y compiladores, Kernels y compiladores
+– optimización del mecanismo de atención, Decodificación paralela

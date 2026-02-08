@@ -1,0 +1,33 @@
+Creating New Features
+230
+Technical requirements
+In this chapter, we will use the pandas, numpy, matplotlib, scikit-learn, and featureengine Python libraries.
+Combining features with mathematical functions
+New features can be created by combining existing variables with mathematical and statistical functions.
+Taking an example from the finance industry, we can calculate the total debt of a person by summing
+up their debt across individual financial products, such as car loan, mortgage, or credit card debt:
+Total debt = car loan debt + credit card debt + mortgage debt
+We can also derive other insightful features using alternative statistical operations. For example, we
+can determine the maximum debt of a customer across financial products or the average time a user
+spends on a website:
+maximum debt = max(car loan balance, credit card balance, mortgage balance)
+average time on website = mean(time spent on homepage, time spent on about page, time spent on
+FAQ page)
+We can, in principle, use any mathematical or statistical operation to create new features, such as the
+product, mean, standard deviation, or maximum or minimum values. In this recipe, we will implement
+these mathematical operations using pandas and feature-engine.
+Note
+While, in the recipe, we can show you how to combine features with mathematical functions,
+we can't do justice to the use of domain knowledge in deciding which function to apply, as that
+varies with every domain. So, we will leave that with you.
+Getting ready
+In this recipe, we will use the breast cancer dataset from scikit-learn. The features are computed
+from digitized images of breast cells and describe the characteristics of their cell nuclei, in terms of
+smoothness, concavity, symmetry, and compactness, among others. Each row contains information
+about the morphology of cell nuclei in a tissue sample. The target variable indicates whether the tissue
+sample corresponds to cancerous cells. The idea is to predict whether the tissue samples belong to
+benign or malignant breast cells, based on their cell nuclei morphology.
+To become familiar with the dataset, run the following commands in a Jupyter notebook or Python console:
+from sklearn.datasets import load_breast_cancer
+data = load_breast_cancer()
+print(data.DESCR)

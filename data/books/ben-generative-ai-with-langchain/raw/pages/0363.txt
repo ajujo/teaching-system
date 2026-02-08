@@ -1,0 +1,39 @@
+Evaluation and Testing
+336
+Offline evaluation
+Offline evaluation involves assessing the agent’s performance under controlled conditions before 
+deployment. This includes benchmarking to establish general performance baselines and more 
+targeted testing based on generated test cases. Offline evaluations provide key metrics, error anal­
+yses, and pass/fail summaries from controlled test scenarios, establishing baseline performance.
+While human assessments are sometimes seen as the gold standard, they are hard to scale and 
+require careful design to avoid bias from subjective preferences or authoritative tones. Bench­
+marking involves comparing the performance of LLMs against standardized tests or tasks. This 
+helps identify the strengths and weaknesses of the models and guides further development and 
+improvement.
+In the next section, we’ll discuss creating an effective evaluation dataset within the context of 
+RAG system evaluation.
+Evaluating RAG systems
+The dimensions of RAG evaluation discussed earlier (retrieval quality, contextual relevance, faith­
+ful generation, and information synthesis) provided a foundation for understanding how to 
+measure RAG system effectiveness. Understanding failure patterns of RAG systems helps create 
+more effective evaluation strategies. Barnett and colleagues in their 2024 paper Seven Failure 
+Points When Engineering a Retrieval Augmented Generation System identified several distinct ways 
+RAG systems fail in production environments:
+•	
+First, missing content failures occur when the system fails to retrieve relevant information 
+that exists in the knowledge base. This might happen because of chunking strategies that 
+split related information, embedding models that miss semantic connections, or content 
+gaps in the knowledge base itself.
+•	
+Second, ranking failures happen when relevant documents exist but aren’t ranked highly 
+enough to be included in the context window. This commonly stems from suboptimal 
+embedding models, vocabulary mismatches between queries and documents, or poor 
+chunking granularity.
+•	
+Context window limitations create another failure mode when key information is spread 
+across documents that exceed the model’s context limit. This forces difficult tradeoffs 
+between including more documents and maintaining sufficient detail from each one.
+•	
+Perhaps most critically, information extraction failures occur when relevant information 
+is retrieved but the LLM fails to properly synthesize it. This might happen due to ineffective 
+prompting, complex information formats, or conflicting information across documents.

@@ -1,0 +1,31 @@
+Automating the datetime feature extraction with Feature-engine
+197
+See also
+To learn more about pandas’ to_datetime(), visit https://pandas.pydata.org/
+pandas-docs/stable/reference/api/pandas.to_datetime.html.
+To learn more about pandas’ tz_convert(), visit https://pandas.pydata.org/
+pandas-docs/stable/reference/api/pandas.Series.dt.tz_convert.html.
+Automating the datetime feature extraction with Feature-
+engine
+feature-engine is a Python library for feature engineering and selection that is well suited to 
+working with pandas DataFrames. The DatetimeFeatures() class can extract features from 
+date and time automatically by using pandas’ dt under the hood. DatetimeFeatures() allows 
+you to extract the following features:
+•	 Month
+•	 Quarter
+•	 Semester
+•	 Year
+•	 Week
+•	 Day of the week
+•	 Day of the month
+•	 Day of the year
+•	 Weekend
+•	 Month start
+•	 Month end
+•	 Quarter start
+•	 Quarter end
+•	 Year start
+•	 Year end
+•	 Leap year
+•	 Days in a month
+•	 Hour

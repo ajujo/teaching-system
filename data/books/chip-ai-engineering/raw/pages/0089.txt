@@ -1,0 +1,32 @@
+trazó la incorporación por parte de los modelos lingüísticos de otras
+modalidades de datos para convertirse en modelos fundacionales, y cómo
+los modelos fundacionales dieron lugar a la ingeniería de IA.
+El rápido crecimiento de la ingeniería de IA está motivado por las
+numerosas aplicaciones que se apoyan en las capacidades emergentes de los
+modelos fundacionales. En este capítulo se analizaron algunos de los
+patrones de aplicación más exitosos, tanto para consumo como
+empresariales. A pesar del increíble número de aplicaciones de IA que ya se
+están produciendo, no estamos más que en las primeras fases de la
+ingeniería de IA, con innumerables innovaciones todavía por construir.
+Antes de crear una aplicación, una pregunta importante, pero que a menudo
+se pasa por alto, es si debe ser creada. En este capítulo se analiza esta
+pregunta, junto con las principales consideraciones para crear las
+aplicaciones de IA.
+Aunque "ingeniería de IA" es un término nuevo, evolucionó a partir de la
+ingeniería de ML, que es la disciplina general que se ocupa de crear
+aplicaciones con todos los modelos de ML. Muchos principios de la
+ingeniería de ML siguen siendo aplicables a la ingeniería de IA. Sin
+embargo, la ingeniería de IA también trae consigo nuevos retos y
+soluciones. La última sección del capítulo trata sobre la pila de ingeniería
+de IA, incluyendo cómo ha cambiado con respecto a la ingeniería de ML.
+Un aspecto de la ingeniería de IA que resulta especialmente difícil de
+plasmar por escrito es la increíble cantidad de energía colectiva, creatividad
+y talento para la ingeniería que aporta la comunidad. Este entusiasmo
+colectivo a menudo puede resultar abrumador, ya que es imposible
+mantenerse al día de las nuevas técnicas, descubrimientos y hazañas de
+ingeniería que parecen producirse constantemente.
+Un consuelo es que, dado que la IA es genial agregando información, puede
+ayudarnos a agregar y resumir todas estas nuevas actualizaciones. Pero las
+herramientas solo pueden ayudar hasta cierto punto. Cuanto más abrumador
+es un espacio, más importante es disponer de un marco que nos ayude a
+navegar por él. Este libro pretende ofrecer ese marco.

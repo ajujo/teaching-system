@@ -1,0 +1,38 @@
+Chapter 6
+231
+Instruction
+Tell me a joke about octopuses.
+Chosen answer
+Why don’t octopuses play cards in casinos? 
+Because they can’t count past eight.
+Rejected answer
+How many tickles does it take to make an 
+octopus laugh? Ten tickles.
+Table 6.1 – Example of sample from the mlabonne/orpo-dpo-mix-40k dataset
+In preference datasets, the rejected response is as important as the chosen one. Without the 
+rejected response, the dataset would be a simple instruction set. Rejected responses represent 
+the behavior we aim to eliminate from the model. This provides a lot of flexibility and allows us 
+to use preference datasets in many contexts. Here is a list of examples where preference datasets 
+are more beneficial to use compared to using SFT alone:
+•	
+Chatbots: In conversational AI, the quality of responses often depends on subjective fac-
+tors like naturalness, engagement, and contextual appropriateness. A preference dataset 
+allows the model to learn these nuanced aspects by comparing better and worse responses. 
+Simple SFT might not capture the subtleties of what makes one response preferable over 
+another in a given context.
+•	
+Content moderation: Determining whether content is appropriate or violates guidelines 
+often involves nuanced judgments. Preference datasets can help the model learn to dis-
+tinguish between borderline cases by comparing examples of content that is and isn’t 
+acceptable. This is more effective than binary classification through SFT, as it helps the 
+model understand the reasoning behind moderation decisions.
+•	
+Summarization: The quality of a summary often depends on factors like conciseness, 
+relevance, and coherence. By using preference datasets, models can learn to generate 
+summaries that humans find more useful and informative. Simple SFT might result in 
+summaries that are technically correct but less preferable to human readers.
+•	
+Code generation: In coding tasks, there are often multiple correct solutions, but some 
+are more efficient or readable, or follow better practices than others. Preference datasets 
+can help the model learn these qualitative aspects of code quality, which might not be 
+captured by simple correctness-based SFT.

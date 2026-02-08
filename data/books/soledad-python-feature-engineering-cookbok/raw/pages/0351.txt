@@ -1,0 +1,36 @@
+Creating Features from a Time Series with tsfresh
+328
+The output of step 11 consists of a DataFrame with 135 rows and 8 features. If we execute 
+features.columns, we will see the names of the created features:
+Index(['light__sum_values', 'light__median',
+    'light__standard_deviation',
+    'light__quantile__q_0.2',
+    'light__quantile__q_0.7',
+    'co2__root_mean_square',
+    'co2__number_peaks__n_1',
+    'co2__number_peaks__n_2'],
+    dtype='object')
+Note that in the output from step 11, different variables have been created from each of the light 
+and co2 time series.
+How it works...
+In this recipe, we extracted specific features from our time-series data. First, we created features based 
+on a predefined dictionary that comes with tsfresh. Next, we created our own dictionary, specifying 
+the creation of different features for different time series.
+The tsfresh package comes with some predefined dictionaries that can be accessed through the 
+settings module. The MinimalFCParameters dictionary is used to create 10 simple features 
+based on basic statistical parameters of the time-series distribution, such as the mean, median, standard 
+deviation, variance, sum of its values, count (or length), and minimum and maximum values. In step 
+3, we displayed the dictionary, with the method names as keys, and, as these methods do not require 
+additional parameters, each key had None as the value.
+tsfresh has two additional predefined dictionaries. EfficientFCParameters is used to apply 
+methods that are fast to compute, whereas ComprehensiveFCParameters returns all possible 
+features and is the one used by default by the extract_features function.
+Note
+For more details about the predefined dictionaries, check out t s f r e s h ’s 
+documentation: https://tsfresh.readthedocs.io/en/latest/text/fea­
+ture_extraction_settings.html
+By using these predefined dictionaries in the default_fc_parameters parameter of tsfresh’s 
+extract_features function, we can create specific features from one or more time series, as we 
+did in step 4. Note that default_fc_parameters instructs extract_features to create 
+the same features from all the time series. What if we want to extract different features from different 
+time series?

@@ -1,0 +1,24 @@
+Appendix
+MLOps Principles
+Building robust and scalable ML systems requires more than creating powerful models. It demands
+an all-encompassing approach to operationalizing the entire ML lifecycle. Let's explore the six
+core principles that guide the MLOps field. These principles are independent of any tool and are
+at the core of building robust and scalable ML systems. They provide a guideline for designing
+production-ready applications, ensuring consistency, reliability, and scalability at every stage.
+With that in mind, let's begin with the foundation: automation or operationalization.
+1. Automation or operationalization
+To adopt MLOps, there are three core tiers that most applications build up gradually, from manual
+processing to full automation:
+•
+Manual process: The process is experimental and iterative in the early stages of developing
+an ML application. The data scientist manually performs each pipeline step, such as data
+preparation and validation, model training, and testing. At this point, they commonly use
+Jupyter notebooks to train their models. This stage's output is the code used to prepare
+the data and train the models.
+•
+Continuous training (CT): The next level involves automating model training. This is
+known as continuous training, which triggers model retraining whenever required. At this
+point, you often automate your data and model validation steps. This step is usually done
+by an orchestration tool, such as ZenML, that glues all your code together and runs it on
+specific triggers. The most common triggers are on a schedule, for example, every day or
+when a specific event comes in, such as when new data is uploaded or the monitoring system detects a drop in performance, offering you the flexibility to adapt to various triggers.

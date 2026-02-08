@@ -85,6 +85,10 @@ from enum import Enum, auto
 class TeachingState(Enum):
     """Estados del flujo de enseñanza teaching-first."""
 
+    # F8.4: Unit-level states
+    UNIT_OPENING = auto()  # Mostrando apertura de unidad
+    WAIT_UNIT_START = auto()  # F8.4: Pausa dura esperando "sí/empezar" para iniciar
+    # Point-level states
     EXPLAINING = auto()  # Explicando un punto
     WAITING_INPUT = auto()  # Esperando respuesta del estudiante
     CHECKING = auto()  # Evaluando comprensión
@@ -2475,6 +2479,8 @@ def tutor(
         TutorEvent,
         TutorEventType,
         generate_unit_opening,
+        # F8.4: Event tracking
+        TutorTurnContext,
         # Multi-student support (F7.3 Academia)
         StudentProfile,
         StudentsState,
@@ -2989,19 +2995,48 @@ def tutor(
             console.print()
             console.print(Markdown(opening_event.markdown))
 
-            # Esperar confirmación para empezar (respeta lenguaje natural)
-            start_input = typer.prompt(f"\n{user_prompt}").strip()
-            if start_input.lower() == "stop":
-                save_students_state(students_state, data_dir)
-                console.print("[green]✓ Sesión cerrada. Progreso guardado.[/green]")
-                return
+            # F8.4: PAUSA DURA - Estado WAIT_UNIT_START
+            # No puede avanzar automáticamente al Punto 1 sin input explícito
+            unit_state = TeachingState.WAIT_UNIT_START
+            last_prompt_kind = TutorPromptKind.ASK_UNIT_START
 
-            # Si dice que no o pide apuntes, mostrar apuntes primero
-            if is_negative(start_input) or start_input.lower() == "apuntes":
-                console.print(f"\n[bold cyan]📝 Apuntes de la unidad:[/bold cyan]")
-                console.print(Markdown(unit_notes))
-                if not typer.confirm("¿Continuamos con la explicación?", default=True):
-                    continue  # Siguiente unidad
+            while unit_state == TeachingState.WAIT_UNIT_START:
+                start_input = typer.prompt(f"\n{user_prompt}").strip()
+
+                # Comando: stop
+                if start_input.lower() == "stop":
+                    save_students_state(students_state, data_dir)
+                    console.print("[green]✓ Sesión cerrada. Progreso guardado.[/green]")
+                    return
+
+                # Comando: apuntes
+                if start_input.lower() == "apuntes":
+                    console.print(f"\n[bold cyan]📝 Apuntes de la unidad:[/bold cyan]")
+                    console.print(Markdown(unit_notes))
+                    console.print("\n[dim]¿Empezamos con la explicación?[/dim]")
+                    continue  # Sigue en WAIT_UNIT_START
+
+                # Respuesta negativa: mostrar apuntes y preguntar de nuevo
+                if is_negative(start_input):
+                    console.print(f"\n[bold cyan]📝 Apuntes de la unidad:[/bold cyan]")
+                    console.print(Markdown(unit_notes))
+                    if not typer.confirm("¿Continuamos con la explicación?", default=True):
+                        unit_state = TeachingState.NEXT_POINT  # Skip to next unit
+                        break
+                    console.print("\n[dim]¿Empezamos?[/dim]")
+                    continue
+
+                # Respuesta afirmativa o intent de avance: empezar
+                if is_affirmative(start_input) or is_advance_intent(start_input) or start_input == "":
+                    unit_state = TeachingState.EXPLAINING  # Ready to start points
+                    break
+
+                # Input no reconocido: pedir clarificación
+                console.print("[dim]Responde 'sí' para empezar, 'apuntes' para ver los apuntes, o 'stop' para salir[/dim]")
+
+            # Si el usuario decidió saltar la unidad
+            if unit_state == TeachingState.NEXT_POINT:
+                continue  # Siguiente unidad
 
             # 3. LOOP DE PUNTOS (Teaching Loop con máquina de estados)
             # F8.2: Get teaching policy for active student
@@ -3100,18 +3135,79 @@ def tutor(
                                 console.print("[dim]Responde 'avanzar', 'repasar', 'más ejemplos' o 'stop'[/dim]")
                                 continue
 
-                        # Comando: adelante (avanzar sin evaluar) - ahora usa is_advance_intent
-                        if user_input.lower() in ("adelante", "continuar", "sigo", "siguiente", "") or is_advance_intent(user_input):
-                            teaching_state = TeachingState.NEXT_POINT
-                            continue
+                        # === F8.4.1: Context-aware para ASK_CHECK (ASK_COMPREHENSION/ASK_MCQ) ===
+                        # Soportar "continua/adelante" como skip y re-emitir pregunta tras comandos
+                        if last_prompt_kind in (TutorPromptKind.ASK_COMPREHENSION, TutorPromptKind.ASK_MCQ):
+                            input_lower = user_input.lower().strip()
 
-                        # Comando: apuntes
+                            # Intent de skip/avanzar durante check
+                            if input_lower in ("continua", "continuar", "seguimos", "adelante", "skip", "paso") or is_advance_intent(user_input):
+                                if teaching_policy.allow_advance_on_failure:
+                                    # Policy permite skip -> avanzar sin evaluar
+                                    teaching_state = TeachingState.NEXT_POINT
+                                    continue
+                                else:
+                                    # Policy estricta -> pedir respuesta real
+                                    if last_prompt_kind == TutorPromptKind.ASK_MCQ:
+                                        console.print("[dim]Necesito tu respuesta (a/b/c) para continuar.[/dim]")
+                                    else:
+                                        console.print("[dim]Intenta responder con tus palabras antes de continuar.[/dim]")
+                                    continue
+
+                            # Comandos globales durante check: ejecutar y re-preguntar
+                            if input_lower == "apuntes":
+                                console.print(f"\n[bold cyan]📝 Apuntes de la unidad:[/bold cyan]")
+                                console.print(Markdown(unit_notes))
+                                # Re-emitir pregunta de verificación
+                                if last_check_question:
+                                    console.print(f"\n[dim]Volviendo a la pregunta:[/dim]")
+                                    console.print(f"[cyan]{last_check_question}[/cyan]")
+                                continue
+
+                            if input_lower == "control":
+                                _run_unit_mini_quiz(
+                                    unit_id=unit_id,
+                                    data_dir=data_dir,
+                                    provider=effective_provider,
+                                    model=effective_model,
+                                    console_obj=console,
+                                )
+                                # Re-emitir pregunta de verificación
+                                if last_check_question:
+                                    console.print(f"\n[dim]Volviendo a la pregunta:[/dim]")
+                                    console.print(f"[cyan]{last_check_question}[/cyan]")
+                                continue
+
+                            if input_lower == "examen":
+                                _run_tutor_exam_flow(
+                                    book_id=book_id,
+                                    chapter_number=current_chapter,
+                                    data_dir=data_dir,
+                                    provider=effective_provider,
+                                    model=effective_model,
+                                )
+                                # Re-emitir pregunta de verificación
+                                if last_check_question:
+                                    console.print(f"\n[dim]Volviendo a la pregunta:[/dim]")
+                                    console.print(f"[cyan]{last_check_question}[/cyan]")
+                                continue
+
+                            # Si no es comando ni skip, cae a CHECKING normal abajo
+
+                        # Comando: adelante (avanzar sin evaluar) - ahora usa is_advance_intent
+                        # NOTA: Solo aplica si NO estamos en ASK_CHECK (ya manejado arriba)
+                        if last_prompt_kind not in (TutorPromptKind.ASK_COMPREHENSION, TutorPromptKind.ASK_MCQ):
+                            if user_input.lower() in ("adelante", "continuar", "sigo", "siguiente", "") or is_advance_intent(user_input):
+                                teaching_state = TeachingState.NEXT_POINT
+                                continue
+
+                        # Comando: apuntes (fallback para otros contextos)
                         if user_input.lower() == "apuntes":
                             console.print(f"\n[bold cyan]📝 Apuntes de la unidad:[/bold cyan]")
                             console.print(Markdown(unit_notes))
                             continue  # Sigue en WAITING_INPUT
 
-                        # Comando: control (mini-quiz)
+                        # Comando: control (mini-quiz) - fallback
                         if user_input.lower() == "control":
                             _run_unit_mini_quiz(
                                 unit_id=unit_id,
@@ -3122,7 +3218,7 @@ def tutor(
                             )
                             continue  # Sigue en WAITING_INPUT
 
-                        # Comando: examen
+                        # Comando: examen - fallback
                         if user_input.lower() == "examen":
                             _run_tutor_exam_flow(
                                 book_id=book_id,
@@ -3153,6 +3249,18 @@ def tutor(
                                 console.print("[dim]¿Qué prefieres: (1) más ejemplos, (2) explicar con tus palabras, (3) avanzar?[/dim]")
                                 continue  # Sigue en WAITING_INPUT
                             # else: va a CHECKING para evaluar MCQ o comprensión
+
+                        # F8.4: GUARD - Confirmaciones NUNCA van a CHECKING
+                        # Las confirmaciones son decisiones de flujo, no evaluación conceptual
+                        if last_prompt_kind in (
+                            TutorPromptKind.ASK_ADVANCE_CONFIRM,
+                            TutorPromptKind.ASK_POST_FAILURE_CHOICE,
+                            TutorPromptKind.ASK_UNIT_START,
+                        ):
+                            # Si llegamos aquí, el input no fue reconocido
+                            # Pero NUNCA llamamos a check_comprehension para confirmaciones
+                            console.print("[dim]No entendí. ¿Quieres continuar?[/dim]")
+                            continue
 
                         # Input normal: evaluar comprensión
                         teaching_state = TeachingState.CHECKING

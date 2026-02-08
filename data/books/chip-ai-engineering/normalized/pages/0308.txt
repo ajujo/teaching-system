@@ -1,0 +1,27 @@
+sin acceso a los datos de entrenamiento. El enfoque de perplejidad es menos
+preciso, pero consume muchos menos recursos.
+Anteriormente, los libros de texto de ML aconsejaban eliminar las muestras
+de evaluación de los datos de entrenamiento. El objetivo es mantener
+normalizadas las pruebas comparativas de evaluación para poder comparar
+distintos modelos. Sin embargo, con los modelos fundacionales, la mayoría
+de la gente no tiene control sobre los datos de entrenamiento. Incluso si
+controlamos los datos de entrenamiento, puede que no queramos eliminar
+todos los datos de pruebas comparativas de los datos de entrenamiento,
+porque los datos de pruebas de alta calidad pueden ayudar a mejorar el
+rendimiento general del modelo. Además, siempre habrá pruebas
+comparativas creadas después de entrenar los modelos, por lo que siempre
+habrá muestras de evaluación contaminadas.
+Para los desarrolladores de modelos, una práctica habitual es eliminar de
+sus datos de entrenamiento las pruebas comparativas que les interesan antes
+de entrenar sus modelos. Lo ideal sería que, al informar sobre el
+rendimiento de su modelo en una prueba comparativa, revelara qué
+porcentaje de los datos de esta prueba comparativa se encuentran en sus
+datos de entrenamiento, y cuál es el rendimiento del modelo tanto en la
+prueba comparativa general como en las muestras limpias de dicha prueba.
+Lamentablemente, como detectar y eliminar la contaminación requiere
+esfuerzo, a muchas personas les resulta más fácil saltárselo.
+OpenAI, al analizar la contaminación de GPT-3 con pruebas comparativas
+comunes, encontró 13 pruebas comparativas que tenían al menos un 40 %
+en los datos de entrenamiento (Brown et al., 2020). En la Figura 4-10 se
+muestra la diferencia relativa de rendimiento entre evaluar solo la muestra
+limpia y evaluar toda la prueba comparativa.

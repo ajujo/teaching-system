@@ -1,0 +1,36 @@
+Chapter 1
+7
+DeepSeek
+R1
+Maths-first: solves Olympiad-level problems; cost-
+effective, optimized for multilingual and programming 
+tasks
+Together 
+AI
+Infrastructure for 
+running open models
+Competitive pricing; growing marketplace of models
+Table 1.2: Comparative overview of major LLM providers and their flagship models for 
+LangChain implementation
+Other organizations develop LLMs but do not necessarily provide them through application 
+programming interfaces (APIs) to developers. For example, Meta AI develops the very influential 
+Llama model series, which has strong reasoning, code-generation capabilities, and is released 
+under an open-source license.
+There is a whole zoo of open-source models that you can access through Hugging Face or through 
+other providers. You can even download these open-source models, fine-tune them, or fully train 
+them. We’ll try this out practically starting in Chapter 2.
+Once you’ve selected an appropriate model, the next crucial step is understanding how to control 
+its behavior to suit your specific application needs. While accessing a model gives you computa­
+tional capability, it’s the choice of generation parameters that transforms raw model power into 
+tailored output for different use cases within your applications.
+Now that we’ve covered the LLM provider landscape, let’s discuss another critical aspect of LLM 
+implementation: licensing considerations. The licensing terms of different models significantly 
+impact how you can use them in your applications.
+Licensing
+LLMs are available under different licensing models that impact how they can be used in practice. 
+Open-source models like Mixtral and BERT can be freely used, modified, and integrated into 
+applications. These models allow developers to run them locally, investigate their behavior, and 
+build upon them for both research and commercial purposes.
+In contrast, proprietary models like GPT-4 and Claude are accessible only through APIs, with their 
+internal workings kept private. While this ensures consistent performance and regular updates, 
+it means depending on external services and typically incurring usage costs.

@@ -1,0 +1,64 @@
+Chapter 4
+131
+The core elements of streaming applications are a distributed event streaming platform such as
+Apache Kafka or Redpanda to store events from multiple clients and a streaming engine such as
+Apache Flink or Bytewax to process the events. To simplify your architecture, you can swap your
+event streaming platform with queues, such as RabbitMQ, to store the events until processed.
+Table 4.1 compares batch and streaming pipelines based on multiple criteria such as processing
+schedule and complexity:
+Aspect
+Batch pipeline
+Streaming pipeline
+Processing schedule
+Processes data at regular
+intervals (e.g., every
+minute, hourly, daily).
+Processes data
+continuously, with
+minimal latency.
+Efficiency
+Handles large volumes of
+data more efficiently,
+optimizing resource
+allocation and parallel
+processing.
+Handles single data
+points, providing
+immediate insights
+and updates, allowing
+for rapid response to
+changes.
+Processing complexity
+Capable of performing
+complex data transformations
+and aggregations.
+Designed to handle
+high-velocity data
+streams with low
+latency.
+Use cases
+Suitable for scenarios where
+immediate data processing
+is not critical. Commonly
+used in data warehousing,
+reporting, ETL processes,
+and feature pipelines.
+Ideal for applications
+requiring real-time
+analytics, features,
+monitoring, and eventdriven architectures.
+System complexity
+Compared to streaming
+pipelines, systems are
+generally simpler to
+implement and maintain.
+More complex to
+implement and maintain
+due to the need for
+low-latency processing,
+fault tolerance, and
+scalability. The
+tooling is also
+more advanced and
+complicated.
+Table 4.1: Batch versus streaming pipelines

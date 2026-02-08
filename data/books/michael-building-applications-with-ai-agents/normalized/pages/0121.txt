@@ -1,0 +1,46 @@
+}
+# Create embeddings for each tool description
+tool_embeddings = []
+tool_names = []
+for tool_name, description in tool_descriptions.items():
+   embedding = embeddings.embed_text(description)
+   tool_embeddings.append(embedding)
+   tool_names.append(tool_name)
+# Initialize FAISS vector store
+dimension = len(tool_embeddings[0])
+index = faiss.IndexFlatL2(dimension)
+# Normalize embeddings for cosine similarity
+faiss.normalize_L2(np.array(tool_embeddings).astype('float32'))
+# Convert list to FAISS-compatible format
+tool_embeddings_np = np.array(tool_embeddings).astype('float32')
+index.add(tool_embeddings_np)
+# Map index to tool functions
+index_to_tool = {
+   0: query_wolfram_alpha,
+   1: trigger_zapier_webhook,
+   2: send_slack_message
+}
+Those embeddings for your tool catalog only need to be computed once, and now
+they're ready to be quickly retrieved. To choose your tool, you embed your query
+using the same embedding model, perform a quick database lookup, choose the
+parameters, and invoke our tool:
+def select_tool(query: str, top_k: int = 1) -> list:
+   """
+   Select the most relevant tool(s) based on the user's query using
+   vector-based retrieval.
+
+   Args:
+       query (str): The user's input query.
+       top_k (int): Number of top tools to retrieve.
+
+   Returns:
+       list: List of selected tool functions.
+   """
+   query_embedding = embeddings.embed_text(query).astype('float32')
+   faiss.normalize_L2(query_embedding.reshape(1, -1))
+   D, I = index.search(query_embedding.reshape(1, -1), top_k)
+   selected_tools = [index_to_tool[idx] for idx in I[0] if idx in index_to_tool]
+   return selected_tools
+Tool Selection
+|
+99

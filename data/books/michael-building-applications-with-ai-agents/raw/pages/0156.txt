@@ -1,0 +1,21 @@
+Conclusion
+Memory is critical to the successful operation of agentic systems, and while the stan‐
+dard approach of relying on the context window of recent interactions is sufficient for
+many use cases, more challenging scenarios can benefit substantially from the invest‐
+ment into a more robust approach. We have explored several approaches here,
+including semantic memory, GraphRAG, and working memory.
+This chapter has delved into various aspects of how memory can be structured and
+utilized to enhance the capabilities of intelligent agents. From the basic concepts of
+managing context windows, through the advanced applications of semantic memory
+and vector stores, to the innovative practices of dynamic knowledge graphs and
+working memory, we have explored a comprehensive range of techniques and tech‐
+nologies that play crucial roles in the development of agentic systems.
+Memory systems in agentic applications are not just about storing data but about
+transforming how agents interact with their environment and end users. By continu‐
+ally improving these systems, we can create more intelligent, responsive, and capable
+agents that can perform a wide range of tasks more effectively. In the next chapter, we
+will explore how agents can learn from experience to improve automatically over
+time.
+134 
+| 
+Chapter 6: Knowledge and Memory

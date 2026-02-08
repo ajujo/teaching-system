@@ -1,0 +1,50 @@
+def determine_parameters(query: str, tool_name: str) -> dict:
+   """
+   Use the LLM to analyze the query and determine the parameters for the tool
+   to be invoked.
+
+   Args:
+       query (str): The user's input query.
+       tool_name (str): The selected tool name.
+
+   Returns:
+       dict: Parameters for the tool.
+   """
+   messages = [
+       HumanMessage(content=f'''Based on the user's query: '{query}', what
+           parameters should be used for the tool '{tool_name}'?''')
+   ]
+
+   # Call the LLM to extract parameters
+   response = llm(messages)
+
+   # Example logic to parse response from LLM
+   parameters = {}
+   if tool_name == "query_wolfram_alpha":
+       parameters["expression"] = response['expression']
+       # Extract mathematical expression
+   elif tool_name == "trigger_zapier_webhook":
+       parameters["zap_id"] = response.get('zap_id', "123456")
+       parameters["payload"] = response.get('payload', {"data": query})
+   elif tool_name == "send_slack_message":
+       parameters["channel"] = response.get('channel', "#general")
+       parameters["message"] = response.get('message', query)
+
+   return parameters
+# Example user query
+user_query = "Solve this equation: 2x + 3 = 7"
+# Select the top tool
+selected_tools = select_tool(user_query, top_k=1)
+tool_name = selected_tools[0] if selected_tools else None
+if tool_name:
+   # Use LLM to determine the parameters based on the query and the selected tool
+   args = determine_parameters(user_query, tool_name)
+   # Invoke the selected tool
+   try:
+       # Assuming each tool has an `invoke` method to execute it
+       tool_result = globals()[tool_name].invoke(args)
+       print(f"Tool '{tool_name}' Result: {tool_result}")
+   except ValueError as e:
+100
+|
+Chapter 5: Orchestration

@@ -1,0 +1,25 @@
+– evaluación comparativa, Ranking de modelos con evaluación
+comparativa
+– Gemini frente a, Optimización de la inferencia
+– introduction of, Prefacio
+– problemas de privacidad de datos, Modelos de código abierto frente a
+API de modelos
+– reescritura de consultas, Reranking
+– y calidad de la escritura humana, Redacción
+clasificación, Medidas de similitud con los datos de referencia
+clasificación de modelos, ¿Qué modelos pueden actuar como jueces?
+clasificadores de intención, Enrutador
+Claude, GAR y, De los grandes modelos lingüísticos a los modelos
+fundacionales, Modelos específicos de dominio, Introducción a la
+incrustación
+Claude, RAG y, RAG
+clustering, Medidas de similitud con los datos de referencia
+cobertura de datos, Cobertura de datos
+coherencia factual, Coherencia factual, Paso 2. Crear una directriz de
+evaluación
+coherencia factual global, Coherencia factual
+coherencia factual local, Coherencia factual
+coincidencia parcial, Coincidencia exacta
+coincidencias, Ranking de modelos con evaluación comparativa
+coincidencias exactas, Medidas de similitud con los datos de referencia
+colapso potencial del modelo, Colapso potencial del modelo

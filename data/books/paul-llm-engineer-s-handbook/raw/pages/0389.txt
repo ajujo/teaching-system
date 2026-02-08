@@ -1,0 +1,8 @@
+Inference Pipeline Deployment
+358
+With that in mind, let’s explore the three major ML deployment types.
+Figure 10.1: The three fundamental architectures of inference deployment types
+Online real-time inference
+In real-time inference, we have a simple architecture based on a server that can be accessed 
+through HTTP requests. The most popular options are to implement a REST API or gRPC server. 
+The REST API is more accessible but slower, using JSON to pass data between the client and server. 

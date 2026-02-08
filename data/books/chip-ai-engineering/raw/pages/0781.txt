@@ -1,0 +1,24 @@
+procesamiento del lenguaje natural (NLP), Capacidades específicas de
+dominio
+productos punto, Mecanismo de atención
+prompts del sistema, Aprendizaje en contexto: Cero shot y pocos shots
+prompts patentados, Ingeniería de prompts defensiva
+prueba de la aguja en el pajar (NIAH), Longitud y eficacia del contexto
+puntos de referencia
+– centrado en el modelo frente a centrado en datos, Ingeniería de
+conjuntos de datos
+– criterios de seguimiento de instrucciones, Capacidad de seguimiento
+de instrucciones
+– detección de la contaminación de datos, Interpretación y casos
+prácticos de la perplejidad
+– distribución de dominios y, Modelos específicos de dominio
+– específico de dominio, Criterios de evaluación
+– navegar por los puntos de referencia públicos, Implementación en el
+dispositivo
+– para la evaluación comparativa, Del rendimiento comparativo al
+rendimiento absoluto
+Q
+QAT (entrenamiento consciente de la cuantización), Cuantización de
+inferencia
+QLoRA (LoRA cuantizado), Servir adaptadores LoRA
+QPS (consultas por segundo), Comparación de algoritmos de recuperación

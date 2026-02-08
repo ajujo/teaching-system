@@ -1,0 +1,33 @@
+4  En el momento de escribir estas líneas, la capitalización bursátil agregada de
+algunas de las mayores empresas de observabilidad (Data-dog, Splunk,
+Dynatrace, New Relic) se acerca a los 100 000 millones de dólares.
+5  Mi libro, Designing Machine Learning Systems (O'Reilly, 2022), también
+contiene un capítulo sobre el monitoreo. Un primer borrador del capítulo está
+disponible en mi blog en "Data Distribution Shifts and Monitoring".
+6  Por ello, algunas herramientas orquestadoras quieren ser puertas de enlace. De
+hecho, muchas herramientas parecen querer convertirse en plataformas
+integrales que lo hacen todo.
+7  Una de las principales desventajas de lanzar una aplicación de código abierto
+en lugar de una comercial es que es mucho más difícil recopilar la
+retroalimentación de los usuarios. Los usuarios pueden tomar su aplicación de
+código abierto e implementarla ellos mismos, y usted no se enterará de cómo se
+está usando la aplicación.
+8  No solo pueden recoger opiniones sobre las aplicaciones de IA, sino que
+también pueden utilizarla para analizarlas.
+9  Ojalá hubiera retoque para la conversión de texto a voz. En mi experiencia, la
+conversión de texto a voz funciona bien el 95 % de las veces, pero el 5 %
+restante puede ser frustrante. La IA puede pronunciar mal un nombre o no hacer
+una pausa durante los diálogos. Ojalá hubiera aplicaciones que me permitieran
+editar solo los errores en lugar de tener que regenerar todo el audio.
+10  Cuando planteo esta pregunta en los eventos en los que intervengo, las
+respuestas son contradictorias. Hay quien piensa que mostrar las respuestas
+completas proporciona una opinión más fiable porque da a los usuarios más
+información para tomar una decisión. Al mismo tiempo, hay quien piensa que,
+una vez que los usuarios han leído las respuestas completas, no hay ningún
+incentivo para que hagan clic en la mejor.
+11  Véase "Ted Cruz Blames Staffer for ‘Liking’ Porn Tweet" (Nelson and Everett,
+POLITICO, septiembre de 2017) y "Kentucky Senator Whose Twitter Account
+‘Liked’ Obscene Tweets Says He Was Hacked" (Liam Niemeyer, WKU Public
+Radio, marzo de 2023).
+12  Las opciones sugeridas aquí son solo para mostrar cómo se pueden reescribir
+las opciones. No han sido validadas.

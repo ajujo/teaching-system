@@ -1,0 +1,99 @@
+Table of Contents 
+xi
+How to do it...
+211
+How it works...
+212
+Scaling with the median 
+and quantiles
+213
+How to do it...
+213
+How it works...
+214
+Performing mean normalization
+214
+How to do it...
+215
+How it works…
+217
+There’s more...
+217
+Implementing maximum 
+absolute scaling
+218
+Getting ready
+219
+How to do it...
+219
+There’s more...
+223
+Scaling to vector unit length
+224
+How to do it...
+226
+How it works...
+227
+8
+Creating New Features
+229
+Technical requirements
+230
+Combining features with 
+mathematical functions
+230
+Getting ready
+230
+How to do it...
+231
+How it works...
+234
+See also
+234
+Comparing features 
+to reference variables
+234
+How to do it…
+235
+How it works...
+238
+See also
+239
+Performing polynomial expansion
+239
+Getting ready
+240
+How to do it...
+241
+How it works...
+245
+There’s more...
+245
+Combining features 
+with decision trees
+247
+How to do it...
+247
+How it works...
+252
+See also
+253
+Creating periodic features 
+from cyclical variables
+253
+Getting ready
+253
+How to do it…
+254
+How it works…
+259
+Creating spline features
+259
+Getting ready
+260
+How to do it…
+261
+How it works…
+267
+See also
+267

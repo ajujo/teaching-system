@@ -1,0 +1,16 @@
+1. El modelo de borrador genera una secuencia de K tokens: xt + 1, xt +
+2, ..., xt + K.
+2. El modelo objetivo verifica en paralelo estos K tokens generados.
+3. El modelo objetivo acepta la secuencia más larga de tokens de
+borrador, de izquierda a derecha, que el modelo objetivo acepta
+utilizar.
+4. Digamos que el modelo objetivo acepta j tokens de borrador, xt + 1,
+xt + 2, ..., xt + j. El modelo objetivo genera entonces un token extra,
+xt + j + 1.
+El proceso vuelve al paso 1, con el modelo de borrador generando K tokens
+condicionadas por x1, x2, ..., xt, xt + 1, xt + 2, ..., xt + j. El proceso se muestra
+en la Figura 9-9.
+Si no se acepta ningún token de borrador, este bucle solo produce un token
+generado por el modelo objetivo. Si se aceptan todos los tokens de borrador,
+este bucle produce K + 1 tokens: K tokens generados por el modelo de
+borrador y uno por el modelo objetivo.

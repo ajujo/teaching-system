@@ -1,0 +1,32 @@
+Sharma et al. (2023) muestran que los modelos de IA entrenados con
+información humana tienden a la adulación. Es más probable que presenten
+respuestas que coincidan con la opinión de este usuario.
+La retroalimentación de usuarios es crucial para mejorar su experiencia,
+pero si se utiliza indiscriminadamente, puede perpetuar los sesgos y destruir
+su producto. Antes de incorporar la retroalimentación a su producto,
+asegúrese comprender las limitaciones de esta y su posible impacto.
+Resumen
+Si cada capítulo anterior se centró en un aspecto específico de la ingeniería
+de IA, este capítulo examinó el proceso de creación de aplicaciones sobre
+modelos fundacionales en su conjunto.
+El capítulo constó de dos partes. En la primera parte se habló de una
+arquitectura común para las aplicaciones de IA. Aunque la arquitectura
+exacta de una aplicación puede variar, esta arquitectura de alto nivel
+proporciona un marco para entender cómo encajan los distintos
+componentes. Utilicé el enfoque paso a paso en la construcción de esta
+arquitectura para examinar los desafíos de cada paso y las técnicas que
+pueden utilizar para hacerles frente.
+Aunque es necesario separar los componentes para que el sistema sea
+modular y fácil de mantener, esta separación es fluida. Hay muchas formas
+de que los componentes se traslapan en funcionalidades. Por ejemplo, las
+barreras de seguridad pueden implementarse en el servicio de inferencia, en
+la puerta de enlace de modelos o como un componente independiente.
+Cada componente adicional puede hacer que su sistema sea más capaz,
+seguro o rápido, pero también aumentará la complejidad del sistema,
+exponiéndolo a nuevos modos de fallo. Una parte integral de cualquier
+sistema complejo es el monitoreo y la observabilidad. La observabilidad
+implica entender cómo falla el sistema, diseñar métricas y alertas en torno a
+los fallos, y garantizar que el sistema esté diseñado de forma que estos
+fallos sean detectables y rastreables.
+Aunque muchas de las mejores prácticas y herramientas de observabilidad
+de la ingeniería de software y el aprendizaje automático tradicional son

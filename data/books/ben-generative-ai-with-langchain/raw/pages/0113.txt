@@ -1,0 +1,31 @@
+Building Workflows with LangGraph
+86
+In Chapter 2, we introduced PromptTemplate, which is a RunnableSerializable. Remember that 
+it substitutes a string template during invocation – for example, you can create a template based 
+on f-string and add your chain, and LangChain would pass parameters from the input, substitute 
+them in the template, and pass the string to the next step in the chain:
+from langchain_core.output_parsers import StrOutputParser
+lc_prompt_template = PromptTemplate.from_template(prompt_template)
+chain = lc_prompt_template | llm | StrOutputParser()
+chain.invoke({"job_description": job_description})
+For chat models, an input can not only be a string but also a list of messages – for example, a sys­
+tem message followed by a history of the conversation. Therefore, we can also create a template 
+that prepares a list of messages, and a template itself can be created based on a list of messages 
+or message templates, as in this example:
+from langchain_core.prompts import ChatPromptTemplate, 
+HumanMessagePromptTemplate
+from langchain_core.messages import SystemMessage, HumanMessage
+msg_template = HumanMessagePromptTemplate.from_template(
+  prompt_template)
+msg_example = msg_template.format(job_description="fake_jd")
+chat_prompt_template = ChatPromptTemplate.from_messages([
+  SystemMessage(content="You are a helpful assistant."),
+  msg_template])
+chain = chat_prompt_template | llm | StrOutputParser()
+chain.invoke({"job_description": job_description})
+You can also do the same more conveniently without using chat prompt templates but by sub­
+mitting a tuple (just because it’s faster and more convenient sometimes) with a type of message 
+and a templated string instead:
+chat_prompt_template = ChatPromptTemplate.from_messages(
+   [("system", "You are a helpful assistant."),
+    ("human", prompt_template)])

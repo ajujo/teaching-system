@@ -1,0 +1,37 @@
+Imputing Missing Data
+8
+3.
+Let's split the data into train and test sets with their respective targets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+4.
+Let's make a list with the numerical variables by excluding variables of type object:
+numeric_vars = X_train.select_dtypes(
+    exclude="O").columns.to_list()
+If you execute numeric_vars, you will see the names of the numerical variables: ['A2',
+'A3', 'A8', 'A11', 'A14', 'A15'].
+5.
+Let's capture the variables' median values in a dictionary:
+median_values = X_train[
+    numeric_vars].median().to_dict()
+Tip
+Note how we calculate the median using the train set. We will use these values to replace missing
+data in the train and test sets. To calculate the mean, use pandas mean() instead of median().
+If you execute median_values, you will see a dictionary with the median value per variable:
+{'A2': 28.835, 'A3': 2.75, 'A8': 1.0, 'A11': 0.0, 'A14': 160.0,
+'A15': 6.0}.
+6.
+Let's replace missing data with the median:
+X_train_t = X_train.fillna(value=median_values)
+X_test_t = X_test.fillna(value=median_values)
+If you execute X_train_t[numeric_vars].isnull().sum() after the imputation,
+the number of missing values in the numerical variables should be 0.
+Note
+pandas fillna() returns a new dataset with imputed values by default. To replace
+missing data in the original DataFrame, set the inplace parameter to True: X_train.
+fillna(value=median_values, inplace=True).
+Now, let's impute missing values with the median using scikit-learn.

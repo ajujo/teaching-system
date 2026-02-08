@@ -1,0 +1,42 @@
+Chapter 4
+161
+Developing a corporate documentation chatbot
+In this section, we will build a corporate documentation chatbot that leverages LangChain for
+LLM interactions and LangGraph for state management and workflow orchestration. LangGraph
+complements the implementation in several critical ways:
+•
+Explicit state management: Unlike basic RAG pipelines that operate as linear sequences,
+LangGraph maintains a formal state object containing all relevant information (queries,
+retrieved documents, intermediate results, etc.).
+•
+Conditional processing: LangGraph enables conditional branching based on the quality
+of retrieved documents or other evaluation criteria-essential for ensuring reliable output.
+•
+Multi-step reasoning: For complex documentation tasks, LangGraph allows breaking
+the process into discrete steps (retrieval, generation, validation, refinement) while main­
+taining context throughout.
+•
+Human-in-the-loop integration: When document quality or compliance cannot be au­
+tomatically verified, LangGraph facilitates seamless integration of human feedback.
+With the Corporate Documentation Manager tool we built, you can generate, validate, and
+refine project documentation while incorporating human feedback to ensure compliance with
+corporate standards. In many organizations, maintaining up-to-date project documentation is
+critical. Our pipeline leverages LLMs to:
+•
+Generate documentation: Produce detailed project documentation from a user's prompt
+•
+Conduct compliance checks: Analyze the generated document for adherence to corporate
+standards and best practices
+•
+Handle human feedback: Solicit expert feedback if compliance issues are detected
+•
+Finalize documentation: Revise the document based on feedback to ensure it is both
+accurate and compliant
+The idea is that this process not only streamlines documentation creation but also introduces
+a safety net by involving human-in-the-loop validation. The code is split into several modules,
+each handling a specific part of the pipeline, and a Streamlit app ties everything together for a
+web-based interface.
+The code will demonstrate the following key features:
+•
+Modular pipeline design: Defines a clear state and uses nodes for documentation gen­
+eration, compliance analysis, human feedback, and finalization

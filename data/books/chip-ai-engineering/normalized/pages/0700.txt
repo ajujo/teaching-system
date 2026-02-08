@@ -1,0 +1,31 @@
+La calidad del modelo también puede inferirse a través de la
+retroalimentación del usuario en lenguaje natural y las señales
+conversacionales. Por ejemplo, algunas métricas sencillas que pueden
+monitorear son las siguientes:
+¿Con qué frecuencia detienen los usuarios una generación a mitad
+de camino?
+¿Cuál es el número promedio de turnos por conversación?
+¿Cuál es el número promedio de tokens por input? ¿Utilizan los
+usuarios su aplicación para tareas más complejas o están
+aprendiendo a ser más concisos con sus prompts?
+¿Cuál es el número promedio de tokens por output? ¿Hay modelos
+que se extiendan más en sus respuestas que otros? ¿Es más
+probable que determinados tipos de consultas produzcan respuestas
+largas?
+¿Cuál es la distribución de tokens de output del modelo? ¿Cómo ha
+cambiado con el tiempo? ¿Es el modelo cada vez más o menos
+diverso?
+Las métricas relacionadas con la longitud también son importantes para
+hacer un monitoreo de la latencia y los costos, ya que los contextos y
+respuestas más largos suelen aumentar la latencia e incurrir en costos más
+elevados.
+Cada componente de una aplicación tiene sus propias métricas. Por
+ejemplo, en una aplicación RAG, la calidad de la recuperación suele
+evaluarse mediante la relevancia y la precisión del contexto. Una base de
+datos vectorial puede evaluarse mediante la cantidad de almacenamiento
+que necesita para indexar los datos y el tiempo que tarda en consultarlos.
+Como probablemente tengan múltiples métricas, es útil medir cómo se
+correlacionan estas métricas entre sí y, sobre todo, con las métricas
+cruciales de su negocio, que pueden ser DAU (usuario activo diario),
+duración de la sesión (el tiempo que un usuario pasa activamente
+interactuando con la aplicación), o las suscripciones. Las métricas muy

@@ -1,0 +1,72 @@
+Index
+367
+S
+Scikit-learn
+reference link 27
+scikit-learn pipeline
+feature creation, embedding into 333-337
+sentence tokenization 346
+sine transformation 286
+spline features
+creating 259-267
+square root transformation
+used, for transforming variables 96-98
+standardization 204
+stop words 350
+T
+tabular pattern 339
+target mean encoding 69
+implementing 69-73
+Term Frequency-Inverse Document
+Frequency (TF-IDF)
+implementing 353-356
+reference link 356
+Term Frequency (tf) 353
+text complexity
+estimating, by counting sentences 346-349
+text features
+extracting 295-299
+text variables
+cleaning 356-361
+stemming 356-361
+time
+features, extracting from 184-187
+time/date components
+reference link 188
+timedelta
+reference link 193
+time, in different time zones
+working with 193-196
+time series
+different features, extracting
+from different 324-329
+features, extracting automatically
+from 309-319
+subset, creating of features identified
+through feature selection 329-332
+time-series data
+predictive features, creating and
+selecting automatically 319-323
+to_datetime(), pandas
+reference link 197
+transform primitive 280, 281
+tsfresh
+reference link 318, 337
+used, for selecting relevant features 329-332
+tz_convert(), pandas
+reference link 197
+U
+unique identifier 317
+V
+variables
+discretizing, into arbitrary intervals 130-134
+transforming, with logarithm function 84-90
+transforming, with reciprocal
+function 91-95
+transforming, with square root
+transformation 95-98
+variance stabilizing transformations 83
+vector unit length
+scaling to 224-227
+vocabulary
+counting 340-345

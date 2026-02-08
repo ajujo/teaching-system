@@ -1,0 +1,39 @@
+Chapter 9
+379
+•
+Google Cloud Run: Supports containerized LangChain applications with automatic scaling
+•
+Azure Functions: Similar to AWS Lambda but in the Microsoft ecosystem
+These platforms automatically handle scaling based on traffic and typically offer a pay-per-use
+pricing model, which can be cost-effective for applications with variable traffic patterns.
+UI frameworks
+These tools help build interfaces for your LangChain applications:
+•
+Chainlit: Specifically designed for deploying LangChain agents with interactive ChatGPT-
+like UIs. Key features include intermediary step visualization, element management and
+display (images, text, carousel), and cloud deployment options.
+•
+Gradio: An easy-to-use library for creating customizable UIs for ML models and LangChain
+applications, with simple deployment to Hugging Face Spaces.
+•
+Streamlit: A popular framework for creating data apps and LLM interfaces, as we've seen
+in earlier chapters. We discussed working with Streamlit in Chapter 4.
+•
+Mesop: A modular, low-code UI builder tailored for LangChain, offering drag-and-drop
+components, built-in theming, plugin support, and real-time collaboration for rapid in­
+terface development.
+These frameworks provide the user-facing layer that connects to your LangChain backend, making
+your applications accessible to end users.
+Model Context Protocol
+The Model Context Protocol (MCP) is an emerging open standard designed to standardize how
+LLM applications interact with external tools, structured data, and predefined prompts. As dis­
+cussed throughout this book, the real-world utility of LLMs and agents often depends on accessing
+external data sources, APIs, and enterprise tools. MCP, developed by Anthropic, addresses this
+challenge by standardizing AI interactions with external systems.
+This is particularly relevant for LangChain deployments, which frequently involve interactions
+between LLMs and various external resources.
+MCP follows a client-server architecture:
+•
+The MCP client is embedded in the AI application (like your LangChain app).
+•
+The MCP server acts as an intermediary to external resources.

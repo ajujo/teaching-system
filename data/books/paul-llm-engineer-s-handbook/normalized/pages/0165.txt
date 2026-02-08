@@ -1,0 +1,16 @@
+RAG Feature Pipeline
+134
+In Figure 8.10, we compare what tools you can use based on your architecture (streaming versus
+batch) and the quantity of data you have to process (small versus big data). In our use case, we
+are in the smaller data and batch quadrant, where we picked a combination of vanilla Python and
+generative AI tools such as LangChain, Sentence Transformers, and Unstructured.
+Figure 4.10: Tools on the streaming versus batch and smaller versus bigger data spectrum
+In the Change data capture: syncing the data warehouse and feature store section later in this chapter,
+we will discuss when switching from a batch architecture to a streaming one makes sense.
+Core steps
+Most of the RAG feature pipelines are composed of five core steps. The one implemented in the
+LLM Twin architecture makes no exception. Thus, you can quickly adapt this pattern for other
+RAG applications, but here is what the LLM Twin's RAG feature pipeline looks like:
+1.
+Data extraction: Extract the latest articles, code repositories, and posts from the MongoDB data warehouse. At the extraction step, you usually aggregate all the data you need
+for processing.

@@ -1,0 +1,36 @@
+MLOps and LLMOps
+440
+The CD pipeline
+The CD pipeline will automate the Docker steps we manually performed in the Deploying the 
+LLM Twin’s pipelines to the cloud section, which are:
+•	
+Set up Docker.
+•	
+Log in to AWS.
+•	
+Build the Docker image.
+•	
+Push the Docker image to AWS ECR.
+With that in mind, let’s look at the GitHub Actions YAML file, which sits under .github/workflows/
+cd.yaml. It begins by naming the workflow CD and specifying the trigger for this workflow. The 
+trigger is any push to the repository’s main branch. This workflow will automatically run when 
+new code is pushed to the main branch, usually when a PR is merged into the main branch. The 
+on.push configuration sets up the trigger:
+name: CD
+on:
+  push:
+    branches:
+      - main
+The workflow then defines a single job named Build & Push Docker Image:
+jobs:
+  build:
+    name: Build & Push Docker Image
+    runs-on: ubuntu-latest
+The first step within the job is to check out the repository’s code.
+steps:
+  - name: Checkout Code
+    uses: actions/checkout@v3
+After checking out the code, the workflow sets up docker buildx, a Docker CLI plugin that extends 
+Docker’s build capabilities with features like multi-platform builds and cache import/export:
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3

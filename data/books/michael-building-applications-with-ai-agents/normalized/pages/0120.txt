@@ -1,0 +1,29 @@
+Figure 5-3. Semantic tool retrieval and invocation workflow. At runtime, the user query
+is embedded and used to retrieve the top relevant tools from the vector database. The
+foundation model then selects the appropriate tool and determines its parameters,
+invokes the tool, and integrates the tool's output to generate the final user response.
+This is the most common pattern and is recommended for most use cases. It's typi‐
+cally faster than standard tool selection, performant, and reasonably scalable. First,
+the tool database is set up by embedding the tool descriptions:
+import os
+import requests
+import logging
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
+from langchain.vectorstores import FAISS
+import faiss
+import numpy as np
+# Initialize OpenAI embeddings
+embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+# Tool descriptions
+tool_descriptions = {
+       "query_wolfram_alpha": '''Use Wolfram Alpha to compute mathematical
+                                 expressions or retrieve information.''',
+       "trigger_zapier_webhook": '''Trigger a Zapier webhook to execute
+                                    predefined automated workflows.''',
+       "send_slack_message": '''Send messages to specific Slack channels to
+                                communicate with team members.'''
+98
+|
+Chapter 5: Orchestration

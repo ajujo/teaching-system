@@ -1,0 +1,26 @@
+Entropía
+La entropía mide la cantidad promedio de información que contiene un
+token. Cuanto mayor es la entropía, más información contiene cada token y
+más bits se necesitan para representarlo. 7
+Utilicemos un ejemplo sencillo para ilustrarlo. Imagine que quiere crear un
+lenguaje para describir posiciones dentro de un cuadrado, como se muestra
+en la Figura 3-4. Si su lenguaje solo tiene dos tokens, como se muestra (a)
+en la Figura 3-4, cada token puede decirle si la posición es superior o
+inferior. Como solo hay dos tokens, basta un bit para representarlos. La
+entropía de este lenguaje es, por tanto, 1.
+figura 3-4. Dos lenguajes describen posiciones dentro de un cuadrado. En
+comparación con el lenguaje de la izquierda (a), los tokens de la derecha (b)
+contienen más información, pero necesitan más bits para representarla.
+Si su lenguaje tiene cuatro tokens, mostrados como (b) en la Figura 3-4,
+cada token puede darle una posición más específica: superior-izquierda,
+superior-derecha, inferior-izquierda o inferior-derecha. Sin embargo, como
+ahora hay cuatro tokens, se necesitan dos bits para representarlos. La
+entropía de este lenguaje es 2. Este lenguaje tiene mayor entropía, ya que
+cada token lleva más información, pero cada token requiere más bits para
+representarlo.
+Intuitivamente, la entropía mide lo difícil que es predecir lo que viene a
+continuación en un lenguaje. Cuanto menor sea la entropía de un lenguaje
+(cuanta menos información contenga un token de un lenguaje), más
+predecible será ese lenguaje. En nuestro ejemplo anterior, el lenguaje con
+solo dos tokens es más fácil de predecir que el lenguaje con cuatro (hay que
+predecir entre solo dos tokens posibles frente a cuatro). Esto es similar a

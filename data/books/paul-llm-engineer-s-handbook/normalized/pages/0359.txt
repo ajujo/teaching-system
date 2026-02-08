@@ -1,0 +1,33 @@
+RAG Inference Pipeline
+328
+It takes expand_to_n as an input parameter to define how many queries we wish to generate while
+we build the PromptTemplate instance. The separator property provides a unique string to split the
+generated queries. The expand_to_n and separator variables are passed as partial_variables,
+making them immutable at runtime. Meanwhile, the {question} placeholder will be changed
+every time the LLM chain is called.
+Now that we have finished studying the query expansion implementation, let's look at an example of how to use the QueryExpansion class. Let's run the following code using this python -m
+llm_engineering.application.rag.query_expansion command:
+query = Query.from_str("Write an article about the best types of advanced
+RAG methods.")
+    query_expander = QueryExpansion()
+    expanded_queries = query_expander.generate(query, expand_to_n=3)
+    for expanded_query in expanded_queries:
+        logger.info(expanded_query.content)
+We get the following variations of the original query. As you can observe, the query expansion
+method was successful in providing more details and different perspectives of the initial query,
+such as highlighting the effectiveness of advanced RAG methods or the overview of these methods
+(remember that the first query is the original one):
+2024-09-18 17:51:33.529 | INFO - Write an article about the best types of
+advanced RAG methods.
+2024-09-18 17:51:33.529 | INFO - What are the most effective advanced RAG
+methods, and how can they be applied?
+2024-09-18 17:51:33.529 | INFO - Can you provide an overview of the top
+advanced retrieval-augmented generation techniques?
+Now, let's move to the next pre-retrieval optimization method: self-querying.
+Self-querying
+The problem when embedding your query into a vector space is that you cannot guarantee that
+all the aspects required by your use case are present with enough signal in the embedding vector. For example, you want to be 100% sure that your retrieval depends on the tags provided
+in the user's input. Unfortunately, you can't control the signal left within the embedding that
+emphasizes the tag. By embedding the query prompt alone, you can never be sure that the tags
+are sufficiently represented in the embedding vector or have enough signal when computing the
+distance against other vectors.

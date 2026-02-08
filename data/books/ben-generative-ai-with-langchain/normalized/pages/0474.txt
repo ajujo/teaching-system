@@ -1,0 +1,47 @@
+Index
+A
+adaptive systems
+building 248
+dynamic behavior adjustment 248
+human-in-the-loop 248-250
+advanced memory mechanisms 415
+advanced tool-calling capabilities 209, 210
+agentic AI 9
+agentic architectures 224-226
+patterns 225, 226
+Agentic RAG 157
+agent memory 262
+cache 263
+store 264, 265
+agents 3, 216
+plan-and-solve agent 217-220
+AI21 Labs Jurassic 30
+AI agents 11, 12
+considerations 13
+significant challenges 12
+Amazon Bedrock 31
+Annoy 126
+Anthropic
+reference link 435
+Anthropic Claude 30, 287-289
+API key setup 28-31
+Application Default Credentials (ADC) 28
+application programming interfaces (APIs) 7
+Approximate Nearest Neighbor (ANN) 126
+artificial general intelligence (AGI) 410
+artificial intelligence (AI) 2
+automated evaluation methods 320, 321
+autonomous agents 10
+Azure
+reference link 435
+Azure OpenAI Service 31
+B
+Big tech
+versus small enterprises 411, 412
+BLOOM 433
+building blocks, LangChain
+LangChain Expression Language
+(LCEL) 42-44
+model interfaces 32
+prompt templates 40
+built-in LangChain tools 192-198

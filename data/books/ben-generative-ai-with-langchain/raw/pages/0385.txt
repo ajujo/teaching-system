@@ -1,0 +1,36 @@
+Production-Ready LLM Deployment and Observability
+358
+The application is running on Uvicorn, an ASGI (Asynchronous Server Gateway Interface) server 
+that FastAPI uses by default. Uvicorn is lightweight and high-performance, making it an excellent 
+choice for serving asynchronous Python web applications like our LLM-powered chatbot. When 
+moving beyond development to production environments, we need to consider how our appli­
+cation will handle increased load. While Uvicorn itself does not provide built-in load-balancing 
+functionality, it can work together with other tools or technologies such as Nginx or HAProxy to 
+achieve load balancing in a deployment setup, which distributes the incoming client requests 
+across multiple worker processes or instances. The use of Uvicorn with load balancers enables 
+horizontal scaling to handle large traffic volumes, improves response times for clients, and en­
+hances fault tolerance.
+While FastAPI provides an excellent foundation for deploying LangChain applications, more 
+complex workloads, particularly those involving large-scale document processing or high request 
+volumes, may require additional scaling capabilities. This is where Ray Serve comes in, offering 
+distributed processing and seamless scaling for computationally intensive LangChain workflows.
+Scalable deployment with Ray Serve
+While Ray’s primary strength lies in scaling complex ML workloads, it also provides flexibility 
+through Ray Serve, which makes it suitable for our search engine implementation. In this prac­
+tical application, we’ll leverage Ray alongside LangChain to build a search engine specifically for 
+Ray’s own documentation. This represents a more straightforward use case than Ray’s typical 
+deployment scenarios for large-scale ML infrastructure, but demonstrates how the framework 
+can be adapted for simpler web applications.
+This recipe builds on RAG concepts introduced in Chapter 4, extending those principles to cre­
+ate a functional search service. The complete implementation code is available in the chapter9 
+directory of the book’s GitHub repository, providing you with a working example that you can 
+examine and modify.
+Our implementation separates the concerns into three distinct scripts:
+•	
+build_index.py: Creates and saves the FAISS index (run once)
+•	
+serve_index.py: Loads the index and serves the search API (runs continuously)
+•	
+test_client.py: Tests the search API with example queries
+This separation solves the slow service startup issue by decoupling the resource-intensive in­
+dex-building process from the serving application.

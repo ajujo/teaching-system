@@ -1,0 +1,30 @@
+Preface
+xxiii
+Chapter 5, Supervised Fine-Tuning, explores the process of refining pre-trained language models
+for specific tasks using instruction-answer pairs. It covers creating high-quality datasets, implementing fine-tuning techniques like full fine-tuning, LoRA, and QLoRA, and provides a practical
+demonstration of fine-tuning a Llama 3.1 8B model on a custom dataset.
+Chapter 6, Fine-Tuning with Preference Alignment, introduces techniques for aligning language
+models with human preferences, focusing on Direct Preference Optimization (DPO). It covers
+creating custom preference datasets, implementing DPO, and provides a practical demonstration
+of aligning the TwinLlama-3.1-8B model using the Unsloth library.
+Chapter 7, Evaluating LLMs, details various methods for assessing the performance of language
+models and LLM systems. It introduces general-purpose and domain-specific evaluations and discusses popular benchmarks. The chapter includes a practical evaluation of the TwinLlama-3.1-8B
+model using multiple criteria.
+Chapter 8, Inference Optimization, covers key optimization strategies such as speculative decoding,
+model parallelism, and weight quantization. It discusses how to improve inference speed, reduce
+latency, and minimize memory usage, introducing popular inference engines and comparing
+their features.
+Chapter 9, RAG Inference Pipeline, explores advanced RAG techniques by implementing methods
+such as self-query, reranking, and filtered vector search from scratch. It covers designing and
+implementing the LLM Twin's RAG inference pipeline and a custom retrieval module similar to
+what you see in popular frameworks such as LangChain.
+Chapter 10, Inference Pipeline Deployment, introduces ML deployment strategies, such as online,
+asynchronous and batch inference, which will help in architecting and deploying the LLM Twin
+fine-tuned model to AWS SageMaker and building a FastAPI microservice to expose the RAG
+inference pipeline as a RESTful API.
+Chapter 11, MLOps and LLMOps, presents what LLMOps is, starting with its roots in DevOps and
+MLOps. This chapter explains how to deploy the LLM Twin project to the cloud, such as the ML
+pipelines to AWS and shows how to containerize the code using Docker and build a CI/CD/CT
+pipeline. It also adds a prompt monitoring layer on top of LLM Twin's inference pipeline.
+Appendix, MLOps Principles, covers the six MLOps principles used to build scalable, reproducible,
+and robust ML applications.

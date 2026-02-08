@@ -1,0 +1,15 @@
+Data Engineering
+66
+The dispatcher: How do you instantiate the right crawler?
+The entry point to our crawling logic is the CrawlerDispatcher class. As illustrated in Figure
+3.4, the dispatcher acts as the intermediate layer between the provided links and the crawlers. It
+knows what crawler to associate with each URL.
+The CrawlerDispatcher class knows how to extract the domain of each link and initialize the
+proper crawler that collects the data from that site. For example, if it detects the https://medium.
+com domain when providing a link to an article, it will build an instance of the MediumCrawler
+used to crawl that particular platform. With that in mind, let's explore the implementation of
+the CrawlerDispatcher class.
+Figure 3.4: The relationship between the provided links, the CrawlerDispatcher, and the
+crawlers
+All the crawling logic is available in the GitHub repository at llm_engineering/
+application/crawlers.

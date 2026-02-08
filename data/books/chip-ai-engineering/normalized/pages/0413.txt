@@ -1,0 +1,23 @@
+semanas, el 3 de enero de 2030.
+Usuario: ¿Y qué hay de Emily Doe?
+La última pregunta, "¿Y qué hay de Emily Doe?", es ambigua sin contexto.
+Si utiliza esta consulta textualmente para recuperar documentos, es
+probable que obtenga resultados irrelevantes. Es necesario reescribir esta
+consulta para reflejar lo que el usuario está preguntando realmente. La
+nueva consulta debería tener sentido por sí sola. En este caso, la consulta
+debería reescribirse como "¿Cuándo fue la última vez que Emily Doe nos
+compró algo?".
+Aunque incluí la reescritura de consultas en el "RAG", la reescritura de
+consultas no es exclusiva de la RAG. En los motores de búsqueda
+tradicionales, la reescritura de consultas suele realizarse mediante
+heurísticas. En las aplicaciones de IA, la reescritura de consultas también
+puede realizarse con otros modelos de IA, utilizando un prompt similar a
+"Dada la siguiente conversación, reescribe el último input del usuario para
+reflejar lo que el usuario está preguntando en realidad". La Figura 6-4
+muestra cómo ChatGPT reescribió la consulta utilizando este prompt.
+figura 6-4. Puede utilizar otros modelos generativos para reescribir consultas.
+La reescritura de consultas puede complicarse, sobre todo si es necesario
+resolver identidades o incorporar otros conocimientos. Por ejemplo, si el
+usuario pregunta "¿Y su mujer?", primero tendrá que consultar su base de
+datos para averiguar quién es su mujer. Si esta información no está
+disponible, el modelo de reescritura debería reconocer que esta consulta no

@@ -1,0 +1,36 @@
+Retraining frequency is manageable
+Fine-tuned models require version management, retraining schedules, and com‐
+patibility checks. If your domain changes frequently, the upkeep cost can out‐
+weigh the performance gains.
+When to hold off:
+You're in rapid prototyping or low-volume use
+Early in development, nonparametric learning or prompt engineering lets you
+iterate at zero retraining cost. Only commit to fine-tuning once your use case and
+data pipelines are stable.
+Model evolution could invalidate your effort
+Proprietary LLM providers regularly release improved base models. A new
+GPT-5 update may outperform your fine-tuned GPT-4, wiping out months of
+retraining work. Always weigh your fine-tuning investment against the pace of
+upstream model advances.
+You're experiencing resource constraints
+If GPU availability is limited, annotation is expensive, or inference speed is a pri‐
+ority, consider nonparametric strategies like retrieval-augmented generation.
+They can deliver many of the same benefits at a fraction of the cost and with far
+lower initial investment and ongoing maintenance.
+In short, fine-tune a model only when your performance requirements, data avail‐
+ability, and operational capacity align-and always maintain a clear plan for retrain‐
+ing or migrating when the next generation of base models arrives. It's important to
+note that pretraining-training a model from scratch on trillions of tokens-is an
+undertaking reserved for major AI labs with vast compute resources and proprietary
+data. For nearly all teams, the best approach is to start with high-quality open source
+models that have appropriate licenses for your use case. Often, these models already
+include post-training or instruction tuning that aligns closely with your task needs. In
+many cases, this eliminates the need for additional fine-tuning altogether, or at least
+reduces it to minimal targeted updates. Before investing in fine-tuning, always
+explore whether an existing pretrained or instruction-tuned model can meet your
+requirements with prompt engineering, nonparametric learning, or lightweight adap‐
+tation techniques. When in doubt, don't fine-tune your model. There are often lowercost, higher-leverage activities you can take to improve your product. Table 7-1 shows
+the primary methods for fine-tuning language models.
+148
+|
+Chapter 7: Learning in Agentic Systems

@@ -1,0 +1,17 @@
+figura 7-16. Cómo funciona SLERP para dos vectores t1 y t2. La línea roja es su
+camino más corto en la superficie esférica. Dependiendo de la interpolación, el vector
+fusionado puede ser cualquier punto a lo largo de esta trayectoria. El vector azul es el
+vector fusionado resultante cuando el factor de interpolación es 0.5.
+Poda de parámetros redundantes específicos de la tarea
+Durante el afinado, se ajustan muchos parámetros de los modelos. Sin
+embargo, la mayoría de estos ajustes son menores y no contribuyen
+significativamente al rendimiento del modelo en la tarea. 31 Los ajustes que
+no contribuyen al rendimiento del modelo se consideran redundantes.
+En el documento "TIES-Merging: Resolving Interference When Merging
+Models", Yadav et al. (2023) mostraron que se puede restablecer una gran
+parte de los parámetros del vector de tareas con una degradación mínima
+del rendimiento, como se muestra en la Figura 7-17. Restablecer significa
+devolver el parámetro ajustado a su valor original en el modelo base,
+poniendo a cero el parámetro del vector de tareas correspondiente para todo
+efecto. (recordemos que el vector de tareas puede obtenerse restando el
+modelo base del modelo afinado).

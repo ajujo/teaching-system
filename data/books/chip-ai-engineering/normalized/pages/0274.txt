@@ -1,0 +1,32 @@
+(la similitud de los outputs generados con los outputs esperados) y jueces de
+IA.
+Si la IA de su aplicación debe asumir un determinado rol, asegúrense de
+evaluar si su modelo se mantiene en el personaje. Dependiendo de la
+función, podrían crear heurísticas para evaluar los outputs del modelo. Por
+ejemplo, si el rol es el de alguien que no habla mucho, una heurística sería
+la media de los outputs del modelo. Aparte de eso, el método de evaluación
+automática más sencillo es la IA como juez. Debe evaluar la IA de juego de
+rol tanto por su estilo como por sus conocimientos. Por ejemplo, si se
+supone que un modelo habla como Jackie Chan, sus outputs deben captar el
+estilo de Jackie Chan y generarse basándose en los conocimientos de Jackie
+Chan. 8
+Los jueces de IA para diferentes funciones necesitarán diferentes prompts.
+Para que se haga una idea de cómo son los prompts de un juez de IA, vea el
+inicio del prompt que utiliza el juez de IA de RoleLLM para clasificar los
+modelos en función de su capacidad para desempeñar un determinado rol.
+Para ver el prompt completo, consulten Wang et al. (2023).)
+Instrucción del sistema:
+Eres un asistente de comparación de resultados de juego de rol.
+Deberás
+clasificar los modelos en función de las características del rol y
+de la
+calidad textual de sus respuestas. Las clasificaciones se obtienen
+mediante diccionarios y listas de Python.
+Prompt del usuario:
+Los modelos a continuación deben desempeñar el rol de
+''{role_name}''.
+La descripción del rol de ''{role_name}'' es
+''{role_description_and_catchphrases}''. Necesito clasificar
+los siguientes modelos en función de los dos criterios siguientes:
+1. Cuál de los dos tiene un habla de rol más marcado y se ajusta
+más

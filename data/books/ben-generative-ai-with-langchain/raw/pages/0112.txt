@@ -1,0 +1,28 @@
+Chapter 3
+85
+Prompts that you send to an LLM are one of the most important building blocks of your work­
+flows. Hence, let’s discuss some basics of prompt engineering next and see how to organize your 
+prompts with LangChain.
+Prompt engineering
+Let’s continue by looking into prompt engineering and exploring various LangChain syntaxes 
+related to it. But first, let’s discuss how prompt engineering is different from prompt design. 
+These terms are sometimes used interchangeably, and it creates a certain level of confusion. As 
+we discussed in Chapter 1, one of the big discoveries about LLMs was that they have the capability 
+of domain adaptation by in-context learning. It’s often enough to describe the task we’d like it to 
+perform in a natural language, and even though the LLM wasn’t trained on this specific task, it 
+performs extremely well. But as we can imagine, there are multiple ways of describing the same 
+task, and LLMs are sensitive to this. Improving our prompt (or prompt template, to be specific) 
+to increase performance on a specific task is called prompt engineering. However, developing 
+more universal prompts that guide LLMs to generate generally better responses on a broad set 
+of tasks is called prompt design.
+There exists a large variety of different prompt engineering techniques. We won’t discuss many 
+of them in detail in this section, but we’ll touch on just a few of them to illustrate key LangChain 
+capabilities that would allow you to construct any prompts you want.
+Prompt templates
+What we did in Chapter 2 is called zero-shot prompting. We created a prompt template that con­
+tained a description of each task. When we run the workflow, we substitute certain values of 
+this prompt template with runtime arguments. LangChain has some very useful abstractions 
+to help with that.
+You can find a good overview of prompt taxonomy in the paper The Prompt Report: 
+A Systematic Survey of Prompt Engineering Techniques, published by Sander Schulhoff 
+and colleagues: https://arxiv.org/abs/2406.06608.

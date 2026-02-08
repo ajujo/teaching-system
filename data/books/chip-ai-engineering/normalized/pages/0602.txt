@@ -1,0 +1,30 @@
+Duplicaciones de documentos enteros: el mismo documento
+aparece más de una vez.
+Duplicaciones dentro de un documento: por ejemplo, el mismo
+párrafo aparece dos veces en un documento.
+Duplicaciones entre documentos: por ejemplo, la misma cita
+popular aparece en varios documentos.
+Lo que puede considerarse duplicación también depende de cómo la defina.
+Por ejemplo, ¿quiere lidiar con duplicaciones a nivel de documento, de
+párrafo, de frase o de token? ¿Dos textos tendrían que coincidir
+exactamente para considerarse duplicados, o bastaría con un traslape del 80
+%? ¿Se consideran duplicadas dos listas que tienen los mismos elementos
+pero en distinto orden?
+La tarea de deduplicación puede aprovechar las mismas técnicas utilizadas
+para las mediciones de similitud (analizadas en el Capítulo 3). La
+deduplicación de datos también se utiliza para la resolución de identidad,
+determinando si dos identidades (por ejemplo, dos perfiles de redes
+sociales) son la misma. Estas son algunas formas concretas de deduplicar
+datos:
+Comparación por parejas
+Calculen la puntuación de similitud de cada ejemplo con
+todos los demás ejemplos del conjunto de datos, utilizando la
+coincidencia exacta, la coincidencia de n-gramas, la
+coincidencia difusa o la puntuación de similitud semántica,
+tal y como se explica en el Capítulo 3. Sin embargo, este
+enfoque puede resultar caro con grandes conjuntos de datos.
+Hashing
+Haga un hash de los ejemplos en diferentes grupos y
+compruebe solo los ejemplos que entran en el mismo grupo.
+Entre los métodos de deduplicación relacionados con el hash
+se encuentran MinHash y el filtro Bloom .

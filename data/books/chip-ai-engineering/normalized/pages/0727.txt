@@ -1,0 +1,24 @@
+figura 10-19. GitHub Copilot facilita tanto sugerir como rechazar una sugerencia.
+Uno de los mayores retos de las aplicaciones de IA independientes como
+ChatGPT y Claude es que no están integradas en el flujo de trabajo diario
+del usuario, lo que dificulta la recopilación de retroalimentación de alta
+calidad de la forma en que pueden hacerlo productos integrados como
+GitHub Copilot. Por ejemplo, si Gmail sugiere un borrador de correo
+electrónico, Gmail puede realizar un seguimiento de cómo se utiliza o edita
+este borrador. Sin embargo, si utiliza ChatGPT para escribir un correo
+electrónico, ChatGPT no sabe si el correo electrónico generado se envía
+realmente.
+La retroalimentación por sí sola podría ser útil para el análisis de los
+productos. Por ejemplo, ver solo la información de pulgares hacia
+arriba/pulgares hacia abajo es útil para calcular con qué frecuencia la gente
+está contenta o descontenta con su producto. Para un análisis más profundo,
+sin embargo, se necesitaría un contexto en torno a la retroalimentación,
+como los 5 o 10 turnos de diálogo anteriores. Este contexto puede ayudarle
+a averiguar qué ha fallado. Sin embargo, obtener este contexto puede no ser
+posible sin el consentimiento explícito del usuario, especialmente si el
+contexto puede contener información personal identificable.
+Por este motivo, algunos productos incluyen cláusulas en sus acuerdos de
+servicio que les permiten acceder a los datos de los usuarios con fines
+analíticos y de mejora del producto. En el caso de las aplicaciones que
+carecen de estos términos, las opiniones de los usuarios podrían estar
+vinculadas a un flujo de donación de datos de los usuarios, en el que se les

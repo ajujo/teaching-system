@@ -1,0 +1,31 @@
+capítulo 5. Ingeniería de prompts
+La ingeniería de prompts se refiere al proceso de creación de una
+instrucción que consiga que un modelo genere el output deseado. La
+ingeniería de prompts es la técnica de adaptación de modelos más sencilla y
+común. A diferencia del afinado, la ingeniería de prompts guía el
+comportamiento de un modelo sin cambiar sus ponderaciones. Gracias a las
+sólidas capacidades básicas de los modelos fundacionales, muchas personas
+los han adaptado con éxito para aplicaciones que utilizan únicamente
+ingeniería de prompts. Debería sacar el máximo partido a los prompts antes
+de pasar a técnicas que consumen más recursos, como el afinado.
+La facilidad de uso de la ingeniería de prompts puede inducir a la gente a
+pensar que el tema no es muy complejo. 1 A primera vista, parece que la
+ingeniería de prompts se limita a juguetear con las palabras hasta que algo
+funciona. Si bien es cierto que la ingeniería de prompts conlleva mucha
+experimentación, también implica muchos retos interesantes y soluciones
+ingeniosas. Se puede pensar en la ingeniería de prompts como una
+comunicación entre humanos e IA: uno se comunica con los modelos de IA
+para conseguir que hagan lo que quiere. Cualquiera puede comunicar, pero
+no todos pueden hacerlo eficazmente. Del mismo modo, es fácil escribir
+prompts, pero no lo es construir prompts eficaces.
+Algunos sostienen que la "ingeniería de prompts" carece del rigor necesario
+para considerarse una disciplina de ingeniería. Sin embargo, no tiene por
+qué ser así. Los experimentos con prompts deben realizarse con el mismo
+rigor que cualquier experimento de ML, con experimentación y evaluación
+sistemáticas.
+La importancia de la ingeniería de prompts la resume perfectamente un
+director de investigación de OpenAI al que entrevisté: "El problema no está
+en la ingeniería de prompts. Es una habilidad real y útil. El problema es
+cuando la ingeniería de prompts es lo único que la gente sabe". Para crear
+aplicaciones de IA listas para la producción, se necesita algo más que la
+ingeniería de prompts. Se necesitan conocimientos de estadística, ingeniería

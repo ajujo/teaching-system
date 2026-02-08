@@ -1,0 +1,32 @@
+suele haber FLOPs ociosos que pueden utilizarse para la
+verificación libre. 20
+Los porcentajes de aceptación dependen del dominio. En el caso de los
+textos que siguen estructuras específicas, como el código, el porcentaje de
+aceptación suele ser mayor. Los valores más altos de K significan menos
+llamadas de verificación para el modelo objetivo, pero una baja tasa de
+aceptación de los tokens de borrador. El modelo de borrador puede ser de
+cualquier arquitectura, aunque lo ideal es que comparta el mismo
+vocabulario y tokenizador que el modelo objetivo. Puede entrenar un
+modelo de borrador personalizado o utilizar un modelo más débil existente.
+Por ejemplo, para acelerar el proceso de decodificación de Chinchilla-70B,
+DeepMind entrenó un modelo de borrador de 4 MM de parámetros de la
+misma arquitectura (Chen et al., 2023). El modelo de borrador puede
+generar un token ocho veces más rápido que el modelo objetivo (1.8
+ms/token frente a 14.1 ms/token). Esto reduce la latencia total de la
+respuesta a más de la mitad sin reducir la calidad de la respuesta. Se
+consiguió una aceleración similar para T5-XXL (Laviathan et al., 2022).
+Este enfoque ha ganado adeptos porque es relativamente fácil de aplicar y
+no cambia la calidad del modelo. Por ejemplo, es posible hacerlo en 50
+líneas de código en PyTorch. Se ha incorporado a marcos de inferencia
+populares como vLLM, TensorRT-LLM y llama.cpp.
+Inferencia con referencia
+A menudo, una respuesta necesita hacer referencia a tokens del input. Por
+ejemplo, si le pregunta a su modelo sobre un documento adjunto, el modelo
+podría repetir un fragmento de texto textualmente del documento. Otro
+ejemplo es que si se pide al modelo que corrija errores en un fragmento de
+código, el modelo podría reutilizar la mayor parte del código original con
+pequeños cambios. En lugar de hacer que el modelo genere estos tokens
+repetidos, ¿y si copiamos estos tokens del input para acelerar la generación?
+Esta es la idea central de la inferencia con referencia.
+La inferencia con referencia es similar a la decodificación especulativa,
+pero en lugar de utilizar un modelo para generar tokens de borrador,

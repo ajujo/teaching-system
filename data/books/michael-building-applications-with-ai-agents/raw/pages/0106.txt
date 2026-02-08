@@ -1,0 +1,42 @@
+The "weather" entry points to an already running HTTP MCP server at http://local‐
+host:8000/mcp. The streamable_http transport allows duplex JSON-RPC communi‐
+cation over HTTP/WebSocket.
+MCP represents a significant step forward in how we design, deploy, and maintain AI
+agents at scale. By defining a single, standardized JSON-RPC interface for exposing
+and consuming methods, MCP decouples service implementation from agent logic,
+enabling any number of agents to reuse the same tools without bespoke integrations.
+In practice, this means that as new data sources, microservices, or legacy systems
+emerge, developers need only implement an MCP-compliant server once—and any
+MCP-capable agent can discover and invoke its methods immediately.
+Although security concerns like robust authentication, fine-grained access control,
+and payload validation remain active areas of development, the core promise of MCP
+—seamless interoperability and modular tool reuse—has already been realized in
+production systems across leading organizations. Looking ahead, we expect contin‐
+ued refinement of MCP’s security best practices, broader adoption of standardized
+method catalogs, and the growth of an ecosystem of public and private MCP end‐
+points. In sum, MCP solves one of the most persistent challenges in agentic system
+design—how to integrate diverse services quickly and reliably—while laying a foun‐
+dation for ever more flexible, maintainable, and distributed AI architectures.
+Stateful Tools
+Stateful tools span local scripts, external APIs, and MCP‐deployed services, yet they
+all share a common risk: when you hand a foundation model direct power over per‐
+sistent state, you also empower it to make destructive mistakes or to be exploited by
+bad actors. In one real-world case, an AI agent “optimized” database performance by
+dropping half the rows from a production table, erasing critical records in the pro‐
+cess. Even without malice, foundation models can misinterpret a user’s intent, turning
+what should be a harmless query into a destructive command. This risk is especially
+acute for stateful tools because they interact with live data stores whose contents
+change over time.
+To mitigate these dangers, register only narrowly scoped operations as tools instead
+of exposing an “execute arbitrary SQL” endpoint. For example, define a get_user_
+profile(user_id) tool or an add_new_customer(record) tool, each encapsulating a
+single, well-tested query or procedure. Agents needing only read access should never
+receive rights to delete or modify data. By constraining tool capabilities at the regis‐
+tration layer, you sharply reduce the attack surface and limit the scope of potential
+errors.
+If your use case absolutely demands free-form queries, you must implement rigorous
+sanitization and access controls. OWASP’s GenAI Security Project warns that prompt
+injections can slip dangerous clauses like DROP or ALTER into otherwise benign
+84 
+| 
+Chapter 4: Tool Use

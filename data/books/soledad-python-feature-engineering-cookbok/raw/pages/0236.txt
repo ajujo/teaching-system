@@ -1,0 +1,44 @@
+Scaling with the median and quantiles
+213
+By default, MinMaxScaler() returns NumPy arrays, but we can modify this behavior to return 
+pandas DataFrames with the set_output() method, as we did in Step 4.
+Scaling with the median and quantiles
+When scaling variables to the median and quantiles, the median value is removed from the observations, 
+and the result is divided by the Inter-Quartile Range (IQR). The IQR is the difference between the 
+3rd quartile and the 1st quartile, or, in other words, the difference between the 75th percentile and 
+the 25th percentile:
+​x _ scaled = ​ 
+x − median​(​x​)​ 
+ 
+______________________ 
+ 
+3rd quaritle​(x)​ − 1st quartile​(​x​)​ ​
+This method is known as robust scaling because it produces more robust estimates for the center and 
+value range of the variable. Robust scaling is a suitable alternative to standardization when models 
+require the variables to be centered and the data contains outliers. It is worth noting that robust scaling 
+will not change the overall shape of the variable distribution.
+How to do it...
+In this recipe, we will implement scaling with the median and IQR by utilizing scikit-learn:
+1.	
+Let’s start by importing pandas and the required scikit-learn classes and functions:
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import RobustScaler
+2.	
+Let’s load the California housing dataset into a pandas DataFrame and drop the Latitude 
+and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=[     "Latitude", "Longitude"], axis=1,
+    inplace=True)
+3.	
+Let’s divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.	
+Let’s set up scikit-learn’s RobustScaler()and fit it to the train set so that it learns and 
+stores the median and IQR:
+scaler = RobustScaler().set_output(
+    transform="pandas")
+scaler.fit(X_train)

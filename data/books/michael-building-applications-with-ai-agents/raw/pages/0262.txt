@@ -1,0 +1,66 @@
+Latency is a perfect example. Teams often adopt the mindset that “foundation models
+are slow,” and then inadvertently build latency into everything—from verbose
+prompts to unnecessary retries to bloated plans. Without rigorous, trace-based
+instrumentation, this drift goes undetected. Before long, the whole system feels slug‐
+gish—not because the infrastructure is underpowered, but because the product and
+ML teams normalized delay as inevitable.
+The solution isn’t to offload latency ownership to infra or UX to product. It’s to build
+shared dashboards where teams can do the following:
+• Product leads can see how planning latency and fallback rate correlate with task
+abandonment.
+• ML engineers can monitor hallucination rates and drift alongside user feedback.
+• Infra/SRE teams can alert on token spikes and tool flakiness that affect system
+reliability.
+Each team must own part of the agent telemetry—and no one team can interpret it in
+isolation. To address the organizational challenges of metric ownership, teams can
+use a Responsibility Assignment Matrix (RACI chart) to clarify roles across functions.
+In a RACI chart, each task or metric is assigned one or more of the following: R
+(Responsible: does the work), A (Accountable: owns the outcome), C (Consulted:
+provides input), or I (Informed: kept updated).
+Table 10-3 is a template tailored to agent monitoring, which you can adapt based on
+your team’s structure, size, and specific metrics. This promotes cross-functional col‐
+laboration by ensuring no metric falls through the cracks while avoiding silos.
+Table 10-3. RACI matrix of monitoring metrics and cross-functional responsibilities
+Metric/activity
+Product team
+ML engineers
+Infra/SRE team
+Latency (e.g., planning
+or tool call delays)
+A (owns user impact) / C
+(consults on UX thresholds)
+R (optimizes prompts/
+models) / I (informed on
+regressions)
+R (monitors infra causes) / C
+(consults on scaling)
+Hallucination rates
+C (provides user feedback
+context) / I (informed on trends)
+A/R (owns detection/
+mitigation via evals)
+I (informed for alerting setup)
+Task success rate
+A (owns product goals) / R
+(defines success criteria)
+C (consults on model
+improvements)
+I (informed for system
+reliability ties)
+Token usage/cost
+C (consults on business impact)
+R (optimizes generations) / I
+(informed on spikes)
+A (owns budgeting/scaling) /
+R (monitors infra efficiency)
+Distribution shifts
+(e.g., input drift)
+I (informed for product
+adjustments)
+A/R (detects via embeddings/
+evals)
+C (consults on data pipeline
+stability)
+240 
+| 
+Chapter 10: Monitoring in Production

@@ -1,0 +1,26 @@
+4
+RAG Feature Pipeline
+Retrieval-augmented generation (RAG) is fundamental in most generative AI applications. RAG’s 
+core responsibility is to inject custom data into the large language model (LLM) to perform a 
+given action (e.g., summarize, reformulate, and extract the injected data). You often want to use 
+the LLM on data it wasn’t trained on (e.g., private or new data). As fine-tuning an LLM is a highly 
+costly operation, RAG is a compelling strategy that bypasses the need for constant fine-tuning 
+to access that new data.
+We will start this chapter with a theoretical part that focuses on the fundamentals of RAG and 
+how it works. We will then walk you through all the components of a naïve RAG system: chunk-
+ing, embedding, and vector DBs. Ultimately, we will present various optimizations used for an 
+advanced RAG system. Then, we will continue exploring LLM Twin’s RAG feature pipeline archi-
+tecture. At this step, we will apply all the theoretical aspects we discussed at the beginning of the 
+chapter. Finally, we will go through a practical example by implementing the LLM Twin’s RAG 
+feature pipeline based on the system design described throughout the book.
+The main sections of this chapter are:
+•	
+Understanding RAG
+•	
+An overview of advanced RAG
+•	
+Exploring the LLM Twin’s RAG feature pipeline architecture
+•	
+Implementing the LLM Twin’s RAG feature pipeline
+By the end of this chapter, you will have a clear and comprehensive understanding of what RAG 
+is and how it is applied to our LLM Twin use case.

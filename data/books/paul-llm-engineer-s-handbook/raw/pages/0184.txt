@@ -1,0 +1,31 @@
+Chapter 4
+153
+class CleanedPostDocument(CleanedDocument):
+    image: Optional[str] = None
+    class Config:
+        name = "cleaned_posts"
+        category = DataCategory.POSTS
+        use_vector_index = False
+class CleanedArticleDocument(CleanedDocument):
+    link: str
+    class Config:
+        name = "cleaned_articles"
+        category = DataCategory.ARTICLES
+        use_vector_index = False
+class CleanedRepositoryDocument(CleanedDocument):
+    name: str
+    link: str
+    class Config:
+        name = "cleaned_repositories"
+        category = DataCategory.REPOSITORIES
+        use_vector_index = False
+To conclude this section, let’s also take a look at the base abstract class of the chunk and embed-
+ded chunk:
+class Chunk(VectorBaseDocument, ABC):
+    content: str
+    platform: str
+    document_id: UUID4
+    author_id: UUID4
+    author_full_name: str
+    metadata: dict = Field(default_factory=dict)
+… # PostChunk, ArticleChunk, RepositoryChunk

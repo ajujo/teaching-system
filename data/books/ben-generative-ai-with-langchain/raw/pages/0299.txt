@@ -1,0 +1,24 @@
+Software Development and Data Analysis Agents
+272
+This evolution has been characterized by parallel development tracks in both proprietary and 
+open-source ecosystems. Initially, commercial models dominated the landscape, but open-source 
+alternatives have gained substantial momentum more recently. Throughout this progression, sev­
+eral key milestones have marked transformative shifts in capabilities, opening new possibilities 
+for AI-assisted development across different programming languages and tasks. The historical 
+context of this evolution provides important insights for understanding implementation ap­
+proaches with LangChain. 
+Figure 7.1: Evolution of code LLMs (2021–2024)
+Figure 7.1 illustrates the progression of code-specialized language models across commercial (upper 
+track) and open-source (lower track) ecosystems. Key milestones are highlighted, showing the 
+transition from early proof-of-concept models to increasingly specialized solutions. The timeline 
+spans from early commercial models such as Codex to recent advancements such as Google’s 
+Gemini 2.5 Pro (March 2025) and specialized code models such as Mistral AI’s Codestral series. 
+In recent years, we’ve witnessed an explosion of LLMs fine-tuned specifically tailored for cod­
+ing—commonly known as code LLMs. These models are rapidly evolving, each with its own 
+set of strengths and limitations, and are reshaping the software development landscape. They 
+offer the promise of accelerating development workflows across a broad spectrum of software 
+engineering tasks:
+•	
+Code generation: Transforming natural language requirements into code snippets or 
+full functions. For instance, developers can generate boilerplate code or entire modules 
+based on project specifications.

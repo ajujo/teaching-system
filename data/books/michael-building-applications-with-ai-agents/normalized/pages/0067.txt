@@ -1,0 +1,33 @@
+Designing effective text-based agents therefore requires strategies to enhance discov‐
+erability. Agents should proactively communicate their supported functions, either
+through onboarding messages, periodic capability reminders, or dynamic suggestions
+during conversation. For instance, an agent can respond to a greeting not only with
+"How can I help you today?" but also with "I can help you cancel orders, check deliv‐
+ery status, or update your account details." This approach ensures users understand
+the agent's operational boundaries, reducing trial-and-error interactions.
+Beyond discoverability, text-based design requires careful attention to clarity, context
+retention, and error management. Agents should communicate with concise and
+unambiguous responses, avoiding overly technical jargon or long-winded explana‐
+tions that may overwhelm the user. Maintaining context across multiturn conversa‐
+tions is equally important; users should not need to repeat themselves or clarify past
+instructions. Effective agents are also graceful in failure, providing clear error mes‐
+sages and fallback mechanisms, such as escalating to a human operator or offering
+alternative suggestions when they cannot fulfill a request. Turn-taking management is
+another subtle but crucial element-agents must guide conversations naturally, bal‐
+ancing when to ask follow-up questions and when to pause for user input.
+Ambiguity in natural language remains a significant hurdle, as users may phrase
+requests in unexpected ways, requiring robust intent recognition to avoid misunder‐
+standings. Additionally, text-based agents are often constrained by response length
+limits-too short, and they risk being cryptic; too long, and they risk overwhelming
+or frustrating the user. Emotional nuance is another limitation. Without vocal tone,
+facial expressions, or visual cues, text-based agents must rely on carefully crafted lan‐
+guage to ensure they convey empathy, friendliness, or urgency where appropriate.
+Despite these challenges, text-based agents shine in scenarios where precision, tracea‐
+bility, and asynchronous communication are valuable. They excel in customer sup‐
+port, where chatbots provide quick answers to frequently asked questions, or in
+productivity tools, where command-line interfaces help users execute tasks efficiently.
+They are equally effective in knowledge retrieval systems, answering specific ques‐
+tions or pulling data from structured databases.
+Interaction Modalities
+|
+45

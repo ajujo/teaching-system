@@ -1,0 +1,33 @@
+Chapter 4
+121
+Vector indexing strategies
+Vector indexing is a critical component that makes vector databases practical for real-world ap­
+plications. At its core, indexing solves a fundamental performance challenge: how to efficiently 
+find similar vectors without comparing against every single vector in the database (brute force 
+approach), which is computationally prohibitive for even medium-sized data volumes.
+Vector indexes are specialized data structures that organize vectors in ways that allow the system 
+to quickly identify which sections of the vector space are most likely to contain similar vectors. 
+Instead of checking every vector, the system can focus on promising regions first. 
+Some common indexing approaches include:
+•	
+Tree-based structures that hierarchically divide the vector space
+•	
+Graph-based methods like Hierarchical Navigable Small World (HNSW) that create 
+navigable networks of connected vectors
+•	
+Hashing techniques that map similar vectors to the same “buckets”
+Each of the preceding approaches offers different trade-offs between:
+•	
+Search speed
+•	
+Accuracy of results
+•	
+Memory usage
+•	
+Update efficiency (how quickly new vectors can be added)
+When using a vector store in LangChain, the indexing strategy is typically handled by the under­
+lying implementation. For example, when you create a FAISS index or use Pinecone, those systems 
+automatically apply appropriate indexing strategies based on your configuration.
+The key takeaway is that proper indexing transforms vector search from an O(n) operation (where 
+n is the number of vectors) to something much more efficient (often closer to O(log n)), making 
+it possible to search through millions of vectors in milliseconds rather than seconds or minutes.

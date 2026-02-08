@@ -1,0 +1,30 @@
+Aparte de las herramientas que ayudan con la codificación general, muchas
+se especializan en ciertas tareas de codificación. Estos son algunos ejemplos
+de estas tareas:
+Extracción de datos estructurados de páginas web y archivos PDF
+(AgentGPT)
+Conversión de inglés a código (DB-GPT, SQL Chat, PandasAI)
+Dado un diseño o una captura de pantalla, generar un código que se
+traducirá en un sitio web que se parece a la imagen dada
+(screenshot-to-code, draw-a-ui)
+Traducción de un lenguaje o marco de programación a otro (GPT-
+Migrate, AI Code Translator)
+Redacción de documentación (Autodoc)
+Creación de pruebas (PentestGPT)
+Generación de mensajes de commit (AI Commits)
+Está claro que la IA puede realizar muchas tareas de ingeniería de software.
+La cuestión es si la IA puede automatizar por completo la ingeniería de
+software. En un extremo del espectro, Jensen Huang, consejero delegado de
+NVIDIA, predice que la IA sustituirá a los ingenieros de software humanos
+y que deberíamos dejar de decir a los niños que deberían aprender a
+programar. En una grabación filtrada, el CEO de AWS, Matt Garman,
+compartió que en un futuro próximo, la mayoría de los desarrolladores
+dejarán de codificar. No se refiere a que sea el fin de los desarrolladores de
+software, sino que su trabajo cambiará.
+En el otro extremo se encuentran muchos ingenieros de software
+convencidos de que nunca serán sustituidos por la IA, tanto por razones
+técnicas como emocionales (a la gente no le gusta admitir que puede ser
+sustituida).
+La ingeniería de software está compuesta por muchas tareas. La IA es mejor
+en unas tareas que en otras. Los investigadores de McKinsey descubrieron
+que la IA puede ayudar a los desarrolladores a duplicar su productividad en

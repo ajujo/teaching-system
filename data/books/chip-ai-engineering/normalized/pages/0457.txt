@@ -1,0 +1,30 @@
+solo puede visitar una página cada vez, pero trivial para un agente de IA,
+que puede visitar todas las páginas web a la vez.
+En este capítulo hemos tratado en detalle el funcionamiento de los sistemas
+RAG y de agentes. Ambos patrones suelen lidiar con información que
+supera el límite de contexto de un modelo. Un sistema de memoria que
+complemente el contexto del modelo en el manejo de la información puede
+mejorar notablemente sus capacidades. Veamos ahora cómo funciona un
+sistema de memoria.
+Memoria
+La memoria se refiere a los mecanismos que permiten a un modelo retener
+y utilizar la información. Un sistema de memoria es especialmente útil para
+aplicaciones ricas en conocimiento como la RAG y aplicaciones multipaso
+como los agentes. Un sistema RAG depende de la memoria para su
+contexto aumentado, que puede crecer tras múltiples turnos a medida que
+recupera más información. Un sistema agéntico necesita memoria para
+almacenar instrucciones, ejemplos, contexto, inventarios de herramientas,
+planes, outputs de las herramientas, reflexiones, etc. Aunque la RAG y los
+agentes exigen más a la memoria, es beneficioso para cualquier aplicación
+de IA que requiera retener información.
+Un modelo de IA suele tener tres mecanismos de memoria principales:
+Conocimientos internos
+El propio modelo es un mecanismo de memoria, ya que
+conserva los conocimientos de los datos con los que se
+entrenó. Este es su conocimiento interno. El conocimiento
+interno de un modelo no cambia a menos que el propio
+modelo se actualice. El modelo puede acceder a este
+conocimiento en todas las consultas.
+Memoria a corto plazo
+El contexto de un modelo es un mecanismo de memoria. Los
+mensajes anteriores de una conversación pueden añadirse

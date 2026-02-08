@@ -1,0 +1,23 @@
+100 ms, lo que ocurra primero. Es como un autobús que sale con un horario
+fijo o cuando está lleno. Este enfoque mantiene la latencia bajo control, de
+modo que las solicitudes anteriores no se ven retenidas por las posteriores.
+La desventaja es que los lotes no siempre están llenos cuando se procesan,
+lo que puede suponer un desperdicio de cómputo. El loteo estático y el loteo
+dinámico se visualizan en la Figura 9-15.
+figura 9-15. El loteo dinámico mantiene la latencia bajo control, pero puede ser menos
+eficiente desde el punto de vista computacional.
+En las implementaciones de loteo ingenuas, todas las solicitudes de lotes
+deben completarse antes de que se devuelvan sus respuestas. En el caso de
+los LLMs, algunas solicitudes pueden tardar mucho más que otras. Si una
+solicitud en un lote genera solo 10 tokens de respuesta y otra solicitud
+genera 1000 tokens de respuesta, la respuesta corta tiene que esperar hasta
+que se complete la respuesta larga antes de ser devuelta al usuario. Esto
+provoca una latencia innecesaria para las solicitudes cortas.
+El loteo continuo permite que las respuestas de un lote se devuelvan a los
+usuarios en cuanto se completan. Funciona agrupando por lotes de forma
+selectiva las operaciones que no provocan que la generación de una
+respuesta retrase otra, tal y como se introdujo en el artículo Orca (Yu et al.,
+2022). Una vez se ha completado una solicitud de un lote y se ha devuelto
+su respuesta, el servicio puede añadir otra solicitud al lote en su lugar,
+haciendo que el loteo sea continuo. Es como un autobús que, tras dejar a un
+pasajero, puede recoger inmediatamente a otro para maximizar su índice de

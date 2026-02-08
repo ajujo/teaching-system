@@ -1,0 +1,31 @@
+Advanced Applications and Multi-Agent Systems
+252
+We also need a replanner component, which will take care of adjusting the plan based on previous 
+observations and generating multiple candidates for the next action:
+from langchain_core.prompts import ChatPromptTemplate
+class ReplanStep(BaseModel):
+   """Replanned next step in the plan."""
+   steps: list[str] = Field(
+       description="different options of the proposed next step"
+   )
+llm_replanner = llm.with_structured_output(ReplanStep)
+replanner_prompt_template = (
+   "Suggest next action in the plan. Do not add any superfluous steps.\n"
+   "If you think no actions are needed, just return an empty list of 
+steps. "
+   "TASK: {task}\n PREVIOUS STEPS WITH OUTPUTS: {current_plan}"
+)
+replanner_prompt = ChatPromptTemplate.from_messages(
+   [("system", "You're a helpful assistant. You goal is to help with 
+planning actions to solve the task. Do not solve the task itself."),
+    ("user", replanner_prompt_template)
+   ]
+)
+replanner = replanner_prompt | llm_replanner
+This replanner component is crucial for our ToT approach. It takes the current plan state and 
+generates multiple potential next steps, encouraging exploration of different solution paths rather 
+than following a single linear sequence.
+To track our exploration path, we need a tree data structure. The TreeNode class below helps us 
+maintain it:
+class TreeNode:
+ def __init__(

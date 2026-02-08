@@ -1,0 +1,34 @@
+Advanced Applications and Multi-Agent Systems
+248
+We're not going to discuss the LangGraph Server API in this book. Please take a look at the doc­
+umentation instead.
+Building adaptive systems
+Adaptability is a great attribute of agents. They should adapt to external and user feedback and
+correct their actions accordingly. As we discussed in Chapter 5, generative AI agents are adaptive
+through:
+•
+Tool interaction: They incorporate feedback from previous tool calls and their outputs
+(by including ToolMessages that represent tool-calling results) when planning the next
+steps (like our ReACT agent adjusting based on search results).
+•
+Explicit reflection: They can be instructed to analyze current results and deliberately
+adjust their behavior.
+•
+Human feedback: They can incorporate user input at critical decision points.
+Dynamic behavior adjustment
+We saw how to add a reflection step to our plan-and-solve agent. Given the initial plan, and the
+output of the steps performed so far, we'll ask the LLM to reflect on the plan and adjust it. Again,
+we continue reiterating the key idea - such reflection might not happen naturally; you might
+add it as a separate task (decomposition), and you keep partial control over the execution flow
+by designing its generic components.
+Human-in-the-loop
+Additionally, when developing agents with complex reasoning trajectories, it might be beneficial
+to incorporate human feedback at a certain point. An agent can ask a human to approve or reject
+certain actions (for example, when it's invoking a tool that is irreversible, like a tool that makes
+a payment), provide additional context to the agent, or give a specific input by modifying the
+graph's state.
+Imagine we're developing an agent that searches for job postings, generates an application, and
+sends this application. We might want to ask the user before submitting an application, or the
+logic might be more complex - the agent might be collecting data about the user, and for some
+job postings, it might be missing relevant context about past job experience. It should ask the
+user and persist this knowledge in long-term memory for better long-term adaptation.

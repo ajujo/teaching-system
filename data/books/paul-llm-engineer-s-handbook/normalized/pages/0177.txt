@@ -1,0 +1,13 @@
+RAG Feature Pipeline
+146
+You can always extend it with anything that makes sense for your use case.
+Figure 4.13: Metadata of the "query the data warehouse" ZenML step
+Cleaning the documents
+In the cleaning step, we iterate through all the documents and delegate all the logic to a
+CleaningDispatcher who knows what cleaning logic to apply based on the data category. Remember that we want to apply, or have the ability to apply in the future, different cleaning techniques on articles, posts, and code repositories.
+@step
+def clean_documents(
+    documents: Annotated[list, "raw_documents"],
+) -> Annotated[list, "cleaned_documents"]:
+    cleaned_documents = []
+    for document in documents:

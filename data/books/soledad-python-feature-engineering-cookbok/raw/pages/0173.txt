@@ -1,0 +1,4 @@
+Performing Variable Discretization
+150
+We can see the number of observations per bin in the following output:
+Figure 4.16 – The proportion of observations per bin after discretizing the variables with decision trees

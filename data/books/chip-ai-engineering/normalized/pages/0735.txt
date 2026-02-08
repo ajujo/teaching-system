@@ -1,0 +1,31 @@
+aplicables a las aplicaciones de ingeniería de IA, los modelos fundacionales
+introducen nuevos modos de fallo, que requieren métricas y
+consideraciones de diseño adicionales.
+Al mismo tiempo, la interfaz conversacional permite nuevos tipos de
+retroalimentación de usuarios, que puede aprovechar para el análisis, la
+mejora del producto y el círculo virtuoso de datos. En la segunda parte del
+capítulo se analizaron varias formas de retroalimentación conversacional y
+cómo diseñar su aplicación para recopilarlos de forma eficaz.
+Tradicionalmente, el diseño de la retroalimentación del usuario se ha
+considerado una responsabilidad del producto más que de la ingeniería, por
+lo que los ingenieros suelen pasarlo por alto. Sin embargo, dado que la
+retroalimentación de los usuarios es una fuente crucial de datos para
+mejorar continuamente los modelos de IA, cada vez más ingenieros de IA
+participan en el proceso para asegurarse de recibir los datos que necesitan.
+Esto refuerza la idea del Capítulo 1 de que, en comparación con la
+ingeniería de ML tradicional, la ingeniería de IA se está acercando más al
+producto. Esto se debe tanto a la creciente importancia del círculo virtuoso
+de datos como a la experiencia del producto como ventajas competitivas.
+Muchos retos de la IA son, en el fondo, problemas de sistema. Para
+resolverlos, a menudo es necesario dar un paso atrás y considerar el sistema
+en su conjunto. Un mismo problema puede ser abordado por distintos
+componentes que trabajen de forma independiente, o una solución puede
+requerir la colaboración de múltiples componentes. Conocer a fondo el
+sistema es esencial para resolver problemas reales, generar nuevas
+posibilidades y garantizar la seguridad.
+1 Un ejemplo es cuando un empleado de Samsung introdujo información
+propiedad de Samsung en ChatGPT, filtrando accidentalmente secretos de la
+empresa.
+2 Es posible que los usuarios pidan al modelo que devuelva una respuesta vacía.
+3 Algunos de los primeros lectores me dijeron que la idea de ignorar los barreras
+de seguridad en favor de la latencia les producía pesadillas.

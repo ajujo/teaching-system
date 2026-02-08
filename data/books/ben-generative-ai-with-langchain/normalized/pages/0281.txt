@@ -1,0 +1,37 @@
+Advanced Applications and Multi-Agent Systems
+254
+Now we need to implement the core logic of our agent. We will explore our tree of actions in a
+depth-for-search mode. This is where the real power of the ToT pattern comes into play:
+async def _run_node(state: PlanState, config: RunnableConfig):
+ node = state.get("next_node")
+ visited_ids = state.get("visited_ids", set())
+ queue = state["queue"]
+ if node is None:
+   while queue and not node:
+     node = state["queue"].popleft()
+     if node.node_id in visited_ids:
+       node = None
+   if not node:
+     return Command(goto="vote", update={})
+ step = await execution_agent.ainvoke({
+     "previous_steps": node.get_full_plan(),
+     "step": node.step,
+     "task": state["task"]})
+ node.step_output = step["messages"][-1].content
+ visited_ids.add(node.node_id)
+ return {"current_node": node, "queue": queue, "visited_ids": visited_ids,
+"next_node": None}
+async def _plan_next(state: PlanState, config: RunnableConfig) ->
+PlanState:
+ max_candidates = config["configurable"].get("max_candidates", 1)
+ node = state["current_node"]
+ next_step = await replanner.ainvoke({"task": state["task"], "current_
+plan": node.get_full_plan()})
+ if not next_step.steps:
+   return {"is_current_node_final": True}
+ max_id = state["max_id"]
+ for step in next_step.steps[:max_candidates]:
+   child = TreeNode(node_id=max_id+1, step=step, parent=node)
+   max_id += 1
+   node.children.append(child)
+   state["queue"].append(child)

@@ -1,0 +1,33 @@
+Table of Contents
+xi
+Defining tools .................................................................................................................. 192
+Built-in LangChain tools • 192
+Custom tools • 199
+Wrapping a Python function as a tool • 199
+Creating a tool from a Runnable • 202
+Subclass StructuredTool or BaseTool • 205
+Error handling • 206
+Advanced tool-calling capabilities .................................................................................. 209
+Incorporating tools into workflows ................................................................................ 210
+Controlled generation • 210
+Controlled generation provided by the vendor • 212
+ToolNode • 213
+Tool-calling paradigm • 214
+What are agents? .............................................................................................................. 216
+Plan-and-solve agent • 217
+Summary ......................................................................................................................... 221
+Questions ......................................................................................................................... 221
+Chapter 6: Advanced Applications and Multi-Agent Systems 
+ 223
+Agentic architectures ...................................................................................................... 224
+Agentic RAG • 226
+Multi-agent architectures ............................................................................................... 227
+Agent roles and specialization • 228
+Consensus mechanism • 229
+Communication protocols • 231
+Semantic router • 232
+Organizing interactions • 234
+LangGraph streaming • 241
+Handoffs • 243
+Communication via a shared messages list • 245
+LangGraph platform • 247

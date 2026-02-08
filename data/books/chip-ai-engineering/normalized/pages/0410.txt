@@ -1,0 +1,32 @@
+La estrategia más sencilla consiste en fragmentar los documentos en
+fragmentos de igual longitud en función de una determinada unidad. Las
+unidades comunes son caracteres, palabras, frases y párrafos. Por ejemplo,
+puede dividir cada documento en fragmentos de 2048 caracteres o 512
+palabras. También puede dividir cada documento de modo que cada
+fragmento contenga un número fijo de frases (por ejemplo, 20 frases) o
+párrafos (por ejemplo, que cada párrafo sea un fragmento aparte).
+También puede dividir documentos recursivamente utilizando unidades
+cada vez más pequeñas, hasta que cada fragmento quepa dentro de su
+tamaño máximo de fragmento. Por ejemplo, puede empezar dividiendo un
+documento en secciones. Si una sección es demasiado larga, divídala en
+párrafos. Si un párrafo sigue siendo demasiado largo, divídalo en frases. Así
+se reduce la posibilidad de separar arbitrariamente textos relacionados.
+Los documentos específicos también pueden apoyar estrategias creativas de
+fragmentación. Por ejemplo, existen divisores desarrollados especialmente
+para distintos lenguajes de programación. Los documentos de preguntas y
+respuestas pueden dividirse por pares de preguntas o respuestas, con cada
+par constituyendo un fragmento. Es posible que los textos en chino deban
+dividirse de forma diferente que los textos en inglés.
+Cuando un documento se divide en fragmentos que no se traslapan, los
+fragmentos pueden quedar cortados en medio de un contexto importante, lo
+que provoca la pérdida de información crítica. Consideren el texto "He
+dejado a mi mujer una nota". Si se divide en "He dejado a mi mujer" y "una
+nota", ninguno de estos dos fragmentos transmite la información clave del
+texto original. El traslape garantiza que la información importante en los
+límites se incluya en al menos un fragmento. Si fija el tamaño del
+fragmento en 2048 caracteres, quizá pueda fijar el tamaño de traslape en 20
+caracteres.
+El tamaño del fragmento no debe superar la longitud máxima del contexto
+del modelo generativo. Para el enfoque basado en incrustaciones, el tamaño
+del fragmento tampoco debe superar el límite de contexto del modelo de
+incrustación.

@@ -1,0 +1,67 @@
+Index
+482
+E
+Elastic Container Registry (ECR)  421, 441
+embedding handlers  169-173
+encoder-only models  189
+end of sentence (EOS) token  222, 252
+end-to-end RAG inference pipeline
+examining  346-351
+Enterprise Scenarios Leaderboard  266
+exact deduplication  184
+extract, load, transform (ELT) pattern  19
+Extract, Transform, Load (ETL) pipeline  55
+fundamental steps  56
+process, connecting to feature pipeline  60
+F
+family bias  237
+FastAPI
+business microservice, building  389-391
+feature drift  468
+feature pipeline  14, 19, 20
+feature/training/inference (FTI)  
+architecture  8, 13, 22, 368
+benefits  15
+feature pipeline  14
+inference pipeline  14
+training pipeline  14
+filtered vector search  123
+fine-tuning models
+best practices  219-226
+specialized tools  220
+usage, considerations  207, 208
+format filtering  183
+formatting errors
+examples  434
+FTI pipeline design
+LLM twin architecture, designing  17
+FTI pipelines architecture
+inference pipeline  14
+used, for building LLM system  460, 461
+full fine-tuning  211, 212
+fuzzy deduplication  184
+G
+GAIA  264
+Galileo Protect  411
+general-purpose LLM evaluations  263-265
+GitHub Actions  403, 435
+GitHub Actions CI YAML file  436-439
+GitHubCrawler class  73-75
+GitHub ecosystem  403
+GitLab  403
+GitLab CI/CD  403
+Global Interpreter Lock (GIL)  144
+GPT  409
+guardrails  409, 410
+input guardrails  410
+output guardrails  411
+H
+Hallucinations Leaderboard  266
+handlers  162, 163
+chunking handlers  165-169
+cleaning handlers  163-165
+embedding handlers  169-173
+high throughput  355
+Hugging Face  31, 32
+fine-tuned LLMs  32
+reference link  251

@@ -1,0 +1,34 @@
+Inference Optimization
+312
+GPTQ and EXL2 quants are based on the GPTQ algorithm, introduced by Frantar et al. (2023).
+It optimizes weight quantization for LLMs by refining the Optimal Brain Quantization (OBQ)
+approach to handle extensive matrices efficiently. It begins with a Cholesky decomposition of
+the Hessian inverse, ensuring numerical stability. Instead of quantizing weights in a strict order,
+GPTQ processes them in batches, updating columns and associated blocks iteratively. This method leverages lazy batch updates, reducing computational redundancy and memory bottlenecks.
+While GPTQ is limited to 4-bit precision, EXL2 offers more flexibility with a highly customizable
+precision that can mix different quantization levels. This allows for precise bitrates between 2
+and 8 bits per weight, such as 2.3, 3.5, or 6.0. It can also apply multiple quantization levels to
+each linear layer, prioritizing more important weights with higher bit quantization. Parameters
+are selected automatically, by quantizing each matrix multiple times and choosing a combination
+that minimizes the quantization error while meeting a target bitrate. In practice, this allows 70B
+models to run on a single 24 GB GPU with 2.55-bit precision.
+The inference itself is handled by the ExLlamaV2 library, which supports both the GPTQ and
+EXL2 models.
+In the following example, let's quantize a model in the EXL2 format using ExLlamaV2. These
+steps can be executed on a free T4 GPU in Google Colab:
+1.
+Install the ExLlamaV2 library from source:
+!git clone https://github.com/turboderp/exllamav2
+!pip install -e exllamav2
+2.	 We download the model to quantize by cloning its repo from the Hugging Face Hub:
+MODEL_ID = "meta-llama/Llama-2-7b-chat-hf"
+MODEL_NAME = MODEL_ID.split('/')[-1]
+!git lfs install
+!git clone https://huggingface.co/{MODEL_ID}
+3.
+Download the calibration dataset used to measure the quantization error. In this case,
+we will use WikiText-103, a standard calibration dataset with high-quality articles from
+Wikipedia:
+!wget https://huggingface.co/datasets/wikitext/
+resolve/9a9e482b5987f9d25b3a9b2883fc6cc9fd8071b3/wikitext-103-v1/
+wikitext-test.parquet

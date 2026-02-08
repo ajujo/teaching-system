@@ -1,0 +1,19 @@
+RAG Feature Pipeline
+152
+The same will happen for the posts and repositories.
+Figure 4.16: Domain entities class hierarchy and their interaction
+We chose this design because the list of states will rarely change, and we want to extend the list
+of data categories. Thus, structuring the classes after the state allows us to plug another data
+category by inheriting these base abstract classes.
+Let's see the complete code for the hierarchy of the cleaned document. All the attributes of a
+cleaned document will be saved within the metadata of the vector DB. For example, the metadata
+of a cleaned article document will always contain the content, platform, author ID, author full
+name, and link of the article.
+Another fundamental aspect is the Config internal class, which defines the name of the collection
+within the vector DB, the data category of the entity, and whether to leverage the vector index
+when creating the collection:
+class CleanedDocument(VectorBaseDocument, ABC):
+    content: str
+    platform: str
+    author_id: UUID4
+    author_full_name: str

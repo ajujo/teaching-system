@@ -1,0 +1,34 @@
+entre la respuesta y la pregunta original del usuario, y un juez de IA para
+medir la coherencia factual entre la respuesta y todo el contexto. Será
+fundamental contar con una rúbrica de puntuación inequívoca y sus
+ejemplos para que los evaluadores especializados y los jueces de IA tengan
+éxito.
+Es posible combinar métodos de evaluación para los mismos criterios. Por
+ejemplo, puede tener un clasificador barato que dé señales de baja calidad
+en el 100 % de sus datos, y un juez de IA caro que dé señales de alta calidad
+en el 1 % de los datos. Esto le da un cierto nivel de confianza en su
+aplicación a la vez que mantiene unos costos manejables.
+Cuando haya logprobs disponibles, utilícenlos. Los logprobs pueden
+utilizarse para medir el grado de confianza de un modelo en un token
+generado. Esto es especialmente útil para la clasificación. Por ejemplo, si
+pide a un modelo que genere como output una de las tres clases y los
+logprobs del modelo para estas tres clases están entre el 30 y el 40 %,
+significa que el modelo no confía en esta predicción. Sin embargo, si la
+probabilidad del modelo para una clase es del 95 %, significa que el modelo
+tiene una gran confianza en esta predicción. Los logprobs también pueden
+utilizarse para evaluar la perplejidad de un modelo para un texto generado,
+que puede utilizarse para mediciones como la fluidez y la coherencia
+factual.
+Utilice métricas automáticas siempre que pueda, pero no tema recurrir a la
+evaluación humana, incluso en producción. Que la evaluación manual de la
+calidad de un modelo la hagan expertos humanos es una práctica arraigada
+en la IA. Dadas las dificultades que plantea evaluar las respuestas abiertas,
+muchos equipos consideran la evaluación humana como la métrica superior
+para guiar el desarrollo de sus aplicaciones. Cualquier día puede recurrir a
+expertos humanos para evaluar un subconjunto de los outputs de su
+aplicación para detectar cualquier cambio en el rendimiento de la aplicación
+o patrones inusuales de uso. Por ejemplo, LinkedIn desarrolló un proceso
+para evaluar manualmente hasta 500 conservaciones diarias con sus
+sistemas de IA.
+Piense en los métodos de evaluación que se utilizarán no solo durante la
+experimentación, sino también durante la producción. Durante la

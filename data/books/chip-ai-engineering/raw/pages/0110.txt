@@ -1,0 +1,31 @@
+Las matrices de consulta, clave y valor tienen dimensiones correspondientes
+a la dimensión oculta del modelo. Por ejemplo, en Llama 2-7B (Touvron et
+al., 2023), el tamaño de la dimensión oculta del modelo es de 4096, lo que
+significa que cada una de estas matrices tiene una dimensión de 4096 ×
+4096. Cada vector K, V, Q resultante tiene una dimensión de 4096. 8
+El mecanismo de atención es casi siempre multicabezal. Los cabezales
+múltiples permiten al modelo atender simultáneamente a distintos grupos de
+tokens anteriores. Con la atención multicabezal, los vectores de consulta,
+clave y valor se dividen en vectores más pequeños, cada uno
+correspondiente a un cabezal de atención. En el caso de Llama 2-7B, al
+tener 32 cabezales de atención, cada vector K, V y Q se dividirá en 32
+vectores de dimensión 128. Esto se debe a que 4096 / 32 = 128.
+Attention(Q, K, V ) = softmax( QKT
+√d )V
+A continuación, se concatenan los outputs de todos los cabezales de
+atención. Se utiliza una matriz de proyección de output para aplicar otra
+transformación a este output concatenado antes de introducirlo en el
+siguiente paso de cálculo del modelo. La matriz de proyección de output
+tiene la misma dimensión que la dimensión oculta del modelo.
+Bloque transformador
+Ahora que ya hemos hablado de cómo funciona la atención, veamos cómo
+se utiliza en un modelo. Una arquitectura de transformadores se compone
+de varios bloques transformadores. El contenido exacto del bloque varía
+según los modelos, pero, en general, cada bloque transformador contiene el
+módulo de atención y el módulo MLP (percepción multicapa):
+Módulo de atención
+Cada módulo de atención consta de cuatro matrices de
+ponderaciones: consulta, clave, valor y proyección de output.
+Módulo MLP
+Un módulo MLP consta de capas lineales separadas por
+funciones de activación no lineales. Cada capa lineal es una

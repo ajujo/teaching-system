@@ -1,0 +1,33 @@
+Chapter 8
+291
+As shown in Figure 8.1, the basic inference process for a decoder-only model involves:
+1.	
+Tokenizing the input prompt and passing it through an embedding layer and positional 
+encoding.
+2.	
+Computing key and value pairs for each input token using the multi-head attention 
+mechanism.
+3.	
+Generating output tokens sequentially, one at a time, using the computed keys and values.
+While Steps 1 and 2 are computationally expensive, they consist of highly parallelizable matrix 
+multiplication that can achieve high hardware utilization on accelerators like GPUs and TPUs.
+The real challenge is that the token generation in Step 3 is inherently sequential – to generate 
+the next token, you need to have generated all previous tokens. This leads to an iterative process 
+where the output sequence is grown one token at a time, failing to leverage the parallel computing 
+capabilities of the hardware. Addressing this bottleneck is one of the core focuses of inference 
+optimization.
+In this section, we will detail several optimization strategies that are commonly used to speed 
+up inference and reduce Video Random-Access Memory (VRAM) usage, such as implementing 
+a (static) KV cache, continuous batching, speculative decoding, and optimized attention mech-
+anisms.
+KV cache
+We saw that LLMs generate text token by token, which is slow because each new prediction 
+depends on the entire previous context. For example, to predict the 100
+th token in a sequence, 
+the model needs the context of tokens 1 through 99. When predicting the 101
+st token, it again 
+needs the information from tokens 1 through 99, plus token 100. This repeated computation is 
+particularly inefficient.
+The key-value (KV) cache addresses this issue by storing key-value pairs produced by self-at-
+tention layers. Instead of recalculating these pairs for each new token, the model retrieves them 
+from the cache, significantly speeding up the generation. 

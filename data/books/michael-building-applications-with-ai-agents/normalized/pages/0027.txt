@@ -1,0 +1,36 @@
+training, customer onboarding, marketing, and virtual presence tools-enabling
+scalable, personalized video interactions without manual production.
+Importantly, the number and variety of agent types is growing rapidly, and we will
+likely see new kinds of agents emerge across many domains as the field and its under‐
+lying technologies evolve. In this book, our emphasis is on the core category of agents
+built around language models, particularly those using text and code. While we touch
+on business‑task automation, voice, and video, we'll primarily explore agents built
+around language models-their architectures, reasoning, and UX-in subsequent
+chapters.
+Now that we've discussed the evolving types of agents, the next critical question
+becomes: which model should you choose to power your agent? Model selection is a
+complex and rapidly changing domain. As discussed in the next section, you'll need
+to balance factors like task complexity, modality support, latency and cost constraints,
+and integration requirements to make the right choice for your agent.
+Model Selection
+Today, we are fortunate to have a proliferation of powerful models available from
+both commercial providers and the open source community. OpenAI, Anthropic,
+Google, Meta, and DeepSeek each offer state-of-the-art foundation models with
+impressive general-purpose capabilities. At the same time, open-weight models like
+Llama, Mistral, and Gemma are pushing the boundaries of what can be achieved with
+local or fine-tuned deployments. Even more striking is the rapid advancement of
+small- and medium-sized models. New techniques for distillation, quantization, and
+synthetic data generation are enabling compact models to inherit surprising levels of
+capability from their larger counterparts.
+This explosion of choice is good news: competition is driving faster innovation, better
+performance, and lower costs. But it also creates a dilemma-how do you choose the
+right model for your agentic system? The truth is, there isn't a one-size-fits-all answer.
+In fact, one of the most reasonable starting points is simply to use the latest generalpurpose model from a leading provider like OpenAI or Anthropic. As you can see in
+Table 1-1, these models offer strong performance out of the box, require little cus‐
+tomization, and will take you surprisingly far for many applications. GPT-5 mini
+(Aug 2025) leads overall with the highest mean score (0.819), closely followed by o4-
+mini (0.812) and o3 (0.811). Proprietary and open-access models like Qwen3, Grok 4,
+Claude 4, and Kimi K2 also show competitive results.
+Model Selection
+|
+5

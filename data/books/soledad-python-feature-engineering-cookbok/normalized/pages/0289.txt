@@ -1,0 +1,34 @@
+Creating New Features
+266
+mean_, std_ = np.mean(
+    cv[«test_score"]), np.std(cv["test_score"])
+print(f"Model score: {mean_} +- {std_}")
+In the following output, we can see the model performance, where the values are the R-squared:
+Model score: 0.490618615960575 +- 0.03617289854929812
+14.	 Now, set up SplineTransformer() to obtain spline features from four variables by utilizing
+third-degree polynomials and 50 knots, and then fit the pipeline to the data:
+spl = SplineTransformer(degree=3, n_knots=50)
+ct = ColumnTransformer(
+    [("splines", spl, [
+        "AveRooms", "AveBedrms", "Population",
+        "AveOccup"]
+    )],
+    remainder="passthrough",
+)
+ct.fit(X, y)
+Note
+Remember that we need to use ColumnTransformer() to obtain features from a subset of
+variables in the data. With remainder=passthrough, we ensure that the variables that are
+not used as templates for the splines - that is, MedInc and HouseAge - are also returned in
+the resulting DataFrame. To check out the features resulting from this step, execute ct.get_
+feature_names_out().
+15.	 Now, fit a Ridge regression to predict house prices based on MedInc, HouseAge, and the
+spline features, using cross-validation, and then obtain the performance of the model:
+cv = cross_validate(linmod, ct.transform(X), y)
+mean_, std_ = np.mean(
+    cv[«test_score"]), np.std(cv["test_score"])
+print(f"Model score: {mean_} +- {std_}")
+In the following output, we can see the model performance, where the values are the R-squared:
+Model score: 0.5553526813919297 +- 0.02244513992785257
+As we can see, by using splines in place of some of the original variables, we can improve the performance
+of the linear regression model.

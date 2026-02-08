@@ -1,0 +1,27 @@
+Chapter 3
+69
+State management
+State management is crucial in real-world AI applications. For example, in a customer service 
+chatbot, the state might track information such as customer ID, conversation history, and out­
+standing issues. LangGraph’s state management lets you maintain this context across a complex 
+workflow of multiple AI components.
+LangGraph allows you to develop and execute complex workflows called graphs. We will use the 
+words graph and workflow interchangeably in this chapter. A graph consists of nodes and edges 
+between them. Nodes are components of your workflow, and a workflow has a state. What is it? 
+Firstly, a state makes your nodes aware of the current context by keeping track of the user input 
+and previous computations. Secondly, a state allows you to persist your workflow execution at 
+any point in time. Thirdly, a state makes your workflow truly interactive since a node can change 
+the workflow’s behavior by updating the state. For simplicity, think about a state as a Python 
+dictionary. Nodes are Python functions that operate on this dictionary. They take a dictionary 
+as input and return another dictionary that contains keys and values to be updated in the state 
+of the workflow.
+Let’s understand that with a simple example. First, we need to define a state’s schema:
+from typing_extensions import TypedDict
+class JobApplicationState(TypedDict):
+   job_description: str
+   is_suitable: bool
+   application: str
+A TypedDict is a Python type constructor that allows to define dictionaries with a predefined 
+set of keys and each key can have its own type (as opposed to a Dict[str, str] construction).
+LangGraph state’s schema shouldn’t necessarily be defined as a TypedDict; you can 
+use data classes or Pydantic models too.

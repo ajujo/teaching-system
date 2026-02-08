@@ -1,0 +1,37 @@
+Finally, effective escalation design should support feedback loops. When humans
+resolve escalated cases, their decisions can be used to improve future agent behavior
+-whether through updated policies, retraining, or prompt tuning. Escalation isn't a
+sign of failure; it's a critical part of responsible autonomy.
+In the next section, we'll examine how agents scale across organizational scopes-and
+how oversight must evolve to match the complexity and risk of each context.
+Privacy and Regulatory Compliance
+As agent systems become integral to critical workflows across industries, they are
+increasingly subject to legal and regulatory scrutiny. Governments and international
+bodies are introducing AI-specific regulations to ensure these systems are deployed
+safely, ethically, and transparently. From data privacy laws to sector-specific compli‐
+ance requirements, organizations building and deploying agents must navigate a
+complex and evolving regulatory landscape to mitigate legal risks and maintain pub‐
+lic trust.
+Compliance is not just about avoiding penalties. It's about embedding ethical princi‐
+ples-such as fairness, transparency, accountability, and privacy-into the fabric of
+agent design and deployment. When implemented thoughtfully, compliance can
+serve as a foundation for more resilient, adaptable, and trustworthy systems. While
+regulatory requirements vary by region and industry, common themes emerge. Some
+of the most influential frameworks include:
+The EU AI Act
+A risk-based framework categorizing AI systems into levels of risk (e.g., minimal
+risk, high risk, unacceptable risk) with corresponding obligations for transpar‐
+ency, accountability, and human oversight.
+GDPR (General Data Protection Regulation)
+A cornerstone of global data privacy, requiring organizations to minimize data
+collection, ensure user consent, and provide clear pathways for data deletion and
+correction.
+CCPA (California Consumer Privacy Act)
+Offering data protection and transparency rights to California residents, empha‐
+sizing user consent and data access rights.
+HIPAA (Health Insurance Portability and Accountability Act)
+In healthcare, agents handling patient data must comply with strict privacy and
+security requirements.
+310
+|
+Chapter 13: Human-Agent Collaboration

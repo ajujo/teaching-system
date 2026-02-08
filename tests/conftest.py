@@ -8,7 +8,7 @@ Future phase tests are automatically skipped.
 import pytest
 
 # Current implementation phase
-CURRENT_PHASE = 8
+CURRENT_PHASE = 9
 
 
 def pytest_collection_modifyitems(config, items):

@@ -1,0 +1,33 @@
+Chapter 7
+291
+# Load all pages from LangChain docs
+loader = DocusaurusLoader("https://python.langchain.com")
+documents[0]
+nest_asyncio.apply() enables async operations in Jupyter notebooks. The 
+loader gets all pages.
+DocusaurusLoader automatically scrapes and extracts content from LangChain’s documenta­
+tion website. This loader is specifically designed to navigate Docusaurus-based sites and extract 
+properly formatted content. Meanwhile, the nest_asyncio.apply() function is necessary for a 
+Jupyter Notebook environment, which has limitations with asyncio’s event loop. This line allows 
+us to run asynchronous code within the notebook’s cells, which is required for many web-scraping 
+operations. After execution, the documents variable contains all the documentation pages, each 
+represented as a Document object with properties like page_content and metadata. We can then 
+set up embeddings with caching:
+from langchain.embeddings import CacheBackedEmbeddings
+from langchain_openai import OpenAIEmbeddings
+from langchain.storage import LocalFileStore
+# Cache embeddings locally to avoid redundant API calls
+store = LocalFileStore("./cache/")
+underlying_embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+embeddings = CacheBackedEmbeddings.from_bytes_store(
+    underlying_embeddings, store, namespace=underlying_embeddings.model
+)
+Before we can feed our models into a vector store, we need to split them, as discussed in Chapter 4:
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=20,
+    length_function=len,
+    is_separator_regex=False,
+)
+splits = text_splitter.split_documents(documents)

@@ -1,0 +1,33 @@
+Con la RAG, solo se recupera y se introduce en el modelo la información
+más relevante para la consulta, según lo determinado por el recuperador.
+Lewis et al. descubrieron que tener acceso a información relevante puede
+ayudar al modelo a generar respuestas más detalladas y, al mismo tiempo,
+reducir las alucinaciones. 2
+Por ejemplo, ante la consulta "¿Puede la fancy-printer-A300 de Acme
+imprimir 100 pps?", el modelo podrá responder mejor si se le dan las
+especificaciones de la fancy-printer-A300. 3
+Se puede decir que la RAG es una técnica para construir un contexto
+específico para cada consulta, en lugar de utilizar el mismo contexto para
+todas las consultas. Esto ayuda a gestionar los datos de los usuarios, ya que
+permite incluir datos específicos de un usuario solo en las consultas
+relacionadas con este usuario.
+La construcción de contextos para los modelos fundacionales es equivalente
+a la ingeniería de características para los modelos clásicos de ML. Sirven
+para lo mismo: dar al modelo la información necesaria para procesar un
+input.
+En los inicios de los modelos fundacionales, la RAG surgió como uno de
+los patrones más comunes. Su principal objetivo era superar las limitaciones
+contextuales de los modelos. Mucha gente piensa que un contexto
+suficientemente grande será el fin de la RAG. No estoy de acuedo. En
+primer lugar, no importa lo largo del contexto de un modelo, habrá
+aplicaciones que requieran un contexto todavía más largo. Al fin y al cabo,
+la cantidad de datos disponibles no hace más que crecer con el tiempo. La
+gente genera y añade nuevos datos, pero rara vez los elimina. La longitud
+del contexto se amplía rápidamente, pero no lo suficiente para las
+necesidades de datos de las aplicaciones arbitrarias. 4
+En segundo lugar, un modelo capaz de procesar un contexto largo no
+necesariamente sabe utilizarlo bien, como se discute en el “Longitud y
+eficacia del contexto”. Cuanto más largo sea el contexto, más probable es
+que el modelo se centre en la parte equivocada del mismo. Cada token de
+contexto adicional supone un costo adicional y puede añadir latencia. La
+RAG permite a un modelo utilizar solo la información más relevante para

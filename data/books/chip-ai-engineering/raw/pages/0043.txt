@@ -1,0 +1,31 @@
+El número de aplicaciones potenciales que se pueden crear con los modelos
+fundacionales parece infinito. Sea cual sea el caso de uso que se les ocurra,
+probablemente exista una IA para ello. 10 Es imposible enumerar todos los
+posibles casos de uso de la IA.
+Incluso intentar categorizar estos casos de uso es un reto, ya que diferentes
+encuestas utilizan diferentes categorizaciones. Por ejemplo, Amazon Web
+Services (AWS) ha clasificado los casos de uso de IA generativa
+empresarial en tres categorías: experiencia del cliente, productividad de los
+empleados y optimización de procesos. Una encuesta de O'Reilly de 2024
+clasificó los casos de uso en ocho categorías: programación, análisis de
+datos, atención al cliente, textos de marketing, otros textos, investigación,
+diseño web y arte.
+Algunas organizaciones, como Deloitte, han clasificado los casos de uso por
+captura de valor, como reducción de costos, eficiencia de procesos,
+crecimiento y aceleración de la innovación. Para la captura de valor,
+Gartner tiene una categoría para continuidad del negocio, lo que significa
+que una organización podría quebrar si no adopta la IA generativa. De los
+2500 ejecutivos encuestados por Gartner en 2023, el 7 % citó la continuidad
+del negocio como motivación para adoptar la IA generativa.
+Eloundou et al. (2023) cuenta con excelentes estudios sobre el grado de
+exposición de las distintas profesiones a la IA. Definieron una tarea como
+expuesta si la IA y el software impulsado por IA pueden reducir el tiempo
+necesario para completar esta tarea en al menos un 50 %. Que una
+ocupación tenga una exposición del 80 % significa que el 80 % de sus
+tareas están expuestas. Según el estudio, entre las ocupaciones con una
+exposición del 100 % o casi del 100 % se encuentran los intérpretes y
+traductores, los asistentes fiscales, los diseñadores de páginas web y los
+escritores. Algunos de ellas se muestran en la Tabla 1-2. No es de extrañar
+que entre las profesiones que no están expuestas a la IA se encuentren los
+cocineros, los albañiles y los atletas. Este estudio da una buena idea de para
+qué casos de uso es buena la IA.

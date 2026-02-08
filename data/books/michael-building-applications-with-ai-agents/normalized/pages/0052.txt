@@ -1,0 +1,38 @@
+duplicating critical components or processes to ensure that failures in one part of the
+system do not affect overall performance.
+Consistency and robustness
+For agents to be reliable, they must perform consistently across different scenarios,
+inputs, and environments. This is particularly important in safety-critical systems,
+such as autonomous vehicles or healthcare agents, where a mistake could have seri‐
+ous consequences. Developers must ensure that the agent performs well not only in
+ideal conditions but also under edge cases, stress tests, and real-world constraints.
+Achieving reliability requires:
+Extensive testing
+Agents should undergo rigorous testing, including unit tests, integration tests,
+and simulations of real-world scenarios. Tests should cover edge cases, unexpec‐
+ted inputs, and adversarial conditions to ensure that the agent can handle diverse
+environments.
+Monitoring and feedback loops
+Reliable agents require continuous monitoring in production to detect anomalies
+and adjust their behavior in response to changing conditions. Feedback loops
+enable agents to learn from their environment and improve performance over
+time, increasing their robustness.
+Costs: Balancing Performance and Expense
+Cost is an often-overlooked but critical trade-off in the design of agent-based sys‐
+tems. The costs associated with developing, deploying, and maintaining an agent
+must be weighed against the expected benefits and return on investment (ROI). Cost
+considerations affect decisions related to model complexity, infrastructure, and
+scalability.
+Development costs
+Developing sophisticated agents can be expensive, especially when using advanced
+machine learning (ML) models that require large datasets, specialized expertise, and
+significant computational resources for training. Additionally, the need for iterative
+design, testing, and optimization increases development costs.
+Complex agents frequently necessitate a team with specialized talent, including data
+scientists, ML engineers, and domain experts, to create high-performing systems.
+Additionally, building a reliable and scalable agent system requires extensive testing
+infrastructure, often involving simulation environments and investments in testing
+tools and frameworks to ensure robust functionality.
+30
+|
+Chapter 2: Designing Agent Systems

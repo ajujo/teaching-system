@@ -1,0 +1,23 @@
+figura 3-10. En ocasiones, ChatGPT pide a los usuarios que comparen dos outputs
+uno al lado del otro.
+Para cada solicitud, se seleccionan dos o más modelos para que respondan.
+Un evaluador, que puede ser humano o una IA, elige al ganador. Muchos
+desarrolladores permiten los empates para evitar que un ganador sea elegido
+al azar cuando las respuestas son igual de buenas o malas.
+Algo muy importante que hay que tener en cuenta es que no todas las
+preguntas deben responderse por preferencia. Muchas preguntas deberían
+responderse por corrección. Imagine que le pregunta al modelo "¿Existe una
+relación entre la radiación de los teléfonos móviles y los tumores
+cerebrales?" y el modelo le presenta dos opciones, "Sí" y "No", para que
+elijan. La votación basada en preferencias puede dar lugar a señales
+erróneas que, si se utilizan para entrenar el modelo, pueden provocar
+comportamientos desajustados.
+Pedir a los usuarios que elijan también puede provocar su frustración.
+Imagine que le hace al modelo una pregunta de matemáticas porque no sabe
+la respuesta, y el modelo le da dos respuestas diferentes y le pide que elija
+la que prefiera. Si hubiera sabido la respuesta correcta, no le habría
+preguntado al modelo para empezar.
+A la hora de recoger opiniones comparativas de los usuarios, uno de los
+retos es determinar qué preguntas pueden determinarse mediante votación
+de preferencias y cuáles no. La votación basada en preferencias solo
+funciona si los votantes tienen conocimientos sobre el tema. Este enfoque

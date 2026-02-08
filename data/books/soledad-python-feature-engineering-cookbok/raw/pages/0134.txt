@@ -1,0 +1,19 @@
+Performing Yeo-Johnson transformations
+111
+Figure 3.14 – Histograms of the variables after the yeo-Johnson transformation
+Finally, let’s implement the Yeo-Johnson transformation with Feature-engine.
+7.	
+Let’s set up YeoJohnsonTransformer() to transform all numerical variables and then 
+fit it to the data:
+yjt = YeoJohnsonTransformer()
+yjt.fit(X)
+Note
+If the variables argument is left set to None, the transformer selects and transforms all 
+the numerical variables in the dataset. Alternatively, we can pass the names of the variables to 
+modify in a list.
+Compared to PowerTransformer() from scikit-learn, Feature-engine’s transformer can 
+take the entire DataFrame as an argument of the fit() and transform() methods, and 
+yet it will only modify the selected variables.
+8.	
+Let’s transform the variables:
+X_tf = yjt.transform(X)

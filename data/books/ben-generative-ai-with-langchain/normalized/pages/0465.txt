@@ -1,0 +1,23 @@
+Appendix A
+438
+To combine everything together, we need a chain that first executes all the MAP steps and then
+the REDUCE phase:
+from langchain_core.runnables import RunnablePassthrough
+final_chain = (
+    RunnablePassthrough.assign(summaries=map_step_chain).assign(final_
+summary=reduce_chain)
+    | RunnableLambda(lambda x: x["final_summary"])
+)
+result = final_chain.invoke({
+    "video_uri": video_uri,
+    "interval_secs": 300,
+    "chunks": 9
+})
+Let's reiterate what we did. We generated multiple summaries of different parts of the video, and
+then we passed these summaries to an LLM as texts and tasked it to generate a final summary.
+We prepared summaries of each piece independently and then combined them, which allowed
+us to overcome the limitation of a context window size for video and decreased latency a lot due
+to parallelization. Another alternative is the so-called refine approach. We begin with an empty
+summary and perform summarization step by step - each time, providing an LLM with a new
+piece of the video and a previously generated summary as input. We encourage readers to build
+this themselves since it will be a relatively simple change to the code.

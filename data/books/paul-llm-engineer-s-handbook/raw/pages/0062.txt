@@ -1,0 +1,37 @@
+Chapter 2
+31
+MLOps and LLMOps tooling
+This section will quickly present all the MLOps and LLMOps tools we will use throughout the 
+book and their role in building ML systems using MLOps best practices. At this point in the 
+book, we don’t aim to detail all the MLOps components we will use to implement the LLM Twin 
+use case, such as model registries and orchestrators, but only provide a quick idea of what they 
+are and how to use them. As we develop the LLM Twin project throughout the book, you will 
+see hands-on examples of how we use all these tools. In Chapter 11, we will dive deeply into the 
+theory of MLOps and LLMOps and connect all the dots. As the MLOps and LLMOps fields are 
+highly practical, we will leave the theory of these aspects to the end, as it will be much easier to 
+understand it after you go through the LLM Twin use case implementation.
+Also, this section is not dedicated to showing you how to set up each tool. It focuses primarily on 
+what each tool is used for and highlights the core features used throughout this book.
+Still, using Docker, you can quickly run the whole infrastructure locally. If you want to run the 
+steps within the book yourself, you can host the application locally with these three simple steps:
+1.	
+Have Docker 27.1.1 (or higher) installed.
+2.	
+Fill your .env file with all the necessary credentials as explained in the repository README.
+3.	
+Run poetry poe local-infrastructure-up to locally spin up ZenML (http://127.0.0.1:8237/) 
+and the MongoDB and Qdrant databases.
+You can read more details on how to run everything locally in the LLM-Engineers-Handbook re-
+pository README: https://github.com/PacktPublishing/LLM-Engineers-Handbook. Within 
+the book, we will also show you how to deploy each component to the cloud.
+Hugging Face: model registry
+A model registry is a centralized repository that manages ML models throughout their lifecycle. 
+It stores models along with their metadata, version history, and performance metrics, serving 
+as a single source of truth. In MLOps, a model registry is crucial for tracking, sharing, and docu-
+menting model versions, facilitating team collaboration. Also, it is a fundamental element in the 
+deployment process as it integrates with continuous integration and continuous deployment 
+(CI/CD) pipelines.
+We used Hugging Face as our model registry, as we can leverage its ecosystem to easily share our 
+fine-tuned LLM Twin models with anyone who reads the book. Also, by following the Hugging 
+Face model registry interface, we can easily integrate the model with all the frameworks around 
+the LLMs ecosystem, such as Unsloth for fine-tuning and SageMaker for inference.

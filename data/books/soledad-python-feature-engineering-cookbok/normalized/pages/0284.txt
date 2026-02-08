@@ -1,0 +1,29 @@
+Creating spline features
+261
+How to do it...
+In this recipe, we will use splines to model the sine function. Once we get a sense of what splines are
+and how we can use them to fit non-linear relationships through a linear model, we will use splines
+for regression in a real dataset:
+Note
+The idea to model the sine function with splines was taken from scikit-learn's
+documentation: https://scikit-learn.org/stable/auto_examples/
+linear_model/plot_polynomial_interpolation.html.
+1.
+Let's begin by importing the necessary libraries and classes:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import Ridge
+from sklearn.preprocessing import SplineTransformer
+2.
+Create a training set, X, with 20 values between -1 and 11, and the target variable, y, which is
+the sine of X:
+X = np.linspace(-1, 11, 20)
+y = np.sin(X)
+3.
+Plot the relationship between X and y:
+plt.plot(X, y)
+plt.ylabel("y")
+plt.xlabel("X")
+In the following plot, we can see the sine function of X:
+Figure 8.20 - The relationship between the predictor and the target variable, where y = sine(x)

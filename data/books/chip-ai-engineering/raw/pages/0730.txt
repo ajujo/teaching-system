@@ -1,0 +1,31 @@
+La visibilidad de una señal puede tener profundas repercusiones en el
+comportamiento del usuario, su experiencia y la calidad de la respuesta. Los
+usuarios tienden a ser más sinceros en privado (hay menos posibilidades de
+que sus actividades sean juzgadas)11, lo que puede dar lugar a señales de
+mayor calidad. En 2024, X (antes Twitter) hizo privados los "me gusta".
+Elon Musk, propietario de X, afirmó que el número de "me gusta" había
+aumentado considerablemente tras este cambio.
+Sin embargo, las señales privadas pueden reducir la descubribilidad y la
+explicabilidad. Por ejemplo, ocultar los "me gusta" impide a los usuarios
+encontrar los tweets que les han gustado a sus contactos. Si X recomienda
+tuits en función de los "me gusta" de las personas a las que siguen, ocultar
+los "me gusta" podría confundir a los usuarios sobre por qué ciertos tuits
+aparecen en sus muros.
+Limitaciones de la retroalimentación
+No cabe duda del valor que tienen las opiniones de los usuarios para los
+desarrolladores de aplicaciones. Sin embargo, la retroalimentación no es
+una rosa sin espinas. Tiene sus propias limitaciones.
+Sesgos
+Como cualquier otro dato, la retroalimentación de los usuarios tienen
+sesgos. Es importante comprender estos sesgos y diseñar el sistema de
+retroalimentación en función de ellos. Cada aplicación tiene sus propios
+sesgos. Estos son algunos ejemplos de sesgos de opiniones para que se haga
+una idea de lo que debe tener en cuenta:
+Sesgo de indulgencia
+El sesgo de indulgencia es la tendencia de las personas a
+valorar las cosas de forma más positiva de lo justificado, a
+menudo para evitar el conflicto porque se sienten obligadas
+a ser amables o porque es la opción más fácil. Imagine que
+tiene prisa y una aplicación le pide que valore una
+transacción. No está contento con la transacción, pero sabe
+que si la califica negativamente, le pedirá que digan porqué,

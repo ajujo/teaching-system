@@ -1,0 +1,24 @@
+Using decision trees for discretization
+149
+12.	 Now, we can display the tree structure:
+fig = plt.figure(figsize=(20, 6))
+plot_tree(tree, fontsize=10, proportion=True)
+plt.show()
+13.	 In the following figure, we can see the values used by the tree to allocate samples to the different 
+end leaves based on the mean number of rooms:
+Figure 4.15 – The structure of the decision tree trained to discretize AveRooms
+14.	 To wrap up the recipe, we can plot the number of observations per bin for three of the variables:
+plt.figure(figsize=(6, 12), constrained_layout=True)
+for i in range(3):
+    ax = plt.subplot(3, 1, i + 1)
+    var = variables[i]
+    t1 = train_t[var].value_counts(normalize=True)
+    t2 = test_t[var].value_counts(normalize=True)
+    tmp = pd.concat([t1, t2], axis=1)
+    tmp.columns = ["train", "test"]
+    tmp.sort_index(inplace=True)
+    tmp.plot.bar(ax=ax)
+    plt.xticks(rotation=0)
+    plt.ylabel("Observations per bin")
+    ax.set_title(var)
+plt.show()

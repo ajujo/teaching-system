@@ -1,0 +1,27 @@
+Chapter 5
+211
+Parameter-efficient fine-tuning techniques
+While many techniques exist in the literature, SFT has converged on three main techniques: full 
+fine-tuning, LoRA, and QLoRA. We will introduce each technique individually, and weigh their 
+pros and cons depending on your use cases.
+Figure 5.9 – Architectural differences of the three main SFT techniques at the module level
+Full fine-tuning
+Full fine-tuning refers to the most straightforward SFT technique, consisting of re-training every 
+parameter in the base model. Like pre-training, SFT uses next-token prediction as its training 
+objective. This means that the previously discussed structure of the dataset can be seen as the 
+main difference between continual pre-training and full fine-tuning.
+This method often provides the best results but requires significant computational resources. 
+Memory usage depends on several factors, including model size, training techniques, and op-
+timization methods. At its simplest, using a single-GPU setting, the memory required can be 
+estimated using the following formula:
+𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀𝑀
+For a basic setup using 32-bit floating point (fp32) precision, we can estimate:
+•	
+Parameters: Learnable weights and biases within a neural network. In a large language 
+model, these are typically the weights in the attention mechanisms, feed-forward layers, 
+and embedding layers. Cost: 4 bytes/parameter (FP32) or 2 bytes/parameter (FP16/BF16).
+•	
+Gradients: Gradients are the partial derivatives of the loss function with respect to each 
+model parameter. They indicate how much each parameter should be adjusted to minimize 
+the loss. During training, gradients are computed for each parameter through backprop-
+agation and are used to update the model parameters. Cost: 4 bytes/parameter.

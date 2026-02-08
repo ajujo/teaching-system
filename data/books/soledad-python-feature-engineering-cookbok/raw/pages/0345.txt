@@ -1,0 +1,38 @@
+Creating Features from a Time Series with tsfresh
+322
+7.	
+Let’s set up and train a logistic regression model and then evaluate its performance:
+cls = LogisticRegression(
+    random_state=10, C=0.1, max_iter=1000)
+cls.fit(X_train, y_train)
+print(classification_report(
+    y_test, cls.predict(X_test)))
+In the following output, we see the values of commonly used evaluation metrics for classification 
+analysis. These suggest that the selected features are useful for predicting office occupancy:
+                  precision     recall  f1-score   support
+               0         1.00        0.91        0.95           
+11
+               1         0.75        1.00        0.8
+6            3
+     accu­
+racy                                       0.93           14
+   macro avg         0.88        0.95        0.90           14
+weighted avg         0.95        0.93        0.93           14
+Go ahead and compare these results with those of step 9 in the Extracting hundreds of features 
+automatically from a time series recipe of this chapter. You will see that we obtained similar 
+performance, with only a fraction of the features.
+8.	
+We can trigger the feature creation and feature selection procedures by using a single function, 
+extract_relevant_features, and, like this, combine steps 3 and 4. We’ll do that to 
+create and select features automatically for the five time series in our dataset:
+features = extract_relevant_features(
+    X,
+    y,
+    column_id="id",
+    column_sort="date",
+)
+Note
+The parameters of extract_relevant_features are very similar to those of extract_
+features. Note, however, that the former will automatically perform imputation to be able 
+to proceed with the feature selection. We discussed the parameters of extract_features 
+in the Extracting hundreds of features automatically from time series recipe.

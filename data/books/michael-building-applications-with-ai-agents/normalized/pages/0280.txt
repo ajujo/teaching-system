@@ -1,0 +1,42 @@
+   dspy.Example(indicator="new-attack-vector-hash789",
+   threat_level="malicious").with_inputs('indicator'), # Novel threat
+]
+# Metric for evaluation (exact match on threat level
+# use semantic match or custom scorer for production)
+def threat_match_metric(example, pred, trace=None):
+   return example.threat_level.lower() == pred.threat_level.lower()
+# Optimize the module (this refines the internal prompts for better
+# handling of diverse cases)
+optimizer = dspy.BootstrapFewshotWithRandomSearch(metric=threat_match_metric,
+    max_bootstrapped_demos=4, max_labeled_demos=4)
+optimized_module = optimizer.compile(ThreatClassificationModule(),
+                                     trainset=trainset)
+# Example usage in the tool: After optimization, use in classify_threat
+def classify_threat(indicator: str) -> str:
+   """Classify threat level using the optimized DSPy module."""
+   prediction = optimized_module(indicator=indicator)
+   return prediction.threat_level
+This refinement enhances the tool's ability to accurately classify threat levels from real
+API data, handling a wider range of responses-including no-results cases, partial
+matches, or emerging threats-by optimizing the foundation model's interpretation
+prompt.
+Each prompt or tool refinement should be documented with a clear rationale-what
+problem was observed, what change was made, and how its effectiveness will be
+measured. This discipline ensures improvements are traceable and repeatable, and
+provides future teams with a knowledge base of what works and why.
+Refinements should be validated iteratively, using both offline evaluation (with heldout logs or synthetic cases) and controlled live experiments (e.g., shadow deploy‐
+ments, A/B tests). Monitoring post-deployment performance is critical: even
+seemingly minor prompt tweaks can have system-wide effects, especially in complex
+or highly agentic environments.
+Over time, the accumulated effect of systematic prompting and tool refinement is
+substantial. Agents become more reliable, less brittle, and better aligned with user
+needs. Feedback-driven refinement also reveals higher-level patterns-common sour‐
+ces of misunderstanding or recurring gaps in capability-that can inform architec‐
+tural improvements and future agent design.
+Prompt and tool refinement are the hands-on instruments of progress in agentic sys‐
+tems. By connecting insight to action, and iterating thoughtfully, teams can ensure
+that every failure or friction point becomes an opportunity for more robust, respon‐
+sive, and capable AI.
+258
+|
+Chapter 11: Improvement Loops

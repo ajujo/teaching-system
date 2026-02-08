@@ -1,0 +1,18 @@
+18 Imposible hablar de sanear tablas SQL sin mencionar este clásico de xkcd:
+"Exploits de una madre".
+19 Pedir a un modelo que repita un texto es una variante de los ataques de tokens
+repetidos. Otra variante consiste en utilizar un prompt que repita un texto varias
+veces. Dropbox tiene una gran publicación de blog sobre este tipo de ataque:
+"Bye Bye Bye..: Evolution of repeated token attacks on ChatGPT models"
+(Breitenbach y Wood, 2024).
+20 En "Scalable Extraction of Training Data from (Production) Language Models"
+(Nasr et al., 2023), en lugar de elaborar manualmente los prompts
+desencadenantes, parten de un corpus de datos iniciales (100 MB de datos de
+Wikipedia) y toman muestras aleatorias de prompts de este corpus. Consideran
+que una extracción tiene éxito "si el modelo produce un texto que contiene una
+subcadena de al menos 50 tokens de longitud que está contenida textualmente en
+el conjunto de entrenamiento".
+21 Es probable que se deba a que los modelos más grandes aprenden mejor de los
+datos.
+22 Dado que muchos casos de uso de alto riesgo aún no han adoptado Internet,
+pasará mucho tiempo hasta que adopten la IA.

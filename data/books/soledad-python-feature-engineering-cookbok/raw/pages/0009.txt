@@ -1,0 +1,107 @@
+Table of Contents
+viii
+2
+Encoding Categorical Variables
+43
+Technical requirements
+44
+Creating binary variables through 
+one-hot encoding
+44
+How to do it...
+46
+How it works...
+51
+There’s more...
+52
+Performing one-hot encoding 
+of frequent categories
+52
+How to do it...
+52
+How it works...
+56
+There’s more...
+56
+Replacing categories with counts 
+or the frequency of observations
+56
+How to do it...
+57
+How it works...
+60
+See also
+60
+Replacing categories with 
+ordinal numbers
+60
+How to do it...
+61
+How it works...
+63
+There’s more...
+64
+Performing ordinal encoding based 
+on the target value
+64
+How to do it...
+65
+How it works...
+68
+See also
+69
+Implementing target mean encoding
+69
+How to do it...
+71
+How it works…
+72
+There’s more…
+73
+Encoding with Weight of Evidence
+74
+How to do it...
+75
+How it works...
+76
+See also
+77
+Grouping rare or 
+infrequent categories
+77
+How to do it...
+77
+How it works...
+79
+Performing binary encoding
+80
+How to do it...
+81
+How it works...
+82
+3
+Transforming Numerical Variables
+83
+Transforming variables with the 
+logarithm function
+84
+Getting ready
+84
+How to do it...
+84
+How it works...
+89
+There’s more…
+90
+Transforming variables with 
+the reciprocal function
+91
+How to do it...
+91
+How it works...
+94
+Using the square root to 
+transform variables
+95
+How to do it...
+96

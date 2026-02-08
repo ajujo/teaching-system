@@ -1,0 +1,33 @@
+Capacidad de generación
+La IA se utilizaba para generar outputs abiertos mucho antes de que la IA
+generativa se convirtiera en una realidad. Durante décadas, las mentes más
+brillantes del NLP (procesamiento del lenguaje natural) han estado
+trabajando en cómo evaluar la calidad de los outputs abiertos. El subcampo
+que estudia la generación de textos abiertos se denomina NLG (generación
+de lenguaje natural). Las tareas de NLG a principios de la década de 2010
+incluían traducción, resumen y paráfrasis.
+Las métricas utilizadas entonces para evaluar la calidad de los textos
+generados incluían la fluidez y la coherencia. La fluidez mide si el texto es
+gramaticalmente correcto y suena natural (¿suena esto como algo escrito
+por un hablante fluido?). La coherencia mide lo bien estructurado que está
+todo el texto (¿sigue una estructura lógica?). Cada tarea también puede
+tener sus propias métricas. Por ejemplo, una métrica que puede utilizar una
+tarea de traducción es la fidelidad: ¿qué tan fiel es la traducción generada a
+la frase original? Una métrica que podría utilizar una tarea de resumen es la
+relevancia: ¿se centra el resumen en los aspectos más importantes del
+documento fuente? (Li et al., 2022).
+Algunas de las primeras métricas de NLG, como la fidelidad y la
+relevancia, se han reutilizado, con importantes modificaciones, para evaluar
+los outputs de los modelos fundacionales. A medida que mejoraban los
+modelos generativos, muchos de los problemas de los primeros sistemas
+NLG desaparecían, y las métricas utilizadas para rastrear estos problemas
+perdían importancia. En la década de 2010, los textos generados no sonaban
+naturales. Normalmente estaban llenos de errores gramaticales y frases
+torpes. Por tanto, la fluidez y la coherencia eran parámetros importantes.
+Sin embargo, a medida que ha ido mejorando la capacidad de generación de
+modelos lingüísticos, los textos generados por la IA se han vuelto casi
+indistinguibles de los generados por humanos. La fluidez y la coherencia
+pierden importancia. 2 Sin embargo, estas métricas pueden seguir siendo
+útiles para modelos más débiles o para aplicaciones relacionadas con la
+escritura creativa y los idiomas con pocos recursos. La fluidez y la
+coherencia pueden evaluarse utilizando la IA como juez (preguntando a un

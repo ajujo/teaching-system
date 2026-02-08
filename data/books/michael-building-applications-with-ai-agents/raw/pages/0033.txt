@@ -1,0 +1,41 @@
+Every path carries trade‐offs. Pure code is cheap and fast but inflexible; workflows
+offer control but break down when inputs grow wildly variable; traditional chatbots
+or RAG are great for question‐answering over documents but cannot orchestrate
+multistep actions; and agents are powerful but demanding—both in terms of cloud
+compute and engineering effort to monitor, tune, and govern. Before choosing, ask:
+are my inputs unstructured or unpredictable? Do I need multistep planning that
+adapts to intermediate results? Can a document retrieval system suffice for my users’
+information needs, or must the system decide and act autonomously? Will I want this
+system to improve itself over time with minimal human intervention? And can I tol‐
+erate the latency and maintenance burden of a foundation model?
+In short, if your task is a fixed, deterministic transformation, write some simple code.
+If there are a handful of known branches and you require explicit error‐handling
+checkpoints, use a deterministic workflow. If you primarily need natural language
+question‐answering over a corpus, choose a traditional chatbot or RAG architecture.
+But if you face high variability, open‐ended reasoning, dynamic planning needs, or
+continual learning requirements, invest in an autonomous agent. Making this choice
+thoughtfully ensures that you get the right balance of simplicity, performance, and
+adaptability—so your solution remains both effective and maintainable as require‐
+ments evolve.
+Principles for Building Effective Agentic Systems
+Creating successful autonomous agents requires an approach that prioritizes scalabil‐
+ity, modularity, continuous learning, resilience, and future-proofing:
+Scalability
+Ensure that agents can handle growing workloads and diverse tasks by utilizing
+distributed architectures, cloud-based infrastructure, and efficient algorithms
+that support parallel processing and resource optimization. Example: a customer
+support agent that processes 10 tickets per minute may crash or hang when traf‐
+fic spikes to 1,000 if not backed by autoscaling infrastructure.
+Modularity
+Design agents with independent, interchangeable components connected
+through clear interfaces. This modular approach simplifies maintenance, pro‐
+motes flexibility, and facilitates rapid adaptation to new requirements or technol‐
+ogies. Example: a poorly modular agent that hardcodes all its tools in its agent
+service would require a full redeployment anytime a small addition or modifica‐
+tion is needed to a tool.
+Continuous learning
+Equip agents with mechanisms to learn from experience, such as in-context
+learning. Integrate user feedback to refine agent behaviors and maintain
+Principles for Building Effective Agentic Systems 
+| 
+11

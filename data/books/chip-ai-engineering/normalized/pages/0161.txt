@@ -1,0 +1,32 @@
+completar la respuesta. Kittipat Kampa, responsable de IA de TIFIN, me
+contó que su equipo pide a su modelo que genere múltiples respuestas en
+paralelo y muestre al usuario la primera que esté completa y sea válida.
+Elegir el output más común entre un conjunto de outputs puede ser
+especialmente útil para tareas que esperan respuestas exactas.31 Por
+ejemplo, dado un problema matemático, el modelo puede resolverlo varias
+veces y elegir la respuesta más frecuente como solución final. Del mismo
+modo, para una pregunta de respuesta múltiple, un modelo puede elegir la
+opción de output más frecuente. Esto es lo que hizo Google al evaluar
+Gemini en la prueba comparativa MMLU. Tomaron muestras de 32 outputs
+para cada pregunta. Esto permitió que el modelo obtuviera una puntuación
+más alta que la que habría obtenido con un solo output por pregunta.
+Un modelo se considera robusto si no cambia drásticamente sus outputs con
+pequeñas variaciones en los datos de input. Cuanto menos robusto sea un
+modelo, más pueden beneficiarse del muestreo de múltiples outputs. 32 En
+un proyecto, utilizamos IA para extraer cierta información de una imagen
+del producto. Descubrimos que, para la misma imagen, nuestro modelo solo
+podía leer la información la mitad de las veces. En la otra mitad, el modelo
+dijo que la imagen era demasiado borrosa o que el texto era demasiado
+pequeño para leerlo. Sin embargo, al intentarlo tres veces con cada imagen,
+el modelo fue capaz de extraer la información correcta para la mayoría de
+las imágenes.
+Outputs estructurados
+A menudo, en producción, es necesario que los modelos generen outputs
+siguiendo determinados formatos. Los outputs estructurados son cruciales
+para los dos escenarios siguientes:
+1. Tareas que requieren outputs estructurados. La categoría más
+común de tareas en este escenario es el análisis semántico. El
+análisis semántico consiste en convertir el lenguaje natural en un
+formato estructurado y legible por máquina. Convertir texto a SQL
+es un ejemplo de análisis semántico, en el que los outputs deben
+ser consultas SQL válidas. El análisis semántico permite a los

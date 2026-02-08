@@ -1,0 +1,30 @@
+RAG Inference Pipeline
+344
+        retrieved_chunks = post_chunks + articles_chunks + repositories_
+chunks
+        return retrieved_chunks
+Finally, the rerank() method takes the original query and the list of retrieved documents to 
+reorder them based on relevance:
+    def rerank(self, query: str | Query, chunks: list[EmbeddedChunk], 
+keep_top_k: int) -> list[EmbeddedChunk]:
+        if isinstance(query, str):
+            query = Query.from_str(query)
+        reranked_documents = self._reranker.generate(query=query, 
+chunks=chunks, keep_top_k=keep_top_k)
+        logger.info("Documents reranked successfully.", num_
+documents=len(reranked_documents))
+        return reranked_documents
+Leveraging the ContextRetriever class, we can retrieve context from any query with only a few 
+lines of code. For example, let’s take a look at the following code snippet, where we call the entire 
+advanced RAG architecture with a simple call to the search() method:
+from loguru import logger
+from llm_engineering.application.rag.retriever import ContextRetriever
+query = """
+        My name is Paul Iusztin.
+       
+        Could you draft a LinkedIn post discussing RAG systems?
+        I'm particularly interested in:
+            - how RAG works
+            - how it is integrated with vector DBs and large language 
+models (LLMs).
+        """

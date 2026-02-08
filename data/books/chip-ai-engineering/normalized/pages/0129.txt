@@ -1,0 +1,25 @@
+entrada de blog: "On the Difficulty of Extrapolation with NN Scaling"
+(Luke Metz, 2022).
+Cuellos de botella de escalado
+Hasta ahora, cada orden de magnitud de aumento en el tamaño del modelo
+se traducía en un aumento de su rendimiento. GPT-2 tiene un orden de
+magnitud más de parámetros que GPT-1 (1500 millones frente a 117
+millones). GPT-3 tiene dos órdenes de magnitud más que GPT-2 (175 000
+millones frente a 1500 millones). Esto significa un aumento de tres órdenes
+de magnitud en el tamaño de los modelos entre 2018 y 2021. Tres órdenes
+de magnitud más de crecimiento darían lugar a modelos de 100 billones de
+parámetros. 19
+¿Cuántos órdenes de magnitud más pueden crecer los tamaños de los
+modelos? ¿Habrá un punto en el que el rendimiento del modelo se estanque
+independientemente de su tamaño? Aunque es difícil responder a estas
+preguntas, ya hay dos cuellos de botella visibles para la ampliación: los
+datos de entrenamiento y la electricidad.
+Los modelos fundacionales utilizan tantos datos que existe una
+preocupación realista de que se agoten los datos de Internet que usar en los
+próximos años. El ritmo de crecimiento del tamaño de los conjuntos de
+datos de entrenamiento es mucho más rápido que el ritmo al que se generan
+nuevos datos (Villalobos et al., 2022), como se ilustra en la Figura 2-9. Si
+alguna vez ha puesto algo en Internet, debe asumir que ya está o estará
+incluido en los datos de entrenamiento de algunos modelos lingüísticos, lo
+consienta o no. Es similar a saber que, si publica algo en Internet, debe
+esperar que sea indexado por Google.

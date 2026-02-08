@@ -1,0 +1,10 @@
+muestra en la Figura 2-19. Su hipótesis es que, a medida que aumenta el
+número de outputs muestreados, también aumenta la probabilidad de
+encontrar outputs adversos que puedan engañar al verificador. Sin embargo,
+un experimento de Stanford mostró una conclusión diferente. "Monkey
+Business" (Brown et al., 2024) concluye que el número de problemas
+resueltos suele aumentar logarítmicamente a medida que el número de
+muestras aumenta de 1 a 10 000. Aunque es interesante pensar si el
+cómputo de tiempo de prueba puede ampliarse indefinidamente, no creo
+que nadie en producción muestree 400 o 10 000 outputs diferentes para
+cada input. El costo sería astronómico.

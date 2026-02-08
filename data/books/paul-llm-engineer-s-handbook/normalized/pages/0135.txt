@@ -1,0 +1,34 @@
+RAG Feature Pipeline
+104
+Ingestion pipeline
+The RAG ingestion pipeline extracts raw documents from various data sources (e.g., data warehouse, data lake, web pages, etc.). Then, it cleans, chunks (splits into smaller sections), and embeds the documents. Ultimately, it loads the embedded chunks into a vector DB (or other similar
+vector storage).
+Thus, the RAG ingestion pipeline is split into the following:
+•
+The data extraction module gathers all the necessary data from various sources such as
+DBs, APIs, or web pages. This module is highly dependent on your data. It can be as easy
+as querying your data warehouse or something more complex such as crawling Wikipedia.
+•
+A cleaning layer standardizes and removes unwanted characters from the extracted data.
+For example, you must remove all invalid characters from your input text, such as non-AS-
+CII and bold and italic characters. Another popular cleaning strategy is to replace URLs
+with placeholders. However, your cleaning strategy will vary depending on your data
+source and embedding model.
+•
+The chunking module splits the cleaned documents into smaller ones. As we want to
+pass the document's content to an embedding model, this is necessary to ensure it doesn't
+exceed the model's input maximum size. Also, chunking is required to separate specific
+regions that are semantically related. For example, when chunking a book's chapter, the
+most optimal way is to group similar paragraphs into the same section or chunk. By doing
+so, at the retrieval time, you will add only the essential data to the prompt.
+•
+The embedding component uses an embedding model to take the chunk's content (text,
+images, audio, etc.) and project it into a dense vector packed with semantic value-more
+on embeddings in the What are embeddings? section below.
+•
+The loading module takes the embedded chunks along with a metadata document. The
+metadata will contain essential information such as the embedded content, the URL to
+the source of the chunk, and when the content was published on the web. The embedding is used as an index to query similar chunks, while the metadata is used to access the
+information added to augment the prompt.
+At this point, we have a RAG ingestion pipeline that takes raw documents as input, processes them,
+and populates a vector DB. The next step is to retrieve relevant data from the vector store correctly.

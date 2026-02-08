@@ -1,0 +1,25 @@
+Creating New Features
+244
+8.	
+Next, let’s combine the three features in the dataset with polynomial expansion up to the second 
+degree, but this time, we will only return features produced by combining at least two different 
+variables – that is, the interaction features:
+poly = PolynomialFeatures(
+    degree=2, interaction_only=True,
+    include_bias=False)
+dft = poly.fit_transform(df)
+If we execute dft, we will see the features resulting from the polynomial expansion, which 
+contain the original features, plus all possible combinations of the three variables but without 
+the quadratic terms, as we set the transformer to return only the interaction between features:
+Figure 8.8 – A DataFrame with the result of creating features with polynomial 
+expansion but retaining only the interaction between variables
+Note
+Go ahead and create third-degree polynomial combinations of the features, returning 
+only the interactions or all possible features to get a better sense of the output 
+of PolynomialFeatures().
+With that, we’ve learned how to create new features by combining existing variables with themselves 
+or other features in data. Creating features via polynomial expansion using a real dataset is, in 
+essence, identical.
+If you want to combine only a subset of features, you can select the features to combine by utilizing 
+ColumnTransformer(), as we will demonstrate in the There’s more… section ahead in this 
+recipe, or by using SklearnTransformerWrapper() from feature-engine, as you can 

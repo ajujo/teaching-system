@@ -1,0 +1,35 @@
+Performing multivariate imputation by chained equations
+37
+6.
+Finally, let's fill in the missing values in both the train and test sets:
+X_train_t = imputer.transform(X_train)
+X_test_t = imputer.transform(X_test)
+Note
+To corroborate the lack of missing data, we can execute X_train_t.isnull().sum().
+To wrap up the recipe, let's impute the variables with a simple univariate imputation method
+and compare the effect on the variables' distribution.
+7.
+Let's set up scikit-learn's SimpleImputer() to perform mean imputation, and then transform
+the datasets:
+imputer_simple = SimpleImputer(
+    strategy="mean").set_output(transform="pandas")
+X_train_s = imputer_simple.fit_transform(X_train)
+X_test_s = imputer_simple.transform(X_test)
+8.
+Let's now make a histogram of the A3 variable after MICE imputation, followed by a histogram
+of the same variable after mean imputation:
+fig, axes = plt.subplots(
+    2, 1, figsize=(10, 10), squeeze=False)
+X_test_t["A3"].hist(
+    bins=50, ax=axes[0, 0], color="blue")
+X_test_s["A3"].hist(
+    bins=50, ax=axes[1, 0], color="green")
+axes[0, 0].set_ylabel('Number of observations')
+axes[1, 0].set_ylabel('Number of observations')
+axes[0, 0].set_xlabel('A3')
+axes[1, 0].set_xlabel('A3')
+axes[0, 0].set_title('MICE')
+axes[1, 0].set_title('Mean imputation')
+plt.show()
+In the following plot, we see that mean imputation distorts the variable distribution, with more
+observations toward the mean value:

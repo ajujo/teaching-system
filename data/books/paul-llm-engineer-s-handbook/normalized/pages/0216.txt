@@ -1,0 +1,34 @@
+Chapter 5
+185
+In addition to exact and fuzzy deduplication, semantic similarity takes a different approach by
+focusing on the meaning of text for deduplication. This method involves converting words or
+entire samples into vector representations using various natural language processing techniques.
+Word embedding models such as Word2Vec, GloVe, and FastText transform individual words
+into dense vectors, capturing semantic relationships. For more context-aware representations,
+language models like BERT, sentence transformers, or cross-encoders can generate embeddings
+for entire sentences or documents. Once these vector representations are obtained, deduplication
+can be performed by comparing the similarity between vectors. Common similarity measures
+include cosine similarity or Euclidean distance. Samples with high similarity scores above a
+predefined threshold can be considered duplicates. For large datasets, clustering techniques may
+be applied to group similar vectors. Methods like K-means, DBSCAN, or hierarchical clustering
+can efficiently organize the vector space, allowing for the identification of clusters that represent
+semantically similar content. Within each cluster, a representative sample can be retained while
+others are marked as duplicates.
+Data decontamination
+Data decontamination is the process of ensuring that the training dataset does not contain samples
+that are identical or highly similar to those in the evaluation or test sets. This step is important
+for ensuring the quality of the model evaluation and preventing overfitting or memorization of
+test data.
+Data decontamination uses techniques from data deduplication. Exact matching can be used to
+remove any training samples that are identical to those in the evaluation sets. This can be done
+using hash functions or direct string comparisons. Next, we can also use near-duplicate detection
+methods to identify and remove training samples that are very similar to evaluation samples,
+even if they are not exactly the same. This often involves techniques like MinHash or computing
+similarity scores based on n-grams or embeddings.
+A simple way to perform data decontamination is to add your evaluation set to the
+instruction dataset during the data deduplication stage. In this case, we want to
+ensure that we only remove samples from the instruction dataset, which can be
+implemented in different ways (only filtering out the first duplicate, recording the
+indexes of the evaluation samples, etc.). Ideally, you can automatically add your
+evaluation sets in the data deduplication stage to fully automate this process. This
+is particularly efficient if you iterate over several versions of custom benchmarks.

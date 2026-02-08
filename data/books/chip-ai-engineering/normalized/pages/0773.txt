@@ -1,0 +1,26 @@
+- tamaño del modelo, Tamaño del modelo
+- muestreo, Afinado mediante el modelo de recompensa
+- cómputo en tiempo de prueba, Cómputo de tiempo de prueba
+- estrategias de muestreo, Fundamentos de muestreo
+- fundamentos de muestreo, Afinado mediante el modelo de
+recompensa
+- naturaleza probabilística de la IA, La naturaleza probabilística de
+la IA
+- outputs estructurados, Cómputo de tiempo de prueba
+- parámetro frente a hiperparámetro, Ley de escalado: Construir
+modelos de computación optimizada
+- post-entrenamiento, Post-entrenamiento
+- ajuste fino de preferencias, Afinado supervisado
+- ajuste fino supervisado, Post-entrenamiento
+- retos de la evaluación, Metodología de evaluación
+- absoluto, Del rendimiento comparativo al rendimiento absoluto
+- cuellos de botella en la escalabilidad, Retos de la evaluación
+comparativa
+- falta de normalización y control de calidad, Cuellos de botella en
+la escalabilidad
+modelos lingüísticos, Introducción a la creación de aplicaciones de IA con
+modelos fundacionales, Interpretación y casos prácticos de la perplejidad
+modelos lingüísticos de autosupervisión, Modelos lingüísticos
+modelos lingüísticos enmascarados, Modelos lingüísticos
+modelos MoE (mezcla de expertos), Poda de parámetros redundantes
+específicos de la tarea

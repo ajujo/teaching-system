@@ -1,0 +1,25 @@
+When designed thoughtfully, text-based agents are reliable, adaptable, and deeply
+useful across a wide range of contexts. For example, text-based agents might be ideal
+for chat interfaces over messaging apps—like Slack, Teams, and WhatsApp for scal‐
+able communications with customers or employees—or text-heavy workloads like
+customer service, claims processing, or textual research tasks. Their accessibility and
+ease of deployment make them a cornerstone of agentic UX design—provided their
+limitations (particularly around discoverability) are mitigated through clear commu‐
+nication of capabilities, robust error handling, and a focus on seamless conversational
+flow.
+Graphical Interfaces
+Graphical interfaces offer users a visual and interactive way to engage with agent sys‐
+tems, combining text, buttons, icons, and other graphical elements to facilitate com‐
+munication. These interfaces are particularly effective for tasks requiring visual
+clarity, structured workflows, or multistep processes, where pure text or voice interac‐
+tions may fall short. Common examples include dashboard-based AI tools, graphical
+chat interfaces, and agent-powered productivity platforms with clickable elements.
+The key strength of graphical interfaces lies in their ability to present information vis‐
+ually and reduce cognitive load. Humans primarily rely on visual input and can pro‐
+cess visual information more quickly and easily than text-based information. Well-
+designed interfaces can display complex data, status updates, or task progress in an
+intuitive and digestible format. Visual cues, such as progress bars, color coding, and
+alert icons, guide users effectively without requiring lengthy explanations.
+46 
+| 
+Chapter 3: User Experience Design for Agentic Systems

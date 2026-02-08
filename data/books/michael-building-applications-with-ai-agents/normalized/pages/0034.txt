@@ -1,0 +1,41 @@
+performance relevance as tasks evolve. Example: agents that ignore feedback
+loops may keep making the same mistakes-like misclassifying contract clauses
+or failing to escalate critical support issues.
+Resilience
+Develop robust resilience architectures capable of gracefully handling errors,
+security threats, timeouts, and unexpected conditions. Incorporate comprehen‐
+sive error handling, stringent security measures, and redundancy to ensure relia‐
+ble and continuous agent operations. Example: agents without retry or fallback
+logic may crash entirely when a single API call fails, leaving the user waiting and
+confused.
+Future-proofing
+Build agent systems around open standards and scalable infrastructure, fostering
+a culture of innovation to adapt quickly to emerging technologies and evolving
+user expectations. Example: tightly coupling your agent to one proprietary ven‐
+dor's prompt format can make switching models painful and limit
+experimentation.
+Adhering to these principles enables organizations to develop autonomous agents
+that remain effective and relevant, adapting seamlessly to technological advance‐
+ments and changing operational environments.
+Organizing for Success in Building Agentic Systems
+The widespread availability of foundation models via simple API calls has spurred
+extensive experimentation with agent systems across many organizations. Teams fre‐
+quently embark on independent proofs of concept, leading to valuable discoveries
+and innovative ideas. However, this ease of experimentation often results in fragmen‐
+tation-overlapping projects, duplicated efforts, and unfinished experiments become
+scattered throughout the organization. Conversely, premature standardization could
+stifle creativity and trap organizations into rigid frameworks or vendor-specific solu‐
+tions. Achieving success requires balancing flexibility for experimentation with suffi‐
+cient alignment for scalability and coherence.
+In the early phases of agent development, organizations should actively encourage
+exploratory efforts, permitting teams to test various architectures, workflows, and
+models freely. Over time, as successful patterns and best practices become apparent,
+strategic alignment becomes critical. Implementing a "one standard per large group"
+strategy can effectively balance this need. Within specific departments or functional
+areas, teams can standardize around common tools and methodologies, streamlining
+collaboration without restricting broader organizational innovation.
+Another essential aspect of success is avoiding vendor lock-in by adopting open
+standards, such as OpenAPI, and embracing modular system designs. These practices
+12
+|
+Chapter 1: Introduction to Agents

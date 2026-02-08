@@ -1,0 +1,48 @@
+Chapter 1
+15
+b.	 Conversation history: Maintaining information across extended conversations 
+requires careful memory management
+c.	
+Cost management: Most providers charge based on token count, making efficient 
+token use a business imperative
+These constraints directly impact application architecture, making techniques like RAG 
+(which we’ll explore in Chapter 4) essential for production systems.
+2.	
+Limited tool orchestration: While many modern LLMs offer native tool-calling capabili­
+ties, they lack the infrastructure to discover appropriate tools, execute complex workflows, 
+and manage tool interactions across multiple turns. Without this orchestration layer, 
+developers must build custom solutions for each integration.
+3.	
+Task coordination challenges: Managing multi-step workflows with LLMs requires 
+structured control mechanisms. Without them, complex processes involving sequential 
+reasoning or decision-making become difficult to implement reliably.
+Tools in this context refer to functional capabilities that extend an LLM’s reach: web browsers for 
+searching the internet, calculators for precise mathematics, coding environments for executing 
+programs, or APIs for accessing external services and databases. Without these tools, LLMs remain 
+confined to operating within their training knowledge, unable to perform real-world actions or 
+access current information.
+These fundamental limitations create three key challenges for developers working with raw LLM 
+APIs, as demonstrated in the following table.
+Challenge
+Description
+Impact
+Reliability
+Detecting hallucinations and 
+validating outputs
+Inconsistent results that may require 
+human verification
+Resource 
+Management
+Handling context windows and 
+rate limits
+Implementation complexity and 
+potential cost overruns
+Integration 
+Complexity
+Building connections to external 
+tools and data sources
+Extended development time and 
+maintenance burden
+Table 1.3: Three key developer challenges
+LangChain addresses these challenges by providing a structured framework with tested solutions, 
+simplifying AI application development and enabling more sophisticated use cases.

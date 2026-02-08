@@ -1,0 +1,4 @@
+Performing discretization with k-means clustering
+137
+Figure 4.9 – The number of clusters versus the explained variation for the 
+MedInc, HouseAge, and AveRooms variables, from top to bottom

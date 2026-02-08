@@ -1,0 +1,30 @@
+parada para la generación (analizada en el Capítulo 2), u otras técnicas de
+optimización (analizadas en el Capítulo 9).
+SUGERENCIA
+Al evaluar los modelos en función de la latencia, es importante distinguir
+entre lo que es imprescindible y lo que es bueno tener. Si se pregunta a los
+usuarios si quieren menos latencia, nadie dirá nunca que no. Pero una
+latencia alta suele ser una molestia, no un problema.
+Si utiliza API de modelos, normalmente cobran por tokens. Cuantos más
+tokens de input y output utilice, más caro será. Muchas aplicaciones
+intentan entonces reducir el número de tokens de input y output para
+manejar los costos.
+Si aloja su propio modelo, su costo, aparte del costo de ingeniería, es el
+computacional. Para sacar el máximo partido de las máquinas que tiene,
+muchas personas eligen los modelos más grandes que puedan caber en sus
+máquinas. Por ejemplo, las GPU suelen venir con 16 GB, 24 GB, 48 GB y
+80 GB de memoria. Por eso, muchos modelos populares son los que llevan
+al máximo estas configuraciones de memoria. No es casualidad que muchos
+modelos actuales tengan 7000 o 65 000 millones de parámetros.
+Si utiliza API de modelos, el costo por token no suele variar mucho a
+medida que se amplía la empresa. Sin embargo, si aloja sus propios
+modelos, el costo por token puede abaratarse mucho a medida que escala.
+Si ya ha invertido en un clúster que puede servir un máximo de 1000
+millones de tokens al día, el costo computacional sigue siendo el mismo
+tanto si sirve 1 millón de tokens como 1000 millones de tokens al día. 9 Por
+lo tanto, a diferentes escalas, las empresas deben reevaluar si tiene más
+sentido utilizar API de modelos o alojar sus propios modelos.
+La Tabla 4-3 muestra los criterios que puede utilizar para evaluar los
+modelos para su aplicación. La fila escala es especialmente importante a la
+hora de evaluar las API de modelos, porque necesita un servicio de API de
+modelos que pueda soportar su escala.

@@ -1,0 +1,33 @@
+Es más útil mirar la latencia en percentiles, ya que le dicen algo sobre un
+cierto porcentaje de sus solicitudes. El percentil más común es el percentil
+50, abreviado como p50 (mediana). Si la mediana es de 100 ms, la mitad de
+las solicitudes tardan más de 100 ms en generar el primer token, y la otra
+mitad tardan menos de 100 ms. Los percentiles también le ayudan a
+descubrir valores atípicos, que podrían ser síntomas de que algo va mal. Por
+lo general, los percentiles que le interesaría mirar son p90, p95 y p99.
+También es útil comparar los valores TTFT con las longitudes de los inputs.
+Throughput (productividad) y goodput (productividad útil)
+El throughput mide el número de tokens de output por segundo que un
+servicio de inferencia puede generar entre todos los usuarios y solicitudes.
+Algunos equipos cuentan tanto los tokens de input como los de output en el
+cálculo del throughput. Sin embargo, dado que el procesamiento de los
+tokens de input (llenado previo) y la generación de los tokens de output
+(decodificación) tienen diferentes cuellos de botella computacionales y a
+menudo están desacoplados en los servidores de inferencia modernos, el
+throughput de input y de output deben contabilizarse por separado. Cuando
+se utiliza throughput sin ningún modificador, suele referirse a los tokens de
+output.
+El throughput suele medirse en tokens/s (TPS). Si sirven a varios usuarios,
+también se utiliza tokens/usuario para evaluar cómo se escala el sistema con
+más usuarios.
+El throughput también pueden medirse como el número de solicitudes
+completadas durante un tiempo determinado. Muchas aplicaciones utilizan
+solicitudes por segundo (RPS). Sin embargo, en el caso de las aplicaciones
+creadas sobre modelos fundacionales, una solicitud pueden tardar segundos
+en completarse, por lo que muchas personas utilizan en su lugar las
+solicitudes completadas por minuto (RPM). El seguimiento de esta métrica
+es útil para comprender cómo gestiona un servicio de inferencia las
+solicitudes concurrentes. Algunos proveedores pueden limitar su servicio si
+se envían demasiadas solicitudes simultáneas al mismo tiempo.
+El throughput está directamente relacionado con el costo computacional.
+Un mayor throughput suele significar un menor costo. Si su sistema cuesta

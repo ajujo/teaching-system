@@ -1,0 +1,32 @@
+Extracting Features from Text Variables
+352
+7.	
+Finally, let’s capture the BoW in a DataFrame with the corresponding feature names:
+bagofwords = pd.DataFrame(
+    X.toarray(),
+    columns = vectorizer.get_feature_names_out()
+)
+With that, we have created a pandas DataFrame that contains words as columns and the number of 
+times they appeared in each text as values. You can inspect the result by executing bagofwords.
+head():
+Figure 11.6 – A DataFrame with the BoW resulting from the 20 Newsgroup dataset
+We can use this BoW as input for a machine learning model.
+How it works...
+scikit-learn’s CountVectorizer() converts a collection of text documents into a matrix of token 
+counts. These tokens can be individual words or arrays of two or more consecutive words – that is, 
+n-grams. In this recipe, we created a BoW from a text variable in a DataFrame.
+We loaded the 20 Newsgroup text dataset from scikit-learn and removed punctuation and 
+numbers from the text rows using pandas’ replace() function, which can be accessed through 
+pandas’ str module, to replace digits, '\d+', or symbols, '[^\w\s]', with empty strings, ''. 
+Then, we used CountVectorizer() to create the BoW. We set the lowercase parameter to 
+True to put the words in lowercase before extracting the BoW. We set the stop_words argument 
+to english to ignore stop words – that is, to avoid stop words in the BoW. We set ngram_range 
+to the (1,1) tuple to return only single words as columns. Finally, we set min_df to 0.05 to return 
+words that appeared in at least 5% of the texts, or, in other words, in 5% of the rows in the DataFrame.
+After setting up the transformer, we used the fit() method to allow the transformer to find the words 
+that fulfill the preceding criteria. Finally, using the transform() method, the transformer returned 
+an object containing the BoW with its feature names, which we captured in a pandas DataFrame.
+See also
+For more details about CountVectorizer(), visit the scikit-learn library’s documentation 
+at https://scikit-learn.org/stable/modules/generated/sklearn.feature_
+extraction.text.CountVectorizer.html.

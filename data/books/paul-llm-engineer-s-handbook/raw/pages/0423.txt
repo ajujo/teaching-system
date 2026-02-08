@@ -1,0 +1,32 @@
+Inference Pipeline Deployment
+392
+Autoscaling capabilities to handle spikes in usage
+So far, the SageMaker LLM microservice has used a static number of replicas to serve our users, 
+which means that all the time, regardless of the traffic, it has the same number of instances up 
+and running. As we highlighted throughout this book, machines with GPUs are expensive. Thus, 
+we lose a lot of money during downtime when most replicas are idle. Also, if our application 
+has sudden spikes in traffic, the application will perform poorly as the server cannot handle the 
+number of requests. This is a massive problem for the user experience of our application, as in 
+those spikes, we bring in the majority of new users. Thus, if they have a terrible impression of our 
+product, we significantly reduce their chance of returning to our platform.
+Previously, we configured our multi-endpoint service using the ResourceRequirements class 
+from SageMaker. For example, let’s assume we requested four copies (replicas) with the following 
+compute requirements:
+model_resource_config = ResourceRequirements(
+    requests={
+        "copies": 4,  # Number of replicas.
+        "num_accelerators": 4, # Number of GPUs required.
+        "num_cpus": 8, # Number of CPU cores required.
+        "memory": 5 * 1024,  # Minimum memory required in Mb (required)
+    },
+)
+Once you’re done testing your inference pipeline deployment, deleting all your AWS 
+SageMaker resources used to deploy the LLM is essential. As almost all AWS re-
+sources use a pay-as-you-go strategy, using SageMaker for a few hours wouldn’t 
+break your wallet, but if you forget and leave it open, in a few days, the costs can 
+grow exponentially. Thus, a good rule of thumb is to always delete everything after 
+you’re done testing your SageMaker infrastructure (or any AWS resource). Luckily, 
+we have provided a script that deletes all the AWS SageMaker resources for you:
+poetry poe delete-inference-endpoint
+To ensure everything was correctly deleted, go to your SageMaker dashboard and 
+check it yourself.

@@ -1,0 +1,39 @@
+Creating features with general and cumulative operations
+285
+6.
+Let's make a list with the cumulative transformations that we'll use to create features:
+cum_primitives = [
+    "cum_sum",
+    "cum_max",
+    "diff",
+    "time_since_previous"]
+Note
+You can find featuretools-supported cumulative transformations at this link: https://
+featuretools.alteryx.com/en/stable/api_reference.html#cumulativetransform-primitives
+7.
+Let's make a list of the general transformations to carry out:
+general_primitives = ["sine", " cosine "]
+Note
+You can find featuretools-supported general transformations at this link: https://
+featuretools.alteryx.com/en/stable/api_reference.html#generaltransform-primitives
+8.
+Finally, let's create the features. We use the dfs class, setting the original DataFrame as
+the target DataFrame - that is, the one whose variables we'll use as a template for the new
+features. Note that we pass an empty list to the agg_primitives parameter; this is to
+avoid returning the default aggregation primitives. We pass the general primitives from step
+7 to the trans_primitives parameter and the cumulative primitives from step 6 to the
+groupby_trans_primitives parameter:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»data»,
+    agg_primitives=[],
+    trans_primitives=general_primitives,
+    groupby_trans_primitives = cum_primitives,
+    ignore_dataframes = [«invoices»],
+)
+Note
+Step 8 triggers the creation of features, which may take some time depending on how big the
+data is, how many aggregation levels it has, and the number of features to create. You can check
+out the output features before creating them, by setting the features_only parameter to
+True. This will return just the feature names; you can check them out, make sure they show what
+you need, and only then trigger the feature synthesis by setting that parameter back to False.

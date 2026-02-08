@@ -1,0 +1,1220 @@
+{
+  "$schema": "outline_v1",
+  "book_id": "michael-building-applications-with-ai-agents",
+  "generated_date": "2026-01-29T18:27:43.567039+00:00",
+  "chapters": [
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:1",
+      "number": 1,
+      "title": "Introduction to Agents",
+      "start_page": 1,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:1",
+          "number": "1.1",
+          "title": "Defining AI Agents",
+          "start_page": 1,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:2",
+          "number": "1.2",
+          "title": "The Pretraining Revolution",
+          "start_page": 2,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:3",
+          "number": "1.3",
+          "title": "Types of Agents",
+          "start_page": 3,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:4",
+          "number": "1.4",
+          "title": "Model Selection",
+          "start_page": 5,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:5",
+          "number": "1.5",
+          "title": "From Synchronous to Asynchronous Operations",
+          "start_page": 6,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:6",
+          "number": "1.6",
+          "title": "Practical Applications and Use Cases",
+          "start_page": 7,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:7",
+          "number": "1.7",
+          "title": "Workflows and Agents",
+          "start_page": 8,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:8",
+          "number": "1.8",
+          "title": "Principles for Building Effective Agentic Systems",
+          "start_page": 11,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:9",
+          "number": "1.9",
+          "title": "Organizing for Success in Building Agentic Systems",
+          "start_page": 12,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:1:sec:10",
+          "number": "1.10",
+          "title": "Agentic Frameworks",
+          "start_page": 13,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:2",
+      "number": 2,
+      "title": "Designing Agent Systems",
+      "start_page": 17,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:1",
+          "number": "2.1",
+          "title": "Our First Agent System",
+          "start_page": 17,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:2",
+          "number": "2.2",
+          "title": "Core Components of Agent Systems",
+          "start_page": 20,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:3",
+          "number": "2.3",
+          "title": "Model Selection",
+          "start_page": 21,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:4",
+          "number": "2.4",
+          "title": "Designing Capabilities for Specific Tasks",
+          "start_page": 24,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:5",
+          "number": "2.5",
+          "title": "Tool Integration and Modularity",
+          "start_page": 25,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:6",
+          "number": "2.6",
+          "title": "Memory Management and Retrieval",
+          "start_page": 26,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:7",
+          "number": "2.7",
+          "title": "Architecture Design Patterns",
+          "start_page": 32,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:8",
+          "number": "2.8",
+          "title": "Best Practices",
+          "start_page": 34,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:9",
+          "number": "2.9",
+          "title": "Iterative Design",
+          "start_page": 34,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:2:sec:10",
+          "number": "2.10",
+          "title": "Evaluation Strategy",
+          "start_page": 35,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:3",
+      "number": 3,
+      "title": "User Experience Design for Agentic Systems",
+      "start_page": 41,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:1",
+          "number": "3.1",
+          "title": "Interaction Modalities",
+          "start_page": 42,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:2",
+          "number": "3.2",
+          "title": "Graphical Interfaces",
+          "start_page": 46,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:3",
+          "number": "3.3",
+          "title": "Speech and Voice Interfaces",
+          "start_page": 50,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:4",
+          "number": "3.4",
+          "title": "Combining Modalities for Seamless Experiences",
+          "start_page": 54,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:5",
+          "number": "3.5",
+          "title": "The Autonomy Slider",
+          "start_page": 55,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:6",
+          "number": "3.6",
+          "title": "Synchronous Versus Asynchronous Agent Experiences",
+          "start_page": 58,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:7",
+          "number": "3.7",
+          "title": "Design Principles for Synchronous Experiences",
+          "start_page": 58,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:8",
+          "number": "3.8",
+          "title": "Design Principles for Asynchronous Experiences",
+          "start_page": 59,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:9",
+          "number": "3.9",
+          "title": "Finding the Balance Between Proactive and Intrusive Agent Behavior",
+          "start_page": 59,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:10",
+          "number": "3.10",
+          "title": "Context Retention and Continuity",
+          "start_page": 60,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:11",
+          "number": "3.11",
+          "title": "Maintaining State Across Interactions",
+          "start_page": 61,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:12",
+          "number": "3.12",
+          "title": "Personalization and Adaptability",
+          "start_page": 62,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:13",
+          "number": "3.13",
+          "title": "Communicating Agent Capabilities",
+          "start_page": 63,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:14",
+          "number": "3.14",
+          "title": "Communicating Confidence and Uncertainty",
+          "start_page": 64,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:15",
+          "number": "3.15",
+          "title": "Asking for Guidance and Input from Users",
+          "start_page": 65,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:16",
+          "number": "3.16",
+          "title": "Failing Gracefully",
+          "start_page": 65,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:3:sec:17",
+          "number": "3.17",
+          "title": "Trust in Interaction Design",
+          "start_page": 66,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:4",
+      "number": 4,
+      "title": "Tool Use",
+      "start_page": 71,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:1",
+          "number": "4.1",
+          "title": "Local Tools",
+          "start_page": 73,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:2",
+          "number": "4.2",
+          "title": "Model Context Protocol",
+          "start_page": 81,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:3",
+          "number": "4.3",
+          "title": "Stateful Tools",
+          "start_page": 84,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:4",
+          "number": "4.4",
+          "title": "Automated Tool Development",
+          "start_page": 85,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:5",
+          "number": "4.5",
+          "title": "Foundation Models as Tool Makers",
+          "start_page": 85,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:4:sec:6",
+          "number": "4.6",
+          "title": "Tool Use Configuration",
+          "start_page": 87,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:5",
+      "number": 5,
+      "title": "Orchestration",
+      "start_page": 89,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:1",
+          "number": "5.1",
+          "title": "Agent Types",
+          "start_page": 90,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:2",
+          "number": "5.2",
+          "title": "Reflex Agents",
+          "start_page": 90,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:3",
+          "number": "5.3",
+          "title": "Reflection Agents",
+          "start_page": 91,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:4",
+          "number": "5.4",
+          "title": "Deep Research Agents",
+          "start_page": 92,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:5",
+          "number": "5.5",
+          "title": "Tool Selection",
+          "start_page": 93,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:6",
+          "number": "5.6",
+          "title": "Standard Tool Selection",
+          "start_page": 94,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:7",
+          "number": "5.7",
+          "title": "Semantic Tool Selection",
+          "start_page": 97,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:8",
+          "number": "5.8",
+          "title": "Hierarchical Tool Selection",
+          "start_page": 101,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:9",
+          "number": "5.9",
+          "title": "Tool Execution",
+          "start_page": 105,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:10",
+          "number": "5.10",
+          "title": "Tool Topologies",
+          "start_page": 105,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:11",
+          "number": "5.11",
+          "title": "Single Tool Execution",
+          "start_page": 106,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:12",
+          "number": "5.12",
+          "title": "Parallel Tool Execution",
+          "start_page": 107,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:5:sec:13",
+          "number": "5.13",
+          "title": "Context Engineering",
+          "start_page": 112,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:6",
+      "number": 6,
+      "title": "Knowledge and Memory",
+      "start_page": 115,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:1",
+          "number": "6.1",
+          "title": "Foundational Approaches to Memory",
+          "start_page": 116,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:2",
+          "number": "6.2",
+          "title": "Managing Context Windows",
+          "start_page": 116,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:3",
+          "number": "6.3",
+          "title": "Semantic Memory and Vector Stores",
+          "start_page": 119,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:4",
+          "number": "6.4",
+          "title": "Introduction to Semantic Search",
+          "start_page": 119,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:5",
+          "number": "6.5",
+          "title": "Implementing Semantic Memory with Vector Stores",
+          "start_page": 119,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:6",
+          "number": "6.6",
+          "title": "Semantic Experience Memory",
+          "start_page": 122,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:7",
+          "number": "6.7",
+          "title": "Using Knowledge Graphs",
+          "start_page": 123,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:8",
+          "number": "6.8",
+          "title": "Building Knowledge Graphs",
+          "start_page": 124,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:6:sec:9",
+          "number": "6.9",
+          "title": "Promise and Peril of Dynamic Knowledge Graphs",
+          "start_page": 130,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:7",
+      "number": 7,
+      "title": "Learning in Agentic Systems",
+      "start_page": 135,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:1",
+          "number": "7.1",
+          "title": "Nonparametric Learning",
+          "start_page": 135,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:2",
+          "number": "7.2",
+          "title": "Nonparametric Exemplar Learning",
+          "start_page": 135,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:3",
+          "number": "7.3",
+          "title": "Experiential Learning",
+          "start_page": 141,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:4",
+          "number": "7.4",
+          "title": "The Promise of Small Models",
+          "start_page": 151,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:5",
+          "number": "7.5",
+          "title": "Direct Preference Optimization",
+          "start_page": 158,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:7:sec:6",
+          "number": "7.6",
+          "title": "Reinforcement Learning with Verifiable Rewards",
+          "start_page": 161,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:8",
+      "number": 8,
+      "title": "From One Agent to Many",
+      "start_page": 163,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:1",
+          "number": "8.1",
+          "title": "Multiagent Scenarios",
+          "start_page": 170,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:2",
+          "number": "8.2",
+          "title": "Principles for Adding Agents",
+          "start_page": 178,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:3",
+          "number": "8.3",
+          "title": "Multiagent Coordination",
+          "start_page": 180,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:4",
+          "number": "8.4",
+          "title": "Democratic Coordination",
+          "start_page": 180,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:5",
+          "number": "8.5",
+          "title": "Manager Coordination",
+          "start_page": 181,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:6",
+          "number": "8.6",
+          "title": "Hierarchical Coordination",
+          "start_page": 182,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:7",
+          "number": "8.7",
+          "title": "Automated Design of Agent Systems",
+          "start_page": 184,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:8",
+          "number": "8.8",
+          "title": "Communication Techniques",
+          "start_page": 189,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:9",
+          "number": "8.9",
+          "title": "Local Versus Distributed Communication",
+          "start_page": 189,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:10",
+          "number": "8.10",
+          "title": "Message Brokers and Event Buses",
+          "start_page": 192,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:11",
+          "number": "8.11",
+          "title": "Orchestration and Workflow Engines",
+          "start_page": 199,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:8:sec:12",
+          "number": "8.12",
+          "title": "Managing State and Persistence",
+          "start_page": 201,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:9",
+      "number": 9,
+      "title": "Validation and Measurement",
+      "start_page": 205,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:1",
+          "number": "9.1",
+          "title": "Measuring Agentic Systems",
+          "start_page": 205,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:2",
+          "number": "9.2",
+          "title": "Measurement Is the Keystone",
+          "start_page": 206,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:3",
+          "number": "9.3",
+          "title": "Integrating Evaluation into the Development Lifecycle",
+          "start_page": 207,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:4",
+          "number": "9.4",
+          "title": "Creating and Scaling Evaluation Sets",
+          "start_page": 207,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:5",
+          "number": "9.5",
+          "title": "Component Evaluation",
+          "start_page": 209,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:6",
+          "number": "9.6",
+          "title": "Evaluating Tools",
+          "start_page": 209,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:7",
+          "number": "9.7",
+          "title": "Evaluating Planning",
+          "start_page": 210,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:8",
+          "number": "9.8",
+          "title": "Evaluating Memory",
+          "start_page": 212,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:9",
+          "number": "9.9",
+          "title": "Evaluating Learning",
+          "start_page": 213,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:10",
+          "number": "9.10",
+          "title": "Holistic Evaluation",
+          "start_page": 214,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:11",
+          "number": "9.11",
+          "title": "Handling Unexpected Inputs",
+          "start_page": 219,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:9:sec:12",
+          "number": "9.12",
+          "title": "Preparing for Deployment",
+          "start_page": 220,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:10",
+      "number": 10,
+      "title": "Monitoring in Production",
+      "start_page": 223,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:1",
+          "number": "10.1",
+          "title": "Monitoring Is How You Learn",
+          "start_page": 224,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:2",
+          "number": "10.2",
+          "title": "Monitoring Stacks",
+          "start_page": 226,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:3",
+          "number": "10.3",
+          "title": "Arize Phoenix",
+          "start_page": 228,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:4",
+          "number": "10.4",
+          "title": "Choosing the Right Stack",
+          "start_page": 230,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:5",
+          "number": "10.5",
+          "title": "Visualization and Alerting",
+          "start_page": 232,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:6",
+          "number": "10.6",
+          "title": "Monitoring Patterns",
+          "start_page": 235,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:7",
+          "number": "10.7",
+          "title": "Shadow Mode",
+          "start_page": 235,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:8",
+          "number": "10.8",
+          "title": "Canary Deployments",
+          "start_page": 235,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:9",
+          "number": "10.9",
+          "title": "Regression Trace Collection",
+          "start_page": 236,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:10",
+          "number": "10.10",
+          "title": "User Feedback as an Observability Signal",
+          "start_page": 236,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:10:sec:11",
+          "number": "10.11",
+          "title": "Distribution Shifts",
+          "start_page": 237,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:11",
+      "number": 11,
+      "title": "Improvement Loops",
+      "start_page": 243,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:1",
+          "number": "11.1",
+          "title": "Feedback Pipelines",
+          "start_page": 245,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:2",
+          "number": "11.2",
+          "title": "Automated Issue Detection and Root Cause Analysis",
+          "start_page": 250,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:3",
+          "number": "11.3",
+          "title": "Prompt and Tool Refinement",
+          "start_page": 254,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:4",
+          "number": "11.4",
+          "title": "Aggregating and Prioritizing Improvements",
+          "start_page": 259,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:5",
+          "number": "11.5",
+          "title": "Shadow Deployments",
+          "start_page": 261,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:6",
+          "number": "11.6",
+          "title": "Bayesian Bandits",
+          "start_page": 263,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:7",
+          "number": "11.7",
+          "title": "Continuous Learning",
+          "start_page": 265,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:11:sec:8",
+          "number": "11.8",
+          "title": "Offline Retraining",
+          "start_page": 267,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:12",
+      "number": 12,
+      "title": "Protecting Agentic Systems",
+      "start_page": 271,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:1",
+          "number": "12.1",
+          "title": "The Unique Risks of Agentic Systems",
+          "start_page": 272,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:2",
+          "number": "12.2",
+          "title": "Emerging Threat Vectors",
+          "start_page": 273,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:3",
+          "number": "12.3",
+          "title": "Securing Foundation Models",
+          "start_page": 275,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:4",
+          "number": "12.4",
+          "title": "Defensive Techniques",
+          "start_page": 276,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:5",
+          "number": "12.5",
+          "title": "Red Teaming",
+          "start_page": 278,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:6",
+          "number": "12.6",
+          "title": "Threat Modeling with MAESTRO",
+          "start_page": 281,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:7",
+          "number": "12.7",
+          "title": "Protecting Data in Agentic Systems",
+          "start_page": 283,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:8",
+          "number": "12.8",
+          "title": "Data Privacy and Encryption",
+          "start_page": 283,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:9",
+          "number": "12.9",
+          "title": "Data Provenance and Integrity",
+          "start_page": 285,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:10",
+          "number": "12.10",
+          "title": "Handling Sensitive Data",
+          "start_page": 286,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:11",
+          "number": "12.11",
+          "title": "Securing Agents",
+          "start_page": 288,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:12",
+          "number": "12.12",
+          "title": "Protections from External Threats",
+          "start_page": 290,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:12:sec:13",
+          "number": "12.13",
+          "title": "Protections from Internal Failures",
+          "start_page": 292,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:13",
+      "number": 13,
+      "title": "Human-Agent Collaboration",
+      "start_page": 297,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:1",
+          "number": "13.1",
+          "title": "Roles and Autonomy",
+          "start_page": 297,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:2",
+          "number": "13.2",
+          "title": "The Changing Role of Humans in Agent Systems",
+          "start_page": 298,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:3",
+          "number": "13.3",
+          "title": "Aligning Stakeholders and Driving Adoption",
+          "start_page": 299,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:4",
+          "number": "13.4",
+          "title": "Scaling Collaboration",
+          "start_page": 300,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:5",
+          "number": "13.5",
+          "title": "Agent Scope and Organizational Roles",
+          "start_page": 302,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:6",
+          "number": "13.6",
+          "title": "Shared Memory and Context Boundaries",
+          "start_page": 303,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:7",
+          "number": "13.7",
+          "title": "The Lifecycle of Trust",
+          "start_page": 305,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:8",
+          "number": "13.8",
+          "title": "Accountability Frameworks",
+          "start_page": 306,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:9",
+          "number": "13.9",
+          "title": "Escalation Design and Oversight",
+          "start_page": 309,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "michael-building-applications-with-ai-agents:ch:13:sec:10",
+          "number": "13.10",
+          "title": "Privacy and Regulatory Compliance",
+          "start_page": 310,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    }
+  ]
+}

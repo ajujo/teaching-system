@@ -1,0 +1,32 @@
+RAG Feature Pipeline
+160
+            **kwargs,
+        )
+        documents = [cls.from_record(record) for record in records]
+        return documents
+Now that we understand what our domain entities look like and how the OVM works, let’s move 
+on to the dispatchers who clean, chunk, and embed the documents.
+The dispatcher layer
+A dispatcher inputs a document and applies dedicated handlers based on its data category (article, 
+post, or repository). A handler can either clean, chunk, or embed a document.
+Let’s start by zooming in on the CleaningDispatcher. It mainly implements a dispatch() method 
+that inputs a raw document. Based on its data category, it instantiates and calls a handler that 
+applies the cleaning logic specific to that data point:
+class CleaningDispatcher:
+    cleaning_factory = CleaningHandlerFactory()
+    @classmethod
+    def dispatch(cls, data_model: NoSQLBaseDocument) -> 
+VectorBaseDocument:
+        data_category = DataCategory(data_model.get_collection_name())
+        handler = cls.cleaning_factory.create_handler(data_category)
+        clean_model = handler.clean(data_model)
+        logger.info(
+            "Data cleaned successfully.",
+            data_category=data_category,
+            cleaned_content_len=len(clean_model.content),
+        )
+        return clean_model
+The key in the dispatcher logic is the CleaningHandlerFactory(), which instantiates a different 
+cleaning handler based on the document’s data category:
+class CleaningHandlerFactory:
+    @staticmethod

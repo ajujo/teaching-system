@@ -1,0 +1,40 @@
+Production-Ready LLM Deployment and Observability
+366
+        print("Loading pre-built index...")
+        # Initialize the embedding model
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name='sentence-transformers/all-mpnet-base-v2'
+        )
+    # Check if index directory exists
+    import os
+    if not os.path.exists("faiss_index") or not os.path.isdir("faiss_
+index"):
+        error_msg = "ERROR: FAISS index directory not found!"
+        print(error_msg)
+        raise FileNotFoundError(error_msg)
+       
+    # Load the pre-built index
+    self.index = FAISS.load_local("faiss_index", self.embeddings)
+    print("SearchDeployment initialized successfully")
+   
+async def __call__(self, request):
+    query = request.query_params.get("query", "")
+    if not query:
+        return {"results": [], "status": "empty_query", "message": "Please 
+provide a query parameter"}
+       
+    try:
+        # Search the index
+        results = self.index.similarity_search_with_score(query, k=5)
+       
+        # Format results for response
+        formatted_results = []
+        for doc, score in results:
+            formatted_results.append({
+                "content": doc.page_content,
+                "source": doc.metadata.get("source", "Unknown"),
+                "score": float(score)
+            })
+           
+        return {"results": formatted_results, "status": "success", 
+"message": f"Found {len(formatted_results)} results"}

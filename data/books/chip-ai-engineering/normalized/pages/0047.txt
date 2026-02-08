@@ -1,0 +1,22 @@
+Categoría
+Ejemplos de
+casos de uso de
+consumo
+Ejemplos de casos de
+uso empresarial
+Planificación de
+eventos
+Generación de clientes
+potenciales
+Dado que los modelos fundacionales son generales, las aplicaciones creadas
+basándose en ellos pueden resolver muchos problemas. Esto significa que
+una aplicación puede pertenecer a más de una categoría. Por ejemplo, un
+bot puede proporcionar compañía y agregar información. Una aplicación
+puede ayudarle a extraer datos estructurados de un PDF y responder a
+preguntas sobre ese PDF.
+La Figura 1-7 muestra la distribución de estos casos de uso entre las 205
+aplicaciones de código abierto. Tenga en cuenta que el pequeño porcentaje
+de casos de uso en educación, organización de datos y redacción no
+significa que estos casos de uso no sean populares. Solo significa que estas
+aplicaciones no son de código abierto. Los creadores de estas aplicaciones
+podrían considerarlas más adecuadas para casos de uso empresarial.

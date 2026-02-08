@@ -1,0 +1,39 @@
+Operational costs
+After deployment, the operational costs of running agents can become substantial,
+particularly for systems requiring high computational power, such as those involving
+real-time decision making or continuous data processing. Key contributors to these
+expenses include the need for significant compute power, as agents running deep
+learning models or complex algorithms often rely on costly hardware like GPUs or
+cloud services.
+Additionally, agents that process vast amounts of data or maintain extensive memory
+incur higher costs for data storage and bandwidth. Regular maintenance and updates,
+including bug fixes and system improvements, further add to operational expenses as
+resources are needed to ensure the system's reliability and performance over time.
+Cost versus value
+Ultimately, the cost of an agent-based system must be justified by the value it delivers.
+In some cases, it may make sense to prioritize cheaper, simpler agents for less critical
+tasks, while investing heavily in more sophisticated agents for mission-critical appli‐
+cations. Decisions around cost must be made in the context of the system's overall
+goals and expected lifespan. Some optimization strategies include:
+Lean models
+Using simpler, more efficient models where appropriate can help reduce both
+development and operational costs. For example, if a rule-based system can
+achieve similar results to a deep learning model for a given task, the simpler
+approach will often be more cost-effective.
+Cloud-based resources
+Leveraging cloud computing resources can reduce up-front infrastructure costs,
+establishing a more scalable, pay-as-you-go model.
+Open source models and tools
+Utilizing open source ML libraries and frameworks can help minimize software
+development costs while still delivering high-quality agents.
+Designing agent systems involves balancing several critical trade-offs. Prioritizing
+performance may require sacrificing some accuracy, while scaling to a multiagent
+architecture introduces challenges in coordination and consistency. Ensuring reliabil‐
+ity demands rigorous testing and monitoring but can increase development time and
+complexity. Finally, cost considerations must be factored in from both a development
+and operational perspective, ensuring that the system delivers value within budget
+constraints. In the next section, we'll review some of the most common design pat‐
+terns used when building effective agentic systems.
+Design Trade-Offs
+|
+31

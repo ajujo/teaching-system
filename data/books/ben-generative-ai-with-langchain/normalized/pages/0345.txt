@@ -1,0 +1,33 @@
+Evaluation and Testing
+318
+Retrieval quality measures how well the system finds the most appropriate information from
+its knowledge base. Rather than using simple relevance scores, modern evaluation approaches
+assess retrieval through precision and recall at different ranks, considering both the absolute
+relevance of retrieved documents and their coverage of the information needed to answer user
+queries. Academic research has developed standardized test collections with expert annotations
+to enable systematic comparison across different retrieval methodologies.
+Contextual relevance, on the other hand, examines how precisely the retrieved information matches
+the specific information need expressed in the query. This involves evaluating whether the system
+can distinguish between superficially similar but contextually different information requests.
+Recent research has developed specialized evaluation methodologies for testing disambiguation
+capabilities in financial contexts, where similar terminology might apply to fundamentally dif­
+ferent products or regulations. These approaches specifically measure how well retrieval systems
+can distinguish between queries that use similar language but have distinct informational needs.
+Faithful generation-the degree to which the agent's responses accurately reflect the retrieved
+information without fabricating details-represents perhaps the most critical aspect of RAG eval­
+uation. Recent studies have found that even well-optimized RAG systems still show non-trivial
+hallucination rates, between 3-15% on complex domains, highlighting the ongoing challenge in
+this area. Researchers have developed various evaluation protocols for faithfulness, including
+source attribution tests and contradiction detection mechanisms that systematically compare
+generated content with the retrieved source material.
+Finally, information synthesis quality evaluates the agent's ability to integrate information from
+multiple sources into coherent, well-structured responses. Rather than simply concatenating or
+paraphrasing individual documents, advanced agents must reconcile potentially conflicting in­
+formation, present balanced perspectives, and organize content logically. Evaluation here extends
+beyond automated metrics to include expert assessment of how effectively the agent has synthe­
+sized complex information into accessible, accurate summaries that maintain appropriate nuance.
+Planning and reasoning evaluation
+Planning and reasoning capabilities form the cognitive foundation that enables agents to solve
+complex, multi-step problems that cannot be addressed through single operations. Evaluating
+these capabilities requires moving beyond simple input-output testing to assess the quality of
+the agent's thought process and problem-solving strategy.

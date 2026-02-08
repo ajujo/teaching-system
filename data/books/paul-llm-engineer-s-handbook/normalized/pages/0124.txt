@@ -1,0 +1,27 @@
+Chapter 3
+93
+For example, we can easily run the same data collection pipeline but with Paul Iusztin's YAML
+configuration, listed below:
+parameters:
+  user_full_name: Paul Iusztin # [First Name(s)] [Last Name]
+  links:
+    # Medium
+    - https://medium.com/decodingml/an-end-to-end-framework-forproduction-ready-llm-systems-by-building-your-llm-twin-2cc6bb01141f
+    - https://medium.com/decodingml/a-real-time-retrieval-system-for-ragon-social-media-data-9cc01d50a2a0
+    - https://medium.com/decodingml/sota-python-streaming-pipelines-forfine-tuning-llms-and-rag-in-real-time-82eb07795b87
+    ... # More Medium links
+    # Substack
+    - https://decodingml.substack.com/p/real-time-feature-pipelineswith?r=1ttoeh
+    - https://decodingml.substack.com/p/building-ml-systems-the-rightway?r=1ttoeh
+    - https://decodingml.substack.com/p/reduce-your-pytorchs-codelatency?r=1ttoeh
+    ... # More Substack links
+To run the pipeline using Paul's configuration, we call the following poe command:
+poetry poe run-digital-data-etl-paul
+That, under the hood, calls the following CLI command that references Paul's config file:
+poetry run python -m tools.run --run-etl --no-cache --etl-config-filename
+digital_data_etl_paul_iusztin.yaml
+You can find all the configs in the repository in the configs/ directory. Also, using poe, we configured a command that calls the data collection pipeline for all the supported authors:
+poetry poe run-digital-data-etl
+We can easily query the MongoDB data warehouse using our ODM classes. For example, let's
+query all the articles collected for Paul Iusztin:
+from llm_engineering.domain.documents import ArticleDocument, UserDocument

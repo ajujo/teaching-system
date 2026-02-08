@@ -1,0 +1,27 @@
+Creating New Features
+240
+Another classical example in which a simple feature can make a simple model, such as logistic
+regression, understand the underlying relationship in the data is the XOR situation. In the left panel
+of the following diagram, we see how the target class is distributed across the values of x1 and x2 (the
+class is highlighted with different color shades):
+Figure 8.5 - An illustration of the XOR relationship and how
+combining features allows a full class separation
+If both features are positive, or both features are negative, then the class is 1, but if the features take
+different signs, then the class is 0 (left panel). Logistic regression will not be able to pick this pattern
+from each individual feature because, as we can see in the middle panel, there is significant class
+overlap across the values of the feature - in this case, x1. However, multiplying x1 by x2 creates a
+feature that allows a logistic regression to predict the classes accurately because x3, as can we see in
+the right panel, allows the classes to be clearly separated.
+With similar logic, polynomial combinations of the same or different variables can return new variables
+that convey additional information and capture feature interaction thereby resulting in useful inputs
+for linear models. With huge datasets, analyzing every possible variable combination is not always
+possible. But we can create several polynomial variables automatically, using, for example, scikitlearn, and we can let the model decide which variables are useful. In this recipe, we will learn how
+to create multiple features through polynomial combinations using scikit-learn.
+Getting ready
+Polynomial expansion serves to automate the creation of new features, capture feature interaction, and
+potential non-linear relationships between the original variables and the target. To create polynomial
+features, we need to determine which features to combine and which polynomial degree to use.
+Note
+While determining the features to combine or the degree of the polynomial combination is not
+an easy task, keep in mind that high polynomial degrees will result in a lot of new features and
+may lead to overfitting. In general, we keep the degree low, to a maximum of 2 or 3.

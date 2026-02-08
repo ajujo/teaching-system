@@ -1,0 +1,24 @@
+2
+First Steps with LangChain
+In the previous chapter, we explored LLMs and introduced LangChain as a powerful framework
+for building LLM-powered applications. We discussed how LLMs have revolutionized natural
+language processing with their ability to understand context, generate human-like text, and
+perform complex reasoning. While these capabilities are impressive, we also examined their
+limitations-hallucinations, context constraints, and lack of up-to-date knowledge.
+In this chapter, we'll move from theory to practice by building our first LangChain application.
+We'll start with the fundamentals: setting up a proper development environment, understanding
+LangChain's core components, and creating simple chains. From there, we'll explore more ad­
+vanced capabilities, including running local models for privacy and cost efficiency and building
+multimodal applications that combine text with visual understanding. By the end of this chapter,
+you'll have a solid foundation in LangChain's building blocks and be ready to create increasingly
+sophisticated AI applications in subsequent chapters.
+To sum up, this chapter will cover the following topics:
+•
+Setting up dependencies
+•
+Exploring LangChain's building blocks (model interfaces, prompts and templates, and
+LCEL)
+•
+Running local models
+•
+Multimodal AI applications

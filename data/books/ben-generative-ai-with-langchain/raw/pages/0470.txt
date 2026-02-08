@@ -1,0 +1,22 @@
+Other Books 
+You May Enjoy
+If you enjoyed this book, you may be interested in these other books by Packt:
+Building AI Agents with LLMs, RAG, and Knowledge Graphs
+Salvatore Raieli, Gabriele Iuculano
+ISBN: 978-1-83508-706-0
+•	
+Design RAG pipelines to connect LLMs with external data.
+•	
+Build and query knowledge graphs for structured context and factual grounding.
+•	
+Develop AI agents that plan, reason, and use tools to complete tasks.
+•	
+Integrate LLMs with external APIs and databases to incorporate live data.
+•	
+Apply techniques to minimize hallucinations and ensure accurate outputs.
+•	
+Orchestrate multiple agents to solve complex, multi-step problems.
+•	
+Optimize prompts, memory, and context handling for long-running tasks.
+•	
+Deploy and monitor AI agents in production environments.

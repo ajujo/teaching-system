@@ -1,0 +1,30 @@
+Prefacio
+Cuando salió ChatGPT, como muchos de mis colegas, me sentí
+desorientada. Lo que me sorprendió no fue el tamaño ni las capacidades del
+modelo. Desde hace más de una década, la comunidad de la IA sabe que
+escalar un modelo lo mejora. En 2012, los autores de AlexNet señalaron en
+su artículo de referencia que: "Todos nuestros experimentos sugieren que
+nuestros resultados pueden mejorarse simplemente esperando a disponer de
+GPU más rápidas y conjuntos de datos más grandes". 1 2
+Lo que me sorprendió fue el gran número de aplicaciones que desbloqueó
+este aumento de la capacidad. Pensé que un pequeño aumento de las
+métricas de calidad de los modelos podría traducirse en un incremento
+modesto de las aplicaciones. En vez de eso, dio lugar a una explosión de
+nuevas posibilidades.
+Estas nuevas capacidades de IA no solo han aumentado la demanda de
+aplicaciones de IA, además han bajado la barrera de entrada para los
+desarrolladores. Ahora es muy fácil empezar a crear aplicaciones de IA.
+Hasta es posible crear una aplicación sin escribir una sola línea de código.
+Este cambio ha hecho que la IA deje de ser una disciplina especializada
+para convertirse en una potente herramienta de desarrollo al alcance de
+todos.
+Aunque la adopción de la IA parece reciente, se basa en técnicas que
+existen desde hace tiempo. Ya en la década de los 50 se publicaron artículos
+sobre el modelado lingüístico. Las aplicaciones de generación aumentada
+por recuperación (RAG) se basan en una tecnología de recuperación que
+lleva impulsando sistemas de búsqueda y recomendación desde mucho
+antes de que se acuñara el término RAG. Las buenas prácticas para
+implementar aplicaciones tradicionales de aprendizaje automático
+(experimentación sistemática, evaluación rigurosa, optimización incesante
+para obtener modelos más rápidos y baratos) siguen siendo las mejores
+prácticas para trabajar con aplicaciones basadas en modelos fundacionales.

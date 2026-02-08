@@ -1,0 +1,31 @@
+diferencian por la información que pueden utilizar para predecir un token:
+Modelo lingüístico enmascarado
+Un modelo lingüístico enmascarado es entrenado para
+predecir los tokens que faltan en cualquier parte de una
+secuencia, utilizando el contexto anterior y posterior a los
+tokens faltantes. En esencia, un modelo lingüístico
+enmascarado se entrena para poder rellenar el espacio en
+blanco. Por ejemplo, dado el contexto, "Mi __ favorito es el
+azul", un modelo lingüístico enmascarado debería predecir
+que el espacio en blanco es probablemente "color". Un
+ejemplo bien conocido de modelo lingüístico enmascarado
+son las representaciones codificadoras bidireccionales a
+partir de transformadores, o BERT (Devlin et al., 2018).
+En la actualidad, los modelos lingüísticos enmascarados se
+utilizan habitualmente para tareas no generativas, como el
+análisis de sentimientos y la clasificación de textos. También
+son útiles para tareas que requieren una comprensión del
+contexto global, como la depuración de código, en la que un
+modelo necesita comprender tanto el código precedente
+como el siguiente para identificar errores.
+Modelo lingüístico autorregresivo
+Un modelo lingüístico autorregresivo es entrenado para
+predecir el siguiente token de una secuencia, utilizando solo
+los tokens precedentes. Predice lo que viene después en "Mi
+color favorito es __".3 Un modelo autorregresivo puede
+generar continuamente un token tras otro. Hoy en día, los
+modelos lingüísticos autorregresivos son los modelos
+preferidos para la generación de textos y, por este motivo,
+son mucho más populares que los modelos lingüísticos
+enmascarados.4
+La Figura 1-2 muestra estos dos tipos de modelos lingüísticos.

@@ -1,0 +1,28 @@
+Chapter 3
+83
+Figure 3.3: Adding a retry mechanism to a chain that has multiple steps
+In order to use RetryWithErrorOutputParser, we need to first initialize it with an LLM (used to
+fix the output) and our parser. Then, if our parsing fails, we run it and provide our initial prompt
+(with all substituted parameters), generated response, and parsing error:
+from langchain.output_parsers import RetryWithErrorOutputParser
+fix_parser = RetryWithErrorOutputParser.from_llm(
+  llm=llm, # provide llm here
+  parser=parser, # your original parser that failed
+  prompt=retry_prompt, # an optional parameter, you can redefine the
+default prompt
+)
+fixed_output = fix_parser.parse_with_prompt(
+  completion=original_response, prompt_value=original_prompt)
+We can read the source code on GitHub to better understand what's going on, but in essence, that's
+an example of a pseudo-code without too many details. We illustrate how we can pass the parsing
+error and the original output that led to this error back to an LLM and ask it to fix the problem:
+prompt = """
+Prompt: {prompt} Completion: {completion} Above, the Completion did not
+satisfy the constraints given in the Prompt. Details: {error} Please try
+again:
+"""
+retry_chain = prompt | llm | StrOutputParser()
+# try to parse a completion with a provided parser
+parser.parse(completion)
+# if it fails, catch an error and try to recover max_retries attempts
+completion = retry_chain.invoke(original_prompt, completion, error)

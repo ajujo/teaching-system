@@ -1,0 +1,40 @@
+Using decision trees for discretization
+145
+Based on this decision tree, houses with a smaller mean number of rooms than 5.5 will go to the first 
+leaf, houses with a mean number of rooms between 5.5 and 6.37 will fall into the second leaf, houses 
+with mean values between 6.37 and 10.77 will end up in the third leaf, and houses with mean values 
+greater than 10.77 will land in the fourth leaf.
+As you see, by design, decision trees can find the set of cut points that partition a variable into intervals 
+with good class coherence.
+In this recipe, we will perform decision tree-based discretization using Feature-engine.
+How to do it...
+Let’s begin by importing some libraries and loading the data:
+1.	
+Let’s import the required Python libraries, classes, and datasets:
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.tree import plot_tree
+from feature_engine.discretisation import 
+DecisionTreeDiscretiser
+2.	
+Let’s load the California housing dataset into a pandas DataFrame and then split it into train 
+and test sets:
+X, y = fetch_california_housing(return_X_y=True,
+    as_frame=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+3.	
+Let’s make a list with the names of the variables to discretize:
+variables = list(X.columns)[:-2]
+If we execute print(variables), we’ll see the following variable names: ['MedInc', 
+'HouseAge', 'AveRooms', 'AveBedrms', 'Population', 'AveOccup'].
+4.	
+Let’s set up the transformer to discretize the variables from step 3. We want the transformer to 
+optimize the hyperparameter’s maximum depth and minimum samples per leaf of each tree 
+based on the negative mean square error metric using three-fold cross-validation. As the output 
+of the discretization, we want the limits of the intervals:
+disc = DecisionTreeDiscretiser(
+    bin_output="boundaries",
+    precision=3,

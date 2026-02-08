@@ -1,0 +1,35 @@
+Chapter 6
+253
+    example["rejected"] = example['rejected'] + EOS_TOKEN
+    return {"prompt": example["prompt"], "chosen":
+example["chosen"], "rejected": example["rejected"]}
+dataset = dataset.map(format_samples)
+dataset = dataset.train_test_split(test_size=0.05)
+9.
+The model and data are now ready, so we can start fine-tuning. Compared to SFT, there
+are a few new parameters, like ref_model and beta. Since we're using LoRA (or QLoRA),
+we don't directly train the model but instead the adapters. This means we can use the
+original model (without adapters) as a reference, saving a lot of VRAM. The beta parameter controls the importance of the reference model. A standard value of 0.1 works well
+in most scenarios, but we decided to increase it to 0.5 based on our experiments. This is
+due to the fact that the trained model used formal language with lower values. Having it
+closer to the reference model helps to fix this issue.
+The learning rate is also lower (from 3e-4 for SFT to 2e-6 here). We train for 1 epoch instead
+of 3, and the max_seq_length parameter is now broken down into two new parameters:
+max_prompt_length (prompt only) and max_length (prompt and answer). Note that we
+also replaced the TrainingArguments class with DPOConfig.
+trainer = DPOTrainer(
+    model=model,
+    ref_model=None,
+    tokenizer=tokenizer,
+    beta=0.5,
+    train_dataset=dataset["train"],
+    eval_dataset=dataset["test"],
+    max_length=max_seq_length//2,
+    max_prompt_length=max_seq_length//2,
+    args=DPOConfig(
+        learning_rate=2e-6,
+        lr_scheduler_type="linear",
+        per_device_train_batch_size=2,
+        per_device_eval_batch_size=2,
+        gradient_accumulation_steps=8,
+        num_train_epochs=1,

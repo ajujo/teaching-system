@@ -1,0 +1,28 @@
+SELECCIÓN DE ACELERADORES
+Qué aceleradores utilizar depende de la carga de trabajo. Si sus cargas
+de trabajo están limitadas por el cómputo, quizá le interese buscar chips
+con más FLOP/s. Si sus cargas de trabajo están limitadas por la
+memoria, gastar dinero en chips con mayor ancho de banda y más
+memoria les hará la vida más fácil.
+A la hora de evaluar qué chips comprar, hay tres preguntas principales:
+¿Puede el hardware ejecutar sus cargas de trabajo?
+¿Cuánto tarda en hacerlo?
+¿Cuánto cuesta hacerlo?
+Los FLOP/s, el tamaño de la memoria y el ancho de banda de la
+memoria son las tres grandes cifras que le ayudarán a responder a las
+dos primeras preguntas. La última pregunta es sencilla. Los precios de
+los proveedores en la nube suelen basarse en el uso y son bastante
+similares entre ellos. Si compra el hardware, el costo puede calcularse
+en función del precio inicial y el consumo de energía continuo.
+Optimización de la inferencia
+La optimización de la inferencia puede realizarse a nivel de modelo,
+hardware o servicio. Para ilustrar sus diferencias, pensemos en el tiro con
+arco. La optimización a nivel de modelo es como fabricar mejores flechas.
+La optimización a nivel de hardware es como entrenar a un arquero más
+fuerte y mejor. La optimización a nivel de servicio es como perfeccionar
+todo el proceso de tiro, incluidos el arco y las condiciones de puntería.
+Lo ideal es que la optimización de un modelo en términos de velocidad y
+costo no altere su calidad. Sin embargo, muchas técnicas pueden provocar
+una degradación del modelo. La Figura 9-8 muestra el rendimiento de los
+mismos modelos Llama en diferentes pruebas comparativas, servidos por
+diferentes proveedores de servicios de inferencia.

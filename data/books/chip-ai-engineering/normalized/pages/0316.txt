@@ -1,0 +1,31 @@
+experimentación, quizá disponga de datos de referencia con los que
+comparar los outputs de su aplicación, mientras que, en producción, es
+posible que los datos de referencia no estén disponibles de inmediato. Sin
+embargo, en producción, tiene usuarios reales. Piense en qué tipo de
+opiniones desea recibir de los usuarios, cómo se correlacionan con otras
+métricas de evaluación y cómo utilizarlas para mejorar su aplicación. En el
+Capítulo 10 se explica cómo recabar comentarios de los usuarios.
+Anotar los datos de evaluación
+Seleccione un conjunto de ejemplos anotados para evaluar su aplicación.
+Necesita datos anotados para evaluar cada uno de los componentes de su
+sistema y cada criterio, tanto para la evaluación por turnos como por tareas.
+Si es posible, utilicen datos reales de producción. Si su aplicación tiene
+etiquetas naturales que pueda utilizar, estupendo. Si no es así, puede utilizar
+humanos o IA para etiquetar sus datos. El Capítulo 8 trata de los datos
+generados por la IA. El éxito de esta fase también depende de la claridad de
+la rúbrica de puntuación. La guía para las anotaciones creada para la
+evaluación puede reutilizarse para crear datos de instrucciones para el
+afinado posterior, si decide realizarlo.
+Segmente los datos para comprender mejor el sistema. Segmentar significa
+separar los datos en subconjuntos y analizar el rendimiento del sistema en
+cada subconjunto por separado. En Designing Machine Learning Systems
+(O'Reilly) escribí largo y tendido sobre la evaluación basada en segmentos,
+así que aquí me limitaré a repasar los puntos clave. Una comprensión más
+detallada de su sistema puede servir para muchos propósitos:
+Evitar sesgos posibles, como los sesgos contra los grupos de
+usuarios minoritarios.
+Depure: si su aplicación funciona especialmente mal con un
+subconjunto de datos, ¿podría deberse a algunos atributos de este
+subconjunto, como su longitud, tema o formato?
+Encuentre áreas de mejora de la aplicación: si su aplicación es
+mala con inputs largos, quizá pueda probar una técnica de

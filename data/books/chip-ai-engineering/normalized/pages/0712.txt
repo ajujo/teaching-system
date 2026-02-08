@@ -1,0 +1,24 @@
+también es de gran interés para las primeras aplicaciones de IA
+conversacional, como Amazon Alexa (Ponnusamy et al., 2019; Park et al.,
+2020), la función de control por voz de Spotify (Xiao et al., 2021) y Yahoo!
+Voice (Hashimoto y Sassano, 2018).
+Retroalimentación en lenguaje natural
+La retroalimentación extraída del contenido de los mensajes se denomina
+retroalimentación de lenguaje natural. Estas son un par de señales de
+retroalimentación de lenguaje natural que le indican cómo va una
+conversación. Es útil hacer un seguimiento de estas señales en producción
+para controlar el rendimiento de su aplicación.
+Finalización anticipada
+Si un usuario termina una respuesta antes de tiempo, por ejemplo,
+deteniendo la generación de una respuesta a mitad de camino, saliendo de la
+aplicación (para aplicaciones web y móviles), pidiéndole al modelo que se
+detenga (para asistentes de voz), o simplemente dejando al agente colgado
+(por ejemplo, no respondiendo al agente con la opción que quiere que siga),
+es probable que la conversación no esté yendo bien.
+Corrección de errores
+Si un usuario empieza su seguimiento con "No, ..." o "Quería decir, ...", es
+probable que la respuesta del modelo esté fuera de lugar.
+Para corregir errores, los usuarios pueden intentar reformular sus
+solicitudes. La Figura 10-12 muestra un ejemplo del intento de un usuario
+de corregir el malentendido del modelo. Los intentos de reformulación
+pueden detectarse mediante modelos heurísticos o ML.

@@ -1,0 +1,13 @@
+figura 6-14. Diferentes modelos y tareas expresan diferentes patrones de uso de las
+herramientas. Imagen de Lu et al. (2023). Adaptación de una imagen original con
+licencia CC BY 4.0.
+Los experimentos de Lu et al. (2023) también demuestran dos puntos:
+1. Diferentes tareas requieren diferentes herramientas. ScienceQA, la
+tarea de respuesta a preguntas científicas, se basa mucho más en
+herramientas de recuperación de conocimientos que TabMWP, una
+tarea tabular de resolución de problemas matemáticos.
+2. Los distintos modelos tienen diferentes preferencias de
+herramientas. Por ejemplo, GPT-4 parece seleccionar un conjunto
+más amplio de herramientas que ChatGPT. ChatGPT parece
+favorecer la recuperación de leyendas de imágenes, mientras que
+GPT-4 parece favorecer la recuperación de conocimientos.

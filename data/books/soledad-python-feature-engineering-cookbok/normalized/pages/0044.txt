@@ -1,0 +1,38 @@
+Finding extreme values for imputation
+21
+5.
+We'll now determine the IQR:
+IQR = X_train.quantile(0.75) - X_train.quantile(0.25)
+We can visualize the IQR values by executing IQR or print(IQR):
+A2      16.4200
+A3       6.5825
+A8       2.8350
+A11      3.0000
+A14    212.0000
+A15    450.0000
+dtype: float64
+6.
+Let's create a dictionary with the variable names and the imputation values:
+imputation_dict = (
+    X_train.quantile(0.75) + 1.5 * IQR).to_dict()
+Note
+If we use the inter-quartile range proximity rule, we determine the imputation values by adding
+1.5 times the IQR to the 75th quantile. If variables are normally distributed, we can calculate the
+imputation values as the mean plus a factor of the standard deviation, imputation_dict
+= (X_train.mean() + 3 * X_train.std()).to_dict().
+7.
+Finally, let's replace the missing data:
+X_train_t = X_train.fillna(value=imputation_dict)
+X_test_t = X_test.fillna(value=imputation_dict)
+Note
+We can also replace missing data with values at the left tail of the distribution using value =
+X_train[var].quantile(0.25) - 1.5 * IQR or value = X_train[var].
+mean() - 3 * X_train[var].std().
+To finish, let's impute missing values using feature-engine.
+1.
+Let's set up imputer to estimate a value at the right of the distribution using the IQR
+proximity rule:
+imputer = EndTailImputer(
+    imputation_method="iqr",
+    tail="right",
+    fold=3,

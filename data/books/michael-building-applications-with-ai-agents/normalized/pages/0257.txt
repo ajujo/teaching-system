@@ -1,0 +1,36 @@
+Monitoring Patterns
+Once an observability stack is in place-spanning instrumentation, logs, traces, dash‐
+boards, and alerts-the question becomes: how do we safely ship changes to agentic
+systems that are inherently probabilistic, adaptive, and hard to predict fully? The
+answer lies in adopting monitoring-aware development patterns that de-risk experi‐
+mentation and create safety nets around production changes. In this section, we
+explore several key patterns that teams can adopt to ensure their agents continue to
+evolve safely and responsively.
+Shadow Mode
+In shadow mode, a new or experimental version of an agent runs alongside the cur‐
+rent production agent, processing the same inputs but without serving its outputs to
+users. This enables developers to log and trace the behavior of the new agent in realworld conditions without affecting user experience.
+With OTel, you can instrument both the production and shadow agents and attach a
+shared request ID. Logs and traces from the shadow agent can then be labeled
+accordingly in Loki and Tempo, making it easy to compare behavior. You might look
+at differences in tool selection, latency, token usage, or hallucination frequency. These
+comparisons are especially useful when trialing new model versions, planning strate‐
+gies, or prompting techniques.
+Shadow mode enables safer innovation. It enables teams to answer: does the new
+agent do better or worse on live traffic? What breaks? What improves? And it lets you
+collect this data continuously, in parallel with normal operation.
+Canary Deployments
+Where shadow mode gathers information without exposure, canarying goes one step
+further. A canary deployment serves a new agent version to a small subset of real
+users-say, 1% or 5% of traffic-while the majority of users continue to interact with
+the baseline version.
+Grafana dashboards are critical in this setup. By filtering all metrics and traces by ver‐
+sion tag, you can directly compare success rates, latency, tool usage, and error counts
+between canary and baseline agents. Alerts can be configured to trigger if the canary
+shows significant regressions or anomalies.
+If the canary behaves well, the deployment can be gradually expanded. If not, it can
+be rolled back immediately with minimal user impact. Canarying provides the opera‐
+tional safety needed to iterate quickly in production environments.
+Monitoring Patterns
+|
+235

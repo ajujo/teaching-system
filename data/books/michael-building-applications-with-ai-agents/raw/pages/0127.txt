@@ -1,0 +1,41 @@
+        # Invoke the selected tool
+        try:
+            tool_result = selected_tool.invoke(args)
+            print(f"Tool '{selected_tool.__name__}' Result: {tool_result}")
+        except ValueError as e:
+            print(f"Error: {e}")
+Tool Execution
+Parametrization is the process of defining and setting the parameters that will guide
+the execution of a tool in a language model. This process is crucial, as it determines
+how the model interprets the task and tailors its response to meet the specific require‐
+ments. Parameters are defined by the tool definition, as discussed in more detail in
+Chapter 4. The current state of the agent, including progress so far, is included as
+additional context in the prompt window, and the foundation model is instructed to
+fill the parameters with appropriate data types to match the expected inputs for the
+function call. Additional context, such as the current time or the user’s location, can
+be injected into the context window to provide additional guidance for functions that
+require this type of information. It is recommended to use a basic parser to validate
+that the inputs meet the basic criteria for the data types, and to instruct the founda‐
+tion model to correct the pattern if it does not pass this check.
+Once the parameters are set, the tool execution phase begins. Some of these tools can
+easily be executed locally, while others will be executed remotely by API. During exe‐
+cution, the model might interact with various APIs, databases, or other tools to gather
+information, perform calculations, or execute actions that are necessary to complete
+the task. The integration of external data sources and tools can significantly enhance
+the utility and accuracy of the agent’s outputs. Timeout and retry logic will need to be
+adjusted to the latency and performance requirements for the use case.
+Tool Topologies
+Today, the majority of chatbot systems rely on single tool execution without planning.
+This makes sense: it is easier to implement, and has lower latency. If your team is
+developing its first agent-based system, or if that is sufficient to meet the needs for
+your scenario, then you can stop there after the following section, “Single Tool Execu‐
+tion.” For many cases, however, we want our agents to be able to perform complex
+tasks that require multiple tools. By providing an agent with a sufficient range of
+tools, you can then enable your agent to flexibly arrange those tools and apply them
+in correct order to solve a wider variety of problems. In traditional software engineer‐
+ing, the designers had to implement the exact control flow and order in which steps
+should be taken. Now, we can implement the tools and define the tools topology in
+which the agent can operate, and then allow the exact composition to be designed
+Tool Topologies 
+| 
+105

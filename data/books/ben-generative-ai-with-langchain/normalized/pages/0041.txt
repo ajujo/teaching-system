@@ -1,0 +1,34 @@
+The Rise of Generative AI: From Language Models to Agents
+14
+With frameworks like LangChain, developers can build complex and agentic structured systems
+that overcome the limitations of raw LLMs. It offers built-in solutions for memory management,
+tool integration, and multi-step reasoning that align with the ecosystem model presented here. In
+the next section we will explore how LangChain facilitates the development of production-ready
+AI agents.
+Introducing LangChain
+LangChain exists as both an open-source framework and a venture-backed company. The frame­
+work, introduced in 2022 by Harrison Chase, streamlines the development of LLM-powered
+applications with support for multiple programming languages including Python, JavaScript/
+TypeScript, Go, Rust, and Ruby.
+The company behind the framework, LangChain, Inc., is based in San Francisco and has secured
+significant venture funding through multiple rounds, including a Series A in February 2024. With
+11-50 employees, the company maintains and expands the framework while offering enterprise
+solutions for LLM application development.
+While the core framework remains open source, the company provides additional enterprise
+features and support for commercial users. Both share the same mission: accelerating LLM ap­
+plication development by providing robust tools and infrastructure.
+Modern LLMs are undeniably powerful, but their practical utility in production applications
+is constrained by several inherent limitations. Understanding these challenges is essential for
+appreciating why frameworks like LangChain have become indispensable tools for AI developers.
+Challenges with raw LLMs
+Despite their impressive capabilities, LLMs face fundamental constraints that create significant
+hurdles for developers building real-world applications:
+1.
+Context window limitations: LLMs process text as tokens (subword units), not complete
+words. For example, "LangChain" might be processed as two tokens: "Lang" and "Chain."
+Every LLM has a fixed context window-the maximum number of tokens it can process
+at once-typically ranging from 2,000 to 128,000 tokens. This creates several practical
+challenges:
+a.
+Document processing: Long documents must be chunked effectively to fit within
+context limits

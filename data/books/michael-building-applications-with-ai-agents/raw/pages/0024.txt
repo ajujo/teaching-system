@@ -1,0 +1,41 @@
+With a growing range of protocols such as Model Context Protocol (discussed in
+Chapter 4) and Agent-to-Agent Protocol (discussed in Chapter 8), these agents will
+be able to use remote tools and collaborate with other agents to solve problems. This
+unlocks enormous opportunities for sophisticated automation—but it also brings a
+profound responsibility to design, measure, and manage these systems thoughtfully,
+ensuring their actions align with human values and operate safely in complex,
+dynamic environments.
+The Pretraining Revolution
+While traditional ML is an incredibly powerful technique, it is usually limited by the
+quantity and quality of the dataset. ML practitioners will typically tell you that they
+spend the majority of their time not training models, but on collecting and cleaning
+datasets that they can use for training. The incredible success of generative models
+that have been trained on large volumes of data have shown that single models can
+now adapt to a wide range of tasks without any additional training. This upends years
+of practice. To build an application that used ML previously required hiring an ML
+engineer or data scientist, having them collect data, and then deploying that model.
+With the latest developments in large, pretrained generative models, high-quality
+models that will work reasonably well for many use cases are now available through a
+single call to a hosted model without any training or hosting required. This dramati‐
+cally lowers the cost and complexity of building applications enabled with ML
+and AI.
+Recent advancements in large language models (LLMs) such as GPT-5, Anthropic’s
+Claude, Meta’s Llama, Google’s Gemini Ultra, and DeepSeek’s V3 have increased the
+performance on a range of difficult tasks even further, widening the scope of prob‐
+lems solvable with pretrained models. These foundation models offer robust natural
+language understanding and content generation capabilities, enhancing agent func‐
+tionality through:
+Natural language understanding
+Interpreting and responding intuitively to user inputs
+Context-aware interaction
+Maintaining context for relevant and accurate responses over extended
+interactions
+Structured content generation
+Producing text, code, and structured outputs essential for analytical and creative
+tasks
+While these models are very capable on their own, they can also be used to make
+decisions within well-scoped areas, adapt to new information, and invoke tools to
+accomplish real work. Integration with sophisticated orchestration frameworks
+2 
+| 
+Chapter 1: Introduction to Agents

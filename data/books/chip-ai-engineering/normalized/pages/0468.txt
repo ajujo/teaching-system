@@ -1,0 +1,30 @@
+especialmente en una categoría interesante: las técnicas basadas en
+adaptadores.
+Para los métodos basados en prompts, se recomienda conocer el
+funcionamiento de los modelos de ML, aunque no es estrictamente
+necesario. Sin embargo, el afinado entra en el ámbito del entrenamiento de
+modelos, el cual requiere conocimientos de ML. Los fundamentos del ML
+quedan fuera del alcance de este libro. Si quiere refrescar rápidamente la
+memoria, el repositorio GitHub del libro contiene enlaces a recursos útiles.
+En este capítulo abordaré algunos conceptos básicos de interés inmediato
+para el tema.
+Para mí, este capítulo es el más difícil de escribir desde el punto de vista
+técnico, no por la complejidad de los conceptos, sino por el amplio alcance
+que abarcan. Sospecho que también puede resultar técnicamente difícil de
+leer. Si en algún momento le parece que está profundizando demasiado en
+detalles que no son relevantes para su trabajo, no dude en saltárselos.
+Hay mucho de qué hablar. Empecemos.
+Visión general del afinado
+Para el afinado, se empieza con un modelo base que tenga algunas de las
+funciones que necesita, pero no todas. El objetivo del afinado es conseguir
+que este modelo realice lo bastante bien la tarea específica que usted busca.
+El afinado es una forma de realizar el aprendizaje por transferencia, un
+concepto introducido por primera vez por Bozinovski y Fulgosi en 1976. El
+aprendizaje por transferencia se centra en cómo transferir los conocimientos
+adquiridos en una tarea para acelerar el aprendizaje de una nueva tarea
+relacionada. Esto es conceptualmente similar a cómo los humanos
+transfieren habilidades: por ejemplo, saber tocar el piano puede facilitar el
+aprendizaje de otro instrumento musical.
+Uno de los primeros éxitos a gran escala del aprendizaje por transferencia
+fue el sistema de traducción multilingüe de Google (Johnson et. al, 2016).
+El modelo transfirió sus conocimientos de traducción portugués-inglés e

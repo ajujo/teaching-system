@@ -1,0 +1,32 @@
+Al igual que mi anterior libro de O’Reilly, Designing Machine Learning
+Systems (DMLS), este libro se centra en los fundamentos de la ingeniería de
+IA en lugar de en cualquier herramienta o API específica. Las herramientas
+se quedan anticuadas rápidamente, pero los fundamentos deberían durar
+más. 3
+LEER INGENIERÍA DE IA (AIE) JUNTO CON DESIGNING
+MACHINE LEARNING SYSTEMS (DMLS)
+AIE puede ser un complemento de DMLS. DMLS se centra en la
+creación de aplicaciones sobre modelos de ML tradicionales, lo que
+implica más anotaciones de datos tabulares, ingeniería de características
+y entrenamiento de modelos. AIE se centra en la creación de
+aplicaciones sobre modelos fundacionales, lo que implica una
+ingeniería de prompts más rápida, la construcción de contextos y un
+afinado eficiente de los parámetros. Ambos libros son autoconclusivos
+y modulares, por lo que puede leer cualquiera de ellos de forma
+independiente.
+Dado que los modelos fundacionales son modelos de ML, algunos
+conceptos son relevantes para trabajar con ambos. Si un tema es
+relevante para AIE pero se ha tratado ampliamente en DMLS, se tratará
+igualmente en este libro, pero en menor medida, con referencias a los
+recursos pertinentes.
+Tengan en cuenta que muchos temas se tratan en DMLS pero no en
+AIE, y viceversa. El primer capítulo de este libro también aborda las
+diferencias entre la ingeniería de ML tradicional y la ingeniería de IA.
+Un sistema del mundo real a menudo implica tanto modelos de ML
+tradicionales como modelos fundacionales, por lo que a menudo es
+necesario tener conocimientos sobre cómo trabajar con ambos.
+Sin embargo, determinar si algo durará suele ser un reto. Me basé en tres
+criterios. En primer lugar, en cuanto a un problema, determiné si este se
+debe a las limitaciones fundamentales del funcionamiento de la IA o si
+desaparecerá cuando haya mejores modelos. Si un problema es
+fundamental, analizaré sus retos y las soluciones para cada uno de ellos.

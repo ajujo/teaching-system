@@ -1,0 +1,17 @@
+Chapter 9
+393
+Here's a tracing example in LangSmith for a benchmark dataset run:
+Figure 9.5: Tracing in LangSmith
+The platform itself is not open source; however, LangChain AI, the company behind LangSmith and
+LangChain, provides some support for self-hosting for organizations with privacy concerns. There
+are a few alternatives to LangSmith, such as Langfuse, Weights & Biases, Datadog APM, Portkey,
+and PromptWatch, with some overlap in features. We'll focus on LangSmith here because it has
+a large set of features for evaluation and monitoring, and because it integrates with LangChain.
+Observability strategy
+While it's tempting to monitor everything, it's more effective to focus on the metrics that matter
+most for your specific application. Core performance metrics-such as latency, success rates,
+and token usage-should always be tracked. Beyond that, tailor your monitoring to the use case:
+for a customer service bot, prioritize metrics like user satisfaction and task completion, while a
+content generator may require tracking originality and adherence to style or tone guidelines. It's
+also important to align technical monitoring with business impact metrics, such as conversion
+rates or customer retention, to ensure that engineering efforts support broader goals.

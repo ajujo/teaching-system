@@ -1,0 +1,32 @@
+2. Evaluar los outputs finales de la RAG.
+3. Evaluar las incrustaciones (para la recuperación basada en
+incrustaciones).
+Combinar los algoritmos de recuperación
+Dadas las distintas ventajas de los diferentes algoritmos de recuperación, un
+sistema de recuperación de producción suele combinar varios enfoques. La
+combinación de la recuperación basada en términos y la recuperación
+basada en incrustaciones se denomina búsqueda híbrida.
+Se pueden utilizar diferentes algoritmos en secuencia. En primer lugar, un
+recuperador barato y menos preciso, como un sistema basado en términos,
+busca candidatos. A continuación, un mecanismo más preciso pero más
+caro, como k vecinos más cercanos, encuentra al mejor de estos candidatos.
+Este segundo paso también se denomina reranking.
+Por ejemplo, dado el término "transformador", podría recuperar todos los
+documentos que contengan la palabra transformador, independientemente
+de si tratan sobre el aparato eléctrico, la arquitectura neuronal o la película.
+A continuación, utilizaría la búsqueda vectorial para encontrar entre estos
+documentos aquellos que estén realmente relacionados con su consulta
+sobre transformadores. Viendo otro ejemplo, piense en la consulta: "¿Quién
+ha logrado el mayor número de ventas a X?". En primer lugar, podría
+recuperar todos los documentos asociados con X utilizando la palabra clave
+X. A continuación, utilizaría la búsqueda vectorial para recuperar el
+contexto asociado a "¿Quién ha logrado el mayor número de ventas?".
+También se pueden utilizar diferentes algoritmos en paralelo como un
+conjunto. Recuerde que un recuperador ordena los documentos en función
+de su relevancia para la consulta. Puede utilizar varios recuperadores para
+obtener candidatos al mismo tiempo y, luego, combinar estas diferentes
+clasificaciones para generar un ranking final.
+Un algoritmo para combinar diferentes clasificaciones se denomina fusión
+recíproca de clasificaciones (RRF) (Cormack et al., 2009). Asigna a cada
+documento una puntuación basada en la clasificación que le haya concedido
+un recuperador. Intuitivamente, si ocupa el primer lugar, su puntuación es

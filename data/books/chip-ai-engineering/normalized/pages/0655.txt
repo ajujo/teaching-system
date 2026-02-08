@@ -1,0 +1,31 @@
+compartida y registros) y cómo se accede a los datos y se mueven entre
+estos diferentes niveles.
+Además, los kernels suelen escribirse en lenguajes de programación de
+menor nivel como CUDA (para GPU NVIDIA), Triton (un lenguaje
+desarrollado por OpenAI para escribir kernels personalizados) o ROCm
+(para GPU AMD). Estos lenguajes permiten un control preciso de la gestión
+de los hilos y el acceso a la memoria, pero también son más difíciles de
+aprender que los lenguajes con los que están familiarizados la mayoría de
+los ingenieros de IA, como Python.
+Debido a esta barrera de entrada, escribir kernels solía ser un arte oscuro
+practicado por unos pocos. Los fabricantes de chips como NVIDIA y AMD
+emplean a ingenieros de optimización para escribir kernels que aumenten la
+eficacia de su hardware para las cargas de trabajo de IA, mientras que
+marcos de IA como PyTorch y TensorFlow emplean ingenieros de kernel
+para optimizar sus marcos en diferentes aceleradores.
+Sin embargo, con la creciente demanda de optimización de la inferencia y la
+ubicuidad de los aceleradores, más ingenieros de IA se han interesado por
+escribir kernels. Hay muchos tutoriales en línea para escribir kernels. A
+continuación mostraré cuatro técnicas comunes que se utilizan a menudo
+para acelerar el cálculo:
+Vectorización
+Dado un bucle o un bucle anidado, en lugar de procesar un
+elemento de datos cada vez, ejecutar simultáneamente
+múltiples elementos de datos contiguos en memoria. Esto
+reduce la latencia al minimizar las operaciones de E/S de
+datos.
+Paralelización
+Dividir una matriz de input (o matriz n-dimensional) en
+fragmentos independientes que puedan ser procesados
+simultáneamente en diferentes núcleos o hilos, acelerando
+el cómputo.

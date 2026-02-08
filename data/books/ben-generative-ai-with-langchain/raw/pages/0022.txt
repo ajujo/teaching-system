@@ -1,0 +1,32 @@
+Preface
+xxi
+You’ll find detailed guidance on environment setup in Chapter 2, along with clear explanations 
+and step-by-step instructions to help you get started. We strongly recommend following these 
+setup steps as outlined—given the fast-moving nature of LangChain, LangGraph and the broader 
+ecosystem, skipping them might lead to avoidable issues down the line.
+Download the example code files
+The code bundle for the book is hosted on GitHub at https://github.com/benman1/generative_
+ai_with_langchain. We recommend typing the code yourself or using the repository as you 
+progress through the chapters. If there’s an update to the code, it will be updated in the GitHub 
+repository.
+We also have other code bundles from our rich catalog of books and videos available at https://
+github.com/PacktPublishing. Check them out!
+Download the color images
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. 
+You can download it here: https://packt.link/gbp/9781837022014.
+Conventions used
+There are a number of text conventions used throughout this book.
+CodeInText: Indicates code words in text, database table names, folder names, filenames, file 
+extensions, pathnames, dummy URLs, user input, and Twitter handles. For example: “Let’s also 
+restore from the initial checkpoint for thread-a. We’ll see that we start with an empty history:”
+A block of code is set as follows:
+checkpoint_id = checkpoints[-1].config["configurable"]["checkpoint_id"]
+_ = graph.invoke(
+   [HumanMessage(content="test")],
+   config={"configurable": {"thread_id": "thread-a", "checkpoint_id": 
+checkpoint_id}})
+Any command-line input or output is written as follows:
+$ pip install langchain langchain-openai
+Bold: Indicates a new term, an important word, or words that you see on the screen. For instance, 
+words in menus or dialog boxes appear in the text like this. For example: “ The Google Research 
+team introduced the Chain-of-Thought (CoT) technique early in 2022.”

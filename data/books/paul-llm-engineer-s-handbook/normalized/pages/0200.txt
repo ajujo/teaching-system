@@ -1,0 +1,32 @@
+Chapter 4
+169
+        tokens_per_chunk=embedding_model.max_input_length,
+        model_name=embedding_model.model_id,
+    )
+    chunks_by_tokens = []
+    for section in text_split_by_characters:
+        chunks_by_tokens.extend(token_splitter.split_text(section))
+    return chunks_by_tokens
+To conclude, the function above returns a list of chunks that respect both the provided chunk
+parameters and the embedding model's max input length.
+The embedding handlers
+The embedding handlers differ slightly from the others as the EmbeddingDataHandler() interface
+contains most of the logic. We took this approach because, when calling the embedding model,
+we want to batch as many samples as possible to optimize the inference process. When running
+the model on a GPU, the batched samples are processed independently and in parallel. Thus, by
+batching the chunks, we can optimize the inference process by 10x or more, depending on the
+batch size and hardware we use.
+We implemented an embed() method, in case you want to run the inference on a single data point,
+and an embed_batch() method. The embed_batch() method takes chunked documents as input,
+gathers their content into a list, passes them to the embedding model, and maps the results to an
+embedded chunk domain entity. The mapping is done through the map_model() abstract method,
+which has to be customized for every data category.
+... # Other imports.
+from typing import Generic, TypeVar, cast
+from llm_engineering.application.networks import EmbeddingModelSingleton
+ChunkT = TypeVar("ChunkT", bound=Chunk)
+EmbeddedChunkT = TypeVar("EmbeddedChunkT", bound=EmbeddedChunk)
+embedding_model = EmbeddingModelSingleton()
+class EmbeddingDataHandler(ABC, Generic[ChunkT, EmbeddedChunkT]):
+    """
+    Abstract class for all embedding data handlers.

@@ -1,0 +1,30 @@
+sobreafinado. Sin embargo, en algunos casos puede ser necesario un rango
+superior. Raschka (2023) llegó a la conclusión de que r = 256 lograba el
+mejor rendimiento en sus tareas.
+Otro hiperparámetro de LoRA que puede configurar es el valor α que
+determina cuánto debe contribuir el producto WAB a la nueva matriz durante
+la fusión: W ′ = W + α
+r WAB. En la práctica, a menudo he visto que α se
+elige de modo que la relación α : r suele estar entre 1:8 y 8:1, pero la
+relación óptima varía. Por ejemplo, si r es pequeña, puede interesarle que α
+sea mayor, y si r es grande, puede ser mejor que α sea menor. Es necesario
+experimentar para determinar la mejor combinación (r, α) para su caso de
+uso.
+Servir adaptadores LoRA
+LoRA no solo permite ajustar los modelos utilizando menos memoria y
+datos, además simplifica el servicio de varios modelos gracias a su
+modularidad. Para entender este beneficio, examinemos cómo servir un
+modelo afinado con LoRA.
+En general, hay dos maneras de servir un modelo afinado con LoRA:
+1. Fusionar las ponderaciones A y B de LoRA en el modelo original
+para crear la nueva matriz W′ antes de servir el modelo afinado.
+Como no se realiza ningún cálculo adicional durante la inferencia,
+no se añade latencia adicional.
+2. Mantener W, A y B separadas durante el servicio. El proceso de
+fusionar A y B de nuevo en W tiene lugar durante la inferencia, lo
+que añade un extra de latencia.
+La primera opción es generalmente mejor si solo tienen que servir un
+modelo de LoRA, mientras que la segunda suele ser mejor para el
+multiservicio LoRA: servir múltiples modelos de LoRA que compartan el
+mismo modelo base. La Figura 7-12 visualiza el multiservicio LoRA si se
+mantienen los adaptadores LoRA separados.

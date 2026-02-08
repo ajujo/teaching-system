@@ -1,0 +1,34 @@
+Existen múltiples razones por las que la evaluación de los modelos
+fundacionales es más difícil que la de los modelos de ML tradicionales.
+En primer lugar, cuanto más inteligentes se vuelven los modelos de IA, más
+difícil resulta evaluarlos. La mayoría de la gente puede decir si la solución
+matemática de un niño de primer grado es incorrecta. Pocos pueden hacer lo
+mismo con una solución matemática de nivel de doctorado. 4 Es fácil saber
+si el resumen de un libro es malo si es incomprensible, pero mucho más
+difícil si el resumen es coherente. Para validar la calidad de un resumen,
+puede ser necesario leer primero el libro. Esto nos lleva a un corolario: la
+evaluación puede llevar mucho más tiempo en el caso de tareas sofisticadas.
+Ya no puede evaluar una respuesta basándose en cómo suena. También
+tendrá que comprobar los hechos, razonar e incluso incorporar
+conocimientos especializados.
+En segundo lugar, la naturaleza abierta de los modelos fundacionales socava
+el enfoque tradicional de evaluar un modelo en función de verdades básicas.
+Con el ML tradicional, la mayoría de las tareas son cerradas. Por ejemplo,
+un modelo de clasificación solo puede producir outputs entre las categorías
+previstas. Para evaluar un modelo de clasificación, puede comparar sus
+outputs con los outputs esperados. Si el output esperado es la categoría X,
+pero el output del modelo es la categoría Y, el modelo está equivocado. Sin
+embargo, en una tarea abierta, para un input dado hay muchas respuestas
+correctas posibles. Es imposible elaborar una lista exhaustiva de outputs
+correctos con los que compararlas.
+En tercer lugar, la mayoría de los modelos fundacionales se tratan como
+cajas negras, ya sea porque los proveedores de modelos optan por no
+exponer sus detalles, o porque los desarrolladores de aplicaciones carecen
+de los conocimientos necesarios para entenderlos. Detalles como la
+arquitectura del modelo, los datos de entrenamiento o el proceso de
+entrenamiento pueden revelar mucho sobre las fortalezas y debilidades de
+un modelo. Sin esos detalles, solo se puede evaluar un modelo observando
+sus outputs.
+Al mismo tiempo, las pruebas comparativas disponibles públicamente han
+demostrado ser inadecuadas para evaluar los modelos fundacionales. Lo
+ideal sería que las pruebas comparativas abarcaran toda la gama de

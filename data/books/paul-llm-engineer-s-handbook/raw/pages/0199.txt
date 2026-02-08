@@ -1,0 +1,35 @@
+RAG Feature Pipeline
+168
+            if len(current_chunk) >= min_length:
+                extracts.append(current_chunk.strip())
+            current_chunk = sentence + " "
+    if len(current_chunk) >= min_length:
+        extracts.append(current_chunk.strip())
+    return extracts
+The PostChunkingHandler and RepositoryChunkingHandler, available on GitHub at llm_
+engineering/application/preprocessing/chunking_data_handlers.py, have a similar struc-
+ture to the ArticleChunkingHandler. However, they use a more generic chunking function called 
+chunk_text(), worth looking into. The chunk_text() function is a two-step process that has 
+the following logic:
+1.	
+It uses a RecursiveCharacterTextSplitter() from LangChain to split the text based on 
+a given separator or chunk size. Using the separator, we first try to find paragraphs in the 
+given text, but if there are no paragraphs or they are too long, we cut it at a given chunk size.
+2.	
+Notice that we want to ensure that the chunk doesn’t exceed the maximum input length 
+of the embedding model. Thus, we pass all the chunks created above into a SenteceTrans
+formersTokenTextSplitter(), which considers the maximum input length of the model. 
+At this point, we also apply the chunk_overlap logic, as we want to do it only after we 
+validate that the chunk is small enough.
+… # Other imports.
+from langchain.text_splitter import RecursiveCharacterTextSplitter, 
+SentenceTransformersTokenTextSplitter
+from llm_engineering.application.networks import 
+EmbeddingModelSingleton
+def chunk_text(text: str, chunk_size: int = 500, chunk_overlap: int 
+= 50) -> list[str]:
+    character_splitter = RecursiveCharacterTextSplitter(separato
+rs=["\n\n"], chunk_size=chunk_size, chunk_overlap=0)
+    text_split_by_characters = character_splitter.split_text(text)
+    token_splitter = SentenceTransformersTokenTextSplitter(
+        chunk_overlap=chunk_overlap,

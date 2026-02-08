@@ -1,0 +1,29 @@
+AVISO
+Una API por lotes para modelos fundacionales difiere de la inferencia por
+lotes para el ML tradicional. En el ML tradicional:
+La inferencia en línea significa que las predicciones se calculan
+después de que hayan llegado las solicitudes.
+La inferencia por lotes significa que las predicciones se calculan
+antes de que lleguen las solicitudes.
+La precomputación es posible para casos de uso con inputs finitos y
+predecibles, como los sistemas de recomendación, en los que se pueden
+generar recomendaciones para todos los usuarios por adelantado. Estas
+predicciones precalculadas se obtienen cuando llegan las solicitudes, por
+ejemplo, cuando un usuario visita el sitio web. Sin embargo, en los casos de
+uso de modelos fundacionales en los que los inputs son abiertos, es difícil
+predecir todos los prompts del usuario. 7
+Métricas de rendimiento de la inferencia
+Antes de lanzarse a la optimización, es importante comprender para qué
+métricas optimizar. Desde la perspectiva del usuario, el eje central es la
+latencia (la calidad de la respuesta es una propiedad del propio modelo, no
+del servicio de inferencia). Sin embargo, los desarrolladores de aplicaciones
+también deben tener en cuenta el throughput (productividad) y la utilización
+a la hora de determinar el costo de sus aplicaciones.
+Latencia, TTFT y TPOT
+La latencia mide el tiempo que transcurre desde que los usuarios envían una
+consulta hasta que reciben la respuesta completa. Para la generación
+autorregresiva, especialmente en el modo streaming, la latencia global
+pueden dividirse en varias métricas:
+Tiempo hasta el primer token (TTFT)
+TTFT mide la rapidez con la que se genera el primer token
+después de que los usuarios envíen una consulta.

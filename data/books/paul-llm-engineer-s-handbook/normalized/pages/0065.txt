@@ -1,0 +1,20 @@
+Tooling and Installation
+34
+How does ZenML work as an orchestrator? It works with pipelines and steps. A pipeline is a
+high-level object that contains multiple steps. A function becomes a ZenML pipeline by being
+decorated with @pipeline, and a step when decorated with @step. This is a standard pattern
+when using orchestrators: you have a high-level function, often called a pipeline, that calls multiple units/steps/tasks.
+Let's explore how we can implement a ZenML pipeline with one of the ML pipelines implemented
+for the LLM Twin project. In the code snippet below, we defined a ZenML pipeline that queries
+the database for a user based on its full name and crawls all the provided links under that user:
+from zenml import pipeline
+from steps.etl import crawl_links, get_or_create_user
+@pipeline
+def digital_data_etl(user_full_name: str, links: list[str]) -> None:
+    user = get_or_create_user(user_full_name)
+    crawl_links(user=user, links=links)
+You can run the pipeline with the following CLI command: poetry poe run-digital-data-etl.
+To visualize the pipeline run, you can go to your ZenML dashboard (at http://127.0.0.1:8237/)
+and, on the left panel, click on the Pipelines tab and then on the digital_data_etl pipeline, as
+illustrated in Figure 2.2:
+Figure 2.2: ZenML Pipelines dashboard

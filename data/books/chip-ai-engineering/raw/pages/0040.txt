@@ -1,0 +1,17 @@
+mediante texto simple en lugar de tener que utilizar un
+lenguaje de programación. Ahora mismo cualquiera, y
+quiero decir cualquiera, puede desarrollar aplicaciones de
+IA.
+figura 1-5. El número de empresas del S&P 500 que mencionan la IA en sus informes
+de resultados alcanzó un máximo histórico en 2023. Datos de FactSet.
+Debido a los recursos que se necesitan para desarrollar modelos
+fundacionales, solo pueden hacerlo grandes corporaciones (Google, Meta,
+Microsoft, Baidu, Tencent), gobiernos (Japón, EAU) y startups ambiciosas
+y bien financiadas (OpenAI, Anthropic, Mistral). En una entrevista de
+septiembre de 2022, Sam Altman, CEO de OpenAI, afirmó que la mayor
+oportunidad para la gran mayoría de la gente será adaptar estos modelos a
+aplicaciones específicas.
+El mundo se apresura a aprovechar esta oportunidad. La ingeniería de IA se
+ha convertido rápidamente en una de las disciplinas de ingeniería de más
+rápido crecimiento, y muy posiblemente la que más rápido crece. Las
+herramientas de ingeniería de IA están ganando terreno más rápidamente

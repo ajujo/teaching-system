@@ -1,0 +1,23 @@
+Chapter 5
+213
+LoRA
+LoRA is a parameter-efficient technique for fine-tuning LLMs. Developed to address the computational challenges associated with adapting massive neural networks, LoRA has quickly become
+a cornerstone technique in LLM fine-tuning.
+The primary purpose of LoRA is to enable the fine-tuning of LLMs with significantly reduced
+computational resources. This is achieved by introducing trainable low-rank matrices that modify the behavior of the model without changing its original parameters. The key advantages of
+LoRA include:
+•
+Dramatically reduced memory usage during training
+•
+Faster fine-tuning process
+•
+Preservation of pre-trained model weights (non-destructive)
+•
+Ability to switch between tasks efficiently by swapping LoRA weights
+These benefits have made LoRA particularly attractive for researchers and developers working
+with limited computational resources, effectively democratizing the process of LLM fine-tuning.
+At its core, LoRA employs a low-rank decomposition technique to update model weights efficiently.
+Instead of directly modifying the original weight matrix 𝑊𝑊, LoRA introduces two smaller matrices,
+𝐴𝐴 and 𝐵𝐵, which together form a low-rank update to 𝑊𝑊.
+Figure 5.10 - LoRA adds the two trainable matrices 𝐴𝐴 and 𝐵𝐵 and keeps the pre-trained weights
+𝑊𝑊 frozen

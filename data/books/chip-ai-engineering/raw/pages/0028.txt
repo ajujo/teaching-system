@@ -1,0 +1,15 @@
+figura 1-2. Modelo lingüístico autorregresivo y modelo lingüístico enmascarado.
+NOTA
+En este libro, a menos que se indique explícitamente, al decir modelo
+lingüístico nos referimos a un modelo autorregresivo.
+Los outputs (las salidas) de los modelos lingüísticos son abiertos. Un
+modelo lingüístico puede utilizar su vocabulario fijo y finito para construir
+infinitos outputs posibles. Un modelo que puede generar outputs abiertos se
+denomina generativo, de ahí el término IA generativa.
+Se puede pensar en un modelo lingüístico como en una máquina de
+completar: dado un texto (prompt), intenta terminarlo (completarlo). Este es
+un ejemplo:
+Prompt (del usuario): "Ser o no ser"
+Terminación (del modelo lingüístico): ", esa es la cuestión".
+Es importante tener en cuenta que las conclusiones son predicciones
+basadas en probabilidades y que no se garantiza que sean correctas. Esta

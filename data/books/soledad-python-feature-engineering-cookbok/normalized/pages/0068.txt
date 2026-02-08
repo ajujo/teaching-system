@@ -1,0 +1,23 @@
+Creating binary variables through one-hot encoding
+45
+Figure 2.1 - One-hot encoded representation of the Smoker variable
+As shown in Figure 2.1, from the Smoker variable, we can derive a binary variable for Smoker,
+which shows the value of 1 for smokers, or the binary variable for Non-Smoker, which takes the
+value of 1 for those who do not smoke.
+For the Color categorical variable with the values of red, blue, and green, we can create three
+variables called red, blue, and green. These variables will be assigned a value of 1 if the observation
+corresponds to the respective color, and 0 if it does not.
+A categorical variable with k unique categories can be encoded using k-1 binary variables. For
+Smoker, k is 2 as it contains two labels (Smoker and Non-Smoker), so we only need one binary
+variable (k - 1 = 1) to capture all the information. For the Color variable, which has 3 categories (k
+= 3; red, blue, and green), we need 2 (k - 1 = 2) binary variables to capture all the information
+so that the following occurs:
+•	 If the observation is red, it will be captured by the red variable (red = 1, blue = 0)
+•	 If the observation is blue, it will be captured by the blue variable (red = 0, blue = 1)
+•	 If the observation is green, it will be captured by the combination of red and blue (red =
+0, blue = 0)
+Encoding into k-1 binary variables is well suited for linear models. There are a few occasions in which
+we may prefer to encode the categorical variables with k binary variables:
+•	 When training decision trees, since they do not evaluate the entire feature space at the same time
+•	 When selecting features recursively
+•	 When determining the importance of each category within a variable

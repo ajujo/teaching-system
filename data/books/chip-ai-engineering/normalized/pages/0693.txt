@@ -1,0 +1,32 @@
+es capital de Vietnam?", que semánticamente es la misma pregunta pero con
+una redacción ligeramente diferente. Con la el almacenamiento semántico
+en caché, el sistema puede reutilizar la respuesta de la primera consulta en
+lugar de calcular la nueva desde cero. La reutilización de consultas
+similares aumenta la tasa de accesos a la caché y reduce potencialmente los
+costos. Sin embargo, el almacenamiento semántico en caché puede reducir
+el rendimiento de su modelo.
+El almacenamiento semántico en caché solo funciona si hay disponible una
+forma fiable de determinar si dos consultas son similares. Un enfoque
+habitual es utilizar la similitud semántica, como se explica en el Capítulo 3.
+Como recordatorio, la similitud semántica funciona del siguiente modo:
+1. Para cada consulta, generar su incrustación utilizando un modelo
+de incrustación.
+2. Utilizar la búsqueda vectorial para encontrar la incrustación
+almacenada en caché con la mayor puntuación de similitud con la
+incrustación de la consulta actual. Digamos que esta puntuación de
+similitud es X.
+3. Si X supera un determinado umbral de similitud, la consulta
+almacenada en caché se considera similar y se devuelven los
+resultados almacenados en caché. Si no, se procesa esta consulta
+actual y se almacena en caché junto con su incrustación y los
+resultados.
+Este enfoque requiere una base de datos vectorial para almacenar las
+incrustaciones de las consultas almacenadas en caché.
+En comparación con otras técnicas de caché, el valor del almacenamiento
+semántico en caché es más dudoso porque muchos de sus componentes son
+propensos a fallar. Su éxito se basa en incrustaciones de alta calidad, la
+búsqueda de vectores funcionales y una métrica de similitud fiable. Fijar el
+umbral de similitud adecuado también puede ser complicado y requerir
+mucho ensayo y error. Si el sistema confunde la consulta entrante con una
+similar a otra consulta, la respuesta devuelta, obtenida de la caché, será
+incorrecta.

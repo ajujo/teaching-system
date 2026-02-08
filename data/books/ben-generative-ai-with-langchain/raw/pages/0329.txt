@@ -1,0 +1,29 @@
+Software Development and Data Analysis Agents
+302
+    "Query: {query}\n"
+)
+prompt = PromptTemplate(template=PROMPT, input_variables=["query"])
+llm = OpenAI()
+agent = create_pandas_dataframe_agent(
+    llm, df, verbose=True, allow_dangerous_code=True
+)
+The example above works well with small datasets like Iris (150 rows), but real-world data analysis 
+often involves much larger datasets that exceed LLM context windows. When implementing Data­
+Frame agents in production environments, several strategies can help overcome these limitations.
+Data summarization and preprocessing techniques form your first line of defense. Before sending 
+data to your agent, consider extracting key statistical information such as shape, column names, 
+data types, and summary statistics (mean, median, max, etc.). Including representative sam­
+ples—perhaps the first and last few rows or a small random sample—provides context without 
+overwhelming the LLM’s token limit. This preprocessing approach preserves critical information 
+while dramatically reducing the input size.
+For datasets that are too large for a single context window, chunking strategies offer an effec­
+tive solution. You can process the data in manageable segments, run your agent on each chunk 
+separately, and then aggregate the results. The aggregation logic would depend on the specific 
+analysis task—for example, finding global maximums across chunk-level results for optimization 
+queries or combining partial analyses for more complex tasks. This approach trades some global 
+context for the ability to handle datasets of any size.
+Security warning
+We’ve used allow_dangerous_code=True, which permits the agent to execute 
+any Python code on your machine. This could potentially be harmful if the agent 
+generates malicious code. Only use this option in development environments with 
+trusted data sources, and never in production scenarios without proper sandboxing.

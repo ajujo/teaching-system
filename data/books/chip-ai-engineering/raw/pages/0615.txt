@@ -1,0 +1,20 @@
+repartiéndola entre más chips o aprovechando los chips con más potencia de
+cálculo (por ejemplo, un mayor número de FLOP/s). Una carga de trabajo
+limitada por el ancho de banda de la memoria podría acelerarse
+aprovechando chips con mayor ancho de banda.
+figura 9-2. El gráfico Roofline puede ayudarle a visualizar si una operación está
+limitada por el cómputo o por el ancho de banda de la memoria. Este gráfico está en
+escala logarítmica.
+Diferentes arquitecturas de modelos y cargas de trabajo dan lugar a
+diferentes cuellos de botella computacionales. Por ejemplo, la inferencia
+para generadores de imágenes como Stable Diffusion suele estar limitada
+por el cómputo, mientras que la inferencia para modelos lingüísticos de
+autorregresión suele estar limitada por el ancho de banda de la memoria.
+A modo de ejemplo, veamos la inferencia de modelos lingüísticos.
+Recordemos del Capítulo 2 que la inferencia para un modelo lingüístico
+basado en transformadores consta de dos pasos, el llenado previo y la
+decodificación:
+Llenado previo
+El modelo procesa los tokens de input en paralelo. 5 El
+número de tokens que se pueden procesar a la vez está
+limitado por el número de operaciones que su hardware

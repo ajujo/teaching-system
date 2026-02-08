@@ -1,0 +1,37 @@
+Chapter 9
+377
+{
+  "dependencies": ["./my_agent"],
+  "graphs": {
+    "agent": "./my_agent/agent.py:graph"
+  },
+  "env": ".env"
+}
+This configuration tells the deployment platform:
+•
+Where to find your application code
+•
+Which graph(s) to expose as endpoints
+•
+How to load environment variables
+Ensure the graph is properly exported in your code:
+# my_agent/agent.py
+from langgraph.graph import StateGraph, END, START
+# Define the graph
+workflow = StateGraph(AgentState)
+# ... add nodes and edges ...
+# Compile and export - this variable is referenced in langgraph.json
+graph = workflow.compile()
+Specify dependencies in requirements.txt:
+langgraph>=0.2.56,<0.4.0
+langgraph-sdk>=0.1.53
+langchain-core>=0.2.38,<0.4.0
+# Add other dependencies your application needs
+Set up environment variables in .env:
+LANGSMITH_API_KEY=lsv2...
+OPENAI_API_KEY=sk-...
+# Add other API keys and configuration
+The LangGraph cloud provides a fast path to production with a fully managed service.
+While manual deployment through the UI is possible, the recommended approach for production
+applications is to implement automated Continuous Integration and Continuous Delivery (CI/
+CD) pipelines.

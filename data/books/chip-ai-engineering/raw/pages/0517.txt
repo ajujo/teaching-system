@@ -1,0 +1,23 @@
+consulta significa aplicar LoRA a todas las matrices de consulta del modelo.
+Ingenuamente, se puede aplicar LoRA a todas estas matrices de atención.
+Sin embargo, a menudo la memoria del hardware limita el número de
+parámetros que se pueden entrenar. Dado un presupuesto fijo de parámetros
+entrenables, ¿a qué matrices debería aplicar LoRA para maximizar el
+rendimiento?
+Al afinar GPT-3 175B, Hu et al. (2021) fijó su presupuesto de parámetros
+entrenables en 18 M, que es el 0.01% del número total de parámetros del
+modelo. Este presupuesto le permite aplicar el LoRA a lo siguiente:
+1. Una matriz con el rango de 8
+2. Dos matrices con el rango de 4
+3. Las cuatro matrices con el rango de 2
+NOTA
+GPT-3 175B tiene 96 capas de transformadores con una dimensión de
+modelo de 12 288. Al aplicar LoRA con rango = 2 a las cuatro matrices se
+obtendrían (12,288 × 2 × 2) × 4 = 196 608 parámetros entrenables por capa,
+o 18 874 368 parámetros entrenables para todo el modelo.
+Descubrieron que al aplicar LoRA a las cuatro matrices con rango = 2 se
+obtiene el mejor rendimiento en las pruebas comparativas WikiSQL (Zhong
+et al., 2017) y MultiNLI (Multi-Genre Natural Language Inference)
+(Williams et al., 2017). La Tabla 7-5 muestra sus resultados. Sin embargo,
+los autores sugieren que, si solo se pueden elegir dos matrices de atención,
+las matrices de consulta y de valor suelen dar los mejores resultados.

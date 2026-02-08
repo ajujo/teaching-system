@@ -1,0 +1,12 @@
+MLOps and LLMOps
+448
+To keep the function light, we added all the logic up to computing the features. But, as we suggested in the code snippet above, you can easily add the instruction dataset generation, training,
+and deploy logic to the parent pipeline to implement an end-to-end flow. By doing that, you can
+automate everything from data collection to deploying the model.
+To run the end-to-end pipeline, use the following poe command:
+poetry poe run-end-to-end-data-pipeline
+What we implemented is not the best approach, as it compresses all the steps into a single monolith
+pipeline (which we want to avoid), as illustrated in Figure 11.20. Usually, you want to keep each
+pipeline isolated and use triggers to start downstream pipelines. This makes the system easier
+to understand, debug, and monitor.
+Figure 11.20: End-to-end pipeline illustrated in ZenML's dashboard

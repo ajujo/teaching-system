@@ -1,0 +1,20 @@
+El apilamiento de capas puede utilizarse para entrenar modelos de mezcla
+de expertos (MDE), como se explica en "Sparse Upcycling: Training
+Mixture-of-Experts from Dense Checkpoints" (Komatsuzaki et al., 2022).
+En lugar de entrenar un MoE desde cero, se toma un modelo pre-entrenado
+y se hacen múltiples copias de determinadas capas o módulos. A
+continuación, se añade un enrutador para enviar cada input a la copia más
+adecuada. Luego, se entrena el modelo fusionado junto con el enrutador
+para perfeccionar su rendimiento. La Figura 7-18 ilustra este proceso.
+Komatsuzaki et al. demostraron que el apilamiento de capas puede producir
+modelos que superan a los modelos MoE entrenados desde cero. Utilizando
+este enfoque, Together AI mezcló seis modelos de código abierto más
+débiles para crear Mixture-of-Agents, que logró un rendimiento comparable
+al GPT-4o de OpenAI en algunas pruebas comparativas (Wang et al., 2024).
+figura 7-18. Puede crear un modelo MoE a partir de un modelo pre-entrenado.
+Imagen adaptada de Komatsuzaki et al. (2022).
+Un caso interesante del apilamiento de capas es la ampliación de modelos.
+La ampliación de modelos es el estudio de cómo crear modelos más
+grandes utilizando menos recursos. A veces, es posible que deseen un
+modelo más grande que el que ya tiene, presumiblemente porque los
+modelos más grandes tienen mejor rendimiento. Por ejemplo, su equipo

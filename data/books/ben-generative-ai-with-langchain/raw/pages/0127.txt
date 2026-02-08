@@ -1,0 +1,34 @@
+Building Workflows with LangGraph
+100
+Now we create a trimmer that uses a len function and threshold 1 – i.e., it always removes the 
+entire history and keeps a system message only:
+trimmer = trim_messages(
+   max_tokens=1,
+   strategy="last",
+   token_counter=len,
+   include_system=True,
+   start_on="human",
+)
+raw_chain = trimmer | llm
+chain = RunnableWithMessageHistory(raw_chain, get_session_history)
+Now let’s run it and make sure that our history keeps all the interactions with the user but a 
+trimmed history is passed to the LLM:
+config = {"callbacks": [PrintOutputCallback()], "configurable": {"session_
+id": "1"}}
+_ = chain.invoke(
+   [HumanMessage("Hi!")],
+   config=config,
+)
+print(f"History length: {len(sessions['1'].messages)}")
+_ = chain.invoke(
+   [HumanMessage("How are you?")],
+   config=config,
+)
+print(f"History length: {len(sessions['1'].messages)}")
+>> Amount of input messages: 1
+History length: 2
+Amount of input messages: 1
+History length: 4
+We used a RunnableWithMessageHistory that takes a chain and wraps it (like a decorator) with 
+calls to history before executing the chain (to retrieve the history and pass it to the chain) and 
+after finishing the chain (to add new messages to the history).

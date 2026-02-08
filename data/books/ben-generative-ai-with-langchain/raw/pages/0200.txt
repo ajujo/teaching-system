@@ -1,0 +1,18 @@
+Chapter 4
+173
+We can visualize this graph from a Jupyter notebook:
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))
+This is what the sequential flow from document retrieval to generation, validation, and finaliza­
+tion looks like:
+Figure 4.5:  State graph of the corporate documentation pipeline
+Before building a user interface, it’s important to test our RAG pipeline to ensure it functions 
+correctly. Let’s examine how we can do this programmatically:
+from langchain_core.messages import HumanMessage
+input_messages = [HumanMessage("What's the square root of 10?")]
+response = graph.invoke({"messages": input_messages}, config=config
+The execution time varies depending on the complexity of the query and how extensively the 
+model needs to reason about its response. Each step in our graph may involve API calls to the LLM, 
+which contributes to the overall processing time. Once the pipeline completes, we can extract 
+the final response from the returned object:
+print(response["messages"][-1].content)

@@ -1,0 +1,33 @@
+tabla 5-2. Algunos formatos de ejemplo son más caros que otros.
+Prompt
+# tokens (GPT-
+4)
+Etiqueta el siguiente artículo como comestible o no com
+estible.
+Input: garbanzo
+Output: comestible
+Input: caja
+Output: no comestible
+Input: pizza
+Output:
+38
+Etiqueta el siguiente artículo como comestible o no com
+estible.
+garbanzo --> comestible
+caja --> no comestible
+pizza -->
+27
+Especifique el formato de output
+Si quiere que el modelo sea conciso, dígaselo. Los outputs largos no solo
+son costosos (las API de modelos cobran por token), sino que también
+aumentan la latencia. Si el modelo tiende a comenzar su respuesta con
+preámbulos como "Basándome en el contenido de este ensayo, le daría una
+puntuación de...", diga claramente que no quiere preámbulos.
+Es esencial garantizar que los outputs del modelo están en el formato
+correcto cuando son utilizados por aplicaciones posteriores que requieren
+formatos específicos. Si desea que el modelo genere JSON, especifique
+cuáles deben ser las claves en el JSON. Dé ejemplos si es necesario.
+Para las tareas que esperan outputs estructurados, como la clasificación,
+utilice marcadores para señalar el final de los prompts para que el modelo
+sepa que los outputs estructurados deben comenzar. 8 Sin marcadores, el
+modelo podría seguir añadiendo datos al input, como se muestra en la

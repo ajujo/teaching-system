@@ -1,0 +1,7 @@
+verificación de datos, Síntesis de datos de instrucción
+versionado de prompts, Evaluar las herramientas de ingeniería de prompts
+vocabulario, Interpretación y casos prácticos de la perplejidad
+– definido, Modelos lingüísticos
+volantes de datos, Cantidad de datos
+W
+WinoGrande, Selección e integración de pruebas comparativas

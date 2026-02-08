@@ -1,0 +1,33 @@
+impulsado por GPT-4, aumentado con un conjunto de 13 herramientas, es
+capaz de superar a GPT-4 por sí solo en varias pruebas comparativas.
+Ejemplos de herramientas utilizadas por este agente son la recuperación de
+conocimientos, un generador de consultas, un lectura de leyendas de
+imágenes, un detector de textos y la búsqueda en Bing.
+En ScienceQA, una prueba comparativa de respuestas a preguntas
+científicas, Chameleon mejora el mejor resultado publicado de pocos shots
+en un 11.37 %. En TabMWP (Tabular Math Word Problems) (Lu et al.,
+2022), una prueba comparativa de preguntas matemáticas tabulares,
+Chameleon mejora la precisión en un 17 %.
+Acciones de escritura
+Hasta ahora, hemos hablado de las acciones de solo lectura que permiten a
+un modelo leer de sus fuentes de datos. Pero las herramientas también
+pueden realizar acciones de escritura, modificando las fuentes de datos. Un
+ejecutor SQL puede recuperar una tabla de datos (lectura), pero también
+puede modificarla o eliminarla (escritura). Una API de correo electrónico
+puede leer un mensaje, pero también responderlo. Una API bancaria puede
+recuperar su saldo actual, pero también puede iniciar una transferencia
+bancaria.
+Las acciones de escritura permiten a un sistema hacer más. Pueden
+permitirle automatizar todo el flujo de trabajo de captación de clientes:
+investigación de clientes potenciales, búsqueda de sus contactos, redacción
+de correos electrónicos, envío de los primeros correos, lectura de las
+respuestas, dar seguimiento, extracción de pedidos, actualización de sus
+bases de datos con nuevos pedidos, etc.
+Sin embargo, la perspectiva de otorgar a la IA la capacidad de alterar
+automáticamente nuestras vidas resulta aterradora. De la misma forma en
+que no deberían darle a un becario la autoridad para borrar su base de datos
+de producción, tampoco deberían permitirle a una IA poco fiable iniciar
+transferencias bancarias. La confianza en las capacidades del sistema y sus
+medidas de seguridad es esencial. Debe asegurarse de que el sistema está
+protegido contra los actores maliciosos, que podrían intentar manipularlo
+para que realice acciones perjudiciales.

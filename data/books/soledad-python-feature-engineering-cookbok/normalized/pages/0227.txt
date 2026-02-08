@@ -1,0 +1,22 @@
+Performing Feature Scaling
+204
+Technical requirements
+The main libraries that we use in this chapter are scikit-learn (sklearn) for scaling, pandas to
+handle the data, and matplotlib for plotting.
+Standardizing the features
+Standardization is the process of centering the variable at 0 and standardizing the variance to 1. To
+standardize features, we subtract the mean from each observation and then divide the result by the
+standard deviation:
+x scaled =  x − mean(x)
+_
+std(x)
+
+The result of the preceding transformation is called the z-score and represents how many standard
+deviations a given observation deviates from the mean.
+Standardization is generally useful when models require the variables to be centered at zero and data
+is not sparse (centering sparse data will destroy its sparse nature). On the downside, standardization is
+sensitive to outliers and the z-score does not keep the symmetric properties if the variables are highly
+skewed, as we discuss in the following section.
+Getting ready
+With standardization, the variable distribution does not change; what changes is the magnitude of
+their values, as we see in the following figure:

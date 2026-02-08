@@ -1,0 +1,18 @@
+equipo de ML existente lidere el esfuerzo. Algunas empresas tratan la
+ingeniería de IA igual que la ingeniería de ML, como se muestra en la
+Figura 1-12.
+figura 1-12. Muchas empresas ponen la ingeniería de IA y la ingeniería de ML en la
+misma categoría, como muestran los titulares de empleo en LinkedIn del 17 de
+diciembre de 2023.
+Algunas empresas tienen descripciones de puestos de trabajo separadas para
+la ingeniería de IA, como se muestra en la Figura 1-13.
+Independientemente de dónde sitúen las organizaciones a los ingenieros de
+IA y los ingenieros de ML, sus funciones se translapan considerablemente.
+Los ingenieros de ML existentes pueden añadir la ingeniería de IA a sus
+listas de competencias para ampliar sus perspectivas laborales. Sin
+embargo, también hay ingenieros de IA sin experiencia previa en ML.
+Para comprender mejor la ingeniería de IA y en qué se diferencia de la
+ingeniería de ML tradicional, en la siguiente sección se desglosan las
+distintas capas del proceso de creación de aplicaciones de IA y se examina
+el papel que desempeña cada capa en la ingeniería de IA y en la ingeniería
+de ML.

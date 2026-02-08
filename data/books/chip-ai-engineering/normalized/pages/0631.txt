@@ -1,0 +1,25 @@
+Las distintas arquitecturas de hardware tienen diferentes distribuciones de
+memoria y unidades de cálculo especializadas que evolucionan con el
+tiempo. Estas unidades están optimizadas para tipos de datos específicos,
+como escalares, vectores o tensores, como se muestra en la Figura 9-6.
+figura 9-6. Diferentes primitivas de cálculo. Imagen inspirada en Chen et al. (2018).
+Un chip puede tener una mezcla de diferentes unidades de cómputo
+optimizadas para varios tipos de datos. Por ejemplo, tradicionalmente las
+GPU admitían operaciones vectoriales, pero ahora muchas GPU modernas
+incluyen núcleos tensoriales optimizados para el cálculo de matrices y
+tensores. Las TPU, por su parte, están diseñadas con operaciones tensoriales
+como su primitiva de cómputo principal. Para que un modelo funcione
+eficientemente una arquitectura de hardware, hay que tener en cuenta su
+disposición de memoria y sus primitivas de cómputo.
+Las especificaciones de un chip contienen muchos detalles que pueden ser
+útiles a la hora de evaluarlo para cada caso de uso específico. Sin embargo,
+las principales características que importan en todos los casos de uso son la
+capacidad de cómputo, el tamaño y ancho de banda de la memoria y el
+consumo de energía. Utilizaré las GPU como ejemplo para ilustrar estas
+características.
+Capacidad de cómputo
+La capacidad de cómputo suele medirse por el número de operaciones que
+puede realizar un chip en un tiempo determinado. La métrica más común es
+FLOP/s, a menudo escrita como FLOPS, que mide el número máximo
+(pico)de operaciones de punto flotante por segundo. En la realidad, sin
+embargo, es muy poco probable que una aplicación pueda alcanzar este pico

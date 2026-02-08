@@ -1,0 +1,36 @@
+Building Workflows with LangGraph
+96
+The first node operates on a state different from the main state, but its output is added to the
+main state. We run this node multiple times and outputs are combined into a list within the main
+graph. To schedule these map tasks, we will create a conditional edge connecting the START and
+_summarize_video_chunk nodes with an edge based on a _map_summaries function:
+human_part = {"type": "text", "text": "Provide a summary of the video."}
+async def _summarize_video_chunk(state:  _ChunkState):
+   start_offset = state["start_offset"]
+   interval_secs = state["interval_secs"]
+   video_part = {
+       "type": "media", "file_uri": state["video_uri"], "mime_type":
+"video/mp4",
+       "video_metadata": {
+           "start_offset": {"seconds": start_offset*interval_secs},
+           "end_offset": {"seconds": (start_offset+1)*interval_secs}}
+   }
+   response = await llm.ainvoke(
+       [HumanMessage(content=[human_part, video_part])])
+   return {"summaries": [response.content]}
+async def _generate_final_summary(state: AgentState):
+   summary = _merge_summaries(
+       summaries=state["summaries"], interval_secs=state["interval_secs"])
+   final_summary = await (reduce_prompt | llm | StrOutputParser()).
+ainvoke({"summaries": summary})
+   return {"final_summary": final_summary}
+def _map_summaries(state: AgentState):
+   chunks = state["chunks"]
+   payloads = [
+       {
+           "video_uri": state["video_uri"],
+           "interval_secs": state["interval_secs"],
+           "start_offset": i
+       } for i in range(state["chunks"])
+   ]
+   return [Send("summarize_video_chunk", payload) for payload in payloads]

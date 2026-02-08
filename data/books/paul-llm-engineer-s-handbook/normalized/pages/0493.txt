@@ -1,0 +1,36 @@
+MLOps Principles
+462
+3. Experiment tracking
+Training ML models is an entirely iterative and experimental process. Unlike traditional software
+development, it involves running multiple parallel experiments, comparing them based on a set
+of predefined metrics, and deciding which one should advance to production. An experiment
+tracking tool allows you to log all the necessary information, such as metrics and visual representations of your model predictions, to compare all your experiments and easily select the best
+model. Popular tools are Comet ML, W&B, MLflow, and Neptune.
+4. Testing
+The same trend is followed when testing ML systems. Hence, we must test our application across
+all three dimensions: the data, the model, and the code. We must also ensure that the feature,
+training, and inference pipeline are well integrated with external services, such as the feature store,
+and work together as a system. When working with Python, the most common tool to write your
+tests is pytest, which we also recommend.
+Test types
+In the development cycle, six primary types of tests are commonly employed at various stages:
+•
+Unit tests: These tests focus on individual components with a single responsibility, such
+as a function that adds two tensors or one that finds an element in a list.
+•
+Integration tests: These tests evaluate the interaction between integrated components
+or units within a system, such as the data evaluation pipeline or the feature engineering
+pipeline, and how they are integrated with the data warehouse and feature store.
+•
+System tests: System tests play a crucial role in the development cycle as they examine the
+entire system, including the complete and integrated application. These tests rigorously
+evaluate the end-to-end functionality of the system, including performance, security, and
+overall user experience-for example, testing an entire ML pipeline, from data ingestion
+to model training and inference, ensuring the system produces the correct outputs for
+given inputs.
+•
+Acceptance tests: These tests, often called user acceptance testing (UAT), are designed to
+confirm that the system meets specified requirements, ensuring it is ready for deployment.
+•
+Regression tests: These tests check for previously identified errors to ensure that new
+changes do not reintroduce them.

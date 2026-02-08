@@ -1,0 +1,34 @@
+Chapter 9
+399
+•
+Semantic caching: This advanced caching approach allows you to reuse responses for
+semantically similar queries, dramatically increasing cache hit rates.
+From a production deployment perspective, implementing proper caching can significantly reduce
+both latency and operational costs depending on your application's query patterns, making it an
+essential consideration when moving from development to production.
+For many applications, you can use structured outputs to eliminate unnecessary narrative text.
+Structured outputs focus the model on providing exactly the information needed in a compact
+format, eliminating unnecessary tokens. Refer to Chapter 3 for technical details.
+As a final cost management strategy, effective context management can dramatically improve
+performance and reduce the costs of LangChain applications in production environments.
+Context management directly impacts token usage, which translates to costs in production. Im­
+plementing intelligent context window management can significantly reduce your operational
+expenses while maintaining application quality.
+See Chapter 3 for a comprehensive exploration of context optimization techniques, including
+detailed implementation examples. For production deployments, implementing token-based
+context windowing is particularly important as it provides predictable cost control. This approach
+ensures you never exceed a specified token budget for conversation context, preventing runaway
+costs as conversations grow longer.
+Monitoring and cost analysis
+Implementing the strategies above is just the beginning. Continuous monitoring is crucial for
+managing costs effectively. For example, LangChain provides callbacks for tracking token usage:
+from langchain.callbacks import get_openai_callback
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(model="gpt-4o")
+with get_openai_callback() as cb:
+    response = llm.invoke("Explain quantum computing in simple terms")
+
+    print(f"Total Tokens: {cb.total_tokens}")
+    print(f"Prompt Tokens: {cb.prompt_tokens}")
+    print(f"Completion Tokens: {cb.completion_tokens}")
+    print(f"Total Cost (USD): ${cb.total_cost}")

@@ -1,0 +1,24 @@
+Chapter 8
+303
+Moreover, TP necessitates high-speed interconnects between devices to minimize communica-
+tion overhead, making it impractical to implement across nodes with insufficient interconnect 
+bandwidth.
+TP is also implemented in distributed training frameworks like Megatron-LM, DeepSpeed (ZeRO), 
+and PyTorch (FSDP). It is available in most inference frameworks, like TGI, vLLM, and Tensor-
+RT-LLM.
+Combining approaches
+Data, tensor, and pipeline parallelisms are orthogonal techniques that can be combined. Figure 
+8.8 illustrates how a given model can be split according to each approach:
+Figure 8.8 – Illustration of the different model parallelism techniques
+Combining these techniques can mitigate their respective issues. Pipeline parallelism provides 
+the greatest memory reduction but sacrifices efficiency, due to pipeline bubbles. This may be 
+ideal if the primary constraint fits the model in the GPU memory. In contrast, if low latency is 
+paramount, then prioritizing tensor parallelism and accepting a larger memory footprint may 
+be the better trade-off. In practice, a model may be split depth-wise into a few pipeline stages, 
+with tensor parallelism used within each stage.
+Balancing these tradeoffs and mapping a given model architecture onto available hardware ac-
+celerators is a key challenge in deploying LLMs.
+Model quantization
+Quantization refers to the process of representing the weights and activations of a neural net-
+work using lower-precision data types. In the context of LLMs, quantization primarily focuses 
+on reducing the precision of the model’s weights and activations. 

@@ -1,0 +1,83 @@
+Preface
+xv
+1
+Imputing Missing Data
+1
+Technical requirements
+2
+Removing observations
+with missing data
+3
+How to do it...
+3
+How it works...
+6
+See also
+7
+Performing mean or
+median imputation
+7
+How to do it...
+7
+How it works...
+11
+Imputing categorical variables
+12
+How to do it...
+12
+How it works...
+15
+Replacing missing values with
+an arbitrary number
+16
+How to do it...
+17
+How it works...
+19
+Finding extreme values
+for imputation
+19
+How to do it...
+20
+How it works...
+22
+Marking imputed values
+23
+How to do it...
+23
+How it works...
+26
+There's more...
+27
+Implementing forward
+and backward fill
+27
+How to do it...
+28
+How it works...
+31
+Carrying out interpolation
+31
+How to do it...
+31
+How it works...
+34
+See also
+34
+Performing multivariate
+imputation by chained equations
+34
+How to do it...
+35
+How it works...
+38
+See also
+39
+Estimating missing data
+with nearest neighbors
+39
+How to do it...
+40
+How it works...
+41
+Table of Contents

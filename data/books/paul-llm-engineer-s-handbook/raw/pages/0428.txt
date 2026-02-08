@@ -1,0 +1,31 @@
+Chapter 10
+397
+Autoscaling is a critical component in any cloud architecture, but there are some pitfalls you 
+should be aware of. The first and most dangerous one is over-scaling, which directly impacts the 
+costs of your infrastructure. If your scaling policy or cooldown period is too sensitive, you may 
+be uselessly spinning up new machines that will remain idle or with the resources underused. 
+The second reason is on the other side of the spectrum, where your system doesn’t scale enough, 
+resulting in a bad user experience for the end user.
+That’s why a good practice is to understand the requirements of your system. Based on them, you 
+should tweak and experiment with the autoscaling parameters in a dev or test environment until 
+you find the sweet spot (similar to hyperparameter tuning when training models). Let’s suppose, 
+for instance, that you expect your system to support an average of 100 users per minute and scale 
+up to 10,000 users per minute in case of an outlier event such as a holiday. Using this spec, you 
+can stress test your system and monitor your resources to find the best trade-off between costs, 
+latency, and throughput that supports standard and outlier use cases.
+Summary
+In this chapter, we learned what design decisions to make before serving an ML model, whether 
+an LLM or not, by walking you through the three fundamental deployment types for ML models: 
+online real-time inference, asynchronous inference, and offline batch transform. Then, we consid-
+ered whether building our ML-serving service as a monolith application made sense or splitting 
+it into two microservices, such as an LLM microservice and a business microservice. To do this, 
+we weighed the pros and cons of a monolithic versus microservices architecture in model-serving.
+Next, we walked you through deploying our fine-tuned LLM Twin to an AWS SageMaker Infer-
+ence endpoint. We also saw how to implement the business microservice using FastAPI, which 
+consists of all the RAG steps based on the retrieval module implemented in Chapter 9 and the LLM 
+microservice deployed on AWS SageMaker. Ultimately, we explored why we have to implement 
+an autoscaling strategy. We also reviewed a popular autoscaling strategy that scales in and out 
+based on a given set of metrics and saw how to implement it in AWS SageMaker.
+In the next chapter, we will learn about the fundamentals of MLOps and LLMOps and then explore 
+how to deploy the ZenML pipelines to AWS and implement a continuous training, continuous 
+integration, and continuous delivery (CT/CI/CD) and monitoring pipeline.

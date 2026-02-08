@@ -1,0 +1,30 @@
+Building Workflows with LangGraph
+78
+class IsSuitableJobEnum(Enum):
+   YES = "YES"
+   NO = "NO"
+parser = EnumOutputParser(enum=IsSuitableJobEnum)
+assert parser.invoke("NO") == IsSuitableJobEnum.NO
+assert parser.invoke("YES\n") == IsSuitableJobEnum.YES
+assert parser.invoke(" YES \n") == IsSuitableJobEnum.YES
+assert parser.invoke(HumanMessage(content="YES")) == IsSuitableJobEnum.YES
+The EnumOutputParser converts text output into a corresponding Enum instance. Note that the 
+parser handles any generation-like output (not only strings), and it actually also strips the output.
+As a final step, let’s combine everything into a chain:
+chain = llm | parser
+result = chain.invoke(prompt_template_enum.format(job_description=job_
+description))
+print(result)
+>> NO
+Now let’s make this chain part of our LangGraph workflow:
+class JobApplicationState(TypedDict):
+   job_description: str
+   is_suitable: IsSuitableJobEnum
+   application: str
+analyze_chain = llm | parser
+def analyze_job_description(state):
+   prompt = prompt_template_enum.format(job_description=state["job_
+description"])
+You can find a full list of parsers in the documentation at https://python.
+langchain.com/docs/concepts/output_parsers/, and if you need your own 
+parser, you can always build a new one!

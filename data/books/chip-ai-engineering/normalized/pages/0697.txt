@@ -1,0 +1,32 @@
+La observabilidad es una práctica universal en todas las disciplinas de la
+ingeniería de software. Es un sector importante con mejores prácticas
+establecidas y muchas soluciones de código abierto y propietario listas para
+usar. 4 Para evitar reinventar la rueda, me centraré en lo que es exclusivo de
+las aplicaciones creadas sobre modelos fundacionales. El repositorio
+GitHub del libro contiene recursos para quienes deseen aprender más sobre
+la observabilidad. 5
+El objetivo del monitoreo es el mismo que el de la evaluación: mitigar
+riesgos y descubrir oportunidades. Entre los riesgos que el monitoreo debe
+ayudarle a mitigar figuran los fallos de las aplicaciones, los ataques a la
+seguridad y las derivas. El monitoreo puede ayudar a descubrir
+oportunidades de mejora de las aplicaciones y ahorro de costos. El
+monitoreo también puede ayudarle a rendir cuentas, ya que le permite
+conocer el rendimiento de su sistema.
+Tres métricas pueden ayudar a evaluar la calidad de la observabilidad de su
+sistema, derivadas de la comunidad DevOps:
+MTTD (tiempo medio hasta la detección): Cuando ocurre algo
+malo, ¿cuánto tiempo se tarda en detectarlo?
+MTTR (tiempo medio de respuesta): Una vez detectado, ¿cuánto
+tarda en resolverse?
+CFR (tasa de fracaso del cambio): Porcentaje de cambios o
+implementaciones que dan lugar a fallos que requieren
+correcciones o reversiones. Si no conoce su CFR, es hora de
+rediseñar su plataforma para hacerla más observable.
+Tener una CFR alta no indica necesariamente que el sistema de monitoreo
+sea malo. Sin embargo, debería replantearse su proceso de evaluación para
+que los cambios incorrectos se detecten antes de su implementación. La
+evaluación y el monitoreo deben colaborar estrechamente. Las métricas de
+evaluación deben traducirse bien en métricas de monitoreo, lo que significa
+que un modelo que funcione bien durante la evaluación también debería
+funcionar bien durante el monitoreo. Los problemas detectados durante el
+monitoreo deben introducirse en el proceso de evaluación.

@@ -1,0 +1,33 @@
+Chapter 5
+209
+Chat templates
+Once the instruction-answer pairs are parsed from the dataset format, we want to structure them
+in a chat template. Chat templates offer a unified way to present the instructions and answers
+to the model.
+In general, they also include special tokens to identify the beginning and the end of a message, or
+who is the author of the message. Since base models are not designed to follow instructions, they
+don't have a chat template. This means that you can choose any template when you fine-tune
+a based model. If you want to fine-tune an instruct model (not recommended), you need to use
+the same template or it might degrade your performance.
+Like instruction dataset formats, there are different chat templates: ChatML, Llama 3, Mistral, and
+many others. In the open-source community, the ChatML template (originally from OpenAI) is a
+popular option. It simply adds two special tokens (<|im_start|> and <|im_end|>) to indicate
+who is speaking. To give you an example, here is what we obtain when we apply the ChatML
+template to the instruction-answer pair shown in Table 5.1:
+<|im_start|>system
+You are a helpful assistant, who always provide explanation. Think like you
+are answering to a five year old.<|im_end|>
+<|im_start|>user
+Concepts: building, shop, town
+Write a sentence that includes all these words.<|im_end|>
+<|im_start|>assistant
+In our little town, there is a shop inside a big building where people go
+to buy their favorite toys and candies.<|im_end|>
+Table 5.6 - Sample from Table 5.1 with the ChatML chat template
+As you can see, we still have three distinct parts: system, user, and assistant. Each part starts with
+the <|im_start|> token and ends with <|im_end|>. The current speaker is identified by a string
+(like "system") instead of a special token. This is the exact string that is tokenized and used as
+input by the model during fine-tuning.
+However, during inference, we can't provide the expected answer. In this case, we provide the
+system and user part as shown in Figure 5.6, and prompt the model to answer by adding <|im_
+start|>assistant\n.

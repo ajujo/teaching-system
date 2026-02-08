@@ -1,0 +1,101 @@
+text-based, 43-46
+video-based interfaces, 53-54
+voice interfaces, 50-53
+internal failures, protections, 292-296
+learning, 135
+measuring capabilities, importance of,
+205-206
+message brokers, 192-195
+orchestration, 27
+privacy and encryption, 283-284
+real-world testing, 37-38
+red teaming, 278-281
+risks, 272
+scaling up, 300-302
+semantic tool selection method, 97-99
+stakeholder alignment, 299-300
+standard tool selection method, 94-97
+synchronous compared to asynchronous, 58
+threat modeling, MAESTRO, 281-283
+tool execution
+chains, 107-111
+graphs, 109
+parallel tools, 107
+single tool, 106
+single tool compared to multiple tools,
+105
+trust, building, 66-68
+UX, agent interaction modalities, 41
+AgentOps.ai, 234
+agents, 1-2, 315
+accountability frameworks, 306-309
+adding to systems, guidelines, 178-180
+common, comparison, 93
+context boundary considerations, 304
+creating
+determining scope, 17-19
+verifying function, 19-20
+deep research, 92-93
+design
+asking for clarification or guidance, 65
+communicating agent capabilities, 63-64
+communicating confidence and uncer‐
+tainty, 64
+failing gracefully, 65-66
+proactivity considerations, 59-60
+experiential learning, 142
+external threats, protections, 290-292
+interaction modalities, 41
+memory, 115
+memory management considerations,
+303-304
+model selection, 5-6
+personalization, 62
+planner-executor, 91
+policy considerations, 303
+project suitability, 10-11
+query-decomposition, 91
+ReAct, 90
+reflection, 91-92
+reflex, 90
+Reflexion, 138
+reinforcement learning, 243-244
+repairing trust, 306
+research, 92-93
+safeguarding trust in, 305-306
+scope types, 301
+access control considerations, 302
+security, 288
+safeguards, 288-290
+self-healing, 236
+single-agent systems
+benefits, 163-164
+bottleneck sources, 169
+example, 164-169
+swarm systems, 177
+advantages, 178
+challenges, 178
+task complexity, assessing model suitability,
+21
+tools, 71
+types, 3-5, 90
+aggregation, feedback pipelines, 259-260
+Agile development workflows, small founda‐
+tion models, 151
+AI (artificial intelligence), 315
+AI Act (European Union), 310
+AI agents (see agents)
+AI Impact Assessment Template, 307
+AI RMF (NIST AI Risk Management Frame‐
+work), 307
+Akka, 196
+alerts, Grafana, 234
+algorithms
+ADAS design, 185-188
+backpropagation, 315
+beam search, 315
+KNN (K-nearest neighbors), 316
+MAS, 185-188
+320 
+| 
+Index

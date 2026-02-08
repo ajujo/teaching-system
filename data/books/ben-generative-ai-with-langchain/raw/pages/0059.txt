@@ -1,0 +1,30 @@
+First Steps with LangChain
+32
+Exploring LangChain’s building blocks
+To build practical applications, we need to know how to work with different model providers. 
+Let’s explore the various options available, from cloud services to local deployments. We’ll start 
+with fundamental concepts like LLMs and chat models, then dive into prompts, chains, and 
+memory systems.
+Model interfaces
+LangChain provides a unified interface for working with various LLM providers. This abstraction 
+makes it easy to switch between different models while maintaining a consistent code structure. 
+The following examples demonstrate how to implement LangChain’s core components in prac­
+tical scenarios.
+LLM interaction patterns
+The LLM interface represents traditional text completion models that take a string input and 
+return a string output. More and more use cases in LangChain use only the ChatModel interface, 
+mainly because it’s better suited for building complex workflows and developing agents. The 
+LangChain documentation is now deprecating the LLM interface and recommending the use of 
+chat-based interfaces. While this chapter demonstrates both interfaces, we recommend using 
+chat models as they represent the current standard to be up to date with LangChain.
+Let’s see the LLM interface in action:
+from langchain_openai import OpenAI
+from langchain_google_genai import GoogleGenerativeAI
+# Initialize OpenAI model
+openai_llm = OpenAI()
+# Initialize a Gemini model
+gemini_pro = GoogleGenerativeAI(model="gemini-1.5-pro")
+Please note that users should almost exclusively be using the newer chat models 
+as most model providers have adopted a chat-like interface for interacting with 
+language models. We still provide the LLM interface, because it’s very easy to use 
+as string-in, string-out.

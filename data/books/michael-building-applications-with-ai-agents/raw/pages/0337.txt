@@ -1,0 +1,57 @@
+Glossary
+Activation function
+A mathematical function applied to a neu‐
+ron’s input to determine the output, such
+as ReLU (rectified linear unit), Sigmoid,
+or Softmax.
+Agent
+An autonomous system that can perform
+tasks, make decisions, and interact with
+users or environments.
+Artificial intelligence (AI)
+The simulation of human intelligence in
+machines, including reasoning, learning,
+and problem-solving.
+Attention mechanism
+A technique in neural networks that
+allows models to focus on specific parts of
+input sequences, crucial for transformers.
+Backpropagation
+The algorithm used to train neural net‐
+works by adjusting weights based on error
+gradients.
+Beam search
+A decoding algorithm in sequence genera‐
+tion models that selects the most probable
+sequences.
+Bias
+Systematic errors in machine learning
+models that can lead to unfair outcomes.
+Chatbot
+An AI system that interacts with users via
+natural language.
+Cold start problem
+The challenge of making predictions
+when little or no historical data is
+available.
+Context window
+The amount of text (measured in tokens)
+an LLM can process at once.
+Corpus
+A collection of text data used to train or
+fine-tune language models.
+Decoder
+The component in transformer-based
+models that generates output sequences
+from encoded information.
+Dense vector
+A numerical representation of text in vec‐
+tor space, often used in embeddings.
+Domain adaptation
+The process of fine-tuning a model to per‐
+form better on a specific domain.
+Dropout
+A regularization technique that randomly
+deactivates neurons during training to
+prevent overfitting.
+315

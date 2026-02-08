@@ -1,0 +1,35 @@
+Chapter 3
+99
+•	
+Implement your own trimming logic: The recommended way is to implement your own 
+tokenizer that can be passed to a trim_messages function since you can reuse a lot of logic 
+that this function already cares for.
+Of course, the question remains on how you can persist the chat history. Let’s examine that next.
+Saving history to a database
+As mentioned above, an application deployed to production can’t store chat history in a local 
+memory. If you have your code running on more than one machine, there’s no guarantee that 
+a request from the same user will hit the same server at the next turn. Of course, you can store 
+history on the frontend and send it back and forth each time, but that also makes sessions not 
+sharable, increases the request size, etc.
+Various database providers might offer an implementation that inherits from the langchain_core.
+chat_history.BaseChatMessageHistory, which allows you to store and retrieve a chat history 
+by session_id. If you’re saving a history to a local variable while prototyping, we recommend 
+using InMemoryChatMessageHistory instead of a list to be able to later switch to integration 
+with a database.
+Let’s look at an example. We create a fake chat model with a callback that prints out the amount 
+of input messages each time it’s called. Then we initialize the dictionary that keeps histories, and 
+we create a separate function that returns a history given the session_id:
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_core.language_models import FakeListChatModel
+from langchain.callbacks.base import BaseCallbackHandler
+class PrintOutputCallback(BaseCallbackHandler):
+   def on_chat_model_start(self, serialized, messages, **kwargs):
+       print(f"Amount of input messages: {len(messages)}")
+sessions = {}
+handler = PrintOutputCallback()
+llm = FakeListChatModel(responses=["ai1", "ai2", "ai3"])
+def get_session_history(session_id: str):
+   if session_id not in sessions:
+       sessions[session_id] = InMemoryChatMessageHistory()
+   return sessions[session_id]

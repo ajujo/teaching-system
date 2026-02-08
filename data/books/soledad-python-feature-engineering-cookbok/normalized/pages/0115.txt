@@ -1,0 +1,22 @@
+Transforming Numerical Variables
+92
+The AveOccup variable shows a very strong right-skewed distribution, as shown in the
+following output:
+Figure 3.4 - A histogram and Q-Q plot of the AveOccup variable
+Note
+The AveOccup variable refers to the average number of household members - that is, the
+ratio between the number of people and the number of houses in a certain area. This is a
+promising variable for a reciprocal transformation. You can find more details about the variables
+and the dataset by executing data = fetch_california_housing() followed
+by print(data.DESCR).
+Now, let's apply the reciprocal transformation with NumPy.
+5.
+First, let's make a copy of the original DataFrame so that we can modify the values in the copy
+and not in the original one, which we will need for the rest of this recipe:
+X_tf = X.copy()
+Note
+Remember that executing X_tf = X instead of using pandas' copy() creates an additional
+view of the same data. Therefore, changes that are made in X_tf will be reflected in X as well.
+6.
+Let's apply the reciprocal transformation to the AveOccup variable:
+X_tf["AveOccup"] = np.reciprocal(X_tf["AveOccup"])

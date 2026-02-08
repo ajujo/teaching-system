@@ -1,0 +1,34 @@
+que contengan frases tóxicas para un modelo de detección
+de toxicidad. Y viceversa, si los datos del mundo real son
+tóxicos, se pueden sintetizar datos seguros. Es especialmente
+habitual utilizar la IA para sintetizar ejemplos adversariales.
+También es posible generar datos para la clase rara con el
+fin de hacer frente a los retos del desequilibrio de clases.
+Como se describe en "TrueTeacher", Gekhman et al. (2022)
+utilizaron LLMs para generar resúmenes con incoherencias
+fácticas que luego emplearon para entrenar modelos de
+detección de incoherencias fácticas.
+En su artículo "Discovering Language Model Behaviors with
+Model-Written Evaluations" (Pérez et al., 2022), Anthropic
+analizó varias técnicas de síntesis de datos para generar
+conjuntos de datos específicos capaces de poner a prueba
+154 comportamientos diferentes de la IA, incluyendo rasgos
+de personalidad, opiniones políticas, posturas éticas y sesgos
+sociales. Descubrieron que en las comparaciones directas
+entre conjuntos de datos generados por LM (modelos
+lingüísticos) y por humanos, "los conjuntos de datos escritos
+por LM se acercan a la calidad de los escritos por humanos,
+y a veces incluso la superan".
+En otras palabras, puede utilizar datos sintéticos para
+aumentar la cobertura de datos: generar datos específicos
+para cubrir las áreas en las que los datos existentes son
+insuficientes.
+Para aumentar la calidad de los datos
+Aunque la percepción común es que los datos sintéticos
+suelen ser de menor calidad que los generados por
+humanos, a veces puede ocurrir lo contrario. A veces, los
+humanos pueden tener limitaciones fundamentales que hacen
+que los datos generados por humanos sean de menor calidad
+que los generados por IA. Un ejemplo de ello son los datos
+sobre el uso de herramientas, ya comentados: los humanos y
+las IA tienen modos de operar y preferencias de

@@ -1,0 +1,34 @@
+Appendix
+435
+If you haven’t enabled the relevant service, you should get a helpful error message pointing you 
+to the right website, where you click Enable. You have to either enable Vertex or the Generative 
+Language API according to preference and availability.
+LangChain offers integrations with Google services such as language model inference, embeddings, 
+data ingestion from different sources, document transformation, and translation.
+Other providers
+•	
+Replicate: You can authenticate with your GitHub credentials at https://replicate.
+com/. If you then click on your user icon at the top left, you’ll find the API tokens – just 
+copy the API key and make it available in your environment as REPLICATE_API_TOKEN. To 
+run bigger jobs, you need to set up your credit card (under billing).
+•	
+Azure: By authenticating either through GitHub or Microsoft credentials, we can create 
+an account on Azure at https://azure.microsoft.com/. We can then create new API 
+keys under Cognitive Services | Azure OpenAI.
+•	
+Anthropic: You need to set the ANTHROPIC_API_KEY environment variable. Please make 
+sure you’ve set up billing and added funds on the Anthropic console at https://console.
+anthropic.com/.
+There are two main integration packages:
+•	
+langchain-google-vertexai
+•	
+langchain-google-genai
+We’ll be using langchain-google-genai, the package recommended by LangChain 
+for individual developers. The setup is simple, only requiring a Google account and 
+API key. It is recommended to move to langchain-google-vertexai for larger 
+projects. This integration offers enterprise features such as customer encryption 
+keys, virtual private cloud integration, and more, requiring a Google Cloud account 
+with billing.
+If you’ve followed the instructions on GitHub, as indicated in the previous section, 
+you should already have the langchain-google-genai package installed.

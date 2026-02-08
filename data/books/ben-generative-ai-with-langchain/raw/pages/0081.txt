@@ -1,0 +1,34 @@
+First Steps with LangChain
+54
+Having explored how to build text-based applications with LangChain, we’ll now extend our 
+understanding to multimodal capabilities. As AI systems increasingly work with multiple forms 
+of data, LangChain provides interfaces for both generating images from text and understanding 
+visual content – capabilities that complement the text processing we’ve already covered and open 
+new possibilities for more immersive applications.
+Multimodal AI applications
+AI systems have evolved beyond text-only processing to work with diverse data types. In the 
+current landscape, we can distinguish between two key capabilities that are often confused but 
+represent different technological approaches.
+Multimodal understanding represents the ability of models to process multiple types of inputs 
+simultaneously to perform reasoning and generate responses. These advanced systems can un­
+derstand the relationships between different modalities, accepting inputs like text, images, PDFs, 
+audio, video, and structured data. Their processing capabilities include cross-modal reasoning, 
+context awareness, and sophisticated information extraction. Models like Gemini 2.5, GPT-4V, 
+Sonnet 3.7, and Llama 4 exemplify this capability. For instance, a multimodal model can analyze 
+a chart image along with a text question to provide insights about the data trend, combining 
+visual and textual understanding in a single processing flow.
+Content generation capabilities, by contrast, focus on creating specific types of media, often with 
+extraordinary quality but more specialized functionality. Text-to-image models create visual 
+content from descriptions, text-to-video systems generate video clips from prompts, text-to-
+audio tools produce music or speech, and image-to-image models transform existing visuals. 
+Examples include Midjourney, DALL-E, and Stable Diffusion for images; Sora and Pika for video; 
+and Suno and ElevenLabs for audio. Unlike true multimodal models, many generation systems 
+are specialized for their specific output modality, even if they can accept multiple input types. 
+They excel at creation rather than understanding.
+As LLMs evolve beyond text, LangChain is expanding to support both multimodal understanding 
+and content generation workflows. The framework provides developers with tools to incorpo­
+rate these advanced capabilities into their applications without needing to implement complex 
+integrations from scratch. Let’s start with generating images from text descriptions. LangChain 
+provides several approaches to incorporate image generation through external integrations and 
+wrappers. We’ll explore multiple implementation patterns, starting with the simplest and pro­
+gressing to more sophisticated techniques that can be incorporated into your applications.

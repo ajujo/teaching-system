@@ -1,0 +1,34 @@
+Chapter 5
+193
+print(f"Tool's name = {search.description}")
+print(f"Tool's arg schema = f{search.args_schema}")
+>> Tool's name = fduckduckgo_search
+Tool's name = fA wrapper around DuckDuckGo Search. Useful for when you 
+need to answer questions about current events. Input should be a search 
+query.
+Tool's arg schema = class 'langchain_community.tools.ddg_search.tool.
+DDGInput'
+The argument schema, arg_schema, is a Pydantic model and we’ll see why it’s useful later in this 
+chapter. We can explore its fields either programmatically or by going to the documentation 
+page—it expects only one input field, a query: 
+from langchain_community.tools.ddg_search.tool import DDGInput
+print(DDGInput.__fields__)
+>> {'query': FieldInfo(annotation=str, required=True, description='search 
+query to look up')}
+Now we can invoke this tool and get a string output back (results from the search engine):
+query = "What is the weather in Munich like tomorrow?"
+search_input = DDGInput(query=query)
+result = search.invoke(search_input.dict())
+print(result)
+We can also invoke the LLM with tools, and let’s make sure that the LLM invokes the search tool 
+and does not answer directly:
+result = llm.invoke(query, tools=[search])
+print(result.tool_calls[0])
+>> {'name': 'duckduckgo_search', 'args': {'query': 'weather in Munich 
+tomorrow'}, 'id': '222dc19c-956f-4264-bf0f-632655a6717d', 'type': 'tool_
+call'}
+Our tool is now a callable that LangGraph can call programmatically. Let’s put everything together 
+and create our first agent. When we stream our graph, we get updates to the state. In our case, 
+these are only messages:
+from langgraph.prebuilt import create_react_agent
+agent = create_react_agent(model=llm, tools=[search])

@@ -1,0 +1,40 @@
+refine their reasoning and adapt their next steps within the same interaction. Key
+strengths of in-context learning include:
+User-specific adaptation
+Tailoring responses to individual user preferences or recurring issues, providing
+a personalized experience
+Real-time feedback incorporation
+Dynamically adjusting behavior in response to user clarifications or follow-up
+instructions, enhancing responsiveness
+Guided reasoning
+Integrating explicit reasoning steps or intermediate outputs to steer the agent
+toward more reliable or interpretable conclusions
+A critical enabler of effective in-context learning is robust context management.
+Because foundation models have finite context windows, systems must carefully
+curate which information to include in prompts, how to structure it, and when to
+remove or compress outdated details. Techniques such as rolling context windows,
+semantic compression, and vector-based memory retrieval help ensure that the most
+relevant information remains accessible throughout an interaction.
+However, in-context learning comes with inherent limitations. Changes made within
+a session are ephemeral-once the session ends, any learned adaptations are lost. To
+preserve valuable insights for future use, successful in-context strategies should be
+promoted to more permanent mechanisms, such as prompt engineering, workflow
+updates, or full model retraining.
+In practice, in-context learning often serves as a first line of adaptation-enabling
+rapid, low-risk testing of improvements in live interactions. It acts as a testing ground
+for new reasoning strategies or prompt structures before these approaches are codi‐
+fied into broader workflows or incorporated system-wide. This makes in-context
+learning especially useful for handling session-specific failures, rapidly iterating on
+small refinements, or addressing highly dynamic and unpredictable user inputs
+where traditional approaches may fall short.
+The strengths of in-context learning lie in its instant adaptability, minimal risk, and
+ability to deliver session-level personalization and real-time refinement. However,
+these adaptations are inherently transient; any changes made are limited in scope and
+do not persist once the session concludes. As such, while in-context learning is ideal
+for rapid prototyping of refinements and responding to evolving or unpredictable
+user needs, valuable insights derived from these interactions must eventually be for‐
+malized through prompt engineering, workflow updates, or model retraining to
+achieve lasting improvement.
+266
+|
+Chapter 11: Improvement Loops

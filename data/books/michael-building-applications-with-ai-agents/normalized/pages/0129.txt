@@ -1,0 +1,30 @@
+Parallel Tool Execution
+The first increase in complexity comes with tool parallelism. In some cases, it might
+be worth taking multiple actions on the input. For example, imagine that you need to
+look up a record for a patient. If your toolset includes multiple tools that access multi‐
+ple sources of data, then it will be necessary to execute multiple actions to retrieve
+data from each of the sources. This increases the complexity of the problem because it
+is unclear how many tools need to be executed. A common approach is to retrieve a
+maximum number of tools that might be executed-say, five-using semantic tool
+selection. Next, make a second call to a foundation model with each of these five
+tools, and ask it to select the five or fewer tools that are necessary to the problem,
+filtering down to the tools necessary for the task. Similarly, the foundation model can
+be called repeatedly with the additional context of which tools have already been
+selected until it chooses to add no more tools. Once selected, these tools are inde‐
+pendently parameterized and executed. After all tools have been completed, their
+results are passed to the foundation model to draft a final response for the user.
+Figure 5-7 illustrates this pattern.
+Figure 5-7. Parallel tool execution pattern. In this example, the user asks how to handle
+a customer ticket. The orchestration process selects multiple tools to run in parallelsuch as retrieving customer details, order history, service logs, similar tickets, and rele‐
+vant support policies-before integrating their outputs to generate the final response.
+This pattern of parallel tool execution enables agents to efficiently gather comprehen‐
+sive information from multiple sources in a single step. By integrating these results
+before composing a response, the agent can provide richer, more informed outputs
+while minimizing overall latency.
+Chains
+The next increase in complexity brings us to chains. Chains refer to sequences of
+actions that are executed one after another, with each action depending on the suc‐
+cessful completion of the previous one. Planning chains involves determining the
+Tool Topologies
+|
+107

@@ -1,0 +1,37 @@
+Chapter 9
+349
+Another example would be if we want to illustrate a piece of code that shows how to build a RAG 
+pipeline. In this case, the router would have to predict the article and repository data category, 
+as we need to look up examples in both collections for an exhaustive context.
+Usually, the router strategy decides what model to call based on a user’s input, such as whether 
+to use GPT-4 or a self-hosted Llama 3.1 model for that specific query. However,  in our particular 
+use case, we can adapt the router algorithm to optimize the retrieval step.
+We can further optimize the retrieval using a hybrid search algorithm that combines the vector 
+search (based on embeddings) with a keyword search algorithm, such as BM25. Search algorithms 
+used BM25 (or similar methods) to find similar items in a DB before vector search algorithms 
+became popular. By merging the methods, hybrid search retrieves results that match the exact 
+terms, such as RAG, LLM, or SageMaker, and the query semantics, increasing the accuracy and 
+relevance of your retrieved results. Fundamentally, the hybrid search algorithms follow the next 
+mechanics:
+1.	
+Parallel processing: The search query is processed simultaneously through both the 
+vector search and BM25 algorithms. Each algorithm retrieves a set of relevant documents 
+based on its criteria.
+2.	
+Score normalization: The results from both searches are assigned relevance scores, which 
+are then normalized to ensure comparability. This step is crucial because vector search 
+and BM25 scoring mechanisms work at different scales. Thus, they can’t be compared or 
+merged without normalization.
+3.	
+Result merging: The normalized scores are combined, often through a weighted sum, to 
+produce a final ranking of documents. Adjusting the weights allows for fine-tuning the 
+emphasis on the semantic or keyword search algorithm.
+To conclude, by combining the semantic and exact keyword search algorithms, you can improve 
+the accuracy of your retrieval step. Vector search helps recognize synonyms or related concepts, 
+ensuring that relevant information isn’t overlooked due to vocabulary differences. Keyword search 
+ensures that documents containing critical keywords are emphasized appropriately, particularly 
+in technical fields with specific terminology.
+One last improvement we can make to our RAG system is to use multi-index vector structures 
+instead of indexing based only on the content’s embedding. Let’s detail how multi-indexing 
+works. Instead of using the embeddings of a single field to do the vector search for a particular 
+collection, it combines multiple fields. 

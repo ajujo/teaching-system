@@ -1,0 +1,28 @@
+Chapter 7
+305
+Final Answer: Row 122 has the biggest difference between petal length and 
+petal width.
+> Finished chain.
+'Row 122 has the biggest difference between petal length and petal width.'
+This example shows how our agent can perform more complex analysis by:
+•	
+Creating derived metrics (the difference between two columns)
+•	
+Finding the maximum value of this metric
+•	
+Identifying which row contains this value
+Finally, let’s see how our agent handles a request for data visualization:
+agent.run(prompt.format(query="Show the distributions for each column vi­
+sually!"))
+For this visualization query, the agent generates code to create appropriate plots for each mea­
+surement column. The agent decides to use histograms to show the distribution of each feature 
+in the dataset, providing visual insights that complement the numerical analyses from previous 
+queries. This demonstrates how our agent can generate code for creating informative data visu­
+alizations that help understand the dataset’s characteristics.
+These three examples showcase the versatility of our data analysis agent in handling different 
+types of analytical tasks. By progressively increasing the complexity of our queries—from basic 
+exploration to statistical analysis and visualization—we can see how the agent uses its tools 
+effectively to provide meaningful insights about the data.
+When designing your own data analysis agents, consider providing them with a 
+variety of analysis tools that cover the full spectrum of data science workflows: 
+exploration, preprocessing, analysis, visualization, and interpretation.

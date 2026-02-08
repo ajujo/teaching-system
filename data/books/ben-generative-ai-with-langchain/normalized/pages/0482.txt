@@ -1,0 +1,48 @@
+Index
+455
+Time Per Output Token (TPOT) 387
+Time to First Token (TTFT) 387
+Together AI 31
+tools 3
+built-in LangChain tools 192-199
+custom tools 199
+defining 192
+error handling 206-209
+in LangChain 185-187
+using 182-185
+tools, incorporating into workflows
+controlled generation 210, 211
+controlled generation, provided
+by vendor 212, 213
+tool-calling paradigm 214, 215
+ToolNode 213
+traditional approach
+key components 413
+traditional database search 116
+Tree-of-Thoughts (ToT) pattern 223, 250-261
+trimming, with MCTS 261, 262
+TypedDict 69
+U
+UI frameworks
+Chainlit 379
+Gradio 379
+Mesop 379
+Streamlit 379
+Universal Sentence Encoder (USE) 320
+V
+vector indexing
+strategies 121-127
+vector store retrievers
+database retrievers 139
+lexical search retrievers 139
+Search API retrievers 139
+vector stores 115, 116
+comparing 117, 118
+embeddings 118
+hardware considerations 119
+interface, in LangChain 119, 120
+patterns 118
+vision-centric enhancements 416
+Z
+zero-shot prompting 85-87
+versus few-shot prompting 87, 88

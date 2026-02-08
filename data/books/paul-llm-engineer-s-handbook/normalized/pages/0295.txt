@@ -1,0 +1,40 @@
+Evaluating LLMs
+264
+•
+ARC-C (reasoning): Evaluates models on grade-school-level multiple-choice science
+questions requiring causal reasoning
+•
+Winogrande (reasoning): Assesses common sense reasoning through pronoun resolution
+in carefully crafted sentences
+•
+PIQA (reasoning): Measures physical common sense understanding through questions
+about everyday physical interactions
+Many of these datasets are also used to evaluate general-purpose fine-tuned models. In this
+case, we focus on the difference in a given score between the base and the fine-tuned model. For
+example, bad fine-tuning can degrade the knowledge of the model, measured by MMLU. On the
+contrary, a good one might instill even more knowledge and increase the MMLU score.
+This can also help identify any contamination issues, where the model might have been finetuned on data that is too close to a test set. For instance, improving the MMLU score of a base
+model by 10 points during the fine-tuning phase is unlikely. This is a sign that the instruction
+data might be contaminated.
+In addition to these pre-trained evaluations, fine-tuned models also have their own benchmarks.
+Here, we use the term "fine-tuned model" to designate a model that has been trained with supervised fine-tuning (SFT) and preference alignment. These benchmarks target capabilities
+connected to the ability of fine-tuned models to understand and answer questions. In particular,
+they test instruction-following, multi-turn conversation, and agentic skills:
+•
+IFEval (instruction following): Assesses a model's ability to follow instructions with
+particular constraints, like not outputting any commas in your answer
+•
+Chatbot Arena (conversation): A framework where humans vote for the best answer to
+an instruction, comparing two models in head-to-head conversations
+•
+AlpacaEval (instruction following): Automatic evaluation for fine-tuned models that is
+highly correlated with Chatbot Arena
+•
+MT-Bench (conversation): Evaluates models on multi-turn conversations, testing their
+ability to maintain context and provide coherent responses
+•
+GAIA (agentic): Tests a wide range of abilities like tool use and web browsing, in a multistep fashion
+Understanding how these evaluations are designed and used is important to choose the best LLM
+for your application. For example, if you want to fine-tune a model, you want the best base model
+in terms of knowledge and reasoning for a given size. This allows you to compare the capabilities
+of different LLMs and pick the one that will offer the strongest foundation for your fine-tuning.

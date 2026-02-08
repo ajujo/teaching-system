@@ -1,0 +1,23 @@
+modelos multimodales, De los grandes modelos lingüísticos a los modelos
+fundacionales
+módulos de atención, Mecanismo de atención
+módulos MLP, Mecanismo de atención
+monitoreo, Dividir tareas complejas en subtareas más sencillas, Monitoreo
+y observabilidad
+mosaico de bucles, Kernels y compiladores
+MTTD (tiempo medio hasta la detección), Monitoreo y observabilidad
+MTTR (tiempo medio de respuesta), Monitoreo y observabilidad
+muestreo, Afinado mediante el modelo de recompensa
+– cómputo en tiempo de prueba, Cómputo de tiempo de prueba
+– estrategias, Fundamentos de muestreo
+– condición de parada, Top-p
+– temperatura, Fundamentos de muestreo
+– top-k, Top-k
+– top-p, Top-k
+– estrategias de muestreo, Fundamentos de muestreo
+– fundamentos de muestreo, Afinado mediante el modelo de recompensa
+– naturaleza probabilística de la IA, La naturaleza probabilística de la IA
+– outputs estructurados, Cómputo de tiempo de prueba
+muestreo restringido, Muestreo restringido, Muestreo restringido
+– ajuste fino, Afinado
+– post-procesamiento, Prompting

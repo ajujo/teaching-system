@@ -1,0 +1,32 @@
+Chapter 5
+201
+  calculator (9b06de35-a31c-41f3-a702-6e20698bf21b)
+ Call ID: 9b06de35-a31c-41f3-a702-6e20698bf21b
+  Args:
+    expression: (2+3*i)**2
+================================= Tool Message ===========================
+======
+Name: calculator
+(-5+12j)
+================================== Ai Message ============================
+======
+(2+3i)² = -5+12i.
+With just a few lines of code, we've successfully extended our LLM's capabilities to work with
+complex numbers. Now we can put together the example we started with:
+question = "What is a square root of the current US president's age
+multiplied by 132?"
+system_hint = "Think step-by-step. Always use search to get the fresh
+information about events or public facts that can change over time."
+agent = create_react_agent(
+   llm, [calculator, search],
+   state_modifier=system_hint)
+for event in agent.stream({"messages": [("user", question)]}, stream_
+mode="values"):
+   event["messages"][-1].pretty_print()
+print(event["messages"][-1].content)
+>> The square root of Donald Trump's age multiplied by 132 is
+approximately 101.47.
+We haven't provided the full output here in the book (you can find it on our GitHub), but if you
+run this snippet, you should see that the LLM was able to query tools step by step:
+1.
+It called the search engine with the query "current US president".

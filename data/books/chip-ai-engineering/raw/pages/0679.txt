@@ -1,0 +1,30 @@
+de su organización. Esto puede ocurrir por muchas razones, entre ellas las
+siguientes:
+Un empleado copia el secreto de la empresa o la información
+privada de un usuario en un prompt y lo envía a una API de
+terceros. 1
+Un desarrollador de aplicaciones introduce las políticas y los datos
+internos de la empresa en el prompt del sistema de la aplicación.
+Una herramienta recupera información privada de una base de
+datos interna y la añade al contexto.
+No existe una fórmula infalible para eliminar las posibles filtraciones
+cuando se utilizan API de terceros. Sin embargo, pueden mitigarlas con las
+barreras de seguridad. Puede utilizar una de las muchas herramientas
+disponibles que detectan automáticamente los datos sensibles. Usted
+especifica qué datos sensibles debe detectar. Las clases de datos sensibles
+más comunes son las siguientes:
+Datos personales (números de identificación, números de teléfono,
+cuentas bancarias)
+Rostros humanos
+Palabras clave y frases específicas asociadas con la propiedad
+intelectual de la empresa o con información privilegiada
+Muchas herramientas de detección de datos sensibles utilizan IA para
+identificar información potencialmente sensible, como determinar si una
+cadena se parece a una dirección de domicilio válida. Si se detecta que una
+consulta contiene información sensible, tiene dos opciones: bloquear toda la
+consulta o eliminar la información sensible de la misma. Por ejemplo,
+puede enmascarar el número de teléfono de un usuario con el marcador de
+posición [NÚMERO DE TELÉFONO]. Si la respuesta generada contiene
+este marcador de posición, utilice un diccionario inverso de PII que asigne
+este marcador de posición a la información original para que pueda
+desenmascararlo, como se muestra en la Figura 10-3.

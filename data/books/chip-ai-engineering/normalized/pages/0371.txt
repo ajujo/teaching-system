@@ -1,0 +1,13 @@
+figura 5-12. Los atacantes pueden inyectar prompts y código maliciosos que su
+modelo puede recuperar y ejecutar. Imagen adaptada de "Not What You've Signed Up
+for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt
+Injection" (Greshake et al., 2023).
+Dado que el número de herramientas que puede utilizar un modelo es
+enorme, como se muestra en el "Agentes", estos ataques pueden adoptar
+muchas formas. Estos son dos enfoques de ejemplo:
+1. Phishing pasivo
+En este enfoque, los atacantes dejan sus cargas maliciosas en
+espacios públicos (como páginas web públicas, repositorios de
+GitHub, vídeos de YouTube o comentarios de Reddit) a la espera
+de que los modelos las encuentren a través de herramientas como
+la búsqueda web. Imagine que un atacante inserta código para

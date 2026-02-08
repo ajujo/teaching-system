@@ -1,0 +1,4 @@
+figura 6-15. Un árbol de transición de herramientas de Lu et al. (2023). Adaptación de
+una imagen original con licencia CC BY 4.0.
+Vogager (Wang et al., 2023) propone un gestor de habilidades para realizar
+un seguimiento de las nuevas habilidades (herramientas) que adquiere un

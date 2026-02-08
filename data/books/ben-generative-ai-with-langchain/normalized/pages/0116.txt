@@ -1,0 +1,29 @@
+Chapter 3
+89
+Another way to make your prompts more manageable is to split them into pieces and chain them
+together:
+system_template_part1 = PromptTemplate.from_template("a: {a}")
+system_template_part2 = PromptTemplate.from_template("b: {b}")
+system_template = system_template_part1 + " " + system_template_part2
+print(system_template.invoke({"a": "a", "b": "b"}).text)
+>> a: a b: b
+You can also build more complex substitutions by using the class langchain_core.prompts.
+PipelinePromptTemplate. Additionally, you can pass templates into a ChatPromptTemplate and
+they will automatically be composed together:
+system_prompt_template = PromptTemplate.from_template("a: {a} b: {b}")
+chat_prompt_template = ChatPromptTemplate.from_messages(
+   [("system", system_prompt_template.template),
+    ("human", "hi"),
+    ("ai", "{c}")])
+messages = chat_prompt_template.invoke({"a": "a", "b": "b", "c": "c"}).
+messages
+print(len(messages))
+print(messages[0].content)
+>> 3
+a: a b: b
+Dynamic few-shot prompting
+As the number of examples used in your few-shot prompts continues to grow, you might limit
+the number of examples to be passed into a specific prompt's template substitution. We select
+examples for every input - by searching for examples similar to the user's input (we'll talk more
+about semantic similarity and embeddings in Chapter 4), limiting them by length, taking the
+freshest ones, etc.

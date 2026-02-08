@@ -1,0 +1,37 @@
+Evaluating LLMs
+276
+Due to the open-ended nature of this problem, we will leverage a judge LLM to evaluate the quality 
+of the generated text. It will take both the instruction and the answer as inputs, and score it on 
+a 1–3 scale based on two criteria:
+•	
+Accuracy: The degree of factual correctness and comprehensiveness of the information 
+presented in the answer
+•	
+Style: The appropriateness of the tone and writing style for blog posts or social media 
+content (no formal or academic expressions)
+In our evaluation framework, we will use the test split of our instruction dataset to get test in-
+structions. We will feed them to our models and generate answers. These answers will then be 
+evaluated by our judge LLM (GPT-4o-mini), based on a prompt that specifies our criteria. Finally, 
+we will analyze the scores and draw conclusions based on qualitative and quantitative evaluations.
+Generating answers
+The first step consists of efficiently generating answers for each instruction in our test set. In ad-
+dition to our two models, we will also use meta-llama/Meta-Llama-3.1-8B-Instruct, the official 
+instruct version of Llama-3.1-8B, as a reference point to better understand the trade-offs we made.
+Let’s start the first stage of the implementation:
+1.	
+We import the relevant libraries, including vLLM for fast generation. This library is a lot 
+faster than transformers for batch generation with local models:
+from vllm import LLM, SamplingParams
+from datasets import load_dataset
+from tqdm.auto import tqdm
+import gc
+2.	 We define a function called generate_answers that will process our dataset and generate 
+responses using a specified model. It takes two inputs—the ID of the model we want to 
+use and the name of the test dataset:
+def generate_answers(model_id, dataset_name):
+    dataset = load_dataset(dataset_name, split="test")
+3.	
+We need to format the raw instructions using the chat template our models have been 
+trained on. Note that Llama-3.1-8B-Instruct has been used with a different template, but 
+it can follow this simple format. Here, we use the same chat template with every model 
+for simplicity. We map the entire test set to this template with the format() function:

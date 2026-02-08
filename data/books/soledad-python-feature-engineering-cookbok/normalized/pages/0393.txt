@@ -1,0 +1,11 @@
+Other Books You May Enjoy
+If you enjoyed this book, you may be interested in these other books by Packt:
+Causal Inference and Discovery in Python
+Aleksander Molak
+ISBN: 978-1-80461-298-9
+•	 Master the fundamental concepts of causal inference
+•	 Decipher the mysteries of structural causal models
+•	 Unleash the power of the 4-step causal inference process in Python
+•	 Explore advanced uplift modeling techniques
+•	 Unlock the secrets of modern causal discovery using Python
+•	 Use causal inference for social impact and community benefit

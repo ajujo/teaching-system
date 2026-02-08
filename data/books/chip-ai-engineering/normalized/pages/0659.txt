@@ -1,0 +1,13 @@
+figura 9-14. Mejora del throughput mediante distintas técnicas de optimización en
+PyTorch. Imagen de PyTorch (2023).
+El experimento se ejecutó en una GPU A100 con 80 GB de memoria.
+No estaba claro cómo afectaban estos pasos de optimización a la
+calidad de los resultados del modelo.
+Los compiladores pueden ser herramientas independientes, como Apache
+TVM y MLIR (Multi-Level Intermediate Representation), o integrarse en
+marcos de ML e inferencia, como torch.compile (una función de PyTorch),
+XLA (Accelerated Linear Algebra, desarrollada originalmente por Tensor-
+Flow, con una versión de código abierto llamada OpenXLA), y el
+compilador integrado en TensorRT, que está optimizado para las GPU
+NVIDIA. Las empresas de IA pueden tener sus propios compiladores, con
+sus propios kernels diseñados para acelerar sus propias cargas de trabajo. 24

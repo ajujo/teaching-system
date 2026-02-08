@@ -1,0 +1,31 @@
+2. "¿Cómo puedo cambiar mi contraseña?"
+3. "Pasos para restablecer contraseñas".
+Yu et al. (2023) reescribió los 15 000 ejemplos de MATH y GSM-8K de
+diferentes maneras para crear MetaMath, un nuevo conjunto de datos de
+casi 400 000 ejemplos. Demostraron que sus modelos, entrenados en este
+nuevo conjunto de datos, superaban a modelos más grandes en pruebas
+comparativas de matemáticas relacionadas.
+Es habitual utilizar la IA para traducir datos desde idiomas con muchos
+recursos (más disponibles en línea) a idiomas con pocos recursos para
+ayudar a entrenar modelos en idiomas con pocos recursos. Esto resulta útil
+para entrenar un modelo pequeño especializado en un idioma con escasos
+recursos como el quechua o el lao.
+Puede verificar la calidad de las traducciones con la retrotraducción.
+Supongamos que la frase original en inglés es X y la frase traducida en
+laosiano es Y. Puede utilizar otro modelo para volver a traducir la
+traducción al idioma original, X′, y luego comparar X′ con la frase original
+X. Si son muy diferentes, es probable que la traducción Y sea mala.
+La IA puede traducir no solo lenguajes naturales, sino también lenguajes de
+programación. Puede utilizar la IA para traducir código escrito en un
+lenguaje a otro. Los autores de Llama 3 utilizaron la traducción de código
+de su conjunto de datos SFT con una gama más amplia de lenguajes de
+programación. De hecho, el entrenamiento de Llama 3 depende en gran
+medida de datos sintéticos, y los autores utilizaron muchas técnicas
+creativas para generar datos útiles.
+Por ejemplo, utilizaron la retrotraducción para generar explicaciones de
+código y documentación. Partiendo de fragmentos de código, utilizaron la
+IA para generar explicaciones y documentación. A continuación, volvieron
+a utilizar la IA para generar fragmentos de código a partir de las
+explicaciones y la documentación. La explicación y la documentación solo
+se usarán para afinar el modelo si el código generado se considera fiel al
+original.

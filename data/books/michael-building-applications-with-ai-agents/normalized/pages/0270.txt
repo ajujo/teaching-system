@@ -1,0 +1,49 @@
+       type={type}, kwargs={kwargs})''')
+   log_to_loki("tool.lookup_threat_intel", f"indicator={indicator}, type={type}")
+   return "threat_intel_retrieved"
+@tool
+def query_logs(query: str, log_index: str, **kwargs) -> str:
+   """Search and analyze security logs across authentication, endpoint, network,
+   firewall, and DNS systems."""
+   print(f"[TOOL] query_logs(query={query}, log_index={log_index},
+         kwargs={kwargs})")
+   log_to_loki("tool.query_logs", f"query={query}, log_index={log_index}")
+   return "log_query_executed"
+@tool
+def triage_incident(incident_id: str, decision: str, reason: str, **kwargs):
+   """Classify security incidents as true positive, false positive, or escalate
+   for further investigation."""
+   print(f'''[TOOL] triage_incident(incident_id={incident_id},
+    decision={decision}, reason={reason},
+    kwargs={kwargs})''')
+   log_to_loki("tool.triage_incident", f"incident_id={incident_id},
+               decision={decision}")
+   return "incident_triaged"
+@tool
+def isolate_host(host_id: str, reason: str, **kwargs) -> str:
+   """Isolate compromised hosts to prevent lateral movement
+   and contain security incidents."""
+   print(f"[TOOL] isolate_host(host_id={host_id}, reason={reason},
+         kwargs={kwargs})")
+   log_to_loki("tool.isolate_host", f"host_id={host_id}, reason={reason}")
+   return "host_isolated"
+@tool
+def send_analyst_response(incident_id: str = None, message: str = None) -> str:
+   """Send security analysis, incident updates, or recommendations to
+   stakeholders."""
+   print(f"[TOOL] send_analyst_response → {message}")
+   log_to_loki("tool.send_analyst_response", f"incident_id={incident_id},
+               message={message}")
+   return "analyst_response_sent"
+TOOLS = [
+   lookup_threat_intel, query_logs, triage_incident, isolate_host,
+   send_analyst_response
+]
+In a real deployment, this agent processes alerts like "Suspicious login attempt from
+IP 203.0.113.45." Over time, as threats evolve (e.g., new attack vectors emerge), user
+queries shift, or external data sources change, the agent may encounter failures-such
+as misinterpreting queries, selecting suboptimal tools, or generating inaccurate tri‐
+ages. This is where feedback pipelines come in: they detect these issues, analyze root
+248
+|
+Chapter 11: Improvement Loops

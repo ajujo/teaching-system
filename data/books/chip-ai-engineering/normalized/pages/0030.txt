@@ -1,0 +1,33 @@
+utilizando datos etiquetados, que pueden ser caros y lentos de obtener. La
+autosupervisión ayuda a superar este cuello de botella del etiquetado de
+datos para crear conjuntos de datos más grandes de los que puedan aprender
+los modelos, lo que permite escalarlos. Así es como puede hacerse.
+Con la supervisión, se etiquetan ejemplos para mostrar los comportamientos
+que se desea que aprenda el modelo y, a continuación, se entrena el modelo
+con estos ejemplos. Una vez entrenado, el modelo puede aplicarse a nuevos
+datos. Por ejemplo, para entrenar un modelo de detección de fraudes, se
+utilizan ejemplos de transacciones, cada una etiquetada como "fraude" o
+"no fraude". Una vez que el modelo aprende de estos ejemplos, puede
+utilizarlo para predecir si una transacción es o no fraudulenta.
+El éxito de los modelos de IA en la década de 2010 residió en la
+supervisión. El modelo que inició la revolución del deep learning, AlexNet
+(Krizhevsky et al., 2012), era supervisado. Fue entrenado para aprender a
+clasificar más de 1 millón de imágenes del conjunto de datos ImageNet.
+Clasificaba cada imagen en una de 1000 categorías, como "coche", "globo"
+o "mono".
+Uno de los inconvenientes de la supervisión es que el etiquetado de los
+datos es caro y requiere mucho tiempo. Si a una persona le cuesta 5
+centavos etiquetar una imagen, le costaría 50 000 dólares etiquetar un
+millón de imágenes para ImageNet.5 Si queremos que dos personas
+distintas etiqueten cada imagen (para poder cotejar la calidad de las
+etiquetas), costará el doble. Como el mundo contiene mucho más de 1000
+objetos, para ampliar las capacidades de los modelos para trabajar con más
+objetos habría que añadir etiquetas de más categorías. Si queremos ampliar
+a un millón de categorías, tan solo el costo de etiquetado ascendería a 50
+millones de dólares.
+Etiquetar objetos cotidianos es algo que la mayoría de la gente puede hacer
+sin tener que entrenarse. Por lo tanto, puede hacerse a un costo
+relativamente reducido. Sin embargo, no todas las tareas de etiquetado son
+tan sencillas. Generar traducciones al latín para un modelo inglés-latín sale
+más caro. Etiquetar si una TAC muestra signos de cáncer tendría un precio
+astronómico.

@@ -1,0 +1,18 @@
+figura 2-20. Guiar a un modelo para generar outputs limitados.
+Puede guiar a un modelo para que genere outputs estructurados en distintas
+capas de la pila de IA: prompting, post-procesamiento, cómputo de tiempo
+de prueba, muestreo restringido y afinado. Los tres primeros son más bien
+ayudas parciales. Funcionan mejor si el modelo ya es bastante bueno
+generando outputs estructurados y solo necesita un pequeño empujón. Para
+un tratamiento intensivo, se necesita un muestreo y afinado restringidos.
+El cómputo de tiempo de prueba se acaba de explicar en la sección anterior:
+seguir generando outputs hasta que uno se ajuste al formato esperado. Esta
+sección se centra en los otros cuatro enfoques.
+Prompting
+El prompting es la primera línea de actuación para los outputs
+estructurados. Puede ordenar a un modelo que genere outputs en cualquier
+formato. Sin embargo, que un modelo pueda seguir esta instrucción
+depende de la capacidad de seguimiento de instrucciones del modelo
+(analizada en el Capítulo 4) y de la claridad de la instrucción (analizada en
+el Capítulo 5). Aunque los modelos son cada vez mejores siguiendo
+instrucciones, no hay garantía de que siempre las sigan. 33 Aún así, unos

@@ -1,0 +1,27 @@
+capítulo 4. Evaluar los sistemas de IA
+Un modelo solo es útil si funciona para los fines previstos. Se debe evaluar
+los modelos en el contexto de su aplicación. En el Capítulo 3 se analizan
+distintos enfoques de la evaluación automática. En este capítulo se explica
+cómo utilizar estos enfoques para evaluar modelos para sus aplicaciones.
+Este capítulo consta de tres partes. Comienza con un análisis de los criterios
+que podría utilizar para evaluar sus solicitudes y cómo se definen y calculan
+estos criterios. Por ejemplo, a mucha gente le preocupa que la IA se invente
+hechos: ¿cómo se detecta la coherencia factual? ¿Cómo se miden las
+capacidades específicas de dominios como las matemáticas, las ciencias, el
+razonamiento y la síntesis?
+La segunda parte se centra en la selección de modelos. Teniendo en cuenta
+el creciente número de modelos fundacionales entre los que elegir, puede
+resultar abrumador escoger el modelo adecuado para su aplicación. Se han
+introducido miles de pruebas comparativas para evaluar estos modelos
+según distintos criterios. ¿Se puede confiar en estas pruebas comparativas?
+¿Cómo se eligen? ¿Y qué hay de las tableros de clasificación públicos que
+engloban múltiples pruebas comparativas?
+El panorama de los modelos está plagado de modelos patentados y modelos
+de código abierto. Una cuestión que muchos equipos tendrán que plantearse
+una y otra vez es si alojar sus propios modelos o utilizar una API de
+modelos. Esta cuestión se ha matizado con la introducción de servicios de
+API de modelos construidos sobre modelos de código abierto.
+La última parte aborda el desarrollo de un proceso de evaluación que pueda
+guiar el desarrollo de su aplicación a lo largo del tiempo. Esta parte reúne
+las técnicas que hemos aprendido a lo largo del libro para evaluar
+aplicaciones concretas.

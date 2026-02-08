@@ -1,0 +1,26 @@
+invaluable for debugging multistep agent behaviors, especially when performance
+degrades or edge-case bugs arise.
+For logs, the Loki plug-in enables querying structured log events emitted during
+agent execution. Grafana's log panels enable you to visualize real-time logs across all
+agents; filter by agent name, user session, error type, or trace ID; and correlate logs
+with related traces. Because logs and traces share common metadata-such as request
+or session IDs-Grafana lets you jump directly from a spike in log volume or error
+messages to the exact trace that triggered them.
+But Grafana's true power lies in building dashboards tailored to your agents' seman‐
+tics and success criteria. As illustrated in Figure 10-1, a GenAI Observability dash‐
+board can display key metrics like request rates, usage costs, token consumption, and
+request distributions for foundation models and vector databases. For example, you
+might build a dashboard showing the following:
+• Token usage per agent per hour (to detect model verbosity regressions)
+• P95 latency for tool calls and planning nodes
+• Task success rate by workflow or prompt template version
+• Fallback frequency by tool or skill
+• Drift indicators based on embedding similarity of user queries over time
+Figure 10-1. Grafana for AI Observability. This dashboard visualizes key metrics for
+foundation model and vector database usage, including request rates, success counts,
+costs, token consumption, request durations, top models by usage, and breakdowns by
+platform, type, and environment, providing actionable insights into agent performance
+and efficiency.
+Visualization and Alerting
+|
+233

@@ -1,0 +1,77 @@
+Table of Contents 
+xiii
+How it works...
+332
+Embedding feature creation into 
+a scikit-learn pipeline
+333
+How to do it...
+333
+How it works...
+336
+See also
+337
+11
+Extracting Features from Text Variables
+339
+Technical requirements
+340
+Counting characters, words, 
+and vocabulary
+340
+Getting ready
+340
+How to do it...
+341
+How it works...
+343
+There’s more...
+344
+See also
+345
+Estimating text complexity 
+by counting sentences
+346
+Getting ready
+346
+How to do it...
+346
+How it works...
+348
+There’s more...
+349
+Creating features with 
+bag-of-words and n-grams
+349
+Getting ready
+350
+How to do it...
+350
+How it works...
+352
+See also
+352
+Implementing term frequency-
+inverse document frequency
+353
+Getting ready
+353
+How to do it...
+354
+How it works...
+356
+See also
+356
+Cleaning and stemming 
+text variables
+356
+Getting ready
+357
+How to do it...
+357
+How it works...
+360
+Index
+363
+Other Books You May Enjoy
+370

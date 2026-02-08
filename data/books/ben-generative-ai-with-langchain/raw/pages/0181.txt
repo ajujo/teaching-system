@@ -1,0 +1,41 @@
+Building Intelligent RAG Systems
+154
+            "explanation": "This claim is fully supported by the provided 
+context."
+        }
+    ],
+    "fully_grounded": false,
+    "issues_identified": ["The answer contains incorrect information about 
+the introduction of the transformer architecture and its use of recurrent 
+neural networks."]
+}
+Based on the verification result, you can:
+1.	
+Regenerate the answer if issues are found
+2.	 Add qualifying statements to indicate uncertainty
+3.	
+Filter out unsupported claims
+4.	
+Include confidence indicators for different parts of the response
+This approach systematically analyzes generated responses against source documents, identify­
+ing specific unsupported claims rather than just providing a binary assessment. For each factual 
+assertion, it determines whether it’s fully supported, partially supported, contradicted, or not 
+mentioned in the context.
+Self-consistency checking is essential for applications where trustworthiness is paramount, such 
+as medical information, financial advice, or educational content. Detecting and addressing hal­
+lucinations before they reach users significantly improves the reliability of RAG systems.
+The verification can be further enhanced by:
+1.	
+Granular claim extraction: Breaking down complex responses into atomic factual claims
+2.	
+Evidence linking: Explicitly connecting each claim to specific supporting text
+3.	
+Confidence scoring: Assigning numerical confidence scores to different parts of the re­
+sponse
+4.	
+Selective regeneration: Regenerating only the unsupported portions of responses
+These techniques create a verification layer that substantially reduces the risk of presenting in­
+correct information to users while maintaining the fluency and coherence of generated responses.
+While the techniques we’ve discussed enhance individual components of the RAG pipeline, cor­
+rective RAG represents a more holistic approach that addresses fundamental retrieval quality 
+issues at a systemic level.

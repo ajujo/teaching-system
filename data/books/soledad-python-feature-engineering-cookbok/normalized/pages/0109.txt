@@ -1,0 +1,26 @@
+Transforming Numerical Variables
+86
+4.
+To evaluate the effect of the transformation on the variable distribution, we'll create a function
+that takes a DataFrame and a variable name as inputs and plots a histogram next to a Q-Q plot:
+def diagnostic_plots(df, variable):
+    plt.figure(figsize=(15,6))
+    plt.subplot(1, 2, 1)
+    df[variable].hist(bins=30)
+    plt.title(f"Histogram of {variable}")
+    plt.subplot(1, 2, 2)
+    stats.probplot(df[variable], dist="norm",
+        plot=plt)
+    plt.title(f"Q-Q plot of {variable}")
+    plt.show()
+5.
+Let's plot the distribution of the MedInc variable with the function from step 4:
+diagnostic_plots(X, "MedInc")
+The following output shows that MedInc has a right-skewed distribution:
+Figure 3.2 - A histogram and Q-Q plot of the MedInc variable
+Now, let's transform the data with the logarithm:
+6.
+First, let's make a copy of the original DataFrame:
+X_tf = X.copy()
+We've created a copy so that we can modify the values in the copy and not in the original
+DataFrame, which we need for the rest of this recipe.

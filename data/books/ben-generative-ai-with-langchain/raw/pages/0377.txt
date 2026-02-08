@@ -1,0 +1,29 @@
+Production-Ready LLM Deployment and Observability
+350
+Let’s begin by examining security considerations and strategies for protecting LLM applications 
+in production environments.
+Security considerations for LLM applications
+LLMs introduce new security challenges that traditional web or application security measures 
+weren’t designed to handle. Standard controls often fail against attacks unique to LLMs, and 
+recent incidents—from prompt leaking in commercial chatbots to hallucinated legal citations—
+highlight the need for dedicated defenses.
+LLM applications differ fundamentally from conventional software because they accept both 
+system instructions and user data through the same text channel, produce nondeterministic out­
+puts, and manage context in ways that can expose or mix up sensitive information. For example, 
+attackers have extracted hidden system prompts by simply asking some models to repeat their 
+instructions, and firms have suffered from models inventing fictitious legal precedents. Moreover, 
+simple pattern‐matching filters can be bypassed by cleverly rephrased malicious inputs, making 
+semantic‐aware defenses essential.
+Recognizing these risks, OWASP has called out several key vulnerabilities in LLM deployments—
+chief among them being prompt injection, which can hijack the model’s behavior by embedding 
+harmful directives in user inputs. Refer to OWASP Top 10 for LLM Applications for a comprehensive 
+list of common security risks and best practices: https://owasp.org/www-project-top-10-for-
+large-language-model-applications/?utm_source=chatgpt.com.
+You can find the code for this chapter in the chapter9/ directory of the book’s 
+GitHub repository. Given the rapid developments in the field and the updates to 
+the LangChain library, we are committed to keeping the GitHub repository current. 
+Please visit https://github.com/benman1/generative_ai_with_langchain 
+for the latest updates. 
+For setup instructions, refer to Chapter 2. If you have any questions or encounter 
+issues while running the code, please create an issue on GitHub or join the discussion 
+on Discord at https://packt.link/lang.

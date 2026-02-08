@@ -1,0 +1,40 @@
+Marking imputed values
+23
+Marking imputed values
+In the previous recipes, we focused on replacing missing data with estimates of their values. In addition, 
+we can add missing indicators to mark observations where values were missing.
+A missing indicator is a binary variable that takes the value 1 or True to indicate whether a value was 
+missing, and 0 or False otherwise. It is common practice to replace missing observations with the 
+mean, median, or most frequent category while simultaneously marking those missing observations 
+with missing indicators. In this recipe, we will learn how to add missing indicators using pandas, 
+scikit-learn, and feature-engine.
+How to do it...
+Let’s begin by making some imports and loading the data:
+1.	
+Let’s import the required libraries, functions, and classes:
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from feature_engine.imputation import(
+    AddMissingIndicator,
+    CategoricalImputer,
+    MeanMedianImputer
+)
+2.	
+Let’s load and split the dataset described in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop("target", axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.	
+Let’s capture the variable names in a list:
+varnames = ["A1", "A3", "A4", "A5", "A6", "A7", "A8"]
+4.	
+Let’s create names for the missing indicators and store them in a list:
+indicators = [f"{var}_na" for var in varnames]

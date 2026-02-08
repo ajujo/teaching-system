@@ -1,0 +1,32 @@
+El output se evalúa con respecto a un contexto. El output se
+considera factualmente coherente si está respaldado por el
+contexto dado. Por ejemplo, si el modelo da como output "el
+cielo es azul" y el contexto dado dice que el cielo es morado,
+este output se considera factualmente incoherente. Por el
+contrario, en este contexto, si el modelo da como output "el
+cielo es morado", este output es factualmente coherente.
+La coherencia factual local de los hechos es importante para
+tareas con alcances limitados, como el resumen (el resumen
+debe ser coherente con el documento original), los chatbots
+de atención al cliente (las respuestas del chatbot deben ser
+coherentes con las políticas de la empresa) y el análisis
+empresarial (las perspectivas extraídas deben ser
+coherentes con los datos).
+Coherencia factual global
+El output se evalúa en función del conocimiento abierto. Si
+el modelo da como output "el cielo es azul" y es un hecho
+comúnmente aceptado que el cielo es azul, esta afirmación
+se considera factualmente correcta. La coherencia factual
+global es importante para tareas de amplio alcance, como los
+chatbots generales, la comprobación de hechos, los estudios
+de mercado, etc.
+La coherencia factual es mucho más fácil de verificar con hechos explícitos.
+Por ejemplo, la coherencia factual de la afirmación "no se ha demostrado
+que exista relación entre vacunación y autismo" es más fácil de verificar si
+se facilitan fuentes fiables que indiquen explícitamente si existe una
+relación entre vacunación y autismo.
+Si no se da ningún contexto, tendrás que buscar primero fuentes fiables,
+deducir los hechos y luego validar la afirmación con esos hechos.
+A menudo, la parte más difícil de la verificación de la coherencia factual es
+determinar cuáles son los hechos. Que alguna de las siguientes afirmaciones
+pueda considerarse factual depende de las fuentes en las que confíe: "Messi

@@ -1,0 +1,25 @@
+– métricas, Establecimiento de expectativas
+– rendimiento de la inferencia y, API de inferencia en línea y por lotes
+latencia entre tokens (ITL), Latencia, TTFT y TPOT
+ley de Escala, Ley de escalado: Construir modelos de computación
+optimizada
+ley de escalado de Chinchilla, Ley de escalado: Construir modelos de
+computación optimizada
+licencias de código abierto, Flujo de trabajo de selección de modelos
+limpieza/filtrado de datos, Limpiar y filtrar datos
+linaje de datos, Privacidad de datos
+linaje de datos oscuro, Linaje de datos oscuro
+Llama
+– ajuste fino, Visión general del afinado
+– ajuste fino de preferencias, Post-entrenamiento
+– calidad de los datos, Calidad de datos
+– cantidad de datos, Cantidad de datos
+– cobertura de datos, Cobertura de datos
+– cuantización de la inferencia, Cuantización de inferencia
+– destilación de modelos, Código abierto, ponderación abierta y
+licencias modelo, Linaje de datos oscuro
+– función de atención, Mecanismo de atención
+– ley de Escala y, Ley de escalado: Construir modelos de computación
+optimizada
+– optimización de la inferencia, Kernels y compiladores
+– plantilla de prompt, Aprendizaje en contexto: Cero shot y pocos shots

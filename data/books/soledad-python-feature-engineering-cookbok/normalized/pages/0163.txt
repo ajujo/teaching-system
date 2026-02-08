@@ -1,0 +1,34 @@
+Performing Variable Discretization
+140
+You can concatenate the result to the original DataFrame using pandas and then drop the original
+numerical variables. Alternatively, use the ColumnTransformer() class to restrict the discretization
+to the selected variables and add the result to the data by setting remainder to "passthrough".
+How it works...
+In this recipe, we performed discretization with k-means clustering. First, we identified the optimal
+number of clusters utilizing the elbow method by using Yellowbrick's KElbowVisualizer().
+To perform k-means discretization, we used scikit-learn's KBinsDiscretizer(), setting strategy
+to kmeans and the number of clusters to six in the n_bins argument. With fit(), the transformer
+learned the cluster boundaries using the k-means algorithm. With transform(), it sorted the
+variable values to their corresponding cluster. We set encode to "onehot-dense"; hence, after
+the discretization, the transformer applied one-hot encoding to the clusters. We also set the output
+of the discretizer to pandas, and with that, the transformer returned the one-hot encoded version
+of the clustered variables as a DataFrame.
+See also
+•	 Discretization with k-means is described in the article found in Palaniappan and Hong,
+Discretization of Continuous Valued Dimensions in OLAP Data Cubes. International Journal of
+Computer Science and Network Security, VOL.8 No.11, November 2008. http://paper.
+ijcsns.org/07_book/200811/20081117.pdf.
+•	 To learn more about the elbow method, visit Yellowbrick's documentation and references
+at https://www.scikit-yb.org/en/latest/api/cluster/elbow.html.
+•	 For other ways of determining the fit of k-means clustering, check out the additional visualizers
+in Yellowbrick at https://www.scikit-yb.org/en/latest/api/cluster/
+index.html.
+Implementing feature binarization
+Some datasets contain sparse variables. Sparse variables are those where the majority of the values
+are 0. The classical example of sparse variables are those derived from text data through the bag-ofwords model, where each variable is a word and each value represents the number of times the word
+appears in a certain document. Given that a document contains a limited number of words, whereas
+the feature space contains the words that appear across all documents, most documents, that is, most
+rows, will show a value of 0 for most columns. However, words are not the sole example. If we think
+about house details data, the number of saunas variable will also be 0 for most houses. In summary,
+some variables have very skewed distributions, where most observations show the same value, usually
+0, and only a few observations show different, usually higher, values.

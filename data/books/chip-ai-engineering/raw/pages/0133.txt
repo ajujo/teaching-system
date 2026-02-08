@@ -1,0 +1,30 @@
+retroalimentación humana (RLHF) (utilizado por GPT-3.5 y Llama
+2), DPO (Optimización Directa de Preferencias) (utilizado por
+Llama 3), y el aprendizaje por refuerzo a partir de la
+retroalimentación de IA (RLAIF) (potencialmente utilizado por
+Claude).
+Permítame destacar la diferencia entre el pre-entrenamiento y el post-
+entrenamiento de otra manera. En el caso de los modelos fundacionales
+basados en el lenguaje, el pre-entrenamiento optimiza la calidad a nivel de
+token, donde el modelo se entrena para predecir con precisión el siguiente
+token. Sin embargo, a los usuarios no les importa la calidad a nivel de
+token, sino la calidad de la respuesta entera. El post-entrenamiento, en
+general, optimiza el modelo para generar las respuestas que prefieren los
+usuarios. Algunas personas comparan el pre-entrenamiento con la lectura
+para adquirir conocimientos, mientras que el post-entrenamiento es similar
+a aprender a utilizar esos conocimientos.
+AVISO
+Cuidado con la ambigüedad terminológica. Algunas personas utilizan el
+término afinado de instrucciones para referirse al afinado supervisado,
+mientras que otras personas lo utilizan para referirse tanto al afinado
+supervisado como al de preferencias. Para evitar ambigüedades, en este
+libro no utilizaré el término afinado de instrucciones.
+Como el post-entrenamiento consume una pequeña parte de los recursos por
+comparación con el pre-entrenamiento (InstructGPT utilizó solo el 2 % de
+los recursos computacionales para el post-entrenamiento y el 98 % para el
+pre-entrenamiento), se puede pensar en el post-entrenamiento como en el
+desbloqueo de las capacidades que el modelo pre-entrenado ya posee, pero
+a las que a los usuarios les resulta difícil acceder solo con prompting.
+La Figura 2-10 muestra el flujo de trabajo general de pre-entrenamiento,
+SFT y afinado de preferencias, suponiendo que utilicen RLHF para el
+último paso. Se puede aproximar el grado en que un modelo se ajusta a las

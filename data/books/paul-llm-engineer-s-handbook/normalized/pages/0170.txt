@@ -1,0 +1,33 @@
+Chapter 4
+139
+We will go into all the details of orchestration, scheduling, and CT in Chapter 11.
+Implementing the LLM Twin's RAG feature pipeline
+The last step is to review the LLM Twin's RAG feature pipeline code to see how we applied everything we discussed in this chapter. We will walk you through the following:
+•
+ZenML code
+•
+Pydantic domain objects
+•
+A custom object-vector mapping (OVM) implementation
+•
+The cleaning, chunking, and embedding logic for all our data categories
+We will take a top-down approach. Thus, let's start with the Settings class and ZenML pipeline.
+Settings
+We use Pydantic Settings (https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+to define a global Settings class that loads sensitive or non-sensitive variables from a .env file.
+This approach also gives us all the benefits of Pydantic, such as type validation. For example, if
+we provide a string for the QDRANT_DATABASE_PORT variable instead of an integer, the program
+will crash. This behavior makes the whole application more deterministic and reliable.
+Here is what the Settings class looks like with all the variables necessary to build the RAG feature pipeline:
+from pydantic import BaseSettings
+class Settings(BaseSettings):
+    class Config:
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+    ... # Some other settings...
+    # RAG
+    TEXT_EMBEDDING_MODEL_ID: str = "sentence-transformers/all-MiniLM-
+L6-v2"
+    RERANKING_CROSS_ENCODER_MODEL_ID: str = "cross-encoder/ms-marco-
+MiniLM-L-4-v2"
+    RAG_MODEL_DEVICE: str = "cpu"

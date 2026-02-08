@@ -1,0 +1,34 @@
+Tooling and Installation
+42
+    InstructTrainTestSplit,
+    ArtifactConfig(
+        name="instruct_datasets",
+        tags=["dataset", "instruct", "cleaned"],
+    ),
+]:
+    datasets = ... # Generate datasets
+    step_context = get_step_context()
+    step_context.add_output_metadata(output_name="instruct_datasets",
+metadata=_get_metadata_instruct_dataset(datasets))
+    return datasets
+def _get_metadata_instruct_dataset(datasets: InstructTrainTestSplit) ->
+dict[str, Any]:
+    instruct_dataset_categories = list(datasets.train.keys())
+    train_num_samples = {
+        category: instruct_dataset.num_samples for category, instruct_
+dataset in datasets.train.items()
+    }
+    test_num_samples = {category: instruct_dataset.num_samples for
+category, instruct_dataset in datasets.test.items()}
+    return {
+        "data_categories": instruct_dataset_categories,
+        "test_split_size": datasets.test_split_size,
+        "train_num_samples_per_category": train_num_samples,
+        "test_num_samples_per_category": test_num_samples,
+    }
+Also, you can easily download and access a specific version of the dataset using its Universally
+Unique Identifier (UUID), which you can find using the ZenML dashboard or CLI:
+from zenml.client import Client
+artifact = Client().get_artifact_version('8bba35c4-8ff9-4d8f-a039-
+08046efc9fdc')
+loaded_artifact = artifact.load()

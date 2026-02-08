@@ -1,0 +1,35 @@
+Building Intelligent RAG Systems
+176
+        with st.chat_message("Assistant"):
+            st.markdown(response)
+        # Add response to chat history
+        st.session_state.chat_history.append(
+            {"role": "Assistant", "content": response}
+        )
+Column 2 takes the files and gives them to the retriever:
+with col2:
+    st.subheader("Document Management")
+    # File uploader
+    uploaded_files = st.file_uploader(
+        "Upload Documents",
+        type=list(DocumentLoader.supported_extensions),
+        accept_multiple_files=True
+    )
+    if uploaded_files:
+        for file in uploaded_files:
+            if file.name not in st.session_state.uploaded_files:
+                st.session_state.uploaded_files.append(file)
+To run our Corporate Documentation Manager application on Linux or macOS, follow these steps:
+1.	
+Open your terminal and change directory to where your project files are. This ensures that 
+the chapter4/ directory is accessible.
+2.	
+Set PYTHONPATH and run Streamlit. The imports within the project rely on the current 
+directory being in the Python module search path. Therefore, we’ll set PYTHONPATH when 
+we run Streamlit:
+PYTHONPATH=. streamlit run chapter4/streamlit_app.py
+The preceding command tells Python to look in the current directory for modules, allowing 
+it to find the chapter4 package.
+3.	
+Once the command runs successfully, Streamlit will start a web server. Open your web 
+browser and navigate to http://localhost:8501 to use the application.

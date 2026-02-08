@@ -1,0 +1,37 @@
+Chapter 4
+115
+•	
+Classification by using the embeddings as features
+•	
+Zero-shot classification by comparing the embedding of each class and picking the most 
+similar one
+The last step to fully understanding how RAG works is to examine vector DBs and how they 
+leverage embeddings to retrieve data.
+More on vector DBs
+Vector DBs are specialized DBs designed to efficiently store, index, and retrieve vector embed-
+dings. Traditional scalar-based DBs struggle with the complexity of vector data, making vector 
+DBs crucial for tasks like real-time semantic search.
+While standalone vector indices like FAISS are effective for similarity search, they lack vector DBs’ 
+comprehensive data management capabilities. Vector DBs support CRUD operations, metadata 
+filtering, scalability, real-time updates, backups, ecosystem integration, and robust data security, 
+making them more suited for production environments than standalone indices.
+How does a vector DB work?
+Think of how you usually search a DB. You type in something specific, and the system spits out 
+the exact match. That’s how traditional DBs work. Vector DBs are different. Instead of perfect 
+matches, we look for the closest neighbors of the query vector. Under the hood, a vector DB uses 
+approximate nearest neighbor (ANN) algorithms to find these close neighbors.
+While ANN algorithms don’t return the top matches for a given search, standard nearest neigh-
+bor algorithms are too slow to work in practice. Also, it is shown empirically that using only ap-
+proximations of the top matches for a given input query works well enough. Thus, the trade-off 
+between accuracy and latency ultimately favors ANN algorithms.
+This is a typical workflow of a vector DB:
+1.	
+Indexing vectors: Vectors are indexed using data structures optimized for high-dimen-
+sional data. Common indexing techniques include hierarchical navigable small world 
+(HNSW), random projection, product quantization (PQ), and locality-sensitive hashing 
+(LSH).
+2.	
+Querying for similarity: During a search, the DB queries the indexed vectors to find those 
+most similar to the input vector. This process involves comparing vectors based on sim-
+ilarity measures such as cosine similarity, Euclidean distance, or dot product. Each has 
+unique advantages and is suitable for different use cases.

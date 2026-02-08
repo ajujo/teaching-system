@@ -1,0 +1,33 @@
+cliente. Para pasar a servir al cliente Y, en lugar de cargar la matriz de
+ponderaciones completa de este cliente, solo hay que cargar el adaptador
+LoRA de Y, lo que puede reducir significativamente el tiempo de carga.
+Aunque mantener A y B separadas incurre en latencia adicional, existen
+técnicas de optimización para minimizarla. El repositorio GitHub del libro
+contiene un tutorial sobre cómo hacerlo.
+El multiservicio LoRA facilita la combinación de varios modelos
+especializados. En lugar de tener un modelo grande y potente para varias
+tareas, puede tener un adaptador LoRA para cada tarea. Por ejemplo, Apple
+utilizó múltiples adaptadores LoRA para adaptar el mismo modelo base de
+3 MM de parámetros a diferentes características del iPhone (2024).
+Utilizaron técnicas de cuantización para reducir aún más la huella de
+memoria de este modelo base y de los adaptadores, permitiendo servirlos
+todos en el dispositivo.
+La modularidad de los adaptadores LoRA permite compartirlos y
+reutilizarlos. Existen adaptadores LoRA perfeccionados a disposición del
+público que se pueden utilizar del mismo modo que los modelos
+preentrenados. Puede encontrarlos en Hugging Face 26 o en iniciativas
+como AdapterHub.
+Quizá se pregunte: "LoRA suena muy bien, pero ¿dónde está el truco?". El
+principal inconveniente de LoRA es que no ofrece un rendimiento tan
+potente como el afinado completo. También es más difícil de realizar que el
+afinado completo, ya que implica modificar la implementación del modelo,
+lo que requiere la comprensión de la arquitectura del modelo y
+conocimientos de codificación. Sin embargo, esto solo suele ser un
+problema en los modelos base menos populares. Los marcos PEFT (como el
+PEFT de Hugging Face, Axolotl, unsloth y LitGPT) probablemente admitan
+LoRA para los modelos base estándar más populares.
+LoRA cuantizado
+El rápido auge del LoRA ha dado lugar al desarrollo de numerosas variantes
+del mismo. Algunos pretenden seguir reduciendo el número de parámetros
+entrenables. Sin embargo, como se ilustra en la Tabla 7-6, la memoria de un
+adaptador LoRA es mínima comparada con la memoria de las

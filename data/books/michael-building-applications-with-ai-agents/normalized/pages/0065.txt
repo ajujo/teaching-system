@@ -1,0 +1,40 @@
+Text-Based
+Text-based interfaces are one of the most common and versatile ways users interact
+with agent systems-found in everything from customer service chatbots and
+command-line tools to productivity assistants integrated into messaging platforms.
+Their widespread adoption can be attributed to their simplicity, familiarity, and ease
+of integration into existing workflows. Text interfaces offer a unique advantage: they
+can support both synchronous conversations (in real time) and asynchronous inter‐
+actions (where users can return to the conversation at their convenience without los‐
+ing context). Additionally, text interactions create a clear and traceable record of
+exchanges, enabling transparency, accountability, and easier troubleshooting when
+something goes wrong.
+In recent years, the text-based modality has undergone a renaissance driven by the
+integration of advanced AI capabilities within terminal environments. Tools like
+Warp, Claude Code, and Gemini CLI illustrate this shift vividly. Warp reimagines the
+traditional developer terminal by integrating natural language command translation,
+intelligent autocompletion, and context-aware explanations, turning the command
+line into a collaborative, AI-augmented workspace. To illustrate this trend, Figure 3-1
+shows an example of an AI-enabled terminal interface inspired by modern tools like
+Claude Code and Gemini CLI. This demonstration captures how developers can
+interact with the terminal using natural language prompts to generate, run, and
+debug commands seamlessly, without memorizing complex syntax or flags.
+Similarly, Claude Code and Gemini CLI extend natural language interactions to code
+generation, execution, and file manipulation directly within terminal workflows, ena‐
+bling developers to perform complex tasks by simply describing their goals in plain
+English. This figure highlights how AI is revitalizing the humble terminal, transform‐
+ing it from a tool accessible only to those with deep command-line expertise into an
+approachable, powerful gateway for both novice and expert users to interact with sys‐
+tems through natural language.
+This trend reflects a broader rethinking of what text-based interfaces can achieve.
+The incredible natural language understanding capabilities of modern foundation
+models are making ordinary text-based interactions more powerful than ever before.
+Where traditional terminals required precise syntax knowledge and memorization of
+command flags, AI terminals now act as conversational partners, interpreting user
+intent, suggesting best practices, and even debugging errors in real time. This shift is
+democratizing access to powerful systems operations, scripting, and data workflows,
+making the terminal "new again" as an accessible, intelligent gateway for both novice
+and expert users.
+Interaction Modalities
+|
+43

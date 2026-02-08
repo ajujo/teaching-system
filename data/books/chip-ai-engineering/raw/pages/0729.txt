@@ -1,0 +1,16 @@
+recoger opiniones. Cuando leía la retroalimentación negativa, me sentí
+confundida. Aunque las respuestas fueron positivas, las valoraciones con
+estrellas fueron de 1/5. Cuando profundicé más, me di cuenta de que Luma
+utilizaba emojis para representar números en su formulario de recopilación
+de opiniones, pero el emoji enfadado, correspondiente a una valoración de
+una estrella, se ponía donde debería estar la valoración de cinco estrellas,
+como se muestra en la Figura 10-21.
+Piense si quiere que la retroalimentación de los usuarios sean privada o
+pública. Por ejemplo, si a un usuario le gusta algo, ¿quiere que esta
+información se muestre a otros usuarios? En sus inicios, la
+retroalimentación de Midjourney (que alguien eligiera aumentar la escala de
+una imagen, generar variaciones o regenerar otro lote de imágenes) eran
+pública.
+figura 10-21. Como Luma puso el emoji enfadado, correspondiente a una valoración
+de una estrella, donde debería haber estado una valoración de cinco estrellas, algunos
+usuarios lo eligieron erróneamente para las valoraciones positivas.

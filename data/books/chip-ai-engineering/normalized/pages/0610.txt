@@ -1,0 +1,29 @@
+capítulo 9. Optimización de la inferencia
+Los nuevos modelos van y vienen, pero hay algo que siempre será
+relevante: hacerlos mejores, más baratos y más rápidos. Hasta ahora, el
+libro ha tratado diversas técnicas para mejorar los modelos. Este capítulo se
+centra en cómo hacerlos más rápidos y baratos.
+Por muy bueno que sea su modelo, si es demasiado lento, los usuarios
+pueden perder la paciencia o, lo que es peor, sus predicciones pueden
+resultar inútiles: imagine un modelo de predicción del precio de las
+acciones al día siguiente que tarde dos días en calcular cada resultado. Si su
+modelo es demasiado caro, el retorno de la inversión no valdrá la pena.
+La optimización de la inferencia puede realizarse a nivel de modelo,
+hardware y servicio. A nivel de modelo, se puede reducir el tamaño de un
+modelo entrenado o desarrollar arquitecturas más eficientes, como una sin
+los cuellos de botella computacionales en el mecanismo de atención a
+menudo utilizado en los modelos de transformador. A nivel de hardware, se
+puede diseñar un hardware más potente.
+El servicio de inferencia ejecuta el modelo en el hardware dado para
+atender las solicitudes de los usuarios. Puede incorporar técnicas que
+optimicen los modelos para un hardware específico. También debe tener en
+cuenta los patrones de uso y tráfico para asignar los recursos de forma
+eficaz y reducir la latencia y los costos.
+Por ello, la optimización de la inferencia es un campo interdisciplinar en el
+que a menudo colaboran investigadores de modelos, desarrolladores de
+aplicaciones, ingenieros de sistemas, diseñadores de compiladores,
+arquitectos de hardware e incluso operadores de centros de datos.
+En este capítulo se analizan los cuellos de botella de la inferencia de IA y
+las técnicas para superarlos. Se centrará sobre todo en la optimización a
+nivel de modelos y servicios, con una visión general de los aceleradores de
+IA.

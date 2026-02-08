@@ -1,0 +1,12 @@
+Chapter 2
+41
+Figure 2.9: ZenML metadata example for the instruct_datasets artifact
+The metadata is manually added to the artifact, as shown in the code snippet below. Thus, you
+can precompute and attach to the artifact's metadata anything you consider helpful for dataset
+discovery across your business and projects:
+... # More imports
+from zenml import ArtifactConfig, get_step_context, step
+@step
+def generate_intruction_dataset(
+    prompts: Annotated[dict[DataCategory,
+list[GenerateDatasetSamplesPrompt]], "prompts"]) -> Annotated[

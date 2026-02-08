@@ -1,0 +1,14 @@
+la documentación y a aumentarla en un 25-50 % en la generación y
+refactorización de código. Se observó una mejora mínima de la
+productividad en las tareas muy complejas, como se muestra en la Figura 1-
+9. En mis conversaciones con desarrolladores de herramientas de
+codificación de IA, muchos me han dicho que se han dado cuenta de que la
+IA es mucho mejor en el desarrollo frontend que en el backend.
+figura 1-9. La IA puede ayudar a los desarrolladores a ser mucho más productivos,
+sobre todo en tareas sencillas, pero no tanto en las tareas muy complejas. Datos de
+McKinsey.
+Independientemente de si la IA sustituirá o no a los ingenieros de software,
+lo cierto es que puede hacerlos más productivos. Esto significa que ahora
+las empresas pueden hacer más con menos ingenieros. La IA también puede
+alterar el sector de la subcontratación, ya que las tareas subcontratadas
+suelen ser más sencillas y ajenas a la actividad principal de una empresa.

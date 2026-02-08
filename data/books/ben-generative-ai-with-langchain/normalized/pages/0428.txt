@@ -1,0 +1,21 @@
+Chapter 9
+401
+6.
+Compare and contrast FastAPI and Ray Serve as deployment options for LLM applications.
+What are the strengths of each?
+7.
+What key metrics should be included in a comprehensive monitoring strategy for LLM
+applications?
+8.	 How do tracking, tracing, and monitoring differ in the context of LLM observability, and
+why are they all important?
+9.
+What are the different patterns for cost management of LLM applications?
+10.	 What role does continuous improvement play in the lifecycle of deployed LLM applications,
+and what methods can be used to implement it?
+Get This Book's PDF Version
+and Exclusive Extras
+Scan the QR code (or go to packtpub.com/unlock).
+Search for this book by name, confirm the edition,
+and then follow the steps on the page.
+Note: Keep your invoice handy. Purchases made
+directly from Packt don't require one.

@@ -1,0 +1,1897 @@
+{
+  "$schema": "outline_v1",
+  "book_id": "chip-ai-engineering",
+  "generated_date": "2026-01-30T06:07:24.065119+00:00",
+  "chapters": [
+    {
+      "chapter_id": "chip-ai-engineering:ch:1",
+      "number": 1,
+      "title": "Introducción a la creación de",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:1",
+          "number": "1",
+          "title": "En comparación con los caracteres, los tokens permiten al modelo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:2",
+          "number": "2",
+          "title": "Como hay menos tokens únicos que palabras únicas, se reduce el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:3",
+          "number": "3",
+          "title": "Los tokens también ayudan al modelo a procesar palabras",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:4",
+          "number": "9",
+          "title": "En mis conversaciones con desarrolladores de herramientas de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:5",
+          "number": "2",
+          "title": "Si no lo hace, perderá oportunidades de aumentar los beneficios y",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:6",
+          "number": "3",
+          "title": "Aún no está seguro de dónde encajará la IA en su negocio, pero no",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:7",
+          "number": "2",
+          "title": "Caminar significa que la IA puede interactuar directamente con los",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:8",
+          "number": "3",
+          "title": "Correr significa aumentar la automatización, incluyendo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:9",
+          "number": "1",
+          "title": "Sin modelos fundacionales, tiene que entrenar sus propios modelos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:10",
+          "number": "2",
+          "title": "La ingeniería de IA trabaja con modelos que son más grandes,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:11",
+          "number": "3",
+          "title": "La ingeniería de IA trabaja con modelos que pueden producir",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:12",
+          "number": "90.04",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:13",
+          "number": "79.13",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:14",
+          "number": "87.29",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:15",
+          "number": "83.7",
+          "title": "% 5 shots",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:16",
+          "number": "71.8",
+          "title": "% 5 shots",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:17",
+          "number": "86.4",
+          "title": "% 5 shots",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:1:sec:18",
+          "number": "90.04",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:2",
+      "number": 2,
+      "title": "Comprender los modelos",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:1",
+          "number": "1.41",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:2",
+          "number": "0.0061",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:3",
+          "number": "0.89",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:4",
+          "number": "0.0077",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:5",
+          "number": "2.89",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:6",
+          "number": "0.0274",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:7",
+          "number": "0.80",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:8",
+          "number": "0.0122",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:9",
+          "number": "1.19",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:10",
+          "number": "0.0183",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:11",
+          "number": "0.78",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:12",
+          "number": "0.0126",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:13",
+          "number": "1.24",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:14",
+          "number": "0.0213",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:15",
+          "number": "3.40",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:16",
+          "number": "0.0930",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:17",
+          "number": "18.15",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:18",
+          "number": "45.88",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:19",
+          "number": "1.4",
+          "title": "billones de tokens para Llama 1",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:20",
+          "number": "1.4",
+          "title": "billones",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:21",
+          "number": "3.14",
+          "title": "× 1023 FLOPs (Brown et al., 2020)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:22",
+          "number": "1",
+          "title": "El rendimiento del modelo depende de su tamaño y del tamaño del",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:23",
+          "number": "2",
+          "title": "Los modelos y conjuntos de datos más grandes requieren más",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:24",
+          "number": "1",
+          "title": "Afinado supervisado (SFT): Afinar el modelo pre-entrenado con",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:25",
+          "number": "2",
+          "title": "Afinado de preferencias: Afinar aún más nuevamente el modelo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:26",
+          "number": "1",
+          "title": "El pre-entrenamiento autosupervisado produce un modelo rebelde",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:27",
+          "number": "2",
+          "title": "A continuación, este monstruo recibe un ajuste fino supervisado",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:28",
+          "number": "3",
+          "title": "Este modelo afinado se pule aún más utilizando el afinado de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:29",
+          "number": "1",
+          "title": "Añadir más contexto a la pregunta: \"¿para una familia de seis",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:30",
+          "number": "2",
+          "title": "Añadir preguntas de seguimiento: \"¿Qué ingredientes necesito?",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:31",
+          "number": "3",
+          "title": "Ruth Bader Ginsburg era la líder del ala lib",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:32",
+          "number": "1",
+          "title": "Entrenar un modelo de recompensa que puntúe los outputs del",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:33",
+          "number": "2",
+          "title": "Optimizar el modelo fundacional para generar respuestas para las",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:34",
+          "number": "0.7",
+          "title": "para casos de uso creativo, ya que equilibra creatividad y previsibilidad,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:2:sec:35",
+          "number": "1",
+          "title": "Mismo input, diferentes outputs: Ofrecer dos veces al modelo el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:3",
+      "number": 3,
+      "title": "Metodología de evaluación",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:1",
+          "number": "1",
+          "title": "La predictibilidad de los datos de entrenamiento, medida por la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:2",
+          "number": "2",
+          "title": "Cómo diverge la distribución captada por el modelo lingüístico de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:3",
+          "number": "1",
+          "title": "Pedir a un evaluador que juzgue si dos textos son iguales",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:4",
+          "number": "2",
+          "title": "Coincidencia exacta: si la respuesta generada coincide exactamente",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:5",
+          "number": "3",
+          "title": "Similitud léxica: qué tan similar la respuesta generada se ve con las",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:6",
+          "number": "4",
+          "title": "Similitud semántica: que tan similar es la respuesta generada a las",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:7",
+          "number": "1",
+          "title": "Supresión: \"brad\" -> \"bad\"",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:8",
+          "number": "2",
+          "title": "Inserción: \"bard\" -> \"bard\"",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:9",
+          "number": "3",
+          "title": "Sustitución: \"bad\" -> \"bed\"",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:10",
+          "number": "1",
+          "title": "Evaluar la calidad de una respuesta por sí misma, dada la pregunta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:11",
+          "number": "2",
+          "title": "Comparar una respuesta generada con una respuesta de referencia",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:12",
+          "number": "3",
+          "title": "Comparar dos respuestas generadas y determinar cuál es mejor o",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:13",
+          "number": "1",
+          "title": "La tarea que debe realizar el modelo, como evaluar la pertinencia",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:14",
+          "number": "2",
+          "title": "Los criterios que debe seguir el modelo para evaluar, como \"Tu",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:3:sec:15",
+          "number": "3",
+          "title": "El sistema de puntuación, que puede ser uno de estos:",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:4",
+      "number": 4,
+      "title": "Evaluar los sistemas de IA",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:1",
+          "number": "1",
+          "title": "Usar un modelo de IA para descomponer la respuesta en",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:2",
+          "number": "3",
+          "title": "Para cada enunciado, proponer consultas de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:3",
+          "number": "4",
+          "title": "Usar la IA para determinar si la afirmación es coherente",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:4",
+          "number": "1",
+          "title": "Lenguaje inapropiado, incluyendo blasfemias y contenido",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:5",
+          "number": "2",
+          "title": "Recomendaciones y tutoriales nocivos, como \"guía paso a paso",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:6",
+          "number": "3",
+          "title": "Discurso de odio, incluyendo el discurso racista, sexista, homófobo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:7",
+          "number": "5",
+          "title": "Estereotipos, como utilizar siempre nombres femeninos para las",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:8",
+          "number": "6",
+          "title": "Sesgos hacia una ideología política o religiosa, lo que puede llevar",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:9",
+          "number": "1",
+          "title": "Representación de un personaje para que los usuarios interactúen",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:10",
+          "number": "2",
+          "title": "Como técnica de ingeniería de prompts para mejorar la calidad de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:11",
+          "number": "1",
+          "title": "Cuál de los dos tiene un habla de rol más marcado y se ajusta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:12",
+          "number": "1",
+          "title": "Determinar el mejor rendimiento posible",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:13",
+          "number": "2",
+          "title": "Mapear los modelos siguiendo los ejes costo-rendimiento y elegir",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:14",
+          "number": "2",
+          "title": "Utilizar la información disponible públicamente, por ejemplo, el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:15",
+          "number": "3",
+          "title": "Realizar experimentos con su propia línea de evaluación para",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:16",
+          "number": "4",
+          "title": "Supervisar continuamente su modelo en producción para detectar",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:17",
+          "number": "6",
+          "title": "GSM-8K (Grade School Math, OpenAI, 2021): Midiendo la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:18",
+          "number": "2",
+          "title": "Coherencia factual: la respuesta es factualmente coherente con el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:19",
+          "number": "1",
+          "title": "Extraiga 100 muestras, con reemplazamiento, de los 100 ejemplos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:4:sec:20",
+          "number": "2",
+          "title": "Evalúe su modelo en estas 100 muestras secuenciadas y obtenga",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:5",
+      "number": 5,
+      "title": "Ingeniería de prompts",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:1",
+          "number": "1",
+          "title": "Clasificación de la intención: identificar la intención de la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:2",
+          "number": "2",
+          "title": "Generar respuesta: a partir de esta intención, dele instrucciones al",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:3",
+          "number": "1",
+          "title": "Determina la velocidad de la raza de perro",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:4",
+          "number": "2",
+          "title": "Determinar la velocidad de la raza de gato",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:5",
+          "number": "1",
+          "title": "La raza de tiburón más rápida es el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:6",
+          "number": "2",
+          "title": "La raza de delfín más rápida es el delfín",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:7",
+          "number": "3",
+          "title": "En función de la respuesta del objetivo, revisar el prompt hasta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:8",
+          "number": "1",
+          "title": "Phishing pasivo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:9",
+          "number": "2",
+          "title": "Inyección activa",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:10",
+          "number": "1",
+          "title": "Prompt del sistema",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:11",
+          "number": "2",
+          "title": "Prompt del usuario",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:12",
+          "number": "3",
+          "title": "Outputs del modelo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:5:sec:13",
+          "number": "4",
+          "title": "Outputs de la herramienta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:6",
+      "number": 6,
+      "title": "RAG y agentes",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:1",
+          "number": "1",
+          "title": "Modelo de incrustación: convertir la consulta en una incrustación",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:2",
+          "number": "2",
+          "title": "Recuperador: recuperar k fragmentos de datos cuyas incrustaciones",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:3",
+          "number": "1",
+          "title": "Calcular las puntuaciones de similitud entre la incrustación de la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:4",
+          "number": "3",
+          "title": "Evaluar las incrustaciones (para la recuperación basada en",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:5",
+          "number": "1",
+          "title": "Generar incrustaciones CLIP para todos sus datos, tanto textos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:6",
+          "number": "3",
+          "title": "Consultar la base de datos vectorial en busca de todas las imágenes",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:7",
+          "number": "1",
+          "title": "Texto a SQL: en función de la consulta del usuario y de los",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:8",
+          "number": "3",
+          "title": "Generación: generar una respuesta basada en el resultado SQL y la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:9",
+          "number": "2",
+          "title": "Invocar la generación de consultas SQL para generar la consulta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:10",
+          "number": "4",
+          "title": "Razonar sobre los outputs de la herramienta y cómo ayudan a",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:11",
+          "number": "5",
+          "title": "Invocar la generación de consultas SQL para generar la consulta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:12",
+          "number": "7",
+          "title": "Razonar que esta nueva información es suficiente para ayudar a",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:13",
+          "number": "1",
+          "title": "Buscar todas las empresas sin ingresos y luego filtrarlas por el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:14",
+          "number": "2",
+          "title": "Buscar todas las empresas que hayan recaudado al menos 1000",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:15",
+          "number": "1",
+          "title": "Generación de planes: elaborar un plan para llevar a cabo esta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:16",
+          "number": "4",
+          "title": "Reflexión y corrección de errores: tras recibir los resultados de la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:17",
+          "number": "2",
+          "title": "Los distintos modelos tienen diferentes preferencias de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:18",
+          "number": "1",
+          "title": "De todos los planes generados, ¿cuántos son válidos?",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:19",
+          "number": "2",
+          "title": "Para una tarea determinada, ¿cuántos planes tiene que generar el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:20",
+          "number": "3",
+          "title": "De todas las llamadas a herramientas, ¿cuántas son válidas?",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:6:sec:21",
+          "number": "2",
+          "title": "Determinar si esta nueva información debe insertarse en la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:7",
+      "number": 7,
+      "title": "Afinado",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:1",
+          "number": "1.3",
+          "title": "millones de horas de GPU A100 para su entrenamiento. El costo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:2",
+          "number": "3",
+          "title": "Si su modelo falla con frecuencia debido a la falta de información,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:3",
+          "number": "4",
+          "title": "Dependiendo de los modos de fallo de su modelo, podría explorar",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:4",
+          "number": "5",
+          "title": "Combine la RAG y el afinado para aumentar todavía más el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:5",
+          "number": "1",
+          "title": "Debido a la escala de los modelos fundacionales, la memoria",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:6",
+          "number": "2",
+          "title": "El número de parámetros, el número de parámetros entrenables",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:7",
+          "number": "3",
+          "title": "Cuantos más parámetros entrenables haya, mayor será la huella",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:8",
+          "number": "4",
+          "title": "La cuantización consiste en convertir un modelo de un formato",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:9",
+          "number": "5",
+          "title": "La inferencia se suele realizar utilizando el menor número de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:10",
+          "number": "6",
+          "title": "El entrenamiento es más sensible a la precisión numérica, por",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:11",
+          "number": "1",
+          "title": "Pasada hacia delante: el proceso de computar el output a partir del",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:12",
+          "number": "2",
+          "title": "Pasada hacia atrás: el proceso de actualizar las ponderaciones del",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:13",
+          "number": "1",
+          "title": "Comparar el output computado de la pasada hacia delante con el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:14",
+          "number": "3",
+          "title": "Ajustar los valores de los parámetros entrenables utilizando su",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:15",
+          "number": "1.58",
+          "title": "bits por parámetro y cuyo rendimiento es comparable al de Llama 2 de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:16",
+          "number": "1.3",
+          "title": "MM",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:17",
+          "number": "1.3",
+          "title": "MM",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:18",
+          "number": "1",
+          "title": "Producir un modelo que pueda funcionar bien en baja precisión",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:19",
+          "number": "1",
+          "title": "Sumar WAB a la matriz de ponderaciones original W para crear una",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:20",
+          "number": "1",
+          "title": "Una matriz con el rango de 8",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:21",
+          "number": "2",
+          "title": "Dos matrices con el rango de 4",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:22",
+          "number": "3",
+          "title": "Las cuatro matrices con el rango de 2",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:23",
+          "number": "1",
+          "title": "Fusionar las ponderaciones A y B de LoRA en el modelo original",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:24",
+          "number": "16.8",
+          "title": "M + 65.536 × 100 = 23.3 M de parámetros",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:25",
+          "number": "6.55",
+          "title": "MB",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:26",
+          "number": "37.7",
+          "title": "MB",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:27",
+          "number": "2",
+          "title": "Fusionar estas dos copias sumando determinadas capas (sumando",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:28",
+          "number": "3",
+          "title": "Seguir entrenando este modelo ampliado para alcanzar el objetivo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:29",
+          "number": "1",
+          "title": "Pruebe su código de afinado utilizando el modelo más barato y",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:30",
+          "number": "3",
+          "title": "Realice algunos experimentos más con el mejor modelo para ver",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:31",
+          "number": "4",
+          "title": "Una vez obtenga buenos resultados, haga una prueba de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:32",
+          "number": "1",
+          "title": "Empiece con un conjunto de datos pequeño y el modelo más",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:33",
+          "number": "2",
+          "title": "Utilice este modelo afinado para generar más datos de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:7:sec:34",
+          "number": "3",
+          "title": "Utilice este nuevo conjunto de datos para entrenar un modelo más",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:8",
+      "number": 8,
+      "title": "Ingeniería de conjuntos de",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:1",
+          "number": "52.66",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:2",
+          "number": "81.99",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:3",
+          "number": "21.19",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:4",
+          "number": "5.89",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:5",
+          "number": "14.89",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:6",
+          "number": "6.93",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:7",
+          "number": "3.01",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:8",
+          "number": "5.19",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:9",
+          "number": "8.14",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:10",
+          "number": "0.11",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:11",
+          "number": "1",
+          "title": "Encuentre conjuntos de datos disponibles con las características",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:12",
+          "number": "4",
+          "title": "Escriba manualmente las respuestas para las 3000 instrucciones de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:13",
+          "number": "5",
+          "title": "Al darse cuenta de que no hay suficientes datos para el tema X,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:14",
+          "number": "1",
+          "title": "Hugging Face y Kaggle albergan cientos de miles de conjuntos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:15",
+          "number": "2",
+          "title": "Google dispone de una maravillosa e infravalorada función de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:16",
+          "number": "3",
+          "title": "Los gobiernos suelen ser grandes proveedores de datos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:17",
+          "number": "4",
+          "title": "El Instituto de Investigación Social de la Universidad de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:18",
+          "number": "5",
+          "title": "El Machine Learning Repository de UC Irvine y OpenML son",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:19",
+          "number": "6",
+          "title": "La Red de Datos Abiertos le permite buscar entre decenas de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:20",
+          "number": "7",
+          "title": "Los proveedores de servicios en la nube suelen albergar una",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:21",
+          "number": "8",
+          "title": "Los marcos de ML suelen tener pequeños conjuntos de datos",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:22",
+          "number": "9",
+          "title": "Algunas herramientas de arnés de evaluación albergan",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:23",
+          "number": "10",
+          "title": "La Stanford Large Network Dataset Collection es un gran",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:24",
+          "number": "1",
+          "title": "Empiece con un pequeño número de ejemplos semilla para",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:25",
+          "number": "2",
+          "title": "Utilice este modelo débil para generar instrucciones para los",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:26",
+          "number": "3",
+          "title": "Afine el modelo débil con estos nuevos datos de instrucción de alta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:27",
+          "number": "1",
+          "title": "Utilizar la IA para generar una gran colección de descripciones de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:28",
+          "number": "2",
+          "title": "Dada la descripción de un problema y un lenguaje de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:29",
+          "number": "1",
+          "title": "Ejecutar el código generado a través de parseadores sintácticos y",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:30",
+          "number": "3",
+          "title": "Cuando una solución falle en cualquier paso, realizar un prompt al",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:31",
+          "number": "2",
+          "title": "Utilizar la IA para generar soluciones para cada problema en",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:32",
+          "number": "3",
+          "title": "Utilizar la AI para generar pruebas unitarias para probar el código",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:33",
+          "number": "4",
+          "title": "Presentar un prompt a la IA para que corrija los errores del código",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:34",
+          "number": "5",
+          "title": "Utilizar la IA para traducir el código generado a distintos lenguajes",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:8:sec:35",
+          "number": "6",
+          "title": "Utilizar la IA para generar conversaciones sobre el código,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:9",
+      "number": 9,
+      "title": "Optimización de la inferencia",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:1",
+          "number": "3",
+          "title": "Basándose en estos outputs, generar una respuesta final para",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:2",
+          "number": "21.3",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:3",
+          "number": "32.5",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:4",
+          "number": "30.2",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:5",
+          "number": "46.2",
+          "title": "%",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:6",
+          "number": "1",
+          "title": "El modelo de borrador genera una secuencia de K tokens: xt + 1, xt +",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:7",
+          "number": "3",
+          "title": "El modelo objetivo acepta la secuencia más larga de tokens de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:8",
+          "number": "4",
+          "title": "Digamos que el modelo objetivo acepta j tokens de borrador, xt + 1,",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:9",
+          "number": "1",
+          "title": "El tiempo que tarda el modelo objetivo en verificar una secuencia",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:10",
+          "number": "2",
+          "title": "En una secuencia de tokens de output, algunos tokens son más",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:11",
+          "number": "3",
+          "title": "La decodificación está limitada por el ancho de banda de la",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:12",
+          "number": "1.9",
+          "title": "veces en sus GPU HGX H200 (Eassa et al., 2024)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:13",
+          "number": "2",
+          "title": "Se comprueba la coherencia y consistencia de estos K tokens con el",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:14",
+          "number": "3",
+          "title": "Si uno o más tokens no aprueban la verificación, en lugar de",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:15",
+          "number": "11.5",
+          "title": "s",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:16",
+          "number": "2.4",
+          "title": "s (-79 %)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:17",
+          "number": "1.6",
+          "title": "s",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:9:sec:18",
+          "number": "1.1",
+          "title": "s (-31 %)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "chip-ai-engineering:ch:10",
+      "number": 10,
+      "title": "Arquitectura de ingeniería de",
+      "start_page": null,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:1",
+          "number": "1",
+          "title": "Mejorar el input de contexto en un modelo dándole acceso a",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:2",
+          "number": "2",
+          "title": "Instalar barreras de seguridad para proteger su sistema y a sus",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:3",
+          "number": "3",
+          "title": "Añadir un enrutador de modelos y una puerta de enlace para",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:4",
+          "number": "5",
+          "title": "Añadir lógica compleja y escribir acciones para maximizar las",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:5",
+          "number": "1",
+          "title": "Para cada consulta, generar su incrustación utilizando un modelo",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:6",
+          "number": "2",
+          "title": "Utilizar la búsqueda vectorial para encontrar la incrustación",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:7",
+          "number": "3",
+          "title": "Si X supera un determinado umbral de similitud, la consulta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:8",
+          "number": "1",
+          "title": "Las métricas le dicen que algo ha ido mal hace cinco minutos, pero",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:9",
+          "number": "2",
+          "title": "Examina los registros de los eventos de unos cinco minutos atrás",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:10",
+          "number": "3",
+          "title": "Correlaciona los errores de los registros con las métricas, para",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:11",
+          "number": "2",
+          "title": "Recuperar los datos pertinentes en función de la consulta",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:12",
+          "number": "3",
+          "title": "Combinar la consulta original y los datos recuperados",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:13",
+          "number": "6",
+          "title": "Si la respuesta se considera buena, devolvérsela al",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:14",
+          "number": "1",
+          "title": "Histórico Rocks Boutique Hotel (The Rocks)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:15",
+          "number": "2",
+          "title": "Elegante Surry Hills House Hotel (Surry Hills)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "chip-ai-engineering:ch:10:sec:16",
+          "number": "3",
+          "title": "Relajado Hotel Bondi Beachside (Bondi Beach)",
+          "start_page": null,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    }
+  ]
+}

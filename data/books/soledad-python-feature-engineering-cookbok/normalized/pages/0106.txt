@@ -1,0 +1,26 @@
+3
+Transforming Numerical
+Variables
+The statistical methods that are used in data analysis make certain assumptions about the data. For
+example, in the general linear model, it is assumed that the values of the dependent variable (the target)
+are independent, that there is a linear relationship between the target and the independent (predictor)
+variables, and that the residuals - that is, the difference between the predictions and the real values
+of the target - are normally distributed and centered at 0. When these assumptions are not met, the
+resulting probabilistic statements might not be accurate. To correct for failure in the assumptions and
+thus improve the performance of the models, we can transform variables before the analysis.
+When we transform a variable, we replace its original values with a function of that variable.
+Transforming variables with mathematical functions helps reduce variable skewness, improves the
+value spread, and sometimes unmasks linear and additive relationships between predictors and the
+target. Commonly used mathematical transformations include the logarithm, reciprocal, power, and
+square and cube root transformations, as well as the Box-Cox and Yeo-Johnson transformations. This
+set of transformations is commonly referred to as variance stabilizing transformations. Variance
+stabilizing transformations intend to bring the distribution of the variable to a more symmetric -
+that is, Gaussian - shape. In this chapter, we will discuss when to use each transformation and then
+implement them using NumPy, scikit-learn, and Feature-engine.
+This chapter contains the following recipes:
+•	 Transforming variables with the logarithm function
+•	 Transforming variables with the reciprocal function
+•	 Using the square root to transform variables
+•	 Using power transformations
+•	 Performing Box-Cox transformations
+•	 Performing Yeo-Johnson transformations

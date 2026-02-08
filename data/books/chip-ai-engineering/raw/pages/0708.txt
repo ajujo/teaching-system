@@ -1,0 +1,30 @@
+uso de herramientas son patrones de aplicación comunes, muchos marcos
+RAG y de agentes son también herramientas de orquestación.
+Aunque es tentador saltar directamente a una herramienta de orquestación
+cuando se inicia un proyecto, es posible que al principio les convenga
+empezar a construir su aplicación sin uno. Cualquier herramienta externa
+aporta una complejidad adicional. Un orquestador puede abstraer detalles
+críticos del funcionamiento del sistema, dificultando comprenderlo y
+depurarlo.
+A medida que avance hacia las últimas fases del proceso de desarrollo de su
+aplicación, quizá decidan que un orquestador puede hacerle la vida más
+fácil. Estos son tres aspectos a tener en cuenta a la hora de evaluar los
+orquestadores:
+Integración y extensibilidad
+Evalúe si el orquestador es compatible con los componentes
+que ya utiliza o que podría adoptar en el futuro. Por
+ejemplo, si desea utilizar un modelo Llama, compruebe si el
+orquestador es compatible. Dada la cantidad de modelos,
+bases de datos y marcos de trabajo que existen, es imposible
+que un orquestador sea compatible con todo. Por lo tanto,
+también tendrá que considerar la extensibilidad de un
+orquestador. Si no es compatible con un componente
+concreto, ¿es difícil cambiarlo?
+Soporte para procesos complejos
+A medida que sus aplicaciones crezcan en complejidad, es
+posible que tenga que gestionar procesos complejos que
+impliquen múltiples pasos y lógica condicional. Un
+orquestador que admita funciones avanzadas como
+ramificación, procesamiento en paralelo y gestión de errores
+le ayudará a gestionar estas complejidades de forma eficaz.
+Facilidad de uso, rendimiento y escalabilidad

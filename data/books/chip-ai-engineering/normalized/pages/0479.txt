@@ -1,0 +1,29 @@
+Desde entonces, se han lanzado varios modelos de tamaño medio con
+prestaciones comparables a las de GPT-4, como Claude 3.5 Sonnet (70
+MM de parámetros), Llama 3-70B-Instruct y Qwen2-72B-Instruct. Los
+dos últimos son de ponderación abierta y pueden autoalojarse.
+Dado que las pruebas comparativas no son suficientes para captar el
+rendimiento en el mundo real, es posible que BloombergGPT funcione
+bien para Bloomberg en sus casos de uso específicos. No cabe duda de
+que el equipo de Bloomberg adquirió una experiencia inestimable con
+el entrenamiento de este modelo, que podría permitirles desarrollar y
+explotar mejor futuros modelos.
+Tanto los experimentos de afinado como los de prompting requieren
+procesos sistemáticos. Realizar experimentos con prompts permite a los
+desarrolladores crear un proceso de evaluación, unas directrices de
+anotación de datos y unas prácticas de seguimiento de los experimentos que
+servirán de base para su afinado.
+Una de las ventajas del afinado, antes de que se introdujera el
+almacenamiento en caché de prompts, era que puede ayudar a optimizar el
+uso de tokens. Cuantos más ejemplos se añadan a un prompt, más tokens de
+input utilizará el modelo, lo que aumenta tanto la latencia como el costo. En
+lugar de incluir sus ejemplos en cada prompt, puede afinar un modelo con
+estos ejemplos. Esto le permite utilizar prompts más cortos con el modelo
+afinado, como se muestra en la Figura 7-2.
+Con el almacenamiento en caché de prompts, donde los segmentos
+repetitivos de prompts pueden almacenarse en caché para su reutilización,
+esto ya no supone una gran ventaja. El almacenamiento en caché de
+prompts se aborda con más detalle en el Capítulo 9. Sin embargo, el número
+de ejemplos que puede utilizar con un prompt sigue estando limitado por la
+longitud máxima del contexto. Con el afinado, no hay límite para el número
+de ejemplos que puede utilizar.

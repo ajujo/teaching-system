@@ -1,0 +1,28 @@
+Table of Contents
+Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xiii
+1. Introduction to Agents. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+Defining AI Agents 1
+The Pretraining Revolution 2
+Types of Agents 3
+Model Selection 5
+From Synchronous to Asynchronous Operations 6
+Practical Applications and Use Cases 7
+Workflows and Agents 8
+Principles for Building Effective Agentic Systems 11
+Organizing for Success in Building Agentic Systems 12
+Agentic Frameworks 13
+LangGraph 13
+AutoGen 14
+CrewAI 14
+OpenAI Agents Software Development Kit (SDK) 14
+Conclusion 15
+2. Designing Agent Systems. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Our First Agent System 17
+Core Components of Agent Systems 20
+Model Selection 21
+Tools 24
+Designing Capabilities for Specific Tasks 24
+Tool Integration and Modularity 25
+Memory 25
+Short-Term Memory 26
+v

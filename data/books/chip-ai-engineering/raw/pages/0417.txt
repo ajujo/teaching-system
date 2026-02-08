@@ -1,0 +1,19 @@
+RAG multimodal
+Si su generador es multimodal, sus contextos pueden estar aumentados no
+solo con documentos de texto, sino también con imágenes, vídeos, audio,
+etc., procedentes de fuentes externas. Utilizaré imágenes en los ejemplos
+para que la redacción sea concisa, pero pueden sustituir las imágenes por
+cualquier otra modalidad. Dada una consulta, el recuperador reúne tanto
+textos como imágenes relevantes para la misma. Por ejemplo, ante la
+pregunta "¿De qué color es la casa de la película Up de Pixar?", el
+recuperador puede buscar una imagen de la casa de Up para ayudar al
+modelo a responder, como se muestra en la Figura 6-6.
+figura 6-6. La RAG multimodal puede aumentar una consulta tanto con texto como
+con imágenes. (*No se utiliza la imagen real de Up, por motivos de copyright).
+Si las imágenes tienen metadatos (como títulos, etiquetas o pies de foto),
+pueden recuperarse utilizando los metadatos. Por ejemplo, una imagen se
+recupera si su pie de foto se considera relevante para la consulta.
+Si desea recuperar imágenes en función de su contenido, necesitará una
+forma de comparar imágenes con consultas. Si las consultas son textos,
+necesitará un modelo de incrustación multimodal capaz de generar
+incrustaciones tanto para imágenes como para textos. Supongamos que se

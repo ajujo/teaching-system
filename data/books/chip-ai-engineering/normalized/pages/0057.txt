@@ -1,0 +1,31 @@
+Para las empresas, los bots más populares son los de atención al cliente.
+Pueden ayudar a las empresas a ahorrar costos a la vez que mejoran la
+experiencia del cliente, ya que son capaces de responder a los usuarios antes
+que los agentes humanos. La IA también puede ser copiloto de productos
+que guíe a los clientes a través de tareas dolorosas y confusas, como
+presentar reclamaciones de seguros, pagar impuestos o consultar políticas
+corporativas.
+El éxito de ChatGPT provocó una oleada de bots conversacionales basados
+en texto. Sin embargo, el texto no es la única interfaz para los agentes
+conversacionales. Los asistentes de voz como Google Assistant, Siri y
+Alexa existen desde hace años. 15 Los bots conversacionales en 3D ya son
+habituales en los juegos, y están ganando terreno en el comercio minorista y
+el marketing.
+Un caso de uso de los personajes 3D basados en IA son los NPC
+inteligentes, personajes no jugadores (véanse las demostraciones de
+NVIDIA de Inworld y Convai).16 Los NPC son esenciales para hacer
+avanzar la historia de muchos juegos. Sin IA, los NPC suelen estar
+programados para realizar acciones sencillas con una gama limitada de
+diálogos. La IA puede hacer que estos NPC sean mucho más inteligentes.
+Los bots inteligentes pueden cambiar la dinámica de juegos existentes como
+Los Sims y Skyrim, así como permitir posibles nuevos juegos nunca antes
+vistos.
+Agregación de información
+Muchas personas creen que nuestro éxito depende de nuestra capacidad
+para filtrar y digerir información útil. Sin embargo, mantenerse al corriente
+de los correos electrónicos, los mensajes de Slack y las noticias a veces
+puede resultar abrumador. Por suerte, la IA vino al rescate. La IA ha
+demostrado ser capaz de agregar información y resumirla. Según el informe
+de Salesforce de 2023 Generative AI Snapshot Research, el 74 % de los
+usuarios de IA generativa la utilizan para destilar ideas complejas y resumir
+información.

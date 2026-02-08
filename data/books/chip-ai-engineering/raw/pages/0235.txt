@@ -1,0 +1,68 @@
+tabla 3-6. Ejemplos de porcentajes de victorias de cinco modelos. La column
+indica que A es preferible a B.
+Pareja de
+modelos #
+Modelo A
+Modelo B
+#
+encuentros
+A >>
+1
+Modelo 1
+Modelo 2
+1000
+90 %
+2
+Modelo 1
+Modelo 3
+1000
+40 %
+3
+Modelo 1
+Modelo 4
+1000
+15 %
+4
+Modelo 1
+Modelo 5
+1000
+10 %
+5
+Modelo 2
+Modelo 3
+1000
+60 %
+6
+Modelo 2
+Modelo 4
+1000
+80 %
+7
+Modelo 2
+Modelo 5
+1000
+80 %
+8
+Modelo 3
+Modelo 4
+1000
+70 %
+9
+Modelo 3
+Modelo 5
+1000
+10 %
+10
+Modelo 4
+Modelo 5
+1000
+20 %
+Dadas las señales comparativas, se utiliza un algoritmo de calificación para
+calcular un ranking de los modelos. Normalmente, este algoritmo computa
+primero una puntuación para cada modelo a partir de las señales
+comparativas y, a continuación, ordena los modelos en función de sus
+puntuaciones.
+La evaluación comparativa es nueva en la IA, pero existe desde hace casi
+un siglo en otros sectores. Es especialmente popular en los deportes y los
+videojuegos. Muchos algoritmos de ranking desarrollados para estos otros
+ámbitos pueden adaptarse a la evaluación de modelos de IA, como Elo,

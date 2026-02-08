@@ -1,0 +1,25 @@
+paralelismo de secuencias, Paralelismo
+paralelización, Dividir tareas complejas en subtareas más sencillas, Kernels
+y compiladores
+parámetros entrenables, Cuellos de botella en la memoria
+pasarelas, Puerta de enlace
+PEFT (ver ajuste fino eficiente en parámetros)
+pequeño mundo navegable jerárquico (HNSW), Recuperación basada en
+incrustaciones
+perplejidad, Entropía cruzada
+perturbación, Síntesis de datos basada en reglas
+peso restringido, Código abierto, ponderación abierta y licencias modelo
+phishing pasivo, Inyección indirecta de prompts
+pila de ingeniería, Las tres capas de la pila de IA
+– desarrollo de aplicaciones, Las tres capas de la pila de IA
+– evaluación, Optimización de la inferencia
+– ingeniería de prompts y construcción de contextos, Ingeniería de
+prompts y construcción de contextos
+– interfaz de la AI, Ingeniería de prompts y construcción de
+contextos
+– desarrollo de modelos, Las tres capas de la pila de IA
+– infraestructura, Las tres capas de la pila de IA
+– ingeniería de ML frente a, Ingeniería de IA Vs. ingeniería de ML
+pila de ingeniería de IA (ver pila de ingeniería)
+pirateo de prompts manual directo, Jailbreaking e inyección de prompts
+planificación

@@ -1,0 +1,29 @@
+Scaling to the maximum and minimum values
+209
+To standardize these features, we used scikit-learn's StandardScaler() function, which is able
+to learn and store the parameters utilized in the transformation. Using fit(), the scaler learned
+each variable's mean and standard deviation and stored them in its mean_ and scale_ attributes.
+Using transform(), the scaler standardized the variables in the train and test sets. The default
+output of StandardScaler() is a NumPy array, but through the set_output() parameter,
+we can change the output container to a pandas DataFrame, as we did in Step 4, or to polars, by
+setting transform="polars".
+Note
+StandardScaler() will subtract the mean and divide it by the standard deviation by default.
+If we want to just center the distributions without standardizing the variance, we can do so by
+setting with_std=False when initializing the transformer. If we want to set the variance to
+1, without cantering the distribution, we can do so by setting with_mean=False in Step 4.
+Scaling to the maximum and minimum values
+Scaling to the minimum and maximum values squeezes the values of the variables between 0 and 1. To
+implement this scaling method, we subtract the minimum value from all the observations and divide
+the result by the value range - that is, the difference between the maximum and minimum values:
+x scaled =
+x − min(x)
+____________
+
+max(x) − min(x)
+Scaling to the minimum and maximum is suitable for variables with very small standard deviations,
+when the models do not require data to be centered at zero, and when we want to preserve zero entries
+in sparse data, such as in one-hot encoded variables. On the downside, it is sensitive to outliers.
+Getting ready
+Scaling to the minimum and maximum value does not change the distribution of the variables, as
+illustrated in the following figure:

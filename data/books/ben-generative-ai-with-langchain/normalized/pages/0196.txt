@@ -1,0 +1,37 @@
+Chapter 4
+169
+•
+double_check function: Evaluates the generated content for compliance with
+corporate standards
+•
+doc_finalizer function: Either returns the original answer if no issues were found
+or revises it based on the feedback from the checker
+•
+Graph compilation: Uses a state graph (via LangGraph's StateGraph) to define the se­
+quence of steps. The pipeline is then compiled into a runnable graph that can process
+queries through the complete workflow.
+Let's get the imports out of the way:
+from typing import Annotated
+from langchain_core.documents import Document
+from langchain_core.messages import AIMessage
+from langchain_core.prompts import ChatPromptTemplate
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.constants import END
+from langgraph.graph import START, StateGraph, add_messages
+from typing_extensions import List, TypedDict
+from chapter4.llms import chat_model
+from chapter4.retriever import DocumentRetriever
+As we mentioned earlier, the system prompt template instructs the AI on how to use the provided
+document snippets when generating a response:
+system_prompt = (
+    "You're a helpful AI assistant. Given a user question "
+    "and some corporate document snippets, write documentation."
+    "If none of the documents is relevant to the question, "
+    "mention that there's no relevant document, and then "
+    "answer the question to the best of your knowledge."
+    "\n\nHere are the corporate documents: "
+    "{context}"
+)
+We'll then instantiate a DocumentRetriever and a prompt:
+retriever = DocumentRetriever()
+prompt = ChatPromptTemplate.from_messages(

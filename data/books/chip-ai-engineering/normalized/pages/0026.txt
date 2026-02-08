@@ -1,0 +1,30 @@
+El proceso de dividir el texto original en tokens se denomina tokenización.
+Para GPT-4, un token promedio tiene aproximadamente ¾ de la longitud de
+una palabra. Así, 100 tokens son aproximadamente 75 palabras.
+El conjunto de todos los tokens con los que puede trabajar un modelo es el
+vocabulario del modelo. Se puede utilizar un pequeño número de tokens
+para construir un gran número de palabras distintas, de forma similar a
+como se pueden utilizar unas pocas letras del alfabeto para construir
+muchas palabras. El modelo Mixtral 8x7B tiene un vocabulario de 32 000
+tokens. El tamaño del vocabulario de GPT-4 es de 100 256 tokens. Los
+desarrolladores del modelo deciden el método de tokenización y el tamaño
+del vocabulario.
+NOTA
+¿Por qué los modelos lingüísticos utilizan el token como unidad en lugar de
+la palabra o el carácter? Hay tres razones principales:
+1. En comparación con los caracteres, los tokens permiten al modelo
+dividir las palabras en componentes significativos. Por ejemplo,
+"cooking" (cocinar) puede dividirse en "cook" e "ing", y ambos
+componentes transmiten parte del significado de la palabra
+original.
+2. Como hay menos tokens únicos que palabras únicas, se reduce el
+tamaño del vocabulario del modelo, lo que lo hace más eficiente
+(como se explica en el Capítulo 2).
+3. Los tokens también ayudan al modelo a procesar palabras
+desconocidas. Por ejemplo, una palabra inventada como
+"chatgpting" podría dividirse en "chatgpt" e "ing", lo que ayudaría
+al modelo a comprender su estructura. Los tokens tienen menos
+unidades que las palabras, pero transmiten más significado que los
+caracteres individuales.
+Existen dos tipos principales de modelos lingüísticos: los modelos
+lingüísticos enmascarados y los modelos lingüísticos autorregresivos. Se

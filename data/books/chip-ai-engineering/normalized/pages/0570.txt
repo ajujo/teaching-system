@@ -1,0 +1,11 @@
+figura 8-4. La diversidad en el número de afinados, medida por el número de tareas,
+pueden influir en el rendimiento del modelo. Imagen de "Scaling Instruction-
+Finetuned Language Models" (Chung et al., 2022). La imagen está bajo licencia CC
+BY 4.0.
+La cantidad de datos a utilizar para el afinado no solo depende de lo que
+necesite, sino también de lo que pueda permitirse. Si el presupuesto para la
+anotación de datos es de 10 000 dólares y la anotación de cada ejemplo
+cuesta 2 dólares, se pueden tener como máximo 5000 ejemplos. Es posible
+que también tengan que equilibrar el presupuesto para datos y computación.
+Gastar más dinero en datos deja menos dinero para computación, y
+viceversa.

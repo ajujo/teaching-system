@@ -1,0 +1,32 @@
+Una desventaja de la división de prompts es que puede aumentar la latencia
+percibida por los usuarios, especialmente en tareas en las que los usuarios
+no ven los outputs intermedios. Con más pasos intermedios, los usuarios
+tienen que esperar más para ver el primer token de output generado en el
+paso final.
+La división de prompts suele implicar más consultas al modelo, lo que
+puede aumentar los costos. No obstante, el costo de dos prompts divididos
+podría no ser el doble que el de un prompt original. Esto se debe a que la
+mayoría de las API de modelos cobran por token de input y output, y los
+prompts más pequeños suelen requerir menos tokens. Además, puede
+utilizar modelos más baratos para pasos más sencillos. Por ejemplo, en la
+atención al cliente, es habitual utilizar un modelo más débil para la
+clasificación de intenciones y un modelo más fuerte para generar respuestas
+de usuario. Aunque el costo aumente, la mejora del rendimiento y la
+fiabilidad pueden hacer que valga la pena.
+Al ir trabajando para mejorar su aplicación, su prompt puede volverse
+complejo con rapidez. Es posible que tenga que proporcionar instrucciones
+más detalladas, añadir más ejemplos y tener en cuenta los casos extremos.
+GoDaddy (2024) descubrió que el prompt de su chatbot de atención al
+cliente se había inflado hasta superar los 1500 tokens tras una iteración.
+Tras dividir el prompt en prompts más pequeños dirigidos a diferentes
+subtareas, descubrieron que su modelo funcionaba mejor y reducía el costo
+de tokens.
+Dar tiempo al modelo para pensar
+Puede animar al modelo a que dedique más tiempo a, por falta de una
+expresión mejor, "pensar" sobre una pregunta utilizando prompts de cadena
+de pensamiento (CoT) y autocrítica.
+CoT significa pedir explícitamente al modelo que piense paso a paso,
+guiándolo hacia un enfoque más sistemático de la resolución de problemas.
+CoT es una de las primeras técnicas de prompting que funcionan bien en
+todos los modelos. Se introdujo en "Chain-of-Thought Prompting Elicits
+Reasoning in Large Language Models" (Wei et al., 2022), casi un año antes

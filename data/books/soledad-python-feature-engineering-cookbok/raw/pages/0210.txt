@@ -1,0 +1,27 @@
+Extracting features from time with pandas
+187
+Note
+You can inspect the unique values of the new variables with pandas’ unique(), for example, 
+by executing df['hour'].unique().
+5.	
+Finally, let’s create a binary variable that flags events that occurred in the morning, between 6 
+A.M. and 12 P.M.:
+df["is_morning"] = np.where(
+    (df[«hour»] < 12) & (df[«hour»] > 6), 1, 0 )
+df.head()
+We see the is_morning variable in the following output:
+Figure 6.12 – The top rows of a DataFrame with the new variables derived from time
+With that, we extracted multiple features from the time part of a datetime variable. These features 
+can be used for data analysis and predictive modelling.
+How it works...
+In this recipe, we created features that capture representations of time. First, we created a sample 
+DataFrame with a datetime variable. We used pandas date_range()to create a range of 20 
+values starting from an arbitrary date and increasing by intervals of 1 hour, 15 minutes, and 10 seconds. 
+We used the 1h15min10s string as the frequency term for the freq argument to indicate the desired 
+increments. Next, we transformed the date range into a DataFrame with pandas’ DataFrame().
+To extract the different time parts, we used pandas’ dt to access the hour, minute, and second 
+time properties. After extracting hour from time, we used it to create a new feature that indicated 
+whether it was morning by using NumPy’s where(). NumPy’s where() scanned the hour variable; 
+if its values were smaller than 12 and greater than 6, it assigned a value of 1; otherwise, it assigned a 
+value of 0. With these operations, we added several features to the DataFrame that can be used for 
+data analysis and to train machine learning models.

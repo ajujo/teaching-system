@@ -1,0 +1,36 @@
+Chapter 4
+133
+Recursive character chunking
+This method respects natural text boundaries by recursively applying different separators:
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+text_splitter = RecursiveCharacterTextSplitter(
+    separators=["\n\n", "\n", ". ", " ", ""],
+    chunk_size=150,
+    chunk_overlap=20
+)
+document = """
+document = """# Introduction to RAG
+Retrieval-Augmented Generation (RAG) combines retrieval systems with 
+generative AI models.
+It helps address hallucinations by grounding responses in retrieved 
+information.
+## Key Components
+RAG consists of several components:
+1. Document processing
+2. Vector embedding
+3. Retrieval
+4. Augmentation
+5. Generation
+### Document Processing
+This step involves loading and chunking documents appropriately.
+"""
+chunks = text_splitter.split_text(document)
+print(chunks)
+Here are the chunks:
+['# Introduction to RAG\nRetrieval-Augmented Generation (RAG) combines 
+retrieval systems with generative AI models.', 'It helps address 
+hallucinations by grounding responses in retrieved information.', '## Key 
+Components\nRAG consists of several components:\n1. Document processing\
+n2. Vector embedding\n3. Retrieval\n4. Augmentation\n5. Generation', '### 
+Document Processing\nThis step involves loading and chunking documents 
+appropriately.']

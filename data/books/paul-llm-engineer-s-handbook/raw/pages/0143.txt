@@ -1,0 +1,32 @@
+RAG Feature Pipeline
+112
+In the code snippet below, you can see how we loaded a model from SentenceTransformer, comput-
+ed the embeddings for three sentences, and, ultimately, computed the cosine similarity between 
+them. The similarity between one sentence and itself is always 1. Also, the similarity between 
+the first and second sentences is approximately 0, as the sentences have nothing in common. In 
+contrast, the value between the first and third one is higher as there is some overlapping context:
+from sentence_transformers import SentenceTransformer
+model = SentenceTransformer("all-MiniLM-L6-v2")
+sentences = [
+"The dog sits outside waiting for a treat.",
+"I am going swimming.",
+"The dog is swimming."
+]
+embeddings = model.encode(sentences)
+print(embeddings.shape)
+# Output: [3, 384]
+similarities = model.similarity(embeddings, embeddings)
+print(similarities)
+# Output:
+# tensor([[ 1.0000, -0.0389, 0.2692],
+# [-0.0389, 1.0000, 0.3837],
+# [ 0.2692, 0.3837, 1.0000]])
+#
+# similarities[0, 0] = The similarity between the first sentence and 
+itself.
+# similarities[0, 1] = The similarity between the first and second 
+sentence.
+# similarities[2, 1] = The similarity between the third and second 
+sentence.
+The source code for the preceding snippet can be found at https://github.com/PacktPublishing/
+LLM-Engineering/blob/main/code_snippets/08_text_embeddings.py.

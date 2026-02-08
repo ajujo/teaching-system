@@ -1,0 +1,40 @@
+Combining features with mathematical functions
+231
+The preceding code block should print out a description of the dataset and an interpretation of
+its variables.
+How to do it...
+In this recipe, we will create new features by combining variables using multiple mathematical operations:
+1.
+Let's begin by loading the necessary libraries, classes, and data:
+import pandas as pd
+from feature_engine.creation import MathFeatures
+from sklearn.datasets import load_breast_cancer
+2.
+Next, load the breast cancer dataset into a pandas DataFrame:
+data = load_breast_cancer()
+df = pd.DataFrame(data.data,
+    columns=data.feature_names)
+In the following code lines, we will create new features by combining variables using multiple
+mathematical operations.
+3.
+Let's begin by creating a list with the subset of the features that we want to combine:
+features = [
+    «mean smoothness",
+    «mean compactness",
+    «mean concavity",
+    «mean concave points",
+    «mean symmetry",
+]
+The features in step 3 represent the mean characteristics of cell nuclei in the images. It might
+be useful to obtain the mean across all examined characteristics.
+4.
+Let's get the mean value of the features and then display the resulting feature:
+df["mean_features"] = df[features].mean(axis=1)
+df["mean_features"].head()
+The following output shows the mean value of the features from step 3:
+0    0.21702
+1    0.10033
+2    0.16034
+3    0.20654
+4    0.14326
+Name: mean_features, dtype: float64

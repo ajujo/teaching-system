@@ -1,0 +1,39 @@
+Implementing term frequency-inverse document frequency
+353
+Implementing term frequency-inverse document frequency
+Term Frequency-Inverse Document Frequency (TF-IDF) is a numerical statistic that captures how 
+relevant a word is in a document considering the entire collection of documents. What does this 
+mean? Some words will appear a lot within a text document as well as across documents, such as the 
+English words the, a, and is, for example. These words generally convey little information about the 
+actual content of the document and don’t make the text stand out from the crowd. TF-IDF provides 
+a way to weigh the importance of a word by considering how many times it appears in a document 
+with regards to how often it appears across documents. Hence, commonly occurring words such as 
+the, a, or is will have a low weight, and words that are more specific to a topic, such as leopard, will 
+have a higher weight.
+TF-IDF is the product of two statistics: Term Frequency (tf) and Inverse Document Frequency 
+(idf), represented as follows: tf-idf = td × idf. tf is, in its simplest form, the count of the word in an 
+individual text. So, for term t, the tf is calculated as tf(t) = count(t) and is determined on a text-by-text 
+basis. The idf is a measure of how common the word is across all documents and is usually calculated 
+on a logarithmic scale. A common implementation is given by the following:
+​idf​(t)​ = ​log​(​ 
+n 
+_ 
+1 + df​(​t​)​ ​)​
+Here, n is the total number of documents, and df(t) is the number of documents in which the term t 
+appears. The bigger the value of df(t), the lower the weighting for the term. The importance of a word 
+will be high if it appears a lot of times in a text (high tf) or few times across texts (high idf).
+Note
+TF-IDF can be used together with n-grams. Similarly, to weigh an n-gram, we compound the 
+n-gram frequency in a certain document with the frequency of the n-gram across documents.
+In this recipe, we will learn how to extract features using TF-IDF with or without n-grams using scikit-
+learn.
+Getting ready
+scikit-learn uses a slightly different way to calculate the IDF statistic:
+​idf​(t)​  =  log​(​  1 + n 
+_ 
+1 + df​(​t​)​ ​)​ + 1​
+This formulation ensures that a word that appears in all texts receives the lowest weight of 1. In 
+addition, after calculating the TF-IDF for every word, scikit-learn normalizes the feature 
+vector (that with all the words) to its Euclidean norm. For more details on the exact formula, visit the 
+scikit-learn documentation at https://scikit-learn.org/stable/modules/
+feature_extraction.html#tfidf-term-weighting.

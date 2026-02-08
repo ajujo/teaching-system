@@ -1,0 +1,38 @@
+Chapter 3
+59
+Our codebase supports four different crawlers:
+•	
+Medium crawler: Used to collect data from Medium. It outputs an article document. It 
+logs in to Medium and crawls the HTML of the article’s link. Then, it extracts, cleans, and 
+normalizes the text from the HTML and loads the standardized text of the article into the 
+NoSQL data warehouse.
+•	
+Custom article crawler: It performs similar steps to the Medium crawler but is a more 
+generic implementation for collecting articles from various sites. Thus, as it doesn’t im-
+plement any particularities of any platform, it doesn’t perform the login step and blindly 
+gathers all the HTML from a particular link. This is enough for articles freely available 
+online, which you can find on Substack and people’s blogs. We will use this crawler as a 
+safety net when the link’s domain isn’t associated with the other supported crawlers. For 
+example, when providing a Substack link, it will default to the custom article crawler, but 
+when providing a Medium URL, it will use the Medium crawler.
+•	
+GitHub crawler: This collects data from GitHub. It outputs a repository document. It 
+clones the repository, parses the repository file tree, cleans and normalizes the files, and 
+loads them to the database.
+•	
+LinkedIn crawler: This is used to collect data from LinkedIn. It outputs multiple post 
+documents. It logs in to LinkedIn, navigates to the user’s feed, and crawls all the user’s 
+latest posts. For each post, it extracts its HTML, cleans and normalizes it, and loads it to 
+MongoDB.
+In the next section, we will examine each crawler’s implementation in detail. For now, note that 
+each crawler accesses a specific platform or site in a particular way and extracts HTML from it. 
+Afterward, all the crawlers parse the HTML, extract the text from it, and clean and normalize it 
+so it can be stored in the data warehouse under the same interface.
+By reducing all the collected data to three data categories and not creating a new data category 
+for every new data source, we can easily extend this architecture to multiple data sources with 
+minimal effort. For example, if we want to start collecting data from X, we only have to imple-
+ment a new crawler that outputs a post document, and that’s it. The rest of the code will remain 
+untouched. Otherwise, if we introduced the source dimension in the class and document struc-
+ture, we would have to add code to all downstream layers to support any new data source. For 
+example, we would have to implement a new document class for each new source and adapt the 
+feature pipeline to support it.

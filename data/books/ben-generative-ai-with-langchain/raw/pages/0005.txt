@@ -1,0 +1,25 @@
+Contributors
+About the authors
+Ben Auffarth, PhD, is an AI implementation expert with more than 15 years of work experience. 
+As the founder of Chelsea AI Ventures, he specializes in helping small and medium enterprises 
+implement enterprise-grade AI solutions that deliver tangible ROI. His systems have prevented 
+millions in fraud losses and process transactions at sub-300ms latency. With a background in com­
+putational neuroscience, Ben brings rare depth to practical AI applications—from supercomputing 
+brain models to production systems that combine technical excellence with business strategy.
+First and foremost, I want to thank my co-author, Leo—a superstar coder—who’s been patient throughout 
+and always ready when advice was needed. This book also wouldn’t be what it is without the people at Packt, 
+especially Tanya, our editor, who offered sparks of insight and encouraging words whenever needed. Finally, 
+the reviewers were very helpful and generous with their critiques, making sure we didn’t miss anything. Any 
+errors or oversights that remain are entirely mine.
+Leonid Kuligin is a staff AI engineer at Google Cloud, working on generative AI and classical 
+machine learning solutions, such as demand forecasting and optimization problems. Leonid is 
+one of the key maintainers of Google Cloud integrations on LangChain and a visiting lecturer at 
+CDTM (a joint institution of TUM and LMU). Prior to Google, Leonid gained more than 20 years 
+of experience building B2C and B2B applications based on complex machine learning and data 
+processing solutions—such as search, maps, and investment management—in German, Russian, 
+and U.S. technology, financial, and retail companies.
+I want to express my sincere gratitude to all my colleagues at Google with whom I had the pleasure and joy of 
+working, and who supported me during the creation of this book and many other endeavors. Special thanks 
+go to Max Tschochohei, Lucio Floretta, and Thomas Cliett. My appreciation also goes to the entire LangChain 
+community, especially Harrison Chase, whose continuous development of the LangChain framework made 
+my work as an engineer significantly easier.

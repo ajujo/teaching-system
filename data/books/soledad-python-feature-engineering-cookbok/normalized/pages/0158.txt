@@ -1,0 +1,34 @@
+Performing discretization with k-means clustering
+135
+Performing discretization with k-means clustering
+The aim of a discretization procedure is to find a set of cut points that partition a variable into a small
+number of intervals that have good class coherence. To create partitions that group similar observations,
+we can use clustering algorithms such as k-means.
+In discretization using k-means clustering, the partitions are the clusters identified by the k-means
+algorithm. The k-means clustering algorithm has two main steps. In the initialization step, k observations
+are chosen randomly as the initial centers of the k clusters, and the remaining data points are assigned
+to the closest cluster. The proximity to the cluster is measured by a distance measure, such as the
+Euclidean distance. In the iteration step, the centers of the clusters are re-computed as the average
+of all of the observations within the cluster, and the observations are reassigned to the newly created
+closest cluster. The iteration step continues until the optimal k centers are found.
+Discretization with k-means requires one parameter, which is k, the number of clusters. There are a
+few methods to determine the optimal number of clusters. One of them is the elbow method, which
+we will use in this recipe. This method consists of training several k-means algorithms over the data
+using different values of k, and then determining the explained variation returned by the clustering.
+In the next step, we plot the explained variation as a function of the number of clusters, k, and pick
+the elbow of the curve as the number of clusters to use. The elbow is the inflection point that indicates
+that increasing the number of k further does not significantly increase the variance explained by the
+model. There are different metrics to quantify the explained variation. We will use the sum of the
+square distances from each point to its assigned center.
+In this recipe, we will use the Python library yellowbrick to determine the optimal number of
+clusters and then carry out k-means discretization with scikit-learn.
+How to do it...
+Let's start by importing the necessary Python libraries and get the dataset ready:
+1.
+Import the required Python libraries and classes:
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import KBinsDiscretizer
+from yellowbrick.cluster import KElbowVisualizer

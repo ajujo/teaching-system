@@ -1,0 +1,16 @@
+preferencias humanas determinando los pasos que han dado los creadores
+del modelo.
+figura 2-10. El flujo de trabajo de entrenamiento global con pre-entrenamiento, SFT y
+RLHF.
+Si entrecierran los ojos, la Figura 2-10 se parece mucho al meme que
+representa al monstruo Shoggoth con un emoticono de sonrisa en la
+Figura 2-11:
+1. El pre-entrenamiento autosupervisado produce un modelo rebelde
+que puede considerarse un monstruo indómito porque utiliza datos
+indiscriminados de Internet.
+2. A continuación, este monstruo recibe un ajuste fino supervisado
+con datos de mayor calidad (Stack Overflow, Quora o anotaciones
+humanas), lo que lo hace más aceptable socialmente.
+3. Este modelo afinado se pule aún más utilizando el afinado de
+preferencias para adaptarlo al cliente, que es como ponerle un
+emoticono de sonrisa.

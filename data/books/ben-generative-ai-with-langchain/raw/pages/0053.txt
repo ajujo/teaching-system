@@ -1,0 +1,40 @@
+First Steps with LangChain
+26
+Setting up dependencies for this book
+This book provides multiple options for running the code examples, from zero-setup cloud note­
+books to local development environments. Choose the approach that best fits your experience 
+level and preferences. Even if you are familiar with dependency management, please read these 
+instructions since all code in this book will depend on the correct installation of the environment 
+as outlined here.
+For the quickest start with no local setup required, we provide ready-to-use online notebooks 
+for every chapter:
+•	
+Google Colab: Run examples with free GPU access
+•	
+Kaggle Notebooks: Experiment with integrated datasets
+•	
+Gradient Notebooks: Access higher-performance compute options
+All code examples you find in this book are available as online notebooks on GitHub at https://
+github.com/benman1/generative_ai_with_langchain.
+These notebooks don’t have all dependencies pre-configured but, usually, a few install commands 
+get you going. These tools allow you to start experimenting immediately without worrying about 
+setup. If you prefer working locally, we recommend using conda for environment management:
+1.	
+Install Miniconda if you don’t have it already.
+2.	
+Download it from https://docs.conda.io/en/latest/miniconda.html.
+3.	
+Create a new environment with Python 3.11:
+conda create -n langchain-book python=3.11
+4.	
+Activate the environment:
+conda activate langchain-book
+5.	
+Install Jupyter and core dependencies:
+conda install jupyter
+pip install langchain langchain-openai jupyter
+Given the rapid evolution of both LangChain and the broader AI field, we maintain 
+up-to-date code examples and resources in our GitHub repository: https://github.
+com/benman1/generative_ai_with_langchain.
+For questions or troubleshooting help, please create an issue on GitHub or join our 
+Discord community: https://packt.link/lang.

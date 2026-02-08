@@ -1,0 +1,31 @@
+Chapter 6
+245
+Communication via a shared messages list
+A few chapters earlier, we discussed how two agents can communicate via controlled output (by
+sending each other special Pydantic instances). Now let's go back to the communication topic and
+illustrate how agents can communicate with native LangChain messages. Let's take the research
+agent with a cross-reflection and make it work with a shared list of messages. First, the research
+agent itself looks simpler - it has a default state since it gets a user's question as a HumanMessage:
+system_prompt = (
+   "You're a hard-working, curious and creative student. "
+   "You're working on exam quesion. Think step by step."
+   "Always provide an argumentation for your answer. "
+   "Do not assume anything, use available tools to search "
+   "for evidence and supporting statements."
+)
+research_agent = create_react_agent(
+  model=llm_small, tools=research_tools, prompt=system_prompt)
+We also need to slightly modify the reflection prompt:
+reflection_prompt = (
+   "You are a university professor and you're supervising a student who is
+"
+   "working on multiple-choice exam question. Given the dialogue above, "
+   "reflect on the answer provided and give a feedback "
+   " if needed. If you think the final answer is correct, reply with "
+   "an empty message. Only provide critique if you think the last answer "
+   "might be incorrect or there are reasoning flaws. Do not assume
+anything, "
+   "evaluate only the reasoning the student provided and whether there is
+"
+   "enough evidence for their answer."
+)

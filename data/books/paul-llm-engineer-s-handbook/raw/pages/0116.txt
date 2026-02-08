@@ -1,0 +1,31 @@
+Chapter 3
+85
+        instance = collection.find_one(filter_options)
+        if instance:
+            return cls.from_mongo(instance)
+        new_instance = cls(**filter_options)
+        new_instance = new_instance.save()
+        return new_instance
+    except errors.OperationFailure:
+        logger.exception(f"Failed to retrieve document with filter 
+options: {filter_options}")
+        raise
+The bulk_insert() class method allows multiple documents to be inserted into the database 
+at once:
+@classmethod
+def bulk_insert(cls: Type[T], documents: list[T], **kwargs) -> bool:
+    collection = _database[cls.get_collection_name()]
+    try:
+        collection.insert_many([doc.to_mongo(**kwargs) for doc in 
+documents])
+        return True
+    except (errors.WriteError, errors.BulkWriteError):
+logger.error(f"Failed to insert documents of type {cls.__name__}")
+        return False
+The find() class method searches for a single document in the database that matches the given 
+filter options:
+@classmethod
+def find(cls: Type[T], **filter_options) -> T | None:
+    collection = _database[cls.get_collection_name()]
+    try:
+        instance = collection.find_one(filter_options)

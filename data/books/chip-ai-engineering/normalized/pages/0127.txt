@@ -1,0 +1,30 @@
+Informe sobre el índice de Inteligencia Artificial 2022 (HAI de la
+Universidad de Stanford).
+Mientras que el costo para el mismo rendimiento del modelo disminuye, el
+costo para la mejora del rendimiento del modelo sigue siendo alto. Al igual
+que en el reto de la última milla analizado en el Capítulo 1, mejorar la
+precisión de un modelo del 90 al 95 % es más caro que mejorarla del 85 al
+90 %. Como señala el artículo de Meta "Beyond Neural Scaling Laws:
+Beating Power Law Scaling via Data Pruning", esto significa que un
+modelo con una tasa de error del 2 % puede requerir un orden de magnitud
+más de datos, cálculo o energía que un modelo con una tasa de error del 3
+%.
+En el modelado lingüístico, una caída de la pérdida de entropía cruzada de
+aproximadamente 3.4 a 2.8 nats requiere 10 veces más datos de
+entrenamiento. La entropía cruzada y sus unidades, incluidas las nats, se
+abordan en el Capítulo 3. Para los modelos de visión de gran tamaño,
+aumentar el número de muestras de entrenamiento de 1000 millones a 2000
+millones supone un aumento de solo unos pocos puntos porcentuales de
+precisión en ImageNet.
+Sin embargo, pequeños cambios de rendimiento en la pérdida de modelado
+lingüístico o en la precisión de ImageNet pueden dar lugar a grandes
+diferencias en la calidad de las aplicaciones posteriores. Si pasa de un
+modelo con una pérdida de entropía cruzada de 3.4 a otro con una pérdida
+de 2.8, notará la diferencia.
+Extrapolación de escalas
+El rendimiento de un modelo depende en gran medida de los valores de sus
+hiperparámetros. Cuando se trabaja con modelos pequeños, es una práctica
+común entrenar a un modelo varias veces con diferentes conjuntos de
+hiperparámetros y elegir el de mejor rendimiento. Sin embargo, esto rara
+vez es posible en el caso de modelos de gran tamaño, ya que entrenarlos
+una sola vez consume bastantes recursos.

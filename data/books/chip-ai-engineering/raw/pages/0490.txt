@@ -1,0 +1,18 @@
+figura 7-4. La pasada hacia adelante y atrás de una red neuronal simple.
+Durante la pasada hacia atrás, cada parámetro entrenable viene con valores
+adicionales, su gradiente y sus estados de optimizador. Por lo tanto, cuantos
+más parámetros entrenables haya, más memoria se necesitará para
+almacenar estos valores adicionales.
+Matemática de la memoria
+Es útil saber cuánta memoria necesita un modelo para poder utilizar el
+hardware adecuado para él. A menudo, puede que ya disponga del hardware
+y necesite calcular si puede permitirse utilizar un determinado modelo. Si
+un modelo requiere 30 GB de memoria para hacer inferencias, un chip con
+24 GB de memoria no será suficiente.
+La huella de memoria de un modelo depende tanto del modelo como de la
+carga de trabajo y de las distintas técnicas de optimización utilizadas para
+reducir su uso de memoria. Como es imposible tener en cuenta todas las
+técnicas de optimización y cargas de trabajo, en esta sección solo esbozaré
+las fórmulas para cálculos aproximados, que debería darle una idea
+aproximada de cuánta memoria necesita para hacer funcionar un modelo,
+tanto durante la inferencia como durante el entrenamiento.

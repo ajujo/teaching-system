@@ -1,0 +1,30 @@
+Creating periodic features from cyclical variables
+253
+With fit(), DecisionTreeFeatures() finds the feature combinations and trains the decision
+trees. With transform(), DecisionTreeFeatures() adds the features resulting from the
+decision trees to the DataFrame.
+Note
+If you are training regression or multi-class classification, the new features will be either the
+prediction of the continuous target or the class. If you are training a binary classification model,
+the new features will result from the probability of class 1.
+After adding the new features, we compared their relationship to the target by analyzing Pearson's
+correlation coefficient, which returned a measure of linear association. We saw that the features derived
+from trees had a greater correlation coefficient.
+See also
+If you want to know more about what mutual information is and how to calculate it, check out this
+article: https://www.blog.trainindata.com/mutual-information-with-python/.
+Creating periodic features from cyclical variables
+Some features are periodic - for example, the hours in a day, the months in a year, and the days in a
+week. They all start at a certain value (say, January), go up to a certain other value (say, December),
+and then start over from the beginning. Some features are numeric, such as the hours, and some can be
+represented with numbers, such as the months, with values of 1 to 12. Yet, this numeric representation
+does not capture the periodicity or cyclical nature of the variable. For example, December (12) is closer
+to January (1) than June (6); however, this relationship is not captured by the numerical representation
+of the feature. But we could change it if we transformed these variables with the sine and cosine, two
+naturally periodic functions.
+Encoding cyclical features with the sine and cosine functions allows linear models to leverage the
+cyclical nature of features and reduce their modeling error. In this recipe, we will create new features
+from periodic variables that capture the cyclical nature of time.
+Getting ready
+Trigonometric functions, such as sine and cosine, are periodic, with values cycling between -1 and 1
+every 2π cycles, as shown here:

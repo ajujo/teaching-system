@@ -1,0 +1,35 @@
+Chapter 2
+45
+result = chain.invoke({"topic": "programming"})
+print(result)
+This produces a programming joke:
+Why don't programmers like nature?
+It has too many bugs!
+Without LCEL, the same workflow is equivalent to separate function calls with manual data 
+passing:
+formatted_prompt = prompt.invoke({"topic": "programming"})
+llm_output = llm.invoke(formatted_prompt)
+result = output_parser.invoke(llm_output)
+As you can see, we have detached chain construction from its execution.
+In production applications, this pattern becomes even more valuable when handling complex 
+workflows with branching logic, error handling, or parallel processing – topics we’ll explore in 
+Chapter 3.
+Complex chain example
+While the simple joke generator demonstrated basic LCEL usage, real-world applications typ­
+ically require more sophisticated data handling. Let’s explore advanced patterns using a story 
+generation and analysis example.
+In this example, we’ll build a multi-stage workflow that demonstrates how to:
+1.	
+Generate content with one LLM call
+2.	
+Feed that content into a second LLM call
+3.	
+Preserve and transform data throughout the chain
+from langchain_core.prompts import PromptTemplate
+from langchain_google_genai import GoogleGenerativeAI
+from langchain_core.output_parsers import StrOutputParser
+# Initialize the model
+llm = GoogleGenerativeAI(model="gemini-1.5-pro")
+# First chain generates a story
+story_prompt = PromptTemplate.from_template("Write a short story about 
+{topic}")

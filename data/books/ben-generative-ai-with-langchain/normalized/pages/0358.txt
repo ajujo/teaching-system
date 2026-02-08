@@ -1,0 +1,35 @@
+Chapter 8
+331
+While final response evaluation focuses on outcomes, trajectory evaluation examines the process
+itself. This approach is particularly valuable for complex agents that employ multiple tools, rea­
+soning steps, or decision points to complete tasks. By evaluating the path taken, we can identify
+exactly where and how agents succeed or fail, even when the final answer is incorrect.
+Trajectory evaluation compares the actual sequence of steps an agent took against an expected
+sequence, calculating a score based on how many expected steps were completed correctly. This
+gives partial credit to agents that follow some correct steps even if they don't reach the right
+final answer.
+Let's implement a custom trajectory evaluator for a healthcare agent that responds to medi­
+cation questions:
+from langsmith import Client
+# Custom trajectory subsequence evaluator
+def trajectory_subsequence(outputs: dict, reference_outputs: dict) ->
+float:
+    """Check how many of the desired steps the agent took."""
+    if len(reference_outputs['trajectory']) > len(outputs['trajectory']):
+        return False
+
+    i = j = 0
+    while i < len(reference_outputs['trajectory']) and j <
+len(outputs['trajectory']):
+        if reference_outputs['trajectory'][i] == outputs['trajectory'][j]:
+            i += 1
+        j += 1
+
+    return i / len(reference_outputs['trajectory'])
+# Create example dataset with expected trajectories
+client = Client()
+trajectory_dataset = client.create_dataset(
+    "Healthcare Agent Trajectory Evaluation",
+    description="Evaluates agent trajectory for medication queries"
+)
+# Add example with expected trajectory

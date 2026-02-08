@@ -1,0 +1,30 @@
+Evaluating LLMs
+262
+This evaluation is essential for several reasons, such as selecting the most relevant LLM or making
+sure that the fine-tuning process actually improved the model. In this section, we will compare
+ML and LLM evaluation to understand the main differences between these two fields. We will
+then explore benchmarks for general-purpose, domain-specific, and task-specific models.
+Comparing ML and LLM evaluation
+ML evaluation is centered on assessing the performance of models designed for tasks like prediction, classification, and regression. Unlike the evaluation of LLMs, which often focuses on
+how well a model understands and generates language, ML evaluation is more concerned with
+how accurately and efficiently a model can process structured data to produce specific outcomes.
+This difference comes from the nature of the tasks these models handle. ML models are generally designed for narrowly defined problems, such as predicting stock prices or detecting outliers, which often involve numerical or categorical data, making the evaluation process more
+straightforward. On the other hand, LLMs are tasked with interpreting and generating language,
+which adds a layer of subjectivity to the evaluation process. Instead of relying solely on numerical
+benchmarks, LLM evaluation requires a more nuanced approach and often incorporates qualitative assessments, examining how well the model produces coherent, relevant, and contextually
+accurate responses in natural language.
+In particular, we can see three key differences in how these models work, which impact the
+evaluation process:
+•
+Numerical metrics: Evaluating ML models typically involves measuring objective performance metrics, such as accuracy, precision, recall, or mean squared error, depending
+on the type of task at hand. This is less clear with LLMs, which can handle multiple tasks
+(hence, multiple evaluations) and can rarely rely on the same numerical metrics.
+•
+Feature engineering: In traditional ML, a critical part of the process involves manually
+selecting and transforming relevant data features before training the model. Evaluating
+the success of this feature engineering often becomes part of the broader model evaluation. LLMs, however, are designed to handle raw text data directly, reducing the need for
+manual feature engineering.
+•
+Interpretability: With ML models, it is easier to interpret why a model made certain predictions or classifications, and this interpretability can be a core part of their evaluation.
+This direct interpretation is not possible with LLMs. However, requesting explanations
+during the generation process can give insights into the model's decision-making process.

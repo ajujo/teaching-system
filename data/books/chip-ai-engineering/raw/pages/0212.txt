@@ -1,0 +1,29 @@
+También pueden evaluar la calidad de las incrustaciones en función de su
+utilidad para su tarea. Las incrustaciones se utilizan en muchas tareas, como
+la clasificación, el modelado de temas, los sistemas de recomendación y el
+RAG. Un ejemplo de pruebas comparativas que miden la calidad de la
+incrustación en múltiples tareas es MTEB, Massive Text Embedding
+Benchmark (Muennigh-off et al., 2023).
+Utilizo textos como ejemplo, pero cualquier dato puede tener
+representaciones incrustadas. Por ejemplo, soluciones de comercio
+electrónico como Criteo y Coveo tienen incrustaciones para productos.
+Pinterest tiene incrustaciones para imágenes, gráficos, consultas e incluso
+usuarios.
+Una campo por explorar es crear incrustaciones conjuntas para datos de
+distintas modalidades. CLIP (Radford et al., 2021) fue uno de los primeros
+modelos importantes capaces de mapear datos de distintas modalidades,
+texto e imágenes, en un espacio de incrustación conjunto. ULIP
+(representación unificada de lenguaje, imágenes y nubes de puntos), (Xue et
+al., 2022) pretende crear representaciones unificadas de texto, imágenes y
+nubes de puntos 3D. ImageBind (Girdhar et al., 2023) aprende una
+incrustación conjunta a través de seis modalidades diferentes, incluyendo
+texto, imágenes y audio.
+La Figura 3-6 visualiza la arquitectura de CLIP. CLIP se entrena utilizando
+duplas (imagen, texto). El texto correspondiente a una imagen puede ser el
+pie de foto o un comentario asociado a esta imagen. Para cada dupla
+(imagen, texto), CLIP utiliza un codificador de texto para convertir el texto
+en una incrustación de texto, y un codificador de imagen para convertir la
+imagen en una incrustación de imagen. Luego, proyecta ambas
+incrustaciones en un espacio de incrustación conjunto. El objetivo del
+entrenamiento es conseguir que la incrustación de una imagen se aproxime
+a la incrustación del texto correspondiente en este espacio conjunto.

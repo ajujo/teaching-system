@@ -1,0 +1,32 @@
+Cuando se encuentran con informaciones contradictorias, algunas personas
+optan por quedarse con las más recientes. Algunas personas piden a los
+modelos de IA que juzguen con cuál quedarse. El modo de lidiar con las
+contradicciones depende del caso de uso. Tener contradicciones puede
+causar confusión a un agente, pero también puede ayudarle a sacar partido a
+diferentes perspectivas.
+Resumen
+Dada la popularidad de la RAG y el potencial de los agentes, los primeros
+lectores han mencionado que este es el capítulo que más les entusiasma.
+Este capítulo comenzó con la RAG, el patrón que surgió primero de los dos.
+Muchas tareas requieren amplios conocimientos previos que a menudo
+superan la ventana contextual de un modelo. Por ejemplo, los copilotos de
+código pueden necesitar acceso a bases de código enteras, y los asistentes
+de investigación, a analizar varios libros. Desarrollada originalmente para
+superar las limitaciones contextuales de un modelo, la RAG también
+permite un uso más eficiente de la información, mejorando la calidad de la
+respuesta y reduciendo los costos. Desde los primeros días de los modelos
+fundacionales, estaba claro que el patrón RAG sería inmensamente valioso
+para una amplia gama de aplicaciones, y desde entonces se ha adoptado
+rápidamente en casos de uso tanto de consumidores finales como
+empresariales.
+La RAG emplea un proceso en dos fases. Primero recupera información
+relevante de la memoria externa y luego la utiliza para generar respuestas
+más precisas. El éxito de un sistema RAG depende de la calidad de su
+recuperador. Los recuperadores basados en términos, como Elasticsearch y
+BM25, son mucho más ligeros de implementar y pueden proporcionar
+líneas de base sólidas. Los recuperadores basados en incrustaciones son más
+intensivos desde el punto de vista computacional, pero tienen potencial para
+superar a los algoritmos basados en términos.
+La recuperación basada en incrustaciones se nutre de la búsqueda vectorial,
+que también es la columna vertebral de muchas aplicaciones básicas de
+Internet, como los sistemas de búsqueda y recomendación. Muchos

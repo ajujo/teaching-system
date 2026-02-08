@@ -1,0 +1,29 @@
+Chapter 7
+265
+Even if you don't want to fine-tune a model, benchmarks like Chatbot Arena or IFEval are a good
+way to compare different instruct models. For instance, you want great conversational abilities
+if you're building a chatbot. However, this is not necessary if your end goal is something like
+information extraction from unstructured documents. In this case, you will benefit more from
+excellent instruction-following skills to understand and execute tasks.
+While these benchmarks are popular and useful, they also suffer from inherent flaws. For example, public benchmarks can be gamed by training models on test data or samples that are very
+similar to benchmark datasets. Even human evaluation is not perfect and is often biased toward
+long and confident answers, especially when they're nicely formatted (e.g., using Markdown).
+On the other hand, private test sets have not been scrutinized as much as public ones and might
+have their own issues and biases.
+This means that benchmarks are not a single source of truth but should be used as signals. Once
+multiple evaluations provide a similar answer, you can raise your confidence level about the real
+capabilities of a model.
+Domain-specific LLM evaluations
+Domain-specific LLMs don't have the same scope as general-purpose models. This is helpful to
+target more fine-grained capabilities with more depth than the previous benchmarks.
+Within the category, the choice of benchmarks entirely depends on the domain in question. For
+common applications like a language-specific model or a code model, it is recommended to
+search for relevant evaluations and even benchmark suites. These suites encompass different
+benchmarks and are designed to be reproducible. By targeting different aspects of a domain, they
+often capture domain performance more accurately.
+To illustrate this, here is a list of domain-specific evaluations with leaderboards on the Hugging
+Face Hub:
+•
+Open Medical-LLM Leaderboard: Evaluates the performance of LLMs in medical question-answering tasks. It regroups 9 metrics, with 1,273 questions from the US medical license exams (MedQA), 500 questions from PubMed articles (PubMedQA), 4,183 questions
+from Indian medical entrance exams (MedMCQA), and 1,089 questions from 6 sub-categories of MMLU (clinical knowledge, medical genetics, anatomy, professional medicine,
+college biology, and college medicine).

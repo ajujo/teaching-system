@@ -1,0 +1,25 @@
+– técnicas PEFT, Afinado eficiente en parámetros
+– visión general, Afinado
+ajuste fino completo, Técnicas de afinado
+ajuste fino de preferencias, Afinado supervisado, Visión general del afinado
+ajuste fino de tareas específicas de dominio, Razones para no hacer un
+afinado
+ajuste fino eficiente en parámetros, Técnicas de afinado
+– LoRA, Técnicas PEFT
+– cómo funciona, LoRA
+– configuraciones, ¿Por qué funciona LoRA?
+– LoRA cuantizado, Servir adaptadores LoRA
+– servicio de adaptadores LoRA, Configuraciones LoRA
+– técnicas basadas en adaptadores/prompts suaves, Afinado eficiente en
+parámetros
+ajuste fino multitarea, LoRA cuantizado
+ajuste fino parcial, Técnicas de afinado
+ajuste fino secuencial, Fusión de modelos y afinado multitarea
+ajuste fino simultáneo, LoRA cuantizado
+ajuste fino supervisado (SFT), Post-entrenamiento, Post-entrenamiento,
+Visión general del afinado
+algoritmo de incrustación, Similitud semántica, Introducción a la
+incrustación
+algoritmos de clasificación, Ranking de modelos con evaluación
+comparativa
+algoritmos de recuperación, Arquitectura RAG

@@ -1,0 +1,38 @@
+Evaluation and Testing
+334
+Trajectory evaluation provides unique insights beyond simple pass/fail assessments:
+•	
+Identifying failure points: Pinpoint exactly where agents deviate from expected paths
+•	
+Process improvement: Recognize when agents take unnecessary detours or inefficient 
+routes
+•	
+Tool usage patterns: Understand how agents leverage available tools and when they 
+make suboptimal choices
+•	
+Reasoning quality: Evaluate the agent’s decision-making process independent of final 
+outcomes
+For example, an agent might provide a correct medication dosage but reach it through an inappro­
+priate trajectory (bypassing safety checks or using unreliable data sources). Trajectory evaluation 
+reveals these process issues that outcome-focused evaluation would miss.
+Consider using trajectory evaluation in conjunction with other evaluation types for a holistic as­
+sessment of your agent’s performance. This approach is particularly valuable during development 
+and debugging phases, where understanding the why behind agent behavior is as important as 
+measuring final output quality.
+By implementing continuous trajectory monitoring, you can track how agent behaviors evolve 
+as you refine prompts, add tools, or modify the underlying model, ensuring improvements in one 
+area don’t cause regressions in the agent’s overall decision-making process.
+Evaluating CoT reasoning
+Now suppose we want to evaluate the agent’s reasoning. For example, going back to our earlier 
+example, the agent must not only answer “What is the current interest rate?” but also provide 
+reasoning behind its answer. We can use the COT_QA evaluator for chain-of-thought evaluation.
+from langchain.evaluation import load_evaluator
+# Simulated chain-of-thought reasoning provided by the agent:
+agent_reasoning = (
+    "The current interest rate is 0.25%. I determined this by recalling 
+that recent monetary policies have aimed "
+    "to stimulate economic growth by keeping borrowing costs low. A rate 
+of 0.25% is consistent with the ongoing "
+    "trend of low rates, which encourages consumer spending and business 
+investment."
+)

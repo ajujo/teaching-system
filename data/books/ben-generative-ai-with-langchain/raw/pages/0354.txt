@@ -1,0 +1,30 @@
+Chapter 8
+327
+The output shows how providing a reference answer significantly changes the evaluation results:
+{'reasoning': "The assistant's response is helpful, relevant, and correct. 
+It directly answers the user's question about the current Federal Reserve 
+interest rate. However, it lacks depth as it does not provide any 
+additional information or context about the interest rate, such as how it 
+is determined or what it means for the economy. Rating: [[8]]", 'score': 
+8}
+Notice how the score increased dramatically from 3 (in the previous example) to 8 when we 
+provided a reference answer. This demonstrates the importance of ground truth in evaluation. 
+Without a reference, the evaluator focused on the lack of citation and timestamp. With a refer­
+ence confirming the factual accuracy, the evaluator now focuses on assessing completeness and 
+depth instead of verifiability.
+Both of these approaches leverage Mistral’s LLM as an evaluator, which can provide more nuanced 
+and context-aware assessments than simple string matching or statistical methods. The results 
+from these evaluations should be consistent when using temperature=0, though outputs may 
+differ from those shown in the book due to changes on the provider side.
+Evaluating tone and conciseness
+Beyond factual accuracy, many applications require responses that meet certain stylistic criteria. 
+Healthcare applications, for example, must provide accurate information in a friendly, approach­
+able manner without overwhelming patients with unnecessary details. The following example 
+demonstrates how to evaluate both conciseness and tone using LangChain’s criteria evaluators, 
+allowing developers to assess these subjective but critical aspects of response quality:
+We start by importing the evaluator loader and a chat LLM for evaluation (for example GPT-4o):
+from langchain.evaluation import load_evaluator
+from langchain.chat_models import ChatOpenAI
+evaluation_llm = ChatOpenAI(model="gpt-4o", temperature=0)
+Your output may differ from the book example due to model version differences and 
+inherent variations in LLM responses (depending on the temperature).

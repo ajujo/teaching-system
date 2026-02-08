@@ -1,0 +1,17 @@
+Chapter 5
+225
+responses with human expectations, thereby improving its accuracy
+and relevance. The goal is to ensure that the model can respond
+effectively to a wide range of queries, making it a valuable tool
+for applications such as chatbots and virtual assistants.
+This is correct and properly formatted with the Alpaca chat template.
+12.	 Now that our model has been successfully fine-tuned, we can save it locally and/or push
+it to the Hugging Face Hub using the following functions.
+model.save_pretrained_merged("model", tokenizer, save_
+method="merged_16bit")
+model.push_to_hub_merged("mlabonne/TwinLlama-3.1-8B", tokenizer,
+save_method="merged_16bit")
+Congratulations on fine-tuning a base model from scratch! During training, you can access Comet
+ML to monitor your training loss, validation loss, and many other metrics. You want to make sure
+that these metrics correspond to what is expected. Figure 5.11 shows the training run corresponding to the previous code in Comet ML.
+Figure 5.11 - Four monitored metrics during fine-tuning in Comet ML

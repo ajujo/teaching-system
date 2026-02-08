@@ -1,0 +1,73 @@
+Index
+452
+code LLMs, evolution 271-273
+considerations, implementing 269-271
+engineering approaches 274-277
+future of development 269
+LangChain integrations 281
+security and risk mitigation 277-279
+local models
+Hugging Face models 50, 51
+Ollama 49
+running 48
+working with 51-54
+long-term memory 262
+long videos
+summarizing 436-438
+M
+Map approach 94
+Maximal Marginal Relevance (MMR) 140
+MCP client 379
+MCP server 379
+memory 3
+memory mechanisms 97
+chat history, saving to database 99-101
+chat history, trimming 97, 98
+LangGraph checkpoints 101-103
+Miniconda
+download link 26
+Mistral models 30
+Mixtral 7
+ML model
+agent, asking to build neural network 298
+agent execution and results 299-301
+Python-capable agent, setting up 297
+training 297
+MLOps 353
+Model Context Protocol (MCP) 379
+model interfaces, LangChain 32
+chat models, working with 34, 35
+development testing 33
+LLM interaction patterns 32, 33
+model behavior, controlling 38, 39
+parameters, selecting for applications 40
+reasoning models 36-38
+model licenses
+reference link 8
+model openness framework (MOF) 8
+model scaling laws
+Chinchilla scaling law 5
+KM scaling law 5
+model selection strategies, LangChain 395
+cascading model approach 397, 398
+tiered model selection 395-397
+modern LLM landscape 2-4
+licensing 7, 8
+LLM provider landscape 6, 7
+model comparison 4-6
+Monte Carlo Tree Search (MCTS) 415
+used, for trimming ToT 261, 262
+multi-agent architectures 227
+communication protocols 231-241
+communication, via shared
+messages list 245-247
+consensus mechanism 229-231
+handoffs 243, 244
+LangGraph platform 247
+LangGraph streaming 241-243
+roles and specialization 228, 229
+multimodal AI applications 54
+image understanding 58
+text-to-image 55
+Multimodal Diffusion Transformer
+(MMDiT) 57

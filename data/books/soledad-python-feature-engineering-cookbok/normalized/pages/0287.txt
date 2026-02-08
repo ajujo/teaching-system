@@ -1,0 +1,22 @@
+Creating New Features
+264
+In the following figure, we can see the relationship between the different splines and the values
+of the predictor variable, X:
+Figure 8.23 - Splines plotted against the values of the predictor variable, X
+9.
+Now, fit a linear model to predict y from the spline features obtained from X, by utilizing a
+Ridge regression, and then obtain the predictions of the model:
+linmod = Ridge(random_state=10)
+linmod.fit(X_t, y)
+pred = linmod.predict(X_t)
+10.	 Now, plot the relationship between X and y, and overlay the predictions:
+plt.plot(X, y)
+plt.plot(X, pred)
+plt.ylabel("y")
+plt.xlabel("X")
+plt.legend(
+    ["y", "splines"],
+    bbox_to_anchor=(1, 1),
+    loc="upper left")
+In the following figure, we can see that by utilizing spline features as input, the Ridge regression
+can better predict the shape of y:

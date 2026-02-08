@@ -1,0 +1,36 @@
+Imputing Missing Data
+26
+13.	 Let's make a list with the names of the numerical and categorical variables:
+numvars = X_train.select_dtypes(
+    exclude="O").columns.to_list()
+catvars = X_train.select_dtypes(
+    include="O").columns.to_list()
+14.	 Let's set up a pipeline to perform mean and frequent category imputation while marking the
+missing data:
+pipe = ColumnTransformer([
+    ("num_imputer", SimpleImputer(
+        strategy="mean",
+        add_indicator=True),
+    numvars),
+    ("cat_imputer", SimpleImputer(
+        strategy="most_frequent",
+        add_indicator=True),
+    catvars),
+]).set_output(transform="pandas")
+15.	 Now, let's carry out the imputation:
+X_train_t = pipe.fit_transform(X_train)
+X_test_t = pipe.transform(X_test)
+Make sure to explore X_train_t.head() to get familiar with the pipeline's output.
+How it works...
+To add missing indicators using pandas, we used isna(), which created a new vector assigning the
+value of True if there was a missing value or False otherwise. We used astype(int) to convert
+the Boolean vectors into binary vectors with values 1 and 0.
+To add a missing indicator with feature-engine, we used AddMissingIndicator(). With
+fit() the transformer found the variables with missing data. With transform() it appended the
+missing indicators to the right of the train and test sets.
+To sequentially add missing indicators and then replace the nan values with the most frequent category
+or the mean, we lined up Feature-engine's AddMissingIndicator(), CategoricalImputer(),
+and MeanMedianImputer() within a pipeline. The fit() method from the pipeline
+made the transformers find the variables with nan and calculate the mean of the numerical variables
+and the mode of the categorical variables. The transform() method from the pipeline made
+the transformers add the missing indicators and then replace the missing values with their estimates.

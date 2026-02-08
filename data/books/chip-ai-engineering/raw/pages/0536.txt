@@ -1,0 +1,15 @@
+figura 7-20. Si fusiona don adaptadores LoRA mediante concatenación, el rango del
+adaptador fusionado será la suma de los rangos de ambos adaptadores.
+No se recomienda la concatenación, porque no reduce la huella de memoria
+en comparación con servir los distintos modelos por separado. La
+concatenación puede mejorar el rendimiento, pero el aumento de
+rendimiento puede no compensar el número de parámetros adicionales. 34
+Tácticas de afinado
+En este capítulo se han analizado múltiples enfoques del afinado, qué
+problemas resuelve y cómo funciona. En esta última sección, me centraré
+en tácticas de afinado más prácticas.
+Afinado de marcos y modelos base
+Aunque el afinado tiene muchos aspectos (decidir si se va a realizar,
+adquirir datos y mantener los modelos afinados) que son difíciles, el
+proceso real de afinado es más sencillo. Hay que elegir tres cosas: un
+modelo base, un método de afinado y un marco para el afinado.

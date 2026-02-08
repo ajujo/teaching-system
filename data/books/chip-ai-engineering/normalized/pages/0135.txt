@@ -1,0 +1,13 @@
+figura 2-11. Shoggoth con un emoticono de sonrisa. Adaptación de una imagen
+original compartida por anthrupad.
+Tenga en cuenta que una combinación de pre-entrenamiento, SFT y afinado
+de preferencias es la solución más popular hoy en día para crear modelos
+fundacionales, pero no es la única solución. Puede saltarse cualquiera de los
+pasos, como verá enseguida.
+Afinado supervisado
+Como se explica en el Capítulo 1, es probable que el modelo pre-entrenado
+esté optimizado para completar y no para conversar. Si da al modelo el
+input "Cómo hacer pizza", el modelo seguirá completando esta frase, ya que
+el modelo no tiene el concepto de que se supone que esto es una
+conversación. Cualquiera de las tres opciones siguientes puede ser una
+terminación válida:

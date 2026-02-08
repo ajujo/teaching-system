@@ -1,0 +1,30 @@
+Como se explica más adelante en el Capítulo 9, la naturaleza paralelizable
+del llenado previo y el aspecto secuencial de la decodificación motivan
+muchas técnicas de optimización para hacer que la inferencia del modelo
+lingüístico sea más barata y rápida.
+Mecanismo de atención
+En el corazón de la arquitectura de transformadores está el mecanismo de
+atención. Entender este mecanismo es necesario para comprender cómo
+funcionan los modelos de transformadores. En su interior, el mecanismo de
+atención aprovecha los vectores de clave, de valor y de consulta:
+El vector de consulta (Q) representa el estado actual del
+decodificador en cada paso de decodificación. Utilizando el mismo
+ejemplo del resumen de un libro, este vector de consulta puede
+considerarse como la persona que busca información para crear un
+resumen.
+Cada vector de clave (K) representa un token anterior. Si cada
+token anterior es una página del libro, cada vector de clave es
+como el número de página. Tenga en cuenta que en un paso de
+decodificación determinado, los tokens anteriores incluyen tanto
+los tokens de input como los tokens generados previamente.
+Cada vector de valor (V) representa el valor real de un token
+anterior, aprendido por el modelo. Cada vector de valor es como el
+contenido de la página.
+El mecanismo de atención calcula cuánta atención prestar a un token de
+input realizando un producto punto entre el vector de consulta y su vector
+de clave. Una puntuación alta significa que el modelo utilizará más
+contenido de esa página (su vector de valor) al generar el resumen del libro.
+En la Figura 2-5 se muestra una visualización del mecanismo de atención
+con los vectores de clave, valor y consulta. En esta visualización, el vector
+de consulta busca información de los tokens anteriores How, are, you,
+?, ¿ para generar el siguiente token.

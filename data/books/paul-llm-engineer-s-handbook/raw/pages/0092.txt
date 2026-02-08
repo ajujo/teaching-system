@@ -1,0 +1,25 @@
+Chapter 3
+61
+Implementing the LLM Twin’s data collection pipeline
+As we presented in Chapter 2, the entry point to each pipeline from our LLM Twin project is a 
+ZenML pipeline, which can be configured at runtime through YAML files and run through the 
+ZenML ecosystem. Thus, let’s start by looking into the ZenML digital_data_etl pipeline. You’ll 
+notice that this is the same pipeline we used as an example in Chapter 2 to illustrate ZenML. But 
+this time, we will dig deeper into the implementation, explaining how the data collection works 
+behind the scenes. After understanding how the pipeline works, we will explore the implemen-
+tation of each crawler used to collect data from various sites and the MongoDB documents used 
+to store and query data from the data warehouse.
+ZenML pipeline and steps
+In the code snippet below, we can see the implementation of the ZenML digital_data_etl 
+pipeline, which inputs the user’s full name and a list of links that will be crawled under that user 
+(considered the author of the content extracted from those links). Within the function, we call two 
+steps. In the first one, we look up the user in the database based on its full name. Then, we loop 
+through all the links and crawl each independently. The pipeline’s implementation is available 
+in our repository at pipelines/digital_data_etl.py.
+from zenml import pipeline
+from steps.etl import crawl_links, get_or_create_user
+@pipeline
+def digital_data_etl(user_full_name: str, links: list[str]) -> str:
+    user = get_or_create_user(user_full_name)
+    last_step = crawl_links(user=user, links=links)
+    return last_step.invocation_id

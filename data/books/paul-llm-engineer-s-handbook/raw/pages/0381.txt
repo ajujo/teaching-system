@@ -1,0 +1,33 @@
+RAG Inference Pipeline
+350
+For example, in our LLM Twin use case, we used only the content field of our articles, posts, or 
+repositories to query the vector DB. When using a multi-index strategy, along with the content 
+field, we could index the embeddings of the platform where the content was posted or when the 
+content was published. This could impact the final accuracy of your retrieval as different platforms 
+have different types of content, or more recent content is usually more relevant. Frameworks 
+such as Superlinked make multi-indexing easy. For example, in the code snippet below, using 
+Superlinked, we defined a multi-index on the content and platform for our article collection in 
+just a few lines of code:
+from superlinked.framework.common.schema.id_schema_object import IdField
+from superlinked.framework.common.schema.schema import schema
+from superlinked.framework.common.schema.schema_object import String
+… # Other Superlinked imports. 
+@schema
+class ArticleSchema:
+    id: IdField
+    platform: String
+    content: String
+article = ArticleSchema()
+articles_space_content = TextSimilaritySpace(
+    text=chunk(article.content, chunk_size=500, chunk_overlap=50),
+    model=settings.EMBEDDING_MODEL_ID,
+)
+articles_space_plaform = CategoricalSimilaritySpace(
+    category_input=article.platform,
+    categories=["medium", "substack", "wordpress"],
+    negative_filter=-5.0,
+)
+article_index = Index(
+    [articles_space_content, articles_space_plaform],
+    fields=[article.author_id],
+)

@@ -1,0 +1,35 @@
+Encoding Categorical Variables
+74
+For an implementation of this encoding method using MEstimateEncoder(), visit this book's
+GitHub repository: https://github.com/PacktPublishing/Python-Featureengineering-Cookbook-Third-Edition/blob/main/ch02-categoricalencoding/Recipe-06-Target-mean-encoding.ipynb.
+Encoding with Weight of Evidence
+Weight of Evidence (WoE) was developed primarily for credit and financial industries to facilitate
+variable screening and exploratory analysis and to build more predictive linear models to evaluate
+the risk of loan defaults.
+The WoE is computed from the basic odds ratio:
+WoE  =  log(  proportion positive cases
+
+__________________
+
+proportion negative cases )
+Here, positive and negative refer to the values of the target being 1 or 0, respectively. The proportion
+of positive cases per category is determined as the sum of positive cases per category group divided by
+the total positive cases in the training set. The proportion of negative cases per category is determined
+as the sum of negative cases per category group divided by the total number of negative observations
+in the training set.
+WoE has the following characteristics:
+•	 WoE = 0 if p(positive) / p(negative) = 1; that is, if the outcome is random
+•	 WoE > 0 if p(positive) > p(negative)
+•	 WoE < 0 if p(negative) > p(positive)
+This allows us to directly visualize the predictive power of the category in the variable: the higher the
+WoE, the more likely the event will occur. If the WoE is positive, the event is likely to occur.
+Logistic regression models a binary response, Y, based on X predictor variables, assuming that there
+is a linear relationship between X and the log of odds of Y:
+log( p(Y  =  1)
+_
+p(Y  =  0) ) = b 0+ b 1 X 1+ b 2 X 2+ ... + b n X n
+Here, log (p(Y=1)/p(Y=0)) is the log of odds. As you can see, the WoE encodes the categories in the
+same scale - that is, the log of odds - as the outcome of the logistic regression.
+Therefore, by using WoE, the predictors are prepared and coded on the same scale, and the parameters
+in the logistic regression model - that is, the coefficients - can be directly compared.
+In this recipe, we will perform WoE encoding using pandas and feature-engine.

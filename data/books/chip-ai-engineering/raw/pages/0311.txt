@@ -1,0 +1,32 @@
+necesitado para completar la tarea? Es muy diferente si un sistema es capaz
+de resolver un problema en dos vueltas o en veinte.
+Dado que lo que realmente importa a los usuarios es si un modelo puede
+ayudarles a realizar sus tareas, la evaluación basada en tareas es más
+importante. Sin embargo, un reto de la evaluación basada en tareas es que
+puede resultar difícil determinar los límites entre ellas. Imagine una
+conversación que mantiene con ChatGPT. Puede hacer varias preguntas a la
+vez. Cuando envía una nueva consulta, ¿se trata del seguimiento de una
+tarea existente o de una tarea nueva?
+Un ejemplo de evaluación basada en tareas es la prueba comparativa
+twenty_questions, inspirada en el clásico juego Twenty Questions, del
+conjunto de pruebas comparativas BIG-bench. Una instancia del modelo
+(Alice) elige un concepto, como manzana, coche o computadora. Otra
+instancia del modelo (Bob) le hace a Alice una serie de preguntas para tratar
+de identificar este concepto. Alice solo puede responder sí o no. La
+puntuación se basa en si Bob adivina correctamente el concepto y en
+cuántas preguntas tarda Bob en adivinarlo. Veamos un ejemplo de
+conversación plausible en esta tarea, tomado del repositorio GitHub de
+BIG-bench:
+Bob: ¿Es el concepto un animal?
+Alice: No.
+Bob: ¿Es el concepto una planta?
+Alice: Sí.
+Bob: ¿Crece en el océano?
+Alice: No.
+Bob: ¿Crece en un árbol?
+Alice: Sí.
+Bob: ¿Es una manzana?
+[La suposición de Bob es correcta, y la tarea se ha completado.]
+Paso 2. Crear una directriz de evaluación
+La creación de una directriz de evaluación clara es el paso más importante
+del proceso de evaluación. Una directriz ambigua da lugar a puntuaciones

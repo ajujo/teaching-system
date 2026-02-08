@@ -1,0 +1,48 @@
+tabla 6-2. Recuperación basada en términos y recuperación semántica por
+velocidad, rendimiento y costo.
+Recuperación
+basada en términos
+Recuperación basada
+en incrustaciones
+Velocidad de
+consulta
+Mucho más rápida que
+la recuperación basada
+en incrustaciones
+La generación de consultas
+y la búsqueda de vectores
+pueden ser lentas
+Rendimiento
+Gran rendimiento
+inicial, pero difícil de
+mejorar
+Puede recuperar
+documentos erróneos
+debido a la ambigüedad
+de los términos
+Puede superar a la
+recuperación basada en
+términos si se le afina
+Permite utilizar consultas
+más naturales, ya que se
+centra en la semántica y no
+los términos
+Costo
+Mucho más barata que
+la recuperación basada
+en incrustaciones
+Las soluciones de
+incrustación,
+almacenamiento vectorial y
+búsqueda vectorial pueden
+ser caras
+Con los sistemas de recuperación se pueden hacer ciertas concesiones entre
+indexación y consulta. Cuanto más detallado sea el índice, más preciso será
+el proceso de recuperación, pero el proceso de indexación será más lento y
+consumirá más memoria. Imagínese que crea un índice de clientes
+potenciales. Añadir más detalles (por ejemplo, nombre, empresa, correo
+electrónico, teléfono, intereses) facilita la búsqueda de personas relevantes,
+pero lleva más tiempo construirlo y requiere más almacenamiento.
+En general, un índice detallado como el HNSW proporciona una gran
+precisión y tiempos de consulta rápidos, pero construirlo requiere mucho
+tiempo y memoria. Por el contrario, un índice más sencillo como el LSH es

@@ -1,0 +1,18 @@
+Chapter 5
+197
+To simplify this process and ensure properly structured results, we can employ structured generation techniques. Structured generation is an effective method to force an LLM to follow a
+predefined template, such as JSON, pydantic classes, or regular expressions. In the following, we
+will use OpenAI's JSON mode feature, which provides a more robust way to return valid JSON
+objects and reduce the need for extensive post-processing.
+Based on this description, the following figure summarizes every step of the synthetic data pipeline we want to build.
+Figure 5.6 - Synthetic data generation pipeline from raw text to instruction dataset
+Let's now implement it in Python. You can implement it as part of the LLMOps pipeline, or as a
+standalone script:
+1.
+We want to make sure that the following libraries are installed. The OpenAI library will
+allow us to interact with a model to generate the instruction data, and datasets will format
+it into a Hugging Face-compatible format. The tqdm library is installed to visualize the
+progress during the data generation process.
+openai==1.37.1
+datasets==2.20.0
+tqdm==4.66.4

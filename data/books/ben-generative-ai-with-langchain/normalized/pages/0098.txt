@@ -1,0 +1,19 @@
+Chapter 3
+71
+Figure 3.1: LangGraph built-in visualization of our first workflow
+Our function accesses the state by simply reading from the dictionary that LangGraph automati­
+cally provides as input. LangGraph isolates state updates. When a node receives the state, it gets
+an immutable copy, not a reference to the actual state object. The node must return a dictionary
+containing the specific keys and values it wants to update. LangGraph then handles merging these
+updates into the master state. This pattern prevents side effects and ensures that state changes
+are explicit and traceable.
+The only way for a node to modify a state is to provide an output dictionary with key-value pairs
+to be updated, and LangGraph will handle it. A node should modify at least one key in the state.
+A graph instance itself is a Runnable (to be precise, it inherits from Runnable) and we can execute
+it. We should provide a dictionary with the initial state, and we'll get the final state as an output:
+res = graph.invoke({"job_description":"fake_jd"})
+print(res)
+>>...Analyzing a provided job description ...
+...generating application...
+{'job_description': 'fake_jd', 'is_suitable': True, 'application': 'some_
+fake_application'}

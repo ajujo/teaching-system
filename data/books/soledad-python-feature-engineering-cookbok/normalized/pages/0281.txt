@@ -1,0 +1,22 @@
+Creating New Features
+258
+If we execute df.head(), we will see the first five rows of the toy DataFrame:
+Figure 8.16 - The toy DataFrame with three cyclical features
+9.
+Set up the transformer to create the sine and cosine features from these variables:
+cyclic = CyclicalFeatures(
+    variables=None,
+    drop_original=False,
+)
+Note
+By setting variables to None, CyclicalFeatures() will create trigonometric features
+from all numerical variables. To create trigonometric features from a subset of variables, we
+can pass the variables' names in a list to the variables parameter. We can retain or drop the
+original variables after creating the cyclical features using the drop_original parameter.
+10.	 To finish, add the features to the DataFrame and capture the result in a new variable:
+dft = cyclic.fit_transform(df)
+If we execute dft.head(), we will see the original and new features:
+Figure 8.17 - DataFrame with cyclical features plus the features
+created through the sine and cosine functions
+And that's it - we've created features by using the sine and cosine transformation automatically from
+multiple variables and added them directly to the original DataFrame.

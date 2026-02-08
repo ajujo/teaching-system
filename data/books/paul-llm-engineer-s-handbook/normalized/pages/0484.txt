@@ -1,0 +1,30 @@
+Chapter 11
+453
+As our implementation is already modular, using Opik makes it straightforward to log an endto-end trace of a user's request:
+from opik import track
+@track
+def call_llm_service(query: str, context: str | None) -> str:
+    llm = LLMInferenceSagemakerEndpoint(...)
+    answer = InferenceExecutor(llm, query, context).execute()
+    return answer
+@track
+def rag(query: str) -> str:
+    retriever = ContextRetriever()
+    documents = retriever.search(query, k=3 * 3)
+    context = EmbeddedChunk.to_context(documents)
+    answer = call_llm_service(query, context)
+    return answer
+The rag() function represents your application's entry point. All the other processing steps take
+place in the ContextRetriever and InferenceExector classes. Also, by decorating the call_llm_
+service() function, we can clearly capture the prompt sent to the LLM and its response.
+To add more granularity to our trace, we can further decorate other functions containing pre- or
+post-processing steps, such as the ContextRetriever search function:
+class ContextRetriever:
+     ...
+
+    @track
+
+    def search(
+        self,
+        query: str,
+        k: int = 3,

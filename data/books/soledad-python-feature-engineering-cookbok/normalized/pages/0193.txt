@@ -1,0 +1,37 @@
+Working with Outliers
+170
+Note
+Using the IQR rule over the transformed variable reveals new outliers. This is not surprising;
+removing observations at the extremes of the distribution alters parameters such as the median
+and quartile values, which in turn determine the length of the whiskers, potentially identifying
+additional observations as outliers. The tools that we use to identify outliers are just that: tools.
+To unequivocally identify outliers, we need to support these tools with additional data analysis.
+If thinking of removing error outliers from the dataset, make sure to compare and report the
+results with and without outliers, to see the extent of their impact on the models.
+How it works...
+The ge() and le() methods from pandas created Boolean vectors identifying observations exceeding
+or falling below thresholds set by the IQR proximity rule. We used these vectors with pandas loc to
+retain observations within the interval defined by the IQR.
+The feature-engine library's OutlierTrimmer() automates the procedure of removing
+outliers for multiple variables. OutlierTrimmer() can identify outliers based on the mean and
+standard deviation, IQR proximity rule, MAD, or quantiles. We can modify this behavior through
+the capping_method parameter.
+The methods to identify outliers can be made more or less conservative by changing the factor by
+which we multiply the IQR, the standard deviation, or MAD. With OutlierTrimmer(), we can
+control the strength of the methods through the fold parameter.
+With tails set to "both", OutlierTrimmer() found and removed outliers at both ends of the
+variables' distribution. To remove outliers just on one of the tails, we can pass "left" or "right"
+to the tails parameter.
+OutlierTrimmer() adopts the scikit-learn functionality with the fit() method, to learn
+parameters, and transform() to modify the dataset. With fit(), the transformer learned and
+stored the limits for each variable. With transform(), it removed the outliers from the data,
+returning pandas DataFrames.
+See also
+This is the study that I mentioned earlier that classifies outliers into errors; it is interesting and
+random: Leys C, et.al. 2019. How to Classify, Detect, and Manage Univariate and Multivariate Outliers,
+with Emphasis on Pre-Registration. International Review of Social Psychology. https://doi.
+org/10.5334/irsp.289.
+Bringing outliers back within acceptable limits
+Removing error outliers can be a valid strategy. However, this approach can reduce statistical power,
+in particular when there are outliers across many variables, because we end up removing big parts of
+the dataset. An alternative way to handle error outliers is by bringing outliers back within acceptable

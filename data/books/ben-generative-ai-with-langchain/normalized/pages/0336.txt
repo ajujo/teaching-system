@@ -1,0 +1,23 @@
+8
+Evaluation and Testing
+As we've discussed so far in this book, LLM agents and systems have diverse applications across
+industries. However, taking these complex neural network systems from research to real-world
+deployment comes with significant challenges and necessitates robust evaluation strategies and
+testing methodologies.
+Evaluating LLM agents and apps in LangChain comes with new methods and metrics that can
+help ensure optimized, reliable, and ethically sound outcomes. This chapter delves into the in­
+tricacies of evaluating LLM agents, covering system-level evaluation, evaluation-driven design,
+offline and online evaluation methods, and practical examples with Python code.
+By the end of this chapter, you will have a comprehensive understanding of how to evaluate LLM
+agents and ensure their alignment with intended goals and governance requirements. In all, this
+chapter will cover:
+•
+Why evaluations matter
+•
+What we evaluate: core agent capabilities
+•
+How we evaluate: methodologies and approaches
+•
+Evaluating LLM agents in practice
+•
+Offline evaluation

@@ -1,0 +1,41 @@
+where a particular tool call failed with a given error code. This enables precise debug‐
+ging of subtle issues that emerge only under real-world, multistep execution
+conditions.
+Loki, by contrast, serves as your log aggregation layer. It captures structured logs—
+often in JSON format—from across your agent infrastructure. Each LangGraph node
+can emit structured log events during its execution: when a user query is received,
+when a tool is invoked, when an LLM produces an ambiguous response, or when a
+fallback path is triggered. Logs can be annotated with span and trace IDs, making it
+easy to correlate logs and traces from the same user session or agent workflow. While
+Loki is a great fit for structured logs, teams requiring full-text search, role-based
+views, or higher ingestion throughput may also consider Elasticsearch or commercial
+options like Datadog logs or Honeycomb.
+Grafana unifies both of these data streams into a single pane of glass. It provides the
+visualization layer where logs from Loki and traces from Tempo can be explored side
+by side. Within Grafana, you can construct dashboards that show live trace data, drill
+down into individual requests, and correlate structured logs with performance met‐
+rics. You can also build custom alerting rules—for example, flagging when error rates
+for a particular agent spike above a threshold, or when tool response latency crosses a
+defined boundary.
+Together, OTel, Tempo, Loki, and Grafana form a complete, open source observabil‐
+ity stack for agent systems. They enable deep inspection of behavior, fast root cause
+analysis, historical trend evaluation, and proactive anomaly detection. This integra‐
+tion is what transforms raw telemetry into operational intelligence—and operational
+intelligence into a development accelerant. This observability enables real-time
+debugging, trend analysis, and continuous learning—all of which are essential to the
+safe and scalable deployment of intelligent agents in production.
+Visualization and Alerting
+Once your LangGraph agents are instrumented with OTel and streaming logs and
+traces into Loki and Tempo, the final and most impactful layer is visualization and
+alerting—made possible with Grafana. Grafana is more than just a dashboarding tool;
+it’s the operational frontend for observability, where signals become stories and met‐
+rics become actions.
+Grafana connects seamlessly with Loki and Tempo as native data sources. For traces,
+Grafana’s Tempo integration enables you to browse full execution traces for individ‐
+ual agent runs. This includes viewing span hierarchies that represent the sequence
+and timing of steps an agent took—from receiving a user query to selecting a plan,
+calling tools, and composing the final output. You can filter traces by latency, status,
+span name, or any custom attribute you’ve attached in your LangGraph nodes. This is
+232 
+| 
+Chapter 10: Monitoring in Production

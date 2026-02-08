@@ -1,0 +1,100 @@
+E
+efficiency, agent-based design principle, 180
+ELK monitoring stack, 227
+embeddings, 316
+semantic searches, 119
+emergent behaviors, internal failure protection,
+294
+encoder, 316
+encryption, 283-284
+encryption protocols, data security, 287
+endpoint hardening, 292
+enterprise systems, model suitability, 21
+entity recognition and extraction, building
+knowledge graphs, 125
+environment isolation, 289
+epoch, 316
+error handling, 293
+escalation criteria, human-in-the-loop (HITL),
+252
+escalation design, 309
+ethics, regulatory compliance, 310
+EU AI Act, 310
+evaluation, 217, 316
+(see also tests)
+agentic systems
+adaptability, 36
+areas of focus, 35-36
+human-in-the-loop validation, 37
+user experience, 36
+agents, verifying functionality, 19-20
+end-to-end performance, 214-216
+integrating into development lifecycle,
+206-207
+planning modules, 210-212
+refining, 215
+tools, unit testing, 209-210
+evaluation sets
+creating, 207-209
+scalability, 208
+evasion attacks, 274
+event buses, 192-195
+exception management, 293
+executor role, 298-299
+exemplar learning, 135-137
+experiential learning, nonparametric learning,
+141-146
+experimentation frameworks, 245, 260-261
+A/B testing, 262-263
+Bayesian Bandits, 263-265
+shadow deployments, 261-262
+experimentation platforms, improvement
+loops, 263
+explainability, 316
+external services, API-based tools, 75
+F
+fail-safe mechanisms, 289
+fallback mechanisms, 289
+agent design, 66
+fault tolerance, 29
+feedback loops
+agentic systems, 30
+hallucination mitigation, 219
+internal failure protection, 294
+feedback pipelines, 245
+aggregation, 259-260
+automated issue detection, 250
+automated prompt optimization loop, 246
+capabilities, 249-249
+core function, 245
+DSPy (Declarative Self-Improving Language
+Programs), 245
+example agent, 247-248
+human-in-the-loop (HITL) review, 251-254
+limitations, 249
+Microsoft Trace, 247
+prioritization, 259
+prompt refinement, 254-258
+root cause analysis, 250-251
+tool refinement, 256
+few-shot learning, 316
+example selection, 136
+financial services agent, 7
+fine-tuning, 316
+workflow, 147
+foundation models, 316
+capabilities, 2-3
+code generation, tool creation, 85-86
+defensive strategies, 276-278
+large, fine-tuning process, 146-151
+project suitability, 9
+selecting, security considerations, 275-276
+small, 151-153
+task suitability, assessing, 21
+tool use, 87
+weaknesses, 73
+full-text searches, 117-118
+future-proofing, design principle, 12
+Index 
+| 
+323

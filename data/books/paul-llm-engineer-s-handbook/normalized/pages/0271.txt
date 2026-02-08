@@ -1,0 +1,37 @@
+Fine-Tuning with Preference Alignment
+240
+            "author_full_name": [item["author_full_name"] for item
+in data["artifact_data"]],
+            "link": [item["link"] for item in data["artifact_
+data"]],
+        }
+    )
+4.
+The clean_text function removes non-alphanumeric characters except for apostrophes,
+periods, commas, exclamation marks, and question marks. It also replaces multiple
+whitespaces with a single space to ensure proper formatting.
+def clean_text(text: str) -> str:    text = re.sub(r"[^\w\s.,!?']",
+" ", text) text = re.sub(r"\s+", " ", text)
+    return text.strip()
+5.
+The extract_substrings function splits articles into chunks with a length between 1,000
+and 2,000 characters. To make sure that the splitting doesn't break sentences, which could
+modify their meanings, we use a regex to only split after the end of a sentence.
+def extract_substrings(dataset: Dataset, min_length: int = 1000,
+max_length: int = 2000) -> List[str]:
+    extracts = []
+    sentence_pattern = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)
+(?<=\.|\?|\!)\s"
+    for article in dataset["content"]:
+        cleaned_article = clean_text(article)
+        sentences = re.split(sentence_pattern, cleaned_article)
+        current_chunk = ""
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if not sentence:
+                continue
+            if len(current_chunk) + len(sentence) <= max_length:
+                current_chunk += sentence + " "
+            else:
+                if len(current_chunk) >= min_length:
+                    extracts.append(current_chunk.strip())

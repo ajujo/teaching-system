@@ -1,0 +1,43 @@
+Long-Term Memory 26
+Memory Management and Retrieval 26
+Orchestration 27
+Design Trade-Offs 27
+Performance: Speed/Accuracy Trade-Offs 27
+Scalability: Engineering Scalability for Agent Systems 28
+Reliability: Ensuring Robust and Consistent Agent Behavior 29
+Costs: Balancing Performance and Expense 30
+Architecture Design Patterns 32
+Single-Agent Architectures 32
+Multiagent Architectures: Collaboration, Parallelism, and Coordination 32
+Best Practices 34
+Iterative Design 34
+Evaluation Strategy 35
+Real-World Testing 37
+Conclusion 39
+3. User Experience Design for Agentic Systems. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+Interaction Modalities 42
+Text-Based 43
+Graphical Interfaces 46
+Speech and Voice Interfaces 50
+Video-Based Interfaces 53
+Combining Modalities for Seamless Experiences 54
+The Autonomy Slider 55
+Synchronous Versus Asynchronous Agent Experiences 58
+Design Principles for Synchronous Experiences 58
+Design Principles for Asynchronous Experiences 59
+Finding the Balance Between Proactive and Intrusive Agent Behavior 59
+Context Retention and Continuity 60
+Maintaining State Across Interactions 61
+Personalization and Adaptability 62
+Communicating Agent Capabilities 63
+Communicating Confidence and Uncertainty 64
+Asking for Guidance and Input from Users 65
+Failing Gracefully 65
+Trust in Interaction Design 66
+Conclusion 68
+4. Tool Use. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+LangChain Fundamentals 72
+Local Tools 73
+vi
+|
+Table of Contents

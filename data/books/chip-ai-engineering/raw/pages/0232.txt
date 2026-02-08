@@ -1,0 +1,24 @@
+Con la evaluación por puntos, se evalúa cada modelo de forma
+independiente 22 y luego se ordenan por su puntuación. Por ejemplo, si
+quiere saber qué bailarín es el mejor, evalúa a cada bailarín
+individualmente, les dan una puntuación y luego elige al bailarín con la
+puntuación más alta.
+Con la evaluación comparativa, se evalúan los modelos entre sí y se calcula
+un ranking a partir de los resultados de la comparación. Para el mismo
+concurso de baile, puede pedir a todos los candidatos que bailen uno al lado
+del otro y preguntar a los jueces qué baile de cada candidato les gusta más,
+y elegir al bailarín preferido por la mayoría de los jueces.
+Cuando la calidad de las respuestas sea subjetiva, la evaluación comparativa
+suele ser más fácil que la evaluación por puntos. Por ejemplo, es más fácil
+decir cuál de las dos canciones es mejor que dar a cada una puntuación
+concreta.
+En IA, la evaluación comparativa fue utilizada por primera vez en 2021 por
+Anthropic para ordenar diferentes modelos. También impulsa la popular
+tabla de clasificación de Chatbot Arena de LMSYS que ordena los modelos
+utilizando puntuaciones computadas a partir de comparaciones de modelos
+por duplas dadas por la comunidad.
+Muchos proveedores de modelos utilizan la evaluación comparativa para
+evaluar sus modelos en producción. La Figura 3-10 muestra un ejemplo de
+ChatGPT en el que se pide a los usuarios que comparen dos outputs uno al
+lado del otro. Estos outputs pueden ser generados por diferentes modelos, o
+por el mismo modelo con diferentes variables de muestreo.

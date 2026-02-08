@@ -1,0 +1,32 @@
+PARÁMETRO VS. HIPERPARÁMETRO
+Un parámetro puede ser aprendido por el modelo durante el proceso de
+entrenamiento. Un hiperparámetro es establecido por el usuario para
+configurar el modelo y controlar cómo aprende el modelo. Los
+hiperparámetros para configurar el modelo incluyen el número de
+capas, la dimensión del modelo y el tamaño del vocabulario. Los
+hiperparámetros para controlar cómo aprende un modelo incluyen el
+tamaño del lote, el número de épocas, la tasa de aprendizaje, la varianza
+inicial por capa, etc.
+Esto significa que, para muchos modelos, es posible que usted solo tenga
+una oportunidad de obtener el conjunto correcto de hiperparámetros. Como
+resultado, ha surgido la extrapolación de escalado (también llamada
+transferencia de hiperparámetros) como un subcampo de investigación que
+intenta predecir, para modelos grandes, qué hiperparámetros darán el mejor
+rendimiento. El enfoque actual consiste en estudiar el impacto de los
+hiperparámetros en modelos de diferentes tamaños, normalmente mucho
+más pequeños que el tamaño del modelo objetivo, y luego extrapolar cómo
+funcionarían estos hiperparámetros en el tamaño del modelo objetivo. 18 Un
+estudio de 2022 de Microsoft y OpenAI muestra que fue posible transferir
+hiperparámetros de un modelo de 40 M a un modelo de 6.7 MM.
+La extrapolación de escalado sigue siendo un tema marginal, ya que pocas
+personas tienen la experiencia y los recursos necesarios para estudiar el
+entrenamiento de grandes modelos. También es difícil debido al gran
+número de hiperparámetros y a cómo interactúan entre sí. Si tiene diez
+hiperparámetros, tendría que estudiar 1024 combinaciones de ellos. Habría
+que estudiar cada hiperparámetro individualmente, luego dos de ellos
+juntos, tres de ellos juntos, y así sucesivamente.
+Además, las capacidades emergentes (Wei et al., 2022) hacen que la
+extrapolación sea menos precisa. Las capacidades emergentes se refieren a
+aquellas que solo están presentes a escala y podrían no ser observables en
+modelos más pequeños entrenados con conjuntos de datos más reducidos.
+Para saber más sobre la extrapolación de escalado, consulte esta excelente

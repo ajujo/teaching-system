@@ -1,0 +1,35 @@
+Advanced Applications and Multi-Agent Systems
+256
+One important thing to keep in mind is that LangGraph doesn’t allow you to modify state directly. 
+In other words, if we execute something like the following within a node, it won’t have an effect 
+on the actual queue in the agent’s state:
+def my_node(state):
+  queue = state["queue"]
+  node = queue.pop()
+  ...
+  queue.append(another_node)
+  return {"key": "value"}
+If we want to modify the queue that belongs to the state itself, we should either use a custom 
+reducer (as we discussed in Chapter 3) or return the queue object to be replaced (since under the 
+hood, LangGraph always created deep copies of the state before passing it to the node).
+We need to define the final step now – the consensus mechanism to choose the final answer based 
+on multiple generated candidates:
+prompt_voting = PromptTemplate.from_template(
+   "Pick the best solution for a given task. "
+   "\nTASK:{task}\n\nSOLUTIONS:\n{candidates}\n"
+)
+def _vote_for_the_best_option(state):
+ candidates = state.get("candidates", [])
+ if not candidates:
+   return {"best_response": None}
+ all_candidates = []
+ for i, candidate in enumerate(candidates):
+   all_candidates.append(f"OPTION {i+1}: {candidate}")
+ response_schema = {
+     "type": "STRING",
+     "enum": [str(i+1) for i in range(len(all_candidates))]}
+ llm_enum = ChatVertexAI(
+     model_name="gemini-2.0-flash-001", response_mime_type="text/x.enum",
+     response_schema=response_schema)
+ result = (prompt_voting | llm_enum | StrOutputParser()).invoke(
+     {"candidates": "\n".join(all_candidates), "task": state["task"]}

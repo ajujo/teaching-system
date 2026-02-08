@@ -1,0 +1,34 @@
+Chapter 7
+293
+Repository RAG
+One powerful application of RAG systems is analyzing code repositories to enable natural language
+queries about codebases. This technique allows developers to quickly understand unfamiliar code
+or find relevant implementation examples. Let's build a code-focused RAG system by indexing
+a GitHub repository.
+First, we'll clone the repository and set up our environment:
+import os
+from git import Repo
+from langchain_community.document_loaders.generic import GenericLoader
+from langchain_community.document_loaders.parsers import LanguageParser
+from langchain_text_splitters import Language, RecursiveCharacter­
+TextSplitter
+# Clone the book repository from GitHub
+repo_path = os.path.expanduser("~/Downloads/generative_ai_with_langchain")
+# this directory should not exist yet!
+repo = Repo.clone_from("https://github.com/benman1/generative_ai_with_
+langchain", to_path=repo_path)
+After cloning the repository, we need to parse the Python files using LangChain's specialized
+loaders that understand code structure. LanguageParser helps maintain code semantics during
+processing:
+loader = GenericLoader.from_filesystem(
+    repo_path,
+    glob="**/*",
+    suffixes=[".py"],
+    parser=LanguageParser(language=Language.PYTHON, parser_threshold=500),
+)
+documents = loader.load()
+python_splitter = RecursiveCharacterTextSplitter.from_language(
+    language=Language.PYTHON, chunk_size=50, chunk_overlap=0
+)
+# Split the Document into chunks for embedding and vector storage
+texts = python_splitter.split_documents(documents)

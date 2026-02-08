@@ -1,0 +1,33 @@
+Extracting Features from Relational Data with Featuretools
+300
+The featuretools library also supports aggregation primitives, and here is where it gets interesting. 
+These primitives take related observations as input and return a single value as output. For example, 
+if we have a numerical variable, price, related to an invoice, an aggregation primitive would take 
+all the price observations for a single invoice and return a single value, such as the mean price or the 
+sum (that is, the total amount paid), for that invoice.
+Note
+The featuretools aggregation functionality is the equivalent of groupby in pandas, 
+followed by pandas functions such as mean, sum, std, and count, among others.
+Some aggregation primitives work with numerical variables, such as the mean, sum, or maximum 
+and minimum values. Other aggregation primitives are specific to categorical variables, such as the 
+number of unique values and the most frequent value (mode).
+Note
+For a complete list of supported aggregation primitives, visit https://featuretools.
+alteryx.com/en/stable/api_reference.html#aggregation-primitives.
+In this recipe, we will first create multiple features by aggregating existing variables. After that, we will 
+combine the use of transform and aggregation primitives to highlight the true power of featuretools.
+Getting ready
+In this recipe, we will use the Online Retail II dataset from the UCI Machine Learning Repository. 
+This dataset has information about products (items), invoices, and customers. To follow along with 
+this recipe, it is important to understand the nature of and the relationships between these entities 
+and how to correctly set up an entity set with featuretools, which we described in the Setting up 
+an entity set and creating features automatically recipe. Make sure you checked that recipe out before 
+proceeding with the next section.
+How to do it...
+Let’s begin by importing the libraries and getting the dataset ready:
+1.	
+First, we’ll import pandas, featuretools, and the logical types:
+import pandas as pd
+import featuretools as ft
+from woodwork.logical_types import (
+    Categorical, NaturalLanguage)

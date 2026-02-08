@@ -1,0 +1,33 @@
+Table of Contents
+xi
+Chapter 3: Data Engineering 
+ 55
+Designing the LLM Twin's data collection pipeline .......................................................... 56
+Implementing the LLM Twin's data collection pipeline • 61
+ZenML pipeline and steps • 61
+The dispatcher: How do you instantiate the right crawler? • 66
+The crawlers • 69
+Base classes • 69
+GitHubCrawler class • 73
+CustomArticleCrawler class • 75
+MediumCrawler class • 77
+The NoSQL data warehouse documents • 79
+The ORM and ODM software patterns • 80
+Implementing the ODM class • 82
+Data categories and user document classes • 87
+Gathering raw data into the data warehouse .................................................................... 89
+Troubleshooting • 94
+Selenium issues • 95
+Import our backed-up data • 95
+Summary .......................................................................................................................... 96
+References ......................................................................................................................... 96
+Chapter 4: RAG Feature Pipeline 
+ 99
+Understanding RAG ........................................................................................................ 100
+Why use RAG? • 100
+Hallucinations • 101
+Old information • 101
+The vanilla RAG framework • 101
+Ingestion pipeline • 104
+Retrieval pipeline • 105
+Generation pipeline • 105

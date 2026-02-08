@@ -1,0 +1,29 @@
+datos de demostración para InstructGPT, el ~90 % tienen al menos un título
+universitario y más de un tercio tienen un máster. Si etiquetar objetos en
+una imagen puede llevar solo unos segundos, generar una dupla (prompt,
+respuesta) puede llevar hasta 30 minutos, especialmente para tareas que
+implican contextos largos, como resumir. Si por una dupla (prompt,
+respuesta) cuesta 10 dólares, las 13 000 duplas que OpenAI utilizó para
+InstructGPT costarían 130 000 dólares. Esto no incluye el costo del diseño
+de los datos (qué tareas y prompts incluir), la contratación de etiquetadores
+ni el control de calidad de los datos.
+No todo el mundo puede permitirse seguir el enfoque de la anotación
+humana de alta calidad. LAION, una organización sin ánimo de lucro,
+movilizó a 13 500 voluntarios de todo el mundo para generar 10 000
+conversaciones, que constan de 161 443 mensajes en 35 idiomas diferentes,
+anotados con 461 292 valoraciones de calidad. Dado que los datos fueron
+generados por voluntarios, no hubo mucho control de los sesgos. En teoría,
+los etiquetadores que enseñan a los modelos la preferencia humana deberían
+ser representativos de la población humana. La demografía de los
+etiquetadores de LAION está sesgada. Por ejemplo, en una encuesta
+autodeclarada, el 90 % de los etiquetadores voluntarios se identificaron
+como varones (Köpf et al., 2023).
+DeepMind utilizó una heurística sencilla para filtrar conversaciones a partir
+de datos de Internet para entrenar su modelo Gopher. Afirmaron que su
+heurística produce diálogos de alta calidad de forma fiable. En concreto,
+buscaron textos con el siguiente formato:
+[A]: [Párrafo corto]
+[B]: [Párrafo corto]
+[A]: [Párrafo corto]
+[B]: [Párrafo corto]
+…

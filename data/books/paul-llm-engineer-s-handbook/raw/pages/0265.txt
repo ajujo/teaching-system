@@ -1,0 +1,37 @@
+Fine-Tuning with Preference Alignment
+234
+•	
+LLM-generated, human-evaluated datasets: This method offers a good balance between 
+quality and efficiency. LLMs generate multiple responses to prompts, and humans rank 
+these responses. This approach is often preferred because humans are generally better at 
+judging answers than writing them from scratch. It allows the rapid generation of diverse 
+responses while still capturing human preferences effectively. However, it may not provide 
+creative or unexpected responses that humans might generate.
+•	
+LLM-generated, LLM-evaluated datasets: Fully synthetic datasets, where both gener-
+ation and evaluation are done by LLMs, are becoming increasingly common due to their 
+scalability and cost-effectiveness. This method can produce massive datasets quickly and 
+improves as LLM capabilities advance. However, it requires careful prompt engineering to 
+ensure quality and diversity, and may perpetuate biases or limitations of the generating 
+LLM.
+In practice, human-generated datasets are expensive, difficult to scale, and not necessarily of 
+the highest quality. On the other hand, human evaluation is quite valuable but can be difficult 
+to scale, which is why large datasets benefit from LLM evaluation. In addition to these high-level 
+considerations, the way you obtain your data and how you plan to use it also need to be considered. 
+For example, applications with many users can embed a feedback mechanism to provide prefer-
+ences. This can be as simple as a like and dislike score, or something more in-depth with text.
+Note that evaluation is not always required and preferences can emerge naturally from the gen-
+eration process. For instance, it is possible to use a high-quality model to generate preferred 
+outputs and a lower-quality or intentionally flawed model to produce less preferred alternatives. 
+This creates a clear distinction in the preference dataset, allowing more effective training of AI 
+systems to recognize and emulate high-quality outputs. The Intel/orca_dpo_pairs dataset 
+available on the Hugging Face Hub was created with this process.
+Another approach is to compare model-generated outputs with human-written responses, which 
+can provide insights into how well the model aligns with actual human preferences and highlight 
+areas where the model may be lacking. This can be used to copy a particular style and give a more 
+authentic tone to the model.
+Tips for data generation
+The data generation is consistent between instruction and preference datasets. Prompts should 
+be designed to encourage diversity and complexity in the model’s responses. By crafting prompts 
+that explicitly request different approaches or styles, we can ensure a wide range of outputs that 
+capture the varied nature of human preferences. 

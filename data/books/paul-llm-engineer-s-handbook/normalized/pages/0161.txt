@@ -1,0 +1,32 @@
+RAG Feature Pipeline
+130
+Batch pipelines
+A batch pipeline in data systems refers to a data processing method where data is collected, processed, and stored in predefined intervals and larger volumes, also known as "batches". This approach differs from real-time or streaming data processing, where data is processed continuously
+as it arrives. This is what happens in a batch pipeline:
+1.
+Data collection: Data is collected from various sources and stored until sufficient amounts
+are accumulated for processing. This can include data from DBs, logs, files, and other
+sources.
+2.
+Scheduled processing: Data processing is scheduled at regular intervals, for example,
+hourly or daily. During this time, the collected data is processed in bulk. This can involve
+data cleansing, transformation, aggregation, and other operations.
+3.
+Data loading: After processing, the data is loaded into the target system, such as a DB, data
+warehouse, data lake, or feature store. This processed data is then available for analysis,
+querying, or further processing.
+Batch pipelines are particularly useful when dealing with large volumes of data that do not require
+immediate processing. They offer several advantages, including:
+•
+Efficiency: Batch processing can handle large volumes of data more efficiently than real-time processing, allowing for optimized resource allocation and parallel processing.
+•
+Complex processing: Batch pipelines can perform complex data transformations and
+aggregations that might be too resource-intensive for real-time processing.
+•
+Simplicity: Batch processing systems' architectures are often simpler than those of real-time systems, making them easier to implement and maintain.
+Batch versus streaming pipelines
+When implementing feature pipelines, you have two main design choices: batch and streaming.
+Thus, it is worthwhile to see the difference between the two and understand why we chose a
+batch architecture over a streaming one for our LLM Twin use case.
+You can effortlessly write a dedicated chapter on streaming pipelines, which suggests its complexity over a batch design. However, as streaming architectures become increasingly popular,
+one must have an intuition of how they work to choose the best option for your application.

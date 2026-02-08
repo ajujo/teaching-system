@@ -1,0 +1,41 @@
+Phi-3-mini (3.8B) matched 540B-parameter PaLM’s 60% MMLU score, a 142× size
+reduction in two years. Mobile-MMLU further highlighted that models under 9B can
+excel on edge-focused tasks, although variance grows as parameter counts fall.
+This pace means that the “best” small model family today—be it Llama 3 (8B–70B),
+Qwen2.5 Turbo (72B), or the emerging Palmyra and DeepSeek lines—may be
+eclipsed within months. To stay current, practitioners should rely on trusted third-
+party leaderboards:
+• Stanford HELM publishes live MMLU, GPQA, and IFEval scores across dozens
+of models.
+• Papers With Code aggregates benchmarks and provides downloadable artifacts
+for comparative analysis.
+• Hugging Face’s Evaluation on the Hub offers an API to fetch up-to-date results
+on common tasks like GSM8K and HumanEval.
+• BigBench Leaderboard tracks performance on the BBH suite, complementing
+HELM’s broader scope.
+When choosing a small model, consider your deployment constraints—latency, hard‐
+ware, budget—and task demands. Models with fewer than eight billion parameters
+are unbeatable for on-device or low-cost inference; 8B–70B families strike a sweet
+spot for general reasoning; above that, proprietary giants like GPT-5 still lead in high-
+stakes accuracy. By combining these resources with periodic leaderboard checks, you
+can navigate this shifting terrain and select the optimal small-model family for your
+agentic application—while acknowledging that the field’s rapid churn will likely
+deposit a new champion by the time you finish reading this chapter.
+Supervised Fine-Tuning
+Among parametric approaches, supervised fine-tuning remains the foundational
+technique, enabling precise behavioral shaping through curated input/output exam‐
+ples. SFT is the foundational approach for precisely steering an agent’s behavior by
+showing it explicit examples of how to respond. One powerful use case is teaching an
+agent exactly when and how to invoke external APIs—fine-tuning function calling so
+the agent not only formats tool calls correctly but also reasons whether a call should
+happen at all. This extends what standard hosted function calling offers, providing
+more control and consistency when prompt engineering alone falls short. While off-
+the-shelf foundation models continue to improve at generating function calls, you
+may encounter stubborn cases where your prompts grow unwieldy, parameters are
+repeatedly mis-parsed, or accuracy lags behind your domain’s strict requirements. In
+those scenarios—especially if you’re driving high-volume traffic and every percentage
+point of reliability matters—fine-tuning on curated examples can both boost
+performance and, over time, reduce your per call costs compared with token-
+Parametric Learning: Fine-Tuning 
+| 
+153

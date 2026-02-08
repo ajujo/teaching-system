@@ -1,0 +1,23 @@
+Working with Outliers
+160
+4.	
+Let’s plot the distribution of the mean smoothness variable:
+plot_boxplot_and_hist(X, "mean smoothness")
+In the following boxplot, we see that the variable’s values show a distribution like the normal 
+distribution, and it has six outliers – one on the left and five on the right tail:
+Figure 5.4 – Boxplot and histogram of the variable mean smoothness
+5.	
+Create a function that returns the mean plus and minus fold times the standard deviation, 
+where fold is a parameter to the function:
+def find_limits(df, variable, fold):
+    var_mean = df[variable].mean()
+    var_std = df[variable].std()
+    lower_limit = var_mean - fold * var_std
+    upper_limit = var_mean + fold * var_std
+    return lower_limit, upper_limit
+6.	
+Use the function to identify the extreme limits of the mean smoothness variable:
+lower_limit, upper_limit = find_limits(
+    X, "mean smoothness", 3)
+If we now execute lower_limit or upper_limit, we will see the values 0.0541 and 
+0.13855, corresponding to the limits beyond which we can consider a value an outlier.

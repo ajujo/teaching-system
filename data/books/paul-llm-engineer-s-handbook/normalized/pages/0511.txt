@@ -1,0 +1,68 @@
+Index
+480
+AWS SageMaker Inference endpoint
+calling 384-388
+automated evaluation framework for RAG
+systems (ARES) 274, 275
+B
+backed-up data
+importing 95
+BaseCrawler interface 69-72
+behavioral testing 464
+bias types
+family bias 237
+length bias 237
+position bias 237
+BigCodeBench Leaderboard 266
+business microservice
+building, with FastAPI 389-391
+C
+CDC patterns
+log-based 137
+timestamp-based 137
+trigger-based 137
+central access point 128
+Change data capture (CDC) 136
+Chatbot Arena 264
+Chatbots 231
+ChatGPT
+limitations 5
+chat templates 209, 210
+chunking handlers 165-169
+CI/CD pipeline 460
+CI pipeline, LLM Twin
+QA job 436
+test job 436
+CircleCI 403
+classifiers models 189
+cleaning handlers 163-165
+CloudFormation 421
+code generation 231
+Comet ML 45, 46
+concept drift 469
+content moderation 231
+continuous batching 294, 295
+continuous integration and continuous
+deployment (CI/CD) pipeline 31, 400
+continuous training (CT) 138, 400, 459
+cooldown period 396
+co-pilot
+versus LLM twin 4
+covariate drift 468
+CrawlerDispatcher class  66-68
+crawlers
+BaseCrawler interface 69-72
+CustomArticleCrawler class  75-77
+GithubCrawler class  73-75
+implementing 69
+MediumCrawler class  77-79
+CustomArticleCrawler class  75-77
+D
+data augmentation 193-196
+database (DB) 317, 408
+database, for unstructured and vector data
+MongoDB 47
+Qdrant 47, 48
+storing 47
+data collection pipeline 19
+data curation 182

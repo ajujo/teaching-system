@@ -1,0 +1,25 @@
+10
+Creating Features from a Time
+Series with tsfresh
+Throughout this book, we've discussed feature engineering methods and tools tailored for tabular
+and relational datasets. In this chapter, we will shift our focus to time-series data. A time series is
+a sequence of observations taken sequentially over time. Examples include energy generation and
+demand, temperature, air pollutant concentration, stock prices, and sales revenue. Each of these
+examples represents a variable and their values change over time.
+The widespread availability of affordable sensors capable of measuring motion, movement, humidity,
+glucose, and other parameters has significantly increased the amount of temporally annotated data.
+These time series can be utilized in various classification tasks. For instance, by analyzing the electricity
+usage pattern of a household at a given time interval, we can infer whether a particular appliance was
+being used. Similarly, the signal of an ultrasound sensor can help determine the probability of a (gas)
+pipeline failure, and the characteristics of a sound wavelength can help predict whether a listener will
+like a song. Time-series data is also valuable for regression tasks. For example, signals from machinery
+sensors can be used to predict the remaining useful life of the device.
+To use time series with traditional supervised machine learning models, such as linear and logistic
+regression, or decision-tree-based algorithms, we need to map each time series into a well-defined
+feature vector that captures its characteristics. Time-series patterns, including trends, seasonality, and
+periodicity, among other things, can be captured by a combination of simple and complex mathematical
+operations. Simple calculations include, for instance, taking the mean and the standard deviation of
+the time series. More complex methods include determining correlation or entropy, for example. In
+addition, we can apply non-linear time-series analysis functions to decompose the time-series signal,
+for example, Fourier or wavelet transformations, and use the parameters of these functions as features
+of the supervised models.

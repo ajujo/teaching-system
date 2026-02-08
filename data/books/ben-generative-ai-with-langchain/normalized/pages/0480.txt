@@ -1,0 +1,67 @@
+Index
+453
+N
+Neural Attention Memory Models
+(NAMMs) 415
+Non-Metric Space Library (nmslib) 127
+O
+Ollama 49
+OpenAI 431, 432
+reference link 432
+OPENAI_API_KEY 28
+OpenAI GPT-o 30
+operational metrics, LLM apps
+cost visibility 387
+latency dimensions 387
+token economy metrics 387
+tool usage analytics 387
+output-fixing parsers
+reference link 84
+output parsing 76-79
+P
+perplexity models 30
+plan-and-solve agent 217-220
+Product Quantization (PQ) 126
+prompt engineering 40, 85
+Chain-of-Thought (CoT) 90-92
+few-shot prompting 87
+prompt template 85-87
+self-consistency 92, 93
+zero-shot prompting 87
+prompt template 40, 41, 85-87
+chat prompt templates 41
+R
+RAG architecture
+agentic approach 226, 227
+RAG grounds model 415
+RAG pipeline
+advanced techniques 140
+components 127-129
+document processing 130-132
+RAG system
+augmenter 110
+components 110-112
+evaluating 336-338
+evaluation 317, 318
+generator 110
+implementing, scenarios 112
+knowledge base 110
+retriever 110
+troubleshooting 178, 179
+RAG techniques
+agentic RAG 157
+context processing 145
+corrective RAG 155
+hybrid retrieval 140
+query transformation 143, 144
+re-ranking 141, 142
+response enhancement 146
+selecting 158-160
+Ray Serve
+using, for scalable deployment 358
+ReACT 188-191
+reasoning models 92
+reasoning paths
+exploring 250
+ToT technique 250-261
+ToT technique, trimming with MCTS 261, 262

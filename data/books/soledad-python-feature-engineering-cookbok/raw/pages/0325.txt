@@ -1,0 +1,44 @@
+Extracting Features from Relational Data with Featuretools
+302
+7.	
+Let’s make a list with string names that identify the aggregation primitives we want to use:
+agg_primitives = ["mean", "max", "min", "sum"]
+8.	
+Let’s create features by aggregating the data at the customer level. To do this, we set up the dfs 
+class from featuretools, indicating customers as the target DataFrame and passing the 
+aggregation primitives from step 7 and an empty list to the trans_primitives parameter 
+to prevent dfs from returning the default transformations:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»customers»,
+    agg_primitives=agg_primitives,
+    trans_primitives=[],
+)
+9.	
+Let’s display the names of the created features:
+feature_defs
+In the following output, we see the name features that were aggregated at the customer level:
+[<Feature: MAX(data.price)>,
+<Feature: MAX(data.quantity)>,
+<Feature: MEAN(data.price)>,
+<Feature: MEAN(data.quantity)>,
+<Feature: MIN(data.price)>,
+<Feature: MIN(data.quantity)>,
+<Feature: SUM(data.price)>,
+<Feature: SUM(data.quantity)>,
+<Feature: MAX(invoices.MEAN(data.price))>,
+<Feature: MAX(invoices.MEAN(data.quantity))>,
+<Feature: MAX(invoices.MIN(data.price))>,
+<Feature: MAX(invoices.MIN(data.quantity))>,
+<Feature: MAX(invoices.SUM(data.price))>,
+<Feature: MAX(invoices.SUM(data.quantity))>,
+<Feature: MEAN(invoices.MAX(data.price))>,
+<Feature: MEAN(invoices.MAX(data.quantity))>,
+<Feature: MEAN(invoices.MEAN(data.price))>,
+<Feature: MEAN(invoices.MEAN(data.quantity))>,
+<Feature: MEAN(invoices.MIN(data.price))>,
+<Feature: MEAN(invoices.MIN(data.quantity))>,
+<Feature: MEAN(invoices.SUM(data.price))>,
+<Feature: MEAN(invoices.SUM(data.quantity))>,
+<Feature: MIN(invoices.MAX(data.price))>,
+<Feature: MIN(invoices.MAX(data.quantity))>,

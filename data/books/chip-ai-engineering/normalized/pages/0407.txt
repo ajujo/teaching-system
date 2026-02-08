@@ -1,0 +1,28 @@
+más rápido de crear y requiere menos memoria, pero genera consultas más
+lentas y menos precisas.
+El sitio web de pruebas comparativas ANN compara distintos algoritmos de
+ANN en múltiples conjuntos de datos utilizando cuatro métricas principales
+y teniendo en cuenta las compensaciones entre indexación y consulta. Estas
+son algunas de ellas:
+Recall
+La fracción de los vecinos más cercanos encontrados por el
+algoritmo.
+Consultas por segundo (QPS)
+El número de consultas que el algoritmo es capaz de
+gestionar por segundo. Esto es crucial para las aplicaciones
+con mucho tráfico.
+Tiempo de construcción
+El tiempo necesario para construir el índice. Esta métrica es
+especialmente importante si necesita actualizar el índice con
+frecuencia (por ejemplo, porque sus datos cambian).
+Tamaño del índice
+El tamaño del índice creado por el algoritmo, que es crucial
+para evaluar su escalabilidad y sus requisitos de
+almacenamiento.
+Además, BEIR (Benchmarking IR) (Thakur et al., 2021) es un arnés de
+evaluación para la recuperación. Es compatible con sistemas de
+recuperación de 14 pruebas comparativas comunes.
+En resumen, la calidad de un sistema de RAG debe evaluarse tanto por
+componentes como de extremo a extremo. Para ello, debe hacer lo
+siguiente:
+1. Evaluar la calidad de la recuperación.

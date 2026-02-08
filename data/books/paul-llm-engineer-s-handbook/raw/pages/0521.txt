@@ -1,0 +1,9 @@
+Index
+490
+configuring  43-45
+data warehouse, querying  143-145
+documents, cleaning  146, 147
+documents, loading to vector DB  150
+implementing  61-65
+running  43-45
+zero-point quantization  307

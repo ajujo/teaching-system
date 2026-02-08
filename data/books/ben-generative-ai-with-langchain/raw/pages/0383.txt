@@ -1,0 +1,40 @@
+Production-Ready LLM Deployment and Observability
+356
+When deploying LLM applications, users often expect real-time responses rather than waiting 
+for complete answers to be generated. Implementing streaming responses allows tokens to be 
+displayed to users as they’re generated, creating a more engaging and responsive experience. 
+The following code demonstrates how to implement streaming with WebSocket in a FastAPI 
+application using LangChain’s callback system and Anthropic’s Claude model:
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+  
+    # Create a callback handler for streaming
+    callback_handler = AsyncIteratorCallbackHandler()
+  
+    # Create a streaming LLM
+    streaming_llm = ChatAnthropic(
+        model="claude-3-sonnet-20240229",
+        callbacks=[callback_handler],
+        streaming=True
+    )
+  
+    # Process messages
+    try:
+        while True:
+            data = await websocket.receive_text()
+            user_message = json.loads(data).get("message", "")
+          
+            # Start generation and stream tokens
+            task = asyncio.create_task(
+                streaming_llm.ainvoke([HumanMessage(content=user_
+message)])
+            )
+          
+            async for token in callback_handler.aiter():
+                await websocket.send_json({"token": token})
+          
+            await task
+          
+    except WebSocketDisconnect:
+        logger.info("Client disconnected")

@@ -1,0 +1,32 @@
+Chapter 11
+413
+As shown in Figure 11.4, the end goal is to trace each step from the user's input until the generated
+answer. If something fails or behaves unexpectedly, you can point exactly to the faulty step. The
+query can fail due to an incorrect answer, an invalid context, or incorrect data processing. Also,
+the application can behave unexpectedly if the number of generated tokens suddenly fluctuates
+during specific steps.
+To conclude, LLMOps is a rapidly developing field. Given its quick evolution, making predictions
+is challenging. The truth is that we are not sure if the term LLMOps is here to stay. However,
+what is certain is that numerous new use cases for LLMs will emerge, along with tools and best
+practices to manage their lifecycle.
+Even if this DevOps, MLOps, and LLMOps section is far from comprehensive, it provides a strong
+idea of how to apply best ops practices in our LLM Twin use case.
+Deploying the LLM Twin's pipelines to the cloud
+This section will show you how to deploy all the LLM Twin's pipelines to the cloud. We must deploy
+the entire infrastructure to have the whole system working in the cloud. Thus, we will have to:
+1.
+Set up an instance of MongoDB serverless.
+2.
+Set up an instance of Qdrant serverless.
+3.
+Deploy the ZenML pipelines, container, and artifact registry to AWS.
+4.
+Containerize the code and push the Docker image to a container registry.
+Note that the training and inference pipelines already work with AWS SageMaker. Thus, by following the preceding four steps, we ensure that our whole system is on the cloud, ready to scale
+and serve our imaginary clients.
+What are the deployment costs?
+We will stick to the free versions of the MongoDB, Qdrant, and ZenML services. As
+for AWS, we will mostly stick to their free tier for running the ZenML pipelines. The
+SageMaker training and inference components are more costly to run (which we
+won't run in this section). Thus, what we will show you in the following sections
+will generate minimum costs (a few dollars at most) from AWS.

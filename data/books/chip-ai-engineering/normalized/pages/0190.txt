@@ -1,0 +1,32 @@
+guiar el desarrollo de modelos lingüísticos no han cambiado mucho desde
+entonces. La mayoría de los modelos lingüísticos autorregresivos se
+entrenan utilizando la entropía cruzada o su pariente, la perplejidad. Al leer
+artículos e informes modelo, quizá también se encuentre con bits por
+carácter (BPC) y bits por byte (BPB); ambas son variaciones de la entropía
+cruzada.
+Las cuatro métricas (entropía cruzada, perplejidad, BPC y BPB) están
+estrechamente relacionadas. Si conoce el valor de uno, puede calcular los
+otros tres, dada la información necesaria. Aunque me refiero a ellas como
+métricas de modelado lingüístico, pueden utilizarse para cualquier modelo
+que genere secuencias de tokens, incluyento tokens no textuales.
+Recordemos que un modelo lingüístico codifica información estadística (la
+probabilidad de que un token aparezca en un contexto determinado) acerca
+de los idiomas. Estadísticamente, dado el contexto "Me gusta beber_", es
+más probable que la siguiente palabra sea "té" que "carbón". Cuanta más
+información estadística pueda captar un modelo, mejor podrá predecir el
+siguiente token.
+En jerga de ML, un modelo lingüístico aprende la distribución de sus datos
+de entrenamiento. Cuanto mejor aprenda este modelo, mejor predecirá lo
+que viene a continuación en los datos de entrenamiento y menor será su
+entropía cruzada de entrenamiento. Al igual que con cualquier modelo de
+ML, se preocupa por su rendimiento no solo en los datos de entrenamiento,
+sino también en sus datos de producción. En general, cuanto más se
+parezcan sus datos a los datos de entrenamiento de un modelo, mejor se
+comportará este con sus datos.
+En comparación con el resto del libro, esta sección es muy matemática. Si
+le resulta confusa, no dude en saltarse la parte matemática y centrarse en el
+debate sobre cómo interpretar estas métricas. Incluso si no está entrenando
+o ajustando modelos lingüísticos, comprender estas métricas puede ayudarle
+a evaluar qué modelos utilizar para su aplicación. Estas métricas pueden
+utilizarse ocasionalmente para determinadas técnicas de evaluación y
+deduplicación de datos, como se comenta a lo largo de este libro.

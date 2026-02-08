@@ -1,0 +1,28 @@
+Cuanto mayor sea la longitud del contexto, menor será la perplejidad
+Cuanto más contexto tenga un modelo, menos
+incertidumbre tendrá a la hora de predecir el siguiente
+token. En 1951, Claude Shannon evaluó la entropía cruzada
+de su modelo utilizándolo para predecir el siguiente token
+condicionado a un máximo de 10 tokens anteriores. En el
+momento de escribir estas líneas, la perplejidad de un
+modelo suele computarse y condicionarse a entre 500 y
+10 000 tokens previos, y posiblemente más, con un límite
+superior en función de la longitud máxima del contexto del
+modelo.
+Como referencia, no es raro ver valores de perplejidad tan bajos como 3 o
+incluso más bajos. Si todos los tokens de un lenguaje hipotético tienen la
+misma probabilidad de ocurrir, una perplejidad de 3 significa que este
+modelo tiene una probabilidad de 1 entre 3 de predecir correctamente el
+siguiente token. Teniendo en cuenta que el vocabulario de un modelo es del
+orden de 10 000 y 100 000, estas probabilidades son increíbles.
+Además de guiar el entrenamiento de los modelos lingüísticos, la
+perplejidad es útil en muchas partes del flujo de trabajo de la ingeniería de
+IA. En primer lugar, la perplejidad es un buen indicador de las capacidades
+de un modelo. Si un modelo es malo para predecir el siguiente token, es
+probable que su rendimiento en las tareas derivadas también sea malo. El
+informe de OpenAI GPT-2 muestra que los modelos más grandes, que
+también son modelos más potentes, dan sistemáticamente una menor
+perplejidad en una serie de conjuntos de datos, como se muestra en la
+Tabla 3-1. Lamentablemente, siguiendo la tendencia de las empresas de ser
+cada vez más herméticas sobre sus modelos, muchas han dejado de
+informar de la perplejidad de sus modelos.

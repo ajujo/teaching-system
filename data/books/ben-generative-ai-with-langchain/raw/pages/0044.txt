@@ -1,0 +1,40 @@
+Chapter 1
+17
+Exploring the LangChain architecture
+LangChain’s philosophy centers on composability and modularity. Rather than treating LLMs 
+as standalone services, LangChain views them as components that can be combined with other 
+tools and services to create more capable systems. This approach is built on several principles:
+•	
+Modular architecture: Every component is designed to be reusable and interchangeable, 
+allowing developers to integrate LLMs seamlessly into various applications. This modu­
+larity extends beyond LLMs to include numerous building blocks for developing complex 
+generative AI applications.
+•	
+Support for agentic workflows: LangChain offers best-in-class APIs that allow you to 
+develop sophisticated agents quickly. These agents can make decisions, use tools, and 
+solve problems with minimal development overhead.
+•	
+Production readiness: The framework provides built-in capabilities for tracing, evalua­
+tion, and deployment of generative AI applications, including robust building blocks for 
+managing memory and persistence across interactions.
+•	
+Broad vendor ecosystem: LangChain offers battle-tested abstract interfaces for all gen­
+erative AI components (LLMs, embeddings, vector databases, document loaders, search 
+engines, etc.). Vendors develop their own integrations that comply with these interfaces, 
+allowing you to build applications on top of any third-party provider and easily switch 
+between them.
+It’s worth noting that there’ve been major changes since LangChain version 0.1 when the first 
+edition of this book was written. While early versions attempted to handle everything, LangChain 
+version 0.3 focuses on excelling at specific functions with companion projects handling specialized 
+needs. LangChain manages model integration and workflows, while LangGraph handles stateful 
+agents and LangSmith provides observability.
+LangChain’s memory management, too, has gone through major changes. Memory mechanisms 
+within the base LangChain library have been deprecated in favor of LangGraph for persistence, 
+and while agents are present, LangGraph is the recommended approach for their creation in 
+version 0.3. However, models and tools continue to be fundamental to LangChain’s functionality. 
+In Chapter 3, we’ll explore LangChain and LangGraph’s memory mechanisms.
+To translate model design principles into practical tools, LangChain has developed a comprehen­
+sive ecosystem of libraries, services, and applications. This ecosystem provides developers with 
+everything they need to build, deploy, and maintain sophisticated AI applications. Let’s examine 
+the components that make up this thriving environment and how they’ve gained adoption across 
+the industry.

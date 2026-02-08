@@ -1,0 +1,20 @@
+1. Comparar el output computado de la pasada hacia delante con el
+output esperado (verdad básica). Si son diferentes, el modelo ha
+cometido un error y hay que ajustar los parámetros. La diferencia
+entre el output computado y el esperado se denomina pérdida.
+2. Calcular cuánto contribuye cada parámetro entrenable al error. Este
+valor se denomina gradiente. Matemáticamente, los gradientes se
+calculan tomando la derivada de la pérdida con respecto a cada
+parámetro entrenable. Hay un valor de gradiente por parámetro
+entrenable. 7 Si un parámetro tiene un gradiente elevado,
+contribuye significativamente a la pérdida y debe ajustarse más.
+3. Ajustar los valores de los parámetros entrenables utilizando su
+gradiente correspondiente. El optimizador determina cuánto debe
+reajustarse cada parámetro dado su valor de gradiente. Entre los
+optimizadores más comunes se encuentran SGD (stochastic
+gradient descent) y Adam. Para los modelos basados en
+transformadores, Adam es, por mucho, el optimizador más
+utilizado.
+En la Figura 7-4 se visualiza la pasada hacia delante y hacia atrás de una red
+neuronal hipotética con tres parámetros y una función de activación no
+lineal. Utilizo esta red neuronal ficticia para simplificar la visualización.

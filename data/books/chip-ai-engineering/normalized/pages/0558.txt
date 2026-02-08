@@ -1,0 +1,29 @@
+Con el formato correcto
+Todos los ejemplos deben seguir el formato esperado por el
+modelo. Los tokens de formato redundantes pueden
+interferir en el aprendizaje del modelo y, por tanto, deben
+eliminarse. Por ejemplo, si extrae reseñas de productos de
+un sitio web, debe eliminar las etiquetas HTML. Tenga
+cuidado con los espacios en blanco, las nuevas líneas, las
+mayúsculas y minúsculas inconsistentes y los formatos
+numéricos. 4
+Suficientemente únicos
+Se refiere a ejemplos únicos en sus datos. 5 En el contexto del
+entrenamiento de modelos, las duplicaciones pueden
+introducir sesgos y provocar la contaminación de los datos.
+Utilizo "suficientemente únicos" porque los casos de uso
+específicos pueden tolerar diferentes niveles de
+duplicaciones.
+En cumplimiento
+Los datos deben cumplir todas las políticas internas y
+externas pertinentes (incluyendo leyes y reglamentos). Por
+ejemplo, si no tiene permitido utilizar datos de PII para
+entrenar sus modelos, sus datos no deberían contener
+ningún dato de ese tipo.
+Antes de ponerse a crear datos, es importante que piense qué significa para
+usted cada una de estas características. Las técnicas analizadas en esta
+sección pretenden producir datos con estas características.
+Cobertura de datos
+Los datos de entrenamiento de un modelo deben cubrir la gama de
+problemas que se espera que resuelva. Los usuarios del mundo real suelen
+tener una amplia gama de problemas, y la forma en que los expresan puede

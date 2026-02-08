@@ -1,0 +1,28 @@
+Data Engineering
+70
+Selenium can programmatically control various browsers such as Chrome, Firefox, or Brave. For
+these specific platforms, we need Selenium to manipulate the browser programmatically to log in
+and scroll through the newsfeed or article before being able to extract the entire HTML. For other
+sites, where we don't have to go through the login step or can directly load the whole page, we
+can extract the HTML from a particular URL using more straightforward methods than Selenium.
+The code begins by setting up the necessary imports and configurations for web crawling using
+Selenium and the ChromeDriver initializer. The chromedriver_autoinstaller ensures that
+the appropriate version of ChromeDriver is installed and added to the system path, maintaining compatibility with the installed version of your Google Chrome browser (or other Chromium-based browser). Selenium will use the ChromeDriver to communicate with the browser
+and open a headless session, where we can programmatically manipulate the browser to access
+various URLs, click on specific elements, such as buttons, or scroll through the newsfeed. Using
+the chromedriver_autoinstaller, we ensure we always have the correct ChromeDriver version
+installed that matches our machine's Chrome browser version.
+import time
+from tempfile import mkdtemp
+import chromedriver_autoinstaller
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from llm_engineering.domain.documents import NoSQLBaseDocument
+# Check if the current version of chromedriver exists
+# and if it doesn't exist, download it automatically,
+# then add chromedriver to path
+chromedriver_autoinstaller.install()
+Next, we define the BaseSeleniumCrawler class for use cases where we need Selenium to collect
+the data, such as collecting data from Medium or LinkedIn.
+For the Selenium-based crawlers to work, you must install Chrome on your machine
+(or a Chromium-based browser such as Brave).

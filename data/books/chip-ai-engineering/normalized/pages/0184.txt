@@ -1,0 +1,31 @@
+Antes de adentrarnos en los métodos de evaluación, es importante
+reconocer los retos que plantea la evaluación de los modelos fundacionales.
+Como la evaluación es difícil, mucha gente se conforma con el boca a boca
+2 (por ejemplo, si alguien le dice que el modelo X es bueno) o con echar un
+vistazo a los resultados.3 Esto crea aún más riesgo y ralentiza la iteración de
+la aplicación. En cambio, debemos invertir en una evaluación sistemática
+para que los resultados sean más fiables.
+Dado que muchos modelos fundacionales tienen un componente de modelo
+lingüístico, este capítulo ofrecerá una rápida visión general de las métricas
+utilizadas para evaluar los modelos lingüísticos, incluidas la entropía
+cruzada y la perplejidad. Estas métricas son esenciales para orientar el
+entrenamiento y el afinado de los modelos lingüísticos y se utilizan con
+frecuencia en muchos métodos de evaluación.
+La evaluación de los modelos fundacionales es especialmente difícil porque
+son abiertos, y explicaré las mejores prácticas para abordarlos. El uso de
+evaluadores humanos sigue siendo una opción necesaria para muchas
+aplicaciones. Sin embargo, dado lo lentas y costosas que pueden resultar su
+uso, el objetivo es automatizar el proceso. Este libro se centra en la
+evaluación automática, que incluye tanto la evaluación exacta como la
+subjetiva.
+La estrella emergente de la evaluación subjetiva es la IA como juez: el
+enfoque de utilizar la IA para evaluar las respuestas de la IA. Es subjetiva
+porque la puntuación depende del modelo y del prompt que utilice el juez
+de IA. Aunque este enfoque está ganando adeptos rápidamente en el sector,
+también quienes creen que la IA no es lo bastante fiable para esta
+importante tarea se oponen intensamente. Me hace especial ilusión
+profundizar en este debate, y espero que a usted también.
+Retos de la evaluación de los modelos
+fundacionales
+Evaluar los modelos de ML siempre ha sido difícil. Con la introducción de
+los modelos fundacionales, la evaluación se ha vuelto aún más compleja.

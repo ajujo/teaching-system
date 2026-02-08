@@ -1,0 +1,9 @@
+funcionan estas técnicas. Esta comprensión, a su vez, puede ayudarle a
+seleccionar el método de afinado que mejor le funcione.
+Además de explicar el cuello de botella de memoria del afinado, esta
+sección también introduce fórmulas para el cálculo aproximado del uso de
+memoria de cada modelo. Este cálculo es útil para estimar el hardware
+necesario para alimentar un modelo o afinarlo.
+Dado que el cálculo de la memoria requiere explicar a fondo conceptos
+básicos de cómputo y de ML, esta sección es técnicamente densa. Si ya está
+familiarizado con estos conceptos, puede saltárselos.

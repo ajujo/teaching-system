@@ -1,0 +1,34 @@
+Otras herramientas sencillas que pueden incrementar significativamente la
+capacidad de un modelo son un calendario, un conversor de zonas horarias,
+un conversor de unidades (por ejemplo, de libras a kg) y un traductor a y
+desde los idiomas que el modelo no domina.
+Otras herramientas más complejas pero potentes son los intérpretes de
+código. En vez de entrenar a un modelo para que entienda el código, puede
+darle acceso a un intérprete de código para que ejecute un fragmento de
+código, devuelva los resultados o analice los fallos del código. Esta
+capacidad permite a sus agentes actuar como asistentes de codificación,
+analistas de datos o incluso asistentes de investigación capaces de escribir
+código para ejecutar experimentos e informar de los resultados. Sin
+embargo, la ejecución automatizada de código conlleva el riesgo de ataques
+de inyección de código, como se discute en el “Ingeniería de prompts
+defensiva”. Es crucial implementar medidas de seguridad adecuadas para su
+seguridad y la de sus usuarios.
+Las herramientas externas pueden convertir en multimodal un modelo de
+solo texto o solo imagen. Por ejemplo, un modelo que solo es capaz de
+generar textos puede aprovechar como herramienta un modelo de texto a
+imagen que le permita generar tanto textos como imágenes. Dada una
+petición de texto, el planificador de IA del agente decide si invocará la
+generación de texto, la generación de imágenes o ambas. Así es como
+ChatGPT puede generar tanto texto como imágenes: utiliza DALL-E como
+generador de imágenes. Los agentes también pueden utilizar un intérprete
+de código para generar tablas y gráficos, un compilador LaTeX para
+representar ecuaciones matemáticas o un navegador para representar
+páginas web a partir de código HTML.
+Del mismo modo, un modelo que solo sea capaz de procesar inputs de texto
+puede utilizar una herramienta de lectura de leyendas de imágenes para
+procesar imágenes y una herramienta de transcripción para procesar audio.
+Puede utilizar una herramienta OCR (reconocimiento óptico de caracteres)
+para leer PDF.
+El uso de herramientas puede incrementar significativamente el
+rendimiento de un modelo por comparación con el mero uso de prompts o
+incluso el afinado. Chameleon (Lu et al., 2023) muestra que un agente

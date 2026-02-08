@@ -1,0 +1,40 @@
+Healthcare patient intake and triage agent
+These agents support frontline healthcare operations by registering new patients,
+verifying insurance, assessing symptoms to prioritize care, scheduling appoint‐
+ments, managing medical histories, and coordinating referrals, thereby improv‐
+ing workflow efficiency and patient outcomes.
+IT help desk agent
+IT help desk agents manage user access, troubleshoot network and system issues,
+deploy software updates, respond to security incidents, and escalate unresolved
+issues to specialists. They enhance productivity by resolving common technical
+problems swiftly.
+Legal document review agent
+Legal agents assist attorneys and paralegals by reviewing contracts, conducting
+legal research, performing client intake and conflict checks, managing discovery,
+assessing compliance, calculating damages, and tracking deadlines. This helps to
+streamline workflows and improve accuracy in legal operations.
+Security Operations Center (SOC) analyst agent
+SOC analyst agents investigate security alerts, gather threat intelligence, query
+logs, triage incidents, isolate compromised hosts, and provide updates to security
+teams. They accelerate incident response and strengthen organizational security
+posture.
+Supply chain and logistics agent
+In supply chain management, agents optimize inventory, track shipments, evalu‐
+ate suppliers, coordinate warehouse operations, forecast demand, manage dis‐
+ruptions, and handle compliance requirements. These capabilities help maintain
+resilience and efficiency across global networks.
+Autonomous agents offer significant potential across various use cases, from cus‐
+tomer support and personal assistance to legal services and advertising. By integrat‐
+ing these agents into their operations, organizations can achieve greater efficiency,
+improve service quality, and unlock new opportunities for innovation and growth. As
+we continue to explore the capabilities and applications of autonomous agents in this
+book, it becomes evident that their impact will be profound and far-reaching across
+multiple industries.
+Now that we’ve looked at some example agents, in the next section, we’ll discuss some
+of the key considerations when designing our agentic systems.
+Workflows and Agents
+In many real‐world projects, choosing between a simple script, a deterministic work‐
+flow, a traditional chatbot, a retrieval‐augmented generation (RAG) system, or a
+8 
+| 
+Chapter 1: Introduction to Agents

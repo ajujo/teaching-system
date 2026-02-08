@@ -1,0 +1,32 @@
+A algunos cambios es más difícil adaptarse, especialmente los relacionados
+con las regulaciones. Las tecnologías en torno a la IA se consideran
+cuestiones de seguridad nacional para muchos países, lo que significa que
+los recursos para la IA, incluidos el cómputo, el talento y los datos, están
+fuertemente regulados. Por ejemplo, se estimó que cumplir con la
+introducción del Reglamento General de Protección de Datos (RGPD) de
+Europa, costaría a las empresas 9000 millones de dólares. La disponibilidad
+de recursos computacionales puede cambiar de la noche a la mañana a
+medida que las nuevas leyes impongan más restricciones sobre quién puede
+comprar y venderlos (véase la orden ejecutiva estadounidense de octubre de
+2023). Si de repente se prohíbe a su proveedor de GPU venderlos a su país,
+le metería en problemas.
+Algunos cambios pueden ser incluso fatales. Por ejemplo, la normativa
+sobre propiedad intelectual (PI) y uso de la IA sigue evolucionando. Si
+usted construye su producto sobre un modelo entrenado utilizando datos de
+otras personas, ¿puede estar seguro de que la propiedad intelectual de su
+producto siempre le pertenecerá? He hablado con muchas empresas que
+poseen una gran cantidad de derechos de propiedad intelectual, como los
+estudios de videojuegos, que dudan en utilizar la IA por miedo a perder sus
+derechos de propiedad intelectual más adelante.
+Una vez comprometidos a crear un producto de IA, analicemos la pila de
+ingeniería necesaria para crear estas aplicaciones.
+La pila de ingeniería de IA
+El rápido crecimiento de la ingeniería de IA también indujo una increíble
+cantidad de expectación y FOMO (miedo a perderse algo). La cantidad de
+nuevas herramientas, técnicas, modelos y aplicaciones que aparecen cada
+día puede resultar abrumadora. En lugar de tratar de mantenernos al día con
+el campo en constante movimiento, analicemos los componentes
+fundamentales de la ingeniería de IA
+Para entender la ingeniería de IA, es importante reconocer que la ingeniería
+de IA evolucionó a partir de la ingeniería de ML. Cuando una empresa
+empieza a experimentar con modelos fundacionales, es natural que su

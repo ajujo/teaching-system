@@ -1,0 +1,32 @@
+Dependiendo del caso de uso y de los datos generados, también puede ser
+creativos. Por ejemplo, si queremos que los datos sintéticos imiten a los
+reales, su calidad puede medirse por lo difícil que sea distinguir entre
+ambos. Se podría entrenar a un detector de contenidos de IA para que
+identifique los datos generados por IA: si es fácil diferenciar entre datos
+reales y sintéticos, los sintéticos no son buenos. O, si quiere que los datos
+sintéticos parezcan trabajos académicos de alta calidad, podría entrenar un
+clasificador para predecir si un artículo generado sería aceptado en una
+conferencia prestigiosa como NeurIPS (la Conferencia y Taller sobre
+Sistemas de Procesamiento de Información Neuronal) y descartar cualquier
+artículo que se prediga como claro rechazo.
+Puede tener un modelo para detectar el tema de cada ejemplo generado y, a
+continuación, eliminar los ejemplos cuyos temas sean irrelevantes para su
+tarea. Si espera que todos los datos sigan un patrón similar, también puede
+utilizar la detección de anomalías para identificar los valores atípicos: los
+ejemplos atípicos podrían ser de baja calidad.
+Al igual que los datos reales, los datos sintéticos también pueden filtrarse
+mediante heurísticas. En general, es posible que desee eliminar los ejemplos
+vacíos o demasiado cortos para su aplicación. Si un ejemplo es demasiado
+largo, puede cortarlo o eliminarlo. Puede filtrar los datos por palabras clave,
+por usuario/autor, por fecha de creación, por metadatos o por fuente. Por
+ejemplo, los autores de Self-Instruct (Wang et al., 2022) filtraron y
+desecharon los ejemplos generados utilizando la siguiente heurística:
+Ejemplos repetitivos
+Instrucciones demasiado largas o demasiado cortas
+Ejemplos con la misma instrucción pero diferentes respuestas
+Ejemplos en los que el output es una repetición del input
+Aunque existen muchas técnicas para evaluar datos sintéticos, la evaluación
+sigue siendo un reto. Como ocurre con otras aplicaciones de la IA, la prueba
+de calidad definitiva para los datos generados por IA es su rendimiento en el
+mundo real (si pueden o no mejorar el rendimiento del modelo) y los datos
+sintéticos han superado esta prueba para muchos modelos.

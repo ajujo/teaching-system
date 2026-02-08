@@ -1,0 +1,41 @@
+Building Intelligent Agents
+206
+One last note about synchronous and asynchronous implementations is necessary at this point.
+If an underlying function besides your tool is a synchronous function, LangChain will wrap it for
+the tool's asynchronous implementation by launching it in a separate thread. In most cases, it
+doesn't matter, but if you care about the additional overhead of creating a separate thread, you
+have two options-either subclass from the BaseClass and override async implementation, or
+create a separate async implementation of your function and pass it to the StructruredTool.
+from_function as a coroutine argument. You can also provide only async implementation, but
+then you won't be able to invoke your workflows in a synchronous manner.
+To conclude, let's take another look at three options that we have to create a LangChain tool, and
+when to use each of them.
+Method to create a tool
+When to use
+@tool decorator
+You have a function with clear docstrings and this function
+isn't used anywhere in your code
+convert_runnable_to_tool
+You have an existing Runnable, or you need more detailed
+controlled on how arguments or tool descriptions are passed to
+an LLM (you wrap an existing function by a RunnableLambda
+in that case)
+subclass from StructuredTool
+or BaseTool
+You need full control over tool description and logic (for
+example, you want to handle sync and async requests
+differently)
+Table 5.1: Options to create a LangChain tool
+When an LLM generates payloads and calls tools, it might hallucinate or make other mistakes.
+Therefore, we need to carefully think about error handling.
+Error handling
+We already discussed error handling in Chapter 3, but it becomes even more important when you
+enhance an LLM with tools; you need logging, working with exceptions, and so on even more. One
+additional consideration is to think about whether you would like your workflow to continue and
+try to auto-recover if one of your tools fails. LangChain has a special ToolException that allows
+the workflow to continue its execution by handling the exception.
+BaseTool has two special flags: handle_tool_error and handle_validation_error. Of course,
+since StructuredTool inherits from BaseTool, you can pass these flags to the StructuredTool.
+from_function class method. If this flag is set, LangChain would construct a string to return as
+a result of tools' execution if either a ToolException or a Pydantic ValidationException (when
+validating input payload) happens.

@@ -1,0 +1,39 @@
+With each user input, the text is turned into a vector representation using an embed‐
+ding model. The embedding is then used as the query in a vector search across all of
+the previous interactions in the memory store. Part of the context window is reserved
+for the best matches from the semantic experience memory, then the rest of the space
+is allocated to the system message, latest user input, and most recent interactions.
+Semantic experience memory allows agentic systems to not only draw upon a broad
+base of knowledge but also tailor their responses and actions based on accumulated
+experience, leading to more adaptive and personalized behavior.
+GraphRAG
+We now turn to an advanced version of RAG that is more complex to incorporate
+into your solution but that is capable of correctly handling a wider variety of ques‐
+tions. Graph retrieval-augmented generation (GraphRAG) is an advanced extension
+of the RAG model, incorporating graph-based data structures to enhance the retrieval
+process. By utilizing graphs, GraphRAG can manage and utilize complex interrela‐
+tionships and dependencies between pieces of information, significantly enhancing
+the richness and accuracy of the generated content.
+Baseline RAG systems operate by chunking documents, embedding those chunks into
+vector space, and retrieving semantically similar chunks at query time to augment
+prompts for the LLM. While effective for simple fact lookup or direct question-
+answering, this approach struggles when:
+• Answers require connecting information scattered across multiple documents
+(“connecting the dots”).
+• Queries involve summarizing higher-level semantic themes across a dataset.
+• The dataset is large, messy, or organized narratively rather than as discrete facts.
+For example, baseline RAG might fail to answer “What has Geoffrey Hinton done?” if
+no single retrieved chunk covers his actions comprehensively. GraphRAG addresses
+this by constructing a knowledge graph of entities and relationships from the dataset,
+enabling multihop reasoning, relationship chaining, and structured summarization.
+Using Knowledge Graphs
+Within a few minutes, the GraphRAG CLI can deliver global insights and local
+context over your texts—no Python required. But if you want more control and flexi‐
+bility, production-level pipelines are just a few lines away using the 
+neo4j‑graphrag‑python package. With the official neo4j-graphrag library, setup
+involves only configuring a Neo4j connection, defining an embedder, and creating a
+retriever—yet you immediately gain full GraphRAG capabilities. For educational or
+local experimentation, lightweight tools like nano‑graphrag or community repos (e.g.,
+GraphRAG 
+| 
+123

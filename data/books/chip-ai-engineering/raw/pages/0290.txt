@@ -1,0 +1,32 @@
+un modelo con prompting y quiere afinarlo. Si este modelo está patentado y
+el proveedor del modelo no tiene una API de afinado, no podrá hacerlo. Sin
+embargo, si se trata de un modelo de código abierto, pueden encontrar un
+servicio que ofrezca afinar ese modelo, o pueden afinarlo ustedes mismos.
+Tenga en cuenta que existen varios tipos de afinado, como el afinado parcial
+y el afinado completo, como se explica en el Capítulo 7. Es posible que un
+proveedor de modelos comerciales solo admita algunos tipos de afinado, no
+todos.
+Costo de API vs. costo de ingeniería
+Las API de modelos cobran por uso, lo que significa que pueden llegar a ser
+prohibitivamente caras con un uso intensivo. A cierta escala, una empresa
+que esté desangrando sus recursos mediante API podría plantearse alojar
+sus propios modelos. 18
+Sin embargo, alojar un modelo uno mismo requiere tiempo, talento y
+esfuerzos de ingeniería no triviales. Tendrían que optimizar el modelo,
+escalar y mantener el servicio de inferencia según sea necesario, e incluir
+barreras de seguridad alrededor de su modelo. Las API son caras, pero la
+ingeniería puede serlo aún más.
+Por otro lado, utilizar otra API significa que tendrán que depender de su
+SLA (acuerdo de nivel de servicio). Si estas API no son fiables, como suele
+ocurrir con las nuevas startups, tendrá que dedicar sus esfuerzos de
+ingeniería a crear barreras de seguridad que lo resuelvan.
+En general, se busca un modelo fácil de usar y manipular. Normalmente, los
+modelos patentados son más fáciles de poner en marcha y escalar, pero los
+modelos abiertos pueden ser más fáciles de manipular, ya que sus
+componentes son más accesibles.
+Independientemente de si se opta por modelos abiertos o patentados,
+conviene que este modelo siga una API estándar, para poder cambiar de
+modelos fácilmente de requerirse. Muchos desarrolladores de modelos
+intentan que sus modelos imiten la API de los modelos más populares. En el
+momento de escribir este artículo, muchos proveedores de API imitan la
+API de OpenAI.

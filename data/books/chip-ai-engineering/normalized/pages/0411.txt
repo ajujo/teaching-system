@@ -1,0 +1,31 @@
+También puede fragmentar documentos utilizando tokens como unidad,
+determinados por el tokenizador del modelo generativo. Supongamos que
+desea utilizar Llama 3 como modelo generativo. En ese caso, primero
+tokenice los documentos utilizando el tokenizador de Llama 3. A
+continuación, puede dividir los documentos en fragmentos utilizando tokens
+como límites. La fragmentación por tokens facilita el trabajo con modelos
+posteriores. Sin embargo, la desventaja de este enfoque es que si cambia a
+otro modelo generativo con un tokenizador diferente, tendrá que volver a
+indexar los datos.
+Independientemente de la estrategia que elija, el tamaño de los fragmentos
+es importante. Un tamaño de fragmento más pequeño permite una
+información más diversa. Los fragmentos más pequeños permiten encajar
+más fragmentos en el contexto del modelo. Si reduce a la mitad el tamaño
+de los fragmentos, le cabrán el doble de fragmentos. Un mayor número de
+fragmentos puede proporcionar a un modelo una gama más amplia de
+información, lo que puede permitir al modelo producir una mejor respuesta.
+Sin embargo, los fragmentos pequeños pueden provocar la pérdida de
+información importante. Imagine un documento que contiene información
+importante sobre el tema X a lo largo de todo el documento, pero X solo se
+menciona en la primera mitad. Si divide este documento en dos fragmentos,
+es posible que la segunda mitad del documento no se recupere y el modelo
+no pueda utilizar la información.
+Los fragmentos más pequeños también pueden aumentar la carga
+computacional. Esto es especialmente problemático en el caso de la
+recuperación basada en incrustaciones. Reducir a la mitad el tamaño de los
+fragmentos significa que hay que indexar el doble de fragmentos, y generar
+y almacenar el doble de vectores de incrustación. Su espacio de búsqueda
+vectorial será el doble de grande, lo que puede reducir la velocidad de
+consulta.
+No existe un tamaño de fragmento ni un tamaño de traslape universales.
+Debe experimentar para encontrar lo que mejor le funciona.

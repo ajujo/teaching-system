@@ -1,0 +1,30 @@
+Chapter 8
+339
+Evaluating a benchmark in LangSmith
+As we've mentioned, comprehensive benchmarking and evaluation, including testing, are critical
+for safety, robustness, and intended behavior. LangSmith, despite being a platform designed for
+testing, debugging, monitoring, and improving LLM applications, offers tools for evaluation and
+dataset management. LangSmith integrates seamlessly with LangChain Benchmarks, providing
+a cohesive framework for developing and assessing LLM applications.
+We can run evaluations against benchmark datasets in LangSmith, as we'll see now. First, please
+make sure you create an account on LangSmith here: https://smith.langchain.com/.
+You can obtain an API key and set it as LANGCHAIN_API_KEY in your environment. We can also set
+environment variables for project ID and tracing:
+# Basic LangSmith Integration Example
+import os
+# Set up environment variables for LangSmith tracing
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_PROJECT"] = "LLM Evaluation Example"
+print("Setting up LangSmith tracing...")
+This configuration establishes a connection to LangSmith and directs all traces to a specific proj­
+ect. When no project ID is explicitly defined, LangChain logs against the default project. The
+LANGCHAIN_TRACING_V2 flag enables the most recent version of LangSmith's tracing capabilities.
+After configuring the environment, we can begin logging interactions with our LLM applications.
+Each interaction creates a traceable record in LangSmith:
+from langchain_openai import ChatOpenAI
+from langsmith import Client
+# Create a simple LLM call that will be traced in LangSmith
+llm = ChatOpenAI()
+response = llm.invoke("Hello, world!")
+print(f"Model response: {response.content}")
+print("\nThis run has been logged to LangSmith.")

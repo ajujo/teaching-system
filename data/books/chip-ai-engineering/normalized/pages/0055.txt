@@ -1,0 +1,26 @@
+Educación
+Cuando ChatGPT no funciona, el servidor Discord de OpenAI se llena de
+estudiantes que se quejan de que no pueden hacer sus tareas. Varios
+consejos educativos, como el de las escuelas públicas de Nueva York y el
+del Distrito Escolar Unificado de Los ángeles, se apresuraron a prohibir
+ChatGPT por temor a que los alumnos lo utilizaran para hacer trampas, pero
+revocaron sus decisiones pocos meses después.
+En lugar de prohibir la IA, las escuelas podrían incorporarla para ayudar a
+los alumnos a aprender más rápido. La IA puede resumir los libros de texto
+y generar planes de lectura personalizados para cada estudiante. Me parece
+extraño que los anuncios se personalicen porque sabemos que cada persona
+es diferente, pero que no se haga con la educación. La IA puede ayudar a
+adaptar los materiales al formato más adecuado para cada alumno. Los
+alumnos auditivos pueden pedir a la IA que lea los materiales en voz alta.
+Los alumnos amantes de los animales pueden utilizar la IA para adaptar las
+visualizaciones de modo que incluyan más animales. Aquellos a quienes les
+resulte más fácil leer código que ecuaciones matemáticas pueden pedirle a
+la IA que traduzca las ecuaciones matemáticas a código.
+La IA es especialmente útil para el aprendizaje de idiomas, ya que pueden
+pedirle que represente diferentes escenarios de práctica. Pajak y Bicknell
+(Duolingo, 2022) descubrieron que de las cuatro etapas de creación de
+cursos, la personalización de las lecciones es la etapa que más puede
+beneficiarse de la IA, como se muestra en la Figura 1-10.
+figura 1-10. La IA se puede utilizar en las cuatro fases de creación de cursos de
+Duolingo, pero resulta más útil en la fase de personalización. Imagen de Pajak y
+Bicknell (Duolingo, 2022).

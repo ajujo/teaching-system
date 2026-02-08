@@ -1,0 +1,24 @@
+Performing one-hot encoding of frequent categories
+55
+If you execute X_train_enc.head() you’ll see the resulting DataFrame:
+Figure 2.6 – Transformed DataFrame containing binary variables for those categories with at 
+least 39 observations and an additional binary representing all remaining categories
+To wrap up the recipe, let’s encode the most frequent categories with feature-engine.
+11.	 Let’s set up the one-hot encoder to encode the five most frequent categories of the A6 and 
+A7 variables:
+From feature_engine.encoding import OneHotEncoder
+ohe_enc = OneHotEncoder(
+    top_categories=5,
+    variables=["A6", "A7"]
+)
+Note
+The number of frequent categories to encode is arbitrarily determined by the user.
+12.	 Let’s fit the encoder to the train set so that it learns and stores the most frequent categories of 
+A6 and A7:
+ohe_enc.fit(X_train)
+13.	 Finally, let’s encode A6 and A7 in the train and test sets:
+X_train_enc = ohe_enc.transform(X_train)
+X_test_enc = ohe_enc.transform(X_test)
+You can view the new binary variables in the transformed DataFrame by executing X_train_
+enc.head(). You can also find the top five categories learned by the encoder by executing ohe_
+enc.encoder_dict_.

@@ -1,0 +1,25 @@
+Using decision trees for discretization
+147
+Note
+If you choose to return the interval limits and want to use these datasets to train machine
+learning models, you will need to follow up the discretization with one-hot encoding or ordinal
+encoding. Check the recipes in Chapter 2, Encoding Categorical Variables, for more details.
+7.
+Instead of returning the interval limits, we can return the interval number to which each
+observation is allocated by setting up the transformer like this:
+disc = DecisionTreeDiscretiser(
+    bin_output="bin_number",
+    cv=3,
+    scoring="neg_mean_squared_error",
+    variables=variables,
+    regression=True,
+    param_grid={
+        "max_depth": [1, 2, 3],
+        "min_samples_leaf": [10, 20, 50]})
+8.
+We can now fit and then transform the training and testing sets:
+train_t = disc.fit_transform(X_train, y_train)
+test_t = disc.transform(X_test)
+If you now execute train_t[variables].head(), you will see integers as a result
+instead of the interval limits:
+Figure 4.14 - The first five rows of the transformed training set containing the discretized variables

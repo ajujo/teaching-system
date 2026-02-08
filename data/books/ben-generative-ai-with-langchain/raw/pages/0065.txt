@@ -1,0 +1,54 @@
+First Steps with LangChain
+38
+chat = ChatOpenAI(model="gpt-4o")
+chain = template | chat
+response = chain.invoke({"problem": "Calculate the optimal strategy 
+for..."})
+The reasoning_effort parameter streamlines your workflow by eliminating the need for complex 
+reasoning prompts, allows you to adjust performance by reducing effort when speed matters 
+more than detailed analysis, and helps manage token consumption by controlling how much 
+processing power goes toward reasoning processes.
+DeepSeek models also offer explicit thinking configuration through the LangChain integration.
+Controlling model behavior
+Understanding how to control an LLM’s behavior is crucial for tailoring its output to specific needs. 
+Without careful parameter adjustments, the model might produce overly creative, inconsistent, 
+or verbose responses that are unsuitable for practical applications. For instance, in customer 
+service, you’d want consistent, factual answers, while in content generation, you might aim for 
+more creative and promotional outputs.
+LLMs offer several parameters that allow fine-grained control over generation behavior, though 
+exact implementation may vary between providers. Let’s explore the most important ones:
+Parameter
+Description
+Typical Range
+Best For
+Temperature
+Controls randomness in 
+text generation
+0.0-1.0 
+(OpenAI, 
+Anthropic)
+0.0-2.0 
+(Gemini)
+Lower (0.0-0.3): Factual 
+tasks, Q&A
+Higher (0.7+): Creative 
+writing, brainstorming
+Top-k
+Limits token selection to 
+k most probable tokens
+1-100
+Lower values (1-10): 
+More focused outputs
+Higher values: More 
+diverse completions
+Top-p (Nucleus 
+Sampling)
+Considers tokens until 
+cumulative probability 
+reaches threshold
+0.0-1.0
+Lower values (0.5): More 
+focused outputs
+Higher values (0.9): 
+More exploratory 
+responses

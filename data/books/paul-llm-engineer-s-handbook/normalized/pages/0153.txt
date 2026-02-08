@@ -1,0 +1,29 @@
+RAG Feature Pipeline
+122
+Both data indexing and query optimization pre-retrieval optimization techniques depend highly
+on your data type, structure, and source. Thus, as with any data processing pipeline, no method
+always works, as every use case has its own particularities and gotchas. Optimizing your pre-retrieval RAG layer is experimental. Thus, what is essential is to try multiple methods (such as the
+ones enumerated in this section), reiterate, and observe what works best.
+Retrieval
+The retrieval step can be optimized in two fundamental ways:
+•
+Improving the embedding models used in the RAG ingestion pipeline to encode the
+chunked documents and, at inference time, transform the user's input.
+•
+Leveraging the DB's filter and search features. This step will be used solely at inference
+time when you have to retrieve the most similar chunks based on user input.
+Both strategies are aligned with our ultimate goal: to enhance the vector search step by leveraging
+the semantic similarity between the query and the indexed data.
+When improving the embedding models, you usually have to fine-tune the pre-trained embedding
+models to tailor them to specific jargon and nuances of your domain, especially for areas with
+evolving terminology or rare terms.
+Instead of fine-tuning the embedding model, you can leverage instructor models (https://
+huggingface.co/hkunlp/instructor-xl) to guide the embedding generation process with an
+instruction/prompt aimed at your domain. Tailoring your embedding network to your data using such a model can be a good option, as fine-tuning a model consumes more computing and
+human resources.
+In the code snippet below, you can see an example of an Instructor model that embeds article
+titles about AI:
+from InstructorEmbedding import INSTRUCTOR
+model = INSTRUCTOR("hkunlp/instructor-base")
+sentence = "RAG Fundamentals First"
+instruction = "Represent the title of an article about AI:"

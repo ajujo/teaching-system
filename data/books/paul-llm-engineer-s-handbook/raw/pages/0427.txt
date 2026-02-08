@@ -1,0 +1,30 @@
+Inference Pipeline Deployment
+396
+One significant advantage of setting up target tracking policies using Application Auto Scaling is 
+that they simplify the scaling process. You no longer need to configure CloudWatch alarms and 
+define scaling adjustments manually.
+Minimum and maximum scaling limits
+When setting up autoscaling for your SageMaker Inference endpoints, it’s crucial to establish 
+your maximum and minimum scaling limits before creating your scaling policy. The minimum 
+value represents the least resources your model can operate with. This value must be at least 1, 
+ensuring that your model always has some capacity.
+Next, configure the maximum value, which defines the upper limit of resources your model can 
+scale up to. While the maximum must be equal to or greater than the minimum value, it doesn’t 
+impose any upper limit. Thus, you can scale up as much as your application needs within the 
+boundaries of what AWS can provide.
+Cooldown period
+Another important aspect of a scaling policy is the cooldown period, during which it’s crucial to 
+maintain a balance between responsiveness and stability. This cooldown period acts as a safe-
+guard, ensuring that your system doesn’t overreact during scaling events—whether it’s reducing 
+capacity (scaling in) or increasing it (scaling out). By introducing a calculated pause, the cooldown 
+period prevents rapid fluctuations in the number of instances. Specifically, it delays the removal 
+of instances during scale-in requests and restricts the creation of new replicas during scale-out 
+requests. This strategy helps maintain a stable and efficient environment for LLM service.
+These practical basics are used in autoscaling most web servers, including online real-time ML 
+servers. Once you understand how to configure scaling policies for SageMaker, you can imme-
+diately apply the strategies you’ve learned to other popular deployment tools like Kubernetes 
+or AWS ECS.
+For a step-by-step guideline on how to configure autoscaling for the AWS SagaMak-
+er endpoint implemented in this chapter, you can follow this official tutorial from 
+AWS: https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-
+scaling-prerequisites.html.

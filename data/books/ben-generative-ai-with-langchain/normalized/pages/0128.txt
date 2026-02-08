@@ -1,0 +1,36 @@
+Chapter 3
+101
+Database providers might have their integrations as part of the langchain_commuity package or
+outside of it - for example, in libraries such as langchain_postgres for a standalone PostgreSQL
+database or langchain-google-cloud-sql-pg for a managed one.
+When designing a real application, you should be cautious about managing access to somebody's
+sessions. For example, if you use a sequential session_id, users might easily access sessions that
+don't belong to them. Practically, it might be enough to use a uuid (a uniquely generated long
+identifier) instead of a sequential session_id, or, depending on your security requirements, add
+other permissions validations during runtime.
+LangGraph checkpoints
+A checkpoint is a snapshot of the current state of the graph. It keeps all the information to continue
+running the workflow from the moment when the snapshot has been taken - including the full
+state, metadata, nodes that were planned to be executed, and tasks that failed. This is a different
+mechanism from storing the chat history since you can store the workflow at any given point
+in time and later restore from the checkpoint to continue. It is important for multiple reasons:
+•
+Checkpoints allow deep debugging and "time travel."
+•
+Checkpoints allow you to experiment with different paths in your complex workflow
+without the need to rerun it each time.
+•
+Checkpoints facilitate human-in-the-loop workflows by making it possible to implement
+human intervention at a given point and continue further.
+•
+Checkpoints help to implement production-ready systems since they add a required level
+of persistence and fault tolerance.
+Let's build a simple example with a single node that prints the amount of messages in the state
+and returns a fake AIMessage. We use a built-in MessageGraph that represents a state with only
+a list of messages, and we initiate a MemorySaver that will keep checkpoints in local memory and
+pass it to the graph during compilation:
+from langgraph.graph import MessageGraph
+from langgraph.checkpoint.memory import MemorySaver
+You can find the full list of integrations to store chat history on the documenta­
+tion page: python.langchain.com/api_reference/community/chat_message_
+histories.html.

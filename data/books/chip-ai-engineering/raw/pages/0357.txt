@@ -1,0 +1,23 @@
+figura 5-8. A partir de un prompt inicial, Promptbreeder genera mutaciones de ese
+prompt y selecciona las más prometedoras. Las seleccionadas se vuelven a mutar, y así
+sucesivamente.
+Muchas herramientas buscan ayudar a partes de la ingeniería de prompts.
+Por ejemplo, Guidance, Outlines e Instructor guían a los modelos hacia
+outputs estructurados. Algunas herramientas alteran los prompts, por
+ejemplo, sustituyendo una palabra por su sinónimo o reescribiendo un
+prompt, para ver qué variación del prompt funciona mejor.
+Si se utilizan correctamente, las herramientas de ingeniería de prompts
+pueden mejorar enormemente el rendimiento del sistema. Sin embargo, es
+importante saber cómo funcionan en su interior para evitar costos y dolores
+de cabeza innecesarios.
+En primer lugar, las herramientas de ingeniería de prompts suelen generar
+llamadas ocultas a la API de modelos, lo que puede elevar rápidamente sus
+facturas de API si no se controlan. Por ejemplo, una herramienta podría
+generar múltiples variaciones del mismo prompt y luego evaluar cada
+variación en su conjunto de evaluación. Suponiendo una llamada a la API
+por cada variación de prompt, 30 ejemplos de evaluación y diez variaciones
+del prompt suponen 300 llamadas a la API.
+A menudo, se requieren varias llamadas a la API por prompt: una para
+generar una respuesta, otra para validar la respuesta (por ejemplo, ¿es la
+respuesta JSON válida?) y otra para puntuar la respuesta. El número de
+llamadas a la API puede aumentar aún más si se da rienda suelta a la

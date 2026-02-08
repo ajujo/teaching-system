@@ -1,0 +1,36 @@
+Figure 7-4. Experiential learning with insight extraction and distillation. The agent
+begins by gathering experiences into an experience pool. Multiple model evaluations are
+then used to extract insights from these experiences, aggregating and distilling them into
+a concise set of general, high-level critiques and rules. These distilled insights guide
+future decisions, enabling the agent to improve its performance across tasks over time.
+In this next section, we see how these rules are actually created, promoted, modified,
+and removed to enable the agent to improve its performance on the task over time:
+def promote_insight(self, insight):
+       if insight in self.insights:
+           self.insights.remove(insight)
+           self.promoted_insights.append(insight)
+           print(f"Promoted: {insight}")
+       else:
+           print(f"Insight '{insight}' not found in insights.")
+   def demote_insight(self, insight):
+       if insight in self.promoted_insights:
+           self.promoted_insights.remove(insight)
+           self.demoted_insights.append(insight)
+           print(f"Demoted: {insight}")
+       else:
+           print(f"Insight '{insight}' not found in promoted insights.")
+   def edit_insight(self, old_insight, new_insight):
+       # Check in all lists
+       if old_insight in self.insights:
+           index = self.insights.index(old_insight)
+           self.insights[index] = new_insight
+       elif old_insight in self.promoted_insights:
+           index = self.promoted_insights.index(old_insight)
+           self.promoted_insights[index] = new_insight
+       elif old_insight in self.demoted_insights:
+           index = self.demoted_insights.index(old_insight)
+           self.demoted_insights[index] = new_insight
+       else:
+144
+|
+Chapter 7: Learning in Agentic Systems

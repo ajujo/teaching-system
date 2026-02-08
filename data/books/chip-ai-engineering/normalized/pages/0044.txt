@@ -1,0 +1,50 @@
+tabla 1-2. Ocupaciones con mayor exposición a la IA basándose en
+anotaciones por humanos. α se refiere a la exposición a modelos de IA
+directamente, mientras que β y ζ se refieren a exposiciones a software
+potenciado por IA. Tabla de Eloundou et al. (2023).
+Grupo
+Profesiones más expuestas
+% de
+exposición
+α humana
+Intérpretes y traductores
+Investigadores de encuestas
+Poetas, letristas y escritores
+creativos
+Zootécnicos
+Especialistas en relaciones públicas
+76.5
+75.0
+68.8
+66.7
+66.7
+β humana
+Investigadores de encuestas
+Escritores y autores
+Intérpretes y traductores
+Especialistas en relaciones públicas
+Zootécnicos
+84.4
+82.5
+82.4
+80.6
+77.8
+ζ humana
+Matemáticos
+Asistentes fiscales
+Analistas financieros cuantitativos
+Escritores y autores
+Diseñadores de páginas web e
+interfaces digitales
+Los humanos etiquetaron 15
+ocupaciones como "totalmente
+expuestas".
+100.0
+100.0
+100.0
+100.0
+100.0
+Al analizar los casos de uso, me fijé tanto en las aplicaciones empresariales
+como en las de consumo. Para comprender los casos de uso empresarial,
+entrevisté a 50 empresas sobre sus estrategias de IA y leí más de 100
+estudios de casos. Para comprender las aplicaciones de consumo, examiné

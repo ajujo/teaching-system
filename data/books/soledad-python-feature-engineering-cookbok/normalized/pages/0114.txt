@@ -1,0 +1,40 @@
+Transforming variables with the reciprocal function
+91
+Transforming variables with the reciprocal function
+The reciprocal function is defined as 1/x. It is often useful when we have ratios - that is, values resulting
+from the division of two variables. Examples of this are population density - that is, people per area
+- and, as we will see in this recipe, house occupancy - that is, the number of occupants per house.
+The reciprocal transformation is not defined for the 0 value, and although it is defined for negative
+values, it is mainly useful for transforming positive variables.
+In this recipe, we will implement the reciprocal transformation using NumPy, scikit-learn, and
+Feature-engine, and compare its effect on variable distribution using histograms and a Q-Q plot.
+How to do it...
+Let's begin by importing the libraries and getting the dataset ready:
+1.
+Import the required Python libraries and data:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+from sklearn.datasets import fetch_california_housing
+2.
+Let's load the California housing dataset:
+X, y = fetch_california_housing(return_X_y=True,
+    as_frame=True)
+3.
+To evaluate variable distributions, we'll create a function that takes a DataFrame and a variable
+name as inputs and plots a histogram next to a Q-Q plot:
+def diagnostic_plots(df, variable):
+    plt.figure(figsize=(15,6))
+    plt.subplot(1, 2, 1)
+    df[variable].hist(bins=30)
+    plt.title(f"Histogram of {variable}")
+    plt.subplot(1, 2, 2)
+    stats.probplot(df[variable], dist="norm",
+        plot=plt)
+    plt.title(f"Q-Q plot of {variable}")
+    plt.show()
+4.
+Now, let's plot the distribution of the AveOccup variable, which specifies the average occupancy
+of the house:
+diagnostic_plots(X, "AveOccup")

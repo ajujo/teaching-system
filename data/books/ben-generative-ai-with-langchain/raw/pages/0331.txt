@@ -1,0 +1,32 @@
+Software Development and Data Analysis Agents
+304
+3                4.6               3.1                1.5               
+0.2
+4                5.0               3.6                1.4               
+0.2
+ This dataset contains four features (sepal length, sepal width, petal 
+length, and petal width) and 150 entries.
+Final Answer: Based on the observation, this dataset is likely about mea­
+surements of flower characteristics. 
+> Finished chain.
+'Based on the observation, this dataset is likely about measurements of 
+flower characteristics.'
+This initial query demonstrates how the agent can perform basic data exploration by checking 
+the structure and first few rows of the dataset. Notice how it correctly identifies that the data 
+contains flower measurements, even without explicit species labels in the preview. Next, let’s 
+challenge our agent with a more analytical question that requires computation:
+agent.run(prompt.format(query="Which row has the biggest difference be­
+tween petal length and petal width?"))
+The agent tackles this by creating a new calculated column and finding its maximum value:
+> Entering new AgentExecutor chain...
+Thought: First, we need to find the difference between petal length and 
+petal width for each row. Then, we need to find the row with the maximum 
+difference.
+Action: python_repl_ast
+Action Input: df['petal_diff'] = df['petal length (cm)'] - df['petal width 
+(cm)']
+              df['petal_diff'].max()
+Observation: 4.7
+Action: python_repl_ast
+Action Input: df['petal_diff'].idxmax()
+Observation: 122

@@ -1,0 +1,30 @@
+Combining features with decision trees
+249
+    regression=True,
+)
+Note
+We set regression to True because the target in this dataset is continuous. If you have a
+binary target or are performing classification, set it to False. Make sure to select an evaluation
+metric (scoring) that is suitable for your model.
+8.
+Fit the transformer so that it trains the decision trees on the input features:
+dtf.fit(X_train, y_train)
+9.
+If you wonder which features have been used to train decision trees, you can inspect them like this:
+dtf.input_features_
+In the following output, we can see that DecisionTreeFeatures() has trained three
+decision trees - two by using the single features, AveRooms and AveBedrms, and one by
+using both features:
+['AveRooms', 'AveBedrms', ['AveRooms', 'AveBedrms']]
+Note
+DecisionTreeFeatures() also stores the decision trees. You can check them out by
+executing dtf.estimators_.
+10.	 Now, add the features to the training and testing sets:
+train_t = dtf.transform(X_train)
+test_t = dtf.transform(X_test)
+11.	 Make a list with the name of the new features (the transformer appends the word tree to the
+feature names):
+tree_features = [
+    var for var in test_t.columns if "tree" in var ]
+12.	 Finally, display the features that were added to the test set:
+test_t[tree_features].head()

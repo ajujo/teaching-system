@@ -1,0 +1,31 @@
+Chapter 2
+27
+#   3.11.8
+To make Python 3.11.8 the default version across your entire system (whenever you open a new 
+terminal), use the following command:
+pyenv global 3.11.8
+However, we aim to use Python 3.11.8 locally only in our repository. To achieve that, first, we have 
+to clone the repository and navigate to it:
+git clone https://github.com/PacktPublishing/LLM-Engineers-Handbook.git 
+cd LLM-Engineers-Handbook
+Because we defined a .python-version file within the repository, pyenv will know to pick up 
+the version from that file and use it locally whenever you are working within that folder. To 
+double-check that, run the following command while you are in the repository:
+python --version
+It should output:
+# Python 3.11.8
+To create the .python-version file, you must run pyenv local 3.11.8 once. Then, pyenv will 
+always know to use that Python version while working within a specific directory.
+Now that we have installed the correct Python version using pyenv, let’s move on to Poetry, which 
+we will use as our dependency and virtual environment manager.
+Poetry: dependency and virtual environment management
+Poetry is one of the most popular dependency and virtual environment managers within the 
+Python ecosystem. But let’s start by clarifying what a dependency manager is. In Python, a depen-
+dency manager allows you to specify, install, update, and manage external libraries or packages 
+(dependencies) that a project relies on. For example, this is a simple Poetry requirements file that 
+uses Python 3.11 and the requests and numpy Python packages.
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.25.1"
+numpy = "^1.19.5"
+[build-system]

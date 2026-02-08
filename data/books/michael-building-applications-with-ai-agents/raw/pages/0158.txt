@@ -1,0 +1,33 @@
+for in-context learning. In the simplest version, fixed few-shot examples, they are
+hardcoded into the prompt and do not change (the left side of Figure 7-1).
+Figure 7-1. Fixed versus dynamic few-shot example selection. On the left, the model
+prompt uses a static set of few-shot examples embedded in the system prompt. On the
+right, dynamic few-shot selection retrieves the most relevant examples from a vector
+database at runtime, enabling more adaptive and contextually appropriate task
+prompting.
+If we have more examples, we can continue adding them into the prompt, but that
+eventually comes with increases in cost and latency. In addition, not all examples
+might be useful for all inputs. A common way to address this is to dynamically select
+the most relevant examples to include in the prompt (see on the right side of
+Figure 7-1). These experiences, as examples, are then stored in a way that makes them
+accessible for future reference. This typically involves building a memory bank where
+details of each interaction—such as the context, actions taken, outcomes, and any
+feedback received—are stored. This database acts much like human memory, where
+past experiences shape understanding and guide future actions. Each experience pro‐
+vides a data point that the agent can reference to make better decisions when encoun‐
+tering similar situations. This method enables agents to build a repository of
+knowledge that can be drawn upon to improve performance.
+The agent retrieves information from its database of past cases to solve new prob‐
+lems. Each stored case consists of a problem description, a solution that was applied,
+and the outcome of that solution. When faced with a new situation, the agent
+searches its memory to find similar past cases, analyzes the solutions that were
+applied, and adapts them if necessary to fit the new circumstances. This method
+allows for high flexibility, as the agent can modify its approach based on what has or
+has not worked in the past, thus continually refining its problem-solving strategies.
+When successful examples are saved in persistent storage, then retrieved and pro‐
+vided as examples in the prompt, performance increases significantly on a range of
+tasks. This is a well-established finding and has been confirmed across a variety of
+domains. In practice, this provides us with a simple, transparent, and lightweight way
+136 
+| 
+Chapter 7: Learning in Agentic Systems

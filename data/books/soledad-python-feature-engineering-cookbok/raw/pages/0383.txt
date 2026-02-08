@@ -1,0 +1,34 @@
+Extracting Features from Text Variables
+360
+owner want think like k opinion pleas email thank would nice 
+stabl mate beemer ill get jap bike call axi motor tuba irwin 
+honk therefor computracrichardsontx irwincmptrclonestarorg dod r
+Note
+If you are counting sentences, you need to do that before removing punctuation, as punctuation 
+and capitalization are needed to define the boundaries of each sentence.
+How it works...
+In this recipe, we removed punctuation, numbers, and stop words from a text variable, set the words 
+in lowercase, and finally, stemmed the words to their root. We removed punctuation and numbers 
+from the text variable using pandas’ replace(), which can be accessed through pandas’ str, to 
+replace digits, '\d+', or symbols, '[^\w\s]', with empty strings, ''. Alternatively, we can use 
+the punctuation module from the built-in string package.
+Tip
+Run string.punctuation in your Python console after importing string to check out 
+the symbols that will be replaced with empty strings.
+Next, utilizing pandas’ string processing functionality through str, we set all of the words to lowercase 
+with the lower() method. To remove stop words from the text, we used the stopwords module 
+from NLTK, which contains a list of words that are considered frequent – that is, the stop words. We 
+created a function that takes a string and splits it into a list of words using pandas’ str.split(), 
+and then, with list comprehension, we looped over the words in the list and retained the non-stop 
+words. Finally, with the join() method, we concatenated the retained words back into a string. 
+We used the built-in Python set() method over the NLTK stop words list to improve computation 
+efficiency since it is faster to iterate over sets than over lists. Finally, with pandas’ apply(), we applied 
+the function to each row of our text data.
+Tip
+Run stopwords.words('english') in your Python console after importing stopwords 
+from NLTK to visualize the list with the stop words that will be removed.
+Finally, we stemmed the words using SnowballStemmer from NLTK. SnowballStemmer works 
+one word at a time. Therefore, we created a function that takes a string and splits it into a list of words 
+using pandas’ str.split(). In a list comprehension, we applied SnowballStemmer word per 
+word and then concatenated the list of stemmed words back into a string using the join() method. 
+With pandas’ apply(), we applied the function to stem words to each row of the DataFrame.

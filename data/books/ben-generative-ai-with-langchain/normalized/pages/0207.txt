@@ -1,0 +1,25 @@
+Building Intelligent RAG Systems
+180
+Questions
+1.
+What are the key benefits of using vector embeddings in RAG?
+2.
+How does MMR improve document retrieval?
+3.
+Why is chunking necessary for effective document retrieval?
+4.
+What strategies can be used to mitigate hallucinations in RAG implementations?
+5.
+How do hybrid search techniques enhance the retrieval process?
+6.	 What are the key components of a chatbot utilizing RAG principles?
+7.
+Why is performance evaluation critical in RAG-based systems?
+8.	 What are the different retrieval methods in RAG systems?
+9.
+How does contextual compression refine retrieved information before LLM processing?
+Subscribe for a free eBook
+New frameworks, evolving architectures, research drops, production breakdowns-AI_Distilled
+filters the noise into a weekly briefing for engineers and researchers working hands-on with LLMs
+and GenAI systems. Subscribe now and receive a free eBook, along with weekly insights that help
+you stay focused and informed.
+Subscribe at https://packt.link/8Oz6Y or scan the QR code below.

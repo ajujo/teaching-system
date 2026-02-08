@@ -1,0 +1,29 @@
+USUARIO
+Necesito que mi conexión a internet vuelva a funcionar.
+Ante este ejemplo, cabe preguntarse por qué no dividir el prompt de
+clasificación de intenciones en dos prompts, uno para la categoría principal
+y otro para la segunda categoría. El tamaño de cada subtarea depende de
+cada caso de uso y del equilibrio entre rendimiento, costo y latencia con el
+que se sienta cómodo. Tendrá que experimentar para encontrar la división y
+secuencia óptimas.
+Aunque los modelos cada vez comprenden mejor las instrucciones
+complejas, siguen rindiendo mejor con las más sencillas. La división de
+prompts no solo mejora el rendimiento, sino que también ofrece varias
+ventajas adicionales:
+Monitoreo
+Puede controlar no solo el output final, sino también todos
+los outputs intermedios.
+Depuración
+Puede aislar el paso que dé problemas y arreglarlo de forma
+independiente sin cambiar el comportamiento del modelo
+en los otros pasos.
+Paralelización
+Cuando sea posible, ejecute pasos independientes en
+paralelo para ahorrar tiempo. Imagínese que le pide a un
+modelo que genere tres versiones distintas de la historia
+para tres niveles de lectura diferentes: primer curso, octavo
+curso y primer año de universidad. Estas tres versiones
+pueden generarse al mismo tiempo, lo que reduce
+considerablemente la latencia de output. 9
+Esfuerzo
+Es más fácil escribir prompts sencillos que complejos.

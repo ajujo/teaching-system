@@ -1,0 +1,36 @@
+Evaluation and Testing
+330
+json_validator = JsonValidityEvaluator()
+valid_json_output = '{"company": "Acme Corp", "revenue": 1000000, 
+"profit": 200000}'
+invalid_json_output = '{"company": "Acme Corp", "revenue": 1000000, 
+"profit": 200000,}'
+# Evaluate the valid JSON.
+valid_result = json_validator.evaluate_strings(prediction=valid_json_
+output)
+print("JSON validity result (valid):", valid_result)
+# Evaluate the invalid JSON.
+invalid_result = json_validator.evaluate_strings(prediction=invalid_json_
+output)
+print("JSON validity result (invalid):", invalid_result)
+We’ll see a score indicating the JSON is valid:
+JSON validity result (valid): {'score': 1}
+For the invalid JSON, we are getting a score indicating the JSON is invalid:
+JSON validity result (invalid): {'score': 0, 'reasoning': 'Expecting 
+property name enclosed in double quotes: line 1 column 63 (char 62)'}
+This validation approach is particularly valuable in production systems where LLMs interface 
+with other software components. The JsonValidityEvaluator not only identifies invalid outputs 
+but also provides detailed error messages pinpointing the exact location of formatting errors. 
+This facilitates rapid debugging and can be incorporated into automated testing pipelines to 
+prevent format-related failures. Consider implementing similar validators for other formats 
+your application may generate, such as XML, CSV, or domain-specific formats like FIX protocol 
+for financial transactions.
+Evaluating agent trajectory
+Complex agents require evaluation across three critical dimensions:
+•	
+Final response evaluation: Assess the ultimate output provided to the user (factual ac­
+curacy, helpfulness, quality, and safety)
+•	
+Trajectory evaluation: Examine the path the agent took to reach its conclusion
+•	
+Single-step evaluation: Analyze individual decision points in isolation

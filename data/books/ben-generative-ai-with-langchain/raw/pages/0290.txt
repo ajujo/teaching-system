@@ -1,0 +1,34 @@
+Chapter 6
+263
+•	
+You need to keep the memory distributed and across multiple workers, and you’d like to 
+use a database other than PostgreSQL.
+Cache
+Caching allows you to save and retrieve key values. Imagine you’re working on an enterprise ques­
+tion-answering assistance application, and in the UI, you ask a user whether they like the answer. 
+If the answer is positive, or if you have a curated dataset of question-answer pairs for the most 
+important topics, you can store these in a cache. When the same (or a similar) question is asked 
+later, the system can quickly return the cached response instead of regenerating it from scratch.
+LangChain allows you to set a global cache for LLM responses in the following way (after you 
+have initialized the cache, the LLM’s response will be added to the cache, as we’ll see below):
+from langchain_core.caches import InMemoryCache
+from langchain_core.globals import set_llm_cache
+cache = InMemoryCache()
+set_llm_cache(cache)
+llm = ChatVertexAI(model="gemini-2.0-flash-001", temperature=0.5)
+llm.invoke("What is the capital of UK?")
+Caching with LangChain works as follows: Each vendor’s implementation of a ChatModel inherits 
+from the base class, and the base class first tries to look up a value in the cache during generation. 
+cache is a global variable that we can expect (of course, only after it has been initialized). It caches 
+responses based on the key that consists of a string representation of the prompt and the string 
+representation of the LLM instance (produced by the llm._get_llm_string method).
+This means the LLM’s generation parameters (such as stop_words or temperature) are included 
+in the cache key:
+import langchain
+print(langchain.llm_cache._cache)
+LangChain supports in-memory and SQLite caches out of the box (they form part of langchain_
+core.caches), and there are also many vendor integrations – available through the langchain_
+community.cache subpackage at https://python.langchain.com/api_reference/community/
+cache.html or through specific vendor integrations (for example, langchain-mongodb offers 
+cache integration for MongoDB: https://langchain-mongodb.readthedocs.io/en/latest/
+langchain_mongodb/api_docs.html).

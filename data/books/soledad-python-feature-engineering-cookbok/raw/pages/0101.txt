@@ -1,0 +1,40 @@
+Encoding Categorical Variables
+78
+    random_state=0,
+)
+3.	
+Let’s capture the fraction of observations per category in A7 in a variable:
+freqs = X_train["A7"].value_counts(normalize=True)
+We can see the percentage of observations per category of A7, expressed as decimals, in the 
+following output after executing print(freqs):
+v 0.573499
+h 0.209110
+ff 0.084886
+bb 0.080745
+z 0.014493
+dd 0.010352
+j 0.010352
+Missing 0.008282
+n 0.006211
+o 0.002070
+Name: A7, dtype: float64
+If we consider those labels present in less than 5% of the observations as rare, then z, dd, j, 
+Missing, n, and o are rare categories.
+4.	
+Let’s create a list containing the names of the categories present in more than 5% of the observations:
+frequent_cat = [
+    x for x in freqs.loc[freqs > 0.05].index.values]
+If we execute print(frequent_cat), we will see the frequent categories of A7:
+['v', 'h', 'ff', 'bb'].
+5.	
+Let’s replace rare labels – that is, those present in <= 5% of the observations – with the Rare 
+string in a copy of the datasets:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+X_train_enc["A7"] = np.where(X_train["A7"].isin(
+    frequent_cat), X_train["A7"], "Rare")
+X_test_enc["A7"] = np.where(X_test["A7"].isin(
+    frequent_cat), X_test["A7"], "Rare")
+6.	
+Let’s determine the percentage of observations in the encoded variable:
+X_train["A7"].value_counts(normalize=True)

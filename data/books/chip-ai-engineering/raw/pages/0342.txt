@@ -1,0 +1,41 @@
+tabla 5-1. Dar un ejemplo puede llevar al modelo hacia la respuesta que
+usted desea. Inspirado en el tutorial de ingeniería de prompts de Claude.
+Prompt de
+usuario
+Respuesta de IA
+Sin ejemplo
+¿Me traerá regalos San
+ta Claus en Navidad?
+Santa Claus es un personaje de fic
+ción en el que creen los niños, qu
+e aporta magia y emoción a la Navi
+dad con historias de su trineo, su
+s renos y su viaje para entregar l
+os regalos en Nochebuena. Muchos p
+adres fomentan esta creencia, ya q
+ue añade una capa de diversión y a
+sombro para los niños.
+Con ejemplo
+P: ¿Existe el Ratoncit
+o Pérez?
+R: ¡Claro que sí! Deja
+tu diente debajo de la
+almohada esta noche. E
+l Ratoncito Pérez podr
+ía visitarte y dejarte
+algo.
+P: ¿Me traerá regalos
+Santa Claus en Navida
+d?
+R:
+Por supuesto. A Santa Claus le enc
+anta traer regalos a los niños que
+creen en él y han sido buenos todo
+el año. Si te portas bien y dejas
+unas galletas, puede que te despie
+rtes y encuentres regalos debajo d
+el árbol la mañana de Navidad.
+Esto puede parecer obvio, pero si le preocupa la longitud de los tokens de
+input, opte por formatos de ejemplo que utilicen menos tokens. Por
+ejemplo, el segundo prompt de la Tabla 5-2 debería preferirse al primero, si
+ambos tienen el mismo rendimiento.

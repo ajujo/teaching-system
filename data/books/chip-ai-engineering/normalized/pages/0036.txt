@@ -1,0 +1,10 @@
+marca ni resaltar su mensaje. Las descripciones generadas pueden incluso
+estar llenas de lenguaje de marketing y clichés.
+figura 1-4. La gama de tareas de la prueba comparativa Super-NaturalInstructions
+(Wang et al., 2022).
+Hay múltiples técnicas que puede utilizar para conseguir que el modelo
+genere lo que quiere. Por ejemplo, puede elaborar instrucciones detalladas
+con ejemplos de las descripciones de productos deseables. Este enfoque es
+la ingeniería de prompts. Puede conectar el modelo a una base de datos de
+opiniones de clientes que el modelo puede aprovechar para generar mejores
+descripciones. El uso de una base de datos para complementar las

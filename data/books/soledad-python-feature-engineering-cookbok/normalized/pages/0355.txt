@@ -1,0 +1,38 @@
+Creating Features from a Time Series with tsfresh
+332
+    },
+    'temperature': {
+        'c3': [{'lag': 1}, {'lag': 2}, {'lag':3}],
+        'abs_energy': None}
+}
+9.
+Now, we can use the dictionary from step 8 together with the extract_features function
+to create only those features from our dataset:
+features = extract_features(
+    X,
+    column_id="id",
+    column_sort="date",
+    kind_to_fc_parameters=kind_to_fc_parameters,
+)
+The new DataFrame, which can be displayed by executing features.head(), only contains the
+12 features that were selected by Lasso. Go ahead and corroborate the result on your computer.
+How it works...
+In this recipe, we created 968 features from 5 time series. Next, we reduced the feature space to 12
+features by using Lasso regularization. Finally, we captured the specifications of the selected features
+in a dictionary so that, looking forward, we only created those features from our time series.
+To automatically create and select features with tsfresh, we used the extract_relevant_
+features function, which we described in detail in the Automatically creating and selecting predictive
+features from time-series data recipe.
+Lasso regularization has the intrinsic ability to reduce some of the coefficients of the logistic regression
+model to 0. The contribution of the features whose coefficient is 0 to the prediction of office occupancy
+is null and can therefore be removed. The SelectFromModel() class can identify and remove those
+features. We set up an instance of SelectFromModel() with a logistic regression model that used
+Lasso regularization to find the model coefficients. With fit(), SelectFromModel() trained
+the logistic regression model using the 968 features created from our time series and identified those
+whose coefficients were different from 0. Then, with the get_feature_names_out() method,
+we captured the names of the selected features in a new variable.
+To create only the 12 features selected by Lasso regularization, we created a dictionary from the variable
+names by using the from_columns() function from tsfresh. This function returned a dictionary
+with the variables from which features were selected as keys. The values were additional dictionaries,
+containing the methods used to create features as keys, and the parameters used, if any, as values. To
+create the new features, we used this dictionary together with the extract_features function.

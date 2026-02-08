@@ -1,0 +1,37 @@
+Imputing Missing Data
+20
+We can replace missing data with a value that is greater or smaller than most values in the variable. To
+select a value that is greater, we can use the mean plus a factor of the standard deviation. Alternatively,
+we can set it to the 75th quantile + IQR × 1.5. IQR stands for inter-quartile range and is the difference
+between the 75th and 25th quantile. To replace missing data with values that are smaller than the
+remaining values, we can use the mean minus a factor of the standard deviation, or the 25th quantile
+- IQR × 1.5.
+Note
+End-of-tail imputation may distort the distribution of the original variables, so it may not be
+suitable for linear models.
+In this recipe, we will implement end-of-tail or extreme value imputation using pandas and featureengine.
+How to do it...
+To begin this recipe, let's import the necessary tools and load the data:
+1.
+Let's import pandas and the required function and class:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from feature_engine.imputation import EndTailImputer
+2.
+Let's load the dataset we described in the Technical requirements section:
+data = pd.read_csv("credit_approval_uci.csv")
+3.
+Let's capture the numerical variables in a list, excluding the target:
+numeric_vars = [
+    var for var in data.select_dtypes(
+        exclude="O").columns.to_list()
+    if var !="target"
+]
+4.
+Let's split the data into train and test sets, keeping only the numerical variables:
+X_train, X_test, y_train, y_test = train_test_split(
+    data[numeric_vars],
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)

@@ -1,0 +1,66 @@
+Index
+483
+Hugging Face Hub
+reference link  245
+human-generated, human-evaluated 
+datasets  233
+human-generated, LLM-evaluated  
+datasets  233
+hybrid search  123
+Hypothetical document  
+embeddings (HyDE)  121
+I
+IAM role  421
+IDE's MongoDB plugin  94
+IFEval  264
+in-breadth evolving  194
+in-depth evolving  194
+inference deployment types  357
+asynchronous inference  359, 360
+offline batch transform  360
+online real-time inference  358, 359
+inference pipeline  22
+versus training pipeline  369, 370
+infrastructure  355, 356
+infrastructure-as-code (IaC)  391
+input guardrails  410
+input test  463
+instruction dataset
+creating  178, 196-206
+data augmentation  193-196
+data curation  182
+data decontamination  185, 186
+data deduplication  184, 185
+data exploration  189-191
+data generation  191-193
+data quality evaluation  186-189
+data quantity  180-182
+general framework  178, 179
+high-quality data  179
+rule-based filtering  183, 184
+integration tests  462
+invariance  465
+iterative improvement  246
+J
+Jenkins  403
+jobs  435
+K
+key-value (KV) cache  291-294
+keywords filtering  183
+Kolmogorov-Smirnov (KS)  470
+Kullback-Leibler (KL)  247
+L
+Langfuse UI
+example trace  412, 413
+large language model (LLM)  1, 99, 353, 399
+latency  354
+length bias  237
+length filtering  183
+linting errors
+examples  434
+LLM-as-a-judge strategy  186
+LLM evaluation  235
+versus, ML evaluation  262, 263
+LLM-generated, human-evaluated  
+datasets  234
+LLM-generated, LLM-evaluated datasets  234

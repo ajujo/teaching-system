@@ -1,0 +1,71 @@
+{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-a01",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-02T17:36:43.283553+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "llm",
+  "strict": false,
+  "grading_time_ms": 27773,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El enfoque FTI permite compartir componentes entre los pipelines de feature, training e inference, lo que mejora la coherencia y reduce el esfuerzo de mantenimiento. Esto se menciona explícitamente como uno de los beneficios clave del diseño (página 15).",
+      "expected_answer": "1: Permite compartir componentes entre los tres pipelines, facilitando la coherencia y mantenimiento.",
+      "given_answer": "1: Permite compartir componentes entre los tres pipelines, facilitando la coherencia y mantenimiento.",
+      "correct_option_text": "Permite compartir componentes entre los tres pipelines, facilitando la coherencia y mantenimiento.",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El MVP (Minimum Viable Product) se define como la versión más simple que resuelve el problema fundamental y permite validar la hipótesis del negocio. Incluir todas las funcionalidades no es necesario ni recomendable en esta fase temprana.",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-q03",
+      "is_correct": true,
+      "score": 0.85,
+      "feedback": "La respuesta del estudiante es parcialmente correcta y captura la idea central de que los sistemas tradicionales son monolíticos y acoplados, lo cual dificulta su escalabilidad y mantenimiento. Sin embargo, no menciona explícitamente el punto clave de la página 8 sobre la complejidad del flujo de datos entre preprocesamiento, entrenamiento e inferencia, que es fundamental para entender por qué los FTI son necesarios. Se recomienda complementar con ejemplos concretos de cómo el acoplamiento afecta directamente al manejo de estos flujos.",
+      "expected_answer": "Los sistemas de ML tradicionales suelen fallar porque no manejan adecuadamente la complejidad del flujo de datos entre preprocesamiento, entrenamiento e inferencia. Esto genera inconsistencias y dificultades para escalar o mantener el sistema a largo plazo.",
+      "given_answer": "Los sistemas de ML tradicionales suelen fallar debido a que se construyen como monolitos acoplados, donde la lógica de los datos, el modelo y la ejecución están mezclados en un solo script",
+      "grading_path": "llm",
+      "confidence": 0.9
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-q04",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La página 5 explica que los LLM Twin se diseñan para casos de uso empresariales específicos, permitiendo personalizar el modelo con datos del dominio y optimizar su arquitectura. Esto contrasta con soluciones genéricas como ChatGPT.",
+      "expected_answer": "1: Un LLM Twin permite personalizar el modelo con datos específicos del dominio y optimizar su arquitectura para casos de uso empresariales.",
+      "given_answer": "1: Un LLM Twin permite personalizar el modelo con datos específicos del dominio y optimizar su arquitectura para casos de uso empresariales.",
+      "correct_option_text": "Un LLM Twin permite personalizar el modelo con datos específicos del dominio y optimizar su arquitectura para casos de uso empresariales.",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex04-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La página 17 indica explícitamente que el diseño debe integrar los tres pipelines (feature, training e inference) para garantizar coherencia y eficiencia en la arquitectura. Ignorar esta interacción llevaría a sistemas ineficaces.",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto"
+    }
+  ],
+  "summary": {
+    "total_questions": 5,
+    "correct_count": 5,
+    "total_score": 5.7,
+    "max_score": 6,
+    "percentage": 0.9500000000000001,
+    "passed": true
+  }
+}

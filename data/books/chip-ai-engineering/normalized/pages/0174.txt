@@ -1,0 +1,12 @@
+figura 2-25. Una suposición inicial incorrecta puede hacer que el modelo afirme que
+9677 es divisible por 13, aunque sepa que no es cierto.
+El artículo de DeepMind demostró que las alucinaciones pueden mitigarse
+mediante dos técnicas. La primera técnica procede del aprendizaje por
+refuerzo, en el que se hace que el modelo diferencie entre los prompts del
+usuario (llamados observaciones sobre el mundo en el aprendizaje por
+refuerzo) y los tokens generados por el modelo (llamados acciones del
+modelo). La segunda técnica se basa en el aprendizaje supervisado, en el
+que se incluyen señales factuales y contrafactuales en los datos de
+entrenamiento.
+La segunda hipótesis es que las alucinaciones son causadas por el desajuste
+entre el conocimiento interno del modelo y el conocimiento interno del

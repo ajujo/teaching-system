@@ -1,0 +1,33 @@
+Chapter 1
+23
+Also, each pipeline will be scaled differently. The data and feature pipelines will be scaled horizon-
+tally based on the CPU and RAM load. The training pipeline will be scaled vertically by adding more 
+GPUs. The inference pipeline will be scaled horizontally based on the number of client requests.
+To conclude, the presented LLM architecture checks all the technical requirements listed at the 
+beginning of the section. It processes the data as requested, and the training is modular and can 
+be quickly adapted to different LLMs, datasets, or fine-tuning techniques. The inference pipeline 
+supports RAG and is exposed as a REST API. On the LLMOps side, the system supports dataset and 
+model versioning, lineage, and reusability. The system has a monitoring service, and the whole 
+ML architecture is designed with CT/CI/CD in mind.
+This concludes the high-level overview of the LLM Twin architecture.
+Summary
+This first chapter was critical to understanding the book’s goal. As a product-oriented book that 
+will walk you through building an end-to-end ML system, it was essential to understand the 
+concept of an LLM Twin initially. Afterward, we walked you through what an MVP is and how 
+to plan our LLM Twin MVP based on our available resources. Following this, we translated our 
+concept into a practical technical solution with specific requirements. In this context, we intro-
+duced the FTI design pattern and showcased its real-world application in designing systems that 
+are both modular and scalable. Ultimately, we successfully applied the FTI pattern to design the 
+architecture of the LLM Twin to fit all our technical requirements.
+Having a clear vision of the big picture is essential when building systems. Understanding how 
+a single component will be integrated into the rest of the application can be very valuable when 
+working on it. We started with a more abstract presentation of the LLM Twin architecture, fo-
+cusing on each component’s scope, interface, and interconnectivity.
+The following chapters will explore how to implement and deploy each component. On the 
+MLOps side, we will walk you through using a computing platform, orchestrator, model registry, 
+artifacts, and other tools and concepts to support all MLOps best practices.
+References
+•	
+Dowling, J. (2024a, July 11). From MLOps to ML Systems with Feature/Training/Inference 
+Pipelines. Hopsworks. https://www.hopsworks.ai/post/mlops-to-ml-systems-with-
+fti-pipelines

@@ -1,0 +1,47 @@
+ensures flexibility: the role (e.g., "helpful assistant") and temperature (for creativity)
+can be tuned, while output descriptions guide task-specific behaviors, such as return‐
+ing only a single-letter answer for MMLU.
+At the heart of MAS is the search function, which iterates over generations to evolve
+agents. Starting from an initial archive (e.g., basic prompt-based agents), it conditions
+the meta-agent on past successes, generates new code, applies Reflexion for refine‐
+ment, evaluates on validation data, and archives fitness-scored solutions. This loop
+balances exploration (novel designs) with exploitation (building on high performers),
+often running for 25-30 generations:
+def search(args, task):
+    archive = task.get_init_archive()  # Or load existing
+    for n in range(args.n_generation):
+        # Generate prompt from archive
+        msg_list = [{"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt}]
+        next_solution = get_json_response_from_gpt_reflect(
+            msg_list, args.model)
+        # Initial generation
+        # Reflexion: Two steps to refine
+        next_solution = reflect_and_refine(msg_list,
+            task.get_reflexion_prompt())
+        # Pseudocode for reflections
+        # Evaluate and debug
+        acc_list = evaluate_forward_fn(args, next_solution["code"], task)
+        next_solution['fitness'] = bootstrap_confidence_interval(acc_list)
+        archive.append(next_solution)
+def evaluate_forward_fn(args, forward_str, task):
+    # Dynamically load agent code as function
+    exec(forward_str, globals(), namespace)
+    func = namespace['forward']  # Assume single function
+    data = task.load_data(SEARCHING_MODE)  # Val or test
+    task_queue = task.prepare_task_queue(data)
+    # Parallel evaluate
+    with ThreadPoolExecutor() as executor:
+        acc_list = list(executor.map(process_item, task_queue))
+        # process_item: run func, score vs truth
+        return acc_list
+The evaluation function dynamically loads the generated agent's code (via exec) as a
+callable forward function, applies it to task data in parallel (using multithreading for
+efficiency), and computes accuracy via task-specific scoring. This modular setup ena‐
+bles easy adaptation to new problems by subclassing a BaseTask abstract class, which
+defines methods for data loading, formatting, and prediction parsing. For example, in
+MMLU, it maps letter choices (A-D) to indices for exact-match scoring, while in
+ARC, it evaluates grid transformations for pixel-perfect accuracy. Such
+Automated Design of Agent Systems
+|
+187

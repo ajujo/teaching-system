@@ -1,0 +1,41 @@
+Context Engineering
+Context engineering is a core component of orchestration. It ensures that each step in
+an agent’s plan has the right information and instructions to perform effectively.
+While prompt engineering focuses on writing effective instructions, context engi‐
+neering involves dynamically assembling all inputs—user messages, retrieved knowl‐
+edge, workflow state, and system prompts—into a structured, token-efficient context
+window that maximizes task performance. For example, planner-executor agents
+depend on clean plan outputs being passed as context to executor steps, while ReAct
+agents require relevant tool results embedded clearly in the prompt to inform their
+next reasoning cycle. Context engineering thus bridges planning and execution, ena‐
+bling agent workflows to remain coherent, grounded, and aligned with user goals.
+At its core, context engineering involves deciding what information to include, how
+to structure it for maximum clarity and relevance, and how to fit it efficiently within
+token limits. This includes the current user input, relevant snippets retrieved from
+memory or external knowledge bases, summaries of prior conversations, system
+instructions defining the agent’s role, and any workflow state necessary for the task at
+hand. In simple systems, context may consist only of a system prompt and the latest
+user query. But as agents tackle more complex tasks—like orchestrating multistep
+workflows or personalizing recommendations based on past interactions—dynamic
+context construction becomes critical for maintaining coherence, accuracy, and
+utility.
+For example, an agent handling ecommerce support might construct its context by
+combining the system prompt defining its allowed actions, the user’s current mes‐
+sage, a retrieved summary of the order record, and any applicable policy excerpts. In
+more advanced systems, the context might also include summaries of prior related
+conversations or the results of tool invocations from earlier in the workflow. Each
+additional element can improve task performance, but only if included thoughtfully;
+irrelevant or poorly structured context risks distracting the model or exceeding token
+budgets without benefit.
+Effective context engineering requires several core practices. First, prioritize rele‐
+vance by retrieving only the most useful information from memory or knowledge
+bases, rather than indiscriminately appending large blocks of text. Second, maintain
+clarity through structured formatting or schemas such as Model Context Protocol
+(MCP), which pass state and retrieved knowledge to the model in a predictable, inter‐
+pretable way. Third, use summarization techniques to compress longer histories into
+concise representations, preserving critical details without wasting tokens. Finally,
+ensure that context is dynamically assembled at each inference step to reflect the
+agent’s current objectives, workflow stage, and user input.
+112 
+| 
+Chapter 5: Orchestration

@@ -1,0 +1,40 @@
+First Steps with LangChain
+30
+You can set all your keys in the config.py file. This function, set_environment(), loads all the
+keys into the environment as mentioned. Anytime you want to run an application, you import
+the function and run it like so:
+from config import set_environment
+set_environment()
+For production environments, consider using dedicated secrets management services or en­
+vironment variables injected at runtime. These approaches provide additional security while
+maintaining the separation between code and credentials.
+While OpenAI's models remain influential, the LLM ecosystem has rapidly diversified, offering
+developers multiple options for their applications. To maintain clarity, we'll separate LLMs from
+the model gateways that provide access to them.
+•
+Key LLM families
+•
+Anthropic Claude: Excels in reasoning, long-form content processing, and vision
+analysis with up to 200K token context windows
+•
+Mistral models: Powerful open-source models with strong multilingual capabil­
+ities and exceptional reasoning abilities
+•
+Google Gemini: Advanced multimodal models with industry-leading 1M token
+context window and real-time information access
+•
+OpenAI GPT-o: Leading omnimodal capabilities accepting text, audio, image, and
+video with enhanced reasoning
+•
+DeepSeek models: Specialized in coding and technical reasoning with state-ofthe-art performance on programming tasks
+•
+AI21 Labs Jurassic: Strong in academic applications and long-form content gen­
+eration
+•
+Inflection Pi: Optimized for conversational AI with exceptional emotional intel­
+ligence
+•
+Perplexity models: Focused on accurate, cited answers for research applications
+•
+Cohere models: Specialized for enterprise applications with strong multilingual
+capabilities

@@ -1,0 +1,617 @@
+{
+  "$schema": "outline_v1",
+  "book_id": "ben-generative-ai-with-langchain",
+  "generated_date": "2026-01-29T18:41:10.150643+00:00",
+  "chapters": [
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:1",
+      "number": 1,
+      "title": "The Rise of Generative AI: From Language Models to Agents",
+      "start_page": 1,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:1:sec:1",
+          "number": "1.1",
+          "title": "The modern LLM landscape",
+          "start_page": 2,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:1:sec:2",
+          "number": "1.2",
+          "title": "From models to agentic applications",
+          "start_page": 8,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:1:sec:3",
+          "number": "1.3",
+          "title": "Introducing LangChain",
+          "start_page": 14,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:1:sec:4",
+          "number": "1.4",
+          "title": "Summary",
+          "start_page": 23,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:1:sec:5",
+          "number": "1.5",
+          "title": "Questions",
+          "start_page": 23,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:2",
+      "number": 2,
+      "title": "First Steps with LangChain",
+      "start_page": 25,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:1",
+          "number": "2.1",
+          "title": "Setting up dependencies for this book",
+          "start_page": 26,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:2",
+          "number": "2.2",
+          "title": "Exploring LangChain's building blocks",
+          "start_page": 32,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:3",
+          "number": "2.3",
+          "title": "Running local models",
+          "start_page": 48,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:4",
+          "number": "2.4",
+          "title": "Multimodal AI applications",
+          "start_page": 54,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:5",
+          "number": "2.5",
+          "title": "Summary",
+          "start_page": 63,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:2:sec:6",
+          "number": "2.6",
+          "title": "Review questions",
+          "start_page": 63,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:3",
+      "number": 3,
+      "title": "Building Workflows with LangGraph",
+      "start_page": 67,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:1",
+          "number": "3.1",
+          "title": "LangGraph fundamentals",
+          "start_page": 68,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:2",
+          "number": "3.2",
+          "title": "Prompt engineering",
+          "start_page": 85,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:3",
+          "number": "3.3",
+          "title": "Working with short context windows",
+          "start_page": 93,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:4",
+          "number": "3.4",
+          "title": "Understanding memory mechanisms",
+          "start_page": 97,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:5",
+          "number": "3.5",
+          "title": "Summary",
+          "start_page": 103,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:3:sec:6",
+          "number": "3.6",
+          "title": "Questions",
+          "start_page": 104,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:4",
+      "number": 4,
+      "title": "Building Intelligent RAG Systems",
+      "start_page": 107,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:1",
+          "number": "4.1",
+          "title": "From indexes to intelligent retrieval",
+          "start_page": 108,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:2",
+          "number": "4.2",
+          "title": "Components of a RAG system",
+          "start_page": 110,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:3",
+          "number": "4.3",
+          "title": "From embeddings to search",
+          "start_page": 113,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:4",
+          "number": "4.4",
+          "title": "Breaking down the RAG pipeline",
+          "start_page": 127,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:5",
+          "number": "4.5",
+          "title": "Developing a corporate documentation chatbot",
+          "start_page": 161,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:6",
+          "number": "4.6",
+          "title": "Troubleshooting RAG systems",
+          "start_page": 178,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:7",
+          "number": "4.7",
+          "title": "Summary",
+          "start_page": 179,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:4:sec:8",
+          "number": "4.8",
+          "title": "Questions",
+          "start_page": 180,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:5",
+      "number": 5,
+      "title": "Building Intelligent Agents",
+      "start_page": 181,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:1",
+          "number": "5.1",
+          "title": "What is a tool?",
+          "start_page": 182,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:2",
+          "number": "5.2",
+          "title": "Defining tools",
+          "start_page": 192,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:3",
+          "number": "5.3",
+          "title": "Advanced tool-calling capabilities",
+          "start_page": 209,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:4",
+          "number": "5.4",
+          "title": "Incorporating tools into workflows",
+          "start_page": 210,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:5",
+          "number": "5.5",
+          "title": "What are agents?",
+          "start_page": 216,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:6",
+          "number": "5.6",
+          "title": "Summary",
+          "start_page": 221,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:5:sec:7",
+          "number": "5.7",
+          "title": "Questions",
+          "start_page": 221,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:6",
+      "number": 6,
+      "title": "Advanced Applications and Multi-Agent Systems",
+      "start_page": 223,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:1",
+          "number": "6.1",
+          "title": "Agentic architectures",
+          "start_page": 224,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:2",
+          "number": "6.2",
+          "title": "Multi-agent architectures",
+          "start_page": 227,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:3",
+          "number": "6.3",
+          "title": "Building adaptive systems",
+          "start_page": 248,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:4",
+          "number": "6.4",
+          "title": "Exploring reasoning paths",
+          "start_page": 250,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:5",
+          "number": "6.5",
+          "title": "Agent memory",
+          "start_page": 262,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:6",
+          "number": "6.6",
+          "title": "Summary",
+          "start_page": 265,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:6:sec:7",
+          "number": "6.7",
+          "title": "Questions",
+          "start_page": 266,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:7",
+      "number": 7,
+      "title": "Software Development and Data Analysis Agents",
+      "start_page": 267,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:7:sec:1",
+          "number": "7.1",
+          "title": "LLMs in software development",
+          "start_page": 268,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:7:sec:2",
+          "number": "7.2",
+          "title": "Writing code with LLMs",
+          "start_page": 282,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:7:sec:3",
+          "number": "7.3",
+          "title": "Applying LLM agents for data science",
+          "start_page": 295,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:7:sec:4",
+          "number": "7.4",
+          "title": "Summary",
+          "start_page": 306,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:7:sec:5",
+          "number": "7.5",
+          "title": "Questions",
+          "start_page": 307,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:8",
+      "number": 8,
+      "title": "Evaluation and Testing",
+      "start_page": 309,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:1",
+          "number": "8.1",
+          "title": "Why evaluation matters",
+          "start_page": 310,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:2",
+          "number": "8.2",
+          "title": "What we evaluate: core agent capabilities",
+          "start_page": 316,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:3",
+          "number": "8.3",
+          "title": "How we evaluate: methodologies and approaches",
+          "start_page": 320,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:4",
+          "number": "8.4",
+          "title": "Evaluating LLM agents in practice",
+          "start_page": 323,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:5",
+          "number": "8.5",
+          "title": "Offline evaluation",
+          "start_page": 336,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:6",
+          "number": "8.6",
+          "title": "Summary",
+          "start_page": 347,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:8:sec:7",
+          "number": "8.7",
+          "title": "Questions",
+          "start_page": 348,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:9",
+      "number": 9,
+      "title": "Production-Ready LLM Deployment and Observability",
+      "start_page": 349,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:1",
+          "number": "9.1",
+          "title": "Security considerations for LLM applications",
+          "start_page": 350,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:2",
+          "number": "9.2",
+          "title": "Deploying LLM apps",
+          "start_page": 353,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:3",
+          "number": "9.3",
+          "title": "How to observe LLM apps",
+          "start_page": 386,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:4",
+          "number": "9.4",
+          "title": "Cost management for LangChain applications",
+          "start_page": 395,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:5",
+          "number": "9.5",
+          "title": "Summary",
+          "start_page": 400,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:9:sec:6",
+          "number": "9.6",
+          "title": "Questions",
+          "start_page": 400,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "chapter_id": "ben-generative-ai-with-langchain:ch:10",
+      "number": 10,
+      "title": "The Future of Generative Models: Beyond Scaling",
+      "start_page": 403,
+      "end_page": null,
+      "sections": [
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:1",
+          "number": "10.1",
+          "title": "The current state of generative AI",
+          "start_page": 404,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:2",
+          "number": "10.2",
+          "title": "The limitations of scaling and emerging alternatives",
+          "start_page": 410,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:3",
+          "number": "10.3",
+          "title": "Economic and industry transformation",
+          "start_page": 419,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:4",
+          "number": "10.4",
+          "title": "Societal implications",
+          "start_page": 424,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:5",
+          "number": "10.5",
+          "title": "Summary",
+          "start_page": 428,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:6",
+          "number": "10.6",
+          "title": "OpenAI",
+          "start_page": 431,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:7",
+          "number": "10.7",
+          "title": "Hugging Face",
+          "start_page": 433,
+          "end_page": null,
+          "subsections": []
+        },
+        {
+          "section_id": "ben-generative-ai-with-langchain:ch:10:sec:8",
+          "number": "10.8",
+          "title": "Google",
+          "start_page": 434,
+          "end_page": null,
+          "subsections": []
+        }
+      ]
+    }
+  ]
+}

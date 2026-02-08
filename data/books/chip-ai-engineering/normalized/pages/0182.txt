@@ -1,0 +1,23 @@
+de OpenAI que devuelvan el output con el logprob promedio más alto de entre
+10 outputs diferentes.
+31 Wang et al. (2023) llamó a este enfoque autoconsistencia.
+32 Sin embargo, lo mejor que se puede hacer con un modelo frágil es cambiarlo
+por otro.
+33 En este momento, dependiendo de la aplicación y el modelo, he visto que el
+porcentaje de objetos JSON generados correctamente oscila entre el 0 % y el
+90 %.
+34 Entrenar un modelo desde cero con datos que sigan el formato deseable
+también funciona, pero este libro no trata sobre el desarrollo de modelos desde
+cero.
+35 Algunos servicios de afinado lo hacen automáticamente. Los servicios de
+afinado de OpenAI solían permitir añadir una cabeza clasificadora durante el
+entrenamiento, pero al momento de escribir estas líneas, esta función ha sido
+desactivada.
+36 Como dice el meme, las probabilidades son bajas, pero nunca nulas.
+37 En diciembre de 2023, repasé tres meses de solicitudes de atención al cliente de
+una empresa de IA a la que asesoraba y descubrí que una quinta parte de las
+preguntas se referían a manejar la incoherencia de los modelos de IA. En un
+panel en el que participé con Drew Houston (CEO de Dropbox) y Harrison
+Chase (CEO de LangChain) en julio de 2023, todos estuvimos de acuerdo en
+que la alucinación es el mayor impedimento para muchos casos de uso
+empresarial de IA.

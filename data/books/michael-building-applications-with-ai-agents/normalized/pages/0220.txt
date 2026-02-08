@@ -1,0 +1,45 @@
+        result_messages = [first]
+        if hasattr(first, "tool_calls"):
+            for tc in first.tool_calls:
+                print(first)
+                print(tc['name'])
+                fn = self.tools.get(tc['name'])
+                if fn:
+                    out = fn.invoke(tc["args"])
+                    result_messages.append(ToolMessage(content=str(out),
+                                           tool_call_id=tc["id"]))
+            second = self.llm.invoke(full + result_messages)
+            result_messages.append(second)
+        # Update internal state (example: track processed steps within session)
+        step_key = str(len(self.internal_state) + 1)
+        # Or use a more specific key
+        self.internal_state[step_key] = {"status": "processed",
+                                         "timestamp": time.time()}
+        return {"messages": result_messages}
+    def get_state(self):
+        return self.internal_state  # Return entire session state
+This actor encapsulates the foundation model and tool logic, processing messages
+(tasks) serially via process_task-Ray queues concurrent calls to the same actor and
+executes them one by one, preserving order and state integrity. The internal_state
+dict is session-isolated because each actor is created per session, enabling per-session
+persistence (e.g., step tracking) without shared memory risks. A session manager
+actor handles dynamic creation for isolation:
+@ray.remote
+class SessionManager:
+    def __init__(self):
+        self.sessions: Dict[str, Dict[str, ray.actor.ActorHandle]] = {}
+    def get_or_create_actor(self, session_id: str, agent_name: str,
+        llm, tools: list, prompt: str):
+        if session_id not in self.sessions:
+            self.sessions[session_id] = {}
+        if agent_name not in self.sessions[session_id]:
+            actor = SpecialistActor.remote(agent_name, llm, tools, prompt)
+            self.sessions[session_id][agent_name] = actor
+        return self.sessions[session_id][agent_name]
+    def get_session_state(self, session_id: str, agent_name: str):
+        if session_id in self.sessions and
+               agent_name in self.sessions[session_id]:
+            actor = self.sessions[session_id][agent_name]
+198
+|
+Chapter 8: From One Agent to Many

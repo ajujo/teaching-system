@@ -1,0 +1,16 @@
+mucho más capaz, pero también exponerlo a riesgos significativamente
+mayores. Dar a un modelo acceso a acciones de escritura debe hacerse con
+sumo cuidado. Con las acciones de escritura añadidas, la arquitectura se
+parece a la Figura 10-10.
+Si ha seguido todos los pasos hasta ahora, es probable que su arquitectura se
+haya vuelto bastante compleja. Aunque los sistemas complejos pueden
+resolver más tareas, también introducen más modos de fallo, lo que los hace
+más difíciles de depurar debido a los muchos puntos potenciales de fallo
+que existen. La próxima sección abordará las mejores prácticas para
+mejorar la observabilidad del sistema.
+figura 10-10. Una arquitectura de aplicación que permite al sistema realizar acciones
+de escritura.
+Monitoreo y observabilidad
+Aunque he incluido la observabilidad en su propia sección, debe formar
+parte integral del diseño de un producto y no ser una ocurrencia tardía.
+Cuanto más complejo sea un producto, más crucial es la observabilidad.

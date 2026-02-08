@@ -1,0 +1,19 @@
+figura 7-5. La memoria necesaria para las activaciones puede opacar la memoria
+necesaria para las ponderaciones del modelo. Imagen de Korthikanti et al., 2022.
+Representaciones numéricas
+En el cálculo de memoria realizado hasta ahora, he supuesto que cada valor
+ocupa hasta 2 bytes de memoria. La memoria necesaria para representar
+cada valor en un modelo contribuye directamente a la huella de memoria
+total del modelo. Si se reduce a la mitad la memoria necesaria para cada
+valor, también se reduce a la mitad la memoria necesaria para las
+ponderaciones del modelo.
+Antes de hablar sobre cómo reducir la memoria necesaria para cada valor,
+es útil entender las representaciones numéricas. Los valores numéricos en
+las redes neuronales se representan tradicionalmente como números
+flotantes. La familia más común de formatos de punto flotante es la familia
+FP, que se adhiere al estándar del Instituto de Ingenieros Eléctricos y
+Electrónicos (IEEE) para la aritmética de punto flotante (IEEE 754):
+FP32 utiliza 32 bits (4 bytes) para representar un flotante. Este
+formato se denomina de precisión simple.
+FP64 utiliza 64 bits (8 bytes) y se denomina doble precisión.
+FP16 utiliza 16 bits (2 bytes) y se denomina media precisión.

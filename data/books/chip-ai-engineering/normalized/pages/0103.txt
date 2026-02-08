@@ -1,0 +1,45 @@
+tabla 2-3. Rendimiento de Open CLIP y CLIP en diferentes conjuntos de
+datos de imágenes.
+Conjunto de datos
+CLIP
+Precisión de ViT-
+B/32 (OpenAI)
+Open CLIP
+Precisión de ViT-
+B/32 (Cade)
+ImageNet
+63.2
+62.9
+ImageNet v2
+-
+62.6
+Birdsnap
+37.8
+46.0
+Country211
+17.8
+14.8
+Oxford 102 Categoría
+Flor
+66.7
+66.0
+Reconocimiento de
+señales de tráfico en
+Alemania
+32.2
+42.0
+Coches Stanford
+59.4
+79.3
+UCF101
+64.5
+63.1
+Aunque los modelos fundacionales de uso general pueden responder a
+preguntas cotidianas sobre distintos ámbitos, es poco probable que
+funcionen bien en tareas específicas de dominio, sobre todo si nunca han
+visto estas tareas durante el entrenamiento. Dos ejemplos de tareas
+específicas de dominio son el descubrimiento de fármacos y la detección
+del cáncer. El descubrimiento de fármacos implica datos sobre proteínas,
+ADN y ARN, que siguen formatos específicos y cuya adquisición es
+costosa. Es poco probable que estos datos se encuentren entre los datos
+disponibles públicamente en Internet. Del mismo modo, el cribado para el

@@ -1,0 +1,22 @@
+Chapter 8
+299
+    "mistralai/Mistral-7B-Instruct-v0.3",
+    attn_implementation="flash_attention_2",
+)
+The techniques presented in this section focused on improving the model's efficiency in processing
+tokens. In the next section, we will discuss how to distribute our model and calculations across
+multiple GPUs.
+Model parallelism
+Model parallelism allows you to distribute the memory and compute requirements of LLMs across
+multiple GPUs. This enables the training and inference of models too large to fit on a single device,
+while also improving performance in terms of throughput (tokens per second).
+There are three main approaches to model parallelism, each involving splitting the model weights
+and computation in different ways: data parallelism, pipeline parallelism, and tensor parallelism. Although these approaches were originally developed for training, we can reuse them for inference
+by focusing on the forward pass only.
+Data parallelism
+Data parallelism (DP) is the simplest type of model parallelism. It involves making copies of the
+model and distributing these replicas across different GPUs (see Figure 8.4). Each GPU processes
+a subset of the data simultaneously. During training, the gradients calculated on each GPU are
+averaged and used to update the model parameters, ensuring that each replica remains synchronized. This approach is particularly beneficial when the batch size is too large to fit into a single
+machine or when aiming to speed up the training process.
+Figure 8.4 - Illustration of data parallelism with four GPUs

@@ -1,0 +1,36 @@
+Encoding Categorical Variables
+46
+In this recipe, we will compare the one-hot encoding implementations of pandas, scikit-learn, 
+and feature-engine.
+How to do it...
+First, let’s make a few imports and get the data ready:
+1.	
+Import pandas and the train_test_split function from scikit-learn:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load the Credit Approval dataset:
+data = pd.read_csv("credit_approval_uci.csv")
+3.	
+Let’s separate the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+4.	
+Let’s inspect the unique categories of the A4 variable:
+X_train["A4"].unique()
+We can see the unique values of A4 in the following output:
+array(['u', 'y', 'Missing', 'l'], dtype=object)
+5.	
+Let’s encode A4 into k-1 binary variables using pandas and then inspect the first five rows 
+of the resulting DataFrame:
+dummies = pd.get_dummies(
+    X_train["A4"], drop_first=True)
+dummies.head()
+Note
+With pandas’ get_dummies(), we can either ignore or encode missing data through the 
+dummy_na parameter. By setting dummy_na=True, missing data will be encoded in a new 
+binary variable. To encode the variable into k dummies, use drop_first=False instead.

@@ -1,0 +1,32 @@
+comparativos públicos que en cualquier otro tablero de clasificación
+pública.
+La evaluación comparativa puede darnos señales discriminatorias sobre los
+modelos que no pueden obtenerse de otro modo. Para la evaluación fuera de
+línea, puede ser un gran complemento a las pruebas comparativas de
+evaluación. Para la evaluación en línea, puede ser complementaria a las
+pruebas A/B.
+Resumen
+Cuanto más fuertes se vuelven los modelos de IA, mayor es el potencial de
+fallos catastróficos, lo que hace que la evaluación sea aún más importante.
+Al mismo tiempo, evaluar modelos abiertos y potentes es todo un reto.
+Estos retos hacen que muchos equipos recurran a la evaluación humana.
+Siempre es útil contar con la ayuda de personas que comprueben la cordura
+del sistema y, en muchos casos, la evaluación humana es esencial. Sin
+embargo, este capítulo se centró en diferentes enfoques de la evaluación
+automática.
+Este capítulo comienza con una discusión sobre por qué los modelos
+fundacionales son más difíciles de evaluar que los modelos de ML
+tradicionales. Aunque se están desarrollando muchas técnicas de evaluación
+nuevas, las inversiones en evaluación siguen estando a la zaga de las
+inversiones en desarrollo de modelos y aplicaciones.
+Dado que muchos modelos fundacionales tienen un componente de modelo
+lingüístico, nos centramos en las métricas de modelado lingüístico,
+incluyendo la perplejidad y la entropía cruzada. Muchas personas con las
+que he hablado encuentran confusas estas métricas, por lo que he incluido
+una sección sobre cómo interpretarlas y aprovecharlas en la evaluación y el
+procesado de datos.
+A continuación, este capítulo se centra en los distintos enfoques para
+evaluar las respuestas abiertas, incluyendo la corrección funcional, las
+puntuaciones de similitud y la IA como juez. Los dos primeros enfoques de
+evaluación son exactos, mientras que la evaluación de la IA como juez es
+subjetiva.

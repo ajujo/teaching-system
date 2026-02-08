@@ -1,0 +1,43 @@
+Creating Features from a Time Series with tsfresh
+334
+4.
+Now, let's split the DataFrame from step 3 and the target from step 2 into training and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    tmp, y, random_state=0)
+Note
+X_train and X_test will be used as containers to store the features created by tsfresh.
+They are needed for the functionality of RelevantFeatureAugmenter() that we will
+discuss in the coming steps.
+5.
+Let's create a dictionary specifying the features to extract from each time series (I defined the
+following features arbitrarily):
+kind_to_fc_parameters = {
+    "light": {
+        "c3": [{"lag": 3}, {"lag": 2}, {"lag": 1}],
+        «abs_energy": None,
+        «sum_values": None,
+        «fft_coefficient": [
+            {«attr": "real", "coeff": 0},
+            {«attr": "abs", "coeff": 0}],
+        «spkt_welch_density": [
+            {«coeff": 2}, {"coeff":5}, {"coeff": 8}
+        ],
+        «agg_linear_trend": [
+            {«attr": "intercept",
+            „chunk_len": 50, „f_agg": „var"},
+            {"attr": "slope",
+            «chunk_len": 50, "f_agg":"var"},
+        ],
+        «change_quantiles": [
+            {«f_agg": "var", "isabs": False,
+            «qh": 1.0,"ql": 0.8},
+            {«f_agg": "var", "isabs": True,
+            «qh": 1.0,"ql": 0.8},
+        ],
+    },
+"co2": {
+    «fft_coefficient": [
+        {«attr": "real", "coeff": 0},
+        {«attr": "abs", "coeff": 0}],
+    "c3": [{"lag": 3}, {"lag": 2}, {"lag": 1}],
+    «sum_values": None,

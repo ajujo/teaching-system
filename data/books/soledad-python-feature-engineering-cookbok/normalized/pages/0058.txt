@@ -1,0 +1,37 @@
+Performing multivariate imputation by chained equations
+35
+MICE involves the following steps:
+1.
+First, it performs a simple univariate imputation to every variable with missing data. For
+example, median imputation.
+2.
+Next, it selects one specific variable, say, var_1, and sets the missing values back to missing.
+3.
+It trains a model to predict var_1 using the other variables as input features.
+4.
+Finally, it replaces the missing values of var_1 with the output of the model.
+MICE repeats steps 2 to 4 for each of the remaining variables.
+An imputation cycle concludes once all the variables have been modeled. MICE carries out multiple
+imputation cycles, typically 10. That is, we repeat steps 2 to 4 for each variable 10 times. The idea is
+that by the end of the cycles, we should have found the best possible estimates of the missing data
+for each variable.
+Note
+Multivariate imputation can be a useful alternative to univariate imputation in situations where
+we don't want to distort the variable distributions. Multivariate imputation is also useful when
+we are interested in having good estimates of the missing data.
+In this recipe, we will implement MICE using scikit-learn.
+How to do it...
+To begin the recipe, let's import the required libraries and load the data:
+1.
+Let's import the required Python libraries, classes, and functions:
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import BayesianRidge
+from sklearn.experimental import (
+    enable_iterative_imputer
+)
+from sklearn.impute import (
+    IterativeImputer,
+    SimpleImputer
+)

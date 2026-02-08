@@ -1,0 +1,21 @@
+herramienta para idear cadenas de prompts, lo que podría dar lugar a
+cadenas excesivamente largas y costosas.
+En segundo lugar, los desarrolladores de herramientas pueden cometer
+errores. Un desarrollador de herramientas puede tener la plantilla incorrecta
+para un modelo determinado, construir un prompt concatenando tokens en
+lugar de textos en bruto, o tener un error tipográfico en sus plantillas de
+prompts. La Figura 5-9 muestra errores tipográficos en un prompt de crítica
+predeterminado de LangChain.
+figura 5-9. Los errores tipográficos en un prompt predeterminado de LangChain están
+resaltados.
+Además, cualquier herramienta de ingeniería de prompts puede cambiar sin
+previo aviso. Es posible que cambien a otras plantillas de prompts o que
+reescriban sus prompts predeterminados. Cuantas más herramientas se
+utilicen, más complejo se vuelve el sistema, lo que aumenta la posibilidad
+de errores.
+Siguiendo el principio de simplicidad, querrá empezar escribiendo sus
+propios prompts sin ninguna herramienta. Esto le permitirá comprender
+mejor el modelo subyacente y sus requisitos.
+Si utiliza una herramienta de ingeniería de prompts, revise siempre los
+prompts producidos por esa herramienta para comprobar si tienen sentido y
+lleve la cuenta de cuántas llamadas a la API genera. 11 Por muy brillantes

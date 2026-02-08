@@ -1,0 +1,25 @@
+S
+segmentar, Anotar los datos de evaluación
+seguridad, Seguridad
+seguridad, como criterio de evaluación, Seguridad
+selección de modelos, Costo y latencia
+- crear un modelo frente a comprar un modelo, Flujo de trabajo de
+selección de modelos
+- código abierto, peso abierto y licencias de modelo, Flujo de
+trabajo de selección de modelos
+- modelos de código abierto frente a API de modelos, Código
+abierto, ponderación abierta y licencias modelo
+- flujo de trabajo de selección de modelos, Costo y latencia
+- navegar por los puntos de referencia públicos, Implementación en el
+dispositivo
+- selección y agregación de puntos de referencia, Implementación
+en el dispositivo
+- tablas de clasificación públicas, Selección e integración de
+pruebas comparativas
+servicio de inferencia
+- definido, Código abierto, ponderación abierta y licencias modelo
+- throughput/goodput, Latencia, TTFT y TPOT
+- y optimización de la inferencia, Optimización de la inferencia
+sesgo de indulgencia, Limitaciones de la retroalimentación
+sesgo de posición, Sesgos
+sesgo de preferencia, Sesgos

@@ -1,0 +1,25 @@
+10
+Inference Pipeline Deployment
+Deploying the inference pipeline for the large language model (LLM) Twin application is a critical 
+stage in the machine learning (ML) application life cycle. It’s where the most value is added to 
+your business, making your models accessible to your end users. However, successfully deploying 
+AI models can be challenging, as the models require expensive computing power and access to 
+up-to-date features to run the inference. To overcome these constraints, it’s crucial to careful-
+ly design your deployment strategy. This ensures that it meets the application’s requirements, 
+such as latency, throughput, and costs. As we work with LLMs, we must consider the inference 
+optimization techniques presented in Chapter 8, such as model quantization. Also, to automate 
+the deployment processes, we must leverage MLOps best practices, such as model registries that 
+version and share our models across our infrastructure.
+To understand how to design the deployment architecture of the LLM Twin, we will first look at 
+three deployment types we can choose from: online real-time inference, asynchronous inference, 
+and offline batch transform. Also, to better understand which option to choose for our LLM Twin 
+use case, we will quickly walk you through a set of critical criteria we must consider before making 
+an architectural decision, such as latency, throughput, data, and infrastructure. Also, we’ll weigh 
+the pros and cons of monolithic and microservices architecture in model serving, a decision that 
+can significantly influence the scalability and maintainability of your service.Once we’ve grasped 
+the various design choices available, we’ll focus on understanding the deployment strategy for 
+the LLM Twin’s inference pipeline. Subsequently, we will walk you through an end-to-end tu-
+torial on deploying the LLM Twin service, including deploying our custom fine-tuned LLM to 
+AWS SageMaker endpoints and implementing a FastAPI server as the central entry point for our 
+users. We will then wrap up this chapter with a short discussion on autoscaling strategies and 
+how to use them on SageMaker.

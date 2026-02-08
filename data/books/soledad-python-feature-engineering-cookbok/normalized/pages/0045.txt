@@ -1,0 +1,38 @@
+Imputing Missing Data
+22
+    variables=None,
+)
+Note
+To use the mean and standard deviation to calculate the replacement values, set imputation_
+method="Gaussian". Use left or right in the tail argument to specify the side of
+the distribution to consider when finding values for the imputation.
+2.
+Let's fit EndTailImputer() to the train set so that it learns the values for the imputation:
+imputer.fit(X_train)
+3.
+Let's inspect the learned values:
+imputer.imputer_dict_
+The previous command returns a dictionary with the values to use to impute each variable:
+{'A2': 88.18,
+ 'A3': 27.31,
+ 'A8': 11.504999999999999,
+ 'A11': 12.0,
+ 'A14': 908.0,
+ 'A15': 1800.0}
+4.
+Finally, let's replace the missing values:
+X_train = imputer.transform(X_train)
+X_test = imputer.transform(X_test)
+Remember that you can corroborate that the missing values were replaced by using X_
+train[['A2','A3', 'A8', 'A11', 'A14', 'A15']].isnull().mean().
+How it works...
+In this recipe, we replaced missing values in numerical variables with a number at the end of the
+distribution using pandas and feature-engine.
+We determined the imputation values according to the formulas described in the introduction to this
+recipe. We used pandas quantile() to find specific quantile values, or pandas mean() and
+std() for the mean and standard deviation. With pandas fillna() we replaced the missing values.
+To replace missing values with EndTailImputer() from feature-engine, we set distribution
+to iqr to calculate the values based on the IQR proximity rule. With tail set to right the
+transformer found the imputation values from the right of the distribution. With fit(), the imputer
+learned and stored the values for the imputation in a dictionary in the imputer_dict_ attribute.
+With transform(), we replaced the missing values, returning DataFrames.

@@ -1,0 +1,33 @@
+Building Workflows with LangGraph
+82
+Retries
+There are three distinct retry approaches, each suited to different scenarios:
+•
+Generic retry with Runnable
+•
+Node-specific retry policies
+•
+Semantic output repair
+Let's look at these in turn, starting with generic retries that are available for every Runnable.
+You can retry any Runnable or LangGraph node using a built-in mechanism:
+fake_llm_retry = fake_llm.with_retry(
+   retry_if_exception_type=(ValueError,),
+   wait_exponential_jitter=True,
+   stop_after_attempt=2,
+)
+analyze_chain_fake_retries = fake_llm_retry | parser
+With LangGraph, you can also describe specific retries for every node. For example, let's retry our
+analyze_job_description node two times in case of a ValueError:
+from langgraph.pregel import RetryPolicy
+builder.add_node(
+  "analyze_job_description", analyze_job_description,
+  retry=RetryPolicy(retry_on=ValueError, max_attempts=2))
+The components you're using, often known as building blocks, might have their own retry mech­
+anism that tries to algorithmically fix the problem by giving an LLM additional input on what
+went wrong. For example, many chat models on LangChain have client-side retries on specific
+server-side errors.
+ChatAnthropic has a max_retries parameter that you can define either per instance or per request.
+Another good example of a more advanced building block is trying to recover from a parsing error.
+Retrying a parsing step won't help since typically parsing errors are related to the incomplete
+LLM output. What if we retry the generation step and hope for the best, or actually give LLM
+a hint about what went wrong? That's exactly what a RetryWithErrorOutputParser is doing.

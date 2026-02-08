@@ -1,0 +1,34 @@
+Fine-Tuning with Preference Alignment
+254
+        fp16=not is_bfloat16_supported(),
+        bf16=is_bfloat16_supported(),
+        optim="adamw_8bit",
+        weight_decay=0.01,
+        warmup_steps=10,
+        output_dir="output",
+        eval_strategy="steps",
+        eval_steps=0.2,
+        logging_steps=1,
+        report_to="comet_ml",
+        seed=0,
+    ),
+)
+trainer.train()
+10.	 Once the model is trained, we can run it for a quick sanity check. This step is similar to the 
+SFT example. It prepares the model for inference and generates a response to a prompt.
+FastLanguageModel.for_inference(model)
+message = alpaca_template.format("Write a paragraph to introduce 
+supervised fine-tuning.", "")
+inputs = tokenizer([message], return_tensors="pt").to("cuda")
+text_streamer = TextStreamer(tokenizer)
+_ = model.generate(**inputs, streamer=text_streamer, max_new_
+tokens=256, use_cache=True)
+11.	 The trained DPO model returns the following response:
+Supervised fine-tuning is a method used to enhance the performance 
+of pre-trained language models by utilizing labeled data. This 
+technique involves taking a pre-trained model and refining it on 
+a specific task, such as content creation or customer service. By 
+providing the model with relevant data and guidance, it can learn to 
+generate outputs that align more closely with the desired outcomes. 
+This approach allows for the creation of more specialized models 
+that can tackle complex tasks with greater accuracy and efficiency.

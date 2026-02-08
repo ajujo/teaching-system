@@ -1,0 +1,6 @@
+Chapter 4
+149
+In Figure 4.15, the rest of the ZenML metadata from the embedding and chunking step details 
+the embedding model and its properties used to compute the vectors.
+Figure 4.15: Metadata of the embedding and chunking ZenML step, detailing the embedding 
+dropdown

@@ -1,0 +1,26 @@
+Building Intelligent Agents
+188
+When we call llm.bind(tools=[search_tool]), LangChain creates a new object (assigned here 
+to llm_with_tools) that automatically includes [search_tool] in every subsequent call to a 
+copy of the initial llm one. Essentially, you no longer need to pass the tools argument with each 
+invoke method. So, calling the preceding code is the same as doing:
+llm.invoke(question, tools=[search_tool)
+This is because bind has “memorized” your tools list for all future invocations. It’s mainly a conve­
+nience feature—ideal if you want a fixed set of tools for repeated calls rather than specifying them 
+every time. Now let’s see how we can utilize tool calling even more, and improve LLM reasoning!
+ReACT
+As you have probably thought already, LLMs can call multiple tools before generating the final 
+reply to the user (and the next tool to be called or a payload sent to this tool might depend on 
+the outcome from the previous tool calls). This was proposed by a ReACT approach introduced in 
+2022 by researchers from Princeton University and Google Research: Reasoning and ACT (https://
+arxiv.org/abs/2210.03629). The idea is simple—we should give the LLM access to tools as a 
+way to interact with an external environment, and let the LLM run in a loop: 
+•	
+Reason: Generate a text output with observations about the current situation and a plan 
+to solve the task.
+•	
+Act: Take an action based on the reasoning above (interact with the environment by calling 
+a tool, or respond to the user).
+It has been demonstrated that ReACT can help reduce hallucination rates compared to CoT 
+prompting, which we discussed in Chapter 3.
+Figure 5.1: ReACT pattern

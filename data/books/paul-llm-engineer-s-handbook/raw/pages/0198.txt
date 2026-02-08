@@ -1,0 +1,37 @@
+Chapter 4
+167
+            chunk_id = hashlib.md5(chunk.encode()).hexdigest()
+            model = ArticleChunk(
+                id=UUID(chunk_id, version=4),
+                content=chunk,
+                platform=data_model.platform,
+                link=data_model.link,
+                document_id=data_model.id,
+                author_id=data_model.author_id,
+                author_full_name=data_model.author_full_name,
+                metadata=self.metadata,
+            )
+            data_models_list.append(model)
+        return data_models_list
+The last step is to dig into the chunk_article() function, which mainly does two things:
+•	
+It uses a regex to find all the sentences within the given text by looking for periods, ques-
+tion marks, or exclamation points followed by a space. However, it avoids splitting into 
+cases where the punctuation is part of an abbreviation or initialism (like “e.g." or “Dr.")
+•	
+It groups sentences into a single chunk until the max_length limit is reached. When the 
+maximum size is reached, and the chunk size is bigger than the minimum allowed value, 
+it is added to the final list the function returns.
+def chunk_article(text: str, min_length: int, max_length: int) -> 
+list[str]:
+    sentences = re.split(r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s", 
+text)
+    extracts = []
+    current_chunk = ""
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        if len(current_chunk) + len(sentence) <= max_length:
+            current_chunk += sentence + " "
+        else:

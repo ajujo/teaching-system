@@ -1,0 +1,33 @@
+Building Intelligent Agents
+198
+           type: string
+         description: The base currency for the exchange rates. If not 
+provided, EUR is used as a base currency. Example: USD
+   /v1/{date}:
+   ...
+"""
+Now let’s build and run our ReACT agent; we’ll see that the LLM can query the third-party API 
+and provide fresh answers on currency exchange rates:
+system_message = (
+ "You're given the API spec:\n{api_spec}\n"
+ "Use the API to answer users' queries if possible. "
+)
+agent = create_react_agent(llm, toolkit.get_tools(), state_
+modifier=system_message.format(api_spec=api_spec))
+query = "What is the swiss franc to US dollar exchange rate?"
+events = agent.stream(
+   {"messages": [("user", query)]},
+   stream_mode="values",
+)
+for event in events:
+   event["messages"][-1].pretty_print()
+>> ============================== Human Message ==========================
+=======
+What is the swiss franc to US dollar exchange rate?
+================================== Ai Message ============================
+======
+Tool Calls:
+  requests_get (541a9197-888d-4ffe-a354-c726804ad7ff)
+ Call ID: 541a9197-888d-4ffe-a354-c726804ad7ff
+  Args:
+    url: https://api.frankfurter.dev/v1/latest?symbols=CHF&base=USD

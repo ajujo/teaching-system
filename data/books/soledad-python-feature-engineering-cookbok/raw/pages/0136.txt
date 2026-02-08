@@ -1,0 +1,26 @@
+4
+Performing Variable 
+Discretization
+Discretization is the process of transforming continuous variables into discrete features by creating a 
+set of contiguous intervals, also called bins, which span the range of the variable values. Subsequently, 
+these intervals are treated as categorical data.
+Many machine learning models, such as decision trees and Naïve Bayes, work better with discrete 
+attributes. In fact, decision tree-based models make decisions based on discrete partitions over the 
+attributes. During induction, a decision tree evaluates all possible feature values to find the best 
+cut-point. Therefore, the more values the feature has, the longer the induction time of the tree is. In 
+this sense, discretization can reduce the time it takes to train the models.
+Discretization has additional advantages. Data is reduced and simplified; discrete features can be easier 
+to understand by domain experts. Discretization can change the distribution of skewed variables; when 
+sorting observations across bins with equal-frequency, the values are spread more homogeneously 
+across the range. Additionally, discretization can minimize the influence of outliers by placing them 
+at lower or higher intervals, together with the remaining inlier values of the distribution. Overall, 
+discretization reduces and simplifies data, making the learning process faster and potentially yielding 
+more accurate results.
+Discretization can also lead to a loss of information, for example, by combining values that are 
+strongly associated with different classes or target values into the same bin. Therefore, the aim of a 
+discretization algorithm is to find the minimal number of intervals without incurring a significant loss 
+of information. In practice, many discretization procedures require the user to input the number of 
+intervals into which the values will be sorted. Then, the job of the algorithm is to find the cut points 
+for those intervals. Among these procedures, we find the most widely used equal-width and equal-
+frequency discretization methods. Discretization methods based on decision trees are, otherwise, able 
+to find the optimal number of partitions, as well as the cut points.

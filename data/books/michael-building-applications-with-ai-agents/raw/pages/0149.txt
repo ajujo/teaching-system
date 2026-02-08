@@ -1,0 +1,41 @@
+graphrag init --root ./ragtest
+graphrag index --root ./ragtest
+graphrag query \
+--root ./ragtest \
+--method global \
+--query "What are the key themes in this novel?"
+graphrag query \
+--root ./ragtest \
+--method local \
+--query "Who is Phileas Fogg and what motivates his journey?"
+This instantly gives you global insights and local context over your texts—without
+writing a single line of Python. If you prefer more control, the Neo4j GraphRAG
+Python package lets you set up a full GraphRAG pipeline in code. With a few lines
+(connecting to Neo4j, defining an embedder and retriever, then querying), you get
+powerful graph‑enhanced RAG capabilities. For developers interested in lightweight
+or educational implementations, there are smaller community projects like
+nano‑graphrag and example repos (e.g., example‑graphrag) that unpack the core pipe‐
+line in a few hundred lines of Python.
+While this is great for experimentation, many teams want to move from a prototype
+to a hardened, scalable system. That’s where Neo4j shines: it’s the most trusted,
+enterprise-grade graph database available. Its native graph storage and index‑free
+adjacency architecture ensures near-constant traversal performance—even as the
+graph scales to billions of nodes and relationships. Production deployments often use
+Neo4j Enterprise or AuraDB, offering clustering, fault-tolerance, ACID (atomicity,
+consistency, isolation, and durability) compliance, and multiregion support. Once
+you’ve used the Neo4j GraphRAG Python tooling or Cypher-based setup to extract
+entities and define relationships, there’s a smooth path to a scalable deployment:
+• Populate at scale via Cypher: use CREATE and MERGE statements to build clean,
+deduplicated graphs.
+• Incremental loading logic ensures you can update with new data without
+duplication.
+• Scale performance through Neo4j’s read/write clustering, cache sharding, and
+optimized query planner.
+In short, Neo4j makes transitioning from notebook prototypes to production-grade
+graph-backed RAG pipelines straightforward—without sacrificing performance, reli‐
+ability, or maintainability.
+Once you’ve defined your ontology and extracted entities and relationships, it’s time
+to populate your knowledge graph. In Neo4j, this is done using the Cypher CREATE
+GraphRAG 
+| 
+127

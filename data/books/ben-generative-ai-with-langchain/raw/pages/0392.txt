@@ -1,0 +1,36 @@
+Chapter 9
+365
+    #     max_depth=2
+    # )
+    
+    # Test the index with a sample query
+    print("\nTesting the index:")
+test_queries = [More actions
+        "How can I build a chatbot with LangChain?",
+        "What is retrieval augmented generation?", 
+        "How do I use document loaders?"
+    ]
+    for query in test_queries:
+        print(f"\nQuery: {query}")
+        results = index.similarity_search(query, k=2)
+        for i, doc in enumerate(results):
+            # Clean the content for readable display
+            clean_content = clean_html_content(doc.page_content, max_
+length=150)
+            print(f"  Result {i + 1}:")
+            print(f"    Source: {doc.metadata.get('source', 'Unknown')}")
+            print(f"    Content: {clean_content}")
+    print(f"\nIndex building complete! Saved to 'faiss_index' directory")
+    print(f"Total vectors in index: {index.index.ntotal}")
+Serving the index
+Let’s deploy our pre-built FAISS index as a REST API using Ray Serve:
+import ray from ray import serve
+from fastapi import FastAPI
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+# initialize Ray
+ray.init(include_dashboard=True, dashboard_host="0.0.0.0")
+# define our FastAPI app
+app = FastAPI()
+@serve.deployment class SearchDeployment:
+    def init(self):

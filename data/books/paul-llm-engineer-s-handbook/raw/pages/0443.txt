@@ -1,0 +1,16 @@
+MLOps and LLMOps
+412
+Also, tracking the total input and output tokens is critical to understanding the costs of hosting 
+your LLMs.
+Ultimately, you can compute metrics that validate your model’s performance for each input, 
+prompt, and output tuple. Depending on your use case, you can compute things such as accuracy, 
+toxicity, and hallucination rate. When working with RAG systems, you can also compute metrics 
+relative to the relevance and precision of the retrieved context.
+Another essential thing to consider when monitoring prompts is to log their full traces. You might 
+have multiple intermediate steps from the user query to the final general answer. For example, 
+rewriting the query to improve the RAG’s retrieval accuracy evolves one or more intermediate steps. 
+Thus, logging the full trace reveals the entire process from when a user sends a query to when 
+the final response is returned, including the actions the system takes, the documents retrieved, 
+and the final prompt sent to the model. Additionally, you can log the latency, tokens, and costs 
+at each step, providing a more fine-grained view of all the steps. 
+Figure 11.4: Example trace in the Langfuse UI

@@ -1,0 +1,29 @@
+recuento. Si hay 10 documentos y 5 de ellos contienen un término
+determinado, entonces la IDF de este término es 10 / 5 = 2. Cuanto
+más alta sea la IDF de un término, más importante es el término.
+TF-IDF es un algoritmo que combina estas dos métricas: la frecuencia de
+términos (TF) y la frecuencia inversa en documentos (IDF).
+Matemáticamente, la puntuación TF-IDF del documento D para la consulta
+Q se calcula del siguiente modo:
+Sean t1, t2, ..., tq los términos de la consulta Q.
+Dado un término t, la frecuencia de este término en el documento
+D es f(t, D).
+Sea N el número total de documentos y C(t) el número de
+documentos que contienen t. El valor IDF del término t puede
+escribirse como IDF(t) = log
+N
+C(t) .
+Ingenuamente, la puntuación TF-IDF de un documento D con
+respecto a Q se define como Puntuación
+(D, Q) = ∑q
+i=1 IDF(ti) × f(ti, D).
+Dos soluciones comunes de recuperación basada en términos son
+Elasticsearch y BM25. Elasticsearch (Shay Banon, 2010), construida
+basándose en Lucene, utiliza una estructura de datos denominada índice
+invertido. Se trata de un diccionario que relaciona los términos con los
+documentos que los contienen. Este diccionario permite recuperar
+rápidamente documentos dado un término. El índice también puede
+almacenar información adicional, como la frecuencia del término y el
+recuento de documentos (cuántos documentos contienen este término), que
+sirve para calcular las puntuaciones TF-IDF. La Tabla 6-1 ilustra un índice
+invertido.

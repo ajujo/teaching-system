@@ -1,0 +1,32 @@
+Las condiciones de parada son útiles para mantener bajos la latencia y los
+costos.
+El inconveniente de la parada anticipada es que si se desea que los modelos
+generen outputs en un formato determinado, la parada prematura puede
+provocar que los outputs tengan un formato incorrecto. Por ejemplo, si le
+pide al modelo que genere JSON, una parada anticipada puede hacer que al
+JSON de output le falten cosas como los corchetes de cierre, haciendo que
+el JSON generado sea difícil de analizar.
+Cómputo de tiempo de prueba
+En la última sección se analizó cómo un modelo podría muestrear el
+siguiente token. En esta sección se analiza cómo puede muestrear un
+modelo todo el output.
+Una forma sencilla de mejorar la calidad de respuesta de un modelo es el
+cómputo de tiempo de prueba: en lugar de generar una sola respuesta por
+consulta, se generan varias respuestas para aumentar la probabilidad de
+obtener buenas respuestas. Una forma de realizar el cómputo de tiempo de
+prueba es la técnica del mejor de N comentada anteriormente en este
+capítulo: se generan aleatoriamente varios outputs y se elige el que mejor
+funciona. Sin embargo, también se puede ser más estratégico a la hora de
+generar múltiples outputs. Por ejemplo, en lugar de generar todos los
+outputs de forma independiente, lo que podría incluir muchos candidatos
+menos prometedores, puede utilizar la búsqueda por haces para generar un
+número fijo de candidatos más prometedores (el haz) en cada paso de la
+generación de secuencias.
+Una estrategia sencilla para aumentar la eficacia del cómputo de tiempo de
+prueba es aumentar la diversidad de los outputs, porque un conjunto más
+diverso de opciones tiene más probabilidades de producir mejores
+candidatos. Si utiliza el mismo modelo para generar distintas opciones,
+suele ser una buena práctica variar las variables de muestreo del modelo
+para diversificar sus outputs.
+Aunque normalmente se puede esperar cierta mejora del rendimiento del
+modelo al muestrear múltiples outputs, esto resulta caro. En promedio,

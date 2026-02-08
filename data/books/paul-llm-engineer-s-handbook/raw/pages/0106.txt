@@ -1,0 +1,30 @@
+Chapter 3
+75
+Finally, whether the scraping succeeds or an exception occurs, the crawler ensures that the tem-
+porary directory is removed to clean up any resources used during the process:
+    except Exception:
+        raise
+    finally:
+        shutil.rmtree(local_temp)
+    logger.info(f"Finished scrapping GitHub repository: {link}")
+CustomArticleCrawler class
+The CustomArticleCrawler class takes a different approach to collecting data from the in-
+ternet. It leverages the AsyncHtmlLoader class to read the entire HTML from a link and the 
+Html2TextTransformer class to extract the text from that HTML. Both classes are made available 
+by the langchain_community Python package, as seen below, where we import all the necessary 
+Python modules:
+from urllib.parse import urlparse
+from langchain_community.document_loaders import AsyncHtmlLoader
+from langchain_community.document_transformers.html2text import 
+Html2TextTransformer
+from loguru import logger
+from llm_engineering.domain.documents import ArticleDocument
+from .base import BaseCrawler
+Next, we define the CustomArticleCrawler class, which inherits from BaseCrawler. As before, 
+we don’t need to log in or use the scrolling functionality provided by Selenium. In the extract 
+method, we first check if the article exists in the database to avoid duplicating content:
+class CustomArticleCrawler(BaseCrawler):
+    model = ArticleDocument
+    def extract(self, link: str, **kwargs) -> None:
+        old_model = self.model.find(link=link)
+        if old_model is not None:

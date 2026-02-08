@@ -1,0 +1,26 @@
+Creating Features from a Time Series with tsfresh
+326
+Figure 10.7 – DataFrame with the features created for each hour of light consumption
+Now, we will use these features to train a logistic regression model to predict whether the office 
+was occupied.
+6.	
+Let’s begin by separating the dataset into training and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    features,
+    y,
+    test_size=0.1,
+    random_state=42,
+)
+7.	
+Now, let’s set up and train a logistic regression model, and then evaluate its performance:
+cls = LogisticRegression(random_state=10, C=0.01)
+cls.fit(X_train, y_train)
+print(classification_report(
+    y_test, cls.predict(X_test)))
+In the following output, we see the evaluation metrics that are commonly used for classification 
+analysis. These suggest that the selected features are useful for predicting office occupancy:
+                    precision     recall  f1-score   support
+               0         1.00        0.91        0.95           
+11
+               1         0.75        1.00        0.8
+6            3

@@ -1,0 +1,33 @@
+Chapter 10
+373
+The last step is to take the new credentials from the JSON file and update the AWS_ACCESS_
+KEY and AWS_SECRET_KEY variables in your .env file. You can check out the implementation at https://github.com/PacktPublishing/LLM-Engineers-Handbook/blob/main/
+llm_engineering/infrastructure/aws/roles/create_sagemaker_role.py.
+2.
+Create an IAM execution role. We will attach this role to the SageMaker deployment,
+empowering it to access other AWS resources on our behalf. This is standard practice for
+cloud deployments, as instead of authenticating every machine within your credentials,
+you attach a role that allows them to access only what is necessary from your infrastructure. In our case, we will provide SageMaker access to AWS S3, CloudWatch, and ECR. To
+create the role, run the following:
+poetry poe create-sagemaker-execution-role
+This command will generate a JSON file called sagemaker_execution_role.json that
+contains the Amazon Resource Name (ARN) of the newly created role. The ARN is an ID
+attached to any AWS resource to identify it across your cloud infrastructure. Take the ARN
+value from the JSON file and update the AWS_ARN_ROLE variable from your .env file with
+it. You can check out the implementation at https://github.com/PacktPublishing/
+LLM-Engineers-Handbook/blob/main/llm_engineering/infrastructure/aws/roles/
+create_execution_role.py.
+By setting the IAM user and role in your .env file, we will automatically load them in the settings
+Python object and use them throughout the following steps. Now, let's move on to the actual
+deployment.
+Deploying the LLM Twin model to AWS SageMaker
+The deployment of AWS SageMaker is fully automated through a set of Python classes, which
+we will cover in this chapter. This section aims to understand how we configure the SageMaker
+infrastructure directly from Python. Thus, you don't have to run everything step by step, as in a
+standard tutorial, but only to understand the code.
+We can initiate and finalize the entire SageMaker deployment using a simple CLI command: poe
+deploy-inference-endpoint. This command will initialize all the steps presented in Figure 10.5,
+except for creating the SageMaker AWS IAMs we created and configured in the previous step.
+If you have issues, configure the AWS CLI with the same AWS credentials as in the
+.env file and repeat the process. Official documentation for installing the AWS CLI:
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html.

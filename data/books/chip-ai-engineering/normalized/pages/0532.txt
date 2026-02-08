@@ -1,0 +1,23 @@
+figura 7-17. En los experimentos de Yadav et al., conservar el 20 % superior de los
+parámetros del vector de tareas ofrece un rendimiento comparable al de conservar el
+100 % de los parámetros.
+Estos parámetros redundantes, aunque no son perjudiciales para un modelo,
+podrían serlo para el modelo fusionado. Las técnicas de fusión como TIES
+(Yadav et al., 2023) y DARE (Yu et al., 2023) primero eliminan los
+parámetros redundantes de los vectores de tareas antes de fusionarlos. 32
+Ambos trabajos demostraron que esta práctica puede mejorar
+significativamente la calidad de los modelos finales fusionados. Cuantos
+más modelos haya que fusionar, más importante es la poda, porque hay más
+oportunidades de que los parámetros redundantes de una tarea interfieran en
+otra. 33
+Apilamiento de capas
+En este enfoque, se toman diferentes capas de uno o varios modelos y se
+apilan unas sobre otras. Por ejemplo, podría tomar la primera capa del
+modelo 1 y la segunda del modelo 2. Este enfoque también se denomina
+passthrough o frankenfusión. Puede crear modelos con arquitecturas y
+números de parámetros únicos. A diferencia del enfoque de fusión por
+suma, los modelos fusionados resultantes del apilamiento de capas suelen
+requerir más afinado para lograr un buen rendimiento.
+Uno de los primeros éxitos de la frankenfusión es Goliath-120B (alpindale,
+2023), que resultó de la fusión de dos modelos Llama 2-70B afinados,
+Xwin y Euryale. Tomó 72 de las 80 capas de cada modelo y las fusionó.

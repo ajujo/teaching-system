@@ -1,0 +1,25 @@
+M
+Massive Multitask Language Understanding (MMLU), Planificación de
+hitos, Selección e integración de pruebas comparativas
+matemáticas de la memoria, Retropropagación y parámetros entrenables
+MBU (utilización del ancho de banda del modelo), Utilización, MFU y
+MBU
+MCQ (preguntas tipo test), Capacidades específicas de dominio
+mecanismos de atención, Arquitectura de transformador
+- módulos de atención, Mecanismo de atención
+- módulos MLP, Mecanismo de atención
+- optimización, Decodificación paralela
+- escribir kernels para el cálculo de la atención, Rediseñar el
+mecanismo de atención
+- rediseño del mecanismo de atención, Optimización del
+mecanismo de atención
+- rediseño, Optimización del mecanismo de atención
+memoria, Fallos de las herramientas
+- conocimientos internos, Memoria
+- memoria a corto plazo, Memoria
+- memoria a largo plazo, Memoria
+memoria a corto plazo, Memoria
+memoria a largo plazo, Memoria
+memoria de gran ancho de banda (HBM), Tamaño y ancho de banda de la
+memoria
+memoria de la CPU (DRAM), Tamaño y ancho de banda de la memoria

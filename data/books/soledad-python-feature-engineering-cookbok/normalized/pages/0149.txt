@@ -1,0 +1,16 @@
+Performing Variable Discretization
+126
+In the following plot, we can see that the bins contain a similar fraction of observations:
+Figure 4.4 - The proportion of observations per interval of HouseAge after equal-frequency discretization
+With feature-engine, we can apply equal-frequency discretization to multiple variables.
+9.
+Let's import the discretizer:
+from feature_engine.discretisation import
+EqualFrequencyDiscretiser
+10.	 Let's set up the transformer to discretize three continuous variables into eight bins:
+variables = ['MedInc', 'HouseAge', 'AveRooms']
+disc = EqualFrequencyDiscretiser(
+    q=8, variables=variables, return_boundaries=True)
+Note
+With return_boundaries=True, the transformer will return the interval boundaries
+after the discretization. To return the interval number, set it to False.

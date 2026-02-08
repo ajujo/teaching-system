@@ -1,0 +1,30 @@
+SUGERENCIA
+Experimente con diferentes estructuras de prompts para averiguar cuál le
+funciona mejor. La mayoría de los modelos, incluyendo GPT-4, obtienen
+mejores outputs empíricos cuando la descripción de la tarea se encuentra al
+principio del prompt. Sin embargo, algunos modelos, como Llama 3,
+parecen funcionar mejor cuando la descripción de la tarea se encuentra al
+final del prompt.
+Aprendizaje en contexto: Cero shot y pocos shots
+Enseñar a los modelos lo que deben hacer a través de prompts también se
+conoce como aprendizaje en contexto. Este término fue introducido por
+Brown et al. (2020) en el artículo GPT-3, "Language Models Are Few-shot
+Learners". Tradicionalmente, un modelo aprende el comportamiento
+deseable durante el entrenamiento (que incluye pre-entrenamiento, postentrenamiento y afinado), lo que implica actualizar las ponderaciones del
+modelo. El documento GPT-3 demostró que los modelos lingüísticos
+pueden aprender el comportamiento deseable a partir de ejemplos en el
+prompt, incluso si este comportamiento deseable es diferente de aquello
+para lo que el modelo fue entrenado originalmente. No es necesario
+actualizar las ponderaciones. En concreto, GPT-3 se entrenó para la
+predicción del siguiente token, pero el artículo demostró que GPT-3 podía
+aprender del contexto para realizar tareas de traducción, comprensión
+lectora, matemáticas sencillas e incluso responder a preguntas del SAT.
+El aprendizaje en contexto permite a un modelo incorporar continuamente
+nueva información para tomar decisiones, evitando que se quede anticuado.
+Imagine un modelo entrenado usando la antigua documentación de
+JavaScript. Si quiere utilizar este modelo para responder a preguntas sobre
+la nueva versión de JavaScript, sin aprendizaje en contexto, tendría que
+volver a entrenarlo. Con el aprendizaje en contexto, puede incluir los
+nuevos cambios de JavaScript en el contexto del modelo, lo que permite
+que el modelo responda a las consultas más allá de su fecha límite. Esto
+hace que el aprendizaje en contexto sea una forma de aprendizaje continuo.

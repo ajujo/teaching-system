@@ -1,0 +1,31 @@
+Encoding Categorical Variables
+50
+Note
+ColumnTransformer() changes the name and order of the variables during the transformation.
+If the variable was encoded, it will append the encoder prefix and if the variable was not
+modified, it will append the remainder prefix.
+To wrap up the recipe, let's perform one-hot encoding with feature-engine.
+16.	 Let's import the encoder from feature-engine:
+from feature_engine.encoding import OneHotEncoder
+17.	 Let's set up the encoder so that it returns k-1 binary variables:
+ohe_enc = OneHotEncoder(drop_last=True)
+Note
+feature-engine's OneHotEncoder() encodes all categorical variables by default. To encode a
+subset of the variables, pass the variable names in a list: OneHotEncoder(variables=["A1",
+"A4"]). To encode numerical variables, set the ignore_format parameter to True or
+cast the variables as objects.
+18.	 Let's fit the encoder to the train set so that it learns the categories and variables to encode:
+ohe_enc.fit(X_train)
+Note
+To encode binary variables into k-1, and other categorical variables into k dummies, set the
+drop_last_binary parameter to True.
+19.	 Let's explore the variables that will be encoded:
+ohe_enc.variables_
+The transformer found and stored the variables of the object or categorical type, as shown in
+the following output:
+['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13']
+20.	 Let's explore the categories for which dummy variables will be created:
+ohe_enc.encoder_dict_
+The following dictionary contains the categories that will be encoded in each variable:
+ {'A1': ['a', 'b'],
+ 'A4': ['u', 'y', 'Missing'],

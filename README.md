@@ -33,6 +33,14 @@ El sistema utiliza modelos de lenguaje (LLM) para generar explicaciones personal
 - Reexplicación adaptativa con analogías cuando no se entiende
 - Detección inteligente de "más ejemplos" o "no entiendo"
 - Soporte multi-estudiante con progreso independiente
+- **4 tutores con personalidades distintas** (Dra. Vega, Profe Nico, Inés, Capitán Ortega)
+- **Políticas de enseñanza configurables** por tutor (estricto vs permisivo)
+
+### Web API y Frontend (F9)
+- **API REST** con FastAPI para integración con aplicaciones
+- **Frontend Next.js** con interfaz de chat moderna
+- **Server-Sent Events (SSE)** para streaming de eventos en tiempo real
+- **Efecto typewriter** para animación de texto
 
 ### Persistencia y Seguimiento
 - Estado de sesión guardado automáticamente
@@ -40,7 +48,7 @@ El sistema utiliza modelos de lenguaje (LLM) para generar explicaciones personal
 - Historial de intentos y calificaciones
 - Academia virtual con múltiples perfiles de estudiante
 
-## Estado Actual: F7 Completado
+## Estado Actual: F9 Completado
 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
@@ -50,7 +58,9 @@ El sistema utiliza modelos de lenguaje (LLM) para generar explicaciones personal
 | F5 | Ejercicios y calificación | ✅ Completado |
 | F6 | Exámenes por capítulo | ✅ Completado |
 | F7 | Orquestación y tutoría | ✅ Completado |
-| F8 | Interfaz gráfica | Planificado |
+| F8 | Personas, Policies, Events | ✅ Completado |
+| F9 | Web API + Frontend | ✅ Completado |
+| F10 | Interfaz gráfica avanzada | Planificado |
 
 ## Requisitos
 
@@ -185,6 +195,8 @@ teach tutor --pace fast    # Más rápido
 Teaching System/
 ├── src/teaching/           # Código fuente principal
 │   ├── cli/                # Comandos de línea (commands.py)
+│   ├── config/             # Configuración de personas (F8)
+│   │   └── personas.py     # TeachingPolicy, Persona loader
 │   ├── core/               # Lógica de negocio
 │   │   ├── book_importer.py
 │   │   ├── pdf_extractor.py
@@ -197,17 +209,27 @@ Teaching System/
 │   │   ├── grader.py
 │   │   ├── chapter_exam_generator.py
 │   │   ├── exam_grader.py
-│   │   └── tutor.py            # Orquestación F7
+│   │   └── tutor.py            # Orquestación F7 + Events F8
+│   ├── web/                # Web API (F9)
+│   │   ├── api.py          # FastAPI app
+│   │   ├── schemas.py      # Pydantic models
+│   │   ├── sessions.py     # SessionManager + SSE
+│   │   └── routes/         # Endpoints REST
 │   ├── llm/                # Cliente LLM unificado
 │   ├── db/                 # Persistencia SQLite
 │   └── utils/              # Utilidades
+├── web/                    # Frontend Next.js (F9)
+│   ├── src/app/            # Pages (Lobby, Session)
+│   ├── src/components/     # React components
+│   └── src/lib/            # API client, types
 ├── data/                   # Datos de libros importados
 │   ├── books/{book_id}/    # Contenido por libro
+│   ├── config/             # Configuración de personas
 │   └── state/              # Estado de sesiones
 ├── prompts/                # Prompts del sistema
 ├── configs/                # Configuración
-├── tests/                  # Suite de tests (600+ tests)
-│   ├── f2/ ... f7/         # Tests por fase
+├── tests/                  # Suite de tests (968 tests)
+│   ├── f2/ ... f9/         # Tests por fase
 │   └── conftest.py
 └── docs/                   # Documentación técnica
 ```
@@ -247,6 +269,34 @@ Teaching System/
 | `teach tutor` | Modo tutoría interactivo |
 | `teach status` | Ver progreso del estudiante |
 | `teach next` | Siguiente acción sugerida |
+
+### Web API (F9)
+
+```bash
+# Iniciar servidor API
+uv run uvicorn teaching.web.api:app --reload --port 8000
+
+# Documentación interactiva
+open http://localhost:8000/docs
+```
+
+| Endpoint | Descripción |
+|----------|-------------|
+| `GET /health` | Health check |
+| `GET /api/students` | Listar estudiantes |
+| `POST /api/students` | Crear estudiante |
+| `GET /api/personas` | Listar tutores |
+| `POST /api/sessions` | Iniciar sesión |
+| `GET /api/sessions/{id}/events` | SSE de eventos |
+
+### Frontend Web (F9)
+
+```bash
+cd web
+npm install
+npm run dev
+# Abrir http://localhost:3000
+```
 
 ### Administración
 | Comando | Descripción |
@@ -302,10 +352,11 @@ uv run pytest --cov=src tests/
 uv run pytest -q
 ```
 
-**Estado actual: 603 tests pasando**
+**Estado actual: 968 tests pasando**
 
 ## Tecnologías
 
+### Backend
 - **Python 3.11+** - Lenguaje principal
 - **Typer** - Framework CLI
 - **Rich** - Output formateado en terminal
@@ -315,6 +366,14 @@ uv run pytest -q
 - **OpenAI SDK** - Cliente LLM (compatible con LM Studio)
 - **Pydantic** - Validación de datos
 - **Structlog** - Logging estructurado
+- **FastAPI** - Web API (F9)
+- **Uvicorn** - Servidor ASGI
+
+### Frontend (F9)
+- **Next.js 14** - React framework
+- **TypeScript** - Tipado estático
+- **Tailwind CSS** - Estilos
+- **react-markdown** - Renderizado Markdown
 
 ## Documentación Adicional
 
@@ -323,6 +382,8 @@ uv run pytest -q
 - [Contratos v1](docs/contracts_v1.md) - Esquemas de datos
 - [CLI Spec v1](docs/cli_spec_v1.md) - Especificación de comandos
 - [Phase Guardrails](docs/phase_guardrails.md) - Asignación de fases
+- [Web API Quickstart](docs/webapi_quickstart.md) - Guía de la API REST
+- [Frontend README](web/README_frontend.md) - Guía del frontend Next.js
 
 ## Contribuir
 

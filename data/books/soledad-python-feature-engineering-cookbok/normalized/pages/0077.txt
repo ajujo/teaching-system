@@ -1,0 +1,43 @@
+Encoding Categorical Variables
+54
+6.
+Let's add a binary variable per top category to a copy of the train and test sets:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+for label in top_5:
+    X_train_enc[f"A6_{label}"] = np.where(
+        X_train["A6"] == label, 1, 0)
+    X_test_enc[f"A6_{label}"] = np.where(
+        X_test["A6"] == label, 1, 0)
+7.
+Let's display the top 10 rows of the original and encoded variable, A6, in the train set:
+X_train_enc[["A6"] + [f"A6_{
+    label}" for label in top_5]].head(10)
+In the output of Step 7, we can see the A6 variable, followed by the binary variables:
+      A6  A6_c  A6_q  A6_w  A6_i  A6_ff
+596   c      1      0      0      0        0
+303   q      0      1      0      0        0
+204   w      0      0      1      0        0
+351  ff      0      0      0      0        1
+118   m      0      0      0      0        0
+247   q      0      1      0      0        0
+652   i      0      0      0      1        0
+513   e      0      0      0      0        0
+230  cc      0      0      0      0        0
+250   e      0      0      0      0        0
+Let's now automate one-hot encoding of frequent categories with scikit-learn.
+8.
+Let's import the encoder:
+from sklearn.preprocessing import OneHotEncoder
+9.
+Let's set up the encoder to encode categories shown in at least 39 observations and limit the
+number of categories to encode to 5:
+encoder = OneHotEncoder(
+    min_frequency=39,
+    max_categories=5,
+    sparse_output=False,
+).set_output(transform="pandas")
+10.	 Finally, let's fit the transformer to the two high cardinal variables and then transform the data:
+X_train_enc = encoder.fit_transform(X_train[
+    ['A6', 'A7']])
+X_test_enc = encoder.transform(X_test[['A6', 'A7']])

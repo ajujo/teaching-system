@@ -1,0 +1,14 @@
+Removing outliers
+169
+Note
+We discussed the code in step 10 in the Visualizing outliers with boxplots recipe earlier in
+this chapter.
+11.	 Let's plot the distribution of MedInc before removing the outliers:
+plot_boxplot_and_hist(X_train, "MedInc")
+In the following plot, we see that MedInc is skewed and observations greater than 8 are
+marked as outliers:
+Figure 5.7- Boxplot and the histogram of MedInc before removing outliers.
+12.	 Finally, let's plot the distribution of MedInc after removing the outliers:
+plot_boxplot_and_hist(train_t, "MedInc")
+After removing outliers, MedInc seems less skewed and its values more evenly distributed:
+Figure 5.8 - Boxplot and the histogram of MedInc after removing outliers

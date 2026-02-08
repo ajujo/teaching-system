@@ -1,0 +1,31 @@
+Paso 1. Evaluar todos los componentes de un sistema
+Las aplicaciones de IA en el mundo real son complejas. Cada aplicación
+puede constar de muchos componentes, y una tarea puede completarse
+después de muchos turnos. La evaluación puede realizarse a distintos
+niveles: por tarea, por turno y por output intermedio.
+Debe evaluar el output de extremo a extremo y el output intermedio de cada
+componente de forma independiente. Pensemos en una aplicación que
+extrae el empleador actual de una persona del PDF de su currículum, y que
+funcione en dos pasos:
+1. Extraer todo el texto del PDF.
+2. Extraer el empleador actual del texto extraído.
+Si el modelo no consigue extraer el empleador actual adecuado, puede
+deberse a cualquiera de los dos pasos. Si no evalúa cada componente por
+separado, no sabrá exactamente dónde falla su sistema. El primer paso de
+PDF a texto puede evaluarse utilizando la similitud entre el texto extraído y
+el texto verdadero. El segundo paso puede evaluarse usando la precisión:
+dado el texto extraído correctamente, ¿con qué frecuencia extrae la
+aplicación correctamente el empleador actual?
+Si procede, evalúe su aplicación tanto por turno como por tarea. Un turno
+puede constar de varios pasos y mensajes. Si un sistema tarda varios pasos
+en generar un output, sigue considerándose un turno.
+Las aplicaciones de IA generativa, especialmente las de tipo chatbot,
+permiten intercambiar información entre el usuario y la aplicación, como en
+una conversación, para realizar una tarea. Imagine que quiere utilizar un
+modelo de IA para depurar por qué falla su código Python. El modelo
+responde pidiendo más información sobre su hardware o la versión de
+Python que está utilizando. Solo después de haberle proporcionado esta
+información podrá el modelo ayudarle a depurar.
+La evaluación basada en turnos evalúa la calidad de cada output. La
+evaluación basada en tareas evalúa si un sistema completa una tarea. ¿Le
+ha ayudado la aplicación a solucionar el fallo? ¿Cuántos turnos ha

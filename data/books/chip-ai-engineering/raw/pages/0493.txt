@@ -1,0 +1,20 @@
+Sin embargo, si solo tiene 1 MM de parámetros entrenables, la memoria
+necesaria para los gradientes y los estados del optimizador será solo:
+1 000 millones × 3 × 2 bytes = 6 GB
+Algo importante a tener en cuenta es que, en la fórmula anterior, supuse que
+la memoria necesaria para las activaciones es menor que la memoria
+necesaria para las ponderaciones del modelo. Sin embargo, en la realidad, la
+memoria de activación puede ser mucho mayor. Si las activaciones se
+almacenan para el cálculo del gradiente, la memoria necesaria para las
+activaciones puede empequeñecer la memoria necesaria para las
+ponderaciones del modelo. La Figura 7-5 muestra la memoria necesaria
+para las activaciones comparada con la memoria necesaria para las
+ponderaciones del modelo para diferentes modelos Megatron a diferentes
+escalas, según el artículo "Reducing Activation Recomputation in Large
+Transformer Models", de Korthikanti et al. (2022).
+Una forma de reducir la memoria necesaria para las activaciones es no
+almacenarlas. En vez de almacenar las activaciones para reutilizarlas, se
+vuelven a calcular cuando sea necesario. Esta técnica se denomina punto de
+control de gradiente o recomputación de activación. Aunque esto reduce los
+requisitos de memoria, aumenta el tiempo necesario para el entrenamiento
+debido a la recomputación. 10

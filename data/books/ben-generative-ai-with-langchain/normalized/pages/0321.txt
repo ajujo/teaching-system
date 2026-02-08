@@ -1,0 +1,33 @@
+Software Development and Data Analysis Agents
+294
+This code performs three key operations: it clones our book's GitHub repository, loads all Python
+files using language-aware parsing, and splits the code into smaller, semantically meaningful
+chunks. The language-specific splitter ensures we preserve function and class definitions when
+possible, making our retrieval more effective.
+Now we'll create our RAG system by embedding these code chunks and setting up a retrieval chain:
+# Create vector store and retriever
+db = Chroma.from_documents(texts, OpenAIEmbeddings())
+retriever = db.as_retriever(
+    search_type="mmr",  # Maximal Marginal Relevance for diverse results
+    search_kwargs={"k": 8}  # Return 8 most relevant chunks
+)
+# Set up Q&A chain
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "Answer based on context:\n\n{context}"),
+    ("placeholder", "{chat_history}"),
+    ("user", "{input}"),
+])
+# Create chain components
+document_chain = create_stuff_documents_chain(ChatOpenAI(), prompt)
+qa = create_retrieval_chain(retriever, document_chain)
+Here, we've built our complete RAG pipeline: we store code embeddings in a Chroma vector
+database, configure a retriever to use maximal marginal relevance (which helps provide diverse
+results), and create a QA chain that combines retrieved code with our prompt template before
+sending it to the LLM.
+Let's test our code-aware RAG system with a question about software development examples:
+question = "What examples are in the code related to software develop­
+ment?"
+result = qa.invoke({"input": question})
+print(result["answer"])
+Here are some examples of the code related to software development in the
+given context:

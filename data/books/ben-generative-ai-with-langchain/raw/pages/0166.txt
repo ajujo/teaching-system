@@ -1,0 +1,38 @@
+Chapter 4
+139
+Here’s a basic example of retriever usage:
+# Basic retriever interaction
+docs = retriever.invoke("What is machine learning?")
+LangChain supports several sophisticated approaches to retrieval:
+Vector store retrievers
+Vector stores serve as the foundation for semantic search, converting documents and queries 
+into embeddings for similarity matching. Any vector store can become a retriever through the 
+as_retriever() method:
+from langchain_community.retrievers import KNNRetriever
+from langchain_openai import OpenAIEmbeddings
+retriever = KNNRetriever.from_documents(documents, OpenAIEmbeddings())
+results = retriever.invoke("query")
+These are the retrievers most relevant for RAG systems.
+1.	
+Search API retrievers: These retrievers interface with external search services without 
+storing documents locally. For example:
+from langchain_community.retrievers.pubmed import PubMedRetriever
+retriever = PubMedRetriever()
+results = retriever.invoke("COVID research")
+2.	
+Database retrievers: These connect to structured data sources, translating natural lan­
+guage queries into database queries:
+•	
+SQL databases using text-to-SQL conversion
+•	
+Graph databases using text-to-Cypher translation
+•	
+Document databases with specialized query interfaces
+3.	
+Lexical search retrievers: These implement traditional text-matching algorithms:
+•	
+BM25 for probabilistic ranking
+•	
+TF-IDF for term frequency analysis
+•	
+Elasticsearch integration for scalable text search

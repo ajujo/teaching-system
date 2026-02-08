@@ -1,0 +1,38 @@
+Extracting features from text
+297
+2.
+Let's load the dataset described in the Technical requirements section:
+df = pd.read_csv(
+    «retail.csv», parse_dates=[«invoice_date»])
+3.
+Let's set up an entity set:
+es = ft.EntitySet(id="data")
+4.
+Let's add the DataFrame to the entity set, highlighting that the description variable is a
+text variable:
+es = es.add_dataframe(
+    dataframe=df,
+    dataframe_name=»data»,
+    index="rows",
+    make_index=True,
+    time_index=»invoice_date»,
+    logical_types={
+        «customer_id»: Categorical,
+        "invoice": Categorical,
+        «description»: NaturalLanguage,
+    }
+)
+Note
+For the featuretools library's text primitives to work, we need to indicate which variables
+are text by using the NaturalLanguage logical type.
+5.
+Let's create a new DataFrame with a relationship to the DataFrame from step 4:
+es.normalize_dataframe(
+    base_dataframe_name=»data»,
+    new_dataframe_name=»invoices»,
+    index="invoice",
+    copy_columns=[«customer_id»],
+)
+Note
+For more details about steps 4 and 5, visit the Setting up an entity set and creating features
+automatically recipe.

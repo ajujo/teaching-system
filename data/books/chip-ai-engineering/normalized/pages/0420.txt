@@ -1,0 +1,17 @@
+figura 6-7. Un sistema de RAG que aumenta el contexto con datos tabulares.
+Para el paso de texto a SQL, si hay muchas tablas disponibles cuyos
+esquemas no quepan todos en el contexto del modelo, es posible que
+necesite un paso intermedio para predecir qué tablas utilizar para cada
+consulta. La conversión de texto a SQL puede realizarse mediante el mismo
+generador que genera la respuesta final o mediante un modelo especializado
+de conversión de texto a SQL.
+En esta sección hemos visto el modo en que herramientas como los
+recuperadores y los ejecutores SQL pueden permitir que los modelos
+gestionen más consultas y generen respuestas de mayor calidad. Dar a un
+modelo acceso a más herramientas ¿mejoraría aún más sus capacidades? El
+uso de herramientas es una característica esencial del modelo agéntico, que
+analizaremos en la siguiente sección.
+Agentes
+Muchos consideran que los agentes inteligentes son el objetivo último de la
+IA. El libro clásico de Stuart Russell y Peter Norvig, Artificial Intelligence:
+A Modern Approach (Prentice Hall, 1995) define el campo de investigación

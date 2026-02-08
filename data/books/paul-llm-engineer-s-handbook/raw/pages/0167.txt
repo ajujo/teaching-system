@@ -1,0 +1,38 @@
+RAG Feature Pipeline
+136
+Change data capture: syncing the data warehouse and feature 
+store
+As highlighted a few times in this chapter, data is constantly changing, which can result in DBs, 
+data lakes, data warehouses, and feature stores getting out of sync. Change data capture (CDC) 
+is a strategy that allows you to optimally keep two or more data storage types in sync without 
+computing and I/O overhead. It captures any CRUD operation done on the source DB and repli-
+cates it on a target DB. Optionally, you can add preprocessing steps in between the replication.
+The syncing issues also apply when building a feature pipeline. One key design choice concerns 
+how to sync the data warehouse with the feature store to have data fresh enough for your par-
+ticular use case.
+In our LLM Twin use case, we chose a naïve approach out of simplicity. We implemented a batch 
+pipeline that is triggered periodically or manually. It reads all the raw data from the data ware-
+house, processes it in batches, and inserts new records or updates old ones from the Qdrant 
+vector DB. This works fine when you are working with a small number of records, at the order of 
+thousands or tens of thousands. But our naïve approach raises the following questions:
+•	
+What happens if the data suddenly grows to millions of records (or higher)?
+•	
+What happens if a record is deleted from the data warehouse? How is this reflected in 
+the feature store?
+•	
+What if we want to process only the new or updated items from the data warehouse and 
+not all of them?
+Fortunately, the CDC pattern can solve all of these issues. When implementing CDC, you can 
+take multiple approaches, but all of them use either a push or pull strategy:
+•	
+Push: The source DB is the primary driver in the push approach. It actively identifies 
+and transmits data modifications to target systems for processing. This method ensures 
+near-instantaneous updates at the target, but data loss can occur if target systems are 
+inaccessible. To mitigate this, a messaging system is typically employed as a buffer.
+•	
+Pull: The pull method assigns a more passive role to the source DB, which only records 
+data changes. Target systems periodically request these changes and handle updates 
+accordingly. While this approach lightens the load on the source, it introduces a delay 
+in data propagation. A messaging system is again essential to prevent data loss during 
+periods of target system unavailability.

@@ -1,0 +1,19 @@
+Tooling and Installation
+46
+Using an experiment tracker, you can go beyond training and evaluation metrics and log your
+training hyperparameters to track different configurations between experiments.
+It also logs out-of-the-box system metrics such as GPU, CPU, or memory utilization to give you
+a clear picture of what resources you need during training and where potential bottlenecks slow
+down your training, as seen in Figure 2.12.
+Figure 2.12: Comet ML system metrics example
+You don't have to set up Comet locally. We will use their online version for free without any
+constraints throughout this book. Also, if you want to look more in-depth into the Comet ML
+experiment tracker, we made the training experiments tracked with Comet ML public while
+fine-tuning our LLM Twin models. You can access them here: https://www.comet.com/mlabonne/
+llm-twin-training/view/new/panels.
+Other popular experiment trackers are W&B, MLflow, and Neptune. We've worked with all of
+them and can state that they all have mostly the same features, but Comet ML differentiates itself through its ease of use and intuitive interface. Let's move on to the final piece of the MLOps
+puzzle: Opik for prompt monitoring.
+Opik: prompt monitoring
+You cannot use standard tools and techniques when logging and monitoring prompts. The reason
+for this is complicated. We will dig into it in Chapter 11. However, to quickly give you some understanding, you cannot use standard logging tools as prompts are complex and unstructured chains.

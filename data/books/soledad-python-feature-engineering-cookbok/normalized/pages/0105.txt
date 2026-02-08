@@ -1,0 +1,12 @@
+Encoding Categorical Variables
+82
+We can display the top rows of the transformed train set by executing print(X_train_enc.
+head()), which returns the following output:
+Figure 2.11 - DataFrame with the variables after binary encoding
+Binary encoding returned four binary variables for A7, which are A7_0, A7_1, A7_2, and
+A7_3, instead of the nine that would have been returned by one-hot encoding.
+How it works...
+In this recipe, we performed binary encoding using the Category Encoders package. We used
+BinaryEncoder() to encode the A7 variable. With the fit() method, BinaryEncoder()
+created a mapping from a category to a set of binary columns, and with the transform() method,
+the encoder encoded the A7 variable in both the train and test sets.

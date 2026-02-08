@@ -1,0 +1,47 @@
+environments. We assume a set of tools have already been developed, so if you need a
+refresher, go back to Chapter 4.
+Table 5-2. Tool selection strategies
+Technique
+Pros
+Cons
+Standard tool selection
+Simple to implement
+Scales poorly to high numbers of tools
+Semantic tool selection
+• Very scalable to large numbers of tools
+• Typically low latency to implement
+Often worse selection accuracy due to semantic
+collisions
+Hierarchical tool selection Very scalable to large numbers of tools
+Slower because it requires multiple sequential
+foundation model calls
+Standard Tool Selection
+The simplest approach is standard tool selection. In this case, the tool, its definition,
+and its description are provided to a foundation model, and the model is asked to
+select the most appropriate tool for the given context. The output from the founda‐
+tion model is then compared with the toolset, and the closest one is chosen. This
+approach is easy to implement, and requires no additional training, embedding, or a
+toolset hierarchy to use. The main drawback is latency, as it requires another founda‐
+tion model call, which can add seconds to the overall response time. It can also bene‐
+fit from in-context learning, where few-shot examples can be provided to boost
+predictive accuracy for your problem without the challenge of training or fine-tuning
+a model.
+Effective tool selection often comes down to how you describe each capability. Start
+by giving every tool a concise, descriptive name (e.g., calculate_sum instead of
+process_numbers) and follow it with a one-sentence summary that highlights its
+unique purpose (e.g., “Returns the sum of two numbers”). Include an example invo‐
+cation in the description—showing typical inputs and outputs—to ground the mod‐
+el’s understanding in concrete terms rather than abstract language. Finally, enforce
+input constraints by specifying types and ranges (e.g., “x and y must be integers
+between 0 and 1,000”), which reduces ambiguous matches and helps the foundation
+model rule out irrelevant tools. By iteratively testing with representative prompts and
+refining each description for clarity and specificity, you’ll see significant gains in
+selection accuracy without any extra training or infrastructure. This sounds simple
+enough, but as the number of tools you register with your agent grows, overlap in the
+tool descriptions frequently becomes a problem and a source of mistakes in tool
+selection. Here we define another tool that is capable of computing mathematical
+expressions and evaluating formulas, something foundation models tend to not be
+good at:
+94 
+| 
+Chapter 5: Orchestration

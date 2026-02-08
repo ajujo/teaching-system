@@ -1,0 +1,31 @@
+Diseño de la retroalimentación
+Si no está seguros de qué información recopilar, espero que la última
+sección le haya dado algunas ideas.
+En esta sección se analiza cuándo y cómo recabar esta valiosa información.
+Cuándo recabar retroalimentación
+La retroalimentación puede y debe recopilarse a lo largo de todo el
+recorrido del usuario. Los usuarios deben tener la opción de dar su opinión
+siempre que surja esta necesidad, especialmente para informar de errores.
+Sin embargo, la opción de recopilación de opiniones no debe ser intrusiva.
+No debería interferir con el flujo de trabajo del usuario. Estos son algunos
+ámbitos en los que la opinión de los usuarios pueden ser especialmente
+valiosa.
+Al principio
+Cuando un usuario acaba de registrarse, sus retroalimentación puede ayudar
+a calibrar la aplicación para él. Por ejemplo, una aplicación de
+identificación facial primero debe escanear su rostro para funcionar. Un
+asistente de voz puede pedirle que lea una frase en voz alta para reconocer
+su voz en busca de palabras despertador (palabras que activan un asistente
+de voz, como "Oye Google"). Una aplicación para aprender idiomas puede
+hacerle algunas preguntas para medir su nivel. Para algunas aplicaciones,
+como la identificación facial, es necesaria la calibración. Para otras
+aplicaciones, sin embargo, la retroalimentación inicial debería ser opcional,
+ya que crea fricción para que los usuarios prueben su producto. Si un
+usuario no especifica sus preferencias, puede recurrir a una opción neutra y
+calibrarla con el tiempo.
+Cuando pasa algo malo
+Cuando el modelo alucina con una respuesta, bloquea una petición legítima,
+genera una imagen comprometedora o tarda demasiado en responder, los
+usuarios deben poder notificarle estos fallos. Puede dar a los usuarios la
+opción de votar negativamente una respuesta, regenerar con el mismo
+modelo o cambiar a otro modelo. Es posible que los usuarios se limiten a

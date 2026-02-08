@@ -1,0 +1,39 @@
+We have a web page for this book, where we list errata and any additional informa‐
+tion. You can access this page at https://oreil.ly/building-applications-with-ai-agents-1e.
+For news and information about our books and courses, visit https://oreilly.com.
+Find us on LinkedIn: https://linkedin.com/company/oreilly-media
+Watch us on YouTube: https://youtube.com/oreillymedia
+Acknowledgments
+As a first-time author, it’s humbling to discover just how many people it takes to write
+a book, and it’s thanks to the contributions of many wonderful people that this book
+has come to fruition.
+This book took over a year to write, and I’m especially grateful to the technical
+reviewers who carved out their valuable time to share their detailed feedback, per‐
+spective, and insight. Nuno Campos has brought invaluable expertise on all things
+agents and LangChain and pointed me to concepts I had missed. Prashanth Josyula
+held the writing and the code examples to a high bar of technical rigor and brought
+deep technical expertise. Megan MacLennan has been my technical writing expert,
+helping ensure accessibility and relevance to a wide audience. Early drafts are always
+imperfect, and I’m deeply grateful to my technical reviewers for tolerating my blun‐
+ders and oversights with grace. Thank you for all of your patience and your invalua‐
+ble suggestions.
+I also want to offer a special thanks to Anthony Wainman, who has been a thought
+partner from the earliest stages of this book, and offered invaluable guidance on the
+structure, content, examples, and so much more.
+This book wouldn’t have been possible without the fantastic team at O’Reilly, espe‐
+cially my development editor, Shira Evans, who helped shepherd the project. Many
+thanks to Melissa Potter for providing early feedback and reviews, and my produc‐
+tion editors Ashley Stussy and Gregory Hyman. Nicole Butterfield has been invalua‐
+ble in turning concepts into reality.
+I also want to thank everyone who read the early release version of the book and
+offered suggestions and encouragement, including Tiago Dufau de Vargas, Jenny
+Song, Leonidas Askianakis, Karthik Rao, and Drew Hoskins.
+I owe so much to my brilliant current and former colleagues at Microsoft, Service‐
+Now, and Uber, especially Olcay Cirit, Dawn Woodard, Sameera Poduri, Zoubin
+Ghahramani, Piero Molino, Pablo Bellver, Jaikumar Ganesh, Jay Stokes, Marc-
+Alexandre Cote, Chi Wang, Anush Sankaran, Amir Abdi, Tong Wang, Antonios Mat‐
+akos, Max Golovanov, Abe Starosta, Francis Beckert, Malachi Jones, Taylor Black,
+Ryan Sweet, Lital Badash, Amir Pirogovsky, Alexander Stojanovic, Brad Sarsfield,
+Preface 
+| 
+xix

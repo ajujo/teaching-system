@@ -1,0 +1,40 @@
+Chapter 9
+361
+    model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+    index_dir: str = "faiss_index",
+    checkpoint_dir: str = "embedding_checkpoints"
+) -> FAISS:
+    """Build and save a FAISS index from documentation website.
+
+    This function loads documentation from a website, preprocesses it into
+chunks,
+    embeds the chunks using a specified model, and saves the resulting
+FAISS index.
+    Includes checkpointing to resume from interruptions.
+
+    Args:
+        base_url: Base URL to scrape documentation from. Defaults to
+LangChain tutorials.
+                 Alternative: "https://langchain-ai.github.io/langgraph/"
+for LangGraph docs.
+        batch_size: Number of documents to process in each preprocessing
+batch.
+        max_depth: Maximum depth to crawl from the base URL.
+        embedding_batch_size: Number of chunks to embed in each parallel
+batch.
+        model_name: HuggingFace model name for embeddings.
+        index_dir: Directory to save the final FAISS index.
+        checkpoint_dir: Directory to save intermediate checkpoints.
+
+    Returns:
+        The constructed FAISS index.
+
+    Example:
+        # Build index from LangChain tutorials (default)
+        index = build_index()
+
+        # Build index from LangGraph documentation
+        index = build_index("https://langchain-ai.github.io/langgraph/")
+
+        # Custom configuration
+        index = build_index(

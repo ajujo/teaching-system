@@ -1,0 +1,10 @@
+figura 7-19. Utilice la escala de profundidad para crear un modelo de 48 capas a
+partir de un modelo de 32 capas. La imagen está bajo licencia CC BY 4.0 y se ha
+modificado ligeramente para facilitar su lectura.
+Concatenación
+En lugar de sumar los parámetros de los modelos constituyentes de distintas
+maneras, también puede concatenarlos. El número de parámetros del
+componente fusionado será la suma del número de parámetros de todos los
+componentes constituyentes. Si fusiona dos adaptadores LoRA de rangos r1
+y r2, el rango del adaptador fusionado será r1 + r2, como se muestra en la
+Figura 7-20.

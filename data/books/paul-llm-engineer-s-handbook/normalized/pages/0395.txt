@@ -1,0 +1,10 @@
+Inference Pipeline Deployment
+364
+Thus, by decoupling the components, you can scale horizontally as required, with minimal costs,
+providing a cost-effective solution to your system's needs.
+Figure 10.3: Scaling microservices independently based on compute requirements
+Additionally, each microservice can adopt the most suitable technology stack, allowing teams to
+innovate and optimize independently.
+However, microservices introduce complexity in deployment and maintenance. Each service
+must be deployed, monitored, and maintained separately, which can be more challenging than
+managing a monolithic system.

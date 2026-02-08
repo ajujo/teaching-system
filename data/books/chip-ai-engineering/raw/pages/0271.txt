@@ -1,0 +1,43 @@
+Grupo de
+instrucciones
+Instrucción
+Descripción
+detectable
+siguientes opciones: {options}.
+Formato
+detectable
+Número mínimo
+secciones
+resaltadas
+Resalta al menos {N} secciones
+en la respuesta con marcado, es
+decir *sección resaltada*
+Formato
+detectable
+Varias secciones
+Tu respuesta debe tener {N}
+secciones. Marca el inicio de
+cada sección con
+{section_splitter} X.
+Formato
+detectable
+Formato JSON
+Todo el output debe envolverse
+en formato JSON.
+INFOBench, creado por Qin et al. (2024), adopta una visión mucho más
+amplia de lo que significa seguir instrucciones. Además de evaluar la
+capacidad de un modelo para seguir un formato esperado, como hace
+IFEval, INFOBench también evalúa la capacidad del modelo para seguir
+restricciones de contenido (como "discute solo el cambio climático"), líneas
+guía lingüísticas (como "usa inglés victoriano") y reglas de estilo (como
+"usa un tono respetuoso"). Sin embargo, no se puede automatizar fácilmente
+la verificación de estos tipos de instrucciones ampliadas. Si da instrucciones
+a un modelo para que "utilice un lenguaje apropiado para un público joven",
+¿cómo verifica automáticamente si el output es realmente apropiado para un
+público joven?
+Para la verificación, los autores de INFOBench construyeron una lista de
+criterios para cada instrucción, cada uno enmarcado como una pregunta de
+sí/no. Por ejemplo, el output de la instrucción "Elabore un cuestionario para
+ayudar a los clientes de un hotel a escribir reseñas sobre el mismo" puede
+verificarse utilizando tres preguntas de tipo sí/no:
+1. ¿El texto generado es un cuestionario?

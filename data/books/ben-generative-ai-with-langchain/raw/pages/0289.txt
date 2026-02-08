@@ -1,0 +1,37 @@
+Advanced Applications and Multi-Agent Systems
+262
+The key idea was that instead of exploring the whole tree, they use an LLM to evaluate the quality 
+of the solution you get at every step (by looking at the sequence of all the steps on these specific 
+reasoning steps and the outputs you’ve got so far).
+Now, as we’ve discussed some more advanced architectures that allow us to build better agents, 
+there’s one last component to briefly touch on – memory. Helping agents to retain and retrieve 
+relevant information from long-term interactions helps us to develop more advanced and helpful 
+agents.
+Agent memory
+We discussed memory mechanisms in Chapter 3. To recap, LangGraph has the notion of short-term 
+memory via the Checkpointer mechanism, which saves checkpoints to persistent storage. This 
+is the so-called per-thread persistence (remember, we discussed earlier in this chapter that the 
+notion of a thread in LangGraph is similar to a conversation). In other words, the agent remembers 
+our interactions within a given session, but it starts from scratch each time.
+As you can imagine, for complex agents, this memory mechanism might be inefficient for two 
+reasons. First, you might lose important information about the user. Second, during the explo­
+ration phase when looking for a solution, an agent might learn something important about the 
+environment that it forgets each time – and it doesn’t look efficient. That’s why there’s the concept 
+of long-term memory, which helps an agent to accumulate knowledge and gain from historical 
+experiences, and enables its continuous improvement on the long horizon.
+How to design and use long-term memory in practice is still an open question. First, you need 
+to extract useful information (keeping in mind privacy requirements too; more about that in 
+Chapter 9) that you want to store during the runtime and then you need to extract it during the 
+next execution. Extraction is close to the retrieval problem we discussed while talking about RAG 
+since we need to extract only knowledge relevant to the given context. The last component is the 
+compaction of memory – you probably want to periodically self-reflect on what you have learned, 
+optimize it, and forget irrelevant facts.
+These are key considerations to take into account, but we haven’t seen any great practical imple­
+mentations of long-term memory for agentic workflows yet. In practice, these days people typically 
+use two components – a built-in cache (a mechanism to cache LLMs responses), a built-in store 
+(a persistent key-value store), and a custom cache or database. Use the custom option when:
+•	
+You need additional flexibility for how you organize memory – for example, you would 
+like to keep track of all memory states.
+•	
+You need advanced read or write access patterns when working with this memory.

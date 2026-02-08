@@ -1,0 +1,35 @@
+Extracting Features from Text Variables
+340
+Technical requirements
+In this chapter, we will use the pandas, matplotlib, and scikit-learn Python libraries.
+We will also use NLTK, a comprehensive Python library for NLP and text analysis. You can find the
+instructions to install NLTK at http://www.nltk.org/install.html.
+If you are using the Python Anaconda distribution, follow the instructions to install NLTK at https://
+anaconda.org/anaconda/nltk.
+After you have installed NLTK, open up a Python console and execute the following:
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+These commands will download the necessary data for you to be able to run the recipes in this
+chapter successfully.
+Note
+If you haven't downloaded these or the other data sources necessary for NLTK functionality,
+NLTK will raise an error. Read the error message carefully because it will direct you to download
+the data required to run the command that you are trying to execute.
+Counting characters, words, and vocabulary
+One of the salient characteristics of text is its complexity. Long descriptions are more likely to contain
+more information than short descriptions. Texts rich in different, unique words are more likely to be
+richer in detail than texts that repeat the same words over and over. In the same way, when we speak,
+we use many short words such as articles and prepositions to build the sentence structure, yet the
+main concept is often derived from the nouns and adjectives we use, which tend to be longer words.
+So, as you can see, even without reading the text, we can start inferring how much information the
+text provides by determining the number of words, the number of unique words (non-repeated
+occurrences of a word), the lexical diversity, and the length of those words. In this recipe, we will
+learn how to extract these features from a text variable using pandas.
+Getting ready
+We are going to use the 20 Newsgroup dataset that comes with scikit-learn, which comprises
+around 18,000 news posts on 20 different topics. More details about this dataset can be found on the
+following sites:
+•	 The scikit-learn dataset website: https://scikit-learn.org/stable/datasets/
+real_world.html#newsgroups-dataset
+•	 The home page for the 20 Newsgroup dataset: http://qwone.com/~jason/20Newsgroups/

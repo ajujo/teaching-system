@@ -1,0 +1,36 @@
+muchos citaron entonces como una de las principales razones de la disminución
+de la financiación para IA en los años 70.
+14 Ha habido discusiones sobre si cambiar el nombre de la GPU, ya que se utiliza
+para mucho más que gráficos (Jon Peddie, "Chasing Pixels", julio de 2018).
+Jensen Huang, Consejero Delegado de NVIDIA, declaró en una entrevista
+(Stratechery, marzo de 2022) que, una vez que las GPU despegaron y les
+añadieron más funciones, se plantearon cambiarle el nombre por algo más
+general, como GPGPU (GPU de propósito general) o XGU. Decidieron no
+cambiar el nombre porque daban por hecho que la gente que compra GPU erá lo
+bastante inteligente como para saber para qué sirve una GPU más allá de su
+nombre.
+15 Se calcula que la multiplicación de matrices, cariñosamente conocida como
+matmul, representa más del 90 % de todas las operaciones de punto flotante de
+una red neuronal, según "Data Movement Is All You Need: A Case Study on
+Optimizing Transformers" (Ivanov et al., arXiv, v3, noviembre de 2021) y
+"Scalable MatMul-free Language Modeling" (Zhu et al., arXiv, junio de 2024).
+16 Mientras que un chip puede desarrollarse para ejecutar una arquitectura
+modelo, también puede desarrollarse una arquitectura de modelo para sacar el
+máximo partido de un chip. Por ejemplo, el transformador fue diseñado
+originalmente por Google para correr con rapidez en las TPU y solo más tarde se
+optimizó para GPU.
+17 Las GPU de gama baja y media pueden utilizar memoria GDDR (doble
+velocidad de datos gráficos).
+18 Uno de los principales retos a la hora de construir centros de datos con decenas
+de miles de GPU es encontrar una ubicación que garantice la electricidad
+necesaria. Construir centros de datos a gran escala exige sortear limitaciones de
+suministro eléctrico, velocidad y geopolíticas. Por ejemplo, las regiones remotas
+pueden ofrecer electricidad más barata, pero también pueden aumentar la
+latencia de la red, lo que hace que los centros de datos sean menos atractivos
+para casos de uso con requisitos de latencia estrictos, como la inferencia.
+19 Cada paso de generación de tokens requiere la transferencia de todos los
+parámetros del modelo desde la memoria de gran ancho de banda del acelerador
+a sus unidades de cómputo. Esto hace que esta operación consuma mucho ancho
+de banda. Como el modelo solo puede producir un token cada vez, el proceso
+solo consume un pequeño número de FLOP/s, lo que se traduce en ineficiencia
+computacional.

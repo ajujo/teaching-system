@@ -1,0 +1,40 @@
+            return actor.get_state.remote()  # Returns future
+        return None
+The manager uses a dict to track actors by session_id and agent_name, creating
+them lazily. This enables scalability: Ray distributes actors across cluster nodes, and
+querying state (e.g., ray.get(manager.get_session_state.remote(session_id,
+agent_name))) retrieves session-specific data without global sharing.
+For developers building agentic systems, actor frameworks like Orleans and Akka
+offer a proven, scalable foundation for representing each agent as an autonomous,
+self-contained unit—capable of handling asynchronous workflows, maintaining per‐
+sistent memory, and integrating cleanly into distributed infrastructures.
+Orchestration and Workflow Engines
+Even with robust messaging and agent execution models, real-world systems need
+orchestration—the logic that sequences tasks, handles retries, tracks dependencies,
+and manages failure across agents. This is especially important for long-running or
+multistep interactions that span time and components. Workflow orchestration tools
+provide a higher-level abstraction, ensuring durability and recoverability in complex
+agentic systems.
+Workflow orchestration tools are particularly useful when processes involve unrelia‐
+ble external dependencies (e.g., APIs, foundation models, or human approvals),
+potential failures, or extended durations—such as supply chain workflows that may
+take days due to asynchronous agent actions or real-world delays. By persisting state
+and automating recovery, these engines prevent data loss and redundant work, mak‐
+ing them essential for production-grade reliability where simple in-memory coordi‐
+nation falls short. Use them when scaling from prototypes to resilient deployments,
+especially in scenarios with high stakes like financial transactions, compliance-heavy
+operations, or distributed AI agents; for quick, low-risk experiments, basic scripting
+may suffice.
+Temporal provides durable, stateful workflows with long-running tasks, retries, and
+failure recovery. It’s ideal for managing multiagent systems where each agent may
+perform asynchronous, multistep actions. Temporal workflows offer a clean abstrac‐
+tion for encapsulating business logic that spans multiple services or agents over long
+durations.
+To illustrate Temporal’s durable execution in the supply chain multiagent system,
+consider a workflow that sequences agent steps (e.g., inventory management, then
+transportation arrangement, followed by supplier compliance)—with automatic
+retries on failures and persistent state for recovery. Temporal ensures the workflow
+resumes from the last successful step even after crashes, making it suitable for
+Orchestration and Workflow Engines 
+| 
+199

@@ -1,0 +1,33 @@
+NOTA
+El afinado no es el único modo de hacer aprendizaje por transferencia. Otro
+enfoque es la transferencia basada en características. En este enfoque, se
+entrena a un modelo para extraer características de los datos, normalmente
+como vectores de incrustación, que luego utiliza otro modelo. Menciono
+brevemente la transferencia basada en características en el Capítulo 2,
+cuando hablo de cómo se puede reutilizar parte de un modelo fundacional
+para una tarea de clasificación añadiendo un cabezal clasificador.
+La transferencia basada en características es muy común en la visión por
+computadora. Por ejemplo, en la segunda mitad de la década de 2010,
+muchas personas utilizaron modelos entrenados en el conjunto de datos
+ImagetNet para extraer características de las imágenes y utilizarlas en otras
+tareas de visión por computadora, como la detección de objetos o la
+segmentación de imágenes.
+El afinado es parte del proceso de entrenamiento de un modelo. Es una
+extensión del pre-entrenamiento de modelos. Dado que cualquier
+entrenamiento que se realice después del pre-entrenamiento es un afinado,
+este puede adoptar muchas formas diferentes. En el Capítulo 2 ya se
+trataron dos tipos de afinado: el afinado supervisado y el afinado de
+preferencias. Repasemos rápidamente estos métodos y cómo puede sacarles
+partido como desarrollador de aplicaciones.
+Recordemos que el proceso de entrenamiento de un modelo comienza con
+el pre-entrenamiento, que suele realizarse con autosupervisión. La
+autosupervisión permite al modelo aprender de una gran cantidad de datos
+no etiquetados. Para los modelos lingüísticos, los datos autosupervisados
+suelen ser simples secuencias de texto que no requieren anotaciones.
+Antes de afinar este modelo pre-entrenado con datos costosos específicos
+de la tarea, pueden afinarlo con autosupervisión utilizando datos baratos
+relacionados con la tarea. Por ejemplo, para afinar un modelo de respuesta a
+preguntas jurídicas, antes de afinarlo con datos anotados (pregunta,
+respuesta) y caros, puede afinarlo con documentos jurídicos sin procesar.
+Del mismo modo, para afinar un modelo de resumen de libros en
+vietnamita, primero se puede afinar con una gran colección de textos en

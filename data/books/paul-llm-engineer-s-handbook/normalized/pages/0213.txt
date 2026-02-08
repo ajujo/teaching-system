@@ -1,0 +1,28 @@
+Supervised Fine-Tuning
+182
+The key factors determining the data needs for domain-specific models are the "size" of the
+domain (i.e., the extent of its specialized knowledge and vocabulary) and the representation of
+that domain in the model's pre-training data. Domains that are well-represented in the original
+training data may require less fine-tuning, while those that are more specialized or underrepresented may need more extensive datasets. Even with open-source LLMs, many pre-training
+datasets are closed-source, which requires making educated guesses to determine their composition (e.g., 30% code or 20% math).
+Data curation
+When it comes to procuring data for fine-tuning, the approaches differ between task-specific and
+domain-specific models. For task-specific models, data curation often involves collecting examples
+of the desired task from existing datasets or creating new ones. This might involve gathering pairs
+of original and summarized texts for a summarization model or collecting sentences in different
+languages for a translation model.
+Domain-specific data curation can be more challenging. It often requires collaboration with subject matter experts to gather and validate relevant texts, research papers, technical documents,
+and other domain-specific content. In some cases, it may involve partnering with organizations
+or institutions that have access to large repositories of specialized information. The quality and
+relevance of this data is crucial, as it directly impacts the model's ability to understand and generate content in the target domain.
+It's worth noting that few-shot prompting has emerged as an alternative strategy to fine-tuning,
+especially for task-specific applications. This approach leverages the capabilities of large, powerful models by providing a few examples of the desired task within the input prompt. While
+not a replacement for fine-tuning in all scenarios (e.g., when you want to learn a new domain),
+few-shot prompting can be an efficient way to adapt models to new tasks without the need for
+extensive additional training.
+In practice, the line between task-specific and domain-specific models can sometimes blur. For
+instance, a model fine-tuned for medical diagnosis could be considered both task-specific (focused
+on diagnosis) and domain-specific (specialized in medical knowledge). The key is to understand
+the primary goal of the fine-tuning process and tailor the approach accordingly.
+At this point in the process, we should have a collection of datasets suited for our use case. The
+next step consists of refining the quality of the samples through rule-based filtering, data duplication, data decontamination, and data quality evaluation.

@@ -1,0 +1,42 @@
+1 Shengran Hu et al., “Automated Design of Agentic Systems”, paper presented at the International Conference
+on Learning Representations, Singapore, April 2025.
+   g = StateGraph(AgentState)
+   g.add_node("actor", actor_node)
+   g.add_node("critic", critic_node)
+  
+   g.set_entry_point("actor")
+   g.add_edge("actor", "critic")
+   # Loop back if not approved (conditional)
+   g.add_conditional_edges("critic", lambda s: "actor" 
+    if "regenerate" in s["messages"][-1].content.lower() else 
+    END)
+  
+   return g.compile()
+Actor-critic setups are particularly useful when evaluation is easier than generation. If
+you can reliably say “This is a good output,” but can’t easily produce it on the first try,
+then a simple actor-critic loop can be a powerful tool—no learning required. As an
+easy strategy to implement, it is often worth trying when a performance boost is
+worth the additional computational cost.
+Automated Design of Agent Systems
+Automated Design of Agentic Systems (ADAS) represents a transformative approach
+to agent development, shifting away from handcrafted architectures and toward sys‐
+tems that can design, evaluate, and iteratively improve themselves. As articulated by
+Shengran Hu, Cong Lu, and Jeff Clune in their 2024 original paper,1 the central idea
+of ADAS is that, rather than manually constructing each component of an agent, we
+can enable a higher-level Meta Agent Search (MAS) algorithm to automatically cre‐
+ate, assess, and refine agentic systems. This approach opens up a new research fron‐
+tier—one that could enable agents to adapt to complex, shifting environments and
+continually improve their own capabilities without direct human intervention. As
+Figure 8-1 shows, ADAS builds on the idea that, historically, hand-designed solutions
+in machine learning (ML) have often been replaced by learned or automated alterna‐
+tives, suggesting that agentic systems, too, may benefit from this transition.
+In ADAS, foundation models serve as flexible, general-purpose modules within an
+agent’s architecture. These models, which already power strategies such as chain-of-
+thought reasoning, self-reflection, and Toolformer-based agents, form a base upon
+which more specialized or task-specific capabilities can be layered. However, ADAS
+seeks to advance beyond these traditional approaches by enabling agents to invent
+entirely new structures and modules autonomously. The versatility of foundation
+models provides an ideal starting point, but ADAS leverages automated processes to
+184 
+| 
+Chapter 8: From One Agent to Many

@@ -11,8 +11,9 @@ Esta guía te llevará paso a paso desde la instalación hasta una sesión compl
 5. [Sesión de Tutoría](#5-sesión-de-tutoría)
 6. [Ejercicios y Exámenes](#6-ejercicios-y-exámenes)
 7. [Multi-Estudiante](#7-multi-estudiante)
-8. [Comandos de Referencia](#8-comandos-de-referencia)
-9. [Solución de Problemas](#9-solución-de-problemas)
+8. [Web API y Frontend](#8-web-api-y-frontend)
+9. [Comandos de Referencia](#9-comandos-de-referencia)
+10. [Solución de Problemas](#10-solución-de-problemas)
 
 ---
 
@@ -291,6 +292,19 @@ Elige libro (0-1): 1
 Libro seleccionado: Mi Libro de Aprendizaje
 ```
 
+### Elegir tutor (Persona)
+
+Desde F8, puedes elegir entre 4 tutores con personalidades distintas:
+
+| Tutor | Estilo | Política |
+|-------|--------|----------|
+| **Dra. Vega** | Académica, rigurosa | 2 intentos, permite avanzar |
+| **Profe Nico** | Cercano, ejemplos de la calle | 2 intentos, permite avanzar |
+| **Inés** | Paciente, metódica | 2 intentos, permite avanzar |
+| **Capitán Ortega** | Estricto, directo | 1 intento, NO permite avanzar |
+
+El tutor se puede cambiar en el perfil del estudiante o al crear uno nuevo.
+
 ### Flujo de enseñanza
 
 El tutor sigue un flujo "teaching-first":
@@ -480,7 +494,70 @@ Cada estudiante tiene su propio progreso:
 
 ---
 
-## 8. Comandos de Referencia
+## 8. Web API y Frontend
+
+Desde F9, Teaching System incluye una Web API y un frontend Next.js.
+
+### Iniciar el Backend API
+
+```bash
+# Terminal 1: Backend
+uv run uvicorn teaching.web.api:app --reload --port 8000
+
+# Verificar que funciona
+curl http://localhost:8000/health
+```
+
+### Iniciar el Frontend
+
+```bash
+# Terminal 2: Frontend
+cd web
+npm install
+npm run dev
+```
+
+Abre http://localhost:3000
+
+### Flujo Web
+
+1. **Lobby** (`/`):
+   - Selecciona o crea un estudiante
+   - Elige un tutor (Dra. Vega, Profe Nico, Inés, Capitán Ortega)
+   - Selecciona un libro
+   - Click "Iniciar Sesión"
+
+2. **Sesión** (`/session/[id]`):
+   - El chat recibe eventos del tutor en tiempo real (SSE)
+   - Escribe tus respuestas en el campo de texto
+   - Usa los botones rápidos: Apuntes, Siguiente, Repasar, Stop
+   - Click "Terminar" para volver al lobby
+
+### Endpoints API
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/health` | Health check |
+| GET | `/api/students` | Listar estudiantes |
+| POST | `/api/students` | Crear estudiante |
+| DELETE | `/api/students/{id}` | Eliminar estudiante |
+| GET | `/api/personas` | Listar tutores |
+| GET | `/api/personas/{id}` | Detalle de tutor |
+| POST | `/api/sessions` | Iniciar sesión |
+| GET | `/api/sessions/{id}` | Estado de sesión |
+| DELETE | `/api/sessions/{id}` | Terminar sesión |
+| POST | `/api/sessions/{id}/input` | Enviar respuesta |
+| GET | `/api/sessions/{id}/events` | Stream SSE |
+
+### Documentación Interactiva
+
+Con el backend corriendo, abre:
+- http://localhost:8000/docs (Swagger UI)
+- http://localhost:8000/redoc (ReDoc)
+
+---
+
+## 9. Comandos de Referencia
 
 ### Importación y Preparación
 
@@ -551,7 +628,7 @@ teach reset [--hard]
 
 ---
 
-## 9. Solución de Problemas
+## 10. Solución de Problemas
 
 ### Error: "LM Studio connection refused"
 
@@ -661,6 +738,26 @@ teach tutor
 4. **Usa "más ejemplos"** cuando no entiendas
 5. **Haz los quizzes** para reforzar aprendizaje
 6. **Guarda progreso** con `stop` antes de cerrar
+
+### Error: "CORS error" en el frontend
+
+El backend ya tiene CORS configurado. Verifica que:
+1. El backend está corriendo en puerto 8000
+2. El frontend usa la URL correcta en `.env.local`
+
+```bash
+# Verificar .env.local en web/
+cat web/.env.local
+# Debe mostrar: NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+```
+
+### Error: "Session not found"
+
+Las sesiones viven en memoria. Si reinicias el backend, se pierden:
+```bash
+# Crear nueva sesión desde el lobby
+open http://localhost:3000
+```
 
 ---
 

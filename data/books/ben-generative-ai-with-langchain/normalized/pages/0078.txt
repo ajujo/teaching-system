@@ -1,0 +1,37 @@
+Chapter 2
+51
+LangChain supports running models locally through other integrations as well, for example:
+•
+llama.cpp: This high-performance C++ implementation allows running LLaMA-based
+models efficiently on consumer hardware. While we won't cover the setup process in
+detail, LangChain provides straightforward integration with llama.cpp for both inference
+and fine-tuning.
+•
+GPT4All: GPT4All offers lightweight models that can run on consumer hardware. Lang­
+Chain's integration makes it easy to use these models as drop-in replacements for cloudbased LLMs in many applications.
+As you begin working with local models, you'll want to optimize their performance and handle
+common challenges. Here are some essential tips and patterns that will help you get the most
+out of your local deployments with LangChain.
+Tips for local models
+When working with local models, keep these points in mind:
+1.
+Resource management: Local models require careful configuration to balance perfor­
+mance and resource usage. The following example demonstrates how to configure an
+Ollama model for efficient operation:
+#  Configure model with optimized memory and processing settings
+from langchain_ollama import ChatOllama
+llm = ChatOllama(
+  model="mistral:q4_K_M", # 4-bit quantized model (smaller memory
+footprint)
+  num_gpu=1, # Number of GPUs to utilize (adjust based on hardware)
+ num_thread=4 # Number of CPU threads for parallel processing
+)
+Let's look at what each parameter does:
+•
+model="mistral:q4_K_M": Specifies a 4-bit quantized version of the Mistral mod­
+el. Quantization reduces the model size by representing weights with fewer bits,
+trading minimal precision for significant memory savings. For example:
+•
+Full precision model: ~8GB RAM required
+•
+4-bit quantized model: ~2GB RAM required

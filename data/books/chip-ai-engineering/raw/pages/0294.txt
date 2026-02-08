@@ -1,0 +1,34 @@
+tabla 4-4. Pros y contras del uso de API de modelos y modelos autoalojados
+contras aparecen en cursiva).
+Uso de API de
+modelos
+Modelos autoalojados
+Datos
+Tener que
+enviar sus datos
+a proveedores
+de modelos, lo
+que significa
+que su equipo
+puede filtrar
+accidentalmente
+información
+confidencial.
+No tener que enviar 
+datos al exterior
+Menos controles y
+verificaciones sobre
+derechos de autor d
+datos de
+alineación/entrenam
+Rendimiento
+El modelo más
+eficaz será
+probablemente
+el de código
+cerrado
+Los mejores modelo
+código abierto estar
+probablemente un p
+por detrás de los
+modelos comerciale

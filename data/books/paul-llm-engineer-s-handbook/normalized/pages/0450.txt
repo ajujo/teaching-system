@@ -1,0 +1,36 @@
+Chapter 11
+419
+That's it! Instead of reading and writing from your local Qdrant vector DB, you will do it from the
+cloud Qdrant cluster we just created. Just to be sure that everything works fine, run the end-toend data pipeline with the cloud version of MongoDB and Qdrant as follows:
+peotry poe run-end-to-end-data-pipeline
+The last step is setting up the ZenML cloud and deploying all our infrastructure to AWS.
+Setting up the ZenML cloud
+Setting up the ZenML cloud and the AWS infrastructure is a multi-step process. First, we will set
+up a ZenML cloud account, then the AWS infrastructure through the ZenML cloud, and, finally,
+we will bundle our code in a Docker image to run it in AWS SageMaker.
+Let's start with setting up the ZenML cloud:
+1.
+Go to the ZenML cloud at https://cloud.zenml.io and make an account. They provide
+a seven-day free trial, which is enough to run our examples.
+2.
+Fill out their onboarding form and create an organization with a unique name and a tenant
+called twin. A tenant refers to a deployment of ZenML in a fully isolated environment.
+Wait a few minutes until your tenant server is up before proceeding to the next step.
+3.
+If you want to, you can go through their Quickstart Guide to understand how the ZenML
+cloud works with a simpler example. It is not required to go through it to deploy the LLM
+Twin application, but we recommend it to ensure everything works fine.
+4.
+At this point, we assume that you have gone through the Quickstart Guide. Otherwise,
+you might encounter issues during the next steps. To connect our project with this Zen-
+ML cloud tenant, return to the project and run the zenml connect command provided
+in the dashboard. It looks similar to the following example but with a different URL:
+zenml connect --url https://0c37a553-zenml.cloudinfra.zenml.io.
+5.
+To ensure everything works fine, run a random pipeline from your code. Note that at this
+point, we are still running it locally, but instead of logging the results to the local server,
+we log everything to the cloud version:
+poetry poe run-digital-data-etl
+6.
+Go to the Pipelines section in the left panel of the ZenML dashboard. If everything worked
+fine, you should see the pipeline you ran in Step 5 there.

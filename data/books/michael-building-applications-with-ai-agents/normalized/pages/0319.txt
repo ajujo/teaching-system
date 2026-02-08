@@ -1,0 +1,23 @@
+CHAPTER 13
+Human-Agent Collaboration
+As agentic systems weave into our workflows, success depends as much on how they
+collaborate with humans on raw capabilities. This chapter brings together the
+interaction-level mechanics (interfaces, uncertainty signals, handoffs) and the gover‐
+nance structures (oversight, compliance, trust calibration) that turn opaque assistants
+into dependable teammates.
+Effective collaboration depends on calibrating autonomy: knowing when an agent
+should act on its own, when it should ask a question, and when it should defer
+entirely to a person. We'll walk through strategies for progressive delegation-starting
+with simple drafts or suggestions and building toward greater independence as trust
+grows-and we'll highlight how to repair that trust if mistakes happen.
+Roles and Autonomy
+This section explains how agentic systems shift from human-guided execution to
+autonomous operation-and how human roles evolve to match. As agent systems
+gain autonomy, one of the most important questions becomes: what role should the
+human play? The answer is not static. It shifts based on the task, the stakes, andmost critically-the level of trust between human and agent. This section explores
+how those roles evolve over time, how organizations can design for progressive dele‐
+gation, and what it takes to align people, processes, and expectations as agents
+become more capable collaborators. We begin by tracing the arc from executor to
+governor, then examine the organizational dynamics that shape adoption and
+engagement.
+297

@@ -1,0 +1,43 @@
+tabla 7-5. Rendimiento de LoRA con un presupuesto de 18 M de parámetros 
+Número de parámetros entrenables = 18 M
+Tipo de
+ponderación
+Wq
+Wk
+Wv
+Wo
+Rango r
+8
+8
+8
+8
+WikiSQL (±
+0.55)
+70.4
+70.0
+73.0
+73.2
+MultiNLI (±
+0.1%)
+91.0
+90.8
+91.0
+91.3
+Las observaciones empíricas sugieren que al aplicar LoRA a más matrices
+de ponderaciones, incluyendo las matrices de prealimentación, se obtienen
+mejores resultados. Por ejemplo, Databricks demostró que el mayor
+aumento de rendimiento lo consiguieron aplicando LoRA a todas las capas
+de prealimentación (Sooriyarachchi, 2023). Fomenko et al. (2024)
+señalaron que el LoRA basado en la prealimentación puede ser
+complementario al LoRA basado en la atención, aunque este último ofrece
+una mayor eficiencia dentro de las limitaciones de la memoria.
+Lo bueno de LoRA es que, aunque su rendimiento depende de su rango, los
+estudios han demostrado que una r pequeña, por ejemplo entre 4 y 64, suele
+bastar para muchos casos de uso. Una r más pequeña implica menos
+parámetros LoRA, lo que se traduce en una menor huella de memoria.
+Los autores de LoRA observaron que, para su sorpresa, aumentar el valor
+de r no incrementa el rendimiento del afinado. Esta observación es
+coherente con el informe de Databricks de que "aumentar r más allá de un
+cierto valor puede no producir ningún aumento perceptible en la calidad del
+output del modelo" (Sooriyarachchi, 2023). 25 Algunos argumentan que una
+r más alta puede incluso ser perjudicial, ya que puede conducir a un

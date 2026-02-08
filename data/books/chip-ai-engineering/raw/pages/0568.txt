@@ -1,0 +1,19 @@
+Experimentar con un pequeño conjunto de datos puede ayudarle a calcular
+cuántos datos más necesitará. Puede afinar un modelo con subconjuntos de
+su conjunto de datos actual (por ejemplo, 25 %, 50 %, 100 %) y graficar
+cómo se escala el rendimiento con el tamaño del conjunto de datos. Una
+pendiente pronunciada de aumento del rendimiento al aumentar el tamaño
+del conjunto de datos significa que puede esperar una mejora significativa
+del rendimiento al duplicar los datos. Una pendiente de meseta significa que
+duplicar los datos solo supondrá una pequeña mejora. La Figura 8-3
+muestra un ejemplo de este gráfico.
+figura 8-3. La curva de ganancia de rendimiento con diferentes tamaños de conjuntos
+de datos puede ayudarle a estimar el impacto de los ejemplos de entrenamiento
+adicionales en el rendimiento de su modelo.
+La curva de ganancia de rendimiento mostrada en la Figura 8-3 es bastante
+típica. En la mayoría de los casos, los ejemplos de entrenamiento
+adicionales producen rendimientos decrecientes: el mismo número de
+ejemplos suele dar un aumento menor del rendimiento a medida que crece
+el conjunto de datos. Por ejemplo, los primeros 1000 ejemplos podrían
+mejorar la precisión de un modelo en diez puntos porcentuales, pero los
+siguientes 1000 ejemplos podrían mejorarla solo en cinco.

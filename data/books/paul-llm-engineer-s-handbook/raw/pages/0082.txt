@@ -1,0 +1,33 @@
+Chapter 2
+51
+We will use SageMaker to fine-tune and operationalize our training pipeline on clusters of GPUs 
+and to deploy our custom LLM Twin model as a REST API that can be accessed in real time from 
+anywhere in the world.
+Why AWS SageMaker?
+We must also discuss why we chose AWS SageMaker over simpler and more cost-effective options, 
+such as AWS Bedrock. First, let’s explain Bedrock and its benefits.
+Amazon Bedrock is a serverless solution for deploying LLMs. Serverless means that there are no 
+servers or infrastructure to manage. It provides pre-trained models, which you can access directly 
+through API calls. When we wrote this book, they provided support only for Mistral, Flan, Llama 
+2, and Llama 3 (quite a limited list of options). You can send input data and receive predictions 
+from the models without managing the underlying infrastructure or software. This approach sig-
+nificantly reduces the complexity and time required to integrate AI capabilities into applications, 
+making it more accessible to developers with limited machine learning expertise. However, this 
+ease of integration comes at the cost of limited customization options, as you’re restricted to the 
+pre-trained models and APIs provided by Amazon Bedrock. In terms of pricing, Bedrock uses a 
+simple pricing model based on the number of API calls. This straightforward pricing structure 
+makes it more efficient to estimate and control costs.
+Meanwhile, SageMaker provides a comprehensive platform for building, training, and deploying 
+machine learning models. It allows you to customize your ML processes entirely or even use 
+the platform for research. That’s why SageMaker is mainly used by data scientists and machine 
+learning experts who know how to program, understand machine learning concepts, and are 
+comfortable working with cloud platforms such as AWS. SageMaker is a double-edged sword 
+regarding costs, following a pay-as-you-go pricing model similar to most AWS services. This 
+means you have to pay for the usage of computing resources, storage, and any other services 
+required to build your applications.
+In contrast to Bedrock, even if the SageMaker endpoint is not used, you will still pay for the 
+deployed resources on AWS, such as online EC2 instances. Thus, you have to design autoscaling 
+systems that delete unused resources. To conclude, Bedrock offers an out-of-the-box solution 
+that allows you to quickly deploy an API endpoint powered by one of the available foundation 
+models. Meanwhile, SageMaker is a multi-functional platform enabling you to customize your 
+ML logic fully.

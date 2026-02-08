@@ -1005,10 +1005,10 @@ class TestNewTeachingStatesF74:
         assert len(values) == len(set(values))
 
     def test_total_state_count(self):
-        """Hay 10 estados en total (7 originales + 2 F7.4 + 1 F8.2)."""
+        """Hay 12 estados en total (7 originales + 2 F7.4 + 1 F8.2 + 2 F8.4)."""
         from teaching.cli.commands import TeachingState
 
-        assert len(list(TeachingState)) == 10
+        assert len(list(TeachingState)) == 12
 
 
 class TestBug1DeepenInterpretation:

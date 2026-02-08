@@ -1,0 +1,15 @@
+figura 3-9. Un output ejemplo de PandaLM, con un prompt humano y dos respuestas
+generadas. Imagen de Wang et al. (2023), modificada ligeramente para facilitar la
+lectura. La imagen original está disponible bajo la Licencia Apache 2.0.
+A pesar de sus limitaciones, el enfoque de la IA como juez es versátil y
+potente. Utilizar modelos más baratos como jueces lo hace aún más útil.
+Muchos de mis compañeros, que al principio se mostraban escépticos, han
+empezado a confiar más en ella en la producción.
+La IA como juez es apasionante, y el siguiente enfoque que vamos a
+discutir es igual de intrigante. Se inspira en el diseño de juegos, un campo
+fascinante.
+Ranking de modelos con evaluación comparativa
+A menudo, usted evalúa los modelos no porque le importen sus
+puntuaciones, sino porque quiere saber qué modelo es el mejor para usted.
+Lo que necesita es un ranking estos modelos. Puede ordenar los modelos
+mediante una evaluación por puntos o una evaluación comparativa.

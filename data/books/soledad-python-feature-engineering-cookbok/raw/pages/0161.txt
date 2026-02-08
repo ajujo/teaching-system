@@ -1,0 +1,33 @@
+Performing Variable Discretization
+138
+7.	
+Let’s set up a discretizer that uses k-means clustering to create six partitions and returns the 
+clusters as one-hot-encoded variables:
+disc = KBinsDiscretizer(
+    n_bins=6,
+    encode="onehot-dense",
+    strategy="kmeans",
+    subsample=None,
+).set_output(transform="pandas")
+8.	
+Let’s fit the discretizer to the slice of the DataFrame that contains the variables to discretize so 
+that it finds the clusters for each variable:
+disc.fit(X_train[variables])
+Note
+In this recipe, we sort the values of all three of the variables into six clusters. To discretize 
+MedInc and HouseAge into six partitions and AveRooms into seven, we would set up one 
+instance of the discretizer for each variable group and use the ColumnTransformer() to 
+restrict the discretization to each group.
+9.	
+Let’s inspect the cut points:
+disc.bin_edges_
+Each array contains the cut points for the six clusters for MedInc, HouseAge, and AveRooms:
+array([array([0.4999, 2.49587954, 3.66599029, 4.95730115, 
+6.67700141, 9.67326677, 15.0001]),
+array([1., 11.7038878, 19.88430419, 27.81472503, 35.39424098, 
+43.90930314, 52.]),
+array([0.84615385, 4.84568771, 6.62222005, 15.24138445, 
+37.60664483, 92.4473438, 132.53333333])], dtype=object)
+10.	 Let’s obtain the discretized form of the variables in the train test sets:
+train_features = disc.transform(X_train[variables])
+test_features = disc.transform(X_test[variables])

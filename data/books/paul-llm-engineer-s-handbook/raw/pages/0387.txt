@@ -1,0 +1,31 @@
+Inference Pipeline Deployment
+356
+•	
+Infrastructure must be optimized to reduce processing time to achieve low latency, such 
+as using faster CPUs, GPUs, or specialized hardware. While optimizing your system for 
+low latency while batching your requests, you often have to sacrifice high throughput 
+in favor of lower latency, which can result in your hardware not being utilized at total 
+capacity. As you process fewer requests per second, it results in idle computing, which 
+increases the overall cost of processing a request. Thus, picking the suitable machine for 
+your requirements is critical in optimizing costs.
+It is crucial to design infrastructure to meet specific data requirements. This includes selecting 
+storage solutions to handle large datasets and implementing fast retrieval mechanisms to ensure 
+efficient data access. For example, we mostly care about optimizing throughput for offline training, 
+while for online inference, we generally care about latency.
+With this in mind, before picking a specific deployment type, you should ask yourself questions 
+such as:
+•	
+What are the throughput requirements? You should make this decision based on the 
+throughput’s required minimum, average, and maximum statistics.
+•	
+How many requests the system must handle simultaneously? (1, 10, 1,000, 1 million, etc.)
+•	
+What are the latency requirements? (1 millisecond, 10 milliseconds, 1 second, etc.)
+•	
+How should the system scale? For example, we should look at the CPU workload, number 
+of requests, queue size, data size, or a combination of them.
+•	
+What are the cost requirements?With what data do we work with? For example, do we 
+work with images, text, or tabular data?
+•	
+What is the size of the data we work with? (100 MB, 1 GB, 10 GB)

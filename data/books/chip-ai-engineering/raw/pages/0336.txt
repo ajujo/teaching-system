@@ -1,0 +1,32 @@
+Muchos proveedores de modelos hacen hincapié en que unos prompts de
+sistema bien elaborados pueden mejorar el rendimiento. Por ejemplo, según
+la documentación de Anthropic, "al asignar a Claude un rol o personalidad
+específicos a través de un prompt del sistema, puede mantener ese papel
+con mayor eficacia a lo largo de la conversación, mostrando respuestas más
+naturales y creativas sin salirse del papel".
+Pero, ¿por qué los prompts de sistema aumentan el rendimiento en
+comparación con los prompts de usuario? En la práctica, el prompt del
+sistema y el prompt de usuario se concatenan en un único prompt final
+antes de introducirse en el modelo. Desde la perspectiva del modelo, los
+prompts de sistema y los prompt de usuario se procesan de la misma
+manera. Cualquier mejora del rendimiento que pueda ofrecer un prompt del
+sistema se debe probablemente a uno de los siguientes factores o a ambos:
+El prompt del sistema va primero en el prompt final, y el modelo
+podría ser mejor procesando instrucciones que van primero.
+El modelo podría haber sido post-entrenado para prestar más
+atención al prompt del sistema, como se comparte en el artículo de
+OpenAI "The Instruction Hierarchy: Training LLMs to Prioritize
+Privileged Instructions" (Wallace et al., 2024). Entrenar un modelo
+para priorizar los prompts de sistema también ayuda a mitigar los
+ataques de prompts, como se discute más adelante en este capítulo.
+Longitud y eficacia del contexto
+La cantidad de información que puede incluirse en un prompt depende del
+límite de longitud del contexto del modelo. La longitud máxima del
+contexto de los modelos ha aumentado rápidamente en los últimos años.
+Las tres primeras generaciones de GPT tienen 1 K, 2 K y 4 K de longitud de
+contexto, respectivamente. Apenas es lo bastante largo para un artículo
+universitario y demasiado corto para la mayoría de documentos jurídicos o
+artículos de investigación.
+Ampliar la longitud del contexto pronto se convirtió en una carrera entre
+proveedores y profesionales del modelo. La Figura 5-2 muestra la rapidez
+con la que se amplía el límite de longitud de contexto. En cinco años, se

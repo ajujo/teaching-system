@@ -1,0 +1,43 @@
+Los autores afinaron varios modelos, entre ellos de Llama 7B a 65B, en el
+modo de 4 bits. La familia de modelos resultante, denominada Guanaco,
+mostró un rendimiento competitivo tanto en las pruebas comparativas
+públicas como en la evaluación comparativa. La Tabla 7-7 muestra las
+puntuaciones Elo de los modelos Guanaco, GPT-4 y ChatGPT en mayo de
+2023, según GPT-4. Aunque Guanaco 65B no superaba a GPT-4, a menudo
+era preferido en vez de ChatGPT.
+tabla 7-7. Clasificaciones Elo de los modelos de
+Guanaco comparados con los modelos populares en
+mayo de 2023 utilizando GPT-4 como juez. El
+experimento procede de QLoRA (Dettmers et al.,
+2023).
+Modelo
+Tamaño
+Elo
+GPT-4
+-
+1348 ± 1
+Guanaco 65B
+41 GB
+1022 ± 1
+Guanaco 33B
+21 GB
+992 ± 1
+Vicuña 13B
+26 GB
+974 ± 1
+ChatGPT
+-
+966 ± 1
+Guanaco 13B
+10 GB
+916 ± 1
+Bard
+-
+902 ± 1
+Guanaco 7B
+6 GB
+879 ± 1
+La principal limitación de QLoRA es que la cuantización NF4 es cara.
+Aunque QLoRA puede reducir la huella de memoria, podría aumentar el
+tiempo de entrenamiento debido al tiempo extra que requieren los pasos de
+cuantización y descuantización.

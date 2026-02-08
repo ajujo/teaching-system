@@ -1,0 +1,33 @@
+Supongamos por ahora que ya tiene el contexto con el que evaluar un
+output: este contexto se lo ha proporcionado los usuarios o lo ha recuperado
+ustedes (la recuperación del contexto se aborda en el Capítulo 6). El
+enfoque de evaluación más directo es la IA como juez. Como se explica en
+el Capítulo 3, a los jueces de AI se les puede pedir que evalúen cualquier
+cosa, incluida la coherencia factual. Both Liu et al. (2023) y Luo et al.
+(2023) demostraron que GPT-3.5 y GPT-4 pueden superar a los métodos
+anteriores en la medición de la coherencia factual. El documento
+"TruthfulQA: Measuring How Models Mimic Human Falsehoods" (Lin et
+al., 2022) muestra que su modelo afinado GPT-judge es capaz de predecir si
+una afirmación es considerada veraz por los humanos con una precisión del
+90-96 %. Este es el prompt que Liu et al. (2023) utilizó para evaluar la
+coherencia factual de un sumario con respecto al documento original: 3
+Coherencia factual: ¿El resumen contiene hechos falsos o engañosos
+que no están
+respaldados por el texto original?
+Texto fuente:
+{{Document}}
+Resumen:
+{{Summary}}
+¿El resumen contiene incoherencias factuales?
+Respuesta:
+Las técnicas más sofisticadas de la IA como juez para evaluar la coherencia
+factual son la autoverificación y la verificación aumentada por el
+conocimiento:
+Autoverificación
+SelfCheckGPT (Manakul et al., 2023) se basa en la suposición
+de que si un modelo genera múltiples outputs que no
+concuerdan entre sí, es probable que el output original sea
+una alucinación. Dada una respuesta R para evaluar,
+SelfCheckGPT genera N nuevas respuestas y mide qué tan
+coherente es R con respecto a estas N nuevas respuestas.
+Este enfoque funciona, pero puede ser prohibitivamente

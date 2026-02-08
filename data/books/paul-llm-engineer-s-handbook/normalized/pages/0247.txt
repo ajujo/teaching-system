@@ -1,0 +1,30 @@
+Supervised Fine-Tuning
+216
+The decision between QLoRA and LoRA should be based on the specific requirements of the
+project, available hardware, and the need to balance memory usage, training speed, and model
+performance.
+Training parameters
+When fine-tuning LLMs, several hyperparameters guide the training process and significantly
+impact the model's convergence, generalization, and overall effectiveness.
+Learning rate and scheduler
+The learning rate is the most important hyperparameter. It controls how much the model's parameters are updated during training. It typically ranges from very small values like 1e-6 to larger
+values like 1e-3. A common starting point for transformer models is often around 1e-5. If the
+learning rate is too low, training progresses slowly and may get stuck in suboptimal solutions.
+Conversely, if it's too high, training can become unstable or diverge, leading to poor performance.
+It's often beneficial to experiment with different learning rates to find the optimal value for your
+specific task and model.
+The learning rate scheduler adjusts the learning rate throughout the training process. It typically
+starts with a higher learning rate to enable rapid initial progress, then gradually decreases it in
+later stages to fine-tune the model more precisely. The two most common types of schedulers are
+linear and cosine. A linear scheduler decreases the learning rate steadily over time, while a cosine
+scheduler follows a cosine curve, decreasing more slowly at first and then more rapidly toward
+the end of training. For example, you might start with a learning rate of 3e-4 and decrease it to
+1e-7 over the course of training. The specific values and decay schedule depend on your model
+and dataset, but a common approach is to use a warmup period (e.g., 5% of total steps) where the
+learning rate increases from 0 to the initial value, followed by a decay period for the remaining 95%
+of steps. This approach helps stabilize early training and allows for more refined updates as the
+model converges. In general, linear and cosine schedulers provide the same level of performance.
+Batch size
+The batch size determines the number of samples processed before the model's weights are updated. Typical batch sizes for LLM fine-tuning range from 1 to 32, with common values being 1, 2,
+4, 8, or 16. Larger batch sizes generally lead to more stable gradient estimates and can improve
+training speed, as they provide a better approximation of the true gradient of the entire dataset.

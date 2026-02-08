@@ -1,0 +1,38 @@
+Creating New Features
+252
+mean = cv_results['test_score'].mean()
+std = cv_results['test_score'].std()
+print(f"Results: {mean} +/- {std}")
+In the following output, we can see the r-squared of the Lasso regression model trained using
+the original features:
+Results: 0.5480403481478856 +/- 0.004214649109293269
+21.	 Finally, train a Lasso regression model with the features derived from the decision trees and
+evaluate it with cross-validation:
+variables = ["AveRooms", "AveBedrms", "Population"]
+train_t = train_t.drop(variables, axis=1)
+cv_results = cross_validate(lasso, train_t, y_train,
+    cv=3)
+mean = cv_results['test_score'].mean()
+std = cv_results['test_score'].std()
+print(f"Results: {mean} +/- {std}")
+In the following output, we can see that the performance of the Lasso regression model trained
+based of the tree-derived features is better; the r-square is greater than that from step 20:
+Results: 0.5800993721099441 +/- 0.002845475651622909
+I hope I've given you a flavor of the power of combining features with decision trees and how to do
+so with feature-engine.
+How it works...
+In this recipe, we created new features based on the predictions of decision trees trained on one or
+more variables. We used DecisionTreeFeatures() from Feature-engine to automate
+the process of training the decision trees with cross-validation and hyperparameter optimization.
+DecisionTreeFeatures() trains decision trees using grid-search under the hood. Hence, you
+can pass a grid of hyperparameters to optimize the tree, or the transformer will optimize just the
+depth, which, in any case, is the most important parameter in a decision tree. You can also change
+the metric you want to optimize through the scoring parameter and the cross-validation scheme
+you want to use through the cv parameter.
+The most exciting feature of DecisionTreeFeatures() is its ability to infer the feature combinations
+to create tree-derived features, which is regulated through the features_to_combine parameter. If
+you pass an integer to this parameter - say, for example, 3, DecisionTreeFeatures() will create
+all possible combinations of 1, 2, and 3 features and use these to train the decision trees. Instead of an
+integer, you can pass a list of integers - say, [2,3] - in which case, DecisionTreeFeatures()
+will create all possible combinations of 2 and 3 features. You can also specify which features you want
+to combine and how by passing the feature combinations in tuples, as we did in step 14.

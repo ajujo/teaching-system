@@ -1,0 +1,28 @@
+Building Intelligent RAG Systems
+124
+# Exact search index
+exact_index = faiss.IndexFlatL2(dimension)
+exact_index.add(vectors)
+# HNSW index (approximate but faster)
+hnsw_index = faiss.IndexHNSWFlat(dimension, 32)  # 32 connections per node
+hnsw_index.add(vectors)
+# Compare search times
+start_time = time.time()
+exact_D, exact_I = exact_index.search(query, k=10)  # Search for 10 
+nearest neighbors
+exact_time = time.time() - start_time
+start_time = time.time()
+hnsw_D, hnsw_I = hnsw_index.search(query, k=10)
+hnsw_time = time.time() - start_time
+# Calculate overlap (how many of the same results were found)
+overlap = len(set(exact_I[0]).intersection(set(hnsw_I[0])))
+overlap_percentage = overlap * 100 / 10
+print(f"Exact search time: {exact_time:.6f} seconds")
+print(f"HNSW search time: {hnsw_time:.6f} seconds")
+print(f"Speed improvement: {exact_time/hnsw_time:.2f}x faster")
+print(f"Result overlap: {overlap_percentage:.1f}%")
+Running this code typically produces results like:
+Exact search time: 0.003210 seconds
+HNSW search time: 0.000412 seconds
+Speed improvement: 7.79x faster
+Result overlap: 90.0%

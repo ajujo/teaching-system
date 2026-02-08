@@ -1,0 +1,20 @@
+Data Engineering
+58
+Hence, the signature of the data collection pipeline will look as follows:
+•	
+Input: A list of links and their associated user (the author)
+•	
+Output: A list of raw documents stored in the NoSQL data warehouse
+We will use user and author interchangeably, as in most scenarios across the ETL pipeline, a 
+user is the author of the extracted content. However, within the data warehouse, we have only 
+a user collection.
+The ETL pipeline will detect the domain of each link, based on which it will call a specialized 
+crawler. We implemented four different crawlers for three different data categories, as seen in 
+Figure 3.2. First, we will explore the three fundamental data categories we will work with across 
+the book. All our collected documents can be boiled down to an article, repository (or code), and 
+post. It doesn’t matter where the data comes from. We are primarily interested in the document’s 
+format. In most scenarios, we will have to process these data categories differently. Thus, we 
+created a different domain entity for each, where each entity will have its class and collection 
+in MongoDB. As we save the source URL within the document’s metadata, we will still know its 
+source and can reference it in our GenAI use cases.
+Figure 3.2: The relationship between the crawlers and the data categories

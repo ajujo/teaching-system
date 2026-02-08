@@ -1,0 +1,34 @@
+Advanced Applications and Multi-Agent Systems
+234
+Another important aspect of semantic routing is that the performance of your application de­
+pends a lot on classification accuracy. You can use all the techniques we have discussed in the 
+book to improve it – few-shot prompting (including dynamic one), incorporating user feedback, 
+sampling, and others.
+Organizing interactions
+There are two ways to organize communication in multi-agent systems:
+•	
+Agents communicate via specific structures that force them to put their thoughts and 
+reasoning traces in a specific form, as we saw in the plan-and-solve example in the pre­
+vious chapter. We saw how our planning node communicated with the ReACT agent via 
+a Pydantic model with a well-structured plan (which, in turn, was a result of an LLM’s 
+controlled generation).
+•	
+On the other hand, LLMs were trained to take natural language as input and produce an 
+output in the same format. Hence, it’s a very natural way for them to communicate via 
+messages, and you can implement a communication mechanism by applying messages 
+from different agents to the shared list of messages!.
+When communicating with messages, you can share all messages via a so-called scratchpad – a 
+shared list of messages. In that case, your context can grow relatively quickly and you might need 
+to use some of the mechanisms to trim the chat memory (like preparing running summaries) that 
+we discussed in Chapter 3. But as general advice, if you need to filter or prioritize messages in 
+the history of communication between multiple agents, go with the first approach and let them 
+communicate through a controlled output. It would give you more control of the state of your 
+workflow at any given point in time. Also, you might end up with a situation where you have 
+a complicated sequence of messages, for example, [SystemMessage, HumanMessage, AIMessage, 
+ToolMessage, AIMessage, AIMessage, SystemMessage, …]. Depending on the foundational model 
+you’re using, double-check that the model’s provider supports such sequences, since previously, 
+many providers supported only relatively simple sequences – SystemMessages followed by al­
+ternating HumanMessage and AIMessage (maybe with a ToolMessage instead of a human one 
+if a tool invocation was decided).
+Another alternative is to share only the final results of each execution. This keeps the list of mes­
+sages relatively short.

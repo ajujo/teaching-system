@@ -1,0 +1,36 @@
+Chapter 10
+377
+        )
+        self.resource_manager = resource_manager
+The deploy() method is the heart of the DeploymentService class. This method orchestrates the
+entire process of deploying a model to a SageMaker endpoint. It checks whether the necessary
+configurations are already in place and, if not, it triggers the deployment:
+def deploy(
+    self,
+    role_arn: str,
+    llm_image: str,
+    config: dict,
+    endpoint_name: str,
+    endpoint_config_name: str,
+    gpu_instance_type: str,
+    resources: Optional[dict] = None,
+    endpoint_type: enum.Enum = EndpointType.MODEL_BASED,
+) -> None:
+    try:
+        if self.resource_manager.endpoint_config_exists(endpoint_config_
+name=endpoint_config_name):
+            logger.info(f"Endpoint configuration {endpoint_config_name}
+exists. Using existing configuration...")
+        else:
+            logger.info(f"Endpoint configuration{endpoint_config_name}
+does not exist.")
+        self.prepare_and_deploy_model(
+            role_arn=role_arn,
+            llm_image=llm_image,
+            config=config,
+            endpoint_name=endpoint_name,
+            update_endpoint=False,
+            resources=resources,
+            endpoint_type=endpoint_type,
+            gpu_instance_type=gpu_instance_type,
+        )

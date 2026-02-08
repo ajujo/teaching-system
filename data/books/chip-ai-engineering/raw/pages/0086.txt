@@ -1,0 +1,30 @@
+IA podían desarrollar aplicaciones de IA. A menudo, estas aplicaciones
+estaban integradas en los productos existentes de las organizaciones. Por
+ejemplo, se integró detección del fraude en Stripe, Venmo y PayPal. Se
+integraron sistemas de recomendación en redes sociales y aplicaciones
+multimedia como Netflix, TikTok y Spotify.
+Con los modelos fundacionales, cualquiera puede crear aplicaciones de IA.
+Puede servir sus aplicaciones de IA como productos independientes o
+incrustarlas en otros productos, incluyendo productos desarrollados por
+otras personas. Por ejemplo, ChatGPT y Perplexity son productos
+independientes, mientras que Copilot de GitHub se utiliza habitualmente
+como complemento en VSCode, y Grammarly como extensión del
+navegador para Google Docs. Midjourney puede utilizarse a través de su
+aplicación web independiente o mediante su integración en Discord.
+Deben existir herramientas que proporcionen interfaces para aplicaciones
+de IA independientes o que faciliten la integración de la IA en los productos
+existentes. Estas son algunas de las interfaces que están ganando
+popularidad para aplicaciones de IA:
+Aplicaciones web, de escritorio y móviles independientes. 26
+Extensiones de navegador que permiten a los usuarios consultar
+rápidamente modelos de IA mientras navegan.
+Chatbots integrados en aplicaciones de chat como Slack, Discord,
+WeChat y WhatsApp.
+Muchos productos, como VSCode, Shopify y Microsoft 365,
+ofrecen API que permiten a los desarrolladores integrar la IA en
+sus productos en forma de plug-ins o complementos. Estas API
+también pueden ser utilizadas por agentes de IA para interactuar
+con el mundo, como se explica en el Capítulo 6.
+Aunque la interfaz de chat es la más utilizada, las interfaces de IA también
+pueden basarse en la voz (por ejemplo, con asistentes de voz) o
+personificarse (como en la realidad aumentada y virtual).

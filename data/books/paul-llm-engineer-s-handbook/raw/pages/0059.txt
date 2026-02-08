@@ -1,0 +1,24 @@
+Tooling and Installation
+28
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+By using Poetry to pin your dependencies, you always ensure that you install the correct version 
+of the dependencies that your projects work with. Poetry, by default, saves all its requirements in 
+pyproject.toml files, which are stored at the root of your repository, as you can see in the cloned 
+LLM-Engineers-Handbook repository.
+Another massive advantage of using Poetry is that it creates a new Python virtual environment in 
+which it installs the specified Python version and requirements. A virtual environment allows you 
+to isolate your project’s dependencies from your global Python dependencies and other projects. 
+By doing so, you ensure there are no version clashes between projects. For example, let’s assume 
+that Project A needs numpy == 1.19.5, and Project B needs numpy == 1.26.0. If you keep both 
+projects in the global Python environment, that will not work, as Project B will override Project A’s 
+numpy installation, which will corrupt Project A and stop it from working. Using Poetry, you can 
+isolate each project in its own Python environment with its own Python dependencies, avoiding 
+any dependency clashes.
+ Quick tip: Enhance your coding experience with the AI Code Explainer and Quick 
+Copy features. Open this book in the next-gen Packt Reader. Click the Copy button 
+(1) to quickly copy code into your coding environment, or click the Explain button 
+(2) to get the AI assistant to explain a block of code to you.
+ The next-gen Packt Reader is included for free with the purchase of this book. 
+Unlock it by scanning the QR code below or visiting https://www.packtpub.com/
+unlock/9781836200079.

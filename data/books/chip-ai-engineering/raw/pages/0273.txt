@@ -1,0 +1,24 @@
+Juego de rol
+Uno de los tipos más comunes de instrucciones para el mundo real es el
+juego de rol, en el que se pide al modelo que asuma un personaje ficticio. El
+juego de rol puede servir para dos cosas:
+1. Representación de un personaje para que los usuarios interactúen
+con él, normalmente con fines de entretenimiento, como en los
+videojuegos o la narración interactiva.
+2. Como técnica de ingeniería de prompts para mejorar la calidad de
+los outputs de un modelo, como se explica en el Capítulo 5.
+Para ambos fines, el juego de rol es muy habitual. El análisis de LMSYS de
+un millón de conversaciones de su demo Vicuna y Chatbot Arena (Zheng et
+al., 2023) muestra que el juego de rol es su octavo caso de uso más común,
+como se muestra en la Figura 4-4. El juego de rol es especialmente
+importante para los NPC (personajes no jugadores) en los videojuegos, los
+compañeros de IA y los asistentes de escritura.
+figura 4-4. Los 10 tipos de instrucciones más comunes en el conjunto de datos de un
+millón de conversaciones de LMSYS.
+Es difícil automatizar la evaluación de la capacidad para el juego de rol. Las
+pruebas comparativas para evaluar la capacidad del juego de rol incluyen
+RoleLLM (Wang et al., 2023) y CharacterEval (Tu et al., 2024).
+CharacterEval utilizó anotadores humanos y entrenó un modelo de
+recompensa para evaluar cada aspecto del juego de rol en una escala de
+cinco puntos. RoleLLM evalúa la capacidad de un modelo para emular a un
+personaje mediante puntuaciones de similitud cuidadosamente elaboradas

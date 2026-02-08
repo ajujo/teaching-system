@@ -1,0 +1,36 @@
+Grouping rare or infrequent categories
+77
+We combined the use of pandas’ sum() and groupby() and numpy’s log() to determine the 
+WoE as we described at the beginning of this recipe.
+Next, we automated the procedure with feature-engine. We used the WoEEncoder(), which 
+learned the WoE per category with the fit() method, and then used transform() to replace 
+the categories with the corresponding numbers.
+See also
+For an implementation of WoE with Category Encoders, visit this book’s GitHub repository: https://
+github.com/PacktPublishing/Python-Feature-engineering-Cookbook-
+Third-Edition/blob/main/ch02-categorical-encoding/Recipe-07-Weight-
+of-evidence.ipynb.
+Grouping rare or infrequent categories
+Rare categories are those present only in a small fraction of the observations. There is no rule of thumb 
+to determine how small a small fraction is, but typically, any value below 5% can be considered rare.
+Infrequent labels often appear only on the train set or only on the test set, thus making the algorithms 
+prone to overfitting or being unable to score an observation. In addition, when encoding categories 
+to numbers, we only create mappings for those categories observed in the train set, so we won’t know 
+how to encode new labels. To avoid these complications, we can group infrequent categories into a 
+single category called Rare or Other.
+In this recipe, we will group infrequent categories using pandas and feature-engine.
+How to do it...
+First, let’s import the necessary Python libraries and get the dataset ready:
+1.	
+Import the necessary Python libraries, functions, and classes:
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from feature_engine.encoding import RareLabelEncoder
+2.	
+Let’s load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,

@@ -1,0 +1,28 @@
+Dado que tanto la secuencia de acciones como los parámetros asociados son
+generados por modelos de IA, pueden ser alucinados. Las alucinaciones
+pueden hacer que el modelo llame a una función no válida o llame a una
+función válida pero con parámetros erróneos. Las técnicas para mejorar el
+rendimiento de un modelo en general pueden utilizarse para mejorar la
+capacidad de planificación de un modelo.
+Estos son algunos métodos para que un agente planifique mejor:
+Escribir un mejor prompt del sistema con más ejemplos.
+Describir mejor las herramientas y sus parámetros para que el
+modelo las comprenda mejor.
+Reescribir las propias funciones para simplificarlas, como
+refactorizar una función compleja en dos funciones más sencillas.
+Utilizar un modelo más fuerte. En general, los modelos más fuertes
+planifican mejor.
+Afinar un modelo para la generación de planes.
+Llamada a funciones
+Muchos proveedores de modelos ofrecen el uso de herramientas para sus
+modelos, convirtiéndolos así en agentes. Una herramienta es una función.
+Por tanto, invocar una herramienta suele denominarse llamar a una función.
+Las API de los distintos modelos funcionan de forma diferente, pero en
+general, la llamada a funciones se desarrolla de la siguiente manera:
+1. Crear un inventario de herramientas.
+Declarar todas las herramientas que queramos que utilice un
+modelo. Cada herramienta se describe por su punto de entrada de
+ejecución (por ejemplo, el nombre de su función), sus parámetros y
+su documentación (por ejemplo, qué hace la función y qué
+parámetros necesita).
+2. Especificar las herramientas que puede utilizar el agente.

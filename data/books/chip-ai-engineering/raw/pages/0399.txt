@@ -1,0 +1,15 @@
+1. Modelo de incrustación: convertir la consulta en una incrustación
+utilizando el mismo modelo de incrustación utilizado durante la
+indexación.
+2. Recuperador: recuperar k fragmentos de datos cuyas incrustaciones
+sean las más cercanas a la incrustación de la consulta, según lo
+determinado por el recuperador. El número de fragmentos de datos
+a recuperar, k, depende del caso de uso, del modelo generativo y de
+la consulta.
+figura 6-3. Vista general del funcionamiento de un recuperador basado en
+incrustaciones, o semántico.
+El flujo de trabajo de recuperación basado en incrustaciones que se muestra
+aquí está simplificado. Los sistemas de recuperación semántica del mundo
+real pueden contener otros componentes, como un rerankeador para volver
+a ordenar todos los candidatos recuperados, y cachés para reducir la
+latencia. 8

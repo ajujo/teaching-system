@@ -1,0 +1,32 @@
+ciegas. 24 Si la segunda razón es cierta, refuerza la idea de que el mejor
+modelo en general puede no ser el mejor modelo para su aplicación.
+No todos los modelos tienen puntuaciones disponibles públicamente en
+todas las pruebas comparativas. Si el modelo que le interesa no tiene una
+puntuación disponible públicamente en su prueba comparativa, tendrá que
+realizar la evaluación usted mismo. 25 Afortunadamente, un arnés de
+evaluación puede ayudarle con eso. Ejecutar pruebas comparativas puede
+resultar caro. Por ejemplo, Stanford gastó aproximadamente entre 80 000 y
+100 000 dólares para evaluar 30 modelos en su paquete HELM completo. 26
+Cuantos más modelos quiera evaluar y más pruebas comparativas quiera
+utilizar, más caro le saldrá.
+Una vez que haya seleccionado un grupo de pruebas comparativas y
+obtenido las puntuaciones de los modelos que le interesan en estas pruebas
+comparativas, tendrá que agregar estas puntuaciones para clasificar los
+modelos. No todas las puntuaciones de las pruebas comparativas están en la
+misma unidad o escala. Una puede utilizar la precisión, otro la F1 y otro la
+puntuación BLEU. Tendrá que pensar en qué tan importante es para usted
+cada prueba comparativa y sopesar sus puntuaciones en consecuencia.
+Al evaluar modelos utilizando pruebas comparativas públicas, tenga en
+cuenta que el objetivo de este proceso es seleccionar un pequeño
+subconjunto de modelos para realizar experimentos más rigurosos
+utilizando sus propios pruebas comparativas y métricas. Esto no solo se
+debe a que es poco probable que las pruebas comparativas públicas
+representen a la perfección las necesidades de su aplicación, sino también a
+que es probable que estén contaminadas. Cómo se contaminan las pruebas
+comparativas públicos y cómo gestionar la contaminación de datos será el
+tema de la próxima sección.
+Contaminación de datos con pruebas comparativas públicas
+La contaminación de datos es tan común que recibe muchos nombres
+diferentes, como fuga de datos, entrenamiento en el conjunto de prueba o,
+simplemente, hacer trampa. La contaminación de datos se produce cuando
+un modelo se ha entrenado con los mismos datos con los que se evalúa. Si

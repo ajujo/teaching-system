@@ -1,0 +1,41 @@
+review. If multiple users abandon a specific flow, it may warrant revisiting the plan‐
+ning strategy or retraining the foundation model prompt. By integrating user signals
+into the broader observability and action framework, teams ensure their monitoring
+practices remain not only operationally effective but also user-centered.
+Distribution Shifts
+One of the subtler, yet most critical, challenges in monitoring agent-based systems is
+identifying and managing distribution shifts. These occur when the statistical proper‐
+ties of the agent's environment change over time-whether through evolving user
+language, new product terminology, changes in API responses, or even updates to the
+foundation model itself. While such shifts may not trigger explicit errors, they often
+manifest as degraded performance, misaligned outputs, or increased fallback usage.
+Monitoring systems are your first line of defense against this kind of slow drift. Dash‐
+boards that track task success rates, tool invocation failures, and semantic metricssuch as token usage trends or hallucination frequency-can surface early signals. For
+quantitative detection, employ statistical tests like the Kolmogorov-Smirnov (KS) test
+to compare distributions of input features or outputs. The KS test is a nonparametric
+statistical test that compares the empirical cumulative distribution functions of two
+datasets to determine if they are drawn from the same underlying distribution, mak‐
+ing it ideal for detecting shifts in continuous features like query lengths, latencies, or
+numerical metrics without assuming normality. It calculates the maximum vertical
+distance (KS statistic) between the distributions, along with a p-value for statistical
+significance; thresholds like KS > 0.1 (often paired with p-value < 0.05) indicate
+meaningful divergence, triggering alerts for potential drift in agent inputs or outputs.
+In this code, SciPy's ks_2samp function is applied to sample arrays of historical and
+current data, printing a detection message if the statistic exceeds the threshold. Here's
+a small Python example using SciPy to detect drift in query lengths:
+import numpy as np
+from scipy import stats
+# Historical and current query lengths (e.g., characters)
+historical = np.array([10, 15, 20, 12]) # Baseline data
+current = np.array([25, 30, 28, 35]) # New data
+ks_stat, p_value = stats.ks_2samp(historical, current)
+if ks_stat > 0.1:
+    print(f"Drift detected: KS statistic = {ks_stat}")
+Kullback-Leibler (KL) divergence measures how one probability distribution diverges
+from another, often used to detect concept drift by quantifying shifts in token distri‐
+butions (e.g., changes in word frequencies that might indicate evolving user language
+or new terminology). It is not symmetric KL(P||Q) ≠ KL(Q||P) and can signal when
+current data (Q) deviates significantly from historical baselines (P), with higher
+Distribution Shifts
+|
+237

@@ -1,0 +1,24 @@
+Fine-Tuning with Preference Alignment
+248
+Direct Preference Optimization
+Introduced by Rafailov et al. in their 2023 paper Direct Preference Optimization: Your Language
+Model is Secretly a Reward Model, DPO offers a streamlined alternative to traditional RLHF methods.
+DPO's core innovation lies in its reformulation of the preference learning problem. Unlike RLHF,
+which typically involves training a separate reward model and then using reinforcement learning
+algorithms like PPO to fine-tune the language model, DPO takes a more direct approach.
+It derives a closed-form expression for the optimal policy under the standard RLHF objective of
+maximizing expected reward subject to a KL-divergence constraint with a reference policy. This
+mathematical insight allows DPO to express the preference learning problem directly in terms of
+the policy, eliminating the need for a separate reward model or complex reinforcement learning
+algorithms.
+In practical terms, DPO can be implemented as a simple binary cross-entropy loss function that
+operates directly on the language model's output probabilities. This loss function encourages the
+model to assign higher probability to preferred responses and lower probability to non-preferred
+responses, while maintaining closeness to a reference (frozen) model. The importance of the reference model is directly controlled via a beta parameter between 0 and 1. The reference model is
+ignored when beta is equal to 0, which means that the trained model can be very different from
+the SFT one. In practice, a value of 0.1 is the most popular one, but this can be tweaked, as we'll
+see in the next section.
+The simplicity of this approach allows optimization using standard gradient descent techniques,
+without the need for sampling from the model during training or implementing complex RL
+algorithms. Figure 6.5 shows a high-level view of the DPO algorithm, greatly simplifying the
+training process compared to Figure 6.4.

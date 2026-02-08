@@ -1,0 +1,23 @@
+Creating spline features
+265
+Figure 8.24 - The predictions of a linear model, based on splines
+overlaid over the true relationship between X and y
+Note
+Increasing the number of knots or the degree of the polynomial increases the flexibility of the
+spline curves. Try creating splines from higher polynomial degrees and see how the Ridge
+regression predictions change.
+Now that we understand what the spline features are and how we can use them to predict
+non-linear effects, let's try them out on a real dataset.
+11.	 Import some additional classes and functions from scikit-learn:
+from sklearn.datasets import fetch_california_housing
+from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import cross_validate
+12.	 Load the California housing dataset and drop two of the variables, which we won't use for modeling:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(["Latitude", "Longitude"], axis=1,
+    inplace=True)
+13.	 First, we will fit a Ridge regression to predict house prices based on the existing variables, by
+utilizing cross-validation, and then obtain the performance of the model to set up the benchmark:
+linmod = Ridge(random_state=10)
+cv = cross_validate(linmod, X, y)

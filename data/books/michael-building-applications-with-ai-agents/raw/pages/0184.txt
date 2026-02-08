@@ -1,0 +1,24 @@
+Figure 7-8. Reinforcement fine-tuning with verifiable rewards. Prompts are sampled to
+generate multiple completions, which are evaluated by a grader (either automated or
+human). These rewards are fed into the model trainer to update the policy, improving
+future outputs based on observed performance.
+In summary, RLVR expands the possibilities of RFT by combining preference learn‐
+ing with value-based policy optimization. This allows your models not just to imitate
+preferred outputs, but to predict and optimize for what will be most useful, accurate,
+or aligned—paving the way for self-improving, task-specialized foundation models.
+Conclusion
+Learning in agentic systems encompasses a variety of approaches, each offering dis‐
+tinct advantages for improving performance and adaptability. Nonparametric learn‐
+ing enables agents to learn dynamically from experience without modifying
+underlying model parameters, emphasizing simplicity, speed, and real-world respon‐
+siveness. Parametric learning, by contrast, directly fine-tunes model weights to
+achieve deeper specialization—whether through supervised fine-tuning for struc‐
+tured outputs and function calling, or through direct preference optimization to
+shape output quality according to nuanced human judgments. Together, these learn‐
+ing methods form a powerful toolkit. By combining nonparametric agility with targe‐
+ted parametric adaptation, developers can create intelligent, robust agents capable of
+evolving alongside changing tasks and environments—while ensuring each invest‐
+ment in learning aligns with operational constraints and performance goals.
+162 
+| 
+Chapter 7: Learning in Agentic Systems

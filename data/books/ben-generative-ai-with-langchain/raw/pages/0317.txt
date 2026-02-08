@@ -1,0 +1,36 @@
+Software Development and Data Analysis Agents
+290
+The agent will:
+1.	
+Determine what it needs to write Python code.
+2.	
+Use PythonREPLTool to execute the code.
+3.	
+Return the results.
+When run, it will show its reasoning steps and code execution before giving the final answer. We 
+should be seeing an output like this:
+> Entering new AgentExecutor chain...
+I can write a Python script to find the prime numbers up to 20.
+Action: Python_REPL
+Action Input: def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+primes = [num for num in range(2, 21) if is_prime(num)]
+print(primes)
+Observation: [2, 3, 5, 7, 11, 13, 17, 19]
+I now know the final answer
+Final Answer: [2, 3, 5, 7, 11, 13, 17, 19]
+> Finished chain.
+{'input': 'What are the prime numbers until 20?', 'output': '[2, 3, 5, 7, 
+11, 13, 17, 19]'}
+Documentation RAG
+What is also quite interesting is the use of documents to help write code or to ask questions 
+about documentation. Here’s an example of loading all documentation pages from LangChain’s 
+website using DocusaurusLoader:
+from langchain_community.document_loaders import DocusaurusLoader
+import nest_asyncio
+nest_asyncio.apply()

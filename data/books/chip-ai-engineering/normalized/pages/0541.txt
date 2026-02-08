@@ -1,0 +1,32 @@
+En general, cuanto mayor sea el tamaño del lote, más rápidamente será
+capaz el modelo de pasar por los ejemplos de entrenamiento. Sin embargo,
+cuanto mayor sea el tamaño del lote, más memoria se necesitará para
+ejecutar el modelo. Por lo tanto, el tamaño del lote está limitado por el
+hardware que se utilice.
+Aquí es donde pueden ver la relación entre costo y eficiencia. Una
+capacidad decómputo más cara permite un afinado más rápido.
+En el momento de escribir estas líneas, la capacidad de cómputo sigue
+siendo un cuello de botella para el afinado. A menudo, los modelos son tan
+grandes y la memoria tan limitada que solo pueden utilizarse lotes
+pequeños. Esto puede dar lugar a actualizaciones inestables de las
+ponderaciones del modelo. Para solucionar este problema, en lugar de
+actualizarlas después de cada lote, puede acumular gradientes a lo largo de
+varios lotes y actualizar las ponderaciones del modelo una vez se hayan
+acumulado suficientes gradientes fiables. Esta técnica se denomina
+acumulación de gradientes. 37
+Cuando el costo computacional no sea el factor más importante, puede
+experimentar con diferentes tamaños de lote para ver cuál ofrece el mejor
+rendimiento del modelo.
+Número de épocas
+Una época es una pasada por los datos de entrenamiento. El número de
+épocas determina cuántas veces se entrena en cada ejemplo de
+entrenamiento.
+Los conjuntos de datos pequeños pueden necesitar más épocas que los
+grandes. Para un conjunto de datos con millones de ejemplos, 1-2 épocas
+pueden ser suficientes. Un conjunto de datos con miles de ejemplos podría
+mejorar su rendimiento después de 4-10 épocas.
+La diferencia entre la pérdida de entrenamiento y la pérdida de validación
+puede darle pistas sobre las épocas. Si tanto la pérdida de entrenamiento
+como la pérdida de validación siguen disminuyendo de forma constante, el
+modelo puede beneficiarse de más épocas (y más datos). Si la pérdida de
+entrenamiento sigue disminuyendo pero la pérdida de validación aumenta,

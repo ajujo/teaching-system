@@ -1,0 +1,7 @@
+figura 10-18. El flujo de trabajo de Midjourney permite a la aplicación recopilar
+retroalimentación implícita.
+Los asistentes de código como GitHub Copilot pueden mostrar sus
+borradores en colores más claros que los textos finales, como se muestra en
+la Figura 10-19. Los usuarios pueden utilizar el tabulador para aceptar una
+sugerencia o simplemente seguir escribiendo para ignorarla, lo que en
+ambos casos muestra su opinión.

@@ -1,0 +1,30 @@
+Building Intelligent RAG Systems
+112
+This architecture offers several advantages for production systems: modularity allows components
+to be developed independently; scalability enables resources to be allocated based on specific
+needs; maintainability is improved through the clear separation of concerns; and flexibility per­
+mits different implementation strategies to be swapped in as requirements evolve.
+In the following sections, we'll explore each component in Figure 4.1 in detail, beginning with
+the fundamental building blocks of modern RAG systems: embeddings and vector stores that
+power the knowledge base and retriever components. But before we dive in, it's important to
+first consider the decision between implementing RAG or using pure LLMs. This choice will fun­
+damentally impact your application's overall architecture and operational characteristics. Let's
+discuss the trade-offs!
+When to implement RAG
+Introducing RAG brings architectural complexity that must be carefully weighed against your
+application requirements. RAG proves particularly valuable in specialized domains where current
+or verifiable information is crucial. Healthcare applications must process both medical images
+and time-series data, while financial systems need to handle high-dimensional market data
+alongside historical analysis. Legal applications benefit from RAG's ability to process complex
+document structures and maintain source attribution. These domain-specific requirements often
+justify the additional complexity of implementing RAG.
+The benefits of RAG, however, come with significant implementation considerations. The system
+requires efficient indexing and retrieval mechanisms to maintain reasonable response times.
+Knowledge bases need regular updates and maintenance to remain valuable. Infrastructure must
+be designed to handle errors and edge cases gracefully, especially where different components
+interact. Development teams must be prepared to manage these ongoing operational requirements.
+Pure LLM implementations, on the other hand, might be more appropriate when these com­
+plexities outweigh the benefits. Applications focusing on creative tasks, general conversation, or
+scenarios requiring rapid response times often perform well without the overhead of retrieval
+systems. When working with static, limited knowledge bases, techniques like fine-tuning or
+prompt engineering might provide simpler solutions.

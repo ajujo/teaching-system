@@ -1,0 +1,23 @@
+Transforming Numerical Variables
+98
+Figure 3.7 – The bar and Q-Q plots of the counts1 variable after the square root transformation
+Now, let’s apply the square root transformation with scikit-learn.
+9.	
+Let’s import FunctionTransformer() and set up it to perform a square root transformation:
+from sklearn.preprocessing import FunctionTransformer
+transformer = FunctionTransformer(
+    np.sqrt).set_output(transform="pandas")
+Note
+If we wanted to round the values as we did in step 7, we can set up the transformer using 
+transformer = FunctionTransformer(func=lambda x: np.round(np.
+sqrt(x), 2)).
+10.	 Let’s make a copy of the data and transform the variables:
+df_tf = df.copy()
+df_tf = transformer.transform(df)
+Go ahead and check the result of the transformation as we did in step 8.
+To apply the square root with Feature-engine instead, we use the PowerTransformer() 
+with an exponent of 0.5:
+from feature_engine.transformation import PowerTransformer
+root_t = PowerTransformer(exp=1/2)
+11.	 Next, we fit the transformer to the data:
+root_t.fit(df)

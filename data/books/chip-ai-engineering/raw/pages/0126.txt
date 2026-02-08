@@ -1,0 +1,26 @@
+Chinchilla propone otro cálculo para cuando el costo de los datos de
+entrenamiento sea considerable.
+figura 2-8. Gráficos que representan las relaciones entre la pérdida de entrenamiento,
+el número de parámetros de un modelo, los FLOPs y el número de tokens de
+entrenamiento. Fuente: "Training Compute-Optional Large Language Models"
+(DeepMind, 2022).
+La ley de escalado se desarrolló para modelos densos entrenados con datos
+generados predominantemente por humanos. La adaptación de este cálculo
+a modelos dispersos, como los modelos de mezcla de expertos, y a datos
+sintéticos es un área de investigación activa.
+La ley de escalado optimiza la calidad del modelo a partir de un
+presupuesto de cómputo. Sin embargo, es importante recordar que para la
+producción, la calidad del modelo no lo es todo. Algunos modelos, sobre
+todo Llama, tienen un rendimiento subóptimo pero una mejor usabilidad.
+Dado su presupuesto de cómputo, los autores de Llama podrían haber
+elegido modelos más grandes que rindieran mejor, pero optaron por
+modelos más pequeños. Con los modelos más pequeños es más fácil
+trabajar y son más baratos para realizar inferencias, lo que ha contribuido a
+que sus modelos sean más adoptados. Sardana et al. (2023) modificaron la
+ley de escalado de Chinchilla para calcular el número óptimo de parámetros
+LLM y el tamaño de los datos de pre-entrenamiento para tener en cuenta
+esta demanda de inferencia.
+En cuanto al rendimiento del modelo con un presupuesto de cálculo, cabe
+señalar que el costo de conseguir un determinado rendimiento del modelo
+es decreciente. Por ejemplo, en el conjunto de datos ImageNet, el costo para
+lograr un 93 % de precisión se redujo a la mitad de 2019 a 2021, según el

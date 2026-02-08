@@ -1,0 +1,31 @@
+La evaluación, si no se hace con cuidado, puede añadir una
+latencia y un costo significativos a su aplicación. Algunos
+equipos deciden saltarse la evaluación con la esperanza de
+reducir la latencia. Es una apuesta arriesgada.
+Iterar
+A medida que cambien sus necesidades y el comportamiento de los
+usuarios, también evolucionarán sus criterios de evaluación, y tendrá que
+repetir su proceso de evaluación. Puede que tenga que actualizar los
+criterios de evaluación, cambiar la rúbrica de puntuación y añadir o
+eliminar ejemplos. Aunque la iteración es necesaria, debería poder esperar
+un cierto nivel de coherencia de su proceso de evaluación. Si el proceso de
+evaluación cambia constantemente, no podrá utilizar los resultados de la
+evaluación para orientar el desarrollo de su aplicación.
+A medida que itere su proceso de evaluación, asegúrese de realizar un
+seguimiento adecuado del experimento: registre todas las variables que
+podrían cambiar en un proceso de evaluación, incluyendo, entre otros, los
+datos de la evaluación, la rúbrica y las configuraciones de prompts y
+muestreo utilizadas para los jueces de IA.
+Resumen
+Este es uno de los temas de IA más difíciles, pero creo que uno de los más
+importantes, sobre los que he escrito. No disponer de un proceso de
+evaluación fiable es uno de los mayores obstáculos para la adopción de la
+IA. Aunque la evaluación lleva tiempo, un proceso de evaluación fiable le
+permitirá reducir riesgos, descubrir oportunidades para mejorar el
+rendimiento y comparar los progresos, lo que le ahorrará tiempo y dolores
+de cabeza.
+Dado el creciente número de modelos fundacionales disponibles, para la
+mayoría de los desarrolladores de aplicaciones el reto ya no consiste en
+desarrollar modelos, sino en seleccionar los modelos adecuados para su
+aplicación. En este capítulo se habló acerca de una lista de criterios que
+suelen utilizarse para evaluar modelos para aplicaciones, y cómo se

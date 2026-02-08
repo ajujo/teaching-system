@@ -1,0 +1,36 @@
+MLOps and LLMOps
+434
+More on formatting errors
+Formatting errors relate to the style and structure of your code, ensuring that it adheres to a 
+consistent visual layout. This can include the placement of spaces, indentation, line length, and 
+other stylistic elements.
+The main purpose of formatting is to make your code more readable and maintainable. Consistent 
+formatting helps teams work together more effectively, as the code looks uniform, regardless of 
+who wrote it. Examples of formatting errors are:
+•	
+Incorrect indentation (e.g., mixing spaces and tabs)
+•	
+Lines that are too long (e.g., exceeding 79 or 88 characters, depending on your style guide)
+•	
+Missing or extra spaces around operators or after commas
+More on linting errors
+Linting errors relate to potential issues in your code that could lead to bugs, inefficiencies, or 
+non-adherence to coding standards beyond just style. Linting checks often involve static analysis 
+of the code to catch things like unused variables, undefined names, or questionable practices.
+Linting’s main goal is to catch potential errors or bad practices early in the development process, 
+improving code quality and reducing the likelihood of bugs. Examples of linting errors are:
+•	
+Unused imports or variables
+•	
+Undefined variables or functions are being used
+•	
+Potentially dangerous code (e.g., using == instead of is for checking against None)
+We use Ruff, a versatile tool for formatting and linting. It incorporates checks for common for-
+matting issues and PEP 8 compliance, as well as deeper linting checks for potential errors and 
+code quality problems. Also, it is written in Rust, making it fast for big codebases.
+Before implementing what we’ve explained above, let’s examine the core principles of GitHub 
+Actions.
+In our repository, we used only a main branch, which reflects production, and fea-
+ture branches to push new work. We did this to keep things simple, but the same 
+principles apply. To extend the flow, you must create a staging branch and add it 
+to the CD pipeline.

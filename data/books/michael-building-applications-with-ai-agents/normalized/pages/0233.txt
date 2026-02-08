@@ -1,0 +1,44 @@
+mismatches can highlight failures of contextual grounding-such as refunding the
+wrong item or issuing a refund for an order that was delivered successfully:
+def tool_metrics(pred_tools: List[str], expected_calls:
+    expected_names = [c.get("tool") for c in expected_calls]
+    if not expected_names:
+        return {"tool_recall": 1.0, "tool_precision": 1.0}
+    pred_set = set(pred_tools)
+    exp_set = set(expected_names)
+    tp = len(exp_set & pred_set)
+    recall = tp / len(exp_set)
+    precision = tp / len(pred_set) if pred_set else 0.0
+    return {"tool_recall": recall, "tool_precision": precision}
+def param_accuracy(pred_calls: List[dict], expected_calls: List[dict]) -> float:
+    if not expected_calls:
+        return 1.0
+    matched = 0
+    for exp in expected_calls:
+        for pred in pred_calls:
+            if pred.get("tool") == exp.get("tool")
+                and pred.get("params") == exp.get("params"):
+                matched += 1
+                break
+    return matched / len(expected_calls)
+Because planning often depends on context, it is especially important to test edge
+cases. What if the order contains multiple items, and only one is defective? What if
+the user provides ambiguous input or contradicts themselves across messages? Tests
+should cover these situations to ensure the planner can navigate ambiguity and
+recover from intermediate failures.
+Planning modules should also be evaluated for consistency. In deterministic scenar‐
+ios, the same input should produce the same output; in probabilistic cases, the range
+of plans should still fall within acceptable bounds. Tests can check for reproducibility,
+sensitivity to small input changes, and graceful handling of unexpected conditionssuch as missing fields in an order object or failed tool execution.
+Over time, we maintain a growing corpus of planning scenarios that reflect the full
+range of what the agent must support-from simple, single-step flows to complex
+multiturn dialogues involving multiple interdependent actions. This corpus becomes
+the backbone of integration testing for planning. By continuously evaluating planning
+behavior as the system evolves, we detect regressions early and ensure that new capa‐
+bilities do not introduce instability or drift.
+Ultimately, planning evaluation tells us whether the agent knows what to do. It con‐
+firms that the agent not only understands user intent but can convert that intent into
+precise, coherent, and contextually grounded actions. As the bridge between
+Component Evaluation
+|
+211

@@ -1,0 +1,44 @@
+Creating a subset of features identified through feature selection
+331
+7.	
+Now, capture the selected features in a variable:
+features = selector.get_feature_names_out()
+If we execute features, we’ll see the names of the selected features:
+array([
+'light__sum_of_reoccurring_data_points',
+'co2__fft_coefficient__attr_"abs"__coeff_0',
+'co2__spkt_welch_density__coeff_2', 'co2__variance',
+'temperature__c3__lag_1', 'temperature__abs_energy',
+'temperature__c3__lag_2', 'temperature__c3__lag_3',
+'co2__sum_of_reoccurring_data_points',
+'light__spkt_welch_density__coeff_8',
+'light__agg_linear_trend__attr_"intercept"__chunk_len_50__f_
+agg_"var"',
+         'light__agg_linear_trend__attr_"slope"__chunk_
+len_50__f_agg_"var"',  'light__agg_linear_trend__
+attr_"intercept"__chunk_len_10__f_agg_"var"'],
+dtype=object)
+8.	
+To extract just the features from step 6 from the time series, we need to capture the feature creation 
+method name and corresponding parameters in a dictionary. We can do this automatically 
+from the feature names with tsfresh:
+kind_to_fc_parameters = settings.from_columns(
+    selector.get_feature_names_out(),
+)
+If we execute kind_to_fc_parameters, we’ll see the dictionary that was created from 
+the names of the features from step 6:
+{'light':
+    {‹sum_of_reoccurring_data_points': None,
+    ‹spkt_welch_density': [{'coeff': 8}],
+    'variance': None,
+    ‹agg_linear_trend': [
+        {‹attr': 'slope','chunk_len': 50,
+            'f_agg': 'var'},
+        {‹attr': 'intercept',
+            'chunk_len': 10,'f_agg':'var'}
+        ]
+    },
+'co2':
+    {‹spkt_welch_density': [{'coeff': 2}],
+    'variance': None,
+    ‹sum_of_reoccurring_data_points': None

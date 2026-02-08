@@ -1,0 +1,31 @@
+El resto del libro explorará este marco paso a paso, empezando por el
+componente fundamental de la ingeniería de IA: los modelos fundacionales
+que hacen posibles tantas aplicaciones asombrosas.
+1  En este libro, llamo ML tradicional a todo el ML anterior a los modelos
+fundacionales.
+2  En el caso de las lenguas no anglosajonas, un único carácter Unicode puede
+representarse a veces como varios tokens.
+3  Los modelos lingüísticos autorregresivos se denominan a veces modelos
+lingüísticos causales.
+4  Técnicamente, un modelo lingüístico enmascarado como BERT también puede
+utilizarse para la generación de texto si se hace un gran esfuerzo.
+5  El costo real del etiquetado de datos varía en función de diversos factores,
+como la complejidad de la tarea, la escala (los conjuntos de datos más grandes
+suelen tener costos por muestra más bajos) y el proveedor del servicio de
+etiquetado. Por ejemplo, a partir de septiembre de 2024, Amazon SageMaker
+Ground Truth cobra 8 centavos por imagen para etiquetar menos de 50 000
+imágenes, pero solo 2 centavos por imagen para etiquetar más de 1 millón de
+imágenes.
+6  Esto es similar a la importancia que tiene para los humanos saber cuándo dejar
+de hablar.
+7  En clase me enseñaron que los parámetros de un modelo incluyen tanto las
+ponderaciones como los sesgos del modelo. Sin embargo, hoy en día, solemos
+utilizar "ponderaciones del modelo" para referirnos a todos los parámetros.
+8  Parece contradictorio que los modelos más grandes requieran más datos de
+entrenamiento. Si un modelo es más potente, ¿no debería necesitar menos
+ejemplos de los cuales aprender? Sin embargo, no pretendemos que un modelo
+grande iguale el rendimiento de un modelo pequeño con los mismos datos. Lo
+que intentamos es maximizar el rendimiento del modelo.
+9  A modo de comparación, el gasto total de EE. UU. en escuelas públicas de
+primaria y secundaria ronda los 900 000 millones de dólares, solo nueve veces la
+inversión en IA en EE. UU.

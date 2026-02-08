@@ -1,0 +1,55 @@
+Building Intelligent RAG Systems
+130
+Document processing
+LangChain provides a comprehensive system for loading documents from various sources through 
+document loaders. A document loader is a component in LangChain that transforms various 
+data sources into a standardized document format that can be used throughout the LangChain 
+ecosystem. Each document contains the actual content and associated metadata.
+Document loaders serve as the foundation for RAG systems by:
+•	
+Converting diverse data sources into a uniform format
+•	
+Extracting text and metadata from files
+•	
+Preparing documents for further processing (like chunking or embedding)
+LangChain supports loading documents from a wide range of document types and sources through 
+specialized loaders, for example:
+•	
+PDFs: Using PyPDFLoader
+•	
+HTML: WebBaseLoader for extracting web page text
+•	
+Plain text: TextLoader for raw text inputs
+•	
+WebBaseLoader for web page content extraction
+•	
+ArxivLoader for scientific papers
+•	
+WikipediaLoader for encyclopedia entries
+•	
+YoutubeLoader for video transcripts
+•	
+ImageCaptionLoader for image content
+You may have noticed some non-text content types in the preceding list. Advanced RAG systems 
+can handle non-text data; for example, image embeddings or audio transcripts.
+The following table organizes LangChain document loaders into a comprehensive table:
+Category
+Description
+Notable Examples
+Common Use 
+Cases
+File Systems
+Load from local 
+files
+TextLoader, CSVLoader, PDF­
+Loader
+Processing local 
+documents, data 
+files
+Web Content
+Extract from 
+online sources
+WebBaseLoader, RecursiveURL­
+Loader, SitemapLoader
+Web scraping, con­
+tent aggregation

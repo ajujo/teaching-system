@@ -1,0 +1,42 @@
+modelo no tiene la información, o lo dice o alucina una
+respuesta.
+El modelo tiene información obsoleta.
+Si pregunta: "¿Cuántos álbumes de estudio ha publicado
+Taylor Swift?" y la respuesta correcta es 11, pero el modelo
+responde 10, puede deberse a que la fecha de corte del
+modelo fue anterior al lanzamiento del último álbum.
+El artículo "Fine-Tuning or Retrieval?" de Ovadia et al. (2024) demostró
+que para tareas que requieren información actualizada, como preguntas
+sobre acontecimientos actuales, la RAG superaba a los modelos afinados.
+No solo eso, la RAG con el modelo base superó a la RAG con modelos
+afinados, como se muestra en la Tabla 7-2. Este hallazgo indica que, aunque
+el afinado puede mejorar el rendimiento de un modelo en una tarea
+específica, también puede disminuir el rendimiento en otras áreas.
+tabla 7-2. La RAG supera al afinado en una tarea de respuesta a preguntas s
+(2024). FT-reg y FT-par se refieren a dos enfoques de afinado diferentes util
+Modelo de
+base
+Modelo de
+base + RAG
+FT-reg
+FT-p
+Mistral-7B
+0.481
+0.875
+0.504
+0.588
+Llama 2-7B
+0.353
+0.585
+0.219
+0.392
+Orca 2-7B
+0.456
+0.876
+0.511
+0.566
+Por otra parte, si el modelo tiene problemas de comportamiento, el afinado
+podría ayudar. Un problema de comportamiento se produce cuando los
+outputs del modelo son correctos, pero irrelevantes para la tarea. Por
+ejemplo, le pide al modelo que genere especificaciones técnicas para un
+proyecto de software para proporcionárselas a sus equipos de ingeniería.

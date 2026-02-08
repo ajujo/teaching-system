@@ -1,0 +1,29 @@
+Building Intelligent RAG Systems
+134
+How it works is that the splitter first attempts to divide text at paragraph breaks (\n\n). If the
+resulting chunks are still too large, it tries the next separator (\n), and so on. This approach pre­
+serves natural text boundaries while maintaining reasonable chunk sizes.
+Recursive character chunking is the recommended default strategy for most applications. It works
+well for a wide range of document types and provides a good balance between preserving context
+and maintaining manageable chunk sizes.
+Document-specific chunking
+Different document types have different structures. Document-specific chunking adapts to
+these structures. An implementation could involve using different specialized splitters based on
+document type using if statements. For example, we could be using a MarkdownTextSplitter,
+PythonCodeTextSplitter, or HTMLHeaderTextSplitter depending on the content type being
+markdown, Python, or HTML.
+This can be useful when working with specialized document formats where structure matters -
+code repositories, technical documentation, markdown articles, or similar. Its advantage is that
+it preserves logical document structure, maintains functional units together (like code functions,
+markdown sections), and improves retrieval relevance for domain-specific queries.
+Semantic chunking
+Unlike previous approaches that rely on textual separators, semantic chunking analyzes the
+meaning of content to determine chunk boundaries.
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_openai import OpenAIEmbeddings
+embeddings = OpenAIEmbeddings()
+text_splitter = SemanticChunker(
+    embeddings=embeddings,
+    add_start_index=True  # Include position metadata
+)
+chunks = text_splitter.split_text(document)

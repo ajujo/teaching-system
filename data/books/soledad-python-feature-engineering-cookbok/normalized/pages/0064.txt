@@ -1,0 +1,16 @@
+Estimating missing data with nearest neighbors
+41
+5.
+Find the nearest neighbors:
+imputer.fit(X_train)
+6.
+Replace the missing values with the weighted mean of the values shown by the neighbors:
+X_train_t = imputer.transform(X_train)
+X_test_t = imputer.transform(X_test)
+The result is a pandas DataFrame with the missing data replaced.
+How it works...
+In this recipe, we replaced missing data with the average value shown by each observation's k-nearest
+neighbors. We set up KNNImputer() to find each observation's five closest neighbors based on
+the Euclidean distance. The replacement values were estimated as the weighted average of the values
+shown by the five closest neighbors for the variable to impute. With transform(), the imputer
+calculated the replacement value and replaced the missing data.

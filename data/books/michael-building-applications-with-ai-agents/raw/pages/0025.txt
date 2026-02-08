@@ -1,0 +1,36 @@
+enables these models to interact directly with external systems and execute practical
+tasks. These models are capable of:
+Contextual interpretation and decision making
+Navigating ambiguous situations without exhaustive preprogramming
+Tool use
+Calling other software to retrieve information or take actions
+Adaptive planning
+Planning and executing complex, multistep actions autonomously
+Information summarization
+Rapidly processing extensive documents, extracting key insights, thereby aiding
+legal analysis, research synthesis, and content curation
+Management of unstructured data
+Interpreting and responding intelligently to unstructured texts such as emails,
+documents, logs, and reports
+Code generation
+Writing and executing code and writing unit tests
+Routine task automation
+Efficiently handling repetitive activities in customer service and administrative
+workflows, freeing human workers to focus on more nuanced tasks
+Multimodal information synthesis
+Performing intricate analyses of image, audio, or video data at scale
+This enhanced flexibility enables autonomous agents to effectively handle complex
+and dynamic scenarios that static ML models typically cannot address.
+Types of Agents
+As the term “agent” has gained popularity, its meaning has broadened to encompass a
+wide range of AI-enabled systems, often creating confusion about what truly consti‐
+tutes an AI agent. The Information categorizes agents into seven practical types,
+reflecting how these technologies are being applied today:
+Business-task agents
+These agents automate predefined business workflows, such as UiPath’s robotic
+process automation, Microsoft Power Automate’s low-code flows, or Zapier’s app
+integrations. They execute sequences of deterministic actions, typically triggered
+by events, with minimal contextual reasoning.
+Types of Agents 
+| 
+3

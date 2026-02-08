@@ -1,0 +1,43 @@
+environments like real-time bidding or IoT coordination, or systems integrating het‐
+erogeneous agents across clusters. They enable “location-transparent” invocation—
+where actors can migrate or replicate without changing code—and built-in supervi‐
+sion for automatic recovery from failures, reducing operational overhead compared
+with manually managing queues or containers.
+The investment in infrastructure (e.g., setting up clusters, monitoring actor lifecycles)
+pays off when systems exceed a few agents or handle variable workloads: for instance,
+in production agent swarms where downtime costs are high, or when evolving from
+local prototypes to cloud native deployments. For smaller, low-traffic setups, the
+added complexity may not justify it—stick to buses or monolithic services—but as
+the agent count grows beyond 10–20 or latency demands tighten, actors provide
+unmatched elasticity and fault tolerance. Three leading frameworks in this space are
+Ray, Orleans, and Akka, each offering distinct advantages depending on the environ‐
+ment and language ecosystem:
+Ray
+Ray is a Python-native distributed computing framework that supports an actor
+model for stateful, scalable computations. Actors in Ray are defined using the
+@ray.remote decorator, enabling asynchronous method invocations that process
+messages while preserving internal state across invocations. Ray manages distri‐
+bution automatically, with resource-aware scheduling, fault tolerance via optional
+restarts and retries, and support for clustering to handle large-scale deployments.
+It pairs naturally with tools like AutoGen or LangGraph for agentic systems,
+offering a lightweight alternative in Python environments where ease of use and
+rapid prototyping are prioritized over JVM-specific (Java Virtual Machine) per‐
+formance tuning.
+Orleans
+Orleans offers a virtual actor model, where actors (or agents) are logically
+addressable and automatically instantiated, suspended, or recovered based on
+demand. Orleans handles state persistence, concurrency, and lifecycle manage‐
+ment with minimal boilerplate. It abstracts away much of the complexity of dis‐
+tributed systems while enabling developers to scale agent-like components
+naturally across a cluster. When paired with AutoGen, Orleans can power agent
+systems that treat each agent as a service, dynamically scaling with system needs
+while retaining internal state and identity.
+Akka
+Akka is a well-established actor framework in the JVM ecosystem, supporting
+both Java and Scala. Akka’s classic actor model is highly performant and suitable
+for building fault-tolerant, distributed systems with fine-grained control over
+actor behavior. With Akka Cluster, actors can be distributed across multiple
+nodes, supporting advanced features like sharding, persistence, supervision, and
+196 
+| 
+Chapter 8: From One Agent to Many

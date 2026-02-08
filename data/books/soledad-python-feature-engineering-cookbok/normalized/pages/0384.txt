@@ -1,0 +1,10 @@
+Cleaning and stemming text variables
+361
+The cleaning steps we performed in this recipe resulted in strings containing the original text, without
+punctuation or numbers, in lowercase, without common words, and with the root of the word instead
+of its conjugated form. The data, as it is returned, can be used to derive features, as described in
+the Counting characters, words, and vocabulary recipe, or to create BoWs and TI-IDF matrices, as
+described in the Creating features with bag-of-words and n-grams and Implementing term frequencyinverse document frequency recipes.
+Cleaning the texts as we have shown in this recipe can incur data loss, depending on the characteristics
+of the text, and if we seek to interpret the models after creating BoW or TF-IDF matrices, understanding
+the importance of stemmed words may not be so straightforward.

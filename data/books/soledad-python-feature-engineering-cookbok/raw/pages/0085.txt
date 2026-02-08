@@ -1,0 +1,36 @@
+Encoding Categorical Variables
+62
+Note
+Do not confuse OrdinalEncoder() with LabelEncoder() from scikit-learn. 
+The former is intended to encode predictive features, whereas the latter is intended to modify 
+the target variable.
+6.	
+Let’s set up the encoder:
+enc = OrdinalEncoder()
+7.	
+Let’s make a list containing the categorical variables to encode:
+cat_vars = X_train.select_dtypes(include="O").columns.to_list()
+8.	
+Let’s restrict the encoding to the categorical variables:
+ct = ColumnTransformer(
+    [("encoder", enc, cat_vars)],
+    remainder="passthrough",
+    force_int_remainder_cols=False,
+).set_output(transform="pandas")
+Note
+Remember to set remainder to "passthrough" to make the ColumnTransformer() 
+return the un-transformed variables as well.
+9.	
+Let’s fit the encoder to the train set so that it creates and stores representations of categories 
+to digits:
+ct.fit(X_train)
+Note
+By executing ct.named_transformers_["encoder"].categories_, you can 
+visualize the unique categories per variable.
+10.	 Now, let’s encode the categorical variables in the train and test sets:
+X_train_enc = ct.transform(X_train)
+X_test_enc = ct.transform(X_test)
+Go ahead and execute X_train_enc.head() to check out the resulting DataFrame.
+Note
+ColumnTransformer() will mark the encoded variables by appending encoder to the 
+variable name. The variables that were not modified show the remainder prefix.

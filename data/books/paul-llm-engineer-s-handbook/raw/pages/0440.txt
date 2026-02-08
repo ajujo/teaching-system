@@ -1,0 +1,34 @@
+Chapter 11
+409
+•	
+Managing massive datasets and multi-GPU clusters involves substantial costs. For ex-
+ample, the estimated training cost for GPT-4 is around $100 million, as stated by Sam 
+Altman, the CEO of OpenAI (https://en.wikipedia.org/wiki/GPT-4#Training). Add to 
+that the costs of multiple experiments, evaluation, and inference. Even if these numbers 
+are not exact, as the sources are not 100% reliable, the scale of the costs of training an 
+LLM is trustworthy, which implies that only the large players in the industry can afford 
+to train LLMs from scratch.
+At its core, LLMOps is MLOps at scale. It uses the same MLOps principles but is applied to big data 
+and huge models that require more computing power to train and run. However, due to its huge 
+scale, the most significant trend is the shift away from training neural networks from scratch for 
+specific tasks. This approach is becoming obsolete with the rise of fine-tuning, especially with 
+the advent of foundation models such as GPT. A few organizations with extensive computational 
+resources, such as OpenAI and Google, develop these foundation models. Thus, most applica-
+tions now rely on the lightweight fine-tuning of parts of these models, prompt engineering, or 
+optionally distilling data or models into smaller, specialized inference networks.
+Thus, for most LLM applications out there, your development steps will involve the selection of a 
+foundation model, which you further have to optimize by using prompt engineering, fine-tuning, 
+or RAG. Thus, the operational aspect of these three steps is the most critical to understand. Let’s 
+dive into some popular components of LLMOps that can improve prompt engineering, fine-tun-
+ing, and RAG.
+Human feedback
+One valuable refinement step of your LLM is aligning it with your audience’s preferences. You 
+must introduce a feedback loop within your application and gather a human feedback dataset 
+to further fine-tune the LLM with techniques such as Reinforcement Learning with Human 
+Feedback (RLHF) or more advanced ones such as Direct Preference Optimization (DPO). One 
+popular feedback loop is the thumbs-up/thumbs-down button present in most chatbot interfaces. 
+You can read more on preference alignment in Chapter 6.
+Guardrails
+Unfortunately, LLM systems are not reliable, as they often hallucinate. You can optimize your 
+system against hallucinations, but as hallucinations are hard to detect and can take many forms, 
+there are significant changes that will still happen in the future. 

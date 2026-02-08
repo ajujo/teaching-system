@@ -1,0 +1,40 @@
+Tempo
+For distributed traces
+Grafana
+For visualization, alerts, and dashboards
+We’ll walk through how to integrate each of these with a LangGraph-based agent sys‐
+tem, then show how the pieces fit together into a feedback loop that closes the gap
+between observation and improvement.
+Monitoring Is How You Learn
+Understanding root causes of agent failures—from software bugs and foundation
+model variations to architectural limits—is essential for proactive maintenance and
+system adaptability. Each type demands targeted detection, analysis, and fixes to
+maintain stability in production.
+The best agent systems improve over time through feedback. Traditional monitoring
+reacts to crashes or throughput dips, but for agents, it’s foundational: revealing emer‐
+gent issues in probabilistic behaviors and guiding development amid uncertainty.
+Agent failures are subtle—a tool succeeds but cascades errors, an LLM output sounds
+fluent yet misleads, or a plan partially works but misses the goal. These mismatches
+rarely crash systems; monitoring must expose them swiftly, making production
+observability nonoptional.
+Failures aren’t just incidents—they’re test cases. Every time an agent breaks in pro‐
+duction, that scenario should be captured and turned into a regression test. But the
+same is true for success: when an agent handles a complex case well, that trace can
+become a golden path worth preserving. By exporting both failure traces and exem‐
+plar successes into your test suite, you create a living CI/CD corpus that reflects real-
+world conditions. This practice helps “shift left” your monitoring strategy—catching
+issues earlier in development, and ensuring that new agent versions are continuously
+validated against the actual complexity of production behavior.
+A key challenge in monitoring probabilistic systems like agents is distinguishing true
+“failures” (systematic issues requiring fixes) from expected variations (inherent non‐
+determinism where outputs differ but stay acceptable). A simple decision tree can
+guide this. Start with the output—does it meet success criteria (e.g., eval score > 0.8)?
+If yes, monitor trends but no action is needed. If no, check reproducibility (rerun 3–5
+times; failure rate > 80% indicates systematic bug for engineering review). If it is not
+reproducible, assess confidence/variance (e.g., LLM score > 0.7, Kullback-Leibler
+divergence < 0.2 from baseline). Within the bounds means expected variation (log for
+drift watch), and outside the bounds suggests anomalous failure (e.g., input drift via
+population stability index > 0.1, triggering mitigation like retraining or guardrails).
+224 
+| 
+Chapter 10: Monitoring in Production

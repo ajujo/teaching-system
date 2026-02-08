@@ -1,0 +1,66 @@
+de estos idiomas. Lo ideal sería que la proporción entre la representación de
+la población mundial y la representación del Common Crawl fuera de 1.
+Cuanto mayor sea esta proporción, más infrarrepresentado estará el idioma
+en Common Crawl.
+tabla 2-2. Ejemplos de idiomas infrarrepresentados en Common Crawl. La ú
+el inglés, es para comparar. Las cifras de % en Common Crawl proceden de
+(2023).
+Idioma
+Hablantes
+(millones)
+% población
+mundial a
+% en
+Common
+Crawl
+Mun
+Prop
+de C
+Craw
+Punjabi
+113
+1.41 %
+0.0061 %
+231.5
+Swahili
+71
+0.89 %
+0.0077 %
+115.2
+Urdu
+231
+2.89 %
+0.0274 %
+105.3
+Canarés
+64
+0.80 %
+0.0122 %
+65.57
+Télugu
+95
+1.19 %
+0.0183 %
+64.89
+Guyaratí
+62
+0.78 %
+0.0126 %
+61.51
+Maratí
+99
+1.24 %
+0.0213 %
+58.10
+Bengalí
+272
+3.40 %
+0.0930 %
+36.56
+Inglés
+1452
+18.15 %
+45.88 %
+0.40
+a Para este cálculo se ha considerado una población mundial de 8000 millones
+habitantes.

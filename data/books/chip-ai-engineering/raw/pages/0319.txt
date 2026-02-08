@@ -1,0 +1,30 @@
+ejemplo, un 95 % de confianza) si se conoce la distribución de las
+puntuaciones. Sin embargo, en realidad, es difícil conocer la verdadera
+distribución de la puntuación.
+SUGERENCIA
+OpenAI sugirió una estimación aproximada del número de muestras de
+evaluación necesarias para tener la certeza de que un sistema es mejor, dada
+una diferencia de puntuación, como se muestra en la Tabla 4-7. Una regla
+útil es que por cada disminución de 3× en la diferencia de puntuación, el
+número de muestras necesarias aumenta 10×.28
+tabla 4-7. Una estimación aproximada del número de muestras de
+evaluación necesarias para tener un 95 % de confianza en que un sistema
+es mejor. Valores de OpenAI.
+Diferencia a
+detectar
+Tamaño de la muestra necesario para un
+95 % de confianza
+30 %
+~10
+10 %
+~100
+3 %
+~1000
+1 %
+~10 000
+Como referencia, entre las pruebas comparativas de evaluación de lm-
+evaluation-harness de Eleuther, la mediana del número de ejemplos es
+1000, y el promedio es 2159. Los organizadores del premio Inverse Scaling
+sugirieron que 300 ejemplos es el mínimo absoluto y preferirían al menos
+1000, especialmente si los ejemplos se están sintetizando (McKenzie et al.,
+2023).

@@ -1,0 +1,22 @@
+desarrollando activamente muchas técnicas para reducir y gestionar la caché
+KV.
+Uno de los marcos de inferencia de más rápido crecimiento, vLLM, ganó
+popularidad por introducir PagedAttention, que optimiza la gestión de
+memoria dividiendo la caché KV en bloques no contiguos, reduciendo la
+fragmentación y permitiendo compartir memoria de forma flexible para
+mejorar la eficiencia del servicio LLM (Kwon et al., 2023).
+Otras técnicas incluyen la cuantización de la caché KV (Hooper et al., 2024;
+Kang et al., 2024), la compresión adaptativa de la caché KV (Ge et al.,
+2023) y la caché KV selectiva (Liu et al., 2024).
+Escribir kernels para el cálculo de la atención
+En lugar de cambiar el diseño del mecanismo u optimizar el
+almacenamiento, este enfoque examina cómo se calculan las puntuaciones
+de atención y encuentra formas de hacer este cálculo más eficiente. Este
+enfoque es el más eficaz cuando tiene en cuenta el hardware que ejecuta el
+cómputo. El código optimizado para un chip específico se denomina kernel.
+La escritura del kernel se abordará con más detalle en la siguiente sección.
+Uno de los kernels optimizados para el cálculo de la atención más
+conocidos es FlashAttention (Dao et al., 2022). Este kernel fusiona muchas
+operaciones utilizadas habitualmente en un modelo basado en
+transformadores para que se ejecuten más rápidamente, como se muestra en
+la Figura 9-13.

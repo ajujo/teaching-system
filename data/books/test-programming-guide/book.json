@@ -1,0 +1,47 @@
+{
+  "$schema": "book_v1",
+  "book_id": "test-programming-guide",
+  "book_uuid": "262d5424-77fe-4a63-807b-c5f958b23bb1",
+  "title": "Programming Guide",
+  "authors": [
+    "Test Author"
+  ],
+  "language": "en",
+  "source_file": "programming_guide.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T12:53:52.809284+00:00",
+  "total_pages": 4,
+  "total_chapters": 7,
+  "sha256": "c023a834fb40b6aac247698ded0e617c81a682b0e13de7b4c052479d21e4cc25",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 3,
+    "empty_pages_count": 1,
+    "total_chars": 821,
+    "avg_chars_per_page": 205.2,
+    "detected_language": "en",
+    "is_likely_scanned": false
+  },
+  "normalization": {
+    "original_chars": 831,
+    "normalized_chars": 828,
+    "chars_removed": 3,
+    "chars_removed_ratio": 0.0036,
+    "hyphen_breaks_fixed": 0,
+    "multiple_spaces_collapsed": 0,
+    "multiple_newlines_collapsed": 3,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "manual",
+    "confidence": 1.0,
+    "chapters_found": 7,
+    "sections_found": 0,
+    "needs_review": false
+  }
+}

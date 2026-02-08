@@ -1,0 +1,14 @@
+Chapter 6
+249
+Figure 6.5 – High-level view of the DPO algorithm for preference alignment
+DPO has several advantages over traditional RLHF methods. As previously mentioned, it signifi-
+cantly simplifies the preference learning pipeline, reducing the engineering complexity associated 
+with RLHF methods. By eliminating the need for a separate reward model and RL algorithms, DPO 
+is more computationally efficient than traditional RLHF approaches. Particularly when trained 
+with adapters (LoRA, QLoRA), the frozen and trained models don’t have to be separated. Indeed, 
+since we’re only training adapters, the trained model is not modified. This allows us to only load 
+one model instead of two, which saves additional VRAM.
+Despite its simplicity, DPO often matches the performance of more complex RLHF methods. It 
+also tends to be more stable during training and less sensitive to hyperparameters. The simpli-
+fied approach makes DPO easier to implement and scale, particularly for small teams without 
+extensive RL knowledge.

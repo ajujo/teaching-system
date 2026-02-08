@@ -1,0 +1,23 @@
+figura 6-8. SWE-agent (Yang et al., 2024) es un agente de codificación cuyo entorno es
+la computadora y cuyas acciones incluyen exploración, búsqueda y edición.
+Adaptación de una imagen original con licencia CC BY 4.0.
+Un agente de IA está destinado a realizar tareas que normalmente son dadas
+por los usuarios en los inputs. En un agente de IA, la IA es el cerebro que
+procesa la información que recibe, incluyendo la tarea y la
+retroalimentación del entorno, planifica una secuencia de acciones para
+lograr esta tarea y determina si la tarea se ha cumplido.
+Volvamos al sistema de RAG con datos tabulares del ejemplo de Kitty
+Vogue. Se trata de un agente sencillo con tres acciones: generación de
+respuestas, generación de consultas SQL y ejecución de consultas SQL.
+Dada la consulta "Proyecta los ingresos por ventas de Fruity Fedora en los
+próximos tres meses", el agente podría realizar la siguiente secuencia de
+acciones:
+1. Razonar cómo llevar a cabo esta tarea. Puede decidir que, para
+predecir las ventas futuras, primero necesita las cifras de ventas de
+los últimos cinco años. Obsérvese que el razonamiento del agente
+se muestra como su respuesta intermedia.
+2. Invocar la generación de consultas SQL para generar la consulta
+que obtenga los números de ventas de los últimos cinco años.
+3. Invocar la ejecución de la consulta SQL para ejecutar esta consulta.
+4. Razonar sobre los outputs de la herramienta y cómo ayudan a
+predecir las ventas. Puede decidir que estas cifras son insuficientes

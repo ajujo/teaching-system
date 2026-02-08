@@ -1,0 +1,35 @@
+What This Book Is Not
+This book isn't an introduction to AI or ML basics. It assumes familiarity with con‐
+cepts like neural networks, natural language processing, and basic programming in
+languages like Python. If you're new to these, pointers to resources are provided, but
+the focus is on applied agent building.
+It's also not a step-by-step tutorial for specific tools, as technologies evolve rapidly.
+Instead, it offers guidance on evaluating and selecting tools, with pseudocode and
+examples to illustrate concepts. For hands-on implementation, online tutorials and
+documentation are recommended, including frameworks like LangChain and
+AutoGen.
+Who This Book Is For
+This book is for engineers, developers, and technical leaders aiming to build AI
+agent-based applications. It's geared toward roles like AI engineers, software develop‐
+ers, ML engineers, data scientists, and product managers with a technical bent. You
+might relate to scenarios like the following:
+• You're tasked with building an autonomous system for decision support, or inter‐
+active services.
+• You have a working agent prototype and you want to harden it and get it ready
+for production.
+• Your team struggles with agent reliability-handling failures, adapting to
+dynamic environments, or orchestrating complex tasks-and you want system‐
+atic approaches including orchestration, memory, and learning from experience.
+• You're integrating agents into existing workflows and seek best practices for scal‐
+ability, multiagent coordination, UX design, measurement, validation, monitor‐
+ing, and security.
+You can also benefit if you're a tool builder identifying gaps in the agent ecosystem, a
+researcher exploring applications, or a job seeker preparing for AI agent roles.
+Navigating This Book
+The chapters follow the lifecycle of building an AI agent application, organized into
+three main sections.
+The first three chapters cover core concepts, design principles, and essential
+components:
+Preface
+|
+xv

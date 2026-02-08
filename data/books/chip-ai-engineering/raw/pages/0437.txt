@@ -1,0 +1,30 @@
+consulta que se introducirá en el generador de respuestas. El output
+de la herramienta en cada paso se añade al historial de la tarea.
+Dada la entrada del usuario "¿Cuál es el precio del producto más vendido la
+semana pasada?", el plan generado podría tener este aspecto:
+1. get_time()
+2. fetch_top_products()
+3. fetch_product_info()
+4. generate_query()
+5. generate_response()
+Quizá se pregunte, ¿y los parámetros necesarios para cada función?. Los
+parámetros exactos son difíciles de predecir de antemano, ya que suelen
+extraerse de los outputs anteriores de la herramienta. Si el primer paso,
+get_time(), da como output "2030-09-13", el agente puede razonar que los
+parámetros para el siguiente paso deben ser llamados con los siguientes
+parámetros:
+retrieve_top_products(
+    start_date=“2030-09-07”,
+    end_date=“2030-09-13”,
+    num_products=1
+)
+A menudo no hay información suficiente para determinar los valores
+exactos de los parámetros de una función. Por ejemplo, si un usuario
+pregunta "¿Cuál es el precio medio de los productos más vendidos?", las
+respuestas a las preguntas siguientes no quedan claras:
+¿Cuántos de los productos más vendidos quiere consultar el
+usuario?
+¿El usuario quiere los productos más vendidos de la semana
+pasada, el mes pasado o históricos?
+Esto significa que los modelos a menudo tienen que adivinar, y las
+conjeturas pueden ser erróneas.

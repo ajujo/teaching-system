@@ -1,0 +1,32 @@
+También debería colocar barreras de seguridad tanto a los inputs como a los
+outputs. En cuanto a los inputs, puede tener una lista de palabras clave para
+bloquearlas, patrones de ataque de prompts conocidos con los que comparar
+los inputs o un modelo para detectar solicitudes sospechosas. Sin embargo,
+incluso inputs que parezcan inofensivos pueden producir outputs
+perjudiciales, por lo que también es importante contar con barreras de
+seguridad de output. Por ejemplo, una barrera de seguridad puede
+comprobar si un output contiene PII o información tóxica. Las barreras de
+seguridad se tratan con más detalle en el Capítulo 10.
+Los actores maliciosos pueden detectarse no solo por sus inputs y outputs
+individuales, sino también por sus patrones de uso. Por ejemplo, si un
+usuario parece enviar muchas solicitudes de aspecto similar en un corto
+período de tiempo, este usuario podría estar buscando un prompt que
+atraviese los filtros de seguridad.
+Resumen
+Los modelos fundacionales pueden hacer muchas cosas, pero debe decirles
+exactamente lo que quiere. El proceso de elaborar una instrucción para
+conseguir que un modelo haga lo que queremos se denomina ingeniería de
+prompts. Qué tanta elaboración se requiera dependerá de la sensibilidad del
+modelo a los prompts. Si un pequeño cambio puede provocar un gran
+cambio en la respuesta del modelo, será necesaria una mayor elaboración.
+Se puede pensar en la ingeniería de prompts como en la comunicación entre
+el ser humano y la inteligencia artificial. Cualquiera puede comunicar, pero
+no todos pueden hacerlo bien. Es fácil iniciar la ingeniería de prompts, lo
+que induce a muchos a pensar que es fácil hacerla bien.
+En la primera parte de este capítulo se analiza la anatomía de un prompt,
+por qué funciona el aprendizaje en contexto y las mejores prácticas de
+ingeniería de prompts. Tanto si se comunican con IA como con otros seres
+humanos, es esencial que las instrucciones sean claras, con ejemplos e
+información relevante. Se pueden producir mejoras sorprendentes con
+trucos sencillos, como pedir al modelo que vaya más despacio y piense paso
+a paso. Al igual que los humanos, los modelos de IA tienen sus

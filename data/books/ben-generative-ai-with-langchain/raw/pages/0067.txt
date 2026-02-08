@@ -1,0 +1,39 @@
+First Steps with LangChain
+40
+Choosing parameters for applications
+For enterprise applications requiring consistency and accuracy, lower temperatures (0.0-0.3) 
+combined with moderate top-p values (0.5-0.7) are typically preferred. For creative assistants or 
+brainstorming tools, higher temperatures produce more diverse outputs, especially when paired 
+with higher top-p values.
+Remember that parameter tuning is often empirical – start with provider recommendations, then 
+adjust based on your specific application needs and observed outputs.
+Prompts and templates
+Prompt engineering is a crucial skill for LLM application development, particularly in production 
+environments. LangChain provides a robust system for managing prompts with features that 
+address common development challenges:
+•	
+Template systems for dynamic prompt generation
+•	
+Prompt management and versioning for tracking changes
+•	
+Few-shot example management for improved model performance
+•	
+Output parsing and validation for reliable results
+LangChain’s prompt templates transform static text into dynamic prompts with variable substi­
+tution – compare these two approaches to see the key differences:
+1.	
+Static use – problematic at scale:
+ def generate_prompt(question, context=None):
+    if context:
+        return f"Context information: {context}\n\nAnswer this 
+question concisely: {question}"
+    return f"Answer this question concisely: {question}"
+      # example use:
+      prompt_text = generate_prompt("What is the capital of 
+France?")
+2.	
+PromptTemplate – production-ready:
+from langchain_core.prompts import PromptTemplate
+# Define once, reuse everywhere
+question_template = PromptTemplate.from_template( "Answer this 
+question concisely: {question}" )

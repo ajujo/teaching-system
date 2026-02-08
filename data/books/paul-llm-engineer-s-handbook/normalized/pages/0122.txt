@@ -1,0 +1,7 @@
+Chapter 3
+91
+Figure 3.5: Example of the user output artifact after running the data collection pipeline using
+Maxime's configuration file
+Also, in Figure 3.6, you can observe the crawled_links output artifact, which lists all the domains
+from which we collected data, the total number of links crawled for each domain, and the number
+of successfully collected links.

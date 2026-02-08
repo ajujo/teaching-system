@@ -1,0 +1,36 @@
+Chapter 2
+29
+You can also expose these variables in your system environment from your terminal. In Linux and
+macOS, you can set a system environment variable from the terminal using the export command:
+export OPENAI_API_KEY=<your token>
+To permanently set the environment variable in Linux or macOS, you would need to add the
+preceding line to the ~/.bashrc or ~/.bash_profile files, and then reload the shell using the
+command source ~/.bashrc or source ~/.bash_profile.
+For Windows users, you can set the environment variable by searching for "Environment Vari­
+ables" in the system settings, editing either "User variables" or "System variables," and adding
+export OPENAI_API_KEY=your_key_here.
+Our choice is to create a config.py file where all API keys are stored. We then import a function
+from this module that loads these keys into the environment variables. This approach centralizes
+credential management and makes it easier to update keys when needed:
+import os
+OPENAI_API_KEY = "... "
+# I'm omitting all other keys
+def set_environment():
+    variable_dict = globals().items()
+    for key, value in variable_dict:
+        if "API" in key or "ID" in key:
+             os.environ[key] = value
+If you search for this file in the GitHub repository, you'll notice it's missing. This is intentional -
+I've excluded it from Git tracking using the .gitignore file. The .gitignore file tells Git which
+files to ignore when committing changes, which is essential for:
+1.
+Preventing sensitive credentials from being publicly exposed
+2.	 Avoiding accidental commits of personal API keys
+3.
+Protecting yourself from unauthorized usage charges
+To implement this yourself, simply add config.py to your .gitignore file:
+# In .gitignore
+config.py
+.env
+**/api_keys.txt
+# Other sensitive files

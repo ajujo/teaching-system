@@ -1,0 +1,35 @@
+Chapter 5
+195
+You are an Instruction Rewriter that rewrites the given #Instruction# into a more complex
+version. Please follow the steps below to rewrite the given "#Instruction#" into a more complex
+version.
+•
+Step 1: Please read the "#Instruction#" carefully and list all the possible methods
+to make this instruction more complex (to make it a bit harder for well-known AI
+assistants such as ChatGPT and GPT4 to handle). Please do not provide methods to
+•
+change the language of the instruction!
+•
+Step 2: Please create a comprehensive plan based on the #Methods List# generated
+in Step 1 to make the #Instruction# more complex. The plan should include several
+methods from the #Methods List#.
+•
+Step 3: Please execute the plan step by step and provide the #Rewritten Instruction#.
+#Rewritten Instruction# can only add 10 to 20 words into the "#Instruction#".
+•
+Step 4: Please carefully review the #Rewritten Instruction# and identify any
+unreasonable parts. Ensure that the #Rewritten Instruction# is only a more complex
+version of the #Instruction#. Just provide the #Finally Rewritten Instruction# without
+anyexplanation.
+Please reply strictly in the following format:
+Step 1 #Methods List#:
+Step 2 #Plan#:
+Step 3 #Rewritten Instruction#:
+Step 4 #Finally Rewritten Instruction#:
+#Instruction#:
+{Instruction}
+Table 5.4 - Evol LLM prompt from the "Automatic Instruction Evolving for Large Language
+Models" paper by Zeng et al. (2024)
+The UltraFeedback method is another innovative approach, focused on answer quality instead
+of instruction quality. It employs AI feedback to enhance the quality and diversity of model responses. Unlike Evol-Instruct, which evolves instructions, UltraFeedback uses a large pool of
+diverse instructions and models to generate a wide range of responses.

@@ -1,0 +1,17 @@
+Extracting Features from Relational Data with Featuretools
+276
+Figure 9.5 – Relationships between the tables containing invoices, customers, and products
+Af﻿tter entering the data and their relationships, we can start automatically creating features 
+for each one of our new DataFrames – that is, customers, invoices, and products – using the 
+default parameters from featuretools.
+12.	 Let’s create features by aggregating the data at the customer level. To do this, we set up the deep 
+feature synthesis (dfs) class from featuretools, indicating customers as the target 
+DataFrame. When creating features, we want to ignore the two columns with unique identifiers:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»customers»,
+    ignore_columns={
+        «invoices»:[«invoice»],
+        «invoices»:[«customer_id»],
+    }
+)

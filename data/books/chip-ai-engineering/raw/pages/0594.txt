@@ -1,0 +1,34 @@
+Colapso potencial del modelo
+Tampoco está claro con cuántos datos generados por la IA puede entrenarse
+un modelo. Algunos estudios han demostrado que el uso recursivo de datos
+generados por IA en el entrenamiento provoca defectos irreversibles en los
+modelos resultantes, lo que degrada su rendimiento con el tiempo. En "The
+Curse of Recursion: Training on Generated Data Makes Models Forget",
+Shumailov et al. (2023) llamaron a este fenómeno colapso del modelo y
+demostraron su ocurrencia en modelos que incluyen Autoencoders
+Variacionales, modelos de mezcla Gaussiana y LLMs. El colapso del
+modelo puede producirse tanto durante el pre-entrenamiento como durante
+el post-entrenamiento. 14
+Una posible explicación es que los modelos de IA son más propensos a
+generar sucesos probables (por ejemplo, no tener cáncer) y menos
+propensos a generar sucesos improbables (por ejemplo, tener cáncer). A lo
+largo de múltiples iteraciones, los sucesos probables quedan
+sobrerrepresentados en los datos generados, mientras que los improbables
+quedan infrarrepresentados. Esto hace que los modelos produzcan más
+sucesos más comunes a lo largo del tiempo y olviden los sucesos poco
+comunes.
+En "Is Model Collapse Inevitable?" Gerstgrasser et al. (2024) sostienen que,
+aunque el colapso del modelo es inevitable si todo el conjunto de datos de
+entrenamiento es sintético, puede evitarse mezclando datos sintéticos con
+datos reales. Bertrand et al. (2023) y Dohmatob et al. (2024) muestran
+resultados similares. Sin embargo, ninguno de estos artículos contiene una
+recomendación definitiva sobre la proporción de datos sintéticos con
+respecto a los datos reales.
+Se ha conseguido mejorar el rendimiento del modelo utilizando una gran
+cantidad de datos sintéticos. Por ejemplo, "Common 7B Language Models
+Already Possess Strong Math Capabilities" (Li et al., 2024) demuestra que
+los datos sintéticos son casi tan eficaces como los datos reales para afinar
+los modelos Llama 2-7B con problemas matemáticos. En sus experimentos,
+los datos sintéticos no muestran una saturación clara cuando se amplían a
+aproximadamente un millón de muestras. Del mismo modo, Nemotron-4
+340B-Instruct (NVIDIA, 2024) utilizó un 98 % de datos sintéticos durante

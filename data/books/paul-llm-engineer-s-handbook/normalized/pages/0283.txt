@@ -1,0 +1,35 @@
+Fine-Tuning with Preference Alignment
+252
+6.
+Let's now prepare the model for PEFT with the LoRA configuration. We increase the rank
+(r) and lora_alpha from 32 (as it was in Chapter 5) to 64. This will allow more expressive
+fine-tuning. We keep a dropout of 0 for speed and we target every linear module as per
+usual.
+model = FastLanguageModel.get_peft_model(
+    model,
+    r=32,
+    lora_alpha=32,
+    lora_dropout=0,
+    target_modules=["q_proj", "k_proj", "v_proj", "up_proj", "down_
+proj", "o_proj", "gate_proj"],
+)
+7.
+We load the llmtwin-dpo dataset (training split), which contains our prompts, chosen,
+and rejected answers.
+dataset = load_dataset("mlabonne/llmtwin-dpo", split="train")
+8.	 The data preparation is significantly different from the SFT example in Chapter 5. Here, we
+have triples with a prompt, a chosen answer, and a rejected answer. In the format_samples
+function, we apply the Alpaca chat template to each individual message. Note that the
+instruction is the only one that requires the chat format: chosen and rejected answers
+only need to be concatenated with the end of sentence (EOS) token. Finally, we create a
+train/test split with a 95%/5% ratio.
+alpaca_template = """Below is an instruction that describes a task.
+Write a response that appropriately completes the request.
+### Instruction:
+{}
+### Response:
+"""
+EOS_TOKEN = tokenizer.eos_token
+def format_samples(example):
+    example["prompt"] = alpaca_template.format(example["prompt"])
+    example["chosen"] = example['chosen'] + EOS_TOKEN

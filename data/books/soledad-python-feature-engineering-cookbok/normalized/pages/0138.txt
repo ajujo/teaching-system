@@ -1,0 +1,39 @@
+Performing equal-width discretization
+115
+In this recipe, we will carry out equal-width discretization using pandas, scikit-learn,
+and feature-engine.
+How to do it...
+First, let's import the necessary Python libraries and get the dataset ready:
+1.
+Let's import the libraries and functions:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+2.
+Let's load the predictor and target variables of the California housing dataset:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+Note
+To avoid data leakage, we will find the intervals' limits by using the variables in the train set.
+Then, we will use these limits to discretize the variables in train and test sets.
+3.
+Let's divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+Next, we will divide the continuous HouseAge variable into 10 intervals using pandas and
+the formula described at the beginning of the recipe.
+4.
+Let's capture the minimum and maximum values of HouseAge:
+min_value = int(X_train["HouseAge"].min())
+max_value = int(X_train["HouseAge"].max())
+5.
+Let's determine the interval width, which is the variable's value range divided by the number
+of bins:
+width = int((max_value - min_value) / 10)
+If we execute print(width), we will obtain 5, which is the size of the intervals.
+6.
+Now we need to define the interval limits and store them in a list:
+interval_limits = [i for i in range(
+    min_value, max_value, width)]

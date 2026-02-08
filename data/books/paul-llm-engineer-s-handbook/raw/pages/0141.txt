@@ -1,0 +1,37 @@
+RAG Feature Pipeline
+110
+Secondly, embedding your input reduces the size of its dimension and condenses all of its se-
+mantic meaning into a dense vector. This is an extremely popular technique when working with 
+images, where a CNN encoder module maps the high-dimensional meaning into an embedding, 
+which is later processed by a CNN decoder that performs the classification or regression steps.
+The following image shows a typical CNN layout. Imagine tiny squares within each layer. Those 
+are the “receptive fields.” Each square feeds information to a single neuron in the previous layer. 
+As you move through the network, two key things are happening:
+•	
+Shrinking the picture: Special “subsampling” operations make the layers smaller, fo-
+cusing on essential details.
+•	
+Learning features: “Convolution” operations, on the other hand, actually increase the 
+layer size as the network learns more complex features from the image.
+One-hot encoding is a technique that converts categorical variables into a binary 
+matrix representation. Each category is represented as a unique binary vector. For 
+each categorical variable, a binary vector is created with a length equal to the number 
+of unique categories, where all values are zero except for the index corresponding to 
+the specific category, which is set to one. The method preserves all information about 
+the categories. It is simple and interpretable. However, a significant disadvantage is 
+that it can lead to a high-dimensional feature space if the categorical variable has 
+many unique values, making the method impractical.
+Feature hashing, also known as hashing encoding or the “hash trick,” is a technique 
+used to convert categorical variables into numerical features by applying a hash 
+function to the category values. Compared to one-hot encoding, the method is not 
+bound to the number of unique categories, but it reduces the dimensionality of the 
+feature space by mapping categories into a fixed number of bins or buckets. Thus, it 
+reduces the dimensionality of the feature space, which is particularly useful when 
+dealing with high-cardinality categorical variables. This makes it efficient in terms of 
+memory usage and computational time. However, there is a risk of collisions, where 
+different categories might map to the same bin, leading to a loss of information. The 
+mapping makes the method uninterpretable. Also, it is difficult to understand the 
+relationship between the original categories and the hashed features.
+Embeddings help us encode categorical variables while controlling the output vec-
+tor’s dimension. They also use ingenious ways to condense information into a lower 
+dimension space than naive hashing tricks.

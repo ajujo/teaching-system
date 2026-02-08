@@ -1,0 +1,55 @@
+The Changing Role of Humans in Agent Systems
+As agent systems scale and mature within organizations, the role of the human col‐
+laborator evolves just as much as the technology itself. In early deployments, humans
+tend to act as executors, manually initiating agent tasks and closely supervising their
+outputs. Over time, as systems prove their reliability and establish trust, human roles
+shift toward reviewers—overseeing decisions at key checkpoints, particularly for
+high-stakes or regulated domains. This shift can be understood as a progression
+through four roles—executor, reviewer, collaborator, and governor. Each marks a
+shift in both the agent’s autonomy and the human’s responsibility. Figure 13-1 visual‐
+izes this arc, highlighting how the human role transforms alongside increasing system
+capability. The figure summarizes these roles and the interface needs associated with
+each.
+Figure 13-1. The evolving roles of humans in agent systems where, as agents grow in
+autonomy, humans shift from hands-on executors to high-level governors.
+Eventually, in mature workflows, humans become collaborators, sharing context,
+guiding priorities, and refining outputs alongside the agent in real time. The agent
+may draft, act, or even decide autonomously, but the human sets the high-level goals
+and intervenes when nuance, exception-handling, or moral judgment is required. In
+the most advanced deployments, humans transition into governors—defining policy
+boundaries, auditing systemic behavior, and overseeing how agent systems interact
+across teams and functions. We can see these responsibilities clearly in Table 13-1.
+Table 13-1. Roles, responsibilities, and interface needs in human-agent collaboration
+Role
+Human responsibilities
+Agent autonomy
+Interface needs
+Executor
+Uploads tasks, reviews every output
+Minimal—when supervised
+Step‑by‑step guidance, tight feedback
+loops
+Reviewer
+Spot‑checks key outputs
+Moderate—handles routine
+work
+Dashboards, exception flags,
+confidence scores
+Collaborator
+Guides priorities, annotates jointly
+High—drafts, executes with
+oversight
+Shared planning UI, contextual
+annotation
+Governor
+Sets policy, audits decisions,
+oversees escalation
+Autonomy within governance
+rules
+Policy config screens, audit logs,
+explainability tools
+At JPMorganChase, for example, the internal COiN (Contract Intelligence) platform
+began with junior legal staff as executors, uploading contracts and reviewing every
+298 
+| 
+Chapter 13: Human-Agent Collaboration

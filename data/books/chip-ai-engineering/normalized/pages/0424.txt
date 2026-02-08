@@ -1,0 +1,28 @@
+para hacer una proyección fiable, quizá debido a que faltan valores.
+Entonces puede decidir que también necesita información sobre
+campañas de marketing anteriores.
+5. Invocar la generación de consultas SQL para generar la consulta
+que obtenga campañas de marketing anteriores.
+6. Invocar la ejecución de una consulta SQL.
+7. Razonar que esta nueva información es suficiente para ayudar a
+predecir las ventas futuras. A continuación, generar una
+proyección.
+8. Razonar que la tarea se ha completado con éxito.
+En comparación con los casos de uso sin agentes, los agentes suelen
+requerir modelos más potentes por dos razones:
+Acumulación de errores: un agente a menudo necesita realizar
+múltiples pasos para llevar a cabo una tarea, y la precisión global
+disminuye a medida que se incrementa el número de pasos. Si la
+precisión del modelo es del 95 % por paso, con más de 10 pasos la
+precisión bajará al 60 % y con más de 100 pasos, la precisión será
+solo del 0.6 %.
+Hay más en juego: con acceso a herramientas, los agentes son
+capaces de realizar tareas de mayor impacto, pero cualquier fallo
+podría tener consecuencias más graves.
+Una tarea que requiere muchos pasos puede llevar tiempo y dinero. 11 Sin
+embargo, si los agentes pueden ser autónomos, pueden ahorrar mucho
+tiempo humano, haciendo que sus costos valgan la pena.
+Dado un entorno, el éxito de un agente en dicho entorno depende del
+inventario de herramientas al que tenga acceso y de la robustez de su
+planificador de IA. Empecemos por examinar los distintos tipos de
+herramientas que puede utilizar un modelo.

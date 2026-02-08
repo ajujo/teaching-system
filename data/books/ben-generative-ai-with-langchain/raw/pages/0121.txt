@@ -1,0 +1,28 @@
+Building Workflows with LangGraph
+94
+Compared to the context window length of 4096 input tokens that we were working with only 2 
+years ago, the current context window of 1 or 2 million tokens is tremendous progress. But it is still 
+relevant to discuss techniques of overcoming limitations of context window size for a few reasons:
+•	
+Not all models have long context windows, especially open-sourced ones or the ones 
+served on edge.
+•	
+Our knowledge bases and the complexity of tasks we’re handling with LLMs are also 
+expanding since we might be facing limitations even with current context windows.
+•	
+Shorter inputs also help reduce costs and latency.
+•	
+Inputs like audio or video are used more and more, and there are additional limitations 
+on the input length (total size of PDF files, length of the video or audio, etc.).
+Hence, let’s take a close look at what we can do to work with a context that is larger than a context 
+window that an LLM can handle – summarization is a good example of such a task. Handling 
+a long context is similar to a classical Map-Reduce (a technique that was actively developed in 
+the 2000s to handle computations on large datasets in a distributed and parallel manner). In 
+general, we have two phases:
+•	
+Map: We split the incoming context into smaller pieces and apply the same task to every 
+one of them in a parallel manner. We can repeat this phase a few times if needed.
+•	
+Reduce: We combine outputs of previous tasks together.
+Figure 3.5: A Map-Reduce summarization pipeline
+Keep in mind that, typically, PDFs are treated as images by a multimodal LLM.

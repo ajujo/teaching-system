@@ -1,0 +1,31 @@
+Tooling and Installation
+32
+Our fine-tuned LLMs are available on Hugging Face at:
+•	
+TwinLlama 3.1 8B (after fine-tuning): https://huggingface.co/mlabonne/TwinLlama-
+3.1-8B
+•	
+TwinLlama 3.1 8B DPO (after preference alignment): https://huggingface.co/
+mlabonne/TwinLlama-3.1-8B-DPO
+Figure 2.1: Hugging Face model registry example
+For a quick demo, we have them available on Hugging Face Spaces:
+•	
+TwinLlama 3.1 8B: https://huggingface.co/spaces/mlabonne/TwinLlama-3.1-8B
+•	
+TwinLlama 3.1 8B DPO: https://huggingface.co/spaces/mlabonne/TwinLlama-3.1-
+8B-DPO
+Most ML tools provide model registry features. For example, ZenML, Comet, and SageMaker, which 
+we will present in future sections, also offer their own model registries. They are good options, 
+but we picked Hugging Face solely because of its ecosystem, which provides easy shareability and 
+integration throughout the open-source environment. Thus, you will usually select the model 
+registry that integrates the most with your project’s tooling and requirements.
+ZenML: orchestrator, artifacts, and metadata
+ZenML acts as the bridge between ML and MLOps. Thus, it offers multiple MLOps features that 
+make your ML pipeline traceability, reproducibility, deployment, and maintainability easier. At 
+its core, it is designed to create reproducible workflows in machine learning. It addresses the 
+challenge of transitioning from exploratory research in Jupyter notebooks to a production-ready 
+ML environment. It tackles production-based replication issues, such as versioning difficulties, 
+reproducing experiments, organizing complex ML workflows, bridging the gap between train-
+ing and deployment, and tracking metadata. Thus, ZenML’s main features are orchestrating ML 
+pipelines, storing and versioning ML pipelines as outputs, and attaching metadata to artifacts 
+for better observability.

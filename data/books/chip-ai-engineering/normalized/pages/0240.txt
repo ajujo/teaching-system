@@ -1,0 +1,30 @@
+que elijan el mejor. Muchas aplicaciones de chat ya lo hacen. Sin embargo,
+como ya se ha mencionado, es posible que el usuario no sepa qué fragmento
+de código es mejor, ya que no es el experto.
+Además, es posible que los usuarios no lean ambas opciones y hagan clic en
+una al azar. Esto puede introducir mucho ruido en los resultados. Sin
+embargo, las señales del pequeño porcentaje de usuarios que votan
+correctamente pueden ser a veces suficientes para ayudar a determinar qué
+modelo es mejor.
+Algunos equipos prefieren los evaluadores de IA que los evaluadores
+humanos. Puede que la IA no sea tan buena como los expertos humanos
+formados, pero sí más fiable que los internautas aleatorios.
+Del rendimiento comparativo al rendimiento absoluto
+Para muchas aplicaciones, no necesitamos necesariamente los mejores
+modelos posibles. Lo que necesitamos es un modelo que sea
+suficientemente bueno. La evaluación comparativa nos dice qué modelo es
+mejor. No nos dice lo bueno que es un modelo o si este modelo es lo
+suficientemente bueno para nuestro caso de uso. Supongamos que
+obtenemos el ranking que nos dice que el modelo B es mejor que el modelo
+A. Cualquiera de los siguientes escenarios podría ser válido:
+1. El modelo B es bueno, pero el modelo A es malo.
+2. Tanto el modelo A como el B son malos.
+3. Tanto el modelo A como el B son buenos.
+Se necesitan otras formas de evaluación para determinar qué hipótesis es
+cierta.
+Imaginemos que utilizamos el modelo A para la atención al cliente, y que el
+modelo A puede resolver el 70 % de todas las incidencias. Consideremos el
+modelo B, que gana frente A el 51 % de las veces. No está claro cómo se
+convertirá este porcentaje de victorias del 51 % en el número de solicitudes
+que puede resolver el modelo B. Varias personas me han dicho que, según
+su experiencia, un cambio del 1 % en la tasa de victorias puede inducir un

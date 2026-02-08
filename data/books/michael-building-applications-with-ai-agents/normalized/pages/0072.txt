@@ -1,0 +1,40 @@
+AI-enabled, agentic UX will be for other professions-lawyers, accountants, insur‐
+ance professionals, product managers, and knowledge workers. The future of work
+may not revolve around documents, spreadsheets, and slide decks, but around inter‐
+active, agent-driven interfaces purpose-built for decision making, analysis, and
+creation.
+Speech and Voice Interfaces
+Speech and voice interfaces offer users a natural and hands-free way to interact with
+agent systems, leveraging spoken language as the primary mode of communication.
+From virtual assistants like Amazon's Alexa and Apple's Siri to customer service voice
+bots, these interfaces excel in scenarios where manual input is impractical or impossi‐
+ble-such as while driving, cooking, or operating machinery. They also provide an
+accessible option for users with visual impairments or limited mobility, making agent
+systems more inclusive.
+Historically, latency has been a major barrier for speech and voice interfaces. Process‐
+ing spoken language in real time-including transcribing speech, interpreting intent,
+and generating appropriate responses-often led to delays that disrupted conversa‐
+tional flow and made voice interfaces feel clunky or robotic. However, the past two
+years have seen astonishing advances in this space. New low-latency speech recogni‐
+tion models, combined with more efficient language processing architectures, have
+dramatically reduced delays. Equally important, the fluidity and capability of voice AI
+systems have improved, enabling more natural-sounding interactions that can handle
+interruptions, mid-sentence corrections, and shifts in conversation topic.
+Graceful handling of interruptions is a particularly important aspect of voice interface
+design. Human conversations are rarely linear monologues; people interrupt them‐
+selves to clarify, change direction, or refine a request mid-sentence. Effective voice
+agents must mirror this conversational flexibility, allowing users to interrupt com‐
+mands without confusion, revise their inputs seamlessly, and resume where they left
+off without forcing a complete restart. For example, a user might say, "Book me a
+table for-oh wait, make that tomorrow instead," and a well-designed agent will adapt
+fluidly to incorporate the correction without requiring the user to start the command
+again. This capability not only makes interactions feel more natural but also builds
+trust and reduces frustration, as users feel the agent is responsive to their real com‐
+munication patterns rather than demanding rigid, computer-like inputs.
+Another major leap has been the integration of tool use into voice agent workflows.
+Modern voice agents are no longer limited to parsing commands and returning static
+answers. Instead, they can now pull in external context, update records, and take realtime actions-such as scheduling appointments, changing system configurations, or
+placing orders-based on dynamic conversational inputs. This ability to combine
+50
+|
+Chapter 3: User Experience Design for Agentic Systems

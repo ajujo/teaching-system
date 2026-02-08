@@ -1,0 +1,35 @@
+7. Integration and validation
+Once the graph is populated, it must be integrated with existing systems and vali‐
+dated to ensure accuracy and utility. This can involve linking data from other
+databases, resolving entity duplication (entity resolution), and verifying that the
+graph accurately represents the knowledge domain. Validation might involve
+user testing or automated checks to ensure the integrity and usability of the
+graph.
+8. Maintenance and updates
+A knowledge graph is not a static entity; it needs regular updates and mainte‐
+nance to stay relevant. This involves adding new data, updating existing informa‐
+tion, and refining the ontology as new types of entities or relationships are
+identified. Automation and ML models can be instrumental in maintaining and
+updating the knowledge graph efficiently.
+Building a knowledge graph can significantly improve complex and multihop
+retrieval. Typically, this is conducted by extracting semantic triples based on the 
+Resource Description Framework data model. This consists of subject-predicate-
+object expressions. Foundation models are quite good at extracting these triples, so
+these types of knowledge graphs can now be constructed at scale. You can see this
+process visualized in Figure 6-3.
+Figure 6-3. Knowledge graph construction workflow. Documents are processed by a
+model to extract semantic triples in the form of subject-relation-object statements (e.g.,
+“Jay-Z, spouse of, Beyoncé”), which are then structured into a knowledge graph to enable
+efficient semantic querying and reasoning.
+To make it even more approachable, building a basic GraphRAG pipeline today is
+surprisingly straightforward thanks to open source tooling. Microsoft’s own Graph‐
+RAG library, available via pip install graphrag, offers a command‑line workflow
+for indexing and querying document collections—no extensive setup required. For
+instance, after initializing your project and indexing using their CLI, you can run:
+pip install graphrag
+mkdir -p ./ragtest/input
+curl https://www.gutenberg.org/ebooks/103.txt.utf-8 -o ./ragtest/input/book.txt
+ ./ragtest/input/book.txt
+126 
+| 
+Chapter 6: Knowledge and Memory

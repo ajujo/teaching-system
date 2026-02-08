@@ -1,0 +1,37 @@
+Performing polynomial expansion
+245
+see in the accompanying GitHub repository: https://github.com/PacktPublishing/
+Python-Feature-Engineering-Cookbook-Third-Edition/blob/main/ch08-
+creation/Recipe3-PolynomialExpansion.ipynb.
+How it works...
+In this recipe, we created features by using polynomial combinations of a feature with itself or among 
+three variables. To create these polynomial features, we used PolynomialFeatures() from 
+scikit-learn. By default, PolynomialFeatures() generates a new feature matrix consisting 
+of all polynomial combinations of the features in the data, with a degree less than or equal to the user-
+specified degree. By setting degree to 3, we created all possible polynomial combinations of a 
+degree of 3 or smaller. To retain the combination of a feature with itself, we set the interaction_
+only parameter to False. To avoid returning the bias term, we set the include_bias parameter 
+to False.
+Note
+Setting the interaction_only parameter to True returns the interaction terms only – 
+that is, the variables resulting from combinations of two or more variables.
+The fit() method determined all of the possible feature combinations based on the parameters 
+specified. At this stage, the transformer did not perform actual mathematical computations. The 
+transform() method performed the mathematical computations with the features to create the 
+new variables. With the get_feature_names() method, we could identify the terms of the 
+expansion – that is, how each new feature was calculated.
+In step 2, we set scikit-learn library’s set_output API globally to return pandas DataFrames 
+as a result of the transform() method. scikit-learn transformers return NumPy arrays by default. 
+The new set_output API allows us to change the container of the result to a pandas or a polars 
+DataFrame. We can set the output individually every time we set up a transformer – for example, 
+by using poly = PolynomialFeatures().set_output(transform="pandas"). 
+Alternatively, as we did in this recipe, we can set the global configuration, and then every time we set 
+up a new transformer, it will return a pandas DataFrame.
+There’s more...
+Let’s create features by performing polynomial expansion on a subset of variables in the breast 
+cancer dataset:
+1.	
+First, import the necessary libraries, classes, and data:
+import pandas as pd
+from sklearn.datasets import load_breast_cancer
+from sklearn.compose import ColumnTransformer

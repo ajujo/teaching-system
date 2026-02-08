@@ -1,0 +1,31 @@
+en estas pruebas. Sin embargo, dado que los datos de pruebas comparativas
+de alta calidad pueden mejorar el rendimiento del modelo, deberá seguir
+entrenando su mejor modelo con datos de pruebas comparativas antes de
+ponerlo a disposición de los usuarios. Así que el modelo liberado está
+contaminado, y sus usuarios no podrán evaluarlo con pruebas comparativas
+contaminadas, pero aun así podría ser lo correcto.
+Manejo de la contaminación de datos
+La prevalencia de la contaminación de datos socava la fiabilidad de los
+parámetros de evaluación. Que un modelo tenga un buen rendimiento en los
+exámenes del colegio de abogados no significa que sea bueno dando
+consejos jurídicos. Podría ser simplemente que este modelo haya sido
+entrenado con muchas preguntas del examen de abogacía.
+Para hacer frente a la contaminación de los datos, primero hay que
+detectarla y después descontaminarlos. Puede detectar la contaminación
+utilizando heurísticas como el traslape de n-gramas y la perplejidad:
+Traslape de N-gramas
+Por ejemplo, si una secuencia de 13 tokens en una muestra
+de evaluación también está en los datos de entrenamiento,
+es probable que el modelo haya visto esta muestra de
+evaluación durante el entrenamiento. Esta muestra de
+evaluación se considera sucia.
+Perplejidad
+Recordemos que la perplejidad mide la dificultad de un
+modelo para predecir un texto determinado. Si la
+perplejidad de un modelo en los datos de evaluación es
+inusualmente baja, lo que significa que el modelo puede
+predecir fácilmente el texto, es posible que el modelo haya
+visto estos datos antes durante el entrenamiento.
+El enfoque de traslape de n-gramas es más preciso, pero puede llevar
+mucho tiempo y ser caro de ejecutar porque hay que comparar cada ejemplo
+de referencia con todos los datos de entrenamiento. También es imposible

@@ -1,0 +1,31 @@
+modelo. Cómo reducir la precisión impactando al mínimo el rendimiento
+del modelo es un área activa de investigación, estudiada tanto por
+desarrolladores de modelos como por fabricantes de hardware y
+desarrolladores de aplicaciones.
+Hacer la inferencia con precisión baja se ha convertido en una norma. Un
+modelo se entrena utilizando un formato de mayor precisión para
+maximizar el rendimiento, y luego se reduce su precisión para la inferencia.
+Los principales marcos de ML, incluyendo PyTorch, TensorFlow y los
+transformadores de Hugging Face, ofrecen PTQ de forma gratuita con unas
+pocas líneas de código.
+Algunos dispositivos de perímetro solo admiten la inferencia cuantizada.
+Por lo tanto, los marcos para la inferencia en el dispositivo, como
+TensorFlow Lite y PyTorch Mobile, también ofrecen PTQ.
+Cuantización del entrenamiento
+La cuantización durante el entrenamiento aún no es tan común como la
+PTQ, pero está ganando terreno. La cuantización del entrenamiento tiene
+dos objetivos distintos:
+1. Producir un modelo que pueda funcionar bien en baja precisión
+durante la inferencia. Esto es para afrontar que la calidad de un
+modelo pueda degradarse durante la cuantización posterior al
+entrenamiento.
+2. Reducir el tiempo y los costos de entrenamiento. La cuantización
+reduce la huella de memoria de un modelo, lo que permite entrenar
+un modelo en un hardware más barato o entrenar un modelo mayor
+en el mismo hardware. La cuantización también acelera el cálculo,
+lo que reduce aún más los costos.
+Una técnica de cuantización podría ayudar a lograr uno de estos objetivos o
+ambos.
+El entrenamiento consciente de la cuantización (QAT) tiene como objetivo
+crear un modelo de alta calidad en baja precisión para la inferencia. Con
+QAT, el modelo simula un comportamiento de baja precisión (por ejemplo,

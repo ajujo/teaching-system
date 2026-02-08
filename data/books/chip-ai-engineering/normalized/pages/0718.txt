@@ -1,0 +1,29 @@
+podría indicar que el bot es ineficaz a la hora de ayudar a los usuarios a
+resolver sus problemas.
+Diversidad en el diálogo
+La duración de la conversación también puede interpretarse en combinación
+con la diversidad del diálogo, que puede medirse por el recuento de tokens
+o temas distintos. Por ejemplo, si la conversación es larga pero el bot sigue
+repitiendo algunas líneas, el usuario podría quedarse atrapado en un bucle.
+La retroalimentación explícita es más fácil de interpretar, pero exige un
+esfuerzo adicional por parte de los usuarios. Dado que muchos usuarios
+pueden no estar dispuestos a realizar este trabajo adicional, la
+retroalimentación explícita puede ser escasa, especialmente en aplicaciones
+con bases de usuarios más pequeñas. La retroalimentación explícita también
+sufre sesgos de respuesta. Por ejemplo, los usuarios descontentos pueden
+ser más propensos a quejarse, haciendo que la retroalimentación parezcan
+más negativa de lo que es.
+La retroalimentación implícita es más abundante (lo que puede considerarse
+retroalimentación implícita solo está limitado por su imaginación), pero
+hace más ruido. Interpretar las señales implícitas puede ser todo un reto. Por
+ejemplo, compartir una conversación puede ser una señal negativa o
+positiva. Por ejemplo, un amigo mío comparte sobre todo conversaciones
+cuando el modelo ha cometido algún error flagrante, y otro amigo comparte
+sobre todo conversaciones útiles con sus compañeros de trabajo. Es
+importante estudiar a los usuarios para entender por qué realizan cada
+acción.
+Añadir más señales puede ayudar a aclarar la intención. Por ejemplo, si el
+usuario reformula su pregunta después de compartir un enlace, puede
+indicar que la conversación no ha cumplido sus expectativas. Extraer,
+interpretar y aprovechar las respuestas implícitas de las conversaciones es
+un campo de investigación pequeño pero creciente. 8

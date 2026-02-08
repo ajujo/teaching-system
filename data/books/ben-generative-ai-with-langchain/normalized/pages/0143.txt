@@ -1,0 +1,42 @@
+Building Intelligent RAG Systems
+116
+Consider a real-world example of what we need to store:
+# Example of data that needs efficient storage in a vector store
+document_data = {
+    "id": "doc_42",
+    "text": "LangChain is a framework for developing applications powered
+by language models.",
+    "embedding": [0.123, -0.456, 0.789, ...],  # 1536 dimensions for
+OpenAI embeddings
+    "metadata": {
+        "source": "documentation.pdf",
+        "page": 7,
+        "created_at": "2023-06-15"
+    }
+}
+At their core, vector stores combine two essential components:
+•
+Vector storage: The actual database that persists vectors and metadata
+•
+Vector index: A specialized data structure that enables efficient similarity search
+The efficiency challenge comes from the curse of dimensionality - as vector dimensions increase,
+computing similarities becomes increasingly expensive, requiring O(dN) operations for d dimen­
+sions and N vectors. This makes naive similarity search impractical for large-scale applications.
+Vector stores enable similarity-based search through distance calculations in high-dimensional
+space. While traditional databases excel at exact matching, vector embeddings allow for semantic
+search and approximate nearest neighbor (ANN) retrieval.
+The key difference from traditional databases is how vector stores handle searches.
+Traditional database search:
+•
+Uses exact matching (equality, ranges)
+•
+Optimized for structured data (for example, "find all customers with age > 30")
+•
+Usually utilizes B-trees or hash-based indexes
+Vector store search:
+•
+Uses similarity metrics (cosine similarity, Euclidean distance)
+•
+Optimized for high-dimensional vector spaces
+•
+Employs Approximate Nearest Neighbor (ANN) algorithms

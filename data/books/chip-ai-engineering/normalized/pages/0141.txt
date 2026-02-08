@@ -1,0 +1,32 @@
+preferencias humanas universales existen, sino que también supone que es
+posible incorporarlas a la IA.
+Si la meta hubiera sido sencilla, la solución podría haber sido elegante. Sin
+embargo, dada la ambiciosa naturaleza de la meta, la solución que tenemos
+hoy en día es complicada. El primer algoritmo exitoso de afinado de
+preferencias, que sigue siendo popular hoy en día, es el RLHF. El RLHF
+consta de dos partes:
+1. Entrenar un modelo de recompensa que puntúe los outputs del
+modelo fundacional.
+2. Optimizar el modelo fundacional para generar respuestas para las
+que el modelo de recompensa dará las máximas puntuaciones.
+Aunque el RLHF se sigue utilizando hoy en día, los nuevos enfoques como
+el DPO (Rafailov et al., 2023) están ganando terreno. Por ejemplo, Meta
+cambió de RLHF para Llama 2 a DPO para Llama 3 pensando en reducir la
+complejidad. No podré abarcar todos los enfoques diferentes en este libro.
+He optado por presentar aquí el RLHF en lugar del DPO porque el RLHF,
+aunque es más complejo, ofrece más flexibilidad para afinar el modelo. Los
+autores de Llama 2 postularon que "las capacidades superiores de escritura
+de los LLMs, que se manifiestan en la superación de los anotadores
+humanos en ciertas tareas, están impulsadas fundamentalmente por el
+RLHF" (Touvron et al., 2023).
+Modelo de recompensa
+El RLHF se basa en un modelo de recompensa. Dada una dupla de (prompt,
+respuesta), el modelo de recompensa da una puntuación de lo buena que es
+la respuesta. Una tarea común de ML es entrenar un modelo para puntuar
+un input determinado. El reto, similar al del SFT, es obtener datos fiables.
+Si pedimos a los etiquetadores que puntúen directamente cada respuesta, las
+puntuaciones variarán. Para la misma muestra, en una escala de 10 puntos,
+un etiquetador puede dar un 5 y otro un 7. Incluso el mismo etiquetador,
+ante la misma dupla de (prompt, respuesta) dos veces, podría dar
+puntuaciones diferentes. La evaluación independiente de cada muestra
+también se denomina evaluación puntual.

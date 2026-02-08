@@ -1,0 +1,37 @@
+procesamiento diferente o utilizar nuevos modelos que funcionen
+mejor con inputs largos.
+Evite caer en la paradoja de Simpson, un fenómeno en el que el
+modelo A obtiene mejores outputs que el modelo B en datos
+integrados, pero peores que el modelo B en cada subconjunto de
+datos. La Tabla 4-6 muestra un escenario en el que el modelo A
+supera al modelo B en cada subgrupo, pero queda por debajo del
+modelo B en general.
+tabla 4-6. Un ejemplo de la paradoja de Simpson. a
+Grupo 1
+Grupo 2
+General
+Modelo A
+93 % (81/87)
+73 % (192/263)
+78 % (273/350)
+Modelo B
+87 % (234/270)
+69 % (55/80)
+83 % (289/350)
+a También utilicé este ejemplo en Designing Machine Learning Systems.
+Cifras de Charig et al., "Comparison of Treatment of Renal Calculi by
+Open Surgery, Percutaneous Nephrolithotomy, and Extracorporeal
+Shockwave Lithotripsy", British Medical Journal (Clinical Research
+Edition) 292, nº 6524 (marzo de 1986): 879-82.
+Deberá tener varios conjuntos de evaluación para representar los distintos
+segmentos de datos. Debe tener un conjunto que represente la segmentación
+de los datos de producción reales para estimar cómo funciona el sistema en
+general. Puede segmentar sus datos por niveles (usuarios de pago vs.
+usuarios gratuitos), fuentes de tráfico (móvil vs. web), uso, etc. Puede tener
+un conjunto formado por los ejemplos para los que se sabe que el sistema
+comete errores con frecuencia. Puede tener un conjunto de ejemplos en los
+que los usuarios cometan errores con frecuencia: si los errores tipográficos
+son comunes en la producción, debe tener ejemplos de evaluación que
+contengan errores tipográficos. Quizá quiera un conjunto de evaluaciones
+fuera del alcance, inputs con los que su aplicación no debería interactuar,
+para asegurarse de que su aplicación los maneje adecuadamente.

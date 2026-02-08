@@ -1,0 +1,7 @@
+Chapter 10
+367
+The LLM microservice is strictly optimized for the RAG generation component. Ultimately, the
+business layer will send the prompt trace consisting of the user query, prompt, answer, and other
+intermediary steps to the prompt monitoring pipeline, which we will detail in Chapter 11.
+In summary, our approach involves implementing an online real-time ML service using a microservice architecture, which effectively splits the LLM and business logic into two distinct services.
+Figure 10.4: Microservice deployment architecture of the LLM Twin's inference pipeline

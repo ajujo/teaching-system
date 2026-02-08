@@ -1,0 +1,38 @@
+Building Intelligent Agents
+216
+>> I signed my contract 2 years ago The contract started on 2023-02-07.
+I started the deal with your company in February last year The contract
+started on 2024-02-01.
+Our contract started on March 24th two years ago The contract started on
+2023-03-24
+We learned how to use tools, or function calls, to enhance LLMs' performance on complex tasks.
+This is one of the fundamental architectural patterns behind agents-now it's time to discuss
+what an agent is.
+What are agents?
+Agents are one of the hottest topics of generative AI these days. People talk about agents a lot,
+but there are many different definitions of what an agent is. LangChain itself defines an agent
+as "a system that uses an LLM to decide the control flow of an application." While we feel it's a great
+definition that is worth citing, it missed some aspects.
+As Python developers, you might be familiar with duck typing to determine an object's behavior by
+the so-called duck test: "If it walks like a duck and it quacks like a duck, then it must be a duck." With
+that concept in mind, let's describe some properties of an agent in the context of generative AI:
+•
+Agents help a user solve complex non-deterministic tasks without being given an explicit
+algorithm on how to do it. Advanced agents can even act on behalf of a user.
+•
+To solve a task, agents typically perform multiple steps and iterations. They reason (gener­
+ate new information based on available context), act (interact with the external environ­
+ment), observe (incorporate feedback from the external environment), and communicate
+(interact and/or work collaboratively with other agents or humans).
+•
+Agents utilize LLMs for reasoning (and solving tasks).
+•
+While agents have certain autonomy (and to a certain extent, they even figure out what
+is the best way to solve the task by thinking and learning from interacting with the en­
+vironment), when running an agent, we'd still like to keep a certain degree of control of
+the execution flow.
+Retaining control over an agent's behavior-an agentic workflow-is a core concept behind
+LangGraph. While LangGraph provides developers with a rich set of building blocks (such as
+memory management, tool invocation, and cyclic graphs with recursion depth control), its pri­
+mary design pattern focuses on managing the flow and level of autonomy that LLMs exercise in
+executing tasks. Let's start with an example and develop our agent.

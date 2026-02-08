@@ -1,0 +1,37 @@
+Evaluation and Testing
+328
+Our example prompt and the answer we’ve obtained is:
+prompt_health = "What is a healthy blood pressure range for adults?"
+# A sample LLM output from your healthcare assistant:
+prediction_health = (
+    "A normal blood pressure reading is typically around 120/80 mmHg. "
+    "It's important to follow your doctor's advice for personal health 
+management!"
+)
+Now let’s evaluate conciseness using a built-in conciseness criterion:
+conciseness_evaluator = load_evaluator(
+    "criteria", criteria="conciseness", llm=evaluation_llm
+)
+conciseness_result = conciseness_evaluator.evaluate_strings(
+    prediction=prediction_health, input=prompt_health
+)
+print("Conciseness evaluation result:", conciseness_result)
+The result includes a score (0 or 1), a value (“Y” or “N”), and a reasoning chain of thought:
+Conciseness evaluation result: {'reasoning': "The criterion is 
+conciseness. This means the submission should be brief, to the point, 
+and not contain unnecessary information.\n\nLooking at the submission, 
+it provides a direct answer to the question, stating that a normal blood 
+pressure reading is around 120/80 mmHg. This is a concise answer to the 
+question.\n\nThe submission also includes an additional sentence advising 
+to follow a doctor's advice for personal health management. While this 
+information is not directly related to the question, it is still relevant 
+and does not detract from the conciseness of the answer.\n\nTherefore, 
+the submission meets the criterion of conciseness.\n\nY", 'value': 'Y', 
+'score': 1}
+As for friendliness, let’s define a custom criterion:
+custom_friendliness = {
+    "friendliness": "Is the response written in a friendly and 
+approachable tone?"
+}
+# Load a criteria evaluator with this custom criterion.
+friendliness_evaluator = load_evaluator(

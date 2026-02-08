@@ -1,0 +1,33 @@
+Transforming variables with the logarithm function
+89
+Now, let's apply the logarithm transformation with Feature-engine.
+14.	 Let's import the LogTransformer():
+from feature_engine.transformation import LogTransformer
+15.	 We'll set up the transformer to transform the variables from step 7 and then fit the transformer
+to the dataset:
+lt = LogTransformer(variables = vars)
+lt.fit(X)
+Note
+If the variables argument is left as None, LogTransformer() applies the logarithm to
+all the numerical variables found during fit(). Alternatively, we can indicate which variables
+to modify, as we did in step 15.
+16.	 Finally, let's transform the data:
+X_tf = lt.transform(X)
+X_tf is a copy of the X DataFrame, where the variables from step 7 are transformed with
+the logarithm.
+17.	 We can also revert the transformed variables to their original representation:
+X_tf = lt.inverse_transform(X_tf)
+If you check the distribution of the variables after step 17, they should be identical to those of
+the original data.
+Note
+Feature-engine has a dedicated transformer that adds constant values to the variables before
+the applying the logarithm transformation. Check the There's more... section later in this recipe
+for more details.
+How it works...
+In this recipe, we applied the logarithm transformation to a subset of positive variables using NumPy,
+scikit-learn, and Feature-engine.
+To compare the effect of the transformation on the variable distribution, we created a diagnostic
+function to plot a histogram next to a Q-Q plot. To create the Q-Q plot, we used scipy.stats.
+probplot(), which plotted the quantiles of the variable of interest in the y axis versus the quantiles
+of a theoretical normal distribution, which we indicated by setting the dist parameter to norm in
+the x axis. We used matplotlib to display the plot by setting the plot parameter to plt.

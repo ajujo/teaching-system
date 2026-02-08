@@ -1,0 +1,37 @@
+Transforming Numerical Variables
+90
+With plt.figure() and figsize, we adjusted the size of the figure and, with plt.subplot(),
+we organized the two plots in one row with two columns - that is, one plot next to the other. The
+numbers within plt.subplot() indicated the number of rows, the number of columns, and the
+place of the plot in the figure, respectively. We placed the histogram in position 1 and the Q-Q plot
+in position 2 - that is, left and right, respectively.
+To test the function, we plotted a histogram and a Q-Q plot for the MedInc variable before the
+transformation and observed that MedInc was not normally distributed. Most observations were
+at the left of the histogram and the values deviated from the 45-degree line in the Q-Q plot at both
+ends of the distribution.
+Next, using np.log(), we applied the logarithm to a slice of the DataFrame with four positive
+variables. To evaluate the effect of the transformation, we plotted a histogram and Q-Q plot of the
+transformed MedInc variable. We observed that, after the logarithm transformation, the values were
+more centered in the histogram and that, in the Q-Q plot, they only deviated from the 45-degree line
+toward the ends of the distribution.
+Next, we used the FunctionTransformer() from scikit-learn, which applies any user-defined
+function to a dataset. We passed np.log() as an argument to apply the logarithm transformation
+and NumPy's exp() for the inverse transformation to FunctionTransfomer(). With the
+transform() method, we transformed a slice of the DataFrame with the positive variables by
+using the logarithm. With inverse_transform(), we reverted the variable values to their
+original representation.
+Finally, we used Feature-engine's LogTransformer() and specified the variables to transform
+in a list using the variables argument. With fit(), the transformer checked that the variables
+were numerical and positive, and with transform(), it applied np.log() under the hood to
+transform the selected variables. With inverse_transform(), we reverted the transformed
+variables to their original representations.
+There's more...
+Feature-engine has a dedicated transformer for adding a constant value to variables that are not strictly
+positive, before applying the logarithm: LogCpTransformer(). LogCpTransformer() can:
+•	 Add the same constant to all variables
+•	 Automatically identify and add the minimum value required to make the variables positive
+•	 Add different values defined by the user to different variables.
+You can find a code implementation of LogCpTransformer() in this book's GitHub
+repository: https://github.com/PacktPublishing/Python-Feature-Engineering-
+Cookbook-Third-Edition/blob/main/ch03-variable-transformation/Recipe-
+1-logarithmic-transformation.ipynb

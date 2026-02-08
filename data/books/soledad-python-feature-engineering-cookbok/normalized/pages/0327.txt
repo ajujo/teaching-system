@@ -1,0 +1,38 @@
+Extracting Features from Relational Data with Featuretools
+304
+To follow up, let's combine what we learned from the recipes using transform primitives with
+the aggregation functions from this recipe. First, we will create new features from existing
+datetime and text variables; then, we will aggregate those features along with the numerical
+variables, at the customer level.
+11.	 Let's make lists with date and text primitives:
+trans_primitives = ["month", "weekday", "num_words"]
+12.	 Let's make a list with an aggregation primitive:
+agg_primitives = ["mean"]
+13.	 Let's now automatically create features by transforming and then aggregating variables:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»customers»,
+    agg_primitives=agg_primitives,
+    trans_primitives=trans_primitives,
+    max_depth=3,
+)
+The code from step 13 triggers the creation of the features and their subsequent aggregation
+at the customer level.
+14.	 Let's display the names of the new features:
+feature_defs
+In the following output, we see the names of the created variables:
+[<Feature: MEAN(data.price)>,
+<Feature: MEAN(data.quantity)>,
+<Feature: MONTH(first_invoices_time)>,
+<Feature: WEEKDAY(first_invoices_time)>,
+<Feature: MEAN(invoices.MEAN(data.price))>,
+<Feature: MEAN(invoices.MEAN(data.quantity))>,
+<Feature: MEAN(data.NUM_WORDS(description))>,
+<Feature: MEAN(invoices.MEAN(data.NUM_
+    WORDS(description)))>] WORDS(description)))>]
+Note that in our recipes, we keep the creation of features to a minimum due to space limitations, but
+you can create as many features as you want and enrich your datasets dramatically with the functionality
+built into featuretools.
+How it works...
+In this recipe, we brought together the creation of features using transform primitives, which we
+discussed throughout the chapter, with the creation of features using aggregation primitives.

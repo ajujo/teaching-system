@@ -1,0 +1,32 @@
+Paso 4. Reducir la latencia con cachés
+El almacenamiento en caché ha sido durante mucho tiempo una parte
+integral de las aplicaciones computacionales para reducir la latencia y los
+costos. Muchas ideas del almacenamiento en caché de software pueden
+utilizarse para aplicaciones de IA. Las técnicas de caché de inferencias,
+incluyendo el almacenamiento en caché KV y caché de prompts, se abordan
+en el Capítulo 9. Esta sección se centra en el almacenamiento en caché del
+sistema.
+Como el almacenamiento en caché es una tecnología antigua con una gran
+cantidad de literatura existente, este libro solo la cubrirá a grandes rasgos.
+En general, existen dos grandes mecanismos de almacenamiento en caché
+del sistema: el exacto y el semántico.
+Almacenamiento exacto en caché
+Con el almacenamiento exacto en caché, los elementos almacenados en
+caché solo se utilizan cuando se solicitan dichos elementos exactos. Por
+ejemplo, si un usuario pide a un modelo que resuma un producto, el sistema
+comprueba en la caché si existe un resumen de ese producto exacto. En
+caso afirmativo, se recupera este resumen. Si no es así, se resume el
+producto y se almacena el resumen en caché.
+El almacenamiento exacto en caché también se utiliza para la recuperación
+basada en incrustaciones con el fin de evitar la búsqueda redundante de
+vectores. Si una consulta entrante ya se encuentra en la caché de búsqueda
+vectorial, se recupera el resultado almacenado en caché. Si no, se realiza
+una búsqueda vectorial para esta consulta y se almacena en caché el
+resultado.
+El almacenamiento en caché es especialmente atractivo para las consultas
+que impliquen múltiples pasos (por ejemplo, de cadena de pensamiento) y/o
+acciones que requieran mucho tiempo (por ejemplo, la recuperación, la
+ejecución de SQL o la búsqueda en la web).
+Se puede implementar una caché exacta utilizando almacenamiento en
+memoria para una recuperación rápida. Sin embargo, dado que el
+almacenamiento en memoria es limitado, también se puede implementar

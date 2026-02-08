@@ -1,0 +1,38 @@
+Production-Ready LLM Deployment and Observability
+374
+LangChain applications rely on external LLM providers, so it’s important to implement com­
+prehensive health checks. Here’s how to create a custom health check endpoint in your FastAPI 
+application:
+@app.get("/health")
+async def health_check():
+    try:
+        # Test connection to OpenAI
+        response = await llm.agenerate(["Hello"])
+        # Test connection to vector store
+        vector_store.similarity_search("test")
+        return {"status": "healthy"}
+    except Exception as e:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "unhealthy", "error": str(e)}
+        )
+This health check endpoint verifies that your application can successfully communicate with 
+both your LLM provider and your vector store. Kubernetes will use this endpoint to determine if 
+your application is ready to receive traffic, automatically rerouting requests away from unhealthy 
+instances. For production deployments:
+•	
+Use a production-grade ASGI server like Uvicorn behind a reverse proxy like Nginx.
+•	
+Implement horizontal scaling for handling concurrent requests.
+•	
+Consider resource allocation carefully as LLM applications can be CPU-intensive during 
+inference.
+These considerations are particularly important for LangChain applications, which may experi­
+ence variable load patterns and can require significant resources during complex inference tasks.
+LangGraph platform
+The LangGraph platform is specifically designed for deploying applications built with the Lang­
+Graph framework. It provides a managed service that simplifies deployment and offers monitoring 
+capabilities.
+LangGraph applications maintain state across interactions, support complex execution flows 
+with loops and conditions, and often coordinate multiple agents working together. Let’s explore 
+how to deploy these specialized applications using tools specifically designed for LangGraph.

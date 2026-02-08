@@ -1,0 +1,38 @@
+Chapter 4
+137
+Context-heavy answers
+Sliding window with significant 
+overlap
+Computational 
+Resources
+Limited API budget
+Basic recursive chunking
+Performance-critical
+Pre-computed semantic chunks
+Table 4.4: Comparison of chunking strategies
+We recommend starting with Level 2 (Recursive Character Chunking) as your baseline, then 
+experiment with more advanced strategies if retrieval quality needs improvement.
+For most RAG applications, the RecursiveCharacterTextSplitter with appropriate chunk size 
+and overlap settings provides an excellent balance of simplicity, performance, and retrieval qual­
+ity. As your system matures, you can evaluate whether more sophisticated chunking strategies 
+deliver meaningful improvements.
+However, it is often critical to performance to experiment with different chunk sizes specific to your 
+use case and document types. Please refer to Chapter 8 for testing and benchmarking strategies.
+The next section covers semantic search, hybrid methods, and advanced ranking techniques.
+Retrieval
+Retrieval integrates a vector store with other LangChain components for simplified querying 
+and compatibility. Retrieval systems form a crucial bridge between unstructured queries and 
+relevant documents.
+In LangChain, a retriever is fundamentally an interface that accepts natural language queries and 
+returns relevant documents. Let’s explore how this works in detail.
+At its heart, a retriever in LangChain follows a simple yet powerful pattern:
+•	
+Input: Takes a query as a string
+•	
+Processing: Applies retrieval logic specific to the implementation
+•	
+Output: Returns a list of document objects, each containing:
+•	
+page_content: The actual document content
+•	
+metadata: Associated information like document ID or source

@@ -1,0 +1,24 @@
+Implementing term frequency-inverse document frequency
+355
+Note
+To introduce n-grams as part of the returned columns, we can change the value of ngrams_
+range to, for example, (1,2). The tuple provides the lower and upper boundaries of the 
+range of n-values for different n-grams. In the case of (1,2), TfidfVectorizer() will 
+return single words and arrays of two consecutive words as columns.
+5.	
+Let’s fit TfidfVectorizer() so that it learns which words should be introduced as columns 
+of the TF-IDF matrix and determines the words’ idf:
+vectorizer.fit(df['text'])
+6.	
+Now, let’s create the TF-IDF matrix:
+X = vectorizer.transform(df['text'])
+7.	
+Finally, let’s capture the TF-IDF matrix in a DataFrame with the corresponding feature names:
+tfidf = pd.DataFrame(
+    X.toarray(),
+    columns = vectorizer.get_feature_names_out()
+)
+With that, we have created a pandas DataFrame that contains words as columns and the 
+TF-IDF as values. You can inspect the result by executing tfidf.head():
+Figure 11.7 – A DataFrame with features resulting from TF-IDF
+Now, we can use this term frequency DataFrame to train machine learning models.

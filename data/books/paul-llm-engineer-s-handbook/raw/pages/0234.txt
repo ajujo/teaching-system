@@ -1,0 +1,37 @@
+Chapter 5
+203
+Instructions must be self-contained and general. \
+Answers must imitate the writing style of the context. \
+Example instruction: Explain the concept of an LLM Twin. \
+Example answer: An LLM Twin is essentially an AI character that 
+mimics your writing style, personality, and voice. \
+It's designed to write just like you by incorporating these elements 
+into a language model. \
+The idea is to create a digital replica of your writing habits using 
+advanced AI techniques. \
+Provide your response in JSON format with the following structure:
+{{
+    "instruction_answer_pairs": [
+        {{"instruction": "...", "answer": "..."}},
+        ...
+    ]
+}}
+Extract:
+{extract}
+"""
+8.	 In addition to the user prompt, we can also specify a system prompt to guide the mod-
+el into generating the expected instructions. Here, we repeat our high-level task in the 
+system prompt.
+The concatenation of the system and user prompts is fed to the OpenAI API, using the GPT-
+4o mini model in JSON mode and a maximum of 1,200 tokens in the answer. We also use a 
+standard temperature of 0.7 to encourage diverse responses. The generated text is directly 
+parsed using the InstructionAnswerSet class to return pairs of instructions and answers.
+    completion = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system", "content": "You are a helpful 
+assistant who \
+            generates instruction-answer pairs based on the given 
+context. \
+            Provide your response in JSON format.",

@@ -1,0 +1,22 @@
+Las opiniones expresadas en esta obra son las del autora y no representan
+las de la editorial. Aunque la editorial y la autora se han esforzado de buena
+fe por garantizar que la información y las instrucciones contenidas en esta
+obra sean exactas, la editorial y la autora declinan toda responsabilidad por
+errores u omisiones, incluyendo, sin limitación, la responsabilidad por
+daños derivados del uso de esta obra o de la confianza depositada en ella. El
+uso de la información y las instrucciones contenidas en esta obra corre por
+su cuenta y riesgo. Si alguna muestra de código u otra tecnología que este
+trabajo contenga o describa está sujeta a licencias de código abierto o a
+derechos de propiedad intelectual de terceros, es responsabilidad suya
+asegurarse de que su uso de los mismos cumple con dichas licencias y/o
+derechos.
+Esta traducción se preparó con la ayuda de MTPE (posedición de
+traducción automática), un flujo de trabajo que combina la traducción
+automática con la revisión humana experta para producir traducciones de
+alta calidad. Los avisos de derechos de autor que Developer Experience
+Advisory LLC ha añadido a esta página se refieren exclusivamente a la
+autoría de esta obra que fue aportada por autores humanos.
+978-1-098-16630-4: Original English Edition (Print)
+978-1-098-18020-1: Spanish Edition (Print)
+978-1-098-18019-5: Spanish Edition (Ebook)
+[LSI]

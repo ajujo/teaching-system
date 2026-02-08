@@ -1,0 +1,44 @@
+Chapter 2
+63
+This capability opens numerous possibilities for LangChain applications. By combining image 
+analysis with the text processing patterns we explored earlier in this chapter, you can build so­
+phisticated applications that reason across modalities. In the next chapter, we’ll build on these 
+concepts to create more sophisticated multimodal applications.
+Summary
+After setting up our development environment and configuring necessary API keys, we’ve ex­
+plored the foundations of LangChain development, from basic chains to multimodal capabilities. 
+We’ve seen how LCEL simplifies complex workflows and how LangChain integrates with both 
+text and image processing. These building blocks prepare us for more advanced applications in 
+the coming chapters.
+In the next chapter, we’ll expand on these concepts to create more sophisticated multimodal 
+applications with enhanced control flow, structured outputs, and advanced prompt techniques. 
+You’ll learn how to combine multiple modalities in complex chains, incorporate more sophis­
+ticated error handling, and build applications that leverage the full potential of modern LLMs.
+Review questions
+1.	
+What are the three main limitations of raw LLMs that LangChain addresses?
+•	
+Memory limitations
+•	
+Tool integration
+•	
+Context constraints
+•	
+Processing speed
+•	
+Cost optimization
+2.	 Which of the following best describes the purpose of LCEL (LangChain Expression Lan­
+guage)?
+•	
+A programming language for LLMs
+•	
+A unified interface for composing LangChain components
+•	
+A template system for prompts
+•	
+A testing framework for LLMs
+3.	
+Name three types of memory systems available in LangChain
+4.	
+Compare and contrast LLMs and chat models in LangChain. How do their interfaces and 
+use cases differ?

@@ -1,0 +1,33 @@
+push beyond predefined capabilities, enabling agents to evolve novel prompts, con‐
+trol flows, and tool use. These building blocks are not static; rather, they are generated
+dynamically by the meta-agent, which can continuously experiment with new designs
+in response to changing requirements or opportunities for improvement.
+Figure 8-1. Core components of the ADAS framework. The search space outlines the
+scope of representable agentic architectures. The search algorithm dictates the explora‐
+tion strategy within this space. The evaluation function quantifies candidate agents'
+effectiveness against objectives like performance, robustness, and efficiency. From the
+original paper.
+The backbone of ADAS is the concept of defining agents through code. By utilizing
+programming languages that are Turing-complete, this framework theoretically
+allows agents to invent any conceivable structure or behavior. This includes complex
+workflows, creative tool integrations, and innovative decision-making processes that
+a human designer may not have foreseen. The power of ADAS lies in this code-based
+approach, which treats agents not as static entities but as flexible constructs that can
+be redefined, modified, and optimized over time. The potential of this approach is
+vast: in principle, a meta-agent could develop an endless variety of agents, continually
+refining and combining elements in pursuit of higher performance across diverse
+tasks.
+Central to ADAS is the MAS algorithm, a specific method that demonstrates how a
+meta-agent can autonomously generate and refine agent systems. In MAS, the metaagent acts as a designer, writing code to define new agents and testing these agents
+against an array of tasks. Each successful design is archived, forming a continuously
+growing knowledge base that informs the creation of future agents. MAS operates
+through an iterative cycle: the meta-agent, conditioned on an archive of prior agents,
+generates a high-level design description, implements it in code (defining a "forward"
+function for the agent), and refines via two self-reflection steps for novelty and cor‐
+rectness. The new agent is evaluated on validation data; errors trigger up to five
+debugging refinements. Successful agents are archived with performance metrics
+(e.g., accuracy or F1 score), informing future iterations. This mirrors evolutionary
+processes, balancing exploration of novel designs with exploitation of high
+Automated Design of Agent Systems
+|
+185

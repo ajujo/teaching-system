@@ -1,0 +1,30 @@
+NOTA
+Mientras escribía este libro, muchas pruebas comparativas se saturaron o
+estaban a punto de saturarse. En junio de 2024, menos de un año después de
+la última renovación de su tablero de clasificación, Hugging Face volvió a
+actualizarla con un grupo completamente nuevo de pruebas comparativas
+más exigentes y centradas en capacidades más prácticas. Por ejemplo,
+GSM-8K se sustituyó por MATH lvl 5, que consiste en las preguntas más
+difíciles de la prueba comparativa de matemáticas MATH. MMLU fue
+sustituida por MMLU-PRO (Wang et al., 2024). También se incluyeron las
+siguientes pruebas comparativas:
+GPQA (Rein et al., 2023): una prueba comparativa de preguntas y
+respuestas a nivel de postgrado. 22
+MuSR (Sprague et al., 2023): una prueba comparativa de
+razonamiento multipaso basado en la cadena de pensamiento.
+BBH (BIG-bench Hard) (Srivastava et al., 2023): otra prueba
+comparativa de razonamiento.
+IFEval (Zhou et al., 2023): una prueba comparativa de
+seguimiento de instrucciones.
+No me cabe duda de que estas pruebas comparativas pronto se saturarán.
+Sin embargo, debatir sobre pruebas comparativas concretas, aunque estén
+desfasadas, puede seguir siendo útil como ejemplo para evaluar e
+interpretar las pruebas. 23
+La Tabla 4-5 muestra las puntuaciones de correlación de Pearson entre las
+seis pruebas comparativas utilizadas en la tabla de clasificación de Hugging
+Face, calculadas en enero de 2024 por Balázs Galambosi. Las tres pruebas
+WinoGrande, MMLU y ARC-C están muy correlacionadas, lo que tiene
+sentido, ya que todas ponen a prueba las capacidades de razonamiento.
+TruthfulQA solo está moderadamente correlacionada con otras pruebas
+comparativas, lo que sugiere que mejorar las capacidades de razonamiento
+y matemáticas de un modelo no siempre mejora su veracidad.

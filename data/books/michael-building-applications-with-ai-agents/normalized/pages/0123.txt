@@ -1,0 +1,26 @@
+       print(f"Error invoking tool '{tool_name}': {e}")
+else:
+   print("No tool was selected.")
+Hierarchical Tool Selection
+If your scenario involves a large number of tools, however, you might need to con‐
+sider hierarchical tool selection. This is especially true if many of those tools are
+semantically similar and you are looking to improve tool selection accuracy at the
+price of higher latency and complexity. In this pattern, you organize your tools into
+groups and provide a description for each group. Your tool selection (either genera‐
+tive or semantic) first selects a group and then performs a secondary search only
+among the tools in that group. Figure 5-4 visualizes this two-stage process, showing
+how a query is first routed to the appropriate tool group and then refined to a single
+tool within that group.
+Figure 5-4. Hierarchical tool-selection workflow. The agent first chooses the most rele‐
+vant tool group for the query, and then narrows the search to select a single tool within
+that group-in this example, routing a math question through the tool group and ulti‐
+mately invoking query_wolfram_alpha.
+While this is slower and would be expensive to parallelize, it reduces the complexity
+of the tool selection task into two smaller chunks, and frequently results in higher
+overall tool selection accuracy. Crafting and maintaining these tool groups takes time
+and effort, so this is not recommended unless you have a large number of tools:
+import os
+import requests
+Tool Selection
+|
+101

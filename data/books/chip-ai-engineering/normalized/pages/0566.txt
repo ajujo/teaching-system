@@ -1,0 +1,14 @@
+Antes de invertir en crear un gran conjunto de datos, es posible que desee
+empezar con un conjunto de datos pequeño y bien elaborado (por ejemplo,
+50 ejemplos) para ver si el afinado puede mejorar el modelo. Si este
+pequeño conjunto de datos es suficiente para alcanzar el rendimiento
+deseado, estupendo. Las claras mejoras sugieren que un mayor número de
+datos mejorará aún más el rendimiento. Si no se observa ninguna mejora
+con datos pequeños, un conjunto de datos más grande raramente servirá.
+Sin embargo, hay que tener cuidado antes de concluir que el afinado con un
+conjunto de datos pequeño no mejora un modelo. Además de los datos, hay
+muchos otros factores que pueden influir en los resultados del afinado,
+como la elección de los hiperparámetros (por ejemplo, si la tasa de
+aprendizaje es demasiado alta o demasiado baja), la calidad de los datos, la
+mala elaboración de los prompts, etc. En la gran mayoría de los casos,
+deberían ver mejoras después de afinar con 50-100 ejemplos.

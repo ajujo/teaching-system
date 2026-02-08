@@ -1,0 +1,17 @@
+También pueden preferir modelos con un buen apoyo comunitario. Cuantas
+más capacidades tenga un modelo, más peculiaridades tendrá. Un modelo
+con una gran comunidad de usuarios significa que cualquier problema que
+encuentre puede haber sido experimentado ya por otros, que pueden haber
+compartido soluciones en línea. 19
+Control, acceso y transparencia
+Un estudio realizado en 2024 por a16z muestra dos razones clave por las
+que las empresas se interesan por los modelos de código abierto: el control
+y la personalización, como se muestra en la Figura 4-8.
+figura 4-8. Por qué las empresas se interesan por los modelos de código abierto.
+Imagen del estudio de a16z de 2024.
+Si su negocio depende de un modelo, es comprensible que quiera tener
+cierto control sobre él, y los proveedores de API no siempre ofrecen el nivel
+de control que desea. Cuando utiliza un servicio proporcionado por
+terceros, están limitado por sus condiciones y sus límites de tarifas. Solo
+puede acceder a lo que este proveedor le permite, por lo que quizá no
+puedan afinar el modelo según sus necesidades.

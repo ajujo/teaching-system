@@ -1,0 +1,30 @@
+Data Engineering
+82
+To conclude, ODM simplifies working with document-based NoSQL databases and maps ob-
+ject-oriented code to JSON-like documents. We will implement a light ODM module on top of 
+MongoDB to fully understand how ODM works.
+Implementing the ODM class
+This section will explore how to implement an ODM class from scratch. This is an excellent ex-
+ercise to learn how ODM works and sharpen our skills in writing modular and reusable Python 
+classes. Hence, we will implement a base ODM class called NoSQLBaseDocument, from which all 
+the other documents will inherit to interact with the MongoDB data warehouse.
+The code starts by importing essential modules and setting up the database connection. Through 
+the _database variable, we establish a connection to the database specified in the settings, which 
+is by default called twin:
+import uuid
+from abc import ABC
+from typing import Generic, Type, TypeVar
+from loguru import logger
+from pydantic import UUID4, BaseModel, Field
+from pymongo import errors
+from llm_engineering.domain.exceptions import ImproperlyConfigured
+from llm_engineering.infrastructure.db.mongo import connection
+from llm_engineering.settings import settings
+_database = connection.get_database(settings.DATABASE_NAME)
+Next, we define a type variable T bound to the NoSQLBaseDocument class. The variable leverages 
+Python’s generic module, allowing us to generalize the class’s types. For example, when we im-
+plement the ArticleDocument class, which will inherit from the NoSQLBaseDocument class, all the 
+instances where T was used will be replaced with the ArticleDocument type when analyzing the 
+signature of functions (more on Python generics: https://realpython.com/python312-typing). 
+The class can be found in our repository at llm_engineering/domain/base/nosql.
+py.

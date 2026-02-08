@@ -1,0 +1,41 @@
+enhance red teaming for foundation models and agentic systems, automating attacks
+and evaluations to uncover risks like jailbreaks, hallucinations, and hijacking. The
+following are some of the leading open source frameworks to facilitate and accelerate
+red teaming and hardening:
+DeepTeam
+This is a lightweight, extensible foundation model red-teaming framework for
+penetration testing and safeguarding foundation model systems. DeepTeam
+automates adversarial attacks such as jailbreaks, prompt injections, and privacy
+leaks, then helps you build guardrails to prevent them in production. It integrates
+seamlessly with existing workflows, allowing custom scripts for multiturn agent
+testing-e.g., simulating context manipulation to elicit prohibited outputs. Its
+repo is located at https://oreil.ly/O8nlL.
+Garak
+NVIDIA's "Generative AI Red-Teaming and Assessment Kit" probes foundation
+models for hallucinations, data leakage, prompt injections, misinformation, tox‐
+icity, jailbreaks, and more-analogous to Nmap/MSF (Network Mapper/Meta‐
+sploit Framework) for foundation models. With its modular design, it's ideal for
+scaling tests across foundation models, such as evaluating probabilistic reasoning
+under stress conditions. The source code can be found at https://oreil.ly/rGIY4.
+PyRIT
+This is Microsoft's Prompt Risk Identification Tool, an open source framework
+for automating red team attacks on generative AI systems, including foundation
+models. It supports orchestrators for generating prompts, scorers for evaluating
+responses, and targets for endpoints like Azure ML or Hugging Face. While
+focused on security testing, it's flexible for scripting custom evals covering safety,
+bias, hallucinations, tool use, and beyond. For red teaming, use it to assess jail‐
+breaking resistance or sensitive information disclosure in dynamic adaptation
+scenarios, with built-in support for multimodal and agentic exploits. The repo
+can be found at https://oreil.ly/oHpdu.
+Effective red teaming doesn't stop at identifying vulnerabilities-it also includes doc‐
+umentation, reporting, and mitigation planning. Findings from red team exercises
+should feed into iterative improvements, informing updates to model configurations,
+input/output filters, and training datasets. Teams must also prioritize vulnerabilities
+based on their severity, exploitability, and potential real-world impact.
+Beyond technical vulnerabilities, red teaming can also uncover social engineering
+risks. For example, an attacker might manipulate a foundation model-powered agent
+into revealing sensitive information through cleverly worded prompts or mimic trus‐
+ted communication styles to deceive human operators.
+280
+|
+Chapter 12: Protecting Agentic Systems

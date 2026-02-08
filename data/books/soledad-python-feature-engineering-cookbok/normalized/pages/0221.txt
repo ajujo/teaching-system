@@ -1,0 +1,37 @@
+Extracting Features from Date and Time Variables
+198
+•	 Minute
+•	 Second
+In this recipe, we will automatically create features from date and time by utilizing feature-engine.
+How to do it...
+To showcase feature-engine's functionality, we'll create a sample DataFrame with a
+datetime variable:
+1.
+Let's begin by importing pandas and DatetimeFeatures():
+import pandas as pd
+from feature_engine.datetime import DatetimeFeatures
+2.
+Let's create a datetime variable with 20 values, beginning from 2024-05-17 at midnight
+and followed by increments of 1 day. Then, we store this variable in a DataFrame:
+rng_ = pd.date_range(
+    '2024-05-17', periods=20, freq='D')
+data = pd.DataFrame({'date': rng_})
+3.
+We'll start by setting up the transformer to extract all supported datetime features:
+dtfs = DatetimeFeatures(
+    variables=None,
+    features_to_extract= "all",
+)
+Note
+DatetimeFeatures() automatically finds the variables of the datetime type, or that
+could be parsed as datetime when the variables parameter is set to None. Alternatively,
+you can pass a list with the names of the variables from which you want to extract date and
+time features.
+4.
+Let's add the date and time features to the data:
+dft = dtfs.fit_transform(data)
+Note
+By default, DatetimeFeatures() extracts the following features from each datetime
+variable: month, year, day_of_week, day_of_month, hour, minute, and second.
+We can modify this behavior through the features_to_extract parameter as we did
+in Step 3.

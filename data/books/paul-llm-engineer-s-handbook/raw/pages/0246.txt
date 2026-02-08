@@ -1,0 +1,34 @@
+Chapter 5
+215
+Using LoRA, it’s possible to fine-tune a 7B parameter model on a single GPU with as little as 14-
+18 GB of VRAM, depending on the specific configuration. This is a dramatic reduction compared 
+to full fine-tuning, which would typically require multiple high-end GPUs. In terms of trainable 
+parameters, LoRA drastically reduces the number compared to full fine-tuning. For example, even 
+when targeting every module with a rank of 16, a Llama 3 8 B model only has 42 million trainable 
+LoRA parameters out of 8 billion parameters, which is 0.5196% of the model’s parameters.
+In terms of quality, LoRA can also achieve comparable or sometimes better results than full-fine-
+tuning. Multiple sets of LoRA weights can be combined for different tasks or domains, allowing 
+flexible deployment and task switching without retraining. Different projects are specialized 
+in multiple-LoRA serving, such as LoRAX. It’s also a feature supported by Hugging Face’s Text 
+Generation Inference (TGI) and Nvidia Inference Microservices (NIM).
+QLoRA
+Introduced by Dettmers et al., QLoRA is a method for fine-tuning LLMs that addresses the chal-
+lenges of high computational costs. By combining quantization techniques with LoRA, QLoRA 
+allows developers to fine-tune models on relatively small, widely available GPUs.
+The core of QLoRA’s approach involves quantizing the base model parameters to a custom 4-bit 
+NormalFloat (NF4) data type, which significantly reduces memory usage. Like LoRA, instead 
+of updating all model parameters during fine-tuning, QLoRA introduces small, trainable low-
+rank matrices (adapters) to specific layers of the model. Only these adapters are updated during 
+training, while the original model weights remain unchanged. To further reduce memory usage, 
+QLoRA employs double quantization, which quantizes the quantization constants themselves. 
+Additionally, it uses paged optimizers to manage memory spikes during training by leveraging 
+Nvidia’s unified memory feature.
+QLoRA provides significant memory savings compared to LoRA, reducing peak GPU memory 
+usage by up to 75%. For example, for a 7B model, QLoRA reduces peak memory usage from 14 GB 
+to 9.1 GB during initialization, a 35% reduction. During fine-tuning, the memory savings increase 
+to 40%, from 15.6 GB for LoRA to 9.3 GB for QLoRA. However, this memory efficiency comes at 
+the cost of increased training time, with QLoRA being about 30% slower than LoRA. In terms of 
+model performance, QLoRA shows only minor differences compared to LoRA.
+In summary, QLoRA is particularly beneficial when memory constraints are the primary concern, 
+such as when working with very large models or on hardware with limited GPU memory. However, 
+if training speed is crucial and sufficient memory is available, LoRA might be the preferred choice. 

@@ -1,0 +1,18 @@
+figura 7-3. Ejemplos de flujos de desarrollo de aplicaciones. Después de una
+recuperación sencilla (como la basada en términos), la conveniencia de experimentar
+con una recuperación más compleja (como la búsqueda híbrida) o de realizar un
+afinado depende de cada aplicación y de sus modos de fallo.
+Así, el flujo de trabajo para adaptar un modelo a una tarea podría funcionar
+de la siguiente manera. Tenga en cuenta que, antes de realizar cualquiera de
+los pasos de adaptación, debe definir sus criterios de evaluación y diseñar
+su proceso de evaluación, tal y como se explica en el Capítulo 4. Este
+proceso de evaluación les servirá para evaluar su progreso a medida que
+desarrolle su aplicación. La evaluación no se produce solo al principio.
+Debe estar presente en todas las fases del proceso:
+1. Intente que un modelo realice su tarea solo con prompts. Utilice las
+mejores prácticas de ingeniería de prompts mostradas en el
+Capítulo 5, incluyendo el versionado sistemático de sus prompts.
+2. Añada más ejemplos al prompt. En función del caso de uso, el
+número de ejemplos necesarios puede oscilar entre 1 y 50.
+3. Si su modelo falla con frecuencia debido a la falta de información,
+conéctelo a fuentes de datos que puedan suministrar información

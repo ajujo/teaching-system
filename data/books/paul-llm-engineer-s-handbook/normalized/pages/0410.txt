@@ -1,0 +1,35 @@
+Chapter 10
+379
+        endpoint_name=endpoint_name,
+        update_endpoint=update_endpoint,
+        resources=resources,
+        tags=[{"Key": "task", "Value": "model_task"}],
+        endpoint_type=endpoint_type,
+    )
+This method begins by creating an instance of HuggingFaceModel, a specialized model class from
+SageMaker designed to handle Hugging Face models. The constructor for HuggingFaceModel
+takes several essential parameters, such as the role ARN (which gives SageMaker the necessary
+permissions), the URI of the LLM DLC Docker image, and the LLM configuration that specifies
+what LLM to load from Hugging Face and its inference parameters, such as the maximum total
+of tokens.
+Once HuggingFaceModel is instantiated, the method deploys it to SageMaker using the deploy
+function. This deployment process involves specifying the type of instance used, the number of
+instances, and whether to update an existing endpoint or create a new one. The method also includes optional resources for more complex deployments, such as the initial_instance_count
+parameter for multi-model endpoints and tags for tracking and categorization.
+The last step is to walk you through the SagemakerHuggingfaceStrategy class, which aggregates
+everything we have shown. The class is initialized only with an instance of a deployment service,
+such as the one shown above.
+class SagemakerHuggingfaceStrategy(DeploymentStrategy):
+def __init__(self, deployment_service):
+    self.deployment_service = deployment_service
+The core functionality of the SagemakerHuggingfaceStrategy class is encapsulated in its deploy()
+method. This method orchestrates the deployment process, taking various parameters that define
+how the Hugging Face model should be deployed to AWS SageMaker:
+def deploy(
+    self,
+    role_arn: str,
+    llm_image: str,
+    config: dict,
+    endpoint_name: str,
+    endpoint_config_name: str,
+    gpu_instance_type: str,

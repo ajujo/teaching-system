@@ -1,0 +1,15 @@
+figura 3-6. La arquitectura de CLIP (Radford et al., 2021).
+Un espacio de incrustación conjunto que puede representar datos de
+distintas modalidades es un espacio de incrustación multimodal. En un
+espacio de incrustación conjunta texto-imagen, la incrustación de una
+imagen de un hombre pescando debería estar más cerca de la incrustación
+del texto "un pescador" que de la incrustación del texto "desfile de moda".
+Este espacio de incrustación conjunta permite comparar y combinar
+incrustaciones de distintas modalidades. Esto permite, por ejemplo, la
+búsqueda de imágenes basada en texto. Dado un texto, le ayuda a encontrar
+las imágenes más cercanas a este texto.
+La IA como juez
+La dificultad de evaluar las respuestas abiertas ha llevado a muchos equipos
+a regresar a la evaluación humana. Dado que la IA se ha utilizado con éxito
+para automatizar muchas tareas complejas, ¿puede automatizar también la
+evaluación? El enfoque de utilizar la IA para evaluar la IA se denomina IA

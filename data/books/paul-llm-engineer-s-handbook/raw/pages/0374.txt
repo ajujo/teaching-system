@@ -1,0 +1,35 @@
+Chapter 9
+343
+            if embedded_query.author_id:
+                query_filter = Filter(
+                    must=[
+                        FieldCondition(
+                            key="author_id",
+                            match=MatchValue(
+                                value=str(embedded_query.author_id),
+                            ),
+                        )
+                    ]
+                )
+            else:
+                query_filter = None
+            return data_category_odm.search(
+                query_vector=embedded_query.embedding,
+                limit=k // 3,
+                query_filter=query_filter,
+            )
+        embedded_query: EmbeddedQuery = EmbeddingDispatcher.
+dispatch(query)
+We used the same EmbeddingDispatcher to embed the query as in the RAG feature pipeline to 
+embed the document chunks stored in the vector DB. Using the same class ensures we use the 
+same embedding model at ingestion and query time, which is critical for the retrieval step.
+We search each data category separately by leveraging the local _search_data_category() func-
+tion. Within the _search_data_category() function, we apply the filters extracted from the 
+embedded_query object. For instance, if an author_id is present, we use it to filter the search results 
+only to include documents from that author. The results from all categories are then combined:
+        post_chunks = _search_data_category(EmbeddedPostChunk, embedded_
+query)
+        articles_chunks = _search_data_category(EmbeddedArticleChunk, 
+embedded_query)
+        repositories_chunks = _search_data_
+category(EmbeddedRepositoryChunk, embedded_query)

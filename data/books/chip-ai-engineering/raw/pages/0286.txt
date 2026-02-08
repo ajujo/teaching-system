@@ -1,0 +1,32 @@
+embargo, el incidente fue lo suficientemente grave como para que Samsung
+prohibiera ChatGPT en mayo de 2023.
+Algunos países tienen leyes que prohíben enviar ciertos datos fuera de sus
+fronteras. Si un proveedor de API de modelos quiere dar servicio a estos
+casos de uso, tendrá que establecer servidores en estos países.
+Si utiliza una API de modelos, existe el riesgo de que el proveedor de la
+API utilice sus datos para entrenar sus modelos. Aunque la mayoría de los
+proveedores de API de modelos afirman que no lo hacen, sus políticas
+pueden cambiar. En agosto de 2023, Zoom se enfrentó a una fuerte reacción
+después de que se supiera que la empresa había modificado discretamente
+sus condiciones de servicio para permitir que Zoom utilizara los datos
+generados por el servicio de los usuarios, incluidos los datos de uso del
+producto y los datos de diagnóstico, para entrenar sus modelos de IA.
+¿Cuál es el problema de que la gente utilice sus datos para entrenar sus
+modelos? Aunque la investigación en este campo sigue siendo escasa,
+algunos estudios sugieren que los modelos de IA pueden memorizar sus
+muestras de entrenamiento. Por ejemplo, se ha descubierto que el modelo
+StarCoder de Hugging Face memoriza el 8 % de su conjunto de
+entrenamiento. Estas muestras memorizadas pueden filtrarse
+accidentalmente a los usuarios o ser explotadas intencionadamente por
+malos actores, como se demuestra en el Capítulo 5.
+Linaje de datos y derechos de autor
+El linaje de los datos y los derechos de autor pueden orientar a una empresa
+en muchas direcciones: hacia modelos de código abierto, hacia modelos
+propietarios o hacia ambos.
+En la mayoría de los modelos, hay poca transparencia sobre los datos con
+los que se entrena un modelo. En el informe técnico de Gemini, Google
+entraba en detalles sobre el rendimiento de los modelos, pero no decía nada
+sobre los datos de entrenamiento de los modelos, aparte de que "todos los
+trabajadores de enriquecimiento de datos cobran al menos un salario digno
+local". CTO de OpenAI no fue capaz de dar una respuesta satisfactoria
+cuando se le preguntó qué datos se utilizaban para entrenar sus modelos.

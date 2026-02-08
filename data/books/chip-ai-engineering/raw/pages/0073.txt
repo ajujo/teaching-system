@@ -1,0 +1,19 @@
+Esta capa proporciona herramientas para el desarrollo de
+modelos, incluyendo marcos para el modelado, el
+entrenamiento, el afinado y la optimización de la inferencia.
+Dado que los datos son fundamentales para el desarrollo de
+modelos, esta capa también contiene la ingeniería de
+conjuntos de datos. El desarrollo de modelos también
+requiere una evaluación rigurosa.
+Infraestructura
+En la parte inferior de la pila se encuentra la
+infraestructura, que incluye herramientas para el servicio
+de modelos, la gestión de datos y computación, y el
+monitoreo.
+En la Figura 1-14 se muestran estos tres niveles y ejemplos de
+responsabilidades para cada uno de ellos.
+figura 1-14. Las tres capas de la pila de ingeniería de IA.
+Para hacerme una idea de cómo ha evolucionado el panorama con los
+modelos fundacionales, en marzo de 2024 busqué en GitHub todos los
+repositorios relacionados con la IA con al menos 500 estrellas. Dada la
+prevalencia de GitHub, creo que estos datos ofrecen una buena

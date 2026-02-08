@@ -1,0 +1,32 @@
+Con la recuperación basada en incrustaciones, volvemos a encontrarnos con
+las incrustaciones, que se abordan en el Capítulo 3. Como recordatorio, una
+incrustación suele ser un vector que pretende conservar las propiedades
+importantes de los datos originales. Un recuperador basado en
+incrustaciones no funciona si el modelo de incrustación es malo.
+La recuperación basada en incrustaciones también introduce un nuevo
+componente: las bases de datos vectoriales. Una base de datos vectorial
+almacena vectores. Sin embargo, almacenarlos es la parte fácil de una base
+de datos vectorial. Lo difícil es buscar los vectores. Dada una incrustación
+de consulta, una base de datos vectorial debe encontrar vectores en la base
+de datos cercanos a la consulta y devolverlos. Los vectores deben indexarse
+y almacenarse de forma que su búsqueda sea rápida y eficaz.
+Como muchos otros mecanismos de los que dependen las aplicaciones de
+IA generativa, la búsqueda vectorial no es exclusiva de la IA generativa. La
+búsqueda vectorial es habitual en cualquier aplicación que utilice
+incrustaciones: búsqueda, recomendación, organización de datos,
+recuperación de información, clustering, detección de fraudes, etc.
+La búsqueda vectorial se suele plantear como un problema de búsqueda del
+vecino más próximo. Por ejemplo, dada una consulta, encontrar los k
+vectores más cercanos. La solución ingenua es k vecinos más cercanos (k-
+NN), que funciona del siguiente modo:
+1. Calcular las puntuaciones de similitud entre la incrustación de la
+consulta y todos los vectores de la base de datos, utilizando
+métricas como la similitud coseno.
+2. Ordenar todos los vectores por sus puntuaciones de similitud.
+3. Devolver k vectores con las puntuaciones de similitud más altas.
+Esta solución ingenua garantiza que los resultados sean precisos, pero es
+computacionalmente pesada y lenta. Solo debe utilizarse para conjuntos de
+datos pequeños.
+Para grandes conjuntos de datos, la búsqueda de vectores suele realizarse
+mediante un algoritmo de aproximación al vecino más cercano (ANN).
+Debido a la importancia de la búsqueda vectorial, se han desarrollado

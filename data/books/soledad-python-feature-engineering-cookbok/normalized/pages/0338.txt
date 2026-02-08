@@ -1,0 +1,40 @@
+Extracting hundreds of features automatically from a time series
+315
+Looking at the mean value of light consumption in Figure 10.4, we can see that the lights were
+on during the first hour, and then off in the following four hours. The length of the time series
+is 60 because we have 60 minutes of records per hour.
+Note
+tsfresh applies 63 feature creation methods to a time series. Based on the characteristics of
+the time series, such as its length or its variability, some of the methods will return missing values
+or infinite values. For example, in Figure 10.4, we see that the variation coefficient could not be
+calculated for those hours where the light consumption is constant. And the variance is also 0
+in those cases. In fact, for our dataset, many of the resulting features contain only NaN values, or
+are constant, like the length, and are therefore not useful for training machine learning models.
+7.
+tsfresh includes an imputation function to impute features that contain NaN values. Let's
+go ahead and impute our features:
+impute(features)
+The impute function from tsfresh replaces NaN, -Inf, and Inf values with the variable's
+median, minimum, or maximum values, respectively.
+Let's use these features to train a logistic regression model and predict whether the office
+was occupied.
+8.
+Let's begin by separating the dataset into training and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    features,
+    y,
+    test_size=0.1,
+    random_state=42,
+)
+9.
+Now, let's set up and train a logistic regression model, and then evaluate its performance:
+cls = LogisticRegression(random_state=10, C=0.01)
+cls.fit(X_train, y_train)
+print(classification_report(
+     y_test, cls.predict(X_test)))
+In the following output, we see the values of evaluation metrics that are commonly used
+for classification analysis, which suggests that the created features are useful for predicting
+office occupancy:
+                  precision     recall  f1-score   support
+               0         1.00        1.00        1.00
+11

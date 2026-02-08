@@ -1,0 +1,42 @@
+Encoding with Weight of Evidence
+75
+How to do it...
+Let's begin by making some imports and preparing the data:
+1.
+Import the required libraries and functions:
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+2.
+Let's load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.
+Let's get the inverse of the target values to be able to calculate the negative cases:
+neg_y_train = pd.Series(
+    np.where(y_train == 1, 0, 1),
+    index=y_train.index
+)
+4.
+Let's determine the number of observations where the target variable takes a value of 1 or 0:
+total_pos = y_train.sum()
+total_neg = neg_y_train.sum()
+5.
+Now, let's calculate the numerator and denominator of the WoE's formula, which we discussed
+earlier in this recipe:
+pos = y_train.groupby(
+    X_train["A1"]).sum() / total_pos
+neg = neg_y_train.groupby(
+    X_train["A1"]).sum() / total_neg
+6.
+Now, let's calculate the WoE per category:
+woe = np.log(pos/neg)
+We can display the series with the category to WoE pairs by executing print(woe):
+A1
+Missing    0.203599
+a          0.092373

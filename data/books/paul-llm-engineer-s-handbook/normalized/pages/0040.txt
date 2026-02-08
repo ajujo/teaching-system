@@ -1,0 +1,16 @@
+Chapter 1
+9
+Figure 1.1: Common elements from an ML system
+The preceding figure shows all the components the Google Cloud team suggests that a mature ML
+and MLOps system requires. Along with the ML code, there are many moving pieces. The rest of
+the system comprises configuration, automation, data collection, data verification, testing and
+debugging, resource management, model analysis, process and metadata management, serving
+infrastructure, and monitoring. The point is that there are many components we must consider
+when productionizing an ML model.
+Thus, the critical question is this: How do we connect all these components into a single homogenous system? We must create a boilerplate for clearly designing ML systems to answer that
+question.
+Similar solutions exist for classic software. For example, if you zoom out, most software applications can be split between a DB, business logic, and UI layer. Every layer can be as complex as
+needed, but at a high-level overview, the architecture of standard software can be boiled down
+to the previous three components.
+Do we have something similar for ML applications? The first step is to examine previous solutions
+and why they are unsuitable for building scalable ML systems.

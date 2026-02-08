@@ -1,0 +1,34 @@
+Production-Ready LLM Deployment and Observability
+354
+Each of these three components introduces unique deployment challenges that must be addressed 
+for a robust production system.
+We discussed models in Chapter 1; agents, tools, and reasoning heuristics in Chapters 3 through 
+7; embeddings, RAG, and vector databases in Chapter 4; and evaluation and testing in Chapter 8. 
+In the present chapter, we’ll focus on deployment tools, monitoring, and custom tools for opera­
+tionalizing LangChain applications. Let’s begin by examining practical approaches for deploying 
+LangChain and LangGraph applications to production environments. We’ll focus specifically on 
+tools and strategies that work well with the LangChain ecosystem.
+Web framework deployment with FastAPI
+One of the most common approaches for deploying LangChain applications is to create API end­
+points using web frameworks like FastAPI or Flask. This approach gives you full control over how 
+your LangChain chains and agents are exposed to clients. FastAPI is a modern, high-performance 
+web framework that works particularly well with LangChain applications. It provides automatic 
+API documentation, type checking, and support for asynchronous endpoints – all valuable fea­
+tures when working with LLM applications. To deploy LangChain applications as web services, 
+FastAPI offers several advantages that make it well suited for LLM-based applications. It provides 
+native support for asynchronous programming (critical for handling concurrent LLM requests 
+efficiently), automatic API documentation, and robust request validation.
+LLMs are typically utilized either through external providers or by self-hosting mod­
+els on your own infrastructure. With external providers, companies like OpenAI 
+and Anthropic handle the heavy computational lifting, while LangChain helps you 
+implement the business logic around these services. On the other hand, self-hosting 
+open-source LLMs offers a different set of advantages, particularly when it comes to 
+managing latency, enhancing privacy, and potentially reducing costs in high-usage 
+scenarios.
+The economics of self-hosting versus API usage, therefore, depend on many factors, 
+including your usage patterns, model size, hardware availability, and operational 
+expertise. These trade-offs require careful analysis – while some organizations report 
+cost savings for high-volume applications, others find API services more econom­
+ical when accounting for the total cost of ownership, including maintenance and 
+expertise. Please refer back to Chapter 2 for a discussion and decision diagram of 
+trade-offs between latency, costs, and privacy concerns.

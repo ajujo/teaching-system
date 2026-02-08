@@ -1,0 +1,32 @@
+Evaluation and Testing
+326
+The next example shows how to use Mistral AI to evaluate a model’s prediction against a refer­
+ence answer. Please make sure to set your MISTRAL_API_KEY environment variable and install the 
+required package: pip install langchain_mistralai. This should already be installed if you 
+followed the instructions in Chapter 2.
+This approach is more appropriate when you have ground truth responses and want to assess 
+how well the model’s output matches the expected answer. It’s particularly useful for factual 
+questions with clear, correct answers.
+from langchain_mistralai import ChatMistralAI
+from langchain.evaluation.scoring import LabeledScoreStringEvalChain
+# Initialize the evaluator LLM with deterministic output (temperature 0.)
+llm = ChatMistralAI(
+    model="mistral-large-latest",
+    temperature=0,
+    max_retries=2
+)
+# Create the evaluation chain that can use reference answers
+labeled_chain = LabeledScoreStringEvalChain.from_llm(llm=llm)
+# Define the finance-related input, prediction, and reference answer
+finance_input = "What is the current Federal Reserve interest rate?"
+finance_prediction = "The current interest rate is 0.25%."
+finance_reference = "The Federal Reserve's current interest rate is 
+0.25%."
+# Evaluate the prediction against the reference
+labeled_result = labeled_chain.evaluate_strings(
+    input=finance_input,
+    prediction=finance_prediction,
+    reference=finance_reference,
+)
+print("Finance Evaluation Result (with reference):")
+print(labeled_result)

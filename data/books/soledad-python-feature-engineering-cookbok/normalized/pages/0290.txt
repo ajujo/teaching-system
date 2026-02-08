@@ -1,0 +1,35 @@
+Creating spline features
+267
+How it works...
+In this recipe, we created new features based on splines. First, we used a toy variable, with values from
+-1 to 11, and then we obtained splines from a real dataset. The procedure in both cases was identical
+- we used SplineTransformer() from scikit-learn. The SplineTransformer()
+transformer takes the degree property of the polynomial and the number of knots (n_knots)
+as input and returns the splines that better fit the data. The knots are placed at equidistant values of
+X by default, but through the knots parameter, we can choose to uniformly distribute them to the
+quantiles of X instead, or we can pass an array with the specific values of X that should be used as knots.
+Note
+The number, spacing, and position of the knots are arbitrarily set by the user and are the
+parameters that influence the shape of the splines the most. When using splines in regression
+models, we can optimize these parameters in a randomized search with cross-validation.
+With fit(), the transformer computes the knots of the splines. With transform(), it returns the
+array of B-splines. The transformer returns n_splines=n_knots + degree - 1.
+Remember that, like most scikit-learn transformers, SplineTransformer() also now has the
+option to return pandas and polars DataFrames in addition to NumPy arrays, a behavior that can
+be modified through the set_output() method.
+Finally, we used ColumnTransformer() to derive splines from a subset of features. Because we
+set remainder to passthrough, ColumnTransformer() concatenated the features that
+were not used to obtain splines to the resulting matrix of splines. By doing this, we fitted a Ridge
+regression with the splines, plus the MedInc and HouseAge variables, and managed to improve
+the linear model's performance.
+See also
+To find out more about the math underlying B-splines, check out the following articles:
+•	 Perperoglou, et al. A review of spline function procedures in R (https://bmcmedresmethodol.
+biomedcentral.com/articles/10.1186/s12874-019-0666-3). BMC Med Res
+Methodol 19, 46 (2019).
+•	 Eilers and Marx. Flexible Smoothing with B-splines and Penalties (https://projecteuclid.
+org/journals/statistical-science/volume-11/issue-2/Flexiblesmoothing-with-B-splines-and-penalties/10.1214/ss/1038425655.full).
+•	 For an example of how to use B-splines to model time series data, check out the following page in
+the scikit-learn library's documentation: https://scikit-learn.org/stable/
+auto_examples/applications/plot_cyclical_feature_engineering.
+html#periodic-spline-features.

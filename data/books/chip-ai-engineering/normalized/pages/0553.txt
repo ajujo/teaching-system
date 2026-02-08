@@ -1,0 +1,29 @@
+paso. La
+cafetería tenía 23 manzanas. Si se utilizaron 20 para comer y
+compraron
+6 más, ¿cuántas manzanas tienen?
+Respuesta (con CoT): La cafetería tenía originalmente 23
+manzanas. Usaron 20
+para hacer el almuerzo. Así que tenían 23 - 20 = 3. Han comprado
+6 manzanas más, por lo que tienen 3 + 6 = 9.
+En consecuencia, los conjuntos de datos CoT son menos
+comunes en comparación con otros conjuntos de datos de
+instrucción.
+Uso de herramientas
+Dada la gran cantidad de conocimientos que adquiere un
+modelo durante el pre-entrenamiento, muchos modelos
+podrían saber intuitivamente cómo utilizar determinadas
+herramientas. Sin embargo, la capacidad de uso de
+herramientas de un modelo puede mejorarse mostrándole
+ejemplos de uso de herramientas. Es habitual utilizar
+expertos en la materia para crear datos sobre el uso de
+herramientas, en los que cada prompt es una tarea que
+requiere el uso de una herramienta, y su respuesta son las
+acciones necesarias para realizar esa tarea. Por ejemplo, si
+quiere datos para afinar un modelo para que actúe como
+asistente personal, puede preguntar a los asistentes
+personales profesionales qué tipo de tareas suelen realizar,
+cómo las llevan a cabo y qué herramientas necesitan. Si se
+pide a expertos humanos que expliquen cómo hacen las
+cosas, es posible que omitan algunos pasos, ya sea por fallos
+de memoria o porque piensen que no son importantes. A

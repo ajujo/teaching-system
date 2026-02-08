@@ -1,0 +1,32 @@
+Chapter 4
+145
+Query transformation techniques are particularly useful when dealing with ambiguous queries, 
+questions formulated by non-experts, or situations where terminology mismatches between 
+queries and documents are common. They do add computational overhead but can dramatically 
+improve retrieval quality, especially for complex or poorly formulated questions.
+Context processing: maximizing retrieved information value
+Once documents are retrieved, context processing techniques help distill and organize the infor­
+mation to maximize its value in the generation phase.
+Contextual compression
+Contextual compression extracts only the most relevant parts of retrieved documents, removing 
+irrelevant content that might distract the generator:
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(temperature=0)
+compressor = LLMChainExtractor.from_llm(llm)
+# Create a basic retriever from the vector store
+base_retriever = vector_db.as_retriever(search_kwargs={"k": 3})
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor,
+    base_retriever=base_retriever
+)
+compressed_docs = compression_retriever.invoke("How do transformers 
+work?")
+Here are our compressed documents:
+[Document(metadata={'source': 'Neural Network Review 2021', 'page': 42}, 
+page_content="The transformer architecture was introduced in the paper 
+'Attention is All You Need' by Vaswani et al. in 2017."),
+ Document(metadata={'source': 'Large Language Models Survey', 'page': 89}, 
+page_content='GPT models are autoregressive transformers that predict the 
+next token based on previous tokens.')]

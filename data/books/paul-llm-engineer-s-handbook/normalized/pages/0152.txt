@@ -1,0 +1,41 @@
+Chapter 4
+121
+As illustrated in Figure 4.6, let's assume that, based on the user's input, to do RAG, we
+can retrieve additional context from a vector DB using vector search queries, a standard
+SQL DB by translating the user query to an SQL command, or the internet by leveraging
+REST API calls. The query router can also detect whether a context is required, helping us
+avoid making redundant calls to external data storage. Also, a query router can be used to
+pick the best prompt template for a given input. For example, in the LLM Twin use case,
+depending on whether the user wants an article paragraph, a post, or a code snippet, you
+need different prompt templates to optimize the creation process. The routing usually
+uses an LLM to decide what route to take or embeddings by picking the path with the
+most similar vectors. To summarize, query routing is identical to an if/else statement but
+much more versatile as it works directly with natural language.
+•
+Query rewriting: Sometimes, the user's initial query might not perfectly align with the
+way your data is structured. Query rewriting tackles this by reformulating the question
+to match the indexed information better. This can involve techniques like:
+•
+Paraphrasing: Rephrasing the user's query while preserving its meaning (e.g.,
+"What are the causes of climate change?" could be rewritten as "Factors contributing to global warming").
+•
+Synonym substitution: Replacing less common words with synonyms to broaden
+the search scope (e.g., " joyful" could be rewritten as "happy").
+•
+Sub-queries: For longer queries, we can break them down into multiple shorter
+and more focused sub-queries. This can help the retrieval stage identify relevant
+documents more precisely.
+•
+Hypothetical document embeddings (HyDE): This technique involves having an LLM
+create a hypothetical response to the query. Then, both the original query and the LLM's
+response are fed into the retrieval stage.
+•
+Query expansion: This approach aims to enrich the user's question by adding additional
+terms or concepts, resulting in different perspectives of the same initial question. For
+example, when searching for "disease," you can leverage synonyms and related terms
+associated with the original query words and also include "illnesses" or "ailments."
+•
+Self-query: The core idea is to map unstructured queries into structured ones. An LLM
+identifies key entities, events, and relationships within the input text. These identities are
+used as filtering parameters to reduce the vector search space (e.g., identify cities within
+the query, for example, "Paris," and add it to your filter to reduce your vector search space).

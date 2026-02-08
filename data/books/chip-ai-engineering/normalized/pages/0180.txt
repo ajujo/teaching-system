@@ -1,0 +1,32 @@
+ya que las más sofisticadas consumen demasiado cálculo y memoria de
+entrenamiento.
+10 Un dato curioso: Ilya Sutskever, cofundador de OpenAI, es el primer autor del
+artículo sobre seq2seq y el segundo autor del artículo sobre AlexNet.
+11 Ilya Sutskever tiene un interesante argumento sobre por qué es tan difícil
+desarrollar nuevas arquitecturas de redes neuronales que superen a las
+existentes. En su opinión, las redes neuronales son excelentes para simular
+muchos programas informáticos. El descenso de gradiente, una técnica para
+entrenar redes neuronales, es en realidad un algoritmo de búsqueda entre todos
+los programas que una red neuronal puede simular para encontrar el mejor para
+su tarea objetivo. Esto significa que es potencialmente posible simular
+arquitecturas nuevas con las existentes. Para que las nuevas arquitecturas
+superen a las existentes, deben ser capaces de simular programas que las
+arquitecturas existentes no puedan simular. Para más información, vea la charla
+de Sutskever en el Instituto Simons de Berkeley (2023).
+12 El transformador fue diseñado originalmente por Google para ejecutarse con
+rapidez en unidades de procesamiento tensorial (TPU), y solo se optimizó
+posteriormente en GPU.
+13 La memoria realmente necesaria es mayor. En el Capítulo 7 se explica cómo
+calcular el uso de memoria de un modelo.
+14 Suponiendo que un libro contenga unas 50 000 palabras o 67 000 tokens,
+15 En el momento de escribir estas líneas, los grandes modelos suelen preentrenarse con una sola época de datos.
+16 El recuento de FLOP/s se mide en FP32. Los formatos de coma flotante se
+abordan en el Capítulo 7.
+17 Al momento de escribir estas líneas, los proveedores de nube ofrecen H100 por
+entre 2 y 5 dólares la hora. Como la informática se está abaratando rápidamente,
+esta cifra se rebajará mucho.
+18 Jascha Sohl-Dickstein, un increíble investigador, compartió una hermosa
+visualización de qué hiperparámetros funcionan y cuáles no en su página de X.
+19 Dario Amodei, CEO de Anthropic, afirmó que si la hipótesis de escalado es
+cierta, un modelo de IA de 100 000 millones de dólares será tan bueno como un
+ganador de Premio Nobel

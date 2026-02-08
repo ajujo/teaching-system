@@ -1,0 +1,27 @@
+con 10 000 ejemplos.
+2. Elimine las instrucciones de baja calidad. Digamos que esto le deja
+con 9000 ejemplos.
+3. Aparte las instrucciones con respuestas de baja calidad.
+Supongamos que encuentra 3000 ejemplos de este tipo. Esto le
+deja con 6000 ejemplos de instrucciones de alta calidad y
+respuestas de alta calidad.
+4. Escriba manualmente las respuestas para las 3000 instrucciones de
+alta calidad. Ahora su conjunto de datos tiene un total de 9000
+ejemplos de alta calidad.
+5. Al darse cuenta de que no hay suficientes datos para el tema X,
+cree manualmente un conjunto de 100 plantillas de instrucciones
+sobre X. Use un modelo de IA para sintetizar 2000 instrucciones
+utilizando estas 10 plantillas.
+6. Anote manualmente estas 2000 instrucciones sintéticas. Ahora su
+conjunto de datos tiene un total de 11 000 ejemplos.
+Por supuesto, se trata de una simplificación excesiva del proceso real de
+conservación de conjuntos de datos, ya que la mayoría de los pasos se
+ocultan para ahorrar papel y tedio a los lectores. Por ejemplo, puede haber
+varios pasos en los que se dé cuenta de que muchas de las anotaciones no
+son útiles, por lo que tendría que actualizar las directrices de anotación y
+volver a anotar sus datos. Y lo que es peor, pueden descubrir que algunos de
+ellos son incorrectos, por lo que tendrá que contratar a otro grupo de
+anotadores para que comprueben sus anotaciones originales. O pueden que
+resulte que tener 100 instrucciones sintéticas por plantilla perjudica la
+diversidad de sus datos, por lo que tendría que crear más plantillas y
+generar menos instrucciones por plantilla. Y así sucesivamente.

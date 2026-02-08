@@ -1,0 +1,35 @@
+Performing polynomial expansion
+241
+The PolynomialFeatures() transformer from scikit-learn creates polynomial combinations
+of the features with a degree less than or equal to a user-specified degree, automatically.
+To follow up easily with this recipe, let's first understand the output of PolynomialFeatures()
+when used to create second- and third-degree polynomial combinations of three variables.
+Second-degree polynomial combinations of three variables - a, b, and c - will return the following
+new features:
+1, a, b, c, ab, ac, bc, a2, b2, c2
+From the previous features, a, b, and c are the original variables; ab, ac, and bc are the products of those
+features; and a2, b2, and c2 are the squared values of the original features. PolynomialFeatures()
+also returns the bias term 1, which we would probably exclude when creating features.
+Note
+The resulting features - ab, ac, and bc - are called interactions or feature interactions of degree
+2. The degree reflects the number of variables combined. The result combines a maximum of two
+variables because we indicated a second-degree polynomial as the maximum allowed combination.
+Third-degree polynomial combinations of the three variables - a, b, and c - will return the following
+new features:
+1, a, b, c, ab, ac, bc, abc, a2b, a2c, b2a, b2c, c2a, c2b, a3, b3, c3
+Among the returned features, in addition to those returned by the second-degree polynomial
+combination, we now have the third-degree combinations of the features with themselves (a3, b3, and
+c3), the squared values of every feature combined linearly with a second feature (a2b, a2c, b2a, b2c,
+c2a, and c2b), and the product of the three features (abc). Note how we have all possible interactions
+of degrees 1, 2, and 3 and the bias term 1.
+Now that we understand the output of the polynomial expansion implemented by scikit-learn,
+let's jump into the recipe.
+How to do it...
+In this recipe, we will create features with polynomial expansion using a toy dataset to become familiar
+with the resulting variables. Creating features with the polynomial expansion of a real dataset is
+identical to what we will discuss in this recipe:
+1.
+Let's import the required libraries, classes, and data:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt

@@ -1,0 +1,36 @@
+Chapter 3
+91
+There are various CoT prompts reported in different papers. You can also explore the CoT template 
+available on LangSmith. For our learning purposes, let’s use a CoT prompt with few-shot examples:
+from langchain import hub
+math_cot_prompt = hub.pull("arietem/math_cot")
+cot_chain = math_cot_prompt | llm | StrOutputParser()
+print(cot_chain.invoke("Solve equation 2*x+5=15"))
+>> Answer: Let's think step by step
+Subtract 5 from both sides:
+2x + 5 - 5 = 15 - 5
+2x = 10
+Divide both sides by 2:
+2x / 2 = 10 / 2
+x = 5
+We used a prompt from LangSmith Hub – a collection of private and public artifacts that you can 
+use with LangChain. You can explore the prompt itself here: https://smith.langchain.com/hub.
+In practice, you might want to wrap a CoT invocation with an extraction step to provide a concise 
+answer to the user. For example, let us first run a cot_chain and then pass its output (please note 
+that we pass a dictionary with an initial question and a cot_output to the next step) to an LLM 
+that will use a prompt to create a final answer based on CoT reasoning:
+from operator import itemgetter
+parse_prompt_template = (
+   "Given the initial question and a full answer, "
+   "extract the concise answer. Do not assume anything and "
+   "only use a provided full answer.\n\nQUESTION:\n{question}\n"
+   "FULL ANSWER:\n{full_answer}\n\nCONCISE ANSWER:\n"
+)
+parse_prompt = PromptTemplate.from_template(
+   parse_prompt_template
+)
+final_chain = (
+ {"full_answer": itemgetter("question") | cot_chain,
+   "question": itemgetter("question"),
+ }
+ | parse_prompt

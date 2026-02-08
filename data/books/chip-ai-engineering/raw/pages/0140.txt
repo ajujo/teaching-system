@@ -1,0 +1,31 @@
+Para reducir su dependencia de datos de alta calidad anotados por humanos,
+muchos equipos están recurriendo a datos generados por IA. Los datos
+sintéticos se abordan en el Capítulo 8.
+Técnicamente, puede entrenar un modelo desde cero en los datos de
+demostración en lugar de afinar un modelo pre-entrenado, eliminando así el
+paso de pre-entrenamiento autosupervisado. Sin embargo, el enfoque del
+pre-entrenamiento ha dado a menudo resultados superiores.
+Afinado de preferencias
+Un gran poder conlleva una gran responsabilidad. Un modelo que puede
+ayudar a los usuarios a conseguir grandes cosas también puede ayudarles a
+conseguir cosas terribles. Los datos de demostración enseñan al modelo a
+mantener una conversación, pero no le enseñan qué tipo de conversaciones
+debe mantener. Por ejemplo, si un usuario pide al modelo que escriba una
+redacción sobre por qué una raza es inferior o sobre cómo secuestrar un
+avión, ¿debe el modelo obedecer?
+En los dos ejemplos anteriores, para la mayoría de la gente es evidente lo
+que debe hacer un modelo. Sin embargo, muchas situaciones no son tan
+claras. Personas de distintos orígenes culturales, políticos,
+socioeconómicos, de género y religiosos discrepan entre sí todo el tiempo.
+¿Cómo debe responder la IA a preguntas sobre el aborto, el control de
+armas, el conflicto entre Israel y Palestina, la disciplina de los niños, la
+legalidad de la marihuana, la renta básica universal o la inmigración?
+¿Cómo definimos y detectamos los temas potencialmente controvertidos?
+Si su modelo responde a un tema controvertido, sean cuales sean las
+respuestas, acabarán ofendiendo a algunos de sus usuarios. Si un modelo se
+censura demasiado, puede resultar aburrido y ahuyentar a los usuarios.
+El temor a que los modelos de IA generen respuestas inadecuadas puede
+impedir que las empresas pongan sus aplicaciones a disposición de los
+usuarios. El objetivo del afinado de preferencias es conseguir que los
+modelos de IA se comporten según las preferencias humanas. 23 Se trata de
+una meta ambiciosa, pero no imposible. Esto no solo supone que las

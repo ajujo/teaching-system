@@ -1,0 +1,52 @@
+           print(f"Insight '{old_insight}' not found.")
+           return
+       print(f"Edited: '{old_insight}' to '{new_insight}'")
+   def show_insights(self):
+       print("\nCurrent Insights:")
+       print(f"Insights: {self.insights}")
+       print(f"Promoted Insights: {self.promoted_insights}")
+       print(f"Demoted Insights: {self.demoted_insights}")
+   def reflect(self, reflexion_prompt):
+       # Build the state graph for reflection
+       builder = StateGraph(MessagesState)
+       builder.add_node("reflection", call_model)
+       builder.add_edge(START, "reflection")
+       graph = builder.compile()
+       # Invoke the graph with the reflection prompt
+       result = graph.invoke(
+           {
+               "messages": [
+                   HumanMessage(
+                       content=reflexion_prompt
+                   )
+               ]
+           }
+       )
+       reflection = result["messages"][-1].content
+       self.reflections.append(reflection)
+       print(f"Reflection: {reflection}")
+With sufficient feedback, this process provides an efficient way to learn from interac‐
+tions with the environment and improve performance over time. An added advan‐
+tage of this approach is its capability to facilitate the agent's gradual adaptation to
+nonstationary environments. Thus, if your agent needs to adjust its policy to a chang‐
+ing environment, this approach enables it to do so effectively. Let's now take a look at
+some example usage:
+agent = InsightAgent()
+# Simulated sequence of observations and whether the KPI target was met
+reports = [
+    ("Website traffic rose by 15%, but bounce rate jumped from 40% to 55%.",
+        False),
+    ("Email open rates improved to 25%, exceeding our 20% goal.", True),
+    ("Cart abandonment increased from 60% to 68%, missing the 50% target.",
+        False),
+    ("Average order value climbed 8%, surpassing our 5% uplift target.", True),
+    ("New subscription sign-ups dipped by 5%, just below our 10% growth goal.",
+        False),
+]
+# 1) Generate and prioritize insights over the reporting periods
+for text, hit_target in reports:
+    insight = agent.generate_insight(text)
+    if hit_target:
+Nonparametric Learning
+|
+145

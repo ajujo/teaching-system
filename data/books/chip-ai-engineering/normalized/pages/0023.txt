@@ -1,0 +1,30 @@
+capítulo 1. Introducción a la creación de
+aplicaciones de IA con modelos
+fundacionales
+Si solo pudiera utilizar una palabra para describir la IA después de 2020,
+sería escala. Los modelos de IA que hay detrás de aplicaciones como
+ChatGPT, Gemini de Google y Midjourney son de tal envergadura que
+están consumiendo una parte considerable de la electricidad mundial, y
+corremos el riesgo de quedarnos sin datos de Internet disponibles
+públicamente para entrenarlos.
+El escalado de los modelos de IA tiene dos consecuencias principales. En
+primer lugar, los modelos de IA son cada vez más potentes y capaces de
+realizar más tareas, lo que permite un mayor número de aplicaciones. Más
+personas y equipos aprovechan la IA para aumentar la productividad, crear
+valor económico y mejorar la calidad de vida.
+En segundo lugar, el entrenamiento de grandes modelos lingüísticos
+(LLMs) requiere datos, recursos computacionales y talento especializado
+que solo unas cuantas organizaciones pueden permitirse. Esto ha llevado a
+la aparición del modelo como servicio: los modelos desarrollados por estas
+pocas organizaciones se ponen a disposición de otros para que los utilicen
+como servicio. Cualquiera que desee aprovechar la IA para crear
+aplicaciones ahora puede utilizar estos modelos para hacerlo sin tener que
+invertir por adelantado en la creación de un modelo.
+En resumen, la demanda de aplicaciones de IA ha aumentado, mientras que
+la barrera de entrada para crear aplicaciones de IA ha bajado. Esto ha
+convertido a la ingeniería de IA (el proceso de creación de aplicaciones a
+partir de modelos fácilmente disponibles) en una de las disciplinas de
+ingeniería de más rápido crecimiento.
+La creación de aplicaciones sobre modelos de aprendizaje automático (ML)
+no es algo nuevo. Mucho antes de que los LLMs cobraran importancia, la
+IA ya impulsaba muchas aplicaciones, como las recomendaciones de

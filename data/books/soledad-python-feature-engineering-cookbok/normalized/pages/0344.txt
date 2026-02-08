@@ -1,0 +1,27 @@
+Automatically creating and selecting predictive features from time-series data
+321
+4.
+Now, let's select the features based on the non-parametric tests that we mentioned in the
+introduction of this recipe:
+features = select_features(features, y)
+If we execute len(features), we'll see the value 135, which means that from the 789
+features created in step 3, only 135 are statistically significant. Go ahead and execute features.
+head() to display the first five rows of the resulting DataFrame.
+5.
+For space reasons, we will only display the first five features:
+feats = features.columns[0:5]
+features[feats].head()
+In the following DataFrame, we see the values of the first five features for the first five hours
+of light consumption:
+Figure 10.6 - DataFrame with five of the selected features created from each hour of light consumption
+Check the discussion in the How it works... section for a more detailed analysis of the DataFrame
+resulting from step 4.
+6.
+Now, we will use the features from step 4 to train a logistic regression model and predict whether
+the office was occupied. Let's begin by separating the dataset into training and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    features,
+    y,
+    test_size=0.1,
+    random_state=42,
+)

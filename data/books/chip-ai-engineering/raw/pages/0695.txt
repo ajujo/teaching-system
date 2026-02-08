@@ -1,0 +1,18 @@
+Paso 5. Añadir patrones de agente
+Las aplicaciones analizadas hasta ahora siguen siendo bastante sencillas.
+Cada consulta sigue un flujo secuencial. Sin embargo, como se explica en el
+Capítulo 6, el flujo de una aplicación puede complicarse con bucles,
+ejecución paralela y bifurcación condicional. Los patrones agénticos,
+tratados en el Capítulo 6, pueden ayudarles a crear aplicaciones complejas.
+Por ejemplo, después de que el sistema genere un output, podría determinar
+que no ha realizado la tarea y que necesita realizar otra recuperación para
+recopilar más información. La respuesta original, junto con el nuevo
+contexto recuperado, se pasa al mismo modelo o a otro diferente. Esto crea
+un bucle, como se muestra en la Figura 10-9.
+figura 10-9. La flecha amarilla permite devolver al sistema la respuesta generada, lo
+que permite patrones de aplicación más complejos.
+Los outputs de un modelo también pueden utilizarse para invocar acciones
+de escritura, como redactar un correo electrónico, realizar un pedido o
+iniciar una transferencia bancaria. Las acciones de escritura permiten a un
+sistema realizar cambios en su entorno directamente. Como se explica en el
+Capítulo 6, las acciones de escritura pueden hacer que un sistema sea

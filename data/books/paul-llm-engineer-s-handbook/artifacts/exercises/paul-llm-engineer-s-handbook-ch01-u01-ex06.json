@@ -1,0 +1,107 @@
+{
+  "$schema": "exercise_set_v1",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "difficulty": "mid",
+  "types": [
+    "quiz"
+  ],
+  "generation_time_ms": 84577,
+  "mode": "json",
+  "pages_used": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "created_at": "2026-02-05T19:49:43.520135+00:00",
+  "total_points": 9,
+  "passing_threshold": 0.7,
+  "exercises": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q01",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Cuáles son los tres componentes principales de la arquitectura FTI (Feature, Training, Inference) mencionada en el capítulo?",
+      "correct_answer": 1,
+      "explanation": "La arquitectura FTI se compone específicamente de tres pipelines: Feature (características), Training (entrenamiento) e Inference (inferencia). Esto permite un flujo coherente y reutilizable entre etapas, como se explica en las páginas 14-15 del capítulo.",
+      "points": 2,
+      "tags": [
+        "arquitectura",
+        "FTI"
+      ],
+      "options": [
+        "Pipeline de datos, Pipeline de entrenamiento, Pipeline de inferencia",
+        "Pipeline de características, Pipeline de entrenamiento, Pipeline de inferencia",
+        "Pipeline de recopilación, Pipeline de transformación, Pipeline de optimización",
+        "Pipeline de almacenamiento, Pipeline de visualización, Pipeline de despliegue"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q02",
+      "type": "true_false",
+      "difficulty": "easy",
+      "question": "La arquitectura FTI permite reutilizar el procesamiento de características entre las etapas de entrenamiento e inferencia.",
+      "correct_answer": true,
+      "explanation": "Según la página 15, uno de los beneficios clave del diseño FTI es la consistencia y reusabilidad de componentes como el procesamiento de características en todas las etapas (entrenamiento e inferencia).",
+      "points": 1,
+      "tags": [
+        "beneficios",
+        "FTI"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q03",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "¿Por qué es importante construir un LLM Twin en lugar de usar ChatGPT u otros chatbots similares?",
+      "correct_answer": "Un LLM Twin permite personalizar el modelo para dominios específicos, garantiza la actualización de información relevante y evita dependencias externas. Esto se explica en la página 5 del capítulo.",
+      "explanation": "La página 5 destaca que los chatbots genéricos como ChatGPT pueden no ser adecuados para casos de uso específicos, mientras que un LLM Twin ofrece adaptabilidad y control sobre el conocimiento integrado.",
+      "points": 3,
+      "tags": [
+        "LLM Twin",
+        "justificación"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q04",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "question": "¿Cuál es la principal ventaja del diseño FTI mencionada en el capítulo?",
+      "correct_answer": 2,
+      "explanation": "La página 15 enfatiza que el diseño FTI resuelve problemas anteriores al garantizar consistencia en el procesamiento de datos (características) y reutilización entre entrenamiento e inferencia, evitando inconsistencias y duplicación.",
+      "points": 2,
+      "tags": [
+        "arquitectura",
+        "beneficios"
+      ],
+      "options": [
+        "Reducción de costos computacionales",
+        "Mayor velocidad de entrenamiento",
+        "Consistencia y reusabilidad entre etapas",
+        "Capacidad de manejar datos no estructurados"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q05",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "El MVP del LLM Twin se define como una versión minimalista que prioriza la funcionalidad básica sobre las optimizaciones avanzadas.",
+      "correct_answer": true,
+      "explanation": "En la página 7, el capítulo explica que un MVP (Minimum Viable Product) para el LLM Twin se centra en validar conceptos clave con la mínima funcionalidad necesaria antes de expandirse a características complejas.",
+      "points": 1,
+      "tags": [
+        "MVP",
+        "diseño"
+      ]
+    }
+  ]
+}

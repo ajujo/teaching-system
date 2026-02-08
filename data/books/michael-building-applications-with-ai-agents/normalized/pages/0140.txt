@@ -1,0 +1,42 @@
+stop-word removal, then maps each term to the list of message chunks or documents
+in which it appears. This structure enables lightning-fast lookups-rather than scan‐
+ning every stored message, the agent simply follows the term's postings list to retrieve
+exactly those passages containing the query keywords.
+To rank these results by relevance, most systems employ the BM25 scoring function.
+BM25 weights each passage by its term frequency (how often the query term
+appears), inverse document frequency (how rare the term is across the corpus), and
+document length normalization (penalizing overly long or overly short chunks).
+When a user query arrives, it is analyzed with the same text pipeline used for index‐
+ing, and BM25 produces a sorted list of the top K candidate passages. These top hits
+-often truncated or summarized-are then injected directly into the foundation
+model prompt, ensuring the model sees the most pertinent historical context without
+exhausting its context length. Fortunately, implementing this is very easy to do in
+Python, though typically one would store these in a database:
+# pip install rank_bm25
+from rank_bm25 import BM25Okapi
+from typing import List
+corpus: List[List[str]] = [
+    "Agent J is the fresh recruit with attitude".split(),
+    "Agent K has years of MIB experience and a cool neuralyzer".split(),
+    "The galaxy is saved by two Agents in black suits".split(),
+]
+# 2. Build the BM25 index
+bm25 = BM25Okapi(corpus)
+# 3. Perform retrieval for a fun query
+query = "Who is a recruit?".split()
+top_n = bm25.get_top_n(query, corpus, n=2)
+print("Query:", " ".join(query))
+print("Top matching lines:")
+for line in top_n:
+    print(" •", " ".join(line))
+In this example, we built a simple BM25-powered full-text index over our agent quips
+and fetched the most relevant lines for a given user query. By injecting those topranked passages directly into the prompt, we ensure the model has the key historical
+context-without passing every past message-and stays within its context limits.
+While this keyword-driven approach excels at pinpointing exact or highly specific
+terms, it can miss broader themes, paraphrases, or conceptual links that weren't
+expressed in the original text. To capture that deeper, "meaning-based" memory-so
+your agent can recall related ideas even when the exact words differ-we turn next to
+semantic memory and vector stores.
+118
+|
+Chapter 6: Knowledge and Memory

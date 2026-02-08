@@ -1,0 +1,33 @@
+RAG Inference Pipeline
+326
+In the generate method, we first ensure that the number of expansions requested (expand_to_n)
+is greater than zero. If the instance is in mock mode (self._mock is True), it simply returns a
+list containing copies of the original query to simulate expansion without actually calling the
+API. If not in mock mode, we proceed to create the prompt and initialize the language model:
+        query_expansion_template = QueryExpansionTemplate()
+        prompt = query_expansion_template.create_template(expand_to_n - 1)
+        model = ChatOpenAI(model=settings.OPENAI_MODEL_ID, api_
+key=settings.OPENAI_API_KEY, temperature=0)
+Here, we instantiate QueryExpansionTemplate and create a prompt tailored to generate expand_
+to_n - 1 new queries (excluding the original). We initialize the ChatOpenAI model with the
+specified settings and set the temperature to 0 for deterministic output. We then create a Lang-
+Chain chain by combining the prompt with the model and invoke it with the user's question:
+        chain = prompt | model
+        response = chain.invoke({"question": query})
+        result = response.content
+By piping the prompt into the model (prompt | model), we set up a chain that generates expanded
+queries when invoked with the original query. The response from the model is captured in the
+result object. After receiving the response, we parse and clean the expanded queries:
+        queries_content = result.strip().split(query_expansion_template.
+separator)
+        queries = [query]
+        queries += [
+            query.replace_content(stripped_content)
+            for content in queries_content
+            if (stripped_content := content.strip())
+        ]
+        return queries
+
+We split the result using the separator defined in the template to get individual queries. Starting
+with a list containing the original query, we append each expanded query after stripping any
+extra whitespace.

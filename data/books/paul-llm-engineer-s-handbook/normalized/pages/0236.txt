@@ -1,0 +1,33 @@
+Chapter 5
+205
+        {"instruction": list(instructions), "output": list(answers)}
+    )
+10.	 We can create our instruction dataset by calling this function. Running it over the raw
+data with GPT-4o mini costs less than 0.5$.
+11.	 We can now create a main function to orchestrate the entire pipeline. It loads the raw
+data, creates the instruction dataset, splits it into training and testing sets, and pushes
+the result to the Hugging Face Hub.
+def main(dataset_id: str) -> Dataset:
+    client = OpenAI()
+    # 1. Load the raw data
+    raw_dataset = load_articles_from_json("cleaned_documents.json")
+    print("Raw dataset:")
+    print(raw_dataset.to_pandas())
+    # 2. Create instructiondataset
+instruction_dataset = create_instruction_dataset(raw_dataset,
+client)
+    print("Instruction dataset:")
+    print(instruction_dataset.to_pandas())
+    # 3. Train/test split and export
+    filtered_dataset = instruction_dataset.train_test_split(test_
+size=0.1)
+    filtered_dataset.push_to_hub("mlabonne/llmtwin")
+    return filtered_dataset
+Dataset({
+    features: ['instruction', 'output'],
+    num_rows: 3335
+})
+We obtained 3,335 pairs with this process. You can find our version of the dataset at https://
+huggingface.co/datasets/mlabonne/llmtwin. The Hugging Face Hub provides a convenient
+dataset viewer (see Figure 5.7) to explore instructions and answers and make sure that there are
+no obvious mistakes in these samples.

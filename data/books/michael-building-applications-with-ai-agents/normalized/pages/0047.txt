@@ -1,0 +1,39 @@
+predefined rules (e.g., deciding whether to approve or deny a request based on set
+criteria).
+API-based tools
+API-based tools enable agents to interact with external services or data sources.
+These tools enable agents to extend their capabilities beyond the local environ‐
+ment by fetching real-time data or leveraging third-party systems. For instance, a
+virtual assistant might use an API to pull weather data, stock prices, or social
+media updates, enabling it to provide more contextual and relevant responses to
+user queries.
+Model Context Protocol (MCP)
+MCP-based tools enable agents to provide structured, real-time context to lan‐
+guage models using the Model Context Protocol, a standardized schema for pass‐
+ing external knowledge, memory, and state into the model's prompt. Unlike
+traditional API calls that require full round-trip execution, MCP enables agents
+to inject rich, dynamic context-such as user profiles, conversation history, world
+state, or task-specific metadata-directly into the model's reasoning process
+without invoking separate tools. They are particularly effective in reducing
+redundant tool use, preserving conversational state, and injecting real-time situa‐
+tional awareness into model behavior.
+While local tools enable agents to perform tasks independently using internal logic
+and rule-based functions, such as calculations or data retrieval from local databases,
+API-based tools enable agents to connect with external services. This allows for the
+access of real-time data or third-party systems to provide contextually relevant
+responses and extended functionality.
+Tool Integration and Modularity
+Modular design is critical for tool development. Each tool should be designed as a
+self-contained module that can be easily integrated or replaced as needed. This
+approach enables developers to update or extend the agent's functionality without
+overhauling the entire system. A customer service chatbot might start with a basic set
+of tools for handling simple queries and later have more complex tools (e.g., dispute
+resolution or advanced troubleshooting) added without disrupting the agent's core
+operations.
+Memory
+Memory is an essential component that enables agents to store and retrieve informa‐
+tion, enabling them to maintain context, learn from past interactions, and improve
+decision making over time. Effective memory management ensures that agents can
+Memory
+|
+25

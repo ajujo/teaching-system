@@ -1,0 +1,30 @@
+Por ejemplo, genera un plan que contiene bing_search, pero
+bing_search no está en el inventario de herramientas del
+agente.
+Herramienta válida, parámetros no válidos
+Por ejemplo, llama a lbs_to_kg con dos parámetros.
+lbs_to_kg está en el inventario de herramientas pero solo
+requiere un parámetro, lbs.
+Herramienta válida, valores de parámetros incorrectos
+Por ejemplo, llama a lbs_to_kg con un parámetro, lbs, pero
+utiliza el valor 100 para lbs cuando debería ser 120.
+Otro modo de fracaso de la planificación es el fracaso del objetivo: el
+agente no consigue alcanzar el objetivo. Esto puede deberse a que el plan
+no resuelve una tarea, o a que la resuelve sin seguir las restricciones. A
+modo de ilustración, imagine que le pide al modelo que planifique un viaje
+de dos semanas de San Francisco a Hanoi con un presupuesto de 5000
+dólares. El agente puede planificar un viaje de San Francisco a Ciudad Ho
+Chi Minh, o planificar un viaje de dos semanas de San Francisco a Hanoi
+muy por encima del presupuesto.
+Una limitación común que a menudo se pasa por alto en la evaluación de
+los agentes es el tiempo. En muchos casos, el tiempo que tarda un agente no
+importa tanto, porque puede asignarle una tarea y solo tendrá que
+comprobarla cuando esté hecha. Sin embargo, en muchos casos, el agente
+pierde utilidad con el tiempo. Por ejemplo, si le pide a un agente que
+prepare una propuesta de subvención y el agente la termina después de la
+fecha de cierre de convocatoria, el agente no es muy útil.
+Un modo interesante de fracaso de la planificación es el causado por los
+errores de reflexión. El agente está convencido de que ha realizado una
+tarea cuando no es así. Por ejemplo, le pide al agente que asigne 50
+personas a 30 habitaciones de hotel. El agente podría asignar solo 40
+personas e insistir en que la tarea se ha cumplido.

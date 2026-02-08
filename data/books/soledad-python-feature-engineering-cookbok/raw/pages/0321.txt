@@ -1,0 +1,41 @@
+Extracting Features from Relational Data with Featuretools
+298
+6.	
+Let’s make a list with strings corresponding to the text features we want to create:
+text_primitives = [
+    "num_words",
+    "num_characters",
+    "MeanCharactersPerWord" ,
+    "PunctuationCount"]
+7.	
+Let’s now extract the text features from the description variable:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»data»,
+    agg_primitives=[],
+    trans_primitives=text_primitives,
+    ignore_dataframes=[«invoices»],
+)
+8.	
+Let’s display the names of the created features:
+feature_defs
+In the following output, we see the names of the original features, followed by those created 
+from the description variable:
+[<Feature: customer_id>,
+<Feature: invoice>,
+<Feature: stock_code>,
+<Feature: quantity>,
+<Feature: price>,
+<Feature: MEAN_CHARACTERS_PER_WORD(description)>,
+<Feature: NUM_CHARACTERS(description)>,
+<Feature: NUM_WORDS(description)>,
+<Feature: PUNCTUATION_COUNT(description)>]
+Go ahead and inspect the result by executing feature_matrix.head().
+9.	
+Let’s display a slice of the DataFrame containing the text-derived features:
+text_f = [
+     "NUM_CHARACTERS(description)",
+     "NUM_WORDS(description)",
+     "PUNCTUATION_COUNT(description)",
+]
+feature_matrix[text_f].head()

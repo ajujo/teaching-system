@@ -1,0 +1,28 @@
+DESARROLLO BASADO EN LA EVALUACIÓN
+Mientras algunas empresas persiguen las últimas modas, las decisiones
+empresariales sensatas se siguen tomando basándose en el retorno de la
+inversión, no en el bombo publicitario. Las aplicaciones deben
+demostrar su valor para ser implementadas. Como resultado, las
+aplicaciones empresariales más comunes en producción son aquellas
+con criterios de evaluación claros:
+Los sistemas de recomendación son habituales porque su éxito
+puede evaluarse por el aumento de la participación o de las
+tasas de compra. 1
+El éxito de un sistema de detección de fraudes puede medirse
+por la cantidad de dinero que se ahorra gracias a los fraudes
+evitados.
+La codificación es un caso de uso común de la IA generativa
+porque, a diferencia de otras tareas de generación, el código
+generado puede evaluarse utilizando la corrección funcional.
+Aunque los modelos fundacionales son abiertos, muchos de sus
+casos de uso son cerrados, como la clasificación de
+intenciones, el análisis de sentimientos, la predicción de
+próximas acciones, etc. Es mucho más fácil evaluar tareas de
+clasificación que tareas abiertas.
+Si bien el enfoque de desarrollo basado en la evaluación tiene sentido
+desde una perspectiva empresarial, centrarse únicamente en
+aplicaciones cuyos outputs puedan medirse es similar a buscar la llave
+perdida debajo de la farola (por la noche). Es más fácil hacerlo, pero no
+significa que vayamos a encontrar la llave. Podríamos estar
+perdiéndonos muchas aplicaciones potencialmente revolucionarias
+porque no hay una forma fácil de evaluarlas.

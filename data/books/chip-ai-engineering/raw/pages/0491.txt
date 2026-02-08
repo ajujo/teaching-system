@@ -1,0 +1,28 @@
+NOTA
+El hecho de que la inferencia y el entrenamiento tengan perfiles de
+memoria distintos es una de las razones de la divergencia en los chips para
+el entrenamiento y la inferencia, como se analiza en el Capítulo 9.
+Memoria necesaria para la inferencia
+Durante la inferencia, solo se ejecuta la pasada hacia delante. La pasada
+hacia delante requiere memoria para las ponderaciones del modelo. Sea N
+el número de parámetros del modelo y M la memoria necesaria para cada
+parámetro; la memoria necesaria para cargar los parámetros del modelo
+será:
+N × M
+La pasada hacia delante también requiere memoria para los valores de
+activación. Los modelos de transformadores necesitan memoria para los
+vectores clave-valor del mecanismo de atención. Tanto para los valores de
+activación como para los vectores clave-valor, la memoria crece
+linealmente con la longitud de la secuencia y el tamaño del lote.
+Para muchas aplicaciones, se puede suponer que la memoria para la
+activación y los vectores clave-valor es el 20 % de la memoria para las
+ponderaciones del modelo. Si su aplicación utiliza un contexto más largo o
+un tamaño de lote mayor, se necesitará de hecho más memoria. Esta
+suposición hace que la huella de memoria del modelo sea de:
+N × M × 1.2
+Consideremos un modelo de 13 MM de parámetros. Si cada parámetro
+requiere 2 bytes, las ponderaciones del modelo requerirán 13 MM × 2 bytes
+= 26 GB. La memoria total para la inferencia será de 26 GB × 1.2 = 31.2
+GB.
+La huella de memoria de un modelo crece rápidamente con su tamaño. A
+medida que los modelos se hacen más grandes, la memoria se convierte en

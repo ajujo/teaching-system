@@ -1,0 +1,27 @@
+Data Engineering
+56
+Finally, we will explore how to run the data collection pipeline using ZenML and query the collected data from MongoDB.
+Thus, in this chapter, we will study the following topics:
+•
+Designing the LLM Twin's data collection pipeline
+•
+Implementing the LLM Twin's data collection pipeline
+•
+Gathering raw data into the data warehouse
+By the end of this chapter, you will know how to design and implement an ETL pipeline to extract,
+transform, and load raw data ready to be ingested into the ML application.
+Designing the LLM Twin's data collection pipeline
+Before digging into the implementation, we must understand the LLM Twin's data collection ETL
+architecture, illustrated in Figure 3.1. We must explore what platforms we will crawl to extract
+data from and how we will design our data structures and processes. However, the first step is
+understanding how our data collection pipeline maps to an ETL process.
+An ETL pipeline involves three fundamental steps:
+1.
+We extract data from various sources. We will crawl data from platforms like Medium,
+Substack, and GitHub to gather raw data.
+2.	 We transform this data by cleaning and standardizing it into a consistent format suitable
+for storage and analysis.
+3.
+We load the transformed data into a data warehouse or database.
+For our project, we use MongoDB as our NoSQL data warehouse. Although this is not a standard
+approach, we will explain the reasoning behind this choice shortly.

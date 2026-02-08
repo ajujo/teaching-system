@@ -1,0 +1,16 @@
+figura 6-2. Una arquitectura RAG básica.
+En el artículo original sobre la RAG, Lewis et al. entrenaron juntos el
+recuperador y el modelo generativo. En los sistemas RAG actuales, estos
+dos componentes suelen entrenarse por separado, y muchos equipos
+construyen sus sistemas de RAG utilizando recuperadores y modelos
+disponibles en el mercado. Sin embargo, afinar todo el sistema RAG en su
+conjunto puede mejorar significativamente su rendimiento.
+El éxito de un sistema RAG depende de la calidad de su recuperador. Un
+recuperador tiene dos funciones principales: indexar y consultar. La
+indexación implica procesar los datos para poder recuperarlos rápidamente
+más tarde. Enviar una consulta para recuperar datos relevantes para ella se
+denomina consultar. La forma de indexar los datos depende de cómo se
+quieran recuperar posteriormente.
+Ahora que ya hemos estudiado los componentes principales, veamos un
+ejemplo de cómo funciona un sistema RAG. Para simplificar, supongamos
+que la memoria externa es una base de datos de documentos, como los

@@ -1,0 +1,37 @@
+Chapter 8
+341
+In a complete implementation, you would prepare a vector store with relevant financial documents,
+create appropriate prompt templates, and configure the retrieval and response generation com­
+ponents. The concepts and techniques for building robust RAG systems are covered extensively in
+Chapter 4, which provides step-by-step guidance on document processing, embedding creation,
+vector store setup, and chain construction.
+We can make changes to our chain and evaluate changes in the application. Does the change
+improve the result or not? Changes can be in any part of our application, be it a new model, a new
+prompt template, or a new chain or agent. We can run two versions of the application with the
+same input examples and save the results of the runs. Then we evaluate the results by comparing
+them side by side.
+To run an evaluation on a dataset, we can either specify an LLM or-for parallelism-use a con­
+structor function to initialize the model or LLM app for each input. Now, to evaluate the perfor­
+mance against our dataset, we need to define an evaluator as we saw in the previous section:
+from langchain.smith import RunEvalConfig
+# Define evaluation criteria specific to RAG systems
+evaluation_config = RunEvalConfig(
+evaluators=[
+        {
+            "criteria": {
+                "factual_accuracy": "Does the response contain only
+factually correct information consistent with the reference answer?"
+            },
+            "evaluator_type": "criteria"
+        },
+        {
+            "criteria": {
+                "groundedness": "Is the response fully supported by the
+retrieved documents without introducing unsupported information?"
+            },
+            "evaluator_type": "criteria"
+        },
+        {
+            "criteria": {
+                "retrieval_relevance": "Are the retrieved documents
+relevant to answering the question?"

@@ -1,0 +1,45 @@
+       # Build the state graph
+       builder = StateGraph(MessagesState)
+       builder.add_node("generate_insight", call_model)
+       builder.add_edge(START, "generate_insight")
+       graph = builder.compile()
+       # Invoke the graph with the messages
+       result = graph.invoke({"messages": messages})
+       # Extract the generated insight
+       generated_insight = result["messages"][-1].content
+       self.insights.append(generated_insight)
+       print(f"Generated: {generated_insight}")
+       return generated_insight
+This may work well when we have a small number of examples to learn from, but
+what if we have many? This technique offers a simple but effective way to manage
+this: the insights generated are regularly reevaluated and adjusted in relative impor‐
+tance to the other rules. For example, a sample prompt to reflect on previous actions
+to generate new rules that improve performance on future trials could be:
+By examining and contrasting to the successful trial, and the list of existing rules, you
+can perform the following operations: add, edit, remove, or agree so that the new list of
+rules is GENERAL and HIGH LEVEL critiques of the failed trial or proposed way of
+Thought so they can be used to avoid similar failures when encountered with different
+questions in the future. Have an emphasis on critiquing how to perform better
+Thought and Action. (ExpeL)
+These learned rules are then regularly reevaluated and adjusted in importance relative
+to the other rules derived from experience. The methodology for evaluating and
+improving the existing rules is as follows:
+The available operations are: AGREE (if the existing rule is strongly relevant for the
+task), REMOVE (if one existing rule is contradictory or similar/duplicated to other exist‐
+ing rules), EDIT (if any existing rule is not general enough or can be enhanced), ADD
+(introduce new rules that are distinct from existing rules and relevant for other tasks).
+Each needs to closely follow their corresponding formatting as follows (any existing
+rule not edited, not agreed upon, or not removed is considered copied):
+AGREE <EXISTING RULE NUMBER>: <EXISTING RULE>
+REMOVE <EXISTING RULE NUMBER>: <EXISTING RULE>
+EDIT <EXISTING RULE NUMBER>: <NEW MODIFIED RULE>
+ADD <NEW RULE NUMBER>: <NEW RULE>
+This process is a bit more involved, but it still relies on manageable logic. Specifically,
+this process enables helpful insights to be dynamically improved upon in subsequent
+experiences. This process is illustrated in Figure 7-4, in which the model is used to
+extract insights from pairs of successful and unsuccessful examples, and in which
+insights are promoted and demoted over time, distilling out a small list of insights
+that are used to guide and improve the performance of the agent.
+Nonparametric Learning 
+| 
+143

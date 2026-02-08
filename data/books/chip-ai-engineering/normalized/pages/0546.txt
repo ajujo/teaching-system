@@ -1,0 +1,33 @@
+21 Una anécdota personal: gran parte del trabajo de mi equipo en NVIDIA se
+centró en el entrenamiento de precisión mixta. Véase "Mixed Precision Training
+for NLP and Speech Recognition with OpenSeq2Seq" (Huyen et al., NVIDIA
+Developer Technical Blog, octubre de 2018).
+22 En el afinado parcial, es habitual ajustar las capas más cercanas a la capa de
+output porque suelen ser más específicas de la tarea, mientras que las capas
+anteriores tienden a capturar características más generales,
+23 Nunca he conocido a una sola persona que pudiera explicarme, in situ, las
+diferencias entre estas técnicas.
+24 Para utilizar eficazmente LoRA para un modelo, es necesario comprender la
+arquitectura de ese modelo. En el Capítulo 2 ya se abordó la composición de
+ponderaciones de algunos modelos basados en transformadores. Para conocer la
+composición de ponderaciones exacta de un modelo, consulte su artículo.
+25 En el momento de escribir esto, algunos marcos de ajuste como Fireworks solo
+permiten un rango LoRA máximo de 32. No obstante, es menos probable que
+esta limitación se deba al rendimiento y más probable que se deba a las
+limitaciones de memoria de su disco duro.
+26 Busque estos adaptadores mediante las etiquetas "adapter", "peft" o "LoRA".
+27 QLoRA no es el único trabajo de LoRA cuantizado. Muchos laboratorios de
+investigación han estado trabajando en LoRA cuantizado sin discutirlo
+públicamente.
+28 Mi libro Designing Machine Learning Systems tiene una sección sobre "ML en
+la Nube y en el Perímetro".
+29 Puede obtener más información sobre los métodos de ensamble en mi libro
+Designing Machine Learning Systems.
+30 El promediado no solo funciona con ponderaciones, también con
+incrustaciones. Por ejemplo, dada una frase, puede utilizar un algoritmo de
+incrustación de palabras para generar un vector de incrustación para cada
+palabra de la frase y, a continuación, promediar todas estas incrustaciones de
+palabras en una incrustación de frase. Cuando empecé en ML, no podía creer
+que promediar pareciera funcionar sin más. Es mágico que unos componentes
+sencillos, utilizados correctamente, puedan crear algo tan maravillosamente
+desconcertante como la IA.

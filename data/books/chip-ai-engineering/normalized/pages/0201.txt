@@ -1,0 +1,34 @@
+from typing import List
+def has_close_elements(numbers: List[float], threshold: float) ->
+bool:
+      """ Check if in given list of numbers, are any two numbers
+closer to each
+      other than given threshold.
+      >>> has_close_elements([1.0, 2.0, 3.0], 0.5) False
+      >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+True
+      """
+Casos de prueba (cada instrucción assert representa un caso de
+prueba)
+def check(candidate):
+      assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3) == True
+      assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05) ==
+False
+      assert candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.95) == True
+      assert candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.8) == False
+      assert candidate([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], 0.1) == True
+      assert candidate([1.1, 2.2, 3.1, 4.1, 5.1], 1.0) == True
+      assert candidate([1.1, 2.2, 3.1, 4.1, 5.1], 0.5) == False
+Al evaluar un modelo, para cada problema se genera un número de
+muestras de código, denotado como k. Un modelo resuelve un problema si
+cualquiera de las k muestras de código que ha generado supera todos los
+casos de prueba de ese problema. La puntuación final, denominada pass@k,
+es la fracción de problemas resueltos de entre todos los problemas. Si hay
+10 problemas y un modelo resuelve 5 con k = 3, entonces la puntuación
+pass@3 de ese modelo es del 50 %. Cuantas más muestras de código genere
+un modelo, más posibilidades tendrá de resolver cada problema y, por tanto,
+mayor será la puntuación final. Esto significa que, según las expectativas, la
+puntuación de pass@1 debería ser inferior a la de pass@3, que, a su vez,
+debería ser inferior a la de pass@10.
+Otra categoría de tareas cuya corrección funcional puede evaluarse
+automáticamente son los robots de juego. Si crean un bot para jugar al

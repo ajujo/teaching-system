@@ -1,0 +1,38 @@
+Extracting Features from Relational Data with Featuretools
+288
+Finally, we did not want features created from the variables in the invoices DataFrame; thus, we
+set dfs to ignore this DataFrame by setting ignore_dataframes = ["invoices"].
+The dfs class returned two variables, the DataFrame with the original and new features, and the
+name of the features in a list. The new features are named with the operations applied to create them,
+such as SINE, COSINE, CUM_MAX, or DIFF, followed by the variable to which the transformation
+was applied and, when corresponding, the variable that was used for grouping.
+Note that featuretools automatically recognizes and selects the variables over which the
+transformations should be applied. The sine, cosine, cumulative sum, maximum, and difference were
+applied to numerical variables, whereas the time_since_previous transformation was applied
+to the datetime variable.
+Combining numerical features
+In Chapter 8, Creating New Features, we saw that we can create new features by combining variables
+with mathematical operations. The featuretools library supports several operations for combining
+variables, including addition, division, modulo, and multiplication. In this recipe, we will learn how
+to combine these features with featuretools.
+How to do it...
+Let's begin by importing the libraries and getting the dataset ready:
+1.
+First, we'll import pandas, featuretools, and the Categorical logical type:
+import pandas as pd
+import featuretools as ft
+from woodwork.logical_types import Categorical
+2.
+Let's load the dataset that described in the Technical requirements section:
+df = pd.read_csv(
+    «retail.csv», parse_dates=[«invoice_date»])
+3.
+Let's set up an entity set:
+es = ft.EntitySet(id="data")
+4.
+Let's add the DataFrame to the entity set:
+es = es.add_dataframe(
+    dataframe=df,
+    dataframe_name=»data»,
+    index="rows",
+    make_index=True,

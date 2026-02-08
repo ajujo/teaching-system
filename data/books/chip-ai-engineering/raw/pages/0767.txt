@@ -1,0 +1,23 @@
+– preferir, Afinado de preferencias
+– síntesis de datos, Síntesis de datos con IA, Síntesis de datos de
+instrucción
+llamada a funciones, Generación de planes
+llenado previo, Arquitectura de transformador
+llenado previo, desacoplamiento de la decodificación, Desacoplamiento del
+llenado previo y la decodificación
+LLM como juez, Introducción a la incrustación
+– (ver también la IA como juez)
+LMM (gran modelo multimodal), De los grandes modelos lingüísticos a los
+modelos fundacionales
+logprobs, Temperatura, Seleccionar métodos de evaluación
+longitud del contexto, Longitud y eficacia del contexto
+longitud del contexto y eficacia del contexto, Longitud y eficacia del
+contexto
+LoRA (adaptación de bajo rango), Técnicas PEFT
+– configuraciones, ¿Por qué funciona LoRA?
+– LoRA cuantizado (QLoRA), Servir adaptadores LoRA
+– mecanismo de operación, LoRA
+– servicio de adaptadores LoRA, Configuraciones LoRA
+LoRA cuantizado (QLoRA), Servir adaptadores LoRA
+LSH (hash sensible a la localización), Recuperación basada en
+incrustaciones

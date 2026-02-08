@@ -1,0 +1,32 @@
+Chapter 5
+219
+Now, it’s time to define our nodes and edges:
+from typing import Literal
+from langgraph.graph import StateGraph, START, END
+final_prompt = PromptTemplate.from_template(
+   "You're a helpful assistant that has executed on a plan."
+   "Given the results of the execution, prepare the final response.\n"
+   "Don't assume anything\nTASK:\n{task}\n\nPLAN WITH RESUlTS:\n{plan}\n"
+   "FINAL RESPONSE:\n"
+)
+async def _build_initial_plan(state: PlanState) -> PlanState:
+ plan = await planner.ainvoke(state["task"])
+ return {"plan": plan}
+async def _run_step(state: PlanState) -> PlanState:
+ plan = state["plan"]
+ current_step = get_current_step(state)
+ step = await execution_agent.ainvoke({"plan": get_full_plan(plan), 
+"step": plan.steps[current_step], "task": state["task"]})
+ return {"past_steps": [step["messages"][-1].content]}
+async def _get_final_response(state: PlanState) -> PlanState:
+ final_response = await (final_prompt | llm).ainvoke({"task": 
+state["task"], "plan": get_full_plan(state)})
+ return {"final_response": final_response}
+def _should_continue(state: PlanState) -> Literal["run", "response"]:
+ if get_current_step(plan) < len(state["plan"].steps):
+   return "run"
+ return "final_response"
+And put together the final graph:
+builder = StateGraph(PlanState)
+builder.add_node("initial_plan", _build_initial_plan)
+builder.add_node("run", _run_step)

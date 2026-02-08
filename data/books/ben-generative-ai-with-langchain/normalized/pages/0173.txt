@@ -1,0 +1,32 @@
+Building Intelligent RAG Systems
+146
+Maximum marginal relevance
+Another powerful approach is Maximum Marginal Relevance (MMR), which balances document
+relevance with diversity, ensuring that the retrieved set contains varied perspectives rather than
+redundant information:
+from langchain_community.vectorstores import FAISS
+vector_store = FAISS.from_documents(documents, embeddings)
+mmr_results = vector_store.max_marginal_relevance_search(
+    query="What are transformer models?",
+    k=5,            # Number of documents to return
+    fetch_k=20,     # Number of documents to initially fetch
+    lambda_mult=0.5  # Diversity parameter (0 = max diversity, 1 = max
+relevance)
+)
+Context processing techniques are especially valuable when dealing with lengthy documents
+where only portions are relevant, or when providing comprehensive coverage of a topic requires
+diverse viewpoints. They help reduce noise in the generator's input and ensure that the most
+valuable information is prioritized.
+The final area for RAG enhancement focuses on improving the generated response itself, ensuring
+it's accurate, trustworthy, and useful.
+Response enhancement: Improving generator output
+These response enhancement techniques are particularly important in applications where accura­
+cy and transparency are paramount, such as educational resources, healthcare information, or legal
+advice. They help build user trust by making AI-generated content more verifiable and reliable.
+Let's first assume we have some documents as our knowledge base:
+from langchain_core.documents import Document
+# Example documents
+documents = [
+    Document(
+        page_content="The transformer architecture was introduced in the
+paper 'Attention is All You Need' by Vaswani et al. in 2017.",

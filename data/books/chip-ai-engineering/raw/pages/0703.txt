@@ -1,0 +1,28 @@
+Registrarlo todo significa que la cantidad de registros que tiene puede
+crecer muy rápidamente. Muchas herramientas de análisis automatizado de
+registros y detección de anomalías se basan en IA.
+Aunque es imposible procesar los registros manualmente, resulta útil
+inspeccionar manualmente los datos de producción a diario para hacerse
+una idea de cómo utilizan los usuarios la aplicación. Shankar et al., (2024)
+descubrieron que las percepciones de los desarrolladores sobre lo que
+constituyen outputs buenos y malos cambian a medida que interactúan con
+más datos, lo que les permite tanto reescribir sus prompts para aumentar la
+probabilidad de buenas respuestas como actualizar su proceso de evaluación
+para detectar las malas respuestas.
+Si los registros son una serie de eventos inconexos, los rastros se
+reconstruyen enlazando los eventos relacionados para formar una línea
+temporal completa de una transacción o proceso, mostrando cómo se
+conecta cada paso de principio a fin. En resumen, un rastro es el registro
+detallado de la ruta de ejecución de una solicitud a través de varios
+componentes y servicios del sistema. En una aplicación de IA, el rastreo
+revela todo el proceso, desde que un usuario envía una consulta hasta que se
+devuelve la respuesta final, incluyendo las acciones que realiza el sistema,
+los documentos recuperados y el prompt final enviado al modelo. También
+debe mostrar cuánto tiempo lleva cada paso y su costo asociado, si se
+pueden medir. La Figura 10-11 es una visualización del rastro de una
+solicitud en LangSmith.
+Lo ideal sería poder rastrear paso a paso la transformación de cada consulta
+a través del sistema. Si una consulta falla, debe poder señalar el paso exacto
+en el que se ha cometido el error: si se ha procesado incorrectamente, si el
+contexto recuperado era irrelevante o si el modelo ha generado una
+respuesta errónea.

@@ -1,0 +1,10 @@
+figura 2-19. OpenAI (2021) descubrió que muestrear más outputs conducía a un mejor
+rendimiento, pero solo hasta 400 outputs.
+También puede utilizar la heurística específica de la aplicación para
+seleccionar la mejor respuesta. Por ejemplo, si su solicitud se beneficia de
+respuestas más breves, puede elegir al candidato más breve. Si su aplicación
+convierte el lenguaje natural en consultas SQL, puede hacer que el modelo
+siga generando outputs hasta que genere una consulta SQL válida.
+Una aplicación especialmente interesante del cómputo de tiempo de prueba
+es superar el reto de la latencia. Para algunas consultas, especialmente las
+de cadena de pensamiento, un modelo puede tardar mucho tiempo en

@@ -1,0 +1,15 @@
+Chapter 2
+39
+Artifacts and metadata
+As mentioned in the previous section, ZenML transforms any step output into an artifact. First, 
+let’s quickly understand what an artifact is. In MLOps, an artifact is any file(s) produced during 
+the machine learning lifecycle, such as datasets, trained models, checkpoints, or logs. Artifacts 
+are crucial for reproducing experiments and deploying models. We can transform anything into 
+an artifact. For example, the model registry is a particular use case for an artifact. Thus, artifacts 
+have these unique properties: they are versioned, sharable, and have metadata attached to them 
+to understand what’s inside quickly. For example, when wrapping your dataset with an artifact, 
+you can add to its metadata the size of the dataset, the train-test split ratio, the size, types of labels, 
+and anything else useful to understand what’s inside the dataset without actually downloading it.
+Let’s circle back to our digital_data_etl pipeline example, where we had as a step output an ar-
+tifact, the crawled links, which are an artifact, as seen in Figure 2.7
+Figure 2.7: ZenML artifact example using the digital_data_etl pipeline as an example

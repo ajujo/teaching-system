@@ -1,0 +1,32 @@
+Extracting Features from Date and Time Variables
+188
+There's more...
+We can also extract microseconds and nanoseconds with the following pandas properties:
+•	 pandas.Series.dt.microsecond
+•	 pandas.Series.dt.nanosecond
+For more details, visit https://pandas.pydata.org/pandas-docs/stable/user_
+guide/timeseries.html#time-date-components.
+Capturing the elapsed time between datetime variables
+We can extract powerful features from each datetime variable individually, as we did in the
+previous two recipes. We can create additional features by combining multiple datetime variables.
+A common example consists of extracting the age at the time of an event by comparing the date of
+birth with the date of the event.
+In this recipe, we will learn how to capture the time between two datetime variables by utilizing
+pandas and feature-engine.
+How to do it...
+To proceed with this recipe, we'll create a DataFrame containing two datatime variables:
+1.
+Let's begin by importing pandas, numpy, and datetime:
+import datetime
+import numpy as np
+import pandas as pd
+2.
+We'll start by creating two datetime variables with 20 values each; the values start from 2024-
+05-17 and increase in intervals of 1 hour for the first variable, and 1 month for the second.
+Then, we'll capture the variables in a DataFrame, add column names, and display the top rows:
+date = "2024-05-17"
+rng_hr = pd.date_range(date, periods=20, freq="h")
+rng_month = pd.date_range(date, periods=20, freq="ME")
+df = pd.DataFrame(
+    {"date1": rng_hr, "date2": rng_month})
+df.head()

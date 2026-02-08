@@ -1,0 +1,33 @@
+Evaluation and Testing
+316
+In conclusion, rigorous and well-governed evaluation is an integral part of the LLM agent devel­
+opment lifecycle. By implementing structured frameworks that consider technical performance,
+user value, and organizational alignment, teams can ensure these systems deliver benefits effec­
+tively while mitigating risks. The subsequent sections will delve into evaluation methodologies,
+including concrete examples relevant to developers working with tools like LangChain.
+Building on the foundational principles of LLM agent evaluation and the importance of establish­
+ing robust governance, we now turn to the practical realities of assessment. Developing reliable
+agents requires a clear understanding of what aspects of their behavior need to be measured and
+how to apply effective techniques to quantify their performance. The upcoming sections provide a
+detailed guide on the what and how of evaluating LLM agents, breaking down the core capabilities
+you should focus on and the diverse methodologies you can employ to build a comprehensive
+evaluation framework for your applications.
+What we evaluate: core agent capabilities
+At the most fundamental level, an LLM agent's value is tied directly to its ability to successfully
+accomplish the tasks it was designed for. If an agent cannot reliably complete its core function,
+its utility is severely limited, regardless of how sophisticated its underlying model or tools are.
+Therefore, this task performance evaluation forms the cornerstone of agent assessment. In the next
+subsection, we'll explore the nuances of measuring task success, looking at considerations relevant
+to assessing how effectively your agent executes its primary functions in real-world scenarios.
+Task performance evaluation
+Task performance forms the foundation of agent evaluation, measuring how effectively an agent
+accomplishes its intended goals. Successful agents demonstrate high task completion rates while
+producing relevant, factually accurate responses that directly address user requirements. When
+evaluating task performance, organizations typically assess both the correctness of the final
+output and the efficiency of the process used to achieve it.
+TaskBench (Shen and colleagues., 2023) and AgentBench (Liu and colleagues, 2023) provide
+standardized multi-stage evaluations of LLM-powered agents. TaskBench divides tasks into
+decomposition, tool selection, and parameter prediction, then reports that models like GPT-4
+exceed 80% success on single-tool invocations but drop to around 50% on end-to-end task auto­
+mation. AgentBench's eight interactive environments likewise show top proprietary models vastly
+outperform smaller open-source ones, underscoring cross-domain generalization challenges.

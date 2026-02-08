@@ -1,0 +1,16 @@
+Figure 3-1. AI-enabled terminal interface. A demonstration of an AI-augmented termi‐
+nal, where natural language inputs are interpreted into executable commands. Such
+interfaces transform the traditional command line into an intelligent conversational
+partner for system operations and development workflows.
+However, a key limitation of text-based interfaces is discoverability. Users often do
+not know what capabilities the agent supports or how to phrase commands effec‐
+tively. Unlike graphical interfaces—where options, buttons, and menus visually indi‐
+cate what actions are possible—text-based interfaces require users to guess or recall
+available functionalities. This lack of affordances can lead to confusion, underutiliza‐
+tion of agent capabilities, and user frustration when their requests fall outside the
+agent’s supported scope. For example, a user might ask a support chatbot to modify
+an order detail that the system does not support, receiving an opaque rejection rather
+than guidance toward what is possible.
+44 
+| 
+Chapter 3: User Experience Design for Agentic Systems

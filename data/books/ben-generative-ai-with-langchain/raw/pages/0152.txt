@@ -1,0 +1,13 @@
+Chapter 4
+125
+This example demonstrates the fundamental tradeoff in vector indexing: exact search guarantees 
+finding the true nearest neighbors but takes longer, while HNSW provides approximate results 
+significantly faster. The overlap percentage shows how many of the same nearest neighbors were 
+found by both methods.
+For small datasets like this example (10,000 vectors), the absolute time difference is minimal. 
+However, as your dataset grows to millions or billions of vectors, exact search becomes prohib­
+itively expensive, while HNSW maintains logarithmic scaling—making approximate indexing 
+methods essential for production RAG systems.
+Here’s a diagram that can help developers choose the right indexing strategy based on their 
+requirements:
+Figure 4.2: Choosing an indexing strategy

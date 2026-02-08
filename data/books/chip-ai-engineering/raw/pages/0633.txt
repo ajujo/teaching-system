@@ -1,0 +1,32 @@
+es crucial cuando se trabaja con modelos de IA que impliquen grandes
+matrices de ponderaciones y datos de entrenamiento. Estas grandes
+cantidades de datos deben moverse con rapidez para mantener los núcleos
+ocupados de forma eficiente. Por tanto, la memoria de la GPU debe tener
+mayor ancho de banda y menor latencia que la memoria de la CPU y, en
+consecuencia, requiere tecnologías de memoria más avanzadas. Este es uno
+de los factores que hace que la memoria de la GPU sea más cara que la de
+la CPU.
+Más específicamente, las CPU suelen utilizar SDRAM DDR (memoria
+dinámica de acceso aleatorio síncrona de doble velocidad de datos), que
+tiene una estructura 2D. Las GPU, sobre todo las de gama alta, suelen
+utilizar HBM (memoria de gran ancho de banda), que tiene una estructura
+apilada en 3D. 17
+La memoria de un acelerador se mide por su tamaño y ancho de banda.
+Estas cifras deben evaluarse dentro del sistema del que forma parte un
+acelerador. Un acelerador, como una GPU, suele interactuar con tres niveles
+de memoria, tal y como se visualiza en la Figura 9-7:
+Memoria de la CPU (DRAM)
+Los aceleradores suelen instalarse junto a las CPU, lo que les
+da acceso a la memoria de la CPU (también conocida como
+memoria del sistema, memoria host o simplemente DRAM
+de la CPU).
+La memoria de la CPU suele tener el menor ancho de banda
+entre estos tipos de memoria, con velocidades de
+transferencia de datos que oscilan entre 25 GB/s y 50 GB/s. El
+tamaño de la memoria de la CPU varía. Las laptops
+promedio pueden tener entre 16 y 64 GB, mientras que las
+estaciones de trabajo de gama alta pueden tener un TB o
+más.
+Memoria de gran ancho de banda (HBM) de la GPU
+Se trata de la memoria dedicada a la GPU, situada cerca de la
+GPU para un acceso más rápido que la memoria de la CPU.

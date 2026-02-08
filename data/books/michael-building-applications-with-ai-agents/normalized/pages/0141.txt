@@ -1,0 +1,40 @@
+Semantic Memory and Vector Stores
+Semantic memory, a type of long-term memory that involves the storage and retrieval
+of general knowledge, concepts, and past experiences, plays a critical role in enhanc‐
+ing the cognitive capabilities of these systems. This allows for information and past
+experiences to be stored and then efficiently retrieved when they are needed to
+improve performance later on. The leading way to do this is by using vector data‐
+bases, which enable rapid indexing and retrieval at large scale, enabling agentic sys‐
+tems to understand and respond to queries with greater depth and relevance.
+Introduction to Semantic Search
+Unlike traditional keyword-based search, semantic search aims to understand the
+context and intent behind a query, leading to more accurate and meaningful retrieval
+results. At its core, semantic search focuses on the meaning of words and phrases
+rather than their exact match. It leverages ML techniques to interpret the context,
+synonyms, and relationships between words. This enables the retrieval system to
+comprehend the intention and deliver results that are contextually relevant, even if
+they don't contain the exact search terms.
+The foundation for these approaches is embeddings, which are vector representations
+of words that capture the words' meanings based on their usage in large text corpora.
+By projecting large bodies of text into a dense numeric representation, we can create
+rich representations that have proven to be very useful for storage and retrieval. Pop‐
+ular models like Word2Vec, GloVe, and BERT have revolutionized how machines
+understand language by placing semantically similar words closer together in a highdimensional space. Large language models (LLMs) have further improved the perfor‐
+mance of these embedding models across a wide range of types of text by increasing
+the size of the embedding model and the quantity and variety of data on which they
+are trained. Semantic search has proven to be an invaluable technique to improve the
+performance of memory within agentic systems, particularly in retrieving semanti‐
+cally relevant information across documents that do not share exact keywords.
+Implementing Semantic Memory with Vector Stores
+We begin by generating semantic embeddings for the concepts and knowledge to be
+stored. These embeddings are typically produced by foundation models or other nat‐
+ural language processing (NLP) techniques that encode textual information into
+dense vector representations. These vector representations, or embeddings, capture
+the semantic properties and relationships of data points in a continuous vector space.
+For example, a sentence describing a historical event can be converted into a vector
+that captures its semantic meaning. Once we have this vector representation, we need
+a place to efficiently store it. That place is a vector database, which is designed specifi‐
+cally to efficiently handle high-dimensional vector representations of data.
+Semantic Memory and Vector Stores
+|
+119

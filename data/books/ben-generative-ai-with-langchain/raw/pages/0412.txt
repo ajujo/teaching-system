@@ -1,0 +1,35 @@
+Chapter 9
+385
+        }
+    },
+    {
+        "model_name": "gpt-4",
+        "litellm_params": {
+            "model": "openai/gpt-4",  # Automatic fallback option
+            "api_key": os.getenv("OPENAI_API_KEY"),
+        }
+    }
+]
+# Setup router with reliability features
+router = Router(
+    model_list=model_list,
+    routing_strategy="usage-based-routing-v2",
+    cache_responses=True,          # Enable caching
+    num_retries=3                  # Auto-retry failed requests
+)
+# Create LangChain LLM with router
+router_llm = ChatLiteLLMRouter(router=router, model_name="gpt-4")
+# Build and use a LangChain
+prompt = PromptTemplate.from_template("Summarize: {text}")
+chain = LLMChain(llm=router_llm, prompt=prompt)
+result = chain.invoke({"text": "LiteLLM provides reliability for LLM 
+applications"})
+Make sure you set up the OPENAI_API_KEY and ANTHROPIC_API_KEY environment variables 
+for this to work.
+LiteLLM’s production features include intelligent load balancing (weighted, usage-based, and 
+latency-based), automatic failover between providers, response caching, and request retry mecha­
+nisms. This makes it invaluable for mission-critical LangChain applications that need to maintain 
+high availability even when individual LLM providers experience issues or rate limits
+For more implementation examples of serving a self-hosted model or quantized 
+model, refer to Chapter 2, where we covered the core development environment 
+setup and model integration patterns.

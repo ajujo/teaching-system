@@ -1,0 +1,42 @@
+Chapter 4
+135
+These are the chunks:
+['# Introduction to RAG\nRetrieval-Augmented Generation (RAG) combines
+retrieval systems with generative AI models. It helps address
+hallucinations by grounding responses in retrieved information. ## Key
+Components\nRAG consists of several components:\n1. Document processing\
+n2. Vector embedding\n3. Retrieval\n4.',
+ 'Augmentation\n5. Generation\n\n### Document Processing\nThis step
+involves loading and chunking documents appropriately. ']
+Here's how the SemanticChunker works:
+1.
+Splits text into sentences
+2.
+Creates embeddings for groups of sentences (determined by buffer_size)
+3.
+Measures semantic similarity between adjacent groups
+4.
+Identifies natural breakpoints where topics or concepts change
+5.
+Creates chunks that preserve semantic coherence
+You may use semantic chunking for complex technical documents where semantic cohesion
+is crucial for accurate retrieval and when you're willing to spend additional compute/costs on
+embedding generation.
+Benefits include chunk creation based on actual meaning rather than superficial text features
+and keeping related concepts together even when they span traditional separator boundaries.
+Agent-based chunking
+This experimental approach uses LLMs to intelligently divide text based on semantic analysis
+and content understanding in the following manner:
+1.
+Analyze the document's structure and content
+2.
+Identify natural breakpoints based on topic shifts
+3.
+Determine optimal chunk boundaries that preserve meaning
+4.
+Return a list of starting positions for creating chunks
+This type of chunking can be useful for exceptionally complex documents where standard splitting
+methods fail to preserve critical relationships between concepts. This approach is particularly
+useful when:
+•
+Documents contain intricate logical flows that need to be preserved

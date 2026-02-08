@@ -1,0 +1,33 @@
+los primeros prompt que se les ocurran y es poco probable que empleen
+técnicas de prompting sofisticadas.
+Entre los 33 000 prompts publicados por LMSYS Chatbot Arena en 2023,
+180 de ellos son "hello" y "hi", que representan el 0.55 % de los datos, y
+esto sin contar también variaciones como "hello!", "hello". , "hola", "hey",
+etc. Hay muchos acertijos. La pregunta "X tiene 3 hermanas, cada una tiene
+un hermano. ¿Cuántos hermanos tiene X?" se preguntó 44 veces.
+Los prompts sencillos son fáciles de responder, lo que dificulta diferenciar
+el rendimiento de los modelos. Evaluar modelos utilizando demasiados
+prompts simples puede contaminar el ranking.
+Si un tablero de clasificación público no admite la construcción de
+contextos sofisticados, por ejemplo, el aumento del contexto con
+documentos relevantes recuperados de sus bases de datos internas, su
+ranking no reflejará lo bien que podría funcionar un modelo para su sistema
+RAG. La capacidad para generar buenas respuestas es diferente de la
+capacidad de recuperar los documentos más relevantes.
+Una posible forma de imponer la normalización es limitar a los usuarios a
+un conjunto de prompts predeterminados. Sin embargo, esto podría afectar a
+la capacidad del tablero de clasificación para captar diversos casos de uso.
+En su lugar, LMSYS permite a los usuarios utilizar cualquier prompt, pero
+luego filtrar los prompts difíciles utilizando su modelo interno y clasificar
+los modelos utilizando solo estos prompts difíciles.
+Otra forma es recurrir únicamente a evaluadores en los que podamos
+confiar. Podemos capacitar a los evaluadores sobre los criterios para
+comparar dos respuestas o para que utilicen prompts prácticos y técnicas de
+prompting sofisticadas. Este es el enfoque que utiliza Scale con su tablero
+de clasificación comparativa privada. El inconveniente de este enfoque es
+que es caro y puede reducir mucho el número de comparaciones que
+podemos obtener.
+Otra opción es incorporar la evaluación comparativa a sus productos y dejar
+que los usuarios evalúen los modelos durante sus flujos de trabajo. Por
+ejemplo, para la tarea de generación de código, puede sugerir a los usuarios
+dos fragmentos de código dentro del editor de código del usuario y dejar

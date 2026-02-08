@@ -1,0 +1,30 @@
+Working with Outliers
+154
+•	 Using the median absolute deviation to find outliers
+•	 Removing outliers
+•	 Bringing outliers back within acceptable limits
+•	 Applying winsorization
+Technical requirements
+In this chapter, we will use the Python numpy, pandas, matplotlib, seaborn, and featureengine libraries.
+Visualizing outliers with boxplots and the inter-quartile
+proximity rule
+A common way to visualize outliers is by using boxplots. Boxplots provide a standardized display of the
+variable's distribution based on quartiles. The box contains the observations within the first and third
+quartiles, known as the Inter-Quartile Range (IQR). The first quartile is the value below which 25%
+of the observations lie (equivalent to the 25th percentile), while the third quartile is the value below
+which 75% of the observations lie (equivalent to the 75th percentile). The IQR is calculated as follows:
+IQR  =  3rd quartile − 1st quartile
+Boxplots also display whiskers, which are lines that protrude from each end of the box toward the
+minimum and maximum values and up to a limit. These limits are given by the minimum or maximum
+value of the distribution or, in the presence of extreme values, by the following equations:
+upper limit  =  3rd quartile + IQR × 1.5
+lower limit  =  1st quartile − IQR × 1.5
+According to the IQR proximity rule, we can consider a value an outlier if it falls beyond the whisker
+limits determined by the previous equations. In boxplots, outliers are indicated as dots.
+Note
+If the variable has a normal distribution, about 99% of the observations will be located within
+the interval delimited by the whiskers. Hence, we can treat values beyond the whiskers as
+outliers. Boxplots are, however, non-parametric, which is why we also use them to visualize
+outliers in skewed variables.
+In this recipe, we'll begin by visualizing the variable distribution with boxplots, and then we'll calculate
+the whisker's limits manually to identify the points beyond which we could consider a value as an outlier.

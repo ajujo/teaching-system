@@ -1,0 +1,34 @@
+Finding extreme values for imputation
+19
+    variables=["A2", "A3", "A8", "A11"],
+)
+Note
+ArbitraryNumberImputer() will automatically select all numerical variables in the 
+train set for imputation if we set the variables parameter to None.
+5.	
+Finally, let’s replace the missing values with 99:
+X_train = imputer.fit_transform(X_train)
+X_test = imputer.transform(X_test)
+Note
+To impute different variables with different numbers, set up ArbitraryNumberImputer() 
+as follows: ArbitraryNumberImputer(imputater_dict = {"A2": -1, "A3": 
+-1, "A8": 999, "A11": 9999}).
+We have now replaced missing data with arbitrary numbers using three different open-source libraries.
+How it works...
+In this recipe, we replaced missing values in numerical variables with an arbitrary number using 
+pandas, scikit-learn, and feature-engine.
+To determine which arbitrary value to use, we inspected the maximum values of four numerical 
+variables using pandas’ max(). We chose 99 because it was greater than the maximum values of the 
+selected variables. In step 5, we used pandas fillna() to replace the missing data.
+To replace missing values using scikit-learn, we utilized SimpleImputer(), with the 
+strategy set to constant, and specified 99 in the fill_value argument. Next, we fitted the 
+imputer to a slice of the train set with the numerical variables to impute. Finally, we replaced missing 
+values using transform().
+To replace missing values with feature-engine we used ArbitraryValueImputer(), 
+specifying the value 99 and the variables to impute as parameters. Next, we applied the fit_
+transform() method to replace missing data in the train set and the transform() method to 
+replace missing data in the test set.
+Finding extreme values for imputation
+Replacing missing values with a value at the end of the variable distribution (extreme values) is like 
+replacing them with an arbitrary value, but instead of setting the arbitrary values manually, the values 
+are automatically selected from the end of the variable distribution.

@@ -1,0 +1,65 @@
+Chapter 4
+117
+Vector stores comparison
+Vector stores manage high-dimensional embeddings for retrieval. The following table compares 
+popular vector stores across key attributes to help you select the most appropriate solution for 
+your specific needs:
+Database
+Deployment 
+options
+License
+Notable features
+Pinecone
+Cloud-only
+Commercial
+Auto-scaling, enterprise security, 
+monitoring
+Milvus
+Cloud, Self-
+hosted
+Apache 2.0
+HNSW/IVF indexing, multi-modal 
+support, CRUD operations
+Weaviate
+Cloud, Self-
+hosted
+BSD 3-Clause
+Graph-like structure, multi-modal 
+support
+Qdrant
+Cloud, Self-
+hosted
+Apache 2.0
+HNSW indexing, filtering optimization, 
+JSON metadata
+ChromaDB
+Cloud, Self-
+hosted
+Apache 2.0
+Lightweight, easy setup
+AnalyticDB-V
+Cloud-only
+Commercial
+OLAP integration, SQL support, 
+enterprise features
+pg_vector
+Cloud, Self-
+hosted
+OSS
+SQL support, PostgreSQL integration
+Vertex Vector 
+Search
+Cloud-only
+Commercial
+Easy setup, low latency, high scalability
+Table 4.1: Vector store comparison by deployment options, licensing, and key features
+Each vector store offers different tradeoffs in terms of deployment flexibility, licensing, and spe­
+cialized capabilities. For production RAG systems, consider factors such as:
+•	
+Whether you need cloud-managed or self-hosted deployment
+•	
+The need for specific features like SQL integration or multi-modal support
+•	
+The complexity of setup and maintenance
+•	
+Scaling requirements for your expected embedding volume

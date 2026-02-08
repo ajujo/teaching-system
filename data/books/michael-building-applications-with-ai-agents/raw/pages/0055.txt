@@ -1,0 +1,41 @@
+processes the data, and a third agent manages user interactions. This division of
+labor enables the system to handle complex tasks more efficiently than a single
+agent would.
+Parallelism
+Multiagent architectures can leverage parallelism to perform multiple tasks
+simultaneously. For instance, agents in a logistics system can simultaneously plan
+different delivery routes, reducing overall processing time and improving
+efficiency.
+Improved scalability
+As the system grows, additional agents can be introduced to handle more tasks or
+to distribute the workload. This makes multiagent systems highly scalable and
+capable of managing larger and more complex environments.
+Redundancy and resilience
+Because multiple agents operate independently, failure in one agent does not nec‐
+essarily compromise the entire system. Other agents can continue to function or
+even take over the failed agent’s responsibilities, improving overall system
+reliability.
+Despite these advantages, multiagent systems also come with significant challenges,
+which include:
+Coordination and communication
+Managing communication between agents can be complex. Agents must
+exchange information efficiently and coordinate their actions to avoid duplica‐
+tion of efforts, conflicting actions, or resource contention. Without proper
+orchestration, multiagent systems can become disorganized and inefficient.
+Increased complexity
+While multiagent systems are powerful, they are also more challenging to design,
+develop, and maintain. The need for communication protocols, coordination
+strategies, and synchronization mechanisms adds layers of complexity to the sys‐
+tem architecture.
+Lower efficiency
+While not always the case, multiagent systems often encounter reduced efficiency
+due to higher token consumption when completing tasks. Because agents must
+frequently communicate, share context, and coordinate actions, they consume
+more processing power and resources compared with single-agent systems. This
+increased token usage not only leads to higher computational costs but can also
+slow task completion if communication and coordination are not optimized.
+Consequently, while multiagent systems offer robust solutions for complex tasks,
+their efficiency challenges mean that careful resource management is crucial.
+Architecture Design Patterns 
+| 
+33

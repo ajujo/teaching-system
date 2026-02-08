@@ -1,0 +1,37 @@
+Chapter 4
+119
+Pre-retrieval
+The pre-retrieval steps are performed in two different ways:
+•	
+Data indexing: It is part of the RAG ingestion pipeline. It is mainly implemented within 
+the cleaning or chunking modules to preprocess the data for better indexing.
+•	
+Query optimization: The algorithm is performed directly on the user’s query before em-
+bedding it and retrieving the chunks from the vector DB.
+As we index our data using embeddings that semantically represent the content of a chunked 
+document, most of the data indexing techniques focus on better preprocessing and structuring 
+the data to improve retrieval efficiency, such as:
+•	
+Sliding window: The sliding window technique introduces overlap between text chunks, 
+ensuring that important context near chunk boundaries is retained, which enhances re-
+trieval accuracy. This is particularly beneficial in domains like legal documents, scientific 
+papers, customer support logs, and medical records, where critical information often spans 
+multiple sections. The embedding is computed on the chunk along with the overlapping 
+portion. Hence, the sliding window improves the system’s ability to retrieve relevant and 
+coherent information by maintaining context across boundaries.
+•	
+Enhancing data granularity: This involves data cleaning techniques like removing irrel-
+evant details, verifying factual accuracy, and updating outdated information. A clean and 
+accurate dataset allows for sharper retrieval.
+•	
+Metadata: Adding metadata tags like dates, URLs, external IDs, or chapter markers helps 
+filter results efficiently during retrieval.
+•	
+Optimizing index structures: It is based on different data index methods, such as various 
+chunk sizes and multi-indexing strategies.
+•	
+Small-to-big: The algorithm decouples the chunks used for retrieval and the context used 
+in the prompt for the final answer generation. The algorithm uses a small sequence of 
+text to compute the embedding while preserving the sequence itself and a wider window 
+around it in the metadata. Thus, using smaller chunks enhances the retrieval’s accuracy, 
+while the larger context adds more contextual information to the LLM. 

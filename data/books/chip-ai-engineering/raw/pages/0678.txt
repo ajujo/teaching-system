@@ -1,0 +1,21 @@
+en los modos de ejecución, por ejemplo si admiten o no la ejecución de
+funciones en paralelo o trabajos de larga duración.
+Con la construcción de contextos, la arquitectura tiene ahora el aspecto de
+la Figura 10-2.
+figura 10-2. Una arquitectura de plataforma con construcción de contextos.
+Paso 2. Instalar barreras de seguridad
+Las barreras de seguridad ayudan a mitigar los riesgos y a protegerle a usted
+y a sus usuarios. Deben colocarse siempre que haya exposición a riesgos.
+En general, pueden clasificarse en barreras de seguridad en torno a los
+inputs y a los outputs.
+Barreras de seguridad de input
+Las barreras de seguridad de input suelen proteger contra dos tipos de
+riesgos: la filtración de información privada a API externas y la ejecución
+de prompts no adecuados que pongan en peligro el sistema.
+El Capítulo 5 trata muchas formas diferentes en que los atacantes pueden
+explotar una aplicación a través del hackeo de prompts y cómo defender su
+aplicación contra ellos. Aunque se pueden mitigar los riesgos, nunca se
+pueden eliminar por completo debido a la naturaleza inherente del modo en
+que los modelos generan respuestas, así como a fallos humanos inevitables.
+La filtración de información privada a API externas es un riesgo específico
+del uso de API de modelos externas cuando necesita enviar sus datos fuera

@@ -1,0 +1,32 @@
+traslade al almacenamiento externo. A medida que la conversación se
+alargue, los proveedores de API como OpenAI podrían empezar a eliminar
+el principio de la conversación. Marcos como LangChain podrían permitir
+la retención de N últimos mensajes o N últimos tokens. En una
+conversación larga, esta estrategia presupone que los primeros mensajes son
+menos relevantes para la discusión actual. Sin embargo, esta suposición
+puede ser totalmente errónea. En algunas conversaciones, los primeros
+mensajes pueden contener la mayor parte de la información, sobre todo si
+en ellos se expone el propósito de la conversación. 15 Aunque el sistema
+FIFO es fácil de aplicar, puede hacer que el modelo pierda información
+importante.16
+Las estrategias más sofisticadas implican eliminar la redundancia. Los
+idiomas humanos contienen redundancias para aumentar la claridad y
+compensar posibles malentendidos. Si existe un modo de detectar
+automáticamente la redundancia, la huella de memoria se reducirá
+significativamente.
+Una forma de eliminar la redundancia es utilizar un resumen de la
+conversación. Este resumen puede generarse utilizando el mismo modelo u
+otro modelo diferente. Resumir, junto con el seguimiento de entidades
+identificadas, puede servirle de mucho. xBae et al. (2022) fue un paso más
+allá. Tras obtener el resumen, los autores querían construir una nueva
+memoria uniendo a ésta la información clave que el resumen omitía. Los
+autores desarrollaron un clasificador que, para cada frase de la memoria y
+cada frase del resumen, determina si solo una, ambas o ninguna deben
+añadirse a la nueva memoria.
+Liu et al. (2023), por otra parte, utilizó un enfoque de reflexión. Después de
+cada acción, se pide al agente que haga dos cosas:
+1. Reflexionar sobre la información que acaba de generar.
+2. Determinar si esta nueva información debe insertarse en la
+memoria, debe fusionarse con la memoria existente o debe sustituir
+a alguna otra información, especialmente si la otra información
+está desfasada y contradice la nueva.

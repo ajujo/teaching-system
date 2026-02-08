@@ -1,0 +1,24 @@
+Performing equal-width discretization
+117
+Note
+The parentheses and brackets in the intervals indicate whether a value is included in the interval
+or not. For example, the (41, 46] interval contains all values greater than 41 and smaller than
+or equal to 46.
+Equal-width discretization allocates a different number of observations to each interval.
+11.	 Let's make a bar plot with the proportion of observations across the intervals of HouseAge
+in the train and test sets:
+t1 = train_t["HouseAge_disc"].value_counts(
+    normalize=True, sort=False)
+t2 = test_t["HouseAge_disc"].value_counts(
+    normalize=True, sort=False)
+tmp = pd.concat([t1, t2], axis=1)
+tmp.columns = ["train", "test"]
+tmp.plot.bar(figsize=(8, 5))
+plt.xticks(rotation=45)
+plt.ylabel("Number of observations per bin")
+plt.xlabel('Discretized HouseAge')
+plt.title("HouseAge")
+plt.show()
+In the following output, we can see that the proportion of observations per interval is approximately
+the same in the train and test sets, but different across intervals:
+Figure 4.1 - The proportion of observations per interval after the discretization

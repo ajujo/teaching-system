@@ -1,0 +1,32 @@
+La IA puede generar datos tanto para el pre-entrenamiento como para el
+post-entrenamiento, aunque los datos sintéticos se incluyen
+intencionadamente con mucha más frecuencia en el post-entrenamiento que
+en el pre-entrenamiento. Una posible explicación es que el objetivo del pre-
+entrenamiento es aumentar los conocimientos del modelo, y aunque la IA
+puede sintetizar conocimientos existentes en distintos formatos, es más
+difícil sintetizar nuevos conocimientos.
+Sin embargo, ya que Internet está inundándose de contenidos generados por
+IA, es probable que los modelos basados en datos de Internet ya estén pre-
+entrenados con datos sintéticos. También existen conjuntos de datos
+sintéticos como Cosmopedia (Allal et al., 2024), una colección de 25 000
+millones de tokens de libros de texto sintético, entradas de blog, historias,
+posts y artículos de WikiHow generados por Mixtral-8x7B-Instruct-v0.1
+(Jiang et al., 2024).
+La síntesis de datos para el post-entrenamiento también es más habitual
+porque los datos de post-entrenamiento, incluidos tanto los datos de
+instrucción como los datos de preferencias, suelen exigir más esfuerzo para
+producirse. Utilizar la IA para elegir la mejor respuesta entre varias es más
+sencillo, y gran parte de este tema ya se trató en el Capítulo 3. El principal
+reto es tener en cuenta los sesgos del modelo, como el sesgo de primera
+posición, en el que es más probable que el modelo prefiera la primera
+opción. Para evitarlo, los investigadores de NVIDIA preguntaron al juez de
+IA dos veces, una cambiando el orden de respuestas. Elegían una tripleta
+válida (prompt, ganador, perdedor) solo cuando el juez de IA elegía el
+mismo ganador las dos veces (NVIDIA, 2024).
+La siguiente sección se centrará en cómo utilizar la IA para sintetizar datos
+de instrucción para un afinado supervisado.
+Síntesis de datos de instrucción
+Durante el afinado de las instrucciones, cada ejemplo incluye una
+instrucción y una respuesta. La IA pueden utilizarse para sintetizar las
+instrucciones, las respuestas o ambas. Por ejemplo, puede utilizar IA para
+generar instrucciones y humanos para escribir las respuestas. También

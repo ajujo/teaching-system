@@ -1,0 +1,24 @@
+Chapter 5
+187
+Instruction
+You are a data quality evaluator. Your goal is to assess an instruction and its corresponding 
+answer, determining how effectively the answer addresses the given task.
+In your evaluation, you will provide feedback detailing the strengths and weaknesses of the 
+answer, followed by a score on a scale of 1 to 4.
+A score of 1 means that the answer is terrible and irrelevant to the instruction.
+A score of 2 means that the answer is not helpful and misses important aspects of the 
+instruction.
+A score of 3 means that the answer is helpful but could be improved in terms of relevance, 
+accuracy, and depth.
+A score of 4 means that the answer is excellent and fully addresses the task.
+Provide your evaluation as follows:
+Feedback: (strengths and weaknesses you find relevant)
+Score: (number between 1 and 4)
+Table 5.2 – Example of LLM-as-a-judge prompt for data quality evaluation
+LLM-as-a-judge is known to have several biases. First, it has a position bias in comparative scoring, 
+where the LLM judge favors the first answer. This can be addressed by randomizing the order of 
+answers A and B. In addition, like humans, LLM judges favor long answers. Length normaliza-
+tion techniques can be applied to absolute scoring to mitigate this issue. Finally, LLM judges are 
+known to have intra-model favoritism, meaning that they prefer models from the same family 
+(GPT-4o with GPT-4 and GPT-4o mini, for example). This can be addressed by using several 
+models instead of a single one.

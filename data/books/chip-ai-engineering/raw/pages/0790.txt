@@ -1,0 +1,12 @@
+Sobre la autora
+Chip Huyen es una escritora y científica computacional especializada en
+sistemas de aprendizaje automático. Ha trabajado en NVIDIA, Snorkel AI,
+fundó una startup de infraestructura de IA (posteriormente adquirida) y
+enseñó sistemas de ML en la Universidad de Stanford.
+Este libro se basa en su experiencia ayudando a grandes organizaciones y
+startups a aprovechar la IA para encontrar soluciones prácticas. Su libro de
+2022, Designing Machine Learning Systems (O'Reilly), es un éxito de
+ventas en Amazon en el ámbito de la IA y se ha traducido a más de 10
+idiomas.
+También es autora de cuatro libros vietnamitas superventas, entre ellos la
+serie Xach ba lo len va Di (Haz la maleta y vete).

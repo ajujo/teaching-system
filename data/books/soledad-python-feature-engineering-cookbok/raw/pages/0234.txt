@@ -1,0 +1,40 @@
+Scaling to the maximum and minimum values
+211
+How to do it...
+In this recipe, we’ll scale the variables of the California housing dataset to values between 0 and 1:
+1.	
+Let’s start by importing pandas and the required classes and functions:
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+2.	
+Let’s load the California housing dataset from scikit-learn into a pandas DataFrame, dropping 
+the Latitude and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=["Latitude", "Longitude"], axis=1,
+    inplace=True)
+3.	
+Let’s divide the data into training and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.	
+Let’s set up the scaler and then fit it to the train set so that it learns each variable’s minimum 
+and maximum values and the value range:
+scaler = MinMaxScaler().set_output(
+    transform="pandas"")
+scaler.fit(X_train)
+5.	
+Finally, let’s scale the variables in the train and test sets with the trained scaler:
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+Note
+MinMaxScaler() stores the maximum and minimum values and the value ranges in its 
+data_max_, min_, and data_range_ attributes, respectively.
+We can corroborate the minimum values of the transformed variables by executing X_test_
+scaled.min(), which will return the following output:
+MedInc           0.000000
+HouseAge        0.000000
+AveRooms        0.004705
+AveBedrms      0.004941

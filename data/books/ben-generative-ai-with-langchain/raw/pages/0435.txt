@@ -1,0 +1,62 @@
+The Future of Generative Models: Beyond Scaling
+408
+Memory and 
+state tracking
+Limited working memory (4-7 
+chunks); excellent at tracking 
+relevant states despite capacity 
+constraints; compensates with 
+selective attention
+Theoretically unlimited context 
+window, but fundamental 
+difficulties with coherent tracking 
+of object and agent states across 
+extended scenarios
+Social 
+understanding
+Naturally develops models of others’ 
+mental states through embodied 
+experience; intuitive grasp of social 
+dynamics with varying individual 
+aptitude
+Limited capacity to track different 
+belief states and social dynamics; 
+requires specialized fine-tuning for 
+basic theory of mind capabilities
+Creative 
+generation
+Generates novel combinations 
+extending beyond prior 
+experience; innovation grounded 
+in recombination, but can push 
+conceptual boundaries
+Bounded by training distribution; 
+produces variations on known 
+patterns rather than fundamentally 
+new concepts
+Architectural 
+properties
+Modular, hierarchical organization 
+with specialized subsystems; 
+parallel distributed processing with 
+remarkable energy efficiency (~20 
+watts)
+Largely homogeneous architectures 
+with limited functional 
+specialization; requires massive 
+computational resources for both 
+training and inference
+Table 10.1: Comparison between human cognition and generative AI
+While current AI systems have made extraordinary advances in producing high-quality content 
+across modalities (images, videos, coherent text), they continue to exhibit significant limitations 
+in deeper cognitive capabilities.
+Recent research highlights particularly profound limitations in social intelligence. A December 
+2024 study by Sclar et al. found that even frontier models like Llama-3.1 70B and GPT-4o show 
+remarkably poor performance (as low as 0-9% accuracy) on challenging Theory of Mind (ToM) 
+scenarios. This inability to model others’ mental states, especially when they differ from available 
+information, represents a fundamental gap between human and AI cognition.
+Interestingly, the same study found that targeted fine-tuning with carefully crafted ToM scenarios 
+yielded significant improvements (+27 percentage points), suggesting that some limitations may 
+reflect inadequate training examples rather than insurmountable architectural constraints. This 
+pattern extends to other capabilities—while scaling alone isn’t sufficient to overcome cognitive 
+limitations, specialized training approaches show promise.

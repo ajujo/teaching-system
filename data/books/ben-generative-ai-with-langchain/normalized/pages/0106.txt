@@ -1,0 +1,34 @@
+Chapter 3
+79
+   result = analyze_chain.invoke(prompt)
+   return {"is_suitable": result}
+def is_suitable_condition(state: JobApplicationState):
+   return state["is_suitable"] == IsSuitableJobEnum.YES
+builder = StateGraph(JobApplicationState)
+builder.add_node("analyze_job_description", analyze_job_description)
+builder.add_node("generate_application", generate_application)
+builder.add_edge(START, "analyze_job_description")
+builder.add_conditional_edges(
+   "analyze_job_description", is_suitable_condition,
+    {True: "generate_application", False: END})
+builder.add_edge("generate_application", END)
+We made two important changes. First, our newly built chain is now part of a Python function that
+represents the analyze_job_description node, and that's how we implement the logic within
+the node. Second, our conditional edge function doesn't return a string anymore, but we added
+a mapping of returned values to destination edges to the add_conditional_edges function, and
+that's an example of how you could implement a branching of your workflow.
+Let's take some time to discuss how to handle potential errors if our parsing fails!
+Error handling
+Effective error management is essential in any LangChain workflow, including when handling
+tool failures (which we'll explore in Chapter 5 when we get to tools). When developing LangChain
+applications, remember that failures can occur at any stage:
+•
+API calls to foundation models may fail
+•
+LLMs might generate unexpected outputs
+•
+External services could become unavailable
+One of the possible approaches would be to use a basic Python mechanism for catching exceptions,
+logging them for further analysis, and continuing your workflow either by wrapping an excep­
+tion as a text or by returning a default value. If your LangChain chain calls some custom Python
+function, think about appropriate exception handling. The same goes for your LangGraph nodes.

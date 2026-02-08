@@ -1,0 +1,31 @@
+Performing mean or median imputation
+11
+The previous command returns the median values in a dictionary:
+{'A2': 28.835, 'A3': 2.75, 'A8': 1.0, 'A11': 0.0, 'A14': 160.0,
+'A15': 6.0}
+16.	 Finally, let's replace the missing values with the median:
+X_train = imputer.transform(X_train)
+X_test = imputer.transform(X_test)
+Feature-engine's MeanMedianImputer() returns a DataFrame. You can check that the imputed
+variables do not contain missing values using X_train[numeric_vars].isnull().mean().
+How it works...
+In this recipe, we replaced missing data with the variable's median values using pandas, scikitlearn, and feature-engine.
+We divided the dataset into train and test sets using scikit-learn's train_test_split() function.
+The function takes the predictor variables, the target, the fraction of observations to retain in the test
+set, and a random_state value for reproducibility, as arguments. It returned a train set with 70%
+of the original observations and a test set with 30% of the original observations. The 70:30 split was
+done at random.
+To impute missing data with pandas, in step 5, we created a dictionary with the numerical variable
+names as keys and their medians as values. The median values were learned from the training set to
+avoid data leakage. To replace missing data, we applied pandas' fillna() to train and test sets,
+passing the dictionary with the median values per variable as a parameter.
+To replace the missing values with the median using scikit-learn, we used SimpleImputer()
+with the strategy set to "median". To restrict the imputation to numerical variables, we used
+ColumnTransformer(). With the remainder argument set to passthrough, we made
+ColumnTransformer() return all the variables seen in the training set in the transformed output;
+the imputed ones followed by those that were not transformed.
+Note
+ColumnTransformer() changes the names of the variables in the output. The transformed
+variables show the prefix imputer and the unchanged variables show the prefix remainder.
+In step 8, we set the output of the column transformer to pandas to obtain a DataFrame as a result.
+By default, ColumnTransformer() returns numpy arrays.

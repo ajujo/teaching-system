@@ -1,0 +1,31 @@
+           ToolCall(
+               function=Function(
+                   arguments='{"lbs":40}',
+                   name='lbs_to_kg'),
+               type='function')
+       ])
+)
+A partir de esta respuesta, puede evocar la función lbs_to_kg(lbs=40) y
+utilizar su resultado para generar una respuesta para los usuarios.
+SUGERENCIA
+Cuando trabaje con agentes, pida siempre al sistema que le informe de los
+valores de los parámetros que utiliza para cada llamada a una función.
+Compruebe que estos valores sean correctos.
+Granularidad de la planificación
+Un plan es una hoja de ruta en la que se describen los pasos necesarios para
+llevar a cabo una tarea. Una hoja de ruta puede tener distintos niveles de
+granularidad. Para planificar un año, un plan trimestre a trimestre es más
+general que un plan mes a mes, que a su vez es más general que un plan
+semana a semana.
+Existe un equilibrio entre planificación y ejecución. Un plan detallado es
+más difícil de generar, pero más fácil de ejecutar. Un plan más general es
+más fácil de generar, pero más difícil de ejecutar. Una manera de evitar esta
+disyuntiva es planificar jerárquicamente. En primer lugar, utilice un
+planificador para generar un plan más general, como un plan trimestral. A
+continuación, para cada trimestre, utilice el mismo planificador u otro
+diferente para generar un plan mes a mes.
+Hasta ahora, todos los ejemplos de planes generados utilizan los nombres
+exactos de las funciones, lo cual es muy granular. Un problema de este
+enfoque es que el inventario de herramientas de un agente podría cambiar
+con el tiempo. Por ejemplo, la función para obtener la fecha actual
+get_time() podría renombrarse a get_current_time(). Cuando una

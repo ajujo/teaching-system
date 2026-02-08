@@ -1,0 +1,23 @@
+Extracting Features from Text Variables
+348
+8.	
+Finally, let’s create a variable containing the number of sentences per text:
+df['num_sent'] = df['text'].apply(
+    sent_tokenize).apply(len)
+With the df command, you can display the entire DataFrame with the text variable and the 
+new feature containing the number of sentences per text:
+Figure 11.3 – A DataFrame with the text variable and the number of sentences per text
+Now, we can use this new feature as input to machine learning algorithms.
+How it works...
+In this recipe, we separated a string with text into sentences using sent_tokenizer from the NLTK 
+library. sent_tokenizer has been pre-trained to recognize capitalization and different types of 
+punctuation that signal the beginning and the end of a sentence.
+First, we applied sent_tokenizer to a manually created string to become familiar with its 
+functionality. The tokenizer divided the text into a list of eight sentences. We combined the tokenizer 
+with the built-in Python len() method to count the number of sentences in the string.
+Next, we loaded a dataset with text and, to speed up the computation, we only retained the first 10 
+rows of the DataFrame using pandas’ loc[] function. Next, we removed the first part of the text, 
+which contained information about the email sender and subject. To do this, we split the string at 
+Lines: using pandas’ str.split("Lines:") function, which returned a list with two elements: 
+the strings before and after Lines:. Utilizing a lambda function within apply(), we retained the 
+second part of the text – that is, the second string in the list returned by split().

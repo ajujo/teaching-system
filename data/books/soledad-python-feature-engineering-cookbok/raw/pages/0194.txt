@@ -1,0 +1,39 @@
+Bringing outliers back within acceptable limits
+171
+limits. In practice, what this means is replacing the value of the outliers with some thresholds identified 
+with the IQR proximity rule, the mean and standard deviation, or MAD. In this recipe, we’ll replace 
+outlier values using pandas and feature-engine.
+How to do it...
+We’ll use the mean and standard deviation to find outliers and then replace their values using pandas 
+and feature-engine:
+1.	
+Let’s import the required Python libraries and functions:
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from feature_engine.outliers import Winsorizer
+2.	
+Load the breast cancer dataset from scikit-learn and separate it into train and test sets:
+X, y = load_breast_cancer(
+    return_X_y=True, as_frame=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+3.	
+Let’s create a function to find outliers using the mean and standard deviation:
+def find_limits(df, variable, fold):
+    var_mean = df[variable].mean()
+    var_std = df[variable].std()
+    lower_limit = var_mean - fold * var_std
+    upper_limit = var_mean + fold * var_std
+    return lower_limit, upper_limit
+Note
+In step 3, we use the mean and standard deviation to find the limits beyond which data points 
+will be considered outliers, as discussed in the Finding outliers using the mean and standard 
+deviation recipe. Alternatively, you can identify outliers with the IQR rule or MAD, as we 
+covered in the Visualizing outliers with boxplots and the inter-quartile proximity rule and Using 
+the median absolute deviation to find outliers recipes.
+4.	
+Using the function from step 3, let’s determine the limits of the mean smoothness variable, 
+which follows approximately a Gaussian distribution:
+var = "worst smoothness"
+lower_limit, upper_limit = find_limits(
+    X_train, var, 3)

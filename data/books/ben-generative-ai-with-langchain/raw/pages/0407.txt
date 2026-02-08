@@ -1,0 +1,31 @@
+Production-Ready LLM Deployment and Observability
+380
+In this section, we’ll work with the langchain-mcp-adapters library, which provides a lightweight 
+wrapper to integrate MCP tools into LangChain and LangGraph environments. This library con­
+verts MCP tools into LangChain tools and provides a client implementation for connecting to 
+multiple MCP servers and loading tools dynamically.
+To get started, you need to install the langchain-mcp-adapters library:
+pip install langchain-mcp-adapters
+There are many resources available online with lists of MCP servers that you can connect from a 
+client, but for illustration purposes, we’ll first be setting up a server and then a client.
+We’ll use FastMCP to define tools for addition and multiplication:
+from mcp.server.fastmcp import FastMCP
+mcp = FastMCP("Math")
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+@mcp.tool()
+def multiply(a: int, b: int) -> int:
+    """Multiply two numbers"""
+    return a * b
+if __name__ == "__main__":
+    mcp.run(transport="stdio")
+You can start the server like this:
+python math_server.py
+This runs as a standard I/O (stdio) service.
+Once the MCP server is running, we can connect to it and use its tools within LangChain:
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+from langchain_mcp_adapters.tools import load_mcp_tools
+from langgraph.prebuilt import create_react_agent

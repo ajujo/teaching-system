@@ -1,0 +1,24 @@
+{
+  "$schema": "attempt_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-a04",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "created_at": "2026-02-02T16:43:38.587146+00:00",
+  "status": "graded",
+  "answers": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q01",
+      "response": null
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q02",
+      "response": null
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q03",
+      "response": null
+    }
+  ],
+  "total_questions": 3
+}

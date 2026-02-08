@@ -1,0 +1,33 @@
+Performing mean normalization
+215
+Note
+Mean normalization is an alternative to standardization. In both cases, the variables are centered 
+at 0. In mean normalization, the variance varies, while the values lie between -1 and 1. On the 
+other hand, in standardization, the variance is set to 1 and the value range varies.
+Mean normalization is a suitable alternative for models that need the variables to be centered at 
+zero. However, it is sensitive to outliers and not a suitable option for sparse data, as it will destroy the 
+sparse nature.
+How to do it...
+In this recipe, we will implement mean normalization with pandas:
+1.	
+Let’s import pandas and the required scikit-learn class and function:
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load the California housing dataset from scikit-learn into a pandas DataFrame, dropping 
+the Latitude and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=[
+   "Latitude", "Longitude"], axis=1, inplace=True)
+3.	
+Let’s divide the data into train and test sets:
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+4.	
+Let’s learn the mean values from the variables in the train set:
+means = X_train.mean(axis=0)
+Note
+We set axis=0 to take the mean of the rows – that is, of the observations in each variable. If we 
+set axis=1 instead, pandas will calculate the mean value per observation across all the columns.

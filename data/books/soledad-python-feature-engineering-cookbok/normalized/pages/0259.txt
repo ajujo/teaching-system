@@ -1,0 +1,38 @@
+Creating New Features
+236
+Similarly, the ratio between the worst and the average characteristic of the cell nuclei might
+be indicative of malignancy.
+4.
+Let's create a new feature with the ratio between the worst and mean radius of the nuclei, and
+then display its values:
+df["quotient"] = df["worst radius"].div(
+    df["mean radius"])
+df["quotient"].head()
+In the following output, we can see the values corresponding to the ratio between the features:
+0    1.410784
+1    1.214876
+2    1.197054
+3    1.305604
+4    1.110892
+Name: quotient, dtype: float64
+Note
+We can calculate the ratio by executing an alternative command, df["quotient"] =
+df["worst radius"] / (df["mean radius"]).
+We can also capture the ratio and difference between every nuclei morphology characteristic
+and the mean radius or mean area of the nuclei. Let's begin by capturing these subsets of
+variables into lists.
+5.
+Let's make a list of the features in the numerator:
+features = [
+    "mean smoothness",
+    «mean compactness",
+    "mean concavity",
+    "mean symmetry"
+]
+6.
+Let's make a list of the features in the denominator:
+reference = ["mean radius", "mean area"]
+Note
+We can create features by dividing the features in step 5 by one of the features in step 6 with
+pandas, by executing df[features].div(df["mean radius"]). For subtraction,
+we'd execute df[features].sub(df["mean radius"]).

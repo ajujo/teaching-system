@@ -1,0 +1,41 @@
+    example_order = {"order_id": "A12345"}
+    convo = [HumanMessage(content="Please cancel my order A12345.")]
+    result = graph.invoke({"order": example_order, "messages": convo})
+    for msg in result["messages"]:
+        print(f"{msg.type}: {msg.content}")  
+Great—you now have a working “cancel order” agent. Before we expand our agent,
+let’s reflect on why we started with such a simple slice. Scoping is always a balancing
+act. If you narrow your task too much—say, only cancellations—you miss out on
+other high-volume requests like refunds or address changes, limiting real-world
+impact. But if you broaden it too far—“automate every support inquiry”—you’ll
+drown in edge cases like billing disputes, product recommendations, and technical
+troubleshooting. And if you keep it vague—“improve customer satisfaction”—you’ll
+never know when you’ve succeeded.
+Instead, by focusing on a clear, bounded workflow—canceling orders—we ensure
+concrete inputs (customer message + order record), structured outputs (tool calls +
+confirmations), and a tight feedback loop. For example, imagine an email that says,
+“Please cancel my order #B73973 because I found a cheaper option elsewhere.” A
+human agent would look up the order, verify it hasn’t shipped, click “Cancel,” and
+reply with a confirmation. Translating this into code means invoking cancel_
+order(order_id="B73973") and sending a simple confirmation message back to the
+customer.
+Now that we have a working “cancel order” agent, the next question is: does it
+actually work? In production, we don’t just want our agent to run—we want to know
+how well it performs, what it gets right, and where it fails. For our cancel order agent,
+we care about questions like:
+• Did it call the correct tool (cancel_order)?
+• Did it pass the right parameters (the correct order ID)?
+• Did it send a clear, correct confirmation message to the customer?
+In our open source repository, you’ll find a full evaluation script to automate this
+process:
+• Evaluation dataset
+• Batch evaluation script
+Here’s a minimal, simplified version of this logic for how you might test your agent
+directly:
+# Minimal evaluation check
+example_order = {"order_id": "B73973"}
+convo = [HumanMessage(content='''Please cancel order #B73973. 
+    I found a cheaper option elsewhere.''')]
+Our First Agent System 
+| 
+19

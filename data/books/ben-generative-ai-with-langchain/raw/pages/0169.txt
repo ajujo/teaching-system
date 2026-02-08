@@ -1,0 +1,35 @@
+Building Intelligent RAG Systems
+142
+•	
+Listwise rerankers: The re-ranking model processes the entire list of documents (and 
+the original query) holistically to determine optimal order by optimizing NDCG or MAP
+LangChain offers several re-ranking implementations:
+•	
+Cohere rerank: Commercial API-based solution with excellent quality:
+# Complete document compressor example
+from langchain.retrievers.document_compressors import CohereRerank
+from langchain.retrievers import ContextualCompressionRetriever
+# Initialize the compressor
+compressor = CohereRerank(top_n=3)
+# Create a compression retriever
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor,
+    base_retriever=base_retriever
+)
+# Original documents
+print("Original documents:")
+original_docs = base_retriever.get_relevant_documents("How do 
+transformers work?")
+for i, doc in enumerate(original_docs):
+    print(f"Doc {i}: {doc.page_content[:100]}...")
+# Compressed documents
+print("\nCompressed documents:")
+compressed_docs = compression_retriever.get_relevant_documents("How 
+do transformers work?")
+for i, doc in enumerate(compressed_docs):
+    print(f"Doc {i}: {doc.page_content[:100]}...")
+•	
+RankLLM: Library supporting open-source LLMs fine-tuned specifically for re-ranking:
+from langchain_community.document_compressors.rankllm_rerank import 
+RankLLMRerank
+compressor = RankLLMRerank(top_n=3, model="zephyr")

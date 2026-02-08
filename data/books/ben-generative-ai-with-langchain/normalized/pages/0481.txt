@@ -1,0 +1,70 @@
+Index
+454
+Reduce approach 94
+reducers 73-75
+reinforcement learning from human
+feedback (RLHF) 3
+Replicate 31
+reference link 435
+repository RAG 293-295
+re-ranking
+listwise rerankers 142
+pairwise rerankers 141
+pointwise rerankers 141
+re-ranking, implementations
+Cohere rerank 142
+LLM-based custom rerankers 143
+RankLLM 142
+response enhancement techniques 146
+self-consistency checking 150-154
+source attribution 147-150
+retries 82, 83
+retrievers
+LangChain retrievers 138
+patterns followed 137
+vector store retrievers 139, 140
+S
+scalable deployment, with Ray Serve 358
+application, running 367-369
+index, building 359-364
+index, serving 365-367
+scaling, alternative approach 413
+scaling laws for post-training phases 419
+scaling limitations 410
+alternative approach 413
+Big tech, versus small enterprises 411, 412
+data quality training 416, 417
+democratization, via technical
+advances 417, 418
+hypothesis challenges 410
+scaling laws for post-training phases 419
+scaling limitations, alternative approach
+distributed approach 414, 415
+efficiency innovations approach 414
+traditional approach 413
+self-consistency 92, 93
+small enterprises
+versus Big tech 411, 412
+small language models (SLMs) 4
+snippets 108
+societal implications 424
+copyright and attribution challenges 426
+misinformation and cybersecurity 425
+regulations and implementation
+challenges 427
+SPTAG 127
+Stable Diffusion
+using 57
+state management 69-73
+structured generation 84
+stuff approach 93
+supersteps 72
+system-level evaluation
+best practices 322, 323
+T
+test-time compute 414
+Text Embeddings Inference (TEI) 433
+text-to-image application 55
+DALL-E, using through OpenAI 55, 56
+Stable Diffusion, using 57
+Theory of Mind (ToM) 408

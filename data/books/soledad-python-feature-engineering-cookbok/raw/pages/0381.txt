@@ -1,0 +1,33 @@
+Extracting Features from Text Variables
+358
+Note
+After executing each of the commands in this recipe, print some example texts by executing, 
+for example, print(df['text'][10]) so that you can visualize the changes introduced 
+to the text. Go ahead and do it now, and then repeat the command after each step.
+3.	
+Let’s begin by removing the punctuation:
+df["text"] = df['text'].str.replace('[^\w\s]','')
+Tip
+You can also remove the punctuation using the built-in string module from Python. First, 
+import the module by executing import string and then execute df['text'] = 
+df['text'].str.replace('[{}]'.format(string.punctuation), '').
+4.	
+We can also remove characters that are numbers, leaving only letters, as follows:
+df['text'] = df['text'].str.replace(
+    '\d+', '', regex=True)
+5.	
+Now, let’s set all words into lowercase:
+df['text'] = df['text'].str.lower()
+Now, let’s start the process of removing stop words.
+Note
+Step 6 may fail if you did not download the NLTK library’s stopwords. Visit the Technical 
+requirements section in this chapter for more details.
+6.	
+Let’s create a function that splits a string into a list of words, removes the stop words, and finally 
+concatenates the remaining words back into a string:
+def remove_stopwords(text):
+    stop = set(stopwords.words('english'))
+    text = [word
+    for word in text.split() if word not in stop]
+    text = ‹ ‹.join(x for x in text)
+    return text

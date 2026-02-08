@@ -1,0 +1,40 @@
+Chapter 2
+31
+•	
+Cloud provider gateways
+•	
+Amazon Bedrock: Unified API access to models from Anthropic, AI21, Cohere, Mis­
+tral, and others with AWS integration
+•	
+Azure OpenAI Service: Enterprise-grade access to OpenAI and other models with 
+robust security and Microsoft ecosystem integration
+•	
+Google Vertex AI: Access to Gemini and other models with seamless Google Cloud 
+integration
+•	
+Independent platforms
+•	
+Together AI: Hosts 200+ open-source models with both serverless and dedicated 
+GPU options
+•	
+Replicate: Specializes in deploying multimodal open-source models with pay-
+as-you-go pricing
+•	
+HuggingFace Inference Endpoints: Production deployment of thousands of open-
+source models with fine-tuning capabilities
+Throughout this book, we’ll work with various models accessed through different providers, giving 
+you the flexibility to choose the best option for your specific needs and infrastructure requirements.
+We will use OpenAI for many applications but will also try LLMs from other organizations.
+There are two main integration packages:
+•	
+langchain-google-vertexai
+•	
+langchain-google-genai
+We’ll be using langchain-google-genai, the package recommended by LangChain 
+for individual developers. The setup is a lot simpler, only requiring a Google account 
+and API key. It is recommended to move to langchain-google-vertexai for larger 
+projects. This integration offers enterprise features such as customer encryption 
+keys, virtual private cloud integration, and more, requiring a Google Cloud account 
+with billing.
+If you’ve followed the instructions on GitHub, as indicated in the previous section, 
+you should already have the langchain-google-genai package installed.

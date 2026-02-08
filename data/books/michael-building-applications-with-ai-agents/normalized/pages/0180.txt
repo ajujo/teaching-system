@@ -1,0 +1,25 @@
+Direct Preference Optimization
+Building on SFT, direct preference optimization introduces preference learning,
+aligning outputs more closely with human-ranked quality judgments. DPO is a finetuning technique that trains a model to prefer better outputs over worse ones by
+learning from ranked pairs. Unlike standard SFT, which simply teaches the model to
+replicate a "gold" output, DPO helps the model internalize preference judgmentsimproving its ability to rank and select high-quality completions at inference time.
+Figure 7-7 illustrates the DPO workflow, showing how models are trained on human
+preference data to learn to produce outputs that align with ranked quality judgments.
+Figure 7-7. DPO workflow. Prompts are fed to the model to generate multiple comple‐
+tions, which are then evaluated by humans to produce preference data indicating the
+better response. These preferences are indicated as y_win and y_lose under "preference
+data." This data is used in DPO training to directly optimize the model toward preferred
+outputs, resulting in an aligned model that better reflects human preferences.
+The following is a minimal working example using a small Phi-3 model to fine-tune
+help desk response quality:
+import torch, os
+from datasets import load_dataset
+from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments,
+    BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model
+from trl import DPOConfig, DPOTrainer
+import logging
+BASE_SFT_CKPT = "microsoft/Phi-3-mini-4k-instruct"
+158
+|
+Chapter 7: Learning in Agentic Systems

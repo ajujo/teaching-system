@@ -1,0 +1,24 @@
+- mecanismo de atención, Arquitectura de transformador
+- módulos de atención, Mecanismo de atención
+- módulos MLP, Mecanismo de atención
+arquitectura H3, Otras arquitecturas de modelos
+arquitectura Jamba, 66 jueces (ver jueces de IA)
+arquitectura Mamba, Otras arquitecturas de modelos
+arquitectura S4, Otras arquitecturas de modelos
+ataques automatizados, Ataques automatizados
+atención a las consultas agrupadas, Rediseñar el mecanismo de atención
+atención a múltiples consultas, Optimización del mecanismo de atención
+atención entre capas, Optimización del mecanismo de atención
+atributos duros, Costo y latencia
+atributos suaves, Costo y latencia
+auge de la ingeniería de IA, Introducción a la creación de aplicaciones de
+IA con modelos fundacionales
+- pila de ingeniería
+- de modelos fundacionales a ingeniería de IA, De los grandes
+modelos lingüísticos a los modelos fundacionales
+aumento de datos, Adquisición y anotación de datos
+aumento de los conocimientos, Herramientas
+aumento de los datos definidos, Adquisición y anotación de datos
+autoevaluación, ¿Qué modelos pueden actuar como jueces?
+automatización del flujo de trabajo, Organización de datos
+autoverificación, Coherencia factual

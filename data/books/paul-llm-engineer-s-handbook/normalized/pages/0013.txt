@@ -1,0 +1,32 @@
+Table of Contents
+xii
+What are embeddings? • 107
+Why embeddings are so powerful • 109
+How are embeddings created? • 111
+Applications of embeddings • 114
+More on vector DBs • 115
+How does a vector DB work? • 115
+Algorithms for creating the vector index • 116
+DB operations • 116
+An overview of advanced RAG .......................................................................................... 117
+Pre-retrieval • 119
+Retrieval • 122
+Post-retrieval • 124
+Exploring the LLM Twin's RAG feature pipeline architecture .......................................... 127
+The problem we are solving • 127
+The feature store • 128
+Where does the raw data come from? • 128
+Designing the architecture of the RAG feature pipeline • 129
+Batch pipelines • 130
+Batch versus streaming pipelines • 130
+Core steps • 134
+Change data capture: syncing the data warehouse and feature store • 136
+Why is the data stored in two snapshots? • 138
+Orchestration • 138
+Implementing the LLM Twin's RAG feature pipeline ....................................................... 139
+Settings • 139
+ZenML pipeline and steps • 140
+Querying the data warehouse • 143
+Cleaning the documents • 146
+Chunk and embed the cleaned documents • 147
+Loading the documents to the vector DB • 150

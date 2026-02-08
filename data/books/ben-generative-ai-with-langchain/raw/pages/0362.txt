@@ -1,0 +1,33 @@
+Chapter 8
+335
+# Expected reasoning reference:
+expected_reasoning = (
+    "An ideal reasoning should mention that the Federal Reserve has 
+maintained a low interest rate—around 0.25%—to "
+    "support economic growth, and it should briefly explain the 
+implications for borrowing costs and consumer spending."
+)
+# Load the chain-of-thought evaluator.
+cot_evaluator = load_evaluator("cot_qa")
+result_reasoning = cot_evaluator.evaluate_strings(
+    input="What is the current Federal Reserve interest rate and why does 
+it matter?",
+    prediction=agent_reasoning,
+    reference=expected_reasoning,
+)
+print("\nChain-of-Thought Reasoning Evaluation:")
+print(result_reasoning)
+The returned score and reasoning allow us to judge whether the agent’s thought process is sound 
+and comprehensive:
+Chain-of-Thought Reasoning Evaluation:
+{'reasoning': "The student correctly identified the current Federal 
+Reserve interest rate as 0.25%. They also correctly explained why this 
+rate matters, stating that it is intended to stimulate economic growth by 
+keeping borrowing costs low, which in turn encourages consumer spending 
+and business investment. This explanation aligns with the context 
+provided, which asked for a brief explanation of the implications for 
+borrowing costs and consumer spending. Therefore, the student's answer is 
+factually accurate.\nGRADE: CORRECT", 'value': 'CORRECT', 'score': 1}
+Please note that in this evaluation, the agent provides detailed reasoning along with its answer. 
+The evaluator (using chain-of-thought evaluation) compares the agent’s reasoning with an ex­
+pected explanation.

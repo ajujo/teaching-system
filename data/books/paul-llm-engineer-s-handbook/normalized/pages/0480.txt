@@ -1,0 +1,29 @@
+Chapter 11
+449
+Unfortunately, the ZenML cloud's free trial has a limitation of a maximum of three pipelines. As
+we have more, we avoided that limitation by compressing all the steps into a single pipeline. But
+if you plan to host ZenML yourself or buy their license, they offer the possibility to independently trigger a pipeline from another pipeline, as you can see in the code snippet below where we
+triggered the feature engineering pipeline after the data collection ETL:
+from zenml import pipeline, step
+@pipeline
+def digital_data_etl(user_full_name: str, links: list[str]) -> str:
+
+user = get_or_create_user(user_full_name)
+
+crawl_links(user=user, links=links)
+trigger_feature_engineering_pipeline(user)
+@step
+def trigger_feature_engineering_pipeline(user):
+run_config = PipelineRunConfiguration(...)
+Client().trigger_pipeline("feature_engineering", run_configuration=run_
+config)
+@pipeline
+def feature_engineering(author_full_names: list[str]) -> list[str]:
+... # ZenML steps
+By taking this approach, each pipeline will have its independent run, where one pipeline sequentially triggers the next one, as described at the beginning of this section. Note that this feature is
+not unique to ZenML but is common in orchestrator tools. The principles we have learned so far
+hold. Only how we interact with the tool changes.
+Prompt monitoring
+We will use Opik (from Comet ML) to monitor our prompts. But remember from the LLMOps
+section earlier in this chapter that we are not interested only in the input prompt and generated
+answer.

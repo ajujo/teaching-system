@@ -1,0 +1,29 @@
+Chapter 4
+113
+The best-performing embedding model can change with time and your specific use case. You can
+find particular models on the Massive Text Embedding Benchmark (MTEB) on Hugging Face.
+Depending on your needs, you can consider the best-performing model, the one with the best
+accuracy, or the one with the smallest memory footprint. This decision is solely based on your
+requirements (e.g., accuracy and hardware). However, Hugging Face and SentenceTransformer
+make switching between different models straightforward. Thus, you can always experiment
+with various options.
+When working with images, you can embed them using convolutional neural networks (CNNs).
+Popular CNN networks are based on the ResNet architecture. However, we can't directly use image embedding techniques for audio recordings. Instead, we can create a visual representation
+of the audio, such as a spectrogram, and then apply image embedding models to those visuals.
+This allows us to capture the essence of images and sounds in a way computers can understand.
+By leveraging models like CLIP, you can practically embed a piece of text and an image in the
+same vector space. This allows you to find similar images using a sentence as input, or the other
+way around, demonstrating the practicality of CLIP.
+In the following code snippet, we use CLIP to encode a crazy cat image and three sentences.
+Ultimately, we use cosine similarity to compute the resemblance between the picture and the
+sentences:
+from io import BytesIO
+import requests
+from PIL import Image
+from sentence_transformers import SentenceTransformer
+response = requests.get(
+"https://github.com/PacktPublishing/LLM-Engineering/blob/main/images/
+crazy_cat.jpg?raw=true"
+)
+The examples in the embeddings section can be run within the virtual environment
+used across the book, as it contains all the required dependencies.

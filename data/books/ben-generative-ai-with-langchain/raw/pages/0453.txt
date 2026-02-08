@@ -1,0 +1,35 @@
+The Future of Generative Models: Beyond Scaling
+426
+The combination of AI’s generative capabilities with internet-scale distribution mechanisms 
+presents unprecedented challenges to information ecosystems that underpin democratic societies. 
+Addressing this will require coordinated efforts across technical, educational, and policy domains.
+Copyright and attribution challenges
+Generative AI raises important copyright questions for developers. Recent court rulings (https://
+www.reuters.com/world/us/us-appeals-court-rejects-copyrights-ai-generated-art-
+lacking-human-creator-2025-03-18/) have established that AI-generated content without 
+significant human creative input cannot receive copyright protection. The U.S. Court of Appeals 
+definitively ruled in March 2025 that “human authorship is required for registration” under 
+copyright law, confirming works created solely by AI cannot be copyrighted.
+The ownership question depends on human involvement. AI-only outputs remain uncopyrightable, 
+while human-directed AI outputs with creative selection may be copyrightable, and AI-assisted 
+human creation retains standard copyright protection.
+The question of training LLMs on copyrighted works remains contested. While some assert 
+this constitutes fair use as a transformative process, recent cases have challenged this position. 
+The February 2025 Thomson Reuters ruling (https://www.lexology.com/library/detail.
+aspx?g=8528c643-bc11-4e1d-b4ab-b467cd641e4c) rejected the fair use defense for AI trained 
+on copyrighted legal materials. 
+These issues significantly impact creative industries where established compensation models rely 
+on clear ownership and attribution. The challenges are particularly acute in visual arts, music, and 
+literature, where generative AI can produce works stylistically similar to specific artists or authors.
+Proposed solutions include content provenance systems tracking training sources, compensation 
+models distributing royalties to creators whose work informed the AI, technical watermarking to 
+distinguish AI-generated content, and legal frameworks establishing clear attribution standards.
+When implementing LangChain applications, developers should track and attribute source con­
+tent, implement filters to prevent verbatim reproduction, document data sources used in fine-tun­
+ing, and consider retrieval-augmented approaches that properly cite sources.
+International frameworks vary, with the EU’s AI Act of 2024 establishing specific data mining 
+exceptions with copyright holder opt-out rights beginning August 2025. This dilemma under­
+scores the urgent need for legal frameworks that can keep pace with technological advances and 
+navigate the complex interplay between rights-holders and AI-generated content. As legal stan­
+dards evolve, flexible systems that can adapt to changing requirements offer the best protection 
+for both developers and users.

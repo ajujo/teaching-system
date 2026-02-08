@@ -1,0 +1,38 @@
+Chapter 4
+117
+•	
+Monitoring: Continuous monitoring of DB performance, including query latency and re-
+source usage (RAM, CPU, disk), helps maintain optimal operations and identify potential 
+issues before they impact the system.
+•	
+Access control: Implementing robust access control mechanisms ensures that only au-
+thorized users can access and modify data. This includes role-based access controls and 
+other security protocols to protect sensitive information.
+•	
+Backups: Regular DB backups are critical for disaster recovery. Automated backup pro-
+cesses ensure that data can be restored to a previous state in case of corruption or loss.
+An overview of advanced RAG
+The vanilla RAG framework we just presented doesn’t address many fundamental aspects that 
+impact the quality of the retrieval and answer generation, such as:
+•	
+Are the retrieved documents relevant to the user’s question?
+•	
+Is the retrieved context enough to answer the user’s question?
+•	
+Is there any redundant information that only adds noise to the augmented prompt?
+•	
+Does the latency of the retrieval step match our requirements?
+•	
+What do we do if we can’t generate a valid answer using the retrieved information?
+From the questions above, we can draw two conclusions. The first one is that we need a robust 
+evaluation module for our RAG system that can quantify and measure the quality of the retrieved 
+data and generate answers relative to the user’s question. We will discuss this topic in more detail 
+in Chapter 9. The second conclusion is that we must improve our RAG framework to address the 
+retrieval limitations directly in the algorithm. These improvements are known as advanced RAG.
+The vanilla RAG design can be optimized at three different stages:
+•	
+Pre-retrieval: This stage focuses on how to structure and preprocess your data for data 
+indexing optimizations as well as query optimizations.
+•	
+Retrieval: This stage revolves around improving the embedding models and metadata 
+filtering to improve the vector search step.

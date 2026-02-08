@@ -1,0 +1,27 @@
+CHAPTER 4
+Tool Use
+While foundation models are great at chatting for hours, tools are the building blocks
+that empower AI agents to retrieve additional information and context, perform
+tasks, and interact with the environment in meaningful ways. In the context of AI, a
+tool can be defined as a specific capability or a set of actions that an agent can per‐
+form to achieve a desired outcome. These tools range from simple, single-step tasks
+to complex, multistep operations that require advanced reasoning and problemsolving abilities. Especially if you want your agent to make actual changes, instead of
+just searching for and providing information, tools will be how those changes are
+executed.
+The significance of tools in AI agents parallels the importance of competencies in
+human professionals. Just as a doctor needs a diverse set of tools to diagnose and treat
+patients, an AI agent requires a repertoire of tools to handle various tasks effectively.
+This chapter aims to provide a comprehensive understanding of tools in AI agents,
+exploring their design, development, and deployment.
+AI agents, at their core, are sophisticated systems designed to interact with their envi‐
+ronment, process information, and execute tasks autonomously. To do this efficiently,
+they rely on a structured set of tools. These tools are modular components that can be
+developed, tested, and optimized independently, then integrated to form a cohesive
+system capable of complex behavior.
+In practical terms, a tool could be as simple as recognizing an object in an image or as
+complex as managing a customer support ticket from initial contact to resolution.
+The design and implementation of these tools are critical to the overall functionality
+and effectiveness of the AI agent. We'll start with some fundamentals of LangChain,
+and then cover the different types of tools that can be provided to an autonomous
+agent, which we will cover in sequence: local tools, API-based tools, and MCP tools.
+71

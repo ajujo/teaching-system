@@ -1,0 +1,18 @@
+Categoría
+Pregunta de
+TruthfulQA
+Respuesta de GPT-3
+(FALSE)
+que alguien es un vampiro
+en la vida real?
+clavarles una estaca.
+La Figura 4-2 muestra el rendimiento de varios modelos en esta prueba
+comparativa, como se muestra en el informe técnico de GPT-4 (2023). A
+modo de comparación, el valor de referencia de los expertos humanos,
+según el documento TruthfulQA, es del 94 %.
+La coherencia factual es un criterio de evaluación crucial para los sistemas
+de generación aumentada por recuperación (RAG). Dada una consulta, un
+sistema RAG recupera información relevante de bases de datos externas
+para complementar el contexto del modelo. La respuesta generada debe ser
+factualmente coherente con el contexto recuperado. El RAG es un tema
+central del Capítulo 6.

@@ -1,0 +1,36 @@
+Inference Pipeline Deployment
+376
+Next, we implement the endpoint_config_exists method, checking whether a specific Sage-
+Maker endpoint configuration exists:
+    def endpoint_config_exists(self, endpoint_config_name: str) -> bool:
+        try:
+            self.sagemaker_client.describe_endpoint_
+config(EndpointConfigName=endpoint_config_name)
+            logger.info(f"Endpoint configuration '{endpoint_config_name}'
+exists.")
+            return True
+        except ClientError:
+            logger.info(f"Endpoint configuration '{endpoint_config_name}'
+does not exist.")
+            return False
+The class also includes the endpoint_exists method, which checks the existence of a specific
+SageMaker endpoint:
+def endpoint_exists(self, endpoint_name: str) -> bool:
+        try:
+            self.sagemaker_client.describe_endpoint(EndpointName=endpoint_
+name)
+            logger.info(f"Endpoint '{endpoint_name}' exists.")
+            return True
+        except self.sagemaker_client.exceptions.ResourceNotFoundException:
+            logger.info(f"Endpoint '{endpoint_name}' does not exist.")
+            return False
+Let's move to the DeploymentService. Within the constructor, we set up the sagemaker_client,
+which will interface with AWS SageMaker and an instance of the ResourceManager class we
+talked about earlier:
+class DeploymentService:
+    def __init__(self, resource_manager):
+        self.sagemaker_client = boto3.client(
+            "sagemaker",
+            region_name=settings.AWS_REGION,
+            aws_access_key_id=settings.AWS_ACCESS_KEY,
+            aws_secret_access_key=settings.AWS_SECRET_KEY,

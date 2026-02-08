@@ -1,0 +1,31 @@
+a la descripción del rol. Cuanto más distintivo sea el estilo de 
+habla, mejor.
+2. ¿Cuál contiene más conocimientos y recuerdos relacionados con el 
+rol? Cuanto más rico, mejor. (Si la pregunta contiene respuestas de 
+referencia, los conocimientos y recuerdos específicos del rol se 
+basan 
+en la respuesta de referencia).
+Costo y latencia
+Un modelo que genere outputs de alta calidad pero sea demasiado lento y
+caro de ejecutar no será útil. A la hora de evaluar los modelos, es importante
+encontrar un equilibrio entre calidad, latencia y costo. Muchas empresas
+optan por modelos de menor calidad si ofrecen mejor costo y latencia. La
+optimización de costos y latencia se aborda en detalle en el Capítulo 9, por
+lo que esta sección será rápida.
+La optimización para objetivos múltiples es un campo de estudio activo
+denominado optimización de Pareto. Cuando se optimiza para múltiples
+objetivos, es importante tener claro en qué objetivos se puede transigir y
+cuáles no. Por ejemplo, si la latencia es algo en lo que no se puede transigir,
+se empieza con las expectativas de latencia para distintos modelos, se filtran
+todos los modelos que no cumplen los requisitos de latencia y luego se elige
+el mejor entre los demás.
+Existen múltiples métricas de latencia para los modelos fundacionales, entre
+las que se incluyen el tiempo hasta el primer token, el tiempo por token, el
+tiempo entre tokens, el tiempo por consulta, etc. Es importante entender qué
+métricas de latencia le importan.
+La latencia no solo depende del modelo subyacente, sino también de cada
+prompt y variable de muestreo. Los modelos autorregresivos del lenguaje
+suelen generar outputs token a token. Cuantos más tokens tenga que
+generar, mayor será la latencia total. Puede controlar la latencia total
+observada por los usuarios generando prompts con cuidado, por ejemplo
+ordenando al modelo que sea conciso, estableciendo una condición de

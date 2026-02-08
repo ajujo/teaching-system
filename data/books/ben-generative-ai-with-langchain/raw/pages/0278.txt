@@ -1,0 +1,14 @@
+Chapter 6
+251
+Figure 6.7: Solution path exploration with ToT
+Please note that the model’s provider should support the generation of multiple candidates in 
+the response (not all providers support this feature).
+We would like to highlight (and we’re not tired of doing this repeatedly in this chapter) that there’s 
+nothing entirely new in the ToT pattern. You take what algorithms and patterns have been used 
+already in other areas, and you use them to build capable agents.
+Now it’s time to do some coding. We’ll take the same components of the plan-and-solve agents 
+we developed in Chapter 5 – a planner that creates an initial plan and execution_agent, which 
+is a research agent with access to tools and works on a specific step in the plan. We can make our 
+execution agent simpler since we don’t need a custom state:
+execution_agent = prompt_template | create_react_agent(model=llm, 
+tools=tools)

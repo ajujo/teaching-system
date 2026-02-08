@@ -1,0 +1,30 @@
+Chapter 3
+89
+class ArticleDocument(Document):
+    link: str
+    class Settings:
+        name = DataCategory.ARTICLES
+Finally, we define the UserDocument class, which is used to store and query all the users from the
+LLM Twin project:
+class UserDocument(NoSQLBaseDocument):
+    first_name: str
+    last_name: str
+    class Settings:
+        name = "users"
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+By implementing the NoSQLBaseDocument ODM class, we had to focus solely on the fields and
+specific functionality of each document or domain entity. All the CRUD functionality is delegated
+to the parent class. Also, by leveraging Pydantic to define the fields, we have out-of-the-box type
+validation. For example, when creating an instance of the ArticleDocument class, if the provided
+link is None or not a string, it will throw an error signaling that the data is invalid.
+With that, we've finished implementing our data collection pipeline, starting with the ZenML
+components. Then, we looked into the implementation of the crawlers and, finally, wrapped it
+up with the ODM class and data category documents. The last step is to run the data collection
+pipeline and ingest raw data into the MongoDB data warehouse.
+Gathering raw data into the data warehouse
+ZenML orchestrates the data collection pipeline. Thus, leveraging ZenML, the data collection
+pipeline can be run manually, scheduled, or triggered by specific events. Here, we will show you
+how to run it manually, while we will discuss the other scenarios in Chapter 11 when digging
+deeper into MLOps.

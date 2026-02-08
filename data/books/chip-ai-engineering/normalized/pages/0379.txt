@@ -1,0 +1,30 @@
+Microsoft tiene un gran artículo sobre cómo planificar el Red Teaming para
+los LLMs.
+Lo aprendido con los Red Teams ayudará a diseñar los mecanismos de
+defensa adecuados. En general, las defensas contra ataques de prompts
+pueden implementarse a nivel de modelo, prompt y de sistema. Aunque hay
+medidas que puede aplicar, mientras su sistema pueda hacer algo de
+impacto, los riesgos de hackeo de prompts nunca se eliminan por completo.
+Para evaluar la solidez de un sistema frente a ataques de prompts, dos
+métricas importantes son la tasa de violaciones y la tasa de falsos rechazos.
+La tasa de violaciones mide el porcentaje de ataques con éxito entre todos
+los intentos de ataque. La tasa de falsos rechazos mide la frecuencia con la
+que un modelo rechaza una consulta cuando es posible responder con
+seguridad. Ambas métricas son necesarias para garantizar que un sistema
+sea seguro sin ser excesivamente precavido. Imagínese un sistema que
+rechace todas las solicitudes: un sistema así podría alcanzar una tasa de
+violaciones cero, pero no sería útil para los usuarios.
+Defensa a nivel de modelo
+Muchos ataques de prompts son posibles porque el modelo es incapaz de
+diferenciar entre las instrucciones del sistema y las maliciosas, ya que todas
+están concatenadas en una gran masa de instrucciones que se introducen en
+el modelo. Esto significa que muchos ataques pueden frustrarse si se
+entrena al modelo para seguir mejor los prompts del sistema.
+En su artículo "The Instruction Hierarchy: Training LLMs to Prioritize
+Privileged Instructions" (Wallace et al., 2024), OpenAI presenta una
+jerarquía de instrucciones con cuatro niveles de prioridad, que se pueden
+ver en la Figura 5-16:
+1. Prompt del sistema
+2. Prompt del usuario
+3. Outputs del modelo
+4. Outputs de la herramienta

@@ -1,0 +1,26 @@
+Using decision trees for discretization
+151
+As evidenced in the plots, discretization with decision trees returns a different fraction of
+observations at each node or bin.
+How it works...
+To perform discretization with decision trees, we used feature-engine's Decision
+TreeDiscretiser(). This transformer fitted a decision tree using each variable to discretize
+as input and optimized the hyperparameters of the model to find the best partitions based on a
+performance metric. It automatically found the optimal number of intervals, as well as their limits,
+returning either the limits, the bin number, or the predictions as a result.
+There's more...
+The implementation of feature-engine is inspired by the winning solution of the KDD 2009
+data science competition. The winners created new features by obtaining predictions of decision
+trees based on continuous features. You can find more details in the Winning the KDD Cup Orange
+Challenge with Ensemble Selection article on page 27 of the article series at http://www.mtome.
+com/Publications/CiML/CiML-v3-book.pdf.
+For a review of discretization techniques, you might find the following articles useful:
+•	 Dougherty et al, Supervised and Unsupervised Discretization of Continuous Features, Machine
+Learning: Proceedings of the 12th International Conference, 1995, (https://ai.stanford.
+edu/~ronnyk/disc.pdf).
+•	 Lu et al, Discretization: An Enabling Technique, Data Mining, and Knowledge Discovery, 6,
+393-423, 2002, (https://www.researchgate.net/publication/220451974_
+Discretization_An_Enabling_Technique).
+•	 Garcia et al, A Survey of Discretization Techniques: Taxonomy and Empirical Analysis in Supervised
+Learning, IEEE Transactions on Knowledge in Data Engineering 25 (4), 2013, (https://
+ieeexplore.ieee.org/document/6152258).

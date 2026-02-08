@@ -1,0 +1,24 @@
+entrenar desde cero clasificadores aún más pequeños. Los enrutadores
+deben ser rápidos y baratos para poder utilizar varios sin incurrir en una
+latencia y un costo adicionales significativos.
+Cuando se enrutan consultas a modelos con límites de contexto variables,
+puede ser necesario afinar el contexto de la consulta en consecuencia.
+Piense en una consulta de 1000 tokens que está programada para un modelo
+con un límite de contexto de 4K. Entonces, el sistema realiza una acción,
+por ejemplo, una búsqueda en Internet, que devuelve un contexto de 8000
+tokens. Puede truncar el contexto de la consulta para ajustarlo al modelo
+previsto originalmente o dirigir la consulta a un modelo con un límite de
+contexto mayor.
+Debido a que el enrutamiento es usualmente hecho por modelos, lo incluí
+en la casilla de API de modelo en la Figura 10-5. Al igual que los
+calificadores, los enrutadores suelen ser más pequeños que los modelos
+utilizados para la generación.
+Agrupar los enrutadores con otros modelos facilita manejar los modelos.
+Sin embargo, es importante tener en cuenta que el enrutamiento suele
+producirse antes de la recuperación. Por ejemplo, antes de la recuperación,
+un enrutador puede ayudar a determinar si una consulta está dentro del
+ámbito de aplicación y, en caso afirmativo, si se necesita usar recuperación.
+El enrutamiento también puede producirse después de la recuperación, por
+ejemplo para determinar si una consulta debe dirigirse a un operador
+humano. Sin embargo, es mucho más común encontrar el patrón de
+aplicación de IA enrutamiento - recuperación - generación - puntuación.

@@ -1,0 +1,25 @@
+Inference Optimization
+300
+During inference, DP can be useful for processing concurrent requests. By distributing the workload across multiple GPUs, this approach helps reduce latency, as multiple requests can be handled
+simultaneously. This concurrent processing also increases throughput, since a higher number of
+requests can be processed at the same time.
+However, the effectiveness of DP is limited by the model size and the communication overhead
+between GPUs. Indeed, replicating the model's parameters on each GPU is inefficient. This means
+that this technique only works when the model is small enough to fit into a single GPU, leaving
+less room for input data and thus limiting the batch size. For larger models or when memory is
+a constraint, this can be a significant drawback.
+Typically, DP is mainly used for training, while pipeline and tensor parallelism are preferred for
+inference.
+Pipeline parallelism
+Introduced by Huang et al. in the GPipe paper (2019), pipeline parallelism (PP) is a strategy
+for distributing the computational load of training and running large neural networks across
+multiple GPUs.
+Unlike traditional DP, which replicates the entire model on each GPU, pipeline parallelism partitions the model's layers across different GPUs. This approach allows each GPU to handle a specific
+portion of the model, thereby reducing the memory burden on individual GPUs.
+Figure 8.5 - Illustration of pipeline parallelism with four GPUs
+As shown in Figure 8.5, in a typical four-way pipeline parallel split, the model is divided into four
+segments, with each segment assigned to a different GPU. The first 25% of the model's layers might
+be processed by GPU 1, the next 25% by GPU 2, and so on. During the forward pass, activations
+are computed and then passed along to the next GPU. For training, the backward pass follows a
+similar sequence in reverse, with gradients being propagated back through the GPUs. The number
+of GPUs is often referred to as the degree of parallelism.

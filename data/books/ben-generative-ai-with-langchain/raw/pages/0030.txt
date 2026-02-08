@@ -1,0 +1,43 @@
+Chapter 1
+3
+Year
+Development
+Key Features
+1990s
+IBM Alignment Models
+Statistical machine translation
+2000s
+Web-scale datasets
+Large-scale statistical models
+2009
+Statistical models dominate
+Large-scale text ingestion
+2012
+Deep learning gains traction
+Neural networks outperform statistical models
+2016
+Neural Machine Translation 
+(NMT)
+Seq2seq deep LSTMs replace statistical methods
+2017
+Transformer architecture
+Self-attention revolutionizes NLP
+2018
+BERT and GPT-1
+Transformer-based language understanding and 
+generation
+Key terminologies
+Tools: External utilities or functions that AI models can use to interact with the world. 
+Tools allow agents to perform actions like searching the web, calculating values, or 
+accessing databases to overcome LLMs’ inherent limitations.
+Memory: Systems that allow AI applications to store and retrieve information across 
+interactions. Memory enables contextual awareness in conversations and complex 
+workflows by tracking previous inputs, outputs, and important information.
+Reinforcement learning from human feedback (RLHF): A training technique where 
+AI models learn from direct human feedback, optimizing their performance to align 
+with human preferences. RLHF helps create models that are more helpful, safe, and 
+aligned with human values.
+Agents: AI systems that can perceive their environment, make decisions, and take 
+actions to accomplish goals. In LangChain, agents use LLMs to interpret tasks, choose 
+appropriate tools, and execute multi-step processes with minimal human inter­
+vention.

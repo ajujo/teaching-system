@@ -1,0 +1,27 @@
+CHAPTER 9
+Validation and Measurement
+It has never been easier to build products and applications, but effectively measuring
+these systems remains an enormous challenge. While teams are often under pressure
+to ship things quickly, taking the time to rigorously evaluate performance and assess
+quality pays long-term dividends and enables teams to ultimately move faster and
+with more confidence. Without rigorous evaluation and measurement, decisions
+about which changes to ship become much more difficult. Rigorous measurement
+and validation become essential, not only to optimize performance but also to build
+trust and ensure alignment with user expectations.
+This chapter explores methodologies for evaluating agent-based systems, covering
+key principles, measurement techniques, and validation strategies. We explore the
+critical role of defining clear objectives, selecting appropriate metrics, and imple‐
+menting robust testing frameworks to assess system performance under real-world
+conditions. Beyond mere functionality, the reliability of agent outputs-including
+accuracy, consistency, coherence, and responsiveness-requires systematic scrutiny,
+particularly given the probabilistic nature of foundation models that often power
+these systems.
+Throughout this chapter, we follow a customer support agent handling a common
+ecommerce scenario: a customer reports a cracked coffee mug and requests a refund.
+We'll build on this case, exploring variations like multi-item orders, cancellations, or
+changes in addresses, to illustrate measurement, validation, and deployment.
+Measuring Agentic Systems
+Without rigorous measurement, it is impossible to ensure that the system meets its
+intended goals or handles the complexities of real-world environments. By defining
+clear objectives, establishing relevant metrics, and employing systematic evaluation
+205

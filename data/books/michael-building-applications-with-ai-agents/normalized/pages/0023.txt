@@ -1,0 +1,28 @@
+CHAPTER 1
+Introduction to Agents
+We are witnessing a profound technological transformation driven by autonomous
+agents-intelligent software systems capable of independent reasoning, decision mak‐
+ing, and interacting effectively within dynamic environments. Unlike traditional soft‐
+ware, autonomous agents interpret contexts, adapt to changing scenarios, and
+perform sophisticated actions with minimal human oversight.
+Defining AI Agents
+Autonomous agents are intelligent systems designed to independently analyze data,
+interpret their environment, and make context-driven decisions. As the popularity of
+the term "agent" grows, its meaning has become diluted, often applied to systems
+lacking genuine autonomy. In practice, agency exists on a spectrum. True autono‐
+mous agents demonstrate meaningful decision making, context-driven reasoning,
+and adaptive behaviors. Conversely, many systems labeled as "agents" may simply
+execute deterministic scripts or tightly controlled workflows. Designing genuinely
+autonomous, adaptive agents is challenging, prompting many teams to adopt simpler
+approaches to achieve quicker outcomes. Therefore, the key test of a true agent is
+whether it demonstrates real decision making rather than following static scripts.
+The rapid evolution of autonomous agents is primarily driven by breakthroughs in
+foundation models and reinforcement learning. While traditional use cases with
+foundation models have focused on generating human-readable outputs, the latest
+advances enable these models to generate structured function signatures and parame‐
+ter selections. Orchestration frameworks can then execute these functions-enabling
+agents to look up data, manipulate external systems, and perform concrete actions.
+Throughout this book, we will use the term "agentic system" to describe the full sup‐
+porting functionality that enables an agent to run effectively, including the tools,
+memory, foundation model, orchestration, and supporting infrastructure.
+1

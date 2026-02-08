@@ -1,0 +1,30 @@
+Si se utiliza un formato de 16 bits como FP16, solo para cargar las
+ponderaciones del modelo se necesitarán 14 GB de memoria.
+El afinado completo de este modelo con el optimizador Adam,
+también en formato de 16 bits, requerirá 7 MM × 3 × 2 bytes
+adicionales = 42 GB de memoria.
+La memoria total necesaria para las ponderaciones del modelo, los
+gradientes y los estados del optimizador será entonces de 14 GB +
+42 GB = 56 GB.
+56 GB superan la capacidad de memoria de la mayoría de las GPU de
+consumo, que suelen venir con 12-24 GB de memoria, mientras que las
+GPU de gama alta ofrecen hasta 48 GB. Y esta estimación de la memoria
+aún no tiene en cuenta la memoria necesaria para las activaciones.
+NOTA
+Para adaptar un modelo a un hardware determinado, puede reducir la huella
+de memoria del modelo o encontrar formas de utilizar la memoria del
+hardware de forma más eficiente. Técnicas como la cuantización o el PEFT
+ayudan a minimizar la huella de memoria total. Entre las técnicas que se
+centran en hacer un mejor uso de la memoria de hardware se incluye la
+descarga en CPU. En lugar de intentar ajustar todo el modelo en las GPU,
+se puede descargar el exceso de memoria en las CPU, como demuestra
+DeepSpeed (Rasley et al., 2020).
+Tampoco hemos mencionado el hecho de que el afinado completo,
+especialmente el afinado supervisado y el afinado de preferencias, suele
+requerir una gran cantidad de datos anotados de alta calidad que la mayoría
+de la gente no puede permitirse. Debido a los elevados requisitos de
+memoria y datos del afinado completo, la gente empezó a hacer afinados
+parciales. En el afinado parcial, solo se actualizan algunos parámetros del
+modelo. Por ejemplo, si un modelo tiene diez capas, pueden congelar las
+nueve primeras y afinar solo la última, 22reduciendo el número de
+parámetros entrenables al 10 % del afinado completo.

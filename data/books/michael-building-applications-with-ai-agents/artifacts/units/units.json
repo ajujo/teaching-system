@@ -1,0 +1,419 @@
+{
+  "$schema": "units_v1",
+  "book_id": "michael-building-applications-with-ai-agents",
+  "created_at": "2026-01-30T06:33:01.046073+00:00",
+  "units": [
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch01-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:1",
+      "chapter_number": 1,
+      "title": "Ch1 — Introduction to Agents (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:1:sec:1",
+        "michael-building-applications-with-ai-agents:ch:1:sec:2",
+        "michael-building-applications-with-ai-agents:ch:1:sec:3",
+        "michael-building-applications-with-ai-agents:ch:1:sec:4",
+        "michael-building-applications-with-ai-agents:ch:1:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "intro",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch01-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:1",
+      "chapter_number": 1,
+      "title": "Ch1 — Introduction to Agents (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:1:sec:6",
+        "michael-building-applications-with-ai-agents:ch:1:sec:7",
+        "michael-building-applications-with-ai-agents:ch:1:sec:8",
+        "michael-building-applications-with-ai-agents:ch:1:sec:9",
+        "michael-building-applications-with-ai-agents:ch:1:sec:10"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "intro",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch02-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:2",
+      "chapter_number": 2,
+      "title": "Ch2 — Designing Agent Systems (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:2:sec:1",
+        "michael-building-applications-with-ai-agents:ch:2:sec:2",
+        "michael-building-applications-with-ai-agents:ch:2:sec:3",
+        "michael-building-applications-with-ai-agents:ch:2:sec:4",
+        "michael-building-applications-with-ai-agents:ch:2:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch02-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:2",
+      "chapter_number": 2,
+      "title": "Ch2 — Designing Agent Systems (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:2:sec:6",
+        "michael-building-applications-with-ai-agents:ch:2:sec:7",
+        "michael-building-applications-with-ai-agents:ch:2:sec:8",
+        "michael-building-applications-with-ai-agents:ch:2:sec:9",
+        "michael-building-applications-with-ai-agents:ch:2:sec:10"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch03-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:3",
+      "chapter_number": 3,
+      "title": "Ch3 — User Experience Design for Agentic Systems (Parte 1/3)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:3:sec:1",
+        "michael-building-applications-with-ai-agents:ch:3:sec:2",
+        "michael-building-applications-with-ai-agents:ch:3:sec:3",
+        "michael-building-applications-with-ai-agents:ch:3:sec:4",
+        "michael-building-applications-with-ai-agents:ch:3:sec:5",
+        "michael-building-applications-with-ai-agents:ch:3:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch03-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:3",
+      "chapter_number": 3,
+      "title": "Ch3 — User Experience Design for Agentic Systems (Parte 2/3)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:3:sec:7",
+        "michael-building-applications-with-ai-agents:ch:3:sec:8",
+        "michael-building-applications-with-ai-agents:ch:3:sec:9",
+        "michael-building-applications-with-ai-agents:ch:3:sec:10",
+        "michael-building-applications-with-ai-agents:ch:3:sec:11",
+        "michael-building-applications-with-ai-agents:ch:3:sec:12"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch03-u03",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:3",
+      "chapter_number": 3,
+      "title": "Ch3 — User Experience Design for Agentic Systems (Parte 3/3)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:3:sec:13",
+        "michael-building-applications-with-ai-agents:ch:3:sec:14",
+        "michael-building-applications-with-ai-agents:ch:3:sec:15",
+        "michael-building-applications-with-ai-agents:ch:3:sec:16",
+        "michael-building-applications-with-ai-agents:ch:3:sec:17"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch04-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:4",
+      "chapter_number": 4,
+      "title": "Ch4 — Tool Use",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:4:sec:1",
+        "michael-building-applications-with-ai-agents:ch:4:sec:2",
+        "michael-building-applications-with-ai-agents:ch:4:sec:3",
+        "michael-building-applications-with-ai-agents:ch:4:sec:4",
+        "michael-building-applications-with-ai-agents:ch:4:sec:5",
+        "michael-building-applications-with-ai-agents:ch:4:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch05-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:5",
+      "chapter_number": 5,
+      "title": "Ch5 — Orchestration (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:5:sec:1",
+        "michael-building-applications-with-ai-agents:ch:5:sec:2",
+        "michael-building-applications-with-ai-agents:ch:5:sec:3",
+        "michael-building-applications-with-ai-agents:ch:5:sec:4",
+        "michael-building-applications-with-ai-agents:ch:5:sec:5",
+        "michael-building-applications-with-ai-agents:ch:5:sec:6",
+        "michael-building-applications-with-ai-agents:ch:5:sec:7"
+      ],
+      "estimated_time_min": 26,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch05-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:5",
+      "chapter_number": 5,
+      "title": "Ch5 — Orchestration (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:5:sec:8",
+        "michael-building-applications-with-ai-agents:ch:5:sec:9",
+        "michael-building-applications-with-ai-agents:ch:5:sec:10",
+        "michael-building-applications-with-ai-agents:ch:5:sec:11",
+        "michael-building-applications-with-ai-agents:ch:5:sec:12",
+        "michael-building-applications-with-ai-agents:ch:5:sec:13"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch06-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:6",
+      "chapter_number": 6,
+      "title": "Ch6 — Knowledge and Memory (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:6:sec:1",
+        "michael-building-applications-with-ai-agents:ch:6:sec:2",
+        "michael-building-applications-with-ai-agents:ch:6:sec:3",
+        "michael-building-applications-with-ai-agents:ch:6:sec:4",
+        "michael-building-applications-with-ai-agents:ch:6:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch06-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:6",
+      "chapter_number": 6,
+      "title": "Ch6 — Knowledge and Memory (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:6:sec:6",
+        "michael-building-applications-with-ai-agents:ch:6:sec:7",
+        "michael-building-applications-with-ai-agents:ch:6:sec:8",
+        "michael-building-applications-with-ai-agents:ch:6:sec:9"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch07-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:7",
+      "chapter_number": 7,
+      "title": "Ch7 — Learning in Agentic Systems",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:7:sec:1",
+        "michael-building-applications-with-ai-agents:ch:7:sec:2",
+        "michael-building-applications-with-ai-agents:ch:7:sec:3",
+        "michael-building-applications-with-ai-agents:ch:7:sec:4",
+        "michael-building-applications-with-ai-agents:ch:7:sec:5",
+        "michael-building-applications-with-ai-agents:ch:7:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch08-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:8",
+      "chapter_number": 8,
+      "title": "Ch8 — From One Agent to Many (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:8:sec:1",
+        "michael-building-applications-with-ai-agents:ch:8:sec:2",
+        "michael-building-applications-with-ai-agents:ch:8:sec:3",
+        "michael-building-applications-with-ai-agents:ch:8:sec:4",
+        "michael-building-applications-with-ai-agents:ch:8:sec:5",
+        "michael-building-applications-with-ai-agents:ch:8:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch08-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:8",
+      "chapter_number": 8,
+      "title": "Ch8 — From One Agent to Many (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:8:sec:7",
+        "michael-building-applications-with-ai-agents:ch:8:sec:8",
+        "michael-building-applications-with-ai-agents:ch:8:sec:9",
+        "michael-building-applications-with-ai-agents:ch:8:sec:10",
+        "michael-building-applications-with-ai-agents:ch:8:sec:11",
+        "michael-building-applications-with-ai-agents:ch:8:sec:12"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch09-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:9",
+      "chapter_number": 9,
+      "title": "Ch9 — Validation and Measurement (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:9:sec:1",
+        "michael-building-applications-with-ai-agents:ch:9:sec:2",
+        "michael-building-applications-with-ai-agents:ch:9:sec:3",
+        "michael-building-applications-with-ai-agents:ch:9:sec:4",
+        "michael-building-applications-with-ai-agents:ch:9:sec:5",
+        "michael-building-applications-with-ai-agents:ch:9:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch09-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:9",
+      "chapter_number": 9,
+      "title": "Ch9 — Validation and Measurement (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:9:sec:7",
+        "michael-building-applications-with-ai-agents:ch:9:sec:8",
+        "michael-building-applications-with-ai-agents:ch:9:sec:9",
+        "michael-building-applications-with-ai-agents:ch:9:sec:10",
+        "michael-building-applications-with-ai-agents:ch:9:sec:11",
+        "michael-building-applications-with-ai-agents:ch:9:sec:12"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch10-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:10",
+      "chapter_number": 10,
+      "title": "Ch10 — Monitoring in Production (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:10:sec:1",
+        "michael-building-applications-with-ai-agents:ch:10:sec:2",
+        "michael-building-applications-with-ai-agents:ch:10:sec:3",
+        "michael-building-applications-with-ai-agents:ch:10:sec:4",
+        "michael-building-applications-with-ai-agents:ch:10:sec:5",
+        "michael-building-applications-with-ai-agents:ch:10:sec:6"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch10-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:10",
+      "chapter_number": 10,
+      "title": "Ch10 — Monitoring in Production (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:10:sec:7",
+        "michael-building-applications-with-ai-agents:ch:10:sec:8",
+        "michael-building-applications-with-ai-agents:ch:10:sec:9",
+        "michael-building-applications-with-ai-agents:ch:10:sec:10",
+        "michael-building-applications-with-ai-agents:ch:10:sec:11"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "adv",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch11-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:11",
+      "chapter_number": 11,
+      "title": "Ch11 — Improvement Loops (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:11:sec:1",
+        "michael-building-applications-with-ai-agents:ch:11:sec:2",
+        "michael-building-applications-with-ai-agents:ch:11:sec:3",
+        "michael-building-applications-with-ai-agents:ch:11:sec:4"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch11-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:11",
+      "chapter_number": 11,
+      "title": "Ch11 — Improvement Loops (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:11:sec:5",
+        "michael-building-applications-with-ai-agents:ch:11:sec:6",
+        "michael-building-applications-with-ai-agents:ch:11:sec:7",
+        "michael-building-applications-with-ai-agents:ch:11:sec:8"
+      ],
+      "estimated_time_min": 17,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch12-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:12",
+      "chapter_number": 12,
+      "title": "Ch12 — Protecting Agentic Systems (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:12:sec:1",
+        "michael-building-applications-with-ai-agents:ch:12:sec:2",
+        "michael-building-applications-with-ai-agents:ch:12:sec:3",
+        "michael-building-applications-with-ai-agents:ch:12:sec:4",
+        "michael-building-applications-with-ai-agents:ch:12:sec:5",
+        "michael-building-applications-with-ai-agents:ch:12:sec:6",
+        "michael-building-applications-with-ai-agents:ch:12:sec:7"
+      ],
+      "estimated_time_min": 26,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch12-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:12",
+      "chapter_number": 12,
+      "title": "Ch12 — Protecting Agentic Systems (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:12:sec:8",
+        "michael-building-applications-with-ai-agents:ch:12:sec:9",
+        "michael-building-applications-with-ai-agents:ch:12:sec:10",
+        "michael-building-applications-with-ai-agents:ch:12:sec:11",
+        "michael-building-applications-with-ai-agents:ch:12:sec:12",
+        "michael-building-applications-with-ai-agents:ch:12:sec:13"
+      ],
+      "estimated_time_min": 23,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch13-u01",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:13",
+      "chapter_number": 13,
+      "title": "Ch13 — Human-Agent Collaboration (Parte 1/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:13:sec:1",
+        "michael-building-applications-with-ai-agents:ch:13:sec:2",
+        "michael-building-applications-with-ai-agents:ch:13:sec:3",
+        "michael-building-applications-with-ai-agents:ch:13:sec:4",
+        "michael-building-applications-with-ai-agents:ch:13:sec:5"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    },
+    {
+      "unit_id": "michael-building-applications-with-ai-agents-ch13-u02",
+      "chapter_id": "michael-building-applications-with-ai-agents:ch:13",
+      "chapter_number": 13,
+      "title": "Ch13 — Human-Agent Collaboration (Parte 2/2)",
+      "section_ids": [
+        "michael-building-applications-with-ai-agents:ch:13:sec:6",
+        "michael-building-applications-with-ai-agents:ch:13:sec:7",
+        "michael-building-applications-with-ai-agents:ch:13:sec:8",
+        "michael-building-applications-with-ai-agents:ch:13:sec:9",
+        "michael-building-applications-with-ai-agents:ch:13:sec:10"
+      ],
+      "estimated_time_min": 20,
+      "difficulty": "mid",
+      "learning_objectives": []
+    }
+  ]
+}

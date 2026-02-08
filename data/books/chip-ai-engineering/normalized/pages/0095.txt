@@ -1,0 +1,32 @@
+clasificación de imágenes solo ve animales en su conjunto de
+entrenamiento, no funcionará bien con fotos de plantas.
+Si quiere que un modelo mejore en una tarea determinada, quizá le interese
+incluir más datos de esa tarea en los datos de entrenamiento. No obstante,
+recopilar datos suficientes para entrenar un gran modelo no es fácil y puede
+resultar caro. Los desarrolladores de modelos a menudo tienen que basarse
+en los datos disponibles, aunque estos no se ajusten exactamente a sus
+necesidades.
+Por ejemplo, una fuente habitual de datos de entrenamiento es Common
+Crawl, creada por una organización sin ánimo de lucro que explora y reune
+datos esporádicamente de sitios web en Internet. En 2022 y 2023, esta
+organización exploró aproximadamente entre 2000 y 3000 millones de
+páginas web cada mes. Google ofrece un subconjunto limpio de Common
+Crawl denominado Colossal Clean Crawled Corpus, o C4 para abreviar.
+La calidad de los datos de Common Crawl, y hasta cierto punto de C4, es
+cuestionable. Piense en clickbait, desinformación, propaganda, teorías
+conspiratorias, racismo, misoginia y cualquier sitio web sospechoso que
+haya visto o evitado en Internet. Un estudio del Washington Post muestra
+que entre los 1000 sitios web más comunes del conjunto de datos figuran
+varios medios de comunicación que ocupan puestos bajos en la escala de
+fiabilidad de NewsGuard. En términos sencillos, Common Crawl contiene
+muchas noticias falsas.
+Sin embargo, por el simple hecho de que Common Crawl está disponible, se
+utilizan variaciones del mismo en la mayoría de los modelos fundacionales
+que revelan sus fuentes de datos de entrenamiento, incluyendo GPT-3 de
+OpenAI y Gemini de Google. Sospecho que Common Crawl también se
+utiliza en modelos que no revelan sus datos de entrenamiento. Para evitar el
+escrutinio tanto del público como de la competencia, muchas empresas han
+dejado de revelar esta información.
+Algunos equipos utilizan la heurística para filtrar los datos de baja calidad
+de Internet. Por ejemplo, OpenAI utilizó solo los enlaces de Reddit que
+recibieron al menos tres votos positivos para entrenar GPT-2. Aunque esto

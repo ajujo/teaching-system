@@ -1,0 +1,32 @@
+GPT-4 parece tener una gama más amplia y diversa de emparejamientos
+verbo-sustantivo y tiende a generar respuestas más largas.
+Grafique estas distribuciones por fuente de datos, tiempo, anotador, etc.
+¿Nota algún patrón de preguntas que tienda a obtener respuestas más
+largas/cortas o puntuaciones más altas/bajas? ¿Hay valores atípicos? ¿Cuál
+puede ser la causa de estos valores atípicos? ¿Qué hacer con ellos?
+Si se supone que las puntuaciones siguen una distribución normal, ¿la
+siguen las puntuaciones de todos los anotadores? Es posible que observe
+que algunos anotadores tienden a dar respuestas mucho más cortas o a
+inclinarse por puntuaciones más altas, y les corresponde a ustedes decidir
+qué hacer con sus anotaciones.
+Si cada ejemplo tiene más de una anotación, calculen el desacuerdo entre
+anotadores. Revise los ejemplos con anotaciones conflictivas y resuelva los
+conflictos.
+Hay muchas herramientas de exploración de datos que debería utilizar, pero
+no sustituye a la inspección manual de los datos. En todos los proyectos en
+los que he trabajado, estudiar los datos durante tan solo 15 minutos suele
+darme alguna idea que podría ahorrarme horas de dolores de cabeza. Greg
+Brockman, cofundador de OpenAI, tuiteó: "La inspección manual de datos
+tiene probablemente la mayor relación valor-prestigio de cualquier
+actividad en el aprendizaje automático".
+Examine los datos para ver si los ejemplos tienen sentido. Si son datos
+anotados, elija algunas consultas e intente anotarlas ustedes mismo para ver
+si las suyas coinciden con las anotaciones dadas. Esto le dará una idea de la
+fiabilidad de las anotaciones. Verifique las respuestas. ¿Hasta qué punto son
+únicos los ejemplos? ¿Existen ejemplos con la misma consulta pero con
+respuestas diferentes? ¿Existen ejemplos con las mismas respuestas pero
+con consultas diferentes?
+Deduplicar datos
+Los datos duplicados pueden distorsionar la distribución de los datos e
+introducir sesgos en el modelo. Imagine un conjunto de datos con el aspecto
+de la Tabla 8-3. Las entradas duplicadas podrían llevar al modelo a la

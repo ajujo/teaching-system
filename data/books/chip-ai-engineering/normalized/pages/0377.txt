@@ -1,0 +1,16 @@
+autor, puede regurgitar estos contenidos a los usuarios. Utilizar sin saberlo
+material regurgitado protegido por derechos de autor puede ser causa de
+demanda.
+En 2022, el documento de Stanford "Holistic Evaluation of Language
+Models" midió la regurgitación de información con derechos de autor de un
+modelo tratando de ofrecerle un prompt para que generase materiales
+protegidos por derechos de autor textualmente. Por ejemplo, dan al modelo
+el primer párrafo de un libro y le dan un prompt para que genere el segundo
+párrafo. Si el párrafo generado es exactamente igual al del libro, el modelo
+debe haber visto el contenido de este libro durante el entrenamiento y lo
+está regurgitando. Al estudiar una amplia gama de modelos fundacionales,
+llegaron a la conclusión de que "la probabilidad de regurgitación directa de
+largas secuencias protegidas por derechos de autor es algo infrecuente, pero
+se vuelve apreciable cuando se analizan libros populares".
+figura 5-15. Claude bloqueó por error una solicitud, pero accedió después de que el
+usuario le señalara el error.

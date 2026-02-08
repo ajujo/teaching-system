@@ -1,0 +1,31 @@
+5 Para evitar que los usuarios cometan errores con las plantillas, muchas API de
+modelos están diseñadas para que los usuarios no tengan que escribir ellos
+mismos los tokens especiales de las plantillas.
+6 Aunque Google anunció experimentos con una longitud de contexto de 10
+millones en febrero de 2024, no incluí esta cifra en el gráfico porque aún no
+estaba disponible para el público.
+7 Shreya Shankar compartió un gran escrito sobre una prueba práctica de NIAH
+que hizo para las visitas al médico (2024).
+8 Recordemos que un modelo lingüístico, por sí mismo, no distingue entre el
+input proporcionado por el usuario y lo que él mismo genera, como se explica en
+el Capítulo 2.
+9 Este ejemplo de procesamiento paralelo se encuentra en la guía de ingeniería de
+prompts de Anthropic.
+10 Es probable que la capacidad de un modelo para escribir prompts aumente si ha
+sido entrenado con prompts compartidos en Internet.
+11 Hamel Husain codificó maravillosamente esta filosofía en su entrada de blog
+"Show Me the Prompt" (14 de febrero de 2024).
+12 En el Capítulo 4 se analizan brevemente que los outputs pueden provocar
+riesgos para la marca y desinformación.
+13 Uno de estos riesgos de ejecución remota de código se encontró en LangChain
+en 2023. Vea las incidencias de GitHub: 814 y 1026.
+14 Las listas más populares de prompts son f/awesome-chatgpt-prompts (prompts
+en inglés) y PlexPt/awesome-chatgpt-prompts-zh (prompts en chino). A medida
+que aparecen nuevos modelos, no me imagino cuánto tiempo seguirán siendo
+pertinentes sus prompts.
+15 Tal vez los prompts propietarios puedan patentarse como se patenta un libro,
+pero hasta que no haya un precedente, es difícil saberlo.
+16 He probado que tan buenos son los modelos para entender errores tipográficos
+y me sorprendió que tanto ChatGPT como Claude fueran capaces de entender
+"el qeada" en mis consultas.
+17 Por favor, no me hagan explicar lo que es UwU.

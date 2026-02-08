@@ -1,0 +1,34 @@
+Fine-Tuning with Preference Alignment
+250
+While RLHF allows iterative improvement through multiple training rounds and can dynamically 
+adapt to new preferences, DPO offers a more straightforward path to achieving similar results. 
+The choice between DPO and PPO-based RLHF often comes down to a trade-off between ease of 
+implementation and potential peak performance. For large-scale training runs with millions of 
+preference samples, PPO-inspired methods still have a higher performance ceiling. However, for 
+most applications, DPO provides the majority of the performance benefits at a lower computa-
+tional and engineering cost.
+Both RLHF and DPO benefit significantly from the integration of synthetic data. As LLMs become 
+more capable, they can generate data that surpasses human-created content in quality and di-
+versity. This enables a virtuous cycle where better models produce better training data, which 
+in turn leads to further model improvements. The iterative nature of both approaches allows 
+multiple rounds of model refinement, each focusing on different aspects of model performance 
+and gradually enhancing capabilities across various domains.
+Despite its advantages, DPO is not without drawbacks. Like RLHF, DPO still requires paired pref-
+erence data, which can be expensive and time-consuming to collect. DPO lacks some of the the-
+oretical guarantees associated with reinforcement learning approaches. There may be scenarios 
+where the added flexibility of RLHF is beneficial, particularly for complex tasks or environments.
+Nonetheless, DPO is ideal in most cases, including our twin LLM example. In the next section, 
+we will implement it using Unsloth.
+Implementing DPO
+In this section, we will DPO fine-tune the TwinLlama-3.1-8B model we created in Chapter 5. For 
+ease of use and to maximize performance, we will again use the Unsloth library for our DPO im-
+plementation. Depending on the available VRAM, you can choose between LoRA (higher quality, 
+speed, and VRAM usage) and QLoRA (lower quality, speed, and VRAM usage). This technique, 
+along with other preference alignment algorithms, is also available in TRL and Axolotl.
+This example can be seen as an advanced application of DPO. Indeed, our objective of imitating 
+a writing style conflicts with the natural tendency of DPO to encourage formal language. This is 
+partly due to the fact that chosen answers are often more formal than rejected ones. In practice, 
+this will force us to do light fine-tuning, with a low learning rate and number of epochs. To find 
+the best hyperparameters, we trained over 20 models and compared their outputs on a set of 
+questions, including “Write a paragraph to introduce supervised fine-tuning.” This allowed us 
+to select the model and parameters that worked best for this task.

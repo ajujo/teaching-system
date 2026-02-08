@@ -1,0 +1,31 @@
+ejemplo, no debe tener ni mucho ni poco azúcar). La cantidad de datos se
+relaciona con cuántos ingredientes debe tener. Analicemos estos términos a
+detalle.
+Calidad de datos
+Una pequeña cantidad de datos de alta calidad pueden superar a una gran
+cantidad de datos llenos de ruido, por ejemplo, datos irrelevantes o
+incoherentes. Los creadores de la familia de modelos Yi descubrieron que
+10K instrucciones cuidadosamente elaboradas son superiores a cientos de
+miles de instrucciones con ruido (Young et al., 2024).
+De manera similar, "LIMA: Less Is More for Alignment" (Zhou et al.,
+2023) demuestra que un modelo Llama de 65 MM de parámetros, afinado
+con 1000 prompts y respuestas cuidadosamente seleccionados, puede
+producir respuestas equivalentes o estrictamente preferibles a GPT-4 en el
+43 % de los casos, según la opinión de los anotadores humanos. Sin
+embargo, el inconveniente de disponer de pocos ejemplos de datos es que
+LIMA no es tan robusto como los modelos de producto.
+El equipo Llama 3 también llegó a la misma conclusión. En particular,
+descubrieron que los datos generados por humanos son más propensos a
+errores e incoherencias, sobre todo en el caso de las políticas de seguridad
+con matices. Esto les llevó a desarrollar herramientas de anotación asistidas
+por IA para garantizar una alta calidad de los datos.
+La mayoría de la gente entiende la importancia de la calidad de los datos,
+pero ¿qué significa que los datos sean de alta calidad? La respuesta corta es
+que los datos se consideran de alta calidad si les ayudan a hacer su trabajo
+de forma eficaz y fiable. No obstante, la respuesta larga difiere según la
+persona.3 En general, los datos pueden considerarse de alta calidad si
+reúnen las seis características siguientes: relevantes, ajustados a los
+requisitos de la tarea, consistentes, con el formato correcto, únicos y en
+cumplimiento. Algunos casos de uso específicos pueden tener otros
+requisitos:
+Relevantes

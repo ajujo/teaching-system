@@ -1,0 +1,33 @@
+es así, es posible que el modelo simplemente memorice las respuestas que
+vio durante el entrenamiento, lo que hace que obtenga puntuaciones de
+evaluación más altas de lo que debería. Un modelo entrenado en la prueba
+comparativa MMLU puede alcanzar altas puntuaciones en MMLU y no ser
+útil.
+Rylan Schaeffer, estudiante de doctorado en Stanford, lo demostró
+maravillosamente en su artículo satírico de 2023 "Pretraining on the Test
+Set Is All You Need". Entrenándose exclusivamente con datos de varias
+pruebas comparativas, su modelo de un millón de parámetros consiguió
+puntuaciones casi perfectas y superó a modelos mucho mayores en todas
+esas pruebas.
+Cómo se produce la contaminación de datos
+Aunque hay quien pueda realizar el entrenamiento intencionadamente con
+datos de pruebas comparativas para obtener puntuaciones engañosamente
+altas, generalmente la contaminación de datos es involuntaria. Hoy en día,
+muchos modelos se entrenan con datos extraídos de Internet, y el proceso
+de extracción puede extraer accidentalmente datos de pruebas comparativas
+públicos. Quizá los datos de pruebas comparativas publicadas antes del
+entrenamiento de un modelo se incluyan en los datos de entrenamiento del
+modelo. 27 Es una de las razones por las que las pruebas comparativas
+existentes se saturan tan rápidamente, y por la que los desarrolladores de
+modelos a menudo sienten la necesidad de crear nuevas pruebas
+comparativas para evaluar sus nuevos modelos.
+La contaminación de datos puede producirse de forma indirecta, como
+cuando los datos de evaluación y los de entrenamiento proceden de la
+misma fuente. Por ejemplo, podría incluir libros de texto de matemáticas en
+los datos de entrenamiento para mejorar las capacidades matemáticas del
+modelo, y otra persona puede utilizar preguntas de los mismos libros para
+crear una prueba comparativa para evaluar las capacidades del modelo.
+La contaminación de datos también puede ocurrir intencionadamente por
+buenas razones. Supongamos que quiere crear el mejor modelo posible para
+sus usuarios. Inicialmente, se excluyen los datos de pruebas comparativas
+de los datos de entrenamiento del modelo y se elige el mejor modelo basado

@@ -1,0 +1,31 @@
+Chapter 6
+265
+On the other side, when using search, we can use a partial namespace path:
+print(len(in_memory_store.search(("users", "user1", "conv1"),
+query="name")))
+print(len(in_memory_store.search(("users", "user1"), query="name")))
+>> 1
+2
+As you can see, we were able to retrieve all relevant facts stored in memory by using a partial search.
+LangGraph has built-in InMemoryStore and PostgresStore implementations. Agentic memory
+mechanisms are still evolving. You can build your own implementation from available compo­
+nents, but we should see a lot of progress in the coming years or even months.
+Summary
+In this chapter, we dived deep into advanced applications of LLMs and the architectural patterns
+that enable them, leveraging LangChain and LangGraph. The key takeaway is that effectively
+building complex AI systems goes beyond simply prompting an LLM; it requires careful architec­
+tural design of the workflow itself, tool usage, and giving an LLM partial control over the workflow.
+We also discussed different agentic AI design patterns and how to develop agents that leverage
+LLMs' tool-calling abilities to solve complex tasks.
+We explored how LangGraph streaming works and how to control what information is streamed
+back during execution. We discussed the difference between streaming state updates and partial
+streaming answer tokens, learned about the Command interface as a way to hand off execution
+to a specific node within or outside the current LangGraph workflow, looked at the LangGraph
+platform and its main capabilities, and discussed how to implement HIL with LangGraph. We
+discussed how a thread on LangGraph differs from a traditional Pythonic definition (a thread is
+somewhat similar to a conversation instance), and we learned how to add memory to our workflow
+per-thread and with cross-thread persistence. Finally, we learned how to expand beyond basic
+LLM applications and build robust, adaptive, and intelligent systems by leveraging the advanced
+capabilities of LangChain and LangGraph.
+In the next chapter, we'll take a look at how generative AI transforms the software engineering
+industry by assisting in code development and data analysis.

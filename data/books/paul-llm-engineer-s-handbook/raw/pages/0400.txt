@@ -1,0 +1,37 @@
+Chapter 10
+369
+The SageMaker Inference deployment is composed of the following components that we will 
+show you how to implement:
+•	
+SageMaker endpoint: An endpoint is a scalable and secure API that SageMaker hosts to 
+enable real-time predictions from deployed models. It’s essentially the interface through 
+which applications interact with your model. Once deployed, an application can make 
+HTTP requests to the endpoint to receive real-time predictions.
+•	
+SageMaker model: In SageMaker, a model is an artifact that results from training an al-
+gorithm. It contains the information required to make predictions, including the weights 
+and computation logic. You can create multiple models and use them in different config-
+urations or for various predictions.
+•	
+SageMaker configuration: This configuration specifies the hardware and software set 
+up to host the model. It defines the resources required for the endpoint, such as the type 
+and number of ML compute instances. Endpoint configurations are used when creating 
+or updating an endpoint. They allow for flexibility in the deployment and scalability of 
+the hosted models.
+•	
+SageMaker Inference component: This is the last piece of the puzzle that connects the 
+model and configuration to an endpoint. You can deploy multiple models to an endpoint, 
+each with its resource configuration. Once deployed, models are easily accessible via the 
+InvokeEndpoint API in Python.
+Together, these components create a robust infrastructure for deploying and managing ML models 
+in SageMaker, enabling scalable, secure, and efficient real-time predictions.
+Other popular cloud platforms offer the exact solutions. For example, you have Azure OpenAI 
+instead of Bedrock and Azure ML instead of SageMaker on Azure. The list of ML deployment 
+tools, such as Hopsworks, Modal, Vertex AI, Seldon, BentoML, and many more, is endless and 
+will probably change. What is essential though is to understand your use case requirements and 
+find a tool that fits your needs.
+The training versus the inference pipeline
+Understanding the nuances between the training and inference pipelines is crucial before we 
+deploy the inference pipeline. While it might seem straightforward that the training pipeline is 
+for training and the inference pipeline is for inference, there are significant differences that we 
+need to grasp to comprehend the technical aspects of our discussion fully.

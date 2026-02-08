@@ -1,0 +1,152 @@
+{
+  "$schema": "exercise_set_v1",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "difficulty": "mid",
+  "types": [
+    "quiz"
+  ],
+  "generation_time_ms": 106331,
+  "mode": "json",
+  "pages_used": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "created_at": "2026-02-02T15:48:52.288175+00:00",
+  "total_points": 10,
+  "passing_threshold": 0.7,
+  "exercises": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q01",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "¿La principal diferencia entre un LLM Twin y una herramienta como ChatGPT radica en que el primero está diseñado para integrarse con pipelines de ML específicos?",
+      "correct_answer": true,
+      "explanation": "El texto explica que los LLM Twins requieren arquitecturas personalizadas (como FTI) para gestionar datos y entrenamiento, mientras que ChatGPT es una solución genérica sin integración con sistemas de ML específicos.",
+      "points": 1,
+      "tags": [
+        "LLM Twin",
+        "ChatGPT"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q02",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Cuál componente del pipeline FTI es responsable de preparar los datos para el entrenamiento del modelo?",
+      "correct_answer": 0,
+      "explanation": "El Feature Pipeline procesa datos crudos en características estructuradas, un paso previo al Training Pipeline que actualiza el modelo.",
+      "points": 1,
+      "tags": [
+        "FTI architecture",
+        "pipelines"
+      ],
+      "options": [
+        "Feature Pipeline",
+        "Training Pipeline",
+        "Inference Pipeline",
+        "Data Collection Pipeline"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q03",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "¿Qué significa la sigla MVP en el contexto del desarrollo de un LLM Twin y cuál es su propósito?",
+      "correct_answer": "MVP (Minimum Viable Product) representa una versión funcional básica del sistema para validar conceptos clave con mínima inversión.",
+      "explanation": "El texto define MVP como una solución mínima viable que permite probar la arquitectura y requisitos técnicos sin desarrollar todas las funcionalidades finales.",
+      "points": 2,
+      "tags": [
+        "MVP",
+        "LLM Twin"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q04",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "question": "¿Cuál de estas NO es una ventaja del diseño FTI (Feature-Training-Inference) mencionada en el texto?",
+      "correct_answer": 1,
+      "explanation": "El texto menciona beneficios como consistencia, reutilización y trazabilidad, pero no garantiza escalabilidad horizontal automática como ventaja directa del FTI.",
+      "points": 1,
+      "tags": [
+        "FTI architecture",
+        "benefits"
+      ],
+      "options": [
+        "Consistencia entre etapas de procesamiento",
+        "Escalabilidad horizontal automática",
+        "Reutilización de componentes entre pipelines",
+        "Seguimiento de versiones de datos y modelos"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q05",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "Los pipelines ML tradicionales resolvieron el problema de la incoherencia entre datos y modelos al permitir versiones controladas.",
+      "correct_answer": false,
+      "explanation": "El texto indica que los sistemas anteriores fallaron en gestionar versiones coherentes, lo que motivó la adopción de pipelines FTI estructurados.",
+      "points": 1,
+      "tags": [
+        "ML systems",
+        "pipelines"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q06",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "¿Cuáles son tres beneficios del diseño FTI mencionados en el texto?",
+      "correct_answer": "1) Consistencia entre etapas, 2) Reutilización de componentes, 3) Trazabilidad de versiones.",
+      "explanation": "El texto destaca estos tres puntos como ventajas clave del enfoque FTI para sistemas ML complejos.",
+      "points": 2,
+      "tags": [
+        "FTI architecture",
+        "benefits"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q07",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Qué componente de la arquitectura LLM Twin se encarga de recopilar datos desde fuentes externas como GitHub o Medium?",
+      "correct_answer": 1,
+      "explanation": "El Data Collection Pipeline está diseñado específicamente para integrar crawlers que extraen datos de múltiples fuentes.",
+      "points": 1,
+      "tags": [
+        "LLM Twin architecture",
+        "pipelines"
+      ],
+      "options": [
+        "Feature Pipeline",
+        "Data Collection Pipeline",
+        "Training Pipeline",
+        "Inference Pipeline"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex01-q08",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "El Training Pipeline procesa directamente los datos crudos sin necesidad de un preprocesamiento previo por el Feature Pipeline.",
+      "correct_answer": false,
+      "explanation": "Según el texto, el Training Pipeline depende del Feature Pipeline para recibir datos ya transformados y estructurados.",
+      "points": 1,
+      "tags": [
+        "pipelines",
+        "FTI architecture"
+      ]
+    }
+  ]
+}

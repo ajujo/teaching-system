@@ -1,0 +1,33 @@
+recursos computacionales de los trabajos de decodificación existentes,
+ralentizando el TPOT para estas solicitudes.
+Una técnica de optimización habitual para los servidores de inferencia
+consiste en desacoplar el llenado previo y la decodificación. "DistServe"
+(Zhong et al., 2024) e "Inference Without Interference" (Hu et al., 2024)
+demuestran que, para varios LLMs y aplicaciones populares, asignar las
+operaciones de llenado previo y decodificación a diferentes instancias (por
+ejemplo, diferentes GPU) puede mejorar significativamente el volumen de
+solicitudes procesadas respetando los requisitos de latencia. Aunque el
+desacoplamiento requiere la transferencia de estados intermedios desde las
+instancias de precarga a las de decodificación, el artículo muestra que la
+sobrecarga de comunicación no es sustancial en los clústeres de GPU
+modernos con conexiones de gran ancho de banda como NVLink dentro de
+un nodo.
+La proporción entre instancias de llenado previo e instancias de
+decodificación depende de muchos factores, como las características de la
+carga de trabajo (por ejemplo, las longitudes de input más largas requieren
+más cómputo de llenado previo) y los requisitos de latencia (por ejemplo, si
+se desea un TTFT o TPOT más bajo). Por ejemplo, si las secuencias de
+input suelen ser largas y se quiere dar prioridad al TTFT, esta relación
+puede estar entre 2:1 y 4:1. Si las secuencias de input son cortas y se quiere
+dar prioridad al TPOT, esta relación puede ser de 1:2 a 1:1. 25
+Almacenamiento en cache de prompts
+Muchos prompts de una aplicación tienen segmentos de texto superpuestos.
+Una caché de prompts almacena estos segmentos que se traslapan para
+reutilizarlos, de modo que solo sea necesario procesarlos una vez. Un
+segmento de texto común que se superpone en diferentes prompts es el
+prompt del sistema. Sin una caché de prompts, su modelo necesita procesar
+el prompt del sistema con cada consulta. Con una caché de prompts, el
+prompt del sistema solo debe procesarse una vez para la primera consulta.
+El almacenamiento en caché de los prompts es útil para las consultas que
+implican documentos largos. Por ejemplo, si muchas de las consultas de los
+usuarios están relacionadas con el mismo documento largo (como un libro o

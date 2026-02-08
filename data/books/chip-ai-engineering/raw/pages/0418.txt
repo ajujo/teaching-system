@@ -1,0 +1,48 @@
+utiliza CLIP (Radford et al., 2021) como modelo de incrustación
+multimodal. El recuperador funciona de la siguiente manera:
+1. Generar incrustaciones CLIP para todos sus datos, tanto textos
+como imágenes, y almacenarlos en una base de datos vectorial.
+2. Dada una consulta, generar su incrustación CLIP.
+3. Consultar la base de datos vectorial en busca de todas las imágenes
+y textos cuyas incrustaciones se aproximen a la incrustación de la
+consulta.
+RAG con datos tabulares
+La mayoría de las aplicaciones trabajan no solo con datos no estructurados,
+como textos e imágenes, sino también con datos tabulares. Muchas
+consultas pueden necesitar información de las tablas de datos para
+responder. El flujo de trabajo para aumentar un contexto utilizando datos
+tabulares es significativamente diferente del flujo de trabajo clásico de la
+RAG.
+Imagine que trabaja para un sitio de comercio electrónico llamado Kitty
+Vogue, especializado en moda felina. Esta tienda tiene una tabla de pedidos
+llamada Ventas, como se muestra en la Tabla 6-3.
+tabla 6-3. Ejemplo de una tabla de pedidos, Ventas, para el sitio imaginario 
+ID de pedido
+Marca de
+hora y fecha
+ID del
+producto
+Producto
+Prec
+unita
+1
+…
+2044
+Sazonador
+Meow Mix
+10.99
+2
+…
+3492
+Purr & Shake
+25
+3
+…
+2045
+Fruity Fedora
+18
+…
+…
+…
+…
+…

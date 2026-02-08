@@ -1,0 +1,37 @@
+Imputing categorical variables
+13
+    test_size=0.3,
+    random_state=0,
+)
+4.
+Let's capture the categorical variables in a list:
+categorical_vars = X_train.select_dtypes(
+    include="O").columns.to_list()
+5.
+Let's store the variables' most frequent categories in a dictionary:
+frequent_values = X_train[
+    categorical_vars].mode().iloc[0].to_dict()
+6.
+Let's replace missing values with the frequent categories:
+X_train_t = X_train.fillna(value=frequent_values)
+X_test_t = X_test.fillna(value=frequent_values)
+Note
+fillna() returns a new DataFrame with the imputed values by default. We can replace missing
+data in the original DataFrame by executing X_train.fillna(value=frequent_
+values, inplace=True).
+7.
+To replace missing data with a specific string, let's create an imputation dictionary with the
+categorical variable names as the keys and an arbitrary string as the values:
+imputation_dict = {var:
+     "no_data" for var in categorical_vars}
+Now, we can use this dictionary and the code in step 6 to replace missing data.
+Note
+With pandas value_counts() we can see the string added by the imputation. Try
+executing, for example, X_train["A1"].value_counts().
+Now, let's impute missing values with the most frequent category using scikit-learn.
+8.
+Let's set up the imputer to find the most frequent category per variable:
+imputer = SimpleImputer(strategy='most_frequent')
+Note
+SimpleImputer() will learn the mode for numerical and categorical variables alike. But
+in practice, mode imputation is done for categorical variables only.

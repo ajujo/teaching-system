@@ -1,0 +1,33 @@
+Table of Contents
+xv
+Chapter 7: Evaluating LLMs 
+ 261
+Model evaluation ............................................................................................................. 261
+Comparing ML and LLM evaluation • 262
+General-purpose LLM evaluations • 263
+Domain-specific LLM evaluations • 265
+Task-specific LLM evaluations • 267
+RAG evaluation ................................................................................................................ 271
+Ragas • 272
+ARES • 274
+Evaluating TwinLlama-3.1-8B ........................................................................................  275
+Generating answers • 276
+Evaluating answers • 278
+Analyzing results • 283
+Summary ........................................................................................................................ 286
+References .......................................................................................................................  287
+Chapter 8: Inference Optimization 
+ 289
+Model optimization strategies ........................................................................................ 290
+KV cache • 291
+Continuous batching • 294
+Speculative decoding • 295
+Optimized attention mechanisms • 297
+Model parallelism ........................................................................................................... 299
+Data parallelism • 299
+Pipeline parallelism • 300
+Tensor parallelism • 301
+Combining approaches • 303
+Model quantization ........................................................................................................ 303
+Introduction to quantization • 304
+Quantization with GGUF and llama.cpp • 309

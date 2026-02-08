@@ -1,0 +1,22 @@
+figura 2-23. El mismo input puede producir diferentes outputs en el mismo modelo.
+La incoherencia puede crear una experiencia de usuario discordante. En la
+comunicación entre humanos, esperamos un cierto nivel de coherencia.
+Imagine que una persona les llama un nombre distinto cada vez que la ven.
+Del mismo modo, los usuarios esperan un cierto nivel de coherencia cuando
+se comunican con la IA.
+Para el escenario de mismo input, diferentes outputs, hay múltiples
+enfoques para mitigar la inconsistencia. Puede almacenar en caché la
+respuesta para que la próxima vez que se haga la misma pregunta, se
+devuelva la misma respuesta. Puede dejar fijas las variables de muestreo del
+modelo, como los valores de temperatura, top-p y top-k, tal y como se ha
+comentado anteriormente. También puede dejar fija la variable semilla, que
+se puede considerar como el punto de partida del generador de números
+aleatorios utilizado para muestrear el siguiente token.
+Sin embargo, aunque dejen fijas todas estas variables, no hay garantía de
+que su modelo sea coherente el 100 % de las veces. El hardware en el que el
+modelo ejecute la generación de outputs también puede influir en el output,
+ya que las distintas máquinas tienen formas diferentes de ejecutar la misma
+instrucción y pueden manejar distintos rangos de números. Si aloja usted
+mismo sus modelos, tiene cierto control sobre el hardware que utiliza. Sin
+embargo, si utilizan un proveedor de API de modelos como OpenAI o
+Google, depende de estos proveedores darles algún tipo de control.

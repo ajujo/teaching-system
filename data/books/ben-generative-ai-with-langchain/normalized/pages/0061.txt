@@ -1,0 +1,36 @@
+First Steps with LangChain
+34
+Working with chat models
+Chat models are LLMs that are fine-tuned for multi-turn interaction between a model and a hu­
+man. These days most LLMs are fine-tuned for multi-turned conversations. Instead of providing
+input to the model, such as:
+human: turn1
+ai: answer1
+human: turn2
+ai: answer2
+where we expect it to generate an output by continuing the conversation, these days model
+providers typically expose an API that expects each turn as a separate well-formatted part of the
+payload. Model providers typically don't store the chat history server-side, they get the full history
+sent each time from the client and only format the final prompt server-side.
+LangChain follows the same pattern with ChatModels, processing conversations through struc­
+tured messages with roles and content. Each message contains:
+•
+Role (who's speaking), which is defined by the message class (all messages inherit from
+BaseMessage)
+•
+Content (what's being said)
+Message types include:
+•
+SystemMessage: Sets behavior and context for the model. Example:
+SystemMessage(content="You're a helpful programming assistant")
+•
+HumanMessage: Represents user input like questions, commands, and data. Example:
+HumanMessage(content="Write a Python function to calculate
+factorial")
+•
+AIMessage: Contains model responses
+Let's see this in action:
+from langchain_anthropic import ChatAnthropic
+from langchain_core.messages import SystemMessage, HumanMessage
+chat = ChatAnthropic(model="claude-3-opus-20240229")
+messages = [

@@ -1,0 +1,49 @@
+The supervisor node acts as a central coordinator, analyzing queries and routing to
+specialists—exemplifying streamlined decision making without full consensus over‐
+head. Specialist nodes then process independently, invoking tools and responding.
+This structure mitigates conflicts through clear role boundaries and enables parallel‐
+ism if edges are expanded to concurrent calls:
+class AgentState(TypedDict):
+   operation: Optional[dict]  # Supply chain operation information
+   messages: Annotated[Sequence[BaseMessage], operator.add]
+# Supervisor (Manager) Node: Routes to the appropriate specialist
+def supervisor_node(state: AgentState):
+   history = state["messages"]
+   operation = state.get("operation", {})
+   operation_json = json.dumps(operation, ensure_ascii=False)
+  
+   supervisor_prompt = (
+       "You are a supervisor coordinating a team of supply chain specialists.\n"
+       "Team members:\n"
+       "- inventory: Handles inventory levels, forecasting,\n"
+       "quality, warehouse optimization, scaling, and costs.\n"
+       "- transportation: Handles shipping tracking,\n"
+       "arrangements, operations coordination,\n"
+        specialhandling, returns, delivery optimization, and disruptions.\n"
+       "- supplier: Handles supplier evaluation and compliance.\n"
+       "\n"
+       "Based on the user query, select ONE team member to handle it.\n"
+       "Output ONLY the selected member's name\n"
+       "(inventory, transportation, or supplier), nothing else.\n\n"
+       f"OPERATION: {operation_json}"
+   )
+   full = [SystemMessage(content=supervisor_prompt)] + history
+   response = llm.invoke(full)
+   return {"messages": [response]}
+# Specialist Node Template
+def specialist_node(state: AgentState, specialist_llm, system_prompt: str):
+   history = state["messages"]
+   operation = state.get("operation", {})
+   if not operation:
+       operation = {"operation_id": "UNKNOWN", "type": "general",   
+           "priority": "medium", "status": "active"}
+   operation_json = json.dumps(operation, ensure_ascii=False)
+   full_prompt = system_prompt + f"\n\nOPERATION: {operation_json}"
+  
+   full = [SystemMessage(content=full_prompt)] + history
+   first: ToolMessage | BaseMessage = specialist_llm.invoke(full)
+   messages = [first]
+   if getattr(first, "tool_calls", None):
+174 
+| 
+Chapter 8: From One Agent to Many

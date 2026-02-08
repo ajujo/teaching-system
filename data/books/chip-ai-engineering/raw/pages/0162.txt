@@ -1,0 +1,30 @@
+usuarios interactuar con las API utilizando un lenguaje natural (por
+ejemplo, el inglés). Por ejemplo, convertir texto a PostgreSQL
+permite a los usuarios consultar una base de datos Postgres
+utilizando consultas en inglés como "What's the average monthly
+revenue over the last 6 months" (¿Cuál es el ingreso mensual
+promedio de los últimos 6 meses?) en lugar de escribirlas en
+PostgreSQL.
+Este es un ejemplo de un prompt para que GPT-4o convierta de
+texto a regex. Los outputs son outputs reales generados por GPT-
+4o:
+Prompt del sistema
+Dado un elemento, cree una expresión regular que represente 
+todas las formas 
+en que se puede escribir el elemento. Devuelve solo la 
+expresión regular.
+Por ejemplo:
+Número de teléfono de EE. UU. -> 
+\+?1?\s?(\()?(\d{3})(?(1)\))[-.\s]?(\d{3})[-.\s]?(\d{4})
+Prompt de usuario
+Dirección de correo electrónico ->
+GPT-4o
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+Prompt de usuario
+Fechas ->
+GTP-4o
+(?:\d{1,2}[\/\-\.])(?:\d{1,2}[\/\-\.])?\d{2,4}
+Otras categorías de tareas en este escenario incluyen la
+clasificación, en la que los outputs tienen que ser clases válidas.
+2. Tareas cuyos outputs son utilizados por aplicaciones posteriores.
+En este escenario, la tarea en sí no necesita que los outputs estén

@@ -1,0 +1,85 @@
+Embedding
+A dense vector representation of words,
+sentences, or concepts in a continuous
+space.
+Encoder
+The component in transformer models
+that processes input text into a latent rep‐
+resentation.
+Epoch
+One complete pass through a dataset dur‐
+ing model training.
+Evaluation metrics
+Methods for assessing model perfor‐
+mance, such as BLEU, ROUGE, or
+perplexity.
+Explainability
+The ability to understand and interpret
+how AI models make decisions.
+Few-shot learning
+The ability of a model to generalize from a
+small number of examples.
+Fine-tuning
+The process of adapting a pretrained
+model to a specific task by further training
+on domain-specific data.
+Foundation model
+A large, pretrained neural network model
+that serves as a base for many downstream
+tasks.
+Generative AI
+AI models that generate new content,
+such as text, images, or music.
+Gradient descent
+An optimization algorithm used to mini‐
+mize loss in machine learning models.
+Graph neural network (GNN)
+A type of neural network that processes
+graph-structured data.
+Hallucination
+When an AI model generates incorrect or
+nonsensical information.
+Hidden layer
+A layer in a neural network between the
+input and output layers where computa‐
+tion occurs.
+Hyperparameter
+A configurable parameter that affects
+model training, such as learning rate or
+batch size.
+Inference
+The process of using a trained model to
+generate predictions.
+Instruction tuning
+Fine-tuning models with task-specific
+instructions to improve performance.
+Intent recognition
+Detecting user intentions in natural lan‐
+guage processing tasks.
+Joint embedding
+A method where different modalities
+(text, images, audio) are mapped into the
+same vector space.
+KNN (K-nearest neighbors)
+A machine learning algorithm for classifi‐
+cation and retrieval.
+Knowledge graph
+A structured representation of informa‐
+tion with entities and relationships.
+Language model (LM)
+A statistical model that predicts the likeli‐
+hood of word sequences.
+Latent space
+The abstract multidimensional space
+where data representations exist in neural
+networks.
+Logits
+The raw output of a neural network
+before applying a normalization function
+like Softmax.
+Long short-term memory (LSTM)
+A type of recurrent neural network
+(RNN) for handling sequential data.
+316
+|
+Glossary

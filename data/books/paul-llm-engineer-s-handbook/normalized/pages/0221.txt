@@ -1,0 +1,20 @@
+Supervised Fine-Tuning
+190
+Figure 5.4 shows an example with Argilla, a collaborative platform for manual data quality evaluation and exploration.
+Figure 5.4 - Argilla's interface for collaborative data quality evaluation and exploration
+Statistical analysis is a complementary technique that reveals vocabulary diversity, potential
+biases, and concept representation. This process utilizes natural language processing libraries
+like NLTK or spaCy for tokenization and analysis of large text volumes. Visualization tools such as
+Matplotlib or Seaborn create histograms and word clouds, enabling intuitive pattern recognition.
+These techniques provide insights into dataset composition, language breadth, and possible
+cultural or contextual preferences, which can influence model outputs.
+Topic clustering automatically groups similar documents or pieces of text together, revealing
+underlying themes and patterns within the data. This process is especially important for understanding the content of large text corpora, identifying trends, and organizing information in a
+meaningful way. It is often associated with data visualization, with figures that show clusters
+of similar samples.
+Let's consider the task of building an instruction dataset about various programming languages.
+You have collected a vast corpus of programming-related text from online forums, documentation,
+and tutorials. First, topic clustering can help identify the distinct programming languages present
+in the dataset (Python, JavaScript, etc.). Second, within each language cluster, you can further
+identify sub-topics like error handling, data structures, and web frameworks. This allows a
+balanced representation of each language and sub-topic in the corpus.

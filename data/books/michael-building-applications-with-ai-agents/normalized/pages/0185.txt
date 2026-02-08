@@ -1,0 +1,27 @@
+CHAPTER 8
+From One Agent to Many
+Most use cases start with one agent, but as the number of tools increases, and the
+range of problems you want your agent to solve increases, introducing a multiagent
+pattern can improve the overall performance and reliability. Just as we saw that it's
+probably not a good idea to put all of your code in a single file, or bundle all of your
+backend servers into a single monolith, many of the lessons we learned about the
+principles of software architecture and service design still apply when building sys‐
+tems with AI and foundation models. As you continue to add functionality and capa‐
+bilities into your agentic system, you'll soon find the need to break up your system
+into smaller agents that can be independently validated, tested, integrated, and
+reused. In this chapter, we'll discuss how and when to add an agent to your system,
+and how to organize and manage them.
+How Many Agents Do I Need?
+Begin with a simple approach, and only add complexity as needed to improve perfor‐
+mance. The appropriate number and organization of agents will vary enormously
+based on the difficulty of the tasks, the number of tools, and the complexity of the
+environment.
+Single-Agent Scenarios
+We'll begin with single-agent systems, which are suitable for tasks that are of modest
+difficulty, a limited number of tools, and lower-complexity environments. They are
+also often better when latency is critical, as multiagent systems typically require mul‐
+tiple exchanges between agents, which increases the latency for the user. As a result, it
+is typically best practice to begin with a single-agent system, as it is often faster and
+cheaper than extending to multiagent systems. In this approach, a single agent is
+responsible for invoking tools, if available, up to a limit before responding to the user.
+163

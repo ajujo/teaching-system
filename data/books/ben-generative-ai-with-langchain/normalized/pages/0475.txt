@@ -1,0 +1,69 @@
+Index
+448
+C
+chaining prompt 88, 89
+Chain-of-Thought (CoT) 90-92
+chat history
+trimming 97, 98
+Chinchilla scaling law 5
+chunking strategies 132
+agent-based chunking 135
+document-specific chunking 134
+fixed-size chunking 132
+multi-modal chunking 136
+recursive character chunking 133, 134
+selecting 136, 137
+semantic chunking 134, 135
+Claude 7
+cloud provider gateways 31
+code LLMs
+benchmarks 273, 274
+evolution 271-273
+code, with LLMs
+agentic approach 289, 290
+Anthropic Claude 287-289
+documentation RAG 290-292
+Google generative AI 282, 283
+Hugging Face 284-287
+repository RAG 293-295
+writing 282
+Cohere models 30
+communication protocols 231, 232
+complex integrated applications 10
+concept-level modeling 416
+Conda 27
+consensus mechanism 229-231
+context processing 145
+contextual compression 145
+Maximum Marginal Relevance (MMR) 146
+context window
+working with 93, 94
+Continuous Integration and Continuous
+Delivery (CI/CD) pipelines 377
+controlled output generation 76
+error handling 79-81
+output parsing 76-79
+corporate documentation chatbot
+developing 161, 162
+document loading 162-165
+document retrieval 166-168
+evaluation and performance
+considerations 177, 178
+integrating, with Streamlit 174-176
+language model setup 165, 166
+state graph, designing 168-173
+Corporate Documentation Manager tool 161
+Corrective Retrieval-Augmented Generation
+(CRAG) 155, 156
+custom tools 199
+BaseTool 205, 206
+creating, from Runnable 202-205
+Python function, as tool 199-201
+D
+DALL-E model
+using, through OpenAI 55, 56
+data quality training
+evolution 416, 417
+DeepSeek models 30
+democratization
+via technical advances 417, 418

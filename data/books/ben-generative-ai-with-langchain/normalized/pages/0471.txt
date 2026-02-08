@@ -1,0 +1,16 @@
+Other Books You May Enjoy
+Building Agentic AI Systems
+Anjanava Biswas, Wrick Talukdar
+ISBN: 978-1-80323-875-3
+•
+Master the core principles of GenAI and agentic systems
+•
+Understand how AI agents operate, reason, and adapt in dynamic environments
+•
+Enable AI agents to analyze their own actions and improvise
+•
+Implement systems where AI agents can leverage external tools and plan complex tasks
+•
+Apply methods to enhance transparency, accountability, and reliability in AI
+•
+Explore real-world implementations of AI agents across industries

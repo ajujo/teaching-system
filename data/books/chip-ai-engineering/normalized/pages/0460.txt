@@ -1,0 +1,31 @@
+Persistencia de la información entre sesiones
+Un orientador de IA es prácticamente inútil si cada vez que
+quiere su consejo tiene que explicarle toda su vida. Un
+asistente de IA sería molesto si se olvidara constantemente
+de sus preferencias. Tener acceso a su historial de
+conversaciones puede permitir a un agente personalizar sus
+acciones por usted. Por ejemplo, si le pide que le recomiende
+un libro, si el modelo recuerda que anteriormente le gustó El
+problema de los tres cuerpos, puede sugerirle libros
+similares.
+Aumentar la consistencia de un modelo
+Si me hace una pregunta subjetiva dos veces, como calificar
+un chiste entre 1 y 5, es mucho más probable que dé
+respuestas consistentes si recuerdo mi respuesta anterior.
+Del mismo modo, si un modelo de IA puede hacer referencia
+a sus respuestas anteriores, puede calibrar sus respuestas
+futuras para que sean consistentes.
+Mantener la integridad estructural de los datos
+Dado que el texto es intrínsecamente desestructurado, los
+datos almacenados en el contexto de un modelo basado en
+texto son desestructurados. Puede incluir datos
+estructurados en el contexto. Por ejemplo, puede introducir
+una tabla en el contexto línea por línea, pero no hay
+garantías de que el modelo entienda que se trata de una
+tabla. Disponer de un sistema de memoria capaz de
+almacenar datos estructurados puede ayudar a mantener la
+integridad estructural de los datos. Por ejemplo, si le pide a
+un agente que busque posibles clientes potenciales, este
+agente puede usar una hoja de Excel para almacenar los
+clientes potenciales. Un agente también puede utilizar una
+cola para almacenar la secuencia de acciones a realizar.

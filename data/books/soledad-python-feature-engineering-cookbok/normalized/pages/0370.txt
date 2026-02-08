@@ -1,0 +1,39 @@
+Estimating text complexity by counting sentences
+347
+Tip
+If you encounter an error in step 3, read the error message carefully and download the data
+source required by NLTK, as described in the error message. For more details, check out the
+Technical requirements section.
+The sentence tokenizer returns the list of sentences shown in the following output:
+['\nThe alarm rang at 7 in the morning as it usually did on
+Tuesdays.',
+ 'She rolled over,\nstretched her arm, and stumbled to the
+button till she finally managed to switch it off.',
+ 'Reluctantly, she got up and went for a shower.',
+ 'The water was cold as the day before the engineers\ndid not
+manage to get the boiler working.',
+ 'Good thing it was still summer.',
+ 'Upstairs, her cat waited eagerly for his morning snack.',
+ 'Miaow!',
+ 'He voiced with excitement\nas he saw her climb the stairs.']
+Note
+The escape character followed by the letter, \n, indicates a new line.
+4.
+Let's count the number of sentences in the text variable:
+len(sent_tokenize(text))
+The previous command returns 8, which is the number of sentences in our text variable.
+Now, let's determine the number of sentences in an entire DataFrame.
+5.
+Let's load the train subset of the 20 Newsgroup dataset into a pandas DataFrame:
+data = fetch_20newsgroups(subset='train')
+df = pd.DataFrame(data.data, columns=['text'])
+6.
+To speed up the following steps, we will only work with the first 10 rows of the DataFrame:
+df = df.loc[1:10]
+7.
+Let's also remove the first part of the text, which contains information about the email sender,
+subject, and other details that we are not interested in. Most of this information comes before
+the word Lines followed by :, so let's split the string at Lines: and capture the second
+part of the string:
+df['text'] = df['text'].str.split('Lines:').apply(
+    lambda x: x[1])

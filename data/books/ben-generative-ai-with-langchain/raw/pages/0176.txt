@@ -1,0 +1,39 @@
+Chapter 4
+149
+    )
+  
+    # Generate the response with citations
+    response = attribution_chain.invoke({
+        "question": question,
+        "sources": sources_formatted
+    })
+  
+    return response
+This example implements source attribution by:
+1.	
+Retrieving relevant documents for a query
+2.	
+Formatting each document with a citation number
+3.	
+Using a prompt that explicitly requests citations for each fact
+4.	
+Generating a response that includes inline citations ([1], [2], etc.)
+5.	 Adding a references section that links each citation to its source
+The key advantages of this approach are transparency and verifiability – users can trace each 
+claim back to its source, which is especially important for academic, medical, or legal applications.
+Let’s see what we get when we execute this with a query:
+# Example usage
+question = "How do transformer models work and what are some examples?"
+attributed_answer = generate_attributed_response(question)
+attributed_answer
+We should be getting a response like this:
+Transformer models work by utilizing self-attention mechanisms to weigh 
+the importance of different input tokens when making predictions. This 
+architecture was first introduced in the paper 'Attention is All You Need' 
+by Vaswani et al. in 2017 [1].
+One example of a transformer model is BERT, which employs bidirectional 
+training of the Transformer, masked language modeling, and next sentence 
+prediction tasks [2]. Another example is GPT (Generative Pre-trained 
+Transformer) models, which are autoregressive transformers that predict 
+the next token based on previous tokens [3].
+Reference List:

@@ -1,0 +1,71 @@
+{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-a01",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-05T19:51:20.437763+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "mixed",
+  "strict": false,
+  "grading_time_ms": 25502,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q01",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (1): Pipeline de características, Pipeline de entrenamiento, Pipeline de inferencia. La arquitectura FTI se compone específicamente de tres pipelines: Feature (características), Training (entrenamiento) e Inference (inferencia). Esto permite un flujo coherente y reutilizable entre etapas, como se explica en las páginas 14-15 del capítulo.",
+      "expected_answer": "1: Pipeline de características, Pipeline de entrenamiento, Pipeline de inferencia",
+      "given_answer": "2: Pipeline de recopilación, Pipeline de transformación, Pipeline de optimización",
+      "correct_option_text": "Pipeline de características, Pipeline de entrenamiento, Pipeline de inferencia",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! Según la página 15, uno de los beneficios clave del diseño FTI es la consistencia y reusabilidad de componentes como el procesamiento de características en todas las etapas (entrenamiento e inferencia).",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q03",
+      "is_correct": null,
+      "score": 0.75,
+      "feedback": "La respuesta del estudiante identifica correctamente aspectos clave como el control y la integración en contextos organizacionales, lo cual refleja una comprensión parcial de los beneficios de un LLM Twin. Sin embargo, omite mencionar explícitamente la personalización para dominios específicos (mencionada en la respuesta esperada) y no aborda directamente el punto sobre evitar dependencias externas o garantizar información actualizada. Además, no incluye la referencia a la página 5 del capítulo, lo que reduce su alineación con la respuesta modelo.",
+      "expected_answer": "Un LLM Twin permite personalizar el modelo para dominios específicos, garantiza la actualización de información relevante y evita dependencias externas. Esto se explica en la página 5 del capítulo.",
+      "given_answer": "usar un chatbot general es perfecto para uso genérico; construir un LLM Twin es clave cuando necesitas control, integración, memoria, consistencia, evaluación y garantías para un trabajo real dentro de una organización.",
+      "grading_path": "llm",
+      "confidence": 0.8
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q04",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (2): Consistencia y reusabilidad entre etapas. La página 15 enfatiza que el diseño FTI resuelve problemas anteriores al garantizar consistencia en el procesamiento de datos (características) y reutilización entre entrenamiento e inferencia, evitando inconsistencias y duplicación.",
+      "expected_answer": "2: Consistencia y reusabilidad entre etapas",
+      "given_answer": "0: Reducción de costos computacionales",
+      "correct_option_text": "Consistencia y reusabilidad entre etapas",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex06-q05",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es: Verdadero. En la página 7, el capítulo explica que un MVP (Minimum Viable Product) para el LLM Twin se centra en validar conceptos clave con la mínima funcionalidad necesaria antes de expandirse a características complejas.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Falso",
+      "grading_path": "auto"
+    }
+  ],
+  "summary": {
+    "total_questions": 5,
+    "correct_count": 1,
+    "total_score": 3.25,
+    "max_score": 9,
+    "percentage": 0.3611111111111111,
+    "passed": false
+  }
+}

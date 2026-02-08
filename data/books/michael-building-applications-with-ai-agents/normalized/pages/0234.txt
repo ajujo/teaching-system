@@ -1,0 +1,45 @@
+perception and execution, planning must be scrutinized carefully-because every‐
+thing downstream depends on it.
+Evaluating Memory
+Memory is essential for agents that need continuity and contextual awareness,
+whether for multiturn conversations, long-running workflows, or persistent user pro‐
+files. Testing memory modules is nontrivial, as it involves not only verifying raw stor‐
+age and retrieval but also ensuring data integrity, relevance, and efficiency as the
+memory store grows.
+Unit tests for memory should first verify that data written to memory is accurately
+stored and can be precisely retrieved, both immediately and after significant time has
+elapsed or other operations have intervened. This includes boundary cases such as
+maximum memory capacity, unusual data types, or rapid-fire read/write cycles. Tests
+should intentionally stress the system with malformed, duplicate, or ambiguous
+entries to ensure robustness:
+def evaluate_memory_retrieval(
+    retrieve_fn: Any,
+    queries: List[str],
+    expected_results: List[List[Any]],
+    top_k: int = 1) -> Dict[str, float]:
+    """
+    Given a retrieval function `retrieve_fn(query, k)` that returns a list of
+    k memory items, evaluate over multiple queries.
+    Returns:
+      - `retrieval_accuracy@k`: fraction of queries for which at least one
+        expected item appears in the top‐k.
+    """
+    hits = 0
+    for query, expect in zip(queries, expected_results):
+        results = retrieve_fn(query, top_k)
+        # did we retrieve any expected item?
+        if set(results) & set(expect):
+            hits += 1
+    accuracy = hits / len(queries) if queries else 1.0
+    return {f"retrieval_accuracy@{top_k}": accuracy}
+Beyond correctness, memory modules must be tested for relevance-ensuring that
+retrieval logic does not surface stale or irrelevant information. For instance, if the
+agent is asked for a user's recent preferences, the test must confirm that outdated or
+incorrect preferences are not returned due to data leakage or indexing errors. Tests
+should also check that irrelevant but similar data is not retrieved simply because of
+superficial similarity in phrasing or semantics.
+Efficiency is a critical dimension, especially as memory size grows. Developers should
+benchmark retrieval times and resource usage under increasing memory loads,
+212
+|
+Chapter 9: Validation and Measurement

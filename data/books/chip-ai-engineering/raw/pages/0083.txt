@@ -1,0 +1,43 @@
+tabla 1-4. Cómo han cambiado las distintas responsabilidades del
+desarrollo de modelos con los modelos fundacionales.
+Categoría
+Construir con ML
+tradicional
+Construir con modelos
+fundacionales
+Modelado y
+entrenamiento
+Se requieren
+conocimientos de
+ML para entrenar un
+modelo desde cero
+Los conocimientos de ML
+son deseables, no
+imprescindiblesa
+Ingeniería de
+conjuntos de
+datos
+Más sobre ingeniería
+de características,
+especialmente con
+datos tabulares
+Menos sobre ingeniería de
+características y más
+deduplicación de datos,
+tokenización, recuperación
+contextual y control de
+calidad.
+Optimización de
+la inferencia
+Importante
+Aún más importante
+a  Muchos rebatirían esta afirmación, diciendo que los conocimientos de
+ML son imprescindibles.
+Las técnicas de optimización de la inferencia, incluidas la cuantización, la
+destilación y el paralelismo, se tratan del Capítulo 7 al Capítulo 9.
+Desarrollo de aplicaciones
+Con la ingeniería de ML tradicional, en la que los equipos construyen
+aplicaciones utilizando sus propios modelos, la calidad del modelo es una
+diferenciación. Con los modelos fundacionales, en los que muchos equipos
+utilizan el mismo modelo, la diferenciación debe lograrse a través del
+proceso de desarrollo de la aplicación.

@@ -1,0 +1,33 @@
+Tooling and Installation
+52
+So why did we choose SageMaker over Bedrock? Bedrock would have been an excellent solution 
+for quickly prototyping something, but this is a book on LLM engineering, and our goal is to dig 
+into all the engineering aspects that Bedrock tries to mask away. Thus, we chose SageMaker 
+because of its high level of customizability, allowing us to show you all the engineering required 
+to deploy a model.
+In reality, even SageMaker isn’t fully customizable. If you want complete control over your de-
+ployment, use EKS, AWS’s Kubernetes self-managed service. In this case, you have direct access 
+to the virtual machines, allowing you to fully customize how you build your ML pipelines, how 
+they interact, and how you manage your resources. You could do the same thing with AWS ECS, 
+AWS’s version of Kubernetes. Using EKS or ECS, you could also reduce the costs, as these services 
+cost considerably less.
+To conclude, SageMaker strikes a balance between complete control and customization and a fully 
+managed service that hides all the engineering complexity behind the scenes. This balance ensures 
+that you have the control you need while also benefiting from the managed service’s convenience.
+Summary
+In this chapter, we reviewed the core tools used across the book. First, we understood how to 
+install the correct version of Python that supports our repository. Then, we looked over how to 
+create a virtual environment and install all the dependencies using Poetry. Finally, we understood 
+how to use a task execution tool like Poe the Poet to aggregate all the commands required to run 
+the application.
+The next step was to review all the tools used to ensure MLOps best practices, such as a model 
+registry to share our models, an experiment tracker to manage our training experiments, an 
+orchestrator to manage all our ML pipelines and artifacts, and metadata to manage all our files 
+and datasets. We also understood what type of databases we need to implement the LLM Twin 
+use case. Finally, we explored the process of setting up an AWS account, generating an access 
+key, and configuring the AWS CLI for programmatic access to the AWS cloud. We also gained a 
+deep understanding of AWS SageMaker and the reasons behind choosing it to build our LLM 
+Twin application.
+In the next chapter, we will explore the implementation of the LLM Twin project by starting with 
+the data collection ETL that scrapes posts, articles, and repositories from the internet and stores 
+them in a data warehouse.

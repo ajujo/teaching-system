@@ -1,0 +1,35 @@
+Chapter 9
+341
+Figure 9.3 illustrates how we process the results returned by the xN searches. As each search 
+returns ≤ K items, we will end up with ≤ N x K chunks that we aggregate into a single list. As 
+some results might overlap between searchers, we must deduplicate the aggregated list to ensure 
+each chunk is unique. Ultimately, we send the results to the rerank model, order them based on 
+their reranking score, and pick the most relevant top K chunks we will use as context for RAG.
+Let’s understand how everything from Figures 9.2 and 9.3 is implemented in the ContextRetriever 
+class. First, we initialize the class by setting up instances of the QueryExpansion, SelfQuery, and 
+Reranker classes:
+class ContextRetriever:
+    def __init__(self, mock: bool = False) -> None:
+        self._query_expander = QueryExpansion(mock=mock)
+        self._metadata_extractor = SelfQuery(mock=mock)
+        self._reranker = Reranker(mock=mock)
+In the search() method, we convert the user’s input string into a query object. We then use the 
+SelfQuery instance to extract the author_id and author_full_name from the query:
+    def search(
+        self,
+        query: str,
+        k: int = 3,
+        expand_to_n_queries: int = 3,
+    ) -> list:
+        query_model = Query.from_str(query)
+        query_model = self._metadata_extractor.generate(query_model)
+        logger.info(
+            "Successfully extracted the author_id from the query.",
+            author_id=query_model.author_id,
+        )
+Next, we expand the query to generate multiple semantically similar queries using the 
+QueryExpansion instance:
+        n_generated_queries = self._query_expander.generate(query_model, 
+expand_to_n=expand_to_n_queries)
+        logger.info(
+            "Successfully generated queries for search.",

@@ -1,0 +1,20 @@
+figura 2-15. Para cada input, un modelo lingüístico produce un vector logit. Cada
+logit corresponde a un token del vocabulario.
+Aunque los logits más grandes corresponden a probabilidades más altas, los
+logits no representan probabilidades. Los logits no suman uno. Los logits
+pueden ser incluso negativos, mientras que las probabilidades tienen que ser
+no negativas. Para convertir los logits en probabilidades, se suele utilizar
+una capa softmax. Digamos que el modelo tiene un vocabulario de N y el
+vector logit es [x1, x2, ..., xN]. La probabilidad del i-ésimo token, pi, se calcula
+de la siguiente manera:
+pi = softmax(xi) =
+exi
+∑jexj
+Estrategias de muestreo
+Una estrategia de muestreo adecuada puede hacer que un modelo genere
+respuestas más adecuadas para su aplicación. Por ejemplo, una estrategia de
+muestreo puede hacer que el modelo genere respuestas más creativas,
+mientras que otra estrategia puede hacer que sus generaciones sean más
+predecibles. Se han introducido muchas estrategias de muestreo diferentes
+para empujar a los modelos hacia respuestas con atributos específicos.
+También pueden diseñar su propia estrategia de muestreo, aunque para ello

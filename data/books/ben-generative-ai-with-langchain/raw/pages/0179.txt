@@ -1,0 +1,38 @@
+Building Intelligent RAG Systems
+152
+          "explanation": "Your explanation"
+        }}
+      ],
+      "fully_grounded": true|false,
+      "issues_identified": ["List any specific issues"]
+    }}
+    """)
+The verification prompt is structured to perform a comprehensive fact check. It instructs the 
+model to break down each claim in the answer and categorize it based on how well it’s supported 
+by the provided context. The prompt also requests the output in a structured JSON format that 
+can be easily processed programmatically.
+Finally, we’ll complete the function with the verification chain and example usage:
+    # Create verification chain using LCEL
+    verification_chain = (
+        verification_prompt
+        | llm
+        | StrOutputParser()
+    )
+  
+    # Run verification
+    result = verification_chain.invoke({
+        "context": context,
+        "answer": generated_answer
+    })
+  
+    return result
+# Example usage
+retrieved_docs = [
+    Document(page_content="The transformer architecture was introduced in 
+the paper 'Attention Is All You Need' by Vaswani et al. in 2017. It relies 
+on self-attention mechanisms instead of recurrent or convolutional neural 
+networks."),
+    Document(page_content="BERT is a transformer-based model developed by 
+Google that uses masked language modeling and next sentence prediction as 
+pre-training objectives.")
+]

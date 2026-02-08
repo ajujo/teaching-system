@@ -1,0 +1,25 @@
+Setting up an entity set and creating features automatically
+271
+Setting up an entity set and creating features automatically
+Relational datasets or databases contain data spread across multiple tables, and the relationships between 
+tables are dictated by a unique identifier that tells us how we can join those tables. To automate feature 
+creation with featuretools, we first need to enter the different data tables and establish their 
+relationships within what is called an entity set. The entity set then informs featuretools how these 
+tables are connected so that the library can automatically create features based on those relationships.
+We will work with a dataset containing information about customers, invoices, and products. First, we 
+will set up an entity set highlighting the relationships between these three items. This entity set will be 
+the starting point for the remaining recipes in this chapter. Next, we will create features automatically 
+by aggregating the data at the customer, invoice, and product levels, utilizing the default parameters 
+from featuretools.
+In this recipe, you will learn how to correctly set up an entity set and extract a bunch of features 
+automatically for each entity. In the upcoming recipes, we will dig deeper into the different types of 
+features that we can create with featuretools.
+Getting ready
+In this recipe, we will use the Online Retail II dataset from the UCI Machine Learning Repository. In this 
+table, there are customers, which are businesses that buy in bulk from the retail company. Customers 
+are identified with a customer_id unique identifier. Each customer makes one or more purchases, 
+which are flagged by an invoice unique identifier, containing the invoice number. In each invoice, 
+there are one or more items that have been bought by the customer. Each item or product sold by the 
+company is also identified with a unique stock code.
+Thus, the data has the following relations:
+Figure 9.1 – Diagram showing the relationships in the data

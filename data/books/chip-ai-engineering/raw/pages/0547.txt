@@ -1,0 +1,24 @@
+31  La hipótesis es que los parámetros que sufren los cambios más sustanciales
+durante el afinado son los más cruciales para la tarea objetivo.
+32  TIES es la abreviatura de "TrIm, Elect Sign, and merge", mientras que DARE
+es de "Drop And REscale". Lo sé, a mí también me incomodan estas
+abreviaturas.
+33  Cuando se podan los vectores de tareas, se vuelven más dispersos, pero el
+modelo afinado no lo hace. La poda, en este caso, no es para reducir la huella de
+memoria o la latencia de inferencia, sino para mejorar el rendimiento.
+34  Durante mucho tiempo medité en si debía incluir la técnica de concatenación
+en este libro, y decidí incluirla para que la información estuviera completa.
+35  En la universidad, cometí el doloroso error de dejar que mi modelo entrenara
+durante la noche, solo para que se bloqueara al cabo de ocho horas porque
+intenté guardar el punto de control en una carpeta inexistente. Todo ese progreso
+se perdió.
+36  Aunque es un hecho aceptado que los lotes pequeños dan lugar a un
+entrenamiento inestable, no he encontrado una buena explicación para ello. Si
+tiene referencias al respecto, no dude en enviármelas.
+37  He intentado encontrar el artículo en el que se habló por primera vez de la
+acumulación de gradientes, pero no lo he conseguido. Su uso en deep learning
+ya se mencionó en 2016 en "Ako: Decentralised Deep Learning with Partial
+Gradient Exchange" (Watcharapichat et al., Proceedings of the Seventh ACM
+Symposium on Cloud Computing, 2016). El concepto parece proceder del
+entrenamiento distribuido, donde los gradientes calculados en distintas máquinas
+deben acumularse y utilizarse para actualizar las ponderaciones del modelo.

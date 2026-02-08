@@ -1,0 +1,37 @@
+Chapter 5
+209
+As we can see, now our execution of a calculator fails, but since the error description is not clear
+enough, the LLM decides to respond itself without using the tool. Depending on your use case,
+you might want to adjust the behavior; for example, provide more meaningful errors from the
+tool, force the workflow to try to adjust the payload for the tool, etc.
+LangGraph also offers a built-in ValidationNode that takes the last messages (by inspecting
+the messages key in the graph's state) and checks whether it has tool calls. If that's the case,
+LangGraph validates the schema of the tool call, and if it doesn't follow the expected schema, it
+raises a ToolMessage with the validation error (and a default command to fix it). You can add a
+conditional edge that cycles back to the LLM and then the LLM would regenerate the tool call,
+similar to the pattern we discussed in Chapter 3.
+Now that we've learned what a tool is, how to create one, and how to use built-in LangChain tools,
+it's time to take a look at additional instructions that you can pass to an LLM on how to use tools.
+Advanced tool-calling capabilities
+Many LLMs offer you some additional configuration options on tool calling. First, some models
+support parallel function calling-specifically, an LLM can call multiple tools at once. LangC­
+hain natively supports this since the tool_calls field of an AIMessage is a list. When you return
+ToolMessage objects as function call results, you should carefully match the tool_call_id field
+of a ToolMessage to the generated payload. This alignment is necessary so that LangChain and
+the underlying LLM can match them together when doing the next turn.
+Another advanced capability is forcing an LLM to call a tool, or even to call a specific tool. Generally
+speaking, an LLM decides whether it should call a tool, and if it should, which tool to call from
+the list of provided tools. Typically, it's handled by tool_choice and/or tool_config arguments
+passed to the invoke method, but implementation depends on the model's provider. Anthropic,
+Google, OpenAI, and other major providers have slightly different APIs, and although LangChain
+tries to unify arguments, in such cases, you should double-check details by the model's provider.
+Typically, the following options are available:
+•
+"auto": An LLM can respond or call one or many tools.
+•
+"any": An LLM is forced to respond by calling one or many tools.
+•
+"tool" or "any" with a provided list of tools: An LLM is forced to respond by calling a tool
+from the restricted list.
+•
+"None": An LLM is forced to respond without calling a tool.

@@ -1,0 +1,41 @@
+   print(tool_msg.content)
+   messages.append(tool_msg)
+   print()
+final_response = llm_with_tools.invoke(messages)
+print(final_response.content)
+Similar tools can be created to search across team- or company-specific information.
+By providing your agent with the tools necessary to access the information it needs to
+handle a task, and the specific tools to operate over that information, you can signifi‐
+cantly expand the scope and complexity of tasks that can be automated.
+When designing API tools for agents, focus on reliability, security, and graceful fail‐
+ure. External services can go down, so agents need fallbacks or clear error messages.
+Secure all communications with HTTPS and strong authentication, especially for sen‐
+sitive data.
+Watch out for API rate limits to avoid disruptions, and ensure compliance with data
+privacy laws—anonymize or obfuscate user data when needed. Handle errors robustly
+so the agent can recover from network issues or invalid responses without breaking
+the user experience. When possible, consider alternatives and multiple providers for
+greater reliability if any given provider is degraded.
+APIs empower agents with real-time data, heavy computation, and external actions
+they couldn’t perform alone, making them far more capable and effective.
+Plug-In Tools
+These tools are modular and can be integrated into the AI agent’s framework with
+minimal customization. They leverage existing libraries, APIs, and third-party serv‐
+ices to extend the agent’s capabilities without extensive development effort. Plug-in
+tools enable rapid deployment and scaling of the agent’s functionalities. These tools
+are predesigned modules that can be integrated into an AI system with minimal
+effort, leveraging existing libraries, APIs, and third-party services. The integration of
+plug-in tools has become a standard offering from leading platforms such as OpenAI,
+Anthropic’s Claude, Google’s Gemini, and Microsoft’s Phi as well as a growing open
+source community. Plug-in tools provide powerful tools to expand the capabilities of
+AI agents without extensive custom development.
+OpenAI’s plug-ins ecosystem offers powerful extensions—everything from real-time
+web search to specialized code generators—but they’re only available inside the
+ChatGPT product, not the public API. You cannot invoke Expedia, Zapier, or any
+first-party ChatGPT plug-in through the standard OpenAI Completions or Chat
+endpoints. To replicate similar behavior in your own applications, you must build
+custom function-calling layers (for example, via LangChain) that approximate plug-
+in functionality.
+78 
+| 
+Chapter 4: Tool Use

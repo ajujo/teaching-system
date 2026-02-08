@@ -1,0 +1,43 @@
+For each node, we recommend starting a span at the beginning of the function and
+annotating it with relevant metadata. For example, in a tool-calling node, you might
+capture the tool name, the specific method called, the latency of the response, the suc‐
+cess or failure status, and any known error codes. In nodes where the LLM generates
+output, the span can include prompt identifiers, token counts, model latency, and
+flags for hallucination risk or confidence scores.
+This instrumentation does not require major architectural changes. OTel’s Python
+SDK can be initialized once at startup, and spans can be created and closed using
+simple context managers. The distributed tracing context is automatically propagated
+across async calls, making it easy to correlate end-to-end behavior even in complex,
+branched agent flows. Here is a simplified example of how to wrap a LangGraph node
+with a trace span:
+from opentelemetry import trace
+tracer = trace.get_tracer("agent")
+async def call_tool_node(context):
+    with tracer.start_as_current_span("call_tool", attributes={
+        "tool": context.tool_name,
+        "input_tokens": context.token_usage.input,
+        "output_tokens": context.token_usage.output,
+    }):
+        result = await call_tool(context)
+        return result
+Spans can include events (like fallback triggers or retries), nested subspans (to mea‐
+sure downstream API calls), and exception capture for automatic error tagging.
+These traces are exported in real time to backends like Tempo or Jaeger and visual‐
+ized alongside logs and metrics in Grafana.
+In addition to traces, OTel can emit structured logs and runtime metrics. For exam‐
+ple, you can record the number of times a specific tool is invoked, the average
+response time per planning node, or the percentage of failed tasks per model version.
+These metrics are invaluable for creating dashboards and alerts that track long-term
+performance and detect early signs of degradation.
+Instrumentation must be thoughtfully scoped. Too much detail becomes noisy; too
+little makes root cause analysis difficult. The key is to attach just enough context at
+each step—user request IDs, session metadata, agent configuration state, skill names,
+and evaluation signals—so that when something goes wrong, the trail of evidence is
+coherent, complete, and easily searchable.
+Tempo acts as the trace backend. Every span you instrument in LangGraph—each
+tool call, plan generation, or fallback—is part of a distributed trace. Tempo stores
+these traces in a highly scalable fashion and supports deep querying. For instance,
+you can filter all traces where the planning step took longer than 1.5 seconds, or
+OTel Instrumentation 
+| 
+231

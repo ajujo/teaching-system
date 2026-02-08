@@ -1,0 +1,36 @@
+{
+  "$schema": "exam_attempt_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam01-a01",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "created_at": "2026-02-05T21:07:41.562723+00:00",
+  "status": "graded",
+  "answers": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q01",
+      "response": 1
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q02",
+      "response": "Un MVP (Minimum Viable Product), en el contexto de desarrollar LLM Twins, es la primera versión mínima que funciona del “twin” (gemelo), con las capacidades esenciales para entregar valor real a usuarios (o al caso de uso) y validar rápidamente supuestos clave (utilidad, calidad de respuestas, seguridad, coste/latencia), sin construir todavía todo el sistema completo."
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q03",
+      "response": true
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q04",
+      "response": 2
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q05",
+      "response": "El propósito principal del Feature Pipeline en un sistema LLM Twin es transformar datos brutos en “características” útiles y consistentes (por ejemplo, texto limpio, metadatos, embeddings, señales de contexto) que luego alimentan tanto el entrenamiento como la inferencia del twin."
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam01-q06",
+      "response": 2
+    }
+  ],
+  "total_questions": 6
+}

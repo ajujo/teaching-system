@@ -1,0 +1,16 @@
+Chapter 11
+433
+If any check fails, the CI pipeline fails, and the developer who created the PR cannot merge it into 
+the staging branch until it fixes the issues.
+Implementing a CI pipeline ensures that new features follow the repository’s standards and 
+don’t break existing functionality. The exact process repeats when we plan to merge the staging 
+branch into the production one. We open a PR, and the CI pipeline is automatically executed 
+before merging the staging branch into production.
+Figure 11.14: CI/CD pipelines flow
+The CD pipeline runs after the branch is merged. For example, after the feature branch is merged 
+into staging, the CD pipeline takes the code from the staging branch, builds a new Docker im-
+age, and pushes it to the AWS ECR Docker repository. When running future pipeline runs in 
+the staging environment, it will use the latest Docker image that was built by the CD pipeline. 
+The exact process happens between staging and production. Still, the key difference is that the 
+staging environment exists as an experimental place where the QA team and stakeholders can 
+further manually test the new feature along with what is automatically tested in the CI pipeline.

@@ -1,0 +1,45 @@
+tabla 2-6. Ejemplos de datos de demostración utilizados para InstructGPT.
+Prompt
+Respuesta del etiquetador
+La serendipia es la ocurrenc
+ia y el desarrollo de aconte
+cimientos por casualidad de
+forma feliz o beneficiosa. U
+sa la palabra en una frase.
+Encontrarme con Margaret y que me presentara a
+Tom fue un afortunado golpe de serendipia.
+Lea el siguiente texto y res
+ponda a las tres preguntas q
+ue figuran al final.
+[OMITIDO POR EXTENSIóN - Art
+ículo sobre la jueza Ruth Ba
+der Ginsburg, defensora de l
+a igualdad de género, fallec
+e a los 87 años].
+1. …
+2. …
+3. ¿Por qué la muerte de Gin
+sburg tendrá profundas conse
+cuencias para el tribunal y
+el país?
+1. …
+2. …
+3. Ruth Bader Ginsburg era la líder del ala lib
+eral, y como el tribunal está a punto de inicia
+r un nuevo mandato, la presidenta del tribunal
+ya no tiene el voto de control en los casos con
+trovertidos.
+ELI5: ¿Cuál es la causa del
+"nudo de ansiedad" que nos d
+a en el pecho durante experi
+encias estresantes o desalen
+tadoras?
+El nudo de ansiedad en la garganta se debe a la
+tensión muscular que mantiene la glotis dilatad
+a para maximizar el flujo de aire. La sensación
+de pecho apretado o dolor de corazón está causa
+da por el nervio vago, que indica a los órganos
+que bombeen sangre más rápido, dejen de digerir
+y produzcan adrenalina y cortisol.
+Por ello, las empresas suelen recurrir a etiquetadores con un alto nivel de
+educación para generar datos de demostración. Entre los que etiquetaron

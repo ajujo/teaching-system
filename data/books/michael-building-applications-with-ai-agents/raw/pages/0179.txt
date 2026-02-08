@@ -1,0 +1,47 @@
+):
+    train_args = SFTConfig(
+        output_dir=output_dir,
+        per_device_train_batch_size=batch_size,
+        per_device_eval_batch_size=batch_size,
+        gradient_accumulation_steps=grad_accum,
+        save_strategy="no",
+        eval_strategy="epoch",
+        logging_steps=5,
+        learning_rate=lr,
+        num_train_epochs=epochs,
+        max_grad_norm=1.0,
+        warmup_ratio=0.1,
+        lr_scheduler_type="cosine",
+        report_to=None,
+        bf16=True,
+        gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
+        packing=True,
+        max_seq_length=max_seq_len,
+    )
+    trainer = SFTTrainer(
+        model=model,
+        args=train_args,
+        train_dataset=dataset["train"],
+        eval_dataset=dataset["test"],
+        processing_class=tokenizer,
+        peft_config=peft_cfg,
+    )
+    trainer.train()
+    trainer.save_model()
+    return trainer
+When agents depend on reliable tool use—retrieving calendar entries, executing
+commands, or querying databases—SFT makes these calls dramatically more robust
+than prompt engineering alone. It lowers error rates, teaches contextual judgment
+(when not to call), and reduces your token cost by cutting retries and malformed
+calls.
+It also introduces a layer of reasoning: the model can choose when not to call a tool.
+For example, if the user says “If it rains tomorrow, I’ll stay in,” the agent can reason
+that no API call is needed and simply reply.
+Finally, this method improves user experience by enabling agents to handle complex
+tasks with reliability. As agents take on more responsibility—especially in automation
+and decision-making roles—structured function calling becomes a foundational skill
+worth fine-tuning.
+Parametric Learning: Fine-Tuning 
+| 
+157

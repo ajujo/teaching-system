@@ -1,0 +1,18 @@
+RAG
+El RAG es una técnica que mejora la generación de un modelo recuperando
+la información relevante de fuentes de memoria externas. Una fuente de
+memoria externa puede ser una base de datos interna, las sesiones de chat
+anteriores de un usuario o Internet.
+El patrón recuperar-y-luego-generar se presentó por primera vez en
+"Reading Wikipedia to Answer Open-Domain Questions" (Chen et al.,
+2017). En este trabajo, el sistema primero recupera las cinco páginas de
+Wikipedia más relevantes para una pregunta y, a continuación, un modelo 1
+utiliza, o lee, la información de estas páginas para generar una respuesta,
+como se visualiza en la Figura 6-1.
+figura 6-1. El patrón recuperar-y-luego-generar. El modelo se denominó lector de
+documentos.
+El término generación aumentada por recuperación se acuñó en "Retrieval-
+Augmented Generation for Knowledge-Intensive NLP Tasks" (Lewis et al.,
+2020). El documento propone la RAG como solución para tareas que
+requieren un uso intensivo de conocimientos, en las que no puede
+introducirse todo el conocimiento disponible directamente en el modelo.

@@ -1,0 +1,37 @@
+Chapter 6
+225
+Let's look at a few relatively simple design patterns that help with building well-performing
+agents. You will see these patterns in various combinations across different domains and agentic
+architectures:
+•
+Tool calling: LLMs are trained to do controlled generation via tool calling. Hence, wrap
+your problem as a tool-calling problem when appropriate instead of creating complex
+prompts. Keep in mind that tools should have clear descriptions and property names,
+and experimenting with them is part of the prompt engineering exercise. We discussed
+this pattern in Chapter 5.
+•
+Task decomposition: Keep your prompts relatively simple. Provide specific instructions
+with few-shot examples and split complex tasks into smaller steps. You can give an LLM
+partial control over the task decomposition and planning process, managing the flow by
+an external orchestrator. We used this pattern in Chapter 5 when we built a plan-andsolve agent.
+•
+Cooperation and diversity: Final outputs on complex tasks can be improved if you intro­
+duce cooperation between multiple instances of LLM-enabled agents. Communicating,
+debating, and sharing different perspectives helps, and you can also benefit from various
+skill sets by initiating your agents with different system prompts, available toolsets, etc.
+Natural language is a native way for such agents to communicate since LLMs were trained
+on natural language tasks.
+•
+Reflection and adaptation: Adding implicit loops of reflection generally improves the
+quality of end-to-end reasoning on complex tasks. LLMs get feedback from the external
+environment by calling the tools (and these calls might fail or produce unexpected results),
+but at the same time, LLMs can continue iterating and self-recover from their mistakes.
+As an exaggeration, remember that we often use the same LLM-as-a-judge, so adding a
+loop when we ask an LLM to evaluate its own reasoning and find errors often helps it to
+recover. We will learn how to build adaptive systems later in this chapter.
+•
+Models are nondeterministic and can generate multiple candidates: Do not focus on a
+single output; explore different reasoning paths by expanding the dimension of potential
+options to try out when an LLM interacts with the external environment when looking
+for the solution. We will investigate this pattern in more detail in the section below when
+we discuss ToT and Language Agent Tree Search (LATS) examples.

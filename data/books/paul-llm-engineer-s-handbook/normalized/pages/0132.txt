@@ -1,0 +1,34 @@
+Chapter 4
+101
+Hallucinations
+If a chatbot without RAG is asked a question about something it wasn't trained on, there is a high
+chance that it will give you a confident answer about something that isn't true. Let's take the 2024
+European Football Championship as an example. If the model is trained up to October 2023 and
+we ask it something about the tournament, it will most likely come up with a random answer
+that is hard to differentiate between reality and truth. Even if the LLM doesn't hallucinate all the
+time, it raises concerns about the trustworthiness of its answers. Thus, we must ask ourselves:
+"When can we trust the LLM's answers?" and "How can we evaluate if the answers are correct?".
+By introducing RAG, we enforce the LLM to always answer solely based on the introduced context. The LLM will act as the reasoning engine, while the additional information added through
+RAG will act as the single source of truth for the generated answer. By doing so, we can quickly
+evaluate if the LLM's answer is based on the external data or not.
+Old information
+Any LLM is trained or fine-tuned on a subset of the total world knowledge dataset. This is due
+to three main issues:
+•
+Private data: You cannot train your model on data you don't own or have the right to use.
+•
+New data: New data is generated every second. Thus, you would have to constantly train
+your LLM to keep up.
+•
+Costs: Training or fine-tuning an LLM is an extremely costly operation. Hence, it is not
+feasible to do it on an hourly or daily basis.
+RAG solves these issues, as you no longer have to constantly fine-tune your LLM on new data (or
+even private data). Directly injecting the necessary data to respond to user questions into the
+prompts that are fed to the LLM is enough to generate correct and valuable answers.
+To conclude, RAG is key for a robust and flexible generative AI system. But how do we inject the
+right data into the prompt based on the user's questions? We will dig into the technical aspects
+of RAG in the next sections.
+The vanilla RAG framework
+Every RAG system is similar at its roots. We will first focus on understanding RAG in its simplest
+form. Later, we will gradually introduce more advanced RAG techniques to improve the system's
+accuracy. Note that we will use vanilla and naive RAG interchangeably to avoid repetition.

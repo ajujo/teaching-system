@@ -1,0 +1,24 @@
+R
+RAG (generación aumentada por recuperación), RAG y agentes
+– algoritmos de recuperación, Arquitectura RAG
+– combinación, Combinar los algoritmos de recuperación
+– comparación, Comparación de algoritmos de recuperación
+– recuperación basada en incrustaciones, Recuperación basada en
+términos
+– recuperación basada en términos, Algoritmos de recuperación
+– arquitectura RAG, RAG
+– optimización de la recuperación, Optimización de la recuperación
+– estrategia de fragmentación, Optimización de la recuperación
+– recuperación contextual, Reescritura de consultas
+– reescritura de consultas, Reranking
+– reordenamiento, Estrategia de fragmentación
+– RAG más allá de los textos, RAG más allá de los textos
+– RAG con datos tabulares, RAG multimodal
+– RAG multimodal, RAG más allá de los textos
+rastros, Registros y rastros
+recuerdo, Comparación de algoritmos de recuperación
+recuerdo del contexto, Comparación de algoritmos de recuperación
+recuperación contextual, Reescritura de consultas
+recuperadores
+– combinar los algoritmos de recuperación, Combinar los algoritmos de
+recuperación

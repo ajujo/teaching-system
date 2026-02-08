@@ -1,0 +1,36 @@
+Setting up an entity set and creating features automatically
+279
+How it works...
+In this recipe, we set up an entity set containing the data and the relationships between some of its 
+variables (unique identifiers). After that, we automatically created features by aggregating the information 
+in the dataset for each of the unique identifiers. We used two main classes from featuretools, 
+EntitySet and dfs, to create the features. Let’s discuss each of these in more detail.
+The EntitySet class stores the data, the logical types of the variables, and the relationships between 
+the variables. The variable types (whether numeric or categorical) are automatically assigned by 
+featuretools. We can also set up specific variable types when adding a DataFrame to the entity set. In 
+step 4, we added the data to the entity set and set the logical type of customer_id to Categorical.
+Note
+To inspect the datatypes inferred by featuretools, you can execute es["data"].ww, 
+where es is the entity set and data is the name of the DataFrame.
+The EntitySet class has the add_dataframe method, which we used in step 4 to add a new 
+DataFrame. When using this method, we need to specify the unique identifier, and if there is none, 
+then we need to create one, as we did in step 4, by setting make_index to True. Note that in the 
+index parameter from add_dataframe, we passed the "rows" string. With this configuration, 
+EntitySet added a rows column containing the unique identifier for each row to the DataFrame, 
+which is a new sequence of integers starting at 0.
+Note
+Instead of using the add_dataframe method to add a DataFrame to an entity set, we can 
+add it by executing es["df_name"]=df, where "df_name" is the name we want to give 
+to the DataFrame and df is the DataFrame we want to add.
+The EntitySet class has the normalize_dataframe method, which is used to create a new 
+DataFrame and relationship from the unique values of an existing column. The method takes the name of 
+the DataFrame to which the new DataFrame will be related and a name for the new DataFrame. We also need 
+to indicate the unique identifier for the new DataFrame in the index parameter. By default, this method 
+creates a new DataFrame containing the unique identifier, followed by a datetime column containing 
+the first date each unique identifier was registered. We can add more columns to this DataFrame by using 
+the copy_columns parameters, as we did in step 5. Adding more columns to the new DataFrame is 
+useful if we want to follow up with relationships to this new DataFrame, as we did in step 6.
+The EntitySet class also has the plot() method, which displays existing relationships in the 
+entity set. In Figure 9.5, we saw the relationships between our data tables; the invoices and items 
+(products) tables were related to the original data, whereas the customers table was related to the 
+invoices table, which was, in turn, related to the original data.

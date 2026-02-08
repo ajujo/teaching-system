@@ -1,0 +1,48 @@
+Graphs
+For support scenarios with multiple decision points, a graph topology models com‐
+plex, nonhierarchical flows far more expressively than chains or trees. Unlike linear
+chains or strictly branching trees, graph structures let you define both conditional
+edges and consolidation edges, so that parallel paths can merge back into shared
+nodes.
+Each node in a graph represents a discrete tool invocation (or logical step), while
+edges-including add_conditional_edges-declare the exact conditions under
+which the agent may transition between steps. By consolidating outputs from multi‐
+ple branches into a single downstream node (e.g., summarize_response), you can
+stitch together findings from separate handlers into a unified customer reply.
+However, full graph execution typically incurs significantly more foundation model
+calls than chains-adding latency and cost-so it's crucial to cap depth and branching
+factor. In addition, cycles, unreachable nodes, or conflicting state merges introduce
+new classes of errors that must be managed through rigorous validation and testing.
+The following is an example for how to implement a graph in LangGraph:
+from langgraph.graph import StateGraph, START, END
+from langchain.chat_models import ChatOpenAI
+# Initialize LLM
+llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+# 1. Node definitions
+def categorize_issue(state: dict) -> dict:
+    prompt = (
+        f"Classify this support request as 'billing' or 'technical'.\n\n"
+        f"Message: {state['user_message']}"
+    )
+    generations = llm.generate([{"role":"user","content":prompt}]).generations
+    kind = generations[0][0].text.strip().lower()
+    return {**state, "issue_type": kind}
+def handle_invoice(state: dict) -> dict:
+    # Fetch invoice details...
+    return {**state, "step_result": f"Invoice details for {state['user_id']}"}
+def handle_refund(state: dict) -> dict:
+    # Initiate refund workflow...
+    return {**state, "step_result": "Refund process initiated"}
+def handle_login(state: dict) -> dict:
+    # Troubleshoot login...
+    return {**state, "step_result": "Password reset link sent"}
+def handle_performance(state: dict) -> dict:
+    # Check performance metrics...
+    return {**state, "step_result": "Performance metrics analyzed"}
+def summarize_response(state: dict) -> dict:
+    # Consolidate previous step_result into a user-facing message
+    details = state.get("step_result", "")
+    summary = llm.generate([{"role":"user","content":
+Tool Topologies
+|
+109

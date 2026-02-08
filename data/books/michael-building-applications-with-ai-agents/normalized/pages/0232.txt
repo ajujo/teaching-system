@@ -1,0 +1,39 @@
+Tool tests should assert that outputs are deterministic for identical inputs unless sto‐
+chasticity is part of the tool's design (in which case, statistical properties must be
+checked). For tools with external dependencies, such as APIs or databases, developers
+should use mocks or simulators to reproduce edge cases that might be rare in produc‐
+tion but catastrophic if mishandled. Regression tests are critical; every time a tool is
+modified, the full suite of tests must be rerun to verify that past capabilities have not
+broken.
+Evaluating Planning
+Planning modules transform high-level goals into actionable sequences of stepsoften involving dynamic decision making, branching logic, and adaptation to envi‐
+ronmental feedback. Unlike traditional scripts, agentic planning is often probabilistic
+or adaptive, requiring careful testing to avoid brittle or inconsistent behaviors. A
+planner might need to sequence tool calls, coordinate conditionals, or stop early
+depending on what it learns during execution. This makes validation both more sub‐
+tle and more essential.
+To assess planning quality, we begin with canonical workflows: common, wellunderstood user intents paired with known-good agent responses. For each scenario,
+we encode the starting environment, a conversation history, and the expected out‐
+come in terms of tool usage and user communication. In the case of our customer
+support agent, for example, when a customer requests a refund for a damaged mug,
+the planner should determine that issuing a refund is the right action, not canceling
+the order or modifying an address. It should also include a confirmation message in
+natural language that reassures the customer that the issue has been resolved.
+To evaluate these plans systematically, we run the agent end-to-end and extract its
+chosen actions. Specifically, we capture the list of tool invocations and their argu‐
+ments from the agent's generated outputs. These are compared against the ground
+truth expectations for the scenario. From this comparison, we compute several auto‐
+mated metrics:
+Tool recall
+Did the planner include all expected tool invocations?
+Tool precision
+Did it avoid calling tools that were unnecessary?
+Parameter accuracy
+For each tool, did it supply the correct arguments-such as the specific order ID
+or refund amount?
+These metrics provide fine-grained insight into the planner's behavior. A low recall
+score might indicate the planner failed to take an essential action, while low precision
+suggests it misunderstood the goal or misread the user's intent. Parameter
+210
+|
+Chapter 9: Validation and Measurement

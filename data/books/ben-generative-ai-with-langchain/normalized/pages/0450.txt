@@ -1,0 +1,40 @@
+Chapter 10
+423
+•
+Legal profession: Routine legal work like document review and draft preparation will be
+largely automated, fundamentally changing job roles for junior lawyers and paralegals.
+Law firms that have already begun this transition report maintaining headcount while
+significantly increasing caseload capacity.
+•
+Education: Teachers will utilize AI for course preparation, administrative tasks, and per­
+sonalized student support. Students are already using generative AI to learn new concepts
+through personalized teaching interactions, asking follow-up questions to clarify un­
+derstanding at their own pace. The teacher's role will evolve toward mentorship, critical
+thinking development, and creative learning design rather than pure information delivery,
+focusing on aspects where human guidance adds the most value.
+•
+Healthcare: While clinical decision-making will remain primarily human, diagnostic
+support, documentation, and routine monitoring will be increasingly automated, allowing
+healthcare providers to focus on complex cases and patient relationships.
+Long-term shifts (2045 and beyond)
+As technology approaches more empathy-requiring roles, we can expect the following to be in
+demand:
+•
+Specialized expertise: Demand will grow significantly for experts in AI ethics, regulations,
+security oversight, and human-AI collaboration design. These roles will be essential for
+ensuring responsible outcomes as systems become more autonomous.
+•
+Creative fields: Musicians and artists will develop new forms of human-AI collaboration,
+potentially boosting creative expression and accessibility while raising new questions
+about attribution and originality.
+•
+Leadership and strategy: Roles requiring complex judgment, ethical reasoning, and stake­
+holder management will be among the last to see significant automation, potentially
+increasing their relative value in the economy.
+Economic distribution and equity considerations
+Without deliberate policy interventions, the economic benefits of AI may accrue disproportion­
+ately to those with the capital, skills, and infrastructure to leverage these technologies, potentially
+widening existing inequalities. This concern is particularly relevant for:
+•
+Geographic disparities: Regions with strong technological infrastructure and education
+systems may pull further ahead of less-developed areas.

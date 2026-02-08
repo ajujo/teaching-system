@@ -1,0 +1,35 @@
+Evaluation and Testing
+346
+    accident_date: str = Field(..., description="The date of the accident
+(YYYY-MM-DD)")
+    accident_description: str = Field(..., description="A brief
+description of the accident")
+    status: str = Field("pending", description="The current status of the
+claim")
+Now we'll define our extraction chain. We are keeping it very simple; we'll just ask for a JSON
+object that follows the InsuranceClaim schema. The extraction chain is defined with ChatOpenAI
+LLM with function calling bound to our schema:
+# Create extraction chain
+from langchain.chat_models import ChatOpenAI
+from langchain.output_parsers.openai_functions import
+JsonOutputFunctionsParser
+instructions = (
+    "Extract the following structured information from the insurance claim
+text: "
+    "claimant_name, claim_id, policy_number, claim_amount, accident_date, "
+    "accident_description, and status. Return the result as a JSON object
+following "
+    "this schema: " + InsuranceClaim.schema_json()
+)
+llm = ChatOpenAI(model="gpt-4", temperature=0).bind_functions(
+    functions=[InsuranceClaim.schema()],
+    function_call="InsuranceClaim"
+)
+output_parser = JsonOutputFunctionsParser()
+extraction_chain = instructions | llm | output_parser | (lambda x:
+{"output": x})
+Finally, we can run the extraction chain on our sample insurance claim:
+# Test the extraction chain
+sample_claim_text = (
+    "I was involved in a car accident on 2023-08-15. My name is Jane
+Smith, "

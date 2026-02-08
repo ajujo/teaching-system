@@ -1,0 +1,37 @@
+Production-Ready LLM Deployment and Observability
+372
+This deployment configuration defines how Kubernetes should run your application. It sets up 
+two replicas for high availability, specifies resource limits to prevent cost overruns, and securely 
+injects API keys from the Secret we created. The readiness probe ensures that traffic is only sent 
+to healthy instances of your application, improving reliability. Now, we need to expose your ap­
+plication within the Kubernetes cluster using a Service:
+# service.yaml - Expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: langchain-app-service
+spec:
+  selector:
+    app: langchain-app
+  ports:
+  - port: 80
+    targetPort: 8000
+  type: ClusterIP  # Internal access within cluster
+This Service creates an internal network endpoint for your application, allowing other compo­
+nents within the cluster to communicate with it. It maps port 80 to your application’s port 8000, 
+providing a stable internal address that remains constant even as Pods come and go. Finally, we 
+configure external access to your application using an Ingress resource:
+# ingress.yaml - External access configuration
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: langchain-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: langchain-app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix

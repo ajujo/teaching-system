@@ -1,0 +1,19 @@
+Extracting features from dates with pandas
+181
+6.	
+Let’s extract the month part of the date in a new column and display the top five rows of 
+the DataFrame:
+data["month"] = data["date"].dt.month
+data[["date", "month"]].head()
+We see the new month variable in the following output:
+Figure 6.4 – The first five rows of a DataFrame with the new month variable
+7.	
+Let’s extract the week number (a year has 52 weeks) from the date:
+data["week"] = data["date"].dt.isocalendar().week
+data[["date", "week"]].head()
+We see the week variable in the following output:
+Figure 6.5 – The first five rows of a DataFrame with the new week variable
+8.	
+Let’s extract the day of the month, which can take values between 1 and 31, into a new column:
+data["day_mo"] = data["date"].dt.day
+data[["date", "day_mo"]].head()

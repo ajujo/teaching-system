@@ -1,0 +1,37 @@
+Implementing maximum absolute scaling
+223
+How it works...
+In this recipe, we scaled the sparse variables of a bag of words to their absolute maximum values by 
+using MaxAbsScaler(). With fit(), the scaler learned the maximum absolute values for each 
+variable and stored them in its max_abs_ attribute. With transform(), the scaler divided the 
+variables by their absolute maximum values, returning a pandas DataFrame.
+Note
+Remember that you can change the output container to a NumPy array or a polars DataFrame 
+through the set_output() method of the scikit-learn library’s transformers.
+There’s more...
+If you want to center the variables’ distribution at 0 and then scale them to their absolute maximum, 
+you can do so by combining the use of two scikit-learn transformers within a pipeline:
+1.	
+Let’s import the required libraries, transformers, and functions:
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import (
+    MaxAbsScaler, StandardScaler)
+from sklearn.pipeline import Pipeline
+2.	
+Let’s load the California housing dataset and split it into train and test sets:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop( labels=[ "Latitude",
+    "Longitude"], axis=1, inplace=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)
+3.	
+Let’s set up StandardScaler() from scikit-learn so that it learns and subtracts the mean 
+but does not divide the result by the standard deviation:
+scaler_mean = StandardScaler(
+    with_mean=True, with_std=False)
+4.	
+Now, let’s set up MaxAbsScaler() with its default parameters:
+scaler_maxabs = MaxAbsScaler()

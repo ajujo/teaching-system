@@ -1,0 +1,32 @@
+Building Intelligent Agents
+214
+Now we can build our ReACT engine in minutes:
+from langgraph.prebuilt import ToolNode, tools_condition
+def invoke_llm(state: MessagesState):
+   return {"messages": [llm_with_tools.invoke(state["messages"])]}
+builder = StateGraph(MessagesState)
+builder.add_node("invoke_llm", invoke_llm)
+builder.add_node("tools", ToolNode([search, calculator]))
+builder.add_edge(START, "invoke_llm")
+builder.add_conditional_edges("invoke_llm", tools_condition)
+builder.add_edge("tools", "invoke_llm")
+graph = builder.compile()
+Tool-calling paradigm
+Tool calling is a very powerful design paradigm that requires a change in how you develop your 
+applications. In many cases, instead of performing rounds of prompt engineering and many 
+attempts to improve your prompts, think whether you could ask the model to call a tool instead.
+Let’s assume we’re working on an agent that deals with contract cancellations and it should follow 
+certain business logic. First, we need to understand the contract starting date (and dealing with 
+dates might be difficult!). If you try to come up with a prompt that can correctly handle cases like 
+this, you’ll realize it might be quite difficult:
+examples = [
+ "I signed my contract 2 years ago",
+ "I started the deal with your company in February last year",
+ "Our contract started on March 24th two years ago"
+]
+Instead, force a model to call a tool (and maybe even through a ReACT agent!). For example, we 
+have two very native tools in Python—date and timedelta:
+from datetime import date, timedelta
+@tool
+def get_date(year: int, month: int = 1, day: int = 1) -> date:
+   """Returns a date object given year, month and day.

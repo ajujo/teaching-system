@@ -1,0 +1,35 @@
+Bringing outliers back within acceptable limits
+173
+9.	
+Finally, let’s replace the outliers with the limits from step 8:
+X_train = capper.transform(X_train)
+X_test = capper.transform(X_test)
+If we now execute train_t[capper.variables_].agg(["min", "max"]), we’ll 
+see that the maximum and minimum values of the transformed DataFrame coincide with either 
+the maximum and minimum values of the variables or the identified limits, whatever comes first:
+      worst smoothness  worst texture
+min              0.071170        12.020000
+max              0.201411        43.953738
+If you are planning to cap variables, make sure you compare the performance of your models 
+or the results of your analysis before and after replacing outliers.
+How it works...
+The clip() function from pandas is used to cap values at lower or upper specified limits. In this 
+recipe, we found those limits using the mean and standard deviation, and then clipped the variable so 
+that all observations took values within those limits. The minimum value of the worst smoothness 
+variable was actually greater than the lower limit we found in step 4, so no values were replaced at 
+the left of its distribution. However, there were values greater than the upper limit from step 4, and 
+those were replaced with the limit. This means that the minimum value of the transformed variable 
+and the original variable coincide, but the maximum values do not.
+We used feature-engine to replace outliers in multiple variables simultaneously. Winsorizer() 
+can identify outliers based on the mean and standard deviation, the IQR proximity rule, MAD, or by 
+using percentiles. We can modify this behavior through the capping_method parameter.
+The methods to identify outliers can be made more or less conservative by changing the factor by 
+which we multiply the IQR, the standard deviation, or MAD. With Winsorizer(), we can control 
+the strength of the methods through the fold parameter.
+With tails set to "both", Winsorizer() found and replaced outliers at both ends of the 
+variables’ distribution. To replace outliers at either end, we can pass "left" or "right" to the 
+tails parameter.
+Winsorizer() adopts the scikit-learn functionality with the fit() method, to learn parameters, 
+and transform() to modify the dataset. With fit(), the transformer learned and stored the 
+limits for each variable. With transform(), it replaced the values of the outliers, returning 
+pandas DataFrames.

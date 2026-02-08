@@ -1,0 +1,25 @@
+9
+Production-Ready LLM 
+Deployment and Observability
+In the previous chapter, we tested and evaluated our LLM app. Now that our application is fully 
+tested, we should be ready to bring it into production! However, before deploying, it’s crucial to 
+go through some final checks to ensure a smooth transition from development to production. This 
+chapter explores the practical considerations and best practices for productionizing generative 
+AI, specifically LLM apps.
+Before we deploy an application, performance and regulatory requirements need to be ensured, 
+it needs to be robust at scale, and finally, monitoring has to be in place. Maintaining rigorous 
+testing, auditing, and ethical safeguards is essential for trustworthy deployment. Therefore, in 
+this chapter, we’ll first examine the pre-deployment requirements for LLM applications, including 
+performance metrics and security considerations. We’ll then explore deployment options, from 
+simple web servers to more sophisticated orchestration tools such as Kubernetes. Finally, we’ll 
+delve into observability practices, covering monitoring strategies and tools that ensure your 
+deployed applications perform reliably in production.
+In a nutshell, the following topics will be covered in this chapter:
+•	
+Security considerations for LLMs
+•	
+Deploying LLM apps
+•	
+How to observe LLM apps
+•	
+Cost management for LangChain applications

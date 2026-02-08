@@ -1,0 +1,32 @@
+NOTA
+LoRA (Low-Rank Adaptation) se basa en el concepto de factorización de
+bajo rango, una antigua técnica de reducción de la dimensionalidad. La
+idea clave es que se puede factorizar una matriz grande en un producto de
+dos matrices más pequeñas para reducir el número de parámetros, lo que, a
+su vez, reduce los requisitos de cálculo y memoria. Por ejemplo, una matriz
+de 9 × 9 puede factorizarse en el producto de dos matrices de dimensiones
+9 × 1 y 1 × 9. La matriz original tiene 81 parámetros, pero las dos
+matrices producto solo tienen 18 parámetros combinadas.
+El número de columnas de la primera matriz factorizada y el número de
+columnas de la segunda matriz factorizada corresponden al rango de la
+factorización. La matriz original es de rango completo, mientras que las dos
+matrices más pequeñas representan una aproximación de bajo rango.
+Aunque la factorización puede reducir significativamente el número de
+parámetros, tiene pérdidas porque solo se aproxima la matriz original.
+Cuanto mayor sea el rango, más información de la matriz original podrá
+conservar la factorización.
+Al igual que el método adaptador original, LoRA es eficiente en cuanto a
+parámetros y muestras. La factorización permite a LoRA utilizar incluso
+menos parámetros entrenables. El artículo de LoRA demostró que, para
+GPT-3, LoRA consigue un rendimiento comparable o mejor que el afinado
+completo en varias tareas utilizando solo ~4.7 millones de parámetros
+entrenables, un 0.0027 % del afinado completo.
+¿Por qué funciona LoRA?
+Los métodos eficientes en parámetros como LoRA se han hecho tan
+populares que mucha gente los da por sentados. Pero, ¿por qué es posible
+la eficiencia en los parámetros? Si un modelo requiere muchos parámetros
+para aprender ciertos comportamientos durante el pre-entrenamiento, ¿no
+debería requerir también muchos parámetros para cambiar sus
+comportamientos durante el afinado?
+La misma pregunta puede hacerse para los datos. Si un modelo requiere
+muchos datos para aprender un comportamiento, ¿no debería requerir

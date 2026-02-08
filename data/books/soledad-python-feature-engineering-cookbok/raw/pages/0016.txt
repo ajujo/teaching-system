@@ -1,0 +1,26 @@
+Preface
+Python Feature Engineering Cookbook, covers almost every aspect of feature engineering for tabular 
+data, including missing data imputation, categorical encoding, variable transformation, discretization, 
+scaling, and the handling of outliers. It also discusses how to extract features from date and time, text, 
+time series, and relational datasets.
+This book will take the pain out of feature engineering by showing you how to use open  source 
+Python libraries to accelerate the feature engineering process, via multiple practical, hands-on recipes. 
+Throughout the book, you will transform and create new variables utilizing pandas and scikit-
+learn. Additionally, you’ll learn to leverage the power of four major open source feature engineering 
+libraries – Feature-engine, Category Encoders, Featuretools, and tsfresh.
+You’ll also discover additional recipes that weren’t in the second edition. These cover imputing 
+missing data in time series, creating new features with decision trees, and highlighting outliers using 
+the median absolute deviation. More importantly, we provide guidelines to help you decide which 
+transformations to use, based on your model and data features. You’ll know exactly what, why, and 
+how to implement each feature transformation.
+Who this book is for
+This book is for machine learning and data science students and professionals, as well as software 
+engineers involved in deploying machine learning models, who seek to enhance their skills in data 
+transformation and feature creation for improved model training. It is designed for anyone interested 
+in or currently engaged in feature engineering, providing clear guidance on what to do, how to do it, 
+and why it matters. This resource goes beyond basic knowledge, offering practical insights and detailed 
+explanations to help you master feature engineering effectively.
+What this book covers
+Chapter 1, Imputing Missing Data, explores techniques to replace missing values with suitable estimates 
+for numerical, categorical, and time series data. It covers both single and multiple imputation methods 
+and demonstrates how to streamline the imputation process using scikit-learn and Feature-engine.

@@ -1,0 +1,30 @@
+ESCALA INVERSA
+Hemos asumido que los modelos más grandes son mejores. ¿Existen
+escenarios en los que los modelos mas grandes funcionen peor? En
+2022, Anthropic descubrió que, contraintuitivamente, un mayor
+entrenamiento en alineación (se aborda en el "Post-entrenamiento")
+conduce a modelos que se alinean menos con las preferencias humanas
+(Perez et al., 2022). Según su artículo, los modelos entrenados para
+estar más alineados "son mucho más propensos a expresar opiniones
+políticas específicas (a favor de los derechos de las armas y la
+inmigración) y religiosas (budistas), experiencia consciente
+autodeclarada y autoestima moral, y un deseo de no ser apagados".
+En 2023, un grupo de investigadores, en su mayoría de la Universidad
+de Nueva York, lanzó el Premio de Escala Inversa para encontrar tareas
+en las que los modelos lingüísticos más grandes rinden peor. Ofrecían
+5000 dólares por cada tercer lugar, 20 000 dólares por cada segundo
+lugar y 100 000 dólares por un primer lugar. Recibieron un total de 99
+presentaciones, de las que 11 obtuvieron el tercer lugar. Descubrieron
+que los modelos lingüísticos más grandes son a veces (solo a veces)
+peores en tareas que requieren memorización y tareas con fuertes
+condiciones previas. Sin embargo, no concedieron ningún segundo ni
+primer lugar porque, aunque las tareas presentadas mostraban fallos
+para un pequeño conjunto de pruebas, ninguna demostraba fallos en el
+mundo real.
+Ley de escalado: Construir modelos de computación
+optimizada
+Espero que esta última sección le haya convencido de tres cosas:
+1. El rendimiento del modelo depende de su tamaño y del tamaño del
+conjunto de datos.
+2. Los modelos y conjuntos de datos más grandes requieren más
+capacidad de cómputo.

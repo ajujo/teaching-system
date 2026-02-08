@@ -1,0 +1,38 @@
+Chapter 9
+363
+
+        # Save chunks for future use
+        print("Saving chunks checkpoint...")
+        with open(chunks_file, 'wb') as f:
+            pickle.dump(all_chunks, f)
+    # Check if FAISS index already existsMore actions
+    index_file = os.path.join(index_dir, "index.faiss")
+    if os.path.exists(index_file):
+        print(f"Loading existing FAISS index from '{index_dir}'...")
+        embeddings = HuggingFaceEmbeddings(model_name=model_name)
+        index = FAISS.load_local(index_dir, embeddings, allow_dangerous_
+deserialization=True)
+        print(f"Loaded existing index with {index.index.ntotal} vectors")
+More actions
+        return index
+    print("No existing index found, proceeding with embedding...")
+
+    # Split into embedding batches
+    chunk_batches = []
+    for i in range(0, len(all_chunks), embedding_batch_size):
+        chunk_batches.append(all_chunks[i:i + embedding_batch_size])
+
+    print(f"Starting parallel embedding with {len(chunk_batches)} batches
+of ~{embedding_batch_size} chunks each...")
+    index_futures = [
+        embed_chunks_with_progress.remote(batch, i, model_name)
+        for i, batch in enumerate(chunk_batches)
+    ]
+# Get results with progress trackingMore actions
+    indices = []
+    for i, future in enumerate(index_futures):
+        result = ray.get(future)
+        indices.append(result)
+        print(f"Completed {i+1}/{len(index_futures)} embedding batches")
+
+    # Merge indices

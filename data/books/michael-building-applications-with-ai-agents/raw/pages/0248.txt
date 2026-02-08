@@ -1,0 +1,97 @@
+Table 10-1. Taxonomy of metrics
+Metric
+Purpose
+Example action
+Infrastructure
+CPU/memory usage
+Monitor system health and scaling
+pressure
+Autoscale or optimize memory-
+intensive tools
+Uptime/availability
+Track service availability and failure
+recovery
+Trigger incident response
+Request latency (P50,
+P95, P99)
+Ensure responsiveness under load
+Engage in tune caching or retry
+logic
+Workflow level
+Task success rate
+Determine how often agents complete
+intended workflows
+Investigate failures or update
+prompts
+Token usage
+Measure the token consumption at the
+workflow level
+Rapid increases or decreases can
+indicate issues
+Tool call success/failure
+rate
+Detect degraded integrations or misuse of
+tools
+Patch wrappers or fall back
+automatically
+Tool use rate limit
+exceeded
+Track instances where agent tool
+invocations surpass predefined call limits
+within specified time windows
+Adjust limits or adjust invocation
+frequency
+Retry frequency
+Identify instability or flakiness in plans or
+tools
+Debounce retries or refine planning
+logic
+Fallback frequency
+Surface failures in primary workflows
+Improve robustness or escalate to
+human
+Output quality
+Token usage (input/
+output)
+Track verbosity, cost, and generation
+efficiency
+Prune long prompts or switch
+model tier
+Hallucination indicator
+Measure semantic accuracy of generated
+content
+Introduce grounding or LLM
+critique steps
+Embedding drift from
+baseline
+Detect distribution shifts in user inputs or
+task framing
+Adjust workflows or fine-tune
+model
+User feedback
+Requery/rephrasing rate
+Measure whether users are understood on
+first try
+Improve intent classification
+Task abandonment rate
+Identify workflows that confuse or
+frustrate users
+Simplify flows or add clarification
+prompts
+Explicit ratings (thumbs
+up/down)
+Collect qualitative assessments of system
+helpfulness
+Use it to triage outputs for
+evaluation
+Each of these metrics can be logged via OpenTelemetry, aggregated in Prometheus or
+Loki, visualized in Grafana, and (where appropriate) linked to traces in Tempo. The
+goal is not to collect everything, but to collect what is necessary to detect meaningful
+change—and to do so in a way that supports rapid diagnosis and continuous
+improvement.
+Monitoring Stacks
+Selecting the right monitoring is an important decision that can either accelerate or
+impede the pace of development for your agent system. Observability must capture
+226 
+| 
+Chapter 10: Monitoring in Production

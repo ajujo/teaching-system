@@ -1,0 +1,20 @@
+El porcentaje de datos de código y matemáticas durante el afinado de
+preferencias es mucho menor (12.82 % combinado), probablemente porque
+el objetivo es reflejar la distribución real de las preferencias de los usuarios.
+Esto plantea una pregunta: ¿Cómo decidimos cuál es la mezcla de datos
+adecuada? Un enfoque sencillo consiste en elegir una mezcla de datos que
+refleje fielmente el uso de la aplicación en el mundo real. También puede
+utilizar experimentos para encontrar combinaciones óptimas de datos. Por
+ejemplo, Meta realizó experimentos de ley de escala similares a los que se
+abordan en el “Extrapolación de escalas”. Para cada mezcla de datos
+candidatos, entrenaron varios modelos pequeños con una mezcla de datos y
+los utilizaron para predecir el rendimiento de un modelo grande en esa
+mezcla. La mezcla final del modelo es la mezcla más probable derivada de
+los resultados del experimento.
+Para evaluar el impacto de la diversidad y la calidad de los datos, Zhou et
+al. (2023) llevaron a cabo un interesante experimento en el que entrenaron
+un modelo lingüístico de 7 MM de parámetros con tres conjuntos de datos
+del mismo tamaño (2000 ejemplos), pero con características diferentes. El
+primero es de alta calidad pero no diverso. El segundo es diverso pero de
+baja calidad. El tercero es diverso y de alta calidad. La Figura 8-1 muestra
+la calidad de generación de los tres modelos resultantes.

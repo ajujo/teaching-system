@@ -1,0 +1,31 @@
+Chapter 7
+285
+"""
+# Use the LangChain LLM to generate text
+output = llm(text)
+print(output)
+When executed, CodeGemma completes the function by implementing the Sieve of Eratosthenes
+algorithm, a classic method for finding prime numbers efficiently. The model correctly interprets
+the docstring, understanding that the function should return all prime numbers up to n rather
+than just checking whether a number is prime. The generated code demonstrates how specialized
+code models can produce working implementations from minimal specifications.
+If you're getting an error saying you "cannot access a gated repo" when trying to use a URL
+with LangChain, it means you're attempting to access a private repository on Hugging Face that
+requires authentication with a personal access token to view or use the model; you need to create
+a Hugging Face access token and set it as an environment variable named "HF_TOKEN" to access
+the gated repository. You can get the token on the Hugging Face website at https://huggingface.
+co/docs/api-inference/quicktour#get-your-api-token.
+When our code from the previous example executes successfully with CodeGemma, it generates
+a complete implementation for the prime number calculator function. The output looks like this:
+def calculate_primes(n):
+    """Create a list of consecutive integers from 2 up to N.
+    For example:
+    >>> calculate_primes(20)
+    Output: [2, 3, 5, 7, 11, 13, 17, 19]
+    """
+    primes = []
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+Please note that the downloading and loading of the models can take a few minutes.

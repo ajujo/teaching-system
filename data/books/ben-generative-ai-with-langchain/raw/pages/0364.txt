@@ -1,0 +1,41 @@
+Chapter 8
+337
+To effectively evaluate and address these specific failure modes, we need a structured and com­
+prehensive evaluation approach. The following example demonstrates how to build a carefully 
+designed evaluation dataset in LangSmith that allows for testing each of these failure patterns in 
+the context of financial advisory systems. By creating realistic questions with expected answers 
+and relevant metadata, we can systematically identify which failure modes most frequently affect 
+our particular implementation:
+# Define structured examples with queries, reference answers, and contexts
+financial_examples = [
+    {
+        "inputs": {
+            "question": "What are the tax implications of early 401(k) 
+withdrawal?",
+            "context_needed": ["retirement", "taxation", "penalties"]
+        },
+        "outputs": {
+            "answer": "Early withdrawals from a 401(k) typically incur a 
+10% penalty if you're under 59½ years old, in addition to regular income 
+taxes. However, certain hardship withdrawals may qualify for penalty 
+exemptions.",
+            "key_points": ["10% penalty", "income tax", "hardship 
+exemptions"],
+            "documents": ["IRS publication 575", "Retirement plan 
+guidelines"]
+        }
+    },
+    {
+        "inputs": {
+            "question": "How does dollar-cost averaging compare to lump-
+sum investing?",
+            "context_needed": ["investment strategy", "risk management", 
+"market timing"]
+        },
+        "outputs": {
+            "answer": "Dollar-cost averaging spreads investments over time 
+to reduce timing risk, while lump-sum investing typically outperforms 
+in rising markets due to longer market exposure. DCA may provide 
+psychological benefits through reduced volatility exposure.",
+            "key_points": ["timing risk", "market exposure", 
+"psychological benefits"],

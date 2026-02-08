@@ -1,0 +1,30 @@
+Tooling and Installation
+50
+region = eu-central-1
+output = json
+For more details on how to configure the AWS CLI, check out the following tutorial: https://
+docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html.
+Also, to configure the project with your AWS credentials, you must fill in the following variables
+within your .env file:
+AWS_REGION="eu-central-1" # Change it with your AWS region. By default, we
+use "eu-central-1".
+AWS_ACCESS_KEY="<your_aws_access_key>"
+AWS_SECRET_KEY="<your_aws_secret_key>"
+SageMaker: training and inference compute
+The last topic of this chapter is understanding SageMaker and why we decided to use it. SageMaker
+is an ML platform used to train and deploy ML models. An official definition is as follows: AWS
+SageMaker is a fully managed machine learning service by AWS that enables developers and data
+scientists to build, train, and deploy machine learning models at scale. It simplifies the process
+by handling the underlying infrastructure, allowing users to focus on developing high-quality
+models efficiently.
+An important note about costs associated with hands-on tasks in this book
+All the cloud services used across the book stick to their freemium option, except AWS.
+Thus, if you use a personal AWS account, you will be responsible for AWS costs as you
+follow along in this book. While some services may fall under AWS Free Tier usage,
+others will not. Thus, you are responsible for checking your billing console regularly.
+Most of the costs will come when testing SageMaker for training and inference. Based
+on our tests, the AWS costs can vary between $50 and $100 using the specifications
+provided in this book and repository.
+See the AWS documentation on setting up billing alarms to monitor your costs
+at https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/
+monitor_estimated_charges_with_cloudwatch.html.

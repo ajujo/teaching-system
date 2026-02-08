@@ -1,0 +1,20 @@
+Preface
+xxii
+Get in touch
+Subscribe to AI_Distilled, the go-to newsletter for AI professionals, researchers, and innovators,
+at https://packt.link/8Oz6Y.
+Feedback from our readers is always welcome.
+If you find any errors or have suggestions, please report them preferably through issues on GitHub,
+the discord chat, or the errata submission form on the Packt website.
+For issues on GitHub, see https://github.com/benman1/generative_ai_with_langchain/
+issues.
+If you have questions about the book's content, or bespoke projects, feel free to contact us at ben@
+chelseaai.co.uk.
+General feedback: Email feedback@packtpub.com and mention the book's title in the subject of
+your message. If you have questions about any aspect of this book, please email us at questions@
+packtpub.com.
+Errata: Although we have taken every care to ensure the accuracy of our content, mistakes do
+happen. If you have found a mistake in this book, we would be grateful if you reported this to us.
+Please visit http://www.packtpub.com/submit-errata, click Submit Errata, and fill in the form.
+Warnings or important notes appear like this.
+Tips and tricks appear like this.

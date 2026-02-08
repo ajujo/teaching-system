@@ -1,0 +1,20 @@
+Chapter 2
+45
+Other popular orchestrators similar to ZenML that we've personally tested and consider powerful
+are Airflow, Prefect, Metaflow, and Dagster. Also, if you are a heavy user of Kubernetes, you can
+opt for Agro Workflows or Kubeflow, the latter of which works only on top of Kubernetes. We still
+consider ZenML the best trade-off between ease of use, features, and costs. Also, none of these
+tools offer the stack feature that is offered by ZenML, which allows it to avoid vendor-locking
+you in to any cloud ecosystem.
+In Chapter 11, we will explore in more depth how to leverage an orchestrator to implement MLOps
+best practices. But now that we understand ZenML, what it is helpful for, and how to use it, let's
+move on to the experiment tracker.
+Comet ML: experiment tracker
+Training ML models is an entirely iterative and experimental process. Unlike traditional software
+development, it involves running multiple parallel experiments, comparing them based on predefined metrics, and deciding which one should advance to production. An experiment tracking
+tool allows you to log all the necessary information, such as metrics and visual representations
+of your model predictions, to compare all your experiments and quickly select the best model.
+Our LLM project is no exception.
+As illustrated in Figure 2.11, we used Comet to track metrics such as training and evaluation loss
+or the value of the gradient norm across all our experiments.
+Figure 2.11: Comet ML training metrics example

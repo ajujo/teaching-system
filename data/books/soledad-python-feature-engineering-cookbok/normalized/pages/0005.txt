@@ -1,0 +1,22 @@
+Foreword
+From convolutional neural networks to XGBoost, when it comes to machine learning, it's easy to
+focus too much on the algorithms. But as the saying goes, "Garbage in, garbage out." The quality of the
+features can be more important than the machine learning algorithm itself. Despite advances in feature
+learning, such as embedding in neural networks, feature engineering remains as important as ever.
+Particularly when dealing with categorical, numerical, and time-series features, feature engineering
+is a critical skill. With the right features, you can greatly improve model performance and ensure that
+models are more interpretable and robust.
+Sole is a remarkable data science and machine learning educator. She has taught tens of thousands
+of students through her online courses on topics ranging from machine learning interpretability
+to hyperparameter optimization. It's fantastic that she has taken on this timeless topic of feature
+engineering. Her approach is direct, pragmatic, and practical. As the author of the popular Featureengine, a Python library for feature engineering, and a respected machine learning educator, Sole is
+uniquely qualified to cover this topic.
+The third edition of this book, which you have in your hands now, provides updated guidelines for
+selecting methods based on the data and the model. It also covers the integration of scikit-learn with
+pandas through the recently released set_output API. Finally, it covers automating feature creation
+using decision trees.
+Whether you are a beginner or an experienced practitioner, this book will provide you with practical
+insights, lots of code examples, and various techniques to improve your machine learning models
+through effective feature engineering.
+Christoph Molnar
+Author of Interpretable Machine Learning and Modeling Mindsets

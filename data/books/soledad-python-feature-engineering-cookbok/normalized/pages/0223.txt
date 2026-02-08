@@ -1,0 +1,33 @@
+Extracting Features from Date and Time Variables
+200
+6.
+Let's create a sample DataFrame with a variable's values in different time zones:
+df = pd.DataFrame()
+df["time"] = pd.concat(
+    [
+        pd.Series(
+            pd.date_range(
+            start="2024-08-01 09:00",
+            freq="h",
+            periods=3,
+            tz="Europe/Berlin"
+            )
+        ),
+        pd.Series(
+            pd.date_range(
+                start="2024-08-01 09:00",
+               freq="h",
+               periods=3, tz="US/Central"
+            )
+        ),
+    ],
+    axis=0,
+)
+If we execute df, we will see the DataFrame from Step 6, as shown in the following output:
+Figure 6.22 - A DataFrame with a variable's values in different time zones
+7.
+We'll set the transformer to extract three specific features from this variable after setting it to
+the UTC:
+dfts = DatetimeFeatures(
+    features_to_extract=
+        ["day_of_week", "hour","minute"],

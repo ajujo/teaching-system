@@ -1,0 +1,33 @@
+Performing Variable Discretization
+122
+We can check the output by executing test_t.head().
+How it works...
+In this recipe, we sorted the variable values into equidistant intervals. To perform discretization with
+pandas, we first found the maximum and minimum values of the HouseAge variable using the
+max() and min() methods. Then, we estimated the interval width by dividing the value range by
+the number of arbitrary bins. With the width and the minimum and maximum values, we determined
+the interval limits and stored them in a list. We used this list with pandas cut() to sort the variable
+values into the intervals.
+Note
+Pandas cut() sorts the variable into intervals of equal size by default. It will extend the variable
+range by .1% on each side to include the minimum and maximum values. The reason why we
+generated the intervals manually is to accommodate potentially smaller or larger values than
+those seen in the dataset in future data sources when we deploy our model.
+After discretization, we normally treat the intervals as categorical values. By default, pandas cut()
+returns the interval values as ordered integers, which is the equivalent of ordinal encoding. Alternatively,
+we can return the interval limits by setting the labels parameter to None.
+To display the number of observations per interval, we created a bar plot. We used the pandas
+value_counts() function to obtain the fraction of observations per interval, which returns the
+result in pandas Series, where the index is the interval and the counts are the values. To plot these
+proportions, first, we concatenated the train and test set series using the pandas concat()function
+in a DataFrame, and then we assigned the train and test column names to it. Finally, we used
+plot.bar() to display a bar plot. We rotated the labels with Matplotlib's xticks()function,
+and added the x and y legend with xlabels() and ylabel(), as well as the title with title().
+To perform equal-width discretization with feature-engine, we used EqualWidth
+Discretiser(), which takes the number of bins and the variables to discretize as arguments.
+With fit(), the discretizer learned the interval limits for each variable. With transform(), it
+sorted the values into each bin.
+EqualWidthDiscretiser() returns the bins as sorted integers by default, which is the equivalent
+of ordinal encoding. To follow up the discretization with any other encoding procedure available in
+the feature-engine or category encoders libraries, we need to return the bins cast as
+objects by setting return_object to True when we set up the transformer.

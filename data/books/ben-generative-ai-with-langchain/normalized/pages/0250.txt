@@ -1,0 +1,18 @@
+6
+Advanced Applications and
+Multi-Agent Systems
+In the previous chapter, we defined what an agent is. But how do we design and build a high-per­
+forming agent? Unlike the prompt engineering techniques we've previously explored, develop­
+ing effective agents involves several distinct design patterns every developer should be familiar
+with. In this chapter, we're going to discuss key architectural patterns behind agentic AI. We'll
+look into multi-agentic architectures and the ways to organize communication between agents.
+We will develop an advanced agent with self-reflection that uses tools to answer complex exam
+questions. We will learn about additional LangChain and LangGraph APIs that are useful when
+implementing agentic architectures, such as details about LangGraph streaming and ways to
+implement handoff as part of advanced control flows.
+Then, we'll briefly touch on the LangGraph platform and discuss how to develop adaptive systems,
+by including humans in the loop, and what kind of prebuilt building blocks LangGraph offers for
+this. We will also look into the Tree-of-Thoughts (ToT) pattern and develop a ToT agent ourselves,
+discussing further ways to improve it by implementing advanced trimming mechanisms. Finally,
+we'll learn about advanced long-term memory mechanisms on LangChain and LangGraph, such
+as caches and stores.

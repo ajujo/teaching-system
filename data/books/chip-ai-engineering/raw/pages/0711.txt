@@ -1,0 +1,31 @@
+-Precio: ~$200/noche
+-Vecindario: De moda, con animados cafés y galerías de arte.
+3. Relajado Hotel Bondi Beachside (Bondi Beach)
+-Precio: ~$300/noche
+Vecindario: Junto a la playa, ideal para relajarse y explorar la 
+ciudad.
+Su respuesta a estas tres recomendaciones revela sus preferencias. Por
+ejemplo, si responde: "Sí, resérvame el que está cerca de las galerías",
+demuestra interés por el arte. Por otro lado, la respuesta "¿No hay nada por
+debajo de 200 dólares?" revela una preferencia por pensar en el precio y
+sugiere que el asistente aún no le ha entendido del todo.
+La retroalimentación de los usuarios, extraída de las conversaciones, puede
+utilizarse para la evaluación, el desarrollo y la personalización:
+Evaluación: derivar métricas para supervisar la aplicación.
+Desarrollo: entrenar a los futuros modelos o guiar su desarrollo
+Personalización: personalizar la aplicación para cada usuario
+La retroalimentación explícita de la conversación pueden inferirse tanto del
+contenido de los mensajes de los usuarios como de sus patrones de
+comunicación. Dado que las opiniones se mezclan en las conversaciones
+cotidianas, también es difícil extraerlas. Si bien la intuición sobre las
+señales conversacionales puede ayudarle a idear un conjunto inicial de
+señales a las que prestar atención, para comprenderlas se necesitan análisis
+rigurosos de datos y estudios de usuarios.
+Aunque la retroalimentación conversacional ha gozado de mayor atención
+gracias a la popularidad de los bots conversacionales, llevaba varios años
+siendo un área de investigación activa antes de la aparición de ChatGPT. La
+comunidad del aprendizaje por refuerzo (RL) lleva intentando que los
+algoritmos de RL aprendan de la retroalimentación en lenguaje natural
+desde finales de la década de 2010, muchos de ellos con resultados
+prometedores; véase Fu et al. (2019); Goyal et al. (2019); Zhou and Small
+(2020) y Sumers et al. (2020). La retroalimentación en lenguaje natural

@@ -1,0 +1,37 @@
+Real-world relevance
+Results reflect genuine user behavior and input diversity, providing strong evi‐
+dence of whether changes generalize beyond isolated test cases.
+Direct comparison
+Teams can quickly determine which version delivers superior outcomes, under
+actual operational conditions.
+Statistical rigor
+Properly designed A/B tests ensure that observed differences are meaningfulnot the result of random variation or biased sampling.
+To maximize the value of A/B testing, teams should:
+• Define clear, actionable metrics that align with the objectives of the proposed
+change.
+• Ensure sufficient sample size to achieve statistical significance, minimizing the
+risk of false positives or negatives.
+• Prevent cross-contamination (e.g., users switching between versions in a single
+session) to preserve result integrity.
+• Monitor both short- and long-term effects, as some changes may yield quick
+gains but introduce longer-term issues.
+Qualitative review remains important: a decrease in completion rate for version B, for
+example, may reflect deeper, more thoughtful engagement-rather than outright
+failure.
+However, A/B testing can be more difficult when agents store long-term interaction
+states, such as chat histories or persistent user contexts, as users might experience
+inconsistencies if they are reassigned to different versions across sessions. To mitigate
+this, teams can implement "sticky" user assignments (ensuring users remain in the
+same variant over time), conduct tests at the session level rather than the user level, or
+isolate state management to prevent cross-version contamination-potentially by
+duplicating or versioning state stores for each test group.
+Modern experimentation platforms (e.g., LaunchDarkly, Optimizely, or custom dash‐
+boards) automate much of the traffic allocation, metric collection, and analysis, free‐
+ing teams to focus on interpreting results and acting on insights.
+Bayesian Bandits
+What if your A/B test could learn on the fly, shifting users toward winning variants
+mid-experiment instead of rigidly splitting traffic? That's the power of adaptive
+experimentation, where Bayesian Bandits stand out as a smart upgrade for multiagent
+Experimentation
+|
+263

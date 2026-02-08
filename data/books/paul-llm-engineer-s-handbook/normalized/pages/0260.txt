@@ -1,0 +1,23 @@
+6
+Fine-Tuning with Preference
+Alignment
+Supervised Fine-Tuning (SFT) has been crucial in adapting LLMs to perform specific tasks. However, SFT struggles to capture the nuances of human preferences and the long tail of potential
+interactions that a model might encounter. This limitation has led to the development of more
+advanced techniques for aligning AI systems with human preferences, grouped under the umbrella term preference alignment.
+Preference alignment addresses the shortcomings of SFT by incorporating direct human or AI
+feedback into the training process. This method allows a more nuanced understanding of human
+preferences, especially in complex scenarios where simple supervised learning falls short. While
+numerous techniques exist for preference alignment, this chapter will primarily focus on Direct
+Preference Optimization (DPO) for simplicity and efficiency.
+In this chapter, we will talk about the type of data that is required by preference alignment algorithms like DPO. We will build our own dataset to modify the writing style of our model, making
+it less artificial and more authentic. We will introduce the DPO algorithm and implement it to
+align the model trained in Chapter 5.
+In this chapter, we will cover the following topics:
+•
+Understanding preference datasets
+•
+How to create our own preference dataset
+•
+Direct preference optimization (DPO)
+•
+Implementing DPO in practice to align our model

@@ -1,0 +1,31 @@
+"¿Cuál es el saldo de mi cuenta corriente?"
+"Rellena el espacio en blanco: París es a Francia como _____ para
+Inglaterra".
+Existen variaciones de la coincidencia que tienen en cuenta cuestiones de
+formato. Una variante consiste en aceptar como coincidencia cualquier
+output que contenga la respuesta de referencia. Tomando la pregunta
+"¿Cuánto es 2 + 3?". La respuesta de referencia es "5". Esta variación
+acepta todas los outputs que contengan "5", incluyendo "La respuesta es 5"
+y "2 + 3 es 5".
+Sin embargo, esta variación puede llevar a veces a aceptar la solución
+equivocada. Piense en la pregunta "¿En qué año nació Ana Frank?". Ana
+Frank nació el 12 de junio de 1929, por lo que la respuesta correcta es 1929.
+Si el modelo da como output "12 de septiembre de 1929", se incluye en el
+output el año correcto, pero el output es factualmente incorrecto.
+Más allá de las tareas sencillas, la coincidencia exacta rara vez funciona.
+Dada la frase original en frances "Comment ça va?", hay múltiples
+traducciones posibles, por ejemplo, "¿Cómo estás?", "¿Qué tal va todo?" y
+"¿Cómo te va?". Si los datos de referencia solo contienen estas tres
+traducciones y un modelo genera "¿Qué tal te va?", la respuesta del modelo
+se marcará como errónea. Cuanto más largo y complejo sea el texto
+original, más traducciones posibles habrá. Es imposible crear un conjunto
+exhaustivo de posibles respuestas para un input. Para tareas complejas, la
+similitud léxica y la similitud semántica funcionan mejor.
+Similitud léxica
+La similitud léxica mide cuánto se superponen dos textos. Para ello,
+primero hay que dividir cada texto en tokens más pequeños.
+En su forma más simple, la similitud léxica puede medirse contando
+cuántos tokens tienen en común dos textos. Como ejemplo, piense en la
+respuesta de referencia "My cats scare the mice" (Mis gatos asustan a los
+ratones) y dos respuestas generadas:
+"My cats eat the mice" (Mis gatos se comen los ratones)

@@ -1,0 +1,40 @@
+Data Provenance and Integrity
+In agentic systems, data provenance and integrity are essential for ensuring that the
+information agents rely on is accurate, trustworthy, and free from tampering. As
+agents increasingly interact with diverse data sources-ranging from user inputs and
+internal databases to third-party APIs and real-time streams-the ability to trace the
+origin of data and verify its authenticity becomes a cornerstone of security. Without
+proper provenance and integrity mechanisms, agents risk making decisions based on
+corrupted, manipulated, or unverified data, leading to potentially catastrophic
+outcomes in high-stakes environments such as finance, healthcare, or critical
+infrastructure.
+Data provenance refers to the ability to track the lineage and history of data, includ‐
+ing where it originated, how it has been processed, and which transformations it has
+undergone. Establishing robust data provenance mechanisms enables organizations
+to answer questions such as: Where did this data come from? Who or what modified
+it? Is it still in its original, unaltered state?
+Provenance metadata often includes timestamps, source identifiers, transformation
+logs, and cryptographic signatures. This level of transparency helps auditors and
+developers understand data flows and trace back anomalies or malicious activity.
+Complementing provenance is data integrity, which focuses on ensuring that data
+remains unchanged and untampered throughout its lifecycle. Cryptographic hashing
+techniques, such as SHA-256 (Secure Hash Algorithm), are widely used to create
+unique fingerprints for data objects. If even a single bit of the data changes, the hash
+will no longer match, serving as a clear indicator of tampering. Digital signatures fur‐
+ther reinforce integrity by allowing recipients to verify both the origin and the
+unchanged state of the data.
+In practice, immutable storage systems, such as append-only logs, are often employed
+to strengthen both provenance and integrity. These systems prevent unauthorized
+modifications to historical records, ensuring that past data states remain verifiable.
+For example, agents interacting with financial transaction data can reference an
+immutable ledger to verify that records have not been altered post-entry.
+Integrity verification workflows provide structured processes to enforce these mecha‐
+nisms in agentic systems. For example, a typical data ingestion workflow might
+involve the following:
+1. Computing a SHA-256 hash of incoming data upon receipt
+2. Attaching a digital signature using asymmetric cryptography (e.g., RSA [Rivest-
+Shamir-Adleman] or ECDSA [Elliptic Curve Digital Signature Algorithm]) to
+confirm origin
+Protecting Data in Agentic Systems
+|
+285

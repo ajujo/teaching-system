@@ -1,0 +1,12 @@
+figura 9-11. En Medusa (Cai et al., 2024), cada cabezal predice varias opciones para
+una posición de token. Se selecciona la secuencia más prometedora de entre estas
+opciones. Imagen adaptada del documento, cuya licencia es CC BY 4.0.
+Aunque la perspectiva de poder eludir la dependencia secuencial es
+atractiva, la decodificación paralela no es intuitiva y algunas técnicas, como
+Medusa, pueden resultar difíciles de aplicar.
+Optimización del mecanismo de atención
+Recordemos del Capítulo 2 que, para generar el siguiente token, se
+necesitan los vectores clave y valor de todos los tokens anteriores. Esto
+significa que se aplica lo siguiente:
+Para generar el token xt se necesitan los vectores de claves y
+valores de los tokens x1, x2, ..., xt - 1.

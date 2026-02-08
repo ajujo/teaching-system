@@ -1,0 +1,13 @@
+comparativa para la respuesta a preguntas multisalto.
+Puede aplicar la reflexión en un entorno multiagente: un agente planifica y
+realiza acciones, y otro agente evalúa el resultado después de cada paso o
+después de una serie de pasos. 14
+Si la respuesta del agente no ha cumplido la tarea, puede darle un prompt
+para que reflexione sobre por qué ha fallado y cómo mejorar. A partir de
+esta sugerencia, el agente genera un nuevo plan. Esto permite a los agentes
+aprender de sus errores. Por ejemplo, dada una tarea de generación de
+código, un evaluador podría evaluar que el código generado falla en ⅓ de
+los casos de prueba. El agente reflexiona entonces que la razón por la que
+falló es porque no tuvo en cuenta las matrices en las que todos los números
+son negativos. A continuación, el actor genera un nuevo código, teniendo en
+cuenta las matrices totalmente negativas.

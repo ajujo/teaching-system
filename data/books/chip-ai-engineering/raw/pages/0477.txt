@@ -1,0 +1,8 @@
+Muchos profesionales con los que he hablado comparten una historia
+similar a la siguiente. Alguien se queja de que los prompts son ineficaces e
+insiste en que se haga un afinado. Tras una investigación, resulta que los
+experimentos con prompts fueron mínimos y poco sistemáticos. Las
+instrucciones eran poco claras, los ejemplos no representaban datos reales y
+las métricas estaban mal definidas. Tras perfeccionar el proceso de
+experimentación con prompts, la calidad de éstos mejoró lo suficiente como
+para bastar para su aplicación. 3

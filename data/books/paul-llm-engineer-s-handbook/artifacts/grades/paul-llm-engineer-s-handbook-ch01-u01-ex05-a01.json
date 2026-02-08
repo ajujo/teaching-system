@@ -1,0 +1,71 @@
+1{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-a01",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-05T19:39:45.812477+00:00",
+  "provider": "lmstudio",
+  "model": "default",
+  "mode": "mixed",
+  "strict": true,
+  "grading_time_ms": 24682,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La arquitectura FTI mejora la modularidad y escalabilidad, pero no aumenta la dependencia entre etapas. De hecho, su objetivo es reducirla al separar claramente las responsabilidades en pipelines independientes.",
+      "expected_answer": "3: Aumenta la dependencia entre las etapas del pipeline",
+      "given_answer": "3: Aumenta la dependencia entre las etapas del pipeline",
+      "correct_option_text": "Aumenta la dependencia entre las etapas del pipeline",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! Sí, la arquitectura FTI consta de tres pipelines principales: feature, training e inference. El pipeline de inferencia es responsable de generar predicciones utilizando el modelo entrenado.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta es correcta y captura la esencia de la diferencia entre un MVP y un sistema completo de LLM Twin. Sin embargo, podría mejorarse mencionando explícitamente que el MVP se centra en las funcionalidades esenciales para validar la viabilidad, mientras que el sistema completo incluye todas las características planificadas, optimizaciones y escalabilidad.",
+      "expected_answer": "Un MVP se enfoca en implementar las funcionalidades esenciales del LLM Twin para validar su viabilidad, mientras que un sistema completo incluye todas las características planificadas, optimizaciones y escalabilidad.",
+      "given_answer": "La diferencia clave es el objetivo y el nivel de fidelidad/robustez:",
+      "grading_path": "llm",
+      "confidence": 0.95
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-q04",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (2): Pipeline de características (feature pipeline). El pipeline de características (feature pipeline) es responsable de transformar los datos crudos en un formato adecuado para el entrenamiento y la inferencia.",
+      "expected_answer": "2: Pipeline de características (feature pipeline)",
+      "given_answer": "0: Pipeline de inferencia",
+      "correct_option_text": "Pipeline de características (feature pipeline)",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex05-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! Sí, una de las ventajas de la arquitectura FTI es que promueve la modularidad y la reutilización de componentes, lo que facilita el mantenimiento y la escalabilidad.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto"
+    }
+  ],
+  "summary": {
+    "total_questions": 5,
+    "correct_count": 3,
+    "total_score": 3.0,
+    "max_score": 5,
+    "percentage": 0.6,
+    "passed": false
+  }
+}

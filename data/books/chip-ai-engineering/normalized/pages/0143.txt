@@ -1,0 +1,6 @@
+concordancia entre etiquetadores se sitúa en torno al 73 %, lo que significa
+que si se pide a 10 personas que clasifiquen las mismas dos respuestas,
+aproximadamente 7 de ellas tendrán la misma clasificación. Para acelerar el
+proceso de etiquetado, cada anotador puede clasificar varias respuestas al
+mismo tiempo. Un conjunto de tres respuestas clasificadas (A > B > C)
+producirá tres duplas clasificados: (A > B), (A > C) y (B > C).

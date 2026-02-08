@@ -1,0 +1,35 @@
+Inference Pipeline Deployment
+370
+One key difference lies in how data is handled and accessed within each pipeline. During train-
+ing, data is typically accessed from offline storage in batch mode, optimized for throughput and 
+ensuring data lineage. For example, our LLM Twin architecture uses ZenML artifacts to access, 
+version, and track data fed to the training loop in batches. In contrast, the inference pipeline 
+requires an online DB optimized for low latency. We will leverage the Qdrant vector DB to grab 
+the necessary context for RAG. In this context, the focus shifts from data lineage and versioning 
+to quick data access, ensuring a seamless user experience. Additionally, the outputs of these pipe-
+lines also differ significantly. The training pipeline outputs trained model weights stored in the 
+model registry. Meanwhile, the inference pipeline outputs predictions served directly to the user.
+Also, the infrastructure required for each pipeline is different. The training pipeline demands 
+more powerful machines equipped with as many GPUs as possible. This is because training in-
+volves batching data and holding all the necessary gradients in memory for optimization steps, 
+making it highly compute-intensive. More computational power and VRAM allow larger batches 
+(or throughput), reducing training time and enabling more extensive experimentation. On the 
+other hand, the inference pipeline typically requires less computation. Inference often involves 
+passing a single sample or smaller batches to the model without the need for optimization steps.
+Despite these differences, there is some overlap between the two pipelines, particularly regarding 
+preprocessing and post-processing steps. Applying the same preprocessing and post-processing 
+functions and hyperparameters during training and inference is crucial. Any discrepancies can 
+lead to what is known as training-serving skew, where the model’s performance during inference 
+deviates from its performance during training.
+Deploying the LLM Twin service
+The last step is implementing the architecture presented in the previous section. More concretely, 
+we will deploy the LLM microservice using AWS SageMaker and the business microservice using 
+FastAPI. Within the business microservice, we will glue the RAG logic written in Chapter 9 with 
+our fine-tuned LLM Twin, ultimately being able to test out the inference pipeline end to end.
+Serving the ML model is one of the most critical steps in any ML application’s life cycle, as users 
+can only interact with our model after this phase is completed. If the serving architecture isn’t 
+designed correctly or if the infrastructure isn’t working properly, it doesn’t matter that you have 
+implemented a powerful and excellent model. As long as the user cannot appropriately interact 
+with it, it has near zero value from a business point of view. For example, if you have the best code 
+assistant on the market, but the latency to use it is too high, or the API calls keep crashing, the 
+user will probably switch to a less performant code assistant that works faster and is more stable.

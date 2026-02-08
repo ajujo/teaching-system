@@ -1,0 +1,40 @@
+In summary, this script loads a base Phi-3 model with LoRA adapters, prepares a
+dataset of preference-ranked examples, and fine-tunes the model using DPOTrainer.
+After training, the model can produce higher-quality outputs that reflect your defined
+preferences more reliably than standard SFT alone.
+DPO is especially useful when your primary goal is to shape output quality rather
+than simply replicate examples. It complements SFT by adding a preference-learning
+dimension, helping your agents produce outputs that are not only correct but also
+aligned with nuanced human expectations.
+Reinforcement Learning with Verifiable Rewards
+Building on preference-based fine-tuning, reinforcement learning with verifiable
+rewards (RLVR) introduces policy optimization against an explicit, measurable
+reward function.
+Unlike preference-based approaches, RLVR enables you to connect any grader you
+can build—automated metrics, rule-based validators, external scoring models, or
+human evaluators—and directly optimize your model toward those rewards. This
+unlocks scalable, targeted improvement for virtually any task where you can define a
+verifiable evaluation signal. Whether optimizing summarization quality, correctness
+of tool calls, factuality of knowledge retrieval, or even adherence to safety constraints,
+RLVR transforms static preference learning into a general, extensible reinforcement
+learning framework.
+Unlike DPO, which directly optimizes for pairwise preferences, RLVR combines pref‐
+erence learning with reinforcement learning, enabling the model to generalize
+beyond observed rankings by predicting value scores and optimizing its outputs
+accordingly. Figure 7-8 illustrates the RLVR workflow, showing how models learn
+from graded completions to iteratively improve their performance on target tasks
+which then guide policy updates to produce outputs that maximize predicted quality
+and utility.
+In the interest of readability, we will not include the full code for RLVR here, but it
+can be found in the accompanying repository for those who wish to implement it in
+practice.
+Benefits of RLVR include its flexibility to optimize against any measurable signal, its
+ability to generalize beyond observed examples through value prediction, and its suit‐
+ability for tasks where automated grading or scalable human evaluation is available.
+RLVR is particularly effective when you have ranked preference data or when you can
+build a reliable scoring function to evaluate outputs. It is ideal for scenarios requiring
+continual quality improvement, especially when rewards are sparse or evaluation is
+too costly to obtain at scale through direct human labeling alone.
+Parametric Learning: Fine-Tuning 
+| 
+161

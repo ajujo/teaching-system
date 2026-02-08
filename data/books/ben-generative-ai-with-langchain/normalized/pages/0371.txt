@@ -1,0 +1,37 @@
+Evaluation and Testing
+344
+Evaluating email extraction
+Let's show how we can use it to evaluate an LLM's ability to extract structured information from
+insurance claim texts.
+We'll first create a synthetic dataset using LangSmith. In this synthetic dataset, each example
+consists of a raw insurance claim text (input) and its corresponding expected structured output
+(output). We will use this dataset to run extraction chains and evaluate your model's performance.
+We assume that you've already set up your LangSmith credentials.
+from langsmith import Client
+# Define a list of synthetic insurance claim examples
+example_inputs = [
+    (
+        "I was involved in a car accident on 2023-08-15. My name is Jane
+Smith, Claim ID INS78910, "
+        "Policy Number POL12345, and the damage is estimated at $3500.",
+        {
+            "claimant_name": "Jane Smith",
+            "claim_id": "INS78910",
+            "policy_number": "POL12345",
+            "claim_amount": "$3500",
+            "accident_date": "2023-08-15",
+            "accident_description": "Car accident causing damage",
+            "status": "pending"
+        }
+    ),
+    (
+        "My motorcycle was hit in a minor collision on 2023-07-20. I am
+John Doe, with Claim ID INS112233 "
+        "and Policy Number POL99887. The estimated damage is $1500.",
+        {
+            "claimant_name": "John Doe",
+            "claim_id": "INS112233",
+            "policy_number": "POL99887",
+            "claim_amount": "$1500",
+            "accident_date": "2023-07-20",
+            "accident_description": "Minor motorcycle collision",

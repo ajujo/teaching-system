@@ -1,0 +1,30 @@
+Table of Contents
+x
+Feature pipeline • 19
+Training pipeline • 21
+Inference pipeline • 22
+Final thoughts on the FTI design and the LLM Twin architecture • 22
+Summary .......................................................................................................................... 23
+References ......................................................................................................................... 23
+Chapter 2: Tooling and Installation 
+ 25
+Python ecosystem and project installation ....................................................................... 26
+Poetry: dependency and virtual environment management • 27
+Poe the Poet: task execution tool • 29
+MLOps and LLMOps tooling .............................................................................................. 31
+Hugging Face: model registry • 31
+ZenML: orchestrator, artifacts, and metadata • 32
+Orchestrator • 33
+Artifacts and metadata • 39
+How to run and configure a ZenML pipeline • 43
+Comet ML: experiment tracker • 45
+Opik: prompt monitoring • 46
+Databases for storing unstructured and vector data ......................................................... 47
+MongoDB: NoSQL database • 47
+Qdrant: vector database • 47
+Preparing for AWS ............................................................................................................ 48
+Setting up an AWS account, an access key, and the CLI • 48
+SageMaker: training and inference compute • 50
+Why AWS SageMaker? • 51
+Summary .......................................................................................................................... 52
+References ......................................................................................................................... 53

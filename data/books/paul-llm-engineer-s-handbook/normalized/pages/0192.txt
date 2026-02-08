@@ -1,0 +1,32 @@
+Chapter 4
+161
+    def create_handler(data_category: DataCategory) ->
+CleaningDataHandler:
+        if data_category == DataCategory.POSTS:
+            return PostCleaningHandler()
+        elif data_category == DataCategory.ARTICLES:
+            return ArticleCleaningHandler()
+        elif data_category == DataCategory.REPOSITORIES:
+            return RepositoryCleaningHandler()
+        else:
+            raise ValueError("Unsupported data type")
+The Dispatcher or Factory classes are nothing fancy, but they offer an intuitive and simple interface
+for applying various operations to your documents. When manipulating documents, instead of
+worrying about their data category and polluting your business logic with if-else statements, you
+have a class dedicated to handling that. You have a single class that cleans any document, which
+respects the DRY (don't repeat yourself) principles from software engineering. By respecting DRY,
+you have a single point of failure, and the code can easily be extended. For example, if we add
+an extra type, we must extend only the Factory class instead of multiple occurrences in the code.
+The ChunkingDispatcher and EmbeddingDispatcher follow the same pattern. They use a
+ChunkingHandlerFactory and, respectively, an EmbeddingHandlerFactory that initializes the
+correct handler based on the data category of the input document. Afterward, they call the handler and return the result.
+The Factory class leverages theabstract factory creational pattern (https://refactoring.guru/
+design-patterns/abstract-factory), which instantiates a family of classes implementing the
+same interface. In our case, these handlers implement the clean() method regardless of the
+handler type.
+Also, the Handler class family leverages the strategy behavioral pattern (https://refactoring.
+guru/design-patterns/strategy) used to instantiate when you want to use different variants of
+an algorithm within an object and be able to switch from one algorithm to another during runtime.
+The source code of all the dispatchers and factories can be found on GitHub at
+https://github.com/PacktPublishing/LLM-Engineers-Handbook/blob/main/
+llm_engineering/application/preprocessing/dispatchers.py

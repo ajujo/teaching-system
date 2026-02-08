@@ -1,0 +1,37 @@
+Creating Features from a Time Series with tsfresh
+320
+In this recipe, we will automatically create hundreds of features from various time series, and then 
+select the most relevant features by utilizing tsfresh.
+How to do it...
+We will begin by automatically creating and selecting features from one time series, lights, and 
+then we will automate the procedure for multiple time series:
+1.	
+Let’s import the required Python libraries and functions:
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from tsfresh import (
+    extract_features,
+    extract_relevant_features,
+    select_features,
+)
+from tsfresh.utilities.dataframe_functions import impute
+2.	
+Load the dataset and the target variable described in the Technical requirements section:
+X = pd.read_csv("occupancy.csv", parse_dates=["date"])
+y = pd.read_csv("occupancy_target.csv",
+    index_col="id")["occupancy"]
+3.	
+Let’s create hundreds of features automatically for each hour of light use records and impute 
+the resulting features:
+features = extract_features(
+    X[[«id», «light»]],
+    column_id="id",
+    impute_function=impute,
+)
+The output of the previous step is a DataFrame with 135 rows and 789 columns, corresponding 
+to the features created from each hour of light consumption.
+Note
+For more details about step 3, or the Occupancy Detection dataset, check out the Extracting 
+hundreds of features automatically from a time series recipe.

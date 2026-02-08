@@ -1,0 +1,32 @@
+Chapter 3
+65
+links.")
+    return links
+The code includes a helper function that attempts to extract information from each link using the 
+appropriate crawler based on the link’s domain. It handles any exceptions that may occur during 
+extraction and returns a tuple indicating the crawl’s success and the link’s domain:
+def _crawl_link(dispatcher: CrawlerDispatcher, link: str, user: 
+UserDocument) -> tuple[bool, str]:
+    crawler = dispatcher.get_crawler(link)
+    crawler_domain = urlparse(link).netloc
+    try:
+        crawler.extract(link=link, user=user)
+        return (True, crawler_domain)
+    except Exception as e:
+        logger.error(f"An error occurred while crawling: {e!s}")
+        return (False, crawler_domain)
+Another helper function is provided to update the metadata dictionary with the results of each 
+crawl:
+def _add_to_metadata(metadata: dict, domain: str, successfull_crawl: bool) 
+-> dict:
+    if domain not in metadata:
+        metadata[domain] = {}
+    metadata[domain]["successful"] = metadata.get(domain, {}).
+get("successful", 0) + successfull_crawl
+    metadata[domain]["total"] = metadata.get(domain, {}).get("total", 0) + 
+1
+    return metadata
+As seen in the abovementioned _crawl_link() function, the CrawlerDispatcher class knows 
+what crawler to initialize based on each link’s domain. The logic is then abstracted away under 
+the crawler’s extract() method. Let’s zoom in on the CrawlerDispatcher class to understand 
+how this works fully.

@@ -1,0 +1,27 @@
+electricidad, lo que se suma al consumo total de energía de los centros de
+datos.
+El consumo de energía de los chips amenaza con tener un impacto
+asombroso en el medio ambiente, lo que aumenta la presión sobre las
+empresas para que inviertan en tecnologías para centros de datos
+ecológicos. Una NVIDIA H100 funcionando al máximo durante un año
+consume aproximadamente 7000 kWh.
+Como comparación, el consumo promedio anual de electricidad de un hogar
+estadounidense es de 10 000 kWh. Por eso la electricidad es un cuello de
+botella para aumentar la computación. 18
+Los aceleradores suelen especificar su consumo de energía bajo el consumo
+máximo de potencia o una métrica aproximada TDP (potencia de diseño
+térmico):
+El consumo máximo indica la potencia pico que puede consumir el
+chip a plena carga.
+La TDP representa el calor máximo que un sistema de
+refrigeración necesita disipar cuando el chip funciona con cargas
+de trabajo típicas. Aunque no es una medida exacta del consumo de
+energía, es una indicación del consumo de energía esperado. En el
+caso de las CPU y las GPU, el consumo máximo puede ser
+aproximadamente entre 1.1 y 1.5 veces la TDP, aunque la relación
+exacta varía en función de la arquitectura y la carga de trabajo
+específicas.
+Si opta por proveedores en la nube, no tendrá que preocuparse por la
+refrigeración ni la electricidad. Sin embargo, estas cifras pueden seguir
+siendo interesantes para comprender el impacto de los aceleradores en el
+medio ambiente y la demanda global de electricidad.

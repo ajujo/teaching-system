@@ -1,0 +1,36 @@
+Inference Pipeline Deployment
+378
+        logger.info(f"Successfully deployed/updated model to endpoint 
+{endpoint_name}.")
+    except Exception as e:
+        logger.error(f"Failed to deploy model to SageMaker: {e}")
+        raise
+The deploy method begins by checking whether the endpoint configuration already exists using 
+the resource_manager. This step is crucial because it avoids unnecessary redeployment if the 
+configuration is already set up. The deployment itself is handled by calling the prepare_and_
+deploy_model() method, which is responsible for the actual deployment of the model to the 
+specified SageMaker endpoint.
+The prepare_and_deploy_model() method is a static method within the DeploymentService 
+class. This method is focused on setting up and deploying the Hugging Face model to SageMaker:
+@staticmethod
+def prepare_and_deploy_model(
+    role_arn: str,
+    llm_image: str,
+    config: dict,
+    endpoint_name: str,
+    update_endpoint: bool,
+    gpu_instance_type: str,
+    resources: Optional[dict] = None,
+    endpoint_type: enum.Enum = EndpointType.MODEL_BASED,
+) -> None:
+    huggingface_model = HuggingFaceModel(
+        role=role_arn,
+        image_uri=llm_image,
+        env=config,
+        transformers_version="4.6",
+        pytorch_version="1.13",
+        py_version="py310",
+    )
+    huggingface_model.deploy(
+        instance_type=gpu_instance_type,
+        initial_instance_count=1,

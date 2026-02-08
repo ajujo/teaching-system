@@ -1,0 +1,36 @@
+Chapter 2
+37
+Design an algorithm to find the kth largest element in an unsorted array
+with the optimal time complexity. Analyze the time and space complexity
+of your solution and explain why it's optimal.
+"""
+# Get response with thinking included
+response = chat.invoke([HumanMessage(content=problem)])
+print(response.content)
+The response will include Claude’s step-by-step reasoning about algorithm selection, complexity 
+analysis, and optimization considerations before presenting its final solution. In the preceding 
+example:
+•	
+Out of the 64,000-token maximum response length, up to 15,000 tokens can be used for 
+Claude’s thinking process.
+•	
+The remaining ~49,000 tokens are available for the final response.
+•	
+Claude doesn’t always use the entire thinking budget—it uses what it needs for the specific 
+task. If Claude runs out of thinking tokens, it will transition to its final answer.
+While Claude offers explicit thinking configuration, you can achieve similar (though not identical) 
+results with other providers through different techniques:
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+template = ChatPromptTemplate.from_messages([
+    ("system", "You are a problem-solving assistant."),
+    ("user", "{problem}")
+])
+# Initialize with reasoning_effort parameter
+chat = ChatOpenAI(
+    model="o3-mini","
+    reasoning_effort="high"  # Options: "low", "medium", "high"
+)
+chain = template | chat
+response = chain.invoke({"problem": "Calculate the optimal strategy 
+for..."})

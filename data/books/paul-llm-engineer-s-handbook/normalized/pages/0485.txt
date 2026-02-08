@@ -1,0 +1,33 @@
+MLOps and LLMOps
+454
+        expand_to_n_queries: int = 3,
+    ) -> list:
+        query_model = Query.from_str(query)
+        query_model = self._metadata_extractor.generate(query_model)
+        ... # Rest of the implementation
+Or even go further to the retrieval optimization methods, such as the self-query metadata extractor, to add more granularity:
+class SelfQuery:
+
+    @track
+    def generate(self, query: str) -> str:
+        ...
+        return enhanced_query
+The developer is responsible for deciding how much granularity the application needs for proper
+debugging and analysis. As having detailed monitoring is healthy, monitoring everything can be
+dangerous as it adds too much noise and makes manually understanding the traces difficult. You
+must find the right balance. A good rule of thumb is tracing the most critical functions, such as
+rag() and call_llm_service(), and gradually adding more granularity when needed.
+The last step is to attach valuable metadata and tags to our traces. To do so, we will further enhance the rag() function as follows:
+@track
+def rag(query: str) -> str:
+    retriever = ContextRetriever()
+    documents = retriever.search(query, k=3 * 3)
+    context = EmbeddedChunk.to_context(documents)
+    answer, prompt = call_llm_service(query, context)
+    trace = get_current_trace()
+    trace.update(
+tags=["rag"],
+metadata={
+
+"model_id": settings.HF_MODEL_ID,
+   "embedding_model_id": settings.TEXT_EMBEDDING_MODEL_ID,

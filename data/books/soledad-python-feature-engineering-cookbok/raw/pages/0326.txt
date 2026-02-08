@@ -1,0 +1,28 @@
+Creating features with aggregation primitives
+303
+<Feature: MIN(invoices.MEAN(data.price))>,
+<Feature: MIN(invoices.MEAN(data.quantity))>,
+<Feature: MIN(invoices.SUM(data.price))>,
+<Feature: MIN(invoices.SUM(data.quantity))>,
+<Feature: SUM(invoices.MAX(data.price))>,
+<Feature: SUM(invoices.MAX(data.quantity))>,
+<Feature: SUM(invoices.MEAN(data.price))>,
+<Feature: SUM(invoices.MEAN(data.quantity))>,
+<Feature: SUM(invoices.MIN(data.price))>,
+<Feature: SUM(invoices.MIN(data.quantity))>]
+Note
+Remember that featuretools names features with the function used to create them, followed 
+by the DataFrame that was used in the computation, followed by the variable that was used in the 
+computation. Thus, MAX(data.price) is the maximum price seen in the dataset for each customer. 
+On the other hand, MEAN(invoices.MAX(data.price)) is the mean value of all maximum 
+prices observed in each invoice for a particular customer. That is, if a customer has six invoices, we 
+first find the maximum price for each of the six invoices and then take the average of those values.
+10.	 Let’s now display the resulting DataFrame containing the original data and new features:
+feature_matrix.head()
+In the following output, we see some of the variables in the DataFrame returned by dfs:
+Figure 9.12 – DataFrame with some of the features resulting from aggregations at the customer level
+Due to space limitations, we can’t display the entire output of step 10, so make sure you execute 
+it on your computer or visit our accompanying GitHub repository for more details: https://
+github.com/PacktPublishing/Python-Feature-Engineering-Cookbook-
+Third-Edition/blob/main/ch09-featuretools/Recipe6-Creating-
+features-with-aggregation-primitives.ipynb.

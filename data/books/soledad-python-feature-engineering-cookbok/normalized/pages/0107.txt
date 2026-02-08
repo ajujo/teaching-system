@@ -1,0 +1,33 @@
+Transforming Numerical Variables
+84
+Transforming variables with the logarithm function
+The logarithm function is a powerful transformation for dealing with positive data with a rightskewed distribution (observations accumulate at lower values of the variable). A common example
+is the income variable, with a heavy accumulation of values toward lower salaries. The logarithm
+transformation has a strong effect on the shape of the variable distribution.
+In this recipe, we will perform logarithmic transformation using NumPy, scikit-learn, and Featureengine. We will also create a diagnostic plot function to evaluate the effect of the transformation on
+the variable distribution.
+Getting ready
+To evaluate the variable distribution and understand whether a transformation improves value spread
+and stabilizes the variance, we can visually inspect the data with histograms and Quantile-Quantile
+(Q-Q) plots. A Q-Q plot helps us determine whether two variables show a similar distribution. In
+a Q-Q plot, we plot the quantiles of one variable against the quantiles of the second variable. If we
+plot the quantiles of the variable of interest against the expected quantiles of the normal distribution,
+then we can determine whether our variable is also normally distributed. If the variable is normally
+distributed, the points in the Q-Q plot will fall along a 45-degree diagonal.
+Note
+A quantile is the value below which there is a certain fraction of data points in the distribution.
+Thus, the 20th quantile is the point in the distribution at which 20% of the observations fall
+below and 80% above that value.
+How to do it...
+Let's begin by importing the libraries and getting the dataset ready:
+1.
+Import the required Python libraries and dataset:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+from sklearn.datasets import fetch_california_housing
+2.
+Let's load the California housing dataset into a pandas DataFrame:
+X, y = fetch_california_housing(return_X_y=True,
+    as_frame=True)

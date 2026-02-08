@@ -1,0 +1,33 @@
+Table of Contents
+xiii
+Setting up a Python-capable agent • 297
+Asking the agent to build a neural network • 298
+Agent execution and results • 299
+Analyzing a dataset • 301
+Creating a pandas DataFrame agent • 301
+Asking questions about the dataset • 303
+Summary ........................................................................................................................ 306
+Questions ........................................................................................................................ 307
+Get This Book's PDF Version and Exclusive Extras • 308
+Chapter 8: Evaluation and Testing 
+ 309
+Why evaluation matters .................................................................................................. 310
+Safety and alignment • 311
+Performance and efficiency • 312
+User and stakeholder value • 313
+Building consensus for LLM evaluation • 315
+What we evaluate: core agent capabilities ....................................................................... 316
+Task performance evaluation • 316
+Tool usage evaluation • 317
+RAG evaluation • 317
+Planning and reasoning evaluation • 318
+How we evaluate: methodologies and approaches .......................................................... 320
+Automated evaluation approaches • 320
+Human-in-the-loop evaluation • 321
+System-level evaluation • 322
+Evaluating LLM agents in practice .................................................................................. 323
+Evaluating the correctness of results • 324
+Evaluating tone and conciseness • 327
+Evaluating the output format • 329
+Evaluating agent trajectory • 330
+Evaluating CoT reasoning • 334

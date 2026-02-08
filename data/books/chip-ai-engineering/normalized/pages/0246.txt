@@ -1,0 +1,11 @@
+23 Aunque Chatbot Arena dejó de utilizar el algoritmo de calificación Elo, sus
+desarrolladores, durante un tiempo, siguieron refiriéndose a las puntuaciones de
+sus modelos como "puntuaciones Elo". Escalaron las puntuaciones Bradley-
+Terry resultantes para que parecieran puntuaciones Elo. El escalado es bastante
+complicado. Cada puntuación se multiplica por 400 (la escala utilizada en Elo) y
+se suma a 1000 (la puntuación Elo inicial). A continuación, esta puntuación se
+reescala para que el modelo Llama-13b tenga una puntuación de 800.
+24 A medida que Chatbot Arena se hace más popular, los intentos de manipularlo
+se han vuelto más comunes. Aunque nadie me ha confesado haber intentado
+manipular el ranking, varios desarrolladores de modelos me han dicho que están
+convencidos de que sus competidores intentan hacerlo.

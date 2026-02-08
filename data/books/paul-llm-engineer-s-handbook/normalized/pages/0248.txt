@@ -1,0 +1,32 @@
+Chapter 5
+217
+However, they also require more memory, which can be a limiting factor on GPUs with less VRAM.
+For instance, a batch size of 16 might work well on a high-end GPU with 24GB of memory, while
+a smaller GPU with 8 GB might only handle a batch size of 2 or 4.
+To overcome memory constraints while still benefiting from larger batch sizes, a technique called
+gradient accumulation can be used. It works by performing multiple forward and backward passes
+with smaller mini-batches, accumulating the gradients over these steps before applying a single
+update to the model's parameters. This approach is particularly useful when working with large
+models or limited GPU memory. For example, if you want to achieve an effective batch size of 32
+but your GPU can only handle 8 samples at a time, you can set the gradient accumulation steps
+to 4. This means you'll process 4 mini-batches of 8 samples each, accumulating the gradients,
+and then update the model as if you had processed all 32 samples at once.
+The number of gradient accumulation steps typically ranges from 1 (no accumulation) to 8 or
+16, depending on the desired effective batch size and available computational resources. When
+choosing the number of steps, consider the trade-off between training speed and memory usage.
+More accumulation steps allow for larger effective batch sizes but increase the time required for
+each update. Here's a simple formula to determine the effective batch size:
+𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸𝐸
+For instance, if you're using 2 GPUs, each processing a batch of 4 samples, with 4 gradient accumulation steps, your effective batch size would be 4 * 2 * 4 = 32 samples.
+Maximum length and packing
+The maximum sequence length determines the longest input the model can process. It's typically
+set between 512 and 4,096 tokens but can go up to 128,000 or more, depending on the task and
+available GPU memory. For example, a maximum length of 2,048 tokens is common for many
+language generation tasks, while RAG applications might use up to 8,192 tokens or more. When
+processing input data, sequences longer than this limit are truncated, meaning excess tokens
+are removed. Truncation can occur at the beginning (left truncation) or end (right truncation) of
+the sequence. For instance, with a maximum length of 1,024 tokens, a 1,500-token input would
+have 476 tokens removed. This parameter directly impacts batch size and memory usage; a batch
+size of 12 with a max length of 1,024 would contain 12,288 tokens (12 * 1,024), while the same
+batch size with a max length of 512 would only contain 6,144 tokens. It's important to balance
+this parameter with your GPU capabilities and the nature of your training data to optimize performance and resource utilization.

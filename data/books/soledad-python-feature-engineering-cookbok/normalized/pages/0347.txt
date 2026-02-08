@@ -1,0 +1,37 @@
+Creating Features from a Time Series with tsfresh
+324
+For more details on feature selection algorithms, check out the book Feature Selection in Machine
+Learning with Python by Soledad Galli on Leanpub: https://leanpub.com/featureselection-in-machine-learning/.
+Extracting different features from different time series
+tsfresh extracts many features based on the time-series characteristics and distribution, such as their
+correlation properties, stationarity, and entropy. It also applies non-linear time-series analysis functions,
+which decompose the time-series signal through, for example, Fourier or wavelet transformations.
+Depending on the nature of the time series, some of these transformations make more sense than
+others. For example, wavelength decomposition methods can make sense for time series resulting
+from signals or sensors but are not always useful for time series representing sales or stock prices.
+In this recipe, we will discuss how to optimize the feature extraction procedure to extract specific
+features from each time series, and then use these features to predict office occupancy.
+How to do it...
+tsfresh accesses the methods that will be used to create features through a dictionary that contains
+the method names as keys and, if they need a parameter, it has the parameter as a value. tsfresh
+includes some predefined dictionaries as well. We'll explore these predefined dictionaries first, which
+can be accessed through the settings module:
+1.
+Let's import the required Python libraries and functions and the settings module:
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from tsfresh.feature_extraction import (
+    extract_features
+)
+from tsfresh.feature_extraction import settings
+2.
+Load the dataset and the target variable described in the Technical requirements section:
+X = pd.read_csv("occupancy.csv", parse_dates=["date"])
+y = pd.read_csv("occupancy_target.csv",
+    index_col="id")["occupancy"]
+tsfresh includes three main dictionaries that control the feature creation output: settings.
+ComprehensiveFCParameters, settings.EfficientFCParameters, and
+settings.MinimalFCParameters. Here, we'll explore the dictionary that returns the
+fewest features. You can repeat the steps to explore the additional dictionaries.

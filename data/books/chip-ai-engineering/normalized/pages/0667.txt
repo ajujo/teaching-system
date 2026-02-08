@@ -1,0 +1,18 @@
+paralelismo intraoperador. La inferencia implica una secuencia de
+operadores sobre tensores multidimensionales, como la multiplicación de
+matrices. En este enfoque, los tensores que intervienen en un operador se
+distribuyen entre varios dispositivos, dividiendo así el operador en partes
+más pequeñas que se ejecutan en paralelo, lo que acelera el cómputo. Por
+ejemplo, al multiplicar dos matrices, puede dividir una de las matrices en
+columnas, como se muestra en la Figura 9-18.
+El paralelismo de tensores ofrece dos ventajas. En primer lugar, permite
+servir modelos grandes que no caben en máquinas individuales. En segundo
+lugar, reduce la latencia. Sin embargo, la ventaja de la latencia puede verse
+contrarrestada por la sobrecarga de comunicación.
+figura 9-18. Paralelismo de tensores para la multiplicación de matrices.
+Otra forma de dividir un modelo es el paralelismo de procesos, que consiste
+en dividir el cómputo de un modelo en distintas etapas y asignar cada etapa
+a un dispositivo diferente. A medida que los datos fluyen por el modelo,
+cada etapa procesa una parte mientras otras procesan las siguientes, lo que
+permite traslapar los cómputos. La Figura 9-19 muestra cómo se ve el
+paralelismo de procesos en cuatro máquinas.

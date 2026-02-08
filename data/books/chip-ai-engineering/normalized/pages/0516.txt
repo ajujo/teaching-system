@@ -1,0 +1,32 @@
+Intentos más recientes de entrenar LLMs de bajo rango incluyen ReLoRA
+(Lialin et al., 2023) y GaLore (Zhao et al., 2024). ReLoRA funciona para
+modelos basados en transformadores de hasta 1.3 MM de parámetros.
+GaLore consigue un rendimiento comparable al de un modelo de rango
+completo con 1 MM parámetros y un rendimiento prometedor con 7 MM de
+parámetros.
+Es posible que algún día no muy lejano, los investigadores desarrollen una
+forma de ampliar el pre-entrenamiento de bajo rango a cientos de miles de
+millones de parámetros. Sin embargo, si el argumento de Aghajanyan et al.
+es correcto (que el pre-entrenamiento comprime implícitamente la
+dimensión intrínseca de un modelo), el pre-entrenamiento de rango
+completo sigue siendo necesario para reducir lo suficiente la dimensión
+intrínseca del modelo hasta un punto en el que la factorización de rango
+bajo pueda funcionar. Sería interesante estudiar exactamente cuánto
+entrenamiento de rango completo es necesario antes de que sea posible
+cambiar al entrenamiento de rango bajo.
+Configuraciones LoRA
+Para aplicar LoRA, necesita decidir a qué matrices de ponderaciones aplicar
+LoRA y el rango de cada factorización. En esta sección se analizan las
+consideraciones para cada una de estas decisiones.
+LoRA puede aplicarse a cada matriz de ponderaciones individual. La
+eficacia de LoRA, por tanto, no solo depende de a qué matrices se aplique
+LoRA, sino también de la arquitectura del modelo, ya que diferentes
+arquitecturas tienen diferentes matrices de ponderaciones.
+Aunque ha habido ejemplos de LoRA con otras arquitecturas, como las
+redes neuronales convolucionales (Dutt et al., 2023; Zhong et al., 2024;
+Aleem et al., 2024), LoRA se ha utilizado principalmente para modelos de
+transformadores. 24 LoRA se aplica sobre todo a las cuatro matrices de
+ponderaciones de los módulos de atención: las matrices de consulta (Wq),
+clave (Wk), valor (Wv) y proyección de output (Wo).
+Normalmente, LoRA se aplica uniformemente a todas las matrices del
+mismo tipo dentro de un modelo. Por ejemplo, aplicar LoRA a la matriz de

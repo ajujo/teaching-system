@@ -1,0 +1,31 @@
+Tasa de aprendizaje
+La tasa de aprendizaje determina la rapidez con la que deben cambiar los
+parámetros del modelo en cada paso de aprendizaje. Si consideramos el
+aprendizaje como buscar un camino hacia un objetivo, la tasa de
+aprendizaje es el tamaño del paso. Si el tamaño del paso es demasiado
+pequeño, puede que se tarde demasiado en llegar a la meta. Si el tamaño del
+paso es demasiado grande, es posible que se sobrepase el objetivo y, por
+tanto, que el modelo no converja nunca.
+No existe una tasa de aprendizaje óptima universal. Tendrá que
+experimentar con distintas tasas de aprendizaje, normalmente entre 1e-7 y
+1e-3, para ver cuál funciona mejor. Una práctica habitual es tomar la tasa de
+aprendizaje al final de la fase de pre-entrenamiento y multiplicarla por una
+constante entre 0.1 y 1.
+La curva de pérdidas puede darle pistas sobre la tasa de aprendizaje. Si la
+curva de pérdidas fluctúa mucho, es probable que la tasa de aprendizaje sea
+demasiado elevada. Si la curva de pérdidas es estable pero tarda mucho en
+disminuir, es probable que la tasa de aprendizaje sea demasiado pequeña.
+Aumente la tasa de aprendizaje hasta que la curva de pérdidas se mantenga
+estable.
+Puede variar las tasas de aprendizaje durante el proceso de entrenamiento.
+Pueden utilizar tasas de aprendizaje mayores al principio y menores hacia el
+final. Los algoritmos que determinan cómo deben cambiar las tasas de
+aprendizaje a lo largo del proceso de entrenamiento se denominan
+programas de tasas de aprendizaje.
+Tamaño de lote
+El tamaño de lote determina de cuántos ejemplos aprende un modelo en
+cada paso para actualizar sus ponderaciones. Un tamaño de lote demasiado
+pequeño, por ejemplo de menos de ocho, puede dar lugar a un
+entrenamiento inestable. 36 Un tamaño de lote mayor ayuda a agregar las
+señales para distintos ejemplos, lo que da lugar a actualizaciones más
+estables y fiables.

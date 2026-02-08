@@ -1,0 +1,55 @@
+Grupo de
+instrucciones
+Instrucción
+Descripción
+Restricciones de
+longitud
+Número de frases
+Responde con al
+menos/alrededor de/como
+máximo {N} frases.
+Restricciones de
+longitud
+Número de
+párrafos + primera
+palabra del
+párrafo i
+Debe haber {N} párrafos. Los
+párrafos y solo los párrafos se
+separan entre sí por dos saltos
+de línea. El párrafo {i} debe
+comenzar con la palabra
+{first_word}.
+Contenido
+detectable
+Postscript
+Al final de la respuesta, añade
+explícitamente un postscript que
+comience por {postscript
+marker}.
+Contenido
+detectable
+Marcador de
+posición numérico
+La respuesta debe contener al
+menos {N} marcadores de
+posición representados por
+corchetes, como [address].
+Formato
+detectable
+Número de
+viñetas
+La respuesta debe contener
+exactamente {N} viñetas.
+Utiliza viñetas de marcado
+como: * Esto es un punto.
+Formato
+detectable
+Título
+La respuesta debe contener un
+título, entre corchetes angulares
+dobles, como por ejemplo
+<<poema de alegría>>.
+Formato
+Elegir entre
+Responde con una de las

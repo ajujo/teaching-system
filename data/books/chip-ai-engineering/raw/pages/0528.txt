@@ -1,0 +1,25 @@
+Puede mezclar estos enfoques al fusionar modelos, por ejemplo, sumando
+algunas capas y apilando otras. Analicemos cada uno de estos enfoques.
+Suma
+Este enfoque consiste en sumar los valores de las ponderaciones de los
+modelos constituyentes. Abordaré dos métodos de suma: la combinación
+lineal y la interpolación lineal esférica. Si los parámetros de dos modelos
+están en escalas diferentes, por ejemplo, los valores de los parámetros de un
+modelo son mucho mayores que los del otro, puede reescalar los modelos
+antes de sumarlos para que los valores de sus parámetros estén en el mismo
+rango.
+Combinación lineal
+La combinación lineal incluye tanto un promedio como una media
+ponderada. Dados dos modelos, A y B, su media ponderada es:
+Merge(A, B) = WAA+WBB
+WA+WB
+La Figura 7-15 muestra cómo combinar linealmente dos capas cuando wA =
+wB = 1.
+figura 7-15. Fusión de parámetros mediante promediado.
+La combinación lineal funciona sorprendentemente bien para lo sencilla que
+es. 30 La idea de que se pueden combinar linealmente varios modelos para
+crear uno mejor se estudió ya a principios de los años 90 (Perrone, 1993).
+La combinación lineal se utiliza a menudo en el aprendizaje federado
+(Wang et al., 2020).
+Puede combinar linealmente modelos enteros o partes de modelos. Las
+sopas de modelos (Wortsman et al., 2022) mostraron cómo promediar las

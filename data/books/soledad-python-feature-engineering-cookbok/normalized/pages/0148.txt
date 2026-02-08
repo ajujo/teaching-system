@@ -1,0 +1,36 @@
+Implementing equal-frequency discretization
+125
+6.
+Let's print the top five observations of the discretized and original variables:
+print(train_t[["HouseAge", "House_disc"]].head(5))
+In the following output, we see that the 52 value was allocated to the 44-52 interval, the 43
+value was allocated to the 37-44 interval, and so on:
+       HouseAge     House_disc
+1989       52.0   (44.0, 52.0]
+256        43.0   (37.0, 44.0]
+7887       17.0   (14.0, 18.0]
+4581       17.0   (14.0, 18.0]
+1993       50.0   (44.0, 52.0]
+7.
+Now, let's discretize HouseAge in the test set, using pandas cut() with the interval limits
+determined in step 5:
+test_t["House_disc"] = pd.cut(
+    x=X_test["HouseAge"],
+    bins=interval_limits,
+    include_lowest=True)
+8.
+Let's make a bar plot with the proportion of observations per interval in the train and test sets:
+# determine proportion of observations per bin
+t1 = train_t["House_disc"].value_counts(
+    normalize=True)
+t2 = test_t["House_disc"].value_counts(normalize=True)
+# concatenate proportions
+tmp = pd.concat([t1, t2], axis=1)
+tmp.columns = ["train", "test"]
+tmp.sort_index(inplace=True)
+# plot
+tmp.plot.bar()
+plt.xticks(rotation=45)
+plt.ylabel("Number of observations per bin")
+plt.title("HouseAge")
+plt.show()

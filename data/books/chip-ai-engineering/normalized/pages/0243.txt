@@ -1,0 +1,29 @@
+A diferencia de la evaluación exacta, las métricas subjetivas dependen en
+gran medida del juez. Sus puntuaciones deben interpretarse teniendo en
+cuenta los jueces utilizados. Puede que no se puedan comparar entre sí las
+puntuaciones que pretenden medir la misma calidad por diferentes jueces de
+IA. Los jueces de IA, como todas las aplicaciones de IA, deben ser objeto
+de iteración, lo que significa que sus juicios cambian. Esto hace que no sean
+fiables como puntos de referencia para seguir los cambios de una aplicación
+a lo largo del tiempo. Aunque prometedores, los jueces de IA deben
+complementarse con una evaluación exacta, una evaluación humana o
+ambas.
+Al evaluar los modelos, puede evaluar cada modelo de forma independiente
+y luego ordenarlos por puntuación. Otra posibilidad es ordenarlos en el
+ranking mediante señales comparativas: ¿cuál de los dos modelos es mejor?
+La evaluación comparativa es habitual en los deportes, especialmente en el
+ajedrez, y está ganando terreno en la evaluación de la IA.
+Tanto la evaluación comparativa como el proceso de alineación postentrenamiento necesitan señales de preferencia, que son caras de recopilar.
+Esto motivó el desarrollo de modelos de preferencias: jueces de IA
+especializados que predicen qué respuesta prefieren los usuarios.
+Aunque las métricas de modelado lingüístico y las medidas de similitud
+diseñadas a mano existen desde hace tiempo, la IA como juez y la
+evaluación comparativa solo han ganado adopción al aparecer en escena los
+modelos fundacionales. Muchos equipos están tratando de incorporarlas a
+sus procesos de evaluación. El próximo capítulo trata sobre cómo construir
+un proceso de evaluación fiable para evaluar aplicaciones abiertas.
+1 En diciembre de 2023, Greg Brockman, cofundador de OpenAI, tuiteó que "las
+evaluaciones son sorprendentemente a menudo todo lo que se necesita".
+2 Un estudio realizado en 2023 por a16z demostró que 6 de cada 70 responsables
+de la toma de decisiones evaluaban los modelos por el boca a boca.
+3 También conocido como vibe check.

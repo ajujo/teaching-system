@@ -1,0 +1,36 @@
+Evaluation and Testing
+324
+Evaluating the correctness of results
+Let's think of an example, where we want to verify that an LLM's answer is correct (or how far
+it is off). For example, when asked about the Federal Reserve's interest rate, you might compare
+the output against a reference answer using both an exact match and a string distance evaluator.
+from langchain.evaluation import load_evaluator, ExactMatchStringEvaluator
+prompt = "What is the current Federal Reserve interest rate?"
+reference_answer = "0.25%" # Suppose this is the correct answer.
+# Example predictions from your LLM:
+prediction_correct = "0.25%"
+prediction_incorrect = "0.50%"
+# Initialize an Exact Match evaluator that ignores case differences.
+exact_evaluator = ExactMatchStringEvaluator(ignore_case=True)
+# Evaluate the correct prediction.
+exact_result_correct = exact_evaluator.evaluate_strings(
+    prediction=prediction_correct, reference=reference_answer
+)
+print("Exact match result (correct answer):", exact_result_correct)
+# Expected output: score of 1 (or 'Y') indicating a perfect match.
+# Evaluate an incorrect prediction.
+exact_result_incorrect = exact_evaluator.evaluate_strings(
+    prediction=prediction_incorrect, reference=reference_answer
+)
+print("Exact match result (incorrect answer):", exact_result_incorrect)
+# Expected output: score of 0 (or 'N') indicating a mismatch.
+Now, obviously this won't be very useful if the output comes in a different format or if we want
+to gauge how far off the answer is. In the repository, you can find an implementation of a custom
+comparison that would parse answers such as "It is 0.50%" and "A quarter percent."
+A more generalizable approach is LLM‐as‐a‐judge for evaluating correctness. In this example, in­
+stead of using simple string extraction or an exact match, we call an evaluation LLM (for example,
+an upper mid-range model such as Mistral) that parses and scores the prompt, the prediction, and
+a reference answer and then returns a numerical score plus reasoning. This works in scenarios
+where the prediction might be phrased differently but still correct.
+from langchain_mistralai import ChatMistralAI
+from langchain.evaluation.scoring import ScoreStringEvalChain

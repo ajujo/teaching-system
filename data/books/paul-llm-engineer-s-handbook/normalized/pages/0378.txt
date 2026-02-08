@@ -1,0 +1,32 @@
+Chapter 9
+347
+prompt = f"""
+You are a content creator. Write what the user asked you to while using
+the provided context as the primary source of information for the content.
+User query: {query}
+Context: {context}
+          """
+Moving on to the rag() function, this is where the RAG logic comes together. It handles retrieving relevant documents based on the query, mapping the documents to the context that will be
+injected into the prompt, and obtaining the final answer from the LLM:
+def rag(query: str) -> str:
+    retriever = ContextRetriever(mock=False)
+    documents = retriever.search(query, k=3)
+    context = EmbeddedChunk.to_context(documents)
+    answer = call_llm_service(query, context)
+    return answer
+As we modularized all the RAG steps into independent classes, we reduced the high-level rag()
+function to five lines of code (encapsulating all the complexities of the system) similar to what we
+see in tools such as LangChain, LlamaIndex, or Haystack. Instead of their high-level implementation, we learned how to build an advanced RAG service from scratch. Also, by clearly separating
+the responsibility of each class, we can use them like LEGOs. Thus, you can quickly call the LLM
+independently without context or use the retrieval module as a query engine on top of your vector
+DB. In the next chapter, we will see the rag() function in action after we deploy our fine-tuned
+LLM to an AWS SageMaker inference endpoint.
+Before ending this chapter, we want to discuss potential improvements you could add to the RAG
+inference pipeline. As we are building a chatbot, the first one is to add a conversation memory that
+stores all the user prompts and generated answers in memory. Thus, when interacting with the
+chatbot, it will be aware of the whole conversation, not only the latest prompt. When prompting
+the LLM, along with the new user input and context, we also pass the conversation history from
+the memory. As the conversation history can get long, to avoid exceeding the context window or
+higher costs, you have to implement a way to reduce the size of your memory. As illustrated in
+Figure 9.4, the simplest one is to keep only the latest K items from your chat history. Unfortunately,
+using this strategy, the LLM will never be aware of the whole conversation.

@@ -1,0 +1,52 @@
+tabla 4-5. La correlación entre las seis pruebas comparativas utilizadas en l
+calculada en enero de 2024.
+ARC-C
+HellaSwag
+MMLU
+Truth
+ARC-C
+1.0000
+0.4812
+0.8672
+0.480
+HellaSwag
+0.4812
+1.0000
+0.6105
+0.480
+MMLU
+0.8672
+0.6105
+1.0000
+0.550
+TruthfulQA
+0.4809
+0.4228
+0.5507
+1.000
+WinoGrande
+0.8856
+0.4842
+0.9011
+0.455
+GSM-8K
+0.7438
+0.3547
+0.7936
+0.500
+Los resultados de todas las pruebas seleccionadas deben integrarse para
+clasificar los modelos. En el momento de escribir este artículo, Hugging
+Face promedia las puntuaciones de un modelo en todas estas pruebas
+comparativas para obtener la puntuación final del ranking de ese modelo.
+Promediar significa tratar todas las puntuaciones de los pruebas
+comparativas por igual, es decir, tratar una puntuación del 80 % en
+TruthfulQA igual que una puntuación del 80 % en GSM-8K, aunque una
+puntuación del 80 % en TruthfulQA pueda ser mucho más difícil de
+conseguir que una puntuación del 80 % en GSM-8K. Esto también significa
+dar a todas las pruebas comparativas el mismo peso, incluso si, para algunas
+tareas, la veracidad puede pesar mucho más que ser capaz de resolver
+problemas matemáticos de primaria.
+Los autores de HELM, por su parte, decidieron evitar el promedio en favor
+de la tasa media de victorias, que definieron como "la fracción de veces que
+un modelo obtiene una puntuación mejor que otro modelo, promediada
+entre todos los escenarios".

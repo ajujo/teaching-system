@@ -1,0 +1,32 @@
+Production-Ready LLM Deployment and Observability
+388
+By implementing observability across these dimensions, organizations can maintain reliable LLM 
+applications that adapt to changing requirements while controlling costs and ensuring quality 
+user experiences. Specialized observability platforms like LangSmith provide purpose-built ca­
+pabilities for tracking these unique aspects of LLM applications in production environments. A 
+foundational aspect of LLM observability is the comprehensive capture of all interactions, which 
+we’ll look at in the following section. Let’s explore next a few practical techniques for tracking 
+and analyzing LLM responses, beginning with how to monitor the trajectory of an agent.
+Tracking responses
+Tracking the trajectory of agents can be challenging due to their broad range of actions and 
+generative capabilities. LangChain comes with functionality for trajectory tracking and eval­
+uation, so seeing the traces of an agent via LangChain is really easy! You just have to set the 
+return_intermediate_steps parameter to True when initializing an agent or an LLM.
+Let’s define a tool as a function. It’s convenient to reuse the function docstring as a description of 
+the tool. The tool first sends a ping to a website address and returns information about packages 
+transmitted and latency, or—in the case of an error—the error message:
+import subprocess
+from urllib.parse import urlparse
+from pydantic import HttpUrl
+from langchain_core.tools import StructuredTool
+def ping(url: HttpUrl, return_error: bool) -> str:
+    """Ping the fully specified url. Must include https:// in the url."""
+    hostname = urlparse(str(url)).netloc
+    completed_process = subprocess.run(
+        ["ping", "-c", "1", hostname], capture_output=True, text=True
+    )
+    output = completed_process.stdout
+    if return_error and completed_process.returncode != 0:
+        return completed_process.stderr
+    return output
+ping_tool = StructuredTool.from_function(ping)

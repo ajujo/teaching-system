@@ -1,0 +1,31 @@
+Extracting hundreds of features automatically from a time series
+311
+flagged with a unique identifier. There is also a dataset with a target variable that indicates in which
+of these 135 hours the office was occupied. Let's load the data and make some plots to understand
+its patterns:
+1.
+Let's load pandas and matplotlib:
+import matplotlib.pyplot as plt
+import pandas as pd
+2.
+Load the dataset and display the first five rows:
+X = pd.read_csv(
+    "occupancy.csv", parse_dates=["date"])
+X.head()
+In the following figure, we can see the dataset containing a unique identifier, followed by the
+date and time of the measurements and values for five time series capturing temperature,
+humidity, lights, and CO 2 levels in the office:
+Figure 10.2 - DataFrame with the time-series data
+3.
+Let's create a function to plot the time series from step 2 at a given hour (the id column is a
+unique identifier for each of the 135 hours of records):
+def plot_timeseries(n_id):
+    fig, axes = plt.subplots(nrows=2, ncols=3,
+    figsize=(20, 10))
+    X[X[«id»] == n_id]["temperature"].plot(
+        ax=axes[0, 0], title="temperature")
+    X[X[«id»] == n_id]["humidity"].plot(
+        ax=axes[0, 1], title="humidity")
+    X[X[«id»] == n_id]["light"].plot(
+        ax=axes[0, 2], title="light")
+    X[X[«id»] == n_id]["co2"].plot(

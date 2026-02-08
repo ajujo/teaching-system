@@ -1,0 +1,22 @@
+estos valores máximos. Un valor k más bajo hace que el texto sea más
+predecible pero menos interesante, ya que el modelo se limita a un conjunto
+más pequeño de palabras probables.
+Top-p
+En el muestreo top-k, el número de valores considerados se fija en k. Sin
+embargo, este número debería cambiar en función de la situación. Por
+ejemplo, ante el prompt "¿Te gusta la música? Responde solo con un sí o un
+no". El número de valores considerados debería ser dos: sí y no. Ante el
+prompt "¿Cuál es el sentido de la vida?", el número de valores considerados
+debería ser mucho mayor.
+Top-p, también conocido como muestreo de núcleos, permite una selección
+más dinámica de los valores de los que tomar muestras. En el muestreo topp, el modelo suma las probabilidades de los siguientes valores más
+probables en orden descendente y se detiene cuando la suma alcanza p. Solo
+se consideran los valores dentro de esta probabilidad acumulada. Los
+valores habituales para el muestreo top-p (núcleo) en los modelos
+lingüísticos suelen oscilar entre 0.9 y 0.95. Un valor top-p de 0.9, por
+ejemplo, significa que el modelo considerará el conjunto más pequeño de
+valores cuya probabilidad acumulada supere el 90 %.
+Digamos que las probabilidades de todos los tokens son las que se muestran
+en la Figura 2-18. Si top-p es 90 %, solo se tendrán en cuenta los "sí" y los
+"quizá", ya que su probabilidad acumulada es superior al 90 %. Si top-p es
+99 %, se tendrán en cuenta los "sí", los "quizá" y los "no".

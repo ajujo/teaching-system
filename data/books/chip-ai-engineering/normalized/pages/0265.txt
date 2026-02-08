@@ -1,0 +1,19 @@
+3. Discurso de odio, incluyendo el discurso racista, sexista, homófobo
+y otros comportamientos discriminatorios.
+4. Violencia, incluyendo amenazas y detalles gráficos.
+5. Estereotipos, como utilizar siempre nombres femeninos para las
+enfermeras o masculinos para los directores generales.
+6. Sesgos hacia una ideología política o religiosa, lo que puede llevar
+a que el modelo genere únicamente contenidos que apoyen esta
+ideología. Por ejemplo, algunos estudios (Feng et al., 2023; Motoki
+et al., 2023; y Hartman et al., 2023) han demostrado que los
+modelos, dependiendo de su entrenamiento, pueden estar imbuidos
+de sesgos políticos. Por ejemplo, GPT-4 de OpenAI es más de
+izquierdas y de tendencia libertaria, mientras que Llama de Meta es
+más autoritario, como se muestra en la Figura 4-3.
+figura 4-3. Inclinaciones políticas y económicas de los distintos modelos
+fundacionales (Feng et al., 2023). La imagen está bajo licencia CC BY 4.0.
+Es posible utilizar jueces de IA de propósito general para detectar estos
+escenarios, y mucha gente lo hace. GPTs, Claude, y Gemini pueden detectar
+muchos outputs dañinos si se les envían prompts de forma adecuada. 5
+Estos proveedores de modelos también necesitan desarrollar herramientas

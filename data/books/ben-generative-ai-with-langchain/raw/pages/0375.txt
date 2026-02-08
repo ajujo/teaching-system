@@ -1,0 +1,27 @@
+Evaluation and Testing
+348
+Questions
+1.	
+Describe three key metrics used in evaluating AI agents.
+2.	 What’s the difference between online and offline evaluation?
+3.	
+What are system-level and application-level evaluations and how do they differ?
+4.	
+How can LangSmith be used to compare different versions of an LLM application?
+5.	
+How does chain-of-thought evaluation differ from traditional output evaluation?
+6.	 Why is trajectory evaluation important for understanding agent behavior?
+7.	
+What are the key considerations when evaluating LLM agents for production deployment?
+8.	 How can bias be mitigated when using language models as evaluators?
+9.	
+What role do standardized benchmarks play, and how can we create benchmark datasets 
+for LLM agent evaluation?
+10.	 How do you balance automated evaluation metrics with human evaluation in production 
+systems?
+Subscribe for a free eBook
+New frameworks, evolving architectures, research drops, production breakdowns—AI_Distilled 
+filters the noise into a weekly briefing for engineers and researchers working hands-on with LLMs 
+and GenAI systems. Subscribe now and receive a free eBook, along with weekly insights that help 
+you stay focused and informed.
+Subscribe at https://packt.link/8Oz6Y or scan the QR code below.

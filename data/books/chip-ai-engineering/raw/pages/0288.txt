@@ -1,0 +1,17 @@
+muchos que algún día habrá un modelo de código abierto que funcione tan
+bien, si no mejor, que el modelo propietario más potente.
+Por mucho que me gustaría que los modelos de código abierto alcancen a
+los modelos propietarios, no creo que haya incentivos suficientes para ello.
+Si tiene el modelo más potente, ¿querría hacerlo de código abierto para que
+otros lo aprovechen o intentar aprovecharlo usted mismo? 17 Es una
+práctica común que las empresas conserven sus modelos más fuertes detrás
+de las API y abran sus modelos más débiles.
+figura 4-7. La brecha entre los modelos de código abierto y los modelos propietarios
+está disminuyendo en la prueba comparativa MMLU. Imagen de Maxime Labonne.
+Por ello, quizá en un futuro previsible el modelo de código abierto más
+fuerte siga a la sombra de los modelos propietarios más fuertes. Sin
+embargo, en muchos casos de uso que no necesitan los modelos más
+potentes, los modelos de código abierto pueden ser suficientes.
+Otra razón que puede retrasar a los modelos de código abierto es que sus
+creadores no reciben comentarios de los usuarios para mejorar sus modelos,
+como ocurre con los modelos comerciales. Una vez que un modelo es de

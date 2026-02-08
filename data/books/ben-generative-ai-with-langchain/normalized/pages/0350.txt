@@ -1,0 +1,38 @@
+Chapter 8
+323
+•
+Deploy progressively: Adopt a staged deployment approach. Begin with development testing
+against offline benchmarks, then proceed to limited production release with a small user sub­
+set. Only roll out fully after meeting performance thresholds. This cautious approach helps
+identify issues before they affect most users.
+•
+Monitor production performance: Implement ongoing monitoring in live environments. Track
+key performance indicators like response time, error rates, token usage, and user feedback. Set
+up alerts for anomalies that might indicate degraded performance or unexpected behavior.
+•
+Establish improvement cycles: Create structured processes to translate evaluation insights
+into concrete improvements. When issues are identified, investigate root causes, implement
+specific solutions, and validate the effectiveness of changes through re-evaluation. Document
+patterns of problems and successful solutions for future reference.
+•
+Foster cross-functional collaboration: Include diverse perspectives in your evaluation process.
+Technical teams, domain experts, business stakeholders, and compliance specialists all bring
+valuable insights. Regular review sessions with these cross-functional teams help ensure the
+comprehensive assessment of LLM applications.
+•
+Maintain living documentation: Keep centralized records of evaluation results, improvement
+actions, and outcomes. This documentation builds organizational knowledge and helps teams
+learn from past experiences, ultimately accelerating the development of more effective LLM
+applications.
+It's time now to put the theory to the test and get into the weeds of evaluating LLM agents. Let's
+dive in!
+Evaluating LLM agents in practice
+LangChain provides several predefined evaluators for different evaluation criteria. These eval­
+uators can be used to assess outputs based on specific rubrics or criteria sets. Some common
+criteria include conciseness, relevance, correctness, coherence, helpfulness, and controversiality.
+We can also compare results from an LLM or agent against reference results using different meth­
+ods starting from pairwise string comparisons, string distances, and embedding distances. The
+evaluation results can be used to determine the preferred LLM or agent based on the comparison
+of outputs. Confidence intervals and p-values can also be calculated to assess the reliability of
+the evaluation results.
+Let's go through a few basics and apply useful evaluation strategies. We'll start with LangChain.

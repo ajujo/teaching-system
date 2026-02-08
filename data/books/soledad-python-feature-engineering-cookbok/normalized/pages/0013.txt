@@ -1,0 +1,95 @@
+Table of Contents
+xii
+9
+Extracting Features from Relational Data with Featuretools
+269
+Technical requirements
+270
+Setting up an entity set and creating
+features automatically
+271
+Getting ready
+271
+How to do it...
+272
+How it works...
+279
+See also
+281
+Creating features with general and
+cumulative operations
+281
+Getting ready
+282
+How to do it...
+283
+How it works...
+287
+Combining numerical features
+288
+How to do it...
+288
+How it works...
+290
+Extracting features from date
+and time
+291
+How to do it...
+291
+How it works...
+295
+Extracting features from text
+295
+Getting ready
+296
+How to do it...
+296
+How it works...
+299
+Creating features with
+aggregation primitives
+299
+Getting ready
+300
+How to do it...
+300
+How it works...
+304
+10
+Creating Features from a Time Series with tsfresh
+307
+Technical requirements
+308
+Extracting hundreds of features
+automatically from a time series
+309
+Getting ready
+310
+How to do it...
+313
+How it works...
+316
+See also
+319
+Automatically creating and
+selecting predictive features
+from time-series data
+319
+How to do it...
+320
+How it works...
+323
+See also
+323
+Extracting different features
+from different time series
+324
+How to do it...
+324
+How it works...
+328
+Creating a subset of features
+identified through feature selection
+329
+How to do it...
+329

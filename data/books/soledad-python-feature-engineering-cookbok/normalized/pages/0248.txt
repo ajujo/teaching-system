@@ -1,0 +1,13 @@
+Scaling to vector unit length
+225
+This scaling procedure changes the variables' distribution, as illustrated in the following figure:
+Figure 7.8 - Distribution of a normal and skewed variable before and
+after scaling each observation's feature vector to its norm
+Note
+This scaling technique scales each observation and not each variable. The scaling methods that
+we discussed so far in this chapter aimed at shifting and resetting the scale of the variables'
+distribution. When we scale to the unit length, however, we normalize each observation
+individually, contemplating their values across all features.
+Scaling to the unit norm can be used when utilizing kernels to quantify similarity for text classification
+and clustering. In this recipe, we will scale each observation's feature vector to a unit length of 1
+using scikit-learn.

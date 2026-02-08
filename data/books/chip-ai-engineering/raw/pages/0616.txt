@@ -1,0 +1,24 @@
+pueda ejecutar en un tiempo determinado. Por lo tanto, el
+llenado previo está limitado por el cálculo.
+Decodificación
+El modelo genera un token de output cada vez. A grandes
+rasgos, este paso suele implicar la carga de grandes matrices
+(por ejemplo, las ponderaciones del modelo) en las GPU, lo
+que está limitado por la rapidez con la que el hardware
+puede cargar datos en la memoria. Por tanto, la
+decodificación está limitada por el ancho de banda de la
+memoria.
+La Figura 9-3 visualiza el llenado previo y la decodificación.
+figura 9-3. Los modelos autorregresivos del lenguaje siguen dos pasos para la
+inferencia: llenado previo y decodificación. <eos> indica el final de la secuencia.
+Dado que el llenado previo y la decodificación tienen perfiles
+computacionales diferentes, a menudo se desacoplan en producción con
+máquinas separadas. Esta técnica se abordará en “Optimización del servicio
+de inferencia”.
+Los factores que afectan a la cantidad de cálculo de llenado previo y
+decodificación en un servidor de inferencia LLM, y por tanto a sus cuellos
+de botella, incluyen la longitud del contexto, la longitud de output y las
+estrategias de agrupación de peticiones. Un contexto largo suele generar
+una carga de trabajo limitada por el ancho de banda de la memoria, pero las
+técnicas de optimización inteligentes, como las que se comentan más
+adelante en este capítulo, pueden eliminar este cuello de botella.

@@ -1,0 +1,30 @@
+Chapter 5
+199
+================================= Tool Message ===========================
+======
+Name: requests_get
+{"amount":1.0,"base":"USD","date":"2025-01-31","rates":{"CHF":0.90917}}
+================================== Ai Message ============================
+======
+The Swiss franc to US dollar exchange rate is 0.90917.
+Observe that, this time, we use a stream_mode="values" option, and in this option, each time, 
+we get a full current state from the graph. 
+Custom tools
+We looked at the variety of built-in tools offered by LangGraph. Now it’s time to discuss how 
+you can create your own custom tools, besides the example we looked at when we wrapped the 
+third-party API with the RequestsToolkit by providing an API spec. Let’s get down to it!
+Wrapping a Python function as a tool
+Any Python function (or callable) can be wrapped as a tool. As we remember, a tool on LangChain 
+should have a name, a description, and an argument schema. Let’s build our own calculator based 
+on the Python numexr library—a fast numerical expression evaluator based on NumPy (https://
+github.com/pydata/numexpr). We’re going to use a special @tool decorator that will wrap our 
+function as a tool:
+import math
+from langchain_core.tools import tool
+import numexpr as ne
+@tool
+def calculator(expression: str) -> str:
+   """Calculates a single mathematical expression, incl. complex numbers.
+  
+There are over 50 tools already available. You can find a full list on the documentation 
+page: https://python.langchain.com/docs/integrations/tools/. 

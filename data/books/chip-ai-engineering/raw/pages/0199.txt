@@ -1,0 +1,31 @@
+Evaluación exacta
+Al evaluar el rendimiento de los modelos, es importante diferenciar entre la
+evaluación exacta y la subjetiva. La evaluación exacta produce un juicio sin
+ambigüedades. Por ejemplo, si la respuesta a una pregunta de opción
+múltiple es A y usted elige B, su respuesta es incorrecta. No hay ninguna
+ambigüedad al respecto. Por otra parte, la calificación de ensayos es
+subjetiva. La puntuación de un ensayo depende de quién lo califique. La
+misma persona, si se le pregunta dos veces con cierto intervalo de tiempo,
+puede dar al mismo ensayo puntuaciones diferentes. La calificación de los
+ensayos puede ser más exacta con unas directrices de calificación claras.
+Como verán en la siguiente sección, la IA como juez es subjetiva. El
+resultado de la evaluación puede cambiar en función del modelo de juez y
+del prompt.
+Trataré dos enfoques de evaluación que producen puntuaciones exactas:
+corrección funcional y medidas de similitud con datos de referencia. Tenga
+en cuenta que esta sección se centra en la evaluación de las respuestas
+abiertas (generación arbitraria de texto), por contraposición con las
+respuestas cerradas (como la clasificación). Esto no se debe a que los
+modelos fundacionales no se utilicen para tareas cerradas. De hecho,
+muchos sistemas de modelos fundacionales tienen al menos un componente
+de clasificación, normalmente para clasificar intenciones o puntuación. Esta
+sección se centra en la evaluación abierta porque la evaluación cerrada ya
+se conoce bien.
+Corrección funcional
+La evaluación de corrección funcional consiste en evaluar un sistema en
+función de si realiza la funcionalidad prevista. Por ejemplo, si le pide a un
+modelo que cree una página web, ¿cumple la página web generada sus
+requisitos? Si le pide a un modelo que haga una reserva en un restaurante
+determinado, ¿consigue hacerlo el modelo?
+La corrección funcional es la métrica definitiva para evaluar el rendimiento
+de cualquier aplicación, ya que mide si esta hace lo que debe hacer. Sin

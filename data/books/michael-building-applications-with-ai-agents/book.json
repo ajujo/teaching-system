@@ -1,0 +1,58 @@
+{
+  "$schema": "book_v1",
+  "book_id": "michael-building-applications-with-ai-agents",
+  "book_uuid": "c7b4e892-4b80-4475-b9a2-bcc239d4c402",
+  "title": "Building Applications with AI Agents",
+  "authors": [
+    "Michael Albada"
+  ],
+  "language": "en",
+  "source_file": "Building_applications_with_ai_agents_designing_and_implementing_multiagent_systems.pdf",
+  "source_format": "pdf",
+  "import_date": "2026-01-29T13:35:08.954235+00:00",
+  "total_pages": 355,
+  "total_chapters": 13,
+  "sha256": "72cdfc0f74bb1f60e0b61e950da06683e2db0aa04e90a59bdf271fcedfecf1f1",
+  "metadata": {
+    "publisher": null,
+    "year": null,
+    "isbn": null,
+    "edition": null
+  },
+  "extraction": {
+    "pages_with_text": 346,
+    "empty_pages_count": 9,
+    "total_chars": 828018,
+    "avg_chars_per_page": 2332.4,
+    "detected_language": "en",
+    "is_likely_scanned": false
+  },
+  "pdf_metadata": {
+    "title": "Building Applications with AI Agents",
+    "author": "Michael Albada;",
+    "creator": "AH CSS Formatter V6.2 MR4 for Linux64 : 6.2.6.18551 (2014/09/24 15:00JST)",
+    "producer": "Antenna House PDF Output Library 6.2.609 (Linux64)",
+    "creation_date": "D:20250916154746Z",
+    "mod_date": "D:20250916115403-04'00'"
+  },
+  "normalization": {
+    "original_chars": 829264,
+    "normalized_chars": 808869,
+    "chars_removed": 20395,
+    "chars_removed_ratio": 0.0246,
+    "hyphen_breaks_fixed": 134,
+    "multiple_spaces_collapsed": 243,
+    "multiple_newlines_collapsed": 347,
+    "content_loss_warning": false
+  },
+  "outline": {
+    "method_used": "toc:numeric",
+    "confidence": 1.0,
+    "chapters_found": 13,
+    "sections_found": 137,
+    "needs_review": false
+  },
+  "units_count": 25,
+  "units_version": "units_v1",
+  "plan_date": "2026-01-30T06:33:01.046784+00:00"
+}

@@ -1,0 +1,33 @@
+Un tipo de modelo disperso que ha ganado popularidad en los últimos años
+es la mezcla de expertos (MoE) (Shazeer et al., 2017). Un modelo MoE se
+divide en diferentes grupos de parámetros, y cada grupo es un experto. Solo
+un subconjunto de los expertos está activo (se utiliza) para procesar cada
+token.
+Por ejemplo, Mixtral 8x7B es una mezcla de ocho expertos, cada uno de
+ellos con siete mil millones de parámetros. Si no hay dos expertos que
+compartan ningún parámetro, debería tener 8 × 7000 millones = 56 000
+millones de parámetros. Sin embargo, debido a que algunos parámetros son
+compartidos, solo tiene 46 700 millones de parámetros.
+En cada capa, para cada token, solo hay dos expertos activos. Esto significa
+que solo 12 900 millones de parámetros están activos para cada token.
+Aunque este modelo tiene 46 700 millones de parámetros, su costo y
+velocidad son los mismos que los de un modelo de 12 900 millones de
+parámetros.
+Un modelo más grande también puede rendir menos que uno más pequeño
+si no se ha entrenado con suficientes datos. Imaginemos un modelo de 13
+MM de parámetros entrenado con un conjunto de datos formado por una
+única frase: "Me gustan las piñas". Este modelo funcionará mucho peor que
+un modelo mucho más pequeño entrenado con más datos.
+Cuando se habla del tamaño del modelo, es importante tener en cuenta el
+tamaño de los datos con los que se ha entrenado. En la mayoría de los
+modelos, el tamaño de los conjuntos de datos se mide por el número de
+muestras de entrenamiento. Por ejemplo, Flamingo de Google (Alayrac et
+al., 2022) se entrenó utilizando cuatro conjuntos de datos: uno de ellos tiene
+1800 millones de duplas (imagen, texto) y otro 312 millones (imagen,
+texto).
+Para los modelos lingüísticos, una muestra de entrenamiento puede ser una
+frase, una página de Wikipedia, una conversación de chat o un libro. Un
+libro tiene mucho más valor más que una frase, así que el número de
+muestras de entrenamiento ya no es una buena métrica para medir el
+tamaño de los conjuntos de datos. Una mejor medida es el número de
+tokens en el conjunto de datos.

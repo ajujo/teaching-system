@@ -1,0 +1,2 @@
+que es posible, estas operaciones se convierten en kernels especializados
+para ejecutarse más rápido en el hardware de destino.

@@ -1,0 +1,29 @@
+cáncer suele implicar radiografías y resonancias magnéticas funcionales
+(IRMf), difíciles de obtener debido a la privacidad.
+Para entrenar un modelo que funcione bien en estas tareas específicas de
+dominio, es posible que tenga que curar conjuntos de datos muy
+específicos. Uno de los modelos específicos de dominio más famosos es
+quizá el AlphaFold de DeepMind, entrenado con las secuencias y
+estructuras tridimensionales de unas 100 000 proteínas conocidas.
+BioNeMo de NVIDIA es otro modelo centrado en los datos biomoleculares
+para el descubrimiento de fármacos. Med-PaLM2 de Google combina la
+potencia de un LLM con datos médicos para responder a consultas médicas
+con mayor precisión.
+SUGERENCIA
+Los modelos de dominios específicos son especialmente comunes en
+biomedicina, pero otros campos también pueden beneficiarse de ellos. Es
+posible que un modelo entrenado con bocetos arquitectónicos pueda ayudar
+a los arquitectos mucho mejor que Stable Diffusion, o que un modelo
+entrenado con planos de fábricas pueda optimizarse para procesos de
+fabricación mucho mejor que un modelo genérico como ChatGPT.
+En esta sección se dio una visión general de cómo influyen los datos de
+entrenamiento en el rendimiento de un modelo. A continuación, analicemos
+cómo influye el diseño de un modelo en su rendimiento.
+Modelado
+Antes de entrenar a un modelo, los desarrolladores deben decidir qué
+aspecto debe tener. ¿Qué arquitectura debe seguir? ¿Cuántos parámetros
+debe tener? Estas decisiones afectan no solo a las capacidades del modelo,
+sino también a su utilidad para aplicaciones posteriores. 5 Por ejemplo, un
+modelo de 7 MM de parámetros será mucho más fácil de implementar que
+un modelo de 175 MM de parámetros. Del mismo modo, optimizar un
+modelo de transformador en cuanto a la latencia es muy diferente de

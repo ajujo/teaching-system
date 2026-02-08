@@ -1,0 +1,31 @@
+8. Los marcos de ML suelen tener pequeños conjuntos de datos
+preconstruidos que se pueden cargar mientras se utiliza el
+marco, como los conjuntos de datos de TensorFlow.
+9. Algunas herramientas de arnés de evaluación albergan
+conjuntos de datos de referencia de evaluación que son lo
+suficientemente grandes para el afinado de PEFT. Por ejemplo,
+el lm-evaluation-harness de Eleuther AI alberga más de 400
+conjuntos de datos de referencia, con una media de más de
+2000 ejemplos por conjunto de datos.
+10. La Stanford Large Network Dataset Collection es un gran
+repositorio de conjuntos de datos de grafos.
+A menudo, puede que necesite anotar sus propios datos para el afinado. La
+anotación es un reto no solo por el proceso de anotación, sino también por
+la complejidad de crear directrices de anotación claras. Por ejemplo, hay
+que indicar explícitamente cómo es una buena respuesta y qué la hace
+buena. ¿Puede una respuesta ser correcta pero inútil? ¿Cuál es la diferencia
+entre las respuestas con una puntuación de 3 y de 4? Se necesitan directrices
+de anotación tanto para las anotaciones manuales como para las realizadas
+con IA.
+Algunos equipos, como en LinkedIn, han informado de que las directrices
+de anotación fueron una de las partes más difíciles de su proceso de
+ingeniería de IA. Es alarmante la frecuencia con la que la gente abandona la
+anotación cuidadosa a medio camino debido al tiempo y el esfuerzo que
+requiere, esperando en su lugar que sus modelos descubran las respuestas
+correctas por sí solos. Muchos modelos son lo suficientemente sólidos
+como para tener éxito ocasionalmente, pero confiar en los modelos para
+averiguarlo pueden ser demasiado arriesgado para muchas aplicaciones.
+La buena noticia es que estas directrices son las mismas que las que se
+aplican a los datos de evaluación, como se expone en el Capítulo 4. Este es
+otro argumento para invertir más tiempo en la elaboración de directrices y
+datos de evaluación. Si tiene suerte, sus ejemplos de evaluación pueden ser

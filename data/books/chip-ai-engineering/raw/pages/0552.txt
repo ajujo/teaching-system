@@ -1,0 +1,28 @@
+Los datos de entrenamiento deben mostrar los comportamientos que desean
+que aprenda su modelo. Adquirir anotaciones de datos de alta calidad
+siempre es un reto, pero es aún mayor si se quiere enseñar a los modelos
+comportamientos complejos, como el razonamiento de cadena de
+pensamiento (CoT) o el uso de herramientas. Repasemos estos dos ejemplos
+para entender por qué:
+Cadena de pensamiento
+Como se explica en el Capítulo 5, los prompts de cadena de
+pensamiento o CoT empujan al modelo a resolver un
+problema paso a paso antes de dar la respuesta final. Para
+enseñar a un modelo a generar respuestas paso a paso, sus
+datos de entrenamiento deben incluir respuestas CoT.
+"Scaling Instruction-Finetuned Language Models" (Chun et
+al., 2024) muestra que incorporar respuestas paso a paso en
+los datos de afinado mejora enormemente el rendimiento de
+modelos de varios tamaños en tareas CoT, con una precisión
+que casi se duplica en determinadas tareas.
+Generar respuestas en varios pasos puede ser tedioso y
+llevar mucho tiempo: explicar cómo resolver un problema
+matemático paso a paso es mucho más difícil que limitarse a
+dar la respuesta final. Para ilustrarlo, aquí hay dos ejemplos,
+uno solo con la respuesta final y otro con CoT. Ambos son de
+Chun et al. (2024):
+Instrucción:  Responde a la siguiente pregunta. ¿Cuál es el 
+punto de 
+ebullición del nitrógeno?
+Respuesta (sin CoT): -320.4 F
+Instrucción CoT: Responde la siguiente pregunta razonando paso a 

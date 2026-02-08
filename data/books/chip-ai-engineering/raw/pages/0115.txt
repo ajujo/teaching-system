@@ -1,0 +1,32 @@
+están ganando terreno varias arquitecturas alternativas.
+Un modelo popular es RWKV (Peng et al., 2023), un modelo basado en
+RNN que puede paralelizarse para el entrenamiento. Debido a su naturaleza
+de RNN, en teoría, no tiene la misma limitación de longitud de contexto que
+los modelos basados en transformadores. Sin embargo, en la práctica, no
+tener una limitación de longitud de contexto no garantiza un buen
+rendimiento con contextos largos.
+El modelado de secuencias largas sigue siendo un reto fundamental en el
+desarrollo de LLMs. Una arquitectura que ha demostrado ser muy
+prometedora en la memoria de largo alcance son los SSMs (modelos de
+espacio de estado) (Gu et al., 2021a). Desde la introducción de la
+arquitectura en 2021, se han introducido múltiples técnicas para hacerla más
+eficiente, mejor en el procesamiento de secuencias largas y escalable a
+modelos de mayor tamaño. Estas son algunas de estas técnicas, para ilustrar
+la evolución de una nueva arquitectura:
+S4, introducido en "Efficiently Modeling Long Sequences with
+Structured State Spaces" (Gu et al., 2021b), fue desarrollado para
+hacer los SSMs más eficientes.
+H3, presentado en "Hungry Hungry Hippos: Towards Language
+Modeling with State Space Models" (Fu et al., 2022), incorpora un
+mecanismo que permite al modelo recordar tokens anteriores y
+comparar tokens entre secuencias. La finalidad de este mecanismo
+es similar a la del mecanismo de atención de la arquitectura de
+transformadores, pero es más eficaz.
+Mamba, presentado en "Mamba: Linear-Time Sequence Modeling
+with Selective State Spaces" (Gu y Dao, 2023), escala los SSMs a
+tres mil millones de parámetros. En el modelado lingüístico,
+Mamba-3B supera a transformadores del mismo tamaño e iguala a
+transformadores del doble de su tamaño. Los autores también
+demuestran que el cálculo de inferencia de Mamba se escala
+linealmente con la longitud de la secuencia (por comparación con
+el escalado cuadrático de los transformadores). Su rendimiento

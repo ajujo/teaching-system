@@ -1,0 +1,24 @@
+Advanced Applications and Multi-Agent Systems
+224
+In all, we'll touch on the following topics in this chapter:
+•
+Agentic architectures
+•
+Multi-agent architectures
+•
+Building adaptive systems
+•
+Exploring reasoning paths
+•
+Agent memory
+Agentic architectures
+As we learned in Chapter 5, agents help humans solve tasks. Building an agent involves balancing
+two elements. On one side, it's very similar to application development in the sense that you're
+combining APIs (including calling foundational models) with production-ready quality. On the
+other side, you're helping LLMs think and solve a task.
+As we discussed in Chapter 5, agents don't have a specific algorithm to follow. We give an LLM
+partial control over the execution flow, but to guide it, we use various tricks that help us as humans
+to reason, solve tasks, and think clearly. We should not assume that an LLM can magically figure
+everything out itself; at the current stage, we should guide it by creating reasoning workflows.
+Let's recall the ReACT agent we learned about in Chapter 5, an example of a tool-calling pattern:
+Figure 6.1: A prebuilt REACT workflow on LangGraph

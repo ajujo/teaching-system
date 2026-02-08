@@ -1,0 +1,34 @@
+variar significativamente. Disponer de datos que recojan los diversos
+patrones de uso de su aplicación es clave para que el modelo funcione bien.
+La cobertura requiere una diversidad de datos suficiente, por lo que muchos
+nombran así a este atributo.
+Por ejemplo, si algunos usuarios construyen instrucciones detalladas con
+abundantes referencias mientras que otros prefieren instrucciones breves,
+sus datos de afinado debería incluir tanto instrucciones detalladas como
+breves. Si las consultas de los usuarios suelen contener errores tipográficos,
+debe incluir ejemplos que los incluyan. Si su aplicación funciona con varios
+lenguajes de programación, sus datos de entrenamiento deben incluir los
+lenguajes de programación que interesan a sus usuarios.
+Las distintas aplicaciones tienen diferentes dimensiones de diversidad. Por
+ejemplo, una herramienta de francés a inglés no necesita diversidad
+lingüística, pero podría beneficiarse de la diversidad de temas, duraciones y
+estilos de habla. Por otro lado, un chatbot que recomiende productos a
+clientes de todo el mundo no necesita necesariamente diversidad de
+dominios, pero la diversidad lingüística y cultural será importante.
+Para casos de uso general, como los chatbots, los datos de afinado deben ser
+diversos y representar una amplia gama de temas y patrones de habla. Ding
+et al., (2023) creen que la forma más directa de mejorar aún más el
+rendimiento de los modelos de lenguaje para chat es aumentar la calidad y
+diversidad de los datos empleados en el proceso de entrenamiento. Para
+desarrollar Nemotron (Adler et al., 2024), los investigadores de NVIDIA se
+centraron en crear un conjunto de datos con diversidad de tareas, diversidad
+de temas y diversidad de instrucciones, que incluye instrucciones para
+diferentes formatos de output, instrucciones con diferentes longitudes de
+output, e instrucciones para respuestas abiertas, así como respuestas de sí o
+no. "The Data Addition Dilemma" (Shen et al., 2024) demostró que, en
+algunos casos, añadir más datos heterogéneos pueden conducir a un peor
+rendimiento.
+Meta compartió que Llama 3 no se desvía significativamente de las
+versiones anteriores de Llama en términos de arquitectura del modelo. Las
+mejoras de rendimiento de Llama 3 "se deben principalmente a la mejora de
+la calidad y la diversidad de los datos, así como al aumento de la escala de

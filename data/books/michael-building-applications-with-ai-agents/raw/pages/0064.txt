@@ -1,0 +1,37 @@
+Another key UX consideration is how the context is managed over time. Some gener‐
+ative AI applications have no memory or learning, so have precisely the information
+you present them with in exactly that session. This requires users to copy and paste
+information into the prompt. More modern applications automatically manage this
+context for you. For example, Cursor uses the integrated development environment
+to intelligently identify code to include in each model inference. Some applications
+retain memory over time, enabling agents to remember past interactions, maintain
+conversation flow, and adapt to user preferences over time. Without these capabili‐
+ties, even technically advanced agents risk feeling disjointed or unresponsive. Simi‐
+larly, communicating agent capabilities, limitations, and uncertainty is essential for
+setting realistic user expectations and preventing misunderstandings. Users must
+know what an agent can and cannot do, and when they might need to intervene or 
+provide guidance.
+Finally, trust and transparency remain foundational to positive user experiences with
+agent systems. Predictable agent behavior and clear explanations of actions contrib‐
+ute to building relationships where users feel confident relying on agents in high-
+stakes scenarios.
+This chapter explores these core aspects of UX design for agentic systems, offering
+principles, best practices, and actionable insights to help you design interactions that
+are intuitive, reliable, and aligned with user needs. Whether you’re building a chatbot,
+an AI-powered personal assistant, or a fully autonomous workflow agent, the princi‐
+ples in this chapter will help you create meaningful and effective experiences that
+users can trust.
+Interaction Modalities
+Agent systems interact with users through a variety of modalities, each offering
+unique strengths, limitations, and design considerations. Whether through text,
+graphical interfaces, speech, or video, the choice of modality shapes how users per‐
+ceive and interact with agents. Text-based interfaces excel in clarity and traceability;
+graphical interfaces offer visual richness and intuitive controls; voice interactions
+provide hands-free convenience; and video interfaces enable dynamic, real-time
+communication.
+In the next section, we’ll explore these interaction modalities, examining their key
+strengths, challenges, and best practices for delivering exceptional UX in agent
+systems.
+42 
+| 
+Chapter 3: User Experience Design for Agentic Systems

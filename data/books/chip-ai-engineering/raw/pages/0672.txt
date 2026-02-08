@@ -1,0 +1,34 @@
+servir un máximo de X solicitudes/segundo sin degradación de la latencia, usted
+tiene que servir Y solicitudes/segundo, e Y es mayor que X. En un mundo ideal,
+los usuarios con solicitudes menos urgentes pueden enviar sus solicitudes a la
+API por lotes, para que su servicio pueda centrarse en procesar primero las
+solicitudes de la API en línea.
+7  Como se explica en “Almacenamiento en cache de prompts”, es habitual
+conocer de antemano el prompt de sistema de una aplicación. Lo que resulta
+difícil de predecir son las consultas exactas de los usuarios.
+8  En los primeros días de los chatbots, algunas personas se quejaban de que
+respondían demasiado rápido, lo que parecía poco natural. Véase "Lufthansa
+Delays Chatbot’s Responses to Make It More ‘Human’" (Ry Crozier, iTnews,
+mayo de 2017). Sin embargo, a medida que la gente se familiariza con los
+chatbots, esto ya no es así.
+9  LinkedIn utiliza el tiempo entre tokens (TBT) y NVIDIA utiliza la latencia
+entre tokens (ITL).
+10  Un experimento de Anyscale muestra que 100 tokens de input tienen
+aproximadamente el mismo impacto en la latencia global que un solo token de
+output.
+11  La gente se ha interesado por la utilización de FLOP/s durante mucho tiempo,
+pero el término MFU se introdujo en el artículo PaLM (Chowdhery et al., 2022).
+12  Los fabricantes de chips también podrían estar haciendo lo que yo llamo
+hackeo del pico de FLOP/s. Esto podría ejecutar experimentos en determinadas
+condiciones, como el uso de matrices dispersas con formas específicas, para
+aumentar su pico de FLOP/s. Las cifras más altas de pico de FLOP/s hacen que
+sus chips sean más atractivos, pero puede resultar más difícil para los usuarios
+conseguir una MFU alta.
+13  En los años 60, las computadora solo podían ejecutar redes neuronales de una
+capa, ofreciendo capacidades muy limitadas. En su famoso libro de 1969
+Perceptrons: An Introduction to Computational Geometry) (MIT Press), dos
+pioneros de la IA, Marvin Minsky y Seymour Papert, sostenían que las redes
+neuronales con capas ocultas aún podrían hacer poco. Su cita exacta fue: "No se
+sabe prácticamente nada de las capacidades de cálculo de este último tipo de
+máquinas. Creemos que pueden hacer poco más que un perceptrón de bajo
+orden". No había suficiente potencia de cálculo para rebatir su argumento, que

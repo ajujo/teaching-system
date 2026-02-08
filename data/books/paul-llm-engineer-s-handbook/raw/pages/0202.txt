@@ -1,0 +1,35 @@
+Chapter 4
+171
+            document_id=data_model.document_id,
+            author_id=data_model.author_id,
+            author_full_name=data_model.author_full_name,
+            metadata={
+                "embedding_model_id": embedding_model.model_id,
+                "embedding_size": embedding_model.embedding_size,
+                "max_input_length": embedding_model.max_input_length,
+            },
+        )
+The last step is to understand how the EmbeddingModelSingleton() works. It is a wrapper over 
+the SentenceTransformer() class from Sentence Transformers that initializes the embedding 
+model. Writing a wrapper over external packages is often good practice. Thus, when you want 
+to change the third-party tool, you have to modify only the internal logic of the wrapper instead 
+of the whole code base.
+The SentenceTransformer() class is initialized with the model_id defined in the Settings class, 
+allowing us to quickly test multiple embedding models just by changing the configuration file 
+and not the code. That is why I am not insisting at all on what embedding model to use. This 
+differs constantly based on your use case, data, hardware, and latency. But by writing a generic 
+class, which can quickly be configured, you can experiment with multiple embedding models 
+until you find the best one for you.
+from sentence_transformers.SentenceTransformer import SentenceTransformer
+from llm_engineering.settings import settings
+from .base import SingletonMeta
+class EmbeddingModelSingleton(metaclass=SingletonMeta):
+    def __init__(
+        self,
+        model_id: str = settings.TEXT_EMBEDDING_MODEL_ID,
+        device: str = settings.RAG_MODEL_DEVICE,
+        cache_dir: Optional[Path] = None,
+    ) -> None:
+        self._model_id = model_id
+        self._device = device
+        self._model = SentenceTransformer(

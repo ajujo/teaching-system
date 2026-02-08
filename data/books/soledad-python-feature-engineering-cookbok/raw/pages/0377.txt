@@ -1,0 +1,38 @@
+Extracting Features from Text Variables
+354
+TF-IDF shares the characteristics of BoW when creating the term matrix – that is, high feature 
+space and sparsity. To reduce the number of features and sparsity, we can remove stop words, set the 
+characters to lowercase, and retain words that appear in a minimum percentage of observations. If 
+you are unfamiliar with these terms, visit the Creating features with bag-of-words and n-grams recipe 
+in this chapter for a recap.
+In this recipe, we will learn how to set words into lowercase, remove stop words, retain words with a 
+minimum acceptable frequency, capture n-grams, and then return the TF-IDF statistic of words, all 
+using a single transformer from scikit-learn: TfidfVectorizer().
+How to do it...
+Let’s begin by loading the necessary libraries and getting the dataset ready:
+1.	
+Load pandas, TfidfVectorizer(), and the dataset from scikit-learn:
+import pandas as pd
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import (
+    TfidfVectorizer
+)
+2.	
+Let’s load the train set part of the 20 Newsgroup dataset into a pandas DataFrame:
+data = fetch_20newsgroups(subset='train')
+df = pd.DataFrame(data.data, columns=['text'])
+3.	
+To make interpreting the results easier, let’s remove punctuation and numbers from the 
+text variable:
+df['text'] = df['text'].str.replace(
+    ‹[^\w\s]›,››, regex=True).str.replace(
+    '\d+','', regex=True)
+4.	
+Now, let’s set up TfidfVectorizer() from scikit-learn so that, before creating the 
+TF-IDF metrics, it puts all text in lowercase, removes stop words, and retains words that appear 
+in at least 5% of the text pieces:
+vectorizer = TfidfVectorizer(
+    lowercase=True,
+    stop_words='english',
+    ngram_range=(1, 1),
+    min_df=0.05)

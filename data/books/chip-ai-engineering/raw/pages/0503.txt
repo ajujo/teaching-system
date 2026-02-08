@@ -1,0 +1,34 @@
+8 bits) durante el entrenamiento, lo que permite al modelo aprender a
+producir outputs de alta calidad en baja precisión. Sin embargo, QAT no
+reduce el tiempo de entrenamiento de un modelo, ya que sus cálculos se
+siguen realizando en alta precisión. QAT puede incluso aumentar el tiempo
+de entrenamiento, debido al trabajo extra de simular comportamientos de
+baja precisión.
+Por otro lado, entrenar un modelo directamente en una precisión menor
+puede ayudar a conseguir ambos objetivos. Ya en 2016 se intentó entrenar
+modelos con precisión reducida; véase Hubara et al. (2016) y Jacob et al.
+(2017). Character.AI (2024) compartió que fueron capaces de entrenar sus
+modelos completamente en INT8, lo que ayudó a eliminar el desajuste de
+precisión de entrenamiento/servicio a la vez que también mejoró
+significativamente la eficiencia del entrenamiento. Sin embargo, entrenar
+con precisión baja es más difícil, ya que la retropropagación es más sensible
+a la baja precisión. 20
+El entrenamiento de menor precisión se realiza a menudo en precisión
+mixta, donde una copia de las ponderaciones se mantiene en mayor
+precisión pero otros valores, como gradientes y activaciones, se mantienen
+en menor precisión. 21 También pueden tener valores de ponderación menos
+sensibles calculados con menor precisión y valores de ponderación más
+sensibles calculados con mayor precisión. Por ejemplo, LLM-QAT (Liu et
+al., 2023) cuantiza las ponderaciones y las activaciones en 4 bits pero
+mantiene las incrustaciones en 16 bits.
+Las partes del modelo que deben estar en menor precisión pueden
+establecerse automáticamente utilizando la funcionalidad de precisión mixta
+automática (AMP) que ofrecen muchos marcos de ML.
+También es posible realizar diferentes fases de entrenamiento en diferentes
+niveles de precisión. Por ejemplo, un modelo puede entrenarse con mayor
+precisión pero ajustarse con menor precisión. Esto es especialmente común
+con los modelos fundacionales, donde el equipo que entrena un modelo
+desde cero puede ser una organización con suficiente computación para un
+entrenamiento de mayor precisión. Una vez publicado el modelo, los
+desarrolladores con menor acceso computacional pueden ajustarlo con
+menor precisión.

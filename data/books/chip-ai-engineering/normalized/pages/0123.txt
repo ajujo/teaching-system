@@ -1,0 +1,20 @@
+Sin embargo, es poco probable que pueda utilizar sus máquinas a su
+máxima capacidad todo el tiempo. La utilización mide qué parte de la
+capacidad máxima de computación puede usarse. Lo que se considera una
+buena utilización depende del modelo, la carga de trabajo y el hardware.
+Por lo general, si puede obtener la mitad del rendimiento anunciado, un 50
+% de utilización, lo está haciendo bien. Todo lo que supere el 70 % de
+utilización se considera excelente. No deje que esta norma le impida
+conseguir una utilización aún mayor. En el Capítulo 9 se analizan con más
+detalle las métricas y la utilización del hardware.
+Con una utilización del 70 % y $2 /h para un H100, 17 el entrenamiento del
+GPT-3-175B costaría más de 4 millones de dólares:
+$2/H100/hora × 256 H100 × 24 horas × 256 días / 0.7 = $4,142,811.43
+SUGERENCIA
+En resumen, tres números señalan la escala de un modelo:
+Número de parámetros, que es un indicador de la capacidad de
+aprendizaje del modelo.
+Número de tokens con los que se ha entrenado un modelo, que es
+un indicador de cuánto ha aprendido un modelo.
+Número de FLOPs, que es una aproximación del costo de
+entrenamiento.

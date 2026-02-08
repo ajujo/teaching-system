@@ -1,0 +1,40 @@
+Building Intelligent RAG Systems
+168
+        self.documents.extend(docs)
+        self.store_documents(docs)
+    def _get_relevant_documents(
+            self, query: str, *, run_manager: CallbackManagerForRetrieverRun
+    ) -> List[Document]:
+        """Sync implementations for retriever."""
+        if len(self.documents) == 0:
+            return []
+        return VECTOR_STORE.similarity_search(query=query, k=self.k)
+There are a few methods that we should explain:
+•	
+store_documents() splits the documents and adds them to the vector store.
+•	
+add_uploaded_docs() processes files uploaded by the user, stores them temporarily, loads 
+them as documents, and adds them to the vector store.
+•	
+_get_relevant_documents() returns the top k documents related to a given query from 
+the vector store. This is the similarity search that we’ll use.
+Designing the state graph
+The rag.py module implements the RAG pipeline that ties together document retrieval with 
+LLM-based generation:
+•	
+System prompt: A template prompt instructs the AI on how to use the provided document 
+snippets when generating a response. This prompt sets the context and provides guidance 
+on how to utilize the retrieved information.
+•	
+State definition: A TypedDict class defines the structure of our graph’s state, tracking key 
+information like the user’s question, retrieved context documents, generated answers, 
+issues reports, and the conversation’s message history. This state object flows through 
+each node in our pipeline and gets updated at each step.
+•	
+Pipeline steps: The module defines several key functions that serve as processing nodes 
+in our graph:
+•	
+Retrieve function: Fetches relevant documents based on the user’s query
+•	
+generate function: Creates a draft answer using the retrieved documents and 
+query

@@ -1,0 +1,29 @@
+aumentados o utilizarse como ejemplos semilla para sintetizar nuevos datos.
+En la próxima sección veremos cómo hacerlo.
+Aumento y síntesis de datos
+Junto con la capacidad de cómputo y el talento, los datos son lo más difícil
+de conseguir de la IA. El objetivo a largo plazo de todo el sector es poder
+generar datos de forma programática. Dos procesos utilizados
+habitualmente son el aumento de datos y la síntesis de datos:
+El aumento de datos crea datos nuevos a partir de datos existentes
+(que son reales). Por ejemplo, dada una imagen real de un gato,
+puede darle la vuelta para crear una nueva imagen del mismo gato.
+8
+La síntesis de datos genera datos que imitan las propiedades de los
+datos reales. Por ejemplo, puede simular cómo se mueve un ratón
+por una página web para generar datos sobre cómo serían los
+movimientos de un bot.
+En otras palabras, los datos aumentados se derivan de datos reales, mientras
+que los datos sintéticos no son reales. Sin embargo, dado que el objetivo
+tanto de la ampliación como de la síntesis es automatizar la creación de
+datos, a veces ambos términos se utilizan indistintamente. En este capítulo
+utilizaré a menudo el término síntesis de datos para referirme a ambas.
+Los datos generados artificialmente tienen una larga historia en la ingeniería
+de software. Originalmente se utilizaba para generar datos falsos con fines
+de prueba. Por ejemplo, bibliotecas como Faker y Chance permiten generar
+datos en formatos sencillos como nombres, direcciones, números de
+teléfono y direcciones de correo electrónico para realizar pruebas.
+Supongamos que ha creado un programa para analizar las direcciones de
+envío. Puede utilizar generadores de datos falsos para generar direcciones
+en diferentes países y estados con diferentes formatos para asegurarse de
+que su programa pueda analizarlos todos.

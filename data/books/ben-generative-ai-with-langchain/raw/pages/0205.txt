@@ -1,0 +1,37 @@
+Building Intelligent RAG Systems
+178
+These strategies build a more reliable, transparent, and production-ready RAG application that 
+not only generates content but also explains its sources. Further performance and observability 
+strategies will be covered in Chapter 8.
+Building an effective RAG system means understanding its common failure points and addressing 
+them with quantitative and testing-based strategies. In the next section, we’ll explore the typical 
+failure points and best practices in relation to RAG systems.
+Troubleshooting RAG systems
+Barnett and colleagues in their paper Seven Failure Points When Engineering a Retrieval Augmented 
+Generation System (2024), and Li and colleagues in their paper Enhancing Retrieval-Augmented 
+Generation: A Study of Best Practices (2025) emphasize the importance of both robust design and 
+continuous system calibration:
+•	
+Foundational setup: Ensure comprehensive and high-quality document collections, clear 
+prompt formulations, and effective retrieval techniques that enhance precision and rel­
+evance.
+•	
+Continuous calibration: Regular monitoring, user feedback, and updates to the knowl­
+edge base help identify emerging issues during operation.
+By implementing these practices early in development, many common RAG failures can be pre­
+vented. However, even well-designed systems encounter issues. The following sections explore 
+the seven most common failure points identified by Barnett and colleagues (2024) and provide 
+targeted solutions informed by empirical research.
+A few common failure points and their remedies are as follows:
+•	
+Missing content: Failure occurs when the system lacks relevant documents. Prevent this 
+by validating content during ingestion and adding domain-specific resources. Use explicit 
+signals to indicate when information is unavailable.
+•	
+Missed top-ranked documents: Even with relevant documents available, poor ranking 
+can lead to their exclusion. Improve this with advanced embedding models, hybrid se­
+mantic-lexical searches, and sentence-level retrieval.
+•	
+Context window limitations: When key information is spread across documents that 
+exceed the model’s context limit, it may be truncated. Mitigate this by optimizing docu­
+ment chunking and extracting the most relevant sentences.

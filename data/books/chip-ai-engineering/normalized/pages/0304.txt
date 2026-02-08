@@ -1,0 +1,14 @@
+¿ESTÁN EMPEORANDO LOS MODELOS DE OPENAI?
+Cada vez que OpenAI actualiza sus modelos, la gente se queja de que
+sus modelos parecen empeorar. Por ejemplo, un estudio de Stanford y
+UC Berkeley (Chen et al., 2023) descubrió que, para muchas pruebas
+comparativas, tanto el rendimiento de GPT-3.5 como el de GPT-4
+cambiaron significativamente entre marzo de 2023 y junio de 2023,
+como se muestra en la Figura 4-9.
+figura 4-9. Cambios en el rendimiento de GPT-3.5 y GPT-4 desde marzo de 2023
+hasta junio de 2023 en determinadas pruebas comparativas (Chen et al., 2023).
+Suponiendo que OpenAI no lance intencionadamente modelos cada vez
+peores, ¿a qué puede deberse esta percepción? Una posible razón es que
+la evaluación es difícil, y nadie, ni siquiera OpenAI, sabe con certeza si
+un modelo está mejorando o empeorando. Aunque la evaluación es
+definitivamente difícil, dudo que OpenAI vuele completamente a

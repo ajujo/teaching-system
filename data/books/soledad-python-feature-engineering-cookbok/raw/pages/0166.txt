@@ -1,0 +1,17 @@
+Implementing feature binarization
+143
+6.	
+Let’s create a bar plot with the number of observations per bin per variable:
+variables = data_t.columns.to_list()
+plt.figure(figsize=(20, 20), constrained_layout=True)
+for i in range(10):
+    ax = plt.subplot(3, 4, i + 1)
+    var = variables[i]
+    t = data_t[var].value_counts(normalize=True)
+    t.plot.bar(ax=ax)
+    plt.xticks(rotation=0)
+    plt.ylabel("Observations per bin")
+    ax.set_title(var)
+plt.show()
+In the following plot, we can see the binarized variables, where most occurrences show the 0 value:
+Figure 4.11 – Bar plots containing the number of documents that either show each one of the words or not

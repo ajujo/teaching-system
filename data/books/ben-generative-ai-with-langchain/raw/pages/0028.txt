@@ -1,0 +1,22 @@
+1
+The Rise of Generative AI: From 
+Language Models to Agents
+The gap between experimental and production-ready agents is stark. According to LangChain’s 
+State of Agents report, performance quality is the #1 concern among 51% of companies using 
+agents, yet only 39.8% have implemented proper evaluation systems. Our book bridges this gap 
+on two fronts: first, by demonstrating how LangChain and LangSmith provide robust testing 
+and observability solutions; second, by showing how LangGraph’s state management enables 
+complex, reliable multi-agent systems. You’ll find production-tested code patterns that lever­
+age each tool’s strengths for enterprise-scale implementation and extend basic RAG into robust 
+knowledge systems.
+LangChain accelerates time-to-market with readily available building blocks, unified vendor 
+APIs, and detailed tutorials. Furthermore, LangChain and LangSmith debugging and tracing 
+functionalities simplify the analysis of complex agent behavior. Finally, LangGraph has excelled in 
+executing its philosophy behind agentic AI – it allows a developer to give a large language model 
+(LLM) partial control flow over the workflow (and to manage the level of how much control an 
+LLM should have), while still making agentic workflows reliable and well-performant.
+In this chapter, we’ll explore how LLMs have evolved into the foundation for agentic AI sys­
+tems and how frameworks like LangChain and LangGraph transform these models into pro­
+duction-ready applications. We’ll also examine the modern LLM landscape, understand the 
+limitations of raw LLMs, and introduce the core concepts of agentic applications that form the 
+basis for the hands-on development we’ll tackle throughout this book.

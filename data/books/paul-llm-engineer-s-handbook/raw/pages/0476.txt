@@ -1,0 +1,18 @@
+Chapter 11
+445
+•	
+The FTI architecture: A modular system with clear interfaces and components made it 
+easy to capture the relationship between the pipelines and automate them.
+•	
+Starting with an orchestrator since day 0: We started with ZenML at the beginning of 
+the project’s development. Early on, we only used it locally. But it acted as an entry point 
+for our pipelines and a way to monitor their execution. Doing so forced us to decouple 
+each pipeline and transfer the communication between them solely through various types 
+of data storage, such as the data warehouse, feature store, or artifact store. As we have 
+leveraged ZenML since day 0, we got rid of implementing a tedious CLI to configure our 
+application. Instead, we did it directly through YAML configuration files out of the box.
+In Figure 11.19, we can see all the pipelines that we have to chain together to fully automate our 
+training and deployment. The pipelines aren’t new; they aggregate everything we’ve covered 
+throughout this book. Thus, at this point, we will treat them as black boxes that interact with 
+each other.
+Figure 11.19: CT pipeline

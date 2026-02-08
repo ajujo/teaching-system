@@ -1,0 +1,33 @@
+Table of Contents
+xv
+Observability strategy • 393
+Continuous improvement for LLM applications • 394
+Cost management for LangChain applications ............................................................... 395
+Model selection strategies in LangChain • 395
+Tiered model selection • 395
+Cascading model approach • 397
+Output token optimization • 398
+Other strategies • 398
+Monitoring and cost analysis • 399
+Summary ....................................................................................................................... 400
+Questions ....................................................................................................................... 400
+Chapter 10: The Future of Generative Models: Beyond Scaling 
+ 403
+The current state of generative AI .................................................................................. 404
+The limitations of scaling and emerging alternatives ..................................................... 410
+The scaling hypothesis challenged • 410
+Big tech vs. small enterprises • 411
+Emerging alternatives to pure scaling • 413
+Scaling up (traditional approach) • 413
+Scaling down (efficiency innovations) • 414
+Scaling out (distributed approaches) • 414
+Evolution of training data quality • 416
+Democratization through technical advances • 417
+New scaling laws for post-training phases • 419
+Economic and industry transformation .......................................................................... 419
+Industry-specific transformations and competitive dynamics • 421
+Job evolution and skills implications • 422
+Near-term impacts (2025-2035) • 422
+Medium-term impacts (2035-2045) • 422
+Long-term shifts (2045 and beyond) • 423
+Economic distribution and equity considerations • 423

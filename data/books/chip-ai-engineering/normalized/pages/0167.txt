@@ -1,0 +1,25 @@
+Construir esa gramática e incorporarla al proceso de muestreo no es trivial.
+Dado que cada formato de output (JSON, YAML, regex, CSV, etc). necesita
+su propia gramática, el muestreo de restricciones es menos generalizable.
+Su uso se limita a los formatos cuyas gramáticas sean compatibles con
+herramientas externas o su equipo. La verificación gramatical también
+puede aumentar la latencia de la generación (Brandon T. Willard, 2024).
+Hay quienes están en contra del muestreo restringido porque creen que los
+recursos necesarios para ello se invierten mejor en entrenar a los modelos
+para que sean mejores a la hora de seguir instrucciones.
+Afinado
+Afinar un modelo con ejemplos que sigan el formato deseado es el método
+más eficaz y general para conseguir que los modelos generen outputs en
+este formato. 34 Puede funcionar con cualquier formato previsto. Aunque un
+afinado simple no garantiza que el modelo vaya a producir siempre el
+formato esperado, es mucho más fiable que el prompting.
+Para determinadas tareas, se puede garantizar el formato de output
+modificando la arquitectura del modelo antes del afinado. Por ejemplo, para
+la clasificación, puede añadir una cabeza clasificadora a la arquitectura del
+modelo fundacional para asegurarse de que el modelo solo produce una de
+las clases especificadas previamente. La arquitectura se parece a la de la
+Figura 2-22. 35 Este enfoque también se denomina transferencia basada en
+características y se analiza con más detalle junto con otras técnicas de
+aprendizaje por transferencia en el Capítulo 7.
+figura 2-22. Añadir una cabeza clasificadora a su modelo base para convertirlo en un
+clasificador. En este ejemplo, el clasificador trabaja con tres clases.

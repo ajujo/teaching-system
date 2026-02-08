@@ -1,0 +1,33 @@
+Chapter 9
+329
+This problem stands for any other metadata you want to present during the search, such as IDs, 
+names, or categories.
+The solution is to use self-querying to extract the tags or other critical metadata within the query 
+and use them alongside the vector search as filters. Self-querying uses an LLM to extract various 
+metadata fields crucial for your business use case, such as tags, IDs, number of comments, likes, 
+shares, etc. Afterward, you have complete control over how the extracted metadata is considered 
+during retrieval. In our LLM Twin use case, we extract the author’s name and use it as a filter. 
+Self-queries work hand-in-hand with filtered vector searches, which we will explain in the next 
+section.
+Now, let’s move on to the code. We begin by importing the necessary modules and classes on 
+which our code relies:
+from langchain_openai import ChatOpenAI
+from llm_engineering.application import utils
+from llm_engineering.domain.documents import UserDocument
+from llm_engineering.domain.queries import Query
+from llm_engineering.settings import settings
+from .base import RAGStep
+from .prompt_templates import SelfQueryTemplate
+Next, we define the SelfQuery class, which inherits from RAGStep and implements the generate() 
+method. The class can be found at https://github.com/PacktPublishing/LLM-Engineers-
+Handbook/blob/main/llm_engineering/application/rag/self_query.py:
+class SelfQuery(RAGStep):
+    def generate(self, query: Query) -> Query:
+        if self._mock:
+            return query
+In the generate() method, we check if the _mock attribute is set to True. If it is, we will return the 
+original query object unmodified. This allows us to bypass calling the model while testing and 
+debugging. If not in mock mode, we create the prompt template and initialize the language model.
+        prompt = SelfQueryTemplate().create_template()
+        model = ChatOpenAI(model=settings.OPENAI_MODEL_ID, api_
+key=settings.OPENAI_API_KEY, temperature=0)

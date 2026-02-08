@@ -1,0 +1,40 @@
+• Chapter 1 introduces agents, their promise, use cases, how they compare to tradi‐
+tional ML, and recent advancements.
+• Chapter 2 provides an overview of designing agent systems, including scenario
+selection, core components (model selection, tools, memory, planning), design
+trade-offs, architecture patterns (single-agent, multiagent, modular), and best
+practices.
+• Chapter 3 focuses on UX design, covering interaction modalities (text, graphical,
+speech, video), synchronous versus asynchronous experiences, context retention,
+communicating capabilities, trust, and key UX principles.
+The next five chapters focus on creating, orchestrating, and scaling agents:
+• Chapter 4 dives into tools, including design (local, API-based, plug-in, hierar‐
+chies) and automated tool development (code generation, imitation learning, tool
+learning from rewards).
+• Chapter 5 covers orchestration, with fundamentals (parameterization, tool selec‐
+tion, execution), tool selection methods (generative, semantic, hierarchical,
+machine-learned), tool topologies (decomposition, single/parallel/sequential exe‐
+cution, chains, trees, graphs), and planning strategies (incremental execution,
+zero-shot, few-shot, ReAct).
+• Chapter 6 explores memory, including foundational approaches (context win‐
+dows, keyword-based), semantic memory and vector stores (semantic search,
+RAG, experience memory), GraphRAG (knowledge graphs), and working mem‐
+ory (whiteboards, note-taking).
+• Chapter 7 addresses learning from experience, with nonparametric learning
+(experiences as examples, exploration/exploitation, reflection), parametric learn‐
+ing (fine-tuning large/small models), and transfer learning.
+• Chapter 8 discusses scaling from one agent to many, including when to use mul‐
+tiagents, coordination (democratic, manager, hierarchical, actor-critic, automated
+design), and frameworks such as LangChain.
+The final five chapters address validation, monitoring, security, improvement, and
+human-agent integration:
+• Chapter 9 covers measurement and validation, with key objectives (accuracy,
+robustness, efficiency, etc.), evaluation sets, unit tests (tools, planning, memory,
+learning), integration tests (end-to-end, consistency, hallucinations), limitations,
+and deployment preparation.
+• Chapter 10 focuses on production monitoring, including causes of failures, agent
+metrics (system health, automated/human evaluation, feedback), distribution
+shifts, and monitoring at scale (analytics, alerting, logging).
+xvi 
+| 
+Preface

@@ -1,0 +1,31 @@
+Elogio de Ingeniería de IA
+Este libro ofrece una guía completa y bien estructurada de los aspectos
+esenciales para la creación de sistemas de IA generativa. Es de lectura
+obligada para cualquier profesional que desee ampliar la IA a toda la
+empresa.
+-Vittorio Cretella, antiguo CIO de P&G y Mars
+Chip Huyen entiende la IA generativa. Además, es una excelente profesora
+y escritora cuyo trabajo ha sido decisivo para ayudar a los equipos a
+incorporar la IA a la producción.
+Utilizando sus profundos conocimientos, Ingeniería de IA es una guía
+completa y holística, que detalla magistralmente todo lo necesario para
+diseñar e implementar aplicaciones de IA generativa en producción.
+-Luke Metz, cocreador de ChatGPT, antiguo director de investigación de
+OpenAI
+Todos los ingenieros de IA que creen aplicaciones para el mundo real
+deberían leer este libro. Se trata de una guía esencial para el diseño integral
+de sistemas de IA, desde el desarrollo y la evaluación de modelos, hasta su
+implementación y operación a gran escala.
+-Andrei Lopatenko, Director de Search and AI, Neuron7
+Este libro es una guía esencial para crear productos de IA escalables. A
+diferencia de otros libros centrados en herramientas o tendencias actuales
+que cambian constantemente, Chip ofrece conocimientos esenciales y
+atemporales. Ya sea jefe de producto o ingeniero, este libro salva
+eficazmente la brecha de colaboración entre equipos interfuncionales,
+convirtiéndose en una lectura obligada para cualquiera que se dedique al
+desarrollo de IA.
+-Aileen Bui, Directora de Operaciones de Productos de Inteligencia
+Artificial, Google
+Este es el paso definitivo de transición a la ingeniería de IA de la mano de
+uno de los grandes de la ingeniería de ML. Chip ha realizado proyectos e
+historias de éxito en todas las etapas de una empresa y, por primera vez, ha

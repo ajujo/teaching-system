@@ -1,0 +1,12 @@
+RAG Feature Pipeline
+148
+    metadata["num_embedded_chunks"] = len(embedded_chunks)
+    step_context = get_step_context()
+    step_context.add_output_metadata(output_name="embedded_documents", 
+metadata=metadata)
+    return embedded_chunks
+In Figure 4.14, you can see the metadata of the chunking and embedding ZenML step. For exam-
+ple, you can quickly understand that we transformed 76 documents into 2,373 chunks, or the 
+properties we used for chunking articles, such as a chunk_size of 500 and a chunk_overlap of 50.
+Figure 4.14: Metadata of the embedding and chunking ZenML step, detailing the uncategorized 
+and chunking dropdowns

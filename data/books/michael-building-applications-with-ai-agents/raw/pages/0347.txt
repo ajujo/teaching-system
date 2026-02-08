@@ -1,0 +1,95 @@
+voice interfaces, 50-53
+interactive voice response (IVR) systems, 53
+interference, 316
+internal failures, protections, 292, 296
+IT help desk agent, 8
+iterative design, 34-35
+IVR (interactive voice response) systems, 53
+J
+jailbreaking, 274
+joint embedding, 316
+K
+K-nearest neighbors (KNN), 316
+keyword-driven searches, 118
+KL (Kullback-Leibler) divergence, 237
+knowledge graphs, 316
+building, 124-130
+dynamic, 130-132
+GraphRAG, 123-124
+KS (Kolmogorov-Smirnov) test, 237
+Kullback-Leibler (KL) divergence, 237
+L
+LangChain
+API-based tools, 75-78
+local tools, 73-75
+overview, 72
+plug-in tools, 78-81
+stateful tools, 84-85
+LangChain Expression Language (LCEL), 108,
+108
+Langfuse monitoring stack, 229
+LangGraph, 13, 115-116
+graph implementation, 109-111
+OTel instrumentation, 230
+language modeling, 316
+language-based agents, metrics, 206
+latency
+graph execution, 109
+model selection, 22
+multiagent systems, 176
+reflex agents, 90
+speech and voice agents, 50
+standard tool selection method, 94
+latent space, 316
+layered feedback loops, monitoring, 225
+LCEL (LangChain Expression Language), creat‐
+ing chains, 108-108
+learning, 135
+improvement loops, 243-245
+nonparametric, 135
+exemplar learning, 135-137
+experiential, 141-146
+Reflexion, 137-141
+parametric, 135, 146
+direct preference optimization, 158-161
+large foundation models, 146-151
+reinforcement learning with verifiable
+rewards, 161-162
+small foundation models, 151-153
+supervised fine-tuning, 153-157
+testing, 213
+legal document review agent, 8
+LLM tracing and evaluation monitoring stack,
+228
+local communication, compared to distributed,
+189
+local tools
+advantages, 73
+binding to models, 74-75
+defining, 74
+drawbacks, 73
+metadata, 73
+registering, 74
+logistics agent, 8
+logits, 316
+logs, 289
+accountability, 308-309
+data security, 287
+OTel, 231
+tool invocation, 85
+Loki, 223
+OTel instrumentation, 232
+long-term memory, agentic systems, 26
+LSTM (long short-term memory), 316
+M
+MAESTRO, 281-283
+real-world examples, 282
+maintenance
+building knowledge graphs, 126
+local tools, 73
+manager coordination, multiagent systems, 181
+manual autonomy, 56
+MAS (Meta Agent Search), 317
+Index 
+| 
+325

@@ -1,0 +1,38 @@
+Evaluating LLMs
+280
+5.	
+This prompt is given as a user query to the GPT-4o-mini model. The system prompt rein-
+forces that we are interested in answer evaluation based on accuracy and style:
+    completion = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful assistant who 
+evaluates answers based on accuracy and style. Provide your response 
+in JSON format with a short analysis and score for each criterion.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+        response_format={"type": "json_object"},
+        max_tokens=1000,
+        temperature=0.8,
+    )
+6.	 As in the previous chapters, we will batch our requests to speed up the process. This is 
+why we create an evaluate_batch() function, which returns a list of parsed structured 
+outputs with their corresponding indices. These indices are important to ensure a correct 
+ordering of the evaluations:
+def evaluate_batch(batch, start_index):
+    client = OpenAI(api_key=OPENAI_KEY)
+    return [
+        (i, evaluate_answer(instr, ans, client))
+        for i, (instr, ans) in enumerate(batch, start=start_index)
+    ]
+7.	
+We can now orchestrate the previous code in the evaluate_answers() function. It takes 
+the model ID, number of threads, and batch size as inputs. First, we load the dataset with 
+the generations we previously saved:
+def evaluate_answers(model_id: str, num_threads: int = 10, batch_
+size: int = 5) -> Dataset:
+    dataset = load_dataset(f"mlabonne/{model_id.split('/')
+[-1]}-results", split="all")

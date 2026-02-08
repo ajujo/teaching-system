@@ -1,0 +1,28 @@
+generar dos outputs cuesta aproximadamente el doble que generar uno. 29
+AVISO
+Utilizo el término cómputo de tiempo de prueba para ser coherente con la
+literatura existente, a pesar de que varios de los primeros revisores
+protestaron porque este término es confuso. En la investigación de IA,
+"tiempo de prueba" se suele utilizar para referirse a la inferencia, ya que la
+mayoría de los investigadores solo hacen inferencia para probar un modelo.
+Sin embargo, esta técnica puede aplicarse a los modelos en producción en
+general. Es cómputo de tiempo de prueba porque el número de outputs que
+pueden muestrear está determinado por la cantidad de cómputo que pueden
+asignar a cada llamada de inferencia.
+Para elegir el mejor output, puede mostrar a los usuarios varios outputs y
+dejarles elegir el que mejor les convenga, o puede idear un método para
+seleccionar el mejor. Un método de selección consiste en elegir el output
+con mayor probabilidad. El output de un modelo lingüístico es una
+secuencia de tokens, y cada token tiene una probabilidad computada por el
+modelo. La probabilidad de un output es el producto de las probabilidades
+de todos los tokens del output.
+Piense en la secuencia de tokens [“I", "love", "food"]. Si la probabilidad de
+"I" es 0.2, la probabilidad de "love" dado "I" es 0.1, y la probabilidad de
+"food" dado "I" y "love" es 0.3, la probabilidad de la secuencia es: 0.2 × 0.1
+× 0.3 = 0.006. Matemáticamente, esto puede denotarse de la siguiente
+manera:
+p(I love food) = p(I) × p(I | love) × p(food | I, love)
+Recuerde que es más fácil trabajar con probabilidades en escala logarítmica.
+El logaritmo de un producto es igual a una suma de logaritmos, por lo que
+el logprob de una secuencia de tokens es la suma de los logprob de todos
+los tokens de la secuencia:

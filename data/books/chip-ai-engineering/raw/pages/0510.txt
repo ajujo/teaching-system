@@ -1,0 +1,19 @@
+figura 7-9. Para modificar el comportamiento de un modelo, pueden combinarse
+prompts duros y suaves.
+El subcampo de la sintonización con prompts suaves se caracteriza por una
+serie de técnicas que suenan muy parecido y pueden resultar confusas,
+como la sintonización prefija (Li y Liang, 2021), la sintonización P (Liu et
+al., 2021) y la sintonización de prompts (Lester et al., 2021). 23 Se
+diferencian principalmente en los lugares en los que se insertan los prompts
+suaves. Por ejemplo, la sintonización prefija antepone tokens de prompt
+suave al input en cada capa del transformador, mientras que la sintonización
+de prompts antepone tokens de prompt suave solo al input incrustado. Si
+desea utilizar cualquiera de ellos, muchos marcos PEFT los implementarán
+de inmediato.
+Para hacerme una idea de qué métodos PEFT se están utilizando, analicé
+más de 1000 problemas abiertos en el repositorio de GitHub
+huggingface/peft en octubre de 2024. Se supone que si alguien utiliza una
+técnica, es más probable que informe de problemas o haga preguntas al
+respecto. La Figura 7-10 muestra el resultado. Para "P-Tuning", he buscado
+las palabras clave "p_tuning" y "p tuning" para tener en cuenta las distintas
+grafías.

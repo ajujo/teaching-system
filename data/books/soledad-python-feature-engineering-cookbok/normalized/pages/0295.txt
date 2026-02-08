@@ -1,0 +1,30 @@
+Extracting Features from Relational Data with Featuretools
+272
+Each customer made one or more purchases, identified by the invoice number. Each invoice contains
+one or more items, identified by the stock code. Each item can be bought by one or more customers
+and is therefore present in several invoices. With these relationships in mind, let's proceed to the recipe.
+How to do it...
+In this recipe, we will set up an entity set with the data, and then highlight the different relationships
+in the dataset. Finally, we will create features by aggregating information in the dataset at the customer,
+invoice, and product levels:
+1.
+Let's import the required libraries:
+import pandas as pd
+import featuretools as ft
+from woodwork.logical_types import Categorical
+2.
+Let's load the retail dataset described in the Getting ready section and display its first five rows:
+df = pd.read_csv(
+    «retail.csv», parse_dates=[«invoice_date»])
+df.head()
+In the following screenshot, we see the unique identifiers for customers (customer_id)
+and invoices (invoice), and additional information about the items bought in each invoice,
+such as the item's code (stock_code), description, quantity, and unit price, as well as the
+date of the invoice:
+Figure 9.2 - Online Retail II dataset
+Note
+Use pandas' unique() function to identify the number of unique items, customers, and
+invoices - for example, by executing df["customer_id"].nunique().
+3.
+Let's initialize an entity set with an arbitrary name, such as data:
+es = ft.EntitySet(id="data")

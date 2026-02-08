@@ -1,0 +1,39 @@
+Chapter 2
+57
+Using Stable Diffusion
+Stable Diffusion 3.5 Large is Stability AI’s latest text-to-image model, released in March 2024. 
+It’s a Multimodal Diffusion Transformer (MMDiT) that generates high-resolution images with 
+remarkable detail and quality.
+This model uses three fixed, pre-trained text encoders and implements Query-Key Normalization 
+for improved training stability. It’s capable of producing diverse outputs from the same prompt 
+and supports various artistic styles.
+from langchain_community.llms import Replicate
+# Initialize the text-to-image model with Stable Diffusion 3.5 Large
+text2image = Replicate(
+    model="stability-ai/stable-diffusion-3.5-large",
+    model_kwargs={
+        "prompt_strength": 0.85,
+        "cfg": 4.5,
+        "steps": 40,
+        "aspect_ratio": "1:1",
+        "output_format": "webp",
+        "output_quality": 90
+    }
+)
+# Generate an image
+image_url = text2image.invoke(
+    "A detailed technical diagram of an AI agent"
+)
+The recommended parameters for the new model include:
+•	
+prompt_strength: Controls how closely the image follows the prompt (0.85)
+•	
+cfg: Controls how strictly the model follows the prompt (4.5)
+•	
+steps: More steps result in higher-quality images (40)
+•	
+aspect_ratio: Set to 1:1 for square images
+•	
+output_format: Using WebP for a better quality-to-size ratio
+•	
+output_quality: Set to 90 for high-quality output

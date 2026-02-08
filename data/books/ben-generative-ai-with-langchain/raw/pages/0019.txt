@@ -1,0 +1,35 @@
+Preface
+xviii
+For technical decision-makers evaluating LLM technologies within their organizations, this book 
+offers strategic insight into successful LLM project implementations. You’ll understand the ar­
+chitectural patterns that differentiate experimental systems from production-ready ones, learn 
+to identify high-value use cases, and discover how to avoid the integration and scaling issues 
+that cause most projects to fail. The book provides clear criteria for evaluating implementation 
+approaches and making informed technology decisions.
+What this book covers
+Chapter 1, The Rise of Generative AI, From Language Models to Agents, introduces the modern LLM 
+landscape and positions LangChain as the framework for building production-ready AI applica­
+tions. You’ll learn about the practical limitations of basic LLMs and how frameworks like LangC­
+hain help with standardization and overcoming these challenges. This foundation will help you 
+make informed decisions about which agent technologies to implement for your specific use cases.
+Chapter 2, First Steps with LangChain, gets you building immediately with practical, hands-on exam­
+ples. You’ll set up a proper development environment, understand LangChain’s core components 
+(model interfaces, prompts, templates, and LCEL), and create simple chains. The chapter shows 
+you how to run both cloud-based and local models, giving you options to balance cost, privacy, 
+and performance based on your project needs. You’ll also explore simple multimodal applications 
+that combine text with visual understanding. These fundamentals provide the building blocks 
+for increasingly sophisticated AI applications.
+Chapter 3, Building Workflows with LangGraph, dives into creating complex workflows with LangC­
+hain and LangGraph. You’ll learn to build workflows with nodes and edges, including conditional 
+edges for branching based on state. The chapter covers output parsing, error handling, prompt 
+engineering techniques (zero-shot and dynamic few-shot prompting), and working with long 
+contexts using Map-Reduce patterns. You’ll also implement memory mechanisms for managing 
+chat history. These skills address why many LLM applications fail in real-world conditions and 
+give you the tools to build systems that perform reliably.
+Chapter 4, Building Intelligent RAG Systems, addresses the “hallucination problem” by ground­
+ing LLMs in reliable external knowledge. You’ll master vector stores, document processing, and 
+retrieval strategies that improve response accuracy. The chapter’s corporate documentation 
+chatbot project demonstrates how to implement enterprise-grade RAG pipelines that maintain 
+consistency and compliance—a capability that directly addresses data quality concerns cited 
+in industry surveys. The troubleshooting section covers seven common RAG failure points and 
+provides practical solutions for each.

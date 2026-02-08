@@ -1,0 +1,38 @@
+actions dynamically based on changing conditions. This asynchronous processing
+dramatically enhances efficiency, reducing idle time and optimizing the use of com‐
+putational resources.
+The practical implications of this shift are substantial. For example:
+• Emails can arrive with reply drafts already prepared.
+• Invoices can come with pre-populated payment details.
+• Software engineers might receive tickets accompanied by code to solve them and
+unit tests to assess them.
+• Customer support agents can be provided with suggested responses and recom‐
+mended actions.
+• Security analysts can receive alerts that have already been automatically investi‐
+gated and enriched with relevant threat intelligence.
+In each case, agents are not just speeding up routine workflows—they are changing
+the nature of work itself. This evolution transforms human roles from task executors
+to task managers. Rather than spending time on repetitive or mechanical steps, indi‐
+viduals can focus on strategic oversight, review, and high-value decision making—
+amplifying human creativity and judgment while letting agents handle the opera‐
+tional details. These agents make it much easier for human roles to be proactive
+rather than reactive.
+Practical Applications and Use Cases
+The versatility of autonomous agents opens up a myriad of applications across differ‐
+ent industries. To keep this book grounded in clear, specific use cases, I have seven
+real-world example agents with evaluation systems available in the public GitHub
+repo supporting this book. We will frequently turn back to these examples as we
+explore the key aspects of agent systems:
+Customer support agent
+Customer support is one of the most prevalent applications for autonomous
+agents. These agents handle common inquiries, process refunds, update orders,
+and escalate complex issues to human representatives, providing 24/7 support
+while enhancing customer satisfaction and reducing operational costs.
+Financial services agent
+In banking and financial services, agents assist with account management, loan
+processing, fraud investigation, and investment portfolio rebalancing. They
+streamline customer service, accelerate transaction processing, and improve
+security by detecting suspicious activities in real time.
+Practical Applications and Use Cases 
+| 
+7

@@ -1,0 +1,35 @@
+Chapter 8
+329
+    "criteria", criteria=custom_friendliness, llm=evaluation_llm
+)
+friendliness_result = friendliness_evaluator.evaluate_strings(
+    prediction=prediction_health, input=prompt_health
+)
+print("Friendliness evaluation result:", friendliness_result)
+The evaluator should return whether the tone is friendly (Y/N) along with reasoning. In fact, this 
+is what we get:
+Friendliness evaluation result: {'reasoning': "The criterion is to assess 
+whether the response is written in a friendly and approachable tone. 
+The submission provides the information in a straightforward manner and 
+ends with a suggestion to follow doctor's advice for personal health 
+management. This suggestion can be seen as a friendly advice, showing 
+concern for the reader's health. Therefore, the submission can be 
+considered as written in a friendly and approachable tone.\n\nY", 'value': 
+'Y', 'score': 1}
+This evaluation approach is particularly valuable for applications in healthcare, customer service, 
+and educational domains where the manner of communication is as important as the factual 
+content. The explicit reasoning provided by the evaluator helps development teams understand 
+exactly which elements of the response contribute to its tone, making it easier to debug and im­
+prove response generation. While binary Y/N scores are useful for automated quality gates, the 
+detailed reasoning offers more nuanced insights for continuous improvement. For production 
+systems, consider combining multiple criteria evaluators to create a comprehensive quality score 
+that reflects all aspects of your application’s communication requirements.
+Evaluating the output format
+When working with LLMs to generate structured data like JSON, XML, or CSV, format validation 
+becomes critical. Financial applications, reporting tools, and API integrations often depend on 
+correctly formatted data structures. A technically perfect response that fails to adhere to the 
+expected format can break downstream systems. LangChain provides specialized evaluators for 
+validating structured outputs, as demonstrated in the following example using JSON validation 
+for a financial report:
+from langchain.evaluation import JsonValidityEvaluator
+# Initialize the JSON validity evaluator.

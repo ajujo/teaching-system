@@ -1,0 +1,42 @@
+Building Knowledge Graphs 124
+Promise and Peril of Dynamic Knowledge Graphs 130
+Note-Taking 133
+Conclusion 134
+7. Learning in Agentic Systems. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 135
+Nonparametric Learning 135
+Nonparametric Exemplar Learning 135
+Reflexion 137
+Experiential Learning 141
+Parametric Learning: Fine-Tuning 146
+Fine-Tuning Large Foundation Models 146
+The Promise of Small Models 151
+Supervised Fine-Tuning 153
+Direct Preference Optimization 158
+Reinforcement Learning with Verifiable Rewards 161
+Conclusion 162
+8. From One Agent to Many. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 163
+How Many Agents Do I Need? 163
+Single-Agent Scenarios 163
+Multiagent Scenarios 170
+Swarms 177
+Principles for Adding Agents 178
+Multiagent Coordination 180
+Democratic Coordination 180
+Manager Coordination 181
+Hierarchical Coordination 182
+Actor-Critic Approaches 182
+Automated Design of Agent Systems 184
+Communication Techniques 189
+Local Versus Distributed Communication 189
+Agent-to-Agent Protocol 189
+Message Brokers and Event Buses 192
+Actor Frameworks: Ray, Orleans, and Akka 195
+Orchestration and Workflow Engines 199
+Managing State and Persistence 201
+Conclusion 202
+9. Validation and Measurement. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 205
+Measuring Agentic Systems 205
+Measurement Is the Keystone 206
+viii
+|
+Table of Contents

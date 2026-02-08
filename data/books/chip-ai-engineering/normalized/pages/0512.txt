@@ -1,0 +1,21 @@
+introducir capas adicionales en el modelo base, LoRA utiliza módulos que
+pueden fusionarse con las capas originales.
+Puede aplicar LoRA a matrices de ponderaciones individuales. Dada una
+matriz de ponderaciones, LoRA descompone esta matriz en el producto de
+dos matrices más pequeñas y, a continuación, actualiza estas dos matrices
+más pequeñas antes de fusionarlas de nuevo con la matriz original.
+Consideremos la matriz de ponderaciones W de dimensión n × m. LoRA
+funciona de la siguiente manera:
+1. En primer lugar, elegir la dimensión de las matrices más pequeñas.
+Sea r el valor elegido. Construir dos matrices: A (dimensión n × r)
+and B (dimensión r × m). Su producto es WAB, que tiene la misma
+dimensión que W. r es el rango LoRA.
+1. Sumar WAB a la matriz de ponderaciones original W para crear una
+nueva matriz de ponderaciones Wʹ. Utilizar Wʹ en lugar de W como
+parte del modelo. Puede utilizar un hiperparámetro ɑ para
+determinar cuánto debe contribuir WAB a la nueva matriz:
+W ′ = W + α
+r WAB
+2. Durante el afinado, actualizar solo los parámetros de A y B. W se
+mantiene intacto.
+La Figura 7-11 visualiza este proceso.

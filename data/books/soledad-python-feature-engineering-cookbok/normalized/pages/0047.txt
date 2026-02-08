@@ -1,0 +1,31 @@
+Imputing Missing Data
+24
+If we execute indicators, we will see the names we will use for the new variables: ['A1_na',
+'A3_na', 'A4_na', 'A5_na', 'A6_na', 'A7_na', 'A8_na'].
+5.
+Let's make a copy of the original DataFrames:
+X_train_t = X_train.copy()
+X_test_t = X_test.copy()
+6.
+Let's add the missing indicators:
+X_train_t[indicators] =X_train[
+    varnames].isna().astype(int)
+X_test_t[indicators] = X_test[
+    varnames].isna().astype(int)
+Note
+If you want the indicators to have True and False as values instead of 0 and 1, remove
+astype(int) in step 6.
+7.
+Let's inspect the resulting DataFrame:
+X_train_t.head()
+We can see the newly added variables at the right of the DataFrame in the following image:
+Figure 1.4 - DataFrame with the missing indicators
+Now, let's add missing indicators using Feature-engine instead.
+8.
+Set up the imputer to add binary indicators to every variable with missing data:
+imputer = AddMissingIndicator(
+    variables=None, missing_only=True
+    )
+9.
+Fit the imputer to the train set so that it finds the variables with missing data:
+imputer.fit(X_train)

@@ -1,0 +1,13 @@
+Performing ordinal encoding based on the target value
+67
+Figure 2.8 - Mean target value per category of A7 before the encoding
+8.
+Let's plot the mean target value per category in the encoded variable:
+y_train.groupby(X_train_enc["A7"]).mean().plot()
+plt.title("Relationship between A7 and the target")
+plt.ylabel("Mean of target")
+plt.show()
+The encoded variable shows a monotonic relationship with the target - the higher the mean
+target value, the higher the digit assigned to the category:
+Figure 2.9 - Mean target value per category of A7 after the encoding.
+Now, let's perform ordered ordinal encoding using feature-engine.

@@ -1,0 +1,32 @@
+Chapter 3
+67
+We begin by importing the necessary Python modules for URL handling and regex, along with 
+importing our crawler classes:
+import re
+from urllib.parse import urlparse
+from loguru import logger
+from .base import BaseCrawler
+from .custom_article import CustomArticleCrawler
+from .github import GithubCrawler
+from .linkedin import LinkedInCrawler
+from .medium import MediumCrawler
+The CrawlerDispatcher class is defined to manage and dispatch appropriate crawler instances 
+based on given URLs and their domains. Its constructor initializes a registry to store the regis-
+tered crawlers.
+class CrawlerDispatcher:
+    def __init__(self) -> None:
+        self._crawlers = {}
+As we are using the builder creational pattern to instantiate and configure the dispatcher, we 
+define a build() class method that returns an instance of the dispatcher:
+    @classmethod
+    def build(cls) -> "CrawlerDispatcher":
+        dispatcher = cls()
+        return dispatcher
+The dispatcher includes methods to register crawlers for specific platforms like Medium, Linke-
+dIn, and GitHub. These methods use a generic register() method under the hood to add each 
+crawler to the registry. By returning self, we follow the builder creational pattern (more on the 
+builder pattern: https://refactoring.guru/design-patterns/builder). We can chain mul-
+tiple register_*() methods when instantiating the dispatcher as follows: CrawlerDispatcher.
+build().register_linkedin().register_medium().
+    def register_medium(self) -> "CrawlerDispatcher":
+        self.register("https://medium.com", MediumCrawler)

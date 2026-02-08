@@ -1,0 +1,33 @@
+Imputing Missing Data
+6
+12.	 Let’s remove the rows with missing data in the training and test sets:
+train_cca = cca.transform(X_train)
+test_cca = cca.transform(X_test)
+Use train_cca.isnull().sum() to corroborate the absence of missing data in the 
+complete case dataset.
+13.	 DropMissingData can automatically adjust the target after removing missing data from 
+the training set:
+train_c, y_train_c = cca.transform_x_y( X_train, y_train)
+test_c, y_test_c = cca.transform_x_y(X_test, y_test)
+The previous code removed rows with nan from the training and test sets and then re-aligned the 
+target variables.
+Note
+To remove observations with missing data in a subset of variables, use 
+DropMissingData(variables=['A3', 'A4']). To remove rows with nan in at 
+least 5% of the variables, use DropMissingData(threshold=0.95).
+How it works...
+In this recipe, we plotted the proportion of missing data in each variable and then removed all 
+observations with missing values.
+We used pandas isnull() and mean() methods to determine the proportion of missing 
+observations in each variable. The isnull() method created a Boolean vector per variable with 
+True and False values indicating whether a value was missing. The mean() method took the 
+average of these values and returned the proportion of missing data.
+We used pandas plot.bar() to create a bar plot of the fraction of missing data per variable. In 
+Figure 1.2, we saw the fraction of nan per variable in the training and test sets.
+To remove observations with missing values in any variable, we used pandas’ dropna(), thereby 
+obtaining a complete case dataset.
+Finally, we removed missing data using Feature-engine’s DropMissingData(). This imputer 
+automatically identified and stored the variables with missing data from the train set when we called 
+the fit() method. With the transform() method, the imputer removed observations with nan 
+in those variables. With transform_x_y(), the imputer removed rows with nan from the data 
+sets and then realigned the target variable.

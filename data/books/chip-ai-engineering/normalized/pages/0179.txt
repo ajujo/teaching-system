@@ -1,0 +1,34 @@
+2 Podría deberse a algunos sesgos en los datos de pre-entrenamiento o en los
+datos de alineación. Tal vez OpenAI simplemente no incluyó tantos datos en
+idioma chino o narraciones centradas en China para entrenar sus modelos.
+3 "Inside the Secret List of Websites That Make AI like ChatGPT Sound Smart",
+Washington Post, 2023.
+4 Para los textos, puede utilizar palabras clave de dominio como heurística, pero
+no hay una heurística obvia para las imágenes. La mayoría de los análisis que he
+podido encontrar sobre conjuntos de datos de visión se refieren al tamaño de las
+imágenes, la resolución o la duración de los vídeos.
+5 En este libro no se tratan los fundamentos de ML relacionados con el
+entrenamiento de modelos. No obstante, cuando es pertinente para el debate,
+incluyo algunos conceptos. Por ejemplo, la autosupervisión (en la que un
+modelo genera sus propias etiquetas a partir de los datos) se aborda en el
+Capítulo 1, y la retropropagación (cómo se actualizan los parámetros de un
+modelo durante el entrenamiento basándose en los errores) se analiza en el
+Capítulo 7.
+6 Las RNNs son especialmente propensas a la desaparición y explosión de
+gradientes debido a su estructura recursiva. Los gradientes deben propagarse a
+través de muchos pasos y, si son pequeños, la multiplicación repetida hace que
+se reduzcan hacia cero, lo que dificulta el aprendizaje del modelo. Por el
+contrario, si los gradientes son grandes, crecen exponencialmente con cada paso,
+lo que provoca inestabilidad en el proceso de aprendizaje.
+7 Bahdanau et al., "Neural Machine Translation by Jointly Learning to Align and
+Translate".
+8 Como los tokens de input se procesan por lotes, el vector de input real tiene la
+forma N × T × 4096, donde N es el tamaño del lote y T es la longitud de la
+secuencia. De manera similar, cada vector K, V, Q resultante tiene la dimensión
+de N × T × 4096.
+9 ¿Por qué las funciones de activación simples sirven para modelos complejos
+como los LLMs? Hubo un tiempo en que la comunidad investigadora se
+apresuraba a idear sofisticadas funciones de activación. Sin embargo, resultó que
+las funciones de activación más sofisticadas no funcionaban mejor. El modelo
+solo necesita una función no lineal para romper la linealidad de las capas de
+prealimentación. Las funciones más sencillas y rápidas de calcular son mejores,

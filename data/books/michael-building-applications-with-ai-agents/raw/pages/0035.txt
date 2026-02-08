@@ -1,0 +1,37 @@
+help ensure flexibility and reduce dependency on any single technology or provider,
+facilitating future adaptability.
+Effective knowledge sharing is also crucial. Lessons learned from both successful and
+unsuccessful experiments should be communicated widely via internal forums,
+shared repositories, and comprehensive documentation. This collaborative approach
+accelerates organizational learning, minimizes redundant efforts, and promotes col‐
+lective improvement.
+Lastly, governance frameworks should remain lightweight and flexible, emphasizing
+guiding principles over rigid mandates. A streamlined governance structure enables
+teams to innovate confidently while remaining aligned with overarching organiza‐
+tional objectives.
+Organizing successfully around agentic systems is fundamentally iterative. Organiza‐
+tions must continually reassess their strategies to maintain a dynamic balance
+between exploration and standardization. By cultivating an environment that values
+experimentation, collaborative learning, and open standards, organizations can effec‐
+tively transition agentic systems from isolated experiments into scalable, transforma‐
+tive solutions that are deeply integrated into their operational processes.
+Agentic Frameworks
+Numerous frameworks currently exist for developing autonomous agents, each
+addressing critical functionalities such as skills integration, memory management,
+planning, orchestration, experiential learning, and multiagent coordination. This list
+is certainly not exhaustive, but leading frameworks include the following.
+LangGraph
+Strengths
+Modular orchestration framework based on directed graphs whose nodes contain
+discrete units of logic (often foundation model calls) and whose edges manage
+the flow of data through complex, potentially cyclic workflows; strong developer
+ergonomics; native support for asynchronous workflows and retries
+Trade-offs
+Requires custom logic for advanced planning and memory; less built-in support
+for multiagent collaboration
+Best for
+Teams building robust, single-agent or light multiagent systems with explicit,
+inspectable flow control
+Agentic Frameworks 
+| 
+13

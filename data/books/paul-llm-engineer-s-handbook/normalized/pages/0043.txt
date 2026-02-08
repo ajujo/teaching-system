@@ -1,0 +1,14 @@
+Understanding the LLM Twin Concept and Architecture
+12
+In conclusion, our problem is accessing the features to make predictions without passing them at
+the client's request. For example, based on our first user movie recommendation example, how
+can we predict the recommendations solely based on the user's ID? Remember these questions,
+as we will answer them shortly.
+Ultimately, on the other spectrum, Google Cloud provides a production-ready architecture, as
+shown in Figure 1.4. Unfortunately, even if it's a feasible solution, it's very complex and not intuitive. You will have difficulty understanding this if you are not highly experienced in deploying
+and keeping ML models in production. Also, it is not straightforward to understand how to start
+small and grow the system in time.
+The following image is reproduced from work created and shared by Google and used according
+to terms described in the Creative Commons 4.0 Attribution License:
+Figure 1.4: ML pipeline automation for CT (source: https://cloud.google.com/architecture/
+mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)

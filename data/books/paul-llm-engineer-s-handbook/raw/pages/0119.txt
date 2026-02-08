@@ -1,0 +1,30 @@
+Data Engineering
+88
+    INSTRUCT_DATASET = "instruct_dataset"
+    PREFERENCE_DATASET_SAMPLES = "preference_dataset_samples"
+    PREFERENCE_DATASET = "preference_dataset"
+    POSTS = "posts"
+    ARTICLES = "articles"
+    	REPOSITORIES = "repositories"
+The Document class is introduced as an abstract base model for other documents on top of the 
+NoSQLBaseDocument ODM class. It includes common attributes like content, platform, and author 
+details, providing a standardized structure for documents that will inherit from it:
+class Document(NoSQLBaseDocument, ABC):
+    content: dict
+    platform: str
+    author_id: UUID4 = Field(alias="author_id")
+    author_full_name: str = Field(alias="author_full_name")
+Finally, specific document types are defined by extending the Document class. The 
+RepositoryDocument, PostDocument, and ArticleDocument classes represent different catego-
+ries of data, each with unique fields and settings that specify their respective collection names 
+in the database:
+class RepositoryDocument(Document):
+    name: str
+    link: str
+    class Settings:
+        name = DataCategory.REPOSITORIES
+class PostDocument(Document):
+    image: Optional[str] = None
+    link: str | None = None
+    class Settings:
+        name = DataCategory.POSTS

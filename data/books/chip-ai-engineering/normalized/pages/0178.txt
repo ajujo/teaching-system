@@ -1,0 +1,31 @@
+La escala de un modelo puede medirse con tres números clave: el número
+de parámetros, el número de tokens de entrenamiento y el número de
+FLOPs necesarios para el entrenamiento. Dos aspectos que influyen en la
+cantidad de computación necesaria para entrenar un modelo son el tamaño
+del modelo y el tamaño de los datos. La ley de escalado ayuda a determinar
+el número óptimo de parámetros y de tokens dado un presupuesto de
+cómputo. En este capítulo también se han analizado los cuellos de botella
+en el escalado. En la actualidad, escalar un modelo suele mejorarlo. Pero,
+¿durante cuánto tiempo seguirá siendo así?
+Debido a la baja calidad de los datos de entrenamiento y a la
+autosupervisión durante el pre-entrenamiento, el modelo resultante puede
+producir outputs que no se ajusten a lo que quieren los usuarios. Esto se
+aborda mediante el post-entrenamiento, que consta de dos pasos: el afinado
+supervisado y el afinado de preferencias. Las preferencias humanas son
+diversas e imposibles de plasmar en una única fórmula matemática, por lo
+que las soluciones existentes distan mucho de ser infalibles.
+Este capítulo también trata uno de mis temas favoritos: el muestreo, el
+proceso por el que un modelo genera tokens de output. El muestreo hace
+que los modelos de IA sean probabilísticos. Esta naturaleza probabilística es
+lo que hace que modelos como ChatGPT y Gemini sean estupendos para
+tareas creativas y divertidas. Sin embargo, esta misma naturaleza también
+provoca incoherencias y alucinaciones.
+Para trabajar con modelos de IA es necesario crear flujos de trabajo basados
+en su naturaleza probabilística. El resto de este libro explorará cómo hacer
+que la ingeniería de IA sea, si no determinista, al menos sistemática. El
+primer paso hacia la ingeniería de IA sistemática es establecer un proceso
+sólido de evaluación que ayude a detectar fallos y cambios inesperados. La
+evaluación de los modelos fundacionales es tan crucial que le he dedicado
+dos capítulos, a partir del siguiente.
+1 "GPT-4 Can Solve Math Problems-but Not in All Languages", por Yennie Jun.
+Puede verificar el estudio utilizando el Tokenizer de OpenAI.

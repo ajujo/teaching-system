@@ -1,0 +1,36 @@
+Chapter 2
+61
+And, of course, such multimodal parts can also be templated. Let’s demonstrate it with a simple 
+template that expects an image_bytes_str argument that contains encoded bytes:
+prompt = ChatPromptTemplate.from_messages(
+   [("user",
+    [{"type": "image_url",
+      "image_url": {"url": "data:image/jpeg;base64,{image_bytes_str}"},
+      }])]
+)
+prompt.invoke({"image_bytes_str": "test-url"})
+Using GPT-4 Vision
+After having explored image generation, let’s examine how LangChain handles image under­
+standing using multimodal models. GPT-4 Vision capabilities (available in models like GPT-4o 
+and GPT-4o-mini) allow us to analyze images alongside text, enabling applications that can “see” 
+and reason about visual content.
+LangChain simplifies working with these models by providing a consistent interface for multi­
+modal inputs. Let’s implement a flexible image analyzer:
+from langchain_core.messages import HumanMessage
+from langchain_openai import ChatOpenAI
+def analyze_image(image_url: str, question: str) -> str:
+    chat = ChatOpenAI(model="gpt-4o-mini", max_tokens=256)
+ 
+    message = HumanMessage(
+        content=[
+            {
+                "type": "text",
+                "text": question
+            },
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": image_url,
+                    "detail": "auto"
+                }
+            }

@@ -1,0 +1,31 @@
+rendimiento. Algunas personas creen que el modelo de recompensa debe ser
+al menos igual de potente que el modelo fundacional para poder puntuar las
+respuestas del modelo fundacional. Sin embargo, como veremos en el
+Capítulo 3 sobre evaluación, un modelo débil puede juzgar a un modelo
+más fuerte, ya que se cree que juzgar es más fácil que generar.
+Afinado mediante el modelo de recompensa
+Con el RM entrenado, seguimos entrenando el modelo SFT para generar
+respuestas de output que maximicen las puntuaciones del modelo de
+recompensa. Durante este proceso, se seleccionan prompts aleatoriamente a
+partir de una distribución de prompts, como los prompts de usuario
+existentes. Estos prompts se introducen en el modelo, cuyas respuestas son
+puntuadas por el modelo de recompensa. Este proceso de entrenamiento
+suele realizarse con la optimización de políticas proximales (PPO), un
+algoritmo de aprendizaje por refuerzo lanzado por OpenAI en 2017.
+Empíricamente, RLHF y DPO mejoran el rendimiento en comparación con
+solo SFT. Sin embargo, en el momento de escribir estas líneas, se debate
+por qué funcionan. A medida que evolucione este campo, sospecho que el
+afinado de preferencias cambiará significativamente en el futuro. Si quiere
+saber más sobre RLHF y el afinado de preferencias, consulte el repositorio
+GitHub del libro.
+Tanto el SFT como el afinado de preferencias son medidas adoptadas para
+resolver el problema creado por la baja calidad de los datos utilizados para
+el pre-entrenamiento. Si algún día disponemos de mejores datos de preentrenamiento o de mejores formas de entrenar a los modelos
+fundacionales, puede que no necesitemos en absoluto el SFT o las
+preferencias.
+A algunas empresas les parece bien saltarse por completo el aprendizaje por
+refuerzo. Por ejemplo, Stitch Fix y Grab consideran que el modelo de
+recompensa por sí solo es suficiente para sus aplicaciones. Hacen que sus
+modelos generen múltiples outputs y eligen los que obtienen puntuaciones
+más altas con sus modelos de recompensa. Este enfoque, a menudo
+conocido como la estrategia "El mejor de N" (BoN), aprovecha la forma en

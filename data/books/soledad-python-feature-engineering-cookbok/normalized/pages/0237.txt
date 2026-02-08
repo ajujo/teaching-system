@@ -1,0 +1,40 @@
+Performing Feature Scaling
+214
+5.
+Finally, let's scale the variables in the train and test sets with the trained scaler:
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+6.
+Let's print the variable median values learned by RobustScaler():
+scaler.center_
+We see the parameters learned by RobustScaler() in the following output:
+array([3.53910000e+00, 2.90000000e+01,
+5.22931763e+00,                 1.04878049e+00, 1.16500000e+03,
+2.81635506e+00])
+7.
+Now, let's display the IQR learned by RobustScaler():
+scaler.scale_
+We can see the IQR for each variable in the following output:
+array([2.16550000e+00, 1.90000000e+01,
+1.59537022e+00,                 9.41284380e-02, 9.40000000e+02,
+8.53176853e-01])
+This scaling procedure does not change the variable distributions. Go ahead and compare the
+distribution of the variables before and after the transformation by using histograms.
+How it works...
+To scale the features using the median and IQR, we created an instance of RobustScaler().
+With fit(), the scaler learned the median and IQR for each variable from the train set. With
+transform(), the scaler subtracted the median from each variable in the train and test sets and
+divided the result by the IQR.
+After the transformation, the median values of the variables were centered at 0, but the overall shape
+of the distributions did not change. You can corroborate the effect of the transformation by displaying
+the histograms of the variables before and after the transformation and by printing out the main
+statistical parameters through X_test.describe() and X_test_scaled.b().
+Performing mean normalization
+In mean normalization, we center the variable at 0 and rescale the distribution to the value range,
+so that its values lie between -1 and 1. This procedure involves subtracting the mean from each
+observation and then dividing the result by the difference between the minimum and maximum
+values, as shown here:
+x scaled =   x − mean(x)
+____________
+
+max(x) − min(x)

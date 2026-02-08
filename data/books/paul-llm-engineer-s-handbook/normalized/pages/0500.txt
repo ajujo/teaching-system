@@ -1,0 +1,20 @@
+Appendix
+469
+Concept drift
+In addition to changes in input and output data, their relationship can also shift. This phenomenon, known as concept drift, makes our model ineffective because the patterns it previously
+learned to associate inputs with outputs become outdated. As illustrated in the following figure,
+concept drifts can manifest in various ways:
+•
+Gradually over time
+•
+Suddenly, due to an external event
+•
+Periodically, due to recurring events
+Figure A.4: Concept drift examples
+For example, this happens when using the model in a different geographic area. Let's assume you
+want to build a model that predicts whether a person will buy a specific car. You initially built it
+for the American market. Now, you want to use it in the European market, where people tend to
+buy smaller cars, creating a drift between the size feature of the car and the output probability of
+purchasing the vehicle. Of course, concept drifts can be more subtle than this example.
+All these types of drift can happen simultaneously, complicating pinpointing the
+exact sources of drift.

@@ -1,0 +1,36 @@
+MLOps and LLMOps
+446
+For the LLM Twin’s CT pipeline, we have to discuss the initial trigger that starts the pipelines 
+and how the pipelines are triggered by each other.
+Initial triggers
+As illustrated in Figure 11.18, we initially want to trigger the data collection pipeline. Usually, the 
+triggers can be of three types:
+•	
+Manual triggers: Done through the CLI or the orchestrator’s dashboard, in our case, 
+through the ZenML dashboard. Manual triggers are still extremely powerful tools, as 
+you need just one action to start the whole ML system, from data gathering to deploy-
+ment, instead of fiddling with dozens of scripts that you might configure wrong or run 
+in an invalid order.
+•	
+REST API triggers: You can call a pipeline by an HTTP request. This is extremely useful 
+when integrating your ML pipelines with other components. For example, you can have 
+a watcher constantly looking for new articles. It triggers the ML logic using this REST API 
+trigger when it finds some. To find more details on this feature, check out this tutorial on 
+ZenML’s documentation: https://docs.zenml.io/v/docs/how-to/trigger-pipelines/
+trigger-a-pipeline-from-rest-api.
+•	
+Scheduled triggers: Another common approach is to schedule your pipeline to run con-
+stantly on a fixed interval. For example, depending on your use case, you can schedule your 
+pipeline to run daily, hourly, or every minute. Most of the orchestrators, ZenML included, 
+provide a cron expression interface where you can define your execution frequency. In the 
+following example from ZenML, the pipeline is scheduled every hour:
+ Schedule(cron_expression="* * 1 * *")
+We chose a manual trigger for our LLM Twin use case as we don’t have other components to lever-
+age the REST API triggers. Also, as the datasets are generated from a list of static links defined in 
+the ZenML configs, running them on a schedule doesn’t make sense as they would always yield 
+the same results.
+But a possible next step for the project is to implement a watcher that monitors for new articles. 
+When it finds any, it generates a new config and triggers the pipelines through the REST API. An-
+other option is implementing the watcher as an additional pipeline and leveraging the schedule 
+triggers to look daily for new data. If it finds any, it executes the whole ML system; otherwise, it 
+stops.

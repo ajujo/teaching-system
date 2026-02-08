@@ -1,0 +1,49 @@
+Finally, the graph assembles the system with conditional edges for routing, enabling
+adaptability as the supervisor dynamically selects based on query content. In execu‐
+tion, this enables efficient handling of diverse tasks without a single point of overload.
+While coordination adds some latency, the benefits in scalability and reliability far
+outweigh it for complex environments:
+# Routing function for conditional edges
+def route_to_specialist(state: AgentState):
+   last_message = state["messages"][-1]
+   agent_name = last_message.content.strip().lower()
+   if agent_name == "inventory":
+       return "inventory"
+   elif agent_name == "transportation":
+       return "transportation"
+   elif agent_name == "supplier":
+       return "supplier"
+   else:
+       # Fallback if no match
+       return END
+def construct_graph():
+   g = StateGraph(AgentState)
+   g.add_node("supervisor", supervisor_node)
+   g.add_node("inventory", inventory_node)
+   g.add_node("transportation", transportation_node)
+   g.add_node("supplier", supplier_node)
+
+   g.set_entry_point("supervisor")
+   g.add_conditional_edges("supervisor", route_to_specialist,
+    {"inventory": "inventory", "transportation":
+    "transportation", "supplier": "supplier"})
+
+   g.add_edge("inventory", END)
+   g.add_edge("transportation", END)
+   g.add_edge("supplier", END)
+
+   return g.compile()
+graph = construct_graph()
+if __name__ == "__main__":
+   example = {"operation_id": "OP-12345", "type": "inventory_management",
+              "priority": "high", "location": "Warehouse A"}
+   convo = [HumanMessage(content='''We're running critically
+     low on SKU-12345. Current stock is 50 units
+     but we have 200 units on backorder. What's our reorder
+     strategy?''')]
+   result = graph.invoke({"operation": example, "messages": convo})
+   for m in result["messages"]:
+       print(f"{m.type}: {m.content}")
+176
+|
+Chapter 8: From One Agent to Many

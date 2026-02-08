@@ -1,0 +1,46 @@
+performers. The meta-agent is thus both a creator and a curator, balancing explora‐
+tion of new designs with exploitation of successful patterns. This process mirrors the
+evolution of biological systems, where successful traits are preserved and iteratively
+modified to adapt to new challenges.
+To illustrate how MAS operationalizes these ideas, consider a generic Python imple‐
+mentation inspired by the open source ADAS. This framework uses a foundation
+model (e.g., GPT-5) as the meta-agent to generate and refine agent code. Key compo‐
+nents include a foundation model agent base for prompting, a search loop for itera‐
+tive evolution, and an evaluation function for fitness scoring. These elements enable
+the meta-agent to dynamically invent agents for tasks like grid puzzles (ARC
+[Abstraction and Reasoning Corpus]) or multiple-choice reasoning (MMLU), archiv‐
+ing high performers for future use:
+class LLMAgentBase:
+    def __init__(self, output_fields: list, agent_name: str,
+     role='helpful assistant', model='gpt-4o-2024-05-13',
+     temperature=0.5):
+        self.output_fields = output_fields
+        self.agent_name = agent_name
+        self.role = role
+        self.model = model
+        self.temperature = temperature
+        self.id = random_id()  # Unique ID for agent instances
+    def generate_prompt(self, input_infos, instruction, output_description):
+        # Builds system prompt with role and JSON format instructions
+        system_prompt = f"You are a {self.role}.\n\n" +
+                          FORMAT_INST(output_description)
+        # Constructs user prompt from inputs and instruction
+        prompt = ''  # (Build input text from infos) + instruction
+        return system_prompt, prompt
+    def query(self, input_infos: list, instruction, output_description,
+              iteration_idx=-1):
+        system_prompt, prompt = self.generate_prompt(input_infos,
+                                                     instruction,
+                                                     output_description)
+        response_json = get_json_response_from_gpt(prompt,
+            self.model, system_prompt, self.temperature)
+        # Handle errors, parse JSON
+        output_infos = [Info(key, self.__repr__(), value,
+            iteration_idx) for key, value in response_json.items()]
+        return output_infos
+The LLMAgentBase class forms the core of the meta-agent, wrapping interactions with
+a foundation model to generate structured responses (e.g., thoughts, code). It enfor‐
+ces JSON outputs for parseability and handles errors gracefully, allowing the metaagent to query for new agent designs based on archived priors. This modular design
+186
+|
+Chapter 8: From One Agent to Many

@@ -1,0 +1,33 @@
+las razones para afinarlo y las razones para no afinarlo. También abordó una
+pregunta que me han hecho muchas veces: cuándo hacer un afinado y
+cuándo hacer RAG.
+En sus inicios, el afinado era similar al pre-entrenamiento: ambos
+implicaban la actualización de todos las ponderaciones del modelo. Sin
+embargo, a medida que aumentaba el tamaño de los modelos, el afinado
+completo resultaba poco práctico para la mayoría de los profesionales.
+Cuantos más parámetros haya que actualizar durante el afinado, más
+memoria necesitará. La mayoría de los profesionales no tienen acceso a
+recursos suficientes (hardware, tiempo y datos) para realizar un afinado
+completo con modelos fundacionales.
+Se han desarrollado muchas técnicas de afinado con la misma motivación:
+conseguir un gran rendimiento con un espacio de memoria mínimo. Por
+ejemplo, PEFT reduce los requisitos de memoria de afinado reduciendo el
+número de parámetros entrenables. Por su parte, el entrenamiento
+cuantizado mitiga este cuello de botella de la memoria reduciendo el
+número de bits necesarios para representar cada valor. Tras ofrecer una
+visión general del PEFT, el capítulo se centra en LoRA: por qué y cómo
+funciona. LoRA tiene muchas propiedades que lo hacen popular entre los
+profesionales.
+Además de ser eficiente en cuanto a parámetros y datos, también es
+modular, por lo que resulta mucho más fácil servir y combinar varios
+modelos LoRA.
+La idea de combinar modelos afinados llevó al capítulo a la fusión de
+modelos; su objetivo es combinar varios modelos en uno solo que funcione
+mejor que estos modelos por separado. En este capítulo se analizaron los
+numerosos casos de uso de la fusión de modelos, desde la implementación
+en dispositivos hasta la ampliación de modelos, así como los enfoques
+generales de la fusión de modelos.
+Un comentario que escucho a menudo de los profesionales es que hacer un
+afinado es fácil, pero obtener datos para ello es difícil. Obtener datos
+anotados de alta calidad, especialmente datos de instrucción, es todo un
+reto. El próximo capítulo profundizará en este reto.

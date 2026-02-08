@@ -1,0 +1,100 @@
+{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-a01",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-06T11:39:20.520869+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "mixed",
+  "strict": true,
+  "grading_time_ms": 48623,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El texto indica que los LLM Twins utilizan datos de dominio específico para su entrenamiento, a diferencia de chatbots genéricos que dependen de datos amplios y no especializados. Esta especialización permite respuestas más precisas en escenarios empresariales o técnicos.",
+      "expected_answer": "1: Están entrenados en datos específicos del dominio",
+      "given_answer": "1: Están entrenados en datos específicos del dominio",
+      "correct_option_text": "Están entrenados en datos específicos del dominio",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El libro menciona que 'The problem with building ML systems' incluye la dificultad de procesar datos desestructurados, resaltando la necesidad de pipelines como Feature/Training/Inference (FTI) para estructurar y preparar estos datos correctamente.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta captura la esencia del MVP al mencionar la validación rápida con mínimo trabajo y reducción de riesgo. Sin embargo, no destaca explícitamente los 'funcionalidades clave' como elemento diferenciador del MVP frente a versiones complejas, lo que constituye un detalle importante en el contexto de LLM Twins.",
+      "expected_answer": "Permite validar rápidamente la viabilidad del producto con funcionalidades clave antes de invertir en características complejas.",
+      "given_answer": "Porque un MVP te permite validar rápido que el LLM Twin aporta valor con el mínimo de trabajo y riesgo, antes de invertir en una versión “perfecta”.",
+      "grading_path": "llm",
+      "confidence": 0.95
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q04",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El pipeline de características (Feature Pipeline) es responsable de transformar y estructurar los datos crudos en formatos procesables para el modelo, según se describe en la sección sobre FTI architecture.",
+      "expected_answer": "1: Pipeline de características",
+      "given_answer": "1: Pipeline de características",
+      "correct_option_text": "Pipeline de características",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El texto destaca que uno de los beneficios clave del diseño FTI es la modularidad y reusabilidad, permitiendo compartir procesos como el preprocesamiento de datos entre diferentes etapas (entrenamiento/inferencia).",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q06",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta incluye elementos clave como el procesamiento de consultas, preparación del contexto (ej: RAG), generación de respuestas y optimización de latencia/seguridad. Sin embargo, no menciona explícitamente que el pipeline usa un modelo entrenado (aunque se infiere implícitamente). También podría haber sido más conciso alineándose directamente con los términos de la respuesta esperada.",
+      "expected_answer": "Procesar consultas entrantes y generar respuestas usando el modelo entrenado, optimizando la latencia y precisión.",
+      "given_answer": "El **pipeline de inferencia** es el componente que **pone el LLM Twin a funcionar en tiempo de uso**: toma la consulta del usuario, **prepara el contexto necesario** (por ejemplo, recuperando información de una base de datos/vector DB si hay RAG), construye el prompt/entrada final y **genera la respuesta** del modelo, aplicando reglas como formato, seguridad (guardrails), memoria y control de calidad/latencia.",
+      "grading_path": "llm",
+      "confidence": 0.95
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q07",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El texto señala que los sistemas ML tradicionales sufrían por problemas como procesamiento ineficiente, no reusabilidad y escalabilidad. La opción 'Exceso de recursos computacionales' es incorrecta ya que el problema real era la escasez o mala gestión de recursos.",
+      "expected_answer": "2: Exceso de recursos computacionales disponibles",
+      "given_answer": "2: Exceso de recursos computacionales disponibles",
+      "correct_option_text": "Exceso de recursos computacionales disponibles",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex07-q08",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! La arquitectura FTI permite compartir componentes entre pipelines, reduciendo la necesidad de infraestructuras duplicadas. Esto se menciona como un beneficio del diseño modular descrito en el capítulo.",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto"
+    }
+  ],
+  "summary": {
+    "total_questions": 8,
+    "correct_count": 6,
+    "total_score": 6.0,
+    "max_score": 10,
+    "percentage": 0.6,
+    "passed": false
+  }
+}

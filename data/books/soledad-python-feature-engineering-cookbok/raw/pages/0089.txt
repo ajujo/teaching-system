@@ -1,0 +1,38 @@
+Encoding Categorical Variables
+66
+4.	
+Now, let’s repeat the computation in Step 3, but this time, let’s retain the ordered category names:
+ordered_labels = y_train.groupby(
+    X_train["A7"]).mean().sort_values().index
+To display the output of the preceding command, we can execute print(ordered_labels): 
+Index(['o', 'ff', 'j', 'dd', 'v', 'bb', 'h', 'n', 'z', 'Missing'], 
+dtype='object', name='A7').
+5.	
+Let’s create a dictionary of category-to-integer pairs, using the ordered list we created in Step 4:
+ordinal_mapping = {
+    k: i for i, k in enumerate(ordered_labels, 0)
+}
+We can visualize the result of the preceding code by executing print(ordinal_mapping):
+{'o': 0, 'ff': 1, 'j': 2, 'dd': 3, 'v': 4, 'bb': 5, 'h': 6, 'n': 
+7, 'z': 8, 'Missing': 9}
+6.	
+Let’s use the dictionary we created in Step 5 to replace the categories in A7 in a copy of the datasets:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+X_train_enc["A7"] = X_train_enc["A7"].map(
+    ordinal_mapping)
+X_test_enc["A7"] = X_test_enc["A7"].map(
+    ordinal_mapping)
+Note
+If the test set contains a category that is not present in the train set, the preceding code will 
+introduce np.nan.
+To visualize the effect of this encoding, let’s plot the relationship of the categories of the A7 
+variable with the target before and after the encoding.
+7.	
+Let’s plot the mean target response per category of the A7 variable:
+y_train.groupby(X_train["A7"]).mean().plot()
+plt.title("Relationship between A7 and the target")
+plt.ylabel("Mean of target")
+plt.show()
+We can see the non-monotonic relationship between categories of A7 and the target in the 
+following plot:

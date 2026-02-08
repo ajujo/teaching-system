@@ -1,0 +1,35 @@
+Working with Outliers
+164
+If we execute lower_limit or upper_limit, we will see the values 0.0536 and 0.13812, 
+corresponding to the limits beyond which we can consider a value an outlier.
+5.	
+Let’s create a Boolean vector that flags observations with values beyond the limits:
+outliers = np.where(
+    (X[«mean smoothness»] > upper_limit) |
+    (X[«mean smoothness»] < lower_limit),
+    True,
+    False
+)
+If we now execute outliers.sum(), we will see the value 5, indicating that there are five 
+outliers or observations that are smaller or greater than the extreme values found with MAD.
+6.	
+Let’s make a function to plot a boxplot next to a histogram of a variable, highlighting in the 
+histogram the limits calculated in step 4:
+def plot_boxplot_and_hist(data, variable):
+    f, (ax_box, ax_hist) = plt.subplots(
+        2, sharex=True,
+        gridspec_kw={"height_ratios": (0.50, 0.85)})
+    sns.boxplot(x=data[variable], ax=ax_box)
+    sns.histplot(data=data, x=variable, ax=ax_hist)
+    plt.vlines(
+        x=lower_limit, ymin=0, ymax=80, color='r')
+    plt.vlines(
+        x=upper_limit, ymin=0, ymax=80, color='r')
+    plt.show()
+7.	
+And now let’s make the plots:
+plot_boxplot_and_hist(X, "mean smoothness")
+In the following plot, we see that the limits observed by the IQR proximity rule in the box 
+plot are less conservative than those identified by using MAD. MAD returns symmetric 
+boundaries, while the boxplot generates asymmetric boundaries, which are more suitable for 
+highly skewed distributions:

@@ -1,0 +1,20 @@
+Production-Ready LLM Deployment and Observability
+392
+On the LangSmith web interface, we can get a large set of graphs for a bunch of statistics that
+can be useful to optimize latency, hardware efficiency, and cost, as we can see on the monitoring
+dashboard:
+Figure 9.4: Evaluator metrics in LangSmith
+The monitoring dashboard includes the following graphs that can be broken down into different
+time intervals:
+Statistics
+Category
+Trace count, LLM call count, trace success rates, LLM call success rates
+Volume
+Trace latency (s), LLM latency (s), LLM calls per trace, tokens / sec
+Latency
+Total tokens, tokens per trace, tokens per LLM call
+Tokens
+% traces w/ streaming, % LLM calls w/ streaming, trace time to first token (ms),
+LLM time to first token (ms)
+Streaming
+Table 9.1: Graph categories on LangSmith

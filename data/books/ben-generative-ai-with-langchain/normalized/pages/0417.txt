@@ -1,0 +1,39 @@
+Production-Ready LLM Deployment and Observability
+390
+Visualization tools like LangSmith provide graphical interfaces for tracing complex agent inter­
+actions, making it easier to identify bottlenecks or failure points.
+Hallucination detection
+Automated detection of hallucinations is another critical factor to consider. One approach is
+retrieval-based validation, which involves comparing the outputs of LLMs against retrieved ex­
+ternal content to verify factual claims. Another method is LLM-as-judge, where a more powerful
+LLM is used to assess the factual correctness of a response. A third strategy is external knowledge
+verification, which entails cross-referencing model responses against trusted external sources
+to ensure accuracy.
+Here's a pattern for LLM-as-a-judge for spotting hallucinations:
+def check_hallucination(response, query):
+    validator_prompt = f"""
+    You are a fact-checking assistant.
+From Ben Auffarth's work at Chelsea AI Ventures with different clients, we would give
+this guidance regarding tracking. Don't log everything. A single day of full prompt
+and response tracking for a moderately busy LLM application generates 10-50 GB
+of data - completely impractical at scale. Instead:
+•
+For all requests, track only the request ID, timestamp, token counts, latency,
+error codes, and endpoint called.
+•
+Sample 5% of non-critical interactions for deeper analysis. For customer
+service, increase to 15% during the first month after deployment or after
+major updates.
+•
+For critical use cases (financial advice or healthcare), track complete data for
+20% of interactions. Never go below 10% for regulated domains.
+•
+Delete or aggregate data older than 30 days unless compliance requires
+longer retention. For most applications, keep only aggregate metrics after
+90 days.
+•
+Use extraction patterns to remove PII from logged prompts - never store raw
+user inputs containing email addresses, phone numbers, or account details.
+This approach cuts storage requirements by 85-95% while maintaining sufficient data
+for troubleshooting and analysis. Implement it with LangChain tracers or custom
+middleware that filters what gets logged based on request attributes.

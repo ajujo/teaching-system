@@ -1,0 +1,23 @@
+Working with Outliers
+162
+Figure 5.5 – Comparison of the limits between the whiskers in the boxplot and those 
+determined by using the mean and the standard deviation (vertical lines in the histogram)
+The boundaries derived from the mean and standard deviation are symmetric. They extend 
+equidistantly from the center of the distribution toward both tails. As previously mentioned, 
+these boundaries are only suitable for normally distributed variables.
+How it works…
+With pandas’ mean() and std(), we captured the mean and standard deviation of the variable. We 
+determined the limits as the mean plus and minus three times the standard deviation. To highlight 
+the outliers, we used NumPy’s where(). The where() function scanned the rows of the variable, 
+and if the value was greater than the upper limit or smaller than the lower limit, it was assigned True, 
+and alternatively False. Finally, we used pandas’ sum() over this Boolean vector to calculate the 
+total number of outliers.
+Finally, we compared the boundaries to determine outliers returned by the IQR proximity rule, which 
+we discussed in the previous recipe, Visualizing outliers with boxplots and the inter-quartile proximity 
+rule, and the mean and the standard deviation. We observed that the limits of the IQR rule are less 
+conservative. That means that with the IQR rule, we’d flag more outliers in this particular variable.
+Using the median absolute deviation to find outliers
+The mean and the standard deviation are heavily impacted by outliers. Hence, using these parameters 
+to identify outliers can defeat the purpose. A better way to identify outliers is by using MAD. MAD is 
+the median of the absolute deviation between each observation and the median value of the variable:
+​MAD  =  b × Median​(​|xi − Median​(X)​|​)​

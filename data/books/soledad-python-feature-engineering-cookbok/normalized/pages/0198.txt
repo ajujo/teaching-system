@@ -1,0 +1,38 @@
+Applying winsorization
+175
+4.
+Capture the 5th and 95th percentiles of each variable in dictionaries:
+q05 = X_train.quantile(0.05).to_dict()
+q95 = X_train.quantile(0.95).to_dict()
+5.
+Let's now replace values beyond those percentiles with the respective percentiles for all variables
+at once:
+train_t = X_train.clip(lower=q05, upper=q95)
+test_t = X_test.clip(lower=q05, upper=q95)
+6.
+Let's display the minimum, maximum, and mean values of one variable before winsorization:
+var = 'worst smoothness'
+X_train[var].agg(["min", "max", "mean"])
+We can see the values in the following output:
+min      0.071170
+max      0.222600
+mean     0.132529
+Name: worst smoothness, dtype: float64
+7.
+Display the minimum, maximum, and mean values of the same variable after winsorization:
+train_t[var].agg([„min", „max"])
+In the following output, we can see that the minimum and maximum values correspond to the
+percentiles. However, the mean is quite similar to the original mean of the variable:
+min      0.096053
+max      0.173215
+mean     0.132063
+Name: worst smoothness, dtype: float64
+Note
+If you want to use winsorization as part of a scikit-learn pipeline, you can use the featureengine library's Winsorizer(), by setting it up as follows:
+capper = Winsorizer(
+     capping_method="quantiles",
+     tail="both",
+     fold=0.05,
+)
+After this, proceed with the fit() and transform() methods as described in the Bringing
+outliers back within acceptable limits recipe.

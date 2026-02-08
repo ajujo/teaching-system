@@ -1,0 +1,40 @@
+Understanding the LLM Twin Concept and Architecture
+6
+•
+Data storage, versioning, and retrieval
+•
+LLM fine-tuning
+•
+RAG
+•
+Content generation evaluation
+Note that we never said not to use OpenAI's GPT API, just that the LLM framework we will present is LLM-agnostic. Thus, if it can be manipulated programmatically and exposes a fine-tuning
+interface, it can be integrated into the LLM Twin system we will learn to build. The key to most
+successful ML products is to be data-centric and make your architecture model-agnostic. Thus,
+you can quickly experiment with multiple models on your specific data.
+Planning the MVP of the LLM Twin product
+Now that we understand what an LLM Twin is and why we want to build it, we must clearly define
+the product's features. In this book, we will focus on the first iteration, often labeled the minimum
+viable product (MVP), to follow the natural cycle of most products. Here, the main objective is
+to align our ideas with realistic and doable business objectives using the available resources to
+produce the product. Even as an engineer, as you grow up in responsibilities, you must go through
+these steps to bridge the gap between the business needs and what can be implemented.
+What is an MVP?
+An MVP is a version of a product that includes just enough features to draw in early users and test
+the viability of the product concept in the initial stages of development. Usually, the purpose of
+the MVP is to gather insights from the market with minimal effort.
+An MVP is a powerful strategy because of the following reasons:
+•
+Accelerated time-to-market: Launch a product quickly to gain early traction
+•
+Idea validation: Test it with real users before investing in the full development of the
+product
+•
+Market research: Gain insights into what resonates with the target audience
+•
+Risk minimization: Reduces the time and resources needed for a product that might not
+achieve market success
+Sticking to the V in MVP is essential, meaning the product must be viable. The product must
+provide an end-to-end user journey without half-implemented features, even if the product is
+minimal. It must be a working product with a good user experience that people will love and
+want to keep using to see how it evolves to its full potential.

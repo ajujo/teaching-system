@@ -1,0 +1,42 @@
+chosen, the MCP client wraps that call into a JSON-RPC payload, sends it over to the
+appropriate server, and awaits a response. Because both ends speak the same lan‐
+guage, building cross-platform interoperability becomes straightforward.
+Before MCP, developers wrote custom adapters for each target system-hard-coding
+REST calls or SDK usage directly inside their agent code. As the number of data sour‐
+ces grew, these bespoke integrations multiplied, resulting in brittle, error-prone code
+that was difficult to maintain or extend.
+Despite these advantages, several security issues have been raised and are not yet fully
+addressed-particularly around authentication, access controls, and potential attack
+vectors when multiple agents share MCP endpoints. Ensuring that only authorized
+agents invoke specific methods, maintaining role-based access control to sensitive
+data, preventing malicious payload injection, and maintaining audit logs remain
+active areas of research and engineering. Some organizations still rely on additional
+network policies or proxy layers to mitigate these risks, but the core MCP specifica‐
+tion does not yet mandate a single, standardized security solution. Nevertheless, MCP
+solves a critical challenge of tool reuse across multiple agents: once a service is
+exposed via MCP, any number of agents can discover and invoke its methods without
+rewriting custom adapters for each agent. This dramatically reduces development
+effort and encourages modular, reusable architectures.
+To see MCP in action, we'll walk through a self-contained Python example that does
+the following:
+1. Launches a local "math" MCP server (via a subprocess)
+2. Connects to a remote "weather" MCP server running on localhost:8000/mcp
+3. Implements an asynchronous agent loop that inspects the user's last message and
+decides whether to call the "math" tool (for arithmetic expressions) or the
+"weather" tool (for weather queries)
+4. Demonstrates how the agent parses the tool's output and returns a final assistant
+response
+Here's the complete Python implementation demonstrating these steps:
+class AgentState(TypedDict):
+    messages: Sequence[Any]  # A list of BaseMessage/HumanMessage/...
+mcp_client = MultiServerMCPClient(
+    {
+        "math": {
+            "command": "python3",
+            "args": ["src/common/mcp/MCP_weather_server.py"],
+            "transport": "stdio",  # Subprocess → STDIO JSON-RPC
+        },
+        "weather": {
+82
+|
+Chapter 4: Tool Use

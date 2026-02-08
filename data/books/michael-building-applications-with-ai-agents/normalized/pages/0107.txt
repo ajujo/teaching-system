@@ -1,0 +1,40 @@
+requests, so input validation must reject any statement containing these patterns.
+Always bind parameters or use prepared statements to prevent SQL injection, and
+ensure the database account used by the agent holds only the minimum privileges
+needed to execute the allowed queries.
+Beyond sanitization, logging every tool invocation to detect anomalous behavior and
+support forensic analysis is highly recommended. Coupled with real-time alerts for
+suspicious patterns-such as unusually large deletions or schema-altering commands
+-you can intervene quickly before small errors cascade into major incidents.
+Ultimately, the principle of least power should guide your design: give the model only
+the tools it strictly requires, and guard every operation with precise boundaries and
+oversight. Whether your tool runs locally, calls an external API, or executes on an
+MCP server, the same safeguards apply-restrict capabilities, sanitize inputs, enforce
+least privilege, and maintain full observability. By treating stateful tools with this level
+of discipline, you ensure that your AI agents remain powerful collaborators rather
+than uncontrolled database administrators.
+Automated Tool Development
+Code generation is a technique where AI agents write code autonomously, signifi‐
+cantly reducing the time and effort required to create and maintain software applica‐
+tions. This process involves training models on vast amounts of code data, enabling
+them to understand programming languages, coding patterns, and best practices.
+Code generation represents a transformative leap in AI capabilities, particularly when
+an agent writes its own tools in real time to solve tasks or interact with new APIs.
+This dynamic approach enables AI agents to adapt and expand their functionality,
+significantly enhancing their versatility and problem-solving capacity.
+Foundation Models as Tool Makers
+Foundation models no longer just consume tools-they build them. By feeding an
+LLM your API specifications or sample inputs, you can have it generate initial wrap‐
+pers, helper functions, or higher-level "atomic" operations. Let the model draft code
+stubs, execute them in a safe sandbox, and then critique its own output: "That end‐
+point returned a 400-adjust the query parameters." Over a few rapid iterations, you
+end up with a suite of well-tested, narrowly scoped tools that agents can call directly,
+without crafting every wrapper by hand.
+This approach shines when you're wrestling with a sprawling API landscape. Instead
+of manually writing dozens of microservice clients, you point the model at your
+OpenAPI spec (or code samples) and let it spin up a first draft of each function.
+Human reviewers then validate and tighten the generated code before it enters your
+continuous integration/continuous deployment (CI/CD) pipeline, ensuring security
+Automated Tool Development
+|
+85

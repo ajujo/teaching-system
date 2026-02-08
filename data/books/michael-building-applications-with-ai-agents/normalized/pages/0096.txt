@@ -1,0 +1,43 @@
+are all areas where handcrafted tools can substantially improve the efficacy of agentic
+systems.
+Let's look at an example of registering a calculator tool. First, we define our simple
+calculator function:
+from langchain_core.runnables import ConfigurableField
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+# Define tools using concise function definitions
+@tool
+def multiply(x: float, y: float) -> float:
+   """Multiply 'x' times 'y'."""
+   return x * y
+`
+@tool
+def exponentiate(x: float, y: float) -> float:
+   """Raise 'x' to the 'y'."""
+   return x**y
+@tool
+def add(x: float, y: float) -> float:
+   """Add 'x' and 'y'."""
+   return x + y
+Then, we bind the tool with the foundation model in LangChain:
+tools = [multiply, exponentiate, add]
+# Initialize the LLM with GPT-4o and bind the tools
+llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm_with_tools = llm.bind_tools(tools)
+This "binding" operation registers the tool. Under the hood, LangChain will now
+check if the foundation model response includes any requests to call a tool. Now that
+we've bound the tool, we can ask the foundation model questions, and if the tool is
+helpful for answering the question, the foundation model will choose the tools, select
+the parameters for those tools, and invoke those functions:
+query = "What is 393 * 12.25? Also, what is 11 + 49?"
+messages = [HumanMessage(query)]
+ai_msg = llm_with_tools.invoke(messages)
+messages.append(ai_msg)
+for tool_call in ai_msg.tool_calls:
+   selected_tool = {"add": add, "multiply": multiply,
+       "exponentiate": exponentiate}[tool_call["name"].lower()]
+   tool_msg = selected_tool.invoke(tool_call)
+
+74
+|
+Chapter 4: Tool Use

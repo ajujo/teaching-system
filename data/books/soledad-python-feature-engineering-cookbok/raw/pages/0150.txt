@@ -1,0 +1,35 @@
+Implementing equal-frequency discretization
+127
+11.	 Let’s fit the discretizer to the train set so that it learns the interval limits:
+disc.fit(X_train)
+The transformer stores the limits of the intervals for each variable in a dictionary in its disc.
+binner_dict_ attribute.
+Note
+feature-engine will automatically extend the limits of the lower and upper intervals to 
+infinite to accommodate potential outliers in future data.
+12.	 Let’s transform the variables in the train and test sets:
+train_t = disc.transform(X_train)
+test_t = disc.transform(X_test)
+13.	 Let’s make bar plots with the fraction of observations per interval to better understand the 
+effect of equal-frequency discretization:
+plt.figure(figsize=(6, 12), constrained_layout=True)
+for i in range(3):
+    # location of plot in figure
+    ax = plt.subplot(3, 1, i + 1)
+    # the variable to plot
+    var = variables[i]
+    # determine proportion of observations per bin
+    t1 = train_t[var].value_counts(normalize=True)
+    t2 = test_t[var].value_counts(normalize=True)
+    # concatenate proportions
+    tmp = pd.concat([t1, t2], axis=1)
+    tmp.columns = ['train', 'test']
+    # sort the intervals
+    tmp.sort_index(inplace=True)
+    # make plot
+    tmp.plot.bar(ax=ax)
+    plt.xticks(rotation=45)
+    plt.ylabel("Observations per bin")
+    # add variable name as title
+    ax.set_title(var)
+ plt.show()

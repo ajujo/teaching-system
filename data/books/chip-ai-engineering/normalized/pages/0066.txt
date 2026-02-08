@@ -1,0 +1,29 @@
+Establecimiento de expectativas
+Una vez que haya decidido que necesita crear esta increíble aplicación de
+IA usted mismo, el siguiente paso es averiguar qué aspecto tiene el éxito:
+¿cómo medirá el éxito? La métrica más importante es cómo repercutirá en
+su negocio. Por ejemplo, si se trata de un chatbot de atención al cliente, las
+métricas empresariales pueden incluir lo siguiente:
+¿Qué porcentaje de mensajes de clientes quiere que automatice el
+chatbot?
+¿Cuántos mensajes más debe permitirle procesar el chatbot?
+¿Cuánto aumenta el chatbot la rapidez de respuesta?
+¿Cuánto trabajo humano puede ahorrarle el chatbot?
+Un chatbot puede responder a más mensajes, pero eso no significa que vaya
+a hacer felices a los usuarios, por lo que es importante hacer un seguimiento
+de la satisfacción del cliente y de sus comentarios en general. El
+"Retroalimentación de los usuarios" explica cómo diseñar un sistema de
+retroalimentación.
+Para asegurarse de que un producto no se ponga a disposición de los
+clientes antes de que esté listo, tenga unas expectativas claras sobre su
+umbral de utilidad: qué tan bueno tiene que ser para que sea útil. Los
+umbrales de utilidad podrían incluir los siguientes grupos de métricas:
+Métricas de calidad para medir la calidad de las respuestas del
+chatbot.
+Métricas de latencia, incluyendo TTFT (tiempo hasta el primer
+token), TPOT (tiempo por token de output) y latencia total. Lo que
+se considere una latencia aceptable depende de su caso de uso. Si
+todas las solicitudes de sus clientes son procesadas actualmente por
+humanos con un tiempo medio de respuesta de una hora, cualquier
+opción más rápida podría ser suficiente.
+Métrica de costos: cuánto cuesta cada solicitud de inferencia.

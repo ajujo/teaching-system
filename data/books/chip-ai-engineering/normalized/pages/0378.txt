@@ -1,0 +1,33 @@
+Esta conclusión no significa que la regurgitación de información con
+derechos de autor no sea un riesgo. Cuando se produce una regurgitación de
+información con derechos de autor, puede dar lugar a costosas demandas
+judiciales. El estudio de Stanford también excluye los casos en que los
+materiales protegidos por derechos de autor se regurgitan con
+modificaciones. Por ejemplo, si un modelo presenta una historia sobre el
+mago de barba gris Randalf en su búsqueda para destruir el poderoso
+brazalete del malvado Señor Oscuro arrojándolo a Vordor, su estudio no lo
+detectaría como una regurgitación de El Señor de los Anillos. La
+regurgitación no literal de información con derechos de autor sigue
+suponiendo un riesgo considerable para las empresas que quieren
+aprovechar la IA en sus actividades principales.
+¿Por qué el estudio no intentó medir la regurgitación no literal de
+información con derechos de autor? Porque es difícil. Determinar si algo
+constituye una infracción de los derechos de autor puede llevar meses, si no
+años, a los abogados especializados en propiedad intelectual y a los
+expertos en la materia. Es poco probable que exista un método automático
+infalible para detectar las infracciones de los derechos de autor. La mejor
+solución es no entrenar a un modelo con material protegido por derechos de
+autor, pero si no entrena usted mismos al modelo, no tiene ningún control
+sobre él.
+Defensas contra los ataques de prompts
+En general, para mantener una aplicación segura, primero hay que entender
+a qué ataques es susceptible su sistema. Existen pruebas comparativas que
+ayudan a evaluar la robustez de un sistema frente a ataques adversarios,
+como Advbench (Chen et al., 2022) y PromptRobust (Zhu et al., 2023).
+Entre las herramientas que ayudan a automatizar el sondeo de seguridad
+figuran Azure/PyRIT, leondz/garak, greshake/llm-security y CHATS-
+lab/persuasive_jailbreaker. Estas herramientas suelen tener plantillas de
+ataques conocidos y prueban automáticamente un modelo objetivo contra
+estos ataques.
+Muchas organizaciones cuentan con un equipo Red Team de seguridad que
+idea nuevos ataques para poder reforzar sus sistemas frente a ellos.

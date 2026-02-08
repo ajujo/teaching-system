@@ -1,0 +1,56 @@
+Model
+Maintainer
+MMLU Relative price per million
+input tokens
+Relative price per million
+output tokens
+Grok 3
+xAI
+79.9
+15
+25
+Nova Pro
+Amazon
+82.0
+4
+5.33
+Mistral Large 2
+Mistral
+80.0
+10
+10
+In Table 2-2, prices are shown as a multiple of the price per million tokens on Llama
+3.1, which was the least expensive at the time of publishing. At the time of publishing,
+Meta is charging $0.20 per million input tokens and $0.60 per million output tokens.
+You might also notice that performance does not directly correlate to price. Also
+know that performance on benchmarks offers useful guidance, but your mileage may
+vary in how these benchmarks align with your particular task. When possible, com‐
+pare the model for your task and find the model that provides you with the best price
+per performance.
+Ultimately, model selection is not a onetime decision but a strategic design choice
+that must be revisited as agent capabilities, user needs, and infrastructure evolve.
+Developers must weigh trade-offs between generality and specialization, performance
+and cost, simplicity and extensibility. By carefully considering the task complexity,
+input modalities, operational constraints, and customization needs, teams can choose
+models that enable their agents to act efficiently, scale reliably, and perform with pre‐
+cision in the real world.
+Tools
+In agent-based systems, tools are the fundamental capabilities that enable agents to
+perform specific actions or solve problems. Tools represent the functional building
+blocks of an agent, providing the ability to execute tasks and interact with both users
+and other systems. An agent's effectiveness depends on the range and sophistication
+of its tools.
+Designing Capabilities for Specific Tasks
+Tools are typically tailored to the tasks that the agent is designed to solve. When
+designing tools, developers must consider how the agent will perform under different
+conditions and contexts. A well-designed toolset ensures that the agent can handle a
+variety of tasks with precision and efficiency. Tools can be divided into three main
+categories:
+Local tools
+These are actions that the agent performs based on internal logic and computa‐
+tions without external dependencies. Local tools are often rule-based or involve
+executing predefined functions. Examples include mathematical calculations,
+data retrieval from local databases, or simple decision making based on
+24
+|
+Chapter 2: Designing Agent Systems

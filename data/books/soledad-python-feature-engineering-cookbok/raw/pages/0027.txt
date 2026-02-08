@@ -1,0 +1,20 @@
+Imputing Missing Data
+4
+    test_size=0.30,
+    random_state=42,
+)
+4.	
+Let’s now make a bar plot with the proportion of missing data per variable in the training and 
+test sets:
+fig, axes = plt.subplots(
+    2, 1, figsize=(15, 10), squeeze=False)
+X_train.isnull().mean().plot(
+    kind='bar', color='grey', ax=axes[0, 0], title="train")
+X_test.isnull().mean().plot(
+    kind='bar', color='black', ax=axes[1, 0], title="test")
+axes[0, 0].set_ylabel('Fraction of NAN')
+axes[1, 0].set_ylabel('Fraction of NAN')
+plt.show()
+The previous code block returns the following bar plots with the fraction of missing data per 
+variable in the training (top) and test sets (bottom):
+Figure 1.2 – Proportion of missing data per variable

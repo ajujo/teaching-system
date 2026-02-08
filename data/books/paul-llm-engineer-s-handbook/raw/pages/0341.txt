@@ -1,0 +1,38 @@
+Inference Optimization
+310
+To provide a brief overview of GGUF quantization, llama.cpp groups values into blocks and rounds 
+them to a lower precision. For instance, the legacy Q4_0 format handles 32 values per block, scaling 
+and quantizing them based on the largest weight value in the block (w = q × block_scale ). In Q4_1, 
+the smallest Lvalue in the block is also added (w = q × block_scale + block_minimum  ). In Q4_K, weights 
+are divided into super-blocks, containing 8 blocks with 32 values. Block scales and minimum 
+values are also quantized in higher precision with 6 bits (w = q × block_scale(6bit) +  block_min(6bit) ). 
+Finally, i-quants like IQ4_XS are inspired by another quantization technique called QuIP#. This 
+ensures an even number of positive (or negative) quant signs in groups of eight and implements 
+the E8 lattice to store their magnitude.
+Here is a practical example of how to quantize a model in the GGUF format. The following steps 
+can be executed on a free T4 GPU in Google Colab:
+1.	
+Install llama.cpp and the required libraries:
+!git clone https://github.com/ggerganov/llama.cpp
+!cd llama.cpp && git pull && make clean && LLAMA_CUBLAS=1 make
+!pip install -r llama.cpp/requirements.txt
+2.	
+Download the model to convert. We will provide the model ID from the Hugging Face 
+Hub – for example, mistralai/Mistral-7B-Instruct-v0.2:
+MODEL_ID = "mlabonne/EvolCodeLlama-7b"
+MODEL_NAME = MODEL_ID.split('/')[-1]
+!git lfs install
+!git clone https://huggingface.co/{MODEL_ID}
+3.	
+First, we convert the model into FP16. This is an intermediary artifact that will be used 
+for every GGUF quantization type. Note that different conversion scripts exist in llama.
+cpp and are compatible with different models:
+fp16 = f"{MODEL_NAME}/{MODEL_NAME.lower()}.fp16.bin"
+!python llama.cpp/convert.py {MODEL_NAME} --outtype f16 --outfile 
+{fp16}
+4.	
+We select a format (here, Q4_K_M) and start the quantization. This process can take an 
+hour on a T4 GPU:
+METHOD = "q4_k_m"
+qtype = f"{MODEL_NAME}/{MODEL_NAME.lower()}.{method.upper()}.gguf"
+!./llama.cpp/quantize {fp16} {qtype} {METHOD}

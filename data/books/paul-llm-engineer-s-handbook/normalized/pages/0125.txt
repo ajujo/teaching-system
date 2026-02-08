@@ -1,0 +1,28 @@
+Data Engineering
+94
+user = UserDocument.get_or_create(first_name="Paul", last_name="Iusztin")
+articles = ArticleDocument.bulk_find(author_id=str(user.id))
+print(f"User ID: {user.id}")
+print(f"User name: {user.first_name} {user.last_name}")
+print(f"Number of articles: {len(articles)}")
+print("First article link:", articles[0].link)
+The output of the code from above is:
+User ID: 900fec95-d621-4315-84c6-52e5229e0b96
+User name: Paul Iusztin
+Number of articles: 50
+First article link: https://medium.com/decodingml/an-end-to-end-frameworkfor-production-ready-llm-systems-by-building-your-llm-twin-2cc6bb01141f
+With only two lines of code, we can query and filter our MongoDB data warehouse using any
+ODM defined within our project.
+Also, to ensure that your data collection pipeline works as expected, you can search your MongoDB
+collections using your IDE's MongoDB plugin, which you must install separately. For example,
+you can use this plugin for VSCode: https://www.mongodb.com/products/tools/vs-code. For
+other IDEs, you can use similar plugins or external NoSQL visualization tools. After connecting
+to the MongoDB visualization tool, you can connect to our local database using the following
+URI: mongodb://llm_engineering:llm_engineering@127.0.0.1:27017. For a cloud MongoDB
+cluster, you must change the URI, which we will explore in Chapter 11.
+And just like that, you've learned how to run the data collection pipeline with different ZenML
+configs and how to visualize the output artifacts of each run. We also looked at how to query the
+data warehouse for a particular data category and author. Thus, we've finalized our data engineering chapter and can move to the conclusion.
+Troubleshooting
+The raw data stored in the MongoDB database is central to all future steps. Thus, if you haven't
+successfully run the code from this chapter due to any issues with the crawlers, this section provides solutions for fixing potential issues to allow you to move forward.

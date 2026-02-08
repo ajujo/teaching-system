@@ -1,0 +1,27 @@
+Extracting features from dates with pandas
+183
+We see the new is_weekend variable in the following output:
+Figure 6.8 - The first five rows of a DataFrame with the new is_weekend variable
+Note
+We can automate the extraction of all these features by using feature-engine. Check
+out the Automating datetime feature extraction with feature-engine recipe in this chapter for
+more details.
+With that, we have extracted many new features from the date part of a datetime variable using
+pandas. These features are useful for data analysis, visualization, and predictive modelling.
+How it works...
+In this recipe, we extracted many date-related features from a datetime variable by using the dt
+module from pandas. First, we created a sample DataFrame with a variable that contained dates.
+We used pandas' date_range() to create a range of values starting from an arbitrary date and
+increasing the time by intervals of 1 day. With the periods argument, we indicated the number of
+values to create in the range - that is, the number of dates. With the freq argument, we indicated
+the size of the steps between the dates. We used D for days in our example. Finally, we transformed
+the date range into a DataFrame with pandas DataFrame().
+To extract the different parts of a date, we used pandas' dt to access the datetime properties of a
+pandas Series and then utilized the different properties. We used year, month, and quarter to
+capture the year, month, and quarter into new columns of the DataFrame. To find the semester, we created
+a Boolean using NumPy's where() in combination with the newly created quarter variable. NumPy's
+where() scanned the values of the quarter variable; if they were smaller than 3, it returned the value
+of 1 for the first semester; otherwise, it returned the value of 2, corresponding to the second semester.
+To extract the different representations of days and weeks, we used the isocalender().week, day,
+and dayofweek properties. With the day of the week, we went ahead and created a binary variable to
+indicate whether it was a weekend. We used where() to scan the day of the week, and if the value was

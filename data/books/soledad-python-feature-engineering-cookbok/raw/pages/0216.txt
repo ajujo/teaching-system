@@ -1,0 +1,28 @@
+Working with time in different time zones
+193
+In the following output, we see the variable that captures the time difference between the two 
+datetime variables in days:
+Figure 6.18 – A DataFrame with the new variable containing the 
+difference between the two datetime variables
+For more details, check out https://feature-engine.trainindata.com/en/latest/
+api_doc/datetime/DatetimeSubtraction.html.
+See also
+To learn more about NumPy’s timedelta, visit https://numpy.org/devdocs/reference/
+arrays.datetime.html#datetime-and-timedelta-arithmetic.
+Working with time in different time zones
+Some organizations operate internationally; therefore, the information they collect about events may 
+be recorded alongside the time zone of the area where the event took place. To be able to compare 
+events that occurred across different time zones, we typically have to set all of the variables within 
+the same zone. In this recipe, we will learn how to unify the time zones of a datetime variable and 
+how to reassign a variable to a different time zone using pandas.
+How to do it...
+To proceed with this recipe, we’ll create a sample DataFrame containing two variables in different 
+time zones:
+1.	
+Let’s import pandas:
+import pandas as pd
+2.	
+Let’s create a DataFrame containing one variable with values in different time zones:
+df = pd.DataFrame()
+df['time1'] = pd.concat([
+    pd.Series(

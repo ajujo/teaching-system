@@ -1,0 +1,30 @@
+Coherencia factual del 90 %: podemos automatizar el 50 %.
+Coherencia factual del 98 %: podemos automatizar el 90 %.
+Comprender el impacto de las métricas de evaluación en las métricas de
+negocio es útil para la planificación. Si sabe cuánto puede ganar mejorando
+una determinada métrica, puede tener más confianza para invertir recursos
+en mejorar esa métrica.
+También es útil determinar el umbral de utilidad: ¿qué puntuaciones debe
+alcanzar una aplicación para que sea útil? Por ejemplo, puede determinar
+que la puntuación de coherencia factual de su chatbot debe ser de al menos
+el 50 % para que sea útil. Cualquier cosa por debajo de esto lo hace
+inutilizable incluso para las peticiones generales de los clientes.
+Antes de desarrollar métricas de evaluación de la IA, es crucial comprender
+las métricas empresariales a las que se dirigen. Muchas aplicaciones se
+centran en métricas de fidelidad, como los usuarios activos diarios,
+semanales o mensuales (DAU, WAU, MAU). Otros dan prioridad a las
+métricas de interacción, como el número de conversaciones que un usuario
+inicia al mes o la duración de cada visita: cuanto más tiempo permanece un
+usuario en la aplicación, menos probable es que la abandone. Elegir qué
+métricas priorizar puede parecer como equilibrar ganancias con
+responsabilidad social. Aunque enfatizar las métricas de fidelidad e
+interacción puede generar mayores ganancias, también puede hacer que un
+producto dé prioridad a funciones adictivas o contenidos extremos, lo que
+puede ser perjudicial para los usuarios.
+Paso 3. Definir los métodos y datos de evaluación
+Ahora que ha desarrollado sus criterios y rúbricas de puntuación, definamos
+qué métodos y datos desea utilizar para evaluar su aplicación.
+Seleccionar métodos de evaluación
+Diferentes criterios pueden requerir diferentes métodos de evaluación. Por
+ejemplo, usted utiliza un pequeño clasificador de toxicidad especializado
+para detectar la toxicidad, la similitud semántica para medir la relevancia

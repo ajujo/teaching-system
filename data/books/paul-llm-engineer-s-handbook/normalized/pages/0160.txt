@@ -1,0 +1,10 @@
+Chapter 4
+129
+Designing the architecture of the RAG feature pipeline
+The last step is to architect and go through the design of the RAG feature pipeline of the LLM
+Twin application. We will use a batch design scheduled to poll data from the MongoDB data
+warehouse, process it, and load it to a Qdrant vector DB. The first question to ask ourselves is,
+"Why a batch pipeline?"
+But before answering that, let's quickly understand how a batch architecture works and behaves
+relative to a streaming design.
+Figure 4.9: The architecture of the LLM Twin's RAG feature pipeline

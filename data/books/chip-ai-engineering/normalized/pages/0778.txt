@@ -1,0 +1,24 @@
+- recuperación contextual, Reescritura de consultas
+- reescritura de consultas, Reranking
+- reordenamiento, Estrategia de fragmentación
+optimización de Pareto, Juego de rol
+optimización de preferencias directas (DPO), Afinado de preferencias
+optimización de prompts, Hacer iteraciones de prompts
+optimización del servicio de inferencia, Kernels y compiladores
+- caché de prompts, Desacoplamiento del llenado previo y la
+decodificación
+- desacoplamiento de llenado previo y decodificación, Desacoplamiento
+del llenado previo y la decodificación
+- paralelismo, Almacenamiento en cache de prompts
+organización de datos, Agregación de información
+orquestación de canalizaciones, Detección de deriva
+- monitoreo y observabilidad, Monitoreo y observabilidad
+- detección de deriva, Detección de deriva
+- métricas, Monitoreo y observabilidad
+- registros y rastros, Métricas
+orquestación de canalizaciones de IA (ver orquestación de canalizaciones)
+outputs estructurados, Cómputo de tiempo de prueba
+P
+paralelismo, Almacenamiento en cache de prompts
+paralelismo de contextos, Paralelismo
+paralelismo de réplicas, Paralelismo

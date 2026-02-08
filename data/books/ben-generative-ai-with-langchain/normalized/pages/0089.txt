@@ -1,0 +1,35 @@
+First Steps with LangChain
+62
+        ]
+    )
+
+    response = chat.invoke([message])
+    return response.content
+# Example usage
+image_url = "https://github.com/benman1/generative_ai_with_langchain/blob/
+f8f1680a8e5abf340dec4d02e38f7c3f84f02b41/chapter2/skyscrapers.png"
+questions = [
+    "What objects do you see in this image?",
+    "What is the overall mood or atmosphere?",
+    "Are there any people in the image?"
+]
+for question in questions:
+    print(f"\nQ: {question}")
+    print(f"A: {analyze_image(image_url, question)}")
+The model provides a rich, detailed analysis of our generated cityscape:
+Q: What objects do you see in this image?
+A: The image features a futuristic cityscape with tall, sleek skyscrapers.
+The buildings appear to have a glowing or neon effect, suggesting a hightech environment. There is a large, bright sun or light source in the
+sky, adding to the vibrant atmosphere. A road or pathway is visible in
+the foreground, leading toward the city, possibly with light streaks
+indicating motion or speed. Overall, the scene conveys a dynamic,
+otherworldly urban landscape.
+Q: What is the overall mood or atmosphere?
+A: The overall mood or atmosphere of the scene is futuristic and vibrant.
+The glowing outlines of the skyscrapers and the bright sunset create a
+sense of energy and possibility. The combination of deep colors and light
+adds a dramatic yet hopeful tone, suggesting a dynamic and evolving urban
+environment.
+Q: Are there any people in the image?
+A: There are no people in the image. It appears to be a futuristic
+cityscape with tall buildings and a sunset.

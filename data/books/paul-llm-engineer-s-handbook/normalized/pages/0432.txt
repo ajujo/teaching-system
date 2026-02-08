@@ -1,0 +1,35 @@
+Chapter 11
+401
+DevOps
+Manually shipping software is time-consuming, error-prone, involves security risks, and doesn't
+scale. Thus, DevOps was born to automate the process of shipping software at scale. More specifically, DevOps is used in software development, where you want to completely automate your
+building, testing, deploying, and monitoring components. It is a methodology designed to shorten
+the development lifecycle and ensure continuous delivery of high-quality software. It encourages
+collaboration, automates processes, integrates workflows, and implements rapid feedback loops.
+These elements contribute to a culture where building, testing, and releasing software becomes
+more reliable and faster.
+Embracing a DevOps culture offers significant advantages to an organization, primarily boosting
+operational efficiency, speeding up feature delivery, and enhancing product quality. Some of the
+main benefits include:
+•
+Improved collaboration: DevOps is pivotal in creating a more unified working environment. Eliminating the barriers between development and operations teams fosters
+enhanced communication and teamwork, leading to a more efficient and productive
+workplace.
+•
+Boosted efficiency: Automating the software development lifecycle reduces manual tasks,
+errors, and delivery times.
+•
+Ongoing improvement: DevOps is not just about internal processes. It's about ensuring
+that the software effectively meets user needs. Promoting a culture of continuous feedback
+enables teams to quickly adapt and enhance their processes, thereby delivering software
+that genuinely satisfies the end users.
+•
+Superior quality and security: DevOps ensures swift software development while maintaining high quality and security standards through CI/CD and proactive security measures.
+The DevOps lifecycle
+As illustrated in Figure 11.1, the DevOps lifecycle encompasses the entire journey from the inception
+of software development to its delivery, upkeep, and security. The key stages of this lifecycle are:
+1.
+Plan: Organize and prioritize the tasks, ensuring each is tracked to completion.
+2.
+Code: Collaborate with your team to write, design, develop, and securely manage code
+and project data.

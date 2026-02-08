@@ -1,0 +1,29 @@
+Evaluating LLMs
+282
+    for evaluation in dataset['evaluation']:
+        try:
+            eval_dict = json.loads(evaluation) if
+isinstance(evaluation, str) else evaluation
+            accuracy_score = eval_dict['accuracy']['score']
+            style_score = eval_dict['style']['score']
+            accuracy_scores.append(accuracy_score)
+            style_scores.append(style_score)
+        except (json.JSONDecodeError, KeyError, TypeError):
+            accuracy_scores.append(None)
+            style_scores.append(None)
+12.	 We add two new columns to store the accuracy and style scores for further analysis:
+    if 'accuracy' in dataset.column_names:
+        dataset = dataset.remove_columns(['accuracy'])
+    dataset = dataset.add_column('accuracy', accuracy_scores)
+    if 'style' in dataset.column_names:
+        dataset = dataset.remove_columns(['style'])
+    dataset = dataset.add_column('style', style_scores)
+13.	 Let's push the final dataset with generated answers, evaluations, and scores to the Hugging Face Hub:
+    dataset.push_to_hub(f"mlabonne/{model_id.split('/')
+[-1]}-results")
+    return dataset
+14.	 We can now call the evaluate_answers() function with the three models we selected:
+model_ids = [
+    'mlabonne/TwinLlama-3.1-8B',
+    'mlabonne/TwinLlama-3.1-8B-DPO',
+    'meta-llama/Meta-Llama-3.1-8B-Instruct'

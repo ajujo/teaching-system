@@ -1,0 +1,30 @@
+Creating New Features
+254
+Figure 8.11 – Sine and cosine functions
+We can capture the periodicity of a cyclical variable by applying a trigonometric transformation after 
+normalizing the variable values between 0 and 2π:
+​sin​(x)​ = sin​(​2π ​  X 
+_ 
+​X​ max​ ​)​
+Dividing the variable’s values by its maximum will normalize it between 0 and 1 (assuming that the 
+minimum value is 0), and multiplying it by 2π will rescale the variable between 0 and 2π.
+Should we use sine? Or should we use cosine? The thing is, we need to use both to encode all the values 
+of the variables unequivocally. Since sine and cosine circle between 0 and 1, they will take a value of 0 for 
+more than one value of x. For example, the sine of 0 returns 0, and so does the sine of π. So, if we encode 
+a variable with just the sine, we wouldn’t be able to distinguish between the values 0 and π anymore. 
+However, because the sine and the cosine are out of phase, the cosine of 0 returns 1, whereas the cosine 
+of π returns -1. Hence, by encoding the variable with the two functions, we are now able to distinguish 
+between 0 and 1, which would take (0,1) and (0,-1) as values for the sine and cosine functions, respectively.
+How to do it…
+In this recipe, we will first transform the hour variable in a toy DataFrame with the sine and the 
+cosine to get a sense of the new variable representation. Then, we will automate feature creation from 
+multiple cyclical variables using feature-engine:
+1.	
+Begin by importing the necessary libraries:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+2.	
+Create a toy DataFrame with one variable – hour – with values between 0 and 23:
+df = pd.DataFrame([i for i in range(24)],
+    columns=["hour"])

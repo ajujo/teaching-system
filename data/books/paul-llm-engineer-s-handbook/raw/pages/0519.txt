@@ -1,0 +1,70 @@
+Index
+488
+reproducibility  471
+requests per second (RPS)  354
+REST API triggers  446
+Retrieval-Augmented Generation 
+Assessment (Ragas)  272-274
+retrieval-augmented generation  
+(RAG)  2, 99, 100, 207, 261, 317
+embeddings  107, 108
+embeddings, applications  114
+embeddings, creating  111-114
+embeddings, significance  109, 110
+hallucinations  101
+issues, solving  101
+vanilla RAG framework  101
+vector DBs  115
+reward model learning  246
+reward models  188
+rule-based filtering  183, 184
+S
+SageMaker  421
+SageMaker Inference deployment  369
+configuration  369
+endpoint  369
+Inference component  369
+model  369
+SageMaker Orchestrator  421
+SageMaker roles
+configuring  372, 373
+scalable and secure object storage  
+service (S3)  421
+scalable policy
+creating  395
+scalable target
+registering  394
+scaling limits
+maximum  396
+minimum  396
+scheduled triggers  446
+Selenium tool  69
+issues  95
+semantic similarity  185
+Server-Sent Events (SSE)  372
+SFT, techniques
+chat templates  209, 210
+fine-tune, usage, considerations  207, 208
+hyperparameters, training  216
+instruction dataset formats  208
+parameter-efficient fine-tuning  
+techniques  211
+SFT techniques, parameters
+batch size  216, 217
+gradient checkpointing  219
+learning rate and scheduler  216
+maximum length and packing  217, 218
+number of epochs  218
+optimizers  218
+weight decay  219
+speculative decoding  295-297
+staging environment  432
+stateless real-time architecture  11
+statistical analysis  190
+stress tests  463
+style transfer  2
+summarization  231
+Supervised Fine-Tuning (SFT)  177, 229, 264
+techniques, exploring  206
+system metrics  467
+system tests  462

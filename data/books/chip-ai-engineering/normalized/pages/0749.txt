@@ -1,0 +1,26 @@
+comentarios aleatorios, Sesgos
+comentarios conversacionales
+- comentarios de lenguaje natural, Extracción de retroalimentación
+conversacional
+- corrección de errores, Corrección de errores
+- finalización anticipada, Extracción de retroalimentación
+conversacional
+- quejas, Corrección de errores
+- sentimiento, Corrección de errores
+- diversidad lingüística, Duración de la conversación
+- duración de la conversación, Duración de la conversación
+- extracción, Retroalimentación de los usuarios
+- organización de la conversación, Sentimiento
+comentarios de lenguaje natural, Extracción de retroalimentación
+conversacional
+- corrección de errores, Corrección de errores
+- finalización anticipada, Extracción de retroalimentación
+conversacional
+- quejas, Corrección de errores
+- sentimiento, Corrección de errores
+comentarios de los usuarios, Orquestación de procesos de IA
+- diseño de los comentarios, Duración de la conversación
+- extracción de los comentarios conversacionales, Retroalimentación de
+los usuarios
+- comentarios de lenguaje natural, Extracción de retroalimentación
+conversacional

@@ -1,0 +1,29 @@
+Building Workflows with LangGraph
+84
+We introduced the StrOutputParser in Chapter 2 to convert the output of the ChatModel from
+an AIMessage to a string so that we can easily pass it to the next step in the chain.
+Another thing to keep in mind is that LangChain building blocks allow you to redefine parameters,
+including default prompts. You can always check them on Github; sometimes it's a good idea to
+customize default prompts for your workflows.
+Fallbacks
+In software development, a fallback is an alternative program that allows you to recover if your
+base one fails. LangChain allows you to define fallbacks on a Runnable level. If execution fails,
+an alternative chain is triggered with the same input parameters. For example, if the LLM you're
+using is not available for a short period of time, your chain will automatically switch to a different
+one that uses an alternative provider (and probably different prompts).
+Our fake model fails every second time, so let's add a fallback to it. It's just a lambda that prints
+a statement. As we can see, every second time, the fallback is executed:
+from langchain_core.runnables import RunnableLambda
+chain_fallback = RunnableLambda(lambda _: print("running fallback"))
+chain = fake_llm | RunnableLambda(lambda _: print("running main chain"))
+chain_with_fb = chain.with_fallbacks([chain_fallback])
+chain_with_fb.invoke("test")
+chain_with_fb.invoke("test")
+>> running fallback
+running main chain
+Generating complex outcomes that can follow a certain template and can be parsed reliably is
+called structured generation (or controlled generation). This can help to build more complex
+workflows, where an output of one LLM-driven step can be consumed by another programmatic
+step. We'll pick this up again in more detail in Chapters 5 and 6.
+You can read about other available output-fixing parsers here: https://python.
+langchain.com/docs/how_to/output_parser_retry/.

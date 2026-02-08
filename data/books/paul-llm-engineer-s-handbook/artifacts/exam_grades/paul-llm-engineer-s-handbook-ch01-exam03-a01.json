@@ -1,0 +1,172 @@
+{
+  "$schema": "exam_grade_report_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam03-a01",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam03",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "graded_at": "2026-02-06T06:21:17.097127+00:00",
+  "provider": "lmstudio",
+  "model": "default",
+  "mode": "mixed",
+  "strict": true,
+  "grading_time_ms": 47566,
+  "results": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q01",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (0): A) Simular conversaciones con usuarios reales.. ",
+      "expected_answer": "0: A) Simular conversaciones con usuarios reales.",
+      "given_answer": "1: B) Emular el estilo de escritura de una persona específica.",
+      "correct_option_text": "A) Simular conversaciones con usuarios reales.",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q02",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (0): A) TensorFlow. ",
+      "expected_answer": "0: A) TensorFlow",
+      "given_answer": "2: C) Docker",
+      "correct_option_text": "A) TensorFlow",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (0): A) Feature, Training, Inference. ",
+      "expected_answer": "0: A) Feature, Training, Inference",
+      "given_answer": "1: B) Fast Tracking Infrastructure",
+      "correct_option_text": "A) Feature, Training, Inference",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q04",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (0): A) Reduce el costo computacional.. ",
+      "expected_answer": "0: A) Reduce el costo computacional.",
+      "given_answer": "1: B) Permite separar claramente las etapas de procesamiento.",
+      "correct_option_text": "A) Reduce el costo computacional.",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! ",
+      "expected_answer": "0: A) Validar la viabilidad técnica y funcional.",
+      "given_answer": "0: A) Validar la viabilidad técnica y funcional.",
+      "correct_option_text": "A) Validar la viabilidad técnica y funcional.",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q06",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (0): A) Hugging Face. ",
+      "expected_answer": "0: A) Hugging Face",
+      "given_answer": "2: C) ZenML",
+      "correct_option_text": "A) Hugging Face",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q07",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! ",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q08",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! ",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q09",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! ",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q10",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta no proporciona ninguna información relevante sobre los componentes de la arquitectura FTI ni sus funciones. Se espera que el estudiante revise los materiales del curso y estudie los conceptos básicos antes de responder preguntas fundamentales.",
+      "expected_answer": "",
+      "given_answer": "no lo sé",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q11",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta es muy genérica y no aborda los aspectos clave del MVP en proyectos de LLM Twin (validación de hipótesis, reducción de riesgos, iteración rápida). Se requiere una explicación más específica sobre cómo el MVP permite probar funcionalidades esenciales con mínima inversión.",
+      "expected_answer": "",
+      "given_answer": "Para asegurar una buena base",
+      "grading_path": "llm",
+      "confidence": 0.95,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam03-q12",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta no proporciona ninguna información relevante sobre las herramientas mencionadas en el capítulo. Se espera que los estudiantes revisen el material y respondan con base en su contenido, incluso si la respuesta es parcial.",
+      "expected_answer": "",
+      "given_answer": "no lo sé",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    }
+  ],
+  "summary": {
+    "total_questions": 12,
+    "correct_count": 4,
+    "total_score": 4.0,
+    "max_score": 15,
+    "percentage": 0.26666666666666666,
+    "passed": false,
+    "by_unit": {
+      "paul-llm-engineer-s-handbook-ch01-u01": {
+        "score": 4.0,
+        "max": 15.0
+      }
+    },
+    "by_type": {
+      "multiple_choice": {
+        "correct": 1,
+        "total": 6
+      },
+      "true_false": {
+        "correct": 3,
+        "total": 3
+      },
+      "short_answer": {
+        "correct": 0,
+        "total": 3
+      }
+    }
+  }
+}

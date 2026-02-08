@@ -1,0 +1,30 @@
+Preface
+When I first started connecting language models, tools, orchestration, and memory
+together into what we now call an agent, I was surprised by how capable this design
+pattern was, and just how much confusion there was about this topic. During my
+time building agents and sharing my findings on incident investigation, threat hunt‐
+ing, vulnerability detection, and more, I found that this latest design pattern enabled
+us to solve whole new classes of problems, but also came with many practical hurdles
+to making them reliable for real-world applications. Engineers, scientists, product
+managers, and leadership all wanted to know more. "How do I get my agent to
+work?" "I can get my agent to work some of the time, but how do I get it to work
+most or all of the time?" "How do I choose a model for my use case?" "How do I
+design good tools for my agent?" "What kind of memory do I need?" "Should I use
+RAG?" "Should I build a single-agent or multiagent system?" "What architecture
+should I use?" "Do I need to fine-tune?" "How do I enable agents to learn from expe‐
+rience and improve over time?"
+While there are many blog posts and research papers that focus on specific aspects of
+the topic of designing agent systems, I realized there were a lack of accessible, holistic,
+trustworthy guides for this. I couldn't find the book that I wanted to share with my
+colleagues, so I set out to write it.
+Through in-depth discussions, I've helped teams navigate the complexities of AI
+agents, considering their unique goals, constraints, and environments. AI agent sys‐
+tems are intricate, blending autonomy, decision making, and interaction in ways that
+traditional software doesn't. They're data-driven, adaptive, and involve multiple com‐
+ponents like perception, reasoning, action, and learning, all while interfacing with
+users, tools, and other agents. Complicating matters, the foundation models that
+power these agents are probabilistic and stochastic by nature, making evaluation and
+testing more challenging.
+This book takes a comprehensive approach to building applications with AI agents. It
+covers the entire lifecycle, from conceptualization to deployment and maintenance,
+xiii

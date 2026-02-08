@@ -1,0 +1,33 @@
+las palabras con las que un niño tiene problemas y genera historias
+centradas en ellas.
+Aplicaciones para tomar notas y enviar correos electrónicos, como Google
+Docs, Notion y Gmail, utilizan la IA para ayudar a los usuarios a mejorar su
+escritura. Grammarly, una aplicación de ayuda para escritura, ajusta un
+modelo para que la escritura de los usuarios sea más fluida, coherente y
+clara.
+También se puede abusar de la capacidad de la IA para escribir. En 2023, el
+New York Times informó que Amazon estaba inundado de guías de viaje de
+mala calidad generadas por IA, cada una de ellas con una biografía del
+autor, un sitio web y críticas favorables, todo generado por inteligencia
+artificial.
+En las empresas, la escritura con IA es habitual en ventas, marketing y
+comunicación entre equipos en general. Muchos directivos me han dicho
+que han estado utilizando la IA para ayudarles a redactar informes de
+rendimiento. La IA puede ayudar a elaborar mensajes eficaces de correo
+electrónico de captación de clientes, y a redactar anuncios y descripciones
+de productos. Las aplicaciones de gestión de las relaciones con los clientes
+(CRM), como HubSpot y Salesforce, también disponen de herramientas
+para que los usuarios empresariales generen contenido web y correos
+electrónicos de difusión.
+La IA parece ser especialmente buena con el SEO, quizá porque muchos
+modelos de IA se entrenan con datos de Internet, que están poblados de
+texto optimizado para el SEO. La IA es tan buena en SEO que ha permitido
+una nueva generación de granjas de contenidos. Estas granjas crean sitios
+web basura y los llenan de contenidos generados por IA para que se
+posicionen en los primeros puestos de Google y así atraer tráfico hacia
+ellos. Luego venden espacios publicitarios a través de intercambios de
+anuncios. En junio de 2023, NewsGuard identificó casi 400 anuncios de
+141 marcas populares en sitios web basura generados por IA. Uno de esos
+sitios web basura producía 1200 artículos al día. A menos que se haga algo
+para frenar esto, el futuro de los contenidos de Internet será generado por
+IA, y será bastante sombrío. 14

@@ -1,0 +1,30 @@
+Técnicas de afinado
+Espero que la sección anterior haya dejado claro por qué el afinado de los
+modelos a gran escala requiere tanta memoria. Cuanta más memoria
+requiera el afinado, menos gente podrá permitírselo. Las técnicas que
+reducen la huella de memoria de un modelo hacen más accesible el afinado,
+lo que permite a más personas adaptar los modelos a sus aplicaciones. Esta
+sección se centra en las técnicas de afinado eficientes en memoria, que se
+centran en el afinado eficiente en parámetros.
+También hablaré de la fusión de modelos, un enfoque interesante pero más
+experimental para crear modelos personalizados. Aunque la fusión de
+modelos no suele considerarse afinado, la incluyo en esta sección porque es
+complementaria a este. El afinado adapta un modelo a necesidades
+específicas. La fusión de modelos combina varios modelos, a menudo
+afinados, con el mismo fin.
+Aunque la combinación de varios modelos no es un concepto nuevo, los
+nuevos tipos de modelos y las técnicas de afinado han inspirado muchas
+técnicas creativas de combinación de modelos, lo que hace que sea
+especialmente divertido escribir esta sección.
+Afinado eficiente en parámetros
+Al principio, los modelos eran tan pequeños que se podían ajustar modelos
+enteros. Este enfoque se denomina afinado completo. En el afinado
+completo, el número de parámetros entrenables coincide exactamente con el
+número de parámetros.
+Un afinado completo puede parecerse a un entrenamiento. La principal
+diferencia es que el entrenamiento comienza con ponderaciones aleatorias
+del modelo, mientras que el afinado comienza con ponderaciones del
+modelo que han sido previamente entrenadas.
+Como se explica en "Matemática de la memoria", cuantos más parámetros
+entrenables haya, más memoria se necesitará. Consideremos un modelo de
+7 MM de parámetros:

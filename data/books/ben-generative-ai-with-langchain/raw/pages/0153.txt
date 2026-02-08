@@ -1,0 +1,41 @@
+Building Intelligent RAG Systems
+126
+The preceding figure illustrates a decision tree for selecting the appropriate indexing strategy 
+based on your deployment constraints. The flowchart helps you navigate key decision points:
+1.	
+Start by assessing your dataset size: For small collections (under 100K vectors), exact 
+search remains viable and provides perfect accuracy.
+2.	
+Consider your memory constraints: If memory is limited, follow the left branch toward 
+compression techniques like Product Quantization (PQ).
+3.	
+Evaluate update frequency: If your application requires frequent index updates, prioritize 
+methods like LSH that support efficient updates.
+4.	
+Assess search speed requirements: For applications demanding ultra-low latency, HNSW 
+typically provides the fastest search times once built.
+5.	
+Balance with accuracy needs: As you move downward in the flowchart, consider the 
+accuracy-efficiency tradeoff based on your application’s tolerance for approximate results.
+For most production RAG applications, you’ll likely end up with HNSW or a combined approach 
+like IVF+HNSW, which clusters vectors first (IVF) and then builds efficient graph structures 
+(HNSW) within each cluster. This combination delivers excellent performance across a wide 
+range of scenarios.
+To improve retrieval, documents must be processed and structured effectively. The next section 
+explores loading various document types and handling multi-modal content.
+Vector libraries, like Facebook (Meta) Faiss or Spotify Annoy, provide functionality for working 
+with vector data. They typically offer different implementations of the ANN algorithm, such as 
+clustering or tree-based methods, and allow users to perform vector similarity searches for various 
+applications. Let’s quickly go through a few of the most popular ones:
+•	
+Faiss is a library developed by Meta (previously Facebook) that provides efficient similarity 
+search and clustering of dense vectors. It offers various indexing algorithms, including 
+PQ, LSH, and HNSW. Faiss is widely used for large-scale vector search tasks and supports 
+both CPU and GPU acceleration.
+•	
+Annoy is a C++ library for approximate nearest neighbor search in high-dimensional 
+spaces maintained and developed by Spotify, implementing the Annoy algorithm based 
+on a forest of random projection trees.
+•	
+hnswlib is a C++ library for approximate nearest-neighbor search using the HNSW al­
+gorithm.

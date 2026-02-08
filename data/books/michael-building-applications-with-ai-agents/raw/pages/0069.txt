@@ -1,0 +1,17 @@
+For example, an agent managing a workflow might use a dashboard to show pending
+tasks, completed steps, and error notifications, enabling users to quickly understand
+the system’s state at a glance. Tools like LangSmith, n8n, Arize, and AutoGen are
+beginning to illustrate agent workflows visually, making them easier to understand,
+debug, and reason about; we are likely to see much more of this visual orchestration
+in the future. To see how these graphical orchestration interfaces are emerging in
+practice, Figure 3-2 shows an example of a modern agent workflow builder. Tools like
+this illustrate agent actions, tool calls, conditionals, and outputs as connected visual
+nodes, enabling developers and operators to easily understand, debug, and optimize
+complex agentic flows without stepping through raw code alone.
+Figure 3-2. Visual orchestration of an agent workflow in n8n.io. This interface displays
+an AI agent integrated with multiple tools, models, and structured parsing components
+arranged in a node-based workflow. Such visual designs make it easier to build, man‐
+age, and iterate on multistep agent pipelines at scale.
+Interaction Modalities 
+| 
+47

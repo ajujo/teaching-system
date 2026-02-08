@@ -1,0 +1,39 @@
+Comparing features to reference variables
+237
+7.	
+Let’s set up the feature-engine library’s RelativeFeatures() so that it subtracts 
+or divides every feature from step 5 with respect to the features from step 6:
+creator = RelativeFeatures(
+    variables=features,
+    reference=reference,
+    func=["sub", "div"],
+)
+Note
+Subtracting the features from step 5 and step 6 does not make biological sense, but we will do 
+it anyway to demonstrate the use of the RelativeFeatures() transformer.
+8.	
+Let’s add the new features to the DataFrame and capture the result in a new variable:
+df_t = creator.fit_transform(df)
+9.	
+Let’s capture the names of the new features in a list:
+all_feat = creator.feature_names_in_
+new_features = [
+    f for f in df_t.columns if f not in all_feat]
+Note
+feature_names_in_ is a common attribute in scikit-learn and feature-engine 
+transformers and stores the name of the variables from the DataFrame used to fit the transformer. 
+In other words, it stores the names of the input features. When using transform(), the 
+transformers check that the features from the new input dataset match those used during 
+training. In step 9, we leverage this attribute to find the additional variables added to the data 
+after the transformation.
+If we execute print(new_features), we will see a list with the names of the features created by 
+ReferenceFeatures(). Note that the features contain the variables on the left- and right-hand 
+sides of the mathematical equation, plus the function that was applied to them to create the new feature:
+['mean smoothness_sub_mean radius',
+'mean compactness_sub_mean radius',
+'mean concavity_sub_mean radius',
+'mean symmetry_sub_mean radius',
+'mean smoothness_sub_mean area',
+'mean compactness_sub_mean area',
+'mean concavity_sub_mean area',
+'mean symmetry_sub_mean area',

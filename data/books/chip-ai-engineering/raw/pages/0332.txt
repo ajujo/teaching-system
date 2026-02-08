@@ -1,0 +1,31 @@
+AMBIGÜEDAD TERMINOLÓGICA: PROMPT VERSUS
+CONTEXTO
+A veces, se utilizan prompt y contexto de forma indistinta. En el
+documento GPT-3 (Brown et al., 2020), el término contexto se utilizó
+para referirse a todo el input en un modelo. En este sentido, contexto es
+exactamente lo mismo que prompt.
+Sin embargo, en una larga discusión en mi Discord, algunas personas
+argumentaron que el contexto es parte del prompt. El contexto se refiere
+a la información que necesita un modelo para realizar lo que el prompt
+le pide. En este sentido, el contexto es información contextual.
+Para hacerlo más confuso, la documentación de Google sobre PALM 2
+define el contexto como la descripción que determina "cómo responde
+el modelo a lo largo de la conversación. Por ejemplo, puede utilizar el
+contexto para especificar las palabras que el modelo puede o no puede
+utilizar, los temas en los que debe centrarse o que debe evitar, o el
+formato o estilo de la respuesta". Esto haría que contexto sea lo mismo
+que la descripción de la tarea.
+En este libro, utilizaré prompt para referirme a todo el input del modelo,
+y contexto para referirme a la información proporcionada al modelo
+para que pueda realizar una tarea determinada.
+Hoy en día, el aprendizaje en contexto se da por sentado. Un modelo
+fundacional aprende de una gran cantidad de datos y debería ser capaz de
+hacer muchas cosas. Sin embargo, antes de GPT-3, los modelos ML solo
+podían hacer aquello para lo que habían sido entrenados, por lo que el
+aprendizaje en contexto parecía magia. Muchas personas inteligentes han
+reflexionado largo y tendido sobre por qué y cómo funciona el aprendizaje
+en contexto (véase "How Does In-context Learning Work?" del Stanford AI
+Lab). François Chollet, creador del marco ML Keras, comparó un modelo
+fundacional con una biblioteca de muchos programas diferentes. Por
+ejemplo, puede contener un programa que escriba haikus y otro que escriba
+limericks. Cada programa puede activarse mediante determinados prompts.

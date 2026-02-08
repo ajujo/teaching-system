@@ -1,0 +1,30 @@
+agente para su posterior reutilización. Cada habilidad es un programa de
+codificación. Cuando el gestor de habilidades determina que una habilidad
+recién creada va a ser útil (por ejemplo, porque ha ayudado con éxito a un
+agente a realizar una tarea), añade esta habilidad a la biblioteca de
+habilidades (conceptualmente similar al inventario de herramientas). Esta
+habilidad puede recuperarse más tarde para utilizarla en otras tareas.
+Anteriormente en esta sección, hemos mencionado que el éxito de un
+agente en un entorno depende de su inventario de herramientas y de su
+capacidad de planificación. Los fallos en cualquiera de estos aspectos
+pueden hacer que el agente falle. En la siguiente sección se analizarán los
+distintos modos de fallo de un agente y cómo evaluarlos.
+Modos de fallo y evaluación de los agentes
+La evaluación consiste en detectar los fallos. Cuanto más compleja sea la
+tarea que realiza un agente, más puntos de fallo posibles existen. Aparte de
+los modos de fallo comunes a todas las aplicaciones de IA comentados en
+los Capítulo 3 y Capítulo 4, los agentes también tienen fallos únicos
+causados por la planificación, la ejecución de herramientas y la eficacia.
+Algunos fallos son más fáciles de detectar que otros.
+Para evaluar a un agente, hay que identificar sus modos de fallo y medir la
+frecuencia con la que se produce cada uno de ellos.
+Para ilustrar los diferentes modos de fallo he creado una sencilla prueba
+comparativa que pueden ver en el repositorio GitHub del libro. También
+existen pruebas comparativas y tableros de clasificación de agentes, como
+la Berkeley Function Calling Leader-board, el arnés de evaluación
+AgentOps y punto de referenciala prueba comparativa TravelPlanner.
+Fallos de planificación
+Planificar es difícil y puede fallar de muchas maneras. El modo más común
+de fracaso de la planificación es el fracaso en el uso de las herramientas. El
+agente puede generar un plan con uno o varios de estos errores:
+Herramienta no válida

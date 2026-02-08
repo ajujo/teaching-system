@@ -1,0 +1,38 @@
+challenges posed by autonomous agents, including goal misalignment, human over‐
+sight limitations, and emerging threat vectors targeting AI models. The chapter then
+delves into strategies to secure foundation models through careful model selection,
+proactive defensive measures, and rigorous red teaming.
+By the end of this chapter, readers will have a robust understanding of the security
+landscape specific to agent systems and practical strategies to safeguard these power‐
+ful but vulnerable technologies.
+The Unique Risks of Agentic Systems
+Agentic systems represent a significant leap forward from traditional software by
+offering autonomous decision making, adaptability, and operational flexibility. These
+strengths, however, introduce distinct risks:
+Goal misalignment
+Agents may interpret their objectives differently than intended, especially when
+tasked with vague or ambiguous instructions. For example, an agent optimizing
+user engagement might inadvertently prioritize sensational content, undermin‐
+ing user trust or well-being.
+Probabilistic reasoning
+Unlike deterministic systems, agents rely on large-scale foundation models
+whose outputs are inherently probabilistic. This can result in unintended behav‐
+iors such as “hallucinations,” where the agent generates plausible-sounding yet
+incorrect or misleading information.
+Dynamic adaptation
+Autonomous agents continuously adapt to changing environments, complicating
+the task of predicting and controlling their behavior. Even minor variations in
+input data or context can significantly alter their decisions and actions.
+Limited visibility
+Agents often operate with incomplete information or ambiguous data, creating
+uncertainty that can lead to suboptimal or harmful decisions.
+Addressing these inherent risks requires carefully designed controls, continuous
+monitoring, and proactive oversight to ensure alignment with human intent. Human
+oversight is commonly employed as a safeguard against the unintended consequences
+of agent autonomy. However, HITL systems introduce their own set of vulnerabilities:
+Automation bias
+Humans may over-trust agent recommendations, failing to adequately scrutinize
+outputs, especially if presented with high confidence.
+272 
+| 
+Chapter 12: Protecting Agentic Systems

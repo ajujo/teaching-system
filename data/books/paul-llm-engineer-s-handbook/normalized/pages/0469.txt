@@ -1,0 +1,29 @@
+MLOps and LLMOps
+438
+The qa job then runs several quality checks on the code. The first check uses a tool called gitleaks
+to scan for secrets in the codebase, ensuring that no sensitive information is accidentally committed:
+      - name: gitleaks check
+        run: poetry poe gitleaks-check
+Following the gitleaks check, the workflow runs a linting process to enforce coding standards
+and best practices in the Python code. This is achieved through the poetry poe lint-check
+command, which uses Ruff under the hood.
+      - name: Lint check [Python]
+        run: poetry poe lint-check
+The last step in the qa job is a format check, which ensures that the Python code is properly formatted according to the project's style guidelines. This is done using the poetry poe formatcheck command, which uses Ruff under the hood.
+      - name: Format check [Python]
+        run: poetry poe format-check
+The second job defined in the workflow is the test job, which also runs on the latest version
+of Ubuntu. Like the qa job, it starts by checking out the code from the repository and installing
+Python 3.11 and Poetry 1.8.3.
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      ...
+After setting up the system dependencies, the test job installs all the project's dependencies with
+the poetry install command. As we want to run the tests, this time, we need to install all the
+dependencies that are required to run the application.
+      - name: Install packages
+        run: |

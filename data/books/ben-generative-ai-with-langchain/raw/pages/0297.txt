@@ -1,0 +1,31 @@
+Software Development and Data Analysis Agents
+270
+The 2025 OpenAI SWE-Lancer benchmark study found that even the top-performing model com­
+pleted only 26.2% of individual engineering tasks drawn from real-world freelance projects. The 
+research identified specific challenges including surface-level problem-solving, limited context 
+understanding across multiple files, inadequate testing, and poor edge case handling.
+Despite these limitations, many organizations report productivity gains when using AI coding 
+assistants in targeted ways. The most effective approach appears to be collaboration—using AI 
+to accelerate routine tasks while applying human expertise to areas where AI still struggles, such 
+as architectural decisions, comprehensive testing, and understanding business requirements in 
+context. As the technology matures, the successful integration of natural language and traditional 
+programming will likely depend on clearly defining where each excels rather than assuming AI 
+can autonomously handle complex software engineering challenges.
+Code maintenance has evolved through AI-assisted approaches where developers use natural 
+language to understand and modify codebases. While GitHub reports Copilot users complet­
+ed specific coding tasks 55% faster in controlled experiments, independent field studies show 
+more modest productivity gains ranging from 4–22%, depending on context and measurement 
+approach. Similarly, Salesforce reports their internal CodeGenie tool contributes to productivity 
+improvements, including automating aspects of code review and security scanning. Beyond raw 
+speed improvements, research consistently shows AI coding assistants reduce developer cognitive 
+load and improve satisfaction, particularly for repetitive tasks. However, studies also highlight 
+important limitations: generated code often requires significant human verification and rework, 
+with some independent research reporting higher bug rates in AI-assisted code. The evidence 
+suggests these tools are valuable assistants that streamline development workflows while still 
+requiring human expertise for quality and security assurance.
+The field of code debugging has been enhanced as natural language queries help developers 
+identify and resolve issues faster by explaining error messages, suggesting potential fixes, and 
+providing context for unexpected behavior. AXA’s deployment of “AXA Secure GPT,” trained on 
+internal policies and code repositories, has significantly reduced routine task turnaround times, 
+allowing development teams to focus on more strategic work (AXA, AXA offers secure Generative 
+AI to employees).

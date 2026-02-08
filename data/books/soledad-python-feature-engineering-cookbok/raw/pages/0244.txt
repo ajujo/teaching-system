@@ -1,0 +1,9 @@
+Implementing maximum absolute scaling
+221
+In the following output, we see histograms with the number of times each word appears in 
+a document:
+Figure 7.6 – Histograms with different word counts
+7.	
+Now, let’s make a histogram with the scaled variables:
+data_scaled.hist(bins=20, figsize=(20, 20))
+plt.show()

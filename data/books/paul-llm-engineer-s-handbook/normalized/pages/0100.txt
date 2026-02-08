@@ -1,0 +1,31 @@
+Chapter 3
+69
+The crawlers
+Before exploring each crawler's implementation, we must present their base class, which defines
+a unified interface for all the crawlers. As shown in Figure 3.4, we can implement the dispatcher
+layer because each crawler follows the same signature. Each class implements the extract()
+method, allowing us to leverage OOP techniques such as polymorphism, where we can work with
+abstract objects without knowing their concrete subclass. For example, in the _crawl_link()
+function from the ZenML steps, we had the following code:
+crawler = dispatcher.get_crawler(link)
+crawler.extract(link=link, user=user)
+Note how we called the extract() method without caring about what specific type of crawler
+we instantiated. To conclude, working with abstract interfaces ensures core reusability and ease
+of extension.
+Base classes
+Now, let's explore the BaseCrawler interface, which can be found in the repository at https://
+github.com/PacktPublishing/LLM-Engineers-Handbook/blob/main/llm_engineering/
+application/crawlers/base.py.
+from abc import ABC, abstractmethod
+class BaseCrawler(ABC):
+    model: type[NoSQLBaseDocument]
+    @abstractmethod
+    def extract(self, link: str, **kwargs) -> None: ...
+As mentioned above, the interface defines an extract() method that takes as input a link. Also, it
+defines a model attribute at the class level that represents the data category document type used
+to save the extracted data into the MongoDB data warehouse. Doing so allows us to customize
+each subclass with different data categories while preserving the same attributes at the class
+level. We will soon explore the NoSQLBaseDocument class when digging into the document entities.
+We also extend the BaseCrawler class with a BaseSeleniumCrawler class, which implements
+reusable functionality that uses Selenium to crawl various sites, such as Medium or LinkedIn.
+Selenium is a tool for automating web browsers. It's used to interact with web pages programmatically (like logging into LinkedIn, navigating through profiles, etc.).

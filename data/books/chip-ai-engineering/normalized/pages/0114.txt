@@ -1,0 +1,48 @@
+tabla 2-4. Los valores de dimensión de diferentes modelos de Llama.
+Modelo
+Nº bloques
+transformadores
+Dim.
+modelo
+Dim.
+prealimentació
+Llama 2-7B
+32
+4096
+11 008
+Llama 2-13B
+40
+5120
+13 824
+Llama 2-70B
+80
+8192
+22 016
+Llama 3-7B
+32
+4096
+14 336
+Llama 3-70B
+80
+8192
+28 672
+Llama 3-405B
+126
+16 384
+53 248
+Otras arquitecturas de modelos
+Aunque el modelo de transformadores domina el ambiente, no es la única
+arquitectura. Desde que AlexNet reavivó el interés por el deep learning en
+2012, muchas arquitecturas se han puesto y han pasado de moda. Los
+reflectores estuvieron sobre Seq2seq durante cuatro años (2014-2018). Las
+GANs (redes generativas adversariales) captaron la atención colectiva
+durante un poco más de tiempo (2014-2019). En comparación con las
+arquitecturas anteriores, el modelo de transformadores está durando
+bastante. Lleva existiendo desde 2017. 10 ¿Cuánto falta para que aparezca
+algo mejor?
+Desarrollar una nueva arquitectura para superar a los transformadores no es
+fácil. 11 El transformador se ha optimizado mucho desde 2017. Una nueva
+arquitectura que pretenda sustituir al transformador tendrá que funcionar a
+la escala que quiere la gente, en el hardware que quiera la gente. 12
+Sin embargo, hay esperanza. Aunque los modelos basados en
+transformadores son dominantes, en el momento de escribir estas líneas

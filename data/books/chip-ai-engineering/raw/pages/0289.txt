@@ -1,0 +1,31 @@
+código abierto, sus creadores no tienen ni idea de cómo se utiliza ni qué tan
+bien funciona en la práctica.
+Funcionalidad
+Se necesitan muchas funcionalidades en torno a un modelo para que
+funcione para un caso de uso. Veamos algunos ejemplos de estas
+funcionalidades:
+Escalabilidad: verificar que el servicio de inferencia puede soportar
+el tráfico de su aplicación manteniendo la latencia y el costo
+deseables.
+Llamada a funciones: dotar al modelo de la capacidad de utilizar
+herramientas externas, algo esencial para los casos de uso de RAG
+y agentes, como se explica en el Capítulo 6.
+Outputs estructurados, como pedir a los modelos que generen
+outputs en formato JSON.
+Barreras de seguridad de output: mitigar los riesgos en las
+respuestas generadas, como asegurarse de que las respuestas no
+sean racistas o sexistas.
+Muchas de estas funcionalidades suponen un reto y requieren mucho
+tiempo de implementación, lo que hace que muchas empresas recurran a
+proveedores de API que les den las funcionalidades que desean de forma
+inmediata.
+El inconveniente de utilizar una API de modelos es quedar restringido a las
+funcionalidades que proporcione la API. Una funcionalidad que muchos
+casos de uso necesitan son los logprobs, muy útiles para tareas de
+clasificación, evaluación e interpretabilidad. Sin embargo, los proveedores
+de modelos comerciales podrían dudar a la hora de exponer sus logprobs
+por miedo a que otros utilicen logprobs para replicar sus modelos. De
+hecho, muchas API de modelos no exponen logprobs o solo lo hacen
+limitadamente.
+Además, solo pueden afinar un modelo comercial si el proveedor del
+modelo se lo permite. Imagine que ha alcanzado el máximo rendimiento de

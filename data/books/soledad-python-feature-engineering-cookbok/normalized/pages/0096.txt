@@ -1,0 +1,38 @@
+Implementing target mean encoding
+73
+Note that for TargetEncoder(), the fit() method followed by transform() do not return
+the same dataset as the fit_transform()method. The latter encodes the training set based on
+mappings found with cross-validation. The idea is to use fit_transform() within a pipeline,
+so the machine learning model does not overfit. However, and here is where it gets confusing, the
+mappings stored in the encodings_ attribute are the same after fit() and fit_transform(),
+and this is done intentionally so that when we apply transform() to a new dataset, we obtain
+the same result regardless of whether we apply fit() or fit_transform()to the training set.
+Note
+Unseen categories are encoded with the target mean by scikit-learn's TargetEncoder().
+feature-engine's MeanEncoder() can either return an error, replace the unseen
+categories with nan, or with the target mean.
+To perform the target encoding with feature-engine, we used MeanEncoder(), setting the
+smoothing parameter to auto. With fit(), the transformer found and stored the categorical
+variables and the values to encode each category. With transform(), it replaced the categories
+with numbers, returning pandas DataFrames.
+There's more...
+If you want to implement target encoding with pandas or Category Encoders, check out the notebook
+in the accompanying GitHub repository: https://github.com/PacktPublishing/
+Python-Feature-engineering-Cookbook-Third-Edition/blob/main/ch02-
+categorical-encoding/Recipe-06-Target-mean-encoding.ipynb.
+There is an alternative way to return better target estimates when the category groups are small. The
+replacement value for each category is determined as follows:
+S i =
+n i(Y=1) + pY x m
+___________
+n i + m
+
+Here, n i(Y=1) is the target mean for category i and n i is the number of observations with category i. The
+target prior is given by pY and m is the weighting factor. With this adjustment, the only parameter
+that we have to set is the weight, m. If m is large, then more importance is given to the target's prior
+probability. This adjustment affects target estimates for all categories but mostly for those with fewer
+observations because, in such cases, m could be much larger than n i in the formula's denominator.
+Note
+This method is a good alternative to Category Encoders' TargetEncoder() because, in
+Category Encoders' implementation of target encoding, we need to optimize two parameters instead
+of one (as we did with feature-engine and scikit-learn) to control the smoothing.

@@ -1,0 +1,32 @@
+una caché utilizando bases de datos como PostgreSQL, Redis o
+almacenamiento por niveles para equilibrar la velocidad y la capacidad de
+almacenamiento. Tener una política de evicción es crucial para gestionar el
+tamaño de la caché y mantener el rendimiento. Entre las políticas de
+evicción más comunes se encuentran la de uso menos reciente (LRU), la de
+uso menos frecuente (LFU) y la de primero en entrar, primero en salir
+(FIFO).
+El tiempo que debe mantenerse una consulta en la caché depende de la
+probabilidad de que se vuelva a realizar. Las consultas específicas de un
+usuario, como "¿Cuál es el estado de mi pedido reciente?", tienen menos
+probabilidades de ser reutilizadas por otros usuarios y, por tanto, no deben
+almacenarse en caché. Del mismo modo, tiene menos sentido almacenar en
+caché consultas sensibles al tiempo como "¿Lloverá hoy?". Muchos equipos
+entrenan un clasificador para predecir si una consulta debe almacenarse en
+caché.
+AVISO
+El almacenamiento en caché, cuando no se gestiona correctamente, puede
+provocar fugas de datos. Imagine que trabaja para un sitio de comercio
+electrónico y el usuario X le hace una pregunta aparentemente genérica
+como: "¿Cuál es la política de devoluciones de los productos electrónicos?"
+Como su política de devoluciones depende de la afiliación del usuario, el
+sistema recupera primero la información del usuario X y luego genera una
+respuesta con la información de X. Confundiendo esta consulta con una
+pregunta genérica, el sistema almacena en caché la respuesta. Más tarde,
+cuando el usuario Y hace la misma pregunta, se devuelve el resultado
+almacenado en caché, revelando la información de X a Y.
+Almacenamiento semántico en caché
+A diferencia de la del almacenamiento exacto en caché, los elementos
+almacenados se utilizan aunque solo sean semánticamente similares, no
+idénticos, a la consulta entrante.
+Imagine que un usuario pregunta: "¿Cuál es la capital de Vietnam?" y el
+modelo responde: "Hanói". Más tarde, otro usuario pregunta: "¿Qué ciudad

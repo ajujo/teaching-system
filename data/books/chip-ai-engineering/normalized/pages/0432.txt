@@ -1,0 +1,31 @@
+prometedor. Esta es otra disyuntiva entre latencia y costos, ya que la
+generación simultánea de varios planes generará costos adicionales.
+Planear requiere comprender la intención que hay detrás de una tarea: ¿qué
+intenta hacer el usuario con esta consulta? A menudo se utiliza un
+clasificador de intenciones para ayudar a los agentes a planificar. Como se
+muestra en el "Dividir tareas complejas en subtareas más sencillas", la
+clasificación de la intención se puede realizar utilizando otro prompt o un
+modelo de clasificación entrenado para esta tarea. El mecanismo de
+clasificación de intenciones puede considerarse un agente más de su sistema
+multiagente.
+Conocer la intención puede ayudar al agente a elegir las herramientas
+adecuadas. Por ejemplo, en el caso de la atención al cliente, si la consulta es
+sobre facturación, el agente podría necesitar acceso a una herramienta para
+recuperar los pagos recientes de un usuario. Pero si la consulta es sobre
+cómo restablecer una contraseña, es posible que el agente necesite acceder a
+la recuperación de documentación.
+SUGERENCIA
+Algunas consultas pueden estar fuera del alcance del agente. El clasificador
+de intenciones debe ser capaz de clasificar las peticiones como
+IRRELEVANTES para que el agente pueda rechazarlas educadamente en
+lugar de malgastar FLOPs en encontrar soluciones imposibles.
+Hasta ahora, hemos supuesto que el agente automatiza las tres etapas:
+generación de planes, validación de planes y ejecución de planes. En
+realidad, el ser humano puede intervenir en cualquiera de esas fases para
+ayudar en el proceso y mitigar los riesgos. Un experto humano puede
+aportar un plan, validarlo o ejecutar partes de un plan. Por ejemplo, para
+tareas complejas en las que un agente tenga problemas para generar el plan
+completo, un experto humano puede proporcionar un plan de alto nivel que
+el agente puede ampliar. Si un plan implica operaciones arriesgadas, como
+la actualización de una base de datos o integrar un cambio en el código de
+un repositorio, el sistema puede pedir una autorización humana explícita

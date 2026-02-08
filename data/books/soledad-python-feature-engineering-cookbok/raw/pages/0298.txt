@@ -1,0 +1,19 @@
+Setting up an entity set and creating features automatically
+275
+10.	 Let’s now display the customers DataFrame:
+es["customers"].head()
+We can see in the following output that featuretools automatically created a DataFrame 
+containing the customer’s unique identifier, followed by the date of the first invoice for this customer:
+Figure 9.4 – DataFrame with information at the customer level
+Note
+Go ahead and display the DataFrame containing the products by executing es["items"].
+head(). You can also evaluate the size of the different DataFrames using pandas’ shape 
+function. You will notice that the number of rows in each DataFrame coincides with the number 
+of unique invoices, customers, and products.
+11.	 We can also display the relationships between these data tables as follows:
+es.plot()
+Note
+To visualize the data relationships, you need to have graphviz installed. If you don’t, follow the 
+instructions in the featuretools documentation to install it: https://featuretools.
+alteryx.com/en/stable/install.html#installing-graphviz.
+In the following output, we can see the relational datasets and their relationships:

@@ -1,0 +1,36 @@
+Chapter 1
+5
+The increase in the scale of language models has been a major driving force behind their impressive 
+performance gains. However, recently there has been a shift in architecture and training methods 
+that has led to better parameter efficiency in terms of performance.
+Model scaling laws
+Empirically derived scaling laws predict the performance of LLMs based on the given 
+training budget, dataset size, and the number of parameters. If true, this means that 
+highly powerful systems will be concentrated in the hands of Big Tech, however, we 
+have seen a significant shift over recent months.
+The KM scaling law, proposed by Kaplan et al., derived through empirical analysis 
+and fitting of model performance with varied data sizes, model sizes, and training 
+compute, presents power-law relationships, indicating a strong codependence be­
+tween model performance and factors such as model size, dataset size, and training 
+compute.
+The Chinchilla scaling law, proposed by the Google DeepMind team, involved ex­
+periments with a wider range of model sizes and data sizes. It suggests an optimal 
+allocation of compute budget to model size and data size, which can be determined 
+by optimizing a specific loss function under a constraint.
+However, future progress may depend more on model architecture, data cleansing, 
+and model algorithmic innovation rather than sheer size. For example, models such 
+as phi, first presented in Textbooks Are All You Need (2023, Gunasekar et al.), with about 
+1 billion parameters, showed that models can – despite a smaller scale – achieve 
+high accuracy on evaluation benchmarks. The authors suggest that improving data 
+quality can dramatically change the shape of scaling laws.
+Further, there is a body of work on simplified model architectures, which have sub­
+stantially fewer parameters and only modestly drop accuracy (for example, One Wide 
+Feedforward is All You Need, Pessoa Pires et al., 2023). Additionally, techniques such as 
+fine-tuning, quantization, distillation, and prompting techniques can enable smaller 
+models to leverage the capabilities of large foundations without replicating their 
+costs. To compensate for model limitations, tools like search engines and calculators 
+have been incorporated into agents, and multi-step reasoning strategies, plugins, 
+and extensions may be increasingly used to expand capabilities.
+The future could see the co-existence of massive, general models with smaller and 
+more accessible models that provide faster and cheaper training, maintenance, and 
+inference.

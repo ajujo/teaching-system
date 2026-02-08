@@ -1,0 +1,17 @@
+multiplicó por 2000, pasando de la longitud de contexto de 1000 de GPT-2
+a la de 2 millones de Gemini-1.5 Pro. En un contexto de 100 K de longitud
+puede caber un libro de tamaño moderado. Como referencia, este libro
+contiene aproximadamente 120 000 palabras, o 160 000 tokens. En un
+contexto de 2 M de longitud caben aproximadamente 2000 páginas de
+Wikipedia y una base de código razonablemente compleja como PyTorch.
+figura 5-2. La longitud del contexto se amplió de 1 K a 2 M entre febrero de 2019 y
+mayo de 2024. 6
+No todas las partes de un prompt son iguales. Las investigaciones han
+demostrado que un modelo comprende mucho mejor las instrucciones dadas
+al principio y al final de un prompt que a la mitad (Liu et al., 2023). Una
+forma de evaluar la eficacia de las distintas partes de un prompt es utilizar
+una prueba conocida comúnmente como aguja en el pajar (NIAH). La idea
+consiste en insertar una información aleatoria (la aguja) en diferentes
+lugares de un prompt (el pajar) y pedir al modelo que la encuentre. La
+Figura 5-3 muestra un ejemplo de información utilizada en el artículo de
+Liu et al.

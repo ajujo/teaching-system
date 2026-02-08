@@ -1,0 +1,33 @@
+Chapter 6
+229
+Besides becoming specialized, keep your agents modular. It becomes easier to maintain and im­
+prove such agents. Also, by working on enterprise assistant use cases, you will eventually end
+up with many different agents available for users and developers within your organization that
+can be composed together. Hence, keep in mind that you should make such specialized agents
+configurable.
+LangGraph allows you to easily compose graphs by including them as a subgraph in a larger
+graph. There are two ways of doing this:
+•
+Compile an agent as a graph and pass it as a callable when defining a node of another agent:
+builder.add_node("pay", payments_agent)
+•
+Wrap the child agent's invocation with a Python function and use it within the definition
+of the parent's node:
+def _run_payment(state):
+  result = payments_agent.invoke({"client_id"; state["client_id"]})
+  return {"payment status": ...}
+...
+builder.add_node("pay", _run_payment)
+Note, that your agents might have different schemas (since they perform different tasks). In
+the first case, the parent agent would pass the same keys in schemas with the child agent when
+invoking it. In turn, when the child agent finishes, it would update the parent's state and send
+back the values corresponding to matching keys in both schemas. At the same time, the second
+option gives you full control over how you construct a state that is passed to the child agent, and
+how the state of the parent agent should be updated as a result. For more information, take a look
+at the documentation at https://langchain-ai.github.io/langgraph/how-tos/subgraph/.
+Consensus mechanism
+We can let multiple agents work on the same tasks in parallel as well. These agents might have
+a different "personality" (introduced by their system prompts; for example, some of them might
+be more curious and explorative, and others might be more strict and heavily grounded) or even
+varying architectures. Each of them independently works on getting a solution for the problem,
+and then you use a consensus mechanism to choose the best solution from a few drafts.

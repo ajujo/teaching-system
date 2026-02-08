@@ -1,0 +1,32 @@
+grande (por ejemplo, una respuesta es el doble de larga que la otra), el juez
+casi siempre prefiere la más larga.19 Tanto Zheng et al. (2023) como Saito
+et al. (2023), sin embargo, descubrieron que GPT-4 es menos propenso a
+este sesgo que GPT-3.5, lo que sugiere que este sesgo podría desaparecer a
+medida que los modelos se hacen más fuertes.
+Además de todos estos sesgos, los jueces de IA tienen las mismas
+limitaciones que todas las aplicaciones de IA, incluyendo la privacidad y la
+propiedad intelectual. Si utiliza un modelo propio como juez, tendrá que
+enviar sus datos a este modelo. Si el proveedor del modelo no revela sus
+datos de formación, no sabrá con seguridad si el juez es comercialmente
+seguro de usar.
+A pesar de las limitaciones del enfoque de la IA como juez, sus muchas
+ventajas me hacen creer que su adopción seguirá creciendo. Sin embargo,
+los jueces de IA deben complementarse con métodos de evaluación exactos
+y/o evaluación humana.
+¿Qué modelos pueden actuar como jueces?
+El juez puede ser más fuerte, más débil o igual que el modelo juzgado.
+Cada escenario tiene sus pros y sus contras.
+A primera vista, un juez más fuerte tiene sentido. ¿No debería el calificador
+tener más conocimientos que el examinado? Los modelos más fuertes no
+solo pueden emitir mejores juicios, sino que también pueden ayudar a
+mejorar los modelos más débiles guiándolos para que generen mejores
+respuestas.
+Quizás se pregunte: si ya tiene acceso al modelo más fuerte, ¿por qué
+molestarse en utilizar un modelo más débil para generar respuestas? La
+respuesta es el costo y la latencia. Es posible que no disponga de
+presupuesto para utilizar el modelo más sólido para generar todas las
+respuestas, por lo que lo utilizaría para evaluar un subconjunto de
+respuestas. Por ejemplo, puede utilizar un modelo barato local para generar
+respuestas y GPT-4 para evaluar el 1 % de las respuestas.
+El modelo más potente también podría ser demasiado lento para su
+aplicación. Puede utilizar un modelo rápido para generar respuestas,

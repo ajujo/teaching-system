@@ -1,0 +1,38 @@
+Combining numerical features
+289
+    time_index=»invoice_date»,
+    logical_types={«customer_id»: Categorical},
+)
+5.
+Let's create a new DataFrame with a relationship to the DataFrame from step 4:
+es.normalize_dataframe(
+    base_dataframe_name=»data»,
+    new_dataframe_name=»invoices»,
+    index="invoice",
+    copy_columns=[«customer_id»],
+)
+Note
+For more details about steps 4 and 5, visit the Setting up an entity set and creating features
+automatically recipe.
+6.
+We will multiply the quantity and price variables, which reflect the number of items
+bought and the unit price, respectively, to obtain the total amount paid:
+feature_matrix, feature_defs = ft.dfs(
+    entityset=es,
+    target_dataframe_name=»data»,
+    agg_primitives=[],
+    trans_primitives=[«multiply_numeric»],
+    primitive_options={
+        («multiply_numeric»): {
+            ‹include_columns›: {
+                'data': ["quantity", "price"]
+            }
+        }
+    },
+    ignore_dataframes=[«invoices»],
+)
+Note
+We set agg_primitives to an empty list to avoid the creation of default primitives.
+7.
+Let's now display the name of the new features:
+feature_defs

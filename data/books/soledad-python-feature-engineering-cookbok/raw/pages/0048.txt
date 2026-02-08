@@ -1,0 +1,33 @@
+Marking imputed values
+25
+Note
+If we execute imputer.variables_, we will find the variables for which missing indicators 
+will be added.
+10.	 Finally, let’s add the missing indicators:
+X_train_t = imputer.transform(X_train)
+X_test_t = imputer.transform(X_test)
+So far, we just added missing indicators. But we still have the missing data in our variables. 
+We need to replace them with numbers. In the rest of this recipe, we will combine the use of 
+missing indicators with mean and mode imputation.
+11.	 Let’s create a pipeline to add missing indicators to categorical and numerical variables, then 
+impute categorical variables with the most frequent category, and numerical variables with 
+the mean:
+pipe = Pipeline([
+    ("indicators",
+        AddMissingIndicator(missing_only=True)),
+    ("categorical", CategoricalImputer(
+        imputation_method="frequent")),
+    ("numerical", MeanMedianImputer()),
+])
+Note
+feature-engine imputers automatically identify numerical or categorical variables. So 
+there is no need to slice the data or pass the variable names as arguments to the transformers 
+in this case.
+12.	 Let’s add the indicators and impute missing values:
+X_train_t = pipe.fit_transform(X_train)
+X_test_t = pipe.transform(X_test)
+Note
+Use X_train_t.isnull().sum() to corroborate that there is no data missing. Execute 
+X_train_t.head() to get a view of the resulting datafame.
+Finally, let’s add missing indicators and simultaneously impute numerical and categorical 
+variables with the mean and most frequent categories respectively, utilizing scikit-learn.

@@ -1,0 +1,29 @@
+Chapter 4
+105
+Retrieval pipeline
+The retrieval components take the user's input (text, image, audio, etc.), embed it, and query the
+vector DB for similar vectors to the user's input.
+The primary function of the retrieval step is to project the user's input into the same vector space
+as the embeddings used as an index in the vector DB. This allows us to find the top K's most similar entries by comparing the embeddings from the vector storage with the user's input vector.
+These entries then serve as content to augment the prompt that is passed to the LLM to generate
+the answer.
+You must use a distance metric to compare two vectors, such as the Euclidean or Manhattan
+distance. But the most popular one is the cosine distance, which is equal to 1 minus the cosine of
+the angle between two vectors, as follows:
+𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶𝐶
+𝐴𝐴𝐴𝐴
+|| 𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴𝐴
+It ranges from -1 to 1, with a value of -1 when vectors A and B are in opposite directions, 0 if they
+are orthogonal, and 1 if they point in the same direction.
+Most of the time, the cosine distance works well in non-linear complex vector spaces. However,
+it is essential to notice that choosing the proper distance between two vectors depends on your
+data and the embedding model you use.
+One critical factor to highlight is that the user's input and embeddings must be in the same vector space. Otherwise, you cannot compute the distance between them. To do so, it is essential to
+preprocess the user input in the same way you processed the raw documents in the RAG ingestion
+pipeline. This means you must clean, chunk (if necessary), and embed the user's input using the
+same functions, models, and hyperparameters. This is similar to how you have to preprocess the
+data into features in the same way between training and inference; otherwise, the inference will
+yield inaccurate results-a phenomenon also known as the training-serving skew.
+Generation pipeline
+The last step of the RAG system is to take the user's input, retrieve data, pass it to an LLM, and
+generate a valuable answer.

@@ -1,0 +1,35 @@
+First Steps with LangChain
+46
+story_chain = story_prompt | llm | StrOutputParser()
+# Second chain analyzes the story
+analysis_prompt = PromptTemplate.from_template(
+    "Analyze the following story's mood:\n{story}"
+)
+analysis_chain = analysis_prompt | llm | StrOutputParser()
+We can compose these two chains together. Our first simple approach pipes the story directly
+into the analysis chain:
+# Combine chains
+story_with_analysis = story_chain | analysis_chain
+# Run the combined chain
+story_analysis = story_with_analysis.invoke({"topic": "a rainy day"})
+print("\nAnalysis:", story_analysis)
+I get a long analysis. Here's how it starts:
+Analysis: The mood of the story is predominantly **calm, peaceful, and
+subtly romantic.** There's a sense of gentle melancholy brought on by the
+rain and the quiet emptiness of the bookshop, but this is balanced by a
+feeling of warmth and hope.
+While this works, we've lost the original story in our result - we only get the analysis! In produc­
+tion applications, we typically want to preserve context throughout the chain:
+from langchain_core.runnables import RunnablePassthrough
+# Using RunnablePassthrough.assign to preserve data
+enhanced_chain = RunnablePassthrough.assign(
+    story=story_chain  # Add 'story' key with generated content
+).assign(
+    analysis=analysis_chain  # Add 'analysis' key with analysis of the
+story
+)
+# Execute the chain
+result = enhanced_chain.invoke({"topic": "a rainy day"})
+print(result.keys()) # Output: dict_keys(['topic', 'story', 'analysis'])
+# dict_keys(['topic', 'story', 'analysis'])
+For more control over the output structure, we could also construct dictionaries manually:

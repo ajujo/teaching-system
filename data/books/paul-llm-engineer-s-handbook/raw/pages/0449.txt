@@ -1,0 +1,32 @@
+MLOps and LLMOps
+418
+3.	
+Fill out the cluster creation form with the following:
+a.	
+Choose the Free version of the cluster.
+b.	 Choose GCP as the cloud provider (while writing the book, it was the only one 
+allowed for a free cluster).
+c.	
+Choose Frankfurt as the region (or the same region as you chose for MongoDB).
+d.	 Name the cluster twin.
+e.	
+Leave the rest of the attributes with their default values and click Create.
+4.	
+Access the cluster in the Data Access Control section in the left panel.
+5.	
+Click Create and choose your twin cluster to create a new access token. Copy the newly 
+created token somewhere safe, as you won’t be able to access it anymore.
+6.	
+You can run their example from Usage Examples to test that your connection works fine.
+7.	
+Go back to the Clusters section of Qdrant and open your newly created twin cluster. You 
+will have access to the cluster’s endpoint, which you need to configure Qdrant in your code.
+You can visualize your Qdrant collections and documents by clicking Open Dashboard and en-
+tering your API Key as your password. The Qdrant cluster dashboard will now be empty, but after 
+running the pipelines, you will see all the collections, as shown here:
+Figure 11.6: Qdrant cluster dashboard example after being populated with two collections.
+Finally, return to your project and open your .env file. Now, we must fill in a couple of environ-
+ment variables as follows:
+USE_QDRANT_CLOUD=true
+QDRANT_CLOUD_URL=<the endpoint URL found at step 7>
+QDRANT_APIKEY=<the access token created at step 5>

@@ -1,0 +1,19 @@
+Chapter 1
+11
+•
+It's hard to share the work between multiple teams between the features, training, and
+prediction modules
+•
+It's impossible to switch to streaming technology for real-time training
+In Figure 1.3, we can see a similar scenario for a real-time system. This use case introduces another issue in addition to what we listed before. To make the predictions, we have to transfer the
+whole state through the client request so the features can be computed and passed to the model.
+Consider the scenario of computing movie recommendations for a user. Instead of simply passing the user ID, we must transmit the entire user state, including their name, age, gender, movie
+history, and more. This approach is fraught with potential errors, as the client must understand
+how to access this state, and it's tightly coupled with the model service.
+Another example would be when implementing an LLM with RAG support. The documents we add
+as context along the query represent our external state. If we didn't store the records in a vector
+DB, we would have to pass them with the user query. To do so, the client must know how to query
+and retrieve the documents, which is not feasible. It is an antipattern for the client application
+to know how to access or compute the features. If you don't understand how RAG works, we will
+explain it in detail in Chapters 8 and 9.
+Figure 1.3: Stateless real-time architecture

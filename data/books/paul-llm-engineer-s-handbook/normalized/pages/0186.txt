@@ -1,0 +1,28 @@
+Chapter 4
+155
+Let's take a look at the definition of the VectorBaseDocument class:
+from pydantic import UUID4, BaseModel
+from typing import Generic
+from llm_engineering.infrastructure.db.qdrant import connection
+T = TypeVar("T", bound="VectorBaseDocument")
+class VectorBaseDocument(BaseModel, Generic[T], ABC):
+    id: UUID4 = Field(default_factory=uuid.uuid4)
+    @classmethod
+    def from_record(cls: Type[T], point: Record) -> T:
+        _id = UUID(point.id, version=4)
+        payload = point.payload or {}
+        attributes = {
+            "id": _id,
+            **payload,
+        }
+        if cls._has_class_attribute("embedding"):
+            payload["embedding"] = point.vector or None
+        return cls(**attributes)
+    def to_point(self: T, **kwargs) -> PointStruct:
+        exclude_unset = kwargs.pop("exclude_unset", False)
+        by_alias = kwargs.pop("by_alias", True)
+        payload = self.dict(exclude_unset=exclude_unset, by_alias=by_
+alias, **kwargs)
+        _id = str(payload.pop("id"))
+        vector = payload.pop("embedding", {})
+        if vector and isinstance(vector, np.ndarray):

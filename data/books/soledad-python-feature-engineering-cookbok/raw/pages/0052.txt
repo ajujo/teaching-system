@@ -1,0 +1,19 @@
+Implementing forward and backward fill
+29
+The previous code returns the following plot, where we see intervals of time where data is missing:
+Figure 1.5 – Time series data showing missing values
+4.	
+Let’s impute missing data by carrying the last observed value in any interval to the next valid value:
+df_imputed = df.ffill()
+You can verify the absence of missing data by executing df_imputed.isnull().sum().
+5.	
+Let’s now plot the complete dataset and overlay as a dotted line the values used for the imputation:
+ax = df_imputed.plot(
+    linestyle="-", marker=".", figsize=[10, 5])
+df_imputed[df.isnull()].plot(
+    ax=ax, legend=None, marker=".", color="r")
+ax.set_title("Air passengers")
+ax.set_ylabel("Number of passengers")
+ax.set_xlabel("Time")
+The previous code returns the following plot, where we see the values used to replace nan as 
+dotted lines overlaid in between the continuous time series lines:

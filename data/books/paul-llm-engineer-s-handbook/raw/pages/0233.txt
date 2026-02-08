@@ -1,0 +1,38 @@
+Supervised Fine-Tuning
+202
+    def from_json(cls, json_str: str) -> 'InstructionAnswerSet':
+        data = json.loads(json_str)
+        pairs = [(pair['instruction'], pair['answer'])
+                 for pair in data['instruction_answer_pairs']]
+        return cls(pairs)
+    def __iter__(self):
+        return iter(self.pairs)
+7.	
+Now that we have a set of extracts from the articles with a reasonable length, we can use 
+an LLM to transform them into pairs of instructions and answers. Note that this step is 
+model-agnostic and can be implemented with any open-source or closed-source model. 
+Because this output is grounded in the context we provide, it doesn’t require complex 
+reasoning or high-performing models.
+For convenience, we will use GPT-4o mini in this example. This choice is motivated by the 
+low cost and good performance of this model. Prompt engineering is the most important 
+aspect of this data transformation stage and requires several iterations to produce the 
+expected outputs. We recommend starting with simple prompts and adding complexity 
+when required to be more accurate, modify the style, or output multiple responses.
+In our example, we want to create instructions like “Write a paragraph about X topic” and 
+corresponding answers that are factual and imitate the writer’s style. To implement this, 
+we need to provide an extract that will ground the model’s responses. For efficiency, we 
+also choose to generate five instruction-answer pairs for each extract. Here’s the beginning 
+of our function for instruction generation, including our prompt.
+def generate_instruction_answer_pairs(
+    extract: str, client: OpenAI
+) -> List[Tuple[str, str]]:
+    prompt = f"""Based on the following extract, generate five 
+instruction-answer pairs. Each instruction \
+must ask to write about a specific topic contained in the context. 
+each answer \
+must provide a relevant paragraph based on the information found in 
+the \
+context. Only use concepts from the context to generate the 
+instructions. \
+Instructions must never explicitly mention a context, a system, a 
+course, or an extract. \

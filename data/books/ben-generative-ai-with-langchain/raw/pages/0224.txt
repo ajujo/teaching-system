@@ -1,0 +1,36 @@
+Chapter 5
+197
+for tool in toolkit.get_tools():
+ print(tool.name)
+>> requests_get
+requests_post
+requests_patch
+requests_put
+requests_delete
+Let’s take a free open-source currency API (https://frankfurter.dev/). It’s a random free API 
+we took from the Internet for illustrative purposes only, just to show you how you can wrap any 
+existing API as a tool. First, we need to put together an API spec based on the OpenAPI format. 
+We truncated the spec but you can find the full version on our GitHub:
+api_spec = """
+openapi: 3.0.0
+info:
+ title: Frankfurter Currency Exchange API
+ version: v1
+ description: API for retrieving currency exchange rates. Pay attention to 
+the base currency and change it if needed.
+servers:
+ - url: https://api.frankfurter.dev/v1
+paths:
+ /v1/latest:
+   get:
+     summary: Get the latest exchange rates.
+     parameters:
+       - in: query
+         name: symbols
+         schema:
+           type: string
+         description: Comma-separated list of currency symbols to retrieve 
+rates for. Example: CHF,GBP
+       - in: query
+         name: base
+         schema:

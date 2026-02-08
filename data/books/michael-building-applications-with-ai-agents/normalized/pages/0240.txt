@@ -1,0 +1,41 @@
+For instance, in the cracked mug scenario from our running customer support agent
+example, coherence requires the agent to reference the initial damage report and
+photo upload when confirming a refund, avoiding lapses such as overlooking the
+multi-item order details (e.g., only refunding the mug from order_id A89268 while
+ignoring other items). In more complex cases, like a modification request following a
+refund (as in modify_2), the agent must maintain logical flow by confirming address
+changes without introducing contradictions in the conversation history.
+Testing for coherence involves simulating extended interactions, verifying that the
+agent maintains a consistent understanding of state, and that its actions follow a logi‐
+cal, goal-directed sequence. Contradictions or lapses-such as conflicting recommen‐
+dations or overlooked dependencies-are flagged as coherence failures. In customer
+service, for instance, coherence tests ensure that an agent's responses logically address
+user questions and maintain professional, unambiguous communication.
+Ultimately, coherence testing is vital for preserving trust, usability, and the practical
+value of agentic systems in real-world applications. By rigorously evaluating for logi‐
+cal flow, context retention, and contradiction avoidance, developers ensure that
+agents operate reliably-even as tasks grow in complexity or session length.
+Hallucination
+Hallucination in AI systems occurs when an agent generates incorrect, nonsensical,
+or fabricated information. This challenge is particularly significant in systems
+designed for knowledge retrieval, decision making, or user interactions, where accu‐
+racy and reliability are paramount. Addressing hallucination requires rigorous testing
+and mitigation strategies to ensure the agent consistently produces responses groun‐
+ded in reality.
+To mitigate this, developers should ground outputs in verifiable data using tech‐
+niques like retrieval-augmented generation (RAG), which cross-references trusted
+sources to enhance factual accuracy, as seen in legal AI tools that reduce hallucina‐
+tions compared with general models.
+At its core, mitigating hallucination begins with ensuring content accuracy. This
+involves verifying that the agent's outputs are based on factual data rather than fabri‐
+cations. Systems must be rigorously tested to cross-check their responses against trus‐
+ted sources of information. For instance, a medical diagnostic agent should base its
+recommendations on verified clinical guidelines, while a conversational agent provid‐
+ing historical facts must rely on validated databases. Regular audits of the system's
+knowledge base and decision-making processes are critical to maintaining this stan‐
+dard of accuracy.
+Data dependence is another critical factor in addressing hallucination. The reliability
+of an agent's outputs is directly tied to the quality of its data sources. Systems that rely
+218
+|
+Chapter 9: Validation and Measurement

@@ -1,0 +1,58 @@
+follow‐up actions (like filing a ticket or scheduling a callback); they simply surface
+information. A traditional chatbot or RAG approach makes sense when the task is
+primarily question‐answering over structured or unstructured content, with limited
+need for external API calls or decision orchestration. Maintenance costs are lower
+than for agents—your main overhead lies in keeping document embeddings up to
+date and refining prompts—but you sacrifice the agent’s ability to plan multistep
+workflows or learn from feedback loops.
+Finally, we reach autonomous agents—situations where neither simple code, nor rigid
+workflows, nor RAG suffice because inputs are unstructured, novel, or highly vari‐
+able, and because you require dynamic, multistep planning or continuous learning
+from feedback. Consider a customer support center that receives free‐form emails
+with issues ranging from “my laptop battery is swelling and might erupt” to “I keep
+getting billed for services I didn’t order.” A rule‐based workflow or a RAG‐powered
+FAQ lookup would shatter under such open‐ended variety, but an agent powered by a
+foundation model can parse intent, extract relevant entities, consult a knowledge
+base, draft an appropriate response, and even escalate to a human if necessary—all
+without being told every possible branch in advance. Similarly, in supply chain man‐
+agement, an agent that ingests real‐time inventory data, supplier lead times, and sales
+forecasts can replan shipment schedules dynamically; a deterministic workflow
+would require constant manual updates to handle new exceptions.
+Agents also excel when many subtasks must run in parallel—such as a security opera‐
+tions agent that simultaneously queries threat intelligence APIs, scans network tele‐
+metry, and performs sandbox analysis on suspicious binaries. Because agents operate
+asynchronously and reprioritize based on real‐time data, they avoid the brittle “one‐
+step‐at‐a‐time” nature of workflows or RAG systems. To justify the higher compute
+and maintenance costs of running a foundation model, you need this level of contex‐
+tual reasoning, parallel task orchestration, or ongoing self‐improvement—scenarios
+where rigid code, workflows, or chatbots would be too brittle or expensive to
+maintain.
+Table 1-2. Distinguishing workflows and agents from traditional code
+Characteristic
+Traditional code
+Workflow
+Autonomous agent
+Input structure
+Fully predictable schemas
+Mostly predictable with
+finite branches
+Highly unstructured or novel inputs
+Explainability
+Full transparency; easily
+auditable
+Explicit branch-by-branch
+audit trail
+Black-box components requiring
+additional tooling
+Latency
+Ultra-low latency
+Moderate latency
+Higher latency
+Adaptability and
+learning
+None
+Limited
+High (learning from feedback)
+10 
+| 
+Chapter 1: Introduction to Agents

@@ -1,0 +1,32 @@
+producto de esta imagen?". La Tabla 3-3 muestra los criterios comunes
+incorporados de la IA como juez que ofrecen algunas herramientas de IA.
+tabla 3-3. Ejemplos de IA incorporada como criterio de valoración ofrecida
+por algunas herramientas de IA, en septiembre de 2024. Tenga en cuenta
+que, a medida que estas herramientas evolucionen, estos criterios
+incorporados cambiarán.
+Herramientas de IA
+Criterios integrados
+Azure AI Studio
+Fundamentación, relevancia, coherencia,
+fluidez, similitud
+MLflow.metrics
+Fidelidad, pertinencia
+Evaluación de los
+criterios de LangChain
+Concisión, pertinencia, corrección, coherencia,
+nocividad, malicia, utilidad, controversia,
+misoginia, insensibilidad, criminalidad
+Ragas
+Fidelidad, pertinencia de la respuesta
+Es esencial recordar que los criterios de la IA como juez no están
+estandarizados. Las puntuaciones de relevancia de Azure AI Studio pueden
+ser muy diferentes de las puntuaciones de relevancia de MLflow. Estas
+puntuaciones dependen del prompt y el modelo subyacente del juez.
+La forma de darle un prompt a un juez de IA es similar a la forma de darle
+un prompt a cualquier aplicación de IA. En general, el prompt de un juez
+debe explicar claramente lo siguiente:
+1. La tarea que debe realizar el modelo, como evaluar la pertinencia
+entre una respuesta generada y la pregunta.
+2. Los criterios que debe seguir el modelo para evaluar, como "Tu
+objetivo principal debe ser determinar si la respuesta generada
+contiene información suficiente para abordar la pregunta dada de

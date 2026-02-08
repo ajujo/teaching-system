@@ -1,0 +1,32 @@
+como juez o LLM como juez. Un modelo de IA que se utiliza para evaluar
+otros modelos de IA se denomina juez de IA.15
+Aunque la idea de utilizar la IA para automatizar la evaluación existe desde
+hace mucho tiempo, 16 solo se hizo práctica cuando los modelos de IA
+fueron capaces de hacerlo, lo que ocurrió en torno a 2020 con el
+lanzamiento de GPT-3. En el momento de escribir estas líneas, la IA como
+juez se ha convertido en uno de los métodos más comunes, si no el más
+común, para evaluar los modelos de IA en producción. La mayoría de las
+demos de startups de evaluación de IA que vi en 2023 y 2024 aprovechaban
+la IA como juez de un modo u otro. El informe sobre el estado de la IA de
+LangChain en 2023 señalaba que el 58 % de las evaluaciones en su
+plataforma las realizaban jueces de IA. La IA como juez también es un área
+activa de investigación.
+¿Por qué la IA como juez?
+Los jueces de IA son rápidos, fáciles de usar y relativamente baratos en
+comparación con los evaluadores humanos. También pueden funcionar sin
+datos de referencia, lo que significa que pueden utilizarse en entornos de
+producción en los que no hay datos de referencia.
+Puede pedir a los modelos de IA que juzguen un output en función de
+cualquier criterio: corrección, repetitividad, toxicidad, integridad,
+alucinaciones, etc. Esto es similar a pedir a una persona que dé su opinión
+sobre cualquier cosa. Quizá piense: "Pero no siempre se puede confiar en la
+opinión de la gente". Eso es cierto, y tampoco puede fiarse siempre de los
+juicios de la IA. Sin embargo, como cada modelo de IA es una agregación
+de las masas, es posible que los modelos de IA emitan juicios
+representativos de las masas. Con el prompt adecuado para el modelo
+adecuado, puede obtener juicios razonablemente buenos sobre una amplia
+gama de temas.
+Diversos estudios han demostrado que ciertos jueces de IA guardan una
+estrecha correlación con los evaluadores humanos. En 2023, Zheng et al.
+descubrieron que en su prueba comparativa de evaluación, MT-Bench, la
+concordancia entre GPT-4 y los humanos alcanzaba el 85 %, que es incluso

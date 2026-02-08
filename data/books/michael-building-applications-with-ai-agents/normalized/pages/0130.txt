@@ -1,0 +1,40 @@
+order in which actions should be performed to achieve a specific goal while ensuring
+that each action leads to the next without interruption. Chains are common in tasks
+that involve step-by-step processes or linear workflows.
+Fortunately, LangChain offers a declarative syntax, the LangChain Expression Lan‐
+guage (LCEL), to build chains by composing existing Runnables rather than manually
+wiring up Chain objects. Under the hood, LCEL treats every chain as a Runnable
+implementing the same interface, so you can invoke(), batch(), or stream() any
+LCEL chain just like any other Runnable:
+from langchain_core.runnables import RunnableLambda
+from langchain.chat_models import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+# Wrap a function or model call as a Runnable
+llm = RunnableLambda.from_callable(ChatOpenAI(model_name="gpt-4",
+                                  temperature=0).generate)
+prompt = RunnableLambda.from_callable(lambda text:
+    PromptTemplate.from_template(text).format_prompt({"input": text}
+                                      ).to_messages())
+# Traditional chain equivalent:
+# chain = LLMChain(prompt=prompt, llm=llm)
+# LCEL chain using pipes:
+chain = prompt | llm
+# Invoke the chain
+result = chain.invoke("What is the capital of France?")
+By switching to LCEL, you reduce boilerplate, gain advanced execution features, and
+keep your chains concise and maintainable. Figure 5-8 illustrates the general agentic
+chain pattern that underlies many LCEL workflows.
+Figure 5-8. Agentic chain execution pattern. The user prompt is passed to the model,
+which performs reasoning and invokes tools to interact with the environment. The result‐
+ing observations are looped back into the model for further reasoning until the task is
+complete.
+The planning of chains requires careful consideration of the dependencies between
+actions, aiming to orchestrate a coherent flow of activity toward the desired outcome.
+It is highly recommended that a maximum length be set to the tool chains, as errors
+can compound down the length of the chain. As long as the task is not expected to
+fan out to multiple branching subtasks, chains provide an excellent trade-off between
+adding planning for multiple tools with dependencies and keeping the complexity
+relatively low.
+108
+|
+Chapter 5: Orchestration

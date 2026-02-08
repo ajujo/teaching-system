@@ -1,0 +1,29 @@
+Perplejidad
+La perplejidad es la exponencial de la entropía y la entropía cruzada. La
+perplejidad suele abreviarse como PPL. Dado un conjunto de datos con la
+distribución real P, su perplejidad se define como:
+PPL(P) = 2H(P)
+La perplejidad de un modelo lingüístico (con la distribución aprendida Q)
+en este conjunto de datos se define como:
+PPL(P, Q) = 2H(P,Q)
+Si la entropía cruzada mide lo difícil que es para un modelo predecir el
+siguiente token, la perplejidad mide la cantidad de incertidumbre que tiene
+a la hora de predecir el siguiente token. Una mayor incertidumbre significa
+que hay más opciones posibles para el siguiente token.
+Consideremos un modelo lingüístico entrenado para codificar
+perfectamente los tokens de 4 posiciones, como en la Figura 3-4 (b). La
+entropía cruzada de este modelo lingüístico es de 2 bits. Si este modelo
+lingüístico intenta predecir una posición en el cuadrado, tiene que elegir
+entre 2 = 4 opciones posibles. Así, este modelo lingüístico tiene una
+perplejidad de 4.
+Hasta ahora, he utilizado el bit como unidad para la entropía y la entropía
+cruzada. Cada bit puede representar 2 valores únicos, de ahí la base de 2 en
+la ecuación de perplejidad anterior.
+Los marcos de ML más populares, incluidos TensorFlow y PyTorch,
+utilizan nat (logaritmo natural) como unidad para la entropía y la entropía
+cruzada. Nat utiliza la base de e, la base del logaritmo natural. 8 Si se utiliza
+nat como unidad, la perplejidad es el exponencial de e:
+PPL(P, Q) = eH(P,Q)
+Debido a la confusión en torno a bit y nat, muchas personas informan de la
+perplejidad, en lugar de la entropía cruzada, cuando reportan el rendimiento
+de sus modelos lingüísticos.

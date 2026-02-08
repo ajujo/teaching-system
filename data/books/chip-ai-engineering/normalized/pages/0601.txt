@@ -1,0 +1,38 @@
+conclusión errónea de que todos los artículos de color rojo deberían ser
+caros. Las duplicaciones pueden contaminar el conjunto de pruebas. Al
+dividir los datos duplicados en conjuntos de entrenamiento y de prueba, un
+ejemplo puede estar en el conjunto de entrenamiento y su duplicado en el
+conjunto de prueba.
+tabla 8-3. Un conjunto de datos sobre juguetes con ejemplos duplicados en
+las celdas en gris.
+Input (Descripción del
+producto)
+Output
+(Precio)
+1
+{item: pencil, color: red}
+20 $
+2
+{item: compass, color: green}
+2 $
+3
+{item: pencil, color: red}
+20 $
+4
+{item: pencil, color: red}
+20 $
+5
+{item: pencil, color: green}
+1 $
+Múltiples estudios han demostrado el impacto negativo de las duplicaciones
+de datos de entrenamiento en el rendimiento del modelo; véase Lee et al.
+(2021) y Tirumala et al. (2023). Un estudio de Anthropic demostró que
+repetir el 0.1 % de los datos 100 veces pueden hacer que el rendimiento de
+un modelo de 800 M de parámetros se degrade al de un modelo de 400 M
+de parámetros, a pesar de que el otro 90 % de los tokens de entrenamiento
+sigan siendo únicos (Hernandez et al., 2022). Incluso cuando las
+duplicaciones no perjudican el rendimiento de su modelo, puede hacerle
+perder tiempo y potencia de cómputo.
+Dependiendo de los datos, existen muchas formas de duplicación, algunas
+de las cuales son más difíciles de detectar. Por ejemplo, aquí hay algunos
+tipos de duplicaciones en un conjunto de datos de documentos:

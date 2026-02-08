@@ -1,0 +1,37 @@
+the interaction. In critical contexts, transparency is nonnegotiable, while in lowstakes settings, confidence can be presented more casually.
+Asking for Guidance and Input from Users
+No agent, no matter how advanced, can perfectly interpret ambiguous, vague, or con‐
+flicting user inputs. Instead of making risky assumptions, agents must know when to
+ask clarifying questions or seek user guidance. This ability transforms potential errors
+into opportunities for collaboration.
+Effective agents are designed to ask focused, helpful questions when they encounter
+ambiguity. For example, if a user says "Book me a ticket to Chicago," the agent might
+respond with "Would you like a one-way or round-trip ticket, and do you have pre‐
+ferred travel dates?" Instead of defaulting to a generic response or making incorrect
+assumptions, the agent uses the opportunity to refine its understanding.
+The way agents ask for guidance also matters. Questions should be clear, polite, and
+context-aware, avoiding robotic or repetitive phrasing. If the user has already
+answered part of the question earlier in the conversation, the agent should reference
+that context rather than starting from scratch.
+Additionally, agents should be transparent about why they're asking for clarification.
+A simple explanation, like "I need a bit more information to proceed accurately,"
+helps users understand the rationale behind the question.
+Finally, agents should avoid asking too many questions at once-this can overwhelm
+users and make the interaction feel like an interrogation. Instead, they should
+sequence questions logically, addressing the most critical ambiguities first.
+When agents confidently ask for guidance and input, they transform uncertainty into
+productive collaboration, empowering users to guide the agent toward successful out‐
+comes while maintaining a sense of partnership and shared control.
+Failing Gracefully
+Failure is inevitable in agentic systems. Whether due to incomplete data, ambiguous
+user input, technical limitations, or unexpected edge cases, agents will encounter sce‐
+narios where they cannot fulfill a request or complete a task. However, how an agent
+handles failure is just as important as how it handles success. A well-designed agent
+doesn't just fail-it fails gracefully, minimizing user frustration, preserving trust, and
+providing a clear path forward.
+At its core, graceful failure involves acknowledging the issue transparently, offering a
+helpful explanation, and suggesting actionable next steps. For instance, if an agent
+cannot find an answer to a query, it might respond with "I couldn't find the
+Communicating Agent Capabilities
+|
+65

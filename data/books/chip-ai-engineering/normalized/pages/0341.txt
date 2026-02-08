@@ -1,0 +1,12 @@
+figura 5-5. Pedir a un modelo que adopte una personalidad puede ayudarle a utilizar
+la perspectiva adecuada para responder a sus preguntas.
+Dé ejemplos
+Los ejemplos pueden reducir la ambigüedad sobre cómo quiere que
+responda el modelo. Imagine que está construyendo un robot para hablar
+con niños pequeños. Ante la pregunta "¿Me traerá regalos Santa Claus en
+Navidad?", un modelo podría responder que Santa Claus es un personaje de
+ficción y, por tanto, no puede traer regalos de Navidad a nadie. Esta
+respuesta no serviría para que a los usuarios le cayera bien su bot.
+Para evitarlo, puede dar al modelo ejemplos de cómo responder a preguntas
+sobre personajes de ficción, como por ejemplo decir que el Ratoncito Pérez
+existe, como se demuestra en la Tabla 5-1.

@@ -1,0 +1,34 @@
+Chapter 5
+185
+result = (prompt_template | llm).invoke(
+  {"question": question, "query": query,
+   "search_result": search_result, "date": "Feb 2025"})
+print(result.content)
+>> SEARCH: Donald Trump age
+With that, we have demonstrated how tool calling works. Please note that we've provided prompt
+examples for demonstration purposes only. Another foundational LLM might require some prompt
+engineering, and our prompts are just an illustration. And good news: using tools is easier than
+it seems from these examples!
+As you can note, we described everything in our prompt, including a tool description and a
+tool-calling format. These days, most LLMs provide a better API for tool calling since modern
+LLMs are post-trained on datasets that help them excel in such tasks. The LLMs' creators know
+how these datasets were constructed. That's why, typically, you don't incorporate a tool descrip­
+tion yourself in the prompt; you just provide both a prompt and a tool description as separate
+arguments, and they are combined into a single prompt on the provider's side. Some smaller
+open-source LLMs expect tool descriptions to be part of the raw prompt, but they would expect
+a well-defined format.
+LangChain makes it easy to develop pipelines where an LLM invokes different tools and provides
+access to many helpful built-in tools. Let's look at how tool handling works with LangChain.
+Tools in LangChain
+With most modern LLMs, to use tools, you can provide a list of tool descriptions as a separate
+argument. As always in LangChain, each particular integration implementation maps the inter­
+face to the provider's API. For tools, this happens through LangChain's tools argument to the
+invoke method (and some other useful methods such as bind_tools and others, as we will learn
+in this chapter).
+When defining a tool, we need to specify its schema in OpenAPI format. We provide a title and
+a description of the tool and also specify its parameters (each parameter has a type, title, and de­
+scription). We can inherit such a schema from various formats, which LangChain translates into
+OpenAPI format. As we go through the next few sections, we'll illustrate how we can do this from
+functions, docstrings, Pydantic definitions, or by inheriting from a BaseTool class and providing
+descriptions directly. For an LLM, a tool is anything that has an OpenAPI specification-in other
+words, it can be called by some external mechanism.

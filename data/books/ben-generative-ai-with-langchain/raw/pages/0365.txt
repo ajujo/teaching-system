@@ -1,0 +1,32 @@
+Evaluation and Testing
+338
+            "documents": ["Investment strategy comparisons", "Market 
+timing research"]
+        }
+    },
+    # Additional examples would be added here
+]
+This dataset structure serves multiple evaluation purposes. First, it identifies specific documents 
+that should be retrieved, allowing evaluation of retrieval accuracy. It then defines key points that 
+should appear in the response, enabling assessment of information extraction. Finally, it connects 
+each example to testing objectives, making it easier to diagnose specific system capabilities.
+When implementing this dataset in practice, organizations typically load these examples into 
+evaluation platforms like LangSmith, allowing automated testing of their RAG systems. The re­
+sults reveal specific patterns in system performance—perhaps strong retrieval but weak synthesis, 
+or excellent performance on simple factual questions but struggles with complex perspective 
+inquiries.
+However, implementing effective RAG evaluation goes beyond simply creating datasets; it requires 
+using diagnostic tools to pinpoint exactly where failures occur within the system pipeline. Draw­
+ing on research, these diagnostics identify specific failure modes, such as poor document ranking 
+(information exists but isn’t prioritized) or poor context utilization (the agent ignores relevant 
+retrieved documents). By diagnosing these issues, organizations gain actionable insights—for 
+instance, consistent ranking failures might suggest implementing hybrid search, while context 
+utilization problems could lead to refined prompting or structured outputs.
+The ultimate goal of RAG evaluation is to drive continuous improvement. Organizations achieving 
+the most success follow an iterative cycle: running comprehensive diagnostics to find specific 
+failure patterns, prioritizing fixes based on their frequency and impact, implementing targeted 
+changes, and then re-evaluating to measure the improvement. By systematically diagnosing is­
+sues and using those insights to iterate, teams can build more accurate and reliable RAG systems 
+with fewer common errors.
+In the next section, we’ll see how we can use LangSmith, a companion project for LangChain, to 
+benchmark and evaluate our system’s performance on a dataset. Let’s step through an example!

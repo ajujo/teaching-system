@@ -1,0 +1,21 @@
+figura 9-19. El paralelismo de procesos permite ejecutar en paralelo las divisiones de
+modelos.
+La Figura 9-19 muestra que un lote puede dividirse en microlotes más
+pequeños. Una vez procesado un microlote en una máquina, su output pasa
+a la siguiente parte del modelo en la máquina siguiente.
+Aunque el paralelismo de proceso permite servir grandes modelos en varias
+máquinas, aumenta la latencia total de cada solicitud debido a la
+comunicación adicional entre las etapas del proceso. Por lo tanto, para
+aplicaciones con requisitos de latencia estrictos, se suele evitar el
+paralelismo de procesos en favor del paralelismo de réplicas. A pesar de
+ello, el paralelismo de procesos se utiliza comúnmente en el entrenamiento,
+ya que puede ayudar a aumentar el throughput.
+Dos técnicas menos comunes pero que merecen una rápida mención para
+ilustrar la diversidad de técnicas son el paralelismo de contexto y el
+paralelismo de secuencia. Ambos se desarrollaron para hacer más eficiente
+el procesamiento de secuencias de input largas, incluyendo el paralelismo
+de contexto y el paralelismo de secuencia.
+En el paralelismo de contexto, la propia secuencia de input se divide entre
+distintos dispositivos para ser procesada por separado. Por ejemplo, la
+primera mitad del input se procesa en la máquina 1 y la segunda mitad en la
+máquina 2.

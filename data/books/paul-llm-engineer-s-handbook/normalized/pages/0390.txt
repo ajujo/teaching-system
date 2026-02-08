@@ -1,0 +1,31 @@
+Chapter 10
+359
+This approach is usually taken when serving models outside your internal network to the broader
+public. For example, OpenAI's API implements a REST API protocol.
+On the other hand, implementing a gRPC makes your ML server faster, though it may reduce
+its flexibility and general applicability. You have to implement protobuf schemas in your client
+application, which are more tedious to work with than JSON structures. The benefit, however,
+is that protobuf objects can be compiled into bites, making the network transfers much faster.
+Thus, this protocol is often adopted for internal services within the same ML system.
+Using the real-time inference approach, the client sends an HTTP request to the ML service, which
+immediately processes the request and returns the result in the same response. This synchronous
+interaction means the client waits for the result before moving on.
+To make this work efficiently, the infrastructure must support low-latency, highly responsive ML
+services, often deployed on fast, scalable servers. Load balancing is crucial to evenly distribute
+incoming traffic evenly, while autoscaling ensures the system can handle varying loads. High
+availability is also essential to keeping the service operational at all times.
+For example, this architecture is often present when interacting with LLMs, as when sending a
+request to a chatbot or API (powered by LLMs), you expend the predictions right ahead. LLM
+services, such as ChatGPT or Claude, often use WebSockets to stream each token individually to
+the end user, making the interaction more responsive. Other famous examples are AI services such
+as embedding or reranking models used for retrieval-augmented generation (RAG) or online
+recommendation engines in platforms like TikTok.
+The simplicity of real-time inference, with its direct client-server interaction, makes it an attractive option for applications that require immediate responses, like chatbots or real-time recommendations. However, this approach can be challenging to scale and may lead to underutilized
+resources during low-traffic periods.
+Asynchronous inference
+In asynchronous inference, the client sends a request to the ML service, which acknowledges the
+request and places it in a queue for processing. Unlike real-time inference, the client doesn't wait
+for an immediate response. Instead, the ML service processes the request asynchronously. This requires a robust infrastructure that queues the messages to be processed by the ML service later on.
+When the results are ready, you can leverage multiple techniques to send them to the client. For
+example, depending on the size of the result, you can put it either in a different queue or an object
+storage dedicated to storing the results.

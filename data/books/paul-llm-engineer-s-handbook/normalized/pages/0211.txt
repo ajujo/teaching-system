@@ -1,0 +1,15 @@
+Supervised Fine-Tuning
+180
+Data quantity
+The Hugging Face Hub contains numerous instruction datasets, which can be general-purpose or
+designed for particular tasks or domains. When working on a new use case, it can be beneficial to
+look for related open-source datasets to leverage for fine-tuning. This is particularly important
+if your number of samples is too low (for example, fewer than 1,000), requiring you to augment
+it with high-quality data.
+Figure 5.2 - Screenshot of the most-liked datasets on the Hugging Face Hub
+Quick tip: Need to see a high-resolution version of this image? Open this book
+in the next-gen Packt Reader or view it in the PDF/ePub copy.
+ The next-gen Packt Reader and a free PDF/ePub copy of this book are included
+with your purchase. Unlock them by scanning the QR code below or visiting https://
+www.packtpub.com/unlock/9781836200079.
+

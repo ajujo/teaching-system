@@ -1,0 +1,45 @@
+Building Intelligent Agents
+196
+•	
+Tools that give an LLM access to databases by writing and executing SQL code: For ex­
+ample, SQLDatabase includes tools to get information about the database and its objects 
+and execute SQL queries. You can also access Google Drive with GoogleDriveLoader or 
+perform operations with usual file system tools from a FileManagementToolkit.
+•	
+Other tools: These comprise tools that integrate third-party systems and allow the LLM to 
+gather additional information or act. There are also tools that can integrate data retrieval 
+from Google Maps, NASA, and other platforms and organizations.
+•	
+Tools for using other AI systems or automation:
+•	
+Image generation: DALL-E and Imagen
+•	
+Speech synthesis: Google Cloud TTS and Eleven Labs
+•	
+Model access: Hugging Face Hub
+•	
+Workflow automation: Zapier and IFTTT
+Any external system with an API can be wrapped as a tool if it enhances an LLM like this: 
+•	
+Provides relevant domain knowledge to the user or the workflow
+•	
+Allows an LLM to take actions on the user’s behalf 
+When integrating such tools with LangChain, consider these key aspects:
+•	
+Authentication: Secure access to the external system
+•	
+Payload schema: Define proper data structures for input/output
+•	
+Error handling: Plan for failures and edge cases
+•	
+Safety considerations: For example, when developing a SQL-to-text agent, restrict access 
+to read-only operations to prevent unintended modifications
+Therefore, an important toolkit is the RequestsToolkit, which allows one to easily wrap any 
+HTTP API:
+from langchain_community.agent_toolkits.openapi.toolkit import 
+RequestsToolkit
+from langchain_community.utilities.requests import TextRequestsWrapper
+toolkit = RequestsToolkit(
+   requests_wrapper=TextRequestsWrapper(headers={}),
+   allow_dangerous_requests=True,
+)

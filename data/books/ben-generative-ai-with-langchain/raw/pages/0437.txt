@@ -1,0 +1,35 @@
+The Future of Generative Models: Beyond Scaling
+410
+The limitations of scaling and emerging alternatives
+Understanding the limitations of the scaling paradigm and the emerging alternatives is crucial for 
+anyone building or implementing AI systems today. As developers and stakeholders, recognizing 
+where diminishing returns are setting in helps inform better investment decisions, technology 
+choices, and implementation strategies. The shift beyond scaling represents both a challenge 
+and an opportunity—a challenge to rethink how we advance AI capabilities, and an opportunity 
+to create more efficient, accessible, and specialized systems. By exploring these limitations and 
+alternatives, readers will be better equipped to navigate the evolving AI landscape, make informed 
+architecture decisions, and identify the most promising paths forward for their specific use cases.
+The scaling hypothesis challenged
+The current doubling time in training compute of very large models is about 8 months, outpacing 
+established scaling laws such as Moore’s Law (transistor density at cost increases at a rate of cur­
+rently about 18 months) and Rock’s Law (costs of hardware like GPUs and TPUs halve every 4 years).
+According to Leopold Aschenbrenner’s Situational Awareness document from June 2024, AI train­
+ing compute has been increasing by about 4.6x per year since 2010, while GPU FLOP/s are only 
+increasing at about 1.35x per year. Algorithmic improvements are delivering performance gains at 
+approximately 3x per year. This extraordinary pace of compute scaling reflects an unprecedented 
+arms race in AI development, far beyond traditional semiconductor scaling norms.
+Gemini Ultra is estimated to have used approximately 5 × 10^25 FLOP in its final training run, 
+making it (as of this writing) likely the most compute-intensive model ever trained. Concurrently, 
+language model training datasets have grown by about 3.0x per year since 2010, creating massive 
+data requirements.
+By 2024-2025, a significant shift in perspective has occurred regarding the scaling hypothesis—the 
+idea that simply scaling up model size, data, and compute would inevitably lead to artificial gen­
+eral intelligence (AGI). Despite massive investments (estimated at nearly half a trillion dollars) 
+in this approach, evidence suggests that scaling alone is hitting diminishing returns for several 
+reasons:
+•	
+First, performance has begun plateauing. Despite enormous increases in model size and 
+training compute, fundamental challenges like hallucinations, unreliable reasoning, and 
+factual inaccuracies persist even in the largest models. High-profile releases such as Grok 
+3 (with 15x the compute of its predecessor) still exhibit basic errors in reasoning, math, 
+and factual information.

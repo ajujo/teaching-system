@@ -1,0 +1,26 @@
+dynamically in response to the context and task at hand. This section considers this
+range of tool topologies and discusses their trade-offs.
+Single Tool Execution
+We’ll begin with tasks that require precisely one tool. In this case, planning consists of
+choosing the one tool most appropriate to address the task. Once the tool is selected,
+it must be correctly parameterized based on the tool definition. The tool is then exe‐
+cuted, and its output is used as an input when composing the final response for the
+user, which can be seen in Figure 5-5. While this is a minimal definition of a plan, it is
+the foundation from which we will build more complex patterns.
+Figure 5-5. Single tool execution workflow. The user query is passed to the model (step
+1), which selects the appropriate tool from the toolset (step 2), receives the tool output
+(step 3), and composes the final response for the user (step 4).
+To make this example more concrete, Figure 5-6 shows this same single tool execu‐
+tion workflow where the agent retrieves and returns the current weather for New
+York City.
+Figure 5-6. Example of single tool execution for weather retrieval. The user asks for the
+weather in New York City, the model selects and parameterizes the weather tool,
+retrieves the temperature and conditions as a JSON payload, and composes a natural
+language response using this information for the user.
+While this single tool execution pattern is simple, it forms the foundation upon
+which more complex multistep planning and tool orchestration strategies are built in
+advanced agent systems. In the next section, we’ll look at how we can execute more
+tools without sacrificing latency.
+106 
+| 
+Chapter 5: Orchestration

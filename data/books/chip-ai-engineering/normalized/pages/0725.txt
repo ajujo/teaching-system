@@ -1,0 +1,16 @@
+del usuario y debe ser fácil de ignorar. Debe haber incentivos para que los
+usuarios den su opinión.
+Un ejemplo que suele citarse como buen diseño para la retroalimentación es
+el de la aplicación generadora de imágenes Midjourney. Por cada prompt,
+Midjourney genera un conjunto de (cuatro) imágenes y ofrece al usuario las
+siguientes opciones, como se muestra en la Figura 10-18:
+1. Generar una versión sin escalar de cualquiera de estas imágenes.
+2. Generar variaciones para cualquiera de estas imágenes.
+3. Regenerar.
+Todas estas opciones dan a Midjourney señales diferentes. Las opciones 1 y
+2 indican a Midjourney cuál de las cuatro fotos considera más prometedora
+el usuario. La opción 1 da la señal positiva más fuerte sobre la foto elegida.
+La opción 2 da una señal positiva más débil. La opción 3 indica que
+ninguna de las fotos es lo bastante buena. Sin embargo, los usuarios pueden
+optar por regenerar incluso si las fotos existentes son buenas, solo para ver
+qué más es posible.

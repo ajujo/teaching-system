@@ -1,0 +1,32 @@
+Debido a su promesa de ahorro de memoria, el LoRA cuantizado es un área
+activa de investigación. Además de QLoRA, los trabajos de LoRA
+cuantizado incluyen QA-LoRA (Xu et al., 2023), ModuLoRA (Yin et al.,
+2023) y IR-QLoRA (Qin et al., 2024).
+Fusión de modelos y afinado multitarea
+Si el afinado permite crear un modelo personalizado modificando un único
+modelo, la fusión de modelos permite crear un modelo personalizado
+combinando múltiples modelos. La fusión de modelos ofrece mayor
+flexibilidad que el afinado por sí solo. Puede tomar dos modelos
+disponibles y fusionarlos para crear un nuevo modelo, con suerte más útil.
+También puede afinar uno o todos los modelos constituyentes antes de
+fusionarlos.
+Aunque no es necesario afinar más el modelo fusionado, a menudo esto
+puede mejorar su rendimiento. Sin afinado, la fusión de modelos puede
+realizarse sin GPU, lo que la hace especialmente atractiva para los
+desarrolladores de modelos independientes sin acceso a muchos recursos
+computacionales.
+El objetivo de la fusión de modelos es crear un modelo único que aporte
+más valor que utilizar todos los modelos constituyentes por separado. El
+valor añadido puede venir de la mejora del rendimiento. Por ejemplo, si
+tiene dos modelos que son buenos en cosas diferentes en la misma tarea,
+puede fusionarlos en un único modelo que sea mejor que ambos en esa
+tarea. Imagine un modelo que pueda responder al primer 60 % de las
+preguntas y otro modelo que pueda responder al último 60 % de las
+preguntas. Combinados, quizá puedan responder al 80 % de las preguntas.
+El valor añadido también puede venir de una menor huella de memoria, lo
+que conlleva una reducción de costos. Por ejemplo, si tiene dos modelos
+que pueden realizar tareas diferentes, pueden fusionarse en un modelo que
+pueda realizar ambas tareas pero con menos parámetros. Esto resulta
+especialmente atractivo para los modelos basados en adaptadores. Teniendo
+dos modelos que se han afinado sobre el mismo modelo base, puede
+combinar sus adaptadores en un único adaptador.

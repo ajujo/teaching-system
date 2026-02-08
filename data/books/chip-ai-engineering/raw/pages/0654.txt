@@ -1,0 +1,14 @@
+figura 9-13. FlashAttention es un kernel que fusiona varios operadores comunes.
+Adaptación de una imagen original con licencia BSD 3-Clause.
+Kernels y compiladores
+Los kernels son piezas especializadas de código optimizadas para
+aceleradores de hardware específicos, como GPU o TPU. Normalmente se
+escriben para realizar rutinas de cómputo intensivo que deben ejecutarse
+repetidamente, a menudo en paralelo, para maximizar el rendimiento de
+estos aceleradores.
+Las operaciones habituales de la IA, como la multiplicación de matrices, el
+cómputo de la atención o la operación de convolución, tienen kernels
+especializados para que su cálculo sea más eficiente en distintos equipos. 23
+Escribir kernels requiere un profundo conocimiento de la arquitectura de
+hardware subyacente. Esto incluye conocer cómo está estructurada la
+jerarquía de memoria (por ejemplo, cachés, memoria global, memoria

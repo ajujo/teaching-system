@@ -1,0 +1,42 @@
+Chapter 4
+157
+While CRAG enhances RAG by adding evaluation and correction mechanisms to the retrieval 
+pipeline, Agentic RAG represents a more fundamental paradigm shift by introducing autonomous 
+AI agents to orchestrate the entire RAG process.
+Agentic RAG
+Agentic RAG employs AI agents—autonomous systems capable of planning, reasoning, and deci­
+sion-making—to dynamically manage information retrieval and generation. Unlike traditional 
+RAG or even CRAG, which follow relatively structured workflows, agentic RAG uses agents to:
+•	
+Analyze queries and decompose complex questions into manageable sub-questions
+•	
+Plan information-gathering strategies based on the specific task requirements
+•	
+Select appropriate tools (retrievers, web search, calculators, APIs, etc.)
+•	
+Execute multi-step processes, potentially involving multiple rounds of retrieval and rea­
+soning
+•	
+Reflect on intermediate results and adapt strategies accordingly
+The key distinction between CRAG and agentic RAG lies in their focus: CRAG primarily enhances 
+data quality through evaluation and correction, while agentic RAG focuses on process intelligence 
+through autonomous planning and orchestration.
+Agentic RAG is particularly valuable for complex use cases that require:
+•	
+Multi-step reasoning across multiple information sources
+•	
+Dynamic tool selection based on query analysis
+•	
+Persistent task execution with intermediate reflection
+•	
+Integration with various external systems and APIs
+However, agentic RAG introduces significant complexity in implementation, potentially higher 
+latency due to multiple reasoning steps, and increased computational costs from multiple LLM 
+calls for planning and reflection.
+In Chapter 5, we’ll explore the implementation of agent-based systems in depth, including pat­
+terns that can be applied to create agentic RAG systems. The core techniques—tool integration, 
+planning, reflection, and orchestration—are fundamental to both general agent systems and 
+agentic RAG specifically.
+By understanding both CRAG and agentic RAG approaches, you’ll be equipped to select the most 
+appropriate RAG architecture based on your specific requirements, balancing accuracy, flexibility, 
+complexity, and performance.

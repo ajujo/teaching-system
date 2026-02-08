@@ -1,0 +1,40 @@
+tabla 3-4. Diferentes herramientas pueden tener prompts por defecto muy
+difíciles para los mismos criterios.
+Herramienta
+Prompt
+[omitido parcialmente para
+mantener la brevedad].
+Sistema de
+puntuación
+MLflow
+La fidelidad solo se evalúa con el outpu
+t y el contexto proporcionados; ignora e
+l input proporcionado por completo al pu
+ntuar la fidelidad. La fidelidad evalúa
+en qué medida los outputs son coherentes
+con los datos proporcionados...
+Fidelidad: A continuación se detallan la
+s distintas puntuaciones:
+– Puntuación 1: Ninguna de las afirmacio
+nes del output puede deducirse del conte
+xto proporcionado.
+– Puntuación 2: ...
+1–5
+Ragas
+Tu tarea consiste en juzgar la fidelidad
+de una serie de declaraciones basadas en
+un contexto determinado. Para cada afirm
+ación, debes devolver tu veredicto como
+1 si la afirmación puede verificarse bas
+ándose en el contexto o 0 si la afirmaci
+ón no puede verificarse basándose en el
+contexto.
+0 y 1
+LlamaIndex
+Di si una información dada está respalda
+da por el contexto. Debes responder con
+un Sí o un NO. Responde Sí si algo del c
+ontexto apoya la información, aunque la
+mayor parte del contexto no tenga relaci
+ón. Abajo hay algunos ejemplos.
+Sí y NO

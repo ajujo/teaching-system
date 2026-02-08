@@ -1,0 +1,14 @@
+entrenamiento". El documento de Llama 3 contiene numerosos detalles
+sobre la cobertura de datos en las tres fases de entrenamiento: preentrenamiento, afinado supervisado y afinado de preferencias. Aunque este
+capítulo se centra en los datos post-entrenamiento, es útil observar la
+mezcla de datos del mismo modelo en todas las fases de entrenamiento para
+comparar y destacar las consideraciones para cada fase.
+Un eje de diversidad constante en las tres fases es la diversidad de
+dominios, aunque el significado exacto de diverso difiere, como se muestra
+en la Tabla 8-1. Esta tabla solo muestra los dominios de alto nivel y no
+incluye temas más específicos, como la "geometría", que es una
+subcategoría de las matemáticas. Los datos de post-entrenamiento también
+tienen diferentes ejes de diversidad que no se muestran en la tabla, como el
+número de tokens (tanto para el contexto como para la respuesta) y el
+número de turnos. Llama 3 utiliza datos sintéticos para el postentrenamiento, por lo que otra dimensión es la relación entre datos
+generados por humanos y datos generados por la IA.

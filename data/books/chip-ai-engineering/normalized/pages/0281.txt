@@ -1,0 +1,31 @@
+los modelos. A continuación veremos cómo explorar el vertiginoso número
+de pruebas comparativas públicas y por qué no hay que fiarse de ellas. Esto
+sentará las bases para la última sección del capítulo. Ya que las pruebas
+comparativas públicas no son de fiar, debe diseñar su propio proceso de
+evaluación con prompts y parámetros en los que puedan confiar.
+Construir un modelo vs. comprar un modelo
+Las empresas siempre se pregunta, a la hora de aprovechar cualquier
+tecnología, si construirla o comprarla. Como la mayoría de las empresas no
+van a crear modelos fundacionales desde cero, la cuestión es si utilizar las
+API de modelos comerciales o alojar uno mismo un modelo de código
+abierto. La respuesta a esta pregunta puede reducir significativamente su
+lista de candidatos potenciales.
+Analicemos primero qué significa exactamente "código abierto" en lo que
+respecta a los modelos, y luego los pros y los contras de estos dos enfoques.
+Código abierto, ponderación abierta y licencias modelo
+El término "modelo de código abierto" se ha vuelto polémico.
+Originalmente, "código abierto" se utilizaba para referirse a cualquier
+modelo que la gente puede descargar y utilizar. Para muchos casos de uso,
+basta con poder descargar el modelo. Sin embargo, hay quien sostiene que,
+dado que el rendimiento de un modelo depende en gran medida de los datos
+con los que se ha entrenado, un modelo solo debería considerarse abierto si
+sus datos de entrenamiento también se ponen a disposición del público.
+Los datos abiertos permiten un uso más flexible del modelo, como volver a
+entrenarlo desde cero con modificaciones en la arquitectura del modelo, el
+proceso de entrenamiento o los propios datos de entrenamiento. Los datos
+abiertos también facilitan comprender el modelo. Algunos casos de uso
+también requerían acceso a los datos de entrenamiento con fines de
+auditoría, por ejemplo, para asegurarse de que el modelo no se había
+entrenado con datos vulnerados o adquiridos ilegalmente. 10
+Para indicar si los datos también son abiertos, se utiliza el término
+"ponderación abierta" para los modelos que no vienen con datos abiertos,

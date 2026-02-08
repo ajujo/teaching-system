@@ -1,0 +1,16 @@
+MLOps and LLMOps
+442
+      ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_NAME 
+}}:latest
+    push: true
+To conclude, the CD pipeline authenticates to AWS, builds the Docker image, and pushes it to 
+AWS ECR. The Docker image is pushed with latest and the commit’s SHA tag. By doing so, we 
+can always use the latest image and point to the commit of the code from which the image was 
+generated.
+Also, in our code, we have only a main branch, which reflects our production environment. But 
+you, as a developer, have the power to extend this functionality with a staging and dev environ-
+ment. You just have to add the name of the branches in the on.push.branches configuration at 
+the beginning of the YAML file.
+In Figure 11.16, you can observe how the CD pipeline looks after a PR is merged into the production 
+branch. As seen before, we only have the Build & Push Docker Image job here.
+Figure 11.16: GitHub Actions CD pipeline run example

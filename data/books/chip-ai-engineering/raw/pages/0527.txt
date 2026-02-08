@@ -1,0 +1,11 @@
+figura 7-13. Cómo funcionan el ensamble y la fusión de modelos.
+Muchas técnicas de fusión de modelos son experimentales y podrían quedar
+obsoletas a medida que la comunidad vaya comprendiendo mejor la teoría
+subyacente. Por esta razón, me centraré en los enfoques de fusión de alto
+nivel, en ves de en cualquier técnica individual.
+Los enfoques de fusión de modelos difieren en cómo se combinan los
+parámetros constituyentes. Aquí se tratan tres enfoques: la suma, el
+apilamiento de capas y la concatenación. La Figura 7-14 muestra sus
+diferencias a grandes rasgos.
+figura 7-14. Tres enfoques principales para la fusión de modelos: suma, apilamiento
+de capas y concatenación.

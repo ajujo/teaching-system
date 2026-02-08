@@ -1,0 +1,33 @@
+en línea]
+Estado de la transacción: [Completada/Pendiente/Fallida]
+Descripción: [Descripción de la transacción]
+Debido a la sensibilidad de los datos de las transacciones, muchos modelos
+de detección de fraudes se entrenan primero con datos de transacciones
+sintéticos generados a partir de plantillas como esta para probar su
+viabilidad antes de darles acceso a datos reales.
+Es habitual utilizar plantillas para generar documentos que sigan una
+estructura específica, como facturas, currículos, declaraciones de impuestos,
+extractos bancarios, agendas de eventos, catálogos de productos, contratos,
+archivos de configuración, etc. Las plantillas también pueden utilizarse para
+generar datos que sigan una gramática y sintaxis determinadas, como
+expresiones regulares y ecuaciones matemáticas. Puede utilizar plantillas
+para generar ecuaciones matemáticas para que las resuelvan los modelos de
+IA. DeepMind entrenó un modelo de geometría de nivel de olimpiadas,
+AlphaGeometry, utilizando 100 millones de ejemplos sintéticos (Trinh et
+al., 2024).
+Pueden generar de forma procedimental nuevos datos a partir de datos
+existentes aplicando transformaciones sencillas. En el caso de las imágenes,
+pueden girar, recortar, escalar o borrar parte de una imagen de forma
+aleatoria. Una imagen invertida de un gato debe seguir siendo un gato. Una
+imagen ligeramente recortada de un partido de fútbol debe seguir siendo un
+partido de fútbol. Krizhevsky et al. (2012) demostraron en su legendario
+artículo AlexNet la utilidad de esta técnica utilizándola para aumentar el
+conjunto de datos ImageNet (Deng et al., 2009).
+Para los textos, pueden sustituir aleatoriamente una palabra por otra similar,
+suponiendo que esta sustitución no cambiará el significado o el sentimiento
+de la frase. Por ejemplo, la frase original "Es una fantástica enfermera"
+puede generar un nuevo ejemplo: "Es una gran enfermera".
+Este enfoque puede utilizarse para mitigar posibles sesgos en los datos. Si
+les preocupa que haya un sesgo de género en sus datos, en los que, por
+ejemplo, la palabra "enfermera" se asocia a las mujeres mientras que la
+palabra "médico" se asocia a los hombres, pueden sustituir las palabras

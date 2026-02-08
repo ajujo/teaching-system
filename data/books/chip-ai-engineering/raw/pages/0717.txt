@@ -1,0 +1,27 @@
+Las señales de regeneración también podrían ser más fuertes en las
+aplicaciones con facturación basada en el uso que en las de suscripción.
+Con la facturación basada en el uso, los usuarios son menos propensos a
+regenerar y gastar dinero extra por simple curiosidad.
+Personalmente, suelo elegir regenerar las solicitudes complejas, para
+garantizar la coherencia de las respuestas del modelo. Si dos respuestas dan
+respuestas contradictorias, no puedo fiarme de ninguna.
+Tras la regeneración, algunas aplicaciones pueden pedir explícitamente que
+se compare la nueva respuesta con la anterior, como se muestra en la
+Figura 10-13. Estos datos sobre "mejor" o "peor", pueden utilizarse para el
+afinado de preferencias.
+figura 10-13. ChatGPT pide una opinión comparativa cuando un usuario regenera
+otra respuesta.
+Organización de la conversación
+Las acciones que realiza un usuario para organizar sus conversaciones
+(como borrar, renombrar, compartir o marcar) también pueden ser señales.
+Borrar una conversación es una señal bastante evidente de que la
+conversación es mala, a menos que se trate de una conversación
+embarazosa y el usuario quiera eliminar su rastro. Cambiar el nombre de
+una conversación sugiere que la conversación es buena, pero el título
+autogenerado es malo.
+Duración de la conversación
+Otra señal que se suele seguir es el número de turnos por conversación.
+Que sea una señal positiva o negativa depende de la aplicación. Para los
+acompañantes de IA, una conversación larga podría indicar que el usuario
+disfruta de la conversación. Sin embargo, para los chatbots orientados a la
+productividad, como los de atención al cliente, una conversación larga

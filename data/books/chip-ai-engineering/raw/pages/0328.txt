@@ -1,0 +1,26 @@
+y ML clásico para darle seguimiento a los experimentos, la evaluación y la
+recopilación de conjuntos de datos.
+Este capítulo trata tanto de cómo escribir prompts efectivos como de cómo
+defender sus aplicaciones contra ataques de prompts. Antes de entrar de
+lleno en todas las aplicaciones divertidas que se puede crear con prompts,
+empecemos por los fundamentos, incluyendo qué es exactamente un prompt
+y las mejores prácticas de ingeniería de prompts.
+Introducción al prompting
+Un prompt es una instrucción que se da a un modelo para que realice una
+tarea. La tarea puede ser tan sencilla como responder a una pregunta, como
+"¿Quién inventó el número cero?". También puede ser más complejo, como
+pedirle al modelo que investigue a los competidores para su idea de
+producto, que construya un sitio web desde cero o que analice sus datos.
+Por lo general, un prompt consta de una o varias de las siguientes partes:
+Descripción de la tarea
+Qué quiere que haga el modelo, incluyendo el papel que
+quiere que desempeñe y el formato de output.
+Ejemplo(s) de cómo realizar esta tarea
+Por ejemplo, si desea que el modelo detecte la toxicidad en
+un texto, puede dar algunos ejemplos de toxicidad y no
+toxicidad.
+La tarea
+La tarea concreta que quiere que haga el modelo, como la
+pregunta que debe responder o el libro que debe resumir.
+La Figura 5-1 muestra un prompt muy sencillo que se podría utilizar para
+una tarea NER (reconocimiento de entidades con nombre).

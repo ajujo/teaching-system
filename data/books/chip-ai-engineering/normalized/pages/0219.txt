@@ -1,0 +1,28 @@
+acuerdo con la respuesta de la verdad fundamental". Cuanto más
+detalladas sean las instrucciones, mejor.
+3. El sistema de puntuación, que puede ser uno de estos:
+- Clasificación, como bueno/malo o
+relevante/irrelevante/neutral.
+- Valores numéricos discretos, como de 1 a 5. Los valores
+numéricos discretos pueden considerarse un caso especial
+de clasificación, en el que cada clase tiene una
+interpretación numérica en lugar de una interpretación
+semántica.
+- Valores numéricos continuos, como entre 0 y 1, por
+ejemplo, cuando se desea evaluar el grado de similitud.
+SUGERENCIA
+Los modelos lingüísticos suelen ser mejores con los textos que con los
+números. Se ha informado de que los jueces de IA trabajan mejor con
+sistemas de clasificación que con sistemas de puntuación numérica.
+Para los sistemas de puntuación numérica, la puntuación discreta parece
+funcionar mejor que la continua. Empíricamente, cuanto mayor es el rango
+para la puntuación discreta, peor parece ser el modelo. Los sistemas típicos
+de puntuación discreta se sitúan entre 1 y 5.
+Se ha demostrado que los prompts con ejemplos dan mejores outputs. Si
+utiliza un sistema de puntuación entre 1 y 5, incluya ejemplos de cómo es
+una respuesta con una puntuación de 1, 2, 3, 4 o 5 y, si es posible, por qué
+una respuesta recibe una puntuación determinada. En el Capítulo 5 se
+describen las mejores prácticas para el prompting.
+A continuación se muestra parte del prompt utilizado para la relevancia de
+los criterios por Azure AI Studio. Explica la tarea, los criterios, el sistema
+de puntuación, un ejemplo de input con una puntuación baja y una

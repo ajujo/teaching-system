@@ -1,0 +1,23 @@
+AVISO
+Cuando utilice un modelo, asegúrese de cargarlo en el formato previsto.
+Cargar un modelo en un formato numérico incorrecto puede hacer que el
+modelo cambie significativamente. Por ejemplo, Llama 2 tenía sus
+ponderaciones ajustadas para BF16 cuando salió. Sin embargo, muchos
+equipos cargaron el modelo en FP16 y se sintieron frustrados al comprobar
+que la calidad del modelo era mucho peor de lo anunciado. 15 Aunque este
+malentendido hizo perder el tiempo a mucha gente, lo bueno es que obligó
+a mucha gente a aprender sobre representaciones numéricas.
+El formato adecuado para usted depende de la distribución de valores
+numéricos de su carga de trabajo (como el rango de valores que necesita),
+de lo sensible que sea su carga de trabajo a pequeños cambios numéricos y
+del hardware subyacente. 16
+Cuantización
+Cuantos menos bits se necesiten para representar los valores de un modelo,
+menos memoria ocupará. Un modelo de 10MM parámetros en formato de
+32 bits requiere 40 GB para sus ponderaciones, pero el mismo modelo en
+formato de 16 bits solo necesitará 20 GB. La reducción de la precisión,
+también conocida como cuantización, es una forma barata y
+extremadamente eficaz de reducir la huella de memoria de un modelo. Es
+fácil de hacer y se generaliza a tareas y arquitecturas. En el contexto de ML,
+la baja precisión se refiere generalmente a cualquier formato con menos bits
+que el estándar FP32.

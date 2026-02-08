@@ -1,0 +1,26 @@
+During generation, the retrieved information is then fed into a generative foundation
+model, which uses this context to produce a coherent and contextually appropriate
+response. The generative model synthesizes the retrieved data with its own learned
+knowledge, enhancing the relevance and accuracy of the generated text, as is illustra‐
+ted in Figure 6-2.
+Figure 6-2. RAG runtime workflow. The user submits a question to the controller, which
+queries the vector knowledge store to retrieve the most relevant information. This
+retrieved context is then combined with the original user question and passed to the gen‐
+erative model, which produces a final, contextually informed response.
+RAG represents a powerful approach for enhancing the capabilities of agentic systems
+by combining retrieval-based methods with generative models. By leveraging external
+knowledge and integrating it into the generation process, RAG enables the creation of
+more informed, accurate, and contextually relevant responses. As technology contin‐
+ues to evolve, RAG will play a crucial role in advancing the performance and versatil‐
+ity of LLM-powered applications across various domains. This is especially valuable
+for incorporating domain- or company-specific information or policies to influence
+the output.
+Semantic Experience Memory
+While incorporating an external knowledge base with a semantic store is an effective
+way to incorporate external knowledge into our agent, our agent will start every
+session from a blank slate, and the context of long-running or complex tasks will
+gradually drop out of the context window. Both of these issues can be addressed by
+semantic experience memory.
+122
+|
+Chapter 6: Knowledge and Memory

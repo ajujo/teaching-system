@@ -1,0 +1,75 @@
+{
+  "$schema": "exercise_set_v1",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "difficulty": "mid",
+  "types": [
+    "quiz"
+  ],
+  "generation_time_ms": 73050,
+  "mode": "json",
+  "pages_used": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "created_at": "2026-02-02T16:32:48.962012+00:00",
+  "total_points": 4,
+  "passing_threshold": 0.7,
+  "exercises": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q01",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "¿Cuál de las siguientes es una ventaja principal de utilizar un LLM Twin en lugar de chatbots genéricos como ChatGPT?",
+      "correct_answer": 2,
+      "explanation": "Los LLM Twins se destacan por permitir personalización específica de dominios utilizando pipelines FTI (Feature/Training/Inference) que optimizan el flujo de datos y la capacidad de entrenamiento, a diferencia de chatbots genéricos como ChatGPT. Esto se explica en las páginas 5-7 del capítulo.",
+      "points": 1,
+      "tags": [
+        "LLM Twin",
+        "FTI architecture"
+      ],
+      "options": [
+        "Tienen mayor capacidad para generar contenido creativo sin restricciones.",
+        "No requieren infraestructura específica de entrenamiento o inferencia.",
+        "Permiten personalización del dominio y flujos de trabajo específicos mediante pipelines FTI.",
+        "Son inherentemente más seguros por su arquitectura centralizada."
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q02",
+      "type": "true_false",
+      "difficulty": "medium",
+      "question": "La arquitectura FTI (Feature/Training/Inference) permite reutilizar componentes entre las etapas de entrenamiento e inferencia, lo que mejora la eficiencia del sistema.",
+      "correct_answer": true,
+      "explanation": "Sí es correcto. La página 15 menciona explícitamente los beneficios de la arquitectura FTI, incluyendo la reutilización de componentes entre pipelines y el diseño modular que optimiza recursos.",
+      "points": 1,
+      "tags": [
+        "FTI architecture",
+        "ML systems"
+      ]
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q03",
+      "type": "short_answer",
+      "difficulty": "medium",
+      "question": "¿Cuáles son los tres componentes fundamentales de la arquitectura FTI (Feature/Training/Inference) mencionados en el texto?",
+      "correct_answer": "Pipeline de características (feature), pipeline de entrenamiento y pipeline de inferencia",
+      "explanation": "La página 14-15 define claramente estos tres componentes como pilares del diseño FTI: feature pipeline para procesar datos, training pipeline para entrenar modelos y inference pipeline para realizar predicciones.",
+      "points": 2,
+      "tags": [
+        "FTI architecture",
+        "system design"
+      ]
+    }
+  ]
+}

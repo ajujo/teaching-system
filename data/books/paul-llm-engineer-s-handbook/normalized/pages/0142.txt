@@ -1,0 +1,22 @@
+Chapter 4
+111
+Finally, a fully connected layer at the end takes all this processed information and transforms it
+into the final vector embedding, a numerical image representation.
+Figure 4.4: Creating embeddings from an image using a CNN (Image source)
+How are embeddings created?
+Embeddings are created by deep learning models that understand the context and semantics of
+your input and project it into a continuous vector space.
+Various deep learning models can be used to create embeddings, varying by the data input type.
+Thus, it is fundamental to understand your data and what you need from it before picking an
+embedding model.
+For example, when working with text data, one of the early methods used to create embeddings
+for your vocabulary is Word2Vec and GloVe. These are still popular methods used today for simpler applications.
+Another popular method is to use encoder-only transformers, such as BERT, or other methods
+from its family, such as RoBERTa. These models leverage the encoder of the transformer architecture to smartly project your input into a dense vector space that can later be used as embeddings.
+To quickly compute the embeddings in Python, you can conveniently leverage the Sentence
+Transformers Python package (also available in Hugging Face's transformer package). This tool
+provides a user-friendly interface, making the embedding process straightforward and efficient.
+The preceding image is sourced from Wikimedia Commons (https://commons.
+wikimedia.org/wiki/File:Typical_cnn.png) and licensed under the Creative
+Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0: https://
+creativecommons.org/licenses/by-sa/4.0/deed.en).

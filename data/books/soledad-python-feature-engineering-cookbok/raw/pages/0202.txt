@@ -1,0 +1,27 @@
+Extracting features from dates with pandas
+179
+How to do it...
+To proceed with the recipe, let’s import pandas and numpy, and create a sample DataFrame:
+1.	
+Let’s import the libraries:
+import numpy as np
+import pandas as pd
+2.	
+We’ll start by creating 20 datetime values beginning from 2024-05-17 at midnight and 
+followed by increments of 1 day. Then, we’ll capture those values in a DataFrame instance 
+and display the top five rows:
+rng_ = pd.date_range(
+    "2024-05-17", periods=20, freq="D")
+data = pd.DataFrame({"date": rng_})
+data.head()
+In the following output, we see the variable containing dates that we created in Step 2:
+Figure 6.1 – Top rows of a DataFrame with a datetime variable containing only dates
+Note
+We can check the data format of the variable by executing data["date"].dtypes. 
+If the variable is cast as an object, we can convert it into datetime format by executing 
+data["date_dt"] = pd.to_datetime(data["date"]).
+3.	
+Let’s extract the year part of the date in a new column and display the top five rows of the 
+resulting DataFrame:
+data["year"] = data["date"].dt.year
+data.head()

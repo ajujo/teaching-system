@@ -1,0 +1,32 @@
+siendo necesario hacer experimentos sistemáticos. Con la ingeniería clásica
+de ML, se experimenta con diferentes hiperparámetros. Con los modelos
+fundacionales, se experimenta con diferentes modelos, prompts, algoritmos
+de recuperación, variables de muestreo, etc. (las variables de muestreo se
+tratan en el Capítulo 2). Seguimos queriendo que los modelos funcionen
+más rápido y más barato. Sigue siendo importante establecer un bucle de
+retroalimentación para poder mejorar iterativamente nuestras aplicaciones
+con datos de producción.
+Esto significa que gran parte de lo que los ingenieros de ML han aprendido
+y compartido durante la última década sigue vigente. Esta experiencia
+colectiva hace más fácil que cualquiera pueda empezar a crear aplicaciones
+de IA. Sin embargo, sobre estos principios duraderos se construyen muchas
+innovaciones exclusivas de la ingeniería de IA, que exploraremos en este
+libro.
+Ingeniería de IA Vs. ingeniería de ML
+Aunque es tranquilizadora la inmutabilidad de los principios de la
+implementación de aplicaciones de IA, también es importante comprender
+cómo han cambiado las cosas. Esto es útil para los equipos que quieren
+adaptar sus plataformas existentes a los nuevos casos de uso de la IA y para
+los desarrolladores interesados en determinar qué habilidades aprender para
+seguir siendo competitivos en un nuevo mercado.
+En forma general, la creación actual de aplicaciones utilizando modelos
+fundacionales es diferente de la ingeniería de ML tradicional en tres
+aspectos principales:
+1. Sin modelos fundacionales, tiene que entrenar sus propios modelos
+para sus aplicaciones. Con la ingeniería de IA, utiliza un modelo
+que alguien ha entrenado por usted. Esto significa que la ingeniería
+de IA se centra menos en el modelado y el entrenamiento, y más en
+la adaptación de modelos.
+2. La ingeniería de IA trabaja con modelos que son más grandes,
+consumen más recursos computacionales y generan una latencia
+mayor que la ingeniería de ML tradicional. Esto significa que hay

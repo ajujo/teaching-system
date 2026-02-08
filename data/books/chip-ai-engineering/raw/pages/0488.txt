@@ -1,0 +1,28 @@
+6. El entrenamiento es más sensible a la precisión numérica, por
+lo que es más difícil entrenar un modelo con menor precisión.
+El entrenamiento se realiza normalmente con precisión mixta,
+con algunas operaciones realizadas con mayor precisión (por
+ejemplo, 32 bits) y otras con menor precisión (por ejemplo, 16
+u 8 bits).
+Retropropagación y parámetros entrenables
+Un factor clave que determina la huella de memoria de un modelo durante
+el afinado es su número de parámetros entrenables. Un parámetro
+entrenable es un parámetro que puede actualizarse durante el afinado.
+Durante el pre-entrenamiento, se actualizan todos los parámetros del
+modelo. Durante la inferencia, no se actualizan los parámetros del modelo.
+Durante el afinado, pueden actualizarse algunos o todos los parámetros del
+modelo. Los parámetros que se mantienen inalterados son parámetros
+congelados.
+La memoria necesaria para cada parámetro entrenable es el resultado de la
+forma en que se entrena un modelo. En el momento de escribir estas líneas,
+las redes neuronales suelen entrenarse mediante un mecanismo llamado
+retropropagación. 6 Con la retropropagación, cada paso de entrenamiento
+consta de dos fases:
+1. Pasada hacia delante: el proceso de computar el output a partir del
+input.
+2. Pasada hacia atrás: el proceso de actualizar las ponderaciones del
+modelo a partir de las señales agregadas a partir de la pasada hacia
+delante.
+Durante la inferencia, solo se ejecuta la pasada hacia delante. Durante el
+entrenamiento, se ejecutan ambas pasadas. A grandes rasgos, la pasada
+hacia atrás funciona de la siguiente manera:

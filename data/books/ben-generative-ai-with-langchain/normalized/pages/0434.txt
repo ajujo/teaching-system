@@ -1,0 +1,61 @@
+Chapter 10
+407
+These developments challenge the simple scaling hypothesis by demonstrating that qualitative
+architectural innovations and novel training approaches can yield discontinuous improvements
+in capabilities. They suggest that the future of AI advancement may depend more on how mod­
+els are structured to think than on raw parameter counts-a theme we'll explore further in the
+Limitations of scaling section.
+The following tracks the progress of AI systems across various capabilities relative to human
+performance over a 25-year period. Human performance serves as the baseline (set to zero on
+the vertical axis), while each AI capability's initial performance is normalized to -100. The chart
+reveals the varying trajectories and timelines for different AI capabilities reaching and exceeding
+human-level performance. Note the particularly steep improvement curve for predictive reason­
+ing, suggesting this capability remains in a phase of rapid advancement rather than plateauing.
+Reading comprehension, language understanding, and image recognition all crossed the human
+performance threshold between approximately 2015 and 2020, while handwriting and speech
+recognition achieved this milestone earlier.
+The comparison between human cognition and generative AI reveals several fundamental differ­
+ences that persist despite remarkable progress between 2022 and 2025. Here is a table summa­
+rizing the key strengths and deficiencies of current generative AI compared to human cognition:
+Category
+Human Cognition
+Generative AI
+Conceptual
+understanding
+Forms causal models grounded
+in physical and social experience;
+builds meaningful concept
+relationships beyond statistical
+patterns
+Relies primarily on statistical pattern
+recognition without true causal
+understanding; can manipulate
+symbols fluently without deeper
+semantic comprehension
+Factual
+processing
+Integrates knowledge with
+significant cognitive biases;
+susceptible to various reasoning
+errors while maintaining functional
+reliability for survival
+Produces confident but often
+hallucinated information; struggles
+to distinguish reliable from
+unreliable information despite
+retrieval augmentation
+Adaptive
+learning and
+reasoning
+Slow acquisition of complex
+skills but highly sample-efficient;
+transfers strategies across domains
+using analogical thinking; can
+generalize from a few examples
+within familiar contexts
+Requires massive datasets for initial
+training; reasoning abilities strongly
+bound by training distribution;
+increasingly capable of in-context
+learning but struggles with truly
+novel domains

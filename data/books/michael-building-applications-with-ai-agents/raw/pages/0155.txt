@@ -1,0 +1,24 @@
+1 Jack Lanchantin et al., “Learning to Reason and Memorize with Self-Notes”, arXiv, May 1, 2023.
+Note-Taking
+With this technique, the foundation model is prompted to specifically inject notes on
+the input context without trying to answer the question.1 This mimics the way that we
+might fill in the margins or summarize a paragraph or section. This note-taking is
+performed before the question is presented, and then interleaves these notes with the
+original context when attempting to address the current task. Experiments show good
+results on multiple reasoning and evaluation tasks, with potential for adaptation to a
+wider range of scenarios. As we can see in Figure 6-5, in a traditional, “vanilla”
+approach, the model is provided with the context and a question, and it produces an
+answer. With chain of thought, it has time to reason about the problem, and only
+subsequently generate its answer to the question. With the self-note approach, the
+model generates notes on multiple parts of the context, and then generates a note on
+the question, before finally moving to generate the final answer. Figure 6-5 illustrates
+how note-taking enhances standard inference workflows by interleaving model-
+generated notes alongside the context before producing a final answer.
+Figure 6-5. Note-taking workflows. In the standard approach, the model processes con‐
+text and question together to produce an answer directly. In the note-taking approach,
+the model first generates notes summarizing or elaborating on parts of the context and
+the question, and then produces the final answer—enabling deeper reasoning and
+improved task performance.
+GraphRAG 
+| 
+133

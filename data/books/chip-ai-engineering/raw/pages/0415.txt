@@ -1,0 +1,17 @@
+Aquí está el fragmento que queremos situar dentro de todo el 
+documento:
+<chunk>
+{{CHUNK_CONTENT}}
+</chunk>
+Por favor, indica brevemente el contexto para situar este fragmento 
+dentro del
+documento general con el fin de mejorar la recuperación del 
+fragmento en la 
+búsqueda. Responde solo con el contexto sucinto y nada más.
+El contexto generado para cada fragmento se añade a cada uno de ellos y el
+algoritmo de recuperación indexa el fragmento aumentado. La Figura 6-5
+visualiza el proceso que sigue Anthropic.
+figura 6-5. Anthropic aumenta cada fragmento con un breve contexto que lo sitúa
+dentro del documento original, lo que facilita al recuperador la búsqueda de los
+fragmentos pertinentes a partir de una consulta. Imagen de "Introducing Contextual
+Retrieval" (Anthropic, 2024).

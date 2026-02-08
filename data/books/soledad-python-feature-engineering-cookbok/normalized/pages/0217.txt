@@ -1,0 +1,34 @@
+Extracting Features from Date and Time Variables
+194
+        pd.date_range(
+            start='2024-06-10 09:00',
+            freq='h',
+            periods=3,
+            tz='Europe/Berlin')),
+    pd.Series(
+        pd.date_range(
+            start='2024-09-10 09:00',
+            freq='h',
+            periods=3,
+            tz='US/Central'))
+    ], axis=0)
+3.
+Let's add another datetime variable to the DataFrame, which also contains values in different
+time zones:
+df['time2'] = pd.concat([
+    pd.Series(
+        pd.date_range(
+            start='2024-07-01 09:00',
+            freq='h',
+            periods=3,
+            tz='Europe/Berlin')),
+    pd.Series(
+        pd.date_range(
+            start='2024-08-01 09:00',
+            freq='h',
+            periods=3,
+            tz='US/Central'))
+    ], axis=0)
+If we now execute df, we'll see the DataFrame with the variables in the different time zones
+like in the following output:
+Figure 6.19 - A DataFrame with two datetime variables in different time zones

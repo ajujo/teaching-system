@@ -1,0 +1,31 @@
+su fase de afinado de las instrucciones y preferencias. Sin embargo, estos
+experimentos se realizaron para una sola iteración del modelo.
+Los datos generados por la IA también podrían perpetuar los sesgos. "Data
+Feedback Loops: Model-driven Amplification of Dataset Biases" (Taori y
+Hashimoto, 2023) demuestra que cuando los modelos se entrenan con
+conjuntos de datos que incluyen resultados de modelos anteriores, cualquier
+sesgo existente en el modelo puede amplificarse. Los autores descubrieron
+que cuanto más fieles sean los resultados del modelo a las características de
+la distribución de entrenamiento original, más estable será el bucle de
+retroalimentación, minimizando así el riesgo de amplificación del sesgo.
+Linaje de datos oscuro
+Esta limitación de los datos generados por IA es más sutil. La generación de
+IA oscurece el linaje de los datos. Los modelos de IA se ven influidos por
+sus datos de entrenamiento y a veces pueden regurgitarlos sin que el usuario
+lo sepa. Esto crea riesgos. Supongamos que utilizan el modelo X para
+generar datos con los que entrenar a su modelo. Si el modelo X se entrenó
+con datos que violaban los derechos de autor, su modelo también podría
+violarlos.
+O imagine que luego utiliza la prueba comparativa B para evaluar su
+modelo, que muestra un gran rendimiento. A pesar de ello, si el modelo X
+también ha sido entrenado con la prueba comparativa B, su resultado en B
+estará contaminado. Sin un linaje de datos claro, es difícil evaluar la
+viabilidad comercial de un modelo o confiar en su rendimiento.
+Hemos hablado de cómo utilizar la IA para generar datos y cómo evaluar
+los datos generados, así como de sus limitaciones. En la siguiente sección,
+cambiaremos de enfoque para hablar de un caso especial de uso de la
+síntesis de datos en el que los datos generados por la IA no solo son
+complementarios, sino necesarios: la destilación de modelos.
+Destilación de modelos
+La destilación de modelos (también llamada destilación de conocimientos)
+es un método mediante el que un modelo pequeño (alumno) se entrena para

@@ -1,0 +1,22 @@
+figura 3-8. Un ejemplo de juez de IA que evalúa la calidad de una respuesta dada a
+una pregunta.
+Un juez de IA no es solo un modelo, sino un sistema que incluye tanto un
+modelo como un prompt. Si se modifica el modelo, el prompt o los
+parámetros de muestreo del modelo, se obtiene un juez diferente.
+Limitaciones de la IA como juez
+A pesar de las numerosas ventajas de la IA como juez, muchos equipos
+dudan en adoptar este enfoque. Utilizar la IA para evaluar la IA parece
+tautológico. La naturaleza probabilística de la IA hace que parezca
+demasiado poco fiable para actuar como evaluador. Los jueces de IA
+pueden introducir costos y latencia no triviales en una aplicación. Dadas
+estas limitaciones, algunos equipos ven en la IA como juez una opción de
+emergencia cuando no tienen otra forma de evaluar sus sistemas,
+especialmente en producción.
+Incoherencia
+Para que un método de evaluación sea fiable, sus resultados deben ser
+coherentes. Sin embargo, los jueces de IA, como todas las aplicaciones de
+IA, son probabilísticos. El mismo juez, con el mismo input, puede emitir
+puntuaciones diferentes si se le ofrece un prompt diferente. Incluso el
+mismo juez, con el mismo prompt, puede dar outputs diferentes si se
+ejecuta dos veces. Esta incoherencia hace difícil reproducir o confiar en los
+resultados de las evaluaciones.

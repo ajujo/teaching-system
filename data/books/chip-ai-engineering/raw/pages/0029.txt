@@ -1,0 +1,31 @@
+naturaleza probabilística de los modelos lingüísticos hace que su uso sea tan
+apasionante como frustrante. Analizaremos esta cuestión en el Capítulo 2.
+Por simple que suene, la terminación es increíblemente poderosa. Muchas
+tareas, como la traducción, el resumen, la codificación y la resolución de
+problemas matemáticos, pueden considerarse tareas de terminación. Por
+ejemplo, dado el prompt: "Cómo estás en francés es...", un modelo
+lingüístico podría terminarlo con: "Comment ça va", traduciendo
+efectivamente de un idioma a otro.
+Otro ejemplo, dado el prompt:
+Pregunta: ¿Es probable que este correo electrónico sea spam? Este 
+es el correo
+electrónico: <contenido del correo electrónico>
+Respuesta:
+Un modelo lingüístico podría terminarlo con: "Probable spam", lo que
+convierte este modelo lingüístico en un clasificador de spam.
+Aunque la terminación es poderosa, no es lo mismo que entablar una
+conversación. Por ejemplo, si hacemos una pregunta a una máquina de
+terminar, puede terminar lo que se dijo dicho añadiendo otra pregunta en
+lugar de responder a la pregunta. En el “Post-entrenamiento” se explica
+cómo hacer que un modelo responda adecuadamente a la petición de un
+usuario.
+Autosupervisión
+El modelado lingüístico no es más que uno de los muchos algoritmos de
+ML. También existen modelos para la detección de objetos, el modelado de
+temas, los sistemas de recomendación, la predicción meteorológica, la
+predicción del precio de las acciones, etc. ¿Qué tienen de especial los
+modelos lingüísticos para que sean el centro del planteamiento de escalado
+que provocó el auge de ChatGPT?
+La respuesta es que los modelos lingüísticos pueden entrenarse mediante
+autosupervisión, mientras que muchos otros modelos requieren supervisión.
+La supervisión se refiere al proceso de entrenamiento de algoritmos de ML

@@ -1,0 +1,33 @@
+Chapter 7
+279
+1 (Poor): Contains factual errors or misleading information
+2 (Good): Mostly accurate with minor errors or omissions
+3 (Excellent): Highly accurate and comprehensive
+Style scale:
+1 (Poor): Too formal, uses some overly complex words
+2 (Good): Good balance of technical content and accessibility, but
+still uses formal words and expressions
+3 (Excellent): Perfectly accessible language for blog/social media,
+uses simple but precise technical terms when necessary
+4.
+Finally, we conclude the prompt with two examples to illustrate what we mean by "complex
+words" and "formal or academic language." We provide the corresponding instruction-answer pair and ask the model to return a response in JSON:
+Example of bad style: The Llama2 7B model constitutes a noteworthy
+progression in the field of artificial intelligence, serving as the
+successor to its predecessor, the original Llama architecture.
+Example of excellent style: Llama2 7B outperforms the original Llama
+model across multiple benchmarks.
+Instruction: {instruction}
+Answer: {answer}
+Provide your evaluation in JSON format with the following structure:
+{{
+    "accuracy": {{
+        "analysis": "...",
+        "score": 0
+    }},
+    "style": {{
+        "analysis": "...",
+        "score": 0
+    }}
+}}
+"""

@@ -1,0 +1,26 @@
+Combining features with mathematical functions
+233
+Note
+pandas agg can apply multiple functions to combine features. It can take a list of strings
+with the function names, as we did in step 7; a list of NumPy functions, such as np.log; and
+Python functions that you create.
+We can create the same features that we created with pandas automatically by using featureengine.
+8.
+Let's create a list by using the name of the output features:
+new_feature_names = [
+    "sum_f", "prod_f", "mean_f",
+    „std_f", „max_f", „min_f"]
+9.
+Let's set up MathFeatures() to apply the functions in step 6 to the features from step 3,
+naming the new features with the strings from step 8:
+create = MathFeatures(
+    variables=features,
+    func=math_func,
+    new_variables_names=new_feature_names,
+)
+10.	 Let's add the new features to the original DataFrame, capturing the result in a new variable:
+df_t = create.fit_transform(df)
+We can display the input and output features by executing df_t[features + new_
+feature_names].head():
+Figure 8.2 - DataFrame with the input features and the newly created variables
+While pandas agg returns a DataFrame with the features resulting from the operation, featureengine goes one step further, by concatenating the new features to the original DataFrame.

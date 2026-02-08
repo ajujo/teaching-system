@@ -1,0 +1,13 @@
+Standardizing the features
+205
+Figure 7.1 – Distribution of a normal and skewed variable before and after standardization.
+The z-score (x axis in the bottom panels) indicates how many standard deviations an observation 
+deviates from the mean. When the z-score is 1, the observation lies 1 standard deviation to the right 
+of the mean, whereas when the z-score is -1, the sample is 1 standard deviation to the left of the mean.
+In normally distributed variables, we can estimate the probability of a value being greater or smaller 
+than a given z-score, and this probability distribution is symmetric. The probability of an observation 
+being smaller than a z-score of -1 is equivalent to the probability of a value being greater than 1 
+(horizontal line in the bottom-left panel). This symmetry is fundamental to many statistical tests. 
+In skewed distributions, this symmetry does not hold. As illustrated in the bottom-right panel of 
+Figure 7.1 (horizontal lines), the probability of a value being smaller than -1 is different from that 
+of being greater than 1.

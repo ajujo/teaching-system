@@ -1,0 +1,36 @@
+Chapter 9
+375
+LangGraph applications differ from simple LangChain chains in several important ways that 
+affect deployment:
+•	
+State persistence: Maintain execution state across steps, requiring persistent storage.
+•	
+Complex execution flows: Support for conditional routing and loops requires specialized 
+orchestration.
+•	
+Multi-component coordination: Manage communication between various agents and 
+tools.
+•	
+Visualization and debugging: Understand complex graph execution patterns.
+The LangGraph ecosystem provides tools specifically designed to address these challenges, making 
+it easier to deploy sophisticated multi-agent systems to production. Moreover, LangGraph offers 
+several deployment options to suit different requirements. Let’s go over them!
+Local development with the LangGraph CLI
+Before deploying to production, the LangGraph CLI provides a streamlined environment for local 
+development and testing. Install the LangGraph CLI:
+pip install --upgrade "langgraph-cli[inmem]"
+Create a new application from a template:
+langgraph new path/to/your/app --template react-agent-python
+This creates a project structure like so:
+my-app/
+├── my_agent/                # All project code
+│   ├── utils/               # Utilities for your graph
+│   │   ├── __init__.py
+│   │   ├── tools.py         # Tool definitions
+│   │   ├── nodes.py         # Node functions
+│   │   └── state.py         # State definition
+│   ├── requirements.txt     # Package dependencies
+│   ├── __init__.py
+│   └── agent.py             # Graph construction code
+├── .env                     # Environment variables
+└── langgraph.json           # LangGraph configuration

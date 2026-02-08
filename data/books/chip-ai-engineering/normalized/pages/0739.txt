@@ -1,0 +1,24 @@
+- cuándo hacer un ajuste fino, Visión general del afinado
+- razones para hacer un ajuste fino, Visión general del afinado
+- razones para no hacer un ajuste fino, Razones para hacer un
+afinado
+- cuellos de botella en la memoria, Afinado y RAG
+- cuantización, Representaciones numéricas
+- matemáticas de la memoria, Retropropagación y parámetros
+entrenables
+- representaciones numéricas, Representaciones numéricas
+- retropropagación y parámetros entrenables, Cuellos de botella en
+la memoria
+- definido, Modelado y entrenamiento
+- hiperparámetros, Marcos de afinado
+- número de épocas, Tasa de aprendizaje
+- tamaño de lote, Tasa de aprendizaje
+- tasa de aprendizaje, Marcos de afinado
+- tasa de pérdida de prompts, Ponderación de pérdida de prompts
+- outputs estructurados, Afinado
+- tácticas, Concatenación
+- tareas específicas de dominio, Razones para no hacer un afinado
+- técnicas, Cuantización del entrenamiento
+- ajuste fino eficiente en parámetros, Técnicas de afinado
+- fusión de modelos y ajuste fino multitarea, LoRA cuantizado
+- LoRA, Técnicas PEFT

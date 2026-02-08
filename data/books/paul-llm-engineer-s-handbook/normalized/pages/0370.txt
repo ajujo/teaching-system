@@ -1,0 +1,8 @@
+Chapter 9
+339
+Implementing the retrieval module
+Let's dive into the ContextRetriever class implementation, which orchestrates the retrieval
+step in our RAG system by integrating all the advanced techniques we previously used: query expansion, self-querying, reranking, and filtered vector search. The class can be found on
+GitHub at https://github.com/PacktPublishing/LLM-Engineers-Handbook/blob/main/llm_
+engineering/application/rag/retriever.py.
+Figure 9.2: Search logic of the RAG retrieval module

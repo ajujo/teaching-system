@@ -1,0 +1,49 @@
+Table 7-1. Primary methods for fine-tuning language models
+Method
+How it works
+Best for
+Supervised finetuning (SFT)
+Provide (prompt, ideal-response) pairs as "ground truth" examples.
+Call the OpenAI fine-tuning API to adjust model weights.
+Classification, structured
+output, correcting instruction
+failures
+Vision fine-tuning
+Supply image-label pairs for supervised training on visual inputs. This
+improves image understanding and multimodal instruction
+following.
+Image classification,
+multimodal instruction
+robustness
+Direct preference
+optimization
+Give both a "good" and a "bad" response per prompt and indicate the
+preferred one. The model learns to rank and prefer higher-quality
+outputs.
+Summarization focus, tone/
+style control
+Reinforcement finetuning (RFT)
+Generate candidate outputs and have expert graders score them.
+Then use a policy gradient-style update to reinforce high-scoring
+chains of thought.
+Complex reasoning, domainspecific tasks (legal, medical)
+Fine-tuning offers four distinct levers for adapting pretrained models to your needs:
+Supervised fine-tuning (SFT)
+SFT uses curated (prompt, response) pairs to teach the model exactly how it
+should behave, making it ideal for classification tasks, structured outputs, or cor‐
+recting instruction-following errors.
+Vision fine-tuning
+Vision fine-tuning injects labeled image-label pairs to sharpen a model's multi‐
+modal understanding-perfect when you need robust image classification or
+more reliable handling of visual inputs.
+Direct preference optimization (DPO)
+DPO trains the model on paired "good versus bad" responses, helping it learn to
+favor higher-quality outputs, which is especially useful for tuning tone, style, or
+summarization priorities.
+Reinforcement fine-tuning (RFT)
+RFT leverages expert-graded outputs and policy-gradient updates to reinforce
+complex reasoning chains, making it the go-to for high-stakes domains like legal
+analysis or medical decision support.
+Parametric Learning: Fine-Tuning
+|
+149

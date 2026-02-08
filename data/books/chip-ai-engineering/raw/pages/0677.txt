@@ -1,0 +1,32 @@
+que tenga más sentido para su aplicación.
+Al final de este proceso se analizarán el monitoreo y la observabilidad, que
+forman parte integrante de cualquier aplicación de control de calidad y
+mejora del rendimiento. Después de ello, se abordará la orquestación, que
+encadena todos estos componentes.
+Paso 1. Mejorar el contexto
+La ampliación inicial de una plataforma suele consistir en añadir
+mecanismos que permitan al sistema construir el contexto pertinente que
+necesita el modelo para responder a cada consulta. Como se explica en el
+Capítulo 6, el contexto puede construirse mediante diversos mecanismos de
+recuperación, como la recuperación de texto, la recuperación de imágenes y
+la recuperación de datos tabulares.
+El contexto también puede aumentarse mediante herramientas que permitan
+al modelo recopilar información automáticamente a través de las API, como
+búsquedas en Internet, noticias, meteorología, eventos, etc.
+La construcción de contextos es como la ingeniería de características para
+los modelos fundacionales. Le da al modelo la información necesaria para
+producir un output. Debido a su papel fundamental en la calidad de los
+resultados de un sistema, los proveedores de API de modelos admiten casi
+universalmente la construcción de contextos. Por ejemplo, proveedores
+como OpenAI, Claude y Gemini permiten a los usuarios cargar archivos y
+que sus modelos utilicen herramientas.
+No obstante, al igual que los modelos difieren en sus capacidades, estos
+proveedores difieren en su soporte a la construcción de contextos. Por
+ejemplo, pueden tener limitaciones sobre qué tipos de documentos y
+cuántos pueden cargar. Una solución RAG especializada podría permitirle
+cargar tantos documentos como su base de datos vectorial pueda recibir,
+pero una API de modelo genérico podría permitirle cargar solo un pequeño
+número de documentos. Los distintos marcos también difieren en sus
+algoritmos de recuperación y otras configuraciones de recuperación, como
+el tamaño de los fragmentos. Del mismo modo, para el uso de herramientas,
+las soluciones también difieren en los tipos de herramientas que admiten y

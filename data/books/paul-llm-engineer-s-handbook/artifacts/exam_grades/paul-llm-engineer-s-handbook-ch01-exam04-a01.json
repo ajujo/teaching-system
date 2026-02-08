@@ -1,0 +1,107 @@
+{
+  "$schema": "exam_grade_report_v1",
+  "exam_attempt_id": "paul-llm-engineer-s-handbook-ch01-exam04-a01",
+  "exam_set_id": "paul-llm-engineer-s-handbook-ch01-exam04",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "chapter_id": "paul-llm-engineer-s-handbook:ch:1",
+  "graded_at": "2026-02-06T09:01:49.961887+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "mixed",
+  "strict": true,
+  "grading_time_ms": 31793,
+  "results": [
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q01",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El LLM Twin está diseñado específicamente para emular el estilo de escritura y conocimientos de un individuo particular, lo que permite una personalización que no es posible con modelos genéricos como ChatGPT.",
+      "expected_answer": "1: Personalización específica del estilo de escritura y conocimiento dominio",
+      "given_answer": "1: Personalización específica del estilo de escritura y conocimiento dominio",
+      "correct_option_text": "Personalización específica del estilo de escritura y conocimiento dominio",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q02",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El texto menciona que las soluciones previas tenían problemas de escalabilidad y complejidad, mientras que FTI ofrece una solución modular y escalable mediante pipelines separados para características, entrenamiento e inferencia.",
+      "expected_answer": "Verdadero",
+      "given_answer": "Verdadero",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (1): Procesar y preparar los datos de entrada para el entrenamiento. El Feature Pipeline transforma los datos crudos en características estructuradas listas para el entrenamiento, como se describe en la sección sobre arquitectura FTI.",
+      "expected_answer": "1: Procesar y preparar los datos de entrada para el entrenamiento",
+      "given_answer": "2: Optimizar el desempeño de inferencia",
+      "correct_option_text": "Procesar y preparar los datos de entrada para el entrenamiento",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q04",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta indica desconocimiento directo sobre los componentes del MVP para un LLM Twin. Se recomienda revisar el material de estudio sobre metodologías ágiles y despliegue de modelos de IA, enfocándose en los tres elementos clave mencionados en la respuesta esperada.",
+      "expected_answer": "1. Colección de datos relevantes\n2. Entrenamiento del modelo personalizado\n3. Implementación de una interfaz de inferencia funcional",
+      "given_answer": "No lo sé",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q05",
+      "is_correct": true,
+      "score": 1.0,
+      "feedback": "¡Correcto! El pipeline de inferencia se enfoca en el procesamiento eficiente de consultas, no en la evaluación continua. La evaluación es parte del ciclo de vida del modelo fuera del pipeline básico.",
+      "expected_answer": "Falso",
+      "given_answer": "Falso",
+      "grading_path": "auto",
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    },
+    {
+      "question_id": "paul-llm-engineer-s-handbook-ch01-exam04-q06",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "La respuesta no proporciona ninguno de los tres principios fundamentales mencionados en el texto (personalización para dominios específicos, control sobre datos y privacidad, adaptación a necesidades técnicas particulares). Se recomienda revisar la lectura correspondiente para identificar estos conceptos clave.",
+      "expected_answer": "1. Personalización para dominios específicos\n2. Control sobre datos y privacidad\n3. Adaptación a necesidades técnicas particulares",
+      "given_answer": "no lo sé",
+      "grading_path": "llm",
+      "confidence": 1.0,
+      "source_unit_id": "paul-llm-engineer-s-handbook-ch01-u01"
+    }
+  ],
+  "summary": {
+    "total_questions": 6,
+    "correct_count": 3,
+    "total_score": 3.0,
+    "max_score": 6,
+    "percentage": 0.5,
+    "passed": false,
+    "by_unit": {
+      "paul-llm-engineer-s-handbook-ch01-u01": {
+        "score": 3.0,
+        "max": 6.0
+      }
+    },
+    "by_type": {
+      "multiple_choice": {
+        "correct": 1,
+        "total": 2
+      },
+      "true_false": {
+        "correct": 2,
+        "total": 2
+      },
+      "short_answer": {
+        "correct": 0,
+        "total": 2
+      }
+    }
+  }
+}

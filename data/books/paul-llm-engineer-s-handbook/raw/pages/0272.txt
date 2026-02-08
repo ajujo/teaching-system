@@ -1,0 +1,35 @@
+Chapter 6
+241
+                current_chunk = sentence + " "
+        if len(current_chunk) >= min_length:
+            extracts.append(current_chunk.strip())
+    return extracts
+6.	
+The generate_preference_triples function replaces the original generate_instruction_
+answer_pairs function. The prompt is adapted from the instruction version and is de-
+signed to generate triples instead of pairs. It also provides general guidance about the 
+type of instructions we’re interested in, how to extract answers from articles, and how 
+to style them:
+def generate_preference_triples(extract: str, client: OpenAI) -> 
+List[Tuple[str, str, str]]:
+    prompt = f"""Based on the following extract, generate five 
+instruction-answer triples. Each triple should consist of:
+1. An instruction asking about a specific topic in the context.
+2. A generated answer that attempts to answer the instruction based 
+on the context.
+3. An extracted answer that is a relevant excerpt directly from the 
+given context.
+Instructions must be self-contained and general, without explicitly 
+mentioning a context, system, course, or extract.
+Important:
+- Ensure that the extracted answer is a verbatim copy from the 
+context, including all punctuation and apostrophes.
+- Do not add any ellipsis (...) or [...]  to indicate skipped text 
+in the extracted answer.
+- If the relevant text is not continuous, use two separate sentences 
+from the context instead of skipping text.
+Provide your response in JSON format with the following structure:
+{{
+    "preference_triples": [
+        {{
+            "instruction": "...",

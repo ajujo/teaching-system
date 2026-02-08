@@ -1,0 +1,38 @@
+Chapter 9
+395
+Cost management for LangChain applications
+As LLM applications move from experimental prototypes to production systems serving real users,
+cost management becomes a critical consideration. LLM API costs can quickly accumulate, espe­
+cially as usage scales, making effective cost optimization essential for sustainable deployments.
+This section explores practical strategies for managing LLM costs in LangChain applications while
+maintaining quality and performance. However, before implementing optimization strategies,
+it's important to understand the factors that drive costs in LLM applications:
+•
+Token-based pricing: Most LLM providers charge per token processed, with separate
+rates for input tokens (what you send) and output tokens (what the model generates).
+•
+Output token premium: Output tokens typically cost 2-5 times more than input tokens.
+For example, with GPT-4o, input tokens cost $0.005 per 1K tokens, while output tokens
+cost $0.015 per 1K tokens.
+•
+Model tier differential: More capable models command significantly higher prices. For
+instance, Claude 3 Opus costs substantially more than Claude 3 Sonnet, which is in turn
+more expensive than Claude 3 Haiku.
+•
+Context window utilization: As conversation history grows, the number of input tokens
+can increase dramatically, affecting costs.
+Model selection strategies in LangChain
+When deploying LLM applications in production, managing cost without compromising quality
+is essential. Two effective strategies for optimizing model usage are tiered model selection and
+the cascading fallback approach. The first uses a lightweight model to classify the complexity of a
+query and route it accordingly. The second attempts a response with a cheaper model and only
+escalates to a more powerful one if needed. Both techniques help balance performance and effi­
+ciency in real-world systems.
+One of the most effective ways to manage costs is to intelligently select which model to use for
+different tasks. Let's look into that in more detail.
+Tiered model selection
+LangChain makes it easy to implement systems that route queries to different models based on
+complexity. The example below shows how to use a lightweight model to classify a query and
+select an appropriate model accordingly:
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser

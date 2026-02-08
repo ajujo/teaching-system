@@ -1,0 +1,26 @@
+cerrado consiste en dar al modelo varias opciones y dejar que elija la
+correcta. Si la respuesta esperada es la opción C y el modelo da como
+output la opción A, el modelo es incorrecto.
+Este es el enfoque que siguen la mayoría de las prueba comparativa
+públicas. En abril de 2024, el 75 % de las tareas del lm-evaluation-harness
+de Eleuther son de opción múltiple, incluyendo el MMLU de UC Berkeley
+(2020), AGIEval (2023) de Microsoft, y el AI2 Reasoning Challenge (ARC-
+C) (2018). En su artículo, los autores de AGIEval explican que excluyeron
+las tareas abiertas a propósito para evitar evaluaciones incoherentes.
+Veamos un ejemplo de pregunta de opción múltiple en la prueba
+comparativa MMLU:
+Pregunta: Una de las razones por las que el gobierno desincentiva y
+regula los monopolios es que
+(A) Se pierde excedente del productor y se gana excedente
+del consumidor.
+(B) Los precios de monopolio garantizan la eficiencia
+productiva, pero cuestan a la sociedad la eficiencia
+distributiva.
+(C) Las empresas monopolísticas no realizan actividades de
+investigación y desarrollo significativas.
+(D) El excedente del consumidor se pierde con precios más
+altos y niveles de producción más bajos. Etiqueta: (D)
+Una pregunta de opción múltiple (MCQ) puede tener una o más respuestas
+correctas. Una medida habitual es la precisión: cuántas preguntas acierta el
+modelo. Algunas tareas utilizan un sistema de puntos para calificar el
+rendimiento de un modelo: las preguntas más difíciles valen más puntos.

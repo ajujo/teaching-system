@@ -1,0 +1,30 @@
+productos, la detección de fraudes y la predicción de rotación. Aunque
+muchos de los principios que rigen la producción de aplicaciones de IA
+siguen siendo los mismos, la nueva generación de modelos a gran escala y
+fácilmente disponibles plantea nuevas posibilidades y nuevos retos, que son
+el tema central de este libro.
+Este capítulo comienza con una visión general de los modelos
+fundacionales, el catalizador clave detrás de la explosión de la ingeniería de
+IA. A continuación, expondré una serie de casos con éxito en el uso de la
+IA, cada uno de los cuales ilustra para qué ya es buena y para qué aún no. A
+medida que las capacidades de la IA se amplían día a día, resulta cada vez
+más difícil predecir sus posibilidades futuras. Sin embargo, los patrones de
+aplicación existentes pueden ayudar a descubrir oportunidades hoy y
+ofrecer pistas sobre cómo puede seguir utilizándose la IA en el futuro.
+Para terminar el capítulo, expondré una visión general de la nueva pila de
+IA, incluyendo lo que ha cambiado con los modelos fundacionales, lo que
+sigue igual y cómo difiere el papel de un ingeniero de IA actual del de un
+ingeniero de ML tradicional.1
+El auge de la ingeniería de IA
+Los modelos fundacionales surgieron a partir de grandes modelos
+lingüísticos, que, a su vez, se originaron como modelos lingüísticos
+simples. Aunque pueda parecer que aplicaciones como ChatGPT y Copilot
+de GitHub han surgido de la nada, son la culminación de décadas de
+avances tecnológicos, ya que los primeros modelos lingüísticos surgieron en
+la década de los 50. En esta sección se describen los principales avances
+que han permitido pasar de los modelos lingüísticos a la ingeniería de IA.
+De los modelos lingüísticos a los grandes modelos
+lingüísticos
+Aunque los modelos lingüísticos existen desde hace tiempo, solo han
+podido crecer hasta la escala actual gracias a la autosupervisión. Esta
+sección ofrece una rápida visión general de lo que significan "modelo

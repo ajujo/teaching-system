@@ -1,0 +1,36 @@
+Chapter 9
+345
+retriever = ContextRetriever(mock=False)
+documents = retriever.search(query, k=3)
+logger.info("Retrieved documents:")
+for rank, document in enumerate(documents):
+    logger.info(f"{rank + 1}: {document}")
+Calling the code from above using the following CLI command: poetry poe call-rag-retrievalmodule. This outputs the following:
+2024-09-18 19:01:50.588 | INFO - Retrieved documents:
+2024-09-18 19:01:50.588 | INFO - 1: id=UUID('541d6c22-d15a-4e6a-924a-
+68b7b1e0a330') content='4 Advanced RAG Algorithms You Must Know by
+Paul Iusztin Implement 4 advanced RAG retrieval techniques to optimize
+your vector DB searches. Integrate the RAG retrieval module into a
+production LLM system..." platform='decodingml.substack.com' document_
+id=UUID('32648f33-87e6-435c-b2d7-861a03e72392') author_id=UUID('900fec95-
+d621-4315-84c6-52e5229e0b96') author_full_name='Paul Iusztin'
+metadata={'embedding_model_id': 'sentence-transformers/all-MiniLM-L6-v2',
+'embedding_size': 384, 'max_input_length': 256} link='https://decodingml.
+substack.com/p/the-4-advanced-rag-algorithms-you?r=1ttoeh'
+2024-09-18 19:01:50.588 | INFO - 2: id=UUID('5ce78438-1314-4874-8a5a-
+04f5fcf0cb21') content='Overview of advanced RAG optimization techniquesA
+production RAG system is split into 3 main components ingestion clean,
+chunk, embed, and load your data to a vector DBretrieval query your vector
+DB for ..." platform='medium' document_id=UUID('bd9021c9-a693-46da-97e7-
+0d06760ee6bf') author_id=UUID('900fec95-d621-4315-84c6-52e5229e0b96')
+author_full_name='Paul Iusztin' metadata={'embedding_model_id': 'sentencetransformers/all-MiniLM-L6-v2', 'embedding_size': 384, 'max_input_length':
+256} link='https://medium.com/decodingml/the-4-advanced-rag-algorithmsyou-must-know-to-implement-5d0c7f1199d2'
+2024-09-18 19:02:45.729 | INFO - 3: id=UUID('0405a5da-4686-428a-91ca-
+446b8e0446ff') content='Every Medium article will be its own lesson
+An End to End Framework for Production Ready LLM Systems by Building
+Your LLM TwinThe Importance of Data Pipelines in the Era of Generative
+AIChange Data Capture Enabling Event Driven ..." platform='medium' document_
+id=UUID('bd9021c9-a693-46da-97e7-0d06760ee6bf') author_id=UUID('900fec95-
+d621-4315-84c6-52e5229e0b96') author_full_name='Paul Iusztin'
+metadata={'embedding_model_id': 'sentence-transformers/all-MiniLM-L6-v2',
+'embedding_size': 384, 'max_input_length': 256} link='https://medium.

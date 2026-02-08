@@ -1,0 +1,34 @@
+Extracting hundreds of features automatically from a time series
+317
+Note
+To create features with tsfresh, the time-series interval from which we want to extract
+features must be marked with a unique identifier. In our dataset, that was the id variable.
+To create features from time series, we used the extract_features function from tsfresh.
+This function takes the DataFrame containing the time series and the unique identifier as input and
+returns a DataFrame containing the extracted features as output.
+extract_features has three key parameters: column_id, column_sort, and impute_
+function. column_id receives the name of the column with the unique identifier for each
+sequence that'll be used to extract features. column_sort is used to reorder the time series before
+extracting features. When column_sort is left to None, tsfresh assumes that the data is ordered
+chronologically and that the timestamps are equidistant. In step 10, we passed the date variable as
+the sorting variable, which informs tsfresh how to sort the data before extracting the features.
+Note
+In our dataset, leaving column_sort set to None or passing the date variable made no
+difference, because our time series were already ordered chronologically and the timestamps
+were equidistant. If this is not the case in your time series, use this parameter to create
+features correctly.
+Finally, extract_features also accepts the impute function through the impute_function
+parameter, to automatically remove infinite and NaN values from the created features. Will discuss
+additional parameters of extract_features in the coming recipes.
+Note
+For more details about the extract_features function, visit https://tsfresh.
+readthedocs.io/en/latest/api/tsfresh.feature_extraction.
+html#module-tsfresh.feature_extraction.extraction.
+The impute function, which can be used independently, as we did in step 7, or within the extract_
+features function, as we did in step 10, replaced NAN, -Inf, and Inf values with the variable's
+median, minimum, or maximum values, respectively. If the feature contains only NaN values, they are
+replaced by zeroes. The imputation occurs in place - that is, in the same DataFrame that is being imputed.
+The extract_features function returns a DataFrame containing as many rows as unique
+identifiers in the data. In our case, it returned a DataFrame with 135 rows. The columns of the resulting
+DataFrame correspond to the 789 values that were returned by 63 characterization methods applied
+to each of the 135 60-minute time series.

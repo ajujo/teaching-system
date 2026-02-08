@@ -1,0 +1,37 @@
+Inference Pipeline Deployment
+372
+•	
+Continuous batching of incoming requests, thus improving throughput by dynamically 
+batching requests as they arrive
+•	
+Accelerated weight loading by utilizing safetensors for faster model initialization, re-
+ducing start-up time: https://github.com/huggingface/safetensors
+•	
+Token streaming that supports real-time interactions through Server-Sent Events (SSE)
+To summarize, our LLM Twin model will run inside DLC Docker images, listening to requests, 
+optimizing the LLM for inference, and serving the results in real time. The DLC’s Docker images 
+will be hosted on AWS SageMaker under inference endpoints that can be accessed through HTTP 
+requests. With that in mind, let’s move on to the implementation. We will start by deploying the 
+LLM and then writing a wrapper class to interact with the SageMaker Inference endpoint.
+Configuring SageMaker roles
+The first step is to create the proper AWS Identity and Access Management (IAM) users and 
+roles to access and deploy the SageMaker infrastructure. AWS IAM controls who can authenticate 
+and what any actor has access to. You can create new users (assigned to people) and new roles 
+(assigned to other actors within your infrastructure, such as EC2 VMs) through IAM.
+The whole deployment process is automated. We will have to run a few CLI commands, but first, 
+ensure that you have correctly configured the AWS_ACCESS_KEY, AWS_SECRET_KEY, and AWS_REGION 
+environmental variables in the .env file. At this step, the easiest way is to use the credentials 
+attached to an admin role as, in the following steps, we will create a set of narrower IAM roles 
+used in the rest of the chapter.
+After you configured your .env file, we have to:
+1.	
+Create an IAM user restricted to creating and deleting only the resources we need for 
+the deployment, such as SageMaker itself, Elastic Container Registry (ECR), and S3. To 
+make it, run the following:
+poetry poe create-sagemaker-role
+This command will generate a JSON file called sagemaker_user_credentials.json that 
+contains a new AWS access and secret key. From now on, we will use these credentials to 
+deploy everything related to SageMaker to ensure we modify only the resources associated 
+with SageMaker. Otherwise, we could accidentally modify other AWS resources using 
+an admin account, resulting in additional costs or altering other existing projects. Thus, 
+having a narrow role only to your use case is good practice. 

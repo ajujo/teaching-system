@@ -1,0 +1,32 @@
+los de la recuperación basada en términos. Dividirlos entre basados en
+términos y basados en incrustaciones evita esta categorización errónea.
+Recuperación basada en términos
+Dada una consulta, la forma más directa de encontrar documentos
+relevantes es mediante palabras clave. Algunos llaman a este enfoque
+recuperación léxica. Por ejemplo, dada la consulta "ingeniería de IA", el
+modelo recuperará todos los documentos que contengan "ingeniería de IA".
+Sin embargo, este enfoque presenta dos problemas:
+Es posible que muchos documentos contengan el término en
+cuestión y que su modelo no disponga de suficiente espacio de
+contexto para incluirlos a todos como contexto. Una heurística
+consiste en incluir los documentos que contengan el término el
+mayor número de veces. Se parte de la base de que cuanto más
+aparece un término en un documento, más relevante es este
+documento para dicho término. El número de veces que un término
+aparece en un documento se denomina frecuencia de términos
+(TF).
+Un prompt puede ser largo y contener muchos términos. Algunos
+son más importantes que otros. Por ejemplo, el prompt "Recetas
+fáciles de seguir de comida vietnamita para cocinar en casa"
+contiene nueve términos: recetas, fáciles de seguir, de, comida,
+vietnamita, para, cocinar, en, casa. Conviene centrarse en
+términos más informativos como vietnamita y recetas, no para y
+en. Se necesita una forma de identificar los términos importantes.
+Una intuición es que cuantos más documentos contengan un
+término, menos informativo será este término. "Para" y "en" suelen
+aparecer en la mayoría de los documentos, por lo que son menos
+informativos. Así, la importancia de un término es inversamente
+proporcional al número de documentos en los que aparece. Esta
+métrica se denomina frecuencia inversa en documentos (IDF). Para
+calcular la IDF de un término, cuente todos los documentos que lo
+contengan y divida el número total de documentos por este

@@ -1,0 +1,21 @@
+Informes periódicos, como resúmenes de mensajes de Slack,
+análisis del sentimiento de las menciones de la marca en las redes
+sociales o análisis de los tickets de atención al cliente.
+Incorporación de nuevos clientes que requieran la tramitación de
+todos los documentos cargados
+Migración a un nuevo modelo que requiera el reprocesamiento de
+todos los datos
+Generación de recomendaciones o boletines personalizados para
+una amplia base de clientes
+Actualización de la base de conocimientos mediante la
+reindexación de los datos de una organización
+Las API suelen devolver respuestas completas por defecto. Sin embargo,
+con la decodificación autorregresiva, el modelo puede tardar mucho tiempo
+en completar una respuesta, y los usuarios son impacientes. Muchas API en
+línea ofrecen el modo streaming, que devuelve cada token a medida que se
+genera. Esto reduce el tiempo que los usuarios tienen que esperar hasta el
+primer token. El inconveniente de este enfoque es que usted no puede
+puntuar una respuesta antes de mostrársela a los usuarios, lo que aumenta el
+riesgo de que los usuarios vean malas respuestas. No obstante, puede
+actualizar o eliminar retrospectivamente una respuesta en cuanto se detecte
+el riesgo.

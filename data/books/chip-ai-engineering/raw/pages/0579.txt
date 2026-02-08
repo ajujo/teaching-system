@@ -1,0 +1,32 @@
+Estas son solo cinco de las muchas razones por las que la gente recurre a la
+síntesis de datos. Debido a su innegable atractivo, cada vez se entrenan más
+modelos con datos sintéticos y se desarrollan más técnicas para sintetizar
+datos.
+Técnicas tradicionales de síntesis de datos
+La síntesis de datos no es exclusiva de la IA. Tiene una larga historia en
+pruebas de software, juegos y robótica. El uso de algoritmos para generar
+datos también se denomina generación procedimental, por contraposición a
+la generación manual. La generación procedimental se utiliza habitualmente
+en los juegos para generar sobre la marcha contenidos como niveles, mapas,
+objetos y personajes. 10 La mayoría de las técnicas de generación de datos
+utilizadas en estas industrias pueden aplicarse a la IA.
+Tradicionalmente, dos enfoques para la síntesis y el aumento de datos han
+sido el basado en reglas y la simulación. Un método más reciente, posible
+gracias a los modelos de IA avanzados, es utilizar la propia IA para
+sintetizar datos. Esta sección ofrece una rápida visión general de estas dos
+técnicas tradicionales antes de pasar a la síntesis de datos impulsada por IA
+en la siguiente sección.
+Síntesis de datos basada en reglas
+La forma más sencilla de generar datos es utilizar reglas y plantillas
+predefinidas. Por ejemplo, para crear una transacción con tarjeta de crédito,
+empiece con una plantilla de transacción y utilice un generador aleatorio
+como Faker para rellenar cada campo de esta plantilla:
+Ejemplo de plantilla de transacción.
+ID de transacción: [Identificador único]
+Fecha: [MM/DD/AAAA]
+Hora: [HH:MM:SS]
+Importe: [Importe de la transacción]
+Nombre del comerciante: [Nombre del comerciante/tienda]
+Categoría de comerciante: [Código de categoría]
+Localización: [Ciudad, Estado, País]
+Forma de pago: [Tarjeta de crédito/Tarjeta de débito/Efectivo/Pago 

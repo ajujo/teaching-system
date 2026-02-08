@@ -1,0 +1,24 @@
+Evaluating LLMs
+274
+Finally, Ragas also provides building blocks for monitoring RAG quality in production environ-
+ments. This facilitates continuous improvement of RAG systems. By leveraging the evaluation 
+results from test datasets and insights gathered from production monitoring, developers can 
+iteratively enhance their applications. This might involve fine-tuning retrieval algorithms, ad-
+justing prompt engineering strategies, or optimizing the balance between retrieved context and 
+LLM generation.
+Ragas can be complemented with another approach, based on custom classifiers.
+ARES
+ARES (an automated evaluation framework for RAG systems) is a comprehensive tool designed 
+to evaluate RAG systems. It offers an automated process that combines synthetic data genera-
+tion with fine-tuned classifiers to assess various aspects of RAG performance, including context 
+relevance, answer faithfulness, and answer relevance.
+The ARES framework operates in three main stages: synthetic data generation, classifier training, 
+and RAG evaluation. Each stage is configurable, allowing users to tailor the evaluation process 
+to their specific needs and datasets.
+In the synthetic data generation stage, ARES creates datasets that closely mimic real-world sce-
+narios for robust RAG testing. Users can configure this process by specifying document file paths, 
+few-shot prompt files, and output locations for the synthetic queries. The framework supports 
+various pre-trained language models for this task, with the default being google/flan-t5-xxl. 
+Users can control the number of documents sampled and other parameters to balance between 
+comprehensive coverage and computational efficiency.
+Figure 7.2: Overview of the ARES evaluation framework

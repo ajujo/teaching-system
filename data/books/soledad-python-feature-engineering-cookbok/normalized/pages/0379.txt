@@ -1,0 +1,36 @@
+Extracting Features from Text Variables
+356
+How it works...
+In this recipe, we extracted the TF-IDF values of words present in at least 5% of the documents by
+utilizing TfidfVectorizer() from scikit-learn.
+We loaded the 20 Newsgroup text dataset from scikit-learn and then removed punctuation
+and numbers from the text rows using pandas' replace(), which can be accessed through pandas'
+str, to replace digits, '\d+', or symbols, '[^\w\s]', with empty strings, ''. Then, we used
+TfidfVectorizer() to create TF-IDF statistics for words. We set the lowercase parameter to
+True to put words into lowercase before making the calculations. We set the stop_words argument
+to english to avoid stop words in the returned matrix. We set ngram_range to the (1,1) tuple
+to return single words as features. Finally, we set the min_df argument to 0.05 to return words that
+appear at least in 5% of the texts or, in other words, in 5% of the rows.
+After setting up the transformer, we applied the fit() method to let the transformer find the words
+to retain in the final term matrix. With the transform() method, the transformer returned an
+object with the words and their TF-IDF values, which we then captured in a pandas DataFrame with
+the appropriate feature names. We can now use these features in machine learning algorithms.
+See also
+For more details on TfidfVectorizer(), visit scikit-learn's documentation: https://scikitlearn.org/stable/modules/generated/sklearn.feature_extraction.text.
+TfidfVectorizer.html
+Cleaning and stemming text variables
+Some variables in our dataset come from free text fields, which are manually completed by users.
+People have different writing styles, and we use a variety of punctuation marks, capitalization patterns,
+and verb conjugations to convey the content, as well as the emotions surrounding it. We can extract
+(some) information from text without taking the trouble to read it by creating statistical parameters
+that summarize the text's complexity, keywords, and relevance of words in a document. We discussed
+these methods in the previous recipes of this chapter. However, to derive these statistics and aggregated
+features, we should clean the text variables first.
+Text cleaning or preprocessing involves punctuation removal, stop word elimination, character case
+setting, and word stemming. Punctuation removal consists of deleting characters that are not letters,
+numbers, or spaces; in some cases, we also remove numbers. The elimination of stop words refers to
+removing common words that are used in our language to allow for the sentence structure and flow,
+but that individually convey little or no information. Examples of stop words include articles such as
+the and a for the English language, as well as pronouns such as I, you and they, and commonly used
+verbs in their various conjugations, such as the verbs to be and to have, as well as the auxiliary verbs
+would and do.

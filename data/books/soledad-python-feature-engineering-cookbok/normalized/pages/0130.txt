@@ -1,0 +1,15 @@
+Performing Box-Cox transformations
+107
+11.	 Now, let's return Q-Q plots of the transformed variables:
+make_qqplot(X_tf)
+In the following output, we can see that, after the transformation, the variables follow the
+theoretical normal distribution more closely:
+Figure 3.13 - Q-Q plots of the variables after the transformation
+Now, let's implement the Box-Cox transformation with Feature-engine.
+12.	 Let's set up BoxCoxTransformer() to transform all the variables in the dataset and then
+fit it to the data:
+bct = BoxCoxTransformer()
+bct.fit(X)
+13.	 Now, let's go ahead and transform the variables:
+X_tf = bct.transform(X)
+The transformation returns a pandas DataFrame containing the modified variables.

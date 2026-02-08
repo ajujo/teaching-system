@@ -1,0 +1,32 @@
+Extracting Features from Text Variables
+350
+We can create, together with a BoW, a bag of n-grams, where the additional variables are given by the
+2-grams and the values for each 2-gram are the number of times they appear in each string; for this
+example, the value is 1. So, our final BoW with 2-grams would look like this:
+Figure 11.5 - The BoW with 2-grams
+In this recipe, we will learn how to create BoWs with or without n-grams using scikit-learn.
+Getting ready
+Before jumping into this recipe, let's get familiar with some of the parameters of a BoW that we can
+adjust to make the BoW comprehensive. When creating a BoW over several pieces of text, a new feature
+is created for each unique word that appears at least once in any of the text pieces we are analyzing.
+If the word appears only in one piece of text, it will show a value of 1 for that particular text and 0
+for all of the others. Therefore, BoWs tend to be sparse matrices, where most of the values are zeros.
+The number of columns - that is, the number of words - in a BoW can be quite large if we work with
+huge text corpora, and even larger if we also include n-grams. To limit the number of columns and
+the sparsity of the returned matrix, we can retain words that appear across multiple texts; or, in better
+words, we can retain words that appear in, at least, a certain percentage of texts.
+To reduce the number of columns and sparsity of the BoW, we should also work with words in the
+same case - for example, lowercase - as Python identifies words in a different case as different words.
+We can also reduce the number of columns and sparsity by removing stop words. Stop words are very
+frequently used words that make sentences flow, but that do not, per se, carry any useful information.
+Examples of stop words are pronouns such as I, you, and he, as well as prepositions and articles.
+In this recipe, we will learn how to set words in lowercase, remove stop words, retain words with a
+minimum acceptable frequency, and capture n-grams all together with a single transformer from
+scikit-learn: CountVectorizer().
+How to do it...
+Let's begin by loading the necessary libraries and getting the dataset ready:
+1.
+Load pandas, CountVectorizer, and the dataset from scikit-learn:
+import pandas as pd
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import (

@@ -1,0 +1,10 @@
+Chapter 11
+415
+Figure 11.5: Infrastructure flow
+Now that we understand what the essential resources of our infrastructure are, let's look over the
+core flow of running a pipeline in the cloud that we will learn to implement, presented in Figure 11.5:
+1.
+Build a Docker image that contains all the system dependencies, the project dependencies,
+and the LLM Twin application.
+2.
+Push the Docker image to ECR, where SageMaker can access it.

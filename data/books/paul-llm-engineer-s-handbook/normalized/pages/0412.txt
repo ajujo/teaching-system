@@ -1,0 +1,35 @@
+Chapter 10
+381
+except Exception as e:
+    logger.error(f"Error during deployment: {e}")
+    raise
+Also, let's review the resource configuration to understand the infrastructure better. These resources are leveraged when setting up multi-endpoint configurations that use multiple replicas
+to serve clients while respecting the latency and throughput requirements of the application.
+The ResourceRequirements object is initialized with a dictionary that specifies various resource
+parameters. These parameters include the number of replicas (copies) of the model to be deployed, the number of GPUs required, the number of CPU cores, and the memory allocation in
+megabytes. Each of these parameters plays a crucial role in the performance and scalability of
+the deployed model.
+from sagemaker.compute_resource_requirements.resource_requirements import
+ResourceRequirements
+    model_resource_config = ResourceRequirements(
+    requests={
+        "copies": settings.COPIES,
+        "num_accelerators": settings.GPUS
+        "num_cpus": settings.CPUS,
+        "memory": 5 * 1024
+    },
+)
+In the preceding snippet, ResourceRequirements is configured with four key parameters:
+•
+copies: This parameter determines how many instances or replicas of the model should be
+deployed. Having multiple replicas can help in reducing latency and increasing throughput.
+•
+num_accelerators: This parameter specifies the number of GPUs to allocate. Since LLMs
+are computationally intensive, multiple GPUs are typically required to accelerate inference processes.
+•
+num_cpus: This defines the number of CPU cores the deployment should have. The number of CPUs impacts the model's ability to handle data preprocessing, post-processing,
+and other tasks that are less GPU-dependent but still essential.
+•
+memory: The memory parameter sets the minimum amount of RAM required for the
+deployment. Adequate memory is necessary to ensure the model can load and operate
+without running into memory shortages.

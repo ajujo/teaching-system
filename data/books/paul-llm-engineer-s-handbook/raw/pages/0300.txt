@@ -1,0 +1,30 @@
+Chapter 7
+269
+There are two main ways of evaluating models with this scheme—text generation and log-like-
+lihood evaluations:
+•	
+The first approach involves having the model generate text responses and comparing 
+those to predefined answer choices. For example, the model generates a letter (A, B, C, or 
+D) as its answer, which is then checked against the correct answer. This method tests the 
+model’s ability to produce coherent and accurate responses in a format similar to how it 
+would be used in real-world applications.
+•	
+Evaluation using probabilities, on the other hand, looks at the model’s predicted probabil-
+ities for different answer options without requiring text generation. For MMLU, lm-eval-
+uation-harness compares the probabilities for the full text of each answer choice. This 
+approach allows for a more nuanced assessment of the model’s understanding, as it can 
+capture the relative confidence the model has in different options, even if it wouldn’t 
+necessarily generate the exact correct answer text.
+For simplicity, we recommend the text-generation version of the evaluation that mimics human 
+test-taking. It is easier to implement, and generally more discriminative, as low-quality models 
+tend to overperform on probability-based evaluations. You can adapt this technique to quiz your 
+models about a particular task, and even expand it to specific domains.
+Conversely, if the task is too open-ended, traditional ML metrics and multiple-choice question 
+answering might not be relevant. In this scenario, the LLM-as-a-judge technique introduced in 
+Chapter 5 can be used to evaluate the quality of the answers. If you have ground-truth answers, 
+providing them as additional context improves the accuracy of the evaluation. Otherwise, defining 
+different dimensions (such as relevance or toxicity, depending on your task) can also ground the 
+evaluation in more interpretable categories.
+It is recommended to use large models for evaluation and to iteratively refine your prompt. In 
+this process, the explanations outputted by the model are important for understanding errors in 
+its reasoning and fixing them through additional prompt engineering. 

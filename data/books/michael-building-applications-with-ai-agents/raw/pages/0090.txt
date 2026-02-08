@@ -1,0 +1,37 @@
+user, explain the issue, and offer a sensible next step rather than silently failing or
+producing misleading outputs.
+Lastly, reliability is about setting and meeting expectations consistently. If an agent
+claims it can handle a specific task, it must deliver on that promise every time. Mis‐
+aligned expectations—where agents overpromise and underdeliver—can cause more
+damage to user trust than simply admitting limitations up front.
+When agents behave predictably and reliably, they become dependable digital part‐
+ners, empowering users to trust their outputs, delegate tasks confidently, and rely on
+them for critical decisions.
+Conclusion
+Designing exceptional user experiences for agent systems goes far beyond technical
+functionality—it requires an understanding of how humans interact with technology
+across different modalities, contexts, and workflows. Whether through text, graphical
+interfaces, voice, or video, each interaction modality carries its own strengths, trade-
+offs, and unique design considerations. Successful agent experiences are those where
+the modality aligns seamlessly with the user’s task, environment, and expectations.
+Synchronous and asynchronous agent experiences present distinct design challenges,
+requiring thoughtful approaches to timing, responsiveness, and clarity. Synchronous
+interactions demand immediacy and conversational flow, while asynchronous inter‐
+actions excel in persistence, transparency, and thoughtful notifications. Striking the
+right balance between proactive assistance and intrusive interruptions remains one of
+the most delicate aspects of agent design.
+Exceptional agents seamlessly retain context and adapt to users, remembering critical
+details across interactions and adapting intelligently to user preferences. This ability
+not only reduces cognitive load but also fosters a sense of continuity and collabora‐
+tion, transforming agents from isolated tools into reliable digital partners. Some com‐
+mon patterns to keep in mind:
+Communicate capabilities clearly
+Show users what the agent can do through onboarding, suggestions, or buttons.
+Combine modalities thoughtfully
+Align text, GUI, voice, or video with the task and user context.
+Retain context thoughtfully
+Maintain relevant conversation state without overwhelming memory or violating
+privacy.
+68 
+| 
+Chapter 3: User Experience Design for Agentic Systems

@@ -1,0 +1,32 @@
+7  He oído a tantas empresas hablar de círculos virtuosos de datos en sus
+presentaciones que estoy convencida de que no es legal poner en marcha una
+startup de IA sin mencionar el círculo virtuoso de datos.
+8  Mi libro, Designing Machine Learning Systems, trata sobre el aumento de datos
+en el Capítulo 4.
+9  Un ejemplo obvio que no incluí en el texto principal es cuando se quiere
+entrenar un modelo para detectar contenidos generados por IA. Se necesitaría
+contenidos generados por IA como ejemplos de entrenamiento.
+10  Muchos juegos increíbles son posibles solo gracias a la generación
+procedimental. Juegos como Minecraft o No Man's Sky utilizan funciones de
+ruido y algoritmos fractales para crear mundos inmensos y envolventes. En
+Dungeons & Dragons, la generación procedimental puede utilizarse para crear
+mazmorras, misiones y encuentros aleatorios, lo que hace que el juego resulte
+más atractivo al añadir un elemento de imprevisibilidad e infinitas posibilidades.
+11  Esto implica que, en teoría, es posible entrenar a un modelo capaz de mejorarse
+continuamente a sí mismo. Sin embargo, que esto sea posible en la práctica es
+otra historia.
+12  "Observaron que alrededor del 20 % de las soluciones eran inicialmente
+incorrectas pero se autocorregían, lo que indicaba que el modelo aprendía de la
+retroalimentación de la ejecución y mejoraba su rendimiento".
+13  Lo mismo pueden ocurrir con las anotaciones humanas. Si el etiquetador
+humano utiliza los conocimientos que tiene (pero que el modelo no) para
+responder a una pregunta, en realidad está enseñando al modelo a alucinar.
+14  El concepto también fue explicado posteriormente por los mismos autores en
+"AI Models Collapse When Trained on Recursively Generated Data" (Nature,
+julio de 2024).
+15  No es justo comparar el recuento de parámetros de un modelo de mezcla de
+expertos como Mixtral con el de un modelo denso como Nemotron-4, pero el
+hecho de que el modelo maestro (Mixtral) sea más pequeño que el modelo
+alumno (Nemotron-4) sigue siendo válido.
+16  Una de mis bibliotecas de código abierto, lazyNLP, también admite la
+estimación de traslape y la deduplicación mediante el filtro Bloom.

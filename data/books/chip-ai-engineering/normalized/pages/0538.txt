@@ -1,0 +1,31 @@
+este pequeño conjunto de datos. Como el modelo base ya es sólido,
+requiere menos datos para lograr un buen rendimiento.
+2. Utilice este modelo afinado para generar más datos de
+entrenamiento.
+3. Utilice este nuevo conjunto de datos para entrenar un modelo más
+barato.
+Como el afinado suele producirse después de experimentar con la ingeniería
+de prompts, lo ideal es que, cuando empiece con el afinado, ya tenga una
+buena idea de los comportamientos de los distintos modelos. Debe
+planificar su ruta de desarrollo de afinado basándose en este conocimiento.
+Métodos de afinado
+Recordemos que las técnicas de adaptador como LoRA son rentables, pero
+no suelen ofrecer el mismo nivel de rendimiento que el afinado completo.
+Si está comenzando en el tema del afinado, pruebe algo como LoRA, e
+intente el afinado completo más tarde.
+Los métodos de afinado a utilizar también dependen de su volumen de
+datos. Dependiendo del modelo base y de la tarea, el afinado completo
+suele requerir miles de ejemplos como mínimo, y a menudo muchos más.
+Los métodos PEFT, sin embargo, pueden mostrar un buen rendimiento con
+un conjunto de datos mucho más pequeño. Si tiene un conjunto de datos
+pequeño, como unos cientos de ejemplos, es posible que el afinado
+completo no produzca mejores resultados que LoRA.
+Tenga en cuenta cuántos modelos afinados necesita y cómo quiere darles
+servicio a la hora de decidir el método de ajuste. Los métodos basados en
+adaptadores como LoRA permiten servir de forma más eficaz varios
+modelos que compartan el mismo modelo base. Con LoRA, solo necesita
+servir un único modelo completo, mientras que el afinado completo
+requiere servir varios modelos completos.
+Marcos de afinado
+La forma más sencilla de realizar un afinado es utilizar una API de afinado
+que permita cargar datos, seleccionar un modelo base y obtener un modelo

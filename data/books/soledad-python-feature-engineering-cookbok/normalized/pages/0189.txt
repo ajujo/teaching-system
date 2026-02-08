@@ -1,0 +1,34 @@
+Working with Outliers
+166
+See also
+For a thorough discussion of the advantages and limitations of the different methods to detect outliers,
+check out the following resources:
+•	 Rousseeuw PJ, Croux C. Alternatives to the Median Absolute deviation. Journal of the American
+Statistical Association, 1993. http://www.jstor.org/stable/2291267.
+•	 Leys C, et. al. Detecting outliers: Do not use standard deviation around the mean, use absolute
+deviation around the median. Journal of Experimental Social Psychology, 2013. http://
+dx.doi.org/10.1016/j.jesp.2013.03.013.
+•	 Thériault R, et. al. Check your outliers! An introduction to identifying statistical outliers in R with
+easystats. Behavior Research Methods, 2024. https://doi.org/10.3758/s13428-
+024-02356-w.
+Removing outliers
+Recent studies distinguish three types of outliers: error outliers, interesting outliers, and random
+outliers. Error outliers are likely due to human or methodological errors and should be either corrected
+or removed from the data analysis. In this recipe, we'll assume outliers are errors (you don't want to
+remove interesting or random outliers) and remove them from the dataset.
+How to do it...
+We'll use the IQR proximity rule to find the outliers and then remove them from the data using pandas
+and Feature-engine:
+1.
+Let's import the Python libraries, functions, and classes:
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from feature_engine.outliers import OutlierTrimmer
+2.
+Load the California housing dataset from scikit-learn and separate it into train and test sets:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=0)

@@ -1,0 +1,52 @@
+Advanced Applications and Multi-Agent Systems
+242
+The Stream method allows you to stream changes to the graph's state after each super-step. Re­
+member, we discussed what a super-step is in Chapter 3, but to keep it short, it's a single iteration
+over the graph where parallel nodes belong to a single super-step while sequential nodes belong
+to different super-steps. If you need actual streaming behavior (like in a chatbot, so that users
+feel like something is happening and the model is actually thinking), you should use astream
+with messages mode.
+You have five modes with stream/astream methods (of course, you can combine multiple modes):
+Mode
+Description
+Output
+updates
+Streams only updates to the graph
+produced by the node
+A dictionary where each node name
+maps to its corresponding state update)
+values
+Streams the full state of the graph after
+each super-step
+A dictionary with the entire graph's
+state
+debug
+Attempts to stream as much information
+as possible in the debug mode
+A dictionary with a timestamp,
+task_type, and all the corresponding
+information for every event
+custom
+Streams events emitted by the node
+using a StreamWriter
+A dictionary that was written from the
+node to a custom writer
+messages
+Streams full events (for example,
+ToolMessages) or its chunks in a
+streaming node if possible (e.g., AI
+Messages)
+A tuple with token or message segment
+and a dictionary containing metadata
+from the node
+Table 6.1: Different streaming modes for LangGraph
+Let's look at an example. If we take the ReACT agent we used in the section above and stream
+with the values mode, we'll get the full state returned after every super-step (you can see that
+the total number of messages is always increasing):
+async for _, event in research_agent.astream({"question": question,
+"options": options}, stream_mode=["values"]):
+ print(len(event["messages"]))
+>> 0
+1
+3
+4

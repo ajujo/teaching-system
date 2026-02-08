@@ -1,0 +1,16 @@
+RAG Feature Pipeline
+108
+For example, you can use UMAP (https://umap-learn.readthedocs.io/en/latest/index.
+html), a dimensionality reduction method well known for keeping the geometrical properties 
+between the points when projecting the embeddings to 2D or 3D. Another popular algorithm for 
+dimensionality reduction when visualizing vectors is t-SNE (https://scikit-learn.org/stable/
+modules/generated/sklearn.manifold.TSNE.html). However, compared to UMAP, it is more 
+stochastic and doesn’t preserve the topological relationships between the points.
+Figure 4.3: Visualize embeddings using UMAP (Source: UMAP’s documentation)
+ A dimensionality reduction algorithm, such as PCA, UMAP, and t-SNE, is a mathe-
+matical technique used to reduce the number of input variables or features in a data-
+set while preserving the data’s essential patterns, structure, and relationships. The 
+goal is to transform high-dimensional data into a lower-dimensional form, making 
+it easier to visualize, interpret, and process while minimizing the loss of important 
+information. These methods help to address the “curse of dimensionality,” improve 
+computational efficiency, and often enhance the performance of ML algorithms.

@@ -1,0 +1,30 @@
+Corresponde a la duración del paso de llenado previo y
+depende de la longitud del input. Los usuarios pueden tener
+distintas expectativas en cuanto al TTFT para distintas
+aplicaciones. Por ejemplo, para los chatbots
+conversacionales, el TTFT debe ser instantáneo. 8 Sin
+embargo, los usuarios podrían estar dispuestos a esperar
+más tiempo para resumir documentos largos.
+Tiempo por token de output (TPOT)
+TPOT mide la rapidez con la que se genera cada token de
+output después del primer token. Si cada token tarda 100 ms,
+una respuesta de 1000 tokens tardará 100 s.
+En el modo streaming, en el que los usuarios leen cada token
+a medida que se genera, el TPOT debe ser más rápido que la
+velocidad de lectura humana, pero no tiene por qué ser
+mucho más rápido. Un lector muy rápido puede leer 120
+ms/token, por lo que un TPOT de unos 120 ms, o 6-8
+tokens/segundo, es suficiente para la mayoría de los casos de
+uso.
+Tiempo entre tokens y latencia entre tokens
+Las variaciones de esta métrica incluyen el tiempo entre
+tokens (TBT) y la latencia entre tokens (ITL). 9 Ambos miden
+el tiempo transcurrido entre los tokens de output.
+La latencia total será igual a TTFT + TPOT × (número de tokens de
+output).
+Dos aplicaciones con la misma latencia total pueden ofrecer experiencias de
+usuario diferentes con TTFT y TPOT distintos. ¿Preferirían los usuarios que
+los primeros tokens fueran instantáneos, con una espera más larga entre
+token y token, o esperar un poco más para los primeros tokens pero
+disfrutar de una generación de tokens más rápida después? Será necesario
+realizar estudios de usuarios para determinar la experiencia óptima. La

@@ -1,0 +1,35 @@
+Building Intelligent Agents
+204
+As you can note, LangChain didn't inherit the args schema fully; that's why it created artificial
+names for arguments like __arg1. Let's change our tool to accept a Pydantic model instead, in a
+similar fashion to how we define LangGraph nodes:
+from pydantic import BaseModel, Field
+from langchain_core.runnables import RunnableConfig
+class CalculatorArgs(BaseModel):
+   expression: str = Field(description="Mathematical expression to be
+evaluated")
+def calculator(state: CalculatorArgs, config: RunnableConfig) -> str:
+   expression = state["expression"]
+   math_constants = config["configurable"].get("math_constants", {})
+   result = ne.evaluate(expression.strip(), local_dict=math_constants)
+   return str(result)
+Now the full schema is a proper one:
+assert isinstance(calculator_tool, BaseTool)
+print(f"Tool name: {calculator_tool.name}")
+print(f"Tool description: {calculator_tool.description}")
+print(f"Args schema: {calculator_tool.args_schema.model_json_schema()}")
+>> Tool name: calculator
+Tool description: Calculates a single mathematical expression, incl.
+complex numbers.'
+Always add * to operations, examples:
+73i -> 73*i
+7pi**2 -> 7*pi**2
+Args schema: {'properties': {'expression': {'title': 'Expression', 'type':
+'string'}}, 'required': ['expression'], 'title': 'calculator', 'type':
+'object'}
+Let's test it together with an LLM:
+tool_call = llm.invoke("How much is (2+3i)**2", tools=[calculator_tool]).
+tool_calls[0]
+print(tool_call)
+>> {'name': 'calculator', 'args': {'expression': '(2+3*i)**2'}, 'id':
+'f8be9cbc-4bdc-4107-8cfb-fd84f5030299', 'type': 'tool_call'}

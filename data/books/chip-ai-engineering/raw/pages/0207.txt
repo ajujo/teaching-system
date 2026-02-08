@@ -1,0 +1,31 @@
+Las métricas habituales para la similitud léxica son BLEU, ROUGE,
+METEOR++, TER y CIDEr. Difieren exactamente en cómo se calcula la
+superposición. Antes de los modelos fundacionales, BLEU, ROUGE y sus
+parientes eran habituales, especialmente para tareas de traducción. Desde el
+auge de los modelos fundacionales, cada vez son menos las pruebas
+comparativas que utilizan la similitud léxica. Ejemplos de evaluaciones
+comparativas que utilizan estas métricas son WMT, COCO Captions, y
+GEMv2.
+Uno de los inconvenientes de este método es que requiere la recopilación de
+un amplio conjunto de respuestas de referencia. Una buena respuesta puede
+obtener una puntuación de similitud baja si el conjunto de referencia no
+contiene ninguna respuesta que se le parezca. En algunos ejemplos de
+pruebas comparativas, Adept descubrió que su modelo Fuyu funcionaba
+mal no porque los outputs del modelo fueran erróneos, sino porque faltaban
+algunas respuestas correctas en los datos de referencia. La Figura 3-5
+muestra un ejemplo de una tarea de subtitulación de imágenes en la que
+Fuyu generó un pie de foto correcto pero recibió una puntuación baja.
+No solo eso, sino que las referencias pueden ser erróneas. Por ejemplo, los
+organizadores de la tarea compartida WMT 2023 Metrics, que se centra en
+el examen de las métricas de evaluación para la traducción automática,
+informaron de que habían encontrado muchas traducciones de referencia
+malas en sus datos. La baja calidad de los datos de referencia es una de las
+razones por las que las métricas sin referencia se impusieron a las métricas
+basadas en referencia en términos de correlación con el juicio humano
+(Freitag et al., 2023).
+Otro inconveniente de esta medida es que las puntuaciones más altas de
+similitud léxica no siempre significan mejores respuestas. Por ejemplo, en
+HumanEval, una prueba comparativa de generación de código, OpenAI
+descubrió que las puntuaciones BLEU de las soluciones incorrectas y
+correctas eran similares. Esto indica que optimizar las puntuaciones BLEU
+no es lo mismo que optimizar la corrección funcional (Chen et al., 2021).

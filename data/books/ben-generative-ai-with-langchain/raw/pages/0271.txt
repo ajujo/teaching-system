@@ -1,0 +1,34 @@
+Advanced Applications and Multi-Agent Systems
+244
+LangGraph allows you to do that with a Command – you can update your graph’s state and at the 
+same time invoke another agent by passing a custom state to it. This is called a handoff – since an 
+agent hands off control to another one. You need to pass an update – a dictionary with an update 
+of the current state to be sent to your graph – and goto – a name (or list of names) of the nodes 
+to hand off control to:
+from langgraph.types import Command
+def _make_payment(state):
+  ...
+  if ...:
+  return Command(
+     update={"payment_id": payment_id},
+     goto="refresh_balance"
+  )
+  ...
+A destination agent can be a node from the current or a parent (Command.PARENT) graph. In other 
+words, you can change the control flow only within the current graph, or you can pass it back to 
+the workflow that initiated this one (for example, you can’t pass control to any random workflow 
+by ID). You can also invoke a Command from a tool, or wrap a Command as a tool, and then an LLM 
+can decide to hand off control to a specific agent. In Chapter 3, we discussed the map-reduce 
+pattern and the Send class, which allowed us to invoke a node in the graph by passing a specific 
+input state to it. We can use Command together with Send (in this example, the destination agent 
+belongs to the parent graph):
+from langgraph.types import Send
+def _make_payment(state):
+  ...
+  if ...:
+  return Command(
+     update={"payment_id": payment_id},
+     goto=[Send("refresh_balance", {"payment_id": payment_id}, ...],
+     graph=Command.PARENT
+  )
+  ...

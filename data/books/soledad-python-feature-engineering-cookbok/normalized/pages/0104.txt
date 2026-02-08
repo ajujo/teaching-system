@@ -1,0 +1,39 @@
+Performing binary encoding
+81
+How to do it...
+First, let's import the necessary Python libraries and get the dataset ready:
+1.
+Import the required Python libraries, functions, and classes:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from category_encoders.binary import BinaryEncoder
+2.
+Let's load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.
+Let's inspect the unique categories in A7:
+X_train["A7"].unique()
+In the following output, we can see that A7 has 10 different categories:
+array(['v', 'ff', 'h', 'dd', 'z', 'bb', 'j', 'Missing', 'n',
+'o'], dtype=object)
+4.
+Let's create a binary encoder to encode A7:
+encoder = BinaryEncoder(cols=["A7"],
+    drop_invariant=True)
+Note
+BinaryEncoder(), as well as other encoders from the Category Encoders package, allow us to
+select the variables to encode. We simply pass the column names in a list to the cols argument.
+5.
+Let's fit the transformer to the train set so that it calculates how many binary variables it needs
+and creates the variable-to-binary code representations:
+encoder.fit(X_train)
+6.
+Finally, let's encode A7 in the train and test sets:
+X_train_enc = encoder.transform(X_train)
+X_test_enc = encoder.transform(X_test)

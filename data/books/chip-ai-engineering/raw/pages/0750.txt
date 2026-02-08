@@ -1,0 +1,24 @@
+– otros comentarios conversacionales, Sentimiento
+comentarios explícitos, Retroalimentación de los usuarios
+comentarios implícitos, Retroalimentación de los usuarios
+comparación por parejas, Deduplicar datos
+compiladores, Kernels y compiladores
+compresión del modelo, Compresión del modelo
+con doble tasa de datos (DDR SDRAM), Tamaño y ancho de banda de la
+memoria
+concatenación, Concatenación
+concordancia aproximada de cadenas, Coincidencia exacta
+condición de parada, Top-p
+conjunto de datos Common Crawl, Comprender los modelos fundacionales
+conocimientos internos, Memoria
+construcción de contextos, Ingeniería de prompts y construcción de
+contextos, Aportar suficiente contexto, Paso 1. Mejorar el contexto
+consultas por segundo (QPS), Comparación de algoritmos de recuperación
+consultas SQL, Visión general de los agentes
+consumo de energía, Tamaño y ancho de banda de la memoria
+contaminación de datos, Tableros de clasificación personalizadas con
+pruebas comparativas públicas
+control de calidad, Verificación de datos
+– cuantización, Representaciones numéricas
+– cuantización de la inferencia, Cuantización
+corrección de errores, Planes complejos

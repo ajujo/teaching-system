@@ -1,0 +1,38 @@
+Combining features with decision trees
+247
+Combining features with decision trees
+In the winning solution of the Knowledge Discovery and Data Mining (KDD) competition in 2009, 
+the authors created new features by combining two or more variables using decision trees. When 
+examining the variables, they noticed that some features had a high level of mutual information with 
+the target yet low correlation, indicating that the relationship with the target was not linear. While these 
+features were predictive when used in tree-based algorithms, linear models could not take advantage 
+of them. Hence, to use these features in linear models, they replaced the features with the outputs of 
+decision trees trained on the individual features, or combinations of two or three variables, to return 
+new features with a monotonic relationship with the target.
+In short, combining features with decision trees is useful for creating features that show a monotonic 
+relationship with the target, which is useful for making accurate predictions using linear models. The 
+procedure consists of training a decision tree using a subset of the features – typically, one, two, or 
+three at a time – and then using the prediction of the tree as a new feature.
+Note
+You can find more details about this procedure and the overall winning solution of the 
+2009 KDD data competition in this article: http://proceedings.mlr.press/v7/
+niculescu09/niculescu09.pdf.
+The good news is that we can automate the creation of features using trees, using feature-engine, 
+and in this recipe, we will learn how to do so.
+How to do it...
+In this recipe, we’ll combine features with decision trees, using the California housing dataset:
+1.	
+Let’s begin by importing pandas and the required functions, classes, and dataset:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from feature_engine.creation, import DecisionTreeFeatures
+2.	
+Let’s load the California housing dataset into a pandas DataFrame and remove the Latitude 
+and Longitude variables:
+X, y = fetch_california_housing(
+    return_X_y=True, as_frame=True)
+X.drop(labels=[
+    "Latitude", "Longitude"], axis=1, inplace=True)

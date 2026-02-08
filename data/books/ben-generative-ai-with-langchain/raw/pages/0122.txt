@@ -1,0 +1,31 @@
+Chapter 3
+95
+Summarizing long video
+Let’s build a LangGraph workflow that implements the Map-Reduce approach presented above. 
+First, let’s define the state of the graph that keeps track of the video in question, the intermediate 
+summaries we produce during the phase step, and the final summary:
+from langgraph.constants import Send
+import operator
+class AgentState(TypedDict):
+   video_uri: str
+   chunks: int
+   interval_secs: int
+   summaries: Annotated[list, operator.add]
+   final_summary: str
+class _ChunkState(TypedDict):
+   video_uri: str
+   start_offset: int
+   interval_secs: int
+Our state schema now tracks all input arguments (so that they can be accessed by various nodes) 
+and intermediate results so that we can pass them across nodes. However, the Map-Reduce pattern 
+presents another challenge: we need to schedule many similar tasks that process different parts 
+of the original video in parallel. LangGraph provides a special Send node that enables dynamic 
+scheduling of execution on a node with a specific state. For this approach, we need an additional 
+state schema called _ChunkState to represent a map step. It’s worth mentioning that ordering is 
+guaranteed – results are collected (in other words, applied to the main state) in exactly the same 
+order as nodes are scheduled.
+Let’s define two nodes:
+•	
+summarize_video_chunk for the Map phase
+•	
+_generate_final_summary for the Reduce phase

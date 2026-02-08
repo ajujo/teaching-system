@@ -1,0 +1,30 @@
+RAG Feature Pipeline
+154
+class EmbeddedChunk(VectorBaseDocument, ABC):
+    content: str
+    embedding: list[float] | None
+    platform: str
+    document_id: UUID4
+    author_id: UUID4
+    author_full_name: str
+    metadata: dict = Field(default_factory=dict)
+... # EmbeddedPostChunk, EmbeddedArticleChunk, EmbeddedRepositoryChunk
+We also defined an enum that aggregates all our data categories in a single structure of constants:
+class DataCategory(StrEnum):
+    POSTS = "posts"
+    ARTICLES = "articles"
+    REPOSITORIES = "repositories"
+The last step to fully understand how the domain objects work is to zoom into the
+VectorBaseDocument OVM class.
+OVM
+The term OVM is inspired by the object-relational mapping (ORM) pattern we discussed in Chapter 3. We called it OVM because we work with embedding and vector DBs instead of structured
+data and SQL tables. Otherwise, it follows the same principles as an ORM pattern.
+Similar to what we did in Chapter 3, we will implement our own OVM version. Even if our custom
+example is simple, it's a powerful example of how to write modular and extendable classes by
+leveraging OOP best practices and principles.
+Our OVM base class is called VectorBaseDocument. It will support CRUD operations on top of
+Qdrant. Based on our application's demands, we limited it only to create and read operations, but
+it can easily be extended to update and delete functions.
+The full implementation of the VectorBaseDocument class is available on GitHub
+at https://github.com/PacktPublishing/LLM-Engineering/blob/main/llm_
+engineering/domain/base/vector.py.

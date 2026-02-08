@@ -1,0 +1,19 @@
+figura 5-1. Un prompt sencillo para NER.
+Para que el prompting funcione, el modelo debe ser capaz de seguir
+instrucciones. Si un modelo es malo en ello, no importa lo bueno que sea su
+prompt, el modelo no será capaz de seguirlo. En el Capítulo 4 se explica
+cómo evaluar la capacidad de seguimiento de instrucciones de un modelo.
+El grado de ingeniería de prompts que se necesite depende de la solidez del
+modelo frente a las perturbaciones a los prompts. Si el prompt cambia
+ligeramente (por ejemplo, si se escribe "5" en lugar de "cinco", se añade
+una nueva línea o se cambian las mayúsculas), ¿será muy diferente la
+respuesta del modelo? Cuanto menos robusto sea el modelo, más habrá que
+retocarlo.
+Se puede medir la robustez de un modelo perturbando aleatoriamente a los
+prompts para ver cómo cambia el output. Al igual que la capacidad de
+seguir instrucciones, la robustez de un modelo está estrechamente
+relacionada con su capacidad general. A medida que los modelos se
+fortalecen, también se hacen más robustos. Esto tiene sentido porque un
+modelo inteligente debería entender que "5" y "cinco" significan lo mismo.
+2 Por ello, trabajar con modelos más sólidos puede ahorrarle a menudo
+quebraderos de cabeza y reducir el tiempo que pierde en ajustes.

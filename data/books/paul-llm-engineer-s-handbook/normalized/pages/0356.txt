@@ -1,0 +1,29 @@
+Chapter 9
+325
+Implementing query expansion can be as straightforward as crafting a detailed zero-shot prompt
+to guide the LLM in generating these alternative queries. Thus, after implementing query expansion, instead of having only one query to search relevant context, you will have xN queries,
+hence xN searches.
+Increasing the number of searches can impact your latency. Thus, you must experiment with the
+number of queries you generate to ensure the retrieval step meets your application requirements.
+You can also optimize the searches by parallelizing them, drastically reducing the latency, which
+we will do in the ContextRetriever class implemented at the end of this chapter.
+Now, let's dig into the code. We begin by importing the necessary modules and classes required
+for query expansion:
+from langchain_openai import ChatOpenAI
+from llm_engineering.domain.queries import Query
+from llm_engineering.settings import settings
+from .base import RAGStep
+from .prompt_templates import QueryExpansionTemplate
+Next, we define the QueryExpansion class, which generates expanded query versions. The class
+implementation can be found at https://github.com/PacktPublishing/LLM-Engineers-
+Handbook/blob/main/llm_engineering/application/rag/query_expanison.py:
+class QueryExpansion(RAGStep):
+    def generate(self, query: Query, expand_to_n: int) -> list[Query]:
+        assert expand_to_n > 0, f"'expand_to_n' should be greater than 0.
+Got {expand_to_n}."
+        if self._mock:
+            return [query for _ in range(expand_to_n)]
+Query expansion is also known as multi-query, but the principles are the
+same. For example, this is an example of LangChain's implementation called
+MultiQueryRetriver: https://python.langchain.com/docs/how_to/
+MultiQueryRetriever/

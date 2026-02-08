@@ -1,0 +1,23 @@
+Chapter 11
+425
+This Dockerfile is designed to create a clean, consistent Python environment with all necessary
+dependencies. It allows the project to run smoothly in any environment that supports Docker.
+The last step is to build the Docker image and push it to the ECR created by ZenML. To build the
+Docker image from the root of the project, run the following:
+docker buildx build --platform linux/amd64 -t llmtwin -f Dockerfile .
+We must build it on a Linux platform as the Google Chrome installer we used inside Docker works
+only on a Linux machine. Even if you use a macOS or Windows machine, Docker can emulate a
+virtual Linux container.
+The tag of the newly created Docker image is llmtwin. We also provide this build command
+under a poethepoet command:
+poetry poe build-docker-image
+Now, let's push the Docker image to ECR. To do so, navigate to your AWS console and then to
+the ECR service. From there, find the newly created ECR repository. It should be prefixed with
+zenml-*, as shown here:
+Figure 11.7: AWS ECR example
+The first step is to authenticate to ECR. For this to work, ensure that you have the AWS CLI installed
+and configured with your admin AWS credentials, as explained in Chapter 2:
+AWS_REGION=<your_region> # e.g. AWS_REGION=eu-central-1
+AWS_ECR_URL=<your_acount_id>
+aws ecr get-login-password --region ${AWS_REGION}| docker login --username
+AWS --password-stdin ${AWS_ECR_URL}

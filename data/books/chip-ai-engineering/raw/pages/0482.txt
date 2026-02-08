@@ -1,0 +1,33 @@
+Aunque exactas, las especificaciones generadas carecen de los detalles que
+sus equipos necesitan. Afinar el modelo con especificaciones técnicas bien
+definidas puede hacer que los outputs sean más pertinentes.
+Otro problema es cuando el modelo no sigue el formato de output esperado.
+Por ejemplo, si se pide al modelo que escriba código HTML, pero el código
+generado no se compila, puede deberse a que el modelo no ha estado
+suficientemente expuesto a HTML en sus datos de entrenamiento. Pueden
+corregir esto exponiendo el modelo a más código HTML durante el afinado.
+El parseo semántico es una categoría de tareas cuyo éxito depende de la
+capacidad del modelo para generar outputs en el formato esperado y, por
+consiguiente, a menudo requiere afinado. El parseo semántico se aborda
+brevemente en el Capítulo 2 y el Capítulo 6. Como recordatorio, el paseo
+semántico significa convertir el lenguaje natural en un formato estructurado
+como JSON. Los modelos estándar sólidos suelen ser adecuados para
+sintaxis comunes y menos complejas, como JSON, YAML y regex. Sin
+embargo, pueden no ser tan buenos para sintaxis con menos ejemplos
+disponibles en Internet, como un lenguaje específico de un dominio para
+una herramienta menos popular, o una sintaxis compleja.
+En resumen, el afinado es para la forma, y la RAG para los hechos. Un
+sistema RAG proporciona a su modelo conocimientos externos para
+construir respuestas más precisas e informativas. Un sistema RAG puede
+ayudar a mitigar las alucinaciones de su modelo. El afinado, por su parte,
+ayuda a su modelo a entender y seguir sintaxis y estilos. 5 Aunque el
+afinado puede reducir las alucinaciones si se realiza con suficientes datos de
+alta calidad, también puede empeorarlas si la calidad de los datos es baja.
+Si su modelo tiene problemas tanto de información como de
+comportamiento, empiece por la RAG. La RAG suele ser más sencilla, ya
+que no tendrán que preocuparse por conservar los datos de entrenamiento ni
+alojar los modelos perfeccionados. Cuando ejecure la RAG, empiece con
+soluciones sencillas basadas en términos, como BM25, en vez de lanzarse
+directamente a algo que requiera bases de datos vectoriales.
+La RAG también puede introducir un aumento de rendimiento más
+significativo que el afinado. Ovadia et al. (2024) mostraron que para casi

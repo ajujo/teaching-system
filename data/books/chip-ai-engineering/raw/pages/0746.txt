@@ -1,0 +1,23 @@
+B
+bits de precisión, Representaciones numéricas
+bits de rango, Representaciones numéricas
+bits por byte (BPB), Entropía cruzada
+bits por carácter (BPC), Entropía cruzada
+bots conversacionales, Bots conversacionales
+BPB (bits por byte), Entropía cruzada
+BPC (bits por carácter), Entropía cruzada
+bucles de retroalimentación degenerados, Sesgos
+C
+caché (ver caché de claves-valores)
+caché de claves-valores (KV), Decodificación paralela
+caché de prompts, Desacoplamiento del llenado previo y la decodificación
+caché exacta, Paso 4. Reducir la latencia con cachés
+caché semántica, Paso 4. Reducir la latencia con cachés
+cadena de pensamiento (CoT), Dividir tareas complejas en subtareas más
+sencillas, Ingeniería de conjuntos de datos
+cálculo de prealimentación, Paralelismo
+capa de prealimentación, Mecanismo de atención, Configuraciones LoRA
+capacidad de cálculo, de los aceleradores de IA, ¿Qué es un acelerador?
+capacidad de generación, Capacidades específicas de dominio
+capacidad de seguimiento de instrucciones, Seguridad
+capacidad específica de dominio, Criterios de evaluación

@@ -1,0 +1,22 @@
+Extracting Features from Date and Time Variables
+186
+3.
+Let's extract the hour, minute, and second part and capture them into three new columns,
+then display the DataFrame's top five rows:
+df["hour"] = df["date"].dt.hour
+df["min"] = df["date"].dt.minute
+df["sec"] = df["date"].dt.second
+df.head()
+In the following output, we see the three time features that we extracted in Step 3:
+Figure 6.10 - The first five rows of a DataFrame with three variables derived from time
+Note
+Remember that pandas' dt needs a datetime object to work. You can change the data type
+of an object variable into datetime by using pandas to_datetime().
+4.
+Let's perform the same operations that we did in Step 3 but now in one line of code:
+df[["h", "m", "s"]] = pd.DataFrame(
+    [(x.hour, x.minute, x.second) for x in df["date"]]
+)
+df.head()
+We see the newly created variables in the following output:
+Figure 6.11 - The first five rows of a DataFrame with the variables derived from time

@@ -1,0 +1,33 @@
+Table of Contents
+xvi
+Quantization with GPTQ and EXL2 • 311
+Other quantization techniques • 313
+Summary ......................................................................................................................... 314
+References ........................................................................................................................ 315
+Chapter 9: RAG Inference Pipeline 
+ 317
+Understanding the LLM Twin’s RAG inference pipeline ..................................................  318
+Exploring the LLM Twin’s advanced RAG techniques ...................................................... 321
+Advanced RAG pre-retrieval optimizations: query expansion and self-querying • 324
+Query expansion • 324
+Self-querying • 328
+Advanced RAG retrieval optimization: filtered vector search • 332
+Advanced RAG post-retrieval optimization: reranking • 334
+Implementing the LLM Twin’s RAG inference pipeline ................................................... 338
+Implementing the retrieval module • 339
+Bringing everything together into the RAG inference pipeline • 346
+Summary ......................................................................................................................... 351
+References ........................................................................................................................ 351
+Chapter 10: Inference Pipeline Deployment 
+ 353
+Criteria for choosing deployment types .......................................................................... 354
+Throughput and latency • 354
+Data • 355
+Understanding inference deployment types .................................................................... 357
+Online real-time inference • 358
+Asynchronous inference • 359
+Offline batch transform • 360
+Monolithic versus microservices architecture in model serving ...................................... 361
+Monolithic architecture • 363
+Microservices architecture • 363
+Choosing between monolithic and microservices architectures • 365

@@ -1,0 +1,34 @@
+articulación para que la acción tenga éxito. Puede simular varios escenarios
+con diferentes movimientos de las articulaciones y utilizar solo los
+escenarios en los que se sirva café con éxito para entrenar al robot.
+Las simulaciones permiten realizar múltiples experimentos con costos
+mínimos y evitar accidentes y daños físicos. Un robot que funciona en
+simulaciones puede no funcionar en el mundo real, pero si falla en las
+simulaciones, es probable que falle en el mundo real. Sin embargo, por muy
+sofisticadas que sean sus simulaciones, no dejan de ser simplificaciones del
+mundo real. Sim2Real es un subcampo que se centra en adaptar al mundo
+real algoritmos que hayan sido entrenados en simulaciones.
+Las simulaciones son habituales para generar datos que permitan enseñar a
+los modelos a utilizar las herramientas. Como ya se ha mencionado, las
+acciones generadas por humanos no siempre son las más eficientes para los
+agentes de IA. Las simulaciones pueden ayudar a descubrir acciones que los
+humanos pasen por alto. Dada una consulta, puede simular diferentes
+secuencias de acciones, ejecutar estas secuencias y validar sus resultados. A
+continuación, se utiliza la secuencia de acciones más eficiente como
+respuesta anotada para la consulta.
+Las simulaciones son especialmente valiosas para generar datos sobre
+sucesos poco frecuentes. Por ejemplo, en el ámbito de las finanzas, los
+investigadores pueden simular escenarios como la salida a bolsa de una
+empresa o una quiebra importante para comprender sus repercusiones en el
+mercado. Los fabricantes pueden simular defectos en materiales o montajes
+para generar datos con los que entrenar modelos de detección de anomalías
+y control de calidad. Del mismo modo, mediante la simulación de los
+sistemas de la Tierra, los científicos del clima pueden crear variaciones en
+los cambios de temperatura, patrones de precipitaciones y escenarios
+meteorológicos extremos. Estos datos sintéticos se introducen en los
+modelos de IA, lo que les permite aprender de un espectro más amplio de
+futuros posibles.
+Tanto las técnicas basadas en reglas como las basadas en simulaciones han
+sido útiles para muchos casos de uso, pero la síntesis de datos no despegó
+hasta que la IA fue capaz de generar datos realistas y de alta calidad.
+Veamos estos métodos a continuación.

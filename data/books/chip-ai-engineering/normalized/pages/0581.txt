@@ -1,0 +1,36 @@
+típicamente sexistas por sus opuestas, como "enfermera" por "enfermero",
+tal y como se muestra en la Tabla 8-2.
+tabla 8-2. El aumento de datos pueden ayudar a mitigar ciertos sesgos en
+sus datos.
+Datos originales
+Datos aumentados
+Es una enfermera fantástica.
+Es un enfermero fantástico. Es una
+doctora fantástica.
+El CEO de la empresa, Alex
+Wang, ...
+La CEO de la empresa, Alexa Wang,
+...
+Hoy, mi madre ha hecho un
+guiso para cenar.
+Hoy, mi padre ha hecho un guiso para
+cenar.
+A Emily siempre le ha gustado
+el violín.
+A Mohammed siempre le ha gustado
+el violín.
+Se pueden encontrar palabras similares con un diccionario de palabras
+sinónimas o encontrando palabras cuyas incrustaciones estén próximas
+entre sí en un espacio de incrustación de palabras. Puede ir más allá de la
+simple sustitución de palabras pidiendo a la IA que reformule o traduzca un
+ejemplo, como veremos más adelante.
+Una transformación interesante es la perturbación: añadir ruido a los datos
+existentes para generar datos nuevos. Al principio, los investigadores
+descubrieron que perturbar ligeramente una muestra de datos puede engañar
+a los modelos para que la clasifiquen erróneamente. Por ejemplo, añadir
+ruido blanco a la imagen de un barco pueden hacer que el modelo lo
+clasifique erróneamente como un coche. El artículo "One Pixel Attack for
+Fooling Deep Neural Networks" (Su et al., 2017) demostró que el 67.97 %
+de las imágenes naturales del conjunto de datos de prueba CIFAR-10 de
+Kaggle y el 16.04 % de las imágenes de prueba de ImageNet podían
+clasificarse erróneamente cambiando solo un píxel. Esto supone un grave

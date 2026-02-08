@@ -1,0 +1,34 @@
+MLOps and LLMOps
+432
+Adding LLMOps to the LLM Twin
+In the previous section, we saw how to set up the infrastructure for the LLM Twin project by
+manually building the Docker image and pushing it to ECR. We want to automate the entire
+process and implement a CI/CD pipeline using GitHub Actions and a CT pipeline using ZenML.
+As mentioned earlier, implementing a CI/CD/CT pipeline ensures that each feature pushed to
+main branches is consistent and tested. Also, by automating the deployment and training, you
+support collaboration, save time, and reduce human errors.
+Finally, at the end of the section, we will show you how to implement a prompt monitoring pipeline using Opik from Comet ML and an alerting system using ZenML. This prompt monitoring
+pipeline will help us debug and analyze the RAG and LLM logic. As LLM systems are non-deterministic, capturing and storing the prompt traces is essential for monitoring your ML logic.
+Before diving into the implementation, let's start with a quick section on the LLM Twin's CI/CD
+pipeline flow.
+LLM Twin's CI/CD pipeline flow
+We have two environments: staging and production. When developing a new feature, we create a new branch out of the staging branch and develop solely on that one. When we are done
+and consider the feature finished, we open a pull request (PR) to the staging branch. After the
+feature branch is accepted, it is merged into the staging branch. This is a standard workflow in
+most software applications. There might be variations, like adding a dev environment, but the
+principles remain the same.
+As illustrated in Figure 11.14, the CI pipeline is triggered when the PR opens. At this point, we
+test the feature branch for linting and formatting errors. Also, we run a gitleaks command to
+check for credentials and sensitive information that was committed by mistake. If the linting,
+formatting, and gitleaks steps pass (also known as static analysis), we run the automated tests.
+Note that the static analysis steps run faster than the automated tests. Thus, the order matters.
+That's why adding the static analysis steps at the beginning of the CI pipeline is good practice.
+We propose the following order of the CI steps:
+•
+gitleaks checks
+•
+Linting checks
+•
+Formatting checks
+•
+Automated testing, such as unit and integration tests

@@ -1,0 +1,38 @@
+Appendix A
+434
+Google
+Google offers two primary platforms to access its LLMs, including the latest Gemini models:
+1. Google AI platform
+The Google AI platform provides a straightforward setup for developers and users, and access to
+the latest Gemini models. To use the Gemini models via Google AI:
+•
+Google Account: A standard Google account is sufficient for authentication.
+•
+API Key: Generate an API key to authenticate your requests.
+•
+Visit this page to create your API key: https://ai.google.dev/gemini-api/docs/
+api-key
+•
+After obtaining the API key, set the GOOGLE_API_KEY environment variable in your
+development environment (see the instructions for OpenAI) to authenticate your
+requests.
+2. Google Cloud Vertex AI
+For enterprise-level features and integration, Google's Gemini models are available through
+Google Cloud's Vertex AI platform. To use models via Vertex AI:
+1.
+Create a Google Cloud account, which requires accepting the terms of service and setting
+up billing.
+2.
+Install the gcloud CLI to interact with Google Cloud services. Follow the installation
+instructions at https://cloud.google.com/sdk/docs/install.
+3.
+Run the following command to authenticate and obtain a key token:
+gcloud auth application-default login
+4.
+Ensure that the Vertex AI API is enabled for your Google Cloud project.
+5.
+You can set your Google Cloud project ID - for example, using the gcloud command:
+gcloud config set project my-project
+Other methods are passing a constructor argument when initializing the LLM, using aiplatform.
+init(), or setting a GCP environment variable.
+You can read more about these options in the Vertex documentation.

@@ -1,0 +1,30 @@
+Creating binary variables through one-hot encoding
+51
+ 'A5': ['g', 'p', 'Missing'],
+ 'A6': ['c', 'q', 'w', 'ff', 'm', 'i', 'e', 'cc', 'x', 'd', 'k', 
+'j', 'Missing', 'aa'],
+ 'A7': ['v', 'ff', 'h', 'dd', 'z', 'bb', 'j', 'Missing', 'n'],
+ 'A9': ['t'],
+ 'A10': ['t'],
+ 'A12': ['t'],
+ 'A13': ['g', 's']}
+21.	 Let’s encode the categorical variables in train and test sets:
+X_train_enc = ohe_enc.transform(X_train)
+X_test_enc = ohe_enc.transform(X_test)
+If we execute X_train_enc.head(), we will see the following DataFrame:
+Figure 2.5 – Transformed DataFrame with numerical variables followed by 
+the one-hot encoded representation of the categorical variables
+Note how the A4 categorical variable was replaced with A4_u, A4_y, and so on.
+Note
+We can get the names of all the variables in the transformed dataset by executing ohe_enc.
+get_feature_names_out().
+How it works...
+In this recipe, we performed a one-hot encoding of categorical variables using pandas, scikit-
+learn, and feature-engine.
+pandas’ get_dummies() replaced the categorical variables with a set of binary variables representing 
+each of the categories. When used on the entire dataset, it returned the numerical variables, followed by the 
+one-hot encoded representation of each seen category in every variable of type object, string, or categorical.
+Note
+pandas will return binary variables for every category seen in a dataset. In practice, to avoid data 
+leakage and anticipate deployment eventualities, we want to return dummy variables for categories 
+seen in a training set only. So, it is safer to use scikit-learn and feature-engine.

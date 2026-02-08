@@ -1,0 +1,31 @@
+Chapter 3
+73
+GitHubCrawler class
+The GithubCrawler class is designed to scrape GitHub repositories, extending the functionality 
+of the BaseCrawler. We don’t have to log in to GitHub through the browser, as we can leverage 
+Git’s clone functionality. Thus, we don’t have to leverage any Selenium functionality. Upon ini-
+tialization, it sets up a list of patterns to ignore standard files and directories found in GitHub 
+repositories, such as .git, .toml, .lock, and .png, ensuring that unnecessary files are excluded 
+from the scraping process:
+class GithubCrawler(BaseCrawler):
+    model = RepositoryDocument
+    def __init__(self, ignore=(".git", ".toml", ".lock", ".png")) -> None:
+        super().__init__()
+        self._ignore = ignore
+Next, we implement the extract() method, where the crawler first checks if the repository has 
+already been processed and stored in the database. If it exists, it exits the method to prevent 
+storing duplicates:
+def extract(self, link: str, **kwargs) -> None:
+    old_model = self.model.find(link=link)
+    if old_model is not None:
+        logger.info(f"Repository already exists in the database: {link}")
+        return
+If the repository is new, the crawler extracts the repository name from the link. Then, it creates 
+a temporary directory to clone the repository to ensure that the cloned repository is cleaned up 
+from the local disk after it’s processed:
+    logger.info(f"Starting scrapping GitHub repository: {link}")
+    repo_name = link.rstrip("/").split("/")[-1]
+    local_temp = tempfile.mkdtemp()
+Within a try block, the crawler changes the current working directory to the temporary directory 
+and executes the git clone command in a different process:
+    try:

@@ -1,0 +1,32 @@
+Transforming Numerical Variables
+88
+Go ahead and plot the other transformed variables to familiarize yourself with the effect of the 
+logarithm transformation on distributions.
+Now, let’s apply the logarithmic transformation with scikit-learn.
+10.	 Let’s import FunctionTransformer():
+from sklearn.preprocessing import FunctionTransformer
+Before we proceed, we need to take a copy of the original dataset, as we did in step 6.
+11.	 We’ll set up the transformer to apply the logarithm and to be able to revert the transformed 
+variable to its original representation:
+transformer = FunctionTransformer(np.log,
+    inverse_func=np.exp)
+Note
+If we set up FunctionTransformer() with the default parameter, validate=False, 
+we don’t need to fit the transformer before transforming the data. If we set validate to True, 
+the transformer will check the data input to the fit method. The latter is useful when fitting 
+the transformer with a DataFrame so that it learns and stores the variable names.
+12.	 Let’s transform the positive variables from step 7:
+X_tf[vars] = transformer.transform(X[vars])
+Note
+Scikit-learn transformers return NumPy arrays and transform the entire DataFrame by default. 
+In this case, we assigned the results of the array directly to our existing DataFrame. We can 
+change the returned format through the set_output method and we can restrict the variables 
+to transform with ColumnTransformer().
+Check the results of the transformation with the diagnostic function from step 4.
+13.	 Let’s now revert the transformation to the original variable representation:
+X_tf[vars] = transformer.inverse_transform(X_tf[vars])
+If you check the distribution by executing diagnostic_plots(X_tf, "MedInc"), 
+you should see a plot that is identical to that returned by step 5.
+Note
+To add a constant value to the variables, in case they are not strictly positive, use transformer 
+= FunctionTransformer(lambda x: np.log(x + 1)).

@@ -1,0 +1,28 @@
+Performing Variable Discretization
+144
+That’s it; now we have a simpler representation of the data.
+How it works…
+In this recipe, we changed the representation of sparse variables to consider the presence or absence of 
+an occurrence, which, in our case, is a word. The data consisted of a bag of words, where each variable 
+(column) is a word, each row is a document, and the values represent the number of times the word 
+appears in a document. Most words do not appear in most documents; therefore, most values in the 
+data are 0. We corroborated the sparsity of our data with histograms.
+scikit-learn’s Binarizer() mapped values greater than the threshold, which, in our case, was 0, to 
+the 1 value, while values less than or equal to the threshold were mapped to 0. Binarizer() has 
+the fit() and transform() methods, where fit() does not do anything and transform() 
+binarizes the variables.
+Binarizer() modifies all variables in a dataset returning NumPy arrays by default. To return 
+pandas DataFrames instead, we set the transform output to pandas.
+Using decision trees for discretization
+In all previous recipes in this chapter, we determined the number of intervals arbitrarily, and then the 
+discretization algorithm would find the interval limits one way or another. Decision trees can find the 
+interval limits and the optimal number of bins automatically.
+Decision tree methods discretize continuous attributes during the learning process. At each node, a 
+decision tree evaluates all possible values of a feature and selects the cut point that maximizes the class 
+separation, or sample coherence, by utilizing a performance metric such as entropy or Gini impurity 
+for classification, or the squared or absolute error for regression. As a result, the observations end up 
+in certain leaves based on whether their feature values are greater or smaller than certain cut points.
+In the following figure, we can see the diagram of a decision tree that is trained to predict house prices 
+based on the property’s average number of rooms:
+Figure 4.12 – A diagram of a decision tree trained to predict house 
+price based on the property’s average number of rooms

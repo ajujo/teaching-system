@@ -1,0 +1,52 @@
+Inference Optimization
+314
+This trend is expected to continue, further optimizing these quantization methods.
+To conclude this chapter, here is a table summarizing the features of the three main inference
+engines we covered in the previous sections:
+Technique
+TGI
+vLLM
+TensorRT-LLM
+Continuous batching
+✓
+✓
+✓
+Speculative decoding
+✓
+FlashAttention2
+✓
+✓
+✓
+PagedAttention
+✓
+✓
+✓
+Pipeline parallelism
+✓
+Tensor parallelism
+✓
+✓
+✓
+GPTQ
+✓
+✓
+EXL2
+✓
+AWQ
+✓
+✓
+✓
+Table 8.1 - Summary of features for TGI, vLLM, and TensorRT-LLM
+Summary
+In summary, inference optimization is a critical aspect of deploying LLMs effectively. This chapter explored various optimization techniques, including optimized generation methods, model
+parallelism, and weight quantization. Significant speedups can be achieved by leveraging techniques like predicting multiple tokens in parallel with speculative decoding, or using an optimized
+attention mechanism with FlashAttention-2. Additionally, we discussed how model parallelism
+methods, including data, pipeline, and tensor parallelism, distribute the computational load across
+multiple GPUs to increase throughput and reduce latency. Weight quantization, with formats
+like GGUF and EXL2, further reduces the memory footprint and accelerates inference, with some
+calculated tradeoff in output quality.
+Understanding and applying these optimization strategies are essential for achieving high performance in practical applications of LLMs, such as chatbots and code completion. The choice
+of techniques and tools depends on specific requirements, including available hardware, desired
+latency, and throughput. By combining various approaches, such as continuous batching and
+speculative decoding, along with advanced attention mechanisms and model parallelism, users
+can tailor their deployment strategies to maximize efficiency.

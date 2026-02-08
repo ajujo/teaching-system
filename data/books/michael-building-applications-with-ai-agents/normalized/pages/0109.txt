@@ -1,0 +1,39 @@
+A less obvious but critical drawback is repeatability. When your agent recreates tools
+from scratch each time, you lose predictability-success for one invocation doesn't
+guarantee success for the next. Performance can fluctuate wildly, and subtle changes
+in prompts or model updates can lead to entirely different code paths. This instability
+complicates debugging, testing, and compliance, making it hard to certify that your
+agent will always behave as expected.
+Resource consumption is also a critical consideration, as real-time code generation
+and execution can be resource-intensive, requiring substantial computational power
+and memory, especially when naive or inefficient solutions are drafted and executed.
+Placing guardrails on multiple aspects of system performance can help to mitigate
+these risks.
+Tool Use Configuration
+Foundation model APIs from OpenAI, Anthropic, Gemini, and more let you explic‐
+itly control the model's use of tools via a tool-choice parameter-shifting from flexi‐
+ble foundation model-driven invocation to deterministic behavior. In "auto" mode,
+the model decides whether to call tools based on context; this is good for general use.
+In contrast, "any"/"required" forces the model to invoke at least one tool, ideal when
+tool output is essential. Setting these parameters to "none" blocks all tool calls-useful
+for controlled outputs or testing environments. Some interfaces even let you pin a
+specific tool, ensuring predictable, repeatable flows. By choosing the appropriate
+mode, you decide whether to let the foundation model manage tasks flexibly or
+impose structure-balancing flexibility, reliability, and predictability.
+Even the best agents can misstep-skipping necessary tool calls, outputting invalid
+JSON, or running tools that error out-so you need reliable fallback and postprocess‐
+ing mechanisms in place. After every model response, inspect whether it invoked the
+right tools, produced valid JSON, and succeeded without runtime errors. If anything
+breaks, respond with a corrective flow:
+• Validate first using your schema (e.g., via jsonschema or Pydantic). This catches
+missing fields or malformed structures. If a tool was skipped, trigger it automati‐
+cally; if the JSON is invalid, prompt the model to correct it.
+• Retry intelligently, using structured logic such as exponential backoff for transi‐
+ent failures, or regenerate only the problematic portion instead of restarting the
+whole exchange.
+• Fall back gracefully when retries fail. Options include switching to a backup
+model or service, asking the user for clarification, using cached data, or returning
+a safe default.
+Tool Use Configuration
+|
+87

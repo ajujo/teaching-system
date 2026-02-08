@@ -1,0 +1,29 @@
+Para evaluar los fallos de planificación de un agente, una opción es crear un
+conjunto de datos de planificación en el que cada ejemplo sea una tupla
+(tarea, inventario de herramientas). Para cada tarea, utilice el
+agente para generar un número K de planes. Calcule las siguientes métricas:
+1. De todos los planes generados, ¿cuántos son válidos?
+2. Para una tarea determinada, ¿cuántos planes tiene que generar el
+agente, en promedio, para obtener un plan válido?
+3. De todas las llamadas a herramientas, ¿cuántas son válidas?
+4. ¿Con qué frecuencia se llaman herramientas no válidas?
+5. ¿Con qué frecuencia se llaman herramientas válidas con
+parámetros no válidos?
+6. ¿Con qué frecuencia se llaman herramientas válidas con valores de
+parámetros incorrectos?
+Analice los outputs del agente para ver si hay patrones. ¿En qué tipo de
+tareas falla más el agente? ¿Tiene alguna hipótesis sobre el motivo? ¿Con
+qué herramientas se equivoca a menudo el modelo? Algunas herramientas
+pueden resultar más difíciles de utilizar para un agente. Se puede mejorar la
+capacidad de un agente para utilizar una herramienta complicada mejorando
+el prompting, aumentando el número de ejemplos o afinándolo. Si todo
+falla, pueden plantearse cambiar esta herramienta por otra más fácil de usar.
+Fallos de las herramientas
+Los fallos de las herramienta se producen cuando se utiliza la herramienta
+correcta, pero el output de la herramienta es incorrecto. Un modo de fallo es
+cuando una herramienta solo produce outputs erróneos. Por ejemplo, un
+lector de leyendas de imágenes devuelve una descripción errónea, o un
+generador de consultas SQL devuelve una consulta SQL errónea.
+Si el agente solo genera planes a grandes rasgos y un módulo de traducción
+se encarga de traducir de cada acción planificada a comandos ejecutables,
+pueden producirse fallos debido a errores de traducción.

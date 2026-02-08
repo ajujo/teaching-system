@@ -1,0 +1,36 @@
+Chapter 10
+385
+As before, we will walk you through the LLMInferenceSagemakerEndpoint and InferenceExecutor 
+classes. Let’s start with the LLMInferenceSagemakerEndpoint class, which directly interacts with 
+SageMaker. The constructor initializes all the essential attributes necessary to interact with the 
+SageMaker endpoint:
+class LLMInferenceSagemakerEndpoint(Inference):
+    def __init__(
+        self,
+        endpoint_name: str,
+        default_payload: Optional[Dict[str, Any]] = None,
+        inference_component_name: Optional[str] = None,
+    ) -> None:
+        super().__init__()
+        self.client = boto3.client(
+            "sagemaker-runtime",
+            region_name=settings.AWS_REGION,
+            aws_access_key_id=settings.AWS_ACCESS_KEY,
+            aws_secret_access_key=settings.AWS_SECRET_KEY,
+        )
+        self.endpoint_name = endpoint_name
+        self.payload = default_payload if default_payload else self._
+default_payload()
+        self.inference_component_name = inference_component_name
+endpoint_name is crucial for identifying the SageMaker endpoint we want to request. Additionally, 
+the method initializes the payload using a provided value or by calling a method that generates 
+a default payload if none is provided.
+One of the key features of the class is its ability to generate a default payload for inference requests. 
+This is handled by the _default_payload() method:
+def _default_payload(self) -> Dict[str, Any]:
+    return {
+        "inputs": "",
+        "parameters": {
+            "max_new_tokens": settings.MAX_NEW_TOKENS_INFERENCE,
+            "top_p": settings.TOP_P_INFERENCE,
+            "temperature": settings.TEMPERATURE_INFERENCE,

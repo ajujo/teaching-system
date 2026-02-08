@@ -1,0 +1,37 @@
+Chapter 4
+179
+•
+Information extraction failure: Sometimes, the LLM fails to synthesize the available con­
+text properly. This can be resolved by refining prompt design-using explicit instructions
+and contrastive examples enhances extraction accuracy.
+•
+Format compliance issues: Answers may be correct but delivered in the wrong format
+(e.g., incorrect table or JSON structure). Enforce structured output with parsers, precise
+format examples, and post-processing validation.
+•
+Specificity mismatch: The output may be too general or too detailed. Address this by using
+query expansion techniques and tailoring prompts based on the user's expertise level.
+•
+Incomplete information: Answers might capture only a portion of the necessary details.
+Increase retrieval diversity (e.g., using maximum marginal relevance) and refine query
+transformation methods to cover all aspects of the query.
+Integrating focused retrieval methods, such as retrieving documents first and then extracting key
+sentences, has been shown to improve performance-even bridging some gaps caused by smaller
+model sizes. Continuous testing and prompt engineering remain essential to maintaining system
+quality as operational conditions evolve.
+Summary
+In this chapter, we explored the key aspects of RAG, including vector storage, document pro­
+cessing, retrieval strategies, and implementation. Following this, we built a comprehensive RAG
+chatbot that leverages LangChain for LLM interactions and LangGraph for state management and
+workflow orchestration. This is a prime example of how you can design modular, maintainable,
+and user-friendly LLM applications that not only generate creative outputs but also incorporate
+dynamic feedback loops.
+This foundation opens the door to more advanced RAG systems, whether you're retrieving doc­
+uments, enhancing context, or tailoring outputs to meet specific user needs. As you continue to
+develop production-ready LLM applications, consider how these patterns can be adapted and
+extended to suit your requirements. In Chapter 8, we'll be discussing how to benchmark and
+quantify the performance of RAG systems to ensure performance is up to requirements.
+In the next chapter, we will build on this foundation by introducing intelligent agents that can
+utilize tools for enhanced interactions. We will cover various tool integration strategies, structured
+tool output generation, and agent architectures such as ReACT. This will allow us to develop more
+capable AI systems that can dynamically interact with external resources.

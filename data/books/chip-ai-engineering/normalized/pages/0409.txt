@@ -1,0 +1,32 @@
+1/1 = 1. Si ocupa el segundo lugar, su puntuación es ½ = 0.5. Cuanto más
+alta sea su lugar en el ranking, mayor será su puntuación.
+La puntuación final de un documento es la suma de sus puntuaciones en
+relación con todos los recuperadores. Si un documento es tiene el primer
+lugar en el ranking de un recuperador y el segundo lugar en el de otro, su
+puntuación es 1 + 0.5 = 1.5. Este ejemplo es una simplificación excesiva de
+la RRF, pero muestra lo básico. La fórmula real para un documento D es
+más complicada:
+Score(D) = ∑n
+i=1
+1
+k+ri(D)
+n es el número de listas ordenadas; cada lista ordenada es
+producida por un recuperador.
+ri(D) es el rango del documento por el recuperador i.
+k es una constante para evitar la división por cero y controlar la
+influencia de los documentos en los últimos lugares en el ranking.
+Un valor típico de k es 60.
+Optimización de la recuperación
+Dependiendo de la tarea, ciertas tácticas pueden aumentar la probabilidad
+de obtener documentos relevantes. Aquí se analizan cuatro tácticas:
+estrategia de fragmentación (chunking), reordenamiento (reranking),
+reescritura de consultas y recuperación contextual.
+Estrategia de fragmentación
+La forma de indexar los datos depende de cómo pretendan recuperarlos
+posteriormente. En la última sección se trataron distintos algoritmos de
+recuperación y sus respectivas estrategias de indexación. Allí, el debate
+asumía que los documentos ya se habían dividido en fragmentos
+manejables. En esta sección, hablaré de diferentes estrategias de
+fragmentación. Es importante tenerla en cuenta, ya que la estrategia de
+fragmentación que se utilice puede influir significativamente en el
+rendimiento del sistema de recuperación.

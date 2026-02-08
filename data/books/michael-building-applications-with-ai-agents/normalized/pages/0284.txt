@@ -1,0 +1,25 @@
+Quality instrumentation is key: compare traces, metrics (accuracy, latency), and out‐
+puts rigorously. Triangulate discrepancies to separate breakthroughs from bugs.
+Challenges arise in HITL-dependent agents (e.g., those querying users for approvals)
+-shadows can't interact without exposure risks. Simulate responses via historical
+replays or synthetics, or hybridize with staging or A/B testing for interactive flows.
+In essence, shadows build confidence quietly, validating in the wild minus the stakes.
+A/B Testing
+If shadows are about observing from the sidelines, A/B testing thrusts variants into
+the spotlight-splitting live traffic between control (A) and treatment (B) versions for
+head-to-head showdowns. Users interact with one or the other, yielding quantifiable
+wins on metrics like task success in a collaborative agent swarm or reduced hallucina‐
+tions in responses. This shines for measurable tweaks, such as running an A/B on
+prompt variants to optimize user satisfaction in real-time chats, where shadows might
+miss subtle engagement shifts. As seen in Figure 11-4, a common setup for A/B test‐
+ing involves randomly assigning users to different agent variants to enable direct,
+real-world comparisons.
+Figure 11-4. A/B testing for agent configurations, where users are split evenly (50/50)
+between two variations of an agent (A and B) to evaluate performance differences based
+on live interactions.
+This balanced allocation ensures fair exposure and reliable metrics, enabling teams to
+confidently identify which variant performs better in practical scenarios. Strengths of
+A/B testing include:
+262
+|
+Chapter 11: Improvement Loops

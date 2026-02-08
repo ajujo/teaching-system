@@ -1,0 +1,32 @@
+Para proteger a sus usuarios y a sí mismos de posibles demandas, los
+proveedores de modelos utilizan barreras de seguridad, como bloquear
+solicitudes de contar chistes racistas o generar fotos de personas reales. Los
+modelos patentados tienden más a pecar de exceso de censura. Estas
+barreras de seguridad son buenas para la gran mayoría de los casos de uso,
+pero pueden ser un factor limitante para algunos. Por ejemplo, si su
+aplicación requiere generar caras reales (por ejemplo, para ayudar en la
+producción de un vídeo musical), un modelo que se niegue a generar caras
+reales no funcionará. Una empresa a la que asesoro, Convai, construye
+personajes tridimensionales de inteligencia artificial que pueden interactuar
+en entornos tridimensionales, incluso recoger objetos. Al trabajar con
+modelos comerciales, se encontraron con el problema de que los modelos
+no dejaban de responder: "Como modelo de IA, no puedo hacer nada
+físicamente". Convai acabó afinando modelos de código abierto.
+También existe el riesgo de perder el acceso a un modelo comercial, lo que
+puede ser molesto si ha construido su sistema en torno a él. No se puede
+congelar un modelo comercial como se hace con los modelos de código
+abierto. Históricamente, los modelos comerciales carecen de transparencia
+en cuanto a cambios de modelo, versiones y hojas de ruta. Los modelos se
+actualizan con frecuencia, pero no todos los cambios se anuncian con
+antelación o ni siquiera se anuncian. Puede que sus prompts dejen de
+funcionar como esperaba y usted no se entere. Los cambios impredecibles
+también hacen que los modelos comerciales sean inutilizables para
+aplicaciones estrictamente reguladas. Sin embargo, sospecho que esta
+histórica falta de transparencia en los cambios en los modelos podría ser
+solo un efecto secundario involuntario de una industria en rápido
+crecimiento. Espero que esto cambie a medida que madure el sector.
+Una situación menos común que desgraciadamente existe es que un
+proveedor de modelos puede dejar de dar soporte a su caso de uso, su
+industria o su país, o su país puede prohibir su proveedor de modelos, como
+Italia prohibió brevemente OpenAI en 2023. Un proveedor de modelos
+también puede simplemente cerrar como empresa.

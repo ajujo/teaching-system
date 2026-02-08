@@ -1,0 +1,39 @@
+Chapter 4
+151
+    context = "\n\n".join([doc.page_content for doc in retrieved_docs])
+
+The function above begins our verification process by accepting the retrieved documents and
+generated answers as inputs. It initializes a language model for verification if one isn't provided
+and combines all document content into a single context string. Next, we'll define the verification
+prompt that instructs the LLM to perform a detailed fact-checking analysis:
+    # Define verification prompt - fixed to avoid JSON formatting issues
+in the template
+    verification_prompt = ChatPromptTemplate.from_template("""
+    As a fact-checking assistant, verify whether the following answer is
+fully supported
+    by the provided context. Identify any statements that are not
+supported or contradict the context.
+
+    Context:
+    {context}
+
+    Answer to verify:
+    {answer}
+
+    Perform a detailed analysis with the following structure:
+    1. List any factual claims in the answer
+    2. For each claim, indicate whether it is:
+       - Fully supported (provide the supporting text from context)
+       - Partially supported (explain what parts lack support)
+       - Contradicted (identify the contradiction)
+       - Not mentioned in context
+    3. Overall assessment: Is the answer fully grounded in the context?
+
+    Return your analysis in JSON format with the following structure:
+    {{
+      "claims": [
+        {{
+          "claim": "The factual claim",
+          "status": "fully_supported|partially_supported|contradicted|not_
+mentioned",
+          "evidence": "Supporting or contradicting text from context",

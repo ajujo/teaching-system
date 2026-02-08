@@ -1,0 +1,36 @@
+Understanding the LLM Twin Concept and Architecture
+20
+The characteristics of the FTI pattern are already present.
+Here are some custom properties of the LLM Twin's feature pipeline:
+•
+It processes three types of data differently: articles, posts, and code
+•
+It contains three main processing steps necessary for fine-tuning and RAG: cleaning,
+chunking, and embedding
+•
+It creates two snapshots of the digital data, one after cleaning (used for fine-tuning) and
+one after embedding (used for RAG)
+•
+It uses a logical feature store instead of a specialized feature store
+Let's zoom in on the logical feature store part a bit. As with any RAG-based system, one of the
+central pieces of the infrastructure is a vector DB. Instead of integrating another DB, more concretely, a specialized feature store, we used the vector DB, plus some additional logic to check all
+the properties of a feature store our system needs.
+The vector DB doesn't offer the concept of a training dataset, but it can be used as a NoSQL DB.
+This means we can access data points using their ID and collection name. Thus, we can easily
+query the vector DB for new data points without any vector search logic. Ultimately, we will
+wrap the retrieved data into a versioned, tracked, and shareable artifact-more on artifacts in
+Chapter 2. For now, you must know it is an MLOps concept used to wrap data and enrich it with
+the properties listed before.
+How will the rest of the system access the logical feature store? The training pipeline will use the
+instruct datasets as artifacts, and the inference pipeline will query the vector DB for additional
+context using vector search techniques.
+For our use case, this is more than enough because of the following reasons:
+•
+The artifacts work great for offline use cases such as training
+•
+The vector DB is built for online access, which we require for inference.
+In future chapters, however, we will explain how the three data categories (articles, posts, and
+code) are cleaned, chunked, and embedded.
+To conclude, we take in raw article, post, or code data points, process them, and store them in
+a feature store to make them accessible to the training and inference pipelines. Note that trimming all the complexity away and focusing only on the interface is a perfect match with the FTI
+pattern. Beautiful, right?

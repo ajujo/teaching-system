@@ -1,0 +1,32 @@
+Chapter 8
+311
+5.	
+Once it’s done, your quantized model is ready. You can download it locally, or upload it 
+to the Hugging Face Hub using the following code:
+from huggingface_hub import create_repo, HfApi
+hf_token = "" # Specify your token
+username = "" # Specify your username
+api = HfApi()
+# Create empty repo
+create_repo(
+    repo_id = f"{username}/{MODEL_NAME}-GGUF",
+    repo_type="model",
+    exist_ok=True,
+    token=hf_token
+)
+# Upload gguf files
+api.upload_folder(
+    folder_path=MODEL_NAME,
+    repo_id=f"{username}/{MODEL_NAME}-GGUF",
+    allow_patterns=f"*.gguf",
+    token=hf_token
+)
+GGUF models can be used with backends such as llama-cpp-python and frameworks like Lang-
+Chain. This is useful if you want to integrate a quantized model into a broader system. You can 
+also directly chat with the model using frontends, like llama.cpp’s lightweight server, LM Studio, 
+and the Text Generation Web UI. These tools enable easy interaction with the GGUF models, 
+providing an experience similar to ChatGPT.
+Quantization with GPTQ and EXL2
+While GGUF and llama.cpp offer CPU inference with GPU offloading, GPTQ and EXL2 are two 
+quantization formats dedicated to GPUs. This makes them both faster than llama.cpp during 
+inference. In particular, EXL2 offers the highest throughput with its dedicated library, ExLlamaV2.

@@ -1,0 +1,52 @@
+tabla 4-2. Instrucciones verificables automáticamente propuestas por Zhou
+et al. para evaluar la capacidad de seguimiento de instrucciones de los
+modelos. Tabla extraída del documento IFEval, disponible bajo licencia CC
+BY 4.0.
+Grupo de
+instrucciones
+Instrucción
+Descripción
+Palabras clave
+Incluir palabras
+clave
+Incluye las palabras clave
+{keyword1}, {keyword2} en la
+respuesta.
+Palabras clave
+Frecuencia de
+palabras clave
+En la respuesta, la palabra
+{word} debe aparecer {N}
+veces.
+Palabras clave
+Palabras
+prohibidas
+No incluyas las palabras clave
+{forbidden words} en la
+respuesta.
+Palabras clave
+Frecuencia de
+letras
+En la respuesta, la letra {letter}
+debe aparecer {N} veces.
+Idioma
+Lenguaje de
+respuesta
+Toda la respuesta debe estar en
+{language}; no se permite
+ningún otro idioma.
+Restricciones de
+longitud
+Número de
+párrafos
+La respuesta debe contener {N}
+párrafos. Se separan los
+párrafos con el separador de
+marcado: ***
+Restricciones de
+longitud
+Número de
+palabras
+Responde con al
+menos/alrededor de/como
+máximo {N} palabras.

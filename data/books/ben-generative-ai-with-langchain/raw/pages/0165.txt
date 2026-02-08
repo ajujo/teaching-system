@@ -1,0 +1,30 @@
+Building Intelligent RAG Systems
+138
+This diagram (from the LangChain documentation) illustrates this relationship.
+Figure 4.3: The relationship between query, retriever, and documents
+LangChain offers a rich ecosystem of retrievers, each designed to solve specific information re­
+trieval challenges.
+LangChain retrievers
+The retrievers can be broadly categorized into a few key groups that serve different use cases and 
+implementation needs:
+•	
+Core infrastructure retrievers include both self-hosted options like ElasticsearchRetriever 
+and cloud-based solutions from major providers like Amazon, Google, and Microsoft.
+•	
+External knowledge retrievers tap into external and established knowledge bases. Arx­
+ivRetriever, WikipediaRetriever, and TavilySearchAPI stand out here, offering direct access 
+to academic papers, encyclopedia entries, and web content respectively.
+•	
+Algorithmic retrievers include several classic information retrieval methods. The BM25 
+and TF-IDF retrievers excel at lexical search, while kNN retrievers handle semantic sim­
+ilarity searches. Each of these algorithms brings its own strengths – BM25 for keyword 
+precision, TF-IDF for document classification, and kNN for similarity matching.
+•	
+Advanced/Specialized retrievers often address specific performance requirements or 
+resource constraints that may arise in production environments. LangChain offers spe­
+cialized retrievers with unique capabilities. NeuralDB provides CPU-optimized retrieval, 
+while LLMLingua focuses on document compression.
+•	
+Integration retrievers connect with popular platforms and services. These retrievers, 
+like those for Google Drive or Outline, make it easier to incorporate existing document 
+repositories into your RAG application.

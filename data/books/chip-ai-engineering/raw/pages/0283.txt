@@ -1,0 +1,32 @@
+¿Permite la licencia el uso comercial? Cuando Meta lanzó su
+primer modelo de Llama, lo hizo bajo una licencia no comercial.
+Si permite el uso comercial, ¿hay alguna restricción? Llama-2 y
+Llama-3 especifican que las aplicaciones con más de 700 millones
+de usuarios activos mensuales requieren una licencia especial de
+Meta. 11
+¿Permite la licencia utilizar los outputs del modelo para entrenar o
+mejorar otros modelos? Los datos sintéticos, generados por los
+modelos existentes, son una fuente importante de datos para
+entrenar futuros modelos (analizados junto con otros temas de
+síntesis de datos en el Capítulo 8). Un caso de uso de la síntesis de
+datos es la destilación de modelos: enseñar a un a imitar el
+comportamiento de un maestro (normalmente un modelo mucho
+mayor). Mistral no lo permitía originalmente, pero más tarde
+cambió su licencia. En el momento de escribir estas líneas, las
+licencias de Llama siguen sin permitirlo. 12
+Algunas personas utilizan el término ponderación restringida para referirse
+a los modelos de código abierto con licencias restringidas. Sin embargo,
+este término me parece ambiguo, ya que todas las licencias sensatas tienen
+restricciones (por ejemplo, no se debería poder utilizar el modelo para
+cometer genocidio).
+Modelos de código abierto frente a API de modelos
+Para que un modelo sea accesible a los usuarios, es necesario que una
+máquina lo aloje y lo ejecute. El servicio que aloja el modelo y recibe las
+consultas de los usuarios, ejecuta el modelo para generar respuestas a las
+consultas y devuelve estas respuestas a los usuarios se denomina servicio de
+inferencia. La interfaz con la que interactúan los usuarios se denomina API
+del modelo, como se muestra en la Figura 4-6. El término API de modelos
+se utiliza normalmente para referirse a la API del servicio de inferencia,
+pero también existen API para otros servicios de modelos, como las API de
+afinado y las API de evaluación. En el Capítulo 9 se explica cómo optimizar
+los servicios de inferencia.

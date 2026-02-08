@@ -1,0 +1,19 @@
+Conclusion
+You don't need a 30-page plan to start building a good agent system-but a little fore‐
+sight goes a long way. As we saw with our ecommerce support agent, picking a tracta‐
+ble slice-like canceling orders-lets you build something small, testable, and
+immediately useful. Define what success looks like, avoid vague or over-scoped ambi‐
+tions, and focus on delivering clear value quickly.
+Effective agent systems are more than a sum of their parts. They depend on strong
+architecture, disciplined engineering, and tight feedback loops. Choosing the right
+structural pattern sets the stage for scalability and resilience, while iterative develop‐
+ment and robust evaluation ensure your agents improve over time. Best practices like
+phased rollouts and real-world testing turn promising prototypes-like our simple
+cancel order agent-into reliable systems that can be trusted in production.
+In Chapter 3, we shift focus to the human side of the equation-how to design agent
+experiences that are clear, responsive, and intuitive for the people who rely on them.
+Ultimately, no matter how powerful your system architecture, its success depends on
+how it lands in human hands.
+Conclusion
+|
+39

@@ -1,0 +1,33 @@
+Chapter 9
+337
+We import the CrossEncoder class from the sentence_transformers library, which provides the 
+functionality for scoring text pairs. We also import SingletonMeta from our base module to en-
+sure our model class follows the singleton pattern, meaning only one instance of the model exists 
+throughout the application. Now, we define the CrossEncoderModelSingleton class:
+class CrossEncoderModelSingleton(metaclass=SingletonMeta):
+    def __init__(
+        self,
+        model_id: str = settings.RERANKING_CROSS_ENCODER_MODEL_ID,
+        device: str = settings.RAG_MODEL_DEVICE,
+    ) -> None:
+        """
+        A singleton class that provides a pre-trained cross-encoder model 
+for scoring pairs of input text.
+        """
+        self._model_id = model_id
+        self._device = device
+        self._model = CrossEncoder(
+            model_name=self._model_id,
+            device=self._device,
+        )
+        self._model.model.eval()
+This class initializes the cross-encoder model using the specified model_id and device from the 
+global settings loaded from the .env file. We set the model to evaluation mode using self._
+model.model.eval() to ensure the model is ready for inference.
+The CrossEncoderModelSingleton class includes a callable method to score text pairs:
+    def __call__(self, pairs: list[tuple[str, str]], to_list: bool = True) 
+-> NDArray[np.float32] | list[float]:
+        scores = self._model.predict(pairs)
+        if to_list:
+            scores = scores.tolist()
+        return scores

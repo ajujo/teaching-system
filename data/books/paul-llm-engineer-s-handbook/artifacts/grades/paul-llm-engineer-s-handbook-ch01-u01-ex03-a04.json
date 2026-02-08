@@ -1,0 +1,52 @@
+{
+  "$schema": "grade_report_v1",
+  "attempt_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-a04",
+  "exercise_set_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03",
+  "unit_id": "paul-llm-engineer-s-handbook-ch01-u01",
+  "book_id": "paul-llm-engineer-s-handbook",
+  "graded_at": "2026-02-02T16:47:25.009384+00:00",
+  "provider": "lmstudio",
+  "model": "qwen3-32b",
+  "mode": "mixed",
+  "strict": false,
+  "grading_time_ms": 103,
+  "results": [
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q01",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es (2): Permiten personalización del dominio y flujos de trabajo específicos mediante pipelines FTI.. Los LLM Twins se destacan por permitir personalización específica de dominios utilizando pipelines FTI (Feature/Training/Inference) que optimizan el flujo de datos y la capacidad de entrenamiento, a diferencia de chatbots genéricos como ChatGPT. Esto se explica en las páginas 5-7 del capítulo.",
+      "expected_answer": "2: Permiten personalización del dominio y flujos de trabajo específicos mediante pipelines FTI.",
+      "given_answer": "(sin respuesta)",
+      "correct_option_text": "Permiten personalización del dominio y flujos de trabajo específicos mediante pipelines FTI.",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q02",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "Incorrecto. La respuesta correcta es: Verdadero. Sí es correcto. La página 15 menciona explícitamente los beneficios de la arquitectura FTI, incluyendo la reutilización de componentes entre pipelines y el diseño modular que optimiza recursos.",
+      "expected_answer": "Verdadero",
+      "given_answer": "(sin respuesta)",
+      "grading_path": "auto"
+    },
+    {
+      "exercise_id": "paul-llm-engineer-s-handbook-ch01-u01-ex03-q03",
+      "is_correct": false,
+      "score": 0.0,
+      "feedback": "No se proporcionó una respuesta.",
+      "expected_answer": "Pipeline de características (feature), pipeline de entrenamiento y pipeline de inferencia",
+      "given_answer": "(sin respuesta)",
+      "grading_path": "auto",
+      "confidence": 1.0
+    }
+  ],
+  "summary": {
+    "total_questions": 3,
+    "correct_count": 0,
+    "total_score": 0.0,
+    "max_score": 4,
+    "percentage": 0.0,
+    "passed": false
+  }
+}

@@ -1,0 +1,41 @@
+The Rise of Generative AI: From Language Models to Agents
+10
+6.	
+Computational costs and efficiency challenges: Deploying and running LLMs at scale 
+requires significant computational resources, making them costly and energy-intensive. 
+Larger models can also introduce latency, slowing response times in real-time applications.
+To overcome these limitations, AI systems must evolve from passive text generators into active 
+agents that can plan, reason, and interact with their environment. This is where agentic AI comes 
+in—integrating LLMs with tool use, decision-making mechanisms, and autonomous execution 
+capabilities to enhance their functionality.
+While frameworks like LangChain provide comprehensive solutions to LLM limitations, un­
+derstanding fundamental prompt engineering techniques remains valuable. Approaches like 
+few-shot learning, chain-of-thought, and structured prompting can significantly enhance model 
+performance for specific tasks. Chapter 3 will cover these techniques in detail, showing how 
+LangChain helps standardize and optimize prompting patterns while minimizing the need for 
+custom prompt engineering in every application.
+The next section explores how agentic AI extends the capabilities of traditional LLMs and unlocks 
+new possibilities for automation, problem-solving, and intelligent decision-making.
+Understanding LLM applications
+LLM applications represent the bridge between raw model capability and practical business 
+value. While LLMs possess impressive language processing abilities, they require thoughtful 
+integration to deliver real-world solutions. These applications broadly fall into two categories: 
+complex integrated applications and autonomous agents.
+Complex integrated applications enhance human workflows by integrating LLMs into existing 
+processes, including:
+•	
+Decision support systems that provide analysis and recommendations
+•	
+Content generation pipelines with human review
+•	
+Interactive tools that augment human capabilities
+•	
+Workflow automation with human oversight
+Autonomous agents operate with minimal human intervention, further augmenting workflows 
+through LLM integration. Examples include:
+•	
+Task automation agents that execute defined workflows
+•	
+Information gathering and analysis systems
+•	
+Multi-agent systems for complex task coordination

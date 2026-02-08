@@ -1,0 +1,11 @@
+12  Dado que la mayoría de los flujos de trabajo de los agentes son lo
+suficientemente complejos como para implicar a varios componentes, la mayoría
+de los agentes son multiagente.
+13  Chameleon (Lu et al., 2023) llama a este traductor "generador de programas".
+14  Esto me recuerda al método del agente actor-crítico (AC) (Konda y Tsitsiklis,
+1999) en el aprendizaje por refuerzo.
+15  En el caso de las conversaciones humanas, puede ocurrir lo contrario si los
+primeros mensajes son de cortesía.
+16  Las estrategias basadas en el uso (como eliminar la información que se utiliza
+con menos frecuencia) son más complicadas, ya que se necesita una forma de
+saber cuándo un modelo utiliza una determinada información.

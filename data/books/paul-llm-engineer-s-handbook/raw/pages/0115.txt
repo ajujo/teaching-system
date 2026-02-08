@@ -1,0 +1,31 @@
+Data Engineering
+84
+    exclude_unset = kwargs.pop("exclude_unset", False)
+    by_alias = kwargs.pop("by_alias", True)
+    parsed = self.model_dump(exclude_unset=exclude_unset, by_alias=by_
+alias, **kwargs)
+    if "_id" not in parsed and "id" in parsed:
+        parsed["_id"] = str(parsed.pop("id"))
+    for key, value in parsed.items():
+        if isinstance(value, uuid.UUID):
+            parsed[key] = str(value)
+    return parsed
+The save() method allows an instance of the model to be inserted into a MongoDB collection. It 
+retrieves the appropriate collection, converts the instance into a MongoDB-compatible document 
+leveraging the to_mongo() method described above, and attempts to insert it into the database, 
+handling any write errors that may occur:
+def save(self: T, **kwargs) -> T | None:
+    collection = _database[self.get_collection_name()]
+    try:
+        collection.insert_one(self.to_mongo(**kwargs))
+        return self
+    except errors.WriteError:
+        logger.exception("Failed to insert document.")
+        return None
+The get_or_create() class method attempts to find a document in the database matching the 
+provided filter options. If a matching document is found, it is converted into an instance of the class. 
+If not, a new instance is created with the filter options as its initial data and saved to the database:
+@classmethod
+def get_or_create(cls: Type[T], **filter_options) -> T:
+    collection = _database[cls.get_collection_name()]
+    try:

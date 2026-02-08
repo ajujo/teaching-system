@@ -1,0 +1,14 @@
+Chapter 4
+175
+•	
+Monigatti, L. (2024b, February 19). Advanced Retrieval-Augmented Generation: From Theory 
+to LlaMaIndex Implementation. Medium. https://towardsdatascience.com/advanced-
+retrieval-augmented-generation-from-theory-to-llamaindex-implementation-
+4de1464a9930
+•	
+Maameri, S. (2024, May 10). Routing in RAG-Driven applications - towards data science. 
+Medium. https://towardsdatascience.com/routing-in-rag-driven-applications-
+a685460a7220
+Join our book’s Discord space
+Join our community’s Discord space for discussions with the authors and other readers:
+https://packt.link/llmeng

@@ -1,0 +1,10 @@
+Chapter 4
+103
+Figure 4.1: Vanilla RAG architecture
+You must implement RAG in your generative AI application when you need access to any type of 
+external information. For example, when implementing a financial assistant, you most likely need 
+access to the latest news, reports, and prices before providing valuable answers. Or, if you build 
+a traveling recommender, you must retrieve and parse a list of potential attractions, restaurants, 
+and activities. At training time, LLMs don’t have access to your specific data, so you will often 
+have to implement a RAG strategy in your generative AI project. Now, let’s dig into the ingestion, 
+retrieval, and generation pipelines.

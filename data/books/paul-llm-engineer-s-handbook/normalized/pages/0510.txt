@@ -1,0 +1,49 @@
+Index
+Symbols
+4-bit NormalFloat (NF4) 215
+32-bit floating point (fp32) 211, 212
+A
+acceptance tests 462
+actions 435
+Activate-aware Weight
+Quantization (AWQ) 313
+advanced RAG
+overview 117, 118
+post-retrieval step 124-126
+pre-retrieval steps 119-122
+retrieval step 122-124
+advanced RAG post-retrieval optimization
+reranking 334-338
+advanced RAG pre-retrieval
+optimizations 324
+query expansion 324-328
+self-querying 328-332
+advanced RAG retrieval optimization
+filtered vector search 332-334
+advanced RAG techniques
+exploring 321-324
+post-retrieval optimization 334-338
+pre-retrieval optimizations 324-332
+retrieval optimization 332-334
+alerting system 455, 456
+alerts 471
+AlpacaEval 264
+Amazon Resource Name (ARN) 373
+Application Auto Scaling 394, 395
+Application Load Balancer (ALB) 394
+asynchronous inference 359, 360
+autoscaling 392, 397
+scalable policy, creating 395
+scalable target, registering 394
+use cases 393
+AWS
+access key, setting up 48-50
+account, setting up 48-50
+CLI, setting up 48-50
+preparing 48
+SageMaker 50
+AWS Elastic Container Service (ECS) 391
+AWS Elastic Kubernetes Service (EKS) 391
+AWS SageMaker 50
+LLM Twin model, deploying to 373-384
+need for 51, 52

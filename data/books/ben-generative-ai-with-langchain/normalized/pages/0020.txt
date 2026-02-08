@@ -1,0 +1,34 @@
+Preface
+xix
+Chapter 5, Building Intelligent Agents, tackles tool use fragility-identified as a core bottleneck
+in agent autonomy. You'll implement the ReACT pattern to improve agent reasoning and deci­
+sion-making, develop robust custom tools, and build error-resilient tool calling processes. Through
+practical examples like generating structured outputs and building a research agent, you'll under­
+stand what agents are and implement your first plan-and-solve agent with LangGraph, setting
+the stage for more advanced agent architectures.
+Chapter 6, Advanced Applications and Multi-Agent Systems, covers architectural patterns for agentic
+AI applications. You'll explore multi-agent architectures and ways to organize communication
+between agents, implementing an advanced agent with self-reflection that uses tools to an­
+swer complex questions. The chapter also covers LangGraph streaming, advanced control flows,
+adaptive systems with humans in the loop, and the Tree-of-Thoughts pattern. You'll learn about
+memory mechanisms in LangChain and LangGraph, including caches and stores, equipping you
+to create systems capable of tackling problems too complex for single-agent approaches-a key
+capability of production-ready systems.
+Chapter 7, Software Development and Data Analysis Agents, demonstrates how natural language has
+become a powerful interface for programming and data analysis. You'll implement LLM-based
+solutions for code generation, code retrieval with RAG, and documentation search. These examples
+show how to integrate LLM agents into existing development and data workflows, illustrating
+how they complement rather than replace traditional programming skills.
+Chapter 8, Evaluation and Testing, outlines methodologies for assessing LLM applications before
+production deployment. You'll learn about system-level evaluation, evaluation-driven design,
+and both offline and online methods. The chapter provides practical examples for implementing
+correctness evaluation using exact matches and LLM-as-a-judge approaches and demonstrates
+tools like LangSmith for comprehensive testing and monitoring. These techniques directly increase
+reliability and help justify the business value of your LLM applications.
+Chapter 9, Observability and Production Deployment, provides guidelines for deploying LLM appli­
+cations into production, focusing on system design, scaling strategies, monitoring, and ensuring
+high availability. The chapter covers logging, API design, cost optimization, and redundancy
+strategies specific to LLMs. You'll explore the Model Context Protocol (MCP) and learn how to
+implement observability practices that address the unique challenges of deploying generative AI
+systems. The practical deployment patterns in this chapter help you avoid common pitfalls that
+prevent many LLM projects from reaching production.

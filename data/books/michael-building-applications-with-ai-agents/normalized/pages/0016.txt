@@ -1,0 +1,35 @@
+illustrated with real-world case studies, supported by references, and reviewed by
+practitioners in the field. Sections on advanced topics-like agent architectures, tool
+integration, memory systems, orchestration, multiagent coordination, measurement,
+monitoring, security, and ethical considerations-are further refined by expert input.
+Writing this book has been a journey of discovery for me as well. The initial drafts
+sparked conversations that challenged my views and introduced new ideas. I hope
+this process continues as you read it, bringing your own insights. Feel free to share
+any feedback you might have for this book via Twitter (X), LinkedIn, my personal
+website, or any other channels that you can find.
+What This Book Is About
+This book provides a practical framework for building robust applications using AI
+agents. It addresses key challenges and offers solutions to questions such as:
+• What defines an AI agent, and when should I use one? How do agents differ from
+traditional machine learning (ML) systems?
+• How do I design agent architectures for specific use cases, including scenario
+selection, and core components like tools, memory, planning, and orchestration?
+• What are effective strategies for agent planning, reasoning, execution, tool selec‐
+tion, and topologies like chains, trees, and graphs?
+• How can I enable agents to learn from experience through nonparametric meth‐
+ods, fine-tuning, and transfer learning?
+• How do I scale from single-agent to multiagent systems, including coordination
+patterns like democratic, hierarchical, or actor-critic approaches?
+• How do I evaluate and improve agent performance with metrics, testing, and
+production monitoring?
+• What tools and frameworks are best for development, deployment, and securing
+agents against risks?
+• How do I ensure agents are safe, ethical, and scalable, with considerations for
+user experience (UX), trust, bias, fairness, and regulatory compliance?
+The content draws from established engineering principles and emerging practices in
+AI agents, with case studies (such as customer support, personal assistants, legal,
+advertising, and code review agents) and discussions on trade-offs to help you tailor
+solutions to your needs.
+xiv
+|
+Preface

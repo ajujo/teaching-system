@@ -1,0 +1,34 @@
+Para evaluar si un modelo tiene las capacidades necesarias, puede basarse
+en pruebas comparativas específicas del sector, ya sean públicas o privadas.
+Se han introducido miles de pruebas comparativas públicas para evaluar
+capacidades aparentemente infinitas, como la generación de código, la
+depuración de código, las matemáticas de primaria, los conocimientos
+científicos, el sentido común, el razonamiento, los conocimientos jurídicos,
+el uso de herramientas, el juego, etc. La lista continúa.
+Las capacidades específicas de un dominio suelen evaluarse mediante una
+evaluación exacta. Las capacidades relacionadas con la codificación suelen
+evaluarse mediante la corrección funcional, como se explica en el
+Capítulo 3. Aunque la corrección funcional es importante, puede que no sea
+el único aspecto que le preocupe. Puede que también le preocupen la
+eficiencia y el costo. Por ejemplo, ¿le gustaría tener un coche que funciona
+pero consume una cantidad excesiva de combustible? Del mismo modo, si
+una consulta SQL generada por su modelo de texto a SQL es correcta pero
+tarda demasiado o requiere demasiada memoria para ejecutarse, puede que
+no sea utilizable.
+La eficiencia puede evaluarse exactamente midiendo el tiempo de ejecución
+o el uso de memoria. BIRD-SQL (Li et al., 2023) es un ejemplo de prueba
+comparativa que tiene en cuenta no solo la precisión de ejecución de la
+consulta generada, sino también su eficiencia, que se mide comparando el
+tiempo de ejecución de la consulta generada con el tiempo de ejecución de
+la consulta SQL real.
+También es posible que le preocupe la legibilidad del código. Si el código
+generado funciona pero nadie puede entenderlo, será difícil mantenerlo o
+incorporarlo a un sistema. No existe una forma obvia de evaluar con
+exactitud la legibilidad del código, por lo que es posible que tenga que
+recurrir a una evaluación subjetiva, como por ejemplo mediante jueces de
+IA.
+Las capacidades de dominio aparte de la codificación suelen evaluarse con
+tareas cerradas, como preguntas de opción múltiple. Los outputs cerrados
+son más fáciles de verificar y reproducir. Por ejemplo, si quiere evaluar la
+capacidad de un modelo para hacer cálculos matemáticos, un enfoque
+abierto es pedirle que genere la solución a un problema dado. Un enfoque

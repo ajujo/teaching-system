@@ -1,0 +1,33 @@
+$2/h en computación y su throughput es de 100 tokens/s, cuesta alrededor
+de $5556 por 1 M de tokens de output. Si cada solicitud genera 200 tokens
+de output en promedio, el costo de decodificación de 1000 solicitudes sería
+de $1.11.
+El costo del llenado previo puede calcularse de forma similar. Si su
+hardware cuesta $2 por hora y puede precargar 100 solicitudes por minuto,
+el costo de precargar 1000 solicitudes sería de $0.33.
+El costo total por solicitud es la suma de los costos de llenado previo y
+decodificación. En este ejemplo, el costo total para 1000 solicitudes sería de
+$1.11 + $0.33 = $1.44.
+Lo que se considera un buen throughput depende del modelo, el hardware y
+la carga de trabajo. Los modelos más pequeños y los chips de gama más
+alta suelen ofrecer un mayor throughput. Las cargas de trabajo con
+longitudes de input y output constantes son más fáciles de optimizar que las
+cargas de trabajo con longitudes variables.
+Incluso para modelos, hardware y cargas de trabajo de tamaño similar, las
+comparaciones directas de throughput podrían ser solo aproximadas, ya que
+el recuento de tokens depende de lo que constituya un token, y los distintos
+modelos tienen distintos tokenizadores. Es mejor comparar la eficiencia de
+los servidores de inferencia utilizando métricas como el costo por solicitud.
+Al igual que la mayoría de las demás aplicaciones de software, las
+aplicaciones de IA tienen la disyuntiva latencia/throughput. Técnicas como
+la agrupación por lotes pueden mejorar el throughput pero empeorar la
+latencia. Según el equipo de IA de LinkedIn en su reflexión tras un año de
+implementación de productos de IA generativa (LinkedIn, 2024), no es raro
+duplicar o triplicar el throughput si se está dispuesto a sacrificar TTFT y
+TPOT.
+Debido a esta concesión, centrarse en un servicio de inferencia basándose
+únicamente en su throughput y costo puede dar lugar a una mala
+experiencia de usuario. En su lugar, algunos equipos se centran en el
+goodput, una métrica adaptada de las redes para aplicaciones LLM. El
+goodput mide el número de solicitudes por segundo que satisface el SLO, u
+objetivo a nivel de software.

@@ -1,0 +1,34 @@
+Using the square root to transform variables
+95
+We plotted the histogram and Q-Q plot of the AveOccup variable, which showed a heavy right-
+skewed distribution; most of its values were at the left of the histogram and they deviated from the 
+45-degree line toward the right end of the distribution in the Q-Q plot.
+To carry out the reciprocal transformation, we applied np.reciprocal() to the variable. After the 
+transformation, AveOccup’s values were more evenly distributed across the value range and followed 
+the theoretical quantiles of the normal distribution in the Q-Q plot more closely.
+Next, we used np.reciprocal() with scikit-learn’s FunctionTransformer(). The 
+transform() method applied np.reciprocal() to the dataset.
+Note
+To restrict the effect of FunctionTransformer() to a group of variables, use the 
+ColumnTransformer(). To change the output to a pandas DataFrame, set the transform 
+output to pandas.
+Finally, we used Feature-engine’s ReciprocalTransformer() to specifically modify one variable. 
+With fit(), the transformer checked that the variable was numerical. With transform(), the 
+transformer applied np.reciprocal() under the hood to transform the variable.
+Feature-engine’s ReciprocalTransformer() provides functionality to revert the variable to its 
+original representation out of the box via the inverse_transform() method.
+Note
+Using the transformers from scikit-learn or Feature-engine, instead of NumPy’s reciprocal() 
+function, allows us to apply the reciprocal function as an additional step of a feature engineering 
+pipeline within the Pipeline object from scikit-learn.
+The difference between FunctionTransformer() and ReciprocalTransformer() is that 
+the first one can apply any user-specified transformation, whereas the latter only applies the reciprocal 
+function. scikit-learn returns NumPy arrays by default and transforms all variables in the dataset. 
+Feature-engine’s transformer, on the other hand, returns pandas DataFrames and can modify subsets 
+of variables within the data without using additional classes.
+Using the square root to transform variables
+The square root transformation, √x, as well as its variations, the Anscombe transformation, √(x+3/8), 
+and the Freeman-Tukey transformation,  √x + √(x+1), are variance stabilizing transformations that 
+transform a variable with a Poisson distribution into one with an approximately standard Gaussian 
+distribution. The square root transformation is a form of power transformation where the exponent 
+is 1/2 and is only defined for positive values.

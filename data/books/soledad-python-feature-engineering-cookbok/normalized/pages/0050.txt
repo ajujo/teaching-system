@@ -1,0 +1,31 @@
+Implementing forward and backward fill
+27
+Note
+Feature-engine transformations return DataFrames respecting the original names and order
+of the variables. Scikit-learn's ColumnTransformer(), on the other hand, changes the
+variable's names and order in the resulting data.
+Finally, we added missing indicators and replaced missing data with the mean and most frequent
+category using scikit-learn. We lined up two instances of SimpleImputer(), the first to
+impute data with the mean and the second to impute data with the most frequent category. In both
+cases, we set the add_indicator parameter to True to add the missing indicators. We wrapped
+SimpleImputer() with ColumnTransformer() to specifically modify numerical or categorical
+variables. Then we used the fit() and transform() methods from the pipeline to train the
+transformers and then add the indicators and replace the missing data.
+When returning DataFrames, ColumnTransformer() changes the names of the variables and
+their order. Take a look at the result from step 15 by executing X_train_t.head(). You'll see that
+the name given to each step of the pipeline is added as a prefix to the variables to flag which variable
+was modified with each transformer. Then, num_imputer__A2 was returned by the first step of
+the pipeline, while cat_imputer__A12 was returned by the second step of the pipeline.
+There's more...
+Scikit-learn has the MissingIndicator() transformer that just adds missing indicators. Check it
+out in the documentation: https://scikit-learn.org/stable/modules/generated/
+sklearn.impute.MissingIndicator.html and find an example in the accompanying
+GitHub repository at https://github.com/PacktPublishing/Python-Featureengineering-Cookbook-Third-Edition/blob/main/ch01-missing-dataimputation/Recipe-06-Marking-imputed-values.ipynb.
+Implementing forward and backward fill
+Time series data also show missing values. To impute missing data in time series, we use specific
+methods. Forward fill imputation involves filling missing values in a dataset with the most recent
+non-missing value that precedes it in the data sequence. In other words, we carry forward the last
+seen value to the next valid value. Backward fill imputation involves filling missing values with the
+next non-missing value that follows it in the data sequence. In other words, we carry the last valid
+value backward to its preceding valid value.
+In this recipe, we will replace missing data in a time series with forward and backward fills.

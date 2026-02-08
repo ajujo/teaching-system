@@ -1,0 +1,35 @@
+Extracting Features from Text Variables
+344
+There’s more...
+We can check out the distribution of the features extracted from text in each of the 20 different news 
+topics present in the dataset by using visualizations.
+To make histogram plots of the newly created features, after you run all of the steps in the How it 
+works... section of this recipe, follow these steps:
+1.	
+Import matplotlib:
+import matplotlib.pyplot as plt
+2.	
+Add the target with the news topics to the 20 Newsgroup DataFrame:
+df['target'] = data.target
+3.	
+Create a function that displays a histogram of a feature of your choice for each of the news topics:
+def plot_features(df, text_var):
+    nb_rows = 5
+    nb_cols = 4
+    fig, axs = plt.subplots(
+        nb_rows, nb_cols,figsize=(12, 12))
+    plt.subplots_adjust(wspace=None, hspace=0.4)
+    n = 0
+    for i in range(0, nb_rows):
+        for j in range(0, nb_cols):
+            axs[i, j].hist(
+                df[df.target==n][text_var], bins=30)
+            axs[i, j].set_title(
+                text_var + ' | ' + str(n))
+                 n += 1
+    plt.show()
+4.	
+Run the function for the number of words feature:
+plot_features(df, 'num_words')
+The previous command returns the following plot, where you can see the distribution of the 
+number of words in each of the 20 news topics, numbered from 0 to 19 in the plot title:

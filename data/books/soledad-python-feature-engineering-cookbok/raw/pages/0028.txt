@@ -1,0 +1,37 @@
+Removing observations with missing data
+5
+5.	
+Now, we’ll remove observations if they have missing values in any variable:
+train_cca = X_train.dropna()
+test_cca = X_test.dropna()
+Note
+pandas’ dropna()drops observations with any missing value by default. We can remove 
+observations with missing data in a subset of variables like this: data.dropna(subset=["A3", 
+"A4"]).
+6.	
+Let’s print and compare the size of the original and complete case datasets:
+print(f"Total observations: {len(X_train)}")
+print(f"Observations without NAN: {len(train_cca)}")
+We removed more than 200 observations with missing data from the training set, as shown 
+in the following output:
+Total observations: 483
+Observations without NAN: 264
+7.	
+After removing observations from the training and test sets, we need to align the target variables:
+y_train_cca = y_train.loc[train_cca.index]
+y_test_cca = y_test.loc[test_cca.index]
+Now, the datasets and target variables contain the rows without missing data.
+8.	
+To drop observations with missing data utilizing feature-engine, let’s import the 
+required transformer:
+from feature_engine.imputation import DropMissingData
+9.	
+Let’s set up the imputer to automatically find the variables with missing data:
+cca = DropMissingData(variables=None, missing_only=True)
+10.	 Let’s fit the transformer so that it finds the variables with missing data:
+cca.fit(X_train)
+11.	 Let’s inspect the variables with NAN that the transformer found:
+cca.variables_
+The previous command returns the names of the variables with missing data:
+['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 
+'A14']

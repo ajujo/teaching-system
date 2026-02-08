@@ -1,0 +1,21 @@
+figura 2-18. Ejemplo de probabilidades de token.
+A diferencia de top-k, top-p no reduce necesariamente la carga de cálculo
+de softmax. Su ventaja es que, al centrarse solo en el conjunto de valores
+más relevantes para cada contexto, permite que los outputs sean más
+apropiados contextualmente. En teoría, el muestreo top-p no parece tener
+muchas ventajas. Sin embargo, en la práctica, el muestreo top-p ha
+demostrado funcionar bien, lo que ha hecho que aumente su popularidad.
+Una estrategia de muestreo relacionada es min-p, en la que se establece la
+probabilidad mínima que debe alcanzar un token para tenerse en cuenta
+durante el muestreo.
+Condición de parada
+Un modelo autorregresivo del lenguaje genera secuencias de tokens
+generando un token tras otro. Una secuencia de output larga lleva más
+tiempo, cuesta más computación (dinero), 28 y, a veces, puede molestar a
+los usuarios. Es posible que queramos establecer una condición para que el
+modelo detenga la secuencia.
+Un método sencillo consiste en pedir a los modelos que dejen de generar
+después de un número fijo de tokens. El inconveniente es que es probable
+que el output se corte a mitad de frase. Otro método consiste en utilizar
+tokens de parada o palabras de parada. Por ejemplo, puede pedir a un
+modelo que deje de generar cuando encuentre el token de fin de secuencia.

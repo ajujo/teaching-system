@@ -1,0 +1,10 @@
+Chapter 6
+259
+graph = builder.compile()
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))
+This creates our finished agent with a complete execution flow. The graph begins with initial 
+planning, proceeds through execution and replanning steps, generates responses for completed 
+paths, and finally selects the best solution through voting. We can visualize the flow using the 
+Mermaid diagram generator, giving us a clear picture of our agent’s decision-making process:
+Figure 6.8: LATS agent

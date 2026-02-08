@@ -1,0 +1,40 @@
+Appendix
+467
+System metrics
+The system metrics are based on monitoring service-level metrics (latency, throughput, error 
+rates) and infrastructure health (CPU/GPU, memory). These metrics are used both in traditional 
+software and ML as they are crucial to understanding whether the infrastructure works well and 
+the system works as expected to provide a good user experience to the end users.
+Model metrics
+Merely monitoring the system’s health won’t suffice to identify the deeper issues within our 
+model. Therefore, moving on to the next layer of metrics that focus on the model’s performance 
+is crucial. This includes quantitative evaluation metrics like accuracy, precision, and F1 score, as 
+well as essential business metrics influenced by the model, such as ROI and click rate.
+Analyzing cumulative performance metrics over the entire deployment period is often ineffective. 
+Instead, evaluating performance over time intervals relevant to our application, such as hourly, 
+is essential. Thus, in practice, you window your inputs and compute and aggregate the metrics 
+at the window level. These sliding metrics can provide a clearer picture of the system’s health, 
+allowing us to detect issues more promptly without them being obscured by historical data.
+We may not always have access to ground-truth outcomes to evaluate the model’s performance 
+on production data. This is particularly challenging when there is a significant delay or when 
+real-life data requires annotation. To address this issue, we can develop an approximate signal 
+to estimate the model’s performance or label a small portion of our live dataset to assess perfor-
+mance. When talking about ML monitoring, an approximate signal is also known as a proxy metric, 
+usually implemented by drift detection methods, which are discussed in the following section.
+Drifts
+Drifts are proxy metrics that help us detect potential issues with the production model in time 
+without requiring any ground truths/labels. Table A.1 shows three kinds of drifts.
+What drifts
+Description
+Drift formulation
+X         
+Inputs (features)  
+data drift →P(X) ≠Pref(X) 
+ y        
+Outputs (ground truths/
+labels)
+target drift →P(y) ≠Pref(y)
+P(y|X)
+relationship between X and y 
+concept drift →P(y|X) ≠Pref(y|X)
+Table A.1: Relationship between data, model, and code changes

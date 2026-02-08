@@ -1,0 +1,28 @@
+Calidad
+- Respuestas con formato incorrecto que no siguen el
+formato de output esperado. Por ejemplo, la aplicación
+espera JSON, y el modelo genera JSON no válido.
+- Respuestas inconsistentes con los hechos alucinadas por el
+modelo.
+- Respuestas malas en general. Por ejemplo, le pide al
+modelo que escriba una redacción y la redacción es mala.
+Seguridad
+- Respuestas tóxicas de contenido racista, sexual o ilegal.
+- Respuestas que contengan información privada y sensible.
+- Respuestas que desencadenen la ejecución remota de
+herramientas y código.
+- Respuestas de riesgo para la marca que caractericen
+erróneamente a su empresa o a sus competidores.
+Recordemos del Capítulo 5 que, para las mediciones de seguridad, es
+importante hacer un seguimiento no solo de los fallos de seguridad, sino
+también de la tasa de falsos rechazos. Es posible tener sistemas demasiado
+seguros, por ejemplo, uno que bloquee incluso las solicitudes legítimas,
+interrumpiendo la carga de trabajo de los usuarios y provocando su
+frustración.
+Muchos fallos pueden mitigarse con una simple lógica de reintento. Los
+modelos de IA son probabilísticos, lo que significa que si se vuelve a
+realizar una consulta, se puede obtener una respuesta diferente. Por
+ejemplo, si la respuesta está vacía, inténtenlo de nuevo X veces o hasta que
+obtengan una respuesta no vacía. Del mismo modo, si la respuesta tiene un
+formato incorrecto, inténtenlo de nuevo hasta que la respuesta tenga el
+formato correcto.

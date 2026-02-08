@@ -1,0 +1,44 @@
+Chapter 11
+457
+Finally, we saw how to implement a monitoring pipeline using Opik from Comet ML and an 
+alerting system using ZenML. These are the fundamental pillars in adding MLOps and LLMOps 
+to any LLM-based application.
+The framework we learned about throughout the book can quickly be extrapolated to other LLM 
+applications. Even if we used the LLM Twin use case as an example, most of the strategies applied 
+can be adapted to other projects. Thus, we can get an entirely new application by changing the 
+data and making minor tweaks to the code. Data is the new oil, remember? 
+By finalizing this chapter, we’ve learned to build an end-to-end LLM application, starting with 
+data collection and fine-tuning until deploying the LLM microservice and RAG service. Through-
+out this book, we aimed to provide a thought framework to help you build and solve real-world 
+problems in the GenAI landscape. Now that you have it, we wish you good luck in your journey 
+and happy building!
+References
+•	
+GitLab. (2023, January 25). What is DevOps? | GitLab. GitLab. https://about.gitlab.
+com/topics/devops/
+•	
+Huyen, C. (2024, July 25). Building a generative AI platform. Chip Huyen. https://
+huyenchip.com/2024/07/25/genai-platform.html
+•	
+Lightricks customer story: Building a recommendation engine from scratch. (n.d.). https://
+www.qwak.com/academy/lightricks-customer-story-building-a-recommendation-
+engine-from-scratch
+•	
+What LLMOps. (n.d.). Google Cloud. https://cloud.google.com/discover/what-is-
+llmops?hl=en
+•	
+MLOps: Continuous delivery and automation pipelines in machine learning. (2024, August 
+28). Google Cloud. https://cloud.google.com/architecture/mlops-continuous-
+delivery-and-automation-pipelines-in-machine-learning#top_of_page
+•	
+Ml-ops.org. (2024a, July 5). https://ml-ops.org/content/mlops-principles
+•	
+Ml-ops.org. (2024b, July 5). https://ml-ops.org/content/mlops-principles
+•	
+Ml-ops.org. (2024c, July 5). https://ml-ops.org/content/motivation
+•	
+Mohandas, G. M. (2022a). Monitoring machine learning systems. Made With ML. https://
+madewithml.com/courses/mlops/monitoring/
+•	
+Mohandas, G. M. (2022b). Testing Machine Learning Systems: Code, Data and Models. 
+Made With ML. https://madewithml.com/courses/mlops/testing/

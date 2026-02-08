@@ -1,0 +1,33 @@
+entrenamiento, exponerlo a datos curados cuidadosamente durante el
+afinado puede contrarrestar estos sesgos (Wang y Russakovsky, 2023). Por
+ejemplo, si un modelo asigna sistemáticamente a los consejeros delegados
+nombres que suenan masculinos, afinarlo con un conjunto de datos con
+muchas consejeras delegadas puede mitigar este sesgo. Garimella et al.
+(2022) descubrieron que afinar modelos lingüísticos tipo BERT con textos
+escritos por mujeres puede reducir los sesgos de género de estos modelos,
+mientras que afinarlos con textos de autores africanos puede reducir los
+sesgos raciales.
+Se puede afinar un modelo grande para hacerlo aún mejor, pero es mucho
+más común afinar modelos más pequeños. Los modelos más pequeños
+requieren menos memoria y, por tanto, son más fáciles de afinar. También
+son más baratos y rápidos de utilizar en la producción.
+Un enfoque habitual es afinar un modelo pequeño para que imite el
+comportamiento de un modelo más grande utilizando los datos generados
+por este modelo grande. Como este enfoque destila el conocimiento del
+modelo más grande en el modelo más pequeño, se denomina destilación.
+Este tema se aborda en el Capítulo 8, junto con otras técnicas de síntesis de
+datos.
+Un modelo pequeño, afinado para una tarea específica, puede superar en esa
+tarea a un modelo mucho más grande. Por ejemplo, Grammarly descubrió
+que sus modelos Flan-T5 afinados (Chung et al., 2022) superaban a una
+variante GPT-3 especializada en la edición de textos en una amplia gama de
+tareas de asistente de escritura a pesar de ser 60 veces más pequeños. En el
+proceso de afinado se utilizaron solo 82 000 duplas (instrucción, output),
+una cantidad inferior a los datos que se suelen necesitar para entrenar desde
+cero un modelo de edición de textos.
+En los primeros tiempos de los modelos fundacionales, cuando los modelos
+más potentes eran comerciales con acceso limitado al afinado, no había
+muchos modelos competitivos disponibles para afinarlos. Sin embargo, a
+medida que la comunidad de código abierto prolifera con modelos de alta
+calidad de todos los tamaños, adaptados a una amplia variedad de dominios,
+el afinado se ha vuelto mucho más viable y atractivo.

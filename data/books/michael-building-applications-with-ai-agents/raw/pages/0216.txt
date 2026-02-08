@@ -1,0 +1,50 @@
+    return [m.dict() for m in messages]
+def supervisor_publish(operation: dict, messages):
+    # ... (existing supervisor prompt and LLM logic to get agent_name)
+    r = redis.Redis(host='localhost', port=6379)
+    task_id = str(uuid.uuid4())
+    task_message = {
+        'task_id': task_id,
+        'agent': agent_name,
+        'operation': operation,
+        'messages': serialize_messages(messages)
+    }
+    r.xadd('supply-chain-tasks', {'data': json.dumps(task_message)})
+    return task_id
+Specialists (e.g., inventory) consume in a loop, process with their node logic, and
+publish responses:
+import redis
+import json
+# Helper to deserialize messages
+def deserialize_messages(serialized):
+    # Rehydrate based on type (HumanMessage, AIMessage, etc.)
+    return [...]  # Implementation as in full code
+def inventory_consumer():
+    r = redis.Redis(host='localhost', port=6379)
+    last_id = '0'
+    # ... (inventory_prompt)
+    while True:
+        msgs = r.xread({'supply-chain-tasks': last_id}, count=1, block=5000)
+        if msgs:
+            stream, entries = msgs[0]
+            for entry_id, entry_data in entries:
+                task = json.loads(entry_data[b'data'])
+                if task['agent'] == 'inventory':
+                    state = {
+                        'operation': task['operation'],
+                        'messages': deserialize_messages(task['messages'])
+                    }
+                    result = specialist_node(state, inventory_llm, 
+                                             inventory_prompt)
+                    response = {
+                        'task_id': task['task_id'],
+                        'from': 'inventory',
+                        'result': {'messages': serialize_messages(
+                                   result['messages'])}
+                    }
+                    r.xadd('supply-chain-responses', {'data': 
+                           json.dumps(response)})
+                last_id = entry_id
+194 
+| 
+Chapter 8: From One Agent to Many

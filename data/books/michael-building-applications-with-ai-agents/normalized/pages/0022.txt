@@ -1,0 +1,15 @@
+Chang Kawaguchi, Jure Leskovic, Chiyu Zhang, Andrew Zhao, Matthieu Lin, and
+many, many more. Thank you for your wisdom, your insight, your patience, your
+mentorship, and your many suggestions.
+I would like to thank Luke Miratrix, who introduced me to statistics and taught me
+how to code. I would also like to thank my core academic mentors Lisa Schmitt, Lise
+Shelton, James Sheehan, Finbarr Livesey, Matthew Sommer, James Ward, Charles
+Isbell, Michael Littman, Zsolt Kira, and Constantine Dovrolis for shaping my think‐
+ing in ways big and small.
+This book is, in many ways, a distillation of lessons I've learned throughout my life
+and career, and I am grateful to many more people than I can name here. I am deeply
+grateful to have the opportunity to release this book out into the world, and I truly
+hope it serves you well.
+xx
+|
+Preface

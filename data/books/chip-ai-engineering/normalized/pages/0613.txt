@@ -1,0 +1,15 @@
+Se trata de tareas cuyo tiempo de ejecución viene
+determinado por el cómputo necesario para realizarlas. Por
+ejemplo, el descifrado de contraseñas suele estar limitado
+por el cómputo, debido a los intensos cálculos matemáticos
+necesarios para romper los algoritmos de cifrado.
+Limitación por el ancho de banda de la memoria
+Estas tareas están limitadas por la velocidad de
+transferencia de datos dentro del sistema, como la velocidad
+de movimiento de datos entre la memoria y los
+procesadores. Por ejemplo, si almacena los datos en la
+memoria de la CPU y entrenan a un modelo en la GPU, tiene
+que mover los datos de la CPU a la GPU, lo que puede llevar
+mucho tiempo. Esto pueden abreviarse como limitado por el
+ancho de banda. En la literatura, a menudo se le llama
+limitado por la memoria.

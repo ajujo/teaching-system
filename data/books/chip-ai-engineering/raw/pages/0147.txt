@@ -1,0 +1,31 @@
+que un modelo muestrea los outputs para mejorar su rendimiento. En la
+siguiente sección se explica cómo funciona el muestreo BoN.
+Muestreo
+Un modelo construye sus outputs mediante un proceso conocido como
+muestreo. En esta sección se analizan diferentes estrategias de muestreo y
+variables de muestreo, como la temperatura, top-k y top-p. A continuación,
+se estudiará cómo muestrear múltiples salidas para mejorar el rendimiento
+de un modelo. También veremos cómo se puede modificar el proceso de
+muestreo para conseguir que los modelos generen respuestas que sigan
+determinados formatos y restricciones.
+El muestreo hace que los outputs de la IA sean probabilísticos. Comprender
+esta naturaleza probabilística es importante para gestionar comportamientos
+de la IA como la incoherencia y la alucinación. Esta sección termina con
+una inmersión profunda en lo que significa esta naturaleza probabilística y
+cómo trabajar con ella.
+Fundamentos de muestreo
+Dado un input, una red neuronal produce un output calculando primero las
+probabilidades de los posibles outputs. Para un modelo de clasificación, los
+resultados posibles son las clases disponibles. Por ejemplo, si se entrena a
+un modelo para clasificar si un correo electrónico es spam o no, solo hay
+dos resultados posibles: spam y no spam. El modelo calcula la probabilidad
+de cada uno de estos dos resultados; por ejemplo, la probabilidad de que el
+correo electrónico sea spam es del 90 %, y de que no lo sea, del 10 %. A
+continuación, puede tomar decisiones basadas en estas probabilidades de
+output. Por ejemplo, si decide que cualquier correo electrónico con una
+probabilidad de spam superior al 50 % debe marcarse como spam, un
+correo electrónico con una probabilidad de spam del 90 % se marcará como
+spam.
+En el caso de un modelo lingüístico, para generar el siguiente token, el
+modelo calcula primero la distribución de probabilidad entre todos los
+tokens del vocabulario, lo que se parece a la Figura 2-14.

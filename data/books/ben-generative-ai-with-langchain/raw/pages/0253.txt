@@ -1,0 +1,36 @@
+Advanced Applications and Multi-Agent Systems
+226
+•	
+Code-centric problem framing: Writing code is very natural for an LLM, so try to frame 
+the problem as a code-writing problem if possible. This might become a very powerful 
+way of solving the task, especially if you wrap it with a code-executing sandbox, a loop for 
+improvement based on the output, access to various powerful libraries for data analysis 
+or visualization, and a generation step afterward. We will go into more detail in Chapter 7.
+Two important comments: first, develop your agents aligned with the best software development 
+practices, and make them agile, modular, and easily configurable. That would allow you to put 
+multiple specialized agents together, and give users the opportunity to easily tune each agent 
+based on their specific task.
+Second, we want to emphasize (once again!) the importance of evaluation and experimentation. 
+We will talk about evaluation in more detail in Chapter 9. But it’s important to keep in mind that 
+there is no clear path to success. Different patterns work better on different types of tasks. Try 
+things, experiment, iterate, and don’t forget to evaluate the results of your work. Data, such as 
+tasks and expected outputs, and simulators, a safe way for LLMs to interact with tools, are key 
+to building really complex and effective agents.
+Now that we have created a mental map of various design patterns, we’ll look deeper into these 
+principles by discussing various agentic architectures and looking at examples. We will start by 
+enhancing the RAG architecture we discussed in Chapter 4 with an agentic approach.
+Agentic RAG
+LLMs enable the development of intelligent agents capable of tackling complex, non-repetitive 
+tasks that defy description as deterministic workflows. By splitting reasoning into steps in different 
+ways and orchestrating them in a relatively simple way, agents can demonstrate a significantly 
+higher task completion rate on complex open tasks.
+This agent-based approach can be applied across numerous domains, including RAG systems, 
+which we discussed in Chapter 4. As a reminder, what exactly is agentic RAG? Remember, a classic 
+pattern for a RAG system is to retrieve chunks given the query, combine them into the context, and 
+ask an LLM to generate an answer given a system prompt, combined context, and the question.
+We can improve each of these steps using the principles discussed above (decomposition, tool 
+calling, and adaptation):
+•	
+Dynamic retrieval hands over the retrieval query generation to the LLM. It can decide 
+itself whether to use sparse embeddings, hybrid methods, keyword search, or web search. 
+You can wrap retrievals as tools and orchestrate them as a LangGraph graph.

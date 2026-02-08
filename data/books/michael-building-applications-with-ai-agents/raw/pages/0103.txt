@@ -1,0 +1,42 @@
+plug-in tools expand, we can expect AI agents to become even more capable and ver‐
+satile. The ongoing research and development efforts by leading platforms and the
+open source community will drive innovation, resulting in more powerful and
+sophisticated tools for AI development. One important area of focus for the future is
+the interoperability and standardization of plug-in tools. Establishing common
+standards and protocols for plug-in tools will facilitate seamless integration and inter‐
+operability across different AI platforms and systems. This will enable developers to
+leverage plug-in tools from various sources, creating more flexible and adaptable AI
+solutions. Efforts are also being made to enhance the customization and adaptability
+of plug-in tools. Future plug-in tools may offer more configurable options, enabling
+developers to tailor them to specific use cases and requirements. This will bridge the
+gap between the ease of integration and the need for customized solutions, providing
+the best of both worlds.
+Model Context Protocol
+As the AI ecosystem matures, agents no longer live in isolated silos. They need to
+read documents from cloud storage, push data to business applications, call internal
+APIs, and coordinate with other agents. Custom integrations—where you write
+bespoke adapters for each data source or service—are brittle and scale poorly. Enter
+the Model Context Protocol (MCP): an open standard introduced by Anthropic (and
+since adopted by major players like OpenAI, Google DeepMind, and Microsoft) that
+provides a uniform, model-agnostic way to connect LLMs to external systems. Think
+of MCP as a “USB-C port for AI”—a single, well-defined interface that any data
+source or tool can expose, and any agent can consume, without specialized glue code.
+At its core, MCP defines two roles:
+MCP server
+This is a web server that exposes data or services via a standardized JSON-RPC
+2.0 interface. A server can wrap anything—cloud object storage, SQL databases,
+enterprise customer relationship management, proprietary business logic—so
+long as it implements the MCP specification.
+MCP client
+This is any agent or LLM application that “speaks” MCP. The client sends JSON-
+RPC requests (e.g., “List all files in this Salesforce folder,” or “Execute function
+‘getCustomerBalance’ with customerId=1234”) and receives structured JSON
+responses. Because the protocol is uniform, an agent developer doesn’t need to
+know the internals of the server—only its exposed methods.
+Under the hood, MCP uses JSON-RPC 2.0 over HTTPS or WebSocket. Servers adver‐
+tise their available methods (e.g., listFiles, getRecord, runAnalysis) and their
+input/output schemas. Clients fetch the server’s “method catalog,” allowing an LLM to
+reason about which method to call and with what parameters. Once the tool call is
+LangChain Fundamentals 
+| 
+81

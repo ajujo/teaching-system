@@ -1,0 +1,36 @@
+Creating features with general and cumulative operations
+281
+For categorical features, featuretools determines the mode and the unique values. For example, from
+the description variable, we've got the NUM_UNIQUE(data.description) and MODE(data.
+description) features. The description is just the name of the item. Thus, these features highlight
+the number of unique items the customer bought and the item the customer bought the most times.
+Note something interesting
+The NUM_UNIQUE(data.description) and MODE(data.description) variables
+are numeric after the aggregation of the categorical features. The featuretools library
+creates more features by using numerical aggregations of these newly created variables. In this
+way, the MAX(invoices.NUM_UNIQUE(data.description) feature first finds the
+number of unique items per invoice and then returns the maximum from those values for a
+particular customer, considering all the customer's invoices.
+From datetime features, featuretools extracts date components by default. Remember that the
+customers DataFrame contains the customer_id variable and the date of the first invoice for
+each customer, as we saw in the output of step 10. From this datetime feature, featuretools created
+DAY(first_invoices_time), MONTH(first_invoices_time), WEEKDAY(first_
+invoices_time), and YEAR(first_invoices_time) features containing the different date parts.
+Finally, featuretools also returned the total number of invoices per customer (COUNT(invoices))
+and the total number of rows (COUNT(data)) per customer.
+See also
+For more details into what inspired featuretools, check the original article Deep Feature Synthesis:
+Towards Automating Data Science Endeavors by Kanter and Veeramachaneni at https://www.
+jmaxkanter.com/papers/DSAA_DSM_2015.pdf.
+Creating features with general and cumulative operations
+The featuretools library uses what are called transform primitives to create features. Transform
+primitives take one or more columns in a dataset as input and return one or more columns as output.
+They are applied to a single DataFrame.
+The featuretools library divides its transform primitives into various categories depending
+on the type of operation they perform or the type of variable they modify. For example, general
+transform primitives apply mathematical operations, such as the square root, the sine, and the
+cosine. Cumulative transform primitives create new features by comparing a row's value to the
+previous row's value. For example, the cumulative sum, cumulative mean, and cumulative minimum
+and maximum values belong to this category, as well as the difference between row values. There is
+another cumulative transformation that can be applied to datetime variables, which is the time since
+previous transformation, which determines the time passed between two consecutive timestamps.

@@ -1,0 +1,31 @@
+Chapter 11
+447
+The conclusion is that once you can manually trigger all your ML pipelines through a single 
+command, you can quickly adapt it to more advanced and complex scenarios.
+Trigger downstream pipelines
+To keep things simple, we sequentially chained all the pipelines. More concretely, when the data 
+collection pipeline has finished, it will trigger the feature pipeline. When the feature pipeline has 
+been completed successfully, it triggers the dataset generation pipeline, and so on. You can make 
+the logic more complex, like scheduling the generate instruct dataset pipeline to run daily, check-
+ing the amount of new data in the Qdrant vector DB, and starting only if it has enough new data. 
+From this point, you can further tweak the system’s parameters and optimize them to reduce costs.
+To trigger all the pipelines in one go, we created one master pipeline that aggregates everything 
+in one entry point:
+@pipeline
+def end_to_end_data(
+    author_links: list[dict[str, str | list[str]]], … # Other paramaters…
+) -> None:
+    wait_for_ids = []
+    for author_data in author_links:
+        last_step_invocation_id = digital_data_etl(
+            user_full_name=author_data["user_full_name"], links=author_
+data["links"]
+        )
+        wait_for_ids.append(last_step_invocation_id)
+    author_full_names = [author_data["user_full_name"] for author_data in 
+author_links]
+    wait_for_ids = feature_engineering(author_full_names=author_full_
+names, wait_for=wait_for_ids)
+    generate_instruct_datasets(…)
+       training(…)
+       deploy(…)

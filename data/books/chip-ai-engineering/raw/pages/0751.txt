@@ -1,0 +1,25 @@
+CoT (cadena de pensamiento), Dividir tareas complejas en subtareas más
+sencillas
+creación de aplicaciones, Introducción a la creación de aplicaciones de IA
+con modelos fundacionales
+– pila de ingeniería, Mantenimiento
+– planificación de aplicaciones, Organización de datos
+– establecimiento de expectativas, Defensibilidad de los productos
+de IA
+– evaluación de casos de uso, Planificación de aplicaciones de IA
+– mantenimiento, Planificación de hitos
+– planificación de hitos, Establecimiento de expectativas
+creación de aplicaciones de IA (ver creación de aplicaciones)
+criterios de seguimiento de instrucciones, Capacidad de seguimiento de
+instrucciones
+cuándo recabar comentarios, Cuándo recabar retroalimentación
+– limitaciones de los comentarios, Limitaciones de la retroalimentación
+– bucles de retroalimentación degenerados, Sesgos
+– sesgos, Limitaciones de la retroalimentación
+cuantización de la inferencia, Cuantización
+cuantización de productos, Recuperación basada en incrustaciones
+– ataques automatizados, Ataques automatizados
+– ataques de prompts, Organizar y versionar prompts, Prompts
+patentados e ingeniería inversa de prompts
+– defensa contra, Defensas contra los ataques de prompts
+– inyección indirecta de prompts, Inyección indirecta de prompts

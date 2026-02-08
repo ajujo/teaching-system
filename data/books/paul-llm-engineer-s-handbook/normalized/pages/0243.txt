@@ -1,0 +1,32 @@
+Supervised Fine-Tuning
+212
+•
+Optimizer states: Optimizer states are additional values maintained by optimization
+algorithms like Adam or AdamW. These typically include running averages of past gradients and past squared gradients for each parameter. They help in adapting the learning
+rate for each parameter and navigating the loss landscape more effectively. For instance,
+Adam maintains two additional values (momentum and variance) per parameter. Cost:
+8 bytes/parameter (for Adam optimizer).
+•
+Activations: Activations are the intermediate outputs of each layer in the neural network
+during the forward pass. For transformer-based models, this includes the outputs of
+attention mechanisms, feed-forward layers, and normalization layers. Activations need
+to be kept in memory during the forward pass to compute gradients in the backward
+pass, unless techniques like activation checkpointing are used. Cost: variable, but often
+negligible for small batch sizes.
+This gives us a baseline of 16 bytes per parameter. This translates into 112 GB of VRAM for a 7
+B model and 1,120 GB for a 70 B model. However, this is often an underestimate, as it doesn't
+account for additional memory needed for activations, temporary buffers, and overhead from
+various training techniques.
+Several techniques can be employed to reduce memory usage during LLM fine-tuning. Model
+parallelism spreads the workload across multiple GPUs, though it adds some overhead. Gradient
+accumulation enables larger effective batch sizes without proportional memory increase. Memory-efficient optimizers like 8-bit Adam can reduce the footprint of optimizer states. Activation
+checkpointing trades computation for memory by recalculating certain activations. When combined, these techniques can significantly lower memory usage. For instance, using mixed precision
+with model parallelism might reduce costs to around 14-15 bytes per parameter, compared to the
+16-byte baseline. However, memory requirements remain substantial for large models even with
+these optimizations.
+In addition, full fine-tuning directly modifies the pre-training weights, which makes it destructive
+by nature. If training doesn't behave as expected, it might erase previous knowledge and skills - a
+phenomenon referred to as "catastrophic forgetting." The same phenomenon can happen with
+continual pre-training, which generally makes these techniques more difficult to use. Due to this
+additional complexity and its high computational requirements, parameter-efficient techniques
+are often preferred to full fine-tuning to create task and domain-specific models.

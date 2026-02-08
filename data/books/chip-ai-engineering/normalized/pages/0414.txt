@@ -1,0 +1,31 @@
+es resoluble en lugar de alucinar con un nombre, y dando una respuesta
+errónea.
+Recuperación contextual
+La idea subyacente de la recuperación contextual es aumentar cada
+fragmento con el contexto pertinente para facilitar la recuperación de los
+fragmentos relevantes. Una técnica sencilla consiste en añadir metadatos,
+como etiquetas o palabras clave. En el caso del comercio electrónico, un
+producto puede ampliarse con su descripción y reseñas. Las imágenes y los
+vídeos pueden consultarse por sus títulos o subtítulos.
+Los metadatos también pueden incluir entidades extraídas automáticamente
+del fragmento. Si su documento contiene términos específicos como el
+código de error EADDRNOTAVAIL (99), añadirlos a los metadatos del
+documento permite al sistema recuperarlo por esa palabra clave, incluso
+después de que el documento se haya convertido en incrustaciones.
+También puede aumentar cada fragmento con las preguntas a las que puede
+responder. Para la atención al cliente, pueden aumentar cada artículo con
+preguntas relacionadas. Por ejemplo, el artículo sobre cómo restablecer la
+contraseña puede aumentarse con consultas como: "¿Cómo restablecer la
+contraseña?", "He olvidado mi contraseña", "No puedo iniciar sesión" o
+incluso "Ayuda, no encuentro mi cuenta".9
+Si un documento se divide en varios fragmentos, puede que algunos
+carezcan del contexto necesario para ayudar al recuperador a entender de
+qué trata el fragmento. Para evitarlo, pueden aumentar cada fragmento con
+el contexto del documento original, como el título y el resumen del
+documento original. Anthropic utiliza modelos de IA para generar un breve
+contexto, normalmente de 50-100 tokens, que explica el fragmento y su
+relación con el documento original. Este es el prompt que Anthropic utilizó
+para este fin (Anthropic, 2024):
+<document>
+{{WHOLE_DOCUMENT}}
+</document>

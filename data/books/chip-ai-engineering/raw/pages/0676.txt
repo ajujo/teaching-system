@@ -1,0 +1,24 @@
+gama de aplicaciones, pero ciertas aplicaciones podrían requerir una
+específica.
+En su forma más simple, su aplicación recibe una consulta y la envía al
+modelo. El modelo genera una respuesta, que se devuelve al usuario, como
+se muestra en la Figura 10-1. No hay aumento del contexto, ni barreras de
+seguridad, ni optimización. La casilla API de modelo se refiere tanto a las
+API de terceros (por ejemplo, OpenAI, Google, Anthropic) como a los
+modelos autoalojados. La construcción de un servidor de inferencia para
+modelos autoalojados se aborda en el Capítulo 9.
+figura 10-1. La arquitectura más sencilla para ejecutar una aplicación de IA.
+A partir de esta arquitectura sencilla, pueden añadir más componentes a
+medida que surjan necesidades. El proceso podría ser el siguiente:
+1. Mejorar el input de contexto en un modelo dándole acceso a
+fuentes de datos externas y a herramientas de recopilación de
+información.
+2. Instalar barreras de seguridad para proteger su sistema y a sus
+usuarios.
+3. Añadir un enrutador de modelos y una puerta de enlace para
+soportar procesos complejas y añadir más seguridad.
+4. Optimizar la latencia y los costos con el almacenamiento en caché.
+5. Añadir lógica compleja y escribir acciones para maximizar las
+capacidades del sistema.
+Este capítulo sigue el camino progresivo que suelo ver en producción. Sin
+embargo, las necesidades de cada uno son diferentes. Debe seguir el orden

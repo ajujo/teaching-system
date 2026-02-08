@@ -1,0 +1,32 @@
+Podría haber obtenido resultados similares o mejores con ese conjunto de
+datos con modelos más pequeños.
+De los grandes modelos lingüísticos a los modelos
+fundacionales
+Aunque los modelos lingüísticos son capaces de realizar tareas increíbles,
+están limitados al texto. Los seres humanos no solo percibimos el mundo a
+través del lenguaje, sino también de la vista, el oído y el tacto. Ser capaz de
+procesar datos más allá del texto es esencial para que la IA funcione en el
+mundo real.
+Por este motivo, se están ampliando los modelos lingüísticos para
+incorporar más modalidades de datos. GPT-4V y Claude 3 pueden entender
+imágenes y textos. Algunos modelos incluso entienden videos, activos 3D,
+estructuras de proteínas, etc. Incorporar más modalidades de datos a los
+modelos lingüísticos los hace todavía más potentes. OpenAI señaló en su
+tarjeta de sistema GPT-4V en 2023 que "la incorporación de modalidades
+adicionales (como inputs de imágenes) en los LLMs es vista por algunos
+como una frontera clave en la investigación y el desarrollo de la IA".
+Aunque mucha gente sigue llamando LLMs a los Gemini y GPT-4V, es
+mejor caracterizarlos como modelos fundacionales. La palabra fundacional
+expresa tanto la importancia de estos modelos en las aplicaciones de IA
+como el hecho de que se puede construir basándose en ellos para diferentes
+necesidades.
+Los modelos fundacionales suponen un avance respecto a la estructura
+tradicional de la investigación en IA. Durante mucho tiempo, la
+investigación en IA se dividió por modalidades de datos. El procesamiento
+del lenguaje natural (NLP) solo se ocupa del texto. La visión computacional
+solo se ocupa de la visión. Los modelos de solo texto pueden utilizarse para
+tareas como la traducción y la detección de spam. Los modelos basados
+únicamente en imágenes pueden utilizarse para la detección de objetos y la
+clasificación de imágenes. Los modelos de solo audio permiten el
+reconocimiento de voz (voz a texto o STT) y la síntesis de voz (texto a voz
+o TTS).

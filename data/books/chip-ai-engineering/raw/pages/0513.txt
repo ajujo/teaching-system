@@ -1,0 +1,3 @@
+figura 7-11. Para aplicar LoRA a una matriz de ponderaciones W, descompónganla en
+el producto de dos matrices A y B. Durante el afinado, solo se actualizan A y B. W se
+mantiene intacto.

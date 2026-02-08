@@ -1,0 +1,37 @@
+Chapter 9
+323
+class Config:
+        category = DataCategory.QUERIES
+What is essential to notice are the class’s attributes used to combine the user’s query with a 
+bunch of metadata fields:
+•	
+content: A string containing input query.
+•	
+author_id: An optional UUID4 identifier extracted from the query used as a filter within 
+the vector search operation to retrieve chunks written only by a specific author
+•	
+author_full_name: An optional string used to query the author_id
+•	
+metadata: A dictionary for any additional metadata, initialized as an empty dict by default
+Besides the standard definition of a domain class, we also define a from_str() class method to 
+create a Query instance directly from a string. This allows us to standardize how we clean the query 
+string before constructing the query object, such as stripping any leading or trailing whitespace 
+and newline characters:
+    @classmethod
+    def from_str(cls, query: str) -> "Query":
+        return Query(content=query.strip("\n "))
+Additionally, there’s an instance method called replace_content() used to create a new Query 
+instance with updated content while retaining the original query’s id, author_id, author_full_
+name, and metadata:
+    def replace_content(self, new_content: str) -> "Query":
+        return Query(
+            id=self.id,
+            content=new_content,
+            author_id=self.author_id,
+            author_full_name=self.author_full_name,
+            metadata=self.metadata,
+        )
+This can be particularly useful when modifying the query text, for example, during preprocessing 
+or normalization, without losing the associated metadata or identifiers. Following the Query class, 
+we define the EmbeddedQuery class:
+class EmbeddedQuery(Query):

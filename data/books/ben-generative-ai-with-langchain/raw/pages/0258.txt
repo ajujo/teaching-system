@@ -1,0 +1,24 @@
+Chapter 6
+231
+It’s worth mentioning that a consensus mechanism has certain latency and cost implications, but 
+typically they’re negligible relative to the costs of solving a task itself. If you task N agents with 
+the same task, your token consumption increases N times, and the consensus mechanism adds 
+a relatively small overhead on top of that difference.
+You can also implement your own consensus mechanism. When you do this, consider the fol­
+lowing:
+•	
+Use few-shot prompting when using an LLM as a judge.
+•	
+Add examples demonstrating how to score different input-output pairs.
+•	
+Consider including scoring rubrics for different types of responses.
+•	
+Test the mechanism on diverse outputs to ensure consistency.
+One important note on parallelization – when you let LangGraph execute nodes in parallel, updates 
+are applied to the main state in the same order as you’ve added nodes to your graph.
+Communication protocols
+The third architecture option is to let agents communicate and work collaboratively on a task. For 
+example, the agents might benefit from various personalities configured through system prompts. 
+Decomposition of a complex task into smaller subtasks also helps you retain control over your 
+application and how your agents communicate.
+Figure 6.4: Reflection pattern

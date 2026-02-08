@@ -1,0 +1,35 @@
+RAG Feature Pipeline
+138
+As this is an LLM book and not a data engineering one, we wanted to keep things simple, but it’s 
+important to know that these techniques exist, and you can always upgrade your current imple-
+mentation when it doesn’t fit your application requirements anymore.
+Why is the data stored in two snapshots?
+We store two snapshots of our data in the logical feature store:
+•	
+After the data is cleaned: For fine-tuning LLMs
+•	
+After the documents are chunked and embedded: For RAG
+Why did we design it this way? Remember that the features should be accessed solely from the feature 
+store for training and inference. Thus, this adds consistency to our design and makes it cleaner.
+Also, storing the data cleaned specifically for our fine-tuning and embedding use case in the Mon-
+goDB data warehouse would have been an antipattern. The data from the warehouse is shared 
+all across the company. Thus, processing it for a specific use case is not good practice. Imagine 
+another summarization use case where we must clean and preprocess the data differently. We 
+must create a new “Cleaned Data” table prefixed with the use case name. We have to repeat that 
+for every new use case. Therefore, to avoid having a spaghetti data warehouse, the data from the 
+data warehouse is generic and is modeled to specific applications only in downstream compo-
+nents, which, in our case, is the feature store.
+Ultimately, as we mentioned in the Core steps section, you can leverage the metadata index of a 
+vector DB as a NoSQL DB. Based on these factors, we decided to keep the cleaned data in Qdrant, 
+along with the chunked and embedded versions of the documents.
+As a quick reminder, when operationalizing our LLM Twin system, the create instruct dataset 
+pipeline, explained in Chapter 5, will read the cleaned documents from Qdrant, process them, 
+and save them under a versioned ZenML artifact. The training pipeline requires a dataset and not 
+plain documents. This is a reminder that our logical feature store comprises the Qdrant vector 
+DB for online serving and ZenML artifacts for offline training.
+Orchestration
+ZenML will orchestrate the batch RAG feature pipeline. Using ZenML, we can schedule it to run 
+on a schedule, for example, every hour, or quickly manually trigger it. Another option is to trigger 
+it after the ETL data collection pipeline finishes.
+By orchestrating the feature pipeline and integrating it into ZenML (or any other orchestration 
+tool), we can operationalize the feature pipeline with the end goal of continuous training (CT).

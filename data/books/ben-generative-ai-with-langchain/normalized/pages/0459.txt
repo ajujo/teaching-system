@@ -1,0 +1,18 @@
+Appendix A
+432
+Here's how this should look on the OpenAI platform:
+Figure A.1: OpenAI API platform - Create new secret key
+After clicking Create secret key, you should see the message API key generated. You need to copy
+the key to your clipboard and save it, as you will need it. You can set the key as an environment
+variable (OPENAI_API_KEY) or pass it as a parameter every time you construct a class for Ope­
+nAI calls.
+You can specify different models when you initialize your model, be it a chat model or an LLM.
+You can see a list of models at https://platform.openai.com/docs/models.
+OpenAI provides a comprehensive suite of capabilities that integrate seamlessly with LangChain,
+including:
+•
+Core language models via the OpenAI API
+•
+Embedding class for text embedding models
+We'll cover the basics of model integration in this chapter, while deeper explorations of specialized
+features like embeddings, assistants, and moderation will follow in Chapters 4 and 5.

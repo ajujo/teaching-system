@@ -1,0 +1,10 @@
+pacientes. Cada persona con la que he trabajado me ha enseñado algo nuevo
+sobre cómo llevar el ML al mundo.
+1 Uno de los autores del artículo sobre AlexNet, Ilya Sutskever, pasó a cofundar
+OpenAI, haciendo realidad esta lección con modelos GPT.
+2 Incluso mi pequeño proyecto de 2017, que utilizaba un modelo lingüístico para
+evaluar la calidad de la traducción, llegó a la conclusión de que necesitábamos
+"un mejor modelo lingüístico".
+3 Impartir un curso sobre cómo usar TensorFlow en 2017 me enseñó una
+dolorosa lección sobre la rapidez con la que las herramientas y los tutoriales se
+quedan obsoletos

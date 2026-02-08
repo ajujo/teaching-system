@@ -1,0 +1,27 @@
+El número de tokens tampoco es una medida perfecta, ya que diferentes
+modelos pueden tener diferentes procesos de tokenización, lo que hace que
+el mismo conjunto de datos tenga diferentes números de tokens para
+diferentes modelos. ¿Por qué no utilizar simplemente el número de palabras
+o el número de letras? Dado que un token es la unidad sobre la que opera un
+modelo, conocer el número de tokens de un conjunto de datos nos ayuda a
+medir cuánto puede aprender potencialmente un modelo a partir de esos
+datos.
+En el momento de escribir estas líneas, los LLMs se entrenan utilizando
+conjuntos de datos del orden de billones de tokens. Meta utilizó conjuntos
+de datos cada vez mayores para entrenar sus modelos Llama:
+1.4 billones de tokens para Llama 1
+2 billones de tokens para Llama 2
+15 billones de tokens para Llama 3
+El conjunto de datos de código abierto RedPajama-v2 de Together contiene
+30 billones de tokens. Esto equivale a 450 millones de libros 14 o 5400
+veces el tamaño de Wikipedia. Sin embargo, dado que RedPajama-v2 se
+compone de contenidos indiscriminados, la cantidad de datos de alta calidad
+es mucho menor.
+El número de tokens del conjunto de datos de un modelo no es el mismo que
+el número de tokens de entrenamiento. El número de tokens de
+entrenamiento mide los tokens con los que se entrena el modelo. Si un
+conjunto de datos contiene 1 billón de tokens y se entrena un modelo con
+ese conjunto de datos durante dos épocas (una época es una pasada por el
+conjunto de datos), el número de tokens de entrenamiento es de 2 billones.
+15 La Tabla 2-5 contiene ejemplos del número de tokens de entrenamiento
+para modelos con diferentes números de parámetros.

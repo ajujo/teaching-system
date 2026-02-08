@@ -1,0 +1,33 @@
+Building Intelligent RAG Systems
+156
+The retrieval evaluator is the cornerstone of CRAG. Its job is to analyze the relationship between
+retrieved documents and the query, determining which documents are truly relevant. Implemen­
+tations typically use an LLM with a carefully crafted prompt:
+from pydantic import BaseModel, Field
+class DocumentRelevanceScore(BaseModel):
+    """Binary relevance score for document evaluation."""
+    is_relevant: bool = Field(description="Whether the document contains
+information relevant to the query")
+    reasoning: str = Field(description="Explanation for the relevance
+decision")
+def evaluate_document(document, query, llm):
+    """Evaluate if a document is relevant to a query."""
+    prompt = f""" You are an expert document evaluator. Your task is to
+determine if the following document contains information relevant to the
+given query.
+Query: {query}
+Document content:
+{document.page_content}
+Analyze whether this document contains information that helps answer the
+query.
+"""
+    Evaluation = llm.with_structured_output(DocumentRelevanceScore).
+invoke(prompt)
+    return evaluation
+By evaluating each document independently, CRAG can make fine-grained decisions about which
+content to include, exclude, or supplement, substantially improving the quality of the final context
+provided to the generator.
+Since the CRAG implementation builds on concepts we'll introduce in Chapter 5, we'll not be
+showing the complete code here, but you can find the implementation in the book's companion
+repository. Please note that LangGraph is particularly well-suited for implementing CRAG because
+it allows for conditional branching based on document evaluation.

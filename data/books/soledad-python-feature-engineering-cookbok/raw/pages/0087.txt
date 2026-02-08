@@ -1,0 +1,31 @@
+Encoding Categorical Variables
+64
+Next, we carried out ordinal encoding using scikit-learn’s OrdinalEncoder() and used 
+ColumnTransformer() to restrict the encoding to categorical variables. With fit(), the 
+transformer created the category-to-integer mappings based on the categories in the train set. With 
+transform(), the categories were replaced with integers. By setting the remainder parameter 
+to passthrough, we made ColumnTransformer() concatenate the variables that are not 
+encoded at the back of the encoded features.
+To perform ordinal encoding with feature-engine, we used OrdinalEncoder(), indicating 
+that the integers should be assigned arbitrarily through encoding_method, and passed a list with 
+the variables to encode in the variables argument. With fit(), the encoder assigned integers 
+to each variable’s categories, which were stored in the encoder_dict_ attribute. These mappings 
+were then used by the transform() method to replace the categories in the train and test sets, 
+returning DataFrames.
+Note
+When a category in the test set is not present in the training set, it will not have a mapping to 
+a digit. OrdinalEncoder() from scikit-learn and feature-engine will raise 
+an error by default. However, they have the option to replace unseen categories with a user-
+defined value or -1, respectively.
+scikit-learn’s OrdinalEncoder() can restrict the encoding to those categories with a 
+minimum frequency. feature-engine’s OrdinalEncoder() can assign the numbers based 
+on the target mean value, as we will see in the following recipe.
+There’s more...
+You can also carry out ordinal encoding with OrdinalEncoder() from Category Encoders. Check 
+it out at http://contrib.scikit-learn.org/category_encoders/ordinal.html.
+Performing ordinal encoding based on the target value
+In the previous recipe, we replaced categories with integers, which were assigned arbitrarily. We can 
+also assign integers to the categories given the target values. To do this, first, we calculate the mean 
+value of the target per category. Next, we order the categories from the one with the lowest to the one 
+with the highest target mean value. Finally, we assign digits to the ordered categories, starting with 0 
+to the first category up to k-1 to the last category, where k is the number of distinct categories.

@@ -1,0 +1,24 @@
+SRAM en chip de la GPU, Tamaño y ancho de banda de la memoria
+suma, Fusión de modelos y afinado multitarea
+– combinación lineal, Fusión de modelos y afinado multitarea
+– interpolación lineal esférica (SLERP), Combinación lineal
+– poda de parámetros redundantes específicos de la tarea, Poda de
+parámetros redundantes específicos de la tarea
+suma de combinaciones lineales, Fusión de modelos y afinado multitarea
+supervisión, Modelos lingüísticos
+T
+tablas de clasificación, Retos de la evaluación comparativa,
+Implementación en el dispositivo
+tablas de clasificación públicas, Selección e integración de pruebas
+comparativas
+tamaño de lote, Tasa de aprendizaje
+tamaño del modelo, Tamaño del modelo
+– cuellos de botella de escala, Extrapolación de escalas
+– extrapolación de escalas, Ley de escalado: Construir modelos de
+computación optimizada
+– ley de escala: construcción de modelos de computación optimizada,
+Ley de escalado: Construir modelos de computación optimizada
+tasa de aprendizaje, Marcos de afinado
+tasa de fracaso del cambio (CFR), Monitoreo y observabilidad
+tasa de pérdida de prompts, Ponderación de pérdida de prompts
+temperatura, Fundamentos de muestreo

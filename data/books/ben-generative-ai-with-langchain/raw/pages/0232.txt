@@ -1,0 +1,32 @@
+Chapter 5
+205
+We can call our calculator tool and pass it to the LangGraph configuration in runtime:
+math_constants = {"pi": math.pi, "i": 1j, "e": math.exp}
+config = {"configurable": {"math_constants": math_constants}}
+calculator_tool.invoke(tool_call["args"], config=config)
+>> (-5+12j)
+With that, we have learned how we can easily convert any Runnable to a tool by providing addi­
+tional details to LangChain to ensure an LLM can correctly handle this tool.
+Subclass StructuredTool or BaseTool
+Another method to define a tool is by creating a custom tool by subclassing the BaseTool class. 
+As with other approaches, you must specify the tool’s name, description, and argument schema. 
+You’ll also need to implement one or two abstract methods: _run for synchronous execution 
+and, if necessary, _arun for asynchronous behavior (if it differs from simply wrapping the sync 
+version). This option is particularly useful when your tool needs to be stateful (for example, to 
+maintain long-lived connection clients) or when its logic is too complex to be implemented as a 
+single function or Runnable.
+If you want more flexibility than a @tool decorator gives you but don’t want to implement your 
+own class, there’s an intermediate approach. You can also use the StructuredTool.from_function 
+class method, which allows you to explicitly specify tools’ meta parameters such as description 
+or args_schema with a few lines of code only:
+from langchain_core.tools import StructuredTool
+calculator_tool = StructuredTool.from_function(
+   name="calculator",
+   description=(
+       "Calculates a single mathematical expression, incl. complex 
+numbers."),
+   func=calculator,
+   args_schema=CalculatorArgs
+)
+tool_call = llm.invoke(
+  "How much is (2+3i)**2", tools=[calculator_tool]).tool_calls[0]

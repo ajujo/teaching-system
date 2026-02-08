@@ -1,0 +1,38 @@
+Unlike traditional multiagent systems, which often rely on explicit role assignment
+and centralized coordination, swarm systems emphasize decentralization and self-
+organization. Each agent follows its own set of local policies or behaviors, typically
+without a global view of the system. Yet, through repeated, local interactions—such as
+broadcasting small updates, reacting to neighbors, or adapting based on shared sig‐
+nals—the swarm can adapt to changing conditions, solve complex problems, and
+exhibit robust group-level behavior. Key advantages of swarm-based systems include:
+Scalability
+Because swarm agents are loosely coupled and locally driven, the system can
+scale to hundreds or thousands of agents with minimal coordination overhead.
+Robustness
+There is no single point of failure. If individual agents fail, others can continue
+operating without significant degradation in performance.
+Flexibility
+Swarms can adapt in real time to changing goals or environments, making them
+well suited to dynamic or unpredictable scenarios.
+Distributed problem-solving
+Tasks such as exploration, monitoring, consensus formation, or distributed
+search can be tackled effectively through swarm dynamics.
+Swarms are particularly effective in environments where centralized control is
+impractical or undesirable. For example, they are useful in large-scale data discovery,
+researching across multiple sources, or distributed decision making. In these scenar‐
+ios, agents can operate semi-independently, contribute small insights or actions, and
+let global behavior emerge from the accumulation of local actions.
+However, designing swarm systems comes with unique challenges, especially around
+predictability, observability, and efficiency. Despite these limitations, swarm-based
+systems offer a powerful and elegant solution for problems that benefit from decen‐
+tralization, parallelism, and resilience. While not suitable for every problem domain,
+swarms shine in distributed environments and are increasingly relevant in fields like
+edge computing, sensor networks, and real-time collaborative systems—especially
+where flexibility and robustness matter more than precision or central control.
+Principles for Adding Agents
+When expanding a system by adding more agents, a strategic approach is essential to
+ensure the system remains efficient, manageable, and effective. The following princi‐
+ples serve as guidelines for optimizing agent-based design and functionality:
+178 
+| 
+Chapter 8: From One Agent to Many

@@ -1,0 +1,10 @@
+CASO PRÁCTICO DE OPTIMIZACIÓN DE INFERENCIAS
+DE PYTORCH
+La Figura 9-14 muestra la mejora de throughput que el equipo de
+PyTorch podría dar a Llama-7B mediante los siguientes pasos de
+optimización (PyTorch, 2023):
+1. Llamar a torch.compile para compilar el modelo en kernels
+más eficientes.
+2. Cuantizar las ponderaciones del modelo a INT8.
+3. Cuantizar todavía más las ponderaciones del modelo a INT4.
+4. Añadir decodificación especulativa.

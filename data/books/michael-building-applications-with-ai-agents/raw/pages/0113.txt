@@ -1,0 +1,37 @@
+transparency (“chain of thought”) that aids debugging and auditability, though it can
+increase API costs and response times.
+Planner-Executor Agents
+Planner-executor agents split a task into two distinct phases: planning, where the
+model generates a multistep plan; and execution, where each planned step is carried
+out via tool calls. This clear separation lets the planner focus on long-horizon reason‐
+ing while executors invoke only the necessary tools, reducing redundant LLM calls.
+Because the plan is explicit, debugging and monitoring become straightforward—you
+can inspect the generated plan, track which step failed, and replan if needed. This
+approach has multiple advantages:
+Clear decomposition
+Complex tasks break down into manageable subtasks.
+Debuggability
+Explicit plans reveal where and why errors occur.
+Cost efficiency
+Smaller models or fewer LLM calls handle execution, reserving large models for
+planning.
+Query-Decomposition Agents
+Query-decomposition agents tackle a complex question by iteratively breaking it into
+subquestions, invoking search or other tools for each, and then synthesizing a final
+answer. This pattern—often called “self-ask with search”—prompts the model: “What
+follow-up question do I need?” → call search → “What’s the next question?” → … →
+“What’s the final answer?”
+Example: SELF_ASK_WITH_SEARCH
+Ask: “Who lived longer, X or Y?”
+Self-ask: “What’s X’s lifespan?” → search tool
+Self-ask: “What’s Y’s lifespan?” → search tool
+Synthesize: “X lived 85 years, Y lived 90 years, so Y lived longer”
+This approach excels when external knowledge retrieval is needed, ensuring each fact
+is grounded in tool output before composing the final response.
+Reflection Agents
+Reflection and metareasoning agents extend the ReAct paradigm by not only inter‐
+leaving thought and action but also reviewing past steps to identify and correct mis‐
+takes before proceeding. In this approach—exemplified by the recently proposed
+Agent Types 
+| 
+91

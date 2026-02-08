@@ -1,0 +1,26 @@
+• Log everything—prompts, tool calls, validation errors, retries, fallbacks—for
+observability, debugging, and continuous improvement.
+By validating outputs, retrying strategically, and falling back gracefully—all while log‐
+ging every step—you transform random failures into manageable, predictable behav‐
+ior. This shift is essential for delivering robust, production-grade agents.
+Conclusion
+Tools enable AI agents to perform tasks, make decisions, and interact with their envi‐
+ronment effectively. These range from simple to complex tasks requiring advanced
+reasoning. Handcrafted tools, manually designed by developers, offer precision but
+can be time-consuming to maintain. Plug-in tools, provided by platforms like
+OpenAI and Google’s Gemini, enable rapid integration and scalability but lack
+customizability.
+Automated tool development, including real-time code generation, imitation learn‐
+ing, and reinforcement learning, allows AI agents to dynamically adapt and refine
+their abilities. This enhances their versatility and problem-solving capabilities, ena‐
+bling continuous improvement and autonomous expansion of tools. Building and
+maintaining the toolkit for your agent is one of the most critical ways to give your
+agent the capabilities to succeed in the task at hand.
+Now that we know how to build and curate a set of tools that we provide to our agent,
+we’ll move on to consider how we’ll enable the agent to make plans, select and
+parameterize tools, and put these pieces together to perform useful work. In the next
+chapter, we’ll discuss how we can organize a sequence of tools to perform complex
+tasks in a process we call orchestration.
+88 
+| 
+Chapter 4: Tool Use

@@ -1,0 +1,19 @@
+evaluación, Anthropic hizo un llamamiento a los responsables de las
+políticas para que aumenten la financiación pública y las subvenciones
+tanto para desarrollar nuevas metodologías de evaluación como para
+analizar la solidez de las evaluaciones existentes.
+figura 3-2. Número de repositorios de evaluación de código abierto entre los 1000
+repositorios de IA más populares en GitHub.
+Para demostrar aún más cómo la inversión en evaluación va a la zaga de
+otras áreas en el espacio de la IA, el número de herramientas para la
+evaluación es pequeño en comparación con el número de herramientas para
+el modelado y entrenamiento y la orquestación de la IA, como se muestra
+en la Figura 3-3.
+Una inversión inadecuada conlleva una infraestructura insuficiente, lo que
+dificulta la realización de evaluaciones sistemáticas. Cuando les pregunté
+cómo evaluaban sus aplicaciones de IA, muchos me dijeron que se
+limitaban a echar un vistazo a los resultados.. Muchos tienen un pequeño
+conjunto de prompts que siempre utilizan para evaluar los modelos. El
+proceso de selección de estos prompts es ad hoc y suele basarse en la
+experiencia personal del seleccionador, en lugar de en las necesidades de la
+aplicación. Puede que este enfoque ad hoc sirva para poner en marcha un

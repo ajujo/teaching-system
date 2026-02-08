@@ -1,0 +1,26 @@
+Building Workflows with LangGraph
+70
+After we have defined a schema for a state, we can define our first simple workflow:
+from langgraph.graph import StateGraph, START, END, Graph
+def analyze_job_description(state):
+   print("...Analyzing a provided job description ...")
+   return {"is_suitable": len(state["job_description"]) > 100}
+def generate_application(state):
+   print("...generating application...")
+   return {"application": "some_fake_application"}
+builder = StateGraph(JobApplicationState)
+builder.add_node("analyze_job_description", analyze_job_description)
+builder.add_node("generate_application", generate_application)
+builder.add_edge(START, "analyze_job_description")
+builder.add_edge("analyze_job_description", "generate_application")
+builder.add_edge("generate_application", END)
+graph = builder.compile()
+Here, we defined two Python functions that are components of our workflow. Then, we defined
+our workflow by providing a state's schema, adding nodes and edges between them. add_node is
+a convenient way to add a component to your graph (by providing its name and a corresponding
+Python function), and you can reference this name later when you define edges with add_edge.
+START and END are reserved built-in nodes that define the beginning and end of the workflow
+accordingly.
+Let's take a look at our workflow by using a built-in visualization mechanism:
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))

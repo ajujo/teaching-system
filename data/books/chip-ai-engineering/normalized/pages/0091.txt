@@ -1,0 +1,33 @@
+10 Un dato curioso: hasta el 16 de septiembre de 2024, el sitio web
+theresanaiforthat.com enumera 16 814 IA para 14 688 tareas y 4803 puestos de
+trabajo.
+11 Explorar distintas aplicaciones de la IA es quizá una de las cosas que más me
+ha gustado de escribir este libro. Es muy divertido ver lo que construye la gente.
+Puede consultar la lista de aplicaciones de IA de código abierto que sigo. La lista
+se actualiza cada 12 horas.
+12 Dado que las empresas suelen gastar mucho dinero en publicidad y marketing,
+la automatización puede suponer un gran ahorro. En promedio, el 11 % del
+presupuesto de una empresa se destina a marketing. Véase "Marketing Budgets
+Vary by Industry" (Christine Moorman, WSJ, 2017).
+13 La IA me ha resultado muy útil en el proceso de escribir este libro, y me doy
+cuenta de que será capaz de automatizar muchas partes del proceso de escritura.
+Cuando escribo ficción, a menudo le pido a la IA que haga una lluvia de ideas
+sobre lo que cree que ocurrirá a continuación o cómo podría reaccionar un
+personaje ante una situación. Todavía estoy evaluando qué tipo de escritura
+puede automatizarse y cuál no.
+14 Mi hipótesis es que llegaremos a desconfiar tanto de los contenidos en Internet
+que solo leeremos contenidos generados por personas o marcas en las que
+confiemos.
+15 Me sorprende que Apple y Amazon estén tardando tanto en incorporar los
+avances de la IA generativa a Siri y Alexa. Un amigo cree que esto se debe a que
+estas empresas pueden tener mayores exigencias de calidad y cumplimiento, y a
+que lleva más tiempo desarrollar interfaces de voz que interfaces de chat.
+16 Descargo de responsabilidad: Soy asesora de Convai
+17 Actualmente tengo más de 40 000 fotos y vídeos en Google Fotos. Sin la IA,
+me resultaría casi imposible buscar las fotos que quiero, cuando las quiero.
+18 Personalmente, la IA también me parece buena para explicar datos y gráficos.
+Cuando encuentro un gráfico confuso con demasiada información, pido a
+ChatGPT que me lo desglose
+19 Las startups más pequeñas, sin embargo, pueden tener que priorizar el enfoque
+en el producto y no pueden permitirse tener ni siquiera una persona que "eche un
+vistazo".

@@ -1,0 +1,31 @@
+reducción del TTFT a costa de un mayor TPOT es posible desplazando más
+instancias de cómputo de la decodificación al llenado previo y viceversa. 10
+Es importante tener en cuenta que los valores TTFT y TPOT observados por
+los usuarios pueden diferir de los observados por los modelos,
+especialmente en escenarios que implican consultas CoT (cadena de
+pensamiento) o agénticas, donde los modelos generan pasos intermedios
+que no se muestran a los usuarios. Algunos equipos utilizan la métrica
+tiempo de publicación para explicitar que mide el tiempo transcurrido hasta
+que los usuarios ven el primer token.
+Consideremos el escenario en el que, después de que un usuario envíe una
+consulta, el modelo realiza los siguientes pasos:
+1. Generar un plan, que consiste en una secuencia de acciones. Este
+plan no se muestra al usuario.
+2. Emprender acciones y registrar sus outputs. Estos outputs no se
+muestran al usuario.
+3. Basándose en estos outputs, generar una respuesta final para
+mostrar al usuario.
+Desde la perspectiva del modelo, el primer token se genera en el paso 1. Es
+entonces cuando el modelo comienza internamente su proceso de
+generación de tokens. El usuario, sin embargo, solo ve el primer token del
+output final generado en el paso 3. Por tanto, desde su punto de vista, el
+TTFT es mucho más largo.
+Como la latencia es una distribución, el promedio puede ser engañosa.
+Imagine que tiene 10 solicitudes cuyos valores TTFT son 100 ms, 102 ms,
+100 ms, 100 ms, 99 ms, 104 ms, 110 ms, 90 ms, 3000 ms, 95 ms. El valor
+medio de TTFT es de 390 ms, lo que hace que su servicio de inferencia
+parezca más lento de lo que es. Puede que se haya producido un error de red
+que haya ralentizado una solicitud o que un prompt especialmente largo
+haya tardado mucho más tiempo en el llenado previo. En cualquier caso,
+debería investigar. Con un gran volumen de solicitudes, los valores atípicos
+que sesgan la latencia media son casi inevitables.

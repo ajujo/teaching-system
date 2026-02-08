@@ -1,0 +1,37 @@
+Extracting Features from Text Variables
+346
+Estimating text complexity by counting sentences
+One aspect of a piece of text that we can capture in features is its complexity. Usually, longer descriptions 
+that contain multiple sentences spread over several paragraphs tend to provide more information 
+than descriptions with very few sentences. Therefore, capturing the number of sentences may provide 
+some insight into the amount of information provided by the text. This process is called sentence 
+tokenization. Tokenization is the process of splitting a string into a list of pieces or tokens. In the 
+Counting characters, words, and vocabulary recipe, we did word tokenization – that is, we divided the 
+string into words. In this recipe, we will divide the string into sentences, and then we will count them. 
+We will use the NLTK Python library, which provides this functionality.
+Getting ready
+In this recipe, we will use the NLTK Python library. For guidelines on how to install NLTK, check out 
+the Technical requirements section of this chapter.
+How to do it...
+Let’s begin by importing the required libraries and dataset:
+1.	
+Let’s load pandas, the sentence tokenizer from NLTK, and the dataset from scikit-learn:
+import pandas as pd
+from nltk.tokenize import sent_tokenize
+from sklearn.datasets import fetch_20newsgroups
+2.	
+To understand the functionality of the sentence tokenizer from NLTK, let’s create a variable 
+that contains a string with multiple sentences:
+text = """
+The alarm rang at 7 in the morning as it usually did on 
+Tuesdays. She rolled over, stretched her arm, and stumbled 
+to the button till she finally managed to switch it off. 
+Reluctantly, she got up and went for a shower. The water was 
+cold as the day before the engineers did not manage to get the 
+boiler working. Good thing it was still summer.
+Upstairs, her cat waited eagerly for his morning snack. Miaow! 
+He voiced with excitement as he saw her climb the stairs.
+"""
+3.	
+Now, let’s separate the string from step 2 into sentences using NLTK library‘s sentence tokenizer:
+sent_tokenize(text)

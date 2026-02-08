@@ -1,0 +1,35 @@
+Figure 3-4. The autonomy slider enables users to adjust an agent's level of independence,
+ranging from fully manual control, to assisted "Ask" mode, to fully autonomous agent
+execution. This flexibility builds user trust by aligning system behavior with user prefer‐
+ences, task complexity, and context.
+Different users, tasks, and contexts demand different degrees of agent autonomy. In
+some situations, users prefer full manual control to ensure precision, while in others,
+they may want to offload routine or complex tasks entirely to the agent. Critically,
+these preferences are not static; they evolve with user trust, task familiarity, stakes,
+and workload. For example:
+Manual
+The developer writes all code themselves without agent assistance. The IDE acts
+purely as an editor with syntax highlighting and linting but no AI-driven
+suggestions.
+Ask (assisted)
+The agent proactively suggests code completions, refactors, or documentation
+snippets, but the developer reviews and accepts each suggestion before it is
+applied. This mode speeds up development while keeping the human fully in
+control.
+Agent
+The agent autonomously performs certain tasks, such as applying standard refac‐
+tors, fixing linter errors, or generating boilerplate code files based on project con‐
+ventions without requiring individual approvals. The developer is notified of
+changes but does not need to approve each action.
+These three modes demonstrate how an autonomy slider empowers developers to
+balance control and efficiency within a single interface. The same principle applies
+beyond software development. For example, in a customer support platform:
+Manual
+Human agents handle all incoming customer queries themselves. The AI is inac‐
+tive or used only for backend analytics, not frontline interactions.
+Ask (assisted)
+The agent drafts suggested replies to customer messages, surfacing recom‐
+mended responses, policy references, or troubleshooting steps. The human agent
+56
+|
+Chapter 3: User Experience Design for Agentic Systems

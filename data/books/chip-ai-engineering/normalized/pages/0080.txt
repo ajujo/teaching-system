@@ -1,0 +1,30 @@
+modelo ya tiene ciertos conocimientos adquiridos en el
+pre-entrenamiento, el afinado suele requerir menos
+recursos (por ejemplo, datos y computación) que el preentrenamiento.
+Post-entrenamiento
+Mucha gente utiliza el término post-entrenamiento para
+referirse al proceso de entrenamiento de un modelo tras
+la fase de pre-entrenamiento. Conceptualmente, postentrenamiento y afinado son lo mismo y pueden
+utilizarse indistintamente. Sin embargo, a veces, la gente
+puede utilizarlos de forma diferente para referirse a sus
+distintas metas. Suele tratarse de post-entrenamiento
+cuando lo realizan los desarrolladores de modelos. Por
+ejemplo, OpenAI podría post-entrenar a un modelo para
+que siga mejor las instrucciones antes de lanzarlo al
+mercado. Se trata de afinado cuando lo hacen los
+desarrolladores de aplicaciones. Por ejemplo, usted
+podría ajustar un modelo de OpenAI (que podría haber
+sido post-entrenado por usted mismo) para adaptarlo a
+sus necesidades.
+El pre-entrenamiento y el post-entrenamiento forman un espectro. 25
+Sus procesos y herramientas son muy similares. Sus diferencias se
+analizan con más detalle en el Capítulo 2 y el Capítulo 7.
+Algunas personas utilizan el término entrenamiento para referirse a la
+ingeniería de prompts, lo cual no es correcto. Leí un artículo de
+Business Insider en el que la autora decía que había entrenado a
+ChatGPT para que imitara a su yo más joven. Lo hizo introduciendo las
+entradas de su diario infantil en ChatGPT. Coloquialmente, el uso que
+hace la autora de la palabra entrenamiento es correcto, ya que está
+enseñando al modelo a hacer algo. Pero técnicamente, si le enseña a un
+modelo lo que tiene que hacer a través del contexto introducido en el
+modelo, está haciendo ingeniería de prompts. Del mismo modo, he

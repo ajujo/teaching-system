@@ -1,0 +1,23 @@
+Transforming Numerical Variables
+104
+3.	
+Let’s drop the Latitude and Longitude variables:
+X.drop(labels=["Latitude", "Longitude"], axis=1,
+    inplace=True)
+4.	
+Let’s inspect the variable distributions with histograms:
+X.hist(bins=30, figsize=(12, 12), layout=(3, 3))
+plt.show()
+In the following output, we can see that the MedInc variable shows a mild right-skewed 
+distribution, variables such as AveRooms and Population are heavily right-skewed, and 
+the HouseAge variable shows an even spread of values across its range:
+Figure 3.10 – Histograms of the numerical variables
+5.	
+Let’s capture the variable names in a list since we will use these in the following step:
+variables = list(X.columns)
+6.	
+Let’s create a function that will plot Q-Q plots for all the variables in the data in two rows with 
+three plots each:
+def make_qqplot(df):
+    plt.figure(figsize=(10, 6),
+        constrained_layout=True)

@@ -1,0 +1,35 @@
+Building Intelligent RAG Systems
+132
+Document loaders come with a standard .load() method interface that returns documents in 
+LangChain’s document format. The initialization is source-specific. After loading, documents 
+often need processing before storage and retrieval, and selecting the right chunking strategy 
+determines the relevance and diversity of AI-generated responses.
+Chunking strategies
+Chunking—how you divide documents into smaller pieces—can dramatically impact your RAG 
+system’s performance. Poor chunking can break apart related concepts, lose critical context, and 
+ultimately lead to irrelevant retrieval results. The way you chunk documents affects:
+•	
+Retrieval accuracy: Well-formed chunks maintain semantic coherence, making them 
+easier to match with relevant queries
+•	
+Context preservation: Poor chunking can split related information, causing knowledge 
+gaps
+•	
+Response quality: When the LLM receives fragmented or irrelevant chunks, it generates 
+less accurate responses
+Let’s explore a hierarchy of chunking approaches, from simple to sophisticated, to help you im­
+plement the most effective strategy for your specific use case.
+Fixed-size chunking
+The most basic approach divides text into chunks of a specified length without considering con­
+tent structure:
+from langchain_text_splitters import CharacterTextSplitter
+text_splitter = CharacterTextSplitter(
+    separator=" ",   # Split on spaces to avoid breaking words
+    chunk_size=200,
+    chunk_overlap=20
+)
+chunks = text_splitter.split_documents(documents)
+print(f"Generated {len(chunks)} chunks from document")
+Fixed-size chunking is good for quick prototyping or when document structure is relatively uni­
+form, however, it often splits text at awkward positions, breaking sentences, paragraphs, or logical 
+units.

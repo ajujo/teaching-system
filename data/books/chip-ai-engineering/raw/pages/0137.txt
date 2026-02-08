@@ -1,0 +1,11 @@
+figura 2-12. La distribución de los prompts utilizados para afinar InstructGPT. El
+gráfico se ha creado a partir de las cifras del artículo de OpenAI.
+Es importante contar con buenos profesores para que los seres humanos
+aprendan. Del mismo modo, es importante contar con buenos etiquetadores
+para que las IA aprendan a mantener conversaciones inteligentes. A
+diferencia del etiquetado de datos tradicional, que a menudo puede hacerse
+con poca o ninguna experiencia en la materia, los datos de demostración
+pueden contener prompts complejos cuyas respuestas requieren
+pensamiento crítico, recopilación de información y juicio sobre la idoneidad
+de las peticiones del usuario. La Tabla 2-6 muestra ejemplos de duplas
+(prompt, respuesta) creadas por los etiquetadores para InstructGPT.

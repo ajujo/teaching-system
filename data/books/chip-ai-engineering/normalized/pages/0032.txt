@@ -1,0 +1,31 @@
+NOTA
+La autosupervisión es diferente de la no supervisión. En el aprendizaje
+autosupervisado, las etiquetas se infieren a partir de los datos del input. En
+el aprendizaje no supervisado, no se necesitan etiquetas en absoluto.
+El aprendizaje autosupervisado significa que los modelos lingüísticos
+pueden aprender de secuencias de texto sin necesidad de etiquetado. Como
+las secuencias de texto están por todas partes (en libros, entradas de blogs,
+artículos y comentarios de Reddit), es posible construir una cantidad masiva
+de datos de entrenamiento, lo que permite escalar los modelos lingüísticos
+hasta convertirlos en LLMs.
+Sin embargo, LLM no es un término científico. ¿Qué tamaño debe tener un
+modelo lingüístico para ser considerado grande? Lo que hoy es grande,
+mañana puede parecer diminuto. El tamaño de un modelo suele medirse por
+su número de parámetros. Un parámetro es una variable dentro de un
+modelo de ML que se actualiza a través del proceso de entrenamiento. 7 En
+general, aunque no siempre es así, cuantos más parámetros tenga un
+modelo, mayor será su capacidad para aprender los comportamientos
+deseados.
+Cuando el primer modelo de transformador generativo pre-entrenado (GPT)
+de OpenAI salió en junio de 2018, tenía 117 millones de parámetros, y eso
+se consideraba grande. Para febrero de 2019, cuando OpenAI presentó
+GPT-2 con 1500 millones de parámetros, ya se consideraba pequeño un
+tamaño de 117 millones. En el momento de escribir este libro, un modelo
+con 100 000 millones de parámetros se considera grande. Quizá algún día
+este tamaño se considere pequeño.
+Antes de pasar a la siguiente sección, quiero que reflexionemos en una
+cuestión que suele darse por sentada: ¿Por qué los modelos más grandes
+necesitan más datos? Los modelos más grandes tienen más capacidad de
+aprendizaje y, por tanto, necesitarían más datos de entrenamiento para
+maximizar su rendimiento. 8 También se puede entrenar un modelo grande
+con un conjunto de datos pequeño, pero sería un desperdicio de cálculo.

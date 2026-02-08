@@ -1,0 +1,35 @@
+Chapter 6
+253
+       self,
+       node_id: int,
+       step: str,
+       step_output: Optional[str] = None,
+       parent: Optional["TreeNode"] = None,
+   ):
+       self.node_id = node_id
+       self.step = step
+       self.step_output = step_output
+       self.parent = parent
+       self.children = []
+       self.final_response = None
+ def __repr__(self):
+   parent_id = self.parent.node_id if self.parent else "None"
+   return f"Node_id: {self.node_id}, parent: {parent_id}, {len(self.
+children)} children."
+ def get_full_plan(self) -> str:
+   """Returns formatted plan with step numbers and past results."""
+   steps = []
+   node = self
+   while node.parent:
+     steps.append((node.step, node.step_output))
+     node = node.parent
+   full_plan = []
+   for i, (step, result) in enumerate(steps[::-1]):
+     if result:
+       full_plan.append(f"# {i+1}. Planned step: {step}\nResult: 
+{result}\n")
+   return "\n".join(full_plan)
+Each TreeNode tracks its identity, current step, output, parent relationship, and children. We 
+also created a method to get a formatted full plan (we’ll substitute it in place of the prompt’s 
+template), and just to make debugging more convenient, we overrode a __repr__ method that 
+returns a readable description of the node.

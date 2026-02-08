@@ -1,0 +1,61 @@
+tabla 1-3. Casos de uso comunes de IA generativa en aplicaciones
+empresariales y de consumo.
+Categoría
+Ejemplos de
+casos de uso de
+consumo
+Ejemplos de casos de
+uso empresarial
+Codificación
+Codificación
+Codificación
+Producción de
+imagen y vídeo
+Edición de fotos y
+vídeos
+Diseño
+Presentación Generación de
+anuncios
+Redacción
+Correo electrónico
+Publicaciones en
+redes sociales y
+blogs
+Redacción publicitaria,
+optimización para motores
+de búsqueda (SEO)
+Informes, notas, documentos
+de diseño
+Educación
+Clases particulares
+Calificación de
+trabajos
+Incorporación de empleados
+Formación de mejora de los
+empleados
+Bots
+conversacionales
+Chatbot general
+Compañero de IA
+Atención al cliente Copilotos
+de productos
+Agregación de
+información
+Síntesis
+Hablar con los
+documentos
+Síntesis Estudios de mercado
+Organización de
+datos
+Búsqueda de
+imágenes
+Memex
+Gestión de conocimientos
+Procesamiento de
+documentos
+Automatización del
+flujo de trabajo
+Planificación de
+viajes
+Extracción, introducción y
+anotación de datos

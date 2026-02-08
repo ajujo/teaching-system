@@ -1,0 +1,40 @@
+Replacing categories with ordinal numbers
+61
+In this recipe, we will perform ordinal encoding using pandas, scikit-learn, and feature-
+engine.
+How to do it...
+First, let’s make the import and prepare the dataset:
+1.	
+Import pandas and the data split function:
+import pandas as pd
+from sklearn.model_selection import train_test_split
+2.	
+Let’s load the Credit Approval dataset and divide it into train and test sets:
+data = pd.read_csv("credit_approval_uci.csv")
+X_train, X_test, y_train, y_test = train_test_split(
+    data.drop(labels=["target"], axis=1),
+    data["target"],
+    test_size=0.3,
+    random_state=0,
+)
+3.	
+To encode the A7 variable, let’s make a dictionary of category-to-integer pairs:
+ordinal_mapping = {k: i for i, k in enumerate(
+    X_train["A7"].unique(), 0)
+}
+If we execute print(ordinal_mapping), we will see the digits that will replace each category:
+{'v': 0, 'ff': 1, 'h': 2, 'dd': 3, 'z': 4, 'bb': 5, 'j': 6, 
+'Missing': 7, 'n': 8, 'o': 9}
+4.	
+Now, let’s replace the categories in a copy of the DataFrames:
+X_train_enc = X_train.copy()
+X_test_enc = X_test.copy()
+X_train_enc["A7"] = X_train_enc["A7"].map(ordinal_mapping)
+X_test_enc["A7"] = X_test_enc["A7"].map(ordinal_mapping)
+Go ahead and execute print(X_train["A7"].head()) to see the result of the 
+previous operation.
+Next, we’ll carry out ordinal encoding using scikit-learn.
+5.	
+Let’s import the required classes:
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.compose import ColumnTransformer

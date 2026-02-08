@@ -1,0 +1,24 @@
+I
+IA centrada en modelos, Ingeniería de conjuntos de datos
+IDF (frecuencia inversa de documentos), Recuperación basada en términos
+IFEval, Criterios de seguimiento de instrucciones
+imitación superficial, Verificación de datos
+implementación de guardarraíles, Implementación de barreras de seguridad
+implementación en el dispositivo, Control, acceso y transparencia
+incoherencia, Incoherencia, Incoherencia
+incrustación, Introducción a la incrustación
+indexación
+– con recuperación basada en incrustaciones, Recuperación basada en
+incrustaciones
+– estrategia de fragmentación y, RAG, Optimización de la recuperación
+– sistemas de recuperación y, Comparación de algoritmos de
+recuperación
+índice de archivos invertido (IVF), Recuperación basada en incrustaciones
+inferencia con referencia, Decodificación especulativa
+inferencia de modelos, Planificación de hitos
+INFOBench, Criterios de seguimiento de instrucciones
+ingeniería de conjuntos de datos, Modelado y entrenamiento, Ingeniería de
+conjuntos de datos
+– aumento/síntesis de datos, Adquisición y anotación de datos
+– curación de datos, Ingeniería de conjuntos de datos
+– adquisición/anotación de datos, Cantidad de datos

@@ -1,0 +1,44 @@
+Fine-Tuning with Preference Alignment
+258
+References
+•
+Rafael Rafailov et al.. "Direct Preference Optimization: Your Language Model is Secretly a
+Reward Model." arXiv preprint arXiv:2305.18290, May 2023.
+•
+Timo Kaufmann et al.. "A Survey of Reinforcement Learning from Human Feedback." arXiv
+preprint arXiv:2312.14925, December 2023.
+•
+Anthropic. "GitHub - anthropics/hh-rlhf: Human preference data for "Training a Helpful and
+Harmless Assistant with Reinforcement Learning from Human Feedback"." github.com, 2022,
+https://github.com/anthropics/hh-rlhf.
+•
+Nisan Stiennon et al.. "Learning to summarize from human feedback." arXiv preprint arX-
+iv:2009.01325, September 2020.
+•
+Intel(R) Neural Compressor. "Supervised Fine-Tuning and Direct Preference Optimization
+on Intel Gaudi2." medium.com, March 26, 2024, https://medium.com/intel-analyticssoftware/the-practice-of-supervised-finetuning-and-direct-preferenceoptimization-on-habana-gaudi2-a1197d8a3cd3.
+•
+Argilla. "GitHub - argilla-io/distilabel." github.com, August 23, 2024, https://github.
+com/argilla-io/distilabel.
+•
+Databricks. "Enhancing LLM-as-a-Judge with Grading Notes." databricks.com, July 22, 2024,
+https://www.databricks.com/blog/enhancing-llm-as-a-judge-with-grading-notes.
+•
+Akrour, Riad & Schoenauer, Marc & Sebag, Michèle. (2011). Preference-Based Policy Learning. 12-27. 10.1007/978-3-642-23780-5_11.
+•
+Cheng, Weiwei & Fürnkranz, Johannes & Hüllermeier, Eyke & Park, Sang-Hyeun. (2011).
+Preference-Based Policy Iteration: Leveraging Preference Learning for Reinforcement Learning.
+312-327. 10.1007/978-3-642-23780-5_30.
+•
+Paul Christiano et al.. "Deep reinforcement learning from human preferences." arXiv preprint
+arXiv:1706.03741, June 2017.
+•
+Long Ouyang et al.. "Training language models to follow instructions with human feedback."
+arXiv preprint arXiv:2203.02155, March 2022.
+•
+John Schulman et al.. "Proximal Policy Optimization Algorithms." arXiv preprint arX-
+iv:1707.06347, July 2017.
+•
+unslothai. "GitHub - unslothai/unsloth: Finetune Llama 3.1, Mistral, Phi & Gemma LLMs
+2-5x faster with 80% less memory." github.com, August 21, 2024, https://github.com/
+unslothai/unsloth.

@@ -1,0 +1,72 @@
+Index
+364
+D
+date and time features
+extracting 291-295
+dates
+features, extracting from 178-183
+datetime documentation, pandas
+reference link 184
+datetime feature extraction
+automating, with feature-engine 197-202
+datetime ranges
+reference link 184
+DatetimeSubstraction()
+using 192
+datetime transform primitives 291
+datetime variables
+elapsed time, capturing between 188-192
+decision trees
+features, combining with 247-252
+using, for discretization 144-151
+deep feature synthesis (dfs) 276
+default text primitives
+reference link 296
+degree 2 241
+discretization 135
+decision trees, using for 144-151
+performing, with k-means
+clustering 135-140
+disposable income 229
+dt module, pandas 184
+reference link 184
+E
+elapsed time
+capturing, between datetime
+variables 188-192
+entity set
+automatic features, creating 271-281
+setting up 271-281
+EntitySet class  279
+equal-frequency discretization 123
+implementing 123-128
+implementing, with scikit-learn 129
+equal-width discretization 114
+performing 114-120
+performing, with scikit-learn 121
+working 122, 123
+extract_features function 333
+reference link 317
+extreme values
+finding, for imputation 19-22
+F
+feature binarization
+implementing 140-144
+feature-engine 197
+datetime feature extraction,
+automating 197-202
+feature engineering, for forecasting
+reference link 34
+feature_names_in attribute 237
+features
+combining, with decision trees 247-252
+combining, with mathematical
+functions 230-234
+comparing, to reference variables 234-238
+creating, with Bag-of-Words (BoW) 349-352
+creating, with n-grams 349-352
+extracting, automatically from
+time series 309-319
+extracting, from dates 178-183
+extracting, from time 184-187
+standardizing 206-209

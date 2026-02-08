@@ -1,0 +1,46 @@
+clause, which lets you specify nodes with labels and properties and then link them via
+directed relationships. Best practice is to first load or match existing nodes—ensuring
+you don’t duplicate entities—and then issue separate CREATE statements for each rela‐
+tionship, as shown in the following example. By organizing your script into discrete
+steps (create nodes → match nodes → create relationships), you maintain clarity and
+can more easily debug or extend your graph as it grows:
+// Create nodes for concepts and entities
+CREATE (:Concept {name: 'Artificial Intelligence'});
+CREATE (:Concept {name: 'Machine Learning'});
+CREATE (:Concept {name: 'Deep Learning'});
+CREATE (:Concept {name: 'Neural Networks'});
+CREATE (:Concept {name: 'Computer Vision'});
+CREATE (:Concept {name: 'Natural Language Processing'});
+CREATE (:Tool {name: 'TensorFlow', creator: 'Google'});
+CREATE (:Tool {name: 'PyTorch', creator: 'Facebook'});
+CREATE (:Model {name: 'BERT', year: 2018});
+CREATE (:Model {name: 'ResNet', year: 2015});
+// Create relationships between concepts
+MATCH
+  (ai:Concept {name:'Artificial Intelligence'}),
+  (ml:Concept {name:'Machine Learning'})
+CREATE (ml)-[:SUBSET_OF]->(ai);
+MATCH
+  (ml:Concept {name:'Machine Learning'}),
+  (dl:Concept {name:'Deep Learning'})
+CREATE (dl)-[:SUBSET_OF]->(ml);
+MATCH
+  (dl:Concept {name:'Deep Learning'}),
+  (nn:Concept {name:'Neural Networks'})
+CREATE (nn)-[:USED_IN]->(dl);
+MATCH
+  (ai:Concept {name:'Artificial Intelligence'}),
+  (cv:Concept {name:'Computer Vision'})
+CREATE (cv)-[:APPLICATION_OF]->(ai);
+MATCH
+  (ai:Concept {name:'Artificial Intelligence'}),
+  (nlp:Concept {name:'Natural Language Processing'})
+CREATE (nlp)-[:APPLICATION_OF]->(ai);
+// Create relationships to tools and models
+MATCH
+  (tensorflow:Tool {name:'TensorFlow'}),
+  (nn:Concept {name:'Neural Networks'})
+CREATE (tensorflow)-[:IMPLEMENTS]->(nn);
+128 
+| 
+Chapter 6: Knowledge and Memory

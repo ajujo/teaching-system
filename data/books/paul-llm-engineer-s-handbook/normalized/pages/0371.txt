@@ -1,0 +1,14 @@
+RAG Inference Pipeline
+340
+The entry point function of the ContextRetriever class is the search() method, which calls all the
+advanced steps discussed in this chapter. Figure 9.2 shows in more detail how the search method
+glues together all the steps required to search results similar to the user's query. It highlights how
+the extracted author details from the self-query step are used within the filtered vector search.
+Also, it zooms in on the search operation itself, where, for each query, we do three searches to
+the vector DB, looking for articles, posts, or repositories similar to the query. For each search (out
+of N searches), we want to retrieve a maximum of K results. Thus, we retrieve a maximum of K
+/ 3 items for each data category (as we have three categories). Therefore, when summed up, we
+will have a list of ≤ K chunks. The retrieved list is ≤ K (and not equal to K) when a particular data
+category or more returns < K / 3 items after applying the author filters due to missing chunks
+for that specific author or data category.
+Figure 9.3: Processing the results flow of the RAG retrieval module
